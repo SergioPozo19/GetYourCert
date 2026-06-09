@@ -225,6 +225,11 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
   #opts .opt.correct,#opts .opt.wrong,.score-ring.celebrate,.verdict.animate,.timer.crit{animation:none !important}
   .confetti{display:none !important}
 }
+/* ---- Len modal chips ---- */
+.len-modal-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 6px}
+.len-chip{padding:10px 20px;border-radius:9px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
+.len-chip:hover{border-color:var(--accent);color:var(--accent)}
+.len-chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 /* ---- Footer / disclaimer ---- */
 .site-footer{max-width:920px;margin:40px auto 24px;padding:20px 24px 0;border-top:1px solid var(--line);text-align:center}
 .site-footer p{color:var(--ink-3);font-size:12px;line-height:1.6;max-width:760px;margin:0 auto}
@@ -508,10 +513,6 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     </div>
 
     <div class="start-row">
-      <div class="len-pick" id="lenWrap" style="display:none">
-        <span data-i="lenLabel">Número de preguntas:</span>
-        <select id="lenSel"></select>
-      </div>
       <button class="btn btn-primary" id="startBtn">
         <span data-i="startBtn">Comenzar examen</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -642,6 +643,17 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     </div>
     <div id="reviewList"></div>
   </section>
+</div>
+
+<div class="modal-ov hidden" id="lenModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lenModalTitle">
+    <h4 id="lenModalTitle" data-i="lenLabel">Número de preguntas</h4>
+    <div class="len-modal-chips" id="lenChips"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="lenModalCancel" data-i="confirmCancel">Cancelar</button>
+      <button class="btn btn-primary" id="lenModalOk" data-i="startBtn">Comenzar examen</button>
+    </div>
+  </div>
 </div>
 
 <div class="modal-ov" id="confirmModal">
@@ -919,34 +931,43 @@ function buildDomOpts(){
     box.appendChild(el);
   });
 }
+let _lenSelected=20;
 function populateLen(){
-  const sel=$('#lenSel'), c=domCounts();
+  const c=domCounts();
   let opts, max;
-  if(mode==='exam'){$('#lenWrap').style.display='none';return;}
-  $('#lenWrap').style.display='flex';
+  if(mode==='exam') return;
   if(mode==='domain'){max=c[domainPick];opts=[10,20,30,40,50].filter(n=>n<max);opts.push(max);}
   else if(mode==='bookmarks'){max=bookmarkCount();opts=[10,20,30,40,50].filter(n=>n<max);opts.push(max);}
   else if(mode==='srs'){max=srsDueCount();opts=[10,20,30,40,50].filter(n=>n<max);opts.push(max);}
   else{max=QUESTIONS.length;opts=[20,40,60,80,100].filter(n=>n<max);opts.push(max);}
   if(max<1){max=0;opts=[0];}
   opts=[...new Set(opts)].sort((a,b)=>a-b);
-  sel.innerHTML=opts.map(n=>'<option value="'+n+'">'+n+(n===max?' ('+t('allWord')+')':'')+'</option>').join('');
+  _lenSelected=opts[0];
+  const box=$('#lenChips'); box.innerHTML='';
+  opts.forEach((n,i)=>{
+    const btn=document.createElement('button');
+    btn.type='button'; btn.className='len-chip'+(i===0?' on':'');
+    btn.textContent=n+(n===max?' ('+t('allWord')+')':'');
+    btn.dataset.val=n;
+    btn.onclick=()=>{ _lenSelected=n; $$('#lenChips .len-chip').forEach(b=>b.classList.toggle('on',b===btn)); };
+    box.appendChild(btn);
+  });
 }
 function buildExamSet(){
   if(mode==='domain'){
     const pool=shuffle(QUESTIONS.filter(q=>q.dom===domainPick));
-    return pool.slice(0,Math.min(parseInt($('#lenSel').value),pool.length));
+    return pool.slice(0,Math.min(_lenSelected,pool.length));
   }
   if(mode==='all'){
-    return shuffle(QUESTIONS).slice(0,Math.min(parseInt($('#lenSel').value),QUESTIONS.length));
+    return shuffle(QUESTIONS).slice(0,Math.min(_lenSelected,QUESTIONS.length));
   }
   if(mode==='bookmarks'){
     const pool=shuffle(QUESTIONS.filter(q=>isBookmarked(q.id)));
-    return pool.slice(0,Math.min(parseInt($('#lenSel').value),pool.length));
+    return pool.slice(0,Math.min(_lenSelected,pool.length));
   }
   if(mode==='srs'){
     const pool=srsDueList(); // ya priorizadas
-    return pool.slice(0,Math.min(parseInt($('#lenSel').value),pool.length));
+    return pool.slice(0,Math.min(_lenSelected,pool.length));
   }
   // modo examen: nº de preguntas del examen, repartido por los pesos oficiales de cada dominio
   const list=domList();
@@ -1952,8 +1973,13 @@ function updateStartState(){
 $('#startBtn').addEventListener('click',()=>{
   if(mode==='srs'&&srsDueCount()===0){ showToast(t('srsEmpty'),'warn'); return; }
   if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
-  startExam();
+  if(mode==='exam'){ startExam(); return; }
+  populateLen();
+  $('#lenModal').classList.remove('hidden');
 });
+$('#lenModalCancel').addEventListener('click',()=>$('#lenModal').classList.add('hidden'));
+$('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.add('hidden'); startExam(); });
+$('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.add('hidden'); });
 // Estudio: favorito en el examen + explorador
 $('#bmBtn').addEventListener('click',()=>{ const q=exam[cur].ref; toggleBookmark(q.id); render(); updateModeBadges(); });
 $('#reviewList').addEventListener('click',e=>{
