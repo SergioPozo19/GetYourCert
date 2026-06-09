@@ -23,8 +23,8 @@
 <meta name="twitter:image" content="https://getyourcert.app/icon-512.png">
 <!-- Favicon (SVG en línea) + iconos -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230F6CBD'/%3E%3Cg fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 9 12 5 3 9l9 4 9-4z'/%3E%3Cpath d='M7 11v4c0 .9 2.2 2 5 2s5-1.1 5-2v-4'/%3E%3C/g%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
 <!-- PWA -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -225,11 +225,18 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
   #opts .opt.correct,#opts .opt.wrong,.score-ring.celebrate,.verdict.animate,.timer.crit{animation:none !important}
   .confetti{display:none !important}
 }
-/* ---- Len modal chips ---- */
-.len-modal-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 6px}
-.len-chip{padding:10px 20px;border-radius:9px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
-.len-chip:hover{border-color:var(--accent);color:var(--accent)}
-.len-chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* ---- Len modal ---- */
+.len-modal{max-width:500px;text-align:center;padding:32px 28px 28px;position:relative}
+.modal-close-btn{position:absolute;top:14px;right:14px;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;color:var(--ink-3);transition:.15s}
+.modal-close-btn:hover{background:var(--line);color:var(--ink)}
+.len-modal-icon{font-size:38px;line-height:1;margin-bottom:14px}
+.len-modal h3{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.len-modal-sub{font-size:13.5px;color:var(--ink-2);margin-bottom:24px;line-height:1.5}
+.len-modal-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
+.len-chip{padding:12px 22px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:16px;font-weight:700;cursor:pointer;transition:.15s;min-width:70px}
+.len-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.len-chip.on{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(15,108,189,.25)}
+.len-modal-start{width:100%;padding:14px;font-size:16px;gap:10px;border-radius:12px}
 /* ---- Footer / disclaimer ---- */
 .site-footer{max-width:920px;margin:40px auto 24px;padding:20px 24px 0;border-top:1px solid var(--line);text-align:center}
 .site-footer p{color:var(--ink-3);font-size:12px;line-height:1.6;max-width:760px;margin:0 auto}
@@ -512,12 +519,6 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="dom-opts" id="domOpts"></div>
     </div>
 
-    <div class="start-row">
-      <button class="btn btn-primary" id="startBtn">
-        <span data-i="startBtn">Comenzar examen</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-    </div>
   </section>
 
   <section id="explore" class="hidden">
@@ -646,13 +647,18 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 </div>
 
 <div class="modal-ov" id="lenModal">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lenModalTitle">
-    <h4 id="lenModalTitle" data-i="lenLabel">Número de preguntas</h4>
+  <div class="modal len-modal" role="dialog" aria-modal="true" aria-labelledby="lenModalTitle">
+    <button class="modal-close-btn" id="lenModalClose" aria-label="Cerrar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="len-modal-icon" id="lenModalIcon" aria-hidden="true"></div>
+    <h3 id="lenModalTitle">Número de preguntas</h3>
+    <p id="lenModalSub" class="len-modal-sub"></p>
     <div class="len-modal-chips" id="lenChips"></div>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" id="lenModalCancel" data-i="confirmCancel">Cancelar</button>
-      <button class="btn btn-primary" id="lenModalOk" data-i="startBtn">Comenzar examen</button>
-    </div>
+    <button class="btn btn-primary len-modal-start" id="lenModalOk" data-i="startBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span data-i="startBtn">Comenzar examen</span>
+    </button>
   </div>
 </div>
 
@@ -927,7 +933,7 @@ function buildDomOpts(){
     el.innerHTML='<div class="check">'+CHECK+'</div>'+
       '<div class="dt"><b>'+t('domainOf')+' '+d+'</b><span>'+domName(d)+'</span></div>'+
       '<span class="cnt">'+(c[d]||0)+'</span>';
-    el.onclick=()=>{domainPick=d;buildDomOpts();populateLen()};
+    el.onclick=()=>{domainPick=d;buildDomOpts();openLenModal()};
     box.appendChild(el);
   });
 }
@@ -1798,7 +1804,6 @@ async function selectExam(id){
   $('#domPick').classList.add('hidden');
   $$('#modes .mode').forEach((m,i)=>m.classList.toggle('sel',i===0));
   mode='exam';
-  updateStartState();
   window.scrollTo(0,0);
 }
 
@@ -1855,7 +1860,7 @@ function goHome(){
   $('#catalog').classList.add('hidden');
   $('#explore').classList.add('hidden');
   $('#home').classList.remove('hidden');
-  updateModeBadges(); updateStartState();
+  updateModeBadges();
   window.scrollTo(0,0);
 }
 
@@ -1950,33 +1955,33 @@ $('#themeBtn').addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme');
   setTheme(cur==='dark'?'light':'dark',true);
 });
+const MODE_ICONS={'exam':'🎯','domain':'📚','all':'🔄','srs':'🧠','bookmarks':'⭐'};
+function openLenModal(){
+  populateLen();
+  const c=domCounts();
+  let max, sub;
+  if(mode==='all'){max=QUESTIONS.length; sub=t('m3t');}
+  else if(mode==='domain'){max=c[domainPick]||0; sub=(domName(domainPick)||t('domainOf')+' '+domainPick);}
+  else if(mode==='srs'){max=srsDueCount(); sub=t('m4t');}
+  else if(mode==='bookmarks'){max=bookmarkCount(); sub=t('m5t');}
+  else return;
+  $('#lenModalIcon').textContent=MODE_ICONS[mode]||'📝';
+  $('#lenModalTitle').textContent=t('lenLabel');
+  $('#lenModalSub').textContent=sub+' · '+max+' '+(lang==='es'?'disponibles':'available');
+  $('#lenModal').classList.add('show');
+}
 $('#modes').addEventListener('click',e=>{
   const m=e.target.closest('[data-mode]');if(!m)return;
   mode=m.dataset.mode;
   $$('#modes .mode').forEach(x=>x.classList.toggle('sel',x===m));
   $('#domPick').classList.toggle('hidden',mode!=='domain');
-  populateLen();
-  updateStartState();
-  if(mode==='bookmarks'&&bookmarkCount()===0) showToast(t('bmEmpty'),'warn');
-  else if(mode==='srs'&&srsDueCount()===0) showToast(t('srsEmpty'),'warn');
-});
-function updateStartState(){
-  let empty=false;
-  if(mode==='srs')empty=srsDueCount()===0;
-  else if(mode==='bookmarks')empty=bookmarkCount()===0;
-  const btn=$('#startBtn');
-  btn.disabled=empty;
-  btn.style.opacity=empty?'.5':'';
-  btn.style.cursor=empty?'not-allowed':'';
-}
-$('#startBtn').addEventListener('click',()=>{
-  if(mode==='srs'&&srsDueCount()===0){ showToast(t('srsEmpty'),'warn'); return; }
-  if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
   if(mode==='exam'){ startExam(); return; }
-  populateLen();
-  $('#lenModal').classList.add('show');
+  if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
+  if(mode==='srs'&&srsDueCount()===0){ showToast(t('srsEmpty'),'warn'); return; }
+  if(mode==='domain') return; // espera selección de dominio
+  openLenModal();
 });
-$('#lenModalCancel').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
+$('#lenModalClose').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
 $('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.remove('show'); startExam(); });
 $('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.remove('show'); });
 // Estudio: favorito en el examen + explorador
