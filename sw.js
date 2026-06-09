@@ -1,7 +1,7 @@
 const CACHE_NAME = 'gyc-v1';
 const STATIC_ASSETS = [
   './',
-  './getyourcert.html',
+  './index.html',
   './manifest.json',
   './icon-192.png',
   'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap'
