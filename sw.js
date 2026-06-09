@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gyc-v3';
+const CACHE_NAME = 'gyc-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -64,7 +64,8 @@ self.addEventListener('fetch', e => {
       if(cached) return cached;
       return fetch(e.request).then(res => {
         if(res.ok && (e.request.url.startsWith('https://fonts.') || url.pathname.match(/\.(png|svg|ico|json|woff2?)$/))) {
-          caches.open(CACHE_NAME).then(c => c.put(e.request, res.clone()));
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
         }
         return res;
       }).catch(() => cached);
