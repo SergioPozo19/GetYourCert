@@ -645,7 +645,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   </section>
 </div>
 
-<div class="modal-ov hidden" id="lenModal">
+<div class="modal-ov" id="lenModal">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lenModalTitle">
     <h4 id="lenModalTitle" data-i="lenLabel">Número de preguntas</h4>
     <div class="len-modal-chips" id="lenChips"></div>
@@ -1779,7 +1779,6 @@ function updateHero(){
 async function selectExam(id){
   currentExam=EXAMS.find(e=>e.id===id);
   if(!currentExam)return;
-  showToast(t('loading')||'Loading…');
   QUESTIONS=await loadQuestions(id);
   // header dinámico
   $('#brandTitle').textContent=currentExam.code+' · '+t('examWord');
@@ -1975,11 +1974,11 @@ $('#startBtn').addEventListener('click',()=>{
   if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
   if(mode==='exam'){ startExam(); return; }
   populateLen();
-  $('#lenModal').classList.remove('hidden');
+  $('#lenModal').classList.add('show');
 });
-$('#lenModalCancel').addEventListener('click',()=>$('#lenModal').classList.add('hidden'));
-$('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.add('hidden'); startExam(); });
-$('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.add('hidden'); });
+$('#lenModalCancel').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
+$('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.remove('show'); startExam(); });
+$('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.remove('show'); });
 // Estudio: favorito en el examen + explorador
 $('#bmBtn').addEventListener('click',()=>{ const q=exam[cur].ref; toggleBookmark(q.id); render(); updateModeBadges(); });
 $('#reviewList').addEventListener('click',e=>{
@@ -2140,6 +2139,8 @@ if(!EXAMS.length){
   $('#examGrid').innerHTML='<p style="color:var(--bad);padding:20px;text-align:center">Error loading exam data. Please reload the page.</p>';
 }else{
   renderCatalog();
+  // Preload question files in background so entering an exam is instant
+  setTimeout(()=>{ EXAMS.forEach(ex=>loadQuestions(ex.id).catch(()=>{})); }, 800);
 }
 
 // Share result
