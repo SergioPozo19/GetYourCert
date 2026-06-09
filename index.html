@@ -609,6 +609,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <button class="btn btn-primary" id="retryBtn" data-i="retry">Nuevo examen</button>
         <button class="btn btn-ghost" id="homeBtn" data-i="backHome">Volver al inicio</button>
+        <button class="btn btn-ghost" id="shareBtn" onclick="shareResult()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <span data-i="shareResult">Compartir resultado</span>
+        </button>
       </div>
       <div class="retry-wrong hidden" id="retryWrongBox">
         <div class="rw-title" id="rwTitle" data-i="rwTitle">Repetir con las preguntas falladas</div>
@@ -658,9 +662,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <span data-i="support">Apóyame en Patreon</span>
   </a>
   <p data-i="disclaimer">Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.</p>
+  <p data-i="copyright" style="margin-top:10px">© 2026 GetYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.</p>
 </footer>
 
-<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administración de Microsoft 365 Copilot y agentes. Basado en la guía oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"Administración de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","questionCount":622},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"Administración de Microsoft Teams: red, seguridad y cumplimiento, gobernanza, colaboración externa, equipos, reuniones, llamadas y solución de problemas. Nivel asociado.","desc_en":"Microsoft Teams administration: network, security and compliance, governance, external collaboration, teams, meetings, calling, and troubleshooting. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","questionCount":471}]</script>
+<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administración de Microsoft 365 Copilot y agentes. Basado en la guía oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"Administración de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","questionCount":622},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"Administración de Microsoft Teams: red, seguridad y cumplimiento, gobernanza, colaboración externa, equipos, reuniones, llamadas y solución de problemas. Nivel asociado.","desc_en":"Microsoft Teams administration: network, security and compliance, governance, external collaboration, teams, meetings, calling, and troubleshooting. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","questionCount":621}]</script>
 
 <script>
 "use strict";
@@ -731,7 +736,9 @@ const I18N = {
     catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"GetYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
     support:"Apóyame en Patreon",
-    disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial."
+    disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
+    copyright:"© 2026 GetYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
+    shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!"
   },
   en:{
     brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
@@ -776,7 +783,9 @@ const I18N = {
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"GetYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
     support:"Support me on Patreon",
-    disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam."
+    disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
+    copyright:"© 2026 GetYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
+    shareResult:"Share result", shareCopied:"Link copied!"
   }
 };
 
@@ -1310,7 +1319,7 @@ function gradeExam(){
     const col=p>=passMark?'var(--ok)':p>=passMark-20?'var(--warn)':'var(--bad)';
     const el=document.createElement('div');
     el.className='rb';
-    el.innerHTML='<div class="rbt">'+t('domainOf')+' '+d+'</div>'+
+    el.innerHTML='<div class="rbt">'+(domName(d)||t('domainOf')+' '+d)+'</div>'+
       '<div class="rbn">'+domStat[d].c+'/'+domStat[d].t+'</div>'+
       '<div class="rbar"><i style="width:'+p+'%;background:'+col+'"></i></div>';
     rb.appendChild(el);
@@ -2105,6 +2114,21 @@ if(!EXAMS.length){
   $('#examGrid').innerHTML='<p style="color:var(--bad);padding:20px;text-align:center">Error loading exam data. Please reload the page.</p>';
 }else{
   renderCatalog();
+}
+
+// Share result
+function shareResult(){
+  const pct=$('#scorePct').textContent;
+  const code=currentExam?currentExam.code:'';
+  const text=(lang==='es'
+    ?'He obtenido un '+pct+' en el examen '+code+' con GetYourCert 🎓'
+    :'I scored '+pct+' on the '+code+' exam with GetYourCert 🎓');
+  const url='https://getyourcert.app/';
+  if(navigator.share){
+    navigator.share({title:'GetYourCert',text,url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text+' '+url).then(()=>showToast(t('shareCopied'),'ok',2400));
+  }
 }
 
 // Service Worker + offline indicator
