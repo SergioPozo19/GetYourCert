@@ -79,8 +79,12 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .icon-btn:hover{color:var(--accent);border-color:var(--accent)}
 .account-area{display:flex;align-items:center}
 .gsi-btn{line-height:0}
-.account-menu{display:flex;align-items:center;gap:6px}
+.account-menu{display:flex;align-items:center;gap:8px}
+.account-info{display:flex;flex-direction:column;align-items:center;gap:2px}
 .account-avatar{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);object-fit:cover}
+.account-avatar.pro{border:2px solid #d4af37;box-shadow:0 0 0 1px rgba(212,175,55,.35)}
+.account-plan{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+.account-plan.pro{color:#b8860b}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 .hero{padding:40px 36px;text-align:center;margin-bottom:22px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 300px at 50% -40%,var(--accent-soft),transparent 70%);pointer-events:none}
@@ -452,7 +456,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="account-area" id="accountArea">
         <div id="gsiButton" class="gsi-btn"></div>
         <div id="accountMenu" class="account-menu hidden">
-          <img id="accountAvatar" class="account-avatar" alt="" referrerpolicy="no-referrer">
+          <div class="account-info">
+            <img id="accountAvatar" class="account-avatar" alt="" referrerpolicy="no-referrer">
+            <span id="accountPlan" class="account-plan"></span>
+          </div>
           <button class="icon-btn" id="logoutBtn" aria-label="Cerrar sesión" title="Cerrar sesión">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
           </button>
@@ -820,7 +827,7 @@ const I18N = {
     disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
     copyright:"© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
     shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!",
-    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro",
+    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro", planFree:"Free", planPro:"PRO",
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
     proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
     proAutoNote:"El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.",
@@ -876,7 +883,7 @@ const I18N = {
     disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
     copyright:"© 2026 EarnYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
     shareResult:"Share result", shareCopied:"Link copied!",
-    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro",
+    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro", planFree:"Free", planPro:"PRO",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
     proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
     proAutoNote:"Pro activates automatically when you log in with the Google account linked to your Patreon subscription.",
@@ -947,6 +954,10 @@ function updateAccountUI(){
     $('#accountAvatar').src=acc.avatar_url||'';
     $('#accountAvatar').alt=acc.name||acc.email||'';
     $('#accountAvatar').title=acc.name||acc.email||'';
+    const pro=isPro();
+    $('#accountAvatar').classList.toggle('pro',pro);
+    $('#accountPlan').textContent=pro?t('planPro'):t('planFree');
+    $('#accountPlan').classList.toggle('pro',pro);
   }
 }
 
@@ -1172,6 +1183,7 @@ function updateModeBadges(){
   if(bb){const n=currentExam?bookmarkCount():0; bb.textContent=n>0?n:'';}
 }
 function updateQuotaBadge(){
+  updateAccountUI();
   const el=$('#quotaPill'); if(!el)return;
   const link=$('#quotaProLink');
   if(isPro()){ el.textContent=t('proLabel'); el.classList.add('pro'); if(link)link.classList.add('hidden'); }
