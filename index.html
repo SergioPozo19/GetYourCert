@@ -254,6 +254,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .len-chip{padding:12px 22px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:16px;font-weight:700;cursor:pointer;transition:.15s;min-width:70px}
 .len-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 .len-chip.on{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(15,108,189,.25)}
+.len-modal-custom{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-10px 0 24px;font-size:13px;color:var(--ink-2)}
+.len-custom-input{width:80px;padding:9px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:15px;font-weight:700;text-align:center}
+.len-custom-input:focus{border-color:var(--accent);outline:none}
 .len-modal-start{width:100%;padding:14px;font-size:16px;gap:10px;border-radius:12px}
 /* ---- Footer / disclaimer ---- */
 .site-footer{max-width:920px;margin:40px auto 24px;padding:20px 24px 0;border-top:1px solid var(--line);text-align:center}
@@ -694,6 +697,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <h3 id="lenModalTitle">Número de preguntas</h3>
     <p id="lenModalSub" class="len-modal-sub"></p>
     <div class="len-modal-chips" id="lenChips"></div>
+    <div class="len-modal-custom">
+      <label for="lenCustomInput" data-i="lenCustomLabel">O elige un número personalizado:</label>
+      <input type="number" id="lenCustomInput" class="len-custom-input" min="1" inputmode="numeric">
+    </div>
     <button class="btn btn-primary len-modal-start" id="lenModalOk" data-i="startBtn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       <span data-i="startBtn">Comenzar examen</span>
@@ -804,6 +811,10 @@ const I18N = {
     confirmSubmit:"Has respondido {a} de {t} preguntas. ¿Finalizar y corregir?",
     noWrong:"¡Perfecto! No has fallado ninguna pregunta.", noFlagged:"No has marcado ninguna pregunta para revisar.",
     confirmTitle:"Confirmar", confirmOk:"Aceptar", confirmCancel:"Cancelar", quitOk:"Salir", submitOk:"Entregar",
+    confirmExamMsg:"El examen completo consumirá {n} de tus {m} preguntas gratuitas restantes hoy. ¿Quieres continuar?",
+    confirmExamMsgPro:"Vas a comenzar el examen completo ({n} preguntas). ¿Continuar?",
+    confirmExamStart:"Empezar examen",
+    lenCustomLabel:"O elige un número personalizado:",
     time5:"Quedan 5 minutos", time1:"¡Queda 1 minuto!", timeUp:"Se acabó el tiempo",
     themeToLight:"Cambiar a modo claro", themeToDark:"Cambiar a modo oscuro",
     loading:"Cargando preguntas…", loadMore:"Cargar {n} más",
@@ -860,6 +871,10 @@ const I18N = {
     confirmSubmit:"You've answered {a} of {t} questions. Finish and grade?",
     noWrong:"Perfect! You didn't miss any question.", noFlagged:"You haven't flagged any question for review.",
     confirmTitle:"Confirm", confirmOk:"OK", confirmCancel:"Cancel", quitOk:"Quit", submitOk:"Submit",
+    confirmExamMsg:"The full exam will use {n} of your {m} remaining free questions today. Continue?",
+    confirmExamMsgPro:"You're about to start the full exam ({n} questions). Continue?",
+    confirmExamStart:"Start exam",
+    lenCustomLabel:"Or choose a custom number:",
     time5:"5 minutes left", time1:"1 minute left!", timeUp:"Time's up",
     themeToLight:"Switch to light mode", themeToDark:"Switch to dark mode",
     loading:"Loading questions…", loadMore:"Load {n} more",
@@ -1259,9 +1274,26 @@ function populateLen(){
     btn.type='button'; btn.className='len-chip'+(i===0?' on':'');
     btn.textContent=n+(n===max?' ('+t('allWord')+')':'');
     btn.dataset.val=n;
-    btn.onclick=()=>{ _lenSelected=n; $$('#lenChips .len-chip').forEach(b=>b.classList.toggle('on',b===btn)); };
+    btn.onclick=()=>{
+      _lenSelected=n;
+      $$('#lenChips .len-chip').forEach(b=>b.classList.toggle('on',b===btn));
+      $('#lenCustomInput').value=n;
+    };
     box.appendChild(btn);
   });
+  const inp=$('#lenCustomInput');
+  inp.min=1; inp.max=max; inp.value=_lenSelected;
+  inp.parentElement.classList.toggle('hidden',max<=1);
+}
+function applyCustomLen(){
+  const inp=$('#lenCustomInput');
+  const max=parseInt(inp.max,10)||1;
+  let v=parseInt(inp.value,10);
+  if(isNaN(v)||v<1)v=1;
+  if(v>max)v=max;
+  inp.value=v;
+  _lenSelected=v;
+  $$('#lenChips .len-chip').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.val,10)===v));
 }
 function buildExamSet(){
   if(mode==='domain'){
@@ -2289,21 +2321,30 @@ function openLenModal(){
   $('#lenModalSub').textContent=sub+' · '+max+' '+(lang==='es'?'disponibles':'available');
   $('#lenModal').classList.add('show');
 }
+function confirmStartExam(){
+  const examLen=examQuotaCap((currentExam&&currentExam.examLen)?currentExam.examLen:50);
+  const msg=isPro()
+    ? t('confirmExamMsgPro').replace('{n}',examLen)
+    : t('confirmExamMsg').replace('{n}',examLen).replace('{m}',remainingQuota());
+  openConfirm(msg,startExam,t('confirmExamStart'));
+}
 $('#modes').addEventListener('click',e=>{
   const m=e.target.closest('[data-mode]');if(!m)return;
   if(!isPro()&&remainingQuota()<=0){ openProModal('limit'); return; }
   mode=m.dataset.mode;
   $$('#modes .mode').forEach(x=>x.classList.toggle('sel',x===m));
   $('#domPick').classList.toggle('hidden',mode!=='domain');
-  if(mode==='exam'){ startExam(); return; }
+  if(mode==='exam'){ confirmStartExam(); return; }
   if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
   if(mode==='srs'&&srsDueCount()===0){ showToast(t('srsEmpty'),'warn'); return; }
   if(mode==='domain') return; // espera selección de dominio
   openLenModal();
 });
 $('#lenModalClose').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
-$('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.remove('show'); startExam(); });
+$('#lenModalOk').addEventListener('click',()=>{ applyCustomLen(); $('#lenModal').classList.remove('show'); startExam(); });
 $('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.remove('show'); });
+$('#lenCustomInput').addEventListener('input',applyCustomLen);
+$('#lenCustomInput').addEventListener('change',applyCustomLen);
 
 // ===== Modal Pro: paywall de límite diario / info de suscripción =====
 function openProModal(reason){
