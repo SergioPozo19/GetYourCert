@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json');
+require __DIR__ . '/_db.php';
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
   http_response_code(405);
@@ -15,15 +16,8 @@ if($code === ''){
   exit;
 }
 
-$config = require __DIR__ . '/config.php';
-
 try {
-  $pdo = new PDO(
-    "mysql:host={$config['host']};dbname={$config['db']};charset=utf8mb4",
-    $config['user'],
-    $config['pass'],
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-  );
+  $pdo = db();
 
   $stmt = $pdo->prepare('SELECT id, max_uses, uses, active FROM pro_codes WHERE code = ?');
   $stmt->execute([$code]);
@@ -36,6 +30,12 @@ try {
 
   $upd = $pdo->prepare('UPDATE pro_codes SET uses = uses + 1 WHERE id = ?');
   $upd->execute([$row['id']]);
+
+  $user = bearer_user($pdo);
+  if($user){
+    $upd = $pdo->prepare('UPDATE users SET is_pro = 1, pro_code = ? WHERE id = ?');
+    $upd->execute([$code, $user['id']]);
+  }
 
   echo json_encode(['ok' => true]);
 } catch (Exception $e) {

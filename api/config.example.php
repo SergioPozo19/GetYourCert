@@ -6,4 +6,6 @@ return [
   'db'   => 'uXXXXXXXX_earnyourcert',
   'user' => 'uXXXXXXXX_eyc',
   'pass' => 'CHANGE_ME',
+  // Google OAuth Client ID (Cloud Console -> Credentials -> OAuth client ID -> Web application)
+  'google_client_id' => 'CHANGE_ME.apps.googleusercontent.com',
 ];

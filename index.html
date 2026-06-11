@@ -34,6 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 :root{
   --accent:#0F6CBD; --accent-d:#0C5AA6; --accent-l:#2886DE; --accent-soft:#EAF3FB;
@@ -76,6 +77,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .toggle button.on{background:var(--accent);color:#fff}
 .icon-btn{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;color:var(--ink-2)}
 .icon-btn:hover{color:var(--accent);border-color:var(--accent)}
+.account-area{display:flex;align-items:center}
+.gsi-btn{line-height:0}
+.account-menu{display:flex;align-items:center;gap:6px}
+.account-avatar{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);object-fit:cover}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 .hero{padding:40px 36px;text-align:center;margin-bottom:22px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 300px at 50% -40%,var(--accent-soft),transparent 70%);pointer-events:none}
@@ -443,6 +448,15 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <button class="icon-btn" id="themeBtn" aria-label="Switch to dark mode">
         <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
+      <div class="account-area" id="accountArea">
+        <div id="gsiButton" class="gsi-btn"></div>
+        <div id="accountMenu" class="account-menu hidden">
+          <img id="accountAvatar" class="account-avatar" alt="" referrerpolicy="no-referrer">
+          <button class="icon-btn" id="logoutBtn" aria-label="Cerrar sesión" title="Cerrar sesión">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -797,7 +811,8 @@ const I18N = {
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para conseguir un código Pro sin límites.",
     proManualTitle:"¿Tienes un código Pro?", proManualSub:"Introduce tu código de mecenas de Patreon para desbloquear preguntas ilimitadas.",
     proCodePh:"Código Pro", proRedeemBtn:"Canjear código", proRedeemOk:"¡Código válido! Pro desbloqueado.", proRedeemErr:"Código no válido o ya usado.",
-    proLink:"¿Tienes un código Pro?"
+    proLink:"¿Tienes un código Pro?",
+    loginGoogle:"Iniciar sesión con Google", logout:"Cerrar sesión", loginOk:"¡Sesión iniciada! Tu progreso se sincronizará.", syncError:"No se pudo conectar con el servidor. Inténtalo de nuevo más tarde."
   },
   en:{
     brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
@@ -850,7 +865,8 @@ const I18N = {
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to get a Pro code with no limits.",
     proManualTitle:"Have a Pro code?", proManualSub:"Enter your Patreon supporter code to unlock unlimited questions.",
     proCodePh:"Pro code", proRedeemBtn:"Redeem code", proRedeemOk:"Code valid! Pro unlocked.", proRedeemErr:"Invalid or already used code.",
-    proLink:"Have a Pro code?"
+    proLink:"Have a Pro code?",
+    loginGoogle:"Sign in with Google", logout:"Sign out", loginOk:"Signed in! Your progress will sync.", syncError:"Couldn't connect to the server. Please try again later."
   }
 };
 
@@ -891,6 +907,148 @@ function consumeQuota(n){
 }
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
+// ===== Cuenta Google + sincronización de progreso =====
+const GOOGLE_CLIENT_ID='PENDING_GOOGLE_CLIENT_ID';
+function authHeaders(){
+  const tok=Store.get('session',null);
+  return tok?{'Authorization':'Bearer '+tok}:{};
+}
+function isLoggedIn(){ return !!Store.get('session',null); }
+
+function updateAccountUI(){
+  const acc=Store.get('account',null);
+  const logged=isLoggedIn()&&acc;
+  $('#gsiButton').classList.toggle('hidden',!!logged);
+  $('#accountMenu').classList.toggle('hidden',!logged);
+  if(logged){
+    $('#accountAvatar').src=acc.avatar_url||'';
+    $('#accountAvatar').alt=acc.name||acc.email||'';
+    $('#accountAvatar').title=acc.name||acc.email||'';
+  }
+}
+
+let syncTimer=null;
+function syncPush(){
+  if(!isLoggedIn())return;
+  clearTimeout(syncTimer);
+  syncTimer=setTimeout(()=>{
+    fetch('/api/sync.php',{
+      method:'POST',
+      headers:Object.assign({'Content-Type':'application/json'},authHeaders()),
+      body:JSON.stringify({
+        history:Store.get('history',[]),
+        srs:Store.get('srs',{}),
+        bookmarks:Store.get('bookmarks',[]),
+        lang:Store.get('lang','en'),
+        theme:Store.get('theme',null)
+      })
+    }).catch(()=>{});
+  },3000);
+}
+
+// Combina los datos del servidor con los locales (favoritos: unión, SRS: gana el más reciente,
+// historial: unión deduplicada por examen+fecha, idioma/tema: prevalece el de la cuenta).
+function syncMergeAndPush(server){
+  const data=(server&&server.data)||{};
+
+  const localBm=Store.get('bookmarks',[]);
+  const remoteBm=data.bookmarks||[];
+  Store.set('bookmarks',[...new Set([...localBm,...remoteBm])]);
+
+  const localSrs=Store.get('srs',{});
+  const remoteSrs=data.srs||{};
+  const mergedSrs=Object.assign({},localSrs);
+  Object.keys(remoteSrs).forEach(id=>{
+    const r=remoteSrs[id],l=mergedSrs[id];
+    if(!l||(r.last||0)>(l.last||0))mergedSrs[id]=r;
+  });
+  Store.set('srs',mergedSrs);
+
+  const localHist=Store.get('history',[]);
+  const remoteHist=data.history||[];
+  const seen=new Set(),mergedHist=[];
+  [...localHist,...remoteHist].sort((a,b)=>b.date-a.date).forEach(h=>{
+    const key=h.examId+'|'+h.date;
+    if(!seen.has(key)){seen.add(key);mergedHist.push(h);}
+  });
+  mergedHist.sort((a,b)=>a.date-b.date);
+  Store.set('history',mergedHist.slice(-200));
+
+  if(data.lang&&data.lang!==lang){
+    lang=data.lang;
+    Store.set('lang',lang);
+    $$('#langToggle button').forEach(x=>{
+      x.classList.toggle('on',x.dataset.lang===lang);
+      x.setAttribute('aria-pressed',String(x.dataset.lang===lang));
+    });
+    applyI18n();
+  }
+  if(data.theme){
+    Store.set('theme',data.theme);
+    setTheme(data.theme,false);
+  }
+
+  if(server.is_pro&&!isPro()){
+    Store.set('pro',{code:server.pro_code||'',ts:Date.now()});
+  }
+
+  updateQuotaBadge();
+  if(!$('#catalog').classList.contains('hidden'))renderCatalog();
+  syncPush();
+}
+
+async function handleGoogleCredential(response){
+  try{
+    const res=await fetch('/api/auth/google.php',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({credential:response.credential})
+    });
+    const data=await res.json();
+    if(data.ok){
+      Store.set('session',data.token);
+      Store.set('account',data.user);
+      updateAccountUI();
+      syncMergeAndPush(data);
+      showToast(t('loginOk'),'ok');
+    }else{
+      showToast(t('syncError'),'warn');
+    }
+  }catch(e){
+    showToast(t('syncError'),'warn');
+  }
+}
+
+function restoreSession(){
+  if(!isLoggedIn())return;
+  fetch('/api/sync.php',{headers:authHeaders()}).then(res=>{
+    if(res.status===401){
+      Store.del('session');Store.del('account');
+      updateAccountUI();
+      return null;
+    }
+    return res.json();
+  }).then(data=>{
+    if(data&&data.ok)syncMergeAndPush(data);
+  }).catch(()=>{});
+}
+
+let gsiInitTries=0;
+function initGoogleAuth(){
+  if(GOOGLE_CLIENT_ID.indexOf('PENDING')!==-1)return;
+  if(typeof google==='undefined'||!google.accounts){
+    if(++gsiInitTries<25)setTimeout(initGoogleAuth,200);
+    return;
+  }
+  google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleCredential});
+  google.accounts.id.renderButton($('#gsiButton'),{theme:'outline',size:'medium',type:'standard',shape:'pill'});
+}
+
+$('#logoutBtn').addEventListener('click',async()=>{
+  try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
+  Store.del('session');Store.del('account');
+  updateAccountUI();
+});
+
 function saveExamState(){
   if(!examActive||!currentExam||!exam.length||graded)return;
   Store.set('exam',{
@@ -909,7 +1067,7 @@ function isBookmarked(id){ return getBookmarks().indexOf(id)>=0; }
 function toggleBookmark(id){
   const b=getBookmarks(); const i=b.indexOf(id);
   if(i>=0)b.splice(i,1); else b.push(id);
-  Store.set('bookmarks',b); return i<0; // true si quedó marcado
+  Store.set('bookmarks',b); syncPush(); return i<0; // true si quedó marcado
 }
 function bookmarkCount(){ return QUESTIONS.filter(q=>isBookmarked(q.id)).length; }
 
@@ -926,7 +1084,7 @@ function updateSrs(id,correct){
   else { r.wrong++; r.box=1; }
   r.due=Date.now()+SRS_INTERVALS[r.box]*SRS_DAY;
   r.last=Date.now();
-  s[id]=r; Store.set('srs',s);
+  s[id]=r; Store.set('srs',s); syncPush();
 }
 // Preguntas "pendientes" del examen actual: vencidas o nunca vistas (priorizadas)
 function srsDueList(){
@@ -1437,7 +1595,7 @@ function gradeExam(){
   const hist=Store.get('history',[]);
   hist.push({examId:currentExam?currentExam.id:'', code:currentExam?currentExam.code:'', date:Date.now(),
              pct, passed, correct, total:exam.length, mode, dom:domSummary});
-  Store.set('history',hist.slice(-200));
+  Store.set('history',hist.slice(-200)); syncPush();
   examActive=false; clearExamState();
   window.scrollTo(0,0);
 }
@@ -2000,7 +2158,7 @@ function celebrate(){
 $('#langToggle').addEventListener('click',e=>{
   const b=e.target.closest('[data-lang]');if(!b)return;
   lang=b.dataset.lang;
-  Store.set('lang',lang);
+  Store.set('lang',lang); syncPush();
   $$('#langToggle button').forEach(x=>{
     x.classList.toggle('on',x.dataset.lang===lang);
     x.setAttribute('aria-pressed',String(x.dataset.lang===lang));
@@ -2032,7 +2190,7 @@ function setTheme(next,save){
     ? '<svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
     : '<svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
   $('#themeBtn').setAttribute('aria-label', next==='dark' ? t('themeToLight') : t('themeToDark'));
-  if(save)Store.set('theme',next);
+  if(save){Store.set('theme',next); syncPush();}
 }
 $('#themeBtn').addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme');
@@ -2093,7 +2251,7 @@ $('#proRedeemBtn').addEventListener('click',async()=>{
   if(!code)return;
   $('#proRedeemBtn').disabled=true;
   try{
-    const res=await fetch('/api/redeem.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});
+    const res=await fetch('/api/redeem.php',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({code})});
     const data=await res.json();
     if(data.ok){
       Store.set('pro',{code,ts:Date.now()});
@@ -2265,6 +2423,9 @@ window.addEventListener('beforeunload',e=>{ if(examActive&&!graded){ e.preventDe
 
 applyI18n();
 $('#brandSub').textContent=t('brandDesc');
+updateAccountUI();
+initGoogleAuth();
+restoreSession();
 if(!EXAMS.length){
   $('#examGrid').innerHTML='<p style="color:var(--bad);padding:20px;text-align:center">Error loading exam data. Please reload the page.</p>';
 }else{
