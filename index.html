@@ -259,12 +259,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .support-btn svg{flex-shrink:0}
 .pro-link{display:block;margin:0 auto 18px;background:none;border:none;color:var(--ink-3);font-size:12.5px;text-decoration:underline;cursor:pointer;padding:4px}
 .pro-link:hover{color:var(--accent)}
-.pro-redeem{display:flex;gap:8px;margin-top:18px}
-.pro-code-input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13.5px}
-.pro-code-input:focus{outline:none;border-color:var(--accent)}
-.pro-redeem-msg{font-size:12.5px;margin-top:10px;min-height:1.5em}
-.pro-redeem-msg.ok{color:var(--ok)}
-.pro-redeem-msg.bad{color:var(--bad)}
+.pro-auto-note{font-size:12px;color:var(--ink-3);margin-top:14px;line-height:1.5}
 .mode{padding:22px;text-align:left;cursor:pointer;transition:.16s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
 .mode:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .mode.sel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
@@ -519,7 +514,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 
     <div class="quota-wrap">
       <div class="quota-pill" id="quotaPill"></div>
-      <button class="quota-pro-link hidden" id="quotaProLink" data-i="quotaProLink">¿Código Pro?</button>
+      <button class="quota-pro-link hidden" id="quotaProLink" data-i="quotaProLink">Hazte Pro</button>
     </div>
     <div class="modes" id="modes">
       <div class="mode sel" data-mode="exam">
@@ -720,11 +715,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.8 2.4c-3.9 0-7.1 3.2-7.1 7.1 0 3.9 3.2 7.1 7.1 7.1 3.9 0 7.1-3.2 7.1-7.1 0-3.9-3.2-7.1-7.1-7.1zM2.4 21.6V2.4h3.5v19.2H2.4z"/></svg>
       <span data-i="support">Apóyame en Patreon</span>
     </a>
-    <div class="pro-redeem">
-      <input type="text" id="proCodeInput" class="pro-code-input" data-i-ph="proCodePh" placeholder="Código Pro">
-      <button class="btn btn-primary" id="proRedeemBtn" data-i="proRedeemBtn">Canjear código</button>
-    </div>
-    <p id="proRedeemMsg" class="pro-redeem-msg"></p>
+    <p class="pro-auto-note" data-i="proAutoNote">El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.</p>
   </div>
 </div>
 
@@ -746,7 +737,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.8 2.4c-3.9 0-7.1 3.2-7.1 7.1 0 3.9 3.2 7.1 7.1 7.1 3.9 0 7.1-3.2 7.1-7.1 0-3.9-3.2-7.1-7.1-7.1zM2.4 21.6V2.4h3.5v19.2H2.4z"/></svg>
     <span data-i="support">Apóyame en Patreon</span>
   </a>
-  <button class="pro-link" id="proLinkBtn" data-i="proLink">¿Tienes un código Pro?</button>
+  <button class="pro-link" id="proLinkBtn" data-i="proLink">Hazte Pro</button>
   <p data-i="disclaimer">Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.</p>
   <p data-i="copyright" style="margin-top:10px">© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.</p>
 </footer>
@@ -826,11 +817,11 @@ const I18N = {
     disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
     copyright:"© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
     shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!",
-    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"¿Código Pro?",
-    proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para conseguir un código Pro sin límites.",
-    proManualTitle:"¿Tienes un código Pro?", proManualSub:"Introduce tu código de mecenas de Patreon para desbloquear preguntas ilimitadas.",
-    proCodePh:"Código Pro", proRedeemBtn:"Canjear código", proRedeemOk:"¡Código válido! Pro desbloqueado.", proRedeemErr:"Código no válido o ya usado.",
-    proLink:"¿Tienes un código Pro?",
+    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro",
+    proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
+    proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
+    proAutoNote:"El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.",
+    proLink:"Hazte Pro",
     loginGoogle:"Iniciar sesión con Google", logout:"Cerrar sesión", loginOk:"¡Sesión iniciada! Tu progreso se sincronizará.", syncError:"No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.",
     loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso."
   },
@@ -881,11 +872,11 @@ const I18N = {
     disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
     copyright:"© 2026 EarnYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
     shareResult:"Share result", shareCopied:"Link copied!",
-    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Pro code?",
-    proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to get a Pro code with no limits.",
-    proManualTitle:"Have a Pro code?", proManualSub:"Enter your Patreon supporter code to unlock unlimited questions.",
-    proCodePh:"Pro code", proRedeemBtn:"Redeem code", proRedeemOk:"Code valid! Pro unlocked.", proRedeemErr:"Invalid or already used code.",
-    proLink:"Have a Pro code?",
+    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro",
+    proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
+    proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
+    proAutoNote:"Pro activates automatically when you log in with the Google account linked to your Patreon subscription.",
+    proLink:"Get Pro",
     loginGoogle:"Sign in with Google", logout:"Sign out", loginOk:"Signed in! Your progress will sync.", syncError:"Couldn't connect to the server. Please try again later.",
     loginRequiredTitle:"Sign in to continue", loginRequiredSub:"You need to sign in with Google to access exams and save your progress."
   }
@@ -2289,11 +2280,8 @@ $('#lenModalClose').addEventListener('click',()=>$('#lenModal').classList.remove
 $('#lenModalOk').addEventListener('click',()=>{ $('#lenModal').classList.remove('show'); startExam(); });
 $('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.remove('show'); });
 
-// ===== Modal Pro: paywall de límite diario + canje de código =====
+// ===== Modal Pro: paywall de límite diario / info de suscripción =====
 function openProModal(reason){
-  $('#proCodeInput').value='';
-  $('#proRedeemMsg').textContent='';
-  $('#proRedeemMsg').className='pro-redeem-msg';
   if(reason==='manual'){
     $('#proModalTitle').textContent=t('proManualTitle');
     $('#proModalSub').textContent=t('proManualSub');
@@ -2308,33 +2296,6 @@ $('#proModalClose').addEventListener('click',closeProModal);
 $('#proModal').addEventListener('click',e=>{ if(e.target===$('#proModal')) closeProModal(); });
 $('#proLinkBtn').addEventListener('click',()=>openProModal('manual'));
 $('#quotaProLink').addEventListener('click',()=>openProModal('manual'));
-$('#proRedeemBtn').addEventListener('click',async()=>{
-  const code=$('#proCodeInput').value.trim();
-  const msg=$('#proRedeemMsg');
-  if(!code)return;
-  $('#proRedeemBtn').disabled=true;
-  try{
-    const res=await fetch('/api/redeem.php',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({code})});
-    const data=await res.json();
-    if(data.ok){
-      Store.set('pro',{code,ts:Date.now()});
-      if(isLoggedIn()){
-        const acc=Store.get('account',null)||{};
-        acc.is_pro=true; acc.pro_code=code;
-        Store.set('account',acc);
-      }
-      msg.textContent=t('proRedeemOk'); msg.className='pro-redeem-msg ok';
-      updateQuotaBadge();
-      setTimeout(closeProModal,1200);
-    }else{
-      msg.textContent=t('proRedeemErr'); msg.className='pro-redeem-msg bad';
-    }
-  }catch(e){
-    msg.textContent=t('proRedeemErr'); msg.className='pro-redeem-msg bad';
-  }finally{
-    $('#proRedeemBtn').disabled=false;
-  }
-});
 // Estudio: favorito en el examen + explorador
 $('#bmBtn').addEventListener('click',()=>{ const q=exam[cur].ref; toggleBookmark(q.id); render(); updateModeBadges(); });
 $('#reviewList').addEventListener('click',e=>{
