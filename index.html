@@ -1149,6 +1149,9 @@ $('#logoutBtn').addEventListener('click',async()=>{
   try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
   Store.del('session');Store.del('account');
   updateAccountUI();
+  // Cerrar sesión corta el acceso al examen en curso: vuelve al catálogo,
+  // donde seleccionar cualquier examen exigirá iniciar sesión de nuevo.
+  backToCatalog();
 });
 
 $('#loginModalClose').addEventListener('click',closeLoginModal);
