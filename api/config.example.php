@@ -11,4 +11,7 @@ return [
   'pass' => 'CHANGE_ME',
   // Google OAuth Client ID (Cloud Console -> Credentials -> OAuth client ID -> Web application)
   'google_client_id' => 'CHANGE_ME.apps.googleusercontent.com',
+  // Clave secreta para conceder/revocar Pro manualmente desde api/admin/grant-pro.html
+  // Genera una cadena aleatoria larga, ej: bin2hex(random_bytes(24))
+  'admin_secret' => 'CHANGE_ME',
 ];

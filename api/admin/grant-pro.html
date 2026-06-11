@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>EarnYourCert — Conceder Pro</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f1115;color:#e6e8eb;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}
+  .card{background:#1a1d24;border:1px solid #2a2e38;border-radius:14px;padding:32px;width:100%;max-width:380px}
+  h1{font-size:18px;margin:0 0 18px}
+  label{display:block;font-size:13px;color:#9aa0ac;margin:14px 0 6px}
+  input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid #2a2e38;background:#0f1115;color:#e6e8eb;font-size:14px}
+  .row{display:flex;gap:10px;margin-top:20px}
+  button{flex:1;padding:10px 14px;border-radius:8px;border:none;font-size:14px;font-weight:600;cursor:pointer}
+  .grant{background:#2e7d32;color:#fff}
+  .revoke{background:#7d2e2e;color:#fff}
+  button:disabled{opacity:.6;cursor:default}
+  #msg{margin-top:16px;font-size:13px;min-height:1.4em}
+  #msg.ok{color:#6fcf73}
+  #msg.bad{color:#ff6b6b}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Conceder / revocar Pro</h1>
+  <label for="secret">Clave admin</label>
+  <input type="password" id="secret" autocomplete="off">
+  <label for="email">Email del usuario</label>
+  <input type="email" id="email" autocomplete="off" placeholder="amigo@ejemplo.com">
+  <div class="row">
+    <button class="grant" id="grantBtn">Dar Pro</button>
+    <button class="revoke" id="revokeBtn">Quitar Pro</button>
+  </div>
+  <p id="msg"></p>
+</div>
+<script>
+async function send(action){
+  const secret=document.getElementById('secret').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const msg=document.getElementById('msg');
+  const grantBtn=document.getElementById('grantBtn');
+  const revokeBtn=document.getElementById('revokeBtn');
+  if(!secret||!email)return;
+  grantBtn.disabled=true;revokeBtn.disabled=true;
+  msg.textContent='Enviando...';msg.className='';
+  try{
+    const res=await fetch('grant-pro.php',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({secret,email,action})
+    });
+    const data=await res.json();
+    if(data.ok){
+      const acc=data.account_found?'Cuenta encontrada y actualizada.':'Sin cuenta aún: se aplicará al iniciar sesión con este email.';
+      msg.textContent=(action==='grant'?'Pro activado. ':'Pro desactivado. ')+acc;
+      msg.className='ok';
+    }else{
+      msg.textContent='Error: '+(data.error||'desconocido');
+      msg.className='bad';
+    }
+  }catch(e){
+    msg.textContent='Error de conexión.';
+    msg.className='bad';
+  }finally{
+    grantBtn.disabled=false;revokeBtn.disabled=false;
+  }
+}
+document.getElementById('grantBtn').addEventListener('click',()=>send('grant'));
+document.getElementById('revokeBtn').addEventListener('click',()=>send('revoke'));
+</script>
+</body>
+</html>
