@@ -917,9 +917,17 @@ const Store={
 // ===== Freemium: límite diario de preguntas + desbloqueo Pro =====
 const DAILY_LIMIT=20;
 function todayStr(){ return new Date().toISOString().slice(0,10); }
+function quotaKey(){
+  if(isLoggedIn()){
+    const acc=Store.get('account',null);
+    if(acc&&acc.email)return 'quota_'+acc.email;
+  }
+  return 'quota';
+}
 function getQuota(){
-  const q=Store.get('quota',{date:todayStr(),count:0});
-  if(q.date!==todayStr()){ const fresh={date:todayStr(),count:0}; Store.set('quota',fresh); return fresh; }
+  const key=quotaKey();
+  const q=Store.get(key,{date:todayStr(),count:0});
+  if(q.date!==todayStr()){ const fresh={date:todayStr(),count:0}; Store.set(key,fresh); return fresh; }
   return q;
 }
 function isPro(){
@@ -933,7 +941,7 @@ function remainingQuota(){ return isPro()?Infinity:Math.max(0,DAILY_LIMIT-getQuo
 function consumeQuota(n){
   if(isPro()||n<=0)return;
   const q=getQuota();
-  Store.set('quota',{date:q.date,count:q.count+n});
+  Store.set(quotaKey(),{date:q.date,count:q.count+n});
 }
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
