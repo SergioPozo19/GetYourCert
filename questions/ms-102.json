@@ -11438,5 +11438,1565 @@
     ],
     "exp_es": "eDiscovery (Standard), incluido en Microsoft 365 E3, proporciona las capacidades fundamentales de gestión de casos: crear casos, asignar miembros, aplicar retenciones legales sobre buzones y sitios, realizar búsquedas de contenido en todo el inquilino y exportar los resultados. eDiscovery (Premium), que requiere licencias E5 o complementos adicionales, añade un flujo de trabajo de revisión completo, análisis de datos (deduplicación, agrupación temática, casi duplicados), comunicaciones con custodios y aprendizaje automático para reducir significativamente el volumen de datos que deben revisarse manualmente.",
     "exp_en": "eDiscovery (Standard), included in Microsoft 365 E3, provides fundamental case management capabilities: creating cases, assigning members, applying legal holds on mailboxes and sites, performing content searches across the tenant, and exporting results. eDiscovery (Premium), which requires E5 licenses or additional add-ons, adds a full review workflow, data analytics (deduplication, thematic clustering, near-duplicates), custodian communications, and machine learning to significantly reduce the volume of data that must be manually reviewed."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 441,
+    "q_es": "Una organización con sede principal en España está incorporando una nueva sucursal en Argentina. Quieren que, cuando se creen nuevas cuentas de usuario para los empleados de esa sucursal, el idioma predeterminado de la interfaz y la zona horaria se configuren automáticamente según la región de Argentina, sin que cada usuario tenga que cambiar manualmente estas preferencias al iniciar sesión por primera vez. ¿Dónde se configura este valor predeterminado a nivel de creación de usuarios?",
+    "q_en": "An organization headquartered in Spain is onboarding a new branch office in Argentina. They want that, when new user accounts are created for that branch's employees, the default interface language and time zone are automatically set according to the Argentina region, without each user having to manually change these preferences the first time they sign in. Where is this default value configured at user-creation level?",
+    "opts_es": [
+      "En las propiedades de configuración regional e idioma (Language and region) que se especifican al crear o editar cada cuenta de usuario en el Centro de administración de Microsoft 365",
+      "En una directiva de acceso condicional dirigida a los usuarios de Argentina",
+      "En el plan de archivo de Microsoft Purview",
+      "Esta configuración no puede definirse de ninguna manera y siempre depende del navegador del usuario"
+    ],
+    "opts_en": [
+      "In the language and region configuration properties specified when creating or editing each user account in the Microsoft 365 admin center",
+      "In a Conditional Access policy targeting users in Argentina",
+      "In the Microsoft Purview file plan",
+      "This setting can't be defined in any way and always depends on the user's browser"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Al crear o editar una cuenta de usuario en el Centro de administración de Microsoft 365, se pueden establecer propiedades de idioma y configuración regional (incluida la zona horaria), que determinan el idioma predeterminado de la interfaz y otros valores regionales para ese usuario en los servicios de Microsoft 365, evitando que cada usuario tenga que configurarlos manualmente. Estas propiedades también pueden establecerse de forma masiva mediante scripts o plantillas al aprovisionar varios usuarios.",
+    "exp_en": "When creating or editing a user account in the Microsoft 365 admin center, language and regional settings properties (including time zone) can be set, which determine the default interface language and other regional values for that user across Microsoft 365 services, avoiding the need for each user to configure them manually. These properties can also be set in bulk via scripts or templates when provisioning multiple users."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 442,
+    "q_es": "Un administrador de TI quiere comparar la calidad de conectividad de red hacia Microsoft 365 entre dos oficinas distintas de la organización, identificando cuál de las dos tiene una mejor puntuación de conectividad y qué recomendaciones específicas de optimización aplican a cada una. ¿Qué le permite hacer la herramienta de conectividad de red de Microsoft 365 en este escenario?",
+    "q_en": "An IT administrator wants to compare the quality of network connectivity to Microsoft 365 between two different offices of the organization, identifying which of the two has a better connectivity score and what specific optimization recommendations apply to each. What does the Microsoft 365 network connectivity tool allow them to do in this scenario?",
+    "opts_es": [
+      "Ejecutar evaluaciones independientes para cada ubicación y comparar sus puntuaciones de conectividad y recomendaciones específicas, ya que la herramienta genera informes por ubicación",
+      "Generar un único informe global que combina todas las ubicaciones sin distinción posible entre ellas",
+      "Solo puede usarse para una ubicación a la vez por inquilino, de forma permanente, sin posibilidad de evaluar otra",
+      "La herramienta no proporciona ninguna puntuación, solo gráficos de tráfico sin interpretación"
+    ],
+    "opts_en": [
+      "Run independent assessments for each location and compare their connectivity scores and specific recommendations, since the tool generates per-location reports",
+      "Generate a single global report combining all locations with no way to distinguish between them",
+      "It can only ever be used for one location per tenant, permanently, with no way to assess another",
+      "The tool provides no score at all, only traffic graphs with no interpretation"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La herramienta de conectividad de red de Microsoft 365 permite ejecutar evaluaciones para distintas ubicaciones (oficinas), generando para cada una un informe que incluye una puntuación de conectividad y recomendaciones de optimización específicas basadas en las características de red de esa ubicación, lo que permite a los administradores comparar el estado de la conectividad entre diferentes sitios de la organización.",
+    "exp_en": "The Microsoft 365 network connectivity tool allows running assessments for different locations (offices), generating for each one a report that includes a connectivity score and specific optimization recommendations based on that location's network characteristics, allowing administrators to compare connectivity status across different organizational sites."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 443,
+    "q_es": "Una organización tiene un grupo de Microsoft 365 llamado 'Anuncios de Dirección' al que pertenecen todos los empleados. Quieren que cualquier empleado pueda enviar correos a este grupo, pero que esos mensajes no se entreguen directamente a los miembros hasta que uno de los miembros del equipo de dirección los apruebe explícitamente. ¿Qué configuración del grupo permite este flujo de aprobación?",
+    "q_en": "An organization has a Microsoft 365 group called 'Leadership Announcements' that all employees belong to. They want any employee to be able to send emails to this group, but those messages shouldn't be delivered directly to members until one of the leadership team members explicitly approves them. What group setting allows this approval flow?",
+    "opts_es": [
+      "Habilitar la moderación del grupo (group moderation), designando a los miembros del equipo de dirección como moderadores que deben aprobar cada mensaje antes de su entrega",
+      "Restringir el envío al grupo a un único remitente, sin posibilidad de que otros empleados envíen mensajes",
+      "Convertir el grupo en un grupo de seguridad sin correo habilitado",
+      "Aplicar una etiqueta de retención que retrase la entrega de todos los correos 24 horas"
+    ],
+    "opts_en": [
+      "Enable group moderation, designating the leadership team members as moderators who must approve each message before delivery",
+      "Restrict sending to the group to a single sender, with no other employees able to send messages",
+      "Convert the group into a security group without mail enabled",
+      "Apply a retention label that delays delivery of all emails by 24 hours"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La moderación de grupos permite designar a uno o varios moderadores que deben revisar y aprobar (o rechazar) los mensajes enviados al grupo antes de que se entreguen a sus miembros. Esto permite que cualquier empleado pueda enviar mensajes al grupo, pero garantiza que solo se entreguen aquellos que los moderadores (en este caso, el equipo de dirección) consideren apropiados.",
+    "exp_en": "Group moderation allows designating one or more moderators who must review and approve (or reject) messages sent to the group before they're delivered to its members. This allows any employee to send messages to the group, but ensures that only those the moderators (in this case, the leadership team) consider appropriate are delivered."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 444,
+    "q_es": "Una clínica utiliza Microsoft 365 y quiere permitir que los pacientes reserven citas con diferentes profesionales en línea, seleccionando el tipo de servicio, la duración y el profesional disponible, recibiendo confirmaciones automáticas por correo y recordatorios. El personal administrativo necesita gestionar los horarios de cada profesional y los tipos de servicios ofrecidos desde una interfaz sencilla. ¿Qué aplicación de Microsoft 365 está diseñada específicamente para este escenario?",
+    "q_en": "A clinic uses Microsoft 365 and wants to allow patients to book appointments with different professionals online, selecting the service type, duration, and available professional, receiving automatic email confirmations and reminders. Administrative staff need to manage each professional's schedules and the types of services offered from a simple interface. What Microsoft 365 application is specifically designed for this scenario?",
+    "opts_es": [
+      "Microsoft Bookings",
+      "Microsoft Planner",
+      "Microsoft Forms",
+      "Microsoft Lists"
+    ],
+    "opts_en": [
+      "Microsoft Bookings",
+      "Microsoft Planner",
+      "Microsoft Forms",
+      "Microsoft Lists"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Microsoft Bookings es una aplicación de programación de citas en línea que permite a las organizaciones configurar una página de reservas pública, definir el personal disponible, los tipos de servicios (con su duración) y horarios, y permite a los clientes o pacientes reservar citas que se sincronizan automáticamente con los calendarios de Outlook del personal, enviando confirmaciones y recordatorios automáticos por correo electrónico.",
+    "exp_en": "Microsoft Bookings is an online appointment scheduling application that allows organizations to set up a public booking page, define available staff, service types (with their duration), and schedules, and allows customers or patients to book appointments that automatically sync with staff Outlook calendars, sending automatic email confirmations and reminders."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 445,
+    "q_es": "Una organización necesita un rol personalizado de Microsoft Entra ID que permita a un equipo de desarrolladores leer (pero no modificar) los registros de auditoría de inicio de sesión a través de Microsoft Graph, sin otorgarles ninguno de los permisos incluidos en los roles integrados existentes, que conceden acceso más amplio del necesario. ¿Qué deberían crear?",
+    "q_en": "An organization needs a custom Microsoft Entra ID role that allows a team of developers to read (but not modify) sign-in audit logs via Microsoft Graph, without granting them any of the permissions included in existing built-in roles, which grant broader access than needed. What should they create?",
+    "opts_es": [
+      "Un rol personalizado de Microsoft Entra ID, seleccionando únicamente los permisos específicos relacionados con la lectura de registros de inicio de sesión",
+      "Asignar el rol integrado de Administrador global, ya que es el único que incluye acceso a los registros de auditoría",
+      "Crear un grupo de seguridad sin ninguna asignación de roles, asumiendo que el acceso a los registros se concede automáticamente a todos los grupos",
+      "Asignar el rol de Administrador de Exchange, que incluye acceso de solo lectura a todos los registros del inquilino"
+    ],
+    "opts_en": [
+      "A custom Microsoft Entra ID role, selecting only the specific permissions related to reading sign-in logs",
+      "Assign the built-in Global Administrator role, since it's the only one that includes access to audit logs",
+      "Create a security group with no role assignment, assuming log access is automatically granted to all groups",
+      "Assign the Exchange Administrator role, which includes read-only access to all tenant logs"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los roles personalizados de Microsoft Entra ID permiten a las organizaciones definir conjuntos de permisos muy específicos (seleccionados de un catálogo de permisos disponibles, como los relacionados con la lectura de registros de directorio), aplicando el principio de privilegio mínimo cuando ninguno de los roles integrados se ajusta exactamente a las necesidades, evitando otorgar permisos adicionales innecesarios presentes en roles más amplios.",
+    "exp_en": "Custom Microsoft Entra ID roles allow organizations to define very specific sets of permissions (selected from a catalog of available permissions, such as those related to reading directory logs), applying the principle of least privilege when none of the built-in roles exactly fit the need, avoiding granting unnecessary additional permissions present in broader roles."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 446,
+    "q_es": "Una organización ha configurado dos cuentas de acceso de emergencia (break-glass) excluidas de todas las directivas de acceso condicional, según las mejores prácticas. El equipo de seguridad quiere asegurarse de detectar de inmediato si alguna de estas cuentas se utiliza, ya que su uso debería ser extremadamente raro y solo en emergencias reales. ¿Qué deberían configurar para esto?",
+    "q_en": "An organization has configured two break-glass emergency access accounts excluded from all Conditional Access policies, following best practices. The security team wants to ensure they're immediately alerted if either of these accounts is used, since their use should be extremely rare and only during real emergencies. What should they configure for this?",
+    "opts_es": [
+      "Alertas de monitorización (por ejemplo, mediante Microsoft Entra ID Protection, Microsoft Sentinel o reglas de Azure Monitor) que notifiquen al equipo de seguridad cada vez que se produzca un inicio de sesión con alguna de estas cuentas",
+      "Eliminar las cuentas de acceso de emergencia inmediatamente después de crearlas para que nunca puedan usarse",
+      "Asignar a estas cuentas el rol de Lector de seguridad, que las desactiva automáticamente",
+      "No es posible monitorizar el uso de estas cuentas, ya que están excluidas de todas las directivas"
+    ],
+    "opts_en": [
+      "Monitoring alerts (for example, via Microsoft Entra ID Protection, Microsoft Sentinel, or Azure Monitor rules) that notify the security team whenever a sign-in occurs with either of these accounts",
+      "Delete the emergency access accounts immediately after creating them so they can never be used",
+      "Assign these accounts the Security Reader role, which automatically deactivates them",
+      "It's not possible to monitor the use of these accounts, since they're excluded from all policies"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Aunque las cuentas de acceso de emergencia se excluyen de las directivas de acceso condicional para garantizar que siempre estén disponibles, su actividad de inicio de sesión sigue registrándose en los registros de Microsoft Entra ID. Configurar alertas de monitorización (mediante Microsoft Entra ID Protection, Microsoft Sentinel, o reglas personalizadas de Azure Monitor basadas en los registros de inicio de sesión) que notifiquen inmediatamente al equipo de seguridad cuando se use cualquiera de estas cuentas permite detectar usos no autorizados o emergencias reales de manera oportuna.",
+    "exp_en": "Although emergency access accounts are excluded from Conditional Access policies to ensure they're always available, their sign-in activity is still logged in Microsoft Entra ID logs. Configuring monitoring alerts (via Microsoft Entra ID Protection, Microsoft Sentinel, or custom Azure Monitor rules based on sign-in logs) that immediately notify the security team when either account is used allows timely detection of unauthorized use or real emergencies."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 447,
+    "q_es": "Antes de instalar el agente de Microsoft Entra Connect Health en un servidor de sincronización, un administrador revisa los requisitos previos y descubre que el servidor necesita acceso saliente a Internet hacia ciertos puntos de conexión de Azure para que el agente pueda enviar datos de telemetría y recibir actualizaciones. Si el tráfico saliente del servidor está bloqueado por un firewall corporativo sin las excepciones adecuadas, ¿qué consecuencia es más probable?",
+    "q_en": "Before installing the Microsoft Entra Connect Health agent on a synchronization server, an administrator reviews the prerequisites and discovers the server needs outbound internet access to certain Azure endpoints so the agent can send telemetry data and receive updates. If the server's outbound traffic is blocked by a corporate firewall without the appropriate exceptions, what is the most likely consequence?",
+    "opts_es": [
+      "El agente de Microsoft Entra Connect Health no podrá comunicarse con el servicio en la nube, por lo que el panel de Connect Health no mostrará datos actualizados ni alertas para ese servidor",
+      "La sincronización de identidades se detendrá por completo de forma inmediata, incluso sin Connect Health",
+      "Todos los usuarios del inquilino perderán acceso a Microsoft 365 hasta que se solucione el problema de firewall",
+      "El agente se desinstalará automáticamente y eliminará la configuración de Microsoft Entra Connect"
+    ],
+    "opts_en": [
+      "The Microsoft Entra Connect Health agent won't be able to communicate with the cloud service, so the Connect Health dashboard won't show updated data or alerts for that server",
+      "Identity synchronization will stop completely and immediately, even without Connect Health",
+      "All tenant users will lose access to Microsoft 365 until the firewall issue is resolved",
+      "The agent will automatically uninstall itself and remove the Microsoft Entra Connect configuration"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El agente de Microsoft Entra Connect Health requiere conectividad saliente a Internet hacia puntos de conexión específicos de Azure para enviar datos de telemetría sobre el estado de la sincronización y recibir actualizaciones. Si esta conectividad está bloqueada, el agente no podrá comunicarse con el servicio en la nube, lo que provoca que el panel de Connect Health no reciba datos actualizados ni pueda generar alertas para ese servidor, aunque la sincronización de Microsoft Entra Connect en sí (que es un componente separado) puede continuar funcionando si tiene su propia conectividad.",
+    "exp_en": "The Microsoft Entra Connect Health agent requires outbound internet connectivity to specific Azure endpoints to send telemetry data about synchronization health and receive updates. If this connectivity is blocked, the agent won't be able to communicate with the cloud service, causing the Connect Health dashboard to not receive updated data or generate alerts for that server, although Microsoft Entra Connect synchronization itself (a separate component) may continue working if it has its own connectivity."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 448,
+    "q_es": "El departamento de Recursos Humanos mantiene un sistema local que almacena la fecha de contratación de cada empleado en un atributo personalizado de Active Directory. La organización quiere que este dato esté disponible en Microsoft Entra ID para usarlo en una regla de pertenencia dinámica que agrupe a los empleados según su antigüedad. ¿Qué tipo de configuración en Microsoft Entra Connect permite que un atributo personalizado de Active Directory, no incluido en el conjunto de atributos sincronizados por defecto, se sincronice hacia un atributo de extensión de directorio en Microsoft Entra ID?",
+    "q_en": "The HR department maintains an on-premises system that stores each employee's hire date in a custom Active Directory attribute. The organization wants this data available in Microsoft Entra ID for use in a dynamic membership rule that groups employees by tenure. What type of configuration in Microsoft Entra Connect allows a custom Active Directory attribute, not included in the default synced attribute set, to be synchronized to a directory extension attribute in Microsoft Entra ID?",
+    "opts_es": [
+      "Configurar atributos de extensión de directorio (directory extension attributes), agregando el atributo personalizado de Active Directory al conjunto de atributos sincronizados mediante el asistente de Microsoft Entra Connect",
+      "No es posible sincronizar atributos personalizados bajo ninguna circunstancia, independientemente de la configuración",
+      "Crear manualmente el valor para cada usuario directamente en Microsoft Entra ID sin ninguna sincronización",
+      "Eliminar el atributo de Active Directory y volver a crearlo con un nombre estándar reconocido automáticamente"
+    ],
+    "opts_en": [
+      "Configure directory extension attributes, adding the custom Active Directory attribute to the set of synchronized attributes via the Microsoft Entra Connect wizard",
+      "It's not possible to sync custom attributes under any circumstances, regardless of configuration",
+      "Manually create the value for each user directly in Microsoft Entra ID with no synchronization at all",
+      "Delete the Active Directory attribute and recreate it with a standard automatically recognized name"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Microsoft Entra Connect permite configurar atributos de extensión de directorio, que extienden el esquema de Microsoft Entra ID para incluir atributos personalizados definidos en Active Directory local que no forman parte del conjunto sincronizado por defecto. Una vez configurados mediante el asistente, estos valores se sincronizan y quedan disponibles como atributos de extensión en Microsoft Entra ID, pudiendo utilizarse en reglas de pertenencia dinámica de grupos u otros escenarios.",
+    "exp_en": "Microsoft Entra Connect allows configuring directory extension attributes, which extend the Microsoft Entra ID schema to include custom attributes defined in on-premises Active Directory that aren't part of the default synced set. Once configured via the wizard, these values are synchronized and become available as extension attributes in Microsoft Entra ID, and can be used in dynamic group membership rules or other scenarios."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 449,
+    "q_es": "Una organización ha identificado que ciertas versiones antiguas y sin soporte de sistemas operativos móviles representan un riesgo de seguridad significativo. Quieren que cualquier intento de acceder a Exchange Online y SharePoint Online desde dispositivos con esas versiones de sistema operativo se bloquee, independientemente de si el usuario proporciona credenciales correctas y completa la MFA. ¿Qué condición de acceso condicional se utiliza para evaluar el sistema operativo del dispositivo?",
+    "q_en": "An organization has identified that certain old, unsupported versions of mobile operating systems represent a significant security risk. They want any attempt to access Exchange Online and SharePoint Online from devices with those OS versions to be blocked, regardless of whether the user provides correct credentials and completes MFA. What Conditional Access condition is used to evaluate the device's operating system?",
+    "opts_es": [
+      "La condición de plataformas de dispositivo (device platforms), combinada con el control de concesión 'Bloquear el acceso' para las plataformas o versiones especificadas",
+      "La condición de ubicaciones con nombre, que solo evalúa direcciones IP",
+      "La condición de riesgo de usuario, que no tiene relación con la versión del sistema operativo",
+      "La condición de aplicación cliente, que solo distingue entre navegador y aplicaciones móviles sin considerar versiones de SO"
+    ],
+    "opts_en": [
+      "The device platforms condition, combined with the 'Block access' grant control for the specified platforms or versions",
+      "The named locations condition, which only evaluates IP addresses",
+      "The user risk condition, which has no relation to the operating system version",
+      "The client app condition, which only distinguishes between browser and mobile apps without considering OS versions"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La condición de plataformas de dispositivo en una directiva de acceso condicional permite identificar el sistema operativo del dispositivo desde el que se realiza el intento de acceso (iOS, Android, Windows, macOS, etc.). Combinada con filtros para dispositivos adicionales (basados en atributos como la versión del sistema operativo) y el control de concesión 'Bloquear el acceso', permite impedir el acceso desde dispositivos con versiones de sistema operativo consideradas inseguras, sin importar las credenciales proporcionadas.",
+    "exp_en": "The device platforms condition in a Conditional Access policy allows identifying the operating system of the device from which the access attempt is made (iOS, Android, Windows, macOS, etc.). Combined with additional device filters (based on attributes such as OS version) and the 'Block access' grant control, it allows preventing access from devices with operating system versions considered insecure, regardless of the credentials provided."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 450,
+    "q_es": "Un usuario que viaja con frecuencia a zonas con cobertura de datos móviles deficiente reporta que, cuando no tiene conexión a Internet en su teléfono, no puede recibir la notificación push de Microsoft Authenticator para aprobar el inicio de sesión, y queda bloqueado. La organización quiere proporcionar un método de respaldo que no dependa de datos móviles ni de notificaciones push, basado en un código numérico que cambia cada 30 segundos y se genera localmente en el dispositivo sin conexión. ¿Qué método de autenticación cumple este requisito?",
+    "q_en": "A user who travels frequently to areas with poor mobile data coverage reports that when they have no internet connection on their phone, they can't receive the Microsoft Authenticator push notification to approve sign-in, and gets locked out. The organization wants to provide a backup method that doesn't depend on mobile data or push notifications, based on a numeric code that changes every 30 seconds and is generated locally on the device offline. What authentication method meets this requirement?",
+    "opts_es": [
+      "Una contraseña de un solo uso basada en tiempo (TOTP), generada por la aplicación Microsoft Authenticator (o un token de hardware/software compatible) sin necesidad de conexión a datos",
+      "Una notificación push exclusivamente, ya que es el único método disponible en Microsoft Authenticator",
+      "Una llamada telefónica, que también requiere cobertura de red móvil para funcionar",
+      "Un mensaje de texto SMS, que requiere igualmente cobertura de red móvil"
+    ],
+    "opts_en": [
+      "A time-based one-time password (TOTP), generated by the Microsoft Authenticator app (or a compatible hardware/software token) without needing a data connection",
+      "A push notification exclusively, since it's the only method available in Microsoft Authenticator",
+      "A phone call, which also requires mobile network coverage to work",
+      "An SMS text message, which similarly requires mobile network coverage"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Microsoft Authenticator (y otros tokens compatibles con el estándar OATH) puede generar contraseñas de un solo uso basadas en tiempo (TOTP), códigos numéricos de seis dígitos que cambian cada 30 segundos y se calculan localmente en el dispositivo utilizando un algoritmo basado en una clave compartida y la hora actual, sin requerir ninguna conexión de red. Esto proporciona un método de respaldo robusto cuando las notificaciones push, las llamadas o los SMS no son viables por falta de cobertura.",
+    "exp_en": "Microsoft Authenticator (and other OATH-compatible tokens) can generate time-based one-time passwords (TOTP), six-digit numeric codes that change every 30 seconds and are calculated locally on the device using an algorithm based on a shared key and the current time, with no network connection required. This provides a robust backup method when push notifications, calls, or SMS aren't viable due to lack of coverage."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 451,
+    "q_es": "Un equipo de seguridad está diseñando varias directivas de acceso condicional basadas en el riesgo de inicio de sesión calculado por Microsoft Entra ID Protection. Para los inicios de sesión clasificados con riesgo 'bajo', quieren simplemente registrar la actividad sin interrumpir al usuario; para riesgo 'medio', quieren requerir MFA adicional; y para riesgo 'alto', quieren bloquear el acceso por completo. ¿Qué característica de las directivas basadas en riesgo permite esta granularidad de respuesta según el nivel de riesgo detectado?",
+    "q_en": "A security team is designing several Conditional Access policies based on the sign-in risk calculated by Microsoft Entra ID Protection. For sign-ins classified as 'low' risk, they simply want to log the activity without interrupting the user; for 'medium' risk, they want to require additional MFA; and for 'high' risk, they want to block access entirely. What feature of risk-based policies allows this granularity of response based on the detected risk level?",
+    "opts_es": [
+      "La posibilidad de crear varias directivas de acceso condicional, cada una dirigida a un nivel de riesgo de inicio de sesión específico (bajo, medio o alto) con su propio control de concesión correspondiente",
+      "Una única directiva que solo puede aplicarse a un nivel de riesgo global para todo el inquilino, sin granularidad por nivel",
+      "El nivel de riesgo de inicio de sesión no puede usarse como condición en ninguna directiva de acceso condicional",
+      "Solo es posible bloquear el acceso; no se puede requerir MFA adicional basada en el riesgo"
+    ],
+    "opts_en": [
+      "The ability to create several Conditional Access policies, each targeting a specific sign-in risk level (low, medium, or high) with its own corresponding grant control",
+      "A single policy that can only apply to one global risk level for the entire tenant, with no per-level granularity",
+      "The sign-in risk level can't be used as a condition in any Conditional Access policy",
+      "Only blocking access is possible; additional MFA based on risk can't be required"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las directivas de acceso condicional basadas en riesgo de inicio de sesión permiten seleccionar uno o varios niveles de riesgo (bajo, medio, alto) como condición, y cada directiva puede tener un control de concesión distinto. Esto permite diseñar una estrategia escalonada: por ejemplo, una directiva para riesgo bajo que no requiera ninguna acción adicional (o solo registre), otra para riesgo medio que exija MFA, y otra para riesgo alto que bloquee el acceso, proporcionando una respuesta proporcional al nivel de riesgo detectado.",
+    "exp_en": "Conditional Access policies based on sign-in risk allow selecting one or more risk levels (low, medium, high) as a condition, and each policy can have a different grant control. This allows designing a tiered strategy: for example, a policy for low risk that requires no additional action (or just logs it), another for medium risk that requires MFA, and another for high risk that blocks access, providing a response proportional to the detected risk level."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 452,
+    "q_es": "Una organización ha asignado el rol de Administrador global de forma permanente a cinco personas durante varios años. Tras una auditoría de seguridad, se recomienda que la organización revise periódicamente si estas cinco personas todavía necesitan este nivel de acceso permanente, y que considere convertir las asignaciones permanentes en asignaciones aptas mediante PIM cuando sea posible. ¿Qué funcionalidad permite programar revisiones periódicas específicamente para las asignaciones de roles privilegiados?",
+    "q_en": "An organization has permanently assigned the Global Administrator role to five people for several years. After a security audit, it's recommended that the organization periodically review whether these five people still need this level of permanent access, and consider converting permanent assignments to eligible assignments via PIM when possible. What feature allows scheduling periodic reviews specifically for privileged role assignments?",
+    "opts_es": [
+      "Las revisiones de acceso de PIM (PIM access reviews), dirigidas específicamente a las asignaciones de roles privilegiados de Microsoft Entra ID",
+      "Una directiva de retención aplicada a las cuentas de los administradores",
+      "El registro de auditoría unificado, que elimina automáticamente roles no utilizados",
+      "Una etiqueta de confidencialidad aplicada a los roles administrativos"
+    ],
+    "opts_en": [
+      "PIM access reviews, specifically targeting Microsoft Entra ID privileged role assignments",
+      "A retention policy applied to administrator accounts",
+      "The Unified audit log, which automatically removes unused roles",
+      "A sensitivity label applied to administrative roles"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las revisiones de acceso de PIM permiten programar revisiones periódicas y recurrentes específicamente para las asignaciones de roles privilegiados de Microsoft Entra ID (tanto permanentes como aptas), en las que los revisores designados (como otros administradores) confirman si cada asignación sigue siendo necesaria. Esto ayuda a las organizaciones a reducir el número de asignaciones permanentes innecesarias y a fomentar el uso de asignaciones aptas con activación temporal, alineándose con el principio de privilegio mínimo.",
+    "exp_en": "PIM access reviews allow scheduling periodic, recurring reviews specifically for Microsoft Entra ID privileged role assignments (both permanent and eligible), in which designated reviewers (such as other administrators) confirm whether each assignment is still needed. This helps organizations reduce the number of unnecessary permanent assignments and encourage the use of eligible assignments with temporary activation, aligning with the principle of least privilege."
+  },
+  {
+    "dom": 3,
+    "obj": "3.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 453,
+    "q_es": "Un analista de seguridad sospecha que un archivo ejecutable descargado por correo electrónico, una vez abierto, estableció una conexión de red saliente hacia un servidor externo poco después. Para confirmar esta hipótesis y comprender la secuencia completa de eventos, el analista necesita correlacionar datos de la entrega del correo (proveniente de los eventos de Exchange Online) con eventos de actividad de procesos y red en el endpoint donde se abrió el archivo. ¿Qué herramienta de Microsoft Defender XDR permite escribir una consulta que combine tablas de eventos de correo y de dispositivos para esta investigación?",
+    "q_en": "A security analyst suspects that an executable file downloaded via email, once opened, established an outbound network connection to an external server shortly after. To confirm this hypothesis and understand the full sequence of events, the analyst needs to correlate mail delivery data (from Exchange Online events) with process and network activity events on the endpoint where the file was opened. What Microsoft Defender XDR tool allows writing a query that combines email event and device event tables for this investigation?",
+    "opts_es": [
+      "La búsqueda avanzada (advanced hunting) con consultas en KQL que combinan tablas como EmailEvents y DeviceNetworkEvents/DeviceProcessEvents",
+      "El panel de Puntuación de seguridad, que no admite consultas personalizadas",
+      "El Centro de mensajes, que solo muestra notificaciones administrativas",
+      "Una directiva de retención que correlaciona automáticamente eventos sin consultas"
+    ],
+    "opts_en": [
+      "Advanced hunting with KQL queries that combine tables such as EmailEvents and DeviceNetworkEvents/DeviceProcessEvents",
+      "The Secure Score dashboard, which doesn't support custom queries",
+      "The Message center, which only shows administrative notifications",
+      "A retention policy that automatically correlates events with no queries"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La búsqueda avanzada en Microsoft Defender XDR permite escribir consultas en KQL (Kusto Query Language) que acceden a múltiples tablas de esquema, incluyendo EmailEvents (eventos relacionados con el correo), DeviceProcessEvents (procesos ejecutados en dispositivos) y DeviceNetworkEvents (conexiones de red). Combinando estas tablas mediante uniones (joins) basadas en identificadores comunes, un analista puede correlacionar la entrega de un correo con la posterior ejecución de un archivo adjunto y sus conexiones de red, reconstruyendo la cadena completa del ataque.",
+    "exp_en": "Advanced hunting in Microsoft Defender XDR allows writing KQL (Kusto Query Language) queries that access multiple schema tables, including EmailEvents (mail-related events), DeviceProcessEvents (processes executed on devices), and DeviceNetworkEvents (network connections). By combining these tables via joins based on common identifiers, an analyst can correlate the delivery of an email with the subsequent execution of an attachment and its network connections, reconstructing the full attack chain."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 454,
+    "q_es": "Una organización detecta que una de sus cuentas de usuario ha sido comprometida y está siendo utilizada para enviar grandes volúmenes de spam a destinatarios externos, lo que podría provocar que el dominio de la organización sea incluido en listas de bloqueo. La organización quiere limitar de forma proactiva el número de destinatarios externos a los que cualquier usuario puede enviar correo en un periodo de 24 horas, de modo que, si una cuenta se compromete en el futuro, el daño potencial se limite automáticamente. ¿Qué deberían configurar?",
+    "q_en": "An organization detects that one of its user accounts has been compromised and is being used to send large volumes of spam to external recipients, which could result in the organization's domain being added to block lists. The organization wants to proactively limit the number of external recipients any user can email within a 24-hour period, so that if an account is compromised in the future, the potential damage is automatically limited. What should they configure?",
+    "opts_es": [
+      "Los límites de la directiva antispam saliente (outbound spam policy), configurando el número máximo de destinatarios externos por usuario en 24 horas, con una acción automática (como restringir el envío) cuando se supere el límite",
+      "Una directiva de retención que elimine automáticamente los correos enviados después de superar un límite",
+      "Una etiqueta de confidencialidad que cifre todos los correos salientes",
+      "Vínculos seguros configurados para todos los correos salientes"
+    ],
+    "opts_en": [
+      "Outbound spam policy limits, configuring the maximum number of external recipients per user in 24 hours, with an automatic action (such as restricting sending) when the limit is exceeded",
+      "A retention policy that automatically deletes sent emails after a limit is exceeded",
+      "A sensitivity label that encrypts all outbound emails",
+      "Safe Links configured for all outbound emails"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las directivas antispam salientes de Exchange Online Protection permiten definir límites sobre el número de mensajes o destinatarios externos a los que un usuario puede enviar correo dentro de un periodo de 24 horas. Cuando un usuario supera estos límites (lo que suele indicar una cuenta comprometida enviando spam), se puede configurar una acción automática, como restringir temporalmente al usuario de enviar correo y alertar a los administradores, limitando proactivamente el impacto de una posible vulneración.",
+    "exp_en": "Exchange Online Protection outbound spam policies allow defining limits on the number of messages or external recipients a user can email within a 24-hour period. When a user exceeds these limits (which often indicates a compromised account sending spam), an automatic action can be configured, such as temporarily restricting the user from sending mail and alerting administrators, proactively limiting the impact of a potential breach."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 455,
+    "q_es": "Una organización ha configurado SPF y DKIM correctamente para su dominio. Sin embargo, quieren ir un paso más allá y publicar una directiva que indique explícitamente a los servidores de correo receptores qué deben hacer con los mensajes que afirman provenir de su dominio pero que no logran pasar las comprobaciones de SPF ni DKIM (por ejemplo, rechazarlos o ponerlos en cuarentena), además de recibir informes agregados sobre estos fallos. ¿Qué deberían publicar en el DNS de su dominio?",
+    "q_en": "An organization has correctly configured SPF and DKIM for its domain. However, they want to go a step further and publish a policy that explicitly tells receiving mail servers what to do with messages claiming to come from their domain but failing both SPF and DKIM checks (for example, reject or quarantine them), in addition to receiving aggregate reports about these failures. What should they publish in their domain's DNS?",
+    "opts_es": [
+      "Un registro DMARC (Domain-based Message Authentication, Reporting, and Conformance)",
+      "Un registro MX adicional apuntando a un servidor de cuarentena",
+      "Un registro CNAME que apunte al dominio '.onmicrosoft.com'",
+      "Un registro SRV utilizado para la federación con AD FS"
+    ],
+    "opts_en": [
+      "A DMARC (Domain-based Message Authentication, Reporting, and Conformance) record",
+      "An additional MX record pointing to a quarantine server",
+      "A CNAME record pointing to the '.onmicrosoft.com' domain",
+      "An SRV record used for AD FS federation"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "DMARC se basa en los resultados de SPF y DKIM y permite al propietario del dominio publicar una directiva (en un registro TXT especial) que indica a los servidores receptores cómo tratar los mensajes que fallan estas comprobaciones de autenticación (por ejemplo, 'none', 'quarantine' o 'reject'), además de especificar una dirección a la que se enviarán informes agregados sobre los resultados de autenticación, lo que ayuda a la organización a detectar y mitigar el uso fraudulento de su dominio.",
+    "exp_en": "DMARC builds on the results of SPF and DKIM and allows the domain owner to publish a policy (in a special TXT record) that tells receiving servers how to handle messages that fail these authentication checks (for example, 'none', 'quarantine', or 'reject'), in addition to specifying an address to which aggregate reports on authentication results will be sent, helping the organization detect and mitigate fraudulent use of its domain."
+  },
+  {
+    "dom": 3,
+    "obj": "3.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 456,
+    "q_es": "El equipo de seguridad quiere comparar la configuración de seguridad actual de sus dispositivos Windows con un conjunto de configuraciones recomendadas por Microsoft (basadas en los estándares de seguridad de la industria), identificando qué dispositivos no cumplen con estas configuraciones recomendadas (por ejemplo, políticas de contraseñas, configuración de firewall o ajustes del navegador) para poder remediarlas. ¿Qué funcionalidad de Microsoft Defender Vulnerability Management proporciona esta evaluación?",
+    "q_en": "The security team wants to compare the current security configuration of their Windows devices against a set of recommended configurations from Microsoft (based on industry security standards), identifying which devices don't comply with these recommended configurations (for example, password policies, firewall configuration, or browser settings) so they can be remediated. What Microsoft Defender Vulnerability Management feature provides this assessment?",
+    "opts_es": [
+      "La evaluación de líneas base de seguridad (security baselines assessment)",
+      "El descubrimiento de dispositivos (device discovery)",
+      "Una directiva de cuarentena para correo electrónico",
+      "El panel de Cloud Discovery"
+    ],
+    "opts_en": [
+      "Security baselines assessment",
+      "Device discovery",
+      "An email quarantine policy",
+      "The Cloud Discovery dashboard"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La evaluación de líneas base de seguridad en Microsoft Defender Vulnerability Management compara la configuración de seguridad de los dispositivos con perfiles de línea base predefinidos (basados, por ejemplo, en los puntos de referencia del CIS o las líneas base de seguridad de Microsoft), identificando configuraciones que no cumplen con la línea base recomendada y proporcionando recomendaciones para remediarlas, ayudando a estandarizar y reforzar la postura de seguridad de los dispositivos.",
+    "exp_en": "Security baselines assessment in Microsoft Defender Vulnerability Management compares devices' security configuration against predefined baseline profiles (based, for example, on CIS benchmarks or Microsoft security baselines), identifying configurations that don't comply with the recommended baseline and providing remediation recommendations, helping standardize and strengthen devices' security posture."
+  },
+  {
+    "dom": 3,
+    "obj": "3.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 457,
+    "q_es": "Una organización ha implementado una solución antivirus de un tercero como protección principal en sus servidores, pero quiere que Microsoft Defender Antivirus permanezca activo en modo pasivo para complementar la detección, y que Microsoft Defender for Endpoint pueda bloquear y corregir archivos maliciosos detectados mediante su tecnología de detección y respuesta de endpoints (EDR), incluso aunque Defender Antivirus no sea la solución de protección en tiempo real principal. ¿Qué funcionalidad permite esta capacidad de bloqueo y corrección complementaria?",
+    "q_en": "An organization has deployed a third-party antivirus solution as the primary protection on its servers, but wants Microsoft Defender Antivirus to remain active in passive mode to supplement detection, and wants Microsoft Defender for Endpoint to be able to block and remediate malicious files detected via its endpoint detection and response (EDR) technology, even though Defender Antivirus isn't the primary real-time protection solution. What feature provides this complementary block-and-remediate capability?",
+    "opts_es": [
+      "EDR en modo de bloqueo (EDR in block mode)",
+      "El acceso controlado a carpetas, que sustituye por completo a cualquier antivirus de terceros",
+      "La protección contra alteraciones, que es exclusiva del antivirus principal",
+      "Vínculos seguros configurados a nivel de servidor"
+    ],
+    "opts_en": [
+      "EDR in block mode",
+      "Controlled folder access, which fully replaces any third-party antivirus",
+      "Tamper protection, which is exclusive to the primary antivirus",
+      "Safe Links configured at the server level"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "EDR en modo de bloqueo permite que Microsoft Defender for Endpoint tome acciones de bloqueo y corrección sobre artefactos maliciosos detectados mediante sus capacidades de detección y respuesta de endpoints, incluso cuando Microsoft Defender Antivirus se ejecuta en modo pasivo (porque otra solución antivirus es la protección principal en tiempo real). Esto proporciona una capa adicional de defensa que actúa después de que una amenaza ha eludido la protección antivirus principal.",
+    "exp_en": "EDR in block mode allows Microsoft Defender for Endpoint to take block and remediation actions on malicious artifacts detected via its endpoint detection and response capabilities, even when Microsoft Defender Antivirus runs in passive mode (because another antivirus solution is the primary real-time protection). This provides an additional layer of defense that acts after a threat has evaded the primary antivirus protection."
+  },
+  {
+    "dom": 3,
+    "obj": "3.4",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 458,
+    "q_es": "Una organización utiliza Microsoft Defender for Cloud Apps con un conector de aplicación para OneDrive y SharePoint. Quieren que, si se detecta que un archivo que contiene información confidencial se ha compartido mediante un vínculo de 'cualquier persona con el vínculo' (acceso anónimo), Defender for Cloud Apps elimine automáticamente ese tipo de uso compartido sin intervención manual, restringiendo el acceso a usuarios específicos de la organización. ¿Qué deberían crear?",
+    "q_en": "An organization uses Microsoft Defender for Cloud Apps with an app connector for OneDrive and SharePoint. They want that, if a file containing sensitive information is found to be shared via an 'anyone with the link' (anonymous access) link, Defender for Cloud Apps automatically removes that sharing without manual intervention, restricting access to specific users in the organization. What should they create?",
+    "opts_es": [
+      "Una directiva de archivos (file policy) que detecte archivos con uso compartido de 'cualquier persona con el vínculo' que contengan información confidencial, con una acción de gobernanza automática para eliminar el uso compartido externo/público",
+      "Una directiva de detección de anomalías de viaje imposible",
+      "Una directiva de sesión de control de carga de archivos exclusivamente",
+      "Una etiqueta de retención aplicada a OneDrive"
+    ],
+    "opts_en": [
+      "A file policy that detects files shared via 'anyone with the link' containing sensitive information, with an automatic governance action to remove external/public sharing",
+      "An impossible travel anomaly detection policy",
+      "A file upload control session policy exclusively",
+      "A retention label applied to OneDrive"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las directivas de archivos en Microsoft Defender for Cloud Apps permiten analizar archivos almacenados en aplicaciones conectadas en busca de criterios específicos, como tipos de información confidencial combinados con un nivel de uso compartido determinado (por ejemplo, 'cualquier persona con el vínculo'). Cuando se detecta una coincidencia, se pueden configurar acciones de gobernanza automáticas, como eliminar el uso compartido público/externo del archivo, sin necesidad de intervención manual por parte de un administrador.",
+    "exp_en": "File policies in Microsoft Defender for Cloud Apps allow scanning files stored in connected applications for specific criteria, such as sensitive information types combined with a certain sharing level (for example, 'anyone with the link'). When a match is detected, automatic governance actions can be configured, such as removing the file's public/external sharing, without requiring manual intervention from an administrator."
+  },
+  {
+    "dom": 4,
+    "obj": "4.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 459,
+    "q_es": "Una organización quiere que, al crear un nuevo equipo de Microsoft Teams para un proyecto confidencial, los propietarios puedan seleccionar una etiqueta que configure automáticamente el equipo como privado (no detectable), restrinja el acceso de usuarios externos al sitio de SharePoint asociado y aplique configuraciones de uso compartido más restrictivas, todo mediante una única selección al crear el equipo. ¿Qué funcionalidad de Microsoft Purview permite aplicar esta configuración de gobernanza a un equipo o sitio completo?",
+    "q_en": "An organization wants that, when creating a new Microsoft Teams team for a confidential project, owners can select a label that automatically configures the team as private (not discoverable), restricts external user access to the associated SharePoint site, and applies more restrictive sharing settings, all via a single selection when creating the team. What Microsoft Purview feature allows applying this governance configuration to an entire team or site?",
+    "opts_es": [
+      "Las etiquetas de confidencialidad de contenedor (container labels), aplicadas a equipos de Microsoft 365, sitios de SharePoint y grupos",
+      "Una directiva de retención aplicada únicamente a los mensajes de chat",
+      "Un clasificador entrenable aplicado al nombre del equipo",
+      "El registro de auditoría unificado, que configura automáticamente la privacidad del equipo"
+    ],
+    "opts_en": [
+      "Container sensitivity labels, applied to Microsoft 365 groups/teams, SharePoint sites, and groups",
+      "A retention policy applied only to chat messages",
+      "A trainable classifier applied to the team's name",
+      "The Unified audit log, which automatically configures the team's privacy"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las etiquetas de confidencialidad de contenedor pueden aplicarse a grupos de Microsoft 365 (equipos de Teams) y sitios de SharePoint, permitiendo configurar de forma centralizada parámetros como la privacidad (público/privado), la posibilidad de que el equipo sea detectable, el acceso de usuarios externos y el uso compartido con personas ajenas a la organización, aplicando una postura de gobernanza coherente al contenedor completo desde su creación mediante una única selección de etiqueta.",
+    "exp_en": "Container sensitivity labels can be applied to Microsoft 365 groups (Teams teams) and SharePoint sites, allowing centralized configuration of settings such as privacy (public/private), whether the team is discoverable, external user access, and sharing with people outside the organization, applying a consistent governance posture to the entire container from its creation via a single label selection."
+  },
+  {
+    "dom": 4,
+    "obj": "4.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 460,
+    "q_es": "Durante una investigación de riesgos internos, el equipo de cumplimiento necesita capturar evidencia visual de lo que un usuario específico estaba viendo en su pantalla en el momento en que se activó una alerta de actividad de riesgo (por ejemplo, justo antes de copiar archivos a un dispositivo USB), para usarla como contexto adicional en la investigación. ¿Qué funcionalidad de la gestión de riesgos internos de Microsoft Purview permite esto?",
+    "q_en": "During an insider risk investigation, the compliance team needs to capture visual evidence of what a specific user was viewing on their screen at the moment a risky activity alert was triggered (for example, just before copying files to a USB device), to use as additional context in the investigation. What Microsoft Purview insider risk management feature allows this?",
+    "opts_es": [
+      "La captura de evidencia forense (forensic evidence capture), que toma capturas de pantalla optativas y controladas en torno a actividades de alto riesgo",
+      "Una directiva de retención que captura automáticamente todas las pantallas de todos los usuarios en todo momento",
+      "El registro de auditoría unificado, que incluye automáticamente capturas de pantalla de cada evento",
+      "Una etiqueta de confidencialidad que captura la pantalla del usuario al aplicarse"
+    ],
+    "opts_en": [
+      "Forensic evidence capture, which takes optional and controlled screenshots around high-risk activities",
+      "A retention policy that automatically captures every user's screen at all times",
+      "The Unified audit log, which automatically includes screenshots of every event",
+      "A sensitivity label that captures the user's screen when applied"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La captura de evidencia forense, dentro de la gestión de riesgos internos de Microsoft Purview, permite configurar la captura opcional y controlada de capturas de pantalla cuando se activan ciertas actividades de riesgo definidas en una directiva, proporcionando contexto visual adicional para los investigadores. Esta funcionalidad está sujeta a controles de privacidad estrictos, requiere habilitarse explícitamente y normalmente se limita a usuarios que ya han sido identificados como de riesgo elevado por otras señales.",
+    "exp_en": "Forensic evidence capture, within Microsoft Purview insider risk management, allows configuring the optional and controlled capture of screenshots when certain risk activities defined in a policy are triggered, providing additional visual context for investigators. This feature is subject to strict privacy controls, must be explicitly enabled, and is typically limited to users already identified as elevated risk by other signals."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 461,
+    "q_es": "Un administrador recibe una notificación en el Centro de administración de Microsoft 365 sobre una interrupción que afecta a Exchange Online en este momento, con actualizaciones periódicas sobre el progreso de la resolución. Por otro lado, también recibe avisos sobre cambios futuros planificados en Microsoft Teams que requerirán que los usuarios actualicen su aplicación antes de una fecha determinada. ¿En qué áreas distintas del Centro de administración encontraría normalmente cada tipo de información?",
+    "q_en": "An administrator receives a notification in the Microsoft 365 admin center about an ongoing outage affecting Exchange Online right now, with periodic updates on resolution progress. Separately, they also receive notices about future planned changes to Microsoft Teams that will require users to update their app before a certain date. In which different areas of the admin center would each type of information normally be found?",
+    "opts_es": [
+      "El estado de la interrupción actual se consulta en 'Salud del servicio' (Service health), mientras que los avisos sobre cambios futuros se encuentran en el 'Centro de mensajes' (Message center)",
+      "Ambos tipos de información se encuentran exclusivamente en el 'Centro de mensajes', sin distinción alguna",
+      "Ambos tipos de información se encuentran exclusivamente en 'Salud del servicio', sin distinción alguna",
+      "Esta información solo está disponible contactando directamente con el soporte técnico de Microsoft por teléfono"
+    ],
+    "opts_en": [
+      "The status of the current outage is checked in 'Service health', while notices about future changes are found in the 'Message center'",
+      "Both types of information are found exclusively in the 'Message center', with no distinction at all",
+      "Both types of information are found exclusively in 'Service health', with no distinction at all",
+      "This information is only available by contacting Microsoft technical support directly by phone"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El panel de 'Salud del servicio' muestra el estado actual de los servicios de Microsoft 365, incluidas interrupciones activas o degradaciones del servicio, con actualizaciones a medida que progresa la resolución. El 'Centro de mensajes', en cambio, está orientado a comunicar cambios futuros planificados en los servicios (nuevas funciones, retiros de funciones, requisitos de actualización), permitiendo a los administradores prepararse y comunicar estos cambios a sus usuarios con antelación.",
+    "exp_en": "The 'Service health' dashboard shows the current status of Microsoft 365 services, including active outages or service degradations, with updates as resolution progresses. The 'Message center', on the other hand, is oriented toward communicating future planned changes to services (new features, feature retirements, update requirements), allowing administrators to prepare and communicate these changes to their users in advance."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 462,
+    "q_es": "Una empresa que acaba de adquirir otra compañía necesita actualizar el nombre legal de la organización y la información del contacto técnico asociada al inquilino de Microsoft 365, de modo que Microsoft pueda contactar a la persona correcta en caso de problemas relacionados con la cuenta y la facturación. ¿Dónde se actualiza esta información del perfil de la organización?",
+    "q_en": "A company that has just acquired another business needs to update the organization's legal name and the technical contact information associated with the Microsoft 365 tenant, so that Microsoft can contact the right person in case of issues related to the account and billing. Where is this organization profile information updated?",
+    "opts_es": [
+      "En 'Configuración' > 'Organización' (Org settings > Organization profile) dentro del Centro de administración de Microsoft 365",
+      "En una directiva de acceso condicional dirigida al departamento de facturación",
+      "Solo puede modificarse abriendo una solicitud de soporte técnico con Microsoft, sin acceso de autoservicio",
+      "En el catálogo de aplicaciones empresariales de Microsoft Entra ID"
+    ],
+    "opts_en": [
+      "In 'Settings' > 'Org settings' > 'Organization profile' within the Microsoft 365 admin center",
+      "In a Conditional Access policy targeting the billing department",
+      "It can only be changed by opening a Microsoft support ticket, with no self-service access",
+      "In the Microsoft Entra ID enterprise applications gallery"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El perfil de la organización, accesible desde 'Configuración' > 'Organización' en el Centro de administración de Microsoft 365, permite a los administradores globales actualizar información como el nombre de la organización, la dirección, y los datos de contacto técnico y de privacidad, que Microsoft utiliza para comunicaciones relacionadas con la cuenta, facturación e incidencias del servicio.",
+    "exp_en": "The organization profile, accessible from 'Settings' > 'Org settings' > 'Organization profile' in the Microsoft 365 admin center, allows global administrators to update information such as the organization name, address, and technical and privacy contact details, which Microsoft uses for communications related to the account, billing, and service incidents."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 463,
+    "q_es": "Varios empleados del departamento de soporte necesitan acceder regularmente al buzón compartido 'soporte@contoso.com' desde Outlook de escritorio, sin tener que escribir credenciales adicionales ni agregarlo manualmente cada vez que se configura un nuevo perfil de Outlook. La organización ya les ha concedido permisos de 'Acceso completo al buzón' (Full Access) sobre el buzón compartido. ¿Qué comportamiento de Outlook hace que el buzón compartido aparezca automáticamente en la lista de carpetas de estos usuarios?",
+    "q_en": "Several employees in the support department need to regularly access the shared mailbox 'support@contoso.com' from desktop Outlook, without having to type additional credentials or add it manually every time a new Outlook profile is configured. The organization has already granted them 'Full Access' permissions on the shared mailbox. What Outlook behavior causes the shared mailbox to automatically appear in these users' folder list?",
+    "opts_es": [
+      "La asignación automática (auto-mapping), que hace que Outlook agregue automáticamente los buzones compartidos sobre los que el usuario tiene permisos de Acceso completo a su perfil, sin configuración manual",
+      "Una directiva de retención que copia el buzón compartido en cada perfil",
+      "Una regla de transporte que reenvía todos los correos del buzón compartido a cada usuario",
+      "El acceso completo no produce ningún efecto en Outlook; el buzón nunca aparece automáticamente bajo ninguna circunstancia"
+    ],
+    "opts_en": [
+      "Auto-mapping, which causes Outlook to automatically add shared mailboxes the user has Full Access permission on to their profile, with no manual configuration",
+      "A retention policy that copies the shared mailbox into each profile",
+      "A transport rule that forwards all emails from the shared mailbox to each user",
+      "Full Access has no effect in Outlook at all; the mailbox never appears automatically under any circumstances"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Cuando a un usuario se le concede el permiso de 'Acceso completo al buzón' (Full Access) sobre un buzón compartido, Exchange Online utiliza la asignación automática (auto-mapping) para agregar ese buzón compartido automáticamente al perfil de Outlook del usuario, sin que este tenga que configurarlo manualmente ni introducir credenciales adicionales, ya que el acceso se basa en sus propias credenciales y permisos.",
+    "exp_en": "When a user is granted 'Full Access' permission on a shared mailbox, Exchange Online uses auto-mapping to automatically add that shared mailbox to the user's Outlook profile, without the user having to configure it manually or enter additional credentials, since access is based on their own credentials and permissions."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 464,
+    "q_es": "Una organización tiene una lista de distribución heredada con cientos de miembros que se utiliza únicamente para enviar correos masivos a todo el personal. Quieren modernizar esta lista convirtiéndola en un grupo de Microsoft 365 para que, además del correo, los miembros también obtengan acceso compartido a un sitio de SharePoint, un calendario de grupo y un bloc de notas compartido, sin tener que volver a agregar manualmente a cada uno de los miembros existentes. ¿Qué opción permite este cambio conservando la membresía actual?",
+    "q_en": "An organization has a legacy distribution list with hundreds of members used only to send mass emails to all staff. They want to modernize this list by converting it into a Microsoft 365 group so that, in addition to email, members also get shared access to a SharePoint site, a group calendar, and a shared notebook, without having to manually re-add each existing member. What option allows this change while preserving the current membership?",
+    "opts_es": [
+      "Utilizar la función de actualización de listas de distribución a grupos de Microsoft 365 disponible en el Centro de administración de Exchange, que conserva la membresía existente durante la conversión",
+      "Eliminar la lista de distribución y crear un grupo de Microsoft 365 completamente nuevo, agregando manualmente a cada miembro uno por uno",
+      "Las listas de distribución no pueden convertirse nunca en grupos de Microsoft 365 bajo ninguna circunstancia",
+      "Cambiar el nombre de la lista de distribución, lo que la convierte automáticamente en un grupo de Microsoft 365 sin pasos adicionales"
+    ],
+    "opts_en": [
+      "Use the distribution list to Microsoft 365 group upgrade feature available in the Exchange admin center, which preserves existing membership during the conversion",
+      "Delete the distribution list and create a brand-new Microsoft 365 group, manually adding each member one by one",
+      "Distribution lists can never be converted to Microsoft 365 groups under any circumstances",
+      "Rename the distribution list, which automatically converts it into a Microsoft 365 group with no additional steps"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Exchange Online ofrece una funcionalidad para actualizar (upgrade) listas de distribución existentes a grupos de Microsoft 365, conservando la membresía actual, la dirección de correo electrónico y otras propiedades, mientras se añaden las capacidades adicionales de colaboración de los grupos de Microsoft 365 (sitio de SharePoint, calendario compartido, bloc de notas de OneNote, etc.), evitando tener que volver a agregar manualmente a todos los miembros.",
+    "exp_en": "Exchange Online offers a feature to upgrade existing distribution lists to Microsoft 365 groups, preserving current membership, the email address, and other properties, while adding the additional collaboration capabilities of Microsoft 365 groups (SharePoint site, shared calendar, OneNote notebook, etc.), avoiding the need to manually re-add all members."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 465,
+    "q_es": "Una organización global tiene divisiones regionales independientes (Europa, América, Asia) y quiere que el administrador de TI de cada región pueda gestionar usuarios, grupos y restablecer contraseñas únicamente para los empleados de su propia región, sin tener visibilidad ni capacidad de administración sobre los usuarios de las otras regiones, evitando crear tres inquilinos de Microsoft 365 independientes. ¿Qué característica de Microsoft Entra ID permite delimitar el alcance de la administración a un subconjunto de usuarios dentro de un mismo inquilino?",
+    "q_en": "A global organization has independent regional divisions (Europe, Americas, Asia) and wants each region's IT administrator to be able to manage users, groups, and reset passwords only for employees in their own region, without visibility or management capability over users in the other regions, avoiding the creation of three separate Microsoft 365 tenants. What Microsoft Entra ID feature allows scoping administration to a subset of users within the same tenant?",
+    "opts_es": [
+      "Las unidades administrativas (administrative units), a las que se asignan los usuarios de cada región y sobre las cuales se asignan roles con ámbito restringido a los administradores correspondientes",
+      "Los grupos de seguridad anidados, que por sí solos limitan automáticamente el ámbito de cualquier rol asignado a sus miembros",
+      "La configuración de zona horaria de cada usuario, que determina automáticamente qué administrador puede gestionarlo",
+      "Crear tres suscripciones de Microsoft 365 independientes dentro del mismo inquilino, una por región"
+    ],
+    "opts_en": [
+      "Administrative units, to which users from each region are assigned and over which roles with restricted scope are assigned to the corresponding administrators",
+      "Nested security groups, which by themselves automatically limit the scope of any role assigned to their members",
+      "Each user's time zone setting, which automatically determines which administrator can manage them",
+      "Create three separate Microsoft 365 subscriptions within the same tenant, one per region"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las unidades administrativas permiten agrupar usuarios, grupos o dispositivos (por ejemplo, por región) dentro de un mismo inquilino de Microsoft Entra ID, y posteriormente asignar roles administrativos (como Administrador de usuarios) con ámbito restringido a esa unidad administrativa. De esta forma, un administrador asignado a la unidad administrativa de Europa solo podrá gestionar a los usuarios incluidos en esa unidad, sin necesidad de crear inquilinos separados.",
+    "exp_en": "Administrative units allow grouping users, groups, or devices (for example, by region) within the same Microsoft Entra ID tenant, and then assigning administrative roles (such as User Administrator) scoped to that administrative unit. This way, an administrator assigned to the Europe administrative unit will only be able to manage users included in that unit, without needing to create separate tenants."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 466,
+    "q_es": "El equipo de seguridad de una organización está preocupado porque un administrador con el rol de Administrador de usuarios, asignado sobre una unidad administrativa específica, podría intentar restablecer la contraseña de la cuenta del director general o modificar al grupo que contiene a los administradores globales, los cuales también pertenecen a esa misma unidad administrativa. Quieren impedir que cualquier administrador con rol delegado sobre la unidad pueda realizar cambios sobre estos objetos altamente sensibles, incluso si técnicamente pertenecen a la unidad. ¿Qué tipo de unidad administrativa proporciona esta protección adicional?",
+    "q_en": "An organization's security team is concerned that an administrator with the User Administrator role, assigned over a specific administrative unit, could attempt to reset the CEO's account password or modify the group containing global administrators, both of which also belong to that same administrative unit. They want to prevent any administrator with a delegated role over the unit from making changes to these highly sensitive objects, even though they technically belong to the unit. What type of administrative unit provides this additional protection?",
+    "opts_es": [
+      "Una unidad administrativa restringida (restricted management administrative unit), que impide que cualquier administrador sin un rol asignado directamente sobre los objetos protegidos (incluidos los administradores con roles delegados sobre la unidad) los modifique",
+      "Una unidad administrativa dinámica basada únicamente en el atributo de departamento",
+      "Un grupo de Microsoft 365 con una etiqueta de confidencialidad aplicada",
+      "Una directiva de acceso condicional que bloquea el acceso de todos los administradores a la unidad administrativa"
+    ],
+    "opts_en": [
+      "A restricted management administrative unit, which prevents any administrator without a role assigned directly on the protected objects (including administrators with roles delegated over the unit) from modifying them",
+      "A dynamic administrative unit based only on the department attribute",
+      "A Microsoft 365 group with a sensitivity label applied",
+      "A Conditional Access policy that blocks all administrator access to the administrative unit"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Una unidad administrativa restringida proporciona una capa adicional de protección: los usuarios o grupos incluidos en ella solo pueden ser administrados por personas con un rol asignado explícitamente sobre esa unidad administrativa restringida (o roles a nivel de inquilino con privilegios suficientes), incluso si esos objetos también serían alcanzables por roles delegados sobre una unidad administrativa normal. Esto permite proteger cuentas altamente sensibles (como ejecutivos o administradores globales) de modificaciones por parte de administradores delegados con ámbitos más amplios.",
+    "exp_en": "A restricted management administrative unit provides an additional layer of protection: users or groups included in it can only be managed by people with a role explicitly assigned over that restricted administrative unit (or tenant-level roles with sufficient privileges), even if those objects would otherwise be reachable through roles delegated over a regular administrative unit. This allows protecting highly sensitive accounts (such as executives or global administrators) from modification by delegated administrators with broader scopes."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 467,
+    "q_es": "Una organización está decidiendo entre dos métodos de autenticación híbrida para Microsoft Entra Connect: uno que sincroniza un hash del hash de la contraseña del usuario hacia la nube para que la autenticación se valide allí, y otro que reenvía las solicitudes de autenticación a un agente local que las valida contra Active Directory en tiempo real, sin almacenar ningún hash de contraseña en la nube. La organización tiene un requisito de cumplimiento que exige que las contraseñas nunca se almacenen, ni siquiera en forma de hash, fuera de las instalaciones locales. ¿Qué método de autenticación híbrida cumple este requisito?",
+    "q_en": "An organization is choosing between two hybrid authentication methods for Microsoft Entra Connect: one that syncs a hash of the user's password hash to the cloud so authentication is validated there, and another that forwards authentication requests to an on-premises agent that validates them against Active Directory in real time, without storing any password hash in the cloud. The organization has a compliance requirement stating that passwords must never be stored, even as a hash, outside on-premises facilities. What hybrid authentication method meets this requirement?",
+    "opts_es": [
+      "La autenticación de paso a través (Pass-through Authentication), que valida las credenciales directamente contra Active Directory local mediante agentes, sin almacenar hashes de contraseña en la nube",
+      "La sincronización de hash de contraseña (Password Hash Synchronization), que es la única opción disponible y siempre almacena un hash en la nube",
+      "La federación con AD FS es la única opción que cumple este requisito y no requiere ninguna infraestructura adicional",
+      "Ninguno de los métodos de autenticación híbrida puede evitar el almacenamiento de información de contraseñas en la nube"
+    ],
+    "opts_en": [
+      "Pass-through Authentication, which validates credentials directly against on-premises Active Directory via agents, without storing password hashes in the cloud",
+      "Password Hash Synchronization, which is the only available option and always stores a hash in the cloud",
+      "Federation with AD FS is the only option that meets this requirement and requires no additional infrastructure",
+      "None of the hybrid authentication methods can avoid storing password information in the cloud"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La autenticación de paso a través (Pass-through Authentication) utiliza agentes ligeros instalados en servidores locales que escuchan las solicitudes de validación de credenciales provenientes de Microsoft Entra ID y las validan directamente contra Active Directory local en tiempo real, sin que ningún hash de contraseña se sincronice o almacene en la nube, lo que satisface requisitos de cumplimiento que prohíben almacenar información de contraseñas fuera de las instalaciones locales.",
+    "exp_en": "Pass-through Authentication uses lightweight agents installed on on-premises servers that listen for credential validation requests from Microsoft Entra ID and validate them directly against on-premises Active Directory in real time, with no password hash ever synced or stored in the cloud, satisfying compliance requirements that prohibit storing password information outside on-premises facilities."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 468,
+    "q_es": "Una organización ha implementado la autenticación de paso a través (Pass-through Authentication) y quiere mejorar la experiencia de los usuarios que inician sesión desde equipos unidos a un dominio local dentro de la red corporativa, de modo que se autentiquen automáticamente con Microsoft Entra ID utilizando su sesión de Windows actual, sin que se les solicite introducir su contraseña de nuevo. ¿Qué característica complementaria deberían habilitar?",
+    "q_en": "An organization has implemented Pass-through Authentication and wants to improve the experience for users signing in from domain-joined computers within the corporate network, so they're automatically authenticated to Microsoft Entra ID using their current Windows session, without being prompted to enter their password again. What complementary feature should they enable?",
+    "opts_es": [
+      "El inicio de sesión único sin interrupciones (Seamless Single Sign-On), que aprovecha la sesión de Windows del usuario en el dominio local para autenticarlo automáticamente en Microsoft Entra ID",
+      "La sincronización de hash de contraseña, que por sí sola ya proporciona inicio de sesión único sin configuración adicional",
+      "El acceso condicional, configurando una directiva que omite la autenticación para toda la red corporativa",
+      "Microsoft Entra Connect Health, que gestiona directamente las sesiones de inicio de sesión único de los usuarios"
+    ],
+    "opts_en": [
+      "Seamless Single Sign-On, which leverages the user's Windows session on the on-premises domain to automatically authenticate them to Microsoft Entra ID",
+      "Password Hash Synchronization, which by itself already provides single sign-on with no additional configuration",
+      "Conditional Access, configuring a policy that skips authentication for the entire corporate network",
+      "Microsoft Entra Connect Health, which directly manages users' single sign-on sessions"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El inicio de sesión único sin interrupciones (Seamless SSO) se puede habilitar junto con la sincronización de hash de contraseña o la autenticación de paso a través, y permite que los usuarios que han iniciado sesión en dispositivos unidos a un dominio dentro de la red corporativa se autentiquen automáticamente en Microsoft Entra ID sin tener que volver a introducir sus credenciales, mejorando la experiencia de usuario al combinarse con cualquiera de los dos métodos de autenticación híbrida.",
+    "exp_en": "Seamless Single Sign-On can be enabled alongside either Password Hash Synchronization or Pass-through Authentication, and allows users who have signed in on domain-joined devices within the corporate network to be automatically authenticated to Microsoft Entra ID without having to re-enter their credentials, improving the user experience when combined with either hybrid authentication method."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 469,
+    "q_es": "El departamento legal de una organización ha redactado una nueva política de uso aceptable que todos los empleados deben leer y aceptar explícitamente antes de poder acceder a cualquier aplicación de Microsoft 365 desde dispositivos no administrados. Quieren presentar el texto de la política directamente durante el proceso de inicio de sesión y registrar la aceptación de cada usuario con marca de tiempo. ¿Qué control de acceso condicional cumple este requisito?",
+    "q_en": "The legal department of an organization has drafted a new acceptable use policy that all employees must read and explicitly accept before being able to access any Microsoft 365 application from unmanaged devices. They want to present the policy text directly during the sign-in process and log each user's acceptance with a timestamp. What Conditional Access control meets this requirement?",
+    "opts_es": [
+      "Términos de uso (Terms of use), configurados como control de concesión en una directiva de acceso condicional, que requieren que el usuario revise y acepte el documento antes de continuar",
+      "Una etiqueta de retención aplicada al correo electrónico de bienvenida de cada usuario",
+      "Una directiva de prevención de pérdida de datos que bloquea el acceso hasta que el usuario responda a una encuesta",
+      "El control de 'Requerir dispositivo conforme', que automáticamente implica la aceptación de cualquier política legal"
+    ],
+    "opts_en": [
+      "Terms of use, configured as a grant control in a Conditional Access policy, which require the user to review and accept the document before continuing",
+      "A retention label applied to each user's welcome email",
+      "A data loss prevention policy that blocks access until the user responds to a survey",
+      "The 'Require compliant device' control, which automatically implies acceptance of any legal policy"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los términos de uso de Microsoft Entra ID permiten cargar un documento (como una política de uso aceptable) y configurarlo como un control de concesión dentro de una directiva de acceso condicional. Cuando se aplica, los usuarios deben revisar y aceptar explícitamente el documento durante el proceso de inicio de sesión antes de que se les conceda acceso, y se registra un informe de aceptación con marca de tiempo para cada usuario, lo que satisface requisitos legales o de cumplimiento.",
+    "exp_en": "Microsoft Entra ID terms of use allow uploading a document (such as an acceptable use policy) and configuring it as a grant control within a Conditional Access policy. When applied, users must explicitly review and accept the document during sign-in before being granted access, and an acceptance report with a timestamp is recorded for each user, satisfying legal or compliance requirements."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 470,
+    "q_es": "Una organización maneja información extremadamente sensible y quiere que, para acceder específicamente a un sitio de SharePoint que contiene esa información, los usuarios deban autenticarse utilizando únicamente métodos resistentes al phishing, como claves de acceso (FIDO2) o tarjetas inteligentes, rechazando otros métodos de MFA como SMS o llamadas telefónicas que son más vulnerables a ataques de interceptación. Para el resto de aplicaciones de la organización, cualquier método de MFA estándar sigue siendo aceptable. ¿Qué funcionalidad de acceso condicional permite exigir un conjunto específico de métodos de autenticación solo para ese recurso?",
+    "q_en": "An organization handles extremely sensitive information and wants that, specifically to access a SharePoint site containing that information, users must authenticate using only phishing-resistant methods, such as FIDO2 passkeys or smart cards, rejecting other MFA methods like SMS or phone calls that are more vulnerable to interception attacks. For the rest of the organization's applications, any standard MFA method remains acceptable. What Conditional Access feature allows requiring a specific set of authentication methods only for that resource?",
+    "opts_es": [
+      "Las fortalezas de autenticación (authentication strengths), que permiten definir un conjunto personalizado de métodos de autenticación considerados resistentes al phishing y aplicarlo como control de concesión en una directiva dirigida específicamente a ese sitio de SharePoint",
+      "Una directiva de retención que cifra el sitio de SharePoint con métodos resistentes al phishing automáticamente",
+      "El control 'Requerir MFA' estándar, que ya distingue automáticamente entre métodos resistentes y no resistentes al phishing sin configuración adicional",
+      "Una etiqueta de confidencialidad que bloquea el acceso de SMS y llamadas telefónicas a nivel global del inquilino"
+    ],
+    "opts_en": [
+      "Authentication strengths, which allow defining a custom set of authentication methods considered phishing-resistant and applying it as a grant control in a policy targeted specifically at that SharePoint site",
+      "A retention policy that automatically encrypts the SharePoint site with phishing-resistant methods",
+      "The standard 'Require MFA' control, which already automatically distinguishes between phishing-resistant and non-resistant methods with no additional configuration",
+      "A sensitivity label that blocks SMS and phone call access at the tenant-wide level"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las fortalezas de autenticación permiten definir combinaciones personalizadas de métodos de autenticación (por ejemplo, solo claves de acceso FIDO2 y tarjetas inteligentes, considerados resistentes al phishing) y aplicarlas como control de concesión en una directiva de acceso condicional dirigida a recursos específicos. Esto permite exigir un nivel de seguridad de autenticación más alto para recursos altamente sensibles, mientras se permite MFA estándar para el resto de aplicaciones mediante directivas separadas.",
+    "exp_en": "Authentication strengths allow defining custom combinations of authentication methods (for example, only FIDO2 passkeys and smart cards, considered phishing-resistant) and applying them as a grant control in a Conditional Access policy targeted at specific resources. This allows requiring a higher authentication security level for highly sensitive resources, while allowing standard MFA for the rest of the applications via separate policies."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 471,
+    "q_es": "Microsoft Entra ID Protection detecta que un usuario ha iniciado sesión correctamente, pero el patrón de inicio de sesión coincide con propiedades asociadas a inicios de sesión anómalos en el pasado, lo que genera un riesgo de usuario de nivel medio. La organización quiere que, cuando se detecte este nivel de riesgo de usuario, el propio usuario deba completar la MFA y, además, cambiar su contraseña antes de poder continuar usando sus credenciales actuales, ya que podrían estar comprometidas. ¿Qué tipo de directiva de Identity Protection implementa esta respuesta automática?",
+    "q_en": "Microsoft Entra ID Protection detects that a user has signed in successfully, but the sign-in pattern matches properties associated with anomalous sign-ins in the past, generating a medium-level user risk. The organization wants that, when this user risk level is detected, the user themselves must complete MFA and additionally change their password before continuing to use their current credentials, since they could be compromised. What type of Identity Protection policy implements this automatic response?",
+    "opts_es": [
+      "Una directiva de riesgo de usuario (user risk policy) que, para el nivel de riesgo configurado, requiera MFA y un cambio de contraseña seguro como condición para conceder el acceso",
+      "Una directiva de riesgo de inicio de sesión (sign-in risk policy), que nunca puede exigir un cambio de contraseña bajo ninguna circunstancia",
+      "Una directiva de cumplimiento de dispositivos que reinstala automáticamente el sistema operativo del usuario",
+      "Una directiva de prevención de pérdida de datos que bloquea el correo electrónico del usuario de forma permanente"
+    ],
+    "opts_en": [
+      "A user risk policy that, for the configured risk level, requires MFA and a secure password change as a condition for granting access",
+      "A sign-in risk policy, which can never require a password change under any circumstances",
+      "A device compliance policy that automatically reinstalls the user's operating system",
+      "A data loss prevention policy that permanently blocks the user's email"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Una directiva de riesgo de usuario en Microsoft Entra ID Protection evalúa la probabilidad de que una cuenta esté comprometida basándose en el historial y patrones de comportamiento del usuario. Cuando se alcanza el nivel de riesgo configurado, la directiva puede exigir que el usuario complete la autenticación multifactor y realice un cambio de contraseña seguro antes de continuar, lo que ayuda a remediar automáticamente cuentas potencialmente comprometidas sin intervención manual inmediata de un administrador.",
+    "exp_en": "A user risk policy in Microsoft Entra ID Protection evaluates the likelihood that an account is compromised based on the user's history and behavior patterns. When the configured risk level is reached, the policy can require the user to complete multi-factor authentication and perform a secure password change before continuing, helping to automatically remediate potentially compromised accounts without immediate manual intervention from an administrator."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 472,
+    "q_es": "Una organización ha configurado PIM para que el rol de Administrador de Exchange sea apto (eligible) para un grupo de administradores de TI, en lugar de asignarlo de forma permanente. Quieren añadir un control adicional: cuando un administrador active este rol, otro administrador designado debe revisar y aprobar la solicitud antes de que la activación se complete, y el solicitante debe proporcionar una justificación. ¿Qué configuración de PIM permite este flujo de aprobación?",
+    "q_en": "An organization has configured PIM so that the Exchange Administrator role is eligible for a group of IT administrators, rather than permanently assigned. They want to add an additional control: when an administrator activates this role, another designated administrator must review and approve the request before the activation completes, and the requester must provide a justification. What PIM configuration enables this approval flow?",
+    "opts_es": [
+      "Configurar la opción 'Requerir aprobación para activar' (require approval to activate) en la configuración del rol dentro de PIM, designando a uno o varios aprobadores",
+      "Convertir la asignación apta en una asignación permanente, lo que automáticamente requiere aprobación de otro administrador",
+      "Una directiva de acceso condicional que bloquea la activación del rol para todos los usuarios sin excepción",
+      "PIM no admite ningún flujo de aprobación; las activaciones siempre son inmediatas"
+    ],
+    "opts_en": [
+      "Configure the 'Require approval to activate' option in the role settings within PIM, designating one or more approvers",
+      "Convert the eligible assignment into a permanent assignment, which automatically requires approval from another administrator",
+      "A Conditional Access policy that blocks role activation for all users without exception",
+      "PIM doesn't support any approval flow; activations are always immediate"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Dentro de la configuración de roles de PIM, se puede habilitar la opción de requerir aprobación para la activación de un rol apto, designando a uno o varios aprobadores específicos. Cuando un usuario con una asignación apta solicita activar el rol, debe proporcionar una justificación, y la solicitud queda pendiente hasta que un aprobador la revise y la apruebe (o la rechace), añadiendo una capa adicional de control sobre la activación de roles privilegiados.",
+    "exp_en": "Within PIM role settings, the option to require approval for activation of an eligible role can be enabled, designating one or more specific approvers. When a user with an eligible assignment requests to activate the role, they must provide a justification, and the request remains pending until an approver reviews and approves (or denies) it, adding an additional layer of control over the activation of privileged roles."
+  },
+  {
+    "dom": 3,
+    "obj": "3.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 473,
+    "q_es": "Una organización ha configurado la investigación y respuesta automatizadas (AIR) de Microsoft Defender XDR con un nivel de automatización que requiere aprobación del equipo de seguridad antes de ejecutar acciones de corrección sobre dispositivos críticos, pero permite la corrección automática sin aprobación en dispositivos estándar de usuario. Después de una alerta, el sistema identifica varios archivos sospechosos en un servidor crítico y los marca como pendientes de aprobación en el centro de acciones. ¿Qué describe correctamente este comportamiento?",
+    "q_en": "An organization has configured Microsoft Defender XDR's automated investigation and response (AIR) with an automation level that requires security team approval before executing remediation actions on critical devices, but allows automatic remediation without approval on standard user devices. After an alert, the system identifies several suspicious files on a critical server and flags them as pending approval in the action center. What correctly describes this behavior?",
+    "opts_es": [
+      "El nivel de automatización configurado para los dispositivos críticos requiere que un analista revise y apruebe manualmente las acciones de corrección recomendadas antes de que se ejecuten, mientras que en dispositivos estándar las acciones equivalentes podrían ejecutarse automáticamente según su propio nivel configurado",
+      "Es un error del sistema, ya que AIR siempre debe ejecutar todas las acciones de corrección automáticamente sin excepción, sin importar la configuración",
+      "Significa que Defender XDR ha dejado de funcionar para ese servidor y requiere reinstalación completa del agente",
+      "Las acciones pendientes de aprobación se eliminan automáticamente después de unos minutos sin que ningún analista pueda revisarlas"
+    ],
+    "opts_en": [
+      "The automation level configured for critical devices requires an analyst to manually review and approve recommended remediation actions before they're executed, while on standard devices equivalent actions might execute automatically per their own configured level",
+      "This is a system error, since AIR must always execute all remediation actions automatically without exception, regardless of configuration",
+      "It means Defender XDR has stopped working for that server and requires a full agent reinstallation",
+      "Pending actions are automatically deleted after a few minutes with no analyst able to review them"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los niveles de automatización de la investigación y respuesta automatizadas (AIR) en Microsoft Defender XDR pueden configurarse de forma diferenciada (por ejemplo, mediante grupos de dispositivos), permitiendo que ciertos dispositivos (como servidores críticos) requieran aprobación manual de un analista para las acciones de corrección recomendadas, mientras que otros dispositivos (como estaciones de trabajo estándar) pueden tener un nivel de automatización más alto que permita la corrección automática sin intervención. Las acciones pendientes aparecen en el centro de acciones hasta que un analista las revisa.",
+    "exp_en": "Automation levels for automated investigation and response (AIR) in Microsoft Defender XDR can be configured differently (for example, via device groups), allowing certain devices (such as critical servers) to require manual analyst approval for recommended remediation actions, while other devices (such as standard workstations) can have a higher automation level allowing automatic remediation without intervention. Pending actions appear in the action center until an analyst reviews them."
+  },
+  {
+    "dom": 3,
+    "obj": "3.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 474,
+    "q_es": "Un analista del SOC observa en Microsoft Defender XDR que se han generado varias alertas independientes (una de Defender for Endpoint sobre un proceso sospechoso, otra de Defender for Office 365 sobre un correo de phishing recibido por el mismo usuario, y otra de Defender for Identity sobre un inicio de sesión anómalo de la misma cuenta) en un corto periodo de tiempo. El analista nota que Defender XDR ya las ha agrupado en una sola entidad para su investigación conjunta. ¿Qué concepto de Defender XDR describe esta agrupación automática de alertas relacionadas?",
+    "q_en": "A SOC analyst observes in Microsoft Defender XDR that several independent alerts have been generated (one from Defender for Endpoint about a suspicious process, another from Defender for Office 365 about a phishing email received by the same user, and another from Defender for Identity about an anomalous sign-in from the same account) within a short time period. The analyst notices Defender XDR has already grouped them into a single entity for joint investigation. What Defender XDR concept describes this automatic grouping of related alerts?",
+    "opts_es": [
+      "Un incidente, que correlaciona y agrupa automáticamente alertas relacionadas de diferentes cargas de trabajo de Defender que probablemente formen parte de la misma cadena de ataque",
+      "Una directiva de retención, que agrupa correos electrónicos antiguos por antigüedad",
+      "Un clasificador entrenable, que solo agrupa documentos según su contenido textual",
+      "Una etiqueta de confidencialidad aplicada automáticamente a las alertas de seguridad"
+    ],
+    "opts_en": [
+      "An incident, which automatically correlates and groups related alerts from different Defender workloads that likely belong to the same attack chain",
+      "A retention policy, which groups old emails by age",
+      "A trainable classifier, which only groups documents based on their textual content",
+      "A sensitivity label automatically applied to security alerts"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Microsoft Defender XDR correlaciona automáticamente alertas relacionadas provenientes de diferentes cargas de trabajo (Defender for Endpoint, Defender for Office 365, Defender for Identity, Defender for Cloud Apps) que comparten indicadores comunes (como el mismo usuario, dispositivo o dirección IP) y probablemente forman parte de la misma cadena de ataque, agrupándolas en un único incidente. Esto permite a los analistas investigar el ataque completo de forma holística en lugar de analizar cada alerta de forma aislada.",
+    "exp_en": "Microsoft Defender XDR automatically correlates related alerts from different workloads (Defender for Endpoint, Defender for Office 365, Defender for Identity, Defender for Cloud Apps) that share common indicators (such as the same user, device, or IP address) and likely belong to the same attack chain, grouping them into a single incident. This allows analysts to investigate the full attack holistically rather than analyzing each alert in isolation."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 475,
+    "q_es": "Una organización quiere proteger a sus usuarios de archivos adjuntos maliciosos sin retrasar significativamente la entrega del correo electrónico ni afectar a la productividad. Quieren que los archivos adjuntos se entreguen inmediatamente con una versión sustituta del documento mientras Microsoft Defender for Office 365 los analiza en un entorno aislado en segundo plano, y que el archivo original solo se libere si se determina que es seguro. ¿Qué opción de configuración de las directivas de archivos adjuntos seguros corresponde a este comportamiento?",
+    "q_en": "An organization wants to protect its users from malicious attachments without significantly delaying email delivery or affecting productivity. They want attachments to be delivered immediately with a placeholder version of the document while Microsoft Defender for Office 365 scans them in an isolated environment in the background, with the original file released only if it's determined to be safe. What Safe Attachments policy configuration option corresponds to this behavior?",
+    "opts_es": [
+      "La opción de entrega dinámica (dynamic delivery), que entrega el cuerpo del correo con un marcador de posición para el archivo adjunto mientras este se analiza en una sandbox, sustituyéndolo por el archivo real si resulta seguro",
+      "La opción de bloqueo (block), que retiene el correo completo hasta que finaliza el análisis, sin entregar nada hasta entonces",
+      "La opción de supervisión (monitor), que entrega el archivo adjunto sin analizarlo y solo registra una alerta después de la entrega",
+      "Desactivar por completo los archivos adjuntos seguros, ya que es la única forma de evitar cualquier retraso"
+    ],
+    "opts_en": [
+      "Dynamic delivery, which delivers the email body with a placeholder for the attachment while it's scanned in a sandbox, replacing it with the real file if it turns out to be safe",
+      "The block option, which holds the entire email until scanning finishes, delivering nothing until then",
+      "The monitor option, which delivers the attachment without scanning it and only logs an alert after delivery",
+      "Completely disable Safe Attachments, since it's the only way to avoid any delay"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La entrega dinámica en las directivas de archivos adjuntos seguros permite que el cuerpo del mensaje se entregue inmediatamente al destinatario, mostrando un marcador de posición en lugar del archivo adjunto mientras este se analiza en un entorno aislado (sandbox). Si el análisis determina que el archivo es seguro, se sustituye el marcador por el archivo real; si se detecta contenido malicioso, el archivo se bloquea. Esto minimiza el impacto en la productividad sin comprometer la protección.",
+    "exp_en": "Dynamic delivery in Safe Attachments policies allows the message body to be delivered immediately to the recipient, showing a placeholder in place of the attachment while it's scanned in an isolated environment (sandbox). If the scan determines the file is safe, the placeholder is replaced with the real file; if malicious content is detected, the file is blocked. This minimizes the impact on productivity without compromising protection."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 476,
+    "q_es": "Un administrador de Exchange Online Protection ha configurado una directiva de cuarentena personalizada para los mensajes detectados como spam de confianza media. Quieren que los propios usuarios finales puedan revisar los mensajes en cuarentena y, si determinan que un mensaje es legítimo, puedan liberarlo ellos mismos sin esperar la intervención de un administrador, pero solo para esta categoría de detección concreta (no para mensajes con malware, que deben requerir siempre revisión de un administrador). ¿Qué les permite lograr esto?",
+    "q_en": "An Exchange Online Protection administrator has configured a custom quarantine policy for messages detected as medium-confidence spam. They want end users themselves to be able to review quarantined messages and, if they determine a message is legitimate, release it themselves without waiting for administrator intervention, but only for this specific detection category (not for messages with malware, which should always require administrator review). What allows them to achieve this?",
+    "opts_es": [
+      "Crear directivas de cuarentena personalizadas con diferentes permisos de usuario final (como la capacidad de liberar mensajes) y asignar la directiva más permisiva a la regla de spam de confianza media, mientras se mantiene una directiva más restrictiva para malware",
+      "Activar la liberación automática para todos los tipos de detección sin distinción, incluido el malware",
+      "Eliminar por completo la cuarentena, entregando todos los mensajes directamente a la bandeja de entrada de los usuarios",
+      "Las directivas de cuarentena no permiten diferenciar permisos según el tipo de detección; todos los mensajes en cuarentena se tratan igual"
+    ],
+    "opts_en": [
+      "Create custom quarantine policies with different end-user permissions (such as the ability to release messages) and assign the more permissive policy to the medium-confidence spam rule, while keeping a more restrictive policy for malware",
+      "Enable automatic release for all detection types without distinction, including malware",
+      "Completely remove quarantine, delivering all messages directly to users' inboxes",
+      "Quarantine policies don't allow differentiating permissions by detection type; all quarantined messages are treated the same"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las directivas de cuarentena personalizadas permiten definir distintos conjuntos de permisos de usuario final (como ver, eliminar, liberar o solicitar la liberación de un mensaje) y asignarlas de forma diferenciada a distintas reglas de detección. Esto permite, por ejemplo, otorgar a los usuarios el permiso de liberar mensajes detectados como spam de confianza media, mientras que para detecciones de malware o phishing de alta confianza se aplica una directiva más restrictiva que requiere siempre la revisión de un administrador.",
+    "exp_en": "Custom quarantine policies allow defining different sets of end-user permissions (such as viewing, deleting, releasing, or requesting release of a message) and assigning them differently to different detection rules. This allows, for example, granting users permission to release messages detected as medium-confidence spam, while for malware or high-confidence phishing detections a more restrictive policy is applied that always requires administrator review."
+  },
+  {
+    "dom": 3,
+    "obj": "3.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 477,
+    "q_es": "Una organización quiere reducir la superficie de ataque de sus dispositivos Windows impidiendo que las aplicaciones de Office puedan crear contenido ejecutable o inyectar código en otros procesos, una técnica comúnmente utilizada por documentos maliciosos con macros para comprometer un sistema, sin necesidad de implementar una solución antivirus de terceros adicional. ¿Qué funcionalidad de Microsoft Defender for Endpoint proporciona estas reglas predefinidas para bloquear comportamientos específicos de aplicaciones que suelen ser indicio de malware?",
+    "q_en": "An organization wants to reduce the attack surface of its Windows devices by preventing Office applications from creating executable content or injecting code into other processes, a technique commonly used by malicious macro documents to compromise a system, without needing to deploy an additional third-party antivirus solution. What Microsoft Defender for Endpoint feature provides these predefined rules to block specific application behaviors that are often indicators of malware?",
+    "opts_es": [
+      "Las reglas de reducción de superficie de ataque (attack surface reduction rules)",
+      "El acceso controlado a carpetas, que solo protege contra el cifrado de archivos por ransomware",
+      "La protección de red, que únicamente bloquea conexiones salientes a dominios maliciosos conocidos",
+      "Vínculos seguros, que solo reescribe URL dentro de los correos electrónicos"
+    ],
+    "opts_en": [
+      "Attack surface reduction rules",
+      "Controlled folder access, which only protects against file encryption by ransomware",
+      "Network protection, which only blocks outbound connections to known malicious domains",
+      "Safe Links, which only rewrites URLs within emails"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las reglas de reducción de superficie de ataque son un conjunto de reglas predefinidas en Microsoft Defender for Endpoint que apuntan a comportamientos específicos que suelen utilizar el malware y las aplicaciones maliciosas para infectar dispositivos, como evitar que las aplicaciones de Office creen contenido ejecutable, inyecten código en otros procesos o ejecuten contenido potencialmente ofuscado, reduciendo así las posibilidades de que técnicas comunes de ataque tengan éxito sin depender de una solución antivirus adicional.",
+    "exp_en": "Attack surface reduction rules are a set of predefined rules in Microsoft Defender for Endpoint that target specific behaviors commonly used by malware and malicious applications to infect devices, such as preventing Office applications from creating executable content, injecting code into other processes, or running potentially obfuscated content, thereby reducing the chances that common attack techniques succeed without relying on an additional antivirus solution."
+  },
+  {
+    "dom": 3,
+    "obj": "3.4",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 478,
+    "q_es": "El equipo de seguridad descubre que varios empleados han concedido permisos de acceso a una aplicación de terceros mediante OAuth, otorgándole permisos de lectura y escritura sobre sus buzones de correo y archivos de OneDrive. La aplicación no ha sido revisada ni aprobada por TI, y el equipo quiere identificar todas las aplicaciones de terceros con permisos OAuth concedidos en el inquilino, evaluar el nivel de riesgo de cada una, y poder revocar el acceso de las que se consideren peligrosas. ¿Qué funcionalidad de Microsoft Defender for Cloud Apps proporciona esta visibilidad y control sobre las aplicaciones OAuth?",
+    "q_en": "The security team discovers that several employees have granted access permissions to a third-party application via OAuth, giving it read and write permissions over their mailboxes and OneDrive files. The application hasn't been reviewed or approved by IT, and the team wants to identify all third-party applications with OAuth permissions granted in the tenant, assess each one's risk level, and be able to revoke access for those considered dangerous. What Microsoft Defender for Cloud Apps feature provides this visibility and control over OAuth apps?",
+    "opts_es": [
+      "La gobernanza de aplicaciones OAuth (OAuth app governance / App permissions), que enumera las aplicaciones de terceros con acceso concedido, su nivel de permisos y permite revocar el acceso",
+      "Cloud Discovery, que solo analiza registros de tráfico de red sin considerar permisos OAuth",
+      "Una directiva de retención aplicada a los buzones de los usuarios afectados",
+      "El panel de Puntuación de seguridad, que no proporciona ninguna acción de revocación de permisos"
+    ],
+    "opts_en": [
+      "OAuth app governance / app permissions, which lists third-party apps with granted access, their permission level, and allows revoking access",
+      "Cloud Discovery, which only analyzes network traffic logs without considering OAuth permissions",
+      "A retention policy applied to the affected users' mailboxes",
+      "The Secure Score dashboard, which provides no permission revocation action"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La funcionalidad de gobernanza/permisos de aplicaciones OAuth en Microsoft Defender for Cloud Apps proporciona una vista de todas las aplicaciones de terceros a las que los usuarios han concedido acceso mediante OAuth, mostrando el nivel de permisos solicitado, el número de usuarios que la han autorizado y una clasificación de riesgo. Desde esta vista, los administradores pueden revocar el acceso de aplicaciones consideradas peligrosas o no autorizadas, mitigando el riesgo de exfiltración de datos a través de aplicaciones de terceros con permisos excesivos.",
+    "exp_en": "The OAuth app governance/permissions feature in Microsoft Defender for Cloud Apps provides a view of all third-party applications that users have granted access to via OAuth, showing the requested permission level, the number of users who have authorized it, and a risk classification. From this view, administrators can revoke access for applications considered dangerous or unauthorized, mitigating the risk of data exfiltration through third-party applications with excessive permissions."
+  },
+  {
+    "dom": 4,
+    "obj": "4.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 479,
+    "q_es": "Una organización quiere evitar que los empleados copien documentos que contienen números de tarjetas de crédito desde su equipo Windows a unidades USB extraíbles, mientras sigue permitiendo que copien otros documentos sin información confidencial sin restricciones. La detección debe aplicarse incluso cuando el usuario no tiene conexión a Internet en ese momento. ¿Qué solución de Microsoft Purview, aplicada a nivel de dispositivo, permite este control granular sobre el almacenamiento extraíble?",
+    "q_en": "An organization wants to prevent employees from copying documents containing credit card numbers from their Windows computer to removable USB drives, while still allowing them to copy other documents without sensitive information without restriction. Detection must apply even when the user has no internet connection at that moment. What Microsoft Purview solution, applied at the device level, allows this granular control over removable storage?",
+    "opts_es": [
+      "La prevención de pérdida de datos en endpoints (Endpoint DLP), con una directiva que detecta el tipo de información confidencial 'número de tarjeta de crédito' y restringe su copia a dispositivos de almacenamiento extraíble",
+      "Una etiqueta de retención aplicada a la carpeta de descargas del usuario",
+      "Una directiva de cuarentena de Exchange Online Protection aplicada al dispositivo local",
+      "Vínculos seguros configurados en Microsoft Defender for Office 365"
+    ],
+    "opts_en": [
+      "Endpoint data loss prevention (Endpoint DLP), with a policy that detects the 'credit card number' sensitive information type and restricts copying it to removable storage devices",
+      "A retention label applied to the user's downloads folder",
+      "An Exchange Online Protection quarantine policy applied to the local device",
+      "Safe Links configured in Microsoft Defender for Office 365"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La prevención de pérdida de datos en endpoints (Endpoint DLP) extiende las capacidades de DLP de Microsoft Purview a actividades realizadas directamente en dispositivos Windows y macOS, permitiendo detectar tipos de información confidencial (como números de tarjetas de crédito) en archivos y restringir acciones como copiarlos a unidades USB, imprimirlos o cargarlos a sitios web no autorizados. Estas restricciones se aplican mediante el agente local instalado en el dispositivo, por lo que funcionan incluso sin conexión a Internet.",
+    "exp_en": "Endpoint data loss prevention (Endpoint DLP) extends Microsoft Purview DLP capabilities to activities performed directly on Windows and macOS devices, allowing detection of sensitive information types (such as credit card numbers) in files and restricting actions like copying them to USB drives, printing them, or uploading them to unauthorized websites. These restrictions are enforced via the local agent installed on the device, so they work even without an internet connection."
+  },
+  {
+    "dom": 4,
+    "obj": "4.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 480,
+    "q_es": "El departamento de Recursos Humanos de una organización está preocupado por el clima laboral y quiere detectar de forma proactiva (pero respetando la privacidad) si se está produciendo lenguaje ofensivo, amenazante o de acoso en las conversaciones de chat de Microsoft Teams entre empleados, de modo que los casos detectados se enrutan a revisores designados para su evaluación, sin que estos revisores vean automáticamente la identidad del usuario hasta que decidan escalar el caso. ¿Qué solución de Microsoft Purview está diseñada específicamente para este escenario?",
+    "q_en": "An organization's HR department is concerned about workplace culture and wants to proactively detect (while respecting privacy) whether offensive, threatening, or harassing language is occurring in Microsoft Teams chat conversations between employees, so that detected cases are routed to designated reviewers for evaluation, without those reviewers automatically seeing the user's identity until they decide to escalate the case. What Microsoft Purview solution is specifically designed for this scenario?",
+    "opts_es": [
+      "El cumplimiento de comunicaciones (Communication compliance), que utiliza clasificadores para detectar mensajes que coinciden con condiciones de directiva (como lenguaje ofensivo) y los enruta a revisores, pudiendo anonimizar la identidad del usuario hasta que se decida escalar",
+      "La gestión de riesgos internos, que está diseñada exclusivamente para detectar la exfiltración de archivos y no analiza mensajes de chat",
+      "Las etiquetas de retención, que eliminan automáticamente los mensajes ofensivos sin revisión humana",
+      "El cifrado de mensajes de correo electrónico, que no tiene relación con las conversaciones de chat de Teams"
+    ],
+    "opts_en": [
+      "Communication compliance, which uses classifiers to detect messages matching policy conditions (such as offensive language) and routes them to reviewers, with the option to anonymize the user's identity until escalation is decided",
+      "Insider risk management, which is designed exclusively to detect file exfiltration and doesn't analyze chat messages",
+      "Retention labels, which automatically delete offensive messages without human review",
+      "Email message encryption, which has no relation to Teams chat conversations"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El cumplimiento de comunicaciones de Microsoft Purview permite configurar directivas que utilizan clasificadores integrados o personalizados para detectar comunicaciones (incluidos los chats de Microsoft Teams) que contengan, por ejemplo, lenguaje ofensivo, amenazante o de acoso. Los mensajes detectados se enrutan a revisores designados, y la solución incluye opciones de privacidad como la seudonimización de la identidad del usuario implicado, revelándola solo si el revisor decide escalar el caso para una investigación más profunda.",
+    "exp_en": "Microsoft Purview Communication compliance allows configuring policies that use built-in or custom classifiers to detect communications (including Microsoft Teams chats) containing, for example, offensive, threatening, or harassing language. Detected messages are routed to designated reviewers, and the solution includes privacy options such as pseudonymizing the identity of the involved user, revealing it only if the reviewer decides to escalate the case for further investigation."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 481,
+    "q_es": "Un administrador global ha asignado a un usuario el rol de 'Administrador de Exchange' utilizando el Centro de administración de Microsoft Entra ID. Otro administrador, que solo está familiarizado con el Centro de administración de Microsoft 365, pregunta si necesita repetir esta asignación allí también para que sea efectiva. ¿Qué es correcto respecto a la relación entre las asignaciones de roles realizadas en ambos centros de administración?",
+    "q_en": "A global administrator has assigned a user the 'Exchange Administrator' role using the Microsoft Entra admin center. Another administrator, who is only familiar with the Microsoft 365 admin center, asks whether they need to repeat this assignment there as well for it to take effect. What is correct regarding the relationship between role assignments made in both admin centers?",
+    "opts_es": [
+      "Los roles de Microsoft Entra ID son compartidos: una asignación realizada en el Centro de administración de Microsoft Entra ID se refleja también en el Centro de administración de Microsoft 365 (y viceversa), ya que ambos operan sobre el mismo directorio subyacente",
+      "Cada centro de administración mantiene su propio directorio de roles completamente independiente, por lo que la asignación debe repetirse manualmente en cada uno",
+      "Los roles asignados en el Centro de administración de Microsoft Entra ID solo afectan a Azure y nunca a los servicios de Microsoft 365",
+      "Es necesario eliminar la asignación del Centro de administración de Microsoft Entra ID antes de poder crearla en el Centro de administración de Microsoft 365"
+    ],
+    "opts_en": [
+      "Microsoft Entra ID roles are shared: an assignment made in the Microsoft Entra admin center is also reflected in the Microsoft 365 admin center (and vice versa), since both operate on the same underlying directory",
+      "Each admin center maintains its own completely independent role directory, so the assignment must be manually repeated in each one",
+      "Roles assigned in the Microsoft Entra admin center only affect Azure and never Microsoft 365 services",
+      "The assignment must be removed from the Microsoft Entra admin center before it can be created in the Microsoft 365 admin center"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Tanto el Centro de administración de Microsoft Entra ID como el Centro de administración de Microsoft 365 operan sobre el mismo directorio subyacente de Microsoft Entra ID. Por lo tanto, los roles administrativos (como Administrador de Exchange, Administrador de usuarios, etc.) asignados desde cualquiera de las dos interfaces son los mismos y se reflejan de inmediato en ambas, sin necesidad de duplicar la asignación.",
+    "exp_en": "Both the Microsoft Entra admin center and the Microsoft 365 admin center operate on the same underlying Microsoft Entra ID directory. Therefore, administrative roles (such as Exchange Administrator, User Administrator, etc.) assigned from either interface are the same and are immediately reflected in both, with no need to duplicate the assignment."
+  },
+  {
+    "dom": 1,
+    "obj": "1.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 482,
+    "q_es": "Una empresa está evaluando fusionar dos inquilinos de Microsoft 365 que surgieron tras una adquisición, de modo que todos los usuarios, buzones de correo y datos de SharePoint del inquilino adquirido pasen a residir en el inquilino de la empresa matriz. El equipo de TI advierte que este tipo de migración entre inquilinos (tenant-to-tenant) no es un proceso automático integrado en el Centro de administración y requiere una planificación cuidadosa. ¿Qué afirmación describe correctamente este tipo de proyecto?",
+    "q_en": "A company is evaluating merging two Microsoft 365 tenants that resulted from an acquisition, so that all users, mailboxes, and SharePoint data from the acquired tenant move into the parent company's tenant. The IT team notes that this type of tenant-to-tenant migration isn't an automated process built into the admin center and requires careful planning. What statement correctly describes this type of project?",
+    "opts_es": [
+      "Una migración entre inquilinos generalmente requiere herramientas de migración especializadas (de terceros o scripts personalizados), planificación de la coexistencia de correo durante la transición, y la migración de identidades, buzones y contenido de SharePoint/OneDrive de forma planificada por fases",
+      "Basta con cambiar el dominio personalizado del inquilino adquirido para que todos sus datos se trasladen automáticamente al otro inquilino de forma instantánea",
+      "Microsoft realiza esta migración automáticamente y de forma gratuita en cuanto se solicita mediante un ticket de soporte, sin intervención del cliente",
+      "No es posible fusionar inquilinos bajo ninguna circunstancia; cada inquilino debe seguir operando de forma indefinida con licencias separadas"
+    ],
+    "opts_en": [
+      "A tenant-to-tenant migration generally requires specialized migration tools (third-party or custom scripts), planning for mail coexistence during the transition, and migrating identities, mailboxes, and SharePoint/OneDrive content in planned phases",
+      "Simply changing the acquired tenant's custom domain causes all its data to move instantly and automatically to the other tenant",
+      "Microsoft performs this migration automatically and free of charge as soon as it's requested via a support ticket, with no customer involvement",
+      "It's not possible to merge tenants under any circumstances; each tenant must continue operating indefinitely with separate licenses"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las migraciones entre inquilinos de Microsoft 365 son proyectos complejos que generalmente requieren herramientas de migración especializadas (de terceros, ya que las herramientas nativas tienen limitaciones), una estrategia de coexistencia de correo durante la transición (para que los usuarios sigan recibiendo correo correctamente en ambos inquilinos mientras dura la migración), y la migración planificada por fases de identidades, buzones de Exchange Online, y contenido de SharePoint Online y OneDrive, junto con la reconfiguración de Teams y otras dependencias.",
+    "exp_en": "Microsoft 365 tenant-to-tenant migrations are complex projects that generally require specialized migration tools (third-party, since native tools have limitations), a mail coexistence strategy during the transition (so users continue receiving mail correctly in both tenants while the migration is ongoing), and a phased migration of identities, Exchange Online mailboxes, and SharePoint Online/OneDrive content, along with reconfiguration of Teams and other dependencies."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 483,
+    "q_es": "Una organización en un escenario híbrido tiene buzones tanto en Exchange Online como en un servidor Exchange local. Quieren que el correo enviado entre usuarios de ambos entornos se entregue de forma segura y directa entre los dos sistemas de correo, sin pasar por Internet de forma no cifrada, y que la organización mantenga una vista unificada de la libreta de direcciones global en ambos entornos. ¿Qué componente de Exchange facilita este flujo de correo seguro entre el entorno local y Exchange Online?",
+    "q_en": "An organization in a hybrid scenario has mailboxes both in Exchange Online and on an on-premises Exchange server. They want mail sent between users in both environments to be delivered securely and directly between the two mail systems, without traversing the internet unencrypted, and for the organization to maintain a unified global address list view across both environments. What Exchange component facilitates this secure mail flow between the on-premises environment and Exchange Online?",
+    "opts_es": [
+      "Los conectores de flujo de correo (mail flow connectors) configurados como parte de la implementación híbrida, que establecen un canal de transporte seguro y cifrado entre Exchange local y Exchange Online",
+      "Una directiva de retención aplicada al conector predeterminado de Internet",
+      "Un grupo de distribución dinámico que sincroniza manualmente cada mensaje entre los dos entornos",
+      "El acceso condicional, que gestiona el enrutamiento de correo entre servidores Exchange"
+    ],
+    "opts_en": [
+      "Mail flow connectors configured as part of the hybrid deployment, which establish a secure, encrypted transport channel between on-premises Exchange and Exchange Online",
+      "A retention policy applied to the default internet connector",
+      "A dynamic distribution group that manually synchronizes each message between the two environments",
+      "Conditional Access, which manages mail routing between Exchange servers"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "En una implementación híbrida de Exchange, el Asistente de configuración híbrida configura conectores de flujo de correo entre el entorno local y Exchange Online. Estos conectores establecen un canal de transporte seguro (normalmente utilizando TLS mutuo y certificados) para que el correo entre ambos entornos se entregue de forma directa y cifrada, y también permiten mantener una libreta de direcciones global unificada entre los dos sistemas.",
+    "exp_en": "In a hybrid Exchange deployment, the Hybrid Configuration Wizard configures mail flow connectors between the on-premises environment and Exchange Online. These connectors establish a secure transport channel (typically using mutual TLS and certificates) so that mail between both environments is delivered directly and encrypted, and they also help maintain a unified global address list between the two systems."
+  },
+  {
+    "dom": 1,
+    "obj": "1.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 484,
+    "q_es": "Una organización recibe una notificación legal que requiere preservar todos los correos electrónicos de un empleado, incluidos los elementos que el empleado elimine permanentemente de su buzón, durante el tiempo que dure un litigio cuya duración exacta aún se desconoce. La organización también tiene una directiva de retención general que elimina los correos después de 5 años, pero quiere asegurarse de que esta directiva no elimine ningún elemento relacionado con este caso mientras el litigio esté activo. ¿Qué funcionalidad deberían aplicar al buzón de este empleado?",
+    "q_en": "An organization receives a legal notice requiring preservation of all of an employee's emails, including items the employee permanently deletes from their mailbox, for the duration of a litigation whose exact length is still unknown. The organization also has a general retention policy that deletes emails after 5 years, but wants to ensure this policy doesn't delete any items related to this case while the litigation is active. What feature should they apply to this employee's mailbox?",
+    "opts_es": [
+      "Una retención por litigio (litigation hold) en el buzón del empleado, que conserva todos los elementos (incluidos los eliminados permanentemente) indefinidamente hasta que se retire la retención, independientemente de las directivas de retención generales",
+      "Una directiva de cuarentena de Exchange Online Protection, que retiene los correos solo durante 30 días como máximo",
+      "Eliminar la directiva de retención general del inquilino completo, afectando a todos los usuarios",
+      "Convertir el buzón en un buzón compartido, lo que automáticamente preserva todo su contenido de forma permanente"
+    ],
+    "opts_en": [
+      "A litigation hold on the employee's mailbox, which preserves all items (including permanently deleted ones) indefinitely until the hold is removed, regardless of general retention policies",
+      "An Exchange Online Protection quarantine policy, which retains emails for a maximum of only 30 days",
+      "Remove the general retention policy for the entire tenant, affecting all users",
+      "Convert the mailbox into a shared mailbox, which automatically preserves all of its content permanently"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La retención por litigio (litigation hold) permite preservar todos los elementos de un buzón, incluidos los correos eliminados permanentemente por el usuario o por directivas de retención automáticas, durante el tiempo que se mantenga activa la retención (que puede ser indefinido, hasta que se elimine manualmente). Esto garantiza que el contenido relevante para un litigio se conserve íntegro, independientemente de cualquier directiva de retención o eliminación general que de otro modo aplicaría.",
+    "exp_en": "Litigation hold allows preserving all items in a mailbox, including emails permanently deleted by the user or by automatic retention policies, for as long as the hold remains active (which can be indefinite, until manually removed). This ensures that content relevant to a litigation is preserved intact, regardless of any general retention or deletion policy that would otherwise apply."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 485,
+    "q_es": "Una organización quiere crear un grupo de Microsoft Entra ID cuya membresía se actualice automáticamente para incluir a todos los usuarios cuyo atributo de departamento sea 'Ventas' Y cuyo atributo de país sea 'México', eliminando o agregando usuarios al grupo automáticamente a medida que estos atributos cambian, sin que un administrador tenga que gestionar la membresía manualmente. ¿Qué tipo de grupo y configuración cumplen este requisito?",
+    "q_en": "An organization wants to create a Microsoft Entra ID group whose membership automatically updates to include all users whose department attribute is 'Sales' AND whose country attribute is 'Mexico', automatically removing or adding users to the group as these attributes change, without an administrator having to manage membership manually. What type of group and configuration meet this requirement?",
+    "opts_es": [
+      "Un grupo de pertenencia dinámica (dynamic membership group), configurado con una regla que combina ambas condiciones de atributo mediante el operador lógico 'and'",
+      "Un grupo de seguridad con membresía asignada manualmente, actualizado mensualmente por un administrador mediante una hoja de cálculo",
+      "Un grupo de distribución clásico, que no admite ningún tipo de regla basada en atributos de usuario",
+      "Una unidad administrativa, que gestiona la membresía de grupos basándose únicamente en la ubicación geográfica del administrador"
+    ],
+    "opts_en": [
+      "A dynamic membership group, configured with a rule that combines both attribute conditions using the logical 'and' operator",
+      "A security group with manually assigned membership, updated monthly by an administrator using a spreadsheet",
+      "A classic distribution group, which doesn't support any kind of user-attribute-based rule",
+      "An administrative unit, which manages group membership based solely on the administrator's geographic location"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los grupos de pertenencia dinámica en Microsoft Entra ID permiten definir una regla basada en atributos de usuario (como departamento, país, título de trabajo, etc.) utilizando una sintaxis de consulta que admite operadores lógicos como 'and' y 'or'. Microsoft Entra ID evalúa esta regla continuamente y actualiza automáticamente la membresía del grupo a medida que los atributos de los usuarios cambian, sin intervención manual del administrador.",
+    "exp_en": "Dynamic membership groups in Microsoft Entra ID allow defining a rule based on user attributes (such as department, country, job title, etc.) using a query syntax that supports logical operators such as 'and' and 'or'. Microsoft Entra ID continuously evaluates this rule and automatically updates the group's membership as users' attributes change, with no manual intervention from the administrator."
+  },
+  {
+    "dom": 1,
+    "obj": "1.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 486,
+    "q_es": "Una organización ha habilitado la gestión de grupos de autoservicio (self-service group management) para que los empleados puedan crear sus propios grupos de Microsoft 365 para proyectos temporales sin intervención de TI. Sin embargo, después de unos meses, TI nota una acumulación de cientos de grupos creados para proyectos que ya finalizaron y que nadie ha eliminado. ¿Qué configuración ayudaría a que estos grupos se gestionen automáticamente cuando dejen de utilizarse?",
+    "q_en": "An organization has enabled self-service group management so employees can create their own Microsoft 365 groups for temporary projects without IT involvement. However, after a few months, IT notices an accumulation of hundreds of groups created for projects that have already ended and that no one has deleted. What configuration would help these groups be automatically managed once they're no longer in use?",
+    "opts_es": [
+      "Configurar una directiva de expiración de grupos (group expiration policy), que requiere que los propietarios renueven el grupo periódicamente o, de no hacerlo, lo elimina automáticamente (con un periodo de gracia para restaurarlo)",
+      "Deshabilitar por completo la creación de grupos de autoservicio, eliminando todos los grupos existentes de forma inmediata sin previo aviso",
+      "Asignar una etiqueta de retención a cada grupo, que únicamente afecta al contenido de los archivos sin gestionar la existencia del propio grupo",
+      "No existe ninguna forma de gestionar automáticamente el ciclo de vida de los grupos creados por autoservicio"
+    ],
+    "opts_en": [
+      "Configure a group expiration policy, which requires owners to periodically renew the group or, if they don't, automatically deletes it (with a grace period to restore it)",
+      "Completely disable self-service group creation, immediately deleting all existing groups without notice",
+      "Assign a retention label to each group, which only affects file content without managing the group's existence itself",
+      "There's no way to automatically manage the lifecycle of self-service created groups"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Una directiva de expiración de grupos permite establecer un periodo de vida (por ejemplo, 180 días) para los grupos de Microsoft 365. Antes de que expire, se notifica a los propietarios para que renueven el grupo si sigue siendo necesario; si nadie lo renueva, el grupo se elimina automáticamente, aunque permanece recuperable durante un periodo de gracia. Esto ayuda a gestionar el ciclo de vida de los grupos creados mediante autoservicio sin requerir intervención manual constante de TI.",
+    "exp_en": "A group expiration policy allows setting a lifespan (for example, 180 days) for Microsoft 365 groups. Before it expires, owners are notified to renew the group if it's still needed; if no one renews it, the group is automatically deleted, though it remains recoverable during a grace period. This helps manage the lifecycle of self-service created groups without requiring constant manual intervention from IT."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 487,
+    "q_es": "El panel de Microsoft Entra Connect Health muestra una alerta indicando que varios objetos no se están sincronizando correctamente debido a un conflicto: dos usuarios diferentes en Active Directory local tienen el mismo valor en el atributo configurado como identificador único (por ejemplo, el mismo valor de proxyAddress o userPrincipalName), lo que provoca un error de atributo duplicado durante la sincronización. ¿Cuál es la causa más probable de este tipo de error y qué acción se requiere?",
+    "q_en": "The Microsoft Entra Connect Health dashboard shows an alert indicating that several objects aren't synchronizing correctly due to a conflict: two different users in on-premises Active Directory have the same value in the attribute configured as the unique identifier (for example, the same proxyAddress or userPrincipalName value), causing a duplicate attribute error during synchronization. What is the most likely cause of this type of error, and what action is required?",
+    "opts_es": [
+      "Existe un valor duplicado en un atributo que debe ser único entre objetos (como una dirección de proxy o un UPN); un administrador debe identificar los objetos afectados en Active Directory local y corregir el atributo duplicado para que la sincronización pueda continuar correctamente",
+      "Microsoft Entra Connect ha dejado de funcionar de forma permanente y debe reinstalarse por completo sin posibilidad de recuperación",
+      "Es un comportamiento normal y esperado que no requiere ninguna acción; los objetos duplicados se fusionan automáticamente sin intervención",
+      "El error indica que la licencia de Microsoft Entra Connect ha caducado y debe renovarse para continuar la sincronización"
+    ],
+    "opts_en": [
+      "A duplicate value exists in an attribute that must be unique across objects (such as a proxy address or UPN); an administrator must identify the affected objects in on-premises Active Directory and correct the duplicate attribute so synchronization can continue correctly",
+      "Microsoft Entra Connect has permanently stopped working and must be completely reinstalled with no possibility of recovery",
+      "This is normal, expected behavior that requires no action; duplicate objects are automatically merged without intervention",
+      "The error indicates that the Microsoft Entra Connect license has expired and must be renewed to continue synchronization"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los errores de atributo duplicado en Microsoft Entra Connect Health se producen cuando dos o más objetos de Active Directory local tienen el mismo valor en un atributo que debe ser único en Microsoft Entra ID (como proxyAddresses o userPrincipalName). El objeto que provocó el conflicto no se sincroniza hasta que un administrador identifica el duplicado en Active Directory local y corrige el valor del atributo para que sea único, permitiendo que la sincronización del objeto afectado se complete correctamente.",
+    "exp_en": "Duplicate attribute errors in Microsoft Entra Connect Health occur when two or more on-premises Active Directory objects have the same value in an attribute that must be unique in Microsoft Entra ID (such as proxyAddresses or userPrincipalName). The object causing the conflict won't synchronize until an administrator identifies the duplicate in on-premises Active Directory and corrects the attribute value to be unique, allowing synchronization of the affected object to complete correctly."
+  },
+  {
+    "dom": 2,
+    "obj": "2.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 488,
+    "q_es": "Un administrador necesita realizar cambios significativos en las reglas de sincronización de Microsoft Entra Connect (por ejemplo, modificar el filtrado de OU o agregar nuevos atributos de extensión) y quiere probar el efecto de estos cambios ejecutando ciclos de sincronización de exportación de prueba (export run profiles) sin que los cambios se escriban realmente en Microsoft Entra ID ni en Active Directory local, hasta confirmar que los resultados son los esperados. ¿Qué modo de Microsoft Entra Connect permite esto?",
+    "q_en": "An administrator needs to make significant changes to Microsoft Entra Connect synchronization rules (for example, modifying OU filtering or adding new extension attributes) and wants to test the effect of these changes by running staging/export run profiles without the changes actually being written to either Microsoft Entra ID or on-premises Active Directory, until confirming the results are as expected. What Microsoft Entra Connect mode allows this?",
+    "opts_es": [
+      "El modo de almacenamiento provisional (staging mode), que permite que un servidor de Microsoft Entra Connect importe y procese datos sin exportar los cambios a Microsoft Entra ID ni a Active Directory, útil para validar configuraciones antes de promoverlo a activo",
+      "El modo de solo lectura, que impide cualquier tipo de sincronización o procesamiento de datos por completo",
+      "El modo de instalación personalizada, que elimina automáticamente todas las reglas de sincronización existentes al iniciarse",
+      "Microsoft Entra Connect no ofrece ningún mecanismo para probar cambios de configuración antes de aplicarlos en producción"
+    ],
+    "opts_en": [
+      "Staging mode, which allows a Microsoft Entra Connect server to import and process data without exporting changes to either Microsoft Entra ID or Active Directory, useful for validating configurations before promoting it to active",
+      "Read-only mode, which prevents any kind of data synchronization or processing entirely",
+      "Custom installation mode, which automatically removes all existing synchronization rules upon startup",
+      "Microsoft Entra Connect offers no mechanism for testing configuration changes before applying them in production"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "El modo de almacenamiento provisional (staging mode) permite que un servidor de Microsoft Entra Connect importe datos desde Active Directory local y Microsoft Entra ID, y ejecute las reglas de sincronización para procesar los cambios, pero sin exportar (escribir) ningún cambio resultante a ninguno de los dos directorios. Esto permite a los administradores revisar los resultados previstos de los cambios de configuración (mediante los registros y previsualizaciones de cambios) antes de deshabilitar el modo provisional y promover el servidor a activo.",
+    "exp_en": "Staging mode allows a Microsoft Entra Connect server to import data from on-premises Active Directory and Microsoft Entra ID, and run synchronization rules to process changes, but without exporting (writing) any resulting changes to either directory. This allows administrators to review the expected results of configuration changes (via logs and change previews) before disabling staging mode and promoting the server to active."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 489,
+    "q_es": "Un equipo de seguridad descubre que algunos usuarios siguen utilizando protocolos de autenticación antiguos (como POP, IMAP o SMTP AUTH con autenticación básica) para conectarse a Exchange Online desde clientes de correo desactualizados. Estos protocolos no admiten la autenticación multifactor y representan un vector de ataque común para los intentos de relleno de credenciales (credential stuffing). La organización quiere bloquear por completo estos intentos de autenticación heredada para todos los usuarios, manteniendo el acceso mediante protocolos modernos. ¿Qué control de acceso condicional logra esto?",
+    "q_en": "A security team discovers that some users are still using legacy authentication protocols (such as POP, IMAP, or SMTP AUTH with basic authentication) to connect to Exchange Online from outdated mail clients. These protocols don't support multi-factor authentication and represent a common attack vector for credential stuffing attempts. The organization wants to completely block these legacy authentication attempts for all users, while maintaining access via modern protocols. What Conditional Access control achieves this?",
+    "opts_es": [
+      "Una directiva de acceso condicional que tenga como condición 'Clientes de autenticación heredada' (legacy authentication clients) dentro de aplicaciones cliente, aplicada a todos los usuarios, con el control de concesión 'Bloquear el acceso'",
+      "Una directiva de retención que elimina los correos enviados mediante protocolos heredados sin bloquear el acceso",
+      "Habilitar la autenticación multifactor únicamente para los protocolos modernos, lo que automáticamente bloquea los heredados sin ninguna directiva adicional",
+      "Una etiqueta de confidencialidad aplicada a los buzones de los usuarios que usan clientes desactualizados"
+    ],
+    "opts_en": [
+      "A Conditional Access policy with the 'legacy authentication clients' condition under client apps, applied to all users, with the 'Block access' grant control",
+      "A retention policy that deletes emails sent via legacy protocols without blocking access",
+      "Enabling multi-factor authentication only for modern protocols, which automatically blocks legacy ones with no additional policy",
+      "A sensitivity label applied to the mailboxes of users who use outdated clients"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las directivas de acceso condicional permiten seleccionar 'Clientes de autenticación heredada' como condición de aplicaciones cliente, lo que abarca protocolos como POP, IMAP, MAPI antiguo y SMTP AUTH con autenticación básica, los cuales no admiten controles de acceso condicional como MFA. Aplicando esta condición a todos los usuarios con el control de concesión 'Bloquear el acceso', la organización puede impedir por completo estos intentos de autenticación, reduciendo significativamente la superficie de ataque frente a relleno de credenciales.",
+    "exp_en": "Conditional Access policies allow selecting 'legacy authentication clients' as a client apps condition, which covers protocols such as POP, IMAP, older MAPI, and SMTP AUTH with basic authentication, none of which support Conditional Access controls like MFA. By applying this condition to all users with the 'Block access' grant control, the organization can completely prevent these authentication attempts, significantly reducing the attack surface against credential stuffing."
+  },
+  {
+    "dom": 2,
+    "obj": "2.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 490,
+    "q_es": "Una organización requiere MFA para todos los inicios de sesión, pero quiere hacer una excepción para los empleados que se conectan desde la red interna de la oficina principal, identificada por un rango específico de direcciones IP públicas, ya que consideran que el acceso físico a esa red ya implica un control de seguridad suficiente. Quieren definir este rango de IP una sola vez y poder reutilizarlo como condición en varias directivas de acceso condicional. ¿Qué deberían configurar primero?",
+    "q_en": "An organization requires MFA for all sign-ins, but wants to make an exception for employees connecting from the main office's internal network, identified by a specific range of public IP addresses, since they consider that physical access to that network already implies a sufficient security control. They want to define this IP range once and be able to reuse it as a condition in multiple Conditional Access policies. What should they configure first?",
+    "opts_es": [
+      "Una ubicación con nombre (named location) que defina el rango de IP de la oficina principal, marcándola opcionalmente como 'de confianza', para luego usarla como condición de ubicación en las directivas de acceso condicional necesarias",
+      "Una directiva de retención que excluya las direcciones IP de la oficina de cualquier análisis de seguridad",
+      "Un grupo de seguridad dinámico basado en la dirección IP del dispositivo del usuario en el momento de su creación",
+      "Una etiqueta de confidencialidad que se aplica automáticamente a los dispositivos conectados a esa red"
+    ],
+    "opts_en": [
+      "A named location defining the main office's IP range, optionally marking it as 'trusted', to then use it as a location condition in the necessary Conditional Access policies",
+      "A retention policy that excludes the office's IP addresses from any security analysis",
+      "A dynamic security group based on the user's device IP address at the time of creation",
+      "A sensitivity label that's automatically applied to devices connected to that network"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las ubicaciones con nombre permiten definir rangos de direcciones IP (u otras ubicaciones) que pueden marcarse como 'de confianza' y reutilizarse como condición de ubicación en múltiples directivas de acceso condicional. Una vez definida la ubicación con nombre para la oficina principal, se puede crear una directiva de acceso condicional que excluya esa ubicación del requisito de MFA, mientras otra directiva sigue exigiendo MFA para el resto de ubicaciones.",
+    "exp_en": "Named locations allow defining IP address ranges (or other locations) that can be marked as 'trusted' and reused as a location condition across multiple Conditional Access policies. Once the named location for the main office is defined, a Conditional Access policy can be created that excludes that location from the MFA requirement, while another policy continues to require MFA for all other locations."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 491,
+    "q_es": "Un analista de seguridad revisa el informe de 'inicios de sesión de riesgo' (risky sign-ins) en Microsoft Entra ID Protection y encuentra un inicio de sesión marcado como de riesgo alto debido a una detección de 'viaje imposible'. Después de investigar, el analista confirma que el usuario efectivamente viajó y que el inicio de sesión es legítimo. ¿Qué acción debería tomar el analista sobre este inicio de sesión específico para reflejar correctamente esta conclusión en el sistema?",
+    "q_en": "A security analyst reviews the 'risky sign-ins' report in Microsoft Entra ID Protection and finds a sign-in flagged as high risk due to an 'impossible travel' detection. After investigating, the analyst confirms the user actually traveled and the sign-in is legitimate. What action should the analyst take on this specific sign-in to correctly reflect this conclusion in the system?",
+    "opts_es": [
+      "Confirmar el inicio de sesión como seguro (confirm sign-in safe), lo que ayuda a refinar el modelo de detección de riesgos y reduce la probabilidad de falsos positivos similares en el futuro para ese usuario",
+      "Eliminar permanentemente la cuenta del usuario, ya que cualquier detección de riesgo alto siempre implica una cuenta comprometida sin posibilidad de error",
+      "Ignorar la alerta sin realizar ninguna acción, ya que las alertas de Identity Protection no permiten ningún tipo de retroalimentación",
+      "Forzar un cambio de contraseña inmediato y revocar todas las sesiones, incluso después de confirmar que el inicio de sesión es legítimo"
+    ],
+    "opts_en": [
+      "Confirm the sign-in as safe, which helps refine the risk detection model and reduces the likelihood of similar false positives for that user in the future",
+      "Permanently delete the user's account, since any high-risk detection always implies a compromised account with no possibility of error",
+      "Ignore the alert without taking any action, since Identity Protection alerts don't allow any kind of feedback",
+      "Force an immediate password change and revoke all sessions, even after confirming the sign-in is legitimate"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Cuando un analista investiga un inicio de sesión marcado como riesgoso y determina que en realidad es legítimo (un falso positivo), puede marcarlo como 'confirmar seguro' (confirm sign-in safe) desde el informe de inicios de sesión de riesgo. Esta retroalimentación ayuda a los algoritmos de detección de riesgos de Microsoft Entra ID Protection a ajustar futuras evaluaciones para ese usuario, reduciendo la probabilidad de alertas similares por el mismo patrón de comportamiento legítimo.",
+    "exp_en": "When an analyst investigates a sign-in flagged as risky and determines it's actually legitimate (a false positive), they can mark it as 'confirm sign-in safe' from the risky sign-ins report. This feedback helps Microsoft Entra ID Protection's risk detection algorithms adjust future assessments for that user, reducing the likelihood of similar alerts for the same legitimate behavior pattern."
+  },
+  {
+    "dom": 2,
+    "obj": "2.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 492,
+    "q_es": "Un empleado externo contratado para un proyecto de seis meses necesita acceso apto (eligible) al rol de Administrador de SharePoint a través de PIM, pero solo durante los primeros tres meses del proyecto, después de los cuales su acceso debe expirar automáticamente sin que un administrador tenga que recordar revocarlo manualmente. ¿Qué configuración de la asignación de roles en PIM permite establecer esta limitación temporal de forma automática?",
+    "q_en": "An external contractor hired for a six-month project needs eligible access to the SharePoint Administrator role via PIM, but only during the first three months of the project, after which their access should expire automatically without an administrator having to remember to manually revoke it. What PIM role assignment configuration allows setting this time limitation automatically?",
+    "opts_es": [
+      "Configurar una asignación apta (eligible) con fechas de inicio y fin específicas (assignment start and end dates) que coincidan con el periodo de tres meses, de modo que la asignación expire automáticamente al llegar la fecha de fin",
+      "Asignar el rol de forma permanente y confiar en que el administrador recuerde eliminarlo manualmente en la fecha correcta",
+      "PIM no permite establecer fechas de expiración para ninguna asignación; todas las asignaciones aptas son indefinidas por defecto",
+      "Crear una directiva de retención que elimine automáticamente la cuenta del contratista después de tres meses"
+    ],
+    "opts_en": [
+      "Configure an eligible assignment with specific start and end dates matching the three-month period, so the assignment automatically expires when the end date arrives",
+      "Assign the role permanently and rely on the administrator remembering to manually remove it on the correct date",
+      "PIM doesn't allow setting expiration dates for any assignment; all eligible assignments are indefinite by default",
+      "Create a retention policy that automatically deletes the contractor's account after three months"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Al crear una asignación de rol en PIM (apta o activa), se pueden establecer fechas de inicio y fin específicas para la asignación. Una vez que llega la fecha de fin configurada, la asignación expira automáticamente y el usuario deja de ser apto para activar (o de tener activo) ese rol, sin requerir ninguna acción manual adicional por parte de un administrador, lo que es ideal para escenarios de acceso temporal como contratistas o proyectos con duración definida.",
+    "exp_en": "When creating a role assignment in PIM (eligible or active), specific start and end dates can be set for the assignment. Once the configured end date arrives, the assignment automatically expires and the user is no longer eligible to activate (or no longer has active) that role, with no additional manual action required from an administrator, which is ideal for temporary access scenarios such as contractors or projects with a defined duration."
+  },
+  {
+    "dom": 3,
+    "obj": "3.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 493,
+    "q_es": "Microsoft Defender for Identity ha detectado que una cuenta de servicio con privilegios elevados, normalmente utilizada solo por una aplicación automatizada, ha iniciado sesión interactivamente en varias estaciones de trabajo de usuarios antes de finalmente acceder a un controlador de dominio. El equipo de seguridad quiere visualizar la ruta completa que un atacante podría seguir desde esas estaciones de trabajo hasta obtener privilegios de administrador de dominio. ¿Qué funcionalidad de Defender for Identity proporciona esta visualización?",
+    "q_en": "Microsoft Defender for Identity has detected that a privileged service account, normally used only by an automated application, has signed in interactively on several user workstations before eventually accessing a domain controller. The security team wants to visualize the complete path an attacker could follow from those workstations to obtain domain administrator privileges. What Defender for Identity feature provides this visualization?",
+    "opts_es": [
+      "Las rutas de movimiento lateral (lateral movement paths), que muestran gráficamente cómo un atacante podría moverse a través de la red utilizando cuentas y dispositivos para alcanzar cuentas con privilegios elevados",
+      "El cumplimiento de comunicaciones, que solo analiza mensajes de chat y correo electrónico sin considerar la actividad de inicio de sesión",
+      "Vínculos seguros, que solo reescriben direcciones URL en correos electrónicos",
+      "La puntuación de seguridad, que no proporciona ninguna representación gráfica de rutas de ataque"
+    ],
+    "opts_en": [
+      "Lateral movement paths, which graphically show how an attacker could move through the network using accounts and devices to reach accounts with elevated privileges",
+      "Communication compliance, which only analyzes chat and email messages without considering sign-in activity",
+      "Safe Links, which only rewrites URLs in emails",
+      "Secure Score, which provides no graphical representation of attack paths"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las rutas de movimiento lateral en Microsoft Defender for Identity analizan los patrones de inicio de sesión y las relaciones entre cuentas y dispositivos para identificar y visualizar gráficamente las rutas que un atacante podría seguir desde un dispositivo comprometido hasta obtener privilegios de administrador de dominio, ayudando a los equipos de seguridad a identificar y remediar configuraciones de riesgo (como cuentas con privilegios excesivos que inician sesión en demasiados dispositivos) antes de que sean explotadas.",
+    "exp_en": "Lateral movement paths in Microsoft Defender for Identity analyze sign-in patterns and relationships between accounts and devices to identify and graphically visualize the paths an attacker could follow from a compromised device to obtain domain administrator privileges, helping security teams identify and remediate risky configurations (such as accounts with excessive privileges signing in on too many devices) before they're exploited."
+  },
+  {
+    "dom": 3,
+    "obj": "3.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 494,
+    "q_es": "Tras conocerse públicamente una nueva vulnerabilidad crítica de día cero que afecta a un software ampliamente utilizado en la organización, el equipo de seguridad quiere obtener rápidamente un resumen del impacto de esta amenaza específica en su entorno: qué dispositivos son vulnerables, si ya se ha observado actividad de explotación relacionada, y qué acciones de mitigación recomienda Microsoft. ¿Dónde encontrarían esta información consolidada dentro de Microsoft Defender XDR?",
+    "q_en": "After a new critical zero-day vulnerability affecting software widely used in the organization becomes publicly known, the security team wants to quickly get a summary of this specific threat's impact on their environment: which devices are vulnerable, whether exploitation activity has already been observed, and what mitigation actions Microsoft recommends. Where would they find this consolidated information within Microsoft Defender XDR?",
+    "opts_es": [
+      "En los informes de análisis de amenazas (threat analytics), que proporcionan informes detallados elaborados por expertos de Microsoft sobre amenazas emergentes, incluyendo el impacto en el entorno del cliente y recomendaciones de mitigación",
+      "En el Centro de mensajes del Centro de administración de Microsoft 365, que no incluye información sobre amenazas de seguridad",
+      "En una directiva de retención configurada específicamente para vulnerabilidades de día cero",
+      "En el catálogo de aplicaciones empresariales, que enumera únicamente aplicaciones SaaS conectadas"
+    ],
+    "opts_en": [
+      "In threat analytics reports, which provide detailed reports created by Microsoft experts about emerging threats, including the impact on the customer's environment and mitigation recommendations",
+      "In the Message center of the Microsoft 365 admin center, which doesn't include security threat information",
+      "In a retention policy configured specifically for zero-day vulnerabilities",
+      "In the enterprise applications gallery, which only lists connected SaaS applications"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Los informes de análisis de amenazas (threat analytics) en Microsoft Defender XDR son elaborados por expertos en seguridad de Microsoft sobre amenazas emergentes relevantes, como vulnerabilidades de día cero o campañas de ataque activas. Cada informe incluye un resumen ejecutivo, detalles técnicos, indicadores de compromiso, y lo más importante, una sección de 'impacto en el entorno' que muestra cuántos dispositivos del inquilino del cliente son vulnerables o han mostrado actividad relacionada, junto con recomendaciones de mitigación específicas.",
+    "exp_en": "Threat analytics reports in Microsoft Defender XDR are created by Microsoft security experts about relevant emerging threats, such as zero-day vulnerabilities or active attack campaigns. Each report includes an executive summary, technical details, indicators of compromise, and most importantly, an 'impact on your environment' section showing how many devices in the customer's tenant are vulnerable or have shown related activity, along with specific mitigation recommendations."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 495,
+    "q_es": "El equipo de seguridad de correo electrónico ha identificado un dominio externo legítimo desde el cual un socio comercial envía correos importantes, pero que ocasionalmente es marcado incorrectamente como spam por los filtros automáticos debido a su configuración de reputación. Al mismo tiempo, han identificado una URL específica utilizada en una campaña de phishing reciente que debe bloquearse en todos los correos entrantes, independientemente del resultado del resto de los filtros. ¿Qué herramienta de Microsoft 365 Defender permite gestionar ambas excepciones (permitir un remitente y bloquear una URL) de forma centralizada?",
+    "q_en": "The email security team has identified a legitimate external domain from which a business partner sends important emails, but which is occasionally incorrectly flagged as spam by automatic filters due to its reputation configuration. At the same time, they've identified a specific URL used in a recent phishing campaign that must be blocked in all incoming emails, regardless of the result of other filters. What Microsoft 365 Defender tool allows managing both exceptions (allowing a sender and blocking a URL) centrally?",
+    "opts_es": [
+      "La lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List), que permite agregar entradas para permitir remitentes/dominios de confianza y bloquear URL, archivos o remitentes específicos de forma centralizada",
+      "Una directiva de retención, que solo gestiona el ciclo de vida de los correos sin afectar a su entrega",
+      "El panel de Puntuación de seguridad, que no permite agregar entradas de permitir o bloquear",
+      "Vínculos seguros, que solo puede bloquear URL pero nunca permitir remitentes específicos"
+    ],
+    "opts_en": [
+      "The Tenant Allow/Block List, which allows adding entries to allow trusted senders/domains and block specific URLs, files, or senders centrally",
+      "A retention policy, which only manages the email lifecycle without affecting delivery",
+      "The Secure Score dashboard, which doesn't allow adding allow or block entries",
+      "Safe Links, which can only block URLs but never allow specific senders"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List) en Microsoft 365 Defender permite a los administradores crear entradas centralizadas para permitir explícitamente remitentes o dominios de confianza (anulando detecciones incorrectas de spam) y, al mismo tiempo, bloquear explícitamente URL, archivos o remitentes específicos conocidos como maliciosos, independientemente del resultado de otros filtros automáticos, proporcionando control granular sobre casos específicos.",
+    "exp_en": "The Tenant Allow/Block List in Microsoft 365 Defender allows administrators to create centralized entries to explicitly allow trusted senders or domains (overriding incorrect spam detections) while also explicitly blocking specific URLs, files, or senders known to be malicious, regardless of the result of other automatic filters, providing granular control over specific cases."
+  },
+  {
+    "dom": 3,
+    "obj": "3.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 496,
+    "q_es": "Una organización ha sido objetivo de varios intentos de phishing en los que los atacantes falsifican la dirección de correo del director financiero (CFO) para solicitar transferencias urgentes a empleados del departamento de finanzas. La organización quiere que, específicamente cuando se detecte un correo que intente suplantar la identidad del CFO (ya sea mediante un dominio similar o un nombre de usuario parecido), se aplique una acción más estricta, como mover el mensaje a cuarentena, además de las protecciones generales contra phishing ya existentes. ¿Qué funcionalidad de las directivas anti-phishing de Defender for Office 365 permite proteger específicamente a personas designadas como de alto valor?",
+    "q_en": "An organization has been the target of several phishing attempts where attackers spoof the CFO's email address to request urgent transfers from finance department employees. The organization wants that, specifically when an email attempting to impersonate the CFO's identity is detected (whether via a similar domain or a similar username), a stricter action is applied, such as moving the message to quarantine, in addition to existing general anti-phishing protections. What feature of Defender for Office 365 anti-phishing policies allows specifically protecting designated high-value individuals?",
+    "opts_es": [
+      "La protección contra suplantación de usuarios (user impersonation protection), que permite especificar usuarios concretos (como el CFO) para que el sistema analice intentos de suplantación dirigidos a ellos y aplique acciones específicas",
+      "La protección contra correo no deseado masivo (bulk mail), que se aplica únicamente a boletines y correos comerciales masivos",
+      "Los vínculos seguros, que solo analizan direcciones URL dentro del cuerpo del mensaje sin considerar al remitente",
+      "Una directiva de retención que elimina automáticamente cualquier correo dirigido al CFO"
+    ],
+    "opts_en": [
+      "User impersonation protection, which allows specifying particular users (such as the CFO) so the system analyzes impersonation attempts targeting them and applies specific actions",
+      "Bulk mail protection, which only applies to newsletters and mass commercial emails",
+      "Safe Links, which only analyzes URLs within the message body without considering the sender",
+      "A retention policy that automatically deletes any email addressed to the CFO"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La protección contra suplantación de usuarios, dentro de las directivas anti-phishing de Microsoft Defender for Office 365, permite especificar usuarios concretos (como ejecutivos de alto valor) que se desean proteger. El sistema analiza los correos entrantes buscando intentos de suplantar a estos usuarios mediante dominios similares (cousin domains) o nombres de usuario parecidos, y aplica la acción configurada (como cuarentena) cuando detecta un intento de suplantación, proporcionando una capa adicional de protección dirigida.",
+    "exp_en": "User impersonation protection, within Microsoft Defender for Office 365 anti-phishing policies, allows specifying particular users (such as high-value executives) to be protected. The system analyzes incoming emails looking for attempts to impersonate these users via similar (cousin) domains or similar usernames, and applies the configured action (such as quarantine) when an impersonation attempt is detected, providing an additional layer of targeted protection."
+  },
+  {
+    "dom": 3,
+    "obj": "3.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 497,
+    "q_es": "El equipo de seguridad quiere una métrica única que resuma cuán expuesta está la organización a vulnerabilidades en sus dispositivos, calculada en función de las vulnerabilidades sin corregir, la configuración de seguridad de los dispositivos y otros factores de riesgo. Quieren poder ver cómo esta métrica cambia con el tiempo a medida que aplican las recomendaciones de seguridad, y priorizar las acciones que tendrían el mayor impacto en reducirla. ¿Qué proporciona esta métrica dentro de Microsoft Defender Vulnerability Management?",
+    "q_en": "The security team wants a single metric that summarizes how exposed the organization is to vulnerabilities on its devices, calculated based on unremediated vulnerabilities, device security configuration, and other risk factors. They want to be able to see how this metric changes over time as they apply security recommendations, and prioritize the actions that would have the greatest impact in reducing it. What provides this metric within Microsoft Defender Vulnerability Management?",
+    "opts_es": [
+      "La puntuación de exposición (exposure score), que refleja el riesgo actual de los dispositivos de la organización y se puede usar para priorizar recomendaciones de seguridad y realizar un seguimiento de su reducción a lo largo del tiempo",
+      "El registro de auditoría unificado, que solo proporciona un registro textual de eventos sin ninguna puntuación calculada",
+      "La directiva de retención, que asigna una puntuación basada únicamente en el volumen de datos retenidos",
+      "El catálogo de aplicaciones empresariales, que no calcula ninguna puntuación relacionada con vulnerabilidades de dispositivos"
+    ],
+    "opts_en": [
+      "The exposure score, which reflects the organization's devices' current risk and can be used to prioritize security recommendations and track its reduction over time",
+      "The Unified audit log, which only provides a textual record of events with no calculated score",
+      "The retention policy, which assigns a score based solely on the volume of retained data",
+      "The enterprise applications gallery, which doesn't calculate any score related to device vulnerabilities"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La puntuación de exposición en Microsoft Defender Vulnerability Management es una métrica que refleja el riesgo actual de los dispositivos de la organización frente a vulnerabilidades, considerando factores como vulnerabilidades sin corregir, configuraciones de seguridad y la criticidad de los dispositivos expuestos. Una puntuación más baja indica menor exposición. El panel muestra recomendaciones de seguridad priorizadas según su impacto potencial en la reducción de esta puntuación, permitiendo seguir su evolución a lo largo del tiempo.",
+    "exp_en": "The exposure score in Microsoft Defender Vulnerability Management is a metric that reflects the organization's devices' current risk regarding vulnerabilities, considering factors such as unremediated vulnerabilities, security configurations, and the criticality of exposed devices. A lower score indicates lower exposure. The dashboard shows security recommendations prioritized by their potential impact on reducing this score, allowing tracking of its evolution over time."
+  },
+  {
+    "dom": 3,
+    "obj": "3.3",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 498,
+    "q_es": "Durante la investigación de un incidente, un analista del SOC necesita realizar una investigación profunda de un dispositivo específico que muestra signos de compromiso: quiere ejecutar comandos para examinar archivos en el sistema, listar procesos en ejecución, recopilar registros de eventos adicionales, y opcionalmente eliminar archivos maliciosos identificados, todo de forma remota y en tiempo real, sin desconectar al usuario del dispositivo. ¿Qué funcionalidad de Microsoft Defender for Endpoint proporciona esta capacidad de investigación remota interactiva?",
+    "q_en": "During an incident investigation, a SOC analyst needs to perform a deep investigation of a specific device showing signs of compromise: they want to run commands to examine files on the system, list running processes, collect additional event logs, and optionally remove identified malicious files, all remotely and in real time, without disconnecting the user from the device. What Microsoft Defender for Endpoint feature provides this interactive remote investigation capability?",
+    "opts_es": [
+      "La respuesta en vivo (live response), una consola remota que permite a los analistas ejecutar comandos de investigación y corrección directamente en el dispositivo en tiempo real",
+      "El aislamiento de dispositivos, que desconecta completamente el dispositivo de la red e impide cualquier interacción remota adicional",
+      "La búsqueda avanzada, que solo permite consultar datos históricos sin ninguna interacción en tiempo real con el dispositivo",
+      "Las reglas de reducción de superficie de ataque, que son configuraciones preventivas sin capacidad de investigación interactiva"
+    ],
+    "opts_en": [
+      "Live response, a remote console that allows analysts to run investigation and remediation commands directly on the device in real time",
+      "Device isolation, which completely disconnects the device from the network and prevents any further remote interaction",
+      "Advanced hunting, which only allows querying historical data with no real-time interaction with the device",
+      "Attack surface reduction rules, which are preventive configurations with no interactive investigation capability"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La respuesta en vivo (live response) en Microsoft Defender for Endpoint proporciona acceso remoto instantáneo a un dispositivo mediante una shell de línea de comandos, permitiendo a los analistas autorizados realizar investigaciones en profundidad: examinar archivos, ejecutar scripts, recopilar evidencias forenses adicionales, y tomar acciones de corrección como eliminar archivos maliciosos, todo en tiempo real y sin interrumpir la experiencia del usuario en el dispositivo (a diferencia del aislamiento de dispositivos).",
+    "exp_en": "Live response in Microsoft Defender for Endpoint provides instant remote access to a device via a command-line shell, allowing authorized analysts to perform in-depth investigations: examining files, running scripts, collecting additional forensic evidence, and taking remediation actions such as removing malicious files, all in real time and without disrupting the user's experience on the device (unlike device isolation)."
+  },
+  {
+    "dom": 4,
+    "obj": "4.1",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 499,
+    "q_es": "Un empleado necesita enviar un correo electrónico con información financiera confidencial a un colega interno, pero quiere asegurarse de que el destinatario no pueda reenviar, imprimir ni copiar el contenido del mensaje a otra aplicación, incluso si el destinatario lo intenta deliberadamente. ¿Qué tipo de etiqueta de confidencialidad, aplicada al correo, permite imponer estas restricciones de uso específicas sobre el contenido del mensaje?",
+    "q_en": "An employee needs to send an email with confidential financial information to an internal colleague, but wants to ensure the recipient can't forward, print, or copy the message's content to another application, even if the recipient deliberately tries to. What type of sensitivity label, applied to the email, allows enforcing these specific usage restrictions on the message content?",
+    "opts_es": [
+      "Una etiqueta de confidencialidad con cifrado que aplica permisos de uso definidos por el usuario (o una plantilla de permisos), como 'No reenviar' (Do Not Forward), que restringen el reenvío, la impresión y la copia del contenido mediante Azure Rights Management",
+      "Una etiqueta de retención, que solo determina cuánto tiempo se conserva el mensaje sin restringir ninguna acción del destinatario",
+      "Una directiva de cuarentena, que retiene el mensaje antes de su entrega pero no impone restricciones después de la entrega",
+      "Un clasificador entrenable, que únicamente detecta el tipo de contenido sin aplicar ninguna restricción de uso"
+    ],
+    "opts_en": [
+      "A sensitivity label with encryption that applies user-defined usage permissions (or a permissions template), such as 'Do Not Forward', restricting forwarding, printing, and copying of content via Azure Rights Management",
+      "A retention label, which only determines how long the message is retained without restricting any recipient action",
+      "A quarantine policy, which holds the message before delivery but doesn't impose restrictions after delivery",
+      "A trainable classifier, which only detects the type of content without applying any usage restriction"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "Las etiquetas de confidencialidad con cifrado pueden aplicar permisos de uso mediante Azure Rights Management, incluyendo plantillas predefinidas como 'No reenviar' (Do Not Forward), que impide que el destinatario reenvíe, imprima o copie el contenido del mensaje, independientemente del cliente de correo que utilice. Estas restricciones se aplican de manera persistente al contenido, incluso después de que el mensaje haya sido entregado, ya que están incrustadas en el propio archivo/mensaje cifrado.",
+    "exp_en": "Sensitivity labels with encryption can apply usage permissions via Azure Rights Management, including predefined templates such as 'Do Not Forward', which prevents the recipient from forwarding, printing, or copying the message's content, regardless of the mail client used. These restrictions are persistently applied to the content, even after the message has been delivered, since they're embedded in the encrypted file/message itself."
+  },
+  {
+    "dom": 4,
+    "obj": "4.2",
+    "type": "mc",
+    "exam": "ms-102",
+    "id": 500,
+    "q_es": "Un equipo legal está utilizando eDiscovery (Premium) para gestionar un caso que involucra a 15 empleados como custodios de información potencialmente relevante. Necesitan colocar en retención legal el contenido de los buzones de correo y las cuentas de OneDrive de estos 15 empleados, comunicarles que sus datos están sujetos a una retención legal mediante una notificación, y posteriormente recopilar y analizar su contenido para la revisión del caso. ¿Qué funcionalidad de eDiscovery (Premium) está diseñada específicamente para gestionar a estas personas y sus fuentes de datos asociadas dentro de un caso?",
+    "q_en": "A legal team is using eDiscovery (Premium) to manage a case involving 15 employees as custodians of potentially relevant information. They need to place a legal hold on the content of these 15 employees' mailboxes and OneDrive accounts, notify them that their data is subject to a legal hold via a notification, and later collect and analyze their content for case review. What eDiscovery (Premium) feature is specifically designed to manage these individuals and their associated data sources within a case?",
+    "opts_es": [
+      "La gestión de custodios (custodian management), que permite agregar personas a un caso, colocar en retención sus fuentes de datos asociadas (buzones, OneDrive) y enviarles comunicaciones de retención",
+      "Las directivas de retención generales del inquilino, que se aplican a todos los usuarios sin posibilidad de seleccionar individuos específicos",
+      "Las etiquetas de confidencialidad, que solo clasifican documentos sin ninguna funcionalidad de retención legal ni gestión de personas",
+      "El cumplimiento de comunicaciones, que está diseñado para detectar lenguaje inapropiado y no para gestionar custodios de un caso legal"
+    ],
+    "opts_en": [
+      "Custodian management, which allows adding people to a case, placing a hold on their associated data sources (mailboxes, OneDrive), and sending them hold notifications",
+      "General tenant-wide retention policies, which apply to all users with no ability to select specific individuals",
+      "Sensitivity labels, which only classify documents with no legal hold or custodian management functionality",
+      "Communication compliance, which is designed to detect inappropriate language, not to manage custodians in a legal case"
+    ],
+    "correct": [
+      0
+    ],
+    "exp_es": "La gestión de custodios en eDiscovery (Premium) permite a los equipos legales agregar personas específicas (custodios) a un caso, asociar automáticamente sus fuentes de datos (buzones de Exchange, OneDrive, sitios de SharePoint), colocar una retención legal sobre esos datos para preservarlos, y enviarles comunicaciones de notificación de retención. Esto centraliza la gestión del ciclo de vida de los datos relevantes para el caso dentro de un conjunto definido de personas.",
+    "exp_en": "Custodian management in eDiscovery (Premium) allows legal teams to add specific individuals (custodians) to a case, automatically associate their data sources (Exchange mailboxes, OneDrive, SharePoint sites), place a legal hold on that data to preserve it, and send them hold notification communications. This centralizes the management of the data lifecycle relevant to the case within a defined set of individuals."
   }
 ]
