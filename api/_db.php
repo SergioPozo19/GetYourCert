@@ -1,8 +1,18 @@
 <?php
+// config.php vive FUERA de public_html (un nivel por encima) para que los
+// despliegues por git (que solo tocan public_html) nunca lo borren ni lo sobreescriban.
+function app_config(){
+  static $config = null;
+  if($config === null){
+    $config = require __DIR__ . '/../../config.php';
+  }
+  return $config;
+}
+
 function db(){
   static $pdo = null;
   if($pdo === null){
-    $config = require __DIR__ . '/config.php';
+    $config = app_config();
     $pdo = new PDO(
       "mysql:host={$config['host']};dbname={$config['db']};charset=utf8mb4",
       $config['user'],

@@ -1,6 +1,9 @@
 <?php
-// Copia este archivo como config.php y rellena con tus credenciales reales de
-// la base de datos MySQL creada en hPanel. config.php NO se sube a git.
+// IMPORTANTE: este archivo debe colocarse como "config.php" UN NIVEL POR
+// ENCIMA de public_html (es decir, fuera de la carpeta que despliega git),
+// para que los despliegues automáticos no lo borren ni lo sobreescriban.
+// Rellena con tus credenciales reales de la base de datos MySQL creada en
+// hPanel. config.php NO se sube a git.
 return [
   'host' => 'localhost',
   'db'   => 'uXXXXXXXX_earnyourcert',

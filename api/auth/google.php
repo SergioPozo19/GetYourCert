@@ -16,7 +16,7 @@ if($credential === ''){
   exit;
 }
 
-$config = require __DIR__ . '/../config.php';
+$config = app_config();
 
 try {
   $resp = file_get_contents('https://oauth2.googleapis.com/tokeninfo?id_token=' . urlencode($credential));
