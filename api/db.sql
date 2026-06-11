@@ -35,3 +35,18 @@ CREATE TABLE sessions (
 );
 
 ALTER TABLE pro_codes ADD COLUMN email VARCHAR(255) NULL;
+
+-- ===== Suscripciones de Patreon =====
+
+ALTER TABLE users ADD COLUMN patreon_member_id VARCHAR(64) NULL;
+
+-- Estado de mecenas de Patreon, indexado por email, para vincular
+-- automáticamente cuando el usuario inicie sesión con Google usando
+-- el mismo correo (independientemente de qué ocurra primero).
+CREATE TABLE patreon_pledges (
+  member_id VARCHAR(64) PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  active TINYINT(1) NOT NULL DEFAULT 1,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE INDEX idx_patreon_pledges_email ON patreon_pledges (email);

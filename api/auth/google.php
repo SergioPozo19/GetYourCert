@@ -52,6 +52,20 @@ try {
   $stmt->execute([$sub]);
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+  // Si el correo coincide con un mecenas de Patreon activo y aún no está vinculado,
+  // activamos Pro automáticamente y guardamos la vinculación.
+  if(!$user['is_pro']){
+    $stmt = $pdo->prepare('SELECT member_id FROM patreon_pledges WHERE email = ? AND active = 1');
+    $stmt->execute([$email]);
+    $pledge = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($pledge){
+      $upd = $pdo->prepare('UPDATE users SET is_pro = 1, patreon_member_id = ? WHERE id = ?');
+      $upd->execute([$pledge['member_id'], $user['id']]);
+      $user['is_pro'] = 1;
+      $user['patreon_member_id'] = $pledge['member_id'];
+    }
+  }
+
   $token = bin2hex(random_bytes(32));
   $stmt = $pdo->prepare('INSERT INTO sessions (token, user_id, expires_at) VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 90 DAY))');
   $stmt->execute([$token, $user['id']]);
