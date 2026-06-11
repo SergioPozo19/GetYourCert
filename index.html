@@ -1039,8 +1039,10 @@ function initGoogleAuth(){
     if(++gsiInitTries<25)setTimeout(initGoogleAuth,200);
     return;
   }
-  google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleCredential});
-  google.accounts.id.renderButton($('#gsiButton'),{theme:'outline',size:'medium',type:'standard',shape:'pill'});
+  try{
+    google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleCredential});
+    google.accounts.id.renderButton($('#gsiButton'),{theme:'outline',size:'medium',type:'standard',shape:'pill'});
+  }catch(e){ /* el Client ID puede tardar en activarse; reintenta en la siguiente carga */ }
 }
 
 $('#logoutBtn').addEventListener('click',async()=>{
@@ -2423,9 +2425,6 @@ window.addEventListener('beforeunload',e=>{ if(examActive&&!graded){ e.preventDe
 
 applyI18n();
 $('#brandSub').textContent=t('brandDesc');
-updateAccountUI();
-initGoogleAuth();
-restoreSession();
 if(!EXAMS.length){
   $('#examGrid').innerHTML='<p style="color:var(--bad);padding:20px;text-align:center">Error loading exam data. Please reload the page.</p>';
 }else{
@@ -2433,6 +2432,10 @@ if(!EXAMS.length){
   // Preload question files in background so entering an exam is instant
   setTimeout(()=>{ EXAMS.forEach(ex=>loadQuestions(ex.id).catch(()=>{})); }, 800);
 }
+
+updateAccountUI();
+initGoogleAuth();
+restoreSession();
 
 // Share result
 function shareResult(){
