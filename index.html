@@ -1048,12 +1048,6 @@ function initGoogleAuth(){
   }
 }
 
-$('#logoutBtn').addEventListener('click',async()=>{
-  try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
-  Store.del('session');Store.del('account');
-  updateAccountUI();
-});
-
 function saveExamState(){
   if(!examActive||!currentExam||!exam.length||graded)return;
   Store.set('exam',{
@@ -1107,6 +1101,13 @@ function srsDueList(){
 function srsDueCount(){ return srsDueList().length; }
 
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+
+$('#logoutBtn').addEventListener('click',async()=>{
+  try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
+  Store.del('session');Store.del('account');
+  updateAccountUI();
+});
+
 const t=k=>I18N[lang][k]||k;
 // L(obj, field) → obj.field_es / obj.field_en based on current lang.
 // L(obj) → obj.es / obj.en (for row objects with bare language keys).
