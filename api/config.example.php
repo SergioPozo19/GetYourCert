@@ -14,4 +14,6 @@ return [
   // Clave secreta para conceder/revocar Pro manualmente desde api/admin/grant-pro.html
   // Genera una cadena aleatoria larga, ej: bin2hex(random_bytes(24))
   'admin_secret' => 'CHANGE_ME',
+  // Secreto del webhook de Patreon (Creators -> Settings -> Webhooks)
+  'patreon_webhook_secret' => 'CHANGE_ME',
 ];
