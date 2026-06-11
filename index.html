@@ -93,9 +93,13 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .stat .n{font-size:26px;font-weight:700;font-family:var(--mono);color:var(--ink)}
 .stat .l{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
 .modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:22px}
-.quota-pill{display:flex;align-items:center;gap:6px;margin:0 auto 14px;padding:5px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:600;font-family:var(--mono);width:fit-content}
+.quota-wrap{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 14px;flex-wrap:wrap}
+.quota-pill{display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:600;font-family:var(--mono);width:fit-content}
 .quota-pill.pro{background:var(--ok-soft);color:var(--ok)}
 .quota-pill:empty{display:none}
+.quota-pro-link{background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--accent);cursor:pointer;transition:.15s}
+.quota-pro-link:hover{background:var(--accent-soft);border-color:var(--accent)}
+.quota-pro-link.hidden{display:none}
 /* ---- Catálogo de exámenes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
@@ -513,7 +517,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </button>
     </div>
 
-    <div class="quota-pill" id="quotaPill"></div>
+    <div class="quota-wrap">
+      <div class="quota-pill" id="quotaPill"></div>
+      <button class="quota-pro-link hidden" id="quotaProLink" data-i="quotaProLink">¿Código Pro?</button>
+    </div>
     <div class="modes" id="modes">
       <div class="mode sel" data-mode="exam">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
@@ -706,7 +713,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <button class="modal-close-btn" id="proModalClose" aria-label="Cerrar">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-    <div class="len-modal-icon" aria-hidden="true">🔒</div>
+    <div class="len-modal-icon" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <h3 id="proModalTitle">Límite diario alcanzado</h3>
     <p id="proModalSub" class="len-modal-sub"></p>
     <a class="support-btn" id="proModalPatreon" href="https://www.patreon.com/" target="_blank" rel="noopener noreferrer">
@@ -726,7 +733,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <button class="modal-close-btn" id="loginModalClose" aria-label="Cerrar">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-    <div class="len-modal-icon" aria-hidden="true">🔐</div>
+    <div class="len-modal-icon" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
     <h3 id="loginModalTitle" data-i="loginRequiredTitle">Inicia sesión para continuar</h3>
     <p class="len-modal-sub" data-i="loginRequiredSub">Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso.</p>
     <div id="gsiButtonModal" class="gsi-btn" style="display:flex;justify-content:center;margin-top:14px"></div>
@@ -819,7 +826,7 @@ const I18N = {
     disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
     copyright:"© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
     shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!",
-    quotaLeft:"{n}/20 preguntas hoy", proLabel:"PRO · ilimitado",
+    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"¿Código Pro?",
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para conseguir un código Pro sin límites.",
     proManualTitle:"¿Tienes un código Pro?", proManualSub:"Introduce tu código de mecenas de Patreon para desbloquear preguntas ilimitadas.",
     proCodePh:"Código Pro", proRedeemBtn:"Canjear código", proRedeemOk:"¡Código válido! Pro desbloqueado.", proRedeemErr:"Código no válido o ya usado.",
@@ -874,7 +881,7 @@ const I18N = {
     disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
     copyright:"© 2026 EarnYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
     shareResult:"Share result", shareCopied:"Link copied!",
-    quotaLeft:"{n}/20 questions today", proLabel:"PRO · unlimited",
+    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Pro code?",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to get a Pro code with no limits.",
     proManualTitle:"Have a Pro code?", proManualSub:"Enter your Patreon supporter code to unlock unlimited questions.",
     proCodePh:"Pro code", proRedeemBtn:"Redeem code", proRedeemOk:"Code valid! Pro unlocked.", proRedeemErr:"Invalid or already used code.",
@@ -1167,8 +1174,9 @@ function updateModeBadges(){
 }
 function updateQuotaBadge(){
   const el=$('#quotaPill'); if(!el)return;
-  if(isPro()){ el.textContent=t('proLabel'); el.classList.add('pro'); }
-  else{ el.textContent=t('quotaLeft').replace('{n}',remainingQuota()); el.classList.remove('pro'); }
+  const link=$('#quotaProLink');
+  if(isPro()){ el.textContent=t('proLabel'); el.classList.add('pro'); if(link)link.classList.add('hidden'); }
+  else{ el.textContent=t('quotaLeft').replace('{n}',remainingQuota()); el.classList.remove('pro'); if(link)link.classList.remove('hidden'); }
 }
 // --- Dominios dinámicos según el examen activo ---
 function domList(){
@@ -2241,7 +2249,13 @@ $('#themeBtn').addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme');
   setTheme(cur==='dark'?'light':'dark',true);
 });
-const MODE_ICONS={'exam':'🎯','domain':'📚','all':'🔄','srs':'🧠','bookmarks':'⭐'};
+const MODE_ICONS={
+  exam:'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+  domain:'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>',
+  all:'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>',
+  srs:'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.5 2.8L3 8"/><path d="M3 4v4h4"/></svg>',
+  bookmarks:'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+};
 function openLenModal(){
   populateLen();
   const c=domCounts();
@@ -2251,7 +2265,7 @@ function openLenModal(){
   else if(mode==='srs'){max=srsDueCount(); sub=t('m4t');}
   else if(mode==='bookmarks'){max=bookmarkCount(); sub=t('m5t');}
   else return;
-  $('#lenModalIcon').textContent=MODE_ICONS[mode]||'📝';
+  $('#lenModalIcon').innerHTML=MODE_ICONS[mode]||'';
   $('#lenModalTitle').textContent=t('lenLabel');
   $('#lenModalSub').textContent=sub+' · '+max+' '+(lang==='es'?'disponibles':'available');
   $('#lenModal').classList.add('show');
@@ -2290,6 +2304,7 @@ function closeProModal(){ $('#proModal').classList.remove('show'); }
 $('#proModalClose').addEventListener('click',closeProModal);
 $('#proModal').addEventListener('click',e=>{ if(e.target===$('#proModal')) closeProModal(); });
 $('#proLinkBtn').addEventListener('click',()=>openProModal('manual'));
+$('#quotaProLink').addEventListener('click',()=>openProModal('manual'));
 $('#proRedeemBtn').addEventListener('click',async()=>{
   const code=$('#proCodeInput').value.trim();
   const msg=$('#proRedeemMsg');
@@ -2490,8 +2505,8 @@ function shareResult(){
   const pct=$('#scorePct').textContent;
   const code=currentExam?currentExam.code:'';
   const text=(lang==='es'
-    ?'He obtenido un '+pct+' en el examen '+code+' con EarnYourCert 🎓'
-    :'I scored '+pct+' on the '+code+' exam with EarnYourCert 🎓');
+    ?'He obtenido un '+pct+' en el examen '+code+' con EarnYourCert'
+    :'I scored '+pct+' on the '+code+' exam with EarnYourCert');
   const url='https://earnyourcert.com/';
   if(navigator.share){
     navigator.share({title:'EarnYourCert',text,url}).catch(()=>{});
