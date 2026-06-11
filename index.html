@@ -908,7 +908,7 @@ function consumeQuota(n){
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
 // ===== Cuenta Google + sincronización de progreso =====
-const GOOGLE_CLIENT_ID='PENDING_GOOGLE_CLIENT_ID';
+const GOOGLE_CLIENT_ID='562027841454-95lm4222qmqprse2tbje27jsgk9oruid.apps.googleusercontent.com';
 function authHeaders(){
   const tok=Store.get('session',null);
   return tok?{'Authorization':'Bearer '+tok}:{};
