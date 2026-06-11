@@ -1032,7 +1032,7 @@ function restoreSession(){
   }).catch(()=>{});
 }
 
-let gsiInitTries=0;
+let gsiInitTries=0, gsiInitErrors=0;
 function initGoogleAuth(){
   if(GOOGLE_CLIENT_ID.indexOf('PENDING')!==-1)return;
   if(typeof google==='undefined'||!google.accounts){
@@ -1042,7 +1042,10 @@ function initGoogleAuth(){
   try{
     google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleCredential});
     google.accounts.id.renderButton($('#gsiButton'),{theme:'outline',size:'medium',type:'standard',shape:'pill'});
-  }catch(e){ /* el Client ID puede tardar en activarse; reintenta en la siguiente carga */ }
+  }catch(e){
+    console.error('Google Identity init failed:',e);
+    if(++gsiInitErrors<=3)setTimeout(initGoogleAuth,5000);
+  }
 }
 
 $('#logoutBtn').addEventListener('click',async()=>{
