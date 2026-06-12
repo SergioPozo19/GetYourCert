@@ -246,22 +246,65 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .btn-ghost:hover{background:var(--panel-2);border-color:var(--accent)}
 .back-link{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:var(--ink-2);cursor:pointer;font-size:13.5px;margin-bottom:10px}
 .back-link:hover{color:var(--accent)}
-.prog-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:920px;margin:0 auto 20px}
-.prog-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.prog-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:960px;margin:0 auto 18px}
+.prog-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;transition:transform .2s,box-shadow .2s}
+.prog-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.prog-card .pi{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;margin:0 auto 8px;background:var(--accent-soft);color:var(--accent)}
+.prog-card.best .pi{background:var(--ok-soft);color:var(--ok)}
+.prog-card.pass .pi{background:var(--ok-soft);color:var(--ok)}
+.prog-card.streak .pi{background:var(--warn-soft);color:var(--warn)}
 .prog-card .pv{font-size:26px;font-weight:700;font-family:var(--mono);color:var(--ink)}
 .prog-card.streak .pv{font-size:18px}
 .prog-card .pl{font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
-.prog-section{max-width:920px;margin:0 auto 18px}
-.prog-section h3{font-size:14px;color:var(--ink-2);margin:0 0 10px}
-.attempt{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:8px}
-.attempt .a-code{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--accent);min-width:70px}
-.attempt .a-date{font-size:12px;color:var(--ink-3);flex:1}
+.prog-section{max-width:960px;margin:0 auto 18px}
+.prog-section h3{font-size:14px;color:var(--ink-2);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.prog-section h3 svg{flex-shrink:0;color:var(--accent)}
+.prog-card-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+/* Score trend chart */
+.prog-chart-wrap{overflow-x:auto}
+.prog-chart-wrap svg{display:block;min-width:480px;width:100%;height:auto}
+.pt-area{fill:url(#progChartGrad)}
+.pt-line{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.pt-pass{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:4 4}
+.pt-dot{stroke-width:2;fill:var(--panel)}
+.pt-dot.ok{stroke:var(--ok)}
+.pt-dot.bad{stroke:var(--bad)}
+.pt-label{fill:var(--ink-3);font-size:10px;font-family:var(--mono)}
+.pt-pct{fill:var(--ink-2);font-size:10px;font-family:var(--mono);font-weight:600}
+/* Per-exam breakdown */
+.prog-examgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.prog-examcard{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 16px}
+.prog-examcard .pe-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;gap:8px}
+.prog-examcard .pe-code{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--accent)}
+.prog-examcard .pe-n{font-size:11px;color:var(--ink-3);white-space:nowrap}
+.prog-examcard .pe-avg{font-size:24px;font-weight:700;font-family:var(--mono);color:var(--ink)}
+.prog-examcard .pe-best{font-size:11.5px;color:var(--ink-3);margin-left:6px}
+.prog-examcard .pe-bar{height:6px;background:var(--line-2);border-radius:6px;overflow:hidden;margin-top:9px}
+.prog-examcard .pe-bar i{display:block;height:100%;border-radius:6px;transition:width .4s}
+/* Domain mastery bars */
+.dom-bars{display:flex;flex-direction:column;gap:11px}
+.dom-bar{display:flex;align-items:center;gap:12px}
+.dom-bar .db-label{flex:0 0 220px;font-size:12.5px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dom-bar .db-label .db-code{font-family:var(--mono);font-size:11px;color:var(--accent);margin-right:6px;font-weight:700}
+.dom-bar .db-track{flex:1;height:8px;background:var(--line-2);border-radius:6px;overflow:hidden}
+.dom-bar .db-track i{display:block;height:100%;border-radius:6px;transition:width .5s}
+.dom-bar .db-pct{flex:0 0 40px;text-align:right;font-family:var(--mono);font-size:12.5px;font-weight:700}
+@media(max-width:680px){.dom-bar .db-label{flex-basis:130px}}
+/* Recent attempts */
+.attempt{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:8px;transition:transform .15s,box-shadow .15s}
+.attempt:hover{transform:translateX(2px);box-shadow:var(--shadow)}
+.attempt .a-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.attempt .a-icon.pass{background:var(--ok-soft);color:var(--ok)}
+.attempt .a-icon.fail{background:var(--bad-soft);color:var(--bad)}
+.attempt .a-main{flex:1;min-width:0}
+.attempt .a-code{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--accent)}
+.attempt .a-date{font-size:12px;color:var(--ink-3);margin-top:1px}
 .attempt .a-pct{font-weight:700;font-family:var(--mono);font-size:15px}
 .attempt .a-badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px}
 .attempt .a-badge.pass{background:var(--ok-soft,#dcfce7);color:#166534}
 .attempt .a-badge.fail{background:var(--bad-soft,#fee2e2);color:#991b1b}
-.prog-empty{max-width:920px;margin:0 auto;text-align:center;color:var(--ink-3);padding:40px 20px;border:1px dashed var(--line);border-radius:14px}
-@media(max-width:600px){.prog-cards{grid-template-columns:repeat(2,1fr)}}
+.prog-empty{max-width:960px;margin:0 auto;text-align:center;color:var(--ink-3);padding:40px 20px;border:1px dashed var(--line);border-radius:14px}
+@media(max-width:600px){.prog-cards{grid-template-columns:repeat(2,1fr)}.prog-card .pv{font-size:22px}}
 .check-btn{margin-top:14px;width:100%}
 /* ---- Modos de estudio + explorador ---- */
 .mode-badge{display:inline-block;min-width:20px;padding:1px 7px;border-radius:999px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;font-family:var(--mono);vertical-align:middle;margin-left:4px}
@@ -947,6 +990,7 @@ const I18N = {
     comingSoonTitle:"Más exámenes próximamente", comingSoonSub:"Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!",
     resumeTitle:"Examen sin terminar", resumeSub:"{code} · pregunta {n} de {t}", resumeBtn:"Reanudar", discardBtn:"Descartar", confirmDiscard:"¿Descartar el examen sin terminar?",
     myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progStreak:"Racha", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
+    progTrend:"Tendencia de puntuación", progTrendSub:"Últimos {n} intentos · línea discontinua = aprobado (70%)", progByExam:"Progreso por examen", progDomains:"Dominio de las áreas practicadas", progAttemptsShort:"intentos", progNoTrend:"Completa al menos 2 exámenes para ver tu tendencia.",
     streakDays:"{n} días", streakDay:"{n} día",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Reportar error en esta pregunta",
     reportSubject:"Reportar error · {code} · pregunta #{id}", reportBody:"Hola,\n\nCreo que hay un error en esta pregunta:\n\nExamen: {code}\nID de la pregunta: {id}\n\nDescripción del problema:\n",
@@ -1013,6 +1057,7 @@ const I18N = {
     comingSoonTitle:"More exams coming soon", comingSoonSub:"We add new certifications continuously. Check back soon!",
     resumeTitle:"Unfinished exam", resumeSub:"{code} · question {n} of {t}", resumeBtn:"Resume", discardBtn:"Discard", confirmDiscard:"Discard the unfinished exam?",
     myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progStreak:"Streak", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
+    progTrend:"Score trend", progTrendSub:"Last {n} attempts · dashed line = passing (70%)", progByExam:"Progress by exam", progDomains:"Mastery by practiced domain", progAttemptsShort:"attempts", progNoTrend:"Complete at least 2 exams to see your trend.",
     streakDays:"{n} days", streakDay:"{n} day",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Report an issue with this question",
     reportSubject:"Report issue · {code} · question #{id}", reportBody:"Hi,\n\nI think there's an issue with this question:\n\nExam: {code}\nQuestion ID: {id}\n\nDescription of the issue:\n",
@@ -2210,6 +2255,59 @@ function computeStreak(hist){
   while(days.has(cursor.toISOString().slice(0,10))){ streak++; cursor.setDate(cursor.getDate()-1); }
   return streak;
 }
+// Iconos para las tarjetas de resumen de progreso
+const PROG_ICONS={
+  attempts:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v2H9z"/><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 12h6M9 16h6M9 8h6"/></svg>',
+  avg:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>',
+  best:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/></svg>',
+  pass:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
+  streak:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 3 2 5 2 7a4 4 0 0 1-8 0c0-1 .3-2 1-3 .2 1.5 1 2 1 2 0-3 1.5-5 4-6z"/><path d="M12 22a6 6 0 0 0 6-6c0-1.5-.5-3-2-4.5.3 2-.5 3.5-2 4-.2-1.5-1-2.5-2-3-1 1.5-2 3-2 5.5a4 4 0 0 0 2 4z"/></svg>',
+  pass_circle:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+  fail_circle:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+};
+// Nombre de un dominio para un código de examen concreto (independiente del examen activo)
+function domNameFor(code,d){
+  const ex=EXAMS.find(e=>e.code===code);
+  if(ex&&Array.isArray(ex.domains)){
+    const m=ex.domains.find(x=>String(x.id)===String(d));
+    if(m) return L(m,'name');
+  }
+  return t('domainOf')+' '+d;
+}
+// Gráfico SVG con la tendencia de puntuación de los últimos intentos
+function renderScoreChart(hist){
+  const data=hist.slice(-15);
+  if(data.length<2) return '<div class="prog-empty" data-i="progNoTrend">'+t('progNoTrend')+'</div>';
+  const w=860,h=200,pad={l:36,r:16,t:18,b:28};
+  const innerW=w-pad.l-pad.r, innerH=h-pad.t-pad.b;
+  const stepX=data.length>1?innerW/(data.length-1):0;
+  const x=i=>pad.l+i*stepX;
+  const y=p=>pad.t+innerH-(Math.max(0,Math.min(100,p))/100*innerH);
+  const pts=data.map((d,i)=>[x(i),y(d.pct)]);
+  const lineD=pts.map((p,i)=>(i===0?'M':'L')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const areaD=lineD+' L'+pts[pts.length-1][0].toFixed(1)+','+(pad.t+innerH)+' L'+pts[0][0].toFixed(1)+','+(pad.t+innerH)+' Z';
+  const passY=y(70);
+  const loc=t('locale');
+  const dotsAndLabels=data.map((d,i)=>{
+    const [px,py]=pts[i];
+    const showLabel=i===0||i===data.length-1||data.length<=6;
+    const dt=new Date(d.date);
+    const lbl=dt.toLocaleDateString(loc,{day:'2-digit',month:'2-digit'});
+    return '<circle class="pt-dot '+(d.passed?'ok':'bad')+'" cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="3.5"/>'+
+      (showLabel?'<text class="pt-label" x="'+px.toFixed(1)+'" y="'+(h-8)+'" text-anchor="middle">'+lbl+'</text>':'');
+  }).join('');
+  return '<div class="prog-chart-wrap"><svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" role="img" aria-label="'+t('progTrend')+'">'+
+    '<defs><linearGradient id="progChartGrad" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0%" stop-color="var(--accent)" stop-opacity="0.35"/>'+
+    '<stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>'+
+    '</linearGradient></defs>'+
+    '<line class="pt-pass" x1="'+pad.l+'" y1="'+passY.toFixed(1)+'" x2="'+(w-pad.r)+'" y2="'+passY.toFixed(1)+'"/>'+
+    '<text class="pt-pct" x="'+(w-pad.r)+'" y="'+(passY-4).toFixed(1)+'" text-anchor="end">70%</text>'+
+    '<path class="pt-area" d="'+areaD+'"/>'+
+    '<path class="pt-line" d="'+lineD+'"/>'+
+    dotsAndLabels+
+    '</svg></div>';
+}
 function renderProgress(){
   const body=$('#progBody'); body.innerHTML='';
   const hist=Store.get('history',[]);
@@ -2223,25 +2321,67 @@ function renderProgress(){
   const passRate=Math.round(hist.filter(h=>h.passed).length/n*100);
   const streak=computeStreak(hist);
   const cards=document.createElement('div'); cards.className='prog-cards';
-  const card=(v,l,cls)=>'<div class="prog-card'+(cls?' '+cls:'')+'"><div class="pv">'+v+'</div><div class="pl" data-i="'+l+'">'+l+'</div></div>';
+  const card=(v,l,cls,icon)=>'<div class="prog-card'+(cls?' '+cls:'')+'"><div class="pi">'+PROG_ICONS[icon]+'</div><div class="pv">'+v+'</div><div class="pl" data-i="'+l+'">'+l+'</div></div>';
   const streakTxt=t(streak===1?'streakDay':'streakDays').replace('{n}',streak);
-  cards.innerHTML=card(n,'progAttempts')+card(avg+'%','progAvg')+card(best+'%','progBest')+card(passRate+'%','progPassRate')+card((streak?'🔥 ':'')+streakTxt,'progStreak','streak');
+  cards.innerHTML=card(n,'progAttempts','','attempts')+card(avg+'%','progAvg','','avg')+card(best+'%','progBest','best','best')+card(passRate+'%','progPassRate','pass','pass')+card((streak?'🔥 ':'')+streakTxt,'progStreak','streak','streak');
   body.appendChild(cards);
-  // dominios a reforzar
+  // tendencia de puntuación
+  const secChart=document.createElement('div'); secChart.className='prog-section';
+  secChart.innerHTML='<h3>'+'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/></svg>'+
+    '<span data-i="progTrend">'+t('progTrend')+'</span></h3>'+
+    '<div class="prog-card-box">'+renderScoreChart(hist)+
+    (hist.length>=2?'<p style="font-size:12px;color:var(--ink-3);margin:10px 0 0;text-align:center">'+t('progTrendSub').replace('{n}',Math.min(15,hist.length))+'</p>':'')+
+    '</div>';
+  body.appendChild(secChart);
+  // progreso por examen
   const byExam={};
-  hist.forEach(h=>{ if(!h.dom)return; byExam[h.code]=byExam[h.code]||{}; Object.keys(h.dom).forEach(d=>{ const o=byExam[h.code][d]=byExam[h.code][d]||{c:0,t:0}; o.c+=h.dom[d].c; o.t+=h.dom[d].t; }); });
-  const weak=[];
-  Object.keys(byExam).forEach(code=>{ Object.keys(byExam[code]).forEach(d=>{ const o=byExam[code][d]; if(o.t){ const p=Math.round(o.c/o.t*100); if(p<70) weak.push({code:code,d:d,p:p}); } }); });
-  if(weak.length){
-    weak.sort((a,b)=>a.p-b.p);
-    const sec=document.createElement('div'); sec.className='prog-section';
-    sec.innerHTML='<h3 data-i="progWeak">Dominios a reforzar</h3>';
-    weak.slice(0,6).forEach(w=>{
-      const el=document.createElement('div'); el.className='attempt';
-      el.innerHTML='<span class="a-code">'+w.code+'</span><span class="a-date">'+t('domainOf')+' '+w.d+'</span><span class="a-pct" style="color:var(--bad)">'+w.p+'%</span>';
-      sec.appendChild(el);
+  const examStats={};
+  hist.forEach(h=>{
+    const code=h.code||'?';
+    if(!h.dom)return; byExam[code]=byExam[code]||{}; Object.keys(h.dom).forEach(d=>{ const o=byExam[code][d]=byExam[code][d]||{c:0,t:0}; o.c+=h.dom[d].c; o.t+=h.dom[d].t; });
+  });
+  hist.forEach(h=>{
+    const code=h.code||'?';
+    const s=examStats[code]=examStats[code]||{n:0,sum:0,best:0};
+    s.n++; s.sum+=h.pct; s.best=Math.max(s.best,h.pct);
+  });
+  const examCodes=Object.keys(examStats).sort();
+  if(examCodes.length){
+    const secEx=document.createElement('div'); secEx.className='prog-section';
+    secEx.innerHTML='<h3>'+'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'+
+      '<span data-i="progByExam">'+t('progByExam')+'</span></h3>';
+    const grid=document.createElement('div'); grid.className='prog-examgrid';
+    examCodes.forEach(code=>{
+      const s=examStats[code];
+      const avgEx=Math.round(s.sum/s.n);
+      const col=avgEx>=70?'var(--ok)':avgEx>=50?'var(--warn)':'var(--bad)';
+      const el=document.createElement('div'); el.className='prog-examcard';
+      el.innerHTML='<div class="pe-head"><span class="pe-code">'+code+'</span><span class="pe-n">'+s.n+' '+t('progAttemptsShort')+'</span></div>'+
+        '<div><span class="pe-avg">'+avgEx+'%</span><span class="pe-best">'+t('progBest')+': '+s.best+'%</span></div>'+
+        '<div class="pe-bar"><i style="width:'+avgEx+'%;background:'+col+'"></i></div>';
+      grid.appendChild(el);
     });
-    body.appendChild(sec);
+    secEx.appendChild(grid);
+    body.appendChild(secEx);
+  }
+  // dominio de las áreas practicadas (todas, ordenadas de peor a mejor)
+  const domRows=[];
+  Object.keys(byExam).forEach(code=>{ Object.keys(byExam[code]).forEach(d=>{ const o=byExam[code][d]; if(o.t){ domRows.push({code:code,d:d,p:Math.round(o.c/o.t*100)}); } }); });
+  if(domRows.length){
+    domRows.sort((a,b)=>a.p-b.p);
+    const secDom=document.createElement('div'); secDom.className='prog-section';
+    secDom.innerHTML='<h3>'+'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M9 19v-7M14 19v-10"/></svg>'+
+      '<span data-i="progDomains">'+t('progDomains')+'</span></h3><div class="prog-card-box"><div class="dom-bars"></div></div>';
+    const bars=secDom.querySelector('.dom-bars');
+    domRows.slice(0,12).forEach(w=>{
+      const col=w.p>=70?'var(--ok)':w.p>=50?'var(--warn)':'var(--bad)';
+      const el=document.createElement('div'); el.className='dom-bar';
+      el.innerHTML='<span class="db-label"><span class="db-code">'+w.code+'</span>'+esc(domNameFor(w.code,w.d))+'</span>'+
+        '<span class="db-track"><i style="width:'+w.p+'%;background:'+col+'"></i></span>'+
+        '<span class="db-pct" style="color:'+col+'">'+w.p+'%</span>';
+      bars.appendChild(el);
+    });
+    body.appendChild(secDom);
   }
   // intentos recientes
   const sec2=document.createElement('div'); sec2.className='prog-section';
@@ -2251,7 +2391,8 @@ function renderProgress(){
     const dt=new Date(h.date);
     const loc=t('locale');
     const ds=dt.toLocaleDateString(loc,{day:'2-digit',month:'short',year:'numeric'})+' · '+dt.toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit'});
-    el.innerHTML='<span class="a-code">'+h.code+'</span><span class="a-date">'+ds+'</span>'+
+    el.innerHTML='<span class="a-icon '+(h.passed?'pass':'fail')+'">'+(h.passed?PROG_ICONS.pass_circle:PROG_ICONS.fail_circle)+'</span>'+
+      '<span class="a-main"><span class="a-code">'+h.code+'</span><div class="a-date">'+ds+'</div></span>'+
       '<span class="a-pct" style="color:'+(h.passed?'var(--ok)':'var(--bad)')+'">'+h.pct+'%</span>'+
       '<span class="a-badge '+(h.passed?'pass':'fail')+'">'+(h.passed?t('pass'):t('fail'))+'</span>';
     sec2.appendChild(el);
