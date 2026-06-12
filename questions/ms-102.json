@@ -8589,13 +8589,13 @@
     "q_en": "A large security operations center (SOC) has three analyst tiers: Tier 1 (can only view and triage alerts), Tier 2 (can investigate and remediate devices for certain departments), and Tier 3 (full access). The SOC manager wants to create custom roles within the Microsoft Defender portal that grant granular, device-group-specific permissions to each tier, instead of relying only on built-in Microsoft Entra ID roles that apply global permissions. What feature enables this?",
     "opts_es": [
       "Control de acceso basado en roles unificado (Unified RBAC) de Microsoft Defender XDR",
-      "Unidades administrativas de Microsoft Entra ID",
+      "Unidades administrativas de Microsoft Entra ID con permisos delegados por grupo de dispositivos y departamento",
       "Microsoft Entra Connect Health roles",
       "Etiquetas de confidencialidad para SOC"
     ],
     "opts_en": [
       "Microsoft Defender XDR unified role-based access control (Unified RBAC)",
-      "Microsoft Entra ID administrative units",
+      "Microsoft Entra ID administrative units with delegated permissions scoped to device groups and departments",
       "Microsoft Entra Connect Health roles",
       "Sensitivity labels for the SOC"
     ],
@@ -8615,7 +8615,7 @@
     "q_en": "During an incident investigation, an analyst needs to view, in chronological order, all events recorded on a specific device over the last 48 hours -including processes created, network connections, sign-ins, and file modifications- to understand the full sequence of actions that led to the compromise. What view in the Microsoft Defender portal should they use?",
     "opts_es": [
       "La cronología (timeline) del dispositivo en su página de entidad",
-      "El panel de Puntuación de seguridad",
+      "El panel de Puntuación de seguridad y sus recomendaciones de mejora",
       "El Centro de mensajes",
       "El informe de Cloud Discovery"
     ],
@@ -8640,15 +8640,15 @@
     "q_es": "Una organización recibe correos de phishing en los que el nombre para mostrar del remitente es idéntico al de su director general ('Juan Pérez, CEO'), pero la dirección de correo electrónico real es de un dominio externo no relacionado. Las directivas antiphishing estándar no siempre detectan esto porque técnicamente el dominio no coincide con ningún dominio protegido. ¿Qué función de Microsoft Defender for Office 365, dentro de la directiva antiphishing, está diseñada específicamente para detectar esta suplantación basada en el nombre y los patrones de comunicación habituales del usuario?",
     "q_en": "An organization receives phishing emails where the sender's display name is identical to their CEO's ('John Smith, CEO'), but the actual email address is from an unrelated external domain. Standard antiphishing policies don't always catch this because the domain technically doesn't match any protected domain. What feature of Microsoft Defender for Office 365, within the antiphishing policy, is specifically designed to detect this impersonation based on the user's name and typical communication patterns?",
     "opts_es": [
-      "Inteligencia de buzones (Mailbox intelligence) combinada con la protección contra suplantación de usuario (user impersonation protection)",
+      "Inteligencia de buzones (mailbox intelligence) combinada con la protección contra la suplantación de usuario",
       "Filtrado de conexión (connection filtering)",
-      "Reglas de reducción de la superficie de ataque",
+      "Reglas de reducción de la superficie de ataque (attack surface reduction) para bloquear archivos ejecutables sospechosos",
       "Acceso controlado a carpetas"
     ],
     "opts_en": [
       "Mailbox intelligence combined with user impersonation protection",
       "Connection filtering",
-      "Attack surface reduction rules",
+      "Attack surface reduction rules for blocking suspicious executable files",
       "Controlled folder access"
     ],
     "correct": [
@@ -8666,13 +8666,13 @@
     "q_es": "Un usuario informa al equipo de seguridad de que recibió un correo electrónico claramente malicioso que Microsoft Defender for Office 365 no detectó ni movió a cuarentena, sino que fue entregado directamente a su bandeja de entrada (un falso negativo). El equipo de seguridad quiere reenviar este mensaje a Microsoft para su análisis, de forma que ayude a mejorar la detección futura, y además quiere generar automáticamente una entrada de bloqueo en la organización para ese remitente mientras se analiza. ¿Qué deberían usar?",
     "q_en": "A user reports to the security team that they received a clearly malicious email that Microsoft Defender for Office 365 did not detect or quarantine, but instead delivered directly to their inbox (a false negative). The security team wants to forward this message to Microsoft for analysis, helping improve future detection, and also wants to automatically generate a block entry within the organization for that sender while it's being analyzed. What should they use?",
     "opts_es": [
-      "Envíos del administrador (Admin submission), enviando el mensaje a Microsoft como 'No detectado' y aplicando un bloqueo asociado",
+      "Envíos del administrador (Admin submission), marcando el mensaje como 'No detectado' y aplicando un bloqueo asociado",
       "El Explorador de amenazas, eliminando el mensaje sin más acción",
       "Una directiva de prevención de pérdida de datos sobre el mensaje",
-      "Reenviar el mensaje manualmente a una dirección de soporte de Microsoft fuera del portal"
+      "Reenviar manualmente el mensaje a una dirección de soporte de Microsoft fuera del portal, junto con sus cabeceras completas"
     ],
     "opts_en": [
-      "Admin submission, sending the message to Microsoft as 'Not detected' and applying an associated block",
+      "Admin submission, marking the message as 'Not detected' and applying an associated block",
       "Threat Explorer, simply deleting the message with no further action",
       "A data loss prevention policy on the message",
       "Manually forwarding the message to a Microsoft support address outside the portal"
@@ -8692,14 +8692,14 @@
     "q_es": "El equipo de TI ha recibido un aviso de que un software de terceros instalado en 800 equipos de la organización llegará al final de su vida útil (end-of-life) el próximo mes, momento en el que dejará de recibir actualizaciones de seguridad. El equipo necesita identificar rápidamente todos los dispositivos que tienen instalada esa aplicación para planificar su desinstalación o actualización antes de la fecha límite. ¿Qué funcionalidad de la gestión de vulnerabilidades de Microsoft Defender les ayuda a identificar estos dispositivos?",
     "q_en": "The IT team has been notified that third-party software installed on 800 of the organization's computers will reach end-of-life next month, after which it will stop receiving security updates. The team needs to quickly identify all devices that have that application installed in order to plan its uninstallation or upgrade before the deadline. What Microsoft Defender Vulnerability Management feature helps identify these devices?",
     "opts_es": [
-      "El inventario de software (Software inventory), incluyendo la detección de software al final de su vida útil",
-      "La cuarentena de dispositivos",
+      "El inventario de software (software inventory), incluyendo software al final de su vida útil",
+      "La cuarentena de dispositivos, que aísla automáticamente los equipos afectados de la red corporativa",
       "Cloud Discovery",
       "El Explorador de amenazas"
     ],
     "opts_en": [
-      "Software inventory, including detection of end-of-life software",
-      "Device quarantine",
+      "Software inventory, including end-of-life software",
+      "Device quarantine, which automatically isolates affected devices from the corporate network",
       "Cloud Discovery",
       "Threat Explorer"
     ],
@@ -8744,9 +8744,9 @@
     "q_es": "Microsoft Defender for Cloud Apps detecta que la cuenta de un usuario, que normalmente accede a Microsoft 365 únicamente desde España, ha iniciado sesión desde un país donde la organización nunca ha tenido actividad ni empleados, algo que no coincide con ninguna ubicación habitual para ese usuario ni para el resto de la organización. ¿Qué tipo de directiva de detección de Microsoft Defender for Cloud Apps identificaría este comportamiento?",
     "q_en": "Microsoft Defender for Cloud Apps detects that a user's account, which normally accesses Microsoft 365 only from Spain, has signed in from a country where the organization has never had activity or employees, something that doesn't match any usual location for that user or the rest of the organization. What type of Microsoft Defender for Cloud Apps detection policy would identify this behavior?",
     "opts_es": [
-      "Una directiva de detección de anomalías para 'actividad desde un país poco frecuente' (activity from infrequent country)",
+      "Una directiva de detección de anomalías para 'actividad desde un país poco frecuente'",
       "Una directiva de prevención de pérdida de datos para puntos de conexión",
-      "Una directiva de control de aplicaciones de acceso condicional sobre descargas",
+      "Una directiva de control de aplicaciones de acceso condicional sobre descargas y cargas de archivos",
       "Una directiva de etiquetado automático de confidencialidad"
     ],
     "opts_en": [
@@ -8770,7 +8770,7 @@
     "q_es": "El departamento legal de una gran corporación ha desarrollado, fuera de Microsoft Purview, una estructura jerárquica detallada de categorías de archivo (file plan) con cientos de descriptores que especifican departamentos, categorías de negocio, periodos de retención y acciones de disposición, conforme a su política de gobernanza documental existente. Quieren aplicar esta estructura completa en Microsoft Purview como base para sus etiquetas de retención, sin recrear manualmente cada descriptor uno por uno en el portal. ¿Qué deberían hacer?",
     "q_en": "The legal department of a large corporation has developed, outside of Microsoft Purview, a detailed hierarchical structure of file plan categories with hundreds of descriptors specifying departments, business categories, retention periods, and disposition actions, in line with their existing records governance policy. They want to apply this entire structure in Microsoft Purview as the basis for their retention labels, without manually recreating each descriptor one by one in the portal. What should they do?",
     "opts_es": [
-      "Importar la estructura del plan de archivo (file plan) mediante un archivo CSV con el formato compatible que proporciona Microsoft Purview",
+      "Importar la estructura del plan de archivo (file plan) mediante un CSV con el formato de Microsoft Purview",
       "Crear cada etiqueta de retención manualmente, una por una, copiando los valores del documento original",
       "Solicitar a Microsoft soporte que cargue la estructura en su nombre mediante un ticket",
       "No es posible importar estructuras de plan de archivo; deben recrearse en Microsoft Purview desde cero"
@@ -8796,10 +8796,10 @@
     "q_es": "Una organización está siendo investigada por un regulador y necesita asegurarse de que ningún correo electrónico ni documento relacionado con un proyecto específico, ubicado en los buzones y sitios de OneDrive de 15 empleados, pueda ser eliminado ni modificado por nadie -incluidos los propios empleados-, hasta que la investigación concluya, sin tener que aplicar primero una clasificación de contenido ni esperar a que se etiquete cada elemento individualmente. ¿Qué deberían aplicar inmediatamente sobre esas 15 ubicaciones?",
     "q_en": "An organization is being investigated by a regulator and needs to ensure that no email or document related to a specific project, located in the mailboxes and OneDrive sites of 15 employees, can be deleted or modified by anyone -including the employees themselves- until the investigation concludes, without first applying content classification or waiting for each item to be individually labeled. What should they immediately apply to those 15 locations?",
     "opts_es": [
-      "Una retención preventiva (hold) en eDiscovery o una retención por litigio (litigation hold) sobre esas 15 ubicaciones",
+      "Una retención preventiva (hold) en eDiscovery o una retención por litigio sobre esas 15 ubicaciones",
       "Una etiqueta de confidencialidad 'Altamente confidencial'",
       "Una directiva de prevención de pérdida de datos en modo de simulación",
-      "Una directiva de etiquetado automático basada en clasificadores entrenables"
+      "Una directiva de etiquetado automático basada en clasificadores entrenables y reglas personalizadas"
     ],
     "opts_en": [
       "An eDiscovery hold or a litigation hold on those 15 locations",
@@ -8874,15 +8874,15 @@
     "q_es": "Una organización está completando una migración de dominio personalizado: actualmente todos los usuarios tienen como nombre principal de usuario (UPN) '@contoso.onmicrosoft.com' y quieren cambiarlo a '@contoso.com', un dominio que ya han agregado y verificado en el inquilino. Si simplemente cambian el UPN de cada usuario mediante PowerShell sin ninguna otra consideración, ¿qué riesgo es más probable que enfrenten en un entorno con sincronización híbrida activa?",
     "q_en": "An organization is completing a custom domain migration: currently all users have '@contoso.onmicrosoft.com' as their user principal name (UPN) and they want to change it to '@contoso.com', a domain they have already added and verified in the tenant. If they simply change each user's UPN via PowerShell without any other consideration, what risk are they most likely to face in an environment with active hybrid synchronization?",
     "opts_es": [
-      "El cambio se sobrescribirá en el siguiente ciclo de sincronización de Microsoft Entra Connect si el UPN local no se actualiza también, ya que el atributo UPN normalmente se sincroniza desde Active Directory local",
+      "El cambio se sobrescribirá en el siguiente ciclo de sincronización de Microsoft Entra Connect si el UPN local no se actualiza también",
       "El cambio de UPN eliminará automáticamente todos los buzones de los usuarios",
-      "No existe ningún riesgo; los UPN en la nube y locales son completamente independientes en todos los casos",
+      "No existe ningún riesgo, ya que los UPN en la nube y en el entorno local son completamente independientes y nunca se sincronizan entre sí",
       "El cambio de UPN revocará permanentemente todas las licencias asignadas a los usuarios"
     ],
     "opts_en": [
-      "The change will be overwritten on the next Microsoft Entra Connect sync cycle if the on-premises UPN is not also updated, since the UPN attribute is normally synchronized from on-premises Active Directory",
+      "The change will be overwritten on the next Microsoft Entra Connect sync cycle if the on-premises UPN is not also updated",
       "Changing the UPN will automatically delete all of the users' mailboxes",
-      "There is no risk; cloud and on-premises UPNs are always completely independent",
+      "There is no risk, since cloud and on-premises UPNs are completely independent and are never synchronized with each other",
       "Changing the UPN will permanently revoke all licenses assigned to the users"
     ],
     "correct": [
@@ -8900,16 +8900,16 @@
     "q_es": "Una sala de conferencias grande tiene un buzón de recursos configurado para aceptar automáticamente las reservas. El administrador quiere que, si dos reuniones se solapan parcialmente en el tiempo, el sistema rechace automáticamente la segunda solicitud que generaría el conflicto, en lugar de aceptar ambas reservas y dejar que los organizadores descubran el solapamiento al llegar a la sala. ¿Qué configuración del buzón de recursos deben asegurarse de que esté habilitada?",
     "q_en": "A large conference room has a resource mailbox configured to automatically accept bookings. The administrator wants that, if two meetings partially overlap in time, the system automatically declines the second request that would create the conflict, instead of accepting both bookings and letting organizers discover the overlap when they arrive at the room. What resource mailbox setting should they make sure is enabled?",
     "opts_es": [
-      "La opción 'Rechazar reuniones en conflicto' (Resolve calendar conflicts automatically) dentro de las opciones de procesamiento de calendario",
+      "La opción 'Rechazar reuniones en conflicto' dentro de las opciones de procesamiento de calendario",
       "El permiso 'Enviar como' otorgado a todos los usuarios",
       "Una directiva de retención sobre el buzón de la sala",
-      "El modo de almacenamiento provisional para el buzón de recursos"
+      "El modo de almacenamiento provisional (staging) para el buzón de recursos durante migraciones"
     ],
     "opts_en": [
-      "The 'Decline conflicting meetings' (Resolve calendar conflicts automatically) option within calendar processing options",
+      "The 'Decline conflicting meetings' option within calendar processing options",
       "The 'Send As' permission granted to all users",
       "A retention policy on the room's mailbox",
-      "Staging mode for the resource mailbox"
+      "Staging mode for the resource mailbox during cross-tenant migrations"
     ],
     "correct": [
       0
@@ -8952,15 +8952,15 @@
     "q_es": "Una organización quiere asignar el rol de Administrador de Exchange a un conjunto de 8 técnicos que cambia con frecuencia según rotaciones de turno. En lugar de asignar y revocar el rol individualmente a cada técnico cada vez que cambia la rotación, la organización quiere gestionar la pertenencia mediante un grupo de Microsoft Entra ID: añadir o quitar técnicos del grupo debería conceder o revocar automáticamente el rol. ¿Qué deben crear para conseguir esto?",
     "q_en": "An organization wants to assign the Exchange Administrator role to a set of 8 technicians that changes frequently based on shift rotations. Instead of individually assigning and revoking the role for each technician every time the rotation changes, the organization wants to manage membership via a Microsoft Entra ID group: adding or removing technicians from the group should automatically grant or revoke the role. What should they create to achieve this?",
     "opts_es": [
-      "Un grupo asignable a roles (role-assignable group) con el rol de Administrador de Exchange asignado al grupo",
+      "Un grupo asignable a roles con el rol de Administrador de Exchange asignado al grupo",
       "Un grupo de distribución dinámico basado en el departamento",
-      "Una unidad administrativa con el rol asignado a nivel de unidad",
+      "Una unidad administrativa con el rol de Administrador de Exchange asignado a nivel de unidad",
       "Un contacto de correo compartido para el equipo de técnicos"
     ],
     "opts_en": [
       "A role-assignable group with the Exchange Administrator role assigned to the group",
       "A dynamic distribution group based on department",
-      "An administrative unit with the role assigned at the unit level",
+      "An administrative unit with the Exchange Administrator role assigned at the unit level",
       "A shared mail contact for the technician team"
     ],
     "correct": [
@@ -8978,7 +8978,7 @@
     "q_es": "Una organización tiene usuarios cuyo atributo userPrincipalName en Active Directory local utiliza un sufijo de dominio interno no enrutable ('.local') que no puede agregarse ni verificarse como dominio personalizado en Microsoft Entra ID. Sin embargo, estos usuarios sí tienen un atributo de correo electrónico (mail) con un dominio público verificado ('contoso.com'). ¿Qué pueden configurar en Microsoft Entra Connect para que estos usuarios inicien sesión en Microsoft 365 usando su dirección de correo en lugar de su UPN basado en '.local'?",
     "q_en": "An organization has users whose userPrincipalName attribute in on-premises Active Directory uses a non-routable internal domain suffix ('.local') that cannot be added or verified as a custom domain in Microsoft Entra ID. However, these users do have a mail attribute with a verified public domain ('contoso.com'). What can they configure in Microsoft Entra Connect so these users sign in to Microsoft 365 using their email address instead of their '.local'-based UPN?",
     "opts_es": [
-      "Configurar el ID alternativo (Alternate ID), usando el atributo mail como nuevo nombre de inicio de sesión de Microsoft Entra ID",
+      "Configurar el ID alternativo (Alternate ID), usando el atributo mail como nuevo nombre de inicio de sesión",
       "Cambiar el sufijo UPN '.local' a '.onmicrosoft.com' directamente en la nube sin tocar Active Directory",
       "Deshabilitar por completo la sincronización del atributo userPrincipalName y dejar el campo vacío",
       "Crear un dominio personalizado verificado usando el sufijo '.local'"
@@ -9004,14 +9004,14 @@
     "q_es": "Un administrador revisa el Administrador de sincronización (Synchronization Service Manager) en el servidor de Microsoft Entra Connect y observa que varios objetos de usuario muestran errores de exportación de tipo 'AttributeValueMustBeUnique', indicando que el mismo valor de dirección de correo proxy está presente en más de un objeto de Active Directory. ¿Cuál es la causa más probable de este error y cómo debería resolverse?",
     "q_en": "An administrator reviews the Synchronization Service Manager on the Microsoft Entra Connect server and notices several user objects showing export errors of type 'AttributeValueMustBeUnique', indicating the same proxy email address value is present on more than one Active Directory object. What is the most likely cause of this error and how should it be resolved?",
     "opts_es": [
-      "Dos o más objetos en Active Directory comparten el mismo valor de proxyAddresses; debe corregirse la duplicidad en Active Directory local antes de que la sincronización pueda completarse para esos objetos",
-      "El servidor de Microsoft Entra Connect necesita reiniciarse; el error se resolverá automáticamente sin cambios en Active Directory",
+      "Dos o más objetos en Active Directory comparten el mismo valor de proxyAddresses; la duplicidad debe corregirse en AD local antes de sincronizar",
+      "El servidor de Microsoft Entra Connect necesita reiniciarse; el error se resolverá automáticamente sin ningún cambio en Active Directory",
       "El error indica que el inquilino ha alcanzado el límite máximo de licencias y debe comprarse una licencia adicional",
       "El error es benigno y puede ignorarse de forma indefinida sin ningún impacto"
     ],
     "opts_en": [
-      "Two or more objects in Active Directory share the same proxyAddresses value; the duplicate must be fixed in on-premises Active Directory before synchronization can complete for those objects",
-      "The Microsoft Entra Connect server needs to be restarted; the error will resolve automatically with no changes to Active Directory",
+      "Two or more objects in Active Directory share the same proxyAddresses value; the duplicate must be fixed in on-premises AD before sync completes",
+      "The Microsoft Entra Connect server needs to be restarted; the error will resolve automatically with absolutely no changes to Active Directory",
       "The error indicates the tenant has reached its maximum license limit and an additional license must be purchased",
       "The error is benign and can be ignored indefinitely with no impact"
     ],
@@ -9030,7 +9030,7 @@
     "q_es": "Una organización ha implementado Microsoft Entra Connect Sync con la unión híbrida de Microsoft Entra (hybrid Microsoft Entra join) para sus equipos Windows. El equipo de seguridad quiere crear una directiva de acceso condicional que permita el acceso a aplicaciones internas sensibles solo desde estos equipos corporativos unidos al dominio local y registrados en la nube, bloqueando dispositivos personales aunque cumplan otras políticas de cumplimiento de Intune. ¿Qué control de concesión deberían usar?",
     "q_en": "An organization has implemented Microsoft Entra Connect Sync with Microsoft Entra hybrid join for its Windows computers. The security team wants to create a Conditional Access policy that allows access to sensitive internal applications only from these on-premises domain-joined, cloud-registered corporate computers, blocking personal devices even if they meet other Intune compliance policies. What grant control should they use?",
     "opts_es": [
-      "Requerir que el dispositivo esté unido de forma híbrida a Microsoft Entra (Require Microsoft Entra hybrid joined device)",
+      "Requerir que el dispositivo esté unido de forma híbrida a Microsoft Entra (hybrid joined)",
       "Requerir únicamente la autenticación multifactor",
       "Requerir una fuerza de autenticación personalizada sin condiciones de dispositivo",
       "Requerir el cumplimiento de Intune sin ninguna condición adicional sobre la unión al dominio"
@@ -9056,15 +9056,15 @@
     "q_es": "Un empleado ha olvidado tanto su contraseña como todos sus métodos de autenticación registrados para SSPR y MFA, y no puede iniciar sesión. El servicio de soporte técnico necesita restaurarle el acceso de forma segura. ¿Qué acción administrativa permite al servicio de soporte resolver esta situación sin necesidad de conocer la contraseña anterior del usuario, generando una contraseña temporal de un solo uso que el usuario deberá cambiar en el siguiente inicio de sesión?",
     "q_en": "An employee has forgotten both their password and all their registered SSPR and MFA authentication methods, and cannot sign in. The helpdesk needs to securely restore their access. What administrative action allows the helpdesk to resolve this without knowing the user's previous password, generating a temporary one-time password the user must change at next sign-in?",
     "opts_es": [
-      "Restablecer la contraseña del usuario desde el Centro de administración de Microsoft 365, generando una contraseña temporal con la opción 'el usuario debe cambiar la contraseña al iniciar sesión'",
+      "Restablecer la contraseña del usuario desde el Centro de administración, generando una temporal que debe cambiarse al iniciar sesión",
       "Eliminar y volver a crear la cuenta del usuario desde cero",
-      "Otorgar al usuario el rol de Administrador global de forma temporal para que pueda restablecer su propia contraseña",
+      "Otorgar temporalmente al usuario el rol de Administrador global para que pueda restablecer su propia contraseña sin ayuda",
       "Desactivar permanentemente la cuenta del usuario hasta que recuerde la contraseña"
     ],
     "opts_en": [
-      "Reset the user's password from the Microsoft 365 admin center, generating a temporary password with the 'user must change password at next sign-in' option",
+      "Reset the user's password from the admin center, generating a temporary one that must be changed at next sign-in",
       "Delete and recreate the user's account from scratch",
-      "Temporarily grant the user the Global Administrator role so they can reset their own password",
+      "Temporarily grant the user the Global Administrator role so they can reset their own password without help",
       "Permanently disable the user's account until they remember the password"
     ],
     "correct": [
@@ -9082,13 +9082,13 @@
     "q_es": "Una organización ha configurado varias directivas de acceso condicional basadas en riesgo que pueden bloquear el acceso o exigir un cambio de contraseña cuando Microsoft Entra ID Protection detecta un riesgo elevado. La organización mantiene dos cuentas de 'acceso de emergencia' (break-glass) sin MFA, almacenadas de forma segura, para usarse únicamente si todos los administradores quedan bloqueados accidentalmente. ¿Qué deberían hacer con estas cuentas respecto a las directivas basadas en riesgo y de acceso condicional en general?",
     "q_en": "An organization has configured several risk-based Conditional Access policies that can block access or require a password change when Microsoft Entra ID Protection detects elevated risk. The organization maintains two securely stored 'break-glass' emergency access accounts without MFA, to be used only if all administrators are accidentally locked out. What should they do with these accounts regarding risk-based and Conditional Access policies in general?",
     "opts_es": [
-      "Excluir explícitamente las cuentas de acceso de emergencia del ámbito de todas las directivas de acceso condicional, incluidas las basadas en riesgo",
+      "Excluir explícitamente las cuentas de acceso de emergencia del ámbito de todas las directivas de acceso condicional",
       "Asignar a las cuentas de acceso de emergencia el nivel de riesgo 'Alto' de forma permanente para maximizar la seguridad",
       "Incluir las cuentas de acceso de emergencia en todas las directivas igual que cualquier otra cuenta, sin excepciones",
       "Eliminar las cuentas de acceso de emergencia, ya que son incompatibles con el acceso condicional"
     ],
     "opts_en": [
-      "Explicitly exclude the emergency access accounts from the scope of all Conditional Access policies, including risk-based ones",
+      "Explicitly exclude the emergency access accounts from the scope of all Conditional Access policies",
       "Permanently assign the emergency access accounts a 'High' risk level to maximize security",
       "Include the emergency access accounts in all policies just like any other account, with no exceptions",
       "Delete the emergency access accounts, since they are incompatible with Conditional Access"
@@ -9108,15 +9108,15 @@
     "q_es": "El director de seguridad quiere saber no solo la puntuación de seguridad absoluta de su organización, sino también cómo se compara esa puntuación con la de otras organizaciones de tamaño y sector similares, para evaluar si su postura de seguridad está por encima o por debajo de lo habitual en su industria. ¿Qué proporciona el panel de Puntuación de seguridad para este propósito?",
     "q_en": "The security director wants to know not only their organization's absolute Secure Score, but also how that score compares to other organizations of similar size and industry, to assess whether their security posture is above or below what's typical for their sector. What does the Secure Score dashboard provide for this purpose?",
     "opts_es": [
-      "Una comparación de la puntuación con organizaciones similares (comparación por sector y tamaño), mostrada como referencia (benchmark) junto a la puntuación propia",
+      "Una comparación de la puntuación con organizaciones similares (benchmark) por sector y tamaño",
       "Solo un valor numérico absoluto sin ningún contexto comparativo posible",
-      "Una lista con los nombres de otras organizaciones y sus puntuaciones exactas",
+      "Una lista pública con los nombres de otras organizaciones y sus puntuaciones exactas detalladas",
       "Un ranking público mundial accesible para cualquier usuario de Internet"
     ],
     "opts_en": [
-      "A comparison of the score with similar organizations (by industry and size), shown as a benchmark alongside the organization's own score",
+      "A comparison of the score with similar organizations, shown as a benchmark",
       "Only an absolute numeric value with no comparative context possible",
-      "A list of other organizations' names and their exact scores",
+      "A public list of other organizations' names and their exact, detailed scores",
       "A public worldwide ranking accessible to any internet user"
     ],
     "correct": [
@@ -9134,15 +9134,15 @@
     "q_es": "Un equipo de seguridad ha creado una regla de detección personalizada basada en una consulta de KQL que se ejecuta automáticamente. Inicialmente la configuraron para ejecutarse cada 24 horas, pero ahora necesitan que las amenazas que detecta esta regla se identifiquen casi en tiempo real, con la menor demora posible entre que ocurre la actividad y se genera la alerta. ¿Qué deberían cambiar en la configuración de la regla de detección personalizada?",
     "q_en": "A security team has created a custom detection rule based on a KQL query that runs automatically. They initially configured it to run every 24 hours, but now need threats detected by this rule to be identified nearly in real time, with the smallest possible delay between when the activity occurs and when the alert is generated. What should they change in the custom detection rule's configuration?",
     "opts_es": [
-      "La frecuencia de ejecución de la regla, configurándola en el intervalo más corto disponible (cada 24 horas, 12 horas, 3 horas o 1 hora, según el tipo de datos consultados)",
+      "La frecuencia de ejecución de la regla, configurándola en el intervalo más corto disponible según el tipo de datos",
       "El nivel de gravedad de la alerta a 'Informativo'",
-      "El grupo de dispositivos al que se aplica la regla, ampliándolo a todos los dispositivos",
+      "El grupo de dispositivos al que se aplica la regla, ampliándolo para incluir todos los dispositivos de la organización",
       "El nombre de la regla, ya que el nombre determina la frecuencia de ejecución"
     ],
     "opts_en": [
-      "The rule's run frequency, setting it to the shortest available interval (every 24 hours, 12 hours, 3 hours, or 1 hour, depending on the type of data queried)",
+      "The rule's run frequency, setting it to the shortest available interval depending on the data type",
       "The alert severity level to 'Informational'",
-      "The device group the rule applies to, expanding it to all devices",
+      "The device group the rule applies to, expanding it to include all devices in the organization",
       "The rule's name, since the name determines the run frequency"
     ],
     "correct": [
@@ -9160,13 +9160,13 @@
     "q_es": "Una organización ha aplicado la directiva de seguridad preestablecida 'Estándar' a todos los usuarios y, además, ha creado una directiva antiphishing personalizada más estricta específicamente para el grupo de Finanzas. Un usuario del departamento de Finanzas recibe un correo. ¿Qué directiva determinará el tratamiento de ese correo para ese usuario?",
     "q_en": "An organization has applied the 'Standard' preset security policy to all users and has also created a stricter custom antiphishing policy specifically for the Finance group. A user in the Finance department receives an email. Which policy will determine how that email is treated for that user?",
     "opts_es": [
-      "La directiva personalizada de Finanzas, ya que las directivas personalizadas tienen mayor prioridad que las directivas preestablecidas, independientemente del orden de prioridad numérico asignado",
+      "La directiva personalizada de Finanzas, ya que las directivas personalizadas siempre tienen mayor prioridad que las preestablecidas",
       "La directiva preestablecida 'Estándar', ya que las directivas preestablecidas siempre tienen prioridad sobre las personalizadas",
       "Ambas directivas se aplican simultáneamente y se combinan sumando sus efectos",
       "Ninguna directiva se aplica; el correo se procesa sin ninguna directiva antiphishing"
     ],
     "opts_en": [
-      "The Finance custom policy, because custom policies always take precedence over preset policies regardless of the assigned numeric priority order",
+      "The Finance custom policy, because custom policies always take precedence over preset policies",
       "The 'Standard' preset policy, because preset policies always take precedence over custom policies",
       "Both policies apply simultaneously and their effects are combined additively",
       "Neither policy applies; the email is processed with no antiphishing policy"
@@ -9188,7 +9188,7 @@
     "opts_es": [
       "El filtro de tipos de archivo adjunto comunes (Common Attachment Types Filter) dentro de la directiva antimalware",
       "Safe Attachments en modo de solo supervisión",
-      "Una directiva de DLP para puntos de conexión que bloquee archivos .exe en USB",
+      "Una directiva de DLP para puntos de conexión que bloquee específicamente archivos .exe y .js en unidades USB",
       "El filtrado de contenido web en los navegadores"
     ],
     "opts_en": [
@@ -9212,16 +9212,16 @@
     "q_es": "La gestión de vulnerabilidades de Microsoft Defender ha generado una recomendación de seguridad para actualizar una aplicación vulnerable instalada en 200 dispositivos administrados por Microsoft Intune. El equipo de seguridad quiere que, directamente desde la recomendación, se genere una solicitud de corrección que el equipo de gestión de dispositivos pueda rastrear y aplicar a través de Intune, sin tener que crear manualmente un ticket separado en otro sistema. ¿Qué función permite esto?",
     "q_en": "Microsoft Defender Vulnerability Management has generated a security recommendation to update a vulnerable application installed on 200 devices managed by Microsoft Intune. The security team wants that, directly from the recommendation, a remediation request is generated that the device management team can track and apply through Intune, without having to manually create a separate ticket in another system. What feature enables this?",
     "opts_es": [
-      "Solicitud de corrección (Request remediation), que crea una tarea de seguridad vinculada e integrada con Microsoft Intune",
+      "Solicitud de corrección (request remediation), que crea una tarea de seguridad vinculada con Microsoft Intune",
       "Acceso controlado a carpetas para esa aplicación",
       "Cloud Discovery para esa aplicación",
-      "Una directiva de prevención de pérdida de datos sobre la aplicación"
+      "Una directiva de prevención de pérdida de datos sobre la aplicación y sus actualizaciones automáticas"
     ],
     "opts_en": [
-      "Request remediation, which creates a linked security task integrated with Microsoft Intune",
+      "Request remediation, creating a linked security task with Microsoft Intune",
       "Controlled folder access for that application",
       "Cloud Discovery for that application",
-      "A data loss prevention policy on the application"
+      "A data loss prevention policy on the application and its automatic updates"
     ],
     "correct": [
       0
@@ -9238,7 +9238,7 @@
     "q_es": "La investigación y respuesta automatizadas (AIR) de Microsoft Defender XDR genera repetidamente alertas para un proceso administrativo legítimo que un equipo de TI ejecuta a diario en sus servidores (un script de respaldo que copia archivos a una ubicación de red), generando ruido innecesario para los analistas. El equipo de seguridad ha confirmado que esta actividad es benigna y quiere evitar que se generen alertas similares en el futuro para este proceso específico en estos servidores, sin deshabilitar la detección para el resto de la organización. ¿Qué deberían crear?",
     "q_en": "Microsoft Defender XDR's automated investigation and response (AIR) repeatedly generates alerts for a legitimate administrative process that an IT team runs daily on its servers (a backup script that copies files to a network location), creating unnecessary noise for analysts. The security team has confirmed this activity is benign and wants to prevent similar alerts from being generated in the future for this specific process on these servers, without disabling detection for the rest of the organization.",
     "opts_es": [
-      "Una regla de supresión de alertas (alert suppression rule) con un ámbito limitado a esos servidores y ese proceso específico",
+      "Una regla de supresión de alertas (alert suppression rule) limitada a esos servidores y proceso",
       "Deshabilitar Microsoft Defender for Endpoint en esos servidores por completo",
       "Eliminar permanentemente la regla de detección que genera esta alerta para toda la organización",
       "Marcar manualmente cada alerta futura como falso positivo, una por una, indefinidamente"
@@ -9264,14 +9264,14 @@
     "q_es": "Una organización utiliza el control de aplicaciones de acceso condicional para enrutar el tráfico de una aplicación SaaS sancionada a través de Microsoft Defender for Cloud Apps. Quieren que, si un usuario intenta cargar un archivo a esa aplicación que Microsoft Defender for Cloud Apps identifica como malware (mediante análisis en tiempo real), la carga se bloquee automáticamente en el momento, sin esperar a un análisis posterior por lotes. ¿Qué deben configurar?",
     "q_en": "An organization uses Conditional Access App Control to route traffic for a sanctioned SaaS application through Microsoft Defender for Cloud Apps. They want that, if a user attempts to upload a file to that application which Microsoft Defender for Cloud Apps identifies as malware (via real-time analysis), the upload is automatically blocked on the spot, without waiting for a later batch scan. What should they configure?",
     "opts_es": [
-      "Una directiva de sesión (session policy) de tipo control de carga de archivos con una acción de bloqueo en tiempo real para malware detectado",
+      "Una directiva de sesión de tipo control de carga de archivos con bloqueo en tiempo real para malware",
       "Una directiva de detección de anomalías que solo genere una alerta informativa",
       "Cloud Discovery con análisis de registros de tráfico históricos",
-      "Una directiva de prevención de pérdida de datos para puntos de conexión exclusivamente"
+      "Una directiva de prevención de pérdida de datos para puntos de conexión exclusivamente, sin análisis en la nube"
     ],
     "opts_en": [
-      "A session policy of type file upload control with a real-time block action for detected malware",
-      "An anomaly detection policy that only generates an informational alert",
+      "A session policy of type file upload control with a real-time block for detected malware",
+      "An anomaly detection policy that only generates an informational alert for review later",
       "Cloud Discovery with analysis of historical traffic logs",
       "An Endpoint DLP policy exclusively"
     ],
@@ -9342,13 +9342,13 @@
     "q_es": "Una directiva de cumplimiento de comunicaciones ha marcado varios mensajes de Teams como potencialmente ofensivos. El equipo de RR. HH. designado como revisor quiere asegurarse de que, si un mensaje marcado como de alta gravedad no es revisado por nadie dentro de las 48 horas, se notifique automáticamente a un supervisor adicional para garantizar que ningún caso grave quede sin atender por descuido. ¿Qué deberían configurar dentro de la directiva de cumplimiento de comunicaciones?",
     "q_en": "A communication compliance policy has flagged several Teams messages as potentially offensive. The HR team designated as reviewers wants to ensure that, if a message flagged as high severity is not reviewed by anyone within 48 hours, an additional supervisor is automatically notified to ensure no serious case goes unattended due to oversight. What should they configure within the communication compliance policy?",
     "opts_es": [
-      "Notificaciones de revisores adicionales (escalamiento) basadas en el tiempo transcurrido sin revisión para elementos marcados",
+      "Notificaciones de revisores adicionales (escalamiento) basadas en el tiempo sin revisión",
       "Una etiqueta de confidencialidad aplicada a los mensajes de Teams",
       "Una directiva de retención que elimine los mensajes marcados automáticamente",
       "Un clasificador entrenable que apruebe automáticamente los mensajes tras 48 horas"
     ],
     "opts_en": [
-      "Additional reviewer notifications (escalation) based on elapsed time without review for flagged items",
+      "Additional reviewer notifications (escalation) based on elapsed time without review",
       "A sensitivity label applied to Teams messages",
       "A retention policy that automatically deletes flagged messages",
       "A trainable classifier that automatically approves messages after 48 hours"
@@ -9368,15 +9368,15 @@
     "q_es": "Una organización con dos inquilinos de Microsoft 365 separados (resultado de una adquisición) necesita migrar los buzones de Exchange Online de los usuarios del inquilino adquirido al inquilino principal, conservando sus direcciones de correo y, en la medida de lo posible, el contenido del buzón. Antes de iniciar esta migración entre inquilinos (cross-tenant), ¿qué requisito previo es esencial respecto a los dominios de correo del inquilino de origen?",
     "q_en": "An organization with two separate Microsoft 365 tenants (resulting from an acquisition) needs to migrate the Exchange Online mailboxes of users from the acquired tenant to the primary tenant, preserving their email addresses and, as much as possible, the mailbox content. Before starting this cross-tenant migration, what prerequisite is essential regarding the source tenant's mail domains?",
     "opts_es": [
-      "El dominio personalizado debe permanecer verificado en el inquilino de origen durante la migración y solo se agrega como dominio aceptado en el inquilino de destino una vez completada, evitando conflictos de dominio entre ambos inquilinos",
+      "El dominio personalizado debe permanecer verificado en el inquilino de origen durante la migración y solo agregarse como aceptado en el destino al finalizar",
       "El dominio personalizado debe eliminarse por completo del inquilino de origen antes de crear cualquier buzón en el destino",
-      "No es necesario gestionar los dominios; Exchange Online detecta y resuelve automáticamente cualquier conflicto de dominio entre inquilinos",
+      "No es necesario gestionar los dominios, ya que Exchange Online detecta y resuelve automáticamente cualquier conflicto de dominio entre los dos inquilinos implicados",
       "El dominio personalizado debe convertirse en un dominio '.onmicrosoft.com' antes de cualquier migración"
     ],
     "opts_en": [
-      "The custom domain must remain verified in the source tenant during the migration and is only added as an accepted domain in the destination tenant once it's complete, avoiding domain conflicts between the two tenants",
+      "The custom domain must remain verified in the source tenant during the migration and only added as accepted in the destination once complete",
       "The custom domain must be completely removed from the source tenant before any mailbox is created in the destination",
-      "Domains don't need to be managed; Exchange Online automatically detects and resolves any domain conflict between tenants",
+      "Domains don't need to be managed, since Exchange Online automatically detects and resolves any domain conflict between the two tenants involved",
       "The custom domain must be converted to a '.onmicrosoft.com' domain before any migration"
     ],
     "correct": [
@@ -9396,7 +9396,7 @@
     "opts_es": [
       "El Evaluador de conectividad de red de Microsoft 365 (Microsoft 365 network connectivity tool / test)",
       "El Centro de mensajes (Message center)",
-      "El panel de Estado del servicio (Service health)",
+      "El panel de Estado del servicio, que muestra incidencias activas y su histórico detallado",
       "El visor de directivas de acceso condicional"
     ],
     "opts_en": [
@@ -9420,7 +9420,7 @@
     "q_es": "Una organización multinacional quiere que el inicio de sesión de Microsoft 365 muestre un logotipo y un texto de inicio de sesión diferentes según el idioma del navegador del usuario: un logotipo en español para usuarios de habla hispana y otro en inglés para el resto. ¿Qué deben configurar para conseguir esto?",
     "q_en": "A multinational organization wants the Microsoft 365 sign-in page to display a different logo and sign-in text depending on the user's browser language: a Spanish-language logo for Spanish-speaking users and a different one in English for everyone else. What should they configure to achieve this?",
     "opts_es": [
-      "Varios perfiles de marca de empresa (company branding), cada uno asociado a un idioma o configuración regional específica",
+      "Varios perfiles de marca de empresa, cada uno asociado a un idioma o configuración regional",
       "Una sola configuración de marca de empresa, ya que solo se admite un perfil por inquilino",
       "Una directiva de acceso condicional que cambie el idioma según la ubicación del usuario",
       "Un grupo dinámico que separe a los usuarios por idioma del navegador"
@@ -9446,15 +9446,15 @@
     "q_es": "Una organización ha configurado directivas antispam que ocasionalmente marcan como correo no deseado los mensajes legítimos provenientes de un socio comercial externo cuyo dominio de correo a veces se incluye en listas de bloqueo públicas. La organización quiere garantizar que los correos provenientes específicamente de ese dominio del socio nunca se filtren como spam, independientemente de las puntuaciones de las directivas antispam habituales, sin desactivar el filtrado antispam para el resto de remitentes. ¿Qué deberían configurar?",
     "q_en": "An organization has configured anti-spam policies that occasionally flag legitimate messages from an external business partner as spam, since the partner's mail domain is sometimes included on public block lists. The organization wants to ensure emails specifically from that partner's domain are never filtered as spam, regardless of the usual anti-spam policy scores, without disabling anti-spam filtering for all other senders.",
     "opts_es": [
-      "Una entrada de permitir (allow entry) para el dominio del socio en la lista de remitentes seguros de la directiva antispam, o una entrada en la lista de entidades permitidas y bloqueadas del inquilino (Tenant Allow/Block List)",
+      "Una entrada de permitir (allow entry) para el dominio del socio en la lista de remitentes seguros, o en la lista de entidades permitidas del inquilino",
       "Deshabilitar por completo la directiva antispam predeterminada para todo el inquilino",
-      "Crear un conector de entrada que acepte todo el correo sin ningún análisis de seguridad",
+      "Crear un conector de entrada dedicado que acepte automáticamente todo el correo de ese dominio sin ningún análisis de seguridad adicional",
       "Agregar el dominio del socio como dominio aceptado del propio inquilino"
     ],
     "opts_en": [
-      "An allow entry for the partner's domain in the anti-spam policy's safe senders list, or an entry in the tenant's Allow/Block List",
+      "An allow entry for the partner's domain in the anti-spam policy's safe senders list, or in the Tenant Allow/Block List",
       "Completely disable the default anti-spam policy for the entire tenant",
-      "Create an inbound connector that accepts all mail without any security scanning",
+      "Create a dedicated inbound connector that automatically accepts all mail from that domain without any additional security scanning",
       "Add the partner's domain as an accepted domain of the tenant itself"
     ],
     "correct": [
@@ -9498,14 +9498,14 @@
     "q_es": "Una organización ha implementado Microsoft Entra Connect Health para supervisar su infraestructura de sincronización híbrida. Una mañana, varios usuarios reportan que los cambios realizados en sus atributos en Active Directory local (como números de teléfono actualizados) no se reflejan en Microsoft Entra ID desde hace más de 24 horas. ¿Dónde debería el administrador buscar primero alertas relacionadas con este problema?",
     "q_en": "An organization has implemented Microsoft Entra Connect Health to monitor its hybrid synchronization infrastructure. One morning, several users report that changes made to their attributes in on-premises Active Directory (such as updated phone numbers) haven't been reflected in Microsoft Entra ID for more than 24 hours. Where should the administrator first look for alerts related to this issue?",
     "opts_es": [
-      "El panel de Microsoft Entra Connect Health, que muestra alertas sobre el estado del servidor de sincronización, errores de exportación/importación y si los ciclos de sincronización se están completando correctamente",
+      "El panel de Microsoft Entra Connect Health, que muestra alertas sobre el estado del servidor de sincronización y si los ciclos se completan correctamente",
       "El panel de Puntuación de seguridad, que es la única fuente de información sobre el estado de la sincronización",
       "El registro de auditoría de Exchange Online exclusivamente",
-      "Los registros de inicio de sesión de Microsoft Entra ID, que muestran el estado de sincronización de atributos de los usuarios"
+      "Los registros de inicio de sesión de Microsoft Entra ID, que muestran detalladamente el estado de sincronización de cada atributo de cada usuario"
     ],
     "opts_en": [
-      "The Microsoft Entra Connect Health dashboard, which shows alerts about the sync server's health, export/import errors, and whether sync cycles are completing successfully",
-      "The Secure Score dashboard, which is the only source of information about sync status",
+      "The Microsoft Entra Connect Health dashboard, showing alerts about sync server health and whether sync cycles complete successfully",
+      "The Secure Score dashboard, which some administrators mistakenly assume is the only source of information about sync status",
       "The Exchange Online audit log exclusively",
       "Microsoft Entra ID sign-in logs, which show the attribute sync status of users"
     ],
@@ -9524,7 +9524,7 @@
     "q_es": "Una organización está diseñando su estrategia de autenticación híbrida. Uno de los requisitos del equipo de seguridad es que, si se restablece la contraseña de un usuario desde Microsoft 365 (autoservicio de restablecimiento de contraseña), ese cambio se sincronice de vuelta a Active Directory local, de modo que la contraseña permanezca igual en ambos entornos. Además, requieren que la validación de credenciales durante el inicio de sesión se realice contra Active Directory local en tiempo real. ¿Qué método de autenticación cumple ambos requisitos?",
     "q_en": "An organization is designing its hybrid authentication strategy. One requirement from the security team is that, if a user's password is reset from Microsoft 365 (self-service password reset), that change must sync back to on-premises Active Directory, so the password remains the same in both environments. They also require that credential validation during sign-in happens against on-premises Active Directory in real time. Which authentication method meets both requirements?",
     "opts_es": [
-      "Autenticación de paso a través (pass-through authentication) con la función de escritura diferida de contraseñas (password writeback) habilitada",
+      "Autenticación de paso a través (pass-through authentication) con la escritura diferida de contraseñas habilitada",
       "Sincronización de hash de contraseñas (password hash synchronization) únicamente, sin escritura diferida",
       "Federación con AD FS sin componentes de Microsoft Entra Connect adicionales",
       "Inicio de sesión único de equipo unido únicamente a la nube (cloud-only join)"
