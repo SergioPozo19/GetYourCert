@@ -100,8 +100,10 @@ html[data-theme="dark"]{
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px;transition:background .25s,color .25s}
-.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
 .hidden{display:none!important}
+/* Reading-focused sections stay at the original narrower width for comfortable line length */
+#home,#exam,#explore,#results{max-width:920px;margin-left:auto;margin-right:auto}
 button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:var(--radius-s);font-weight:600;font-size:15px;transition:.15s;border:1px solid transparent;white-space:nowrap}
 .btn-primary{background:var(--accent);color:#fff}
