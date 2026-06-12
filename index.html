@@ -107,9 +107,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1
 button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:var(--radius-s);font-weight:600;font-size:15px;transition:.15s;border:1px solid transparent;white-space:nowrap}
 .btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-d)}
+.btn-primary:hover{background:var(--accent-d);transform:translateY(-1px);box-shadow:var(--shadow)}
 .btn-ghost{background:var(--panel);color:var(--ink-2);border-color:var(--line);box-shadow:var(--shadow)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);transform:translateY(-1px)}
 .btn-sm{padding:9px 16px;font-size:13.5px;border-radius:10px}
 .btn-sm{padding:8px 14px;font-size:13.5px}
 .btn:disabled{opacity:.4;cursor:not-allowed}
@@ -174,6 +174,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 /* entrada escalonada */
 @keyframes cardIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 .exam-card.reveal{opacity:0;animation:cardIn .55s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes qFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.qcard.q-anim{animation:qFadeIn .3s ease}
+@media(prefers-reduced-motion:reduce){.qcard.q-anim{animation:none}}
 .exam-card.coming-soon .cs-icon{transition:transform .4s ease}
 .exam-card.coming-soon:hover .cs-icon{transform:rotate(20deg)}
 @media(prefers-reduced-motion:reduce){
@@ -258,7 +261,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 #bmBtn.on #bmIcon{fill:var(--accent);stroke:var(--accent)}
 .explore-controls{display:flex;gap:10px;max-width:920px;margin:0 auto 12px;flex-wrap:wrap}
 .ex-search{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font-size:14px;font-family:inherit}
-.ex-search:focus{outline:none;border-color:var(--accent)}
+.ex-search:focus,.ex-dom:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .ex-dom{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font-size:14px;font-family:inherit}
 .ex-count{max-width:920px;margin:0 auto 12px;color:var(--ink-3);font-size:12.5px}
 .ex-q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 auto 10px;max-width:920px}
@@ -1542,6 +1545,12 @@ const instantFeedback=()=>mode!=='exam';
 
 function announce(msg){ var el=$('#srAnnounce'); if(el){ el.textContent=''; setTimeout(function(){ el.textContent=msg; },50); } }
 function render(){
+  const qcard=$('.qcard');
+  if(qcard){
+    qcard.classList.remove('q-anim');
+    void qcard.offsetWidth;
+    qcard.classList.add('q-anim');
+  }
   const item=exam[cur], q=item.ref, tp=qType(q);
   $('#qProgress').textContent=(cur+1)+' / '+exam.length;
   $('#qDom').textContent=t('domainOf')+' '+q.dom+' · '+q.obj;
