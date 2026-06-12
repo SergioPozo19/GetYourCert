@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EarnYourCert · Exámenes de práctica para certificaciones de Microsoft</title>
-<meta name="description" content="EarnYourCert: plataforma de exámenes de práctica para certificaciones de Microsoft (AB-900, MS-700 y más). Preguntas originales con explicaciones, repaso inteligente y seguimiento de progreso. Recurso de preparación independiente, no afiliado a Microsoft.">
+<title>EarnYourCert Â· ExÃ¡menes de prÃ¡ctica para certificaciones de Microsoft</title>
+<meta name="description" content="EarnYourCert: plataforma de exÃ¡menes de prÃ¡ctica para certificaciones de Microsoft (AB-900, MS-700 y mÃ¡s). Preguntas originales con explicaciones, repaso inteligente y seguimiento de progreso. Recurso de preparaciÃ³n independiente, no afiliado a Microsoft.">
 <meta name="theme-color" content="#0F6CBD">
 <link rel="canonical" href="https://earnyourcert.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EarnYourCert">
-<meta property="og:title" content="EarnYourCert · Exámenes de práctica para certificaciones de Microsoft">
-<meta property="og:description" content="Practica certificaciones de Microsoft (AB-900, MS-700 y más) con preguntas originales, explicaciones, repaso inteligente y seguimiento de progreso.">
+<meta property="og:title" content="EarnYourCert Â· ExÃ¡menes de prÃ¡ctica para certificaciones de Microsoft">
+<meta property="og:description" content="Practica certificaciones de Microsoft (AB-900, MS-700 y mÃ¡s) con preguntas originales, explicaciones, repaso inteligente y seguimiento de progreso.">
 <meta property="og:url" content="https://earnyourcert.com/">
 <meta property="og:image" content="https://earnyourcert.com/icon-512.png">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="en_US">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EarnYourCert · Exámenes de práctica para certificaciones de Microsoft">
+<meta name="twitter:title" content="EarnYourCert Â· ExÃ¡menes de prÃ¡ctica para certificaciones de Microsoft">
 <meta name="twitter:description" content="Practica certificaciones de Microsoft con preguntas originales, explicaciones y repaso inteligente.">
 <meta name="twitter:image" content="https://earnyourcert.com/icon-512.png">
-<!-- Favicon (SVG en línea) + iconos -->
+<!-- Favicon (SVG en lÃ­nea) + iconos -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230F6CBD'/%3E%3Cg fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 9 12 5 3 9l9 4 9-4z'/%3E%3Cpath d='M7 11v4c0 .9 2.2 2 5 2s5-1.1 5-2v-4'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
@@ -104,19 +104,19 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .quota-pro-link{background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--accent);cursor:pointer;transition:.15s}
 .quota-pro-link:hover{background:var(--accent-soft);border-color:var(--accent)}
 .quota-pro-link.hidden{display:none}
-/* ---- Catálogo de exámenes ---- */
+/* ---- CatÃ¡logo de exÃ¡menes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
 .cat-head p{color:var(--ink-3);font-size:15px;max-width:560px;margin:0 auto}
 .exam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;perspective:1100px}
 .exam-card{padding:26px;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .2s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;gap:14px;text-align:left;position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
 .exam-card>*{position:relative;z-index:1}
-/* brillo diagonal que recorre la tarjeta al pasar el ratón */
+/* brillo diagonal que recorre la tarjeta al pasar el ratÃ³n */
 .exam-card::before{content:"";position:absolute;top:0;left:-60%;width:55%;height:100%;z-index:2;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);opacity:0;transition:opacity .2s;pointer-events:none}
 [data-theme="dark"] .exam-card::before{background:linear-gradient(100deg,transparent,rgba(255,255,255,.10),transparent)}
 .exam-card:not(.coming-soon):hover::before{opacity:1;animation:cardSheen .8s ease}
 @keyframes cardSheen{from{left:-60%}to{left:120%}}
-/* halo de acento al pasar el ratón */
+/* halo de acento al pasar el ratÃ³n */
 .exam-card::after{content:"";position:absolute;inset:0;border-radius:var(--radius);box-shadow:0 0 0 0 var(--accent);opacity:0;transition:opacity .25s;pointer-events:none}
 .exam-card:not(.coming-soon):hover{border-color:var(--accent);box-shadow:0 18px 40px rgba(15,108,189,.18)}
 .exam-card .ec-logo{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent-l));display:grid;place-items:center;color:#fff;font-weight:700;font-family:var(--mono);font-size:18px;flex-shrink:0;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
@@ -154,7 +154,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .back-cat{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--ink-3);font-size:13px;cursor:pointer;padding:6px 10px;border-radius:8px;transition:.13s;font-family:inherit}
 .back-cat:hover{background:var(--panel-2);color:var(--accent)}
 .brand.clickable{cursor:pointer}
-/* ---- Tarjeta: más exámenes próximamente ---- */
+/* ---- Tarjeta: mÃ¡s exÃ¡menes prÃ³ximamente ---- */
 .exam-card.coming-soon{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;border:2px dashed var(--line);background:var(--panel-2);box-shadow:none;cursor:default;padding:34px 26px}
 .exam-card.coming-soon:hover{transform:none;border-color:var(--accent);box-shadow:none}
 .exam-card.coming-soon .cs-icon{width:52px;height:52px;border-radius:14px;display:grid;place-content:center;background:var(--accent-soft);color:var(--accent)}
@@ -210,7 +210,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .ex-opt{padding:8px 12px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:13.5px;color:var(--ink-2)}
 .ex-opt.correct{border-color:var(--ok);background:var(--ok-soft);color:var(--ink);font-weight:600}
 .ex-q .exq-exp{margin-top:10px;padding:10px 12px;background:var(--panel-2);border-radius:8px;font-size:13px;color:var(--ink-2);line-height:1.5}
-/* ---- Modal de confirmación ---- */
+/* ---- Modal de confirmaciÃ³n ---- */
 .modal-ov{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .18s}
 .modal-ov.show{opacity:1;pointer-events:auto}
 .modal{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:420px;width:calc(100% - 40px);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(8px) scale(.98);transition:transform .18s}
@@ -333,7 +333,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .yn-btn.correct{background:var(--ok);border-color:var(--ok);color:#fff}
 .yn-btn.miss{border-color:var(--ok);color:var(--ok);background:rgba(16,124,16,.08)}
 .yn-btn.wrong{background:var(--bad);border-color:var(--bad);color:#fff}
-/* revisión de tipos interactivos */
+/* revisiÃ³n de tipos interactivos */
 .sentence-rv{font-size:15px;line-height:2;color:var(--ink)}
 .rows-rv{display:flex;flex-direction:column;gap:10px}
 .row-rv{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel-2);flex-wrap:wrap}
@@ -470,7 +470,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
             <img id="accountAvatar" class="account-avatar" alt="" referrerpolicy="no-referrer">
             <span id="accountPlan" class="account-plan"></span>
           </div>
-          <button class="icon-btn" id="logoutBtn" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <button class="icon-btn" id="logoutBtn" aria-label="Cerrar sesiÃ³n" title="Cerrar sesiÃ³n">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
           </button>
         </div>
@@ -481,7 +481,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   <section id="catalog">
     <div class="cat-head">
       <h2 data-i="catTitle">Elige tu examen</h2>
-      <p data-i="catSub">Plataforma de exámenes de práctica basados en las guías oficiales de Microsoft.</p>
+      <p data-i="catSub">Plataforma de exÃ¡menes de prÃ¡ctica basados en las guÃ­as oficiales de Microsoft.</p>
     </div>
     <div id="resumeBar" class="resume-bar hidden">
       <div class="rz-info"><b id="rzTitle"></b><span id="rzSub"></span></div>
@@ -500,7 +500,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   </section>
 
   <section id="progress" class="hidden">
-    <button class="back-link" id="backProg">‹ <span data-i="backCatalog">Todos los exámenes</span></button>
+    <button class="back-link" id="backProg">â€¹ <span data-i="backCatalog">Todos los exÃ¡menes</span></button>
     <div class="cat-head">
       <h2 data-i="progTitle">Mi progreso</h2>
     </div>
@@ -510,12 +510,12 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   <section id="home" class="hidden">
     <button class="back-cat" id="backCat">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      <span data-i="backCatalog">Todos los exámenes</span>
+      <span data-i="backCatalog">Todos los exÃ¡menes</span>
     </button>
     <div class="card hero">
       <div class="eyebrow" id="heroEyebrow">Microsoft Certified Fundamentals</div>
       <h2 id="heroTitle">Domina el examen AB-900</h2>
-      <p data-i="heroSub">Plataforma de práctica basada en la guía oficial de Microsoft.</p>
+      <p data-i="heroSub">Plataforma de prÃ¡ctica basada en la guÃ­a oficial de Microsoft.</p>
       <div class="stats">
         <div class="stat"><div class="n" id="statTotal">0</div><div class="l" data-i="sQuestions">Preguntas</div></div>
         <div class="stat"><div class="n" id="statPerExam">50</div><div class="l" data-i="sPerExam">Por examen</div></div>
@@ -527,7 +527,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <div class="explore-row">
       <button class="btn btn-ghost" id="exploreBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <span data-i="exploreBtn">Catálogo de Preguntas</span>
+        <span data-i="exploreBtn">CatÃ¡logo de Preguntas</span>
       </button>
     </div>
 
@@ -543,8 +543,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </div>
       <div class="mode" data-mode="domain">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
-        <h3 data-i="m2t">Práctica por dominio</h3>
-        <p data-i="m2d">Concéntrate en un dominio concreto, sin límite de tiempo.</p>
+        <h3 data-i="m2t">PrÃ¡ctica por dominio</h3>
+        <p data-i="m2d">ConcÃ©ntrate en un dominio concreto, sin lÃ­mite de tiempo.</p>
       </div>
       <div class="mode" data-mode="all">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></div>
@@ -554,7 +554,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="mode" data-mode="srs">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.5 2.8L3 8"/><path d="M3 4v4h4"/></svg></div>
         <h3><span data-i="m4t">Repaso inteligente</span> <span class="mode-badge" id="srsBadge"></span></h3>
-        <p data-i="m4d">Repetición espaciada: te repregunta lo que fallaste y lo que toca repasar.</p>
+        <p data-i="m4d">RepeticiÃ³n espaciada: te repregunta lo que fallaste y lo que toca repasar.</p>
       </div>
       <div class="mode" data-mode="bookmarks">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
@@ -571,10 +571,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   </section>
 
   <section id="explore" class="hidden">
-    <button class="back-link" id="backExplore">‹ <span data-i="backToExam">Volver</span></button>
+    <button class="back-link" id="backExplore">â€¹ <span data-i="backToExam">Volver</span></button>
     <div class="cat-head"><h2 data-i="exploreTitle">Explorar preguntas</h2></div>
     <div class="explore-controls">
-      <input type="text" id="exSearch" class="ex-search" data-i-ph="searchPh" placeholder="Buscar por texto…">
+      <input type="text" id="exSearch" class="ex-search" data-i-ph="searchPh" placeholder="Buscar por textoâ€¦">
       <select id="exDom" class="ex-dom"></select>
     </div>
     <div id="exCount" class="ex-count"></div>
@@ -604,7 +604,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </div>
       <div class="opts" id="opts"></div>
       <div class="exp hidden" id="qExp">
-        <h5 data-i="expTitle">Explicación</h5>
+        <h5 data-i="expTitle">ExplicaciÃ³n</h5>
         <p id="qExpText"></p>
       </div>
     </div>
@@ -652,9 +652,9 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
           <circle cx="85" cy="85" r="74" fill="none" stroke="var(--line-2)" stroke-width="13"/>
           <circle id="ring" cx="85" cy="85" r="74" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round" stroke-dasharray="465" stroke-dashoffset="465" style="transition:stroke-dashoffset 1s ease"/>
         </svg>
-        <div class="pct"><b id="scorePct">0%</b><span data-i="rScore">Puntuación</span></div>
+        <div class="pct"><b id="scorePct">0%</b><span data-i="rScore">PuntuaciÃ³n</span></div>
       </div>
-      <div class="verdict" id="verdict">—</div>
+      <div class="verdict" id="verdict">â€”</div>
       <div class="verdict-sub" id="verdictSub"></div>
       <div class="rbreak" id="rbreak"></div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -669,22 +669,22 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
         <div class="rw-title" id="rwTitle" data-i="rwTitle">Repetir con las preguntas falladas</div>
         <div class="rw-sub" id="rwSub"></div>
         <div class="rw-controls">
-          <div class="rw-extra-label" data-i="rwExtra">Preguntas extra a añadir:</div>
+          <div class="rw-extra-label" data-i="rwExtra">Preguntas extra a aÃ±adir:</div>
           <div class="rw-chips" id="rwChips">
             <button type="button" class="rw-chip on" data-x="0">+0</button>
             <button type="button" class="rw-chip" data-x="10">+10</button>
             <button type="button" class="rw-chip" data-x="20">+20</button>
             <button type="button" class="rw-chip" data-x="30">+30</button>
-            <button type="button" class="rw-chip rw-chip-custom" data-x="custom" data-i="rwCustom">Otra…</button>
+            <button type="button" class="rw-chip rw-chip-custom" data-x="custom" data-i="rwCustom">Otraâ€¦</button>
           </div>
-          <input type="number" id="rwCustomInput" class="rw-custom-input hidden" min="1" step="1" placeholder="Nº">
+          <input type="number" id="rwCustomInput" class="rw-custom-input hidden" min="1" step="1" placeholder="NÂº">
         </div>
         <button class="btn btn-primary" id="retryWrongBtn" data-i="rwStart">Repetir examen</button>
       </div>
     </div>
 
     <div class="review-head">
-      <h3 data-i="reviewTitle">Revisión de respuestas</h3>
+      <h3 data-i="reviewTitle">RevisiÃ³n de respuestas</h3>
       <div class="filter-tabs" id="filterTabs">
         <button data-f="wrong" class="on" data-i="fWrong">Fallos</button>
         <button data-f="flagged" data-i="fFlagged">Marcadas</button>
@@ -701,11 +701,11 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div class="len-modal-icon" id="lenModalIcon" aria-hidden="true"></div>
-    <h3 id="lenModalTitle">Número de preguntas</h3>
+    <h3 id="lenModalTitle">NÃºmero de preguntas</h3>
     <p id="lenModalSub" class="len-modal-sub"></p>
     <div class="len-modal-chips" id="lenChips"></div>
     <div class="len-modal-custom">
-      <label for="lenCustomInput" data-i="lenCustomLabel">O elige un número personalizado:</label>
+      <label for="lenCustomInput" data-i="lenCustomLabel">O elige un nÃºmero personalizado:</label>
       <input type="number" id="lenCustomInput" class="len-custom-input" min="1" inputmode="numeric">
     </div>
     <button class="btn btn-primary len-modal-start" id="lenModalOk" data-i="startBtn">
@@ -732,13 +732,13 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div class="len-modal-icon" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-    <h3 id="proModalTitle">Límite diario alcanzado</h3>
+    <h3 id="proModalTitle">LÃ­mite diario alcanzado</h3>
     <p id="proModalSub" class="len-modal-sub"></p>
     <a class="support-btn" id="proModalPatreon" href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.8 2.4c-3.9 0-7.1 3.2-7.1 7.1 0 3.9 3.2 7.1 7.1 7.1 3.9 0 7.1-3.2 7.1-7.1 0-3.9-3.2-7.1-7.1-7.1zM2.4 21.6V2.4h3.5v19.2H2.4z"/></svg>
-      <span data-i="support">Apóyame en Patreon</span>
+      <span data-i="support">ApÃ³yame en Patreon</span>
     </a>
-    <p class="pro-auto-note" data-i="proAutoNote">El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.</p>
+    <p class="pro-auto-note" data-i="proAutoNote">El acceso Pro se activa automÃ¡ticamente al iniciar sesiÃ³n con la cuenta de Google asociada a tu suscripciÃ³n de Patreon.</p>
   </div>
 </div>
 
@@ -748,8 +748,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div class="len-modal-icon" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
-    <h3 id="loginModalTitle" data-i="loginRequiredTitle">Inicia sesión para continuar</h3>
-    <p class="len-modal-sub" data-i="loginRequiredSub">Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso.</p>
+    <h3 id="loginModalTitle" data-i="loginRequiredTitle">Inicia sesiÃ³n para continuar</h3>
+    <p class="len-modal-sub" data-i="loginRequiredSub">Necesitas iniciar sesiÃ³n con Google para acceder a los exÃ¡menes y guardar tu progreso.</p>
     <div id="gsiButtonModal" class="gsi-btn" style="display:flex;justify-content:center;margin-top:14px"></div>
     <p class="login-consent" id="loginConsent" style="margin-top:14px;font-size:12px;color:var(--ink-3);text-align:center"></p>
   </div>
@@ -759,16 +759,16 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 <footer class="site-footer">
   <a class="support-btn" id="supportBtn" href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.8 2.4c-3.9 0-7.1 3.2-7.1 7.1 0 3.9 3.2 7.1 7.1 7.1 3.9 0 7.1-3.2 7.1-7.1 0-3.9-3.2-7.1-7.1-7.1zM2.4 21.6V2.4h3.5v19.2H2.4z"/></svg>
-    <span data-i="support">Apóyame en Patreon</span>
+    <span data-i="support">ApÃ³yame en Patreon</span>
   </a>
   <button class="pro-link" id="proLinkBtn" data-i="proLink">Hazte Pro</button>
-  <p class="footer-support"><span data-i="footerSupportPre">¿Dudas, problemas o sugerencias? Escríbenos a</span> <a href="mailto:soporte@earnyourcert.com">soporte@earnyourcert.com</a></p>
-  <p data-i="disclaimer">Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.</p>
-  <p data-i="copyright" style="margin-top:10px">© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.</p>
-  <p class="footer-privacy"><a href="privacy.html" data-i="privacyPolicy">Política de privacidad</a></p>
+  <p class="footer-support"><span data-i="footerSupportPre">Â¿Dudas, problemas o sugerencias? EscrÃ­benos a</span> <a href="mailto:soporte@earnyourcert.com">soporte@earnyourcert.com</a></p>
+  <p data-i="disclaimer">Esta plataforma es independiente y no estÃ¡ afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de prÃ¡ctica original y no reproducen el examen oficial.</p>
+  <p data-i="copyright" style="margin-top:10px">Â© 2026 EarnYourCert Â· Todos los derechos reservados. Queda prohibida la reproducciÃ³n total o parcial del contenido sin autorizaciÃ³n expresa por escrito.</p>
+  <p class="footer-privacy"><a href="privacy.html" data-i="privacyPolicy">PolÃ­tica de privacidad</a></p>
 </footer>
 
-<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administración de Microsoft 365 Copilot y agentes: conceptos clave, seguridad, cumplimiento y gobernanza. Basado en la guía oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration: core concepts, security, compliance and governance. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"Administración de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":622},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"Administración de Microsoft Teams: redes, seguridad, cumplimiento, gobernanza, colaboración externa, equipos, reuniones y llamadas. Nivel asociado.","desc_en":"Microsoft Teams administration: networking, security, compliance, governance, external collaboration, teams, meetings and calling. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","level":"associate","questionCount":621},{"id":"ms-102","code":"MS-102","title_es":"Microsoft 365 Certified: Administrator Expert","title_en":"Microsoft 365 Certified: Administrator Expert","desc_es":"Administración de inquilinos de Microsoft 365: identidad y acceso en Microsoft Entra, seguridad y amenazas con Microsoft Defender XDR, y cumplimiento con Microsoft Purview. Nivel experto.","desc_en":"Microsoft 365 tenant administration: identity and access in Microsoft Entra, security and threats with Microsoft Defender XDR, and compliance with Microsoft Purview. Expert level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar un inquilino de Microsoft 365","name_en":"Deploy and manage a Microsoft 365 tenant","weight":"25-30%"},{"id":2,"name_es":"Implementar y administrar identidad y acceso en Microsoft Entra","name_en":"Implement and manage identity and access in Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Administrar la seguridad y las amenazas con Microsoft Defender XDR","name_en":"Manage security and threats by using Microsoft Defender XDR","weight":"30-35%"},{"id":4,"name_es":"Administrar el cumplimiento con Microsoft Purview","name_en":"Manage compliance by using Microsoft Purview","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"shield","level":"expert","questionCount":560,"newUntil":"2026-06-19"}]</script>
+<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administraciÃ³n de Microsoft 365 Copilot y agentes: conceptos clave, seguridad, cumplimiento y gobernanza. Basado en la guÃ­a oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration: core concepts, security, compliance and governance. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"AdministraciÃ³n de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":622},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"AdministraciÃ³n de Microsoft Teams: redes, seguridad, cumplimiento, gobernanza, colaboraciÃ³n externa, equipos, reuniones y llamadas. Nivel asociado.","desc_en":"Microsoft Teams administration: networking, security, compliance, governance, external collaboration, teams, meetings and calling. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","level":"associate","questionCount":621},{"id":"ms-102","code":"MS-102","title_es":"Microsoft 365 Certified: Administrator Expert","title_en":"Microsoft 365 Certified: Administrator Expert","desc_es":"AdministraciÃ³n de inquilinos de Microsoft 365: identidad y acceso en Microsoft Entra, seguridad y amenazas con Microsoft Defender XDR, y cumplimiento con Microsoft Purview. Nivel experto.","desc_en":"Microsoft 365 tenant administration: identity and access in Microsoft Entra, security and threats with Microsoft Defender XDR, and compliance with Microsoft Purview. Expert level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar un inquilino de Microsoft 365","name_en":"Deploy and manage a Microsoft 365 tenant","weight":"25-30%"},{"id":2,"name_es":"Implementar y administrar identidad y acceso en Microsoft Entra","name_en":"Implement and manage identity and access in Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Administrar la seguridad y las amenazas con Microsoft Defender XDR","name_en":"Manage security and threats by using Microsoft Defender XDR","weight":"30-35%"},{"id":4,"name_es":"Administrar el cumplimiento con Microsoft Purview","name_en":"Manage compliance by using Microsoft Purview","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"shield","level":"expert","questionCount":560,"newUntil":"2026-06-19"}]</script>
 
 <script>
 "use strict";
@@ -797,75 +797,75 @@ const CROSS = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" strok
 
 const I18N = {
   es:{
-    brandTitle:"AB-900 · Examen de práctica", heroMaster:"Domina el examen {code}",
-    heroSub:"Plataforma de práctica basada en la guía oficial de Microsoft. Preguntas con explicaciones detalladas para reforzar cada dominio.",
+    brandTitle:"AB-900 Â· Examen de prÃ¡ctica", heroMaster:"Domina el examen {code}",
+    heroSub:"Plataforma de prÃ¡ctica basada en la guÃ­a oficial de Microsoft. Preguntas con explicaciones detalladas para reforzar cada dominio.",
     sQuestions:"Preguntas", sPerExam:"Por examen", sPass:"Aprobado", sDomains:"Dominios",
     m1t:"Examen completo", m1d:"Simulacro cronometrado con preguntas aleatorias ponderadas por dominio, como el examen real.",
-    m2t:"Práctica por dominio", m2d:"Concéntrate en un dominio concreto para reforzar tus puntos débiles, sin límite de tiempo.",
+    m2t:"PrÃ¡ctica por dominio", m2d:"ConcÃ©ntrate en un dominio concreto para reforzar tus puntos dÃ©biles, sin lÃ­mite de tiempo.",
     m3t:"Repaso libre", m3d:"Recorre todo el banco de preguntas con feedback inmediato tras cada respuesta.",
-    m4t:"Repaso inteligente", m4d:"Repetición espaciada: te repregunta lo que fallaste y lo que toca repasar.", m5t:"Favoritas", m5d:"Practica solo las preguntas que has guardado como favoritas.",
-    exploreBtn:"Catálogo de Preguntas", exploreTitle:"Catálogo de Preguntas", searchPh:"Buscar por texto…", allDomains:"Todos los dominios", backToExam:"Volver", exCount:"{n} preguntas", bookmark:"Favorita", bookmarked:"Guardada", srsEmpty:"No hay preguntas pendientes de repaso por ahora.", bmEmpty:"Aún no has guardado preguntas favoritas.",
-    pickDom:"Elige el dominio a practicar", lenLabel:"Número de preguntas:", startBtn:"Comenzar examen",
-    disclaimer:"Material de estudio no oficial creado con fines de práctica. No está afiliado ni respaldado por Microsoft. El examen oficial requiere 700/1000 para aprobar; aquí se usa el 70% como referencia.",
-    quit:"Salir", multiHint:"Selecciona todas las respuestas correctas.", checkAns:"Comprobar", expTitle:"Explicación", aOk:"Respuesta correcta", aWrong:"Respuesta incorrecta",
+    m4t:"Repaso inteligente", m4d:"RepeticiÃ³n espaciada: te repregunta lo que fallaste y lo que toca repasar.", m5t:"Favoritas", m5d:"Practica solo las preguntas que has guardado como favoritas.",
+    exploreBtn:"CatÃ¡logo de Preguntas", exploreTitle:"CatÃ¡logo de Preguntas", searchPh:"Buscar por textoâ€¦", allDomains:"Todos los dominios", backToExam:"Volver", exCount:"{n} preguntas", bookmark:"Favorita", bookmarked:"Guardada", srsEmpty:"No hay preguntas pendientes de repaso por ahora.", bmEmpty:"AÃºn no has guardado preguntas favoritas.",
+    pickDom:"Elige el dominio a practicar", lenLabel:"NÃºmero de preguntas:", startBtn:"Comenzar examen",
+    disclaimer:"Material de estudio no oficial creado con fines de prÃ¡ctica. No estÃ¡ afiliado ni respaldado por Microsoft. El examen oficial requiere 700/1000 para aprobar; aquÃ­ se usa el 70% como referencia.",
+    quit:"Salir", multiHint:"Selecciona todas las respuestas correctas.", checkAns:"Comprobar", expTitle:"ExplicaciÃ³n", aOk:"Respuesta correcta", aWrong:"Respuesta incorrecta",
     prev:"Anterior", next:"Siguiente", flag:"Marcar", flagged:"Marcada",
     navigator:"Navegador", lgDone:"Respondida", lgFlag:"Marcada", submit:"Finalizar y corregir",
-    rScore:"Puntuación", retry:"Nuevo examen", backHome:"Volver al inicio",
-    reviewTitle:"Revisión de respuestas", fWrong:"Fallos", fFlagged:"Marcadas", fAll:"Todas",
-    domNames:{1:"Características y objetos de M365",2:"Protección y gobernanza de datos",3:"Administración de Copilot y agentes"},
-    pass:"¡Aprobado!", fail:"No superado", passSub:"Has alcanzado el umbral del 70%. ¡Bien hecho!",
+    rScore:"PuntuaciÃ³n", retry:"Nuevo examen", backHome:"Volver al inicio",
+    reviewTitle:"RevisiÃ³n de respuestas", fWrong:"Fallos", fFlagged:"Marcadas", fAll:"Todas",
+    domNames:{1:"CaracterÃ­sticas y objetos de M365",2:"ProtecciÃ³n y gobernanza de datos",3:"AdministraciÃ³n de Copilot y agentes"},
+    pass:"Â¡Aprobado!", fail:"No superado", passSub:"Has alcanzado el umbral del 70%. Â¡Bien hecho!",
     failSub:"Necesitas un 70% para aprobar. Repasa los fallos y vuelve a intentarlo.",
     correctAns:"Correcta", wrongAns:"Incorrecta",
-    confirmQuit:"¿Seguro que quieres salir? Perderás el progreso del examen.",
-    confirmSubmit:"Has respondido {a} de {t} preguntas. ¿Finalizar y corregir?",
-    noWrong:"¡Perfecto! No has fallado ninguna pregunta.", noFlagged:"No has marcado ninguna pregunta para revisar.",
+    confirmQuit:"Â¿Seguro que quieres salir? PerderÃ¡s el progreso del examen.",
+    confirmSubmit:"Has respondido {a} de {t} preguntas. Â¿Finalizar y corregir?",
+    noWrong:"Â¡Perfecto! No has fallado ninguna pregunta.", noFlagged:"No has marcado ninguna pregunta para revisar.",
     confirmTitle:"Confirmar", confirmOk:"Aceptar", confirmCancel:"Cancelar", quitOk:"Salir", submitOk:"Entregar",
-    confirmExamMsg:"El examen completo consumirá {n} de tus {m} preguntas gratuitas restantes hoy. ¿Quieres continuar?",
-    confirmExamMsgPro:"Vas a comenzar el examen completo ({n} preguntas). ¿Continuar?",
+    confirmExamMsg:"El examen completo consumirÃ¡ {n} de tus {m} preguntas gratuitas restantes hoy. Â¿Quieres continuar?",
+    confirmExamMsgPro:"Vas a comenzar el examen completo ({n} preguntas). Â¿Continuar?",
     confirmExamStart:"Empezar examen",
-    lenCustomLabel:"O elige un número personalizado:",
-    time5:"Quedan 5 minutos", time1:"¡Queda 1 minuto!", timeUp:"Se acabó el tiempo",
+    lenCustomLabel:"O elige un nÃºmero personalizado:",
+    time5:"Quedan 5 minutos", time1:"Â¡Queda 1 minuto!", timeUp:"Se acabÃ³ el tiempo",
     themeToLight:"Cambiar a modo claro", themeToDark:"Cambiar a modo oscuro",
-    loading:"Cargando preguntas…", loadMore:"Cargar {n} más",
+    loading:"Cargando preguntasâ€¦", loadMore:"Cargar {n} mÃ¡s",
     answerOptions:"Opciones de respuesta", questionWord:"Pregunta", ofWord:"de", locale:"es-ES",
     domainOf:"Dominio", correctOf:"correctas", allWord:"todas",
     rwTitle:"Repetir con las preguntas falladas",
-    rwExtra:"Preguntas extra a añadir:",
-    rwCustom:"Otra…",
+    rwExtra:"Preguntas extra a aÃ±adir:",
+    rwCustom:"Otraâ€¦",
     rwStart:"Repetir examen",
     rwSub:"{w} falladas + {x} nuevas = {n} preguntas",
     rwSubNoExtra:"{w} preguntas falladas",
-    yes:"Sí", no:"No", choose:"Selecciona…", noAnswer:"Sin responder",
-    catTitle:"Elige tu examen", catSub:"Plataforma de exámenes de práctica basados en las guías oficiales de Microsoft.",
-    comingSoonTitle:"Más exámenes próximamente", comingSoonSub:"Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!",
-    resumeTitle:"Examen sin terminar", resumeSub:"{code} · pregunta {n} de {t}", resumeBtn:"Reanudar", discardBtn:"Descartar", confirmDiscard:"¿Descartar el examen sin terminar?",
-    myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
-    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
+    yes:"SÃ­", no:"No", choose:"Seleccionaâ€¦", noAnswer:"Sin responder",
+    catTitle:"Elige tu examen", catSub:"Plataforma de exÃ¡menes de prÃ¡ctica basados en las guÃ­as oficiales de Microsoft.",
+    comingSoonTitle:"MÃ¡s exÃ¡menes prÃ³ximamente", comingSoonSub:"AÃ±adimos nuevas certificaciones de forma continua. Â¡Vuelve pronto!",
+    resumeTitle:"Examen sin terminar", resumeSub:"{code} Â· pregunta {n} de {t}", resumeBtn:"Reanudar", discardBtn:"Descartar", confirmDiscard:"Â¿Descartar el examen sin terminar?",
+    myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"AÃºn no has completado ningÃºn examen. Â¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"Â¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
+    catReady:"Disponible", catStart:"Empezar", catSoon:"PrÃ³ximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
-    backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
-    support:"Apóyame en Patreon",
-    disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
-    copyright:"© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
-    privacyPolicy:"Política de privacidad", loginConsent:"Al continuar, aceptas nuestra {link}.",
-    shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!",
-    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro", planFree:"Free", planPro:"PRO",
-    proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
-    proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
-    proAutoNote:"El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.",
-    footerSupportPre:"¿Dudas, problemas o sugerencias? Escríbenos a",
+    backCatalog:"Todos los exÃ¡menes", examWord:"Examen de prÃ¡ctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de prÃ¡ctica para aprobar certificaciones de Microsoft.",
+    support:"ApÃ³yame en Patreon",
+    disclaimer:"Esta plataforma es independiente y no estÃ¡ afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de prÃ¡ctica original y no reproducen el examen oficial.",
+    copyright:"Â© 2026 EarnYourCert Â· Todos los derechos reservados. Queda prohibida la reproducciÃ³n total o parcial del contenido sin autorizaciÃ³n expresa por escrito.",
+    privacyPolicy:"PolÃ­tica de privacidad", loginConsent:"Al continuar, aceptas nuestra {link}.",
+    shareResult:"Compartir resultado", shareCopied:"Â¡Enlace copiado!",
+    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO Â· ilimitado", quotaProLink:"Hazte Pro", planFree:"Free", planPro:"PRO",
+    proLimitTitle:"LÃ­mite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve maÃ±ana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
+    proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activarÃ¡ automÃ¡ticamente.",
+    proAutoNote:"El acceso Pro se activa automÃ¡ticamente al iniciar sesiÃ³n con la cuenta de Google asociada a tu suscripciÃ³n de Patreon.",
+    footerSupportPre:"Â¿Dudas, problemas o sugerencias? EscrÃ­benos a",
     proLink:"Hazte Pro",
-    loginGoogle:"Iniciar sesión con Google", logout:"Cerrar sesión", loginOk:"¡Sesión iniciada! Tu progreso se sincronizará.", syncError:"No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.",
-    loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso."
+    loginGoogle:"Iniciar sesiÃ³n con Google", logout:"Cerrar sesiÃ³n", loginOk:"Â¡SesiÃ³n iniciada! Tu progreso se sincronizarÃ¡.", syncError:"No se pudo conectar con el servidor. IntÃ©ntalo de nuevo mÃ¡s tarde.",
+    loginRequiredTitle:"Inicia sesiÃ³n para continuar", loginRequiredSub:"Necesitas iniciar sesiÃ³n con Google para acceder a los exÃ¡menes y guardar tu progreso."
   },
   en:{
-    brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
+    brandTitle:"AB-900 Â· Practice exam", heroMaster:"Master the {code} exam",
     heroSub:"Practice platform based on the official Microsoft study guide. Questions with detailed explanations to reinforce every domain.",
     sQuestions:"Questions", sPerExam:"Per exam", sPass:"To pass", sDomains:"Domains",
     m1t:"Full exam", m1d:"Timed simulation with random questions weighted by domain, just like the real exam.",
     m2t:"Practice by domain", m2d:"Focus on a specific domain to strengthen your weak spots, with no time limit.",
     m3t:"Free review", m3d:"Go through the whole question bank with instant feedback after each answer.",
     m4t:"Smart review", m4d:"Spaced repetition: re-asks what you missed and what is due for review.", m5t:"Bookmarked", m5d:"Practice only the questions you have saved as favorites.",
-    exploreBtn:"Question Catalog", exploreTitle:"Question Catalog", searchPh:"Search by text…", allDomains:"All domains", backToExam:"Back", exCount:"{n} questions", bookmark:"Bookmark", bookmarked:"Saved", srsEmpty:"No questions are due for review right now.", bmEmpty:"You haven't saved any bookmarked questions yet.",
+    exploreBtn:"Question Catalog", exploreTitle:"Question Catalog", searchPh:"Search by textâ€¦", allDomains:"All domains", backToExam:"Back", exCount:"{n} questions", bookmark:"Bookmark", bookmarked:"Saved", srsEmpty:"No questions are due for review right now.", bmEmpty:"You haven't saved any bookmarked questions yet.",
     pickDom:"Choose the domain to practice", lenLabel:"Number of questions:", startBtn:"Start exam",
     disclaimer:"Unofficial study material created for practice purposes. Not affiliated with or endorsed by Microsoft. The official exam requires 700/1000 to pass; 70% is used here as a reference.",
     quit:"Quit", multiHint:"Select all correct answers.", checkAns:"Check answer", expTitle:"Explanation", aOk:"Correct answer", aWrong:"Incorrect answer",
@@ -887,29 +887,29 @@ const I18N = {
     lenCustomLabel:"Or choose a custom number:",
     time5:"5 minutes left", time1:"1 minute left!", timeUp:"Time's up",
     themeToLight:"Switch to light mode", themeToDark:"Switch to dark mode",
-    loading:"Loading questions…", loadMore:"Load {n} more",
+    loading:"Loading questionsâ€¦", loadMore:"Load {n} more",
     answerOptions:"Answer options", questionWord:"Question", ofWord:"of", locale:"en-US",
     domainOf:"Domain", correctOf:"correct", allWord:"all",
     rwTitle:"Retry with the questions you missed",
     rwExtra:"Extra questions to add:",
-    rwCustom:"Other…",
+    rwCustom:"Otherâ€¦",
     rwStart:"Retry exam",
     rwSub:"{w} missed + {x} new = {n} questions",
     rwSubNoExtra:"{w} missed questions",
-    yes:"Yes", no:"No", choose:"Select…", noAnswer:"Not answered",
+    yes:"Yes", no:"No", choose:"Selectâ€¦", noAnswer:"Not answered",
     catTitle:"Choose your exam", catSub:"A practice-exam platform based on Microsoft's official study guides.",
     comingSoonTitle:"More exams coming soon", comingSoonSub:"We add new certifications continuously. Check back soon!",
-    resumeTitle:"Unfinished exam", resumeSub:"{code} · question {n} of {t}", resumeBtn:"Resume", discardBtn:"Discard", confirmDiscard:"Discard the unfinished exam?",
+    resumeTitle:"Unfinished exam", resumeSub:"{code} Â· question {n} of {t}", resumeBtn:"Resume", discardBtn:"Discard", confirmDiscard:"Discard the unfinished exam?",
     myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
     support:"Support me on Patreon",
     disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
-    copyright:"© 2026 EarnYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
+    copyright:"Â© 2026 EarnYourCert Â· All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
     privacyPolicy:"Privacy Policy", loginConsent:"By continuing, you accept our {link}.",
     shareResult:"Share result", shareCopied:"Link copied!",
-    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro", planFree:"Free", planPro:"PRO",
+    quotaLeft:"{n}/20 free questions today", proLabel:"PRO Â· unlimited", quotaProLink:"Get Pro", planFree:"Free", planPro:"PRO",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
     proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
     proAutoNote:"Pro activates automatically when you log in with the Google account linked to your Patreon subscription.",
@@ -931,7 +931,7 @@ let timerInt=null, timeLeft=0;                    // exam timer
 let examActive=false;                             // guard: unsaved exam in progress
 // ---------------------------------------------------------------------------
 
-// ===== Persistencia: localStorage con degradación segura =====
+// ===== Persistencia: localStorage con degradaciÃ³n segura =====
 const STORE_PREFIX='gyc:';
 const Store={
   ok:(()=>{try{const k='__gyc_t';localStorage.setItem(k,'1');localStorage.removeItem(k);return true;}catch(e){return false;}})(),
@@ -940,7 +940,7 @@ const Store={
   del(key){ if(!this.ok)return; try{localStorage.removeItem(STORE_PREFIX+key);}catch(e){} }
 };
 
-// ===== Freemium: límite diario de preguntas + desbloqueo Pro =====
+// ===== Freemium: lÃ­mite diario de preguntas + desbloqueo Pro =====
 const DAILY_LIMIT=20;
 function todayStr(){ return new Date().toISOString().slice(0,10); }
 function quotaKey(){
@@ -971,7 +971,7 @@ function consumeQuota(n){
 }
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
-// ===== Cuenta Google + sincronización de progreso =====
+// ===== Cuenta Google + sincronizaciÃ³n de progreso =====
 const GOOGLE_CLIENT_ID='562027841454-95lm4222qmqprse2tbje27jsgk9oruid.apps.googleusercontent.com';
 function authHeaders(){
   const tok=Store.get('session',null);
@@ -1014,8 +1014,8 @@ function syncPush(){
   },3000);
 }
 
-// Combina los datos del servidor con los locales (favoritos: unión, SRS: gana el más reciente,
-// historial: unión deduplicada por examen+fecha, idioma/tema: prevalece el de la cuenta).
+// Combina los datos del servidor con los locales (favoritos: uniÃ³n, SRS: gana el mÃ¡s reciente,
+// historial: uniÃ³n deduplicada por examen+fecha, idioma/tema: prevalece el de la cuenta).
 function syncMergeAndPush(server){
   const data=(server&&server.data)||{};
 
@@ -1091,7 +1091,7 @@ async function handleGoogleCredential(response){
   }
 }
 
-// ===== Modal "inicia sesión para continuar" (acceso a exámenes) =====
+// ===== Modal "inicia sesiÃ³n para continuar" (acceso a exÃ¡menes) =====
 let pendingAction=null;
 function requireLogin(action){
   if(isLoggedIn()){ action(); return; }
@@ -1150,14 +1150,14 @@ function isBookmarked(id){ return getBookmarks().indexOf(id)>=0; }
 function toggleBookmark(id){
   const b=getBookmarks(); const i=b.indexOf(id);
   if(i>=0)b.splice(i,1); else b.push(id);
-  Store.set('bookmarks',b); syncPush(); return i<0; // true si quedó marcado
+  Store.set('bookmarks',b); syncPush(); return i<0; // true si quedÃ³ marcado
 }
 function bookmarkCount(){ return QUESTIONS.filter(q=>isBookmarked(q.id)).length; }
 
-// ===== Repetición espaciada (SRS, estilo Leitner) =====
+// ===== RepeticiÃ³n espaciada (SRS, estilo Leitner) =====
 const SRS_DAY=86400000;
-const SRS_INTERVALS=[0,1,3,7,16,35]; // días por caja 0..5
-let srsRecorded={}; // por índice: ya contabilizado en esta sesión
+const SRS_INTERVALS=[0,1,3,7,16,35]; // dÃ­as por caja 0..5
+let srsRecorded={}; // por Ã­ndice: ya contabilizado en esta sesiÃ³n
 function getSrs(){ return Store.get('srs',{}); }
 function updateSrs(id,correct){
   const s=getSrs();
@@ -1178,7 +1178,7 @@ function srsDueList(){
     if(!r) fresh.push(q);
     else if((r.due||0)<=now) due.push(q);
   });
-  // vencidas primero (caja más baja = más urgente), luego nuevas
+  // vencidas primero (caja mÃ¡s baja = mÃ¡s urgente), luego nuevas
   due.sort((a,b)=>((s[a.id].box||0)-(s[b.id].box||0))||((s[a.id].due||0)-(s[b.id].due||0)));
   return due.concat(shuffle(fresh));
 }
@@ -1190,8 +1190,8 @@ $('#logoutBtn').addEventListener('click',async()=>{
   try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
   Store.del('session');Store.del('account');
   updateAccountUI();
-  // Cerrar sesión corta el acceso al examen en curso: vuelve al catálogo,
-  // donde seleccionar cualquier examen exigirá iniciar sesión de nuevo.
+  // Cerrar sesiÃ³n corta el acceso al examen en curso: vuelve al catÃ¡logo,
+  // donde seleccionar cualquier examen exigirÃ¡ iniciar sesiÃ³n de nuevo.
   backToCatalog();
 });
 
@@ -1225,7 +1225,7 @@ function updateQuotaBadge(){
   if(isPro()){ el.textContent=t('proLabel'); el.classList.add('pro'); if(link)link.classList.add('hidden'); }
   else{ el.textContent=t('quotaLeft').replace('{n}',remainingQuota()); el.classList.remove('pro'); if(link)link.classList.remove('hidden'); }
 }
-// --- Dominios dinámicos según el examen activo ---
+// --- Dominios dinÃ¡micos segÃºn el examen activo ---
 function domList(){
   // ids de dominio del examen actual (p.ej. [1,2,3] o [1,2,3,4])
   if(currentExam && Array.isArray(currentExam.domains) && currentExam.domains.length)
@@ -1324,7 +1324,7 @@ function buildExamSet(){
     const pool=srsDueList(); // ya priorizadas
     return pool.slice(0,Math.min(_lenSelected,pool.length));
   }
-  // modo examen: nº de preguntas del examen, repartido por los pesos oficiales de cada dominio
+  // modo examen: nÂº de preguntas del examen, repartido por los pesos oficiales de cada dominio
   const list=domList();
   const examLen=examQuotaCap((currentExam&&currentExam.examLen)?currentExam.examLen:50);
   const totalW=list.reduce((a,d)=>a+domWeightMid(d),0);
@@ -1346,7 +1346,7 @@ function buildExamSet(){
 // shuffle options per question, keep mapping
 function qType(q){return q.type||'mc';}
 
-// Baraja el orden de presentación de las opciones de un tipo compuesto.
+// Baraja el orden de presentaciÃ³n de las opciones de un tipo compuesto.
 function prepQuestion(q){
   const tp=qType(q);
   if(tp==='mc'){
@@ -1357,13 +1357,13 @@ function prepQuestion(q){
   }
   // dropdown / yesno: una orden por fila
   const rowOrders=q.rows.map(r=>{
-    if(tp==='yesno')return [0,1]; // Sí / No fijo
+    if(tp==='yesno')return [0,1]; // SÃ­ / No fijo
     return shuffle(r.opts_es.map((_,i)=>i));
   });
   return {ref:q, rowOrders};
 }
 
-// ¿La pregunta tiene respuesta (parcial o total) registrada?
+// Â¿La pregunta tiene respuesta (parcial o total) registrada?
 function isAnswered(i){
   const sel=answers[i];
   if(!sel||!sel.length)return false;
@@ -1373,7 +1373,7 @@ function isAnswered(i){
   return sel.some(x=>x>=0);
 }
 
-// ¿Está totalmente respondida? (todas las filas en dropdown/yesno)
+// Â¿EstÃ¡ totalmente respondida? (todas las filas en dropdown/yesno)
 function isComplete(i){
   const item=exam[i], q=item.ref, sel=answers[i]||[], tp=qType(q);
   if(tp==='mc'||tp==='sentence')return sel.some(x=>x>=0);
@@ -1382,7 +1382,7 @@ function isComplete(i){
   return true;
 }
 
-// ¿Está completamente correcta?
+// Â¿EstÃ¡ completamente correcta?
 function isCorrect(i){
   const item=exam[i], q=item.ref, sel=answers[i]||[], tp=qType(q);
   if(tp==='mc')return arrEq(sel,q.correct);
@@ -1443,7 +1443,7 @@ function announce(msg){ var el=$('#srAnnounce'); if(el){ el.textContent=''; setT
 function render(){
   const item=exam[cur], q=item.ref, tp=qType(q);
   $('#qProgress').textContent=(cur+1)+' / '+exam.length;
-  $('#qDom').textContent=t('domainOf')+' '+q.dom+' · '+q.obj;
+  $('#qDom').textContent=t('domainOf')+' '+q.dom+' Â· '+q.obj;
   const pct=Math.round((cur+1)/exam.length*100);
   $('#progBar').style.width=pct+'%';
   $('#progressBar').setAttribute('aria-valuenow',pct);
@@ -1453,19 +1453,19 @@ function render(){
   const box=$('#opts');box.innerHTML='';
   box.removeAttribute('role');box.removeAttribute('aria-label');
 
-  // pista "selecciona todas" solo aplica a opción múltiple multi-respuesta
+  // pista "selecciona todas" solo aplica a opciÃ³n mÃºltiple multi-respuesta
   const multi=(tp==='mc')&&q.correct.length>1;
   $('#qHint').classList.toggle('hidden',!multi);
 
   // En multi-respuesta NO se corrige al marcar: hay que pulsar "Comprobar".
-  // En respuesta única e interactivas se mantiene el feedback al completar.
+  // En respuesta Ãºnica e interactivas se mantiene el feedback al completar.
   const showAns = multi
     ? (instantFeedback() && !!revealed[cur])
     : (instantFeedback() && isComplete(cur));
 
   if(tp==='mc'){
     renderMC(item,q,box,showAns,multi);
-    // Botón "Comprobar" para multi-respuesta en modos con feedback, antes de revelar.
+    // BotÃ³n "Comprobar" para multi-respuesta en modos con feedback, antes de revelar.
     if(multi && instantFeedback() && !showAns){
       const sel=answers[cur]||[];
       const cb=document.createElement('button');
@@ -1484,7 +1484,7 @@ function render(){
   // explanation in instant feedback
   const expEl=$('#qExp');
   if(showAns){
-    // registrar en repetición espaciada una vez por pregunta y sesión
+    // registrar en repeticiÃ³n espaciada una vez por pregunta y sesiÃ³n
     if(instantFeedback()&&!srsRecorded[cur]){ updateSrs(q.id,isCorrect(cur)); srsRecorded[cur]=true; }
     $('#qExpText').textContent=L(q,'exp');
     expEl.classList.remove('hidden');
@@ -1508,7 +1508,7 @@ function render(){
   if(examActive&&!graded)saveExamState();
 }
 
-// --- Opción múltiple (comportamiento original) ---
+// --- OpciÃ³n mÃºltiple (comportamiento original) ---
 function renderMC(item,q,box,showAns,multi){
   const opts=L(q,'opts');
   const sel=answers[cur]||[];
@@ -1555,7 +1555,7 @@ function renderSentence(item,q,box,showAns){
   box.appendChild(wrap);
 }
 
-// --- Filas con desplegable o Sí/No (dropdown / yesno) ---
+// --- Filas con desplegable o SÃ­/No (dropdown / yesno) ---
 function renderRows(item,q,box,showAns,tp){
   const sel=answers[cur]||[];
   q.rows.forEach((row,r)=>{
@@ -1567,7 +1567,7 @@ function renderRows(item,q,box,showAns,tp){
     line.appendChild(label);
     const chosen=(sel[r]!==undefined)?sel[r]:-1;
     if(tp==='yesno'){
-      const want=row.ans?0:1; // 0=Sí,1=No
+      const want=row.ans?0:1; // 0=SÃ­,1=No
       const grp=document.createElement('div');grp.className='yn-group';
       [0,1].forEach(v=>{
         const b=document.createElement('button');
@@ -1595,7 +1595,7 @@ function renderRows(item,q,box,showAns,tp){
   });
 }
 
-// Construye un <select> estilizado. order=array de índices originales en orden de presentación.
+// Construye un <select> estilizado. order=array de Ã­ndices originales en orden de presentaciÃ³n.
 function buildDropdown(order,opts,chosen,correctArr,showAns,onChange){
   const sel=document.createElement('select');
   sel.className='dd-select';
@@ -1612,7 +1612,7 @@ function buildDropdown(order,opts,chosen,correctArr,showAns,onChange){
     sel.disabled=true;
     const ok=correctArr.includes(chosen);
     sel.classList.add(ok?'dd-correct':'dd-wrong');
-    // mostrar la respuesta correcta si falló o no respondió
+    // mostrar la respuesta correcta si fallÃ³ o no respondiÃ³
     if(!ok){
       const tag=document.createElement('span');
       tag.className='dd-answer';
@@ -1682,7 +1682,7 @@ function gradeExam(){
   const v=$('#verdict');
   v.textContent=passed?t('pass'):t('fail');
   v.className='verdict '+(passed?'pass':'fail');
-  $('#verdictSub').textContent=(passed?t('passSub'):t('failSub'))+' · '+correct+'/'+exam.length;
+  $('#verdictSub').textContent=(passed?t('passSub'):t('failSub'))+' Â· '+correct+'/'+exam.length;
   // microinteracciones de resultado
   const sr=$('.score-ring');
   if(sr){ sr.classList.remove('celebrate'); void sr.offsetWidth; sr.classList.add('celebrate'); }
@@ -1732,7 +1732,7 @@ function updateRetryWrongBox(){
   }
 }
 
-// Calcula cuántas preguntas extra hay realmente disponibles fuera de las falladas.
+// Calcula cuÃ¡ntas preguntas extra hay realmente disponibles fuera de las falladas.
 function maxExtraAvailable(){
   return Math.max(0, QUESTIONS.length - lastWrongIds.length);
 }
@@ -1788,7 +1788,7 @@ function renderReview(){
     card.innerHTML=
       '<div class="rq-top">'+
         '<span class="rq-num">#'+(i+1)+'</span>'+
-        '<span class="badge dom">'+t('domainOf')+' '+q.dom+' · '+q.obj+'</span>'+
+        '<span class="badge dom">'+t('domainOf')+' '+q.dom+' Â· '+q.obj+'</span>'+
         '<span class="badge '+(ok?'ok':'bad')+'">'+(ok?t('correctAns'):t('wrongAns'))+'</span>'+
         '<button class="exq-bm rev-bm'+(isBookmarked(q.id)?' on':'')+'" data-qid="'+q.id+'" title="'+t('bookmark')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="'+(isBookmarked(q.id)?'currentColor':'none')+'" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>'+
       '</div>'+
@@ -1847,14 +1847,14 @@ function reviewBody(item,i,tp){
   return h+'</div>';
 }
 
-// Iconos temáticos (Lucide, licencia MIT). Evocan el concepto del examen
+// Iconos temÃ¡ticos (Lucide, licencia MIT). Evocan el concepto del examen
 // sin reproducir logotipos de Microsoft.
 var EXAM_ICONS={
   // Copilot / IA -> destellos
   sparkles:'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>',
-  // Teams / colaboración -> bocadillos de chat
+  // Teams / colaboraciÃ³n -> bocadillos de chat
   chat:'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>',
-  // genéricos por si se añaden más exámenes
+  // genÃ©ricos por si se aÃ±aden mÃ¡s exÃ¡menes
   cloud:'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6.5 19z"/></svg>',
   shield:'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>'
 };
@@ -1870,7 +1870,7 @@ function renderCatalog(){
     const card=document.createElement('div');
     card.className='exam-card'+(ex.soon?' soon':'');
     const badge=ex.soon
-      ?'<span class="ec-badge soon-b" data-i="catSoon">Próximamente</span>'
+      ?'<span class="ec-badge soon-b" data-i="catSoon">PrÃ³ximamente</span>'
       :'<span class="ec-badge" data-i="catReady">Disponible</span>';
     const levelKey=ex.level?'lvl'+ex.level.charAt(0).toUpperCase()+ex.level.slice(1):'';
     const levelBadge=levelKey?'<span class="ec-badge level-b" data-i="'+levelKey+'"></span>':'';
@@ -1903,20 +1903,20 @@ function renderCatalog(){
     if(!ex.soon)card.onclick=()=>requireLogin(()=>selectExam(ex.id));
     grid.appendChild(card);
   });
-  // Tarjeta genérica: más exámenes próximamente (la plataforma se actualiza)
+  // Tarjeta genÃ©rica: mÃ¡s exÃ¡menes prÃ³ximamente (la plataforma se actualiza)
   const soon=document.createElement('div');
   soon.className='exam-card coming-soon';
   soon.innerHTML=
     '<div class="cs-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>'+
-    '<div class="cs-title" data-i="comingSoonTitle">Más exámenes próximamente</div>'+
-    '<div class="cs-sub" data-i="comingSoonSub">Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!</div>';
+    '<div class="cs-title" data-i="comingSoonTitle">MÃ¡s exÃ¡menes prÃ³ximamente</div>'+
+    '<div class="cs-sub" data-i="comingSoonSub">AÃ±adimos nuevas certificaciones de forma continua. Â¡Vuelve pronto!</div>';
   grid.appendChild(soon);
   applyI18n();
   renderResumeBar();
   animateCards();
 }
 
-// Entrada escalonada + inclinación 3D al pasar el ratón
+// Entrada escalonada + inclinaciÃ³n 3D al pasar el ratÃ³n
 function animateCards(){
   let reduce=false;
   try{ reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches; }catch(e){}
@@ -1927,7 +1927,7 @@ function animateCards(){
       card.style.animationDelay=(i*90)+'ms';
     }
     if(reduce||card.classList.contains('coming-soon'))return;
-    // inclinación 3D suave siguiendo el cursor
+    // inclinaciÃ³n 3D suave siguiendo el cursor
     card.addEventListener('mousemove',e=>{
       const r=card.getBoundingClientRect();
       const px=(e.clientX-r.left)/r.width-0.5;
@@ -1951,7 +1951,7 @@ function renderResumeBar(){
   bar.classList.remove('hidden');
 }
 
-// --- Explorador de preguntas (estudio libre con búsqueda) ---
+// --- Explorador de preguntas (estudio libre con bÃºsqueda) ---
 function openExplore(){
   $('#home').classList.add('hidden');
   $('#explore').classList.remove('hidden');
@@ -1975,7 +1975,7 @@ function buildExploreCard(q){
   const tp=qType(q), bm=isBookmarked(q.id);
   const card=document.createElement('div'); card.className='ex-q';
   const star='<button class="exq-bm'+(bm?' on':'')+'" aria-label="'+t('bookmark')+'" aria-pressed="'+bm+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="'+(bm?'currentColor':'none')+'" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
-  card.innerHTML='<div class="exq-top"><span class="badge dom">'+t('domainOf')+' '+q.dom+' · '+q.obj+'</span>'+star+'</div>'+'<div class="exq-text">'+esc(exQuestionText(q))+'</div>'+'<div class="exq-ans hidden"></div>';
+  card.innerHTML='<div class="exq-top"><span class="badge dom">'+t('domainOf')+' '+q.dom+' Â· '+q.obj+'</span>'+star+'</div>'+'<div class="exq-text">'+esc(exQuestionText(q))+'</div>'+'<div class="exq-ans hidden"></div>';
   const txt=card.querySelector('.exq-text');
   const ansBox=card.querySelector('.exq-ans');
   txt.onclick=()=>{
@@ -2052,7 +2052,7 @@ function renderProgress(){
   const body=$('#progBody'); body.innerHTML='';
   const hist=Store.get('history',[]);
   if(!hist.length){
-    body.innerHTML='<div class="prog-empty" data-i="progEmpty">Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!</div>';
+    body.innerHTML='<div class="prog-empty" data-i="progEmpty">AÃºn no has completado ningÃºn examen. Â¡Haz uno para ver tu progreso!</div>';
     applyI18n(); return;
   }
   const n=hist.length;
@@ -2086,7 +2086,7 @@ function renderProgress(){
     const el=document.createElement('div'); el.className='attempt';
     const dt=new Date(h.date);
     const loc=t('locale');
-    const ds=dt.toLocaleDateString(loc,{day:'2-digit',month:'short',year:'numeric'})+' · '+dt.toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit'});
+    const ds=dt.toLocaleDateString(loc,{day:'2-digit',month:'short',year:'numeric'})+' Â· '+dt.toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit'});
     el.innerHTML='<span class="a-code">'+h.code+'</span><span class="a-date">'+ds+'</span>'+
       '<span class="a-pct" style="color:'+(h.passed?'var(--ok)':'var(--bad)')+'">'+h.pct+'%</span>'+
       '<span class="a-badge '+(h.passed?'pass':'fail')+'">'+(h.passed?t('pass'):t('fail'))+'</span>';
@@ -2129,7 +2129,7 @@ function exportProgress(hist){
   showToast(t('progExported')||'Exported!','ok');
 }
 
-// Rellena el hero del examen activo (eyebrow, título y estadísticas)
+// Rellena el hero del examen activo (eyebrow, tÃ­tulo y estadÃ­sticas)
 function updateHero(){
   if(!currentExam)return;
   const ey = L(currentExam,'eyebrow');
@@ -2145,8 +2145,8 @@ async function selectExam(id){
   currentExam=EXAMS.find(e=>e.id===id);
   if(!currentExam)return;
   QUESTIONS=await loadQuestions(id);
-  // header dinámico
-  $('#brandTitle').textContent=currentExam.code+' · '+t('examWord');
+  // header dinÃ¡mico
+  $('#brandTitle').textContent=currentExam.code+' Â· '+t('examWord');
   $('#brandSub').textContent=L(currentExam,'title');
   // hero
   $('#statTotal').textContent=QUESTIONS.length;
@@ -2181,7 +2181,7 @@ async function resumeExam(){
   answers=st.answers||{}; flags=st.flags||{}; revealed=st.revealed||{};
   cur=Math.min(st.cur||0,exam.length-1); graded=false; srsRecorded={};
   // cabecera y hero del examen activo
-  $('#brandTitle').textContent=currentExam.code+' · '+t('examWord');
+  $('#brandTitle').textContent=currentExam.code+' Â· '+t('examWord');
   $('#brandSub').textContent=L(currentExam,'title');
   updateHero(); buildDomOpts(); populateLen();
   // pantallas
@@ -2225,7 +2225,7 @@ function goHome(){
 }
 
 // ---- events ----
-// Modal de confirmación propio (sustituye a confirm() nativo)
+// Modal de confirmaciÃ³n propio (sustituye a confirm() nativo)
 let _cmOnYes=null; let _cmReturnFocus=null;
 function openConfirm(msg,onYes,okLabel){
   $('#cmTitle').textContent=t('confirmTitle');
@@ -2256,7 +2256,7 @@ function showToast(msg,type,ms){
   setTimeout(()=>{ el.classList.remove('show'); setTimeout(()=>el.remove(),300); }, ms||2600);
 }
 
-// Confeti (celebración al aprobar); respeta prefers-reduced-motion
+// Confeti (celebraciÃ³n al aprobar); respeta prefers-reduced-motion
 function celebrate(){
   try{ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return; }catch(e){}
   const cols=['#0F6CBD','#107C41','#E0B341','#F0786B','#2886DE','#4FC07E'];
@@ -2285,7 +2285,7 @@ $('#langToggle').addEventListener('click',e=>{
   applyI18n();
   if(currentExam){
     buildDomOpts();populateLen();
-    $('#brandTitle').textContent=currentExam.code+' · '+t('examWord');
+    $('#brandTitle').textContent=currentExam.code+' Â· '+t('examWord');
     $('#brandSub').textContent=L(currentExam,'title');
     updateHero();
     updateModeBadges();
@@ -2333,7 +2333,7 @@ function openLenModal(){
   else return;
   $('#lenModalIcon').innerHTML=MODE_ICONS[mode]||'';
   $('#lenModalTitle').textContent=t('lenLabel');
-  $('#lenModalSub').textContent=sub+' · '+max+' '+(lang==='es'?'disponibles':'available');
+  $('#lenModalSub').textContent=sub+' Â· '+max+' '+(lang==='es'?'disponibles':'available');
   $('#lenModal').classList.add('show');
 }
 function confirmStartExam(){
@@ -2352,7 +2352,7 @@ $('#modes').addEventListener('click',e=>{
   if(mode==='exam'){ confirmStartExam(); return; }
   if(mode==='bookmarks'&&bookmarkCount()===0){ showToast(t('bmEmpty'),'warn'); return; }
   if(mode==='srs'&&srsDueCount()===0){ showToast(t('srsEmpty'),'warn'); return; }
-  if(mode==='domain') return; // espera selección de dominio
+  if(mode==='domain') return; // espera selecciÃ³n de dominio
   openLenModal();
 });
 $('#lenModalClose').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
@@ -2361,7 +2361,7 @@ $('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#l
 $('#lenCustomInput').addEventListener('input',applyCustomLen);
 $('#lenCustomInput').addEventListener('change',applyCustomLen);
 
-// ===== Modal Pro: paywall de límite diario / info de suscripción =====
+// ===== Modal Pro: paywall de lÃ­mite diario / info de suscripciÃ³n =====
 function openProModal(reason){
   if(reason==='manual'){
     $('#proModalTitle').textContent=t('proManualTitle');
@@ -2394,11 +2394,11 @@ $('#prevBtn').addEventListener('click',()=>{if(cur>0){cur--;render();window.scro
 $('#nextBtn').addEventListener('click',()=>{if(cur<exam.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'})}});
 $('#flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];render()});
 
-// --- Gestos táctiles (swipe) para navegar preguntas en móvil ---
+// --- Gestos tÃ¡ctiles (swipe) para navegar preguntas en mÃ³vil ---
 (function(){
   let touchStartX = 0, touchStartY = 0;
-  const MIN_SWIPE = 50;   // px mínimos para detectar swipe
-  const MAX_VERT  = 80;   // px máximos de desviación vertical permitida
+  const MIN_SWIPE = 50;   // px mÃ­nimos para detectar swipe
+  const MAX_VERT  = 80;   // px mÃ¡ximos de desviaciÃ³n vertical permitida
 
   document.getElementById('exam').addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
@@ -2420,7 +2420,7 @@ $('#flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];render()});
   }, {passive: true});
 })();
 
-// --- Navegación por teclado ---
+// --- NavegaciÃ³n por teclado ---
 document.addEventListener('keydown',(e)=>{
   // Modal abierto: Escape cierra, Enter confirma
   if($('#confirmModal').classList.contains('show')){
@@ -2440,7 +2440,7 @@ document.addEventListener('keydown',(e)=>{
   const tag=(e.target&&e.target.tagName)||'';
   if(tag==='INPUT'||tag==='SELECT'||tag==='TEXTAREA'||e.ctrlKey||e.metaKey||e.altKey) return;
   const item=exam[cur]; if(!item) return; const q=item.ref;
-  // dígitos 1-9: elegir/alternar opción (mc y completar frase)
+  // dÃ­gitos 1-9: elegir/alternar opciÃ³n (mc y completar frase)
   if(/^[1-9]$/.test(e.key)){
     const tp=qType(q);
     if((tp==='mc'||tp==='sentence') && !graded){
@@ -2570,7 +2570,7 @@ if('serviceWorker' in navigator){
         const newWorker = reg.installing;
         newWorker.addEventListener('statechange', ()=>{
           if(newWorker.state === 'installed' && navigator.serviceWorker.controller){
-            showToast(lang==='es'?'Nueva versión disponible. Recarga para actualizar.':'New version available. Reload to update.');
+            showToast(lang==='es'?'Nueva versiÃ³n disponible. Recarga para actualizar.':'New version available. Reload to update.');
           }
         });
       });
@@ -2588,7 +2588,7 @@ function updateOnlineStatus(){
     bar.setAttribute('role','status');
     bar.setAttribute('aria-live','polite');
     bar.style.cssText = 'position:fixed;top:0;left:0;right:0;background:var(--warn);color:#fff;text-align:center;padding:6px 16px;font-size:13px;font-weight:600;z-index:300;';
-    bar.textContent = lang==='es' ? '? Sin conexión — usando datos en caché' : '? Offline — using cached data';
+    bar.textContent = lang==='es' ? '? Sin conexiÃ³n â€” usando datos en cachÃ©' : '? Offline â€” using cached data';
     document.body.prepend(bar);
   } else if(!offline && bar){
     bar.remove();
