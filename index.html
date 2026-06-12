@@ -2179,11 +2179,13 @@ function exploreAnswer(q,tp){
 }
 
 function openProgress(){
-  if(!isPro()){ openProModal('manual'); return; }
-  $('#catalog').classList.add('hidden');
-  $('#progress').classList.remove('hidden');
-  renderProgress();
-  window.scrollTo(0,0);
+  requireLogin(()=>{
+    if(!isPro()){ openProModal('manual'); return; }
+    $('#catalog').classList.add('hidden');
+    $('#progress').classList.remove('hidden');
+    renderProgress();
+    window.scrollTo(0,0);
+  });
 }
 function closeProgress(){
   $('#progress').classList.add('hidden');
