@@ -9473,13 +9473,13 @@
     "q_en": "An organization uses Microsoft Entra Privileged Identity Management (PIM) to manage the Exchange Administrator role. A user has an 'eligible' assignment for this role, configured to require approval from a second administrator before activation. When this user requests to activate the role for an urgent task, what happens immediately after submitting the request, before they can use the role's privileges?",
     "opts_es": [
       "La solicitud queda pendiente y se notifica a los aprobadores designados; el rol no se activa hasta que uno de ellos la apruebe",
-      "El rol se activa de inmediato y la aprobación posterior es solo un registro informativo sin efecto sobre el acceso",
+      "El rol se activa de inmediato y la aprobación posterior es solo un registro informativo sin ningún efecto real sobre el acceso",
       "La solicitud se rechaza automáticamente porque PIM no admite flujos de aprobación para roles de Exchange",
       "El usuario recibe el rol de forma permanente sin ningún registro de auditoría"
     ],
     "opts_en": [
       "The request remains pending and the designated approvers are notified; the role is not activated until one of them approves it",
-      "The role activates immediately, and the subsequent approval is just an informational record with no effect on access",
+      "The role activates immediately, and the subsequent approval is just an informational record with no real effect on access",
       "The request is automatically rejected because PIM doesn't support approval workflows for Exchange roles",
       "The user permanently receives the role with no audit record at all"
     ],
@@ -9501,11 +9501,11 @@
       "El panel de Microsoft Entra Connect Health, que muestra alertas sobre el estado del servidor de sincronización y si los ciclos se completan correctamente",
       "El panel de Puntuación de seguridad, que es la única fuente de información sobre el estado de la sincronización",
       "El registro de auditoría de Exchange Online exclusivamente",
-      "Los registros de inicio de sesión de Microsoft Entra ID, que muestran detalladamente el estado de sincronización de cada atributo de cada usuario"
+      "Los registros de inicio de sesión de Microsoft Entra ID, que muestran detalladamente el estado de sincronización de cada atributo de cada usuario individual"
     ],
     "opts_en": [
       "The Microsoft Entra Connect Health dashboard, showing alerts about sync server health and whether sync cycles complete successfully",
-      "The Secure Score dashboard, which some administrators mistakenly assume is the only source of information about sync status",
+      "The Secure Score dashboard, which some administrators mistakenly assume is the only source of information about sync status entirely",
       "The Exchange Online audit log exclusively",
       "Microsoft Entra ID sign-in logs, which show the attribute sync status of users"
     ],
@@ -9525,7 +9525,7 @@
     "q_en": "An organization is designing its hybrid authentication strategy. One requirement from the security team is that, if a user's password is reset from Microsoft 365 (self-service password reset), that change must sync back to on-premises Active Directory, so the password remains the same in both environments. They also require that credential validation during sign-in happens against on-premises Active Directory in real time. Which authentication method meets both requirements?",
     "opts_es": [
       "Autenticación de paso a través (pass-through authentication) con la escritura diferida de contraseñas habilitada",
-      "Sincronización de hash de contraseñas (password hash synchronization) únicamente, sin escritura diferida",
+      "Sincronización de hash de contraseñas (password hash synchronization) únicamente, sin ninguna escritura diferida",
       "Federación con AD FS sin componentes de Microsoft Entra Connect adicionales",
       "Inicio de sesión único de equipo unido únicamente a la nube (cloud-only join)"
     ],
@@ -9553,7 +9553,7 @@
       "Términos de uso (Terms of use), presentados como control de concesión dentro de una directiva de acceso condicional",
       "Etiquetas de confidencialidad aplicadas a los documentos del sitio",
       "Acceso entre inquilinos (cross-tenant access settings)",
-      "El control de aplicaciones de acceso condicional con análisis de carga de archivos y bloqueo en tiempo real"
+      "El control de aplicaciones de acceso condicional con análisis de carga de archivos y bloqueo automático en tiempo real"
     ],
     "opts_en": [
       "Terms of use, presented as a grant control within a Conditional Access policy",
@@ -9577,7 +9577,7 @@
     "q_en": "An organization is migrating from legacy per-user MFA settings to the modern Microsoft Entra ID Authentication methods policy, aiming to promote Microsoft Authenticator passwordless phone sign-in as the preferred method. After enabling the passwordless phone sign-in method in the Authentication methods policy for a pilot group, what do users in that group need to do to start using this method?",
     "opts_es": [
       "Registrar Microsoft Authenticator en modo sin contraseña, lo que requiere haber registrado antes la app en modo de notificación push estándar",
-      "No es necesario ningún registro adicional; el método se activa automáticamente para todos los usuarios sin ninguna acción por su parte",
+      "No es necesario ningún registro adicional; el método se activa automáticamente para todos los usuarios sin ninguna acción adicional por su parte",
       "Cambiar la contraseña de su cuenta a una cadena vacía mediante PowerShell",
       "Desinstalar Microsoft Authenticator y volver a instalarlo cada vez que inicien sesión"
     ],
@@ -9735,11 +9735,11 @@
       "Configurar diferentes niveles de automatización para cada grupo de dispositivos, asignando un nivel más restrictivo a los servidores de producción",
       "Eliminar el grupo de servidores de producción de Microsoft Defender for Endpoint por completo",
       "Aplicar la misma directiva antimalware a ambos grupos sin distinción",
-      "Configurar una sola regla de detección personalizada que se aplique a todos los dispositivos por igual, sin distinción de grupos ni niveles"
+      "Configurar una sola regla de detección personalizada que se aplique a todos los dispositivos por igual, sin ninguna distinción de grupos ni niveles"
     ],
     "opts_en": [
       "Configure different automation levels for each device group, assigning a more restrictive level to production servers",
-      "Remove the production servers group from Microsoft Defender for Endpoint entirely without reconfiguration",
+      "Remove the production servers group from Microsoft Defender for Endpoint entirely, without any further reconfiguration",
       "Apply the same anti-malware policy to both groups with no distinction",
       "Configure a single custom detection rule that applies equally to all devices"
     ],
@@ -9792,7 +9792,7 @@
     "opts_en": [
       "App governance, which evaluates OAuth permissions granted to third-party apps and their risk",
       "An Endpoint data loss prevention policy",
-      "The Common Attachment Types Filter in the anti-malware policy for the entire tenant",
+      "The Common Attachment Types Filter setting in the anti-malware policy for the entire tenant",
       "A retention label applied to users' mailboxes"
     ],
     "correct": [
@@ -9839,13 +9839,13 @@
       "La gestión de riesgos internos (insider risk management), usando una directiva con el indicador de empleados que se marchan",
       "Etiquetas de retención aplicadas a los recursos compartidos",
       "Una directiva antiphishing dirigida a la cuenta del empleado",
-      "El panel de Cloud Discovery de Microsoft Defender for Cloud Apps, mostrando el uso de aplicaciones no aprobadas"
+      "El panel de Cloud Discovery de Microsoft Defender for Cloud Apps, mostrando el uso detallado de aplicaciones no aprobadas por TI"
     ],
     "opts_en": [
       "Insider risk management, using a policy with the departing employee indicator",
       "Retention labels applied to shared resources",
       "An anti-phishing policy targeting the employee's account",
-      "The Cloud Discovery dashboard in Microsoft Defender for Cloud Apps"
+      "The Cloud Discovery dashboard within Microsoft Defender for Cloud Apps entirely"
     ],
     "correct": [
       0
@@ -9921,7 +9921,7 @@
     ],
     "opts_en": [
       "The first is an active service health incident, while the second is an advisory/planned-change message in the Message center",
-      "Both are exactly the same type of communication and appear in the same admin center section with no visual distinction",
+      "Both are exactly the same type of communication and appear in the same admin center section with absolutely no visual distinction",
       "The first comes from the Message center and the second from the Secure Score dashboard",
       "The first is only visible to end users and the second only to global administrators"
     ],
@@ -9999,7 +9999,7 @@
     ],
     "opts_en": [
       "An administrative unit containing the Mexico users, assigning the User Administrator role scoped to that administrative unit",
-      "A regular security group with no additional configuration, since roles are automatically scoped by group membership",
+      "A regular security group with no additional configuration, since roles are automatically and fully scoped by group membership",
       "A Conditional Access policy that restricts the role based on the administrator's location",
       "A retention policy applied to the Mexico users' mailboxes"
     ],
@@ -10021,13 +10021,13 @@
       "Configurar el filtrado de unidades organizativas durante la instalación o el asistente de Microsoft Entra Connect, excluyendo la OU 'Cuentas de servicio'",
       "Eliminar por completo Active Directory local, ya que no se puede excluir solo una OU",
       "Cambiar la contraseña de todas las cuentas de esa OU para que no puedan sincronizarse",
-      "Configurar una directiva de acceso condicional que bloquee el acceso de esas cuentas tras la sincronización con la nube y los demás servicios"
+      "Configurar una directiva de acceso condicional que bloquee el acceso de esas cuentas tras la sincronización con la nube y con los demás servicios conectados"
     ],
     "opts_en": [
       "Configure organizational unit filtering during installation or via the Microsoft Entra Connect wizard, excluding the 'Service accounts' OU",
       "Completely remove on-premises Active Directory, since a single OU cannot be excluded",
       "Change the password of all accounts in that OU so they cannot be synced",
-      "Configure a Conditional Access policy that blocks access for those accounts after synchronization to the cloud and other services"
+      "Configure a Conditional Access policy that blocks access for those accounts after synchronization to the cloud and other connected services"
     ],
     "correct": [
       0
@@ -10047,7 +10047,7 @@
       "El inicio de sesión único sin interrupciones (Seamless Single Sign-On)",
       "El restablecimiento de contraseñas de autoservicio",
       "La activación de equipo compartido para Microsoft 365 Apps",
-      "El filtrado de unidades organizativas en Microsoft Entra Connect"
+      "El filtrado de unidades organizativas dentro de Microsoft Entra Connect"
     ],
     "opts_en": [
       "Seamless Single Sign-On",
@@ -10129,7 +10129,7 @@
     ],
     "opts_en": [
       "Mark the sign-in as 'Confirm sign-in safe', which helps tune the risk model to reduce future false positives",
-      "Mark the sign-in as 'Confirm user compromised', which would unnecessarily force a credential reset",
+      "Mark the sign-in as 'Confirm user compromised', which would unnecessarily force an immediate credential reset",
       "Permanently delete the sign-in record with no annotation at all",
       "Ignore the report entirely, since there is no option to mark sign-ins as legitimate"
     ],
@@ -10149,7 +10149,7 @@
     "q_en": "An administrator reviews an improvement action in the Secure Score dashboard suggesting enabling a Conditional Access policy that requires MFA for administrators. The recommendation indicates that implementing it would grant 8 additional points. After configuring and deploying the policy, the administrator notices the score doesn't increase immediately. What is the most likely explanation?",
     "opts_es": [
       "La puntuación de seguridad se recalcula periódicamente, no de forma instantánea, por lo que puede tardar en reflejarse en el panel",
-      "La directiva de acceso condicional nunca afecta a la puntuación de seguridad bajo ninguna circunstancia ni configuración",
+      "La directiva de acceso condicional nunca afecta a la puntuación de seguridad bajo ninguna circunstancia ni configuración posible",
       "La puntuación de seguridad solo considera cambios realizados en Microsoft Defender for Cloud Apps",
       "Es necesario reiniciar el inquilino completo de Microsoft 365 para que se recalcule la puntuación"
     ],
@@ -10157,7 +10157,7 @@
       "Secure Score is recalculated periodically, not instantaneously, so it may take time to appear in the dashboard",
       "Conditional Access policies never affect Secure Score under any circumstances",
       "Secure Score only considers changes made in Microsoft Defender for Cloud Apps",
-      "The entire Microsoft 365 tenant must be restarted before the score can ever be recalculated again"
+      "The entire Microsoft 365 tenant must be fully restarted before the score can ever be recalculated again at all"
     ],
     "correct": [
       0
@@ -10177,7 +10177,7 @@
       "Los informes de Análisis de amenazas (Threat analytics)",
       "El panel de Cloud Discovery",
       "El catálogo de aplicaciones empresariales",
-      "El informe de uso de licencias del inquilino"
+      "El informe detallado de uso de licencias del inquilino"
     ],
     "opts_en": [
       "Threat analytics reports",
@@ -10280,7 +10280,7 @@
     "opts_es": [
       "Las reglas de reducción de la superficie de ataque (Attack surface reduction rules)",
       "El acceso controlado a carpetas exclusivamente",
-      "La directiva de Vínculos seguros para archivos adjuntos de correo electrónico",
+      "La directiva de Vínculos seguros para los archivos adjuntos de correo electrónico",
       "Un indicador personalizado de dirección IP"
     ],
     "opts_en": [
@@ -10307,7 +10307,7 @@
       "Una directiva de detección de anomalías (anomaly detection policy) con la detección de viaje imposible (impossible travel)",
       "Una directiva de control de aplicaciones de acceso condicional de tipo control de carga de archivos",
       "Una directiva de actividad que solo detecta inicios de sesión fallidos",
-      "Una directiva de descubrimiento de aplicaciones en la nube (Cloud Discovery) basada en registros de firewall"
+      "Una directiva de descubrimiento de aplicaciones en la nube (Cloud Discovery) basada únicamente en registros de firewall"
     ],
     "opts_en": [
       "An anomaly detection policy with impossible travel detection",
@@ -10338,7 +10338,7 @@
     "opts_en": [
       "Endpoint DLP, with a policy that detects the 'Credit Card Number' type and blocks copying to removable devices",
       "A retention label applied to files containing card numbers",
-      "A Conditional Access policy that blocks the use of USB ports on all managed devices in the organization",
+      "A Conditional Access policy that blocks the use of USB ports on all managed devices across the organization",
       "Microsoft Defender for Cloud Apps with a Cloud Discovery policy"
     ],
     "correct": [
@@ -10357,13 +10357,13 @@
     "q_en": "An organization wants that, when an email sent from Exchange Online is detected to contain a tax identification number (a sensitive information type), a 'Highly Confidential' sensitivity label that encrypts the message is automatically applied, without the sender having to manually select the label. What should they configure in Microsoft Purview?",
     "opts_es": [
       "Una directiva de etiquetado automático que aplique la etiqueta a los correos que coincidan con ese tipo de información",
-      "Una directiva de retención que elimine automáticamente los correos que contengan ese tipo de información",
+      "Una directiva de retención que elimine automáticamente los correos electrónicos que contengan ese tipo de información",
       "Un clasificador entrenable que rechace el envío de cualquier correo con números fiscales",
       "Una directiva de cuarentena específica para mensajes salientes"
     ],
     "opts_en": [
       "An auto-labeling policy that applies the sensitivity label to emails matching that sensitive information type",
-      "A retention policy that automatically deletes emails containing that sensitive information type",
+      "A retention policy that automatically deletes all emails containing that specific sensitive information type",
       "A trainable classifier that rejects sending any email with tax numbers",
       "A specific quarantine policy for outbound messages"
     ],
@@ -10383,7 +10383,7 @@
     "q_en": "The HR department wants to proactively detect Microsoft Teams messages and internal emails containing potentially offensive, threatening language, or language suggesting harassment between employees, so a designated HR team can review them confidentially, without this becoming general surveillance of all employees' free-text communications. What Microsoft Purview solution is specifically designed for this scenario?",
     "opts_es": [
       "El cumplimiento de comunicaciones, usando una directiva con clasificadores integrados o personalizados para detectar lenguaje inapropiado",
-      "Una directiva de prevención de pérdida de datos basada exclusivamente en tipos de información confidencial financiera y bancaria",
+      "Una directiva de prevención de pérdida de datos basada exclusivamente en tipos de información confidencial financiera, bancaria y fiscal",
       "Una etiqueta de retención aplicada a todos los canales de Teams",
       "El panel de Cloud Discovery de Microsoft Defender for Cloud Apps"
     ],
@@ -10411,13 +10411,13 @@
       "Las preferencias del Centro de mensajes, habilitando los correos de resumen periódico y eligiendo las categorías de interés",
       "Una directiva de acceso condicional que envíe correos automáticamente",
       "Un conector de transporte que reenvíe todos los correos del sistema a una bandeja compartida",
-      "El panel de Puntuación de seguridad, que incluye notificaciones del Centro de mensajes integradas y resúmenes"
+      "El panel de Puntuación de seguridad, que incluye notificaciones del Centro de mensajes integradas y resúmenes periódicos"
     ],
     "opts_en": [
       "Message center preferences, enabling periodic digest emails and selecting categories of interest",
       "A Conditional Access policy that automatically sends emails",
       "A transport connector that forwards all system emails to a shared inbox",
-      "The Secure Score dashboard, which includes integrated Message center notifications"
+      "The Secure Score dashboard, which includes integrated Message center notifications and digests"
     ],
     "correct": [
       0
@@ -10441,7 +10441,7 @@
     ],
     "opts_en": [
       "VPN split tunneling for Teams media traffic",
-      "Organizational unit filtering",
+      "Organizational unit filtering during sync operations",
       "Shared computer activation",
       "Password hash synchronization"
     ],
@@ -10513,7 +10513,7 @@
     "q_en": "An organization has a Microsoft Entra ID group assigned the Exchange Administrator role (a role-assignable group). They want to apply the principle of least privilege further: instead of group membership permanently granting the role, they want users to have to activate their group membership (and thus the role) only when needed, for a limited time, via a request. What should they configure?",
     "opts_es": [
       "Asignaciones aptas (eligible assignments) a la pertenencia del grupo mediante PIM para grupos, con activación temporal",
-      "Eliminar el grupo y asignar el rol individualmente y de forma permanente a cada usuario que lo necesite",
+      "Eliminar el grupo y asignar el rol individualmente y de forma permanente a cada usuario que lo necesite actualmente",
       "Convertir el grupo asignable a roles en un grupo de distribución dinámico",
       "Aplicar una directiva de retención al grupo para limitar su duración"
     ],
@@ -10546,7 +10546,7 @@
     "opts_en": [
       "Start-ADSyncSyncCycle, specifying the cycle type (Delta or Initial) as needed",
       "Restart-Computer, which is the only way to force an immediate sync",
-      "Remove-ADSyncScheduler, which permanently removes the sync scheduler",
+      "Remove-ADSyncScheduler, which permanently removes the sync scheduler entirely",
       "Disable-ADSyncFeature, which triggers a one-time manual sync"
     ],
     "correct": [
@@ -10565,13 +10565,13 @@
     "q_en": "An organization resulting from a merger has two separate on-premises Active Directory forests, each managed by a different IT team, and both need to sync to a single Microsoft Entra ID tenant. The organization wants a lightweight, agent-based synchronization solution that supports multiple Active Directory forests without requiring a single centralized Microsoft Entra Connect Sync server with complex custom synchronization rule configuration. What solution is most suitable?",
     "opts_es": [
       "Microsoft Entra Connect cloud sync, que usa agentes de aprovisionamiento ligeros y admite mejor topologías de múltiples bosques",
-      "Microsoft Entra Connect Sync con una sola regla de sincronización personalizada y compartida entre ambos bosques de AD",
+      "Microsoft Entra Connect Sync con una sola regla de sincronización personalizada y compartida entre ambos bosques de AD locales",
       "Una federación con AD FS exclusivamente, sin ningún componente de sincronización",
       "La exportación manual de usuarios a un archivo CSV importado periódicamente"
     ],
     "opts_en": [
       "Microsoft Entra Connect cloud sync, which uses lightweight agents and better supports multi-forest topologies",
-      "Microsoft Entra Connect Sync with a single custom synchronization rule shared between both forests",
+      "Microsoft Entra Connect Sync with a single custom synchronization rule shared between both on-premises forests",
       "Federation with AD FS exclusively, with no synchronization component",
       "Manually exporting users to a CSV file imported periodically"
     ],
@@ -10597,7 +10597,7 @@
     ],
     "opts_en": [
       "A sign-in frequency session control in a Conditional Access policy for that application, set to 4 hours",
-      "A retention policy that automatically signs the user out every 4 hours across all applications",
+      "A retention policy that automatically signs the user out every 4 hours across all applications used",
       "A sensitivity label with encryption applied to the application",
       "Disabling single sign-on for the entire organization"
     ],
@@ -10645,7 +10645,7 @@
       "La detección de riesgo para identidades de carga de trabajo dentro de Microsoft Entra ID Protection",
       "Una directiva de prevención de pérdida de datos aplicada a las entidades de servicio",
       "El registro combinado de seguridad, extendido a entidades de servicio",
-      "Una etiqueta de confidencialidad aplicada a los certificados de las entidades de servicio"
+      "Una etiqueta de confidencialidad aplicada a todos los certificados de las entidades de servicio"
     ],
     "opts_en": [
       "Workload identity risk detection within Microsoft Entra ID Protection",
@@ -10722,7 +10722,7 @@
     "opts_es": [
       "Una entrada de bloqueo de dominio de remitente en la Lista de entidades permitidas y bloqueadas del inquilino",
       "Una etiqueta de confidencialidad aplicada a todos los correos entrantes",
-      "Una directiva de retención que elimine automáticamente los correos de ese dominio tras 30 días",
+      "Una directiva de retención que elimine automáticamente los correos electrónicos de ese dominio tras 30 días exactos",
       "Un cambio en el registro MX del propio dominio de la organización"
     ],
     "opts_en": [
