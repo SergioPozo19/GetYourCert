@@ -61,15 +61,15 @@
     "q_en": "You want to receive an email notification whenever a Microsoft 365 service experiences an outage that affects your organization. Where should you configure this?",
     "opts_es": [
       "En Estado del servicio (Service Health), configurando las preferencias de notificación",
-      "En el Centro de mensajes (Message center), activando las alertas push",
-      "En Informes de uso, habilitando las alertas de actividad",
-      "En Microsoft Defender, creando una directiva de alertas personalizada"
+      "En el Centro de mensajes (Message center), activando las alertas push para cambios planificados",
+      "En Informes de uso, habilitando las alertas de actividad de inicio de sesión de los usuarios",
+      "En Microsoft Defender, creando una directiva de alertas personalizada para amenazas de seguridad"
     ],
     "opts_en": [
       "In Service Health, by configuring notification preferences",
-      "In Message center, by enabling push alerts",
-      "In Usage reports, by enabling activity alerts",
-      "In Microsoft Defender, by creating a custom alert policy"
+      "In Message center, by enabling push alerts for planned changes",
+      "In Usage reports, by enabling user sign-in activity alerts",
+      "In Microsoft Defender, by creating a custom alert policy for security threats"
     ],
     "correct": [
       0
@@ -113,15 +113,15 @@
     "q_en": "Your organization wants a pilot group of users to receive new Microsoft 365 features before the rest of employees. Which organization setting enables this?",
     "opts_es": [
       "La configuración de versión preliminar dirigida (Targeted release) para usuarios o grupos específicos",
-      "La configuración de Comunicaciones a clientes en Configuración de la organización",
-      "La directiva de actualización de software en Microsoft Endpoint Manager",
-      "La configuración de zona horaria predeterminada del inquilino"
+      "La configuración de Comunicaciones a clientes en Configuración de la organización, para avisos generales",
+      "La directiva de actualización de software en Microsoft Endpoint Manager para todos los dispositivos",
+      "La configuración de zona horaria predeterminada del inquilino y de cada usuario"
     ],
     "opts_en": [
       "The Targeted release setting for specific users or groups",
-      "The Customer communications setting in Org settings",
-      "The software update policy in Microsoft Endpoint Manager",
-      "The tenant's default time zone setting"
+      "The Customer communications setting in Org settings, for general notices",
+      "The software update policy in Microsoft Endpoint Manager for all devices",
+      "The tenant's and each user's default time zone setting"
     ],
     "correct": [
       0
@@ -138,16 +138,16 @@
     "q_es": "¿Cuál es la diferencia principal entre Estado del servicio (Service Health) y el Centro de mensajes (Message center) en el Centro de administración de Microsoft 365?",
     "q_en": "What is the main difference between Service Health and Message center in the Microsoft 365 admin center?",
     "opts_es": [
-      "Estado del servicio informa sobre interrupciones e incidentes activos, mientras que el Centro de mensajes informa sobre cambios planificados y nuevas características",
-      "Estado del servicio es solo para administradores globales, mientras que el Centro de mensajes es visible para todos los usuarios",
-      "Estado del servicio muestra el historial de facturación, mientras que el Centro de mensajes muestra el estado de las licencias",
-      "Ambos muestran exactamente la misma información, solo cambia el formato de presentación"
+      "Estado del servicio informa sobre interrupciones activas, mientras que el Centro de mensajes informa sobre cambios planificados",
+      "Estado del servicio es solo para administradores globales, mientras que el Centro de mensajes es visible para todos los usuarios y grupos",
+      "Estado del servicio muestra el historial de facturación y pagos, mientras que el Centro de mensajes muestra el estado y caducidad de las licencias",
+      "Ambos muestran exactamente la misma información sobre incidentes y cambios, solo cambia el formato de presentación y los filtros disponibles"
     ],
     "opts_en": [
       "Service Health reports active outages and incidents, while Message center reports planned changes and new features",
-      "Service Health is only for global administrators, while Message center is visible to all users",
-      "Service Health shows billing history, while Message center shows license status",
-      "Both show exactly the same information, only the presentation format differs"
+      "Service Health is only for global administrators, while Message center is visible to all users and groups",
+      "Service Health shows billing and payment history, while Message center shows license status and expiration",
+      "Both show exactly the same information about incidents and changes, only the presentation format and filters differ"
     ],
     "correct": [
       0
@@ -165,15 +165,15 @@
     "q_en": "For the Network Connectivity dashboard to show connection quality data by location, what must be deployed on client computers?",
     "opts_es": [
       "El Agente de conectividad de Microsoft 365 (Microsoft 365 Network Connectivity Test agent)",
-      "El cliente de Microsoft Defender para punto de conexión",
-      "El módulo de Microsoft Entra Connect Health",
-      "El agente de inventario de Microsoft Endpoint Configuration Manager"
+      "El cliente de Microsoft Defender para punto de conexión, configurado con protección en tiempo real",
+      "El módulo de Microsoft Entra Connect Health, instalado en los servidores de sincronización",
+      "El agente de inventario de Microsoft Endpoint Configuration Manager para hardware y software"
     ],
     "opts_en": [
       "The Microsoft 365 Network Connectivity Test agent",
-      "The Microsoft Defender for Endpoint client",
-      "The Microsoft Entra Connect Health module",
-      "The Microsoft Endpoint Configuration Manager inventory agent"
+      "The Microsoft Defender for Endpoint client, configured with real-time protection",
+      "The Microsoft Entra Connect Health module, installed on the sync servers",
+      "The Microsoft Endpoint Configuration Manager inventory agent for hardware and software"
     ],
     "correct": [
       0
@@ -191,15 +191,15 @@
     "q_en": "Your organization wants to control which version of Microsoft 365 Apps (Office) users receive and how often it updates, balancing stability and new features. Which Microsoft 365 Apps admin center concept enables this?",
     "opts_es": [
       "Los canales de actualización (por ejemplo, Canal mensual empresarial o Canal semestral empresarial)",
-      "Las directivas de retención de Microsoft Purview",
-      "Los perfiles de configuración de Microsoft Intune para dispositivos móviles",
-      "Las plantillas de directiva de grupo para Exchange Online"
+      "Las directivas de retención de Microsoft Purview aplicadas a los buzones de Exchange Online",
+      "Los perfiles de configuración de Microsoft Intune para actualizaciones de dispositivos móviles",
+      "Las plantillas de directiva de grupo para Exchange Online aplicadas mediante Endpoint Manager"
     ],
     "opts_en": [
-      "Update channels (for example, Monthly Enterprise Channel or Semi-Annual Enterprise Channel)",
-      "Microsoft Purview retention policies",
-      "Microsoft Intune configuration profiles for mobile devices",
-      "Group Policy templates for Exchange Online"
+      "Update channels (for example, Monthly Enterprise or Semi-Annual Enterprise Channel)",
+      "Microsoft Purview retention policies applied to Exchange Online mailboxes",
+      "Microsoft Intune configuration profiles for mobile device updates",
+      "Group Policy templates for Exchange Online applied via Endpoint Manager"
     ],
     "correct": [
       0
@@ -217,15 +217,15 @@
     "q_en": "An administrator wants to see which Microsoft 365 features the organization is actually using (for example, Teams or OneDrive adoption) to drive change-management initiatives. Which tool provides these adoption reports?",
     "opts_es": [
       "Microsoft 365 Adoption Score / Informes de uso en el Centro de administración",
-      "Microsoft Defender Threat Intelligence",
-      "El Explorador de contenido de Microsoft Purview",
-      "Azure Service Health"
+      "Microsoft Defender Threat Intelligence, centrado en amenazas externas",
+      "El Explorador de contenido de Microsoft Purview, para clasificación de datos",
+      "Azure Service Health, para el estado de los recursos de Azure"
     ],
     "opts_en": [
       "Microsoft 365 Adoption Score / Usage reports in the admin center",
-      "Microsoft Defender Threat Intelligence",
-      "Microsoft Purview Content explorer",
-      "Azure Service Health"
+      "Microsoft Defender Threat Intelligence, focused on external threats",
+      "Microsoft Purview Content explorer, for data classification",
+      "Azure Service Health, for the status of Azure resources"
     ],
     "correct": [
       0
@@ -242,16 +242,16 @@
     "q_es": "Por motivos de privacidad, tu organización quiere que los informes de uso del Centro de administración no muestren nombres de usuario ni direcciones de correo identificables. ¿Qué configuración debe cambiarse?",
     "q_en": "For privacy reasons, your organization wants the admin center usage reports to not display identifiable usernames or email addresses. Which setting should be changed?",
     "opts_es": [
-      "La configuración de privacidad de los informes, cambiándola de datos específicos a datos seudonimizados (de-identified)",
-      "La directiva de retención de Microsoft Purview aplicada a los buzones",
-      "El nivel de acceso de Microsoft Entra ID Privileged Identity Management",
-      "La configuración de uso compartido externo de SharePoint"
+      "La configuración de privacidad de los informes, mostrando datos seudonimizados",
+      "La directiva de retención de Microsoft Purview aplicada a los buzones de todos los usuarios",
+      "El nivel de acceso de Microsoft Entra ID Privileged Identity Management para los administradores",
+      "La configuración de uso compartido externo de SharePoint y OneDrive"
     ],
     "opts_en": [
       "The reports' privacy setting, changing it from specific data to de-identified (pseudonymized) data",
-      "The Microsoft Purview retention policy applied to mailboxes",
-      "The access level in Microsoft Entra ID Privileged Identity Management",
-      "SharePoint's external sharing configuration"
+      "The Microsoft Purview retention policy applied to all users' mailboxes",
+      "The access level in Microsoft Entra ID Privileged Identity Management for administrators",
+      "SharePoint and OneDrive's external sharing configuration"
     ],
     "correct": [
       0
@@ -294,16 +294,16 @@
     "q_es": "Has añadido un nuevo dominio personalizado al inquilino y planeas convertirlo en el dominio predeterminado para nuevas cuentas de usuario. ¿Qué efecto tiene cambiar el dominio predeterminado?",
     "q_en": "You have added a new custom domain to the tenant and plan to make it the default domain for new user accounts. What effect does changing the default domain have?",
     "opts_es": [
-      "Las cuentas existentes mantienen su nombre principal de usuario actual; solo las cuentas nuevas usarán el dominio predeterminado salvo que se especifique otro",
-      "Todas las cuentas existentes cambian automáticamente su nombre principal de usuario al nuevo dominio",
-      "El dominio anterior se elimina automáticamente del inquilino",
-      "Todos los buzones de correo se migran automáticamente a un nuevo servidor de Exchange Online"
+      "Las cuentas existentes mantienen su nombre principal de usuario actual; solo las nuevas usarán el nuevo dominio",
+      "Todas las cuentas existentes cambian automáticamente su nombre principal de usuario al nuevo dominio sin notificación",
+      "El dominio anterior se elimina automáticamente del inquilino y deja de estar disponible",
+      "Todos los buzones de correo se migran automáticamente a un nuevo servidor de Exchange Online y región"
     ],
     "opts_en": [
-      "Existing accounts keep their current user principal name; only new accounts will use the default domain unless another is specified",
-      "All existing accounts automatically change their user principal name to the new domain",
-      "The previous domain is automatically removed from the tenant",
-      "All mailboxes automatically migrate to a new Exchange Online server"
+      "Existing accounts keep their current UPN; only new accounts use the new default domain",
+      "All existing accounts automatically change their user principal name to the new domain without notice",
+      "The previous domain is automatically removed from the tenant and becomes unavailable",
+      "All mailboxes automatically migrate to a new Exchange Online server and region"
     ],
     "correct": [
       0
@@ -320,16 +320,16 @@
     "q_es": "Un administrador necesita habilitar la autenticación multifactor de seguridad para el acceso al portal de administración mismo, además de aplicar línea base de seguridad recomendada por Microsoft sin configurar manualmente cada directiva. ¿Qué función de Microsoft Entra puede aplicar automáticamente protecciones básicas como bloquear la autenticación heredada y exigir MFA a los administradores?",
     "q_en": "An administrator needs to enforce strong sign-in security for the admin portal itself, applying Microsoft's recommended security baseline without manually configuring every policy. Which Microsoft Entra feature can automatically apply baseline protections such as blocking legacy authentication and requiring MFA for admins?",
     "opts_es": [
-      "Las directivas de acceso condicional de seguridad por defecto (Security Defaults) o las plantillas de Conditional Access",
-      "Los informes de seguridad de Exchange Online Protection",
-      "El panel de Información de conectividad de red",
-      "La configuración de zona horaria de la organización"
+      "Security Defaults o las plantillas de directivas de Conditional Access",
+      "Los informes de seguridad de Exchange Online Protection sobre correo no deseado y malware",
+      "El panel de Información de conectividad de red para sucursales remotas",
+      "La configuración de zona horaria de la organización y de los usuarios"
     ],
     "opts_en": [
       "Security Defaults or Conditional Access policy templates",
-      "Exchange Online Protection security reports",
-      "The Network connectivity information dashboard",
-      "The organization's time zone settings"
+      "Exchange Online Protection security reports on spam and malware",
+      "The Network connectivity information dashboard for remote branches",
+      "The organization's and users' time zone settings"
     ],
     "correct": [
       0
@@ -346,16 +346,16 @@
     "q_es": "¿Qué describe mejor el propósito del Centro de administración de Microsoft 365 en comparación con los portales especializados como el Centro de administración de Exchange o el portal de Microsoft Defender?",
     "q_en": "What best describes the purpose of the Microsoft 365 admin center compared to specialized portals such as the Exchange admin center or the Microsoft Defender portal?",
     "opts_es": [
-      "Es el punto de entrada centralizado para tareas administrativas comunes (usuarios, licencias, estado del servicio, facturación) y enlaza a los portales especializados para tareas avanzadas de cada carga de trabajo",
-      "Es exclusivo para administrar la facturación y no permite gestionar usuarios ni licencias",
-      "Reemplaza por completo a los portales especializados, que están en proceso de retirada",
-      "Solo está disponible para organizaciones con licencias Microsoft 365 E5"
+      "Es el punto de entrada centralizado para tareas administrativas comunes y enlaza a portales especializados para tareas avanzadas",
+      "Es exclusivo para administrar la facturación y las suscripciones, y no permite gestionar usuarios, licencias ni el estado del servicio",
+      "Reemplaza por completo a los portales especializados como Exchange o SharePoint, que están en proceso de retirada definitiva",
+      "Solo está disponible para organizaciones con licencias Microsoft 365 E5 y no para planes E3 o Business"
     ],
     "opts_en": [
-      "It is the centralized entry point for common admin tasks (users, licenses, service health, billing) and links to specialized portals for advanced workload-specific tasks",
-      "It is exclusively for managing billing and cannot manage users or licenses",
-      "It completely replaces the specialized portals, which are being retired",
-      "It is only available to organizations with Microsoft 365 E5 licenses"
+      "The centralized entry point for common admin tasks, linking to specialized portals for advanced tasks",
+      "It is exclusively for managing billing and subscriptions, and cannot manage users, licenses, or service health",
+      "It completely replaces specialized portals like Exchange or SharePoint, which are being permanently retired",
+      "It is only available to organizations with Microsoft 365 E5 licenses, not E3 or Business plans"
     ],
     "correct": [
       0
@@ -399,15 +399,15 @@
     "q_en": "You want a Microsoft 365 group to automatically include all users whose department attribute is 'Sales', without manually adding them. What type of group should you create?",
     "opts_es": [
       "Un grupo dinámico basado en una regla de membresía sobre el atributo department",
-      "Un grupo de seguridad de membresía asignada",
-      "Una lista de distribución clásica de Exchange",
-      "Un grupo de Microsoft 365 con membresía oculta"
+      "Un grupo de seguridad de membresía asignada, agregando a cada usuario manualmente",
+      "Una lista de distribución clásica de Exchange con miembros añadidos uno a uno",
+      "Un grupo de Microsoft 365 con membresía oculta y asignación manual"
     ],
     "opts_en": [
       "A dynamic group based on a membership rule for the department attribute",
-      "An assigned-membership security group",
-      "A classic Exchange distribution list",
-      "A Microsoft 365 group with hidden membership"
+      "An assigned-membership security group, adding each user manually",
+      "A classic Exchange distribution list with members added one by one",
+      "A Microsoft 365 group with hidden membership and manual assignment"
     ],
     "correct": [
       0
@@ -425,15 +425,15 @@
     "q_en": "An employee was terminated and their account was deleted from the Microsoft 365 admin center 10 days ago. Their manager requests access to the employee's files and mail. What should you do?",
     "opts_es": [
       "Restaurar la cuenta eliminada desde Usuarios eliminados, ya que sigue dentro del periodo de retención de 30 días",
-      "Crear una cuenta nueva con el mismo nombre, ya que los datos no se pueden recuperar",
-      "Pedir al gerente que abra un caso de soporte con Microsoft para recrear la cuenta original",
-      "Restaurar la cuenta desde una copia de seguridad local del equipo del empleado"
+      "Crear una cuenta nueva con el mismo nombre y correo, ya que los datos anteriores no se pueden recuperar",
+      "Pedir al gerente que abra un caso de soporte con Microsoft para recrear la cuenta y restaurar sus datos",
+      "Restaurar la cuenta desde una copia de seguridad local del equipo del empleado despedido"
     ],
     "opts_en": [
       "Restore the deleted account from Deleted users, since it is still within the 30-day retention period",
-      "Create a new account with the same name, since the data cannot be recovered",
-      "Ask the manager to open a Microsoft support case to recreate the original account",
-      "Restore the account from a local backup of the employee's computer"
+      "Create a new account with the same name and email, since the previous data cannot be recovered",
+      "Ask the manager to open a Microsoft support case to recreate the account and restore its data",
+      "Restore the account from a local backup of the dismissed employee's computer"
     ],
     "correct": [
       0
@@ -451,15 +451,15 @@
     "q_en": "You need to invite an external consultant who uses a Gmail account to collaborate on a SharePoint site and a Teams channel in your organization. What type of account is created in your tenant when you invite them?",
     "opts_es": [
       "Una cuenta de usuario invitado (B2B) con el tipo de usuario 'Guest'",
-      "Una cuenta de administrador global temporal",
-      "Una cuenta de servicio sin licencia asignada",
-      "Un buzón compartido con permisos de lectura"
+      "Una cuenta de administrador global temporal con acceso completo",
+      "Una cuenta de servicio sin licencia asignada para automatización",
+      "Un buzón compartido con permisos de lectura para el consultor"
     ],
     "opts_en": [
       "A guest (B2B) user account with the user type 'Guest'",
-      "A temporary Global Administrator account",
-      "A service account with no license assigned",
-      "A shared mailbox with read permissions"
+      "A temporary Global Administrator account with full access",
+      "A service account with no license, used for automation",
+      "A shared mailbox with read permissions for the consultant"
     ],
     "correct": [
       0
@@ -476,16 +476,16 @@
     "q_es": "Tu organización quiere que el correo enviado a contabilidad@contoso.com sea recibido y respondido por varios miembros del equipo, sin que ninguno de ellos use credenciales o licencia adicionales para esa dirección. ¿Qué recurso debes crear?",
     "q_en": "Your organization wants email sent to accounting@contoso.com to be received and replied to by several team members, without any of them needing separate credentials or an additional license for that address. What resource should you create?",
     "opts_es": [
-      "Un buzón compartido (shared mailbox) con permisos de 'Enviar como' o 'Enviar en nombre de' para los miembros del equipo",
-      "Una cuenta de usuario adicional con licencia E5 para cada miembro del equipo",
-      "Un grupo de seguridad habilitado para correo sin buzón asociado",
-      "Un alias de reenvío configurado en el buzón personal de cada miembro"
+      "Un buzón compartido (shared mailbox) con permisos de 'Enviar como' para el equipo",
+      "Una cuenta de usuario adicional con licencia E5 para cada miembro del equipo de contabilidad",
+      "Un grupo de seguridad habilitado para correo sin buzón asociado ni acceso compartido",
+      "Un alias de reenvío configurado en el buzón personal de cada miembro del equipo"
     ],
     "opts_en": [
-      "A shared mailbox with 'Send as' or 'Send on behalf' permissions granted to the team members",
-      "An additional licensed E5 user account for each team member",
-      "A mail-enabled security group with no associated mailbox",
-      "A forwarding alias configured on each member's personal mailbox"
+      "A shared mailbox with 'Send as' permissions for the team",
+      "An additional licensed E5 user account for each accounting team member",
+      "A mail-enabled security group with no associated mailbox or shared access",
+      "A forwarding alias configured on each team member's personal mailbox"
     ],
     "correct": [
       0
@@ -502,16 +502,16 @@
     "q_es": "Como administrador, necesitas restablecer la contraseña de un usuario que olvidó la suya y no puede iniciar sesión. ¿Dónde puedes hacerlo de forma más rápida desde el Centro de administración de Microsoft 365?",
     "q_en": "As an administrator, you need to reset the password of a user who forgot theirs and cannot sign in. Where can you do this most quickly from the Microsoft 365 admin center?",
     "opts_es": [
-      "En Usuarios > Usuarios activos, seleccionando el usuario y eligiendo 'Restablecer contraseña'",
-      "En Facturación > Licencias, editando el perfil del usuario",
-      "En Configuración > Dominios, dentro de la configuración DNS",
-      "En Soporte técnico, abriendo un ticket para Microsoft"
+      "En Usuarios activos, eligiendo 'Restablecer contraseña'",
+      "En Facturación > Licencias, editando el perfil y los datos del usuario",
+      "En Configuración > Dominios, dentro de la configuración DNS del dominio",
+      "En Soporte técnico, abriendo un ticket de prioridad para Microsoft"
     ],
     "opts_en": [
       "In Users > Active users, selecting the user and choosing 'Reset password'",
-      "In Billing > Licenses, editing the user's profile",
-      "In Settings > Domains, within the DNS configuration",
-      "In Support, by opening a ticket for Microsoft"
+      "In Billing > Licenses, editing the user's profile and details",
+      "In Settings > Domains, within the domain's DNS configuration",
+      "In Support, by opening a priority ticket for Microsoft"
     ],
     "correct": [
       0
@@ -606,16 +606,16 @@
     "q_es": "Quieres que un usuario pueda activar el rol de Administrador de Exchange únicamente cuando lo necesite, durante un máximo de 8 horas, y que la activación requiera aprobación y registro de un motivo. ¿Qué función de Microsoft Entra ID Governance debes configurar?",
     "q_en": "You want a user to be able to activate the Exchange Administrator role only when needed, for a maximum of 8 hours, with activation requiring approval and a justification. Which Microsoft Entra ID Governance feature should you configure?",
     "opts_es": [
-      "Privileged Identity Management (PIM) con asignación elegible y configuración de activación con aprobación",
-      "Acceso condicional con control de sesión limitada",
-      "Revisiones de acceso (access reviews) mensuales",
-      "Asignación directa permanente del rol con una directiva de expiración"
+      "PIM con asignación elegible y aprobación requerida",
+      "Acceso condicional con control de sesión limitada y bloqueo tras la sesión",
+      "Revisiones de acceso (access reviews) mensuales para todo el inquilino",
+      "Asignación directa permanente del rol con una directiva de expiración automática"
     ],
     "opts_en": [
-      "Privileged Identity Management (PIM) with an eligible assignment and an activation policy requiring approval",
-      "Conditional Access with a sign-in frequency control",
-      "Monthly access reviews",
-      "A permanent direct role assignment with an expiration policy"
+      "PIM with an eligible assignment and required approval",
+      "Conditional Access with a sign-in frequency control and session block",
+      "Monthly access reviews for the entire tenant",
+      "A permanent direct role assignment with an automatic expiration policy"
     ],
     "correct": [
       0
@@ -633,15 +633,15 @@
     "q_en": "You need a role that allows a group of employees to only restart managed mobile devices and view their compliance status in Intune, without granting any other admin permission. No built-in role matches exactly that combination. What should you do?",
     "opts_es": [
       "Crear un rol personalizado de Microsoft Entra ID con los permisos específicos necesarios y asignarlo al grupo",
-      "Asignarles el rol Administrador global de forma temporal",
-      "Asignarles el rol Lector de seguridad y pedirles que no usen otras funciones",
-      "Crear una directiva de acceso condicional que oculte el resto de funciones de Intune"
+      "Asignarles el rol Administrador global de forma temporal cada vez",
+      "Asignarles el rol Lector de seguridad y pedirles que no usen otras funciones disponibles",
+      "Crear una directiva de acceso condicional que oculte el resto de funciones de Intune para ellos"
     ],
     "opts_en": [
-      "Create a custom Microsoft Entra ID role with the specific required permissions and assign it to the group",
-      "Temporarily assign them the Global Administrator role",
-      "Assign them the Security Reader role and ask them not to use other functions",
-      "Create a Conditional Access policy that hides the rest of Intune's features"
+      "Create a custom Microsoft Entra ID role with the required permissions and assign it to the group",
+      "Temporarily assign them the Global Administrator role each time",
+      "Assign them the Security Reader role and ask them not to use other available functions",
+      "Create a Conditional Access policy that hides the rest of Intune's features for them"
     ],
     "correct": [
       0
@@ -658,16 +658,16 @@
     "q_es": "Como práctica de seguridad recomendada, ¿qué deberías hacer respecto al número de cuentas con el rol de Administrador global asignado de forma permanente en un inquilino de Microsoft 365?",
     "q_en": "As a recommended security practice, what should you do regarding the number of accounts with the Global Administrator role permanently assigned in a Microsoft 365 tenant?",
     "opts_es": [
-      "Mantener el menor número posible (Microsoft recomienda entre 2 y 4) y usar PIM para activaciones temporales adicionales cuando se necesiten",
-      "Asignar el rol de Administrador global a todos los usuarios para evitar bloqueos accidentales",
-      "Usar una única cuenta de Administrador global compartida entre todo el equipo de TI",
-      "Eliminar por completo el rol de Administrador global y usar solo roles personalizados"
+      "Mantener el menor número posible (entre 2 y 4) y usar PIM para activaciones temporales",
+      "Asignar el rol de Administrador global a todos los usuarios para evitar bloqueos accidentales del inquilino",
+      "Usar una única cuenta de Administrador global compartida entre todo el equipo de TI sin MFA",
+      "Eliminar por completo el rol de Administrador global y usar solo roles personalizados sin excepciones"
     ],
     "opts_en": [
-      "Keep the number as low as possible (Microsoft recommends 2 to 4) and use PIM for additional temporary activations when needed",
-      "Assign the Global Administrator role to all users to avoid accidental lockouts",
-      "Use a single Global Administrator account shared across the entire IT team",
-      "Remove the Global Administrator role entirely and use only custom roles"
+      "Keep the number as low as possible (2 to 4) and use PIM for temporary activations",
+      "Assign the Global Administrator role to all users to avoid accidental tenant lockouts",
+      "Use a single Global Administrator account shared across the entire IT team without MFA",
+      "Remove the Global Administrator role entirely and use only custom roles with no exceptions"
     ],
     "correct": [
       0
@@ -684,16 +684,16 @@
     "q_es": "Una auditoría de cumplimiento requiere que cada 6 meses se revise quién tiene asignado el rol de Administrador de Exchange y que los aprobadores confirmen si cada asignación sigue siendo necesaria, eliminando automáticamente las que no se confirmen. ¿Qué función de Microsoft Entra ID Governance cumple este requisito?",
     "q_en": "A compliance audit requires that every 6 months, the assignments of the Exchange Administrator role be reviewed, with approvers confirming whether each assignment is still needed and automatically removing those not confirmed. Which Microsoft Entra ID Governance feature meets this requirement?",
     "opts_es": [
-      "Revisiones de acceso (access reviews) recurrentes con eliminación automática de acceso no confirmado",
-      "Directivas de acceso condicional con revisión periódica",
-      "Configuración de caducidad de contraseñas cada 6 meses",
-      "Etiquetas de retención de Microsoft Purview aplicadas a los roles"
+      "Revisiones de acceso recurrentes con baja automática de acceso no confirmado",
+      "Directivas de acceso condicional con revisión periódica manual de los registros",
+      "Configuración de caducidad de contraseñas cada 6 meses para los administradores",
+      "Etiquetas de retención de Microsoft Purview aplicadas a los roles administrativos"
     ],
     "opts_en": [
       "Recurring access reviews with automatic removal of unconfirmed access",
-      "Conditional Access policies with periodic review",
-      "Password expiration settings every 6 months",
-      "Microsoft Purview retention labels applied to roles"
+      "Conditional Access policies with periodic manual log review",
+      "Password expiration settings every 6 months for admins",
+      "Microsoft Purview retention labels applied to admin roles"
     ],
     "correct": [
       0
@@ -866,16 +866,16 @@
     "q_es": "Después de configurar Microsoft Entra Connect Sync, notas que un usuario que existe tanto en Active Directory local como ya tenía una cuenta en la nube creada manualmente con el mismo correo, ahora aparece como dos objetos distintos en Microsoft Entra ID en lugar de fusionarse. ¿Qué función debería haberse configurado para evitar este problema?",
     "q_en": "After configuring Microsoft Entra Connect Sync, you notice that a user who exists both in on-premises Active Directory and already had a manually created cloud account with the same email now appears as two separate objects in Microsoft Entra ID instead of being merged. Which feature should have been configured to prevent this issue?",
     "opts_es": [
-      "Coincidencia flexible (soft match) o coincidencia rígida (hard match) usando atributos como el correo electrónico o ImmutableId",
-      "Filtrado de dominios en Microsoft Entra Connect",
-      "Sincronización de hash de contraseñas",
-      "Reglas de sincronización de atributos personalizados"
+      "Coincidencia flexible o rígida usando el correo o ImmutableId",
+      "Filtrado de dominios en Microsoft Entra Connect para excluir unidades organizativas",
+      "Sincronización de hash de contraseñas entre Active Directory y Microsoft Entra ID",
+      "Reglas de sincronización de atributos personalizados definidas en Microsoft Entra Connect"
     ],
     "opts_en": [
       "Soft match or hard match using attributes such as email or the ImmutableId",
-      "Domain-based filtering in Microsoft Entra Connect",
-      "Password hash synchronization",
-      "Custom attribute synchronization rules"
+      "Domain-based filtering in Microsoft Entra Connect to exclude organizational units",
+      "Password hash synchronization between Active Directory and Microsoft Entra ID",
+      "Custom attribute synchronization rules defined in Microsoft Entra Connect"
     ],
     "correct": [
       0
@@ -892,16 +892,16 @@
     "q_es": "Quieres permitir que los usuarios restablezcan su propia contraseña sin intervención del departamento de TI, exigiéndoles verificar su identidad mediante al menos dos métodos (por ejemplo, una app de autenticación y un correo alternativo). ¿Qué función de Microsoft Entra ID debes habilitar y configurar?",
     "q_en": "You want to allow users to reset their own password without IT involvement, requiring them to verify their identity using at least two methods (for example, an authenticator app and an alternate email). Which Microsoft Entra ID feature should you enable and configure?",
     "opts_es": [
-      "Restablecimiento de contraseña de autoservicio (SSPR) configurado para exigir dos métodos de verificación",
-      "Acceso condicional con control de cumplimiento de dispositivo",
-      "Microsoft Entra Password Protection",
-      "Privileged Identity Management (PIM)"
+      "SSPR configurado para exigir dos métodos de verificación",
+      "Acceso condicional con control de cumplimiento de dispositivo y MFA",
+      "Microsoft Entra Password Protection con lista de contraseñas prohibidas",
+      "Privileged Identity Management (PIM) para activación de roles"
     ],
     "opts_en": [
-      "Self-Service Password Reset (SSPR) configured to require two verification methods",
-      "Conditional Access with a device compliance control",
-      "Microsoft Entra Password Protection",
-      "Privileged Identity Management (PIM)"
+      "SSPR configured to require two verification methods",
+      "Conditional Access with a device compliance and MFA control",
+      "Microsoft Entra Password Protection with a banned password list",
+      "Privileged Identity Management (PIM) for role activation"
     ],
     "correct": [
       0
@@ -919,15 +919,15 @@
     "q_en": "Your organization has noticed that many users choose passwords like 'Contoso2024!' or variations of the company name, which are easy to guess but technically meet complexity requirements. Which Microsoft Entra ID feature helps block such passwords, including custom terms specific to the organization?",
     "opts_es": [
       "Microsoft Entra Password Protection con una lista de contraseñas personalizadas prohibidas",
-      "Autenticación multifactor obligatoria para todos los usuarios",
-      "Directiva de caducidad de contraseñas cada 30 días",
-      "Identity Protection con detección de credenciales filtradas"
+      "Autenticación multifactor obligatoria para todos los usuarios del inquilino",
+      "Directiva de caducidad de contraseñas cada 30 días para todas las cuentas",
+      "Identity Protection con detección de credenciales filtradas en la web"
     ],
     "opts_en": [
       "Microsoft Entra Password Protection with a custom banned password list",
-      "Mandatory multi-factor authentication for all users",
-      "A password expiration policy of 30 days",
-      "Identity Protection with leaked credentials detection"
+      "Mandatory multi-factor authentication for all tenant users",
+      "A password expiration policy of 30 days for all accounts",
+      "Identity Protection with leaked credentials detection on the web"
     ],
     "correct": [
       0
@@ -1023,15 +1023,15 @@
     "q_en": "You want to reduce how often a user must re-authenticate to Microsoft 365 applications when signing in on a Windows computer joined to Microsoft Entra ID, leveraging the device's primary refresh token. What feature are you describing?",
     "opts_es": [
       "Inicio de sesión único (SSO) basado en el token de actualización principal (PRT)",
-      "Autenticación de paso a través",
-      "Acceso condicional basado en aplicación cliente",
-      "Restablecimiento de contraseña de autoservicio"
+      "Autenticación de paso a través configurada en Microsoft Entra Connect",
+      "Acceso condicional basado en aplicación cliente y plataforma del dispositivo",
+      "Restablecimiento de contraseña de autoservicio mediante la app de Microsoft Authenticator"
     ],
     "opts_en": [
       "Single sign-on (SSO) based on the Primary Refresh Token (PRT)",
-      "Pass-through authentication",
-      "Conditional Access based on client application",
-      "Self-service password reset"
+      "Pass-through authentication configured in Microsoft Entra Connect",
+      "Conditional Access based on client application and device platform",
+      "Self-service password reset via the Microsoft Authenticator app"
     ],
     "correct": [
       0
@@ -1048,16 +1048,16 @@
     "q_es": "Una directiva de la organización exige que todos los usuarios que aún no tienen registrados métodos de autenticación multifactor sean obligados a registrarlos la próxima vez que inicien sesión, dándoles un periodo de gracia de 14 días. ¿Qué función de Microsoft Entra ID se utiliza típicamente para aplicar esta directiva de registro?",
     "q_en": "An organizational policy requires that all users who have not yet registered multi-factor authentication methods be prompted to register them the next time they sign in, with a 14-day grace period. Which Microsoft Entra ID feature is typically used to enforce this registration policy?",
     "opts_es": [
-      "Directiva de registro de seguridad combinada (combined registration) junto con una directiva de Identity Protection para registro de MFA",
-      "Acceso condicional basado en la red corporativa",
-      "Microsoft Entra Connect Health",
-      "Etiquetas de confidencialidad de Microsoft Purview"
+      "Registro combinado de seguridad con MFA de Identity Protection",
+      "Acceso condicional basado en la red corporativa, bloqueando conexiones externas",
+      "Microsoft Entra Connect Health, supervisando los servidores de sincronización local",
+      "Etiquetas de confidencialidad de Microsoft Purview aplicadas a documentos y correos"
     ],
     "opts_en": [
       "Combined security registration along with an Identity Protection policy for MFA registration",
-      "Conditional Access based on the corporate network",
-      "Microsoft Entra Connect Health",
-      "Microsoft Purview sensitivity labels"
+      "Conditional Access based on the corporate network, blocking external connections",
+      "Microsoft Entra Connect Health, monitoring the on-premises sync servers",
+      "Microsoft Purview sensitivity labels applied to documents and emails"
     ],
     "correct": [
       0
@@ -1074,16 +1074,16 @@
     "q_es": "Un administrador quiere desactivar gradualmente el uso de SMS y llamadas de voz como métodos de MFA en favor de Microsoft Authenticator y claves FIDO2, pero sin eliminar de inmediato el acceso de los usuarios que aún dependen de SMS. ¿Dónde se gestionan los métodos de autenticación habilitados para los usuarios del inquilino?",
     "q_en": "An administrator wants to gradually phase out SMS and voice calls as MFA methods in favor of Microsoft Authenticator and FIDO2 keys, without immediately cutting off access for users who still rely on SMS. Where are the authentication methods enabled for tenant users managed?",
     "opts_es": [
-      "En la directiva de métodos de autenticación (Authentication methods policy) de Microsoft Entra ID",
-      "En la configuración de buzones de Exchange Online",
-      "En las directivas de cumplimiento de dispositivos de Intune",
-      "En el Centro de cumplimiento de Microsoft Purview"
+      "En la directiva de métodos de autenticación de Microsoft Entra ID",
+      "En la configuración de buzones de Exchange Online para cada usuario",
+      "En las directivas de cumplimiento de dispositivos de Intune para móviles",
+      "En el Centro de cumplimiento de Microsoft Purview para directivas DLP"
     ],
     "opts_en": [
       "In the Microsoft Entra ID Authentication methods policy",
-      "In Exchange Online mailbox settings",
-      "In Intune device compliance policies",
-      "In the Microsoft Purview compliance portal"
+      "In Exchange Online mailbox settings for each user",
+      "In Intune device compliance policies for mobile devices",
+      "In the Microsoft Purview compliance portal for DLP policies"
     ],
     "correct": [
       0
@@ -1153,15 +1153,15 @@
     "q_en": "Microsoft Entra ID Protection has detected a 'high risk' sign-in for a user, originating from an unusual location and with atypical device properties. You want the user to be automatically required to complete MFA before proceeding, without manual administrator intervention. What should you configure?",
     "opts_es": [
       "Una directiva de acceso condicional basada en el riesgo de inicio de sesión (sign-in risk) que exija MFA",
-      "Una directiva de retención de Microsoft Purview",
-      "Una alerta de Microsoft Defender for Cloud Apps sin acción automática",
-      "Un grupo dinámico que excluya al usuario de todas las aplicaciones"
+      "Una directiva de retención de Microsoft Purview para los correos del usuario",
+      "Una alerta de Microsoft Defender for Cloud Apps sin ninguna acción automática configurada",
+      "Un grupo dinámico que excluya al usuario de todas las aplicaciones asignadas"
     ],
     "opts_en": [
       "A Conditional Access policy based on sign-in risk that requires MFA",
-      "A Microsoft Purview retention policy",
-      "A Microsoft Defender for Cloud Apps alert with no automated action",
-      "A dynamic group that excludes the user from all applications"
+      "A Microsoft Purview retention policy for the user's emails",
+      "A Microsoft Defender for Cloud Apps alert with no automated action configured",
+      "A dynamic group that excludes the user from all assigned applications"
     ],
     "correct": [
       0
@@ -1178,16 +1178,16 @@
     "q_es": "Microsoft Entra ID Protection marca a un usuario con un 'riesgo de usuario' (user risk) alto debido a que sus credenciales aparecieron en una filtración de datos pública. Quieres que el usuario, en su próximo inicio de sesión, sea forzado automáticamente a cambiar su contraseña tras completar MFA. ¿Qué tipo de directiva debes configurar?",
     "q_en": "Microsoft Entra ID Protection flags a user with high 'user risk' because their credentials appeared in a public data breach. You want the user, on their next sign-in, to be automatically forced to change their password after completing MFA. What type of policy should you configure?",
     "opts_es": [
-      "Una directiva de acceso condicional basada en el riesgo de usuario (user risk) que exija un cambio seguro de contraseña",
-      "Una directiva de cumplimiento de dispositivos en Intune",
-      "Una directiva de retención de etiquetas en Microsoft Purview",
-      "Una directiva de uso compartido externo en SharePoint"
+      "Directiva de acceso condicional por riesgo de usuario con cambio de contraseña",
+      "Una directiva de cumplimiento de dispositivos en Intune que bloquee el dispositivo",
+      "Una directiva de retención de etiquetas en Microsoft Purview para el buzón",
+      "Una directiva de uso compartido externo en SharePoint para el usuario"
     ],
     "opts_en": [
-      "A Conditional Access policy based on user risk that requires a secure password change",
-      "An Intune device compliance policy",
-      "A Microsoft Purview retention label policy",
-      "A SharePoint external sharing policy"
+      "User-risk based Conditional Access with password change",
+      "An Intune device compliance policy that blocks the device",
+      "A Microsoft Purview retention label policy for the mailbox",
+      "A SharePoint external sharing policy for the user"
     ],
     "correct": [
       0
@@ -1204,16 +1204,16 @@
     "q_es": "Tu organización quiere bloquear el acceso a Microsoft 365 desde fuera del país donde opera, excepto para un grupo reducido de empleados que viajan con frecuencia y están exentos de esta restricción. ¿Qué deberías usar para implementarlo?",
     "q_en": "Your organization wants to block access to Microsoft 365 from outside the country where it operates, except for a small group of employees who travel frequently and are exempt from this restriction. What should you use to implement this?",
     "opts_es": [
-      "Una directiva de acceso condicional con una condición de ubicación que bloquee ubicaciones no confiables, excluyendo al grupo de viajeros frecuentes",
-      "Una directiva de retención que bloquee correos enviados desde el extranjero",
-      "Microsoft Defender for Identity con detección de movimiento lateral",
-      "Una directiva de prevención de pérdida de datos (DLP) basada en geolocalización"
+      "Acceso condicional con ubicación bloqueando ubicaciones no confiables",
+      "Una directiva de retención que bloquee correos enviados desde el extranjero automáticamente",
+      "Microsoft Defender for Identity con detección de movimiento lateral en la red local",
+      "Una directiva de prevención de pérdida de datos (DLP) basada en la geolocalización del usuario"
     ],
     "opts_en": [
-      "A Conditional Access policy with a location condition that blocks untrusted locations, excluding the frequent-travelers group",
-      "A retention policy that blocks emails sent from abroad",
-      "Microsoft Defender for Identity with lateral movement detection",
-      "A Data Loss Prevention (DLP) policy based on geolocation"
+      "Conditional Access location condition excluding frequent travelers",
+      "A retention policy that automatically blocks emails sent from abroad",
+      "Microsoft Defender for Identity with lateral movement detection on the local network",
+      "A Data Loss Prevention (DLP) policy based on the user's geolocation"
     ],
     "correct": [
       0
@@ -1334,16 +1334,16 @@
     "q_es": "Tu organización ya usa directivas de acceso condicional personalizadas para exigir MFA y bloquear autenticación heredada. Un administrador intenta también habilitar Security Defaults y recibe un aviso de incompatibilidad. ¿Por qué ocurre esto?",
     "q_en": "Your organization already uses custom Conditional Access policies to require MFA and block legacy authentication. An administrator also tries to enable Security Defaults and receives an incompatibility warning. Why does this happen?",
     "opts_es": [
-      "Security Defaults y el acceso condicional personalizado son mutuamente excluyentes; deben usarse las directivas de acceso condicional en su lugar para mantener un control granular",
-      "Security Defaults requiere primero deshabilitar Microsoft Entra Connect",
-      "Las directivas de acceso condicional solo funcionan si Security Defaults está activo",
-      "Security Defaults solo se puede habilitar en inquilinos sin ningún usuario con licencia"
+      "Security Defaults y el acceso condicional personalizado son mutuamente excluyentes entre sí",
+      "Security Defaults requiere primero deshabilitar Microsoft Entra Connect y la sincronización híbrida",
+      "Las directivas de acceso condicional solo funcionan si Security Defaults está activo en el inquilino",
+      "Security Defaults solo se puede habilitar en inquilinos sin ningún usuario con licencia asignada"
     ],
     "opts_en": [
-      "Security Defaults and custom Conditional Access are mutually exclusive; Conditional Access policies should be used instead for granular control",
-      "Security Defaults first requires disabling Microsoft Entra Connect",
-      "Conditional Access policies only work if Security Defaults is active",
-      "Security Defaults can only be enabled in tenants with no licensed users"
+      "Security Defaults and custom Conditional Access cannot be combined",
+      "Security Defaults first requires disabling Microsoft Entra Connect and hybrid sync",
+      "Conditional Access policies only work if Security Defaults is active in the tenant",
+      "Security Defaults can only be enabled in tenants with no users assigned a license"
     ],
     "correct": [
       0
@@ -1360,16 +1360,16 @@
     "q_es": "Quieres crear una directiva de acceso condicional que se aplique a todas las aplicaciones en la nube, pero excluya específicamente a la cuenta de un administrador global de emergencia ('break glass') para evitar un bloqueo accidental que deje a la organización sin acceso administrativo. ¿Qué deberías hacer?",
     "q_en": "You want to create a Conditional Access policy that applies to all cloud apps, but specifically excludes an emergency 'break glass' Global Administrator account to avoid an accidental lockout that leaves the organization without administrative access. What should you do?",
     "opts_es": [
-      "Excluir explícitamente la cuenta de emergencia en la sección de usuarios excluidos de la directiva, y mantener esa cuenta fuera del alcance de MFA con credenciales muy seguras y monitorización",
-      "Asignar a la cuenta de emergencia el rol de Lector global en lugar de Administrador global",
-      "No crear la cuenta de emergencia, ya que las directivas de acceso condicional nunca pueden bloquear administradores",
-      "Aplicar la directiva solo en modo de solo informe de forma permanente"
+      "Excluir explícitamente la cuenta de emergencia de la directiva y protegerla con credenciales muy seguras y monitorización",
+      "Asignar a la cuenta de emergencia el rol de Lector global en lugar de Administrador global para reducir el riesgo",
+      "No crear la cuenta de emergencia, ya que las directivas de acceso condicional nunca pueden bloquear a los administradores globales",
+      "Aplicar la directiva solo en modo de solo informe de forma permanente sin bloquear nunca el acceso"
     ],
     "opts_en": [
-      "Explicitly exclude the emergency account in the policy's excluded users section, and keep that account out of MFA scope with very strong credentials and monitoring",
-      "Assign the emergency account the Global Reader role instead of Global Administrator",
-      "Don't create the emergency account, since Conditional Access policies can never lock out administrators",
-      "Apply the policy only in permanent report-only mode"
+      "Exclude the emergency account from the policy and protect it with strong credentials and monitoring",
+      "Assign the emergency account the Global Reader role instead of Global Administrator to reduce risk",
+      "Don't create the emergency account, since Conditional Access policies can never lock out global administrators",
+      "Apply the policy only in permanent report-only mode without ever blocking access"
     ],
     "correct": [
       0
