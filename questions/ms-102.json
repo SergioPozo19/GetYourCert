@@ -2583,15 +2583,15 @@
     "q_en": "A user who normally doesn't handle sensitive information has been flagged by Microsoft Purview with an 'elevated risk level' due to recent unusual behavior (for example, mass downloads followed by attempts to copy files to external devices). The organization wants stricter DLP controls to automatically apply only to that user while this risk remains elevated. Which Microsoft Purview feature allows dynamically adjusting DLP policy severity based on a user's risk level?",
     "opts_es": [
       "Protección adaptable (Adaptive Protection), integrada con Insider Risk Management y DLP",
-      "Etiquetas de retención estáticas",
-      "Cloud Discovery sin directivas de gobernanza",
-      "Microsoft Entra Connect Health"
+      "Etiquetas de retención estáticas aplicadas manualmente a cada documento por el usuario",
+      "Cloud Discovery sin directivas de gobernanza ni puntuación de riesgo de aplicaciones",
+      "Microsoft Entra Connect Health para supervisar agentes de sincronización locales"
     ],
     "opts_en": [
       "Adaptive Protection, integrated with Insider Risk Management and DLP",
-      "Static retention labels",
-      "Cloud Discovery without governance policies",
-      "Microsoft Entra Connect Health"
+      "Static retention labels applied manually to each document by the end user",
+      "Cloud Discovery without governance policies or app risk scoring",
+      "Microsoft Entra Connect Health for monitoring on-premises sync agents"
     ],
     "correct": [
       0
@@ -2842,15 +2842,15 @@
     "q_es": "Como medida de continuidad operativa, el equipo de seguridad exige que existan al menos dos cuentas de 'acceso de emergencia' (break-glass) excluidas de las directivas de acceso condicional y que no dependan de la autenticación multifactor basada en el teléfono móvil de un empleado. ¿Cuál es la práctica recomendada para estas cuentas?",
     "q_en": "As an operational continuity measure, the security team requires that at least two 'break-glass' emergency access accounts exist, excluded from Conditional Access policies, and that they do not rely on MFA tied to an individual employee's mobile phone. What is the recommended practice for these accounts?",
     "opts_es": [
-      "Crear cuentas en la nube dedicadas con contraseñas muy largas y aleatorias, excluidas de la MFA y de las directivas de acceso condicional, monitorizando estrechamente su uso",
+      "Crear cuentas en la nube dedicadas con contraseñas muy largas y aleatorias, excluidas de la MFA y de las directivas de acceso condicional",
       "Compartir las credenciales del Administrador global habitual entre dos empleados de TI",
-      "Configurar dichas cuentas para que usen exclusivamente la autenticación basada en certificados del dispositivo del CEO",
+      "Configurar dichas cuentas para que usen exclusivamente la autenticación basada en certificados del dispositivo personal del CEO de la empresa",
       "Deshabilitar la MFA para todas las cuentas con el rol de Administrador global del inquilino"
     ],
     "opts_en": [
-      "Create dedicated cloud-only accounts with very long, random passwords, excluded from MFA and Conditional Access policies, with their usage closely monitored",
+      "Create dedicated cloud-only accounts with very long, random passwords, excluded from MFA and Conditional Access policies",
       "Share the credentials of the regular Global Administrator account between two IT employees",
-      "Configure these accounts to rely exclusively on certificate-based authentication tied to the CEO's device",
+      "Configure these accounts to rely exclusively on certificate-based authentication tied to the CEO's personal device and managed by IT",
       "Disable MFA for all accounts holding the Global Administrator role in the tenant"
     ],
     "correct": [
@@ -2920,14 +2920,14 @@
     "q_es": "Un administrador configuró Microsoft Entra Connect Sync con autenticación de paso a través (Pass-through Authentication). Una semana después, los usuarios de una sucursal no pueden iniciar sesión en Microsoft 365, mientras que los de la sede central sí pueden. El administrador sospecha que el agente de PTA instalado en los servidores de esa sucursal no está funcionando correctamente. ¿Dónde debería verificar primero el estado de los agentes de PTA?",
     "q_en": "An administrator configured Microsoft Entra Connect Sync with Pass-through Authentication (PTA). A week later, users at a branch office cannot sign in to Microsoft 365, while users at headquarters can. The administrator suspects the PTA agent installed on that branch's servers is not functioning correctly. Where should they first check the status of the PTA agents?",
     "opts_es": [
-      "En el portal de Microsoft Entra, dentro de la configuración de autenticación de paso a través, donde se muestra el estado de cada agente",
-      "En el Centro de mensajes (Message center) del Centro de administración de Microsoft 365",
+      "En el portal de Microsoft Entra, dentro de la configuración de PTA, donde se muestra el estado de los agentes",
+      "En el Centro de mensajes (Message center) del Centro de administración de Microsoft 365, sección de mantenimiento",
       "En el informe de uso de aplicaciones de Microsoft Entra",
       "En la configuración de directivas de acceso condicional"
     ],
     "opts_en": [
-      "In the Microsoft Entra portal, under the Pass-through Authentication settings, which shows the status of each agent",
-      "In the Message center of the Microsoft 365 admin center",
+      "In the Microsoft Entra portal, under Pass-through Authentication settings, showing each agent's status",
+      "In the Message center of the Microsoft 365 admin center, under the maintenance and service health section",
       "In the Microsoft Entra application usage report",
       "In the Conditional Access policies configuration"
     ],
@@ -2946,15 +2946,15 @@
     "q_es": "Durante la instalación de Microsoft Entra Connect Sync, un administrador habilita el 'modo de preparación' (staging mode) en un segundo servidor que tiene la misma configuración de sincronización que el servidor activo. ¿Cuál es el propósito principal de este modo?",
     "q_en": "During the installation of Microsoft Entra Connect Sync, an administrator enables 'staging mode' on a second server that has the same synchronization configuration as the active server. What is the primary purpose of this mode?",
     "opts_es": [
-      "Permitir que el segundo servidor importe y sincronice datos de prueba con Microsoft Entra ID, pero sin exportar cambios, para validar la configuración antes de convertirlo en el servidor activo",
+      "Permitir que el servidor importe y sincronice datos sin exportar cambios, validando la configuración antes de activarlo",
       "Cifrar las contraseñas sincronizadas con una clave temporal antes de enviarlas a la nube",
-      "Crear automáticamente una copia de seguridad diaria de la base de datos de sincronización",
+      "Crear automáticamente una copia de seguridad diaria completa de la base de datos de sincronización y su configuración",
       "Limitar la sincronización únicamente a los grupos de seguridad, excluyendo usuarios"
     ],
     "opts_en": [
-      "Allow the second server to import and sync data with Microsoft Entra ID for validation purposes, but without exporting changes, so the configuration can be verified before promoting it to the active server",
+      "Allow the server to import and sync data without exporting changes, validating the configuration first",
       "Encrypt synced passwords with a temporary key before sending them to the cloud",
-      "Automatically create a daily backup of the synchronization database",
+      "Automatically create a full daily backup of the synchronization database and its configuration settings",
       "Limit synchronization to security groups only, excluding users"
     ],
     "correct": [
@@ -3025,7 +3025,7 @@
     "q_en": "An administrator wants to ensure that when a user signs in with MFA via Microsoft Authenticator, the app displays a number on screen that the user must enter on their phone, to mitigate the risk of a user accidentally approving a push notification sent by an attacker who knows their password ('MFA fatigue'). What should the administrator enable?",
     "opts_es": [
       "La coincidencia de números (number matching) en las notificaciones push de Microsoft Authenticator",
-      "La directiva de bloqueo por intentos fallidos de Smart Lockout",
+      "La directiva de bloqueo por intentos fallidos de inicio de sesión (Smart Lockout) tras varios intentos",
       "El registro combinado de información de seguridad",
       "La autenticación basada en certificados para todos los usuarios"
     ],
@@ -3260,13 +3260,13 @@
     "opts_es": [
       "La notificación de fraude (report fraud) integrada con Microsoft Entra ID Protection",
       "La directiva de bloqueo de cuenta de Smart Lockout",
-      "Una directiva de acceso condicional basada en ubicaciones con nombre",
+      "Una directiva de acceso condicional basada en ubicaciones con nombre y direcciones IP de confianza",
       "El restablecimiento de contraseña de autoservicio combinado"
     ],
     "opts_en": [
       "The 'report fraud' notification integrated with Microsoft Entra ID Protection",
       "The Smart Lockout account lockout policy",
-      "A Conditional Access policy based on named locations",
+      "A Conditional Access policy based on named locations and trusted IP address ranges",
       "Combined self-service password reset"
     ],
     "correct": [
@@ -3313,7 +3313,7 @@
       "Requerir que el dispositivo esté marcado como compatible (require device to be marked as compliant)",
       "Requerir autenticación multifactor",
       "Requerir una ubicación de red aprobada",
-      "Bloquear el acceso para todas las aplicaciones en la nube"
+      "Bloquear el acceso para todas las aplicaciones en la nube desde cualquier dispositivo no compatible"
     ],
     "opts_en": [
       "Require device to be marked as compliant",
@@ -3388,15 +3388,15 @@
     "q_es": "El portal de Microsoft Defender clasificó automáticamente un dispositivo comprometido y, según el nivel de automatización configurado, está ejecutando acciones de corrección sin intervención humana, como aislar el dispositivo y poner en cuarentena los archivos maliciosos detectados. Sin embargo, la organización quiere que, para este grupo de dispositivos críticos, todas las acciones de corrección requieran la aprobación manual de un analista antes de ejecutarse. ¿Qué deberían configurar?",
     "q_en": "The Microsoft Defender portal automatically classified a compromised device and, based on the configured automation level, is taking remediation actions without human intervention, such as isolating the device and quarantining detected malicious files. However, the organization wants that for this group of critical devices, all remediation actions require manual analyst approval before execution. What should they configure?",
     "opts_es": [
-      "El nivel de automatización de la investigación y respuesta automatizadas (AIR) para ese grupo de dispositivos en 'Semiautomático: requiere aprobación para todas las carpetas'",
+      "El nivel de automatización de AIR de ese grupo configurado en 'Semiautomático: requiere aprobación para todas las carpetas'",
       "Una directiva de prevención de pérdida de datos específica para esos dispositivos",
-      "Una etiqueta de confidencialidad de 'Altamente confidencial' aplicada a los dispositivos",
+      "Una etiqueta de confidencialidad de 'Altamente confidencial' aplicada a esos dispositivos críticos de la organización",
       "Excluir esos dispositivos de Microsoft Defender for Endpoint"
     ],
     "opts_en": [
-      "The automated investigation and response (AIR) automation level for that device group set to 'Semi - require approval for any remediation'",
+      "The AIR automation level for that device group set to 'Semi - require approval for any remediation'",
       "A data loss prevention policy specific to those devices",
-      "A 'Highly Confidential' sensitivity label applied to the devices",
+      "A 'Highly Confidential' sensitivity label applied to those critical organizational devices",
       "Excluding those devices from Microsoft Defender for Endpoint"
     ],
     "correct": [
@@ -3468,7 +3468,7 @@
     "opts_es": [
       "Una entrada de permitir en la lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List)",
       "Desactivar la directiva antispam predeterminada para todo el inquilino",
-      "Crear una directiva de prevención de pérdida de datos que excluya a ese remitente",
+      "Crear una directiva de prevención de pérdida de datos que excluya explícitamente a ese remitente de confianza",
       "Aplicar una etiqueta de retención al buzón del destinatario"
     ],
     "opts_en": [
@@ -3519,13 +3519,13 @@
     "q_en": "The security team organizes the 5,000 devices managed by Microsoft Defender for Endpoint into different groups based on criticality and location (for example, 'Finance servers', 'Sales laptops'). They want a regional security analyst to be able to see and act only on alerts and devices in the 'Sales laptops - South region' group, without access to other groups. What should they configure?",
     "opts_es": [
       "Grupos de dispositivos con control de acceso basado en roles (RBAC) en Microsoft Defender for Endpoint",
-      "Una unidad administrativa de Microsoft Entra que contenga esos dispositivos",
+      "Una unidad administrativa de Microsoft Entra que agrupe específicamente esos dispositivos por región",
       "Una directiva de cumplimiento de Intune restringida a esa región",
       "Una etiqueta de confidencialidad aplicada a los dispositivos de esa región"
     ],
     "opts_en": [
       "Device groups with role-based access control (RBAC) in Microsoft Defender for Endpoint",
-      "A Microsoft Entra administrative unit containing those devices",
+      "A Microsoft Entra administrative unit grouping specifically those devices by region",
       "An Intune compliance policy restricted to that region",
       "A sensitivity label applied to devices in that region"
     ],
@@ -3571,7 +3571,7 @@
     "q_en": "The organization wants to reduce the attack surface by preventing Office macros in documents downloaded from the internet from executing potentially malicious content, such as creating child processes or injecting code into other processes, across all Windows devices onboarded to Microsoft Defender for Endpoint. Which feature should they implement?",
     "opts_es": [
       "Reglas de reducción de la superficie de ataque (Attack surface reduction rules)",
-      "Protección contra alteraciones (tamper protection)",
+      "Protección contra alteraciones (tamper protection) en la configuración de seguridad de Defender",
       "Aislamiento basado en hardware (Application Guard)",
       "Cifrado de dispositivo con BitLocker"
     ],
@@ -3675,7 +3675,7 @@
     "q_en": "A hotel's front desk department needs a shared mailbox called 'Reservations' that several employees can access to read and send mail without their own credentials or an individual Exchange Online license, while the 'North Room' meeting room needs a mailbox that users can book directly from their Outlook calendars. What mailbox types correspond, respectively, to 'Reservations' and 'North Room'?",
     "opts_es": [
       "Un buzón compartido (shared mailbox) para 'Reservas' y un buzón de recursos de tipo sala (room mailbox) para 'Sala Norte'",
-      "Un buzón de recursos de tipo sala para 'Reservas' y un buzón compartido para 'Sala Norte'",
+      "Un buzón de recursos de tipo sala para 'Reservas' y un buzón compartido para 'Sala Norte', ambos sin licencia",
       "Ambos deben ser buzones compartidos con licencias completas de Exchange Online Plan 2",
       "Ambos deben ser grupos de distribución dinámicos con reenvío automático"
     ],
@@ -3727,7 +3727,7 @@
     "q_en": "Your organization wants a Conditional Access policy that requires a stricter authentication security level to access a critical financial application: users must authenticate with a FIDO2 security key or Windows Hello for Business, and specifically a password combined with SMS or a phone call must NOT satisfy this requirement. Which Microsoft Entra feature allows defining this specific combination of accepted methods?",
     "opts_es": [
       "Las concesiones de acceso condicional basadas en niveles de seguridad de autenticación (authentication strengths)",
-      "La directiva de métodos de autenticación habilitados a nivel de inquilino",
+      "La directiva de métodos de autenticación habilitados a nivel de inquilino, incluyendo SMS y llamada telefónica",
       "Los términos de uso (terms of use)",
       "La directiva de registro combinado de información de seguridad"
     ],
@@ -3780,7 +3780,7 @@
     "opts_es": [
       "Control de acceso basado en roles unificado de Microsoft Defender XDR (Unified RBAC)",
       "El rol de Administrador global de Microsoft Entra",
-      "Una unidad administrativa que contenga las cuentas de los analistas",
+      "Una unidad administrativa que contenga específicamente las cuentas de esos analistas de seguridad",
       "El rol de Lector global"
     ],
     "opts_en": [
@@ -3935,13 +3935,13 @@
     "q_en": "Your organization allows access to SharePoint Online from unmanaged personal devices, but the security team specifically wants to prevent users in that situation from downloading, printing, or syncing files to those devices, while still allowing them to view and edit files in the browser. Which technology allows applying this specific session control?",
     "opts_es": [
       "Una directiva de control de sesión de Conditional Access App Control que aplique restricciones de Defender for Cloud Apps",
-      "Una directiva de prevención de pérdida de datos de punto de conexión (endpoint DLP)",
+      "Una directiva de prevención de pérdida de datos de punto de conexión (endpoint DLP) aplicada a esos dispositivos personales",
       "Una directiva de retención aplicada al sitio de SharePoint",
       "Una directiva de cumplimiento de dispositivos en Intune"
     ],
     "opts_en": [
       "A Conditional Access App Control session policy applying Defender for Cloud Apps restrictions",
-      "An endpoint data loss prevention (endpoint DLP) policy",
+      "An endpoint data loss prevention (endpoint DLP) policy applied to those personal devices",
       "A retention policy applied to the SharePoint site",
       "An Intune device compliance policy"
     ],
@@ -3962,7 +3962,7 @@
     "opts_es": [
       "Una directiva de detección de anomalías (anomaly detection policy) para 'viaje imposible'",
       "Una directiva de archivo (file policy) basada en clasificación",
-      "Una directiva de Cloud Discovery basada en registros de tráfico",
+      "Una directiva de Cloud Discovery basada en el análisis de registros de tráfico de red",
       "Una directiva de control de aplicaciones OAuth"
     ],
     "opts_en": [
@@ -3986,16 +3986,16 @@
     "q_es": "Un sitio de SharePoint tiene aplicada una directiva de retención que conserva todo el contenido durante 5 años, pero un documento específico dentro de ese sitio tiene aplicada manualmente una etiqueta de retención que indica que debe eliminarse después de 1 año. Cuando ambas reglas entran en conflicto sobre el mismo documento, ¿qué principio determina cuál prevalece según las reglas de precedencia de Microsoft Purview?",
     "q_en": "A SharePoint site has a retention policy applied that keeps all content for 5 years, but a specific document within that site has a retention label manually applied indicating it should be deleted after 1 year. When both rules conflict over the same document, what principle determines which one prevails according to Microsoft Purview precedence rules?",
     "opts_es": [
-      "Las etiquetas de retención aplicadas explícitamente a un elemento tienen precedencia sobre las directivas de retención aplicadas a nivel de contenedor (sitio o ubicación)",
+      "Las etiquetas de retención aplicadas explícitamente a un elemento tienen precedencia sobre las directivas de retención del contenedor",
       "Siempre prevalece la regla que tenga el periodo de retención más largo, independientemente de cómo se haya aplicado",
       "Las directivas de retención a nivel de sitio siempre tienen prioridad sobre las etiquetas individuales",
-      "El conflicto debe resolverse manualmente por un administrador de cumplimiento antes de que se aplique cualquier regla"
+      "El conflicto debe resolverse manualmente por un administrador de cumplimiento de Microsoft Purview antes de aplicar cualquier regla"
     ],
     "opts_en": [
-      "Retention labels explicitly applied to an item take precedence over retention policies applied at the container level (site or location)",
+      "Retention labels explicitly applied to an item take precedence over container-level retention policies",
       "The rule with the longest retention period always wins, regardless of how it was applied",
       "Site-level retention policies always take priority over individual labels",
-      "The conflict must be manually resolved by a compliance administrator before any rule is applied"
+      "The conflict must be manually resolved by a Microsoft Purview compliance administrator before any rule is applied"
     ],
     "correct": [
       0
@@ -4064,14 +4064,14 @@
     "q_es": "La organización quiere extender su directiva de prevención de pérdida de datos para que también detecte y bloquee la copia de archivos que contengan números de la seguridad social a unidades USB extraíbles, así como su carga a sitios web no autorizados, directamente desde los equipos Windows de los empleados, incluso cuando estén desconectados de la red corporativa. ¿Qué se necesita configurar primero?",
     "q_en": "The organization wants to extend its data loss prevention policy to also detect and block copying files containing social security numbers to removable USB drives, as well as uploading them to unauthorized websites, directly from employees' Windows devices, even when disconnected from the corporate network. What needs to be configured first?",
     "opts_es": [
-      "Incorporar (onboard) los dispositivos a la prevención de pérdida de datos de punto de conexión (Endpoint DLP) mediante Microsoft Purview",
-      "Crear una directiva de acceso condicional que bloquee dispositivos USB",
+      "Incorporar (onboard) los dispositivos a la prevención de pérdida de datos de punto de conexión mediante Purview",
+      "Crear una directiva de acceso condicional que bloquee el uso de dispositivos USB externos en toda la organización",
       "Habilitar BitLocker en todos los dispositivos de la organización",
       "Crear una etiqueta de confidencialidad con cifrado de doble clave"
     ],
     "opts_en": [
-      "Onboard the devices to Endpoint data loss prevention (Endpoint DLP) via Microsoft Purview",
-      "Create a Conditional Access policy that blocks USB devices",
+      "Onboard the devices to Endpoint DLP via Microsoft Purview",
+      "Create a Conditional Access policy that blocks external USB devices across the organization",
       "Enable BitLocker on all of the organization's devices",
       "Create a sensitivity label with double key encryption"
     ],
@@ -4090,13 +4090,13 @@
     "q_es": "El departamento de cumplimiento quiere crear una directiva de prevención de pérdida de datos que detecte cuando un empleado comparte, en un chat o canal de Microsoft Teams, un mensaje que contenga números de tarjetas de crédito, mostrando al usuario un consejo de directiva (policy tip) antes de que el mensaje se envíe. ¿Es esto posible con DLP de Microsoft Purview, y bajo qué condición?",
     "q_en": "The compliance department wants to create a data loss prevention policy that detects when an employee shares, in a Microsoft Teams chat or channel, a message containing credit card numbers, showing the user a policy tip before the message is sent. Is this possible with Microsoft Purview DLP, and under what condition?",
     "opts_es": [
-      "Sí, las directivas de DLP pueden incluir Microsoft Teams como ubicación, mostrando un consejo de directiva e impidiendo el envío del mensaje si contiene el tipo de información confidencial definido",
+      "Sí, las directivas de DLP de Purview pueden incluir Teams como ubicación y mostrar un consejo de directiva antes del envío",
       "No, DLP de Microsoft Purview solo puede aplicarse a Exchange, SharePoint y OneDrive, no a los chats de Teams",
       "Sí, pero solo es posible si los mensajes de Teams se archivan primero manualmente en un buzón de Exchange",
       "No, los consejos de directiva solo están disponibles para correos electrónicos, nunca para mensajes de chat"
     ],
     "opts_en": [
-      "Yes, DLP policies can include Microsoft Teams as a location, showing a policy tip and preventing the message from being sent if it contains the defined sensitive information type",
+      "Yes, DLP policies can include Microsoft Teams as a location, showing a policy tip before the message is sent",
       "No, Microsoft Purview DLP can only be applied to Exchange, SharePoint, and OneDrive, not to Teams chats",
       "Yes, but only if Teams messages are first manually archived to an Exchange mailbox",
       "No, policy tips are only available for emails, never for chat messages"
@@ -4196,13 +4196,13 @@
     "opts_es": [
       "Crear el registro TXT (o MX) que Microsoft proporciona en el sistema DNS del proveedor donde está registrado el dominio",
       "Instalar un certificado SSL emitido por Microsoft en el servidor web del dominio",
-      "Configurar Microsoft Entra Connect para sincronizar el dominio desde Active Directory local",
+      "Configurar Microsoft Entra Connect para sincronizar el dominio desde Active Directory local con el inquilino",
       "Activar la licencia de Exchange Online Plan 2 para el dominio"
     ],
     "opts_en": [
       "Create the TXT (or MX) record provided by Microsoft in the DNS system of the provider where the domain is registered",
       "Install an SSL certificate issued by Microsoft on the domain's web server",
-      "Configure Microsoft Entra Connect to sync the domain from on-premises Active Directory",
+      "Configure Microsoft Entra Connect to synchronize the domain from the on-premises Active Directory forest to the tenant",
       "Activate an Exchange Online Plan 2 license for the domain"
     ],
     "correct": [
@@ -4221,7 +4221,7 @@
     "q_en": "A company allows employees to use their personal phones (BYOD) to access corporate email via the Outlook mobile app, but does not want to enroll those personal devices in Intune mobile device management (MDM), since that would give the company control over the entire device. Still, they want to prevent corporate data from being copied to personal apps or email being forwarded to personal accounts. Which Intune solution meets this requirement?",
     "opts_es": [
       "Directivas de protección de aplicaciones (App protection policies, MAM sin inscripción)",
-      "Directivas de cumplimiento de dispositivos (device compliance policies)",
+      "Directivas de cumplimiento de dispositivos (device compliance policies) para BYOD sin MAM",
       "Perfiles de configuración de dispositivos completos",
       "Windows Autopilot"
     ],
@@ -4247,13 +4247,13 @@
     "q_en": "A department currently uses a distribution group called 'Marketing-All' to send email to the whole team, but now also wants that same team to have a shared calendar, a SharePoint site for documents, and a shared OneNote notebook, all managed under a single group identity. What action would you recommend?",
     "opts_es": [
       "Convertir o recrear el grupo como un grupo de Microsoft 365, que proporciona correo, calendario, SharePoint y OneNote compartidos bajo una sola identidad",
-      "Mantener el grupo de distribución y crear por separado un sitio de SharePoint, un calendario y un bloc de OneNote sin vincularlos",
+      "Mantener el grupo de distribución y crear por separado un sitio de SharePoint, un calendario compartido y un bloc de OneNote sin vincularlos entre sí",
       "Convertir el grupo en un grupo de seguridad habilitado para correo",
       "Crear un nuevo buzón compartido con el mismo nombre y eliminar el grupo de distribución"
     ],
     "opts_en": [
       "Convert or recreate the group as a Microsoft 365 group, which provides shared mail, calendar, SharePoint and OneNote under a single identity",
-      "Keep the distribution group and separately create a SharePoint site, calendar, and OneNote notebook without linking them",
+      "Keep the distribution group and separately create a SharePoint site, shared calendar, and OneNote notebook without linking them together",
       "Convert the group into a mail-enabled security group",
       "Create a new shared mailbox with the same name and delete the distribution group"
     ],
@@ -4325,13 +4325,13 @@
     "q_en": "Users in an organization using Pass-through Authentication (PTA) intermittently report sign-in failures with an error indicating the authentication service is unavailable, even though the on-premises domain controller is working correctly. What component should the administrator check first to diagnose this issue?",
     "opts_es": [
       "El estado de los agentes de autenticación de paso a través (PTA agents) instalados en los servidores locales",
-      "La configuración de la directiva de retención de Microsoft Purview",
+      "La configuración de la directiva de retención de Microsoft Purview aplicada a los buzones de esa sucursal",
       "El estado de la licencia de Microsoft Entra ID P1",
       "La configuración de los grupos de seguridad dinámicos"
     ],
     "opts_en": [
       "The status of the Pass-through Authentication agents installed on on-premises servers",
-      "The Microsoft Purview retention policy configuration",
+      "The Microsoft Purview retention policy configuration applied to that branch office's mailboxes",
       "The Microsoft Entra ID P1 license status",
       "The dynamic security group configuration"
     ],
@@ -4376,9 +4376,9 @@
     "q_es": "El equipo de seguridad quiere que las directivas de acceso condicional traten de forma diferente las conexiones que se originan desde las oficinas corporativas (cuyos rangos de direcciones IP públicas son conocidos) frente a las conexiones desde cualquier otro lugar, por ejemplo, exigiendo MFA solo para las conexiones externas. Para poder hacer referencia a 'las oficinas corporativas' como una condición reutilizable en varias directivas, ¿qué deberían configurar primero?",
     "q_en": "The security team wants Conditional Access policies to treat connections originating from corporate offices (whose public IP address ranges are known) differently from connections from anywhere else, for example, requiring MFA only for external connections. To be able to reference 'corporate offices' as a reusable condition across multiple policies, what should they configure first?",
     "opts_es": [
-      "Ubicaciones con nombre (named locations) que definan los rangos de IP de las oficinas como ubicaciones de confianza",
+      "Ubicaciones con nombre (named locations) que definan los rangos de IP de las oficinas",
       "Una unidad administrativa que agrupe los dispositivos de oficina",
-      "Un grupo de seguridad dinámico basado en la dirección IP del dispositivo",
+      "Un grupo de seguridad dinámico basado en la dirección IP pública del dispositivo del usuario",
       "Una directiva de cumplimiento de Intune basada en la red Wi-Fi"
     ],
     "opts_en": [
@@ -4402,8 +4402,8 @@
     "q_es": "Una aplicación que se ejecuta como un trabajo automatizado en Azure necesita acceder a la API de Microsoft Graph para leer datos de Microsoft Entra ID, sin que ningún usuario inicie sesión de forma interactiva. La organización quiere evitar el uso de un secreto de cliente (client secret) que deba renovarse periódicamente y que podría filtrarse si se almacena incorrectamente. ¿Qué enfoque de autenticación es más adecuado?",
     "q_en": "An application running as an automated job in Azure needs to access the Microsoft Graph API to read Microsoft Entra ID data, with no user signing in interactively. The organization wants to avoid using a client secret that must be periodically renewed and could leak if stored incorrectly. Which authentication approach is most appropriate?",
     "opts_es": [
-      "Configurar la federación de identidades de carga de trabajo (workload identity federation) usando una identidad administrada",
-      "Crear un usuario dedicado con una contraseña que nunca caduque y usar autenticación básica",
+      "Usar federación de identidades de carga de trabajo (workload identity federation) con identidad administrada",
+      "Crear un usuario dedicado con una contraseña que nunca caduque y usar autenticación básica heredada",
       "Compartir las credenciales de un administrador global con la aplicación",
       "Usar un código de acceso temporal (Temporary Access Pass) para la aplicación"
     ],
@@ -4429,7 +4429,7 @@
     "q_en": "The security director wants to see a chart showing how the tenant's Secure Score has evolved over the past six months, in order to present management with the progress of implemented security improvements, as well as compare it with similar organizations. Where can they find this information?",
     "opts_es": [
       "En la pestaña de Historial e Información comparativa (History/Comparison) de Microsoft Secure Score",
-      "En el informe de actividad de inicio de sesión de Microsoft Entra ID",
+      "En el informe de actividad de inicio de sesión y uso de aplicaciones de Microsoft Entra ID",
       "En el panel de Estado del servicio",
       "En el Explorador de contenido de Microsoft Purview"
     ],
@@ -4586,13 +4586,13 @@
     "opts_es": [
       "El servicio de importación de Microsoft Purview (carga de unidad o carga de red para archivos PST)",
       "Microsoft Entra Connect",
-      "La herramienta de migración de buzones de Exchange Online",
+      "La herramienta de migración de buzones de Exchange Online (Exchange Online mailbox migration)",
       "El Explorador de actividades"
     ],
     "opts_en": [
       "The Microsoft Purview import service (drive shipping or network upload for PST files)",
       "Microsoft Entra Connect",
-      "The Exchange Online mailbox migration tool",
+      "The Exchange Online mailbox migration tool, used for moving individual mailboxes",
       "Activity explorer"
     ],
     "correct": [
@@ -4639,7 +4639,7 @@
       "Una directiva de etiquetado automático (auto-labeling) a nivel de servicio basada en un tipo de información confidencial",
       "Pedir a cada usuario que aplique manualmente la etiqueta al guardar el archivo",
       "Una directiva de retención que elimine los documentos con números de cuenta",
-      "Una directiva de acceso condicional que bloquee la descarga de cualquier documento de Excel"
+      "Una directiva de acceso condicional que bloquee la descarga de cualquier documento de Excel desde dispositivos no gestionados"
     ],
     "opts_en": [
       "A service-side auto-labeling policy based on a sensitive information type",
@@ -4714,16 +4714,16 @@
     "q_es": "Un administrador asigna licencias de Microsoft 365 E5 a los usuarios mediante licencias basadas en grupos asignadas al grupo de seguridad 'Todos-Empleados'. Sin embargo, el departamento legal no debe tener acceso a Microsoft Teams por motivos de cumplimiento, aunque sí necesita el resto de servicios incluidos en E5. ¿Cómo puede lograrse esto sin crear un grupo ni una licencia separados para el departamento legal?",
     "q_en": "An administrator assigns Microsoft 365 E5 licenses to users via group-based licensing assigned to the 'All-Employees' security group. However, the legal department must not have access to Microsoft Teams for compliance reasons, although it still needs the rest of the services included in E5. How can this be achieved without creating a separate group or license for the legal department?",
     "opts_es": [
-      "Crear una asignación de licencia basada en grupos independiente para el grupo del departamento legal, deshabilitando el plan de servicio de Teams en esa asignación",
+      "Crear una asignación de licencia basada en grupos independiente para legal, deshabilitando el plan de servicio de Teams",
       "Eliminar Microsoft Teams del catálogo de aplicaciones del inquilino completo",
       "Aplicar una directiva de acceso condicional que bloquee Teams para todos los usuarios",
-      "Quitar manualmente la licencia de Teams a cada usuario del departamento legal todos los meses"
+      "Quitar manualmente la licencia de Teams a cada usuario del departamento legal todos los meses de forma indefinida"
     ],
     "opts_en": [
-      "Create a separate group-based license assignment for the legal department's group, disabling the Teams service plan in that assignment",
+      "Create a separate group-based license assignment for the legal group, disabling the Teams service plan",
       "Remove Microsoft Teams from the entire tenant's app catalog",
       "Apply a Conditional Access policy that blocks Teams for all users",
-      "Manually remove the Teams license from each legal department user every month"
+      "Manually remove the Teams license from each legal department user every month indefinitely"
     ],
     "correct": [
       0
@@ -4741,7 +4741,7 @@
     "q_en": "An organization is in a hybrid scenario: some mailboxes remain on-premises Exchange Server while others are already in Exchange Online. They want mail sent between on-premises and cloud mailboxes to be delivered securely and efficiently, not via standard Internet routing, and want features like shared free/busy to work across both environments. What component is needed to achieve this mail flow and hybrid functionality?",
     "opts_es": [
       "Un conector de flujo de correo híbrido configurado mediante el Asistente de configuración híbrida de Exchange",
-      "Microsoft Entra Connect Cloud Sync únicamente",
+      "Microsoft Entra Connect Cloud Sync únicamente, sin configurar conectores de flujo de correo híbrido",
       "Una directiva de prevención de pérdida de datos entre Exchange local y Exchange Online",
       "Un grupo de distribución dinámico que incluya ambos tipos de buzones"
     ],
