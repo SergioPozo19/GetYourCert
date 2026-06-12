@@ -30,16 +30,18 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Cache-first for question JSON files (large, stable data)
+  // Stale-while-revalidate for question JSON files (large, mostly-stable data):
+  // serve the cached copy immediately if present, but always re-fetch in the
+  // background to refresh the cache for next time.
   if(url.pathname.startsWith('/questions/') || url.pathname.includes('questions/')){
     e.respondWith(
       caches.open(CACHE_NAME).then(cache =>
         cache.match(e.request).then(cached => {
-          if(cached) return cached;
-          return fetch(e.request).then(res => {
+          const network = fetch(e.request).then(res => {
             if(res.ok) cache.put(e.request, res.clone());
             return res;
-          });
+          }).catch(() => cached);
+          return cached || network;
         })
       )
     );

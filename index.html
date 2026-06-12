@@ -171,9 +171,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .btn-ghost:hover{background:var(--panel-2);border-color:var(--accent)}
 .back-link{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:var(--ink-2);cursor:pointer;font-size:13.5px;margin-bottom:10px}
 .back-link:hover{color:var(--accent)}
-.prog-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:920px;margin:0 auto 20px}
+.prog-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:920px;margin:0 auto 20px}
 .prog-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
 .prog-card .pv{font-size:26px;font-weight:700;font-family:var(--mono);color:var(--ink)}
+.prog-card.streak .pv{font-size:18px}
 .prog-card .pl{font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
 .prog-section{max-width:920px;margin:0 auto 18px}
 .prog-section h3{font-size:14px;color:var(--ink-2);margin:0 0 10px}
@@ -207,6 +208,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .ex-q .exq-bm.on svg{fill:var(--accent)}
 .rev-bm{margin-left:auto;background:none;border:none;cursor:pointer;color:var(--ink-3);padding:2px}
 .rev-bm.on{color:var(--accent)}
+.rev-report{background:none;border:none;cursor:pointer;color:var(--ink-3);padding:2px}
+.rev-report:hover{color:var(--bad)}
 .ex-opt{padding:8px 12px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:13.5px;color:var(--ink-2)}
 .ex-opt.correct{border-color:var(--ok);background:var(--ok-soft);color:var(--ink);font-weight:600}
 .ex-q .exq-exp{margin-top:10px;padding:10px 12px;background:var(--panel-2);border-radius:8px;font-size:13px;color:var(--ink-2);line-height:1.5}
@@ -664,6 +667,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           <span data-i="shareResult">Compartir resultado</span>
         </button>
+        <button class="btn btn-ghost hidden" id="exportReportBtn" onclick="exportReportPdf()" title="" data-i-title="exportReportPro">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+          <span data-i="exportReport">Exportar informe (PDF)</span>
+        </button>
       </div>
       <div class="retry-wrong hidden" id="retryWrongBox">
         <div class="rw-title" id="rwTitle" data-i="rwTitle">Repetir con las preguntas falladas</div>
@@ -839,7 +846,10 @@ const I18N = {
     catTitle:"Elige tu examen", catSub:"Plataforma de exámenes de práctica basados en las guías oficiales de Microsoft.",
     comingSoonTitle:"Más exámenes próximamente", comingSoonSub:"Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!",
     resumeTitle:"Examen sin terminar", resumeSub:"{code} · pregunta {n} de {t}", resumeBtn:"Reanudar", discardBtn:"Descartar", confirmDiscard:"¿Descartar el examen sin terminar?",
-    myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
+    myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progStreak:"Racha", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
+    streakDays:"{n} días", streakDay:"{n} día",
+    exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Reportar error en esta pregunta",
+    reportSubject:"Reportar error · {code} · pregunta #{id}", reportBody:"Hola,\n\nCreo que hay un error en esta pregunta:\n\nExamen: {code}\nID de la pregunta: {id}\n\nDescripción del problema:\n",
     catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
@@ -900,7 +910,10 @@ const I18N = {
     catTitle:"Choose your exam", catSub:"A practice-exam platform based on Microsoft's official study guides.",
     comingSoonTitle:"More exams coming soon", comingSoonSub:"We add new certifications continuously. Check back soon!",
     resumeTitle:"Unfinished exam", resumeSub:"{code} · question {n} of {t}", resumeBtn:"Resume", discardBtn:"Discard", confirmDiscard:"Discard the unfinished exam?",
-    myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
+    myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progStreak:"Streak", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
+    streakDays:"{n} days", streakDay:"{n} day",
+    exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Report an issue with this question",
+    reportSubject:"Report issue · {code} · question #{id}", reportBody:"Hi,\n\nI think there's an issue with this question:\n\nExam: {code}\nQuestion ID: {id}\n\nDescription of the issue:\n",
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
@@ -1209,6 +1222,7 @@ function applyI18n(){
   document.documentElement.lang=lang;
   $$('[data-i]').forEach(el=>{const k=el.getAttribute('data-i');if(I18N[lang][k]!==undefined)el.textContent=I18N[lang][k]});
   $$('[data-i-ph]').forEach(el=>{const k=el.getAttribute('data-i-ph');if(I18N[lang][k]!==undefined)el.setAttribute('placeholder',I18N[lang][k]);});
+  $$('[data-i-title]').forEach(el=>{const k=el.getAttribute('data-i-title');if(I18N[lang][k]!==undefined)el.setAttribute('title',I18N[lang][k]);});
   const lc=$('#loginConsent');
   if(lc)lc.innerHTML=t('loginConsent').replace('{link}',`<a href="privacy.html" target="_blank" rel="noopener">${t('privacyPolicy')}</a>`);
   updateQuotaBadge();
@@ -1674,6 +1688,7 @@ function gradeExam(){
 
   $('#exam').classList.add('hidden');
   $('#results').classList.remove('hidden');
+  $('#exportReportBtn').classList.toggle('hidden',!isPro());
   $('#scorePct').textContent=pct+'%';
   const ring=$('#ring'),circ=465;
   ring.style.stroke=passed?'var(--ok)':'var(--bad)';
@@ -1791,6 +1806,7 @@ function renderReview(){
         '<span class="badge dom">'+t('domainOf')+' '+q.dom+' · '+q.obj+'</span>'+
         '<span class="badge '+(ok?'ok':'bad')+'">'+(ok?t('correctAns'):t('wrongAns'))+'</span>'+
         '<button class="exq-bm rev-bm'+(isBookmarked(q.id)?' on':'')+'" data-qid="'+q.id+'" title="'+t('bookmark')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="'+(isBookmarked(q.id)?'currentColor':'none')+'" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>'+
+        '<button class="exq-bm rev-report" data-qid="'+q.id+'" title="'+t('reportIssue')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></button>'+
       '</div>'+
       '<div class="rqt">'+(L(q,'q'))+'</div>'+
       body+
@@ -2048,6 +2064,15 @@ function closeProgress(){
   renderCatalog();
   window.scrollTo(0,0);
 }
+// Cuenta los días consecutivos (terminando hoy o ayer) con al menos un intento.
+function computeStreak(hist){
+  const days=new Set(hist.map(h=>new Date(h.date).toISOString().slice(0,10)));
+  const cursor=new Date();
+  if(!days.has(cursor.toISOString().slice(0,10))) cursor.setDate(cursor.getDate()-1);
+  let streak=0;
+  while(days.has(cursor.toISOString().slice(0,10))){ streak++; cursor.setDate(cursor.getDate()-1); }
+  return streak;
+}
 function renderProgress(){
   const body=$('#progBody'); body.innerHTML='';
   const hist=Store.get('history',[]);
@@ -2059,9 +2084,11 @@ function renderProgress(){
   const avg=Math.round(hist.reduce((a,h)=>a+h.pct,0)/n);
   const best=Math.max.apply(null,hist.map(h=>h.pct));
   const passRate=Math.round(hist.filter(h=>h.passed).length/n*100);
+  const streak=computeStreak(hist);
   const cards=document.createElement('div'); cards.className='prog-cards';
-  const card=(v,l)=>'<div class="prog-card"><div class="pv">'+v+'</div><div class="pl" data-i="'+l+'">'+l+'</div></div>';
-  cards.innerHTML=card(n,'progAttempts')+card(avg+'%','progAvg')+card(best+'%','progBest')+card(passRate+'%','progPassRate');
+  const card=(v,l,cls)=>'<div class="prog-card'+(cls?' '+cls:'')+'"><div class="pv">'+v+'</div><div class="pl" data-i="'+l+'">'+l+'</div></div>';
+  const streakTxt=t(streak===1?'streakDay':'streakDays').replace('{n}',streak);
+  cards.innerHTML=card(n,'progAttempts')+card(avg+'%','progAvg')+card(best+'%','progBest')+card(passRate+'%','progPassRate')+card((streak?'🔥 ':'')+streakTxt,'progStreak','streak');
   body.appendChild(cards);
   // dominios a reforzar
   const byExam={};
@@ -2380,12 +2407,25 @@ $('#quotaProLink').addEventListener('click',()=>openProModal('manual'));
 // Estudio: favorito en el examen + explorador
 $('#bmBtn').addEventListener('click',()=>{ const q=exam[cur].ref; toggleBookmark(q.id); render(); updateModeBadges(); });
 $('#reviewList').addEventListener('click',e=>{
-  const b=e.target.closest('.rev-bm'); if(!b)return;
-  const id=parseInt(b.dataset.qid);
-  const now=toggleBookmark(id);
-  b.classList.toggle('on',now);
-  b.querySelector('svg').setAttribute('fill',now?'currentColor':'none');
+  const bm=e.target.closest('.rev-bm');
+  if(bm){
+    const id=parseInt(bm.dataset.qid);
+    const now=toggleBookmark(id);
+    bm.classList.toggle('on',now);
+    bm.querySelector('svg').setAttribute('fill',now?'currentColor':'none');
+    return;
+  }
+  const rep=e.target.closest('.rev-report');
+  if(rep){ reportQuestion(parseInt(rep.dataset.qid)); return; }
 });
+
+// Abre el cliente de correo con un mensaje prerrellenado para reportar un error en una pregunta.
+function reportQuestion(qid){
+  const code=currentExam?currentExam.code:'';
+  const subject=t('reportSubject').replace('{code}',code).replace('{id}',qid);
+  const body=t('reportBody').replace('{code}',code).replace('{id}',qid);
+  location.href='mailto:soporte@earnyourcert.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+}
 $('#exploreBtn').addEventListener('click',openExplore);
 $('#backExplore').addEventListener('click',closeExplore);
 $('#exSearch').addEventListener('input',renderExplore);
@@ -2546,6 +2586,71 @@ initGoogleAuth();
 restoreSession();
 
 // Share result
+// Exporta un informe imprimible (PDF via diálogo de impresión) con el detalle
+// completo del examen: resumen, desglose por dominio y todas las preguntas
+// con la respuesta del usuario, la correcta y la explicación. Función Pro.
+function exportReportPdf(){
+  if(!isPro()){ openProModal('limit'); return; }
+  const pct=$('#scorePct').textContent;
+  const code=currentExam?currentExam.code:'';
+  const verdict=$('#verdict').textContent;
+  const verdictSub=$('#verdictSub').textContent;
+  const dt=new Date().toLocaleString(t('locale'));
+
+  let rows='';
+  exam.forEach((item,i)=>{
+    const q=item.ref, tp=qType(q);
+    const ok=isCorrect(i);
+    rows+='<div class="q">'+
+      '<div class="qh"><b>#'+(i+1)+'</b> · '+esc(t('domainOf')+' '+q.dom+' · '+q.obj)+
+      ' · <span class="'+(ok?'ok':'bad')+'">'+(ok?esc(t('correctAns')):esc(t('wrongAns')))+'</span></div>'+
+      '<div class="qt">'+esc(L(q,'q'))+'</div>'+
+      reviewBody(item,i,tp)+
+      '<div class="qe"><b>'+esc(t('expTitle'))+':</b> '+esc(L(q,'exp'))+'</div>'+
+    '</div>';
+  });
+
+  const html='<!DOCTYPE html><html lang="'+lang+'"><head><meta charset="UTF-8">'+
+    '<title>EarnYourCert · '+esc(code)+'</title>'+
+    '<style>'+
+    'body{font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;padding:24px;max-width:800px;margin:0 auto}'+
+    'h1{font-size:20px;margin-bottom:4px}'+
+    '.meta{color:#555;font-size:13px;margin-bottom:18px}'+
+    '.summary{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin-bottom:24px}'+
+    '.q{border-top:1px solid #ddd;padding:14px 0}'+
+    '.qh{font-size:12px;color:#555;margin-bottom:6px}'+
+    '.qt{font-weight:600;margin-bottom:6px}'+
+    '.qe{margin-top:8px;font-size:13px;color:#333;background:#f5f5f5;padding:8px;border-radius:6px}'+
+    '.opts{margin:4px 0}'+
+    '.opt{font-size:13px;margin:3px 0;padding:4px 8px;border-radius:6px;border:1px solid #ddd;display:flex;gap:8px;align-items:flex-start}'+
+    '.opt.correct{background:#e6f4ea;border-color:#9bcfae}'+
+    '.opt.wrong{background:#fbe9e7;border-color:#e9a39a}'+
+    '.opt.miss{background:#fff7d6;border-color:#e8d089}'+
+    '.opt .ol{font-weight:700;margin-right:4px}'+
+    '.rows-rv{margin:4px 0}'+
+    '.row-rv,.sentence-rv{font-size:13px;margin:4px 0}'+
+    '.row-rv-label{font-weight:600;margin-bottom:2px}'+
+    '.rv-chip{display:inline-block;padding:2px 6px;border-radius:4px;font-size:12px;margin-right:6px}'+
+    '.rv-chip.correct{background:#e6f4ea;color:#107C41}'+
+    '.rv-chip.wrong{background:#fbe9e7;color:#C42B1C}'+
+    '.ok{color:#107C41;font-weight:700}'+
+    '.bad{color:#C42B1C;font-weight:700}'+
+    '@media print{.q{page-break-inside:avoid}}'+
+    '</style></head><body>'+
+    '<h1>EarnYourCert · '+esc(code)+'</h1>'+
+    '<div class="meta">'+esc(dt)+'</div>'+
+    '<div class="summary"><b>'+esc(verdict)+'</b> · '+esc(pct)+' · '+esc(verdictSub)+'</div>'+
+    rows+
+    '</body></html>';
+
+  const w=window.open('','_blank');
+  if(!w){ showToast(lang==='en'?'Pop-up blocked':'El navegador ha bloqueado la ventana','warn'); return; }
+  w.document.write(html);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>w.print(),300);
+}
+
 function shareResult(){
   const pct=$('#scorePct').textContent;
   const code=currentExam?currentExam.code:'';
