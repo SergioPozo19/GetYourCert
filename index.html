@@ -1025,7 +1025,6 @@ const I18N = {
     streakDays:"{n} días", streakDay:"{n} día",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
-    fbSubject:"Comentario sobre pregunta · {code} · #{id}", fbBody:"Hola,\n\nQuiero enviar un comentario sobre esta pregunta:\n\nExamen: {code}\nID de la pregunta: {id}\nTipo: {cat}\n\nComentario:\n{comment}\n",
     catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
@@ -1093,7 +1092,6 @@ const I18N = {
     streakDays:"{n} days", streakDay:"{n} day",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
-    fbSubject:"Feedback on question · {code} · #{id}", fbBody:"Hi,\n\nI'd like to send feedback about this question:\n\nExam: {code}\nQuestion ID: {id}\nType: {cat}\n\nComment:\n{comment}\n",
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
@@ -2760,17 +2758,18 @@ function closeFeedbackModal(){
   $('#feedbackModal').classList.remove('show'); _fbQid=null;
   if(_fbReturnFocus&&_fbReturnFocus.focus){ try{_fbReturnFocus.focus();}catch(e){} } _fbReturnFocus=null;
 }
-// Abre el cliente de correo con un mensaje prerrellenado con el comentario del usuario sobre una pregunta.
+// Envía el comentario del usuario sobre una pregunta directamente al backend, sin pasar por el cliente de correo.
 function sendFeedback(){
   if(_fbQid==null) return;
   const q=QUESTIONS.find(x=>x.id===_fbQid);
   const ex=q?EXAMS.find(e=>e.id===q.exam):null;
   const code=ex?ex.code:(currentExam?currentExam.code:'');
-  const catLabel=t(FB_CATS.find(c=>c.id===_fbCat).key);
   const comment=$('#fbComment').value.trim();
-  const subject=t('fbSubject').replace('{code}',code).replace('{id}',_fbQid);
-  const body=t('fbBody').replace('{code}',code).replace('{id}',_fbQid).replace('{cat}',catLabel).replace('{comment}',comment||'-');
-  location.href='mailto:soporte@earnyourcert.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  fetch('/api/feedback.php',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({code, qid:_fbQid, cat:_fbCat, comment})
+  }).catch(()=>{});
   closeFeedbackModal();
   showToast(t('fbSent'),'ok');
 }
