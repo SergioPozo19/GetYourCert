@@ -119,7 +119,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .brand.clickable:hover .logo{transform:rotate(-6deg) scale(1.06)}
 .brand h1{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--ink)}
 .brand .sub{font-size:13px;color:var(--ink-3);margin-top:3px;max-width:420px;line-height:1.4}
-.tools{display:flex;gap:8px;align-items:center}
+.tools{display:flex;gap:18px;align-items:center}
 .toggle{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}
 .toggle button{padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink-3);font-family:var(--mono)}
 .toggle button.on{background:var(--accent);color:#fff}
@@ -128,10 +128,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .account-area{display:flex;align-items:center}
 .gsi-btn{line-height:0}
 .account-menu{display:flex;align-items:center;gap:8px}
-.account-info{display:flex;flex-direction:column;align-items:center;gap:2px}
-.account-avatar{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);object-fit:cover}
+.account-info{position:relative}
+.account-avatar{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);object-fit:cover;display:block}
 .account-avatar.pro{border:2px solid #d4af37;box-shadow:0 0 0 1px rgba(212,175,55,.35)}
-.account-plan{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+.account-plan{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:2px;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 .account-plan.pro{color:#b8860b}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 .hero{padding:40px 36px;text-align:center;margin-bottom:22px;position:relative;overflow:hidden}
