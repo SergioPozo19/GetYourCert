@@ -15,7 +15,7 @@
     ],
     "opts_en": [
       "A TXT record containing the verification value provided by Microsoft 365",
-      "An A record pointing to the IP address of the admin center portal",
+      "An A record pointing to the IP address of the admin center web portal",
       "A CNAME record pointing to outlook.office365.com",
       "A reverse-resolution PTR record for the domain"
     ],
@@ -42,7 +42,7 @@
     "opts_en": [
       "Settings > Org settings, in the Security & privacy tab",
       "Billing > Your products, in the licenses tab",
-      "Users > Active users, in each user's settings",
+      "Users > Active users, in each individual user's settings",
       "Support > New service request"
     ],
     "correct": [
@@ -197,7 +197,7 @@
     ],
     "opts_en": [
       "Update channels (for example, Monthly Enterprise or Semi-Annual Enterprise Channel)",
-      "Microsoft Purview retention policies applied to Exchange Online mailboxes",
+      "Microsoft Purview retention policies applied to Exchange Online user mailboxes",
       "Microsoft Intune configuration profiles for mobile device updates",
       "Group Policy templates for Exchange Online applied via Endpoint Manager"
     ],
@@ -250,7 +250,7 @@
     "opts_en": [
       "The reports' privacy setting, changing it from specific data to de-identified (pseudonymized) data",
       "The Microsoft Purview retention policy applied to all users' mailboxes",
-      "The access level in Microsoft Entra ID Privileged Identity Management for administrators",
+      "The access level in Microsoft Entra ID Privileged Identity Management for global administrators",
       "SharePoint and OneDrive's external sharing configuration"
     ],
     "correct": [
@@ -425,13 +425,13 @@
     "q_en": "An employee was terminated and their account was deleted from the Microsoft 365 admin center 10 days ago. Their manager requests access to the employee's files and mail. What should you do?",
     "opts_es": [
       "Restaurar la cuenta eliminada desde Usuarios eliminados, ya que sigue dentro del periodo de retención de 30 días",
-      "Crear una cuenta nueva con el mismo nombre y correo, ya que los datos anteriores no se pueden recuperar",
+      "Crear una cuenta nueva con el mismo nombre y correo electrónico, ya que los datos anteriores no se pueden recuperar",
       "Pedir al gerente que abra un caso de soporte con Microsoft para recrear la cuenta y restaurar sus datos",
       "Restaurar la cuenta desde una copia de seguridad local del equipo del empleado despedido"
     ],
     "opts_en": [
       "Restore the deleted account from Deleted users, since it is still within the 30-day retention period",
-      "Create a new account with the same name and email, since the previous data cannot be recovered",
+      "Create a new account with the same name and email address, since the previous data cannot be recovered",
       "Ask the manager to open a Microsoft support case to recreate the account and restore its data",
       "Restore the account from a local backup of the dismissed employee's computer"
     ],
@@ -509,7 +509,7 @@
     ],
     "opts_en": [
       "In Users > Active users, selecting the user and choosing 'Reset password'",
-      "In Billing > Licenses, editing the user's profile and details",
+      "In Billing > Licenses, editing the user's account profile and details",
       "In Settings > Domains, within the domain's DNS configuration",
       "In Support, by opening a priority ticket for Microsoft"
     ],
@@ -529,7 +529,7 @@
     "q_en": "You want to organize licenses and policies for several departments by assigning licenses automatically based on group membership, instead of assigning them user by user. Which Microsoft Entra ID feature lets you do this?",
     "opts_es": [
       "Asignación de licencias basada en grupos (group-based licensing)",
-      "Acceso condicional con control de concesión de licencias",
+      "Acceso condicional con un control de concesión de licencias",
       "Unidades administrativas (administrative units)",
       "Paquetes de acceso de Entra ID Governance"
     ],
@@ -635,12 +635,12 @@
       "Crear un rol personalizado de Microsoft Entra ID con los permisos específicos necesarios y asignarlo al grupo",
       "Asignarles el rol Administrador global de forma temporal cada vez",
       "Asignarles el rol Lector de seguridad y pedirles que no usen otras funciones disponibles",
-      "Crear una directiva de acceso condicional que oculte el resto de funciones de Intune para ellos"
+      "Crear una directiva de acceso condicional que oculte el resto de las funciones de Intune para ese grupo de usuarios"
     ],
     "opts_en": [
       "Create a custom Microsoft Entra ID role with the required permissions and assign it to the group",
       "Temporarily assign them the Global Administrator role each time",
-      "Assign them the Security Reader role and ask them not to use other available functions",
+      "Assign them the Security Reader role and kindly ask them not to use any other available functions",
       "Create a Conditional Access policy that hides the rest of Intune's features for them"
     ],
     "correct": [
@@ -691,7 +691,7 @@
     ],
     "opts_en": [
       "Recurring access reviews with automatic removal of unconfirmed access",
-      "Conditional Access policies with periodic manual log review",
+      "Conditional Access policies with periodic manual log reviews instead",
       "Password expiration settings every 6 months for admins",
       "Microsoft Purview retention labels applied to admin roles"
     ],
@@ -815,7 +815,7 @@
     "q_en": "Your organization uses Microsoft Entra Connect Sync and wants user passwords to be validated in Microsoft Entra ID using a secure copy of the on-premises password hash, without depending on on-premises servers being available to authenticate cloud sign-ins. Which authentication method is being described?",
     "opts_es": [
       "Sincronización de hash de contraseñas (Password Hash Synchronization, PHS)",
-      "Autenticación de paso a través (Pass-through Authentication, PTA)",
+      "Autenticación de paso a través hacia el entorno local (Pass-through Authentication, PTA)",
       "Federación con AD FS",
       "Autenticación basada en certificados"
     ],
@@ -919,7 +919,7 @@
     "q_en": "Your organization has noticed that many users choose passwords like 'Contoso2024!' or variations of the company name, which are easy to guess but technically meet complexity requirements. Which Microsoft Entra ID feature helps block such passwords, including custom terms specific to the organization?",
     "opts_es": [
       "Microsoft Entra Password Protection con una lista de contraseñas personalizadas prohibidas",
-      "Autenticación multifactor obligatoria para todos los usuarios del inquilino",
+      "Autenticación multifactor obligatoria para todos los usuarios del inquilino sin excepción",
       "Directiva de caducidad de contraseñas cada 30 días para todas las cuentas",
       "Identity Protection con detección de credenciales filtradas en la web"
     ],
@@ -927,7 +927,7 @@
       "Microsoft Entra Password Protection with a custom banned password list",
       "Mandatory multi-factor authentication for all tenant users",
       "A password expiration policy of 30 days for all accounts",
-      "Identity Protection with leaked credentials detection on the web"
+      "Identity Protection with leaked credentials detection across the web"
     ],
     "correct": [
       0
@@ -945,7 +945,7 @@
     "q_en": "You want users to receive a push notification in the Microsoft Authenticator app and approve or deny the sign-in, instead of receiving SMS codes. What type of authentication method are you configuring?",
     "opts_es": [
       "Notificaciones push de Microsoft Authenticator como método de autenticación multifactor",
-      "Contraseña de un solo uso basada en tiempo (TOTP) por correo electrónico",
+      "Contraseña de un solo uso basada en tiempo (TOTP) enviada por correo electrónico cada vez",
       "Autenticación basada en certificados de cliente",
       "Acceso condicional basado en ubicación de red"
     ],
@@ -1055,7 +1055,7 @@
     ],
     "opts_en": [
       "Combined security registration along with an Identity Protection policy for MFA registration",
-      "Conditional Access based on the corporate network, blocking external connections",
+      "Conditional Access policies based on the corporate network, blocking external connections",
       "Microsoft Entra Connect Health, monitoring the on-premises sync servers",
       "Microsoft Purview sensitivity labels applied to documents and emails"
     ],
@@ -1154,7 +1154,7 @@
     "opts_es": [
       "Una directiva de acceso condicional basada en el riesgo de inicio de sesión (sign-in risk) que exija MFA",
       "Una directiva de retención de Microsoft Purview para los correos del usuario",
-      "Una alerta de Microsoft Defender for Cloud Apps sin ninguna acción automática configurada",
+      "Una alerta de Microsoft Defender for Cloud Apps, sin ninguna acción automática configurada para el usuario",
       "Un grupo dinámico que excluya al usuario de todas las aplicaciones asignadas"
     ],
     "opts_en": [
@@ -1233,7 +1233,7 @@
       "Requerir que el dispositivo esté marcado como compatible (require device to be marked as compliant)",
       "Requerir autenticación multifactor únicamente",
       "Requerir una ubicación de red aprobada",
-      "Requerir que la aplicación esté en la lista de aplicaciones aprobadas de Microsoft Store"
+      "Requerir que la aplicación esté en la lista de aplicaciones aprobadas de Microsoft Store únicamente"
     ],
     "opts_en": [
       "Require device to be marked as compliant",
@@ -1387,7 +1387,7 @@
     "q_en": "A Conditional Access policy unexpectedly blocks several users when signing in from a new application. You want to determine which specific policy caused the block and what conditions were evaluated for a particular sign-in. Where should you look for this information?",
     "opts_es": [
       "En los registros de inicio de sesión de Microsoft Entra ID, pestaña de detalles de acceso condicional",
-      "En el Centro de mensajes (Message center), donde se publican avisos de cambios en el servicio",
+      "En el Centro de mensajes (Message center), donde se publican los avisos de cambios en el servicio",
       "En los informes de uso de Microsoft 365, que muestran estadísticas de actividad de las apps",
       "En el registro de auditoría de Exchange Online únicamente, sin detalles de Entra ID"
     ],
@@ -1465,7 +1465,7 @@
     "q_en": "A security analyst suspects that several devices in the organization have made outbound connections to a known malicious domain over the past 7 days. They want to run a custom query using a SQL-like language over raw network and process event data to confirm this. Which Microsoft Defender feature should they use?",
     "opts_es": [
       "Búsqueda avanzada (Advanced hunting) con consultas en Kusto Query Language (KQL)",
-      "El Centro de mensajes, donde se anuncian cambios próximos del servicio",
+      "El Centro de mensajes, donde únicamente se anuncian los próximos cambios del servicio",
       "Las directivas de retención de Purview aplicadas a buzones y sitios",
       "El generador de informes de uso de Microsoft 365 por carga de trabajo"
     ],
@@ -1543,7 +1543,7 @@
     "q_en": "The organization wants a consolidated view of its attack surface (for example, devices missing critical patches, insecure configurations, and certificates about to expire) across its Microsoft 365 and Defender for Endpoint assets, with prioritized recommendations to reduce risk. Which feature should it use?",
     "opts_es": [
       "Administración de exposición de seguridad de Microsoft (Microsoft Security Exposure Management)",
-      "Microsoft Entra Connect Health, que muestra el estado de los servidores de sincronización",
+      "Microsoft Entra Connect Health, que muestra el estado de los servidores de sincronización local",
       "Etiquetas de retención de Purview aplicadas a documentos y correos antiguos",
       "Centro de mensajes, donde se publican los próximos cambios del servicio"
     ],
@@ -1595,7 +1595,7 @@
     "q_en": "After investigating an incident, an analyst determines that a specific alert was a false positive caused by a legitimate internal IT tool. To prevent similar alerts from being generated for that tool in the future, what should the analyst configure in the Microsoft Defender portal?",
     "opts_es": [
       "Una regla de supresión de alertas (alert tuning) que excluya esa actividad específica",
-      "Una directiva de retención que elimine la alerta automáticamente tras 7 días",
+      "Una directiva de retención que elimine la alerta automáticamente después de 7 días",
       "Una nueva unidad administrativa para delegar la gestión de esa herramienta",
       "Una directiva de prevención de pérdida de datos para el equipo de TI interno"
     ],
@@ -1622,7 +1622,7 @@
     "opts_es": [
       "Control de acceso basado en roles unificado (Unified RBAC) del portal de Microsoft Defender",
       "Asignar el rol de Administrador global",
-      "Crear una unidad administrativa de Microsoft Entra ID sin asignación de roles",
+      "Crear una nueva unidad administrativa de Microsoft Entra ID sin ninguna asignación de roles",
       "Configurar una directiva de acceso condicional con bloqueo total"
     ],
     "opts_en": [
@@ -1727,7 +1727,7 @@
       "Purga automática en cero horas (Zero-hour Auto Purge, ZAP)",
       "Vínculos seguros",
       "Cuarentena manual del administrador",
-      "Directiva de prevención de pérdida de datos"
+      "Una directiva de prevención de pérdida de datos (DLP)"
     ],
     "opts_en": [
       "Zero-hour Auto Purge (ZAP)",
@@ -1783,7 +1783,7 @@
     ],
     "opts_en": [
       "Request release of the message, or release it directly, based on the quarantine policy",
-      "Permanently delete the entire tenant quarantine, including other users' messages",
+      "Permanently delete the entire tenant quarantine, including all other users' messages",
       "Modify the global anti-phishing policies affecting the whole tenant",
       "Grant themselves the Security Administrator role to manage quarantine"
     ],
@@ -1856,14 +1856,14 @@
     "opts_es": [
       "Detección de phishing mediante código QR ('quishing') integrada en las directivas anti-phishing",
       "Cifrado de mensajes de Office 365 para proteger el contenido de correos salientes",
-      "Etiquetas de confidencialidad de Microsoft Purview aplicadas a documentos compartidos",
+      "Etiquetas de confidencialidad de Microsoft Purview aplicadas a documentos compartidos externamente",
       "Revisiones de acceso de Entra ID Governance para aplicaciones con permisos OAuth"
     ],
     "opts_en": [
       "QR code phishing ('quishing') detection integrated into anti-phishing policies",
       "Office 365 Message Encryption to protect outgoing email content",
       "Microsoft Purview sensitivity labels applied to shared documents",
-      "Entra ID Governance access reviews for apps with OAuth permissions"
+      "Entra ID Governance access reviews for applications with OAuth permissions"
     ],
     "correct": [
       0
@@ -1883,11 +1883,11 @@
       "En los informes de seguridad de correo (Email security reports) del portal de Defender",
       "En el Centro de mensajes (Message center), donde se publican avisos generales",
       "En la configuración de Microsoft Entra Connect Health para sincronización",
-      "En el catálogo de aplicaciones de Microsoft Defender for Cloud Apps detectadas"
+      "En el catálogo de aplicaciones en la nube detectadas por Microsoft Defender for Cloud Apps"
     ],
     "opts_en": [
       "In Email security reports, under the reports section of the Defender portal",
-      "In the Message center, where general announcements are posted",
+      "In the Message center, where general service announcements are typically posted",
       "In the Microsoft Entra Connect Health sync settings",
       "In the Microsoft Defender for Cloud Apps detected app catalog"
     ],
@@ -1987,7 +1987,7 @@
       "Aislar el dispositivo (device isolation) desde el portal de Microsoft Defender",
       "Eliminar el dispositivo de Microsoft Entra ID",
       "Apagar el dispositivo de forma remota mediante Intune",
-      "Revocar todas las licencias del usuario asociado al dispositivo"
+      "Revocar todas las licencias asignadas al usuario asociado al dispositivo afectado"
     ],
     "opts_en": [
       "Isolate the device from the Microsoft Defender portal",
@@ -2141,7 +2141,7 @@
     "q_en": "After discovering through Cloud Discovery that employees are using an unapproved cloud storage app with a high risk score, the security team wants to connect it directly to Microsoft Defender for Cloud Apps via its API to gain detailed visibility into files, users, and activities, and apply governance policies. Which feature should they use?",
     "opts_es": [
       "Conectores de aplicaciones (App connectors) mediante API",
-      "Vínculos seguros de Defender for Office 365",
+      "Los vínculos seguros (Safe Links) de Defender for Office 365",
       "Reglas de reducción de superficie de ataque",
       "Pase de acceso temporal"
     ],
@@ -2175,7 +2175,7 @@
       "An anomaly detection policy or activity policy with an automatic governance action",
       "A Microsoft Purview retention policy applied to SharePoint sites",
       "An Intune compliance policy that marks the device as noncompliant",
-      "An Exchange Online transport rule that forwards copies to the security team"
+      "An Exchange Online transport rule that automatically forwards copies to the security team"
     ],
     "correct": [
       0
@@ -2193,7 +2193,7 @@
     "q_en": "You want to create a policy that automatically detects when a file containing a social security number is shared externally from OneDrive or SharePoint, and automatically removes the external sharing permission. Which type of Defender for Cloud Apps policy is most appropriate?",
     "opts_es": [
       "Una directiva de archivos con detección de información confidencial y gobernanza automática",
-      "Una directiva de detección de aplicaciones OAuth con permisos de alto riesgo",
+      "Una directiva de detección de aplicaciones OAuth conectadas con permisos de alto riesgo",
       "Una directiva de Cloud Discovery que clasifique apps por nivel de riesgo",
       "Una directiva de sesión sin acciones de gobernanza, solo de supervisión"
     ],
@@ -2201,7 +2201,7 @@
       "A file policy with sensitive info detection and automatic governance",
       "An OAuth app detection policy with high-risk permissions",
       "A Cloud Discovery policy that classifies apps by risk level",
-      "A session policy with no governance actions, monitoring only"
+      "A session policy with no governance actions, used for monitoring only"
     ],
     "correct": [
       0
