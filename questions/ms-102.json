@@ -7868,7 +7868,7 @@
     "opts_en": [
       "The group and its resources can be restored within 30 days via the admin center or Graph PowerShell",
       "Microsoft 365 groups cannot be recovered under any circumstances after deletion",
-      "Only the SharePoint site can be recovered; the Teams team and notebook are permanently lost",
+      "Only the SharePoint site can be recovered; the Teams team and notebook are permanently and completely lost",
       "Recovery is only possible if deleted less than 24 hours ago"
     ],
     "correct": [
@@ -7887,13 +7887,13 @@
     "q_en": "An organization wants to allow users to share OneDrive and SharePoint files externally via 'anyone with the link' links, but only for the Marketing department, which frequently collaborates with external agencies. All other departments must remain restricted to sharing only with authenticated organization users or specific guests. What approach allows different external sharing settings per department?",
     "opts_es": [
       "Configurar el nivel de uso compartido externo más permisivo a nivel de organización y aplicar directivas más restrictivas a nivel de sitio",
-      "No es posible aplicar configuraciones de uso compartido diferentes; el ajuste es siempre global e idéntico para todos los sitios",
+      "No es posible aplicar configuraciones de uso compartido diferentes; el ajuste es siempre global e idéntico para absolutamente todos los sitios",
       "Crear un inquilino independiente solo para el departamento de Marketing",
       "Usar únicamente etiquetas de confidencialidad para controlar el uso compartido externo"
     ],
     "opts_en": [
       "Set the most permissive external sharing level organization-wide, then apply more restrictive policies at the site level",
-      "It is not possible to apply different sharing settings; the setting is always global and identical for all sites",
+      "It is not possible to apply different sharing settings; the setting is always global and identical for absolutely all sites",
       "Create a separate tenant just for the Marketing department",
       "Use only sensitivity labels to control external sharing"
     ],
@@ -7947,7 +7947,7 @@
       "Group-based filtering, syncing only the members of the designated security group",
       "OU-based filtering",
       "Full domain filtering",
-      "It is not possible to filter by group membership; only by OU or attribute"
+      "It is not possible to filter sync by group membership; only by OU or attribute"
     ],
     "correct": [
       0
@@ -7998,7 +7998,7 @@
     "opts_en": [
       "Number matching in Microsoft Authenticator push notifications",
       "Temporary Access Pass",
-      "Tenant restrictions applied to unmanaged devices",
+      "Tenant restrictions applied only to unmanaged devices on-premises",
       "Smart Lockout"
     ],
     "correct": [
@@ -8071,7 +8071,7 @@
       "La gravedad (severity) asignada automáticamente al incidente",
       "El número de identificación secuencial del incidente",
       "La hora exacta de creación del incidente",
-      "El nombre del analista que primero abrió el incidente"
+      "El nombre del analista que primero abrió el incidente original"
     ],
     "opts_en": [
       "The severity automatically assigned to the incident",
@@ -8278,7 +8278,7 @@
     "opts_es": [
       "Una directiva de etiquetado automático basada en el tipo de información confidencial 'Número de pasaporte'",
       "Una directiva de prevención de pérdida de datos sin etiqueta de retención asociada",
-      "Una etiqueta de retención que los usuarios deben seleccionar manualmente desde Outlook o SharePoint",
+      "Una etiqueta de retención que los usuarios deben seleccionar siempre manualmente desde Outlook o SharePoint",
       "Una directiva de acceso condicional que exija MFA para abrir el documento"
     ],
     "opts_en": [
@@ -8304,7 +8304,7 @@
     "opts_es": [
       "Plantillas de directiva (policy templates) de gestión de riesgos internos",
       "Clasificadores entrenables predeterminados",
-      "Directivas de prevención de pérdida de datos predeterminadas",
+      "Directivas de prevención de pérdida de datos predeterminadas del inquilino",
       "Líneas base de seguridad de Microsoft Defender"
     ],
     "opts_en": [
@@ -8329,14 +8329,14 @@
     "q_en": "An organization with highly sensitive information wants that, if a user signs in to Outlook on the web or SharePoint from a browser on a public or unmanaged computer and remains idle for 10 minutes, their session is automatically signed out and they are prompted to re-authenticate, without affecting sign-ins from the Outlook desktop app or from managed devices. What should they configure?",
     "opts_es": [
       "Una directiva de tiempo de espera de sesión inactiva para apps web de Microsoft 365, con ámbito a dispositivos no administrados",
-      "Reducir el tiempo de vida del token de actualización (refresh token) para todos los dispositivos no administrados",
+      "Reducir el tiempo de vida del token de actualización (refresh token) para todos los dispositivos no administrados del inquilino",
       "Una directiva de retención que elimine los correos tras 10 minutos",
       "Deshabilitar Outlook en la Web para toda la organización"
     ],
     "opts_en": [
       "An idle session timeout policy for Microsoft 365 web apps, scoped to unmanaged devices only",
       "Reducing the refresh token lifetime for all unmanaged devices in the tenant",
-      "A retention policy that automatically deletes emails after 10 minutes of inactivity",
+      "A retention policy that automatically deletes all emails after 10 minutes of inactivity",
       "Disabling Outlook on the web for the entire organization"
     ],
     "correct": [
@@ -8355,7 +8355,7 @@
     "q_en": "An organization regularly collaborates with two trusted partner companies and wants B2B guest users to only be able to come from the Microsoft Entra ID tenants of those two specific companies, automatically blocking any B2B collaboration attempt from any other external tenant, without managing a list of individually blocked users. What should they configure?",
     "opts_es": [
       "Configuración de acceso entre inquilinos con una directiva de organizaciones que permita solo a esos dos inquilinos",
-      "Restricciones de inquilino (tenant restrictions) aplicadas únicamente en las redes locales de la organización",
+      "Restricciones de inquilino (tenant restrictions) aplicadas únicamente en las redes locales de toda la organización",
       "Una directiva de acceso condicional que bloquee a todos los usuarios invitados sin excepción",
       "Eliminar manualmente cualquier usuario invitado que no pertenezca a esas dos empresas cada semana"
     ],
@@ -8363,7 +8363,7 @@
       "Cross-tenant access settings with an organization-specific policy allowing only those two tenants",
       "Tenant restrictions on on-premises networks only",
       "A Conditional Access policy that blocks all guest users without exception",
-      "Manually removing any guest user that doesn't belong to those two companies every week"
+      "Manually removing any guest user that doesn't belong to those two specific companies every week"
     ],
     "correct": [
       0
@@ -8381,7 +8381,7 @@
     "q_en": "A company has a distribution list called 'Company-Wide-Announcements' that reaches 5,000 employees. Management wants to prevent any employee from sending emails to this list directly, requiring every message to be reviewed and approved by the Internal Communications department before being delivered to all recipients. What group setting should they enable?",
     "opts_es": [
       "Moderación de mensajes (message moderation), designando a Comunicaciones Internas como moderadores",
-      "Restringir el grupo para que solo pueda recibir correos de remitentes externos autenticados",
+      "Restringir el grupo para que solo pueda recibir correos de remitentes externos ya autenticados",
       "Convertir el grupo en un grupo de seguridad sin habilitar para correo",
       "Aplicar una etiqueta de confidencialidad 'Solo lectura' al grupo"
     ],
@@ -8485,13 +8485,13 @@
     "q_en": "During an Active Directory restructuring, an administrator needs to move several user objects to a new Active Directory forest using a cross-forest migration tool. It is critical that, after the migration, Microsoft Entra Connect Sync continues to recognize these users as the SAME cloud identities (preserving their mailboxes, OneDrive files, and group memberships), instead of creating new, duplicate accounts. What must they ensure is preserved during the cross-forest migration?",
     "opts_es": [
       "El atributo usado como ancla de origen (sourceAnchor), que debe coincidir con el ImmutableId existente en la nube",
-      "El nombre de inicio de sesión (sAMAccountName) del usuario, sin importar los demás atributos sincronizados",
+      "El nombre de inicio de sesión (sAMAccountName) del propio usuario, sin importar los demás atributos sincronizados",
       "La pertenencia al mismo grupo de seguridad 'Domain Users'",
       "La ruta de la carpeta de inicio (home directory) del usuario"
     ],
     "opts_en": [
       "The attribute used as the source anchor (sourceAnchor), matching the existing ImmutableId in the cloud",
-      "The user's logon name (sAMAccountName), regardless of any other synchronized attributes",
+      "The user's original logon name (sAMAccountName), regardless of any other synchronized attributes at all",
       "Membership in the same 'Domain Users' security group",
       "The user's home directory path"
     ],
@@ -8564,7 +8564,7 @@
     "opts_es": [
       "Una directiva de acceso condicional para identidades de carga de trabajo (workload identities)",
       "Una directiva de acceso condicional estándar dirigida a 'Todos los usuarios'",
-      "Una directiva de cumplimiento de dispositivos aplicada a la entidad de servicio",
+      "Una directiva de cumplimiento de dispositivos aplicada directamente a la entidad de servicio",
       "Una etiqueta de confidencialidad aplicada a la aplicación"
     ],
     "opts_en": [
@@ -8621,7 +8621,7 @@
     ],
     "opts_en": [
       "The device's timeline on its entity page",
-      "The Secure Score dashboard",
+      "The Secure Score dashboard and recommendations",
       "The Message Center",
       "The Cloud Discovery report"
     ],
@@ -8675,7 +8675,7 @@
       "Admin submission, marking the message as 'Not detected' and applying an associated block",
       "Threat Explorer, simply deleting the message with no further action",
       "A data loss prevention policy on the message",
-      "Manually forwarding the message to a Microsoft support address outside the portal"
+      "Manually forwarding the message to a Microsoft support address entirely outside the portal"
     ],
     "correct": [
       0
@@ -8725,7 +8725,7 @@
     ],
     "opts_en": [
       "Malware attachment using a link-in-attachment enablement technique",
-      "Credential Harvest via a direct link in the email body",
+      "Credential Harvest via a direct link placed in the email body",
       "Drive-by URL with no attachment at all",
       "OAuth consent grant"
     ],
@@ -8752,7 +8752,7 @@
     "opts_en": [
       "An anomaly detection policy for 'activity from infrequent country'",
       "An Endpoint DLP policy",
-      "A Conditional Access App Control policy on downloads",
+      "A Conditional Access App Control policy on file downloads and uploads",
       "An auto-labeling sensitivity policy"
     ],
     "correct": [
@@ -8805,7 +8805,7 @@
       "An eDiscovery hold or a litigation hold on those 15 locations",
       "A 'Highly Confidential' sensitivity label",
       "A data loss prevention policy in simulation mode",
-      "An auto-labeling policy based on trainable classifiers"
+      "An auto-labeling policy based on trainable classifiers only"
     ],
     "correct": [
       0
@@ -8823,7 +8823,7 @@
     "q_en": "The compliance team has designed a new, very strict data loss prevention policy that would block emails containing bank account numbers sent to external recipients. Before turning it on in full enforcement mode, they want to understand the real impact: how many emails would have been blocked over the last two weeks and from which departments, without blocking or notifying any user yet. What should they do first?",
     "opts_es": [
       "Ejecutar la directiva de DLP en modo de prueba (Test it out / simulation mode) sin aplicar acciones de protección",
-      "Activar la directiva directamente en modo de aplicación completa y revertirla si genera demasiadas quejas",
+      "Activar la directiva directamente en modo de aplicación completa y revertirla luego si genera demasiadas quejas",
       "Crear la directiva pero dejarla deshabilitada indefinidamente sin obtener datos",
       "Aplicar la directiva solo a un único usuario de prueba durante un día"
     ],
@@ -8909,7 +8909,7 @@
       "The 'Decline conflicting meetings' option within calendar processing options",
       "The 'Send As' permission granted to all users",
       "A retention policy on the room's mailbox",
-      "Staging mode for the resource mailbox during cross-tenant migrations"
+      "Staging mode for the resource mailbox during cross-tenant mailbox migrations"
     ],
     "correct": [
       0
@@ -9005,7 +9005,7 @@
     "q_en": "An administrator reviews the Synchronization Service Manager on the Microsoft Entra Connect server and notices several user objects showing export errors of type 'AttributeValueMustBeUnique', indicating the same proxy email address value is present on more than one Active Directory object. What is the most likely cause of this error and how should it be resolved?",
     "opts_es": [
       "Dos o más objetos en Active Directory comparten el mismo valor de proxyAddresses; la duplicidad debe corregirse en AD local antes de sincronizar",
-      "El servidor de Microsoft Entra Connect necesita reiniciarse; el error se resolverá automáticamente sin ningún cambio en Active Directory",
+      "El servidor de Microsoft Entra Connect necesita reiniciarse; el error se resolverá automáticamente sin ningún cambio adicional en Active Directory",
       "El error indica que el inquilino ha alcanzado el límite máximo de licencias y debe comprarse una licencia adicional",
       "El error es benigno y puede ignorarse de forma indefinida sin ningún impacto"
     ],
@@ -9058,13 +9058,13 @@
     "opts_es": [
       "Restablecer la contraseña del usuario desde el Centro de administración, generando una temporal que debe cambiarse al iniciar sesión",
       "Eliminar y volver a crear la cuenta del usuario desde cero",
-      "Otorgar temporalmente al usuario el rol de Administrador global para que pueda restablecer su propia contraseña sin ayuda",
+      "Otorgar temporalmente al usuario el rol de Administrador global para que pueda restablecer él mismo su propia contraseña sin ayuda",
       "Desactivar permanentemente la cuenta del usuario hasta que recuerde la contraseña"
     ],
     "opts_en": [
       "Reset the user's password from the admin center, generating a temporary one that must be changed at next sign-in",
       "Delete and recreate the user's account from scratch",
-      "Temporarily grant the user the Global Administrator role so they can reset their own password without help",
+      "Temporarily grant the user the Global Administrator role so they can reset their own password without any help",
       "Permanently disable the user's account until they remember the password"
     ],
     "correct": [
@@ -9194,7 +9194,7 @@
     "opts_en": [
       "The Common Attachment Types Filter within the anti-malware policy",
       "Safe Attachments in monitor-only mode",
-      "An Endpoint DLP policy blocking .exe files on USB drives",
+      "An Endpoint DLP policy blocking .exe files on all USB drives",
       "Web content filtering in browsers"
     ],
     "correct": [
@@ -9215,7 +9215,7 @@
       "Solicitud de corrección (request remediation), que crea una tarea de seguridad vinculada con Microsoft Intune",
       "Acceso controlado a carpetas para esa aplicación",
       "Cloud Discovery para esa aplicación",
-      "Una directiva de prevención de pérdida de datos sobre la aplicación y sus actualizaciones automáticas"
+      "Una directiva de prevención de pérdida de datos sobre la aplicación y todas sus actualizaciones automáticas"
     ],
     "opts_en": [
       "Request remediation, creating a linked security task with Microsoft Intune",
@@ -9291,7 +9291,7 @@
     "q_en": "An organization wants that, when users save new documents to a specific SharePoint library dedicated to signed contracts, a 10-year retention label is automatically applied to those documents from the moment of creation, without the user having to manually select any label or any content-based conditions being met. What should they configure at that document library's level?",
     "opts_es": [
       "Una etiqueta de retención predeterminada (default label) para la biblioteca de documentos",
-      "Una directiva de etiquetado automático basada en tipos de información confidencial",
+      "Una directiva de etiquetado automático basada en varios tipos de información confidencial",
       "Un clasificador entrenable aplicado a nivel de inquilino",
       "Una directiva de prevención de pérdida de datos sobre la biblioteca"
     ],
@@ -9345,13 +9345,13 @@
       "Notificaciones de revisores adicionales (escalamiento) basadas en el tiempo sin revisión",
       "Una etiqueta de confidencialidad aplicada a los mensajes de Teams",
       "Una directiva de retención que elimine los mensajes marcados automáticamente",
-      "Un clasificador entrenable que apruebe automáticamente los mensajes tras 48 horas"
+      "Un clasificador entrenable que apruebe automáticamente todos los mensajes tras 48 horas"
     ],
     "opts_en": [
       "Additional reviewer notifications (escalation) based on elapsed time without review",
       "A sensitivity label applied to Teams messages",
       "A retention policy that automatically deletes flagged messages",
-      "A trainable classifier that automatically approves messages after 48 hours"
+      "A trainable classifier that automatically approves all messages after 48 hours"
     ],
     "correct": [
       0
@@ -9396,14 +9396,14 @@
     "opts_es": [
       "El Evaluador de conectividad de red de Microsoft 365 (Microsoft 365 network connectivity tool / test)",
       "El Centro de mensajes (Message center)",
-      "El panel de Estado del servicio, que muestra incidencias activas y su histórico detallado",
+      "El panel de Estado del servicio, que muestra todas las incidencias activas y su histórico detallado",
       "El visor de directivas de acceso condicional"
     ],
     "opts_en": [
       "The Microsoft 365 network connectivity tool/test",
       "The Message center",
       "The Service health dashboard",
-      "The Conditional Access policy viewer"
+      "The Conditional Access policy viewer tool and page"
     ],
     "correct": [
       0
@@ -9427,7 +9427,7 @@
     ],
     "opts_en": [
       "Multiple company branding profiles, each associated with a specific language or regional setting",
-      "A single company branding configuration, since only one profile per tenant is supported",
+      "A single company branding configuration, since only one profile per tenant is ever supported",
       "A Conditional Access policy that changes the language based on the user's location",
       "A dynamic group that separates users by browser language"
     ],
@@ -9448,7 +9448,7 @@
     "opts_es": [
       "Una entrada de permitir (allow entry) para el dominio del socio en la lista de remitentes seguros, o en la lista de entidades permitidas del inquilino",
       "Deshabilitar por completo la directiva antispam predeterminada para todo el inquilino",
-      "Crear un conector de entrada dedicado que acepte automáticamente todo el correo de ese dominio sin ningún análisis de seguridad adicional",
+      "Crear un conector de entrada dedicado que acepte automáticamente todo el correo de ese dominio sin ningún tipo de análisis de seguridad adicional",
       "Agregar el dominio del socio como dominio aceptado del propio inquilino"
     ],
     "opts_en": [
