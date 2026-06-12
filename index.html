@@ -419,6 +419,16 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .dom-opt .dt b{font-size:14.5px;font-weight:600;display:block}
 .dom-opt .dt span{font-size:12.5px;color:var(--ink-3)}
 .dom-opt .cnt{font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
+/* Modal de feedback sobre preguntas */
+.fb-options{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.fb-opt{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--line);border-radius:var(--radius-s);cursor:pointer;transition:.14s;font-size:13.5px;color:var(--ink-2)}
+.fb-opt:hover{border-color:var(--accent)}
+.fb-opt.sel{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.fb-opt .check{width:18px;height:18px;border-radius:50%;border:2px solid var(--line-2);display:grid;place-items:center;flex:none;background:var(--panel)}
+.fb-opt .check i{width:9px;height:9px;border-radius:50%;background:var(--accent);opacity:0}
+.fb-opt.sel .check i{opacity:1}
+.fb-textarea{width:100%;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel-2);color:var(--ink);font-family:var(--sans);font-size:13.5px;padding:10px 12px;resize:vertical;min-height:64px;margin-bottom:4px;box-sizing:border-box}
+.fb-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .start-row{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap}
 .len-pick{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-2)}
 .len-pick select{font-family:var(--mono);font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink)}
@@ -874,6 +884,21 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   </div>
 </div>
 
+<div class="modal-ov" id="feedbackModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
+    <button class="modal-close-btn" id="feedbackModalClose" aria-label="Cerrar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h4 id="fbTitle" data-i="fbTitle">Comentarios sobre esta pregunta</h4>
+    <div class="fb-options" id="fbOptions"></div>
+    <textarea id="fbComment" class="fb-textarea" rows="3" data-i-ph="fbCommentPh" placeholder="Cuéntanos más (opcional)…"></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="fbCancel" data-i="confirmCancel"></button>
+      <button class="btn btn-primary" id="fbSend" data-i="fbSend"></button>
+    </div>
+  </div>
+</div>
+
 <div class="modal-ov" id="proModal">
   <div class="modal len-modal" role="dialog" aria-modal="true" aria-labelledby="proModalTitle">
     <button class="modal-close-btn" id="proModalClose" aria-label="Cerrar">
@@ -992,8 +1017,9 @@ const I18N = {
     myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progStreak:"Racha", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
     progTrend:"Tendencia de puntuación", progTrendSub:"Últimos {n} intentos · línea discontinua = aprobado (70%)", progByExam:"Progreso por examen", progDomains:"Dominio de las áreas practicadas", progAttemptsShort:"intentos", progNoTrend:"Completa al menos 2 exámenes para ver tu tendencia.",
     streakDays:"{n} días", streakDay:"{n} día",
-    exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Reportar error en esta pregunta",
-    reportSubject:"Reportar error · {code} · pregunta #{id}", reportBody:"Hola,\n\nCreo que hay un error en esta pregunta:\n\nExamen: {code}\nID de la pregunta: {id}\n\nDescripción del problema:\n",
+    exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
+    fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
+    fbSubject:"Comentario sobre pregunta · {code} · #{id}", fbBody:"Hola,\n\nQuiero enviar un comentario sobre esta pregunta:\n\nExamen: {code}\nID de la pregunta: {id}\nTipo: {cat}\n\nComentario:\n{comment}\n",
     catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
@@ -1059,8 +1085,9 @@ const I18N = {
     myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progStreak:"Streak", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
     progTrend:"Score trend", progTrendSub:"Last {n} attempts · dashed line = passing (70%)", progByExam:"Progress by exam", progDomains:"Mastery by practiced domain", progAttemptsShort:"attempts", progNoTrend:"Complete at least 2 exams to see your trend.",
     streakDays:"{n} days", streakDay:"{n} day",
-    exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Report an issue with this question",
-    reportSubject:"Report issue · {code} · question #{id}", reportBody:"Hi,\n\nI think there's an issue with this question:\n\nExam: {code}\nQuestion ID: {id}\n\nDescription of the issue:\n",
+    exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
+    fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
+    fbSubject:"Feedback on question · {code} · #{id}", fbBody:"Hi,\n\nI'd like to send feedback about this question:\n\nExam: {code}\nQuestion ID: {id}\nType: {cat}\n\nComment:\n{comment}\n",
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
@@ -2170,7 +2197,8 @@ function buildExploreCard(q){
   const tp=qType(q), bm=isBookmarked(q.id);
   const card=document.createElement('div'); card.className='ex-q';
   const star='<button class="exq-bm'+(bm?' on':'')+'" aria-label="'+t('bookmark')+'" aria-pressed="'+bm+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="'+(bm?'currentColor':'none')+'" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
-  card.innerHTML='<div class="exq-top"><span class="badge dom">'+t('domainOf')+' '+q.dom+' · '+q.obj+'</span>'+star+'</div>'+'<div class="exq-text">'+esc(exQuestionText(q))+'</div>'+'<div class="exq-ans hidden"></div>';
+  const report='<button class="exq-bm ex-report" aria-label="'+t('reportIssue')+'" title="'+t('reportIssue')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></button>';
+  card.innerHTML='<div class="exq-top"><span class="badge dom">'+t('domainOf')+' '+q.dom+' · '+q.obj+'</span>'+report+star+'</div>'+'<div class="exq-text">'+esc(exQuestionText(q))+'</div>'+'<div class="exq-ans hidden"></div>';
   const txt=card.querySelector('.exq-text');
   const ansBox=card.querySelector('.exq-ans');
   txt.onclick=()=>{
@@ -2178,8 +2206,10 @@ function buildExploreCard(q){
     ansBox.innerHTML=exploreAnswer(q,tp);
     ansBox.classList.remove('hidden');
   };
-  const starBtn=card.querySelector('.exq-bm');
+  const starBtn=card.querySelector('.exq-bm:not(.ex-report)');
   starBtn.onclick=()=>{ const now=toggleBookmark(q.id); starBtn.classList.toggle('on',now); starBtn.setAttribute('aria-pressed',String(now)); starBtn.querySelector('svg').setAttribute('fill',now?'currentColor':'none'); updateModeBadges(); };
+  const reportBtn=card.querySelector('.ex-report');
+  reportBtn.onclick=(e)=>{ e.stopPropagation(); openFeedbackModal(q.id); };
   return card;
 }
 
@@ -2694,16 +2724,54 @@ $('#reviewList').addEventListener('click',e=>{
     return;
   }
   const rep=e.target.closest('.rev-report');
-  if(rep){ reportQuestion(parseInt(rep.dataset.qid)); return; }
+  if(rep){ openFeedbackModal(parseInt(rep.dataset.qid)); return; }
 });
 
-// Abre el cliente de correo con un mensaje prerrellenado para reportar un error en una pregunta.
-function reportQuestion(qid){
-  const code=currentExam?currentExam.code:'';
-  const subject=t('reportSubject').replace('{code}',code).replace('{id}',qid);
-  const body=t('reportBody').replace('{code}',code).replace('{id}',qid);
-  location.href='mailto:soporte@earnyourcert.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+// ===== Feedback de usuarios sobre preguntas (errores, repetición, dificultad, etc.) =====
+const FB_CATS=[
+  {id:'error', key:'fbCatError'},
+  {id:'repeat', key:'fbCatRepeat'},
+  {id:'easy', key:'fbCatEasy'},
+  {id:'other', key:'fbCatOther'}
+];
+let _fbQid=null, _fbCat='error', _fbReturnFocus=null;
+function openFeedbackModal(qid){
+  _fbQid=qid; _fbCat='error';
+  $('#fbComment').value='';
+  const opts=$('#fbOptions'); opts.innerHTML='';
+  FB_CATS.forEach(c=>{
+    const el=document.createElement('div');
+    el.className='fb-opt'+(c.id===_fbCat?' sel':'');
+    el.dataset.cat=c.id;
+    el.innerHTML='<span class="check"><i></i></span><span>'+t(c.key)+'</span>';
+    el.onclick=()=>{ _fbCat=c.id; $$('#fbOptions .fb-opt').forEach(o=>o.classList.toggle('sel',o.dataset.cat===_fbCat)); };
+    opts.appendChild(el);
+  });
+  _fbReturnFocus=document.activeElement;
+  $('#feedbackModal').classList.add('show');
 }
+function closeFeedbackModal(){
+  $('#feedbackModal').classList.remove('show'); _fbQid=null;
+  if(_fbReturnFocus&&_fbReturnFocus.focus){ try{_fbReturnFocus.focus();}catch(e){} } _fbReturnFocus=null;
+}
+// Abre el cliente de correo con un mensaje prerrellenado con el comentario del usuario sobre una pregunta.
+function sendFeedback(){
+  if(_fbQid==null) return;
+  const q=QUESTIONS.find(x=>x.id===_fbQid);
+  const ex=q?EXAMS.find(e=>e.id===q.exam):null;
+  const code=ex?ex.code:(currentExam?currentExam.code:'');
+  const catLabel=t(FB_CATS.find(c=>c.id===_fbCat).key);
+  const comment=$('#fbComment').value.trim();
+  const subject=t('fbSubject').replace('{code}',code).replace('{id}',_fbQid);
+  const body=t('fbBody').replace('{code}',code).replace('{id}',_fbQid).replace('{cat}',catLabel).replace('{comment}',comment||'-');
+  location.href='mailto:soporte@earnyourcert.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  closeFeedbackModal();
+  showToast(t('fbSent'),'ok');
+}
+$('#feedbackModalClose').addEventListener('click',closeFeedbackModal);
+$('#fbCancel').addEventListener('click',closeFeedbackModal);
+$('#fbSend').addEventListener('click',sendFeedback);
+$('#feedbackModal').addEventListener('click',e=>{ if(e.target===$('#feedbackModal')) closeFeedbackModal(); });
 $('#exploreBtn').addEventListener('click',openExplore);
 $('#backExplore').addEventListener('click',closeExplore);
 $('#exSearch').addEventListener('input',renderExplore);
