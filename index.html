@@ -214,7 +214,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .resume-bar .rz-info b{font-size:14px;color:var(--ink)}
 .resume-bar .rz-info span{font-size:12.5px;color:var(--ink-3)}
 .resume-bar .rz-actions{display:flex;gap:8px}
-.cat-tools{display:flex;justify-content:flex-end;margin-bottom:14px}
+.cat-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.cat-filters{display:flex;gap:10px;flex-wrap:wrap;flex:1;min-width:240px}
+.cat-filters .ex-search{flex:1;min-width:180px}
+.cat-no-results{grid-column:1/-1;text-align:center;color:var(--ink-3);padding:40px 20px;border:1px dashed var(--line);border-radius:14px}
 .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink-2)}
 .btn-ghost:hover{background:var(--panel-2);border-color:var(--accent)}
 .back-link{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:var(--ink-2);cursor:pointer;font-size:13.5px;margin-bottom:10px}
@@ -553,6 +556,16 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </div>
     </div>
     <div class="cat-tools">
+      <div class="cat-filters">
+        <input type="text" id="catSearch" class="ex-search" data-i-ph="catSearchPh" placeholder="Buscar examen…">
+        <select id="catLevel" class="ex-dom">
+          <option value="" data-i="catLevelAll">Todos los niveles</option>
+          <option value="fundamentals" data-i="lvlFundamentals">Fundamentals</option>
+          <option value="associate" data-i="lvlAssociate">Asociado</option>
+          <option value="expert" data-i="lvlExpert">Experto</option>
+          <option value="specialty" data-i="lvlSpecialty">Especialidad</option>
+        </select>
+      </div>
       <button class="btn btn-ghost btn-sm" id="progressBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
         <span data-i="myProgress">Mi progreso</span>
@@ -904,6 +917,7 @@ const I18N = {
     yes:"Sí", no:"No", choose:"Selecciona…", noAnswer:"Sin responder",
     promoBanner:"Apoya EarnYourCert en Patreon y desbloquea acceso ilimitado a todos los exámenes.", promoBannerCta:"Hazte mecenas →",
     catTitle:"Elige tu examen", catSub:"Plataforma de exámenes de práctica basados en las guías oficiales de Microsoft.",
+    catSearchPh:"Buscar examen…", catLevelAll:"Todos los niveles", catNoResults:"No se encontraron exámenes con esos filtros.",
     comingSoonTitle:"Más exámenes próximamente", comingSoonSub:"Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!",
     resumeTitle:"Examen sin terminar", resumeSub:"{code} · pregunta {n} de {t}", resumeBtn:"Reanudar", discardBtn:"Descartar", confirmDiscard:"¿Descartar el examen sin terminar?",
     myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progStreak:"Racha", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
@@ -969,6 +983,7 @@ const I18N = {
     yes:"Yes", no:"No", choose:"Select…", noAnswer:"Not answered",
     promoBanner:"Support EarnYourCert on Patreon and unlock unlimited access to all exams.", promoBannerCta:"Become a patron →",
     catTitle:"Choose your exam", catSub:"A practice-exam platform based on Microsoft's official study guides.",
+    catSearchPh:"Search exams…", catLevelAll:"All levels", catNoResults:"No exams found for those filters.",
     comingSoonTitle:"More exams coming soon", comingSoonSub:"We add new certifications continuously. Check back soon!",
     resumeTitle:"Unfinished exam", resumeSub:"{code} · question {n} of {t}", resumeBtn:"Resume", discardBtn:"Discard", confirmDiscard:"Discard the unfinished exam?",
     myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progStreak:"Streak", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
@@ -1940,9 +1955,30 @@ function examIcon(ex){
   return ex.logo||'';
 }
 
+function filteredExams(){
+  const term=($('#catSearch')?.value||'').trim().toLowerCase();
+  const level=$('#catLevel')?.value||'';
+  return EXAMS.filter(ex=>{
+    if(level && ex.level!==level)return false;
+    if(term){
+      const haystack=[ex.code,ex.title_es,ex.title_en].join(' ').toLowerCase();
+      if(!haystack.includes(term))return false;
+    }
+    return true;
+  });
+}
+
 function renderCatalog(){
   const grid=$('#examGrid');grid.innerHTML='';
-  EXAMS.forEach(ex=>{
+  const exams=filteredExams();
+  const filtersActive=!!(($('#catSearch')?.value||'').trim()||$('#catLevel')?.value);
+  if(exams.length===0){
+    grid.innerHTML='<div class="cat-no-results" data-i="catNoResults">No se encontraron exámenes con esos filtros.</div>';
+    applyI18n();
+    renderResumeBar();
+    return;
+  }
+  exams.forEach(ex=>{
     const count=ex.questionCount||0;
     const card=document.createElement('div');
     card.className='exam-card'+(ex.soon?' soon':'');
@@ -1981,13 +2017,15 @@ function renderCatalog(){
     grid.appendChild(card);
   });
   // Tarjeta genérica: más exámenes próximamente (la plataforma se actualiza)
-  const soon=document.createElement('div');
-  soon.className='exam-card coming-soon';
-  soon.innerHTML=
-    '<div class="cs-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>'+
-    '<div class="cs-title" data-i="comingSoonTitle">Más exámenes próximamente</div>'+
-    '<div class="cs-sub" data-i="comingSoonSub">Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!</div>';
-  grid.appendChild(soon);
+  if(!filtersActive){
+    const soon=document.createElement('div');
+    soon.className='exam-card coming-soon';
+    soon.innerHTML=
+      '<div class="cs-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>'+
+      '<div class="cs-title" data-i="comingSoonTitle">Más exámenes próximamente</div>'+
+      '<div class="cs-sub" data-i="comingSoonSub">Añadimos nuevas certificaciones de forma continua. ¡Vuelve pronto!</div>';
+    grid.appendChild(soon);
+  }
   applyI18n();
   renderResumeBar();
   animateCards();
@@ -2608,6 +2646,10 @@ $('#filterTabs').addEventListener('click',e=>{
 $('#backCat').addEventListener('click',backToCatalog);
 $('#brandHome').addEventListener('click',()=>{ if(currentExam)backToCatalog(); });
 $('#brandHome').classList.add('clickable');
+
+// Filtros del catálogo
+$('#catSearch').addEventListener('input',renderCatalog);
+$('#catLevel').addEventListener('change',renderCatalog);
 
 // Botones de persistencia
 $('#progressBtn').addEventListener('click',openProgress);
