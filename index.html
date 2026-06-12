@@ -152,6 +152,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .quota-pro-link{background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--accent);cursor:pointer;transition:.15s}
 .quota-pro-link:hover{background:var(--accent-soft);border-color:var(--accent)}
 .quota-pro-link.hidden{display:none}
+.pro-badge{display:inline-block;background:#d4af37;color:#fff;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:999px;vertical-align:middle}
+.pro-badge.hidden{display:none}
 /* ---- Catálogo de exámenes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
@@ -617,6 +619,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <button class="btn btn-ghost" id="exploreBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <span data-i="exploreBtn">Catálogo de Preguntas</span>
+        <span class="pro-badge" id="exploreProBadge">PRO</span>
       </button>
     </div>
 
@@ -1096,6 +1099,7 @@ function updateAccountUI(){
     $('#accountPlan').textContent=pro?t('planPro'):t('planFree');
     $('#accountPlan').classList.toggle('pro',pro);
   }
+  $('#exploreProBadge')?.classList.toggle('hidden',isPro());
 }
 
 let syncTimer=null;
@@ -2088,6 +2092,7 @@ function renderResumeBar(){
 
 // --- Explorador de preguntas (estudio libre con búsqueda) ---
 function openExplore(){
+  if(!isPro()){ openProModal('manual'); return; }
   $('#home').classList.add('hidden');
   $('#explore').classList.remove('hidden');
   // poblar filtro de dominios
