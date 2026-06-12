@@ -5780,15 +5780,15 @@
     "q_es": "El equipo de seguridad sospecha que la cuenta de un empleado ha sido comprometida, ya que se han detectado correos salientes con contenido inusual. Quieren comprobar si se ha configurado alguna regla de reenvío automático que envíe copias de los correos entrantes a una dirección externa desconocida, una técnica común utilizada por los atacantes para mantener la persistencia tras un ataque de phishing exitoso. ¿Dónde deberían buscar esta información?",
     "q_en": "The security team suspects an employee's account has been compromised, as outbound emails with unusual content have been detected. They want to check whether any automatic forwarding rule has been configured that sends copies of incoming emails to an unknown external address, a common technique attackers use to maintain persistence after a successful phishing attack. Where should they look for this information?",
     "opts_es": [
-      "En el registro de auditoría unificado de Microsoft Purview, buscando eventos de creación de reglas de bandeja de entrada (New-InboxRule / Set-InboxRule)",
+      "En el registro de auditoría unificado de Purview, buscando eventos de creación de reglas de bandeja de entrada",
       "En el panel de Estado del servicio de Microsoft 365",
-      "En el catálogo de aplicaciones de Microsoft Entra ID",
+      "En el catálogo de aplicaciones empresariales de Microsoft Entra ID y la lista de sus permisos delegados otorgados",
       "En la configuración de Microsoft Entra Connect"
     ],
     "opts_en": [
-      "In the Microsoft Purview unified audit log, searching for inbox rule creation events (New-InboxRule / Set-InboxRule)",
+      "In the Microsoft Purview unified audit log, searching for inbox rule creation events",
       "In the Microsoft 365 Service health dashboard",
-      "In the Microsoft Entra ID app catalog",
+      "In the Microsoft Entra ID enterprise application gallery and its granted delegated permissions",
       "In the Microsoft Entra Connect configuration"
     ],
     "correct": [
@@ -5806,14 +5806,14 @@
     "q_es": "Una sala de conferencias grande tiene un buzón de recursos configurado para aceptar automáticamente las reservas que no superen su capacidad máxima de 20 personas. Sin embargo, para reservas que requieran servicios de catering adicionales (gestionados manualmente por el departamento de instalaciones), la organización quiere que esas solicitudes específicas requieran la aprobación manual de un delegado, en lugar de aceptarse automáticamente. ¿Qué configuración del buzón de recursos permite esta combinación?",
     "q_en": "A large conference room has a resource mailbox configured to automatically accept bookings that don't exceed its maximum capacity of 20 people. However, for bookings requiring additional catering services (managed manually by the facilities department), the organization wants those specific requests to require manual approval from a delegate, rather than being automatically accepted. What resource mailbox configuration allows this combination?",
     "opts_es": [
-      "Configurar el buzón con aceptación automática (AutomateProcessing AutoAccept) y, además, designar delegados de recursos para que las solicitudes que cumplan ciertos criterios adicionales requieran su revisión manual",
-      "Configurar el buzón únicamente en modo de revisión manual para todas las solicitudes, sin aceptación automática",
+      "Configurar el buzón con aceptación automática (AutoAccept) y designar delegados de recursos para que ciertas solicitudes requieran revisión manual",
+      "Configurar el buzón únicamente en modo de revisión manual para todas las solicitudes, sin ningún tipo de aceptación automática habilitada",
       "Eliminar el buzón de recursos y gestionar todas las reservas mediante un grupo de distribución",
       "Convertir el buzón de recursos en un buzón compartido estándar"
     ],
     "opts_en": [
-      "Configure the mailbox with automatic acceptance (AutomateProcessing AutoAccept) and additionally designate resource delegates so that requests meeting certain additional criteria require their manual review",
-      "Configure the mailbox in manual review mode only for all requests, with no automatic acceptance",
+      "Configure automatic acceptance (AutoAccept) and add resource delegates so certain requests require manual review",
+      "Configure the mailbox in manual review mode only for all requests, with no automatic acceptance enabled at all",
       "Remove the resource mailbox and manage all bookings via a distribution group",
       "Convert the resource mailbox into a standard shared mailbox"
     ],
@@ -5835,7 +5835,7 @@
       "Unidades administrativas restringidas (restricted management administrative units)",
       "Directivas de nombres de grupo",
       "Acceso condicional basado en ubicación",
-      "Etiquetas de confidencialidad aplicadas a usuarios"
+      "Etiquetas de confidencialidad con cifrado aplicadas a las cuentas de usuario"
     ],
     "opts_en": [
       "Restricted management administrative units",
@@ -5860,13 +5860,13 @@
     "opts_es": [
       "La directiva de nombres de grupo (group naming policy), con una lista de palabras bloqueadas y un prefijo predefinido",
       "Una etiqueta de confidencialidad obligatoria aplicada a los grupos",
-      "Una unidad administrativa con permisos de solo lectura sobre los nombres",
+      "Una unidad administrativa con permisos de solo lectura sobre los nombres de todos los grupos de la organización",
       "Una directiva de acceso condicional basada en el nombre del grupo"
     ],
     "opts_en": [
       "The group naming policy, with a custom blocked words list and a fixed prefix",
       "A mandatory sensitivity label applied to groups",
-      "An administrative unit with read-only permissions on names",
+      "An administrative unit with read-only permissions on the names of all groups in the organization",
       "A Conditional Access policy based on the group's name"
     ],
     "correct": [
@@ -5910,16 +5910,16 @@
     "q_es": "Una organización utiliza una aplicación SaaS de RR. HH. de terceros que admite el aprovisionamiento automático de usuarios. Quieren que, cuando se cree un nuevo empleado en Microsoft Entra ID (sincronizado desde Active Directory), se cree automáticamente una cuenta correspondiente en esa aplicación SaaS con los atributos correctos, y que cuando el empleado sea deshabilitado, su cuenta en la aplicación SaaS también se deshabilite automáticamente. ¿Qué tecnología permite este aprovisionamiento automatizado entre Microsoft Entra ID y la aplicación SaaS?",
     "q_en": "An organization uses a third-party HR SaaS application that supports automatic user provisioning. They want that when a new employee is created in Microsoft Entra ID (synced from Active Directory), a corresponding account is automatically created in that SaaS application with the correct attributes, and when the employee is disabled, their account in the SaaS application is also automatically disabled. What technology enables this automated provisioning between Microsoft Entra ID and the SaaS application?",
     "opts_es": [
-      "Aprovisionamiento de usuarios basado en SCIM (System for Cross-domain Identity Management) configurado en la aplicación empresarial de Microsoft Entra ID",
+      "Aprovisionamiento de usuarios basado en SCIM, configurado en la aplicación empresarial de Microsoft Entra ID",
       "Microsoft Entra Connect, sincronizando directamente con la API de la aplicación SaaS",
       "Una directiva de acceso condicional que cree usuarios automáticamente",
-      "Reglas de pertenencia dinámica de grupos únicamente, sin ninguna integración adicional"
+      "Reglas de pertenencia dinámica de grupos únicamente, sin ninguna integración SCIM ni de aprovisionamiento adicional"
     ],
     "opts_en": [
-      "SCIM-based (System for Cross-domain Identity Management) user provisioning configured on the Microsoft Entra ID enterprise application",
+      "SCIM-based user provisioning configured on the Microsoft Entra ID enterprise application",
       "Microsoft Entra Connect, syncing directly with the SaaS application's API",
       "A Conditional Access policy that automatically creates users",
-      "Dynamic group membership rules alone, with no additional integration"
+      "Dynamic group membership rules alone, with no SCIM or additional provisioning integration"
     ],
     "correct": [
       0
@@ -5936,14 +5936,14 @@
     "q_es": "El equipo de seguridad quiere exigir que los usuarios solo puedan acceder a Exchange Online y SharePoint Online desde dispositivos móviles si el dispositivo es un iPhone o iPad con iOS 16 o posterior, bloqueando el acceso desde dispositivos Android o versiones anteriores de iOS. ¿Qué condición de la directiva de acceso condicional permite distinguir el sistema operativo y la plataforma del dispositivo?",
     "q_en": "The security team wants to require that users can only access Exchange Online and SharePoint Online from mobile devices if the device is an iPhone or iPad running iOS 16 or later, blocking access from Android devices or earlier iOS versions. Which Conditional Access policy condition allows distinguishing the device's operating system and platform?",
     "opts_es": [
-      "La condición de plataformas de dispositivo (device platforms), combinada con una directiva de cumplimiento de Intune que verifique la versión del sistema operativo",
-      "La condición de aplicaciones cliente únicamente, sin posibilidad de filtrar por sistema operativo",
+      "La condición de plataformas de dispositivo, combinada con una directiva de cumplimiento de Intune que verifique la versión del SO",
+      "La condición de aplicaciones cliente únicamente, sin ninguna posibilidad de filtrar por sistema operativo o plataforma",
       "Una etiqueta de confidencialidad aplicada al dispositivo",
       "Las ubicaciones con nombre, configuradas con la dirección IP del dispositivo"
     ],
     "opts_en": [
-      "The device platforms condition, combined with an Intune compliance policy that checks the OS version",
-      "The client apps condition alone, with no ability to filter by operating system",
+      "The device platforms condition, combined with an Intune compliance policy checking the OS version",
+      "The client apps condition alone, with no ability to filter by operating system or device platform",
       "A sensitivity label applied to the device",
       "Named locations, configured with the device's IP address"
     ],
@@ -5962,13 +5962,13 @@
     "q_es": "Una organización configuró hace tiempo la autenticación multifactor mediante la configuración heredada de 'MFA por usuario' (per-user MFA) para usuarios individuales. Ahora quieren centralizar y estandarizar los requisitos de MFA usando directivas de acceso condicional, que ofrecen mayor flexibilidad y opciones de informe. ¿Qué deben hacer con la configuración de MFA por usuario existente para evitar conflictos o requisitos redundantes?",
     "q_en": "An organization configured multi-factor authentication some time ago using the legacy 'per-user MFA' settings for individual users. They now want to centralize and standardize MFA requirements using Conditional Access policies, which offer greater flexibility and reporting options. What should they do with the existing per-user MFA settings to avoid conflicts or redundant requirements?",
     "opts_es": [
-      "Deshabilitar la MFA por usuario para esos usuarios una vez que las directivas de acceso condicional equivalentes estén activas y probadas, evitando que ambos mecanismos se apliquen simultáneamente de forma redundante",
+      "Deshabilitar la MFA por usuario para esos usuarios una vez que las directivas de acceso condicional equivalentes estén activas y probadas",
       "Mantener la MFA por usuario habilitada para todos, ya que es complementaria y no afecta a las directivas de acceso condicional",
       "Eliminar la licencia de Microsoft Entra ID P1 de esos usuarios",
       "Convertir la MFA por usuario en una etiqueta de confidencialidad"
     ],
     "opts_en": [
-      "Disable per-user MFA for those users once the equivalent Conditional Access policies are active and tested, avoiding both mechanisms applying redundantly at the same time",
+      "Disable per-user MFA for those users once the equivalent Conditional Access policies are active and tested",
       "Keep per-user MFA enabled for everyone, since it's complementary and doesn't affect Conditional Access policies",
       "Remove the Microsoft Entra ID P1 license from those users",
       "Convert per-user MFA into a sensitivity label"
@@ -5990,7 +5990,7 @@
     "opts_es": [
       "Inicios de sesión de riesgo (risky sign-ins) para el primer caso, y usuarios de riesgo (risky users) para el segundo",
       "Usuarios de riesgo para el primer caso, e inicios de sesión de riesgo para el segundo",
-      "Ambos casos se reflejan únicamente en el informe de Auditoría de Microsoft Entra ID",
+      "Ambos casos se reflejan únicamente en el informe de Auditoría unificado de Microsoft Entra ID y Purview",
       "Ambos casos se reflejan únicamente en el panel de Estado del servicio"
     ],
     "opts_en": [
@@ -6016,7 +6016,7 @@
     "opts_es": [
       "Una regla de detección personalizada (custom detection rule) basada en esa consulta de Advanced Hunting",
       "Una directiva de acceso condicional basada en la consulta KQL",
-      "Una directiva de retención que ejecute la consulta periódicamente",
+      "Una directiva de retención que ejecute y registre automáticamente la consulta periódicamente cada hora",
       "Un informe de Estado del servicio programado"
     ],
     "opts_en": [
@@ -6068,7 +6068,7 @@
     "opts_es": [
       "Bloqueo perimetral basado en directorio (directory-based edge blocking)",
       "Vínculos seguros para Exchange Online",
-      "Una directiva de retención aplicada a los buzones",
+      "Una directiva de retención aplicada a los buzones de correo de la organización",
       "El filtro de tipos de archivos adjuntos comunes"
     ],
     "opts_en": [
@@ -6118,14 +6118,14 @@
     "q_es": "Un equipo de TI necesita incorporar (onboard) miles de equipos Windows existentes a Microsoft Defender for Endpoint. La mayoría de los equipos ya están administrados mediante Microsoft Intune, pero un grupo de servidores Windows Server no está inscrito en Intune y se administra mediante scripts y Group Policy local. ¿Qué afirmación describe correctamente las opciones de incorporación disponibles?",
     "q_en": "An IT team needs to onboard thousands of existing Windows machines to Microsoft Defender for Endpoint. Most machines are already managed via Microsoft Intune, but a group of Windows Server machines is not enrolled in Intune and is managed via scripts and local Group Policy. Which statement correctly describes the available onboarding options?",
     "opts_es": [
-      "Los equipos administrados por Intune pueden incorporarse mediante una directiva de configuración de Intune, mientras que los servidores no administrados por Intune pueden incorporarse mediante un script local o una directiva de Group Policy, entre otros métodos",
-      "Solo es posible incorporar dispositivos a Microsoft Defender for Endpoint si están inscritos en Microsoft Intune",
+      "Los dispositivos administrados por Intune se incorporan con una directiva de Intune, y los no administrados mediante script local o GPO",
+      "Solo es posible incorporar dispositivos a Microsoft Defender for Endpoint si están inscritos y administrados por Microsoft Intune",
       "La incorporación a Microsoft Defender for Endpoint requiere desinstalar Group Policy de todos los servidores",
       "Microsoft Defender for Endpoint solo admite la incorporación mediante Microsoft Entra Connect"
     ],
     "opts_en": [
-      "Devices managed by Intune can be onboarded via an Intune configuration policy, while servers not managed by Intune can be onboarded via a local script or a Group Policy, among other methods",
-      "Devices can only be onboarded to Microsoft Defender for Endpoint if they are enrolled in Microsoft Intune",
+      "Devices managed by Intune can be onboarded via an Intune policy, while non-Intune servers can use a local script or Group Policy",
+      "Devices can only be onboarded to Microsoft Defender for Endpoint if they are enrolled and managed by Microsoft Intune",
       "Onboarding to Microsoft Defender for Endpoint requires uninstalling Group Policy from all servers",
       "Microsoft Defender for Endpoint only supports onboarding via Microsoft Entra Connect"
     ],
@@ -6145,7 +6145,7 @@
     "q_en": "Microsoft Defender for Cloud Apps detects that a user account has downloaded more than 500 files from SharePoint Online within a 10-minute period, a volume far exceeding their usual behavior, which could indicate data exfiltration by a compromised account or a departing employee. What type of Defender for Cloud Apps policy detects this kind of behavior based on the volume and frequency of a user's actions?",
     "opts_es": [
       "Una directiva de actividad (activity policy) configurada para detectar actividad de descarga masiva inusual",
-      "Una directiva de archivo basada únicamente en la clasificación del contenido",
+      "Una directiva de archivo basada únicamente en la clasificación del contenido del documento descargado",
       "Una directiva de Cloud Discovery basada en el catálogo de aplicaciones",
       "Una directiva de acceso condicional basada en la ubicación geográfica"
     ],
@@ -6172,13 +6172,13 @@
     "opts_es": [
       "El registro de auditoría (Audit), buscando por usuario, intervalo de fechas y actividades específicas",
       "El Explorador de contenido (Content explorer)",
-      "El catálogo de tipos de información confidencial",
+      "El catálogo de tipos de información confidencial y su distribución entre los archivos analizados",
       "El panel de Estado del servicio"
     ],
     "opts_en": [
       "The Audit log, searching by user, date range, and specific activities",
       "Content explorer",
-      "The sensitive information types catalog",
+      "The sensitive information types catalog and its distribution across the analyzed files",
       "The Service health dashboard"
     ],
     "correct": [
@@ -6196,14 +6196,14 @@
     "q_es": "Bajo el RGPD, un cliente solicita a la organización una copia de todos los datos personales que posee sobre él, almacenados en correos electrónicos, documentos de SharePoint y OneDrive, así como su eliminación posterior. La organización quiere usar una herramienta de Microsoft Purview que permita buscar el contenido relacionado con esa persona en todo el entorno y exportarlo o marcarlo para eliminación de forma centralizada. ¿Qué tipo de caso deberían crear?",
     "q_en": "Under GDPR, a customer requests a copy of all personal data the organization holds about them, stored in emails, SharePoint documents, and OneDrive, as well as its subsequent deletion. The organization wants to use a Microsoft Purview tool that allows searching for content related to that person across the entire environment and exporting it or marking it for deletion centrally. What type of case should they create?",
     "opts_es": [
-      "Un caso de eDiscovery (Standard o Premium) para realizar la búsqueda, exportación y, si procede, eliminación del contenido relacionado con la solicitud de acceso del interesado (DSR)",
-      "Una directiva de retención que elimine automáticamente todos los datos del cliente sin búsqueda previa",
+      "Un caso de eDiscovery (Standard o Premium) para buscar, exportar y, si procede, eliminar el contenido relacionado con la solicitud DSR",
+      "Una directiva de retención que elimine automáticamente todos los datos del cliente sin ninguna búsqueda ni revisión previa",
       "Una directiva de cumplimiento de comunicaciones",
       "Una directiva de etiquetado automático aplicada solo a nuevos documentos"
     ],
     "opts_en": [
-      "An eDiscovery (Standard or Premium) case to search, export, and, if applicable, delete content related to the data subject request (DSR)",
-      "A retention policy that automatically deletes all the customer's data without prior search",
+      "An eDiscovery (Standard or Premium) case to search, export, and, if applicable, delete content related to the DSR",
+      "A retention policy that automatically deletes all the customer's data without any prior search or review",
       "A communication compliance policy",
       "An auto-labeling policy applied only to new documents"
     ],
@@ -6222,15 +6222,15 @@
     "q_es": "El departamento de cumplimiento quiere evitar que los empleados impriman documentos que contengan números de identificación nacional desde sus equipos Windows, ya sea en una impresora local o de red, mientras siguen permitiendo la impresión de otros documentos sin restricciones. ¿Qué solución de Microsoft Purview permite controlar la acción de impresión a nivel de dispositivo según el contenido del documento?",
     "q_en": "The compliance department wants to prevent employees from printing documents containing national identification numbers from their Windows computers, whether to a local or network printer, while still allowing printing of other documents without restriction. Which Microsoft Purview solution allows controlling the print action at the device level based on document content?",
     "opts_es": [
-      "Prevención de pérdida de datos de punto de conexión (Endpoint DLP), con una regla que restrinja la acción de imprimir para el tipo de información confidencial correspondiente",
+      "Endpoint DLP, con una regla que restrinja la acción de imprimir para ese tipo de información confidencial",
       "Una directiva de retención aplicada a la impresora de red",
-      "Una etiqueta de confidencialidad sin restricciones de uso aplicada a las impresoras",
+      "Una etiqueta de confidencialidad sin restricciones de uso aplicada a todas las impresoras de red de la organización",
       "Cumplimiento de comunicaciones aplicado a Microsoft Teams"
     ],
     "opts_en": [
-      "Endpoint data loss prevention (Endpoint DLP), with a rule restricting the print action for the corresponding sensitive information type",
+      "Endpoint DLP, with a rule restricting the print action for that sensitive information type",
       "A retention policy applied to the network printer",
-      "A sensitivity label with no usage restrictions applied to printers",
+      "A sensitivity label with no usage restrictions applied to all network printers in the organization",
       "Communication compliance applied to Microsoft Teams"
     ],
     "correct": [
@@ -6248,14 +6248,14 @@
     "q_es": "El director de TI quiere obtener una visión general de cómo los empleados utilizan las aplicaciones de Microsoft 365 (por ejemplo, qué porcentaje colabora activamente en Teams o SharePoint), con el objetivo de identificar áreas donde la adopción es baja y dirigir mejor la formación. Sin embargo, la organización tiene políticas estrictas de privacidad y no quiere que estos informes muestren la actividad de usuarios identificables individualmente. ¿Qué deberían usar y qué configuración de privacidad es relevante?",
     "q_en": "The IT director wants an overview of how employees use Microsoft 365 apps (for example, what percentage actively collaborates in Teams or SharePoint), to identify areas of low adoption and better target training. However, the organization has strict privacy policies and does not want these reports to show individually identifiable user activity. What should they use, and which privacy setting is relevant?",
     "opts_es": [
-      "Adoption Score / informes de uso, con la configuración de privacidad de informes establecida para mostrar datos seudonimizados o agregados en lugar de identificadores de usuario",
-      "El registro de auditoría unificado, exportando los datos sin procesar de cada usuario",
+      "Adoption Score / informes de uso, mostrando datos seudonimizados o agregados según la configuración de privacidad",
+      "El registro de auditoría unificado, exportando los datos sin procesar y detallados de cada usuario individual",
       "Una directiva de retención que oculte los nombres de usuario en SharePoint",
       "Microsoft Entra Connect, deshabilitando la sincronización de atributos de usuario"
     ],
     "opts_en": [
-      "Adoption Score / usage reports, with the reports privacy setting configured to show pseudonymized or aggregated data instead of user identifiers",
-      "The unified audit log, exporting raw per-user data",
+      "Adoption Score / usage reports, showing pseudonymized or aggregated data per the privacy setting",
+      "The unified audit log, exporting raw and detailed per-user data for each individual",
       "A retention policy that hides usernames in SharePoint",
       "Microsoft Entra Connect, disabling synchronization of user attributes"
     ],
@@ -6326,16 +6326,16 @@
     "q_es": "Una organización todavía utiliza varias carpetas públicas heredadas de Exchange para compartir información departamental, pero quiere modernizar esta colaboración aprovechando las funciones de Microsoft 365, como sitios de SharePoint, calendarios compartidos y conversaciones por correo, manteniendo una experiencia similar a la de un buzón compartido por departamento. ¿Qué recomendación es más adecuada?",
     "q_en": "An organization still uses several legacy Exchange public folders to share departmental information, but wants to modernize this collaboration by leveraging Microsoft 365 features like SharePoint sites, shared calendars, and email conversations, while maintaining an experience similar to a per-department shared mailbox. What recommendation is most appropriate?",
     "opts_es": [
-      "Migrar el contenido de las carpetas públicas a grupos de Microsoft 365, que ofrecen buzón y calendario compartidos junto con un sitio de SharePoint y otras herramientas de colaboración",
+      "Migrar el contenido de las carpetas públicas a grupos de Microsoft 365, con buzón, calendario y SharePoint compartidos",
       "Mantener las carpetas públicas indefinidamente, ya que no existe una alternativa moderna equivalente",
       "Convertir cada carpeta pública en un buzón de recursos de tipo sala",
-      "Eliminar las carpetas públicas sin migrar su contenido, ya que Microsoft 365 no admite ningún equivalente"
+      "Eliminar las carpetas públicas sin migrar su contenido, ya que Microsoft 365 no ofrece ningún equivalente moderno viable"
     ],
     "opts_en": [
-      "Migrate the public folder content to Microsoft 365 groups, which offer a shared mailbox and calendar along with a SharePoint site and other collaboration tools",
+      "Migrate the public folder content to Microsoft 365 groups, with a shared mailbox, calendar, and SharePoint site",
       "Keep the public folders indefinitely, since there is no equivalent modern alternative",
       "Convert each public folder into a room resource mailbox",
-      "Delete the public folders without migrating their content, since Microsoft 365 has no equivalent"
+      "Delete the public folders without migrating their content, since Microsoft 365 offers no viable modern equivalent"
     ],
     "correct": [
       0
@@ -6352,16 +6352,16 @@
     "q_es": "Una empresa colabora frecuentemente con consultores externos que necesitan acceso temporal a un conjunto específico de aplicaciones, sitios de SharePoint y un grupo de Teams durante la duración de cada proyecto. Quieren que los consultores puedan solicitar este 'paquete' de accesos a través de una interfaz de autoservicio, que un responsable de proyecto apruebe la solicitud, y que el acceso expire automáticamente al finalizar el proyecto sin intervención manual. ¿Qué función de Microsoft Entra ID Governance se ajusta a este escenario?",
     "q_en": "A company frequently collaborates with external consultants who need temporary access to a specific set of applications, SharePoint sites, and a Teams group for the duration of each project. They want consultants to be able to request this 'bundle' of access through a self-service interface, have a project manager approve the request, and have access automatically expire when the project ends without manual intervention. Which Microsoft Entra ID Governance feature fits this scenario?",
     "opts_es": [
-      "Gestión de derechos (Entitlement Management), mediante paquetes de acceso (access packages) con flujo de aprobación y expiración automática",
-      "Una unidad administrativa restringida",
-      "Una directiva de nombres de grupo",
-      "Protección de Microsoft Entra ID basada en riesgo de usuario"
+      "Gestión de derechos (Entitlement Management), mediante paquetes de acceso con aprobación y expiración automática",
+      "Una unidad administrativa restringida que agrupe los recursos del proyecto",
+      "Una directiva de nombres de grupo que incluya el nombre del proyecto",
+      "Protección de Microsoft Entra ID basada en riesgo de usuario, con remediación automática y revisión periódica"
     ],
     "opts_en": [
       "Entitlement Management, using access packages with an approval workflow and automatic expiration",
-      "A restricted administrative unit",
-      "A group naming policy",
-      "Risk-based Microsoft Entra ID Protection"
+      "A restricted administrative unit grouping the project's resources",
+      "A group naming policy including the project name",
+      "Risk-based Microsoft Entra ID Protection, with automatic remediation and periodic review"
     ],
     "correct": [
       0
@@ -6407,7 +6407,7 @@
       "El umbral de prevención de eliminación accidental (accidental deletion prevention threshold)",
       "El modo de espera (staging mode)",
       "El filtrado basado en atributos",
-      "La sincronización de hash de contraseñas"
+      "La sincronización de hash de contraseñas (password hash synchronization) entre AD y Entra ID"
     ],
     "opts_en": [
       "The accidental deletion prevention threshold",
@@ -6430,14 +6430,14 @@
     "q_es": "El equipo de seguridad quiere bloquear el acceso a Exchange Online desde clientes de correo heredados que utilizan protocolos como POP3, IMAP4 y SMTP AUTH con autenticación básica, ya que estos protocolos no admiten la autenticación multifactor y son un objetivo común de ataques de pulverización de contraseñas. ¿Qué condición de la directiva de acceso condicional permite identificar estas conexiones para bloquearlas?",
     "q_en": "The security team wants to block access to Exchange Online from legacy mail clients using protocols such as POP3, IMAP4, and SMTP AUTH with basic authentication, since these protocols don't support multi-factor authentication and are a common target for password spray attacks. What Conditional Access policy condition allows identifying these connections to block them?",
     "opts_es": [
-      "La condición de aplicaciones cliente (client apps), seleccionando 'Clientes de autenticación heredada' (Other clients / Exchange ActiveSync clients según corresponda)",
-      "La condición de plataformas de dispositivo, seleccionando 'Linux'",
+      "La condición de aplicaciones cliente, seleccionando 'Clientes de autenticación heredada' (Other clients)",
+      "La condición de plataformas de dispositivo, seleccionando específicamente el sistema operativo Linux",
       "Las ubicaciones con nombre, configuradas para todos los países",
       "Una directiva de cumplimiento de dispositivos en Intune"
     ],
     "opts_en": [
-      "The client apps condition, selecting 'Legacy authentication clients' (Other clients / Exchange ActiveSync clients as applicable)",
-      "The device platforms condition, selecting 'Linux'",
+      "The client apps condition, selecting 'Legacy authentication clients' (Other clients)",
+      "The device platforms condition, selecting the Linux operating system specifically",
       "Named locations, configured for all countries",
       "An Intune device compliance policy"
     ],
@@ -6459,13 +6459,13 @@
       "Microsoft Entra Global Secure Access (incluyendo Microsoft Entra Private Access e Internet Access)",
       "Microsoft Entra Connect Cloud Sync",
       "Microsoft Defender for Identity",
-      "Microsoft Purview Information Protection"
+      "Microsoft Purview Information Protection para clasificar, etiquetar y proteger documentos confidenciales"
     ],
     "opts_en": [
       "Microsoft Entra Global Secure Access (including Microsoft Entra Private Access and Internet Access)",
       "Microsoft Entra Connect Cloud Sync",
       "Microsoft Defender for Identity",
-      "Microsoft Purview Information Protection"
+      "Microsoft Purview Information Protection for classifying, labeling, and protecting sensitive documents"
     ],
     "correct": [
       0
@@ -6482,7 +6482,7 @@
     "q_es": "Un administrador está revisando dos directivas relacionadas con la seguridad de las cuentas: una obliga a los usuarios a registrar métodos para poder restablecer su propia contraseña en el futuro, y otra obliga a los usuarios a registrar métodos que se usarán para satisfacer los requisitos de autenticación multifactor durante el inicio de sesión. ¿Qué par de directivas corresponde, respectivamente, a estas dos descripciones?",
     "q_en": "An administrator is reviewing two account-security-related policies: one requires users to register methods so they can reset their own password in the future, and the other requires users to register methods that will be used to satisfy multi-factor authentication requirements during sign-in. Which pair of policies corresponds, respectively, to these two descriptions?",
     "opts_es": [
-      "La directiva de registro de SSPR (restablecimiento de contraseña de autoservicio) para la primera, y la directiva de registro de información de seguridad para MFA para la segunda",
+      "La directiva de registro de SSPR para la primera, y la directiva de registro de información de seguridad para MFA para la segunda",
       "Ambas descripciones corresponden a la misma directiva única, ya que SSPR y MFA comparten siempre el mismo registro sin distinción",
       "La directiva de acceso condicional para la primera, y la directiva de SSPR para la segunda",
       "La directiva de Identity Protection para la primera, y la directiva de cumplimiento de dispositivos para la segunda"
@@ -6511,13 +6511,13 @@
       "En el centro de acciones (Action center) del portal de Microsoft Defender",
       "En el panel de Estado del servicio",
       "En el Explorador de contenido de Purview",
-      "En la configuración de Microsoft Entra Connect"
+      "En la configuración de Microsoft Entra Connect y sus opciones de sincronización"
     ],
     "opts_en": [
       "The Action center in the Microsoft Defender portal",
       "The Service health dashboard",
       "Purview Content explorer",
-      "Microsoft Entra Connect settings"
+      "In the Microsoft Entra Connect settings and synchronization options"
     ],
     "correct": [
       0
@@ -6534,14 +6534,14 @@
     "q_es": "Un administrador observa que, al implementar la autenticación multifactor para todos los usuarios, su puntuación de Secure Score aumentó automáticamente unos puntos sin que tuviera que marcar manualmente la mejora como completada, mientras que otra mejora recomendada, relacionada con la revisión de permisos de aplicaciones de terceros, requiere que el administrador la marque manualmente como resuelta tras realizar la revisión. ¿Qué explica esta diferencia?",
     "q_en": "An administrator notices that, after implementing multi-factor authentication for all users, their Secure Score automatically increased by a few points without manually marking the improvement as completed, while another recommended improvement, related to reviewing third-party app permissions, requires the administrator to manually mark it as resolved after completing the review. What explains this difference?",
     "opts_es": [
-      "Algunas acciones de mejora se detectan y puntúan automáticamente en función de la configuración real del inquilino, mientras que otras requieren confirmación manual del administrador porque implican una evaluación o decisión que Microsoft no puede verificar automáticamente",
-      "Secure Score nunca asigna puntos automáticamente; todas las mejoras requieren confirmación manual",
+      "Algunas mejoras se puntúan automáticamente según la configuración del inquilino, y otras requieren confirmación manual del administrador",
+      "Secure Score nunca asigna puntos automáticamente; todas las mejoras de seguridad requieren confirmación manual explícita del administrador del inquilino",
       "La diferencia se debe a un error y ambas deberían comportarse de la misma manera",
       "Solo las acciones relacionadas con Exchange Online se puntúan automáticamente"
     ],
     "opts_en": [
-      "Some improvement actions are automatically detected and scored based on the tenant's actual configuration, while others require manual administrator confirmation because they involve an assessment or decision Microsoft cannot automatically verify",
-      "Secure Score never assigns points automatically; all improvements require manual confirmation",
+      "Some improvements are scored automatically based on the tenant's configuration, while others require manual administrator confirmation",
+      "Secure Score never assigns points automatically; all security improvements require explicit manual confirmation from the tenant administrator",
       "The difference is a bug and both should behave the same way",
       "Only actions related to Exchange Online are scored automatically"
     ],
@@ -6560,14 +6560,14 @@
     "q_es": "Una organización recibe una gran cantidad de correos de marketing y boletines legítimos, pero de baja prioridad, que los usuarios consideran molestos aunque no sean maliciosos. Quieren que estos correos, identificados con un nivel de confianza de spam (SCL) intermedio característico de 'correo masivo', se entreguen directamente a la carpeta de Correo no deseado de los usuarios en lugar de a la bandeja de entrada, sin afectar a los correos legítimos normales ni ponerlos en cuarentena. ¿Qué configuración deberían ajustar?",
     "q_en": "An organization receives a large amount of legitimate but low-priority marketing emails and newsletters that users find annoying, even though they aren't malicious. They want these emails, identified with an intermediate spam confidence level (SCL) characteristic of 'bulk mail', to be delivered directly to users' Junk Email folder instead of the inbox, without affecting normal legitimate emails or quarantining them. What setting should they adjust?",
     "opts_es": [
-      "El umbral de correo masivo (Bulk Complaint Level, BCL) en la directiva antispam, configurando la acción para correo masivo como mover a la carpeta de correo no deseado",
-      "El filtro de tipos de archivos adjuntos comunes en la directiva antimalware",
+      "El umbral BCL en la directiva antispam, moviendo el correo masivo a la carpeta de correo no deseado",
+      "El filtro de tipos de archivos adjuntos comunes en la directiva antimalware, aplicado a todos los buzones",
       "Una directiva de retención que elimine los boletines después de 7 días",
       "Una directiva de DLP que bloquee correos con la palabra 'newsletter'"
     ],
     "opts_en": [
-      "The Bulk Complaint Level (BCL) threshold in the anti-spam policy, setting the bulk mail action to move to the Junk Email folder",
-      "The Common Attachment Types Filter in the anti-malware policy",
+      "The BCL threshold in the anti-spam policy, moving bulk mail to the Junk Email folder",
+      "The Common Attachment Types Filter in the anti-malware policy, applied to all mailboxes",
       "A retention policy that deletes newsletters after 7 days",
       "A DLP policy that blocks emails containing the word 'newsletter'"
     ],
@@ -6586,14 +6586,14 @@
     "q_es": "Un correo electrónico contiene un archivo ZIP adjunto que, a su vez, contiene un documento de Word con una macro que descarga contenido adicional desde una URL externa al abrirse. Microsoft Defender for Office 365 necesita analizar no solo el archivo adjunto en sí, sino también el comportamiento de la URL incrustada dentro del documento contenido en el ZIP. ¿Qué función permite este nivel de análisis en capas (archivo dentro de archivo, con URLs incrustadas)?",
     "q_en": "An email contains a ZIP attachment that, in turn, contains a Word document with a macro that downloads additional content from an external URL when opened. Microsoft Defender for Office 365 needs to analyze not just the attachment itself, but also the behavior of the URL embedded within the document contained in the ZIP. What feature allows this layered analysis (file within file, with embedded URLs)?",
     "opts_es": [
-      "Vínculos seguros (Safe Links), que reescribe y analiza las URLs incluso dentro de archivos adjuntos, en combinación con el análisis de espacio aislado de Vínculos seguros para archivos adjuntos (Safe Attachments)",
-      "El filtro de tipos de archivos adjuntos comunes únicamente",
+      "Vínculos seguros, que analiza URLs incluso en adjuntos, combinado con el análisis de espacio aislado de archivos adjuntos",
+      "El filtro de tipos de archivos adjuntos comunes únicamente, sin ningún análisis adicional de contenido, comportamiento o URLs",
       "La cuarentena basada en remitente",
       "Una directiva de retención aplicada a los archivos ZIP"
     ],
     "opts_en": [
-      "Safe Links, which rewrites and scans URLs even within attachments, combined with Safe Attachments sandbox analysis",
-      "The Common Attachment Types Filter alone",
+      "Safe Links, which scans URLs even within attachments, combined with Safe Attachments sandbox analysis",
+      "The Common Attachment Types Filter alone, with no additional content, behavior, or URL analysis at all",
       "Sender-based quarantine",
       "A retention policy applied to ZIP files"
     ],
@@ -6664,14 +6664,14 @@
     "q_es": "Tras ejecutar Cloud Discovery, el equipo de seguridad identifica una aplicación de almacenamiento en la nube de terceros que la organización ha decidido prohibir formalmente debido a problemas de cumplimiento. Quieren que Microsoft Defender for Cloud Apps marque esta aplicación como 'no sancionada' (unsanctioned) y que, en combinación con Conditional Access App Control o una integración con un firewall/proxy, se bloquee el acceso a esa aplicación desde la red corporativa. ¿Qué describe correctamente este flujo de gobernanza de aplicaciones?",
     "q_en": "After running Cloud Discovery, the security team identifies a third-party cloud storage app that the organization has formally decided to ban due to compliance concerns. They want Microsoft Defender for Cloud Apps to mark this app as 'unsanctioned' and, combined with Conditional Access App Control or a firewall/proxy integration, block access to that app from the corporate network. What correctly describes this app governance flow?",
     "opts_es": [
-      "Marcar la aplicación como no sancionada actualiza su estado en el catálogo de Cloud Discovery y puede generar un script de bloqueo para los dispositivos de seguridad de red integrados (firewall/proxy), impidiendo el acceso desde la red corporativa",
+      "Marcar la app como no sancionada actualiza su estado en Cloud Discovery y puede generar un script de bloqueo para el firewall/proxy",
       "Marcar una aplicación como no sancionada la elimina permanentemente de Internet para todos los usuarios de cualquier organización",
       "El estado de sanción de una aplicación solo afecta a los informes, sin ninguna posibilidad de aplicar bloqueos",
       "Las aplicaciones no sancionadas se bloquean automáticamente solo en dispositivos macOS"
     ],
     "opts_en": [
-      "Marking the app as unsanctioned updates its status in the Cloud Discovery catalog and can generate a block script for integrated network security devices (firewall/proxy), preventing access from the corporate network",
-      "Marking an app as unsanctioned permanently removes it from the Internet for all users of any organization",
+      "Marking the app as unsanctioned updates its Cloud Discovery status and can generate a block script for the firewall/proxy",
+      "Marking an app as unsanctioned permanently removes it from the Internet entirely for all users of any organization worldwide",
       "An app's sanction status only affects reporting, with no ability to enforce blocking",
       "Unsanctioned apps are automatically blocked only on macOS devices"
     ],
@@ -6690,14 +6690,14 @@
     "q_es": "El departamento legal de una organización está creando un plan de archivo formal (file plan) en Microsoft Purview para gestionar cientos de etiquetas de retención de manera organizada, agrupándolas según la categoría de negocio (por ejemplo, 'Contratos', 'RR. HH.', 'Finanzas'), el departamento responsable y la cita normativa que justifica cada periodo de retención. ¿Qué proporciona principalmente la función de plan de archivo?",
     "q_en": "An organization's legal department is creating a formal file plan in Microsoft Purview to manage hundreds of retention labels in an organized way, grouping them by business category (e.g., 'Contracts', 'HR', 'Finance'), responsible department, and the regulatory citation justifying each retention period. What does the file plan feature primarily provide?",
     "opts_es": [
-      "Una estructura jerárquica de metadatos (descriptores de plan de archivo) para organizar, documentar y gestionar de forma masiva un gran número de etiquetas y directivas de retención",
-      "Una directiva de acceso condicional que restringe quién puede ver las etiquetas",
+      "Una estructura jerárquica de metadatos para organizar y gestionar de forma masiva etiquetas y directivas de retención",
+      "Una directiva de acceso condicional que restringe quién puede ver y aplicar esas etiquetas de retención",
       "Un mecanismo de cifrado adicional para los documentos etiquetados",
       "Una herramienta de migración de contenido entre inquilinos"
     ],
     "opts_en": [
-      "A hierarchical metadata structure (file plan descriptors) for organizing, documenting, and bulk-managing a large number of retention labels and policies",
-      "A Conditional Access policy restricting who can see the labels",
+      "A hierarchical metadata structure for organizing and bulk-managing retention labels and policies",
+      "A Conditional Access policy restricting who can see and apply those retention labels",
       "An additional encryption mechanism for labeled documents",
       "A content migration tool between tenants"
     ],
@@ -6717,13 +6717,13 @@
     "q_en": "A global organization has a retention policy applying a 5-year retention period to all SharePoint content. However, due to a new regional regulation, they need SharePoint sites belonging specifically to a particular country's subsidiary to have a 10-year retention period, and this set of sites changes frequently as new projects are created in that subsidiary. Manually maintaining the list of locations in the policy would be unworkable. Which Microsoft Purview feature helps automate the policy's scope in this case?",
     "opts_es": [
       "Ámbitos adaptables (adaptive scopes), basados en propiedades como una unidad organizativa o un atributo de ubicación de los sitios",
-      "Una unidad administrativa restringida aplicada a SharePoint",
+      "Una unidad administrativa restringida aplicada específicamente a todos los sitios de SharePoint de esa filial regional",
       "El catálogo de tipos de información confidencial",
       "Cumplimiento de comunicaciones aplicado a SharePoint"
     ],
     "opts_en": [
       "Adaptive scopes, based on properties such as an organizational unit or location attribute of the sites",
-      "A restricted administrative unit applied to SharePoint",
+      "A restricted administrative unit applied specifically to all SharePoint sites of that regional subsidiary",
       "The sensitive information types catalog",
       "Communication compliance applied to SharePoint"
     ],
@@ -6797,13 +6797,13 @@
       "La lista de endpoints web de Microsoft 365 publicada por Microsoft, organizada en las categorías Optimizar, Permitir y Predeterminado",
       "El registro de auditoría unificado",
       "El Centro de mensajes (Message Center)",
-      "El catálogo de aplicaciones de Microsoft Entra"
+      "El catálogo de aplicaciones de Microsoft Entra y su galería de aplicaciones empresariales integradas, con sus rangos de IP asociados"
     ],
     "opts_en": [
       "The Microsoft 365 web service endpoints list published by Microsoft, organized into the Optimize, Allow, and Default categories",
       "The unified audit log",
       "The Message Center",
-      "The Microsoft Entra application gallery"
+      "The Microsoft Entra application gallery and its list of integrated enterprise applications with their associated IP ranges"
     ],
     "correct": [
       0
