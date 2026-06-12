@@ -6145,7 +6145,7 @@
     "q_en": "Microsoft Defender for Cloud Apps detects that a user account has downloaded more than 500 files from SharePoint Online within a 10-minute period, a volume far exceeding their usual behavior, which could indicate data exfiltration by a compromised account or a departing employee. What type of Defender for Cloud Apps policy detects this kind of behavior based on the volume and frequency of a user's actions?",
     "opts_es": [
       "Una directiva de actividad (activity policy) configurada para detectar actividad de descarga masiva inusual",
-      "Una directiva de archivo basada únicamente en la clasificación del contenido del documento descargado",
+      "Una directiva de archivo basada únicamente en la clasificación del contenido de los documentos descargados",
       "Una directiva de Cloud Discovery basada en el catálogo de aplicaciones",
       "Una directiva de acceso condicional basada en la ubicación geográfica"
     ],
@@ -6153,7 +6153,7 @@
       "An activity policy configured to detect unusual mass download activity",
       "A file policy based solely on content classification",
       "A Cloud Discovery policy based on the app catalog",
-      "A Conditional Access policy based on geographic location"
+      "A Conditional Access policy based solely on the user's geographic location"
     ],
     "correct": [
       0
@@ -6197,13 +6197,13 @@
     "q_en": "Under GDPR, a customer requests a copy of all personal data the organization holds about them, stored in emails, SharePoint documents, and OneDrive, as well as its subsequent deletion. The organization wants to use a Microsoft Purview tool that allows searching for content related to that person across the entire environment and exporting it or marking it for deletion centrally. What type of case should they create?",
     "opts_es": [
       "Un caso de eDiscovery (Standard o Premium) para buscar, exportar y, si procede, eliminar el contenido relacionado con la solicitud DSR",
-      "Una directiva de retención que elimine automáticamente todos los datos del cliente sin ninguna búsqueda ni revisión previa",
+      "Una directiva de retención que elimine automáticamente todos los datos del cliente sin ninguna búsqueda ni revisión previa alguna",
       "Una directiva de cumplimiento de comunicaciones",
       "Una directiva de etiquetado automático aplicada solo a nuevos documentos"
     ],
     "opts_en": [
       "An eDiscovery (Standard or Premium) case to search, export, and, if applicable, delete content related to the DSR",
-      "A retention policy that automatically deletes all the customer's data without any prior search or review",
+      "A retention policy that automatically deletes all of the customer's data without any prior search or review at all",
       "A communication compliance policy",
       "An auto-labeling policy applied only to new documents"
     ],
@@ -6255,7 +6255,7 @@
     ],
     "opts_en": [
       "Adoption Score / usage reports, showing pseudonymized or aggregated data per the privacy setting",
-      "The unified audit log, exporting raw and detailed per-user data for each individual",
+      "The unified audit log, exporting raw and detailed per-user activity data for each individual",
       "A retention policy that hides usernames in SharePoint",
       "Microsoft Entra Connect, disabling synchronization of user attributes"
     ],
@@ -6361,7 +6361,7 @@
       "Entitlement Management, using access packages with an approval workflow and automatic expiration",
       "A restricted administrative unit grouping the project's resources",
       "A group naming policy including the project name",
-      "Risk-based Microsoft Entra ID Protection, with automatic remediation and periodic review"
+      "Risk-based Microsoft Entra ID Protection, with automatic remediation and periodic manual review"
     ],
     "correct": [
       0
@@ -6413,7 +6413,7 @@
       "The accidental deletion prevention threshold",
       "Staging mode",
       "Attribute-based filtering",
-      "Password hash synchronization"
+      "Password hash synchronization between AD and Entra ID"
     ],
     "correct": [
       0
@@ -6489,7 +6489,7 @@
     ],
     "opts_en": [
       "The SSPR (self-service password reset) registration policy for the first, and the security info registration policy for MFA for the second",
-      "Both descriptions correspond to the same single policy, since SSPR and MFA always share the same registration without distinction",
+      "Both descriptions actually correspond to the same single policy, since SSPR and MFA always share the same registration without distinction",
       "The Conditional Access policy for the first, and the SSPR policy for the second",
       "The Identity Protection policy for the first, and the device compliance policy for the second"
     ],
@@ -6691,13 +6691,13 @@
     "q_en": "An organization's legal department is creating a formal file plan in Microsoft Purview to manage hundreds of retention labels in an organized way, grouping them by business category (e.g., 'Contracts', 'HR', 'Finance'), responsible department, and the regulatory citation justifying each retention period. What does the file plan feature primarily provide?",
     "opts_es": [
       "Una estructura jerárquica de metadatos para organizar y gestionar de forma masiva etiquetas y directivas de retención",
-      "Una directiva de acceso condicional que restringe quién puede ver y aplicar esas etiquetas de retención",
+      "Una directiva de acceso condicional que restringe específicamente quién puede ver y aplicar esas etiquetas de retención",
       "Un mecanismo de cifrado adicional para los documentos etiquetados",
       "Una herramienta de migración de contenido entre inquilinos"
     ],
     "opts_en": [
       "A hierarchical metadata structure for organizing and bulk-managing retention labels and policies",
-      "A Conditional Access policy restricting who can see and apply those retention labels",
+      "A Conditional Access policy specifically restricting who can see and apply those retention labels",
       "An additional encryption mechanism for labeled documents",
       "A content migration tool between tenants"
     ],
@@ -6717,7 +6717,7 @@
     "q_en": "A global organization has a retention policy applying a 5-year retention period to all SharePoint content. However, due to a new regional regulation, they need SharePoint sites belonging specifically to a particular country's subsidiary to have a 10-year retention period, and this set of sites changes frequently as new projects are created in that subsidiary. Manually maintaining the list of locations in the policy would be unworkable. Which Microsoft Purview feature helps automate the policy's scope in this case?",
     "opts_es": [
       "Ámbitos adaptables (adaptive scopes), basados en propiedades como una unidad organizativa o un atributo de ubicación de los sitios",
-      "Una unidad administrativa restringida aplicada específicamente a todos los sitios de SharePoint de esa filial regional",
+      "Una unidad administrativa restringida aplicada específicamente a todos los sitios de SharePoint de esa filial regional concreta",
       "El catálogo de tipos de información confidencial",
       "Cumplimiento de comunicaciones aplicado a SharePoint"
     ],
@@ -6823,7 +6823,7 @@
       "Una directiva de nomenclatura de grupos (group naming policy) con palabras bloqueadas y prefijo/sufijo",
       "Una directiva de acceso condicional que bloquee la creación de grupos",
       "Una etiqueta de retención aplicada a los grupos",
-      "Una directiva de prevención de pérdida de datos que detecte y bloquee ciertos nombres de grupo"
+      "Una directiva de prevención de pérdida de datos que detecte y bloquee ciertos nombres de grupo prohibidos"
     ],
     "opts_en": [
       "A group naming policy with a blocked words list and a prefix/suffix template",
@@ -6874,13 +6874,13 @@
     "opts_es": [
       "Grupos de acceso con privilegios (Privileged Access groups) en PIM para grupos",
       "Unidades administrativas",
-      "Una directiva de nomenclatura de grupos con prefijos por departamento",
+      "Una directiva de nomenclatura de grupos con prefijos específicos por departamento",
       "Acceso de invitados B2B"
     ],
     "opts_en": [
       "Privileged Access groups in Privileged Identity Management",
       "Administrative units",
-      "A group naming policy with department-based prefixes",
+      "A group naming policy with department-specific prefixes",
       "B2B guest access"
     ],
     "correct": [
@@ -6899,13 +6899,13 @@
     "q_en": "An organization has four independent on-premises Active Directory forests, with no trust relationships between them and no direct network connectivity between the domain controllers and a single centralized sync server. The organization wants to synchronize identities from all four forests to Microsoft Entra ID with the minimum possible on-premises infrastructure, installing lightweight agents in each forest instead of a full sync server. Which solution should they use?",
     "opts_es": [
       "Microsoft Entra Cloud Sync con agentes de aprovisionamiento ligeros en cada bosque",
-      "Microsoft Entra Connect Sync con un único servidor para los cuatro bosques",
+      "Microsoft Entra Connect Sync con un único servidor central para los cuatro bosques",
       "Active Directory Federation Services (AD FS)",
       "Sincronización manual mediante PowerShell programada"
     ],
     "opts_en": [
       "Microsoft Entra Cloud Sync with lightweight provisioning agents in each forest",
-      "Microsoft Entra Connect Sync with a single server for all four forests",
+      "Microsoft Entra Connect Sync with a single central server for all four forests",
       "Active Directory Federation Services (AD FS)",
       "Manual scheduled PowerShell synchronization"
     ],
@@ -7030,7 +7030,7 @@
     "opts_es": [
       "Una regla de detección personalizada (custom detection rule)",
       "Un panel de Workbooks en Microsoft Sentinel",
-      "Una directiva de prevención de pérdida de datos",
+      "Una nueva directiva de prevención de pérdida de datos (DLP)",
       "Una etiqueta de retención automática"
     ],
     "opts_en": [
@@ -7057,7 +7057,7 @@
       "El registro de auditoría unificado (Unified audit log) en el portal de cumplimiento de Microsoft Purview",
       "El Centro de mensajes (Message Center)",
       "El Explorador de amenazas (Threat Explorer)",
-      "El panel de Puntuación de seguridad (Secure Score) y sus recomendaciones de mejora de seguridad"
+      "El panel de Puntuación de seguridad (Secure Score) y sus recomendaciones de mejora de seguridad continua"
     ],
     "opts_en": [
       "The Unified audit log in the Microsoft Purview compliance portal",
@@ -7081,7 +7081,7 @@
     "q_en": "A security team has confirmed that a specific external domain, 'promo-deals.net', is consistently sending phishing emails that Microsoft Defender for Office 365's standard policies don't always detect as malicious. The team wants to immediately and manually block all email from that domain for the next 24 hours while they investigate, without waiting for the machine learning models to update. What should they use?",
     "opts_es": [
       "La lista de permitidos y bloqueados de inquilino, añadiendo el dominio del remitente como entrada bloqueada",
-      "Una directiva de acceso condicional que bloquee todo el correo entrante de ese dominio específico",
+      "Una directiva de acceso condicional que bloquee todo el correo entrante proveniente de ese dominio específico",
       "Microsoft Defender for Cloud Apps, sancionar la aplicación",
       "Una etiqueta de confidencialidad aplicada a los correos entrantes"
     ],
@@ -7108,7 +7108,7 @@
     "opts_es": [
       "Marcar estas cuentas como cuentas prioritarias (priority accounts) y aplicarles la directiva de seguridad preestablecida 'Estricta'",
       "Crear una etiqueta de confidencialidad 'Ejecutivos' aplicada manualmente",
-      "Agregar estas cuentas a un grupo de Microsoft Entra ID excluido manualmente de todas las directivas de seguridad existentes",
+      "Agregar estas cuentas a un grupo de Microsoft Entra ID que esté excluido manualmente de todas las directivas de seguridad existentes",
       "Habilitar Microsoft Defender for Identity únicamente para estas cuentas"
     ],
     "opts_en": [
@@ -7134,14 +7134,14 @@
     "opts_es": [
       "Establecer el nivel de automatización del grupo en 'Semiautomático: requiere aprobación para todas las carpetas'",
       "Excluir el grupo de dispositivos de Defender for Endpoint por completo",
-      "Aplicar una directiva de reducción de la superficie de ataque sin ninguna regla activa configurada",
+      "Aplicar una directiva de reducción de la superficie de ataque sin ninguna regla activa configurada actualmente",
       "Configurar el grupo como 'No supervisado' en Microsoft Defender for Cloud Apps"
     ],
     "opts_en": [
       "Set the device group's automation level to one requiring approval for all remediation actions",
       "Exclude the device group from Defender for Endpoint entirely",
       "Apply an attack surface reduction policy with no active rules",
-      "Configure the group as 'Unmonitored' in Microsoft Defender for Cloud Apps entirely"
+      "Configure the group as 'Unmonitored' entirely within Microsoft Defender for Cloud Apps console"
     ],
     "correct": [
       0
@@ -7263,13 +7263,13 @@
     "q_en": "An organization wants to prevent employees from copying files containing credit card numbers from their Windows device to removable USB drives. However, instead of immediately blocking the action without warning the user, they want that, the first time a user attempts this action, an educational policy tip is shown explaining the policy and the user can justify the action to proceed, with the event logged for later review. What should they configure?",
     "opts_es": [
       "Endpoint DLP con una acción de 'Avisar' (policy tip) que permita anular la acción con justificación",
-      "Una directiva de acceso condicional que bloquee dispositivos sin cumplimiento de Intune",
+      "Una directiva de acceso condicional que bloquee directamente los dispositivos sin cumplimiento de Intune",
       "Acceso controlado a carpetas en Microsoft Defender for Endpoint",
       "Una etiqueta de confidencialidad sin acciones de protección automáticas"
     ],
     "opts_en": [
       "An Endpoint DLP policy with a 'Warn' action (policy tip) that allows override with justification",
-      "A Conditional Access policy that blocks devices not compliant with Intune policies",
+      "A Conditional Access policy that directly blocks devices not compliant with Intune policies",
       "Controlled folder access in Microsoft Defender for Endpoint",
       "A sensitivity label with no automatic protection actions"
     ],
@@ -7341,13 +7341,13 @@
     "q_en": "A shared mailbox called 'Customer-Support' has grown beyond 50 GB because several agents use it to store attachments from old tickets. Users start receiving errors when sending mail from that mailbox because, with no license assigned, its storage limit is restricted to 50 GB. What is the recommended solution to resolve this without converting the shared mailbox into a regular user mailbox?",
     "opts_es": [
       "Asignar al buzón una licencia con Exchange Online Plan 2, ampliando el límite de almacenamiento a 100 GB",
-      "Crear un segundo buzón compartido y dividir manualmente los correos antiguos entre ambos buzones",
+      "Crear un segundo buzón compartido y dividir manualmente los correos antiguos entre ambos buzones nuevos",
       "Habilitar el archivado local en cada PC de los agentes",
       "Eliminar el buzón compartido y recrear uno nuevo cada 6 meses"
     ],
     "opts_en": [
       "Assign the shared mailbox a license with Exchange Online Plan 2, increasing the storage limit to 100 GB",
-      "Create a second shared mailbox and manually split the old emails between both shared mailboxes",
+      "Create a second shared mailbox and manually split the old emails between both new shared mailboxes",
       "Enable local archiving on each agent's PC",
       "Delete the shared mailbox and recreate a new one every 6 months"
     ],
@@ -7393,7 +7393,7 @@
     "q_en": "An IT consulting firm manages the Microsoft 365 tenants of several clients through Microsoft partner relationships. For security reasons, each client wants the partner's technicians to have administrative access only to specific roles (for example, only Exchange Administrator and Helpdesk Administrator) for a limited period of time, instead of permanent, full administrative access to the tenant. What partner relationship model enables this?",
     "opts_es": [
       "Privilegios de administrador delegado granular (Granular Delegated Admin Privileges, GDAP)",
-      "Privilegios de administrador delegado (Delegated Admin Privileges, DAP) clásicos",
+      "Los privilegios de administrador delegado (Delegated Admin Privileges, DAP) clásicos y de alcance completo",
       "Una unidad administrativa compartida entre ambos inquilinos",
       "Un acuerdo de federación con AD FS entre ambas organizaciones"
     ],
@@ -7419,7 +7419,7 @@
     "q_en": "An organization is implementing Microsoft Entra Connect Sync for the first time. There are already user accounts in Microsoft Entra ID (manually created some time ago for early access to Microsoft 365) that correspond to the same users now existing in on-premises Active Directory, sharing the same primary email address but with no common attribute deliberately configured to link them. The administrator wants Microsoft Entra Connect Sync to automatically match each on-premises account with its corresponding existing cloud account, instead of creating duplicate accounts. What matching process applies by default in this scenario?",
     "opts_es": [
       "Coincidencia flexible (soft match) basada en la dirección de correo electrónico/proxyAddresses",
-      "Coincidencia rígida (hard match) basada en el atributo ms-DS-ConsistencyGuid/ImmutableId",
+      "Coincidencia rígida (hard match) basada en el atributo ms-DS-ConsistencyGuid/ImmutableId configurado",
       "No es posible vincular las cuentas; siempre se crearán duplicados",
       "Coincidencia basada exclusivamente en el nombre para mostrar"
     ],
@@ -7473,13 +7473,13 @@
       "Exigir una fuerza de autenticación (authentication strength) personalizada que incluya solo métodos resistentes al phishing",
       "Exigir el cumplimiento del dispositivo (device compliance) únicamente",
       "Exigir una contraseña de aplicación (app password)",
-      "Exigir la unión híbrida de Microsoft Entra (hybrid Azure AD join) como único requisito adicional de dispositivo"
+      "Exigir la unión híbrida de Microsoft Entra (hybrid Azure AD join) como único requisito adicional del dispositivo del usuario"
     ],
     "opts_en": [
       "Require a custom authentication strength that includes only phishing-resistant methods",
       "Require device compliance only",
       "Require an app password",
-      "Require Microsoft Entra hybrid join as the only additional device requirement"
+      "Require Microsoft Entra hybrid join as the only additional user device requirement"
     ],
     "correct": [
       0
@@ -7555,7 +7555,7 @@
     ],
     "opts_en": [
       "Technically configurable actions are scored automatically once detected, while process actions require manual confirmation",
-      "All actions always require manual administrator confirmation; automatic scoring does not exist in Secure Score",
+      "All actions always require manual administrator confirmation; automatic scoring never ever exists in Secure Score at all",
       "Automatic scoring only applies to E5 licenses, and manual scoring to E3 licenses",
       "Manually-scored actions are dashboard configuration errors that should be ignored"
     ],
@@ -7577,13 +7577,13 @@
       "Correlación entre dominios, que vincula alertas relacionadas de varias cargas de trabajo en un único incidente",
       "Cada alerta genera siempre un incidente independiente; la agrupación es manual",
       "Solo las alertas de Defender for Endpoint pueden formar parte de incidentes",
-      "La agrupación solo es posible si las tres alertas se producen exactamente en el mismo segundo del día"
+      "La agrupación solo es posible si las tres alertas se producen exactamente en el mismo segundo exacto del día"
     ],
     "opts_en": [
       "Cross-domain correlation, linking related alerts from multiple workloads into a single incident",
       "Each alert always generates an independent incident; grouping is manual",
       "Only Microsoft Defender for Endpoint alerts can be part of incidents",
-      "Grouping is only possible if all three alerts occur in exactly the same second of the day"
+      "Grouping is only possible if all three alerts occur in exactly the same exact second of the day"
     ],
     "correct": [
       0
@@ -7603,7 +7603,7 @@
       "Purga automática de cero horas (Zero-hour Auto Purge, ZAP)",
       "Safe Attachments en modo de bloqueo dinámico",
       "Tenant Allow/Block List",
-      "Investigación y respuesta automatizadas (AIR)"
+      "Una investigación y respuesta automatizadas (AIR) completa"
     ],
     "opts_en": [
       "Zero-hour Auto Purge (ZAP)",
@@ -7633,7 +7633,7 @@
     ],
     "opts_en": [
       "Directory-based edge blocking (DBEB) and connection filtering based on IP reputation",
-      "A sensitivity label automatically applied to suspicious incoming emails",
+      "A sensitivity label automatically applied to all suspicious incoming email messages",
       "Conditional Access based on the sender's location",
       "Microsoft Defender for Identity"
     ],
@@ -7711,7 +7711,7 @@
     ],
     "opts_en": [
       "Conditional Access App Control via reverse proxy",
-      "Cloud Discovery with firewall log analysis",
+      "Cloud Discovery with firewall log traffic analysis",
       "An app governance policy",
       "An Endpoint DLP policy"
     ],
@@ -7757,7 +7757,7 @@
     "q_en": "A compliance administrator has run a content search that found 5,000 emails relevant to a regulatory audit, spread across 40 mailboxes. The external audit team requests to receive these emails in a standard mailbox file format that can be imported into their own forensic review tool, rather than accessing the Microsoft 365 tenant directly. What export option should they use from the content search results?",
     "opts_es": [
       "Exportar los resultados como archivos PST mediante la herramienta de exportación de eDiscovery",
-      "Compartir directamente el buzón completo de cada usuario mediante permisos de Outlook",
+      "Compartir directamente el buzón completo de cada usuario mediante permisos de acceso de Outlook",
       "Reenviar manualmente cada correo a una cuenta externa",
       "Aplicar una etiqueta de retención y esperar a que expire"
     ],
@@ -7837,13 +7837,13 @@
       "Restringir el consentimiento del usuario para permisos de alto impacto y habilitar el flujo de aprobación del administrador",
       "Deshabilitar por completo el registro de aplicaciones para todos los usuarios",
       "Eliminar todas las aplicaciones empresariales existentes del inquilino",
-      "Aplicar una directiva de prevención de pérdida de datos sobre los datos accedidos por las aplicaciones registradas"
+      "Aplicar una directiva de prevención de pérdida de datos sobre los datos accedidos por todas las aplicaciones registradas"
     ],
     "opts_en": [
       "Restrict user consent for high-impact permissions and enable the admin consent approval workflow",
       "Completely disable application registration for all users",
       "Delete all existing enterprise applications from the tenant",
-      "Apply a data loss prevention policy on the data accessed by all registered applications"
+      "Apply a data loss prevention policy on all of the data accessed by all registered applications"
     ],
     "correct": [
       0
