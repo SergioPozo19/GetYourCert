@@ -10857,7 +10857,7 @@
     ],
     "opts_en": [
       "The file plan, which organizes retention labels using metadata such as business category and department",
-      "A data loss prevention policy that automatically classifies the labels by content and department",
+      "A data loss prevention policy that automatically classifies the labels by content, category, and department",
       "A trainable classifier that replaces retention labels",
       "The Unified audit log, which organizes labels based on their usage"
     ],
@@ -10878,13 +10878,13 @@
     "opts_es": [
       "La protección adaptable (Adaptive Protection), que ajusta dinámicamente las directivas de DLP según el riesgo del usuario",
       "Una etiqueta de confidencialidad aplicada manualmente al usuario de alto riesgo",
-      "El registro de auditoría unificado, que bloquea automáticamente a los usuarios marcados como de alto riesgo",
+      "El registro de auditoría unificado, que bloquea automáticamente a todos los usuarios marcados como de muy alto riesgo",
       "Una directiva de retención que elimina los permisos del usuario de alto riesgo"
     ],
     "opts_en": [
       "Adaptive Protection, which dynamically adjusts DLP policies based on the user's risk level",
       "A sensitivity label manually applied to the high-risk user",
-      "The Unified audit log, which automatically blocks users flagged as high-risk",
+      "The Unified audit log, which automatically blocks all users flagged as high-risk by the system",
       "A retention policy that removes the high-risk user's permissions"
     ],
     "correct": [
@@ -10956,7 +10956,7 @@
     "opts_es": [
       "Agregar y verificar 'marketing.contoso.com' como dominio independiente, mediante el registro TXT en DNS, y configurarlo como dominio aceptado",
       "No es posible usar subdominios para correo electrónico bajo ninguna circunstancia en Microsoft 365",
-      "El subdominio se activa automáticamente para correo en cuanto se verifica el dominio raíz, sin pasos adicionales ni configuración DNS",
+      "El subdominio se activa automáticamente para correo en cuanto se verifica el dominio raíz, sin ningún paso adicional ni configuración DNS",
       "Crear un nuevo inquilino de Microsoft 365 exclusivamente para el subdominio de marketing"
     ],
     "opts_en": [
@@ -11087,7 +11087,7 @@
       "Crear o modificar una regla de sincronización personalizada en Microsoft Entra Connect que asigne 'extensionAttribute5' al atributo de Microsoft Entra ID deseado",
       "Cambiar manualmente el atributo para cada usuario directamente en Microsoft Entra ID, sin modificar Microsoft Entra Connect",
       "Eliminar y reinstalar Microsoft Entra Connect desde cero, ya que los atributos personalizados nunca pueden sincronizarse",
-      "Usar exclusivamente PowerShell de Microsoft Graph para sincronizar este atributo manualmente, sin involucrar a Microsoft Entra Connect en ningún momento"
+      "Usar exclusivamente PowerShell de Microsoft Graph para sincronizar este atributo manualmente, sin involucrar a Microsoft Entra Connect en ningún momento del proceso"
     ],
     "opts_en": [
       "Create or modify a custom sync rule in Microsoft Entra Connect that maps 'extensionAttribute5' to the desired Microsoft Entra ID attribute",
@@ -11137,7 +11137,7 @@
     "q_en": "An organization has enabled multifactor authentication for all users via a modern Conditional Access policy. However, the security team discovers that some attackers are using legacy protocols like IMAP and SMTP AUTH to connect directly to mailboxes, completely bypassing modern sign-in flows and therefore MFA, since these legacy protocols don't support modern authentication. What should they do to close this gap?",
     "opts_es": [
       "Crear una directiva de acceso condicional que bloquee la autenticación heredada para todos los usuarios, o deshabilitarla a nivel de buzón",
-      "Aumentar la duración de la sesión de inicio de sesión único para que la MFA se solicite con mayor frecuencia a todos los usuarios",
+      "Aumentar la duración de la sesión de inicio de sesión único para que la MFA se solicite con mayor frecuencia a todos los usuarios de la organización",
       "Eliminar todas las directivas de acceso condicional existentes y crear una nueva desde cero",
       "Migrar todos los buzones a buzones compartidos, que no admiten ningún protocolo de autenticación"
     ],
@@ -11171,7 +11171,7 @@
       "A group with dynamic membership, configured with a rule evaluating 'department' equal to 'Sales'",
       "A group with assigned membership, manually adding each user once",
       "A role-assignable group, since only these groups support dynamic rules",
-      "A resource mailbox configured with calendar rules based on the user's department attribute"
+      "A resource mailbox configured with calendar rules based on the user's department attribute value"
     ],
     "correct": [
       0
@@ -11241,13 +11241,13 @@
     "q_en": "An organization uses several services within Microsoft 365 Defender (Office 365 protection, Defender for Endpoint, Defender for Identity, and Defender for Cloud Apps). They want to create a custom role that allows a group of analysts to manage incidents and alerts across all these services from a single place, without having to assign separate roles for each individual product. What feature allows defining this kind of unified role?",
     "opts_es": [
       "El control de acceso basado en roles unificado (Unified RBAC) de Microsoft Defender XDR, que permite roles personalizados entre varios servicios",
-      "Un grupo de seguridad de Microsoft Entra ID sin ninguna asignación de roles, ya que el acceso se hereda automáticamente del directorio",
+      "Un grupo de seguridad de Microsoft Entra ID sin ninguna asignación de roles, ya que el acceso se hereda automáticamente del directorio completo",
       "Una directiva de retención aplicada al portal de Microsoft Defender",
       "El rol de Lector global, que es el único rol disponible para varios productos"
     ],
     "opts_en": [
       "Microsoft Defender XDR's Unified RBAC, which allows creating custom roles spanning multiple security services",
-      "A Microsoft Entra ID security group with no role assignment, since access is automatically inherited",
+      "A Microsoft Entra ID security group with no role assignment, since access is automatically and fully inherited",
       "A retention policy applied to the Microsoft Defender portal",
       "The Global Reader role, which is the only role available across multiple products"
     ],
@@ -11267,13 +11267,13 @@
     "q_en": "An organization has been the target of impersonation attacks against its CFO, where attackers register visually similar domains (such as 'c0ntoso.com' instead of 'contoso.com') and send emails impersonating the CFO to request urgent transfers. The organization wants Microsoft Defender for Office 365 to specifically detect these impersonation attempts of a high-profile internal user, also using recipients' usual communication history. What should they configure?",
     "opts_es": [
       "Protección contra suplantación de usuario en la directiva antiphishing, agregando al CFO como usuario protegido, con inteligencia del buzón",
-      "Una regla de flujo de correo que bloquee todos los mensajes externos sin excepción, incluidos los de socios comerciales habituales",
+      "Una regla de flujo de correo que bloquee todos los mensajes externos sin excepción, incluidos también los de socios comerciales habituales",
       "El filtro de tipos de archivo adjunto comunes en la directiva antimalware",
       "Vínculos seguros configurados únicamente para aplicaciones de Office de escritorio"
     ],
     "opts_en": [
       "User impersonation protection in the anti-phishing policy, adding the CFO as a protected user, with mailbox intelligence",
-      "A mail flow rule that blocks all external messages with no exceptions, including from regular business partners",
+      "A mail flow rule that blocks all external messages with no exceptions, including from all regular business partners",
       "The Common Attachment Types Filter in the anti-malware policy",
       "Safe Links configured only for desktop Office applications"
     ],
@@ -11293,14 +11293,14 @@
     "q_en": "An organization has enabled Safe Attachments to scan attachments for malware before delivery. However, users complain that some emails with legitimate attachments take several minutes to arrive while the scan completes, delaying urgent communications. The organization wants emails to be delivered immediately, showing the message body, but with the attachment remaining blocked until the scan completes. What Safe Attachments option allows this?",
     "opts_es": [
       "La entrega dinámica (Dynamic Delivery), que entrega el cuerpo del correo de inmediato y sustituye el adjunto mientras se analiza",
-      "El modo de supervisión (monitor), que nunca retrasa ni bloquea ningún elemento aunque detecte malware en el adjunto",
+      "El modo de supervisión (monitor), que nunca retrasa ni bloquea ningún elemento, aunque detecte malware en el adjunto analizado",
       "El bloqueo permanente de todos los archivos adjuntos sin excepción",
       "La desactivación completa de Safe Attachments para todos los usuarios"
     ],
     "opts_en": [
       "Dynamic Delivery, which delivers the email body immediately and replaces the attachment while it's scanned",
       "Monitor mode, which never delays or blocks any item",
-      "Permanently blocking all attachments with no exceptions, even from trusted internal senders",
+      "Permanently blocking all attachments with no exceptions whatsoever, even from trusted internal senders",
       "Completely disabling Safe Attachments for all users"
     ],
     "correct": [
@@ -11424,13 +11424,13 @@
     "opts_es": [
       "eDiscovery (Standard) permite crear casos, aplicar retenciones, buscar contenido y exportar resultados, pero sin las funciones avanzadas de Premium",
       "eDiscovery (Standard) no permite realizar ninguna búsqueda de contenido sin una licencia E5",
-      "eDiscovery (Standard) y eDiscovery (Premium) son funcionalmente idénticos en todos los aspectos, sin ninguna diferencia de licenciamiento",
+      "eDiscovery (Standard) y eDiscovery (Premium) son funcionalmente idénticos en todos los aspectos, sin ninguna diferencia de licenciamiento entre ambos",
       "eDiscovery (Standard) solo funciona con datos de Exchange Online y nunca con SharePoint o Teams"
     ],
     "opts_en": [
       "eDiscovery (Standard) allows creating cases, applying holds, performing searches, and exporting results, but lacks Premium's advanced features",
       "eDiscovery (Standard) doesn't allow performing any content search without an E5 license",
-      "eDiscovery (Standard) and eDiscovery (Premium) are functionally identical in every respect, with no licensing differences at all",
+      "eDiscovery (Standard) and eDiscovery (Premium) are functionally identical in every respect, with no licensing differences of any kind at all",
       "eDiscovery (Standard) only works with Exchange Online data and never with SharePoint or Teams"
     ],
     "correct": [
@@ -11476,13 +11476,13 @@
     "opts_es": [
       "Ejecutar evaluaciones independientes por ubicación y comparar sus puntuaciones de conectividad y recomendaciones, ya que genera informes por ubicación",
       "Generar un único informe global que combina todas las ubicaciones sin distinción posible entre ellas",
-      "Solo puede usarse para una ubicación a la vez por inquilino, de forma permanente, sin posibilidad de evaluar ninguna otra ubicación adicional",
+      "Solo puede usarse para una ubicación a la vez por inquilino, de forma permanente, sin ninguna posibilidad de evaluar ninguna otra ubicación adicional",
       "La herramienta no proporciona ninguna puntuación, solo gráficos de tráfico sin interpretación"
     ],
     "opts_en": [
       "Run independent assessments per location and compare connectivity scores and recommendations, since it generates per-location reports",
       "Generate a single global report combining all locations with no way to distinguish between them",
-      "It can only ever be used for one location per tenant, permanently, with no way to assess any additional location at all",
+      "It can only ever be used for one location per tenant, permanently, with absolutely no way to assess any additional location at all, ever",
       "The tool provides no score at all, only traffic graphs with no interpretation"
     ],
     "correct": [
@@ -11507,7 +11507,7 @@
     ],
     "opts_en": [
       "Enable group moderation, designating leadership team members as moderators who approve each message before delivery",
-      "Restrict sending to the group to a single authorized sender, with no other employee able to send messages",
+      "Restrict sending to the group to a single authorized sender, with no other employee ever able to send messages",
       "Convert the group into a security group without mail enabled",
       "Apply a retention label that delays delivery of all emails by 24 hours"
     ],
@@ -11554,7 +11554,7 @@
     "opts_es": [
       "Un rol personalizado de Microsoft Entra ID, seleccionando únicamente los permisos específicos relacionados con la lectura de registros de inicio de sesión",
       "Asignar el rol integrado de Administrador global, ya que es el único que incluye acceso a los registros de auditoría",
-      "Crear un grupo de seguridad sin ninguna asignación de roles, asumiendo que el acceso a los registros se concede automáticamente a todos los grupos",
+      "Crear un grupo de seguridad sin ninguna asignación de roles, asumiendo que el acceso a los registros se concede automáticamente a todos los grupos existentes",
       "Asignar el rol de Administrador de Exchange, que incluye acceso de solo lectura a todos los registros del inquilino"
     ],
     "opts_en": [
@@ -11586,7 +11586,7 @@
     "opts_en": [
       "Monitoring alerts (via Entra ID Protection, Sentinel, or Azure Monitor) that notify security of any sign-in with these accounts",
       "Delete the emergency access accounts immediately after creating them so they can never be used",
-      "Assign these accounts the Security Reader role, which automatically and permanently deactivates both accounts entirely",
+      "Assign these accounts the Security Reader role, which automatically and permanently deactivates both emergency accounts entirely",
       "It's not possible to monitor the use of these accounts, since they're excluded from all policies"
     ],
     "correct": [
@@ -11638,7 +11638,7 @@
     "opts_en": [
       "Configure directory extension attributes, adding the custom AD attribute to the synced set via the Microsoft Entra Connect wizard",
       "It's not possible to sync custom attributes under any circumstances, regardless of configuration",
-      "Manually create the value for each user directly in Microsoft Entra ID, with absolutely no synchronization involved at all",
+      "Manually create the value for each user directly in Microsoft Entra ID, with absolutely no synchronization involved in the process at all",
       "Delete the Active Directory attribute and recreate it with a standard automatically recognized name"
     ],
     "correct": [
@@ -11683,7 +11683,7 @@
     "q_en": "A user who travels frequently to areas with poor mobile data coverage reports that when they have no internet connection on their phone, they can't receive the Microsoft Authenticator push notification to approve sign-in, and gets locked out. The organization wants to provide a backup method that doesn't depend on mobile data or push notifications, based on a numeric code that changes every 30 seconds and is generated locally on the device offline. What authentication method meets this requirement?",
     "opts_es": [
       "Una contraseña de un solo uso basada en tiempo (TOTP), generada por Microsoft Authenticator sin necesidad de conexión a datos",
-      "Una notificación push exclusivamente, ya que es el único método disponible en Microsoft Authenticator sin excepción",
+      "Una notificación push exclusivamente, ya que es el único método disponible en Microsoft Authenticator sin ninguna excepción",
       "Una llamada telefónica, que también requiere cobertura de red móvil para funcionar",
       "Un mensaje de texto SMS, que requiere igualmente cobertura de red móvil"
     ],
@@ -11709,13 +11709,13 @@
     "q_en": "A security team is designing several Conditional Access policies based on the sign-in risk calculated by Microsoft Entra ID Protection. For sign-ins classified as 'low' risk, they simply want to log the activity without interrupting the user; for 'medium' risk, they want to require additional MFA; and for 'high' risk, they want to block access entirely. What feature of risk-based policies allows this granularity of response based on the detected risk level?",
     "opts_es": [
       "La posibilidad de crear varias directivas, cada una dirigida a un nivel de riesgo específico (bajo, medio o alto) con su propio control de concesión",
-      "Una única directiva que solo puede aplicarse a un nivel de riesgo global para todo el inquilino, sin granularidad por nivel ni por aplicación",
+      "Una única directiva que solo puede aplicarse a un nivel de riesgo global para todo el inquilino, sin ninguna granularidad por nivel ni por aplicación",
       "El nivel de riesgo de inicio de sesión no puede usarse como condición en ninguna directiva de acceso condicional",
       "Solo es posible bloquear el acceso; no se puede requerir MFA adicional basada en el riesgo"
     ],
     "opts_en": [
       "The ability to create several Conditional Access policies, each targeting a specific sign-in risk level with its own grant control",
-      "A single policy that can only apply to one global risk level for the entire tenant, with no per-level or per-app granularity",
+      "A single policy that can only apply to one global risk level for the entire tenant, with no per-level or per-application granularity",
       "The sign-in risk level can't be used as a condition in any Conditional Access policy",
       "Only blocking access is possible; additional MFA based on risk can't be required"
     ],
@@ -11769,7 +11769,7 @@
       "Advanced hunting with KQL queries combining tables such as EmailEvents and DeviceNetworkEvents",
       "The Secure Score dashboard, which doesn't support custom queries",
       "The Message center, which only shows administrative notifications",
-      "A retention policy that automatically correlates email and device events with no queries"
+      "A retention policy that automatically correlates email and device events with no queries needed"
     ],
     "correct": [
       0
@@ -11787,13 +11787,13 @@
     "q_en": "An organization detects that one of its user accounts has been compromised and is being used to send large volumes of spam to external recipients, which could result in the organization's domain being added to block lists. The organization wants to proactively limit the number of external recipients any user can email within a 24-hour period, so that if an account is compromised in the future, the potential damage is automatically limited. What should they configure?",
     "opts_es": [
       "Los límites de la directiva antispam saliente, configurando el máximo de destinatarios externos por usuario en 24 horas",
-      "Una directiva de retención que elimine automáticamente los correos enviados después de superar un límite",
+      "Una directiva de retención que elimine automáticamente los correos enviados después de superar un límite configurado",
       "Una etiqueta de confidencialidad que cifre todos los correos salientes",
       "Vínculos seguros configurados para todos los correos salientes"
     ],
     "opts_en": [
       "Outbound spam policy limits, configuring the maximum number of external recipients per user in 24 hours",
-      "A retention policy that automatically deletes sent emails after a recipient limit is exceeded",
+      "A retention policy that automatically deletes sent emails after a recipient limit is exceeded for that user",
       "A sensitivity label that encrypts all outbound emails",
       "Safe Links configured for all outbound emails"
     ],
@@ -11813,14 +11813,14 @@
     "q_en": "An organization has correctly configured SPF and DKIM for its domain. However, they want to go a step further and publish a policy that explicitly tells receiving mail servers what to do with messages claiming to come from their domain but failing both SPF and DKIM checks (for example, reject or quarantine them), in addition to receiving aggregate reports about these failures. What should they publish in their domain's DNS?",
     "opts_es": [
       "Un registro DMARC (Domain-based Message Authentication, Reporting, and Conformance)",
-      "Un registro MX adicional apuntando a un servidor de cuarentena de correo",
+      "Un registro MX adicional apuntando directamente a un servidor de cuarentena de correo",
       "Un registro CNAME que apunte al dominio '.onmicrosoft.com'",
       "Un registro SRV utilizado para la federación con AD FS"
     ],
     "opts_en": [
       "A DMARC (Domain-based Message Authentication, Reporting, and Conformance) record",
       "An additional MX record pointing to a quarantine server",
-      "A CNAME record that points to the '.onmicrosoft.com' domain instead",
+      "A CNAME record that points directly to the '.onmicrosoft.com' domain instead",
       "An SRV record used for AD FS federation"
     ],
     "correct": [
@@ -11943,7 +11943,7 @@
     "q_en": "During an insider risk investigation, the compliance team needs to capture visual evidence of what a specific user was viewing on their screen at the moment a risky activity alert was triggered (for example, just before copying files to a USB device), to use as additional context in the investigation. What Microsoft Purview insider risk management feature allows this?",
     "opts_es": [
       "La captura de evidencia forense, que toma capturas de pantalla optativas y controladas en torno a actividades de alto riesgo",
-      "Una directiva de retención que captura automáticamente todas las pantallas de todos los usuarios en todo momento",
+      "Una directiva de retención que captura automáticamente todas las pantallas de absolutamente todos los usuarios en todo momento",
       "El registro de auditoría unificado, que incluye automáticamente capturas de pantalla de cada evento",
       "Una etiqueta de confidencialidad que captura la pantalla del usuario al aplicarse"
     ],
@@ -12047,7 +12047,7 @@
     "q_en": "An organization has a legacy distribution list with hundreds of members used only to send mass emails to all staff. They want to modernize this list by converting it into a Microsoft 365 group so that, in addition to email, members also get shared access to a SharePoint site, a group calendar, and a shared notebook, without having to manually re-add each existing member. What option allows this change while preserving the current membership?",
     "opts_es": [
       "Utilizar la función de actualización de listas a grupos de Microsoft 365 en el Centro de administración de Exchange, conservando la membresía existente",
-      "Eliminar la lista de distribución y crear un grupo de Microsoft 365 completamente nuevo, agregando manualmente a cada miembro uno por uno",
+      "Eliminar la lista de distribución y crear un grupo de Microsoft 365 completamente nuevo, agregando manualmente a cada uno de los miembros uno por uno",
       "Las listas de distribución no pueden convertirse nunca en grupos de Microsoft 365 bajo ninguna circunstancia",
       "Cambiar el nombre de la lista de distribución, lo que la convierte automáticamente en un grupo de Microsoft 365 sin pasos adicionales"
     ],
@@ -12125,13 +12125,13 @@
     "q_en": "An organization is choosing between two hybrid authentication methods for Microsoft Entra Connect: one that syncs a hash of the user's password hash to the cloud so authentication is validated there, and another that forwards authentication requests to an on-premises agent that validates them against Active Directory in real time, without storing any password hash in the cloud. The organization has a compliance requirement stating that passwords must never be stored, even as a hash, outside on-premises facilities. What hybrid authentication method meets this requirement?",
     "opts_es": [
       "La autenticación de paso a través (Pass-through Authentication), que valida credenciales contra AD local mediante agentes, sin almacenar hashes en la nube",
-      "La sincronización de hash de contraseña (Password Hash Synchronization), que es la única opción disponible y siempre almacena un hash en la nube",
+      "La sincronización de hash de contraseña (Password Hash Synchronization), que es la única opción disponible y siempre almacena un hash de la contraseña en la nube",
       "La federación con AD FS es la única opción que cumple este requisito y no requiere ninguna infraestructura adicional",
       "Ninguno de los métodos de autenticación híbrida puede evitar el almacenamiento de información de contraseñas en la nube"
     ],
     "opts_en": [
       "Pass-through Authentication validates credentials against on-premises AD via agents, without storing password hashes in the cloud",
-      "Password Hash Synchronization is the only available option and it always stores a password hash value in the cloud",
+      "Password Hash Synchronization is the only available option and it always stores a password hash value permanently in the cloud forever",
       "Federation with AD FS is the only option that meets this requirement and requires no additional infrastructure",
       "None of the hybrid authentication methods can avoid storing password information in the cloud"
     ],
@@ -12151,13 +12151,13 @@
     "q_en": "An organization has implemented Pass-through Authentication and wants to improve the experience for users signing in from domain-joined computers within the corporate network, so they're automatically authenticated to Microsoft Entra ID using their current Windows session, without being prompted to enter their password again. What complementary feature should they enable?",
     "opts_es": [
       "El inicio de sesión único sin interrupciones (Seamless SSO), que usa la sesión de Windows del usuario en el dominio local para autenticarlo en Entra ID",
-      "La sincronización de hash de contraseña, que por sí sola ya proporciona inicio de sesión único sin ninguna configuración adicional necesaria",
+      "La sincronización de hash de contraseña, que por sí sola ya proporciona inicio de sesión único sin ninguna configuración adicional necesaria en absoluto",
       "El acceso condicional, configurando una directiva que omite la autenticación para toda la red corporativa",
       "Microsoft Entra Connect Health, que gestiona directamente las sesiones de inicio de sesión único de los usuarios"
     ],
     "opts_en": [
       "Seamless Single Sign-On, which leverages the user's Windows session on the on-premises domain to authenticate them to Microsoft Entra ID",
-      "Password Hash Synchronization, which by itself already provides single sign-on with absolutely no additional configuration needed",
+      "Password Hash Synchronization, which by itself already provides single sign-on with absolutely no additional configuration needed at all",
       "Conditional Access, configuring a policy that skips authentication for the entire corporate network",
       "Microsoft Entra Connect Health, which directly manages users' single sign-on sessions"
     ],
@@ -12179,7 +12179,7 @@
       "Términos de uso, configurados como control de concesión en una directiva de acceso condicional, requiriendo revisión y aceptación del usuario",
       "Una etiqueta de retención aplicada al correo electrónico de bienvenida de cada usuario",
       "Una directiva de prevención de pérdida de datos que bloquea el acceso hasta que el usuario responda a una encuesta",
-      "El control de 'Requerir dispositivo conforme', que automáticamente implica la aceptación de cualquier política legal sin notificación"
+      "El control de 'Requerir dispositivo conforme', que automáticamente implica la aceptación de cualquier política legal sin ninguna notificación al usuario"
     ],
     "opts_en": [
       "Terms of use, configured as a grant control in a Conditional Access policy, requiring the user to review and accept the document",
@@ -12204,7 +12204,7 @@
     "opts_es": [
       "Las fortalezas de autenticación, que permiten definir un conjunto personalizado de métodos resistentes al phishing y aplicarlo en una directiva dirigida a ese sitio",
       "Una directiva de retención que cifra el sitio de SharePoint con métodos resistentes al phishing automáticamente",
-      "El control 'Requerir MFA' estándar, que ya distingue automáticamente entre métodos resistentes y no resistentes al phishing sin configuración adicional",
+      "El control 'Requerir MFA' estándar, que ya distingue automáticamente entre métodos resistentes y no resistentes al phishing sin ninguna configuración adicional necesaria",
       "Una etiqueta de confidencialidad que bloquea el acceso de SMS y llamadas telefónicas a nivel global del inquilino"
     ],
     "opts_en": [
@@ -12287,7 +12287,7 @@
     ],
     "opts_en": [
       "The automation level for critical devices requires an analyst to manually approve remediation actions before execution, while standard devices might execute them automatically",
-      "This is a system error, since AIR must always execute all remediation actions automatically without exception, regardless of any configuration set for the device group",
+      "This is a system error, since AIR must always execute all remediation actions automatically without exception, regardless of any configuration set for that specific device group at all",
       "It means Defender XDR has stopped working for that server and requires a full agent reinstallation",
       "Pending actions are automatically deleted after a few minutes with no analyst able to review them"
     ],
@@ -12314,7 +12314,7 @@
     "opts_en": [
       "An incident, which automatically correlates and groups related alerts from different Defender workloads",
       "A retention policy, which groups old emails by age",
-      "A trainable classifier, which only groups documents based on their textual content and metadata",
+      "A trainable classifier, which only groups documents based on their textual content, metadata, and structure",
       "A sensitivity label automatically applied to security alerts"
     ],
     "correct": [
