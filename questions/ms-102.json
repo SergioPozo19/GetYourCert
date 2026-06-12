@@ -1386,16 +1386,16 @@
     "q_es": "Una directiva de acceso condicional bloquea inesperadamente a varios usuarios al iniciar sesión desde una nueva aplicación. Quieres determinar qué directiva específica causó el bloqueo y qué condiciones se evaluaron para un inicio de sesión concreto. ¿Dónde debes buscar esta información?",
     "q_en": "A Conditional Access policy unexpectedly blocks several users when signing in from a new application. You want to determine which specific policy caused the block and what conditions were evaluated for a particular sign-in. Where should you look for this information?",
     "opts_es": [
-      "En los registros de inicio de sesión (sign-in logs) de Microsoft Entra ID, en la pestaña de detalles de acceso condicional de cada evento",
-      "En el Centro de mensajes (Message center)",
-      "En los informes de uso de Microsoft 365",
-      "En el registro de auditoría de Exchange Online únicamente"
+      "En los registros de inicio de sesión de Microsoft Entra ID, pestaña de detalles de acceso condicional",
+      "En el Centro de mensajes (Message center), donde se publican avisos de cambios en el servicio",
+      "En los informes de uso de Microsoft 365, que muestran estadísticas de actividad de las apps",
+      "En el registro de auditoría de Exchange Online únicamente, sin detalles de Entra ID"
     ],
     "opts_en": [
-      "In Microsoft Entra ID sign-in logs, in the Conditional Access details tab of each event",
-      "In the Message center",
-      "In Microsoft 365 usage reports",
-      "In the Exchange Online audit log only"
+      "In Microsoft Entra ID sign-in logs, under the Conditional Access details tab",
+      "In the Message center, where service change announcements are published",
+      "In Microsoft 365 usage reports, showing app activity statistics",
+      "In the Exchange Online audit log only, without Entra ID details"
     ],
     "correct": [
       0
@@ -1413,15 +1413,15 @@
     "q_en": "You want a numerical score reflecting your organization's overall security posture in Microsoft 365, along with prioritized improvement recommendations and the estimated impact of each on that score. Which tool should you check?",
     "opts_es": [
       "Puntuación de seguridad de Microsoft (Microsoft Secure Score)",
-      "Informe de uso de Microsoft 365",
-      "Centro de mensajes (Message center)",
-      "Panel de Service Health"
+      "Informe de uso de Microsoft 365, con estadísticas de actividad por aplicación",
+      "Centro de mensajes (Message center), con anuncios de cambios del servicio",
+      "Panel de Service Health, con el estado de los servicios suscritos"
     ],
     "opts_en": [
       "Microsoft Secure Score",
-      "Microsoft 365 usage report",
-      "Message center",
-      "Service Health dashboard"
+      "Microsoft 365 usage report, with per-app activity statistics",
+      "Message center, with service change announcements",
+      "Service Health dashboard, showing subscribed service status"
     ],
     "correct": [
       0
@@ -1465,15 +1465,15 @@
     "q_en": "A security analyst suspects that several devices in the organization have made outbound connections to a known malicious domain over the past 7 days. They want to run a custom query using a SQL-like language over raw network and process event data to confirm this. Which Microsoft Defender feature should they use?",
     "opts_es": [
       "Búsqueda avanzada (Advanced hunting) con consultas en Kusto Query Language (KQL)",
-      "El Centro de mensajes",
-      "Las directivas de retención de Purview",
-      "El generador de informes de uso de Microsoft 365"
+      "El Centro de mensajes, donde se anuncian cambios próximos del servicio",
+      "Las directivas de retención de Purview aplicadas a buzones y sitios",
+      "El generador de informes de uso de Microsoft 365 por carga de trabajo"
     ],
     "opts_en": [
       "Advanced hunting with Kusto Query Language (KQL) queries",
-      "The Message center",
-      "Purview retention policies",
-      "The Microsoft 365 usage report generator"
+      "The Message center, where upcoming service changes are announced",
+      "Purview retention policies applied to mailboxes and sites",
+      "The Microsoft 365 usage report generator by workload"
     ],
     "correct": [
       0
@@ -1491,15 +1491,15 @@
     "q_en": "Microsoft Defender for Office 365 automatically detected a phishing email delivered to 50 mailboxes, investigated the attack chain, identified similar entities, and—without analyst intervention—moved all copies of the email to the affected users' deleted items folder. Which feature performed this automated investigation and remediation?",
     "opts_es": [
       "Investigación y respuesta automatizadas (Automated investigation and response, AIR)",
-      "Acceso condicional basado en riesgo",
-      "Microsoft Entra Connect Health",
-      "Revisiones de acceso de Entra ID Governance"
+      "Acceso condicional basado en riesgo, que exige MFA en inicios de sesión sospechosos",
+      "Microsoft Entra Connect Health, que supervisa la sincronización con AD local",
+      "Revisiones de acceso de Entra ID Governance para roles administrativos"
     ],
     "opts_en": [
       "Automated investigation and response (AIR)",
-      "Risk-based Conditional Access",
-      "Microsoft Entra Connect Health",
-      "Entra ID Governance access reviews"
+      "Risk-based Conditional Access, requiring MFA on suspicious sign-ins",
+      "Microsoft Entra Connect Health, monitoring sync with on-prem AD",
+      "Entra ID Governance access reviews for administrative roles"
     ],
     "correct": [
       0
@@ -1543,15 +1543,15 @@
     "q_en": "The organization wants a consolidated view of its attack surface (for example, devices missing critical patches, insecure configurations, and certificates about to expire) across its Microsoft 365 and Defender for Endpoint assets, with prioritized recommendations to reduce risk. Which feature should it use?",
     "opts_es": [
       "Administración de exposición de seguridad de Microsoft (Microsoft Security Exposure Management)",
-      "Microsoft Entra Connect Health",
-      "Etiquetas de retención de Purview",
-      "Centro de mensajes"
+      "Microsoft Entra Connect Health, que muestra el estado de los servidores de sincronización",
+      "Etiquetas de retención de Purview aplicadas a documentos y correos antiguos",
+      "Centro de mensajes, donde se publican los próximos cambios del servicio"
     ],
     "opts_en": [
       "Microsoft Security Exposure Management",
-      "Microsoft Entra Connect Health",
-      "Purview retention labels",
-      "Message center"
+      "Microsoft Entra Connect Health, showing sync server status",
+      "Purview retention labels applied to old documents and emails",
+      "Message center, where upcoming service changes are posted"
     ],
     "correct": [
       0
@@ -1569,15 +1569,15 @@
     "q_en": "An analyst is investigating an incident in the Microsoft Defender portal and needs to see a visual, chronological representation of how the attack spread across mailboxes, devices, and identities, including which entity was the initial point of entry. Which incident view provides this information?",
     "opts_es": [
       "El gráfico de la historia del ataque (attack story / incident graph)",
-      "El informe de licencias de Microsoft 365",
-      "La pestaña de directivas de retención",
-      "El panel de Service Health"
+      "El informe de licencias de Microsoft 365, con el estado de asignación",
+      "La pestaña de directivas de retención del centro de cumplimiento",
+      "El panel de Service Health, con el estado actual de los servicios"
     ],
     "opts_en": [
       "The attack story / incident graph",
-      "The Microsoft 365 license report",
-      "The retention policies tab",
-      "The Service Health dashboard"
+      "The Microsoft 365 license report, showing assignment status",
+      "The retention policies tab in the compliance center",
+      "The Service Health dashboard, showing current service status"
     ],
     "correct": [
       0
@@ -1595,15 +1595,15 @@
     "q_en": "After investigating an incident, an analyst determines that a specific alert was a false positive caused by a legitimate internal IT tool. To prevent similar alerts from being generated for that tool in the future, what should the analyst configure in the Microsoft Defender portal?",
     "opts_es": [
       "Una regla de supresión de alertas (alert tuning) que excluya esa actividad específica",
-      "Una directiva de retención que elimine la alerta automáticamente",
-      "Una nueva unidad administrativa para esa herramienta",
-      "Una directiva de prevención de pérdida de datos para el equipo de TI"
+      "Una directiva de retención que elimine la alerta automáticamente tras 7 días",
+      "Una nueva unidad administrativa para delegar la gestión de esa herramienta",
+      "Una directiva de prevención de pérdida de datos para el equipo de TI interno"
     ],
     "opts_en": [
       "An alert tuning/suppression rule that excludes that specific activity",
-      "A retention policy that automatically deletes the alert",
-      "A new administrative unit for that tool",
-      "A data loss prevention policy for the IT team"
+      "A retention policy that automatically deletes the alert after 7 days",
+      "A new administrative unit to delegate management of that tool",
+      "A data loss prevention policy for the internal IT team"
     ],
     "correct": [
       0
@@ -1647,15 +1647,15 @@
     "q_en": "Your organization has experienced several 'impersonation' incidents where attackers send emails pretending to be the CEO using a domain very similar to the real one. Which Microsoft Defender for Office 365 feature is specifically designed to detect and mitigate this type of user and domain impersonation?",
     "opts_es": [
       "Directivas anti-phishing con protección contra suplantación de usuarios y dominios",
-      "Directivas anti-spam de conexión",
-      "Directivas de cifrado de mensajes de Office 365",
-      "Directivas de retención de Microsoft Purview"
+      "Directivas anti-spam de conexión, que bloquean direcciones IP con mala reputación",
+      "Directivas de cifrado de mensajes de Office 365 para correos salientes",
+      "Directivas de retención de Microsoft Purview aplicadas a los buzones"
     ],
     "opts_en": [
       "Anti-phishing policies with user and domain impersonation protection",
-      "Connection anti-spam policies",
-      "Office 365 Message Encryption policies",
-      "Microsoft Purview retention policies"
+      "Connection anti-spam policies that block IP addresses with poor reputation",
+      "Office 365 Message Encryption policies for outgoing emails",
+      "Microsoft Purview retention policies applied to mailboxes"
     ],
     "correct": [
       0
@@ -1751,15 +1751,15 @@
     "q_en": "The security team wants to assess employees' susceptibility to phishing by sending realistic simulated phishing emails, and then automatically assign awareness training to those who click the simulated link. Which Microsoft Defender feature should be used?",
     "opts_es": [
       "Entrenamiento de simulación de ataques (Attack simulation training)",
-      "Vínculos seguros",
-      "Análisis de amenazas",
-      "Investigación y respuesta automatizadas"
+      "Vínculos seguros, que reescriben las URL de los correos entrantes",
+      "Análisis de amenazas, con informes sobre campañas activas conocidas",
+      "Investigación y respuesta automatizadas tras una alerta detectada"
     ],
     "opts_en": [
       "Attack simulation training",
-      "Safe Links",
-      "Threat analytics",
-      "Automated investigation and response"
+      "Safe Links, which rewrite URLs in incoming emails",
+      "Threat analytics, with reports on known active campaigns",
+      "Automated investigation and response after a detected alert"
     ],
     "correct": [
       0
@@ -1776,16 +1776,16 @@
     "q_es": "Un usuario revisa su carpeta de cuarentena y encuentra un correo legítimo de un proveedor que fue puesto en cuarentena por una directiva anti-spam. El usuario quiere recuperarlo. ¿Qué acción puede realizar, según los permisos predeterminados de la directiva de cuarentena, sobre un mensaje en cuarentena por spam?",
     "q_en": "A user checks their quarantine folder and finds a legitimate email from a vendor that was quarantined by an anti-spam policy. The user wants to recover it. Based on default quarantine policy permissions, what action can they take on a message quarantined as spam?",
     "opts_es": [
-      "Solicitar la liberación del mensaje (request release) o liberarlo directamente, según la configuración de la directiva de cuarentena",
-      "Eliminar permanentemente toda la cuarentena del inquilino",
-      "Modificar las directivas anti-phishing globales",
-      "Otorgarse a sí mismo el rol de Administrador de seguridad"
+      "Solicitar la liberación del mensaje, o liberarlo directamente según la directiva de cuarentena",
+      "Eliminar permanentemente toda la cuarentena del inquilino, incluidos los mensajes de otros usuarios",
+      "Modificar las directivas anti-phishing globales que afectan a todo el inquilino",
+      "Otorgarse a sí mismo el rol de Administrador de seguridad para gestionar la cuarentena"
     ],
     "opts_en": [
-      "Request release of the message, or release it directly, depending on the quarantine policy configuration",
-      "Permanently delete the entire tenant quarantine",
-      "Modify the global anti-phishing policies",
-      "Grant themselves the Security Administrator role"
+      "Request release of the message, or release it directly, based on the quarantine policy",
+      "Permanently delete the entire tenant quarantine, including other users' messages",
+      "Modify the global anti-phishing policies affecting the whole tenant",
+      "Grant themselves the Security Administrator role to manage quarantine"
     ],
     "correct": [
       0
@@ -1802,10 +1802,10 @@
     "q_es": "La organización ha identificado un dominio externo específico que constantemente envía correo malicioso, y quiere asegurarse de que cualquier correo de ese dominio sea bloqueado automáticamente sin pasar por el filtrado normal, independientemente de su contenido. ¿Qué deben configurar?",
     "q_en": "The organization has identified a specific external domain that consistently sends malicious mail, and wants to ensure that any email from that domain is automatically blocked without going through normal filtering, regardless of content. What should they configure?",
     "opts_es": [
-      "Una entrada de bloqueo de remitente/dominio en la lista de permitidos y bloqueados del inquilino (Tenant Allow/Block List)",
-      "Una directiva de retención que oculte los correos de ese dominio",
-      "Una regla de transporte que reenvíe los correos a la papelera de cada usuario",
-      "Una directiva DLP que cifre los correos de ese dominio"
+      "Una entrada de bloqueo de dominio en la lista de permitidos y bloqueados del inquilino",
+      "Una directiva de retención que oculte los correos de ese dominio en todos los buzones",
+      "Una regla de transporte que reenvíe los correos de ese dominio a la papelera de cada usuario",
+      "Una directiva DLP que cifre los correos de ese dominio antes de entregarlos"
     ],
     "opts_en": [
       "A sender/domain block entry in the Tenant Allow/Block List",
@@ -1854,16 +1854,16 @@
     "q_es": "Un correo electrónico contiene un código QR que dirige a una página de inicio de sesión falsa de Microsoft 365. El correo evade los filtros tradicionales de detección de URL porque el enlace está incrustado dentro de la imagen del código QR. ¿Qué tipo de capacidad de Defender for Office 365 está diseñada para detectar este tipo de amenazas basadas en imágenes?",
     "q_en": "An email contains a QR code that leads to a fake Microsoft 365 sign-in page. The email evades traditional URL detection filters because the link is embedded within the QR code image. What type of Defender for Office 365 capability is designed to detect this type of image-based threat?",
     "opts_es": [
-      "Detección de phishing mediante código QR (QR code phishing / 'quishing' detection) integrada en las directivas anti-phishing",
-      "Cifrado de mensajes de Office 365",
-      "Etiquetas de confidencialidad de Microsoft Purview",
-      "Revisiones de acceso de Entra ID Governance"
+      "Detección de phishing mediante código QR ('quishing') integrada en las directivas anti-phishing",
+      "Cifrado de mensajes de Office 365 para proteger el contenido de correos salientes",
+      "Etiquetas de confidencialidad de Microsoft Purview aplicadas a documentos compartidos",
+      "Revisiones de acceso de Entra ID Governance para aplicaciones con permisos OAuth"
     ],
     "opts_en": [
       "QR code phishing ('quishing') detection integrated into anti-phishing policies",
-      "Office 365 Message Encryption",
-      "Microsoft Purview sensitivity labels",
-      "Entra ID Governance access reviews"
+      "Office 365 Message Encryption to protect outgoing email content",
+      "Microsoft Purview sensitivity labels applied to shared documents",
+      "Entra ID Governance access reviews for apps with OAuth permissions"
     ],
     "correct": [
       0
@@ -1880,16 +1880,16 @@
     "q_es": "Quieres ver, para un periodo de 7 días, cuántos correos fueron detectados como phishing, malware y spam, así como las principales URL maliciosas con clic y los remitentes más reportados por los usuarios, para presentar un resumen ejecutivo a la dirección. ¿Dónde puedes encontrar esta información agregada en el portal de Microsoft Defender?",
     "q_en": "You want to see, for a 7-day period, how many emails were detected as phishing, malware, and spam, as well as the top clicked malicious URLs and the senders most reported by users, to present an executive summary to leadership. Where can you find this aggregated information in the Microsoft Defender portal?",
     "opts_es": [
-      "En los informes de seguridad de correo electrónico (Email security reports), bajo la sección de informes del portal de Defender",
-      "En el Centro de mensajes (Message center)",
-      "En la configuración de Microsoft Entra Connect Health",
-      "En el catálogo de aplicaciones de Microsoft Defender for Cloud Apps"
+      "En los informes de seguridad de correo (Email security reports) del portal de Defender",
+      "En el Centro de mensajes (Message center), donde se publican avisos generales",
+      "En la configuración de Microsoft Entra Connect Health para sincronización",
+      "En el catálogo de aplicaciones de Microsoft Defender for Cloud Apps detectadas"
     ],
     "opts_en": [
       "In Email security reports, under the reports section of the Defender portal",
-      "In the Message center",
-      "In the Microsoft Entra Connect Health settings",
-      "In the Microsoft Defender for Cloud Apps app catalog"
+      "In the Message center, where general announcements are posted",
+      "In the Microsoft Entra Connect Health sync settings",
+      "In the Microsoft Defender for Cloud Apps detected app catalog"
     ],
     "correct": [
       0
@@ -1906,13 +1906,13 @@
     "q_es": "Tu organización quiere incorporar 500 equipos Windows 11 a Microsoft Defender for Endpoint para que reporten señales de seguridad al portal de Microsoft Defender. Los equipos ya están administrados por Intune. ¿Cuál es la forma más sencilla de incorporarlos (onboarding)?",
     "q_en": "Your organization wants to onboard 500 Windows 11 computers to Microsoft Defender for Endpoint so they report security signals to the Microsoft Defender portal. The computers are already managed by Intune. What is the simplest way to onboard them (onboarding)?",
     "opts_es": [
-      "Usar una directiva de incorporación de Defender for Endpoint a través de Intune (configuration profile / endpoint security)",
+      "Usar una directiva de incorporación de Defender for Endpoint mediante Intune (perfil de configuración)",
       "Pedir a cada usuario que descargue manualmente un instalador desde un sitio web público",
       "Reinstalar Windows en cada equipo con una imagen personalizada",
       "Usar Group Policy exclusivamente, ya que Intune no admite la incorporación a Defender for Endpoint"
     ],
     "opts_en": [
-      "Use a Defender for Endpoint onboarding policy through Intune (configuration profile / endpoint security)",
+      "Use a Defender for Endpoint onboarding policy through Intune (configuration profile)",
       "Ask each user to manually download an installer from a public website",
       "Reimage Windows on each computer with a custom image",
       "Use Group Policy exclusively, since Intune does not support Defender for Endpoint onboarding"
@@ -1933,15 +1933,15 @@
     "q_en": "A security team wants to block Office documents from executing executable content, such as spawning child processes or using macros to download and run payloads, without deploying additional third-party software. Which Microsoft Defender for Endpoint feature should they configure?",
     "opts_es": [
       "Reglas de reducción de la superficie de ataque (Attack Surface Reduction, ASR)",
-      "Vínculos seguros de Defender for Office 365",
-      "Cifrado de unidad BitLocker",
-      "Directivas de cumplimiento de Intune para aplicaciones móviles"
+      "Vínculos seguros de Defender for Office 365 para correos entrantes",
+      "Cifrado de unidad BitLocker en los discos de los equipos",
+      "Directivas de cumplimiento de Intune para aplicaciones móviles corporativas"
     ],
     "opts_en": [
       "Attack Surface Reduction (ASR) rules",
-      "Defender for Office 365 Safe Links",
-      "BitLocker drive encryption",
-      "Intune mobile app compliance policies"
+      "Defender for Office 365 Safe Links for incoming emails",
+      "BitLocker drive encryption on computer disks",
+      "Intune mobile app compliance policies for corporate apps"
     ],
     "correct": [
       0
@@ -2036,16 +2036,16 @@
     "q_es": "Un equipo de TI quiere identificar qué dispositivos de la organización tienen versiones de software con vulnerabilidades conocidas (CVE) y priorizar los parches según el nivel de gravedad y la exposición del dispositivo. ¿Qué función de Microsoft Defender for Endpoint proporciona esta capacidad?",
     "q_en": "An IT team wants to identify which devices in the organization have software versions with known vulnerabilities (CVEs) and prioritize patching based on severity and device exposure. Which Microsoft Defender for Endpoint feature provides this capability?",
     "opts_es": [
-      "Administración de vulnerabilidades de Microsoft Defender (Threat and Vulnerability Management / TVM)",
-      "Directivas anti-phishing",
-      "Cifrado de mensajes de Office 365",
-      "Acceso condicional basado en riesgo de usuario"
+      "Administración de vulnerabilidades de Microsoft Defender (TVM)",
+      "Directivas anti-phishing con protección contra suplantación de dominios",
+      "Cifrado de mensajes de Office 365 para correos con datos confidenciales",
+      "Acceso condicional basado en riesgo de usuario detectado por Identity Protection"
     ],
     "opts_en": [
-      "Microsoft Defender Vulnerability Management (Threat and Vulnerability Management / TVM)",
-      "Anti-phishing policies",
-      "Office 365 Message Encryption",
-      "User-risk-based Conditional Access"
+      "Microsoft Defender Vulnerability Management (TVM)",
+      "Anti-phishing policies with domain impersonation protection",
+      "Office 365 Message Encryption for emails with sensitive data",
+      "User-risk-based Conditional Access detected by Identity Protection"
     ],
     "correct": [
       0
@@ -2062,16 +2062,16 @@
     "q_es": "Una organización quiere que, cuando Microsoft Defender Antivirus detecte un archivo desconocido y potencialmente sospechoso que requiera más análisis, el archivo se bloquee automáticamente y se envíe a la nube para su análisis, en lugar de permitir su ejecución mientras se determina si es malicioso. ¿Qué función describe este comportamiento?",
     "q_en": "An organization wants that, when Microsoft Defender Antivirus detects an unknown and potentially suspicious file requiring further analysis, the file is automatically blocked and sent to the cloud for analysis, rather than being allowed to run while a determination is made. What feature describes this behavior?",
     "opts_es": [
-      "Protección entregada en la nube con bloqueo a primera vista (Cloud-delivered protection / Block at First Sight)",
-      "Modo pasivo de Microsoft Defender Antivirus",
-      "Reglas de reducción de superficie de ataque en modo de auditoría",
-      "Live response en modo de solo lectura"
+      "Protección entregada en la nube con bloqueo a primera vista (Block at First Sight)",
+      "Modo pasivo de Microsoft Defender Antivirus, usado junto a otro antivirus principal",
+      "Reglas de reducción de superficie de ataque en modo de auditoría, sin bloquear nada",
+      "Live response en modo de solo lectura, para inspeccionar dispositivos remotos"
     ],
     "opts_en": [
       "Cloud-delivered protection with Block at First Sight",
-      "Microsoft Defender Antivirus passive mode",
-      "Attack Surface Reduction rules in audit mode",
-      "Live response in read-only mode"
+      "Microsoft Defender Antivirus passive mode, used alongside another primary antivirus",
+      "Attack Surface Reduction rules in audit mode, without blocking anything",
+      "Live response in read-only mode, for inspecting remote devices"
     ],
     "correct": [
       0
@@ -2115,15 +2115,15 @@
     "q_en": "You want to apply real-time controls to a third-party (non-Microsoft) SaaS application that users access via the browser, such as blocking the download of sensitive files or applying a watermark, without requiring changes to the application itself. Which Microsoft Entra/Defender for Cloud Apps feature enables this via reverse-proxy session control?",
     "opts_es": [
       "Control de aplicaciones de acceso condicional (Conditional Access App Control)",
-      "Cloud Discovery",
-      "Sincronización de hash de contraseñas",
-      "Microsoft Entra Connect Health"
+      "Cloud Discovery, que analiza registros de tráfico para descubrir nuevas apps en uso",
+      "Sincronización de hash de contraseñas entre Active Directory y la nube",
+      "Microsoft Entra Connect Health, que supervisa servidores de sincronización"
     ],
     "opts_en": [
       "Conditional Access App Control",
-      "Cloud Discovery",
-      "Password hash synchronization",
-      "Microsoft Entra Connect Health"
+      "Cloud Discovery, analyzing traffic logs to discover apps in use",
+      "Password hash synchronization between Active Directory and the cloud",
+      "Microsoft Entra Connect Health, monitoring sync servers"
     ],
     "correct": [
       0
@@ -2166,16 +2166,16 @@
     "q_es": "El equipo de seguridad quiere recibir una alerta automática y, opcionalmente, suspender la cuenta del usuario, cuando se detecte que un usuario descarga un volumen inusualmente alto de archivos de SharePoint en un corto periodo de tiempo, lo que podría indicar exfiltración de datos. ¿Qué deben configurar en Microsoft Defender for Cloud Apps?",
     "q_en": "The security team wants to receive an automatic alert and, optionally, suspend the user's account, when a user is detected downloading an unusually high volume of files from SharePoint in a short time period, which could indicate data exfiltration. What should they configure in Microsoft Defender for Cloud Apps?",
     "opts_es": [
-      "Una directiva de detección de anomalías o de actividad (activity policy) con una acción de gobernanza automática",
-      "Una directiva de retención de Microsoft Purview",
-      "Una directiva de cumplimiento de Intune",
-      "Una regla de transporte de Exchange Online"
+      "Una directiva de detección de anomalías con una acción de gobernanza automática",
+      "Una directiva de retención de Microsoft Purview aplicada a los sitios de SharePoint",
+      "Una directiva de cumplimiento de Intune que marque el dispositivo como no compatible",
+      "Una regla de transporte de Exchange Online que reenvíe copias al equipo de seguridad"
     ],
     "opts_en": [
       "An anomaly detection policy or activity policy with an automatic governance action",
-      "A Microsoft Purview retention policy",
-      "An Intune compliance policy",
-      "An Exchange Online transport rule"
+      "A Microsoft Purview retention policy applied to SharePoint sites",
+      "An Intune compliance policy that marks the device as noncompliant",
+      "An Exchange Online transport rule that forwards copies to the security team"
     ],
     "correct": [
       0
@@ -2192,16 +2192,16 @@
     "q_es": "Quieres crear una directiva que detecte automáticamente cuando un archivo que contiene un número de la seguridad social se comparte externamente desde OneDrive o SharePoint, y que elimine automáticamente el permiso de uso compartido externo. ¿Qué tipo de directiva de Defender for Cloud Apps es la más adecuada?",
     "q_en": "You want to create a policy that automatically detects when a file containing a social security number is shared externally from OneDrive or SharePoint, and automatically removes the external sharing permission. Which type of Defender for Cloud Apps policy is most appropriate?",
     "opts_es": [
-      "Una directiva de archivos (file policy) con detección de información confidencial y una acción de gobernanza automática",
-      "Una directiva de detección de aplicaciones OAuth",
-      "Una directiva de Cloud Discovery",
-      "Una directiva de sesión sin acciones de gobernanza"
+      "Una directiva de archivos con detección de información confidencial y gobernanza automática",
+      "Una directiva de detección de aplicaciones OAuth con permisos de alto riesgo",
+      "Una directiva de Cloud Discovery que clasifique apps por nivel de riesgo",
+      "Una directiva de sesión sin acciones de gobernanza, solo de supervisión"
     ],
     "opts_en": [
-      "A file policy with sensitive information detection and an automatic governance action",
-      "An OAuth app detection policy",
-      "A Cloud Discovery policy",
-      "A session policy with no governance actions"
+      "A file policy with sensitive info detection and automatic governance",
+      "An OAuth app detection policy with high-risk permissions",
+      "A Cloud Discovery policy that classifies apps by risk level",
+      "A session policy with no governance actions, monitoring only"
     ],
     "correct": [
       0
@@ -2218,16 +2218,16 @@
     "q_es": "Un usuario otorgó permisos a una aplicación de terceros conectada a través de OAuth para leer su correo y archivos de OneDrive, como parte de un ataque de phishing de consentimiento (consent phishing). El equipo de seguridad necesita identificar todas las aplicaciones OAuth con permisos similares en el inquilino y revocar el acceso a las maliciosas. ¿Qué función deben usar?",
     "q_en": "A user granted permissions to a third-party OAuth-connected application to read their mail and OneDrive files, as part of a consent phishing attack. The security team needs to identify all OAuth apps with similar permissions across the tenant and revoke access for the malicious ones. Which feature should they use?",
     "opts_es": [
-      "El catálogo de aplicaciones OAuth de Microsoft Defender for Cloud Apps, con la capacidad de revocar el acceso de aplicaciones",
-      "Microsoft Entra Connect Health",
-      "Una directiva de retención de Purview",
-      "Vínculos seguros de Defender for Office 365"
+      "El catálogo de aplicaciones OAuth de Defender for Cloud Apps, que permite revocar el acceso",
+      "Microsoft Entra Connect Health, que muestra el estado de la sincronización híbrida",
+      "Una directiva de retención de Purview aplicada a los buzones afectados",
+      "Vínculos seguros de Defender for Office 365 para los correos de phishing"
     ],
     "opts_en": [
-      "The Microsoft Defender for Cloud Apps OAuth app catalog, with the ability to revoke app access",
-      "Microsoft Entra Connect Health",
-      "A Purview retention policy",
-      "Defender for Office 365 Safe Links"
+      "The Cloud Apps OAuth app catalog, which can revoke app access",
+      "Microsoft Entra Connect Health, showing hybrid sync status",
+      "A Purview retention policy applied to the affected mailboxes",
+      "Defender for Office 365 Safe Links for the phishing emails"
     ],
     "correct": [
       0
@@ -2244,16 +2244,16 @@
     "q_es": "El departamento de cumplimiento quiere evaluar el riesgo de las aplicaciones en la nube descubiertas (por ejemplo, dónde almacenan los datos, sus certificaciones de cumplimiento como ISO 27001, y si han sufrido brechas de seguridad conocidas) antes de decidir si sancionarlas o bloquearlas. ¿Qué proporciona Microsoft Defender for Cloud Apps para apoyar esta evaluación?",
     "q_en": "The compliance department wants to assess the risk of discovered cloud apps (for example, where they store data, their compliance certifications such as ISO 27001, and whether they have had known security breaches) before deciding whether to sanction or block them. What does Microsoft Defender for Cloud Apps provide to support this assessment?",
     "opts_es": [
-      "Puntuaciones de riesgo de aplicaciones en el catálogo de Cloud Discovery, basadas en docenas de factores de riesgo y cumplimiento",
-      "Únicamente el nombre y la categoría de la aplicación, sin más detalles",
-      "Un informe de licencias de Microsoft 365",
-      "Una lista de usuarios con MFA deshabilitada"
+      "Puntuaciones de riesgo de apps en Cloud Discovery por riesgo y cumplimiento",
+      "Únicamente el nombre y la categoría de la aplicación, sin más detalles ni puntuación",
+      "Un informe de licencias de Microsoft 365 con el estado de asignación de cada usuario",
+      "Una lista de usuarios con MFA deshabilitada que requieren atención inmediata"
     ],
     "opts_en": [
-      "App risk scores in the Cloud Discovery catalog, based on dozens of risk and compliance factors",
-      "Only the app's name and category, with no further detail",
-      "A Microsoft 365 license report",
-      "A list of users with MFA disabled"
+      "App risk scores in Cloud Discovery, based on risk and compliance",
+      "Only the app's name and category, with no further detail or score",
+      "A Microsoft 365 license report with each user's assignment status",
+      "A list of users with MFA disabled who need immediate attention"
     ],
     "correct": [
       0
@@ -2271,15 +2271,15 @@
     "q_en": "The organization wants to automatically detect when documents contain credit card numbers, using a pattern already defined by Microsoft that recognizes the format and checksum of these numbers. Which Microsoft Purview feature provides these predefined patterns?",
     "opts_es": [
       "Tipos de información confidencial (Sensitive information types)",
-      "Etiquetas de retención",
-      "Casos de eDiscovery",
-      "Conectores de datos de Purview"
+      "Etiquetas de retención aplicadas manualmente a cada documento",
+      "Casos de eDiscovery creados para investigaciones legales activas",
+      "Conectores de datos de Purview para orígenes de terceros"
     ],
     "opts_en": [
       "Sensitive information types",
-      "Retention labels",
-      "eDiscovery cases",
-      "Purview data connectors"
+      "Retention labels applied manually to each document",
+      "eDiscovery cases created for active legal investigations",
+      "Purview data connectors for third-party sources"
     ],
     "correct": [
       0
@@ -2322,16 +2322,16 @@
     "q_es": "La organización quiere que los documentos clasificados como 'Confidencial' se cifren automáticamente y que solo los empleados de la organización puedan abrirlos, mientras que los usuarios pueden seguir aplicando manualmente otras clasificaciones como 'Público' o 'Interno' a sus documentos y correos desde Word y Outlook. ¿Qué función de Microsoft Purview deben usar?",
     "q_en": "The organization wants documents classified as 'Confidential' to be automatically encrypted and only openable by employees of the organization, while users can still manually apply other classifications such as 'Public' or 'Internal' to their documents and emails from Word and Outlook. Which Microsoft Purview feature should they use?",
     "opts_es": [
-      "Etiquetas de confidencialidad (Sensitivity labels) con configuración de cifrado para la etiqueta 'Confidencial'",
-      "Etiquetas de retención obligatorias para todos los documentos",
-      "Una directiva de prevención de pérdida de datos sin etiquetas",
-      "Casos de eDiscovery con retención legal"
+      "Etiquetas de confidencialidad con cifrado configurado para la etiqueta 'Confidencial'",
+      "Etiquetas de retención obligatorias para todos los documentos, sin opción manual",
+      "Una directiva de prevención de pérdida de datos sin etiquetas de confidencialidad",
+      "Casos de eDiscovery con retención legal aplicada a los buzones implicados"
     ],
     "opts_en": [
       "Sensitivity labels with encryption configured for the 'Confidential' label",
-      "Mandatory retention labels for all documents",
-      "A data loss prevention policy without labels",
-      "eDiscovery cases with litigation hold"
+      "Mandatory retention labels for all documents, with no manual option",
+      "A data loss prevention policy without sensitivity labels",
+      "eDiscovery cases with litigation hold applied to involved mailboxes"
     ],
     "correct": [
       0
@@ -2348,16 +2348,16 @@
     "q_es": "Por motivos legales, la organización debe conservar todos los correos electrónicos y documentos relacionados con contratos durante 7 años desde su creación, y los usuarios no deben poder eliminarlos ni modificarlos antes de ese plazo, aunque sí podrán seguir trabajando con copias. ¿Qué función de Microsoft Purview se debe configurar?",
     "q_en": "For legal reasons, the organization must retain all emails and documents related to contracts for 7 years from creation, and users must not be able to delete or modify them before that period, although they can continue working with copies. Which Microsoft Purview feature should be configured?",
     "opts_es": [
-      "Una etiqueta de retención (retention label) con un periodo de retención de 7 años y la acción de conservar el contenido",
-      "Una directiva de prevención de pérdida de datos con bloqueo total",
-      "Un tipo de información confidencial personalizado",
-      "Una directiva de cumplimiento de dispositivos en Intune"
+      "Una etiqueta de retención con un periodo de 7 años y la acción de conservar el contenido",
+      "Una directiva de prevención de pérdida de datos con bloqueo total del contenido",
+      "Un tipo de información confidencial personalizado para detectar contratos",
+      "Una directiva de cumplimiento de dispositivos en Intune para 7 años"
     ],
     "opts_en": [
-      "A retention label with a 7-year retention period and the action set to retain the content",
-      "A data loss prevention policy with a full block",
-      "A custom sensitive information type",
-      "An Intune device compliance policy"
+      "A retention label with a 7-year period, set to retain content",
+      "A data loss prevention policy with a full content block",
+      "A custom sensitive information type to detect contracts",
+      "An Intune device compliance policy for 7 years"
     ],
     "correct": [
       0
@@ -2427,15 +2427,15 @@
     "q_en": "A 'Highly Confidential' sensitivity label must be automatically applied to any SharePoint document that contains protected health information (PHI), without users having to remember to label it manually. Which sensitivity label feature in Microsoft Purview enables this?",
     "opts_es": [
       "Etiquetado automático (auto-labeling) basado en condiciones de tipos de información confidencial",
-      "Etiquetado obligatorio sin condiciones",
-      "Una directiva de retención independiente de las etiquetas",
-      "Cifrado de mensajes de Office 365 sin etiquetas"
+      "Etiquetado obligatorio sin condiciones, aplicado a todos los documentos por igual",
+      "Una directiva de retención independiente de las etiquetas de confidencialidad",
+      "Cifrado de mensajes de Office 365 sin etiquetas, aplicado a todo el correo"
     ],
     "opts_en": [
       "Auto-labeling based on sensitive information type conditions",
-      "Mandatory labeling with no conditions",
-      "A retention policy independent of labels",
-      "Office 365 Message Encryption without labels"
+      "Mandatory labeling with no conditions, applied to all documents equally",
+      "A retention policy independent of sensitivity labels",
+      "Office 365 Message Encryption without labels, applied to all mail"
     ],
     "correct": [
       0
@@ -2478,16 +2478,16 @@
     "q_es": "¿Cuáles son los tres componentes principales que se configuran al crear una directiva de prevención de pérdida de datos (DLP) en Microsoft Purview?",
     "q_en": "What are the three main components configured when creating a Data Loss Prevention (DLP) policy in Microsoft Purview?",
     "opts_es": [
-      "Ubicaciones donde se aplica, condiciones de coincidencia (qué buscar) y acciones a realizar (qué hacer al coincidir)",
-      "Solo el nombre de la directiva y la fecha de creación",
-      "Únicamente la lista de usuarios excluidos",
-      "Solo el nivel de cifrado y el algoritmo hash"
+      "Ubicaciones donde se aplica, condiciones de coincidencia y acciones a realizar",
+      "Solo el nombre de la directiva y la fecha de creación, sin más configuración",
+      "Únicamente la lista de usuarios excluidos de todas las directivas existentes",
+      "Solo el nivel de cifrado y el algoritmo hash usados por la directiva"
     ],
     "opts_en": [
-      "Locations where it applies, match conditions (what to look for), and actions to take (what to do on a match)",
-      "Only the policy name and creation date",
-      "Only the list of excluded users",
-      "Only the encryption level and hash algorithm"
+      "Locations where it applies, match conditions, and actions to take",
+      "Only the policy name and creation date, with no further configuration",
+      "Only the list of users excluded from all existing policies",
+      "Only the encryption level and hash algorithm used by the policy"
     ],
     "correct": [
       0
@@ -2505,15 +2505,15 @@
     "q_en": "The organization wants to prevent users from copying files containing credit card information to removable USB drives from their managed Windows computers, in addition to applying restrictions in Exchange and SharePoint. Which DLP policy location should they include to cover USB drives?",
     "opts_es": [
       "Dispositivos (Endpoint DLP), incluyendo dispositivos de almacenamiento extraíbles",
-      "Únicamente Exchange Online",
-      "Únicamente Microsoft Defender for Cloud Apps",
-      "Únicamente Microsoft Teams"
+      "Únicamente Exchange Online, ya que DLP no admite dispositivos Windows",
+      "Únicamente Microsoft Defender for Cloud Apps, sin cobertura de endpoints",
+      "Únicamente Microsoft Teams, ya que ahí se comparten más archivos"
     ],
     "opts_en": [
       "Devices (Endpoint DLP), including removable storage devices",
-      "Exchange Online only",
-      "Microsoft Defender for Cloud Apps only",
-      "Microsoft Teams only"
+      "Exchange Online only, since DLP doesn't support Windows devices",
+      "Microsoft Defender for Cloud Apps only, with no endpoint coverage",
+      "Microsoft Teams only, since more files are shared there"
     ],
     "correct": [
       0
@@ -2530,16 +2530,16 @@
     "q_es": "Una directiva de DLP está generando demasiados falsos positivos al bloquear correos internos entre el departamento legal que rutinariamente comparten números de contrato con un formato similar a los números de tarjeta de crédito. ¿Qué deberías ajustar primero en la directiva para reducir estos falsos positivos sin desactivar la protección por completo?",
     "q_en": "A DLP policy is generating too many false positives by blocking internal emails between the legal department that routinely share contract numbers in a format similar to credit card numbers. What should you adjust first in the policy to reduce these false positives without disabling protection entirely?",
     "opts_es": [
-      "Ajustar las condiciones de la regla (por ejemplo, el umbral de coincidencias o excluir el grupo legal/comunicación interna) en lugar de desactivar toda la directiva",
-      "Eliminar permanentemente la directiva de DLP",
-      "Otorgar a todo el departamento legal el rol de Administrador global",
-      "Desactivar Microsoft Purview para todo el inquilino"
+      "Ajustar las condiciones de la regla (umbral o exclusiones) en lugar de desactivar toda la directiva",
+      "Eliminar permanentemente la directiva de DLP y crear una nueva sin ninguna regla configurada",
+      "Otorgar a todo el departamento legal el rol de Administrador global para evitar bloqueos",
+      "Desactivar Microsoft Purview para todo el inquilino, afectando a todas las directivas"
     ],
     "opts_en": [
-      "Adjust the rule conditions (for example, the match threshold or exclude the legal group/internal communication) instead of disabling the entire policy",
-      "Permanently delete the DLP policy",
-      "Grant the entire legal department the Global Administrator role",
-      "Disable Microsoft Purview for the whole tenant"
+      "Adjust the rule conditions, such as the match threshold or exclusions, instead of disabling it",
+      "Permanently delete the DLP policy and create a new one with no rules configured",
+      "Grant the entire legal department the Global Administrator role to avoid blocks",
+      "Disable Microsoft Purview for the whole tenant, affecting all policies"
     ],
     "correct": [
       0
@@ -2556,16 +2556,16 @@
     "q_es": "La organización quiere extender sus directivas de prevención de pérdida de datos para que también se apliquen a los mensajes de chat y reuniones de Microsoft Teams, evitando que se compartan números de la seguridad social en conversaciones internas y externas. ¿Qué deben hacer?",
     "q_en": "The organization wants to extend its data loss prevention policies to also apply to Microsoft Teams chat messages and meetings, preventing social security numbers from being shared in internal and external conversations. What should they do?",
     "opts_es": [
-      "Incluir Microsoft Teams como ubicación dentro de la directiva de DLP existente o crear una nueva directiva con esa ubicación",
-      "Crear una directiva de retención en Teams en lugar de DLP",
-      "Configurar una directiva de cumplimiento de dispositivos en Intune para Teams",
-      "Usar únicamente Cloud Discovery, ya que DLP no admite Teams"
+      "Incluir Microsoft Teams como ubicación en la directiva de DLP existente, o crear una nueva",
+      "Crear una directiva de retención en Teams en lugar de DLP, ya que es más simple de configurar",
+      "Configurar una directiva de cumplimiento de dispositivos en Intune para Teams en todos los equipos",
+      "Usar únicamente Cloud Discovery, ya que DLP no admite Teams como ubicación"
     ],
     "opts_en": [
-      "Include Microsoft Teams as a location within the existing DLP policy or create a new policy with that location",
-      "Create a retention policy in Teams instead of DLP",
-      "Configure an Intune device compliance policy for Teams",
-      "Use only Cloud Discovery, since DLP does not support Teams"
+      "Include Microsoft Teams as a location in the existing DLP policy, or create a new one",
+      "Create a retention policy in Teams instead of DLP, since it's simpler to configure",
+      "Configure an Intune device compliance policy for Teams on all devices",
+      "Use only Cloud Discovery, since DLP doesn't support Teams as a location"
     ],
     "correct": [
       0
