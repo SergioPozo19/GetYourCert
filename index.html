@@ -585,6 +585,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <button class="btn btn-ghost btn-sm" id="progressBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
         <span data-i="myProgress">Mi progreso</span>
+        <span class="pro-badge" id="progressProBadge">PRO</span>
       </button>
     </div>
     <div class="exam-grid" id="examGrid"></div>
@@ -1100,6 +1101,7 @@ function updateAccountUI(){
     $('#accountPlan').classList.toggle('pro',pro);
   }
   $('#exploreProBadge')?.classList.toggle('hidden',isPro());
+  $('#progressProBadge')?.classList.toggle('hidden',isPro());
 }
 
 let syncTimer=null;
@@ -2177,6 +2179,7 @@ function exploreAnswer(q,tp){
 }
 
 function openProgress(){
+  if(!isPro()){ openProModal('manual'); return; }
   $('#catalog').classList.add('hidden');
   $('#progress').classList.remove('hidden');
   renderProgress();
