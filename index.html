@@ -499,6 +499,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .exp{margin-top:18px;padding:16px 18px;border-radius:var(--radius-s);background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--accent)}
 .exp h5{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:7px;font-weight:600;font-family:var(--mono)}
 .exp p{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.exp-report{margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink-3);font-size:12.5px;font-weight:600;cursor:pointer;transition:.14s}
+.exp-report:hover{border-color:var(--accent);color:var(--accent)}
 .nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}
 .nav-mid{display:flex;gap:8px;align-items:center}
 .flag-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid var(--line);border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink-2);background:var(--panel)}
@@ -760,6 +762,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="exp hidden" id="qExp">
         <h5 data-i="expTitle">Explicación</h5>
         <p id="qExpText"></p>
+        <button class="exp-report" id="qExpReport" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          <span data-i="reportIssue">Enviar comentario sobre esta pregunta</span>
+        </button>
       </div>
     </div>
 
@@ -2779,6 +2785,7 @@ $('#exDom').addEventListener('change',renderExplore);
 $('#prevBtn').addEventListener('click',()=>{if(cur>0){cur--;render();window.scrollTo({top:0,behavior:'smooth'})}});
 $('#nextBtn').addEventListener('click',()=>{if(cur<exam.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'})}});
 $('#flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];render()});
+$('#qExpReport').addEventListener('click',()=>{ openFeedbackModal(exam[cur].ref.id); });
 
 // --- Gestos táctiles (swipe) para navegar preguntas en móvil ---
 (function(){
