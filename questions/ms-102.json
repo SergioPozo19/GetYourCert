@@ -4690,7 +4690,7 @@
     "opts_es": [
       "Migración de buzones entre inquilinos (cross-tenant mailbox migration)",
       "Microsoft Entra Connect",
-      "La herramienta de importación de PST de Microsoft Purview",
+      "La herramienta de importación de PST de Microsoft Purview Compliance",
       "Una directiva de retención aplicada a ambos inquilinos"
     ],
     "opts_en": [
@@ -4717,13 +4717,13 @@
       "Crear una asignación de licencia basada en grupos independiente para legal, deshabilitando el plan de servicio de Teams",
       "Eliminar Microsoft Teams del catálogo de aplicaciones del inquilino completo",
       "Aplicar una directiva de acceso condicional que bloquee Teams para todos los usuarios",
-      "Quitar manualmente la licencia de Teams a cada usuario del departamento legal todos los meses de forma indefinida"
+      "Quitar manualmente la licencia de Teams a cada usuario del departamento legal todos los meses de forma indefinida y sin automatización"
     ],
     "opts_en": [
       "Create a separate group-based license assignment for the legal group, disabling the Teams service plan",
       "Remove Microsoft Teams from the entire tenant's app catalog",
       "Apply a Conditional Access policy that blocks Teams for all users",
-      "Manually remove the Teams license from each legal department user every month indefinitely"
+      "Manually remove the Teams license from each legal department user every single month indefinitely"
     ],
     "correct": [
       0
@@ -4741,14 +4741,14 @@
     "q_en": "An organization is in a hybrid scenario: some mailboxes remain on-premises Exchange Server while others are already in Exchange Online. They want mail sent between on-premises and cloud mailboxes to be delivered securely and efficiently, not via standard Internet routing, and want features like shared free/busy to work across both environments. What component is needed to achieve this mail flow and hybrid functionality?",
     "opts_es": [
       "Un conector de flujo de correo híbrido configurado mediante el Asistente de configuración híbrida de Exchange",
-      "Microsoft Entra Connect Cloud Sync únicamente, sin configurar conectores de flujo de correo híbrido",
+      "Microsoft Entra Connect Cloud Sync únicamente, sin configurar ningún conector de flujo de correo híbrido",
       "Una directiva de prevención de pérdida de datos entre Exchange local y Exchange Online",
       "Un grupo de distribución dinámico que incluya ambos tipos de buzones"
     ],
     "opts_en": [
       "A hybrid mail flow connector configured via the Exchange Hybrid Configuration Wizard",
       "Microsoft Entra Connect Cloud Sync only",
-      "A data loss prevention policy between on-premises Exchange and Exchange Online",
+      "A data loss prevention policy between the on-premises Exchange and Exchange Online",
       "A dynamic distribution group including both mailbox types"
     ],
     "correct": [
@@ -4769,13 +4769,13 @@
       "En las directivas de buzón de Outlook en la web (OWA mailbox policies) del centro de administración de Exchange",
       "En una directiva de retención de Microsoft Purview",
       "En la configuración de Microsoft Entra Connect",
-      "En el Centro de mensajes del centro de administración de Microsoft 365, en la sección de cambios próximos"
+      "En el Centro de mensajes del centro de administración de Microsoft 365, en la sección de cambios próximos del servicio"
     ],
     "opts_en": [
       "In Outlook on the web mailbox policies (OWA mailbox policies) in the Exchange admin center",
       "In a Microsoft Purview retention policy",
       "In Microsoft Entra Connect settings",
-      "In the Message center of the Microsoft 365 admin center, under upcoming changes"
+      "In the Message center of the Microsoft 365 admin center, under upcoming service changes"
     ],
     "correct": [
       0
@@ -4873,7 +4873,7 @@
       "Al ser un grupo asignable a roles (role-assignable group), solo administradores de roles privilegiados pueden gestionar su pertenencia, no propietarios normales",
       "No aplica ninguna restricción especial; cualquier propietario del grupo puede gestionar la pertenencia igual que en un grupo normal",
       "El grupo debe convertirse primero en un grupo de seguridad dinámico para poder asignarle roles",
-      "Los grupos con roles asignados no pueden tener propietarios delegados bajo ninguna circunstancia, ni siquiera administradores de roles privilegiados"
+      "Los grupos con roles asignados nunca pueden tener propietarios delegados bajo ninguna circunstancia, ni siquiera administradores de roles privilegiados"
     ],
     "opts_en": [
       "Because it is a role-assignable group, only Privileged Role Administrators can manage its membership, not regular group owners",
@@ -4951,7 +4951,7 @@
       "Las correlaciona automáticamente y las agrupa en un único incidente que representa toda la cadena de ataque",
       "Las elimina automáticamente para evitar duplicados, conservando solo la primera alerta",
       "Las convierte automáticamente en una directiva de acceso condicional",
-      "Las envía únicamente como notificación por correo electrónico al administrador, sin agruparlas"
+      "Las envía únicamente como notificaciones separadas por correo electrónico al administrador, sin agruparlas ni correlacionarlas"
     ],
     "opts_en": [
       "It automatically correlates them and groups them into a single incident representing the entire attack chain",
@@ -5053,7 +5053,7 @@
     "q_en": "The incident response team has identified the SHA-256 hash of a malicious executable file used in a recent attack. They want to ensure that if that specific file appears on any device managed by Microsoft Defender for Endpoint in the future, its execution is automatically blocked and an alert is generated, without waiting for Microsoft's global threat intelligence to detect it. What should they create?",
     "opts_es": [
       "Un indicador personalizado (custom indicator) de archivo que bloquee y genere alerta para ese hash específico",
-      "Una regla de reducción de la superficie de ataque genérica para bloquear todos los ejecutables",
+      "Una regla de reducción de la superficie de ataque genérica para bloquear la ejecución de todos los archivos ejecutables",
       "Una directiva de acceso controlado a carpetas que incluya el nombre del archivo",
       "Una etiqueta de confidencialidad aplicada al archivo"
     ],
@@ -5159,13 +5159,13 @@
       "Gestión de riesgos internos (Insider Risk Management), usando plantillas de directiva predefinidas",
       "Information barriers",
       "Una directiva de retención con eliminación automática",
-      "Una directiva de acceso condicional basada en el nivel de riesgo de usuario detectado"
+      "Una directiva de acceso condicional basada únicamente en el nivel de riesgo de usuario detectado"
     ],
     "opts_en": [
       "Insider Risk Management, using predefined policy templates",
       "Information barriers",
       "A retention policy with automatic deletion",
-      "A user-risk-based Conditional Access policy"
+      "A Conditional Access policy based solely on user risk level"
     ],
     "correct": [
       0
@@ -5241,7 +5241,7 @@
     ],
     "opts_en": [
       "In the SharePoint admin center sharing settings, setting the external sharing level to 'New and existing guests'",
-      "In a Conditional Access policy that specifically blocks anonymous access to Microsoft Graph and SharePoint",
+      "In a Conditional Access policy that specifically blocks anonymous access to Microsoft Graph and SharePoint Online",
       "In the Exchange admin center, under connector settings",
       "In Microsoft Entra Connect, by disabling synchronization of external users"
     ],
@@ -5313,7 +5313,7 @@
     "q_en": "A large organization has thousands of users spread across dozens of departments, each stored as a value of the 'Department' attribute in Microsoft Entra ID. They want to automatically create an administrative unit for each department, so users are assigned to the corresponding administrative unit based on that attribute's value, without an administrator manually moving each user. What type of administrative unit enables this?",
     "opts_es": [
       "Una unidad administrativa dinámica (dynamic administrative unit) basada en una regla sobre el atributo 'Department'",
-      "Una unidad administrativa basada en grupos de seguridad estáticos creados manualmente para cada departamento",
+      "Una unidad administrativa basada en grupos de seguridad estáticos creados manualmente para cada departamento existente",
       "Una unidad administrativa que se sincroniza automáticamente desde las OU de Active Directory mediante PTA",
       "Microsoft Entra ID no admite la asignación automática de usuarios a unidades administrativas"
     ],
@@ -5346,7 +5346,7 @@
     "opts_en": [
       "Run the Start-ADSyncSyncCycle cmdlet with -PolicyType Delta on the Entra Connect server",
       "Restart the on-premises domain controller",
-      "Delete and recreate the entire Microsoft Entra Connect configuration from scratch",
+      "Delete and recreate the entire Microsoft Entra Connect configuration completely from scratch",
       "Wait for the automatic cycle, as there is no way to force it"
     ],
     "correct": [
@@ -5419,13 +5419,13 @@
       "La solicitud queda pendiente y se notifica a los aprobadores designados; el rol solo se activa una vez que uno de ellos la aprueba",
       "El rol se activa de inmediato y la aprobación se solicita después, de forma retroactiva",
       "La solicitud se rechaza automáticamente porque PIM no admite flujos de aprobación",
-      "El usuario debe ponerse en contacto manualmente con el aprobador por correo electrónico, ya que PIM no envía notificaciones"
+      "El usuario debe ponerse en contacto manualmente con el aprobador por correo electrónico cada vez, ya que PIM no envía notificaciones"
     ],
     "opts_en": [
       "The request remains pending and the designated approvers are notified; the role is only activated once one of them approves it",
       "The role is activated immediately, and approval is requested afterward, retroactively",
       "The request is automatically rejected because PIM does not support approval workflows",
-      "The user must manually contact the designated approver by email, since PIM does not send any notifications automatically"
+      "The user must manually contact the designated approver by email every time, since PIM does not send any notifications automatically"
     ],
     "correct": [
       0
@@ -5449,7 +5449,7 @@
     ],
     "opts_en": [
       "A sign-in risk-based Conditional Access policy requiring MFA, enabling automatic self-remediation of the risk",
-      "A policy that permanently blocks access until an administrator manually reviews each risky sign-in",
+      "A policy that permanently blocks access until an administrator manually reviews each individual risky sign-in",
       "Disable Microsoft Entra ID Protection to avoid false positives",
       "A retention policy that logs the event for quarterly review"
     ],
@@ -5469,13 +5469,13 @@
     "q_en": "In a security operations center (SOC) with several analysts, the team lead wants new Microsoft Defender XDR incidents to be automatically distributed or filtered by severity, status, and affected entity, so each analyst can focus on incidents assigned to them or matching their area of expertise. Where is this work organization primarily managed?",
     "opts_es": [
       "En la cola de incidentes del portal de Microsoft Defender, usando filtros y asignación a analistas",
-      "En el centro de administración de Exchange, mediante reglas de flujo de correo y transporte",
+      "En el centro de administración de Exchange, mediante reglas de flujo de correo y de transporte",
       "En Microsoft Entra ID, mediante unidades administrativas",
       "En el Explorador de contenido de Microsoft Purview"
     ],
     "opts_en": [
       "In the Defender portal incident queue, using filters and analyst assignment",
-      "In the Exchange admin center, via mail flow and transport rules",
+      "In the Exchange admin center, via mail flow and transport rules configuration",
       "In Microsoft Entra ID, via administrative units",
       "In Microsoft Purview Content explorer"
     ],
@@ -5521,13 +5521,13 @@
     "q_en": "An organization has configured a quarantine policy for emails detected as medium-confidence spam. They want end users to be able to see these quarantined messages and request their release, but that release must be approved by an administrator before the message reaches the inbox, rather than the user being able to release it directly. What quarantine policy setting enables this?",
     "opts_es": [
       "Configurar los permisos de la directiva de cuarentena para permitir 'solicitar la liberación' en lugar de 'liberar' directamente",
-      "Configurar la directiva de cuarentena para eliminar automáticamente todos los mensajes después de 1 día sin notificación",
+      "Configurar la directiva de cuarentena para eliminar automáticamente todos los mensajes después de 1 día, sin ninguna notificación",
       "Deshabilitar las notificaciones de cuarentena para todos los usuarios",
       "Otorgar a todos los usuarios el rol de Administrador de seguridad"
     ],
     "opts_en": [
       "Configure the quarantine policy to allow 'request release' instead of 'release' directly",
-      "Configure the quarantine policy to automatically delete all messages after 1 day",
+      "Configure the quarantine policy to automatically delete all messages after just 1 day",
       "Disable quarantine notifications for all users",
       "Grant all users the Security Administrator role"
     ],
@@ -5548,13 +5548,13 @@
     "opts_es": [
       "El filtro de tipos de archivos adjuntos comunes (Common Attachment Types Filter) dentro de la directiva antimalware",
       "Una etiqueta de confidencialidad que cifre los archivos ejecutables",
-      "Una regla de reducción de la superficie de ataque aplicada únicamente en los dispositivos cliente con Windows",
+      "Una regla de reducción de la superficie de ataque aplicada únicamente en los dispositivos cliente con Windows 11",
       "Una directiva de retención que elimine los archivos después de 30 días"
     ],
     "opts_en": [
       "The Common Attachment Types Filter within the anti-malware policy",
       "A sensitivity label that encrypts executable files",
-      "An attack surface reduction rule on client devices only",
+      "An attack surface reduction rule applied to client devices only",
       "A retention policy that deletes the files after 30 days"
     ],
     "correct": [
@@ -5601,13 +5601,13 @@
       "Respuesta activa (Live response), usando el comando para descargar el archivo",
       "Aislamiento del dispositivo (device isolation)",
       "Acceso controlado a carpetas",
-      "Una directiva de prevención de pérdida de datos de punto de conexión"
+      "Una directiva de prevención de pérdida de datos de punto de conexión (Endpoint DLP)"
     ],
     "opts_en": [
       "Live response, using the command to download the file",
       "Device isolation",
       "Controlled folder access",
-      "An endpoint data loss prevention policy"
+      "An endpoint data loss prevention (Endpoint DLP) policy"
     ],
     "correct": [
       0
@@ -5684,7 +5684,7 @@
     "opts_en": [
       "Apply a 10-year retention label directly to those files, which takes precedence over the site-level label",
       "Change the retention label for the entire site to 10 years for all files",
-      "Create a new SharePoint site just for those files and apply the 10-year retention label there",
+      "Create a brand-new SharePoint site solely for those files and apply the 10-year retention label there",
       "It is not possible to apply different retention periods within the same SharePoint site"
     ],
     "correct": [
@@ -5730,13 +5730,13 @@
     "opts_es": [
       "La Herramienta de implementación de Office (Office Deployment Tool) y un archivo de configuración XML",
       "Microsoft Entra Connect y un archivo de sincronización CSV",
-      "El centro de administración de Intune, mediante un perfil de configuración de aplicaciones",
+      "El centro de administración de Microsoft Intune, mediante un perfil de configuración de aplicaciones",
       "Microsoft Purview, mediante una directiva de retención"
     ],
     "opts_en": [
       "The Office Deployment Tool and a configuration XML file",
       "Microsoft Entra Connect and a CSV sync file",
-      "The Intune admin center, via a compliance policy",
+      "The Microsoft Intune admin center, via a compliance policy",
       "Microsoft Purview, via a retention policy"
     ],
     "correct": [
@@ -5807,7 +5807,7 @@
     "q_en": "A large conference room has a resource mailbox configured to automatically accept bookings that don't exceed its maximum capacity of 20 people. However, for bookings requiring additional catering services (managed manually by the facilities department), the organization wants those specific requests to require manual approval from a delegate, rather than being automatically accepted. What resource mailbox configuration allows this combination?",
     "opts_es": [
       "Configurar el buzón con aceptación automática (AutoAccept) y designar delegados de recursos para que ciertas solicitudes requieran revisión manual",
-      "Configurar el buzón únicamente en modo de revisión manual para todas las solicitudes, sin ningún tipo de aceptación automática habilitada",
+      "Configurar el buzón únicamente en modo de revisión manual para todas las solicitudes, sin ningún tipo de aceptación automática habilitada nunca",
       "Eliminar el buzón de recursos y gestionar todas las reservas mediante un grupo de distribución",
       "Convertir el buzón de recursos en un buzón compartido estándar"
     ],
@@ -5835,13 +5835,13 @@
       "Unidades administrativas restringidas (restricted management administrative units)",
       "Directivas de nombres de grupo",
       "Acceso condicional basado en ubicación",
-      "Etiquetas de confidencialidad con cifrado aplicadas a las cuentas de usuario"
+      "Etiquetas de confidencialidad con cifrado aplicadas directamente a las cuentas de usuario"
     ],
     "opts_en": [
       "Restricted management administrative units",
       "Group naming policies",
       "Location-based Conditional Access",
-      "Sensitivity labels applied to users"
+      "Sensitivity labels with encryption applied to users"
     ],
     "correct": [
       0
@@ -5860,7 +5860,7 @@
     "opts_es": [
       "La directiva de nombres de grupo (group naming policy), con una lista de palabras bloqueadas y un prefijo predefinido",
       "Una etiqueta de confidencialidad obligatoria aplicada a los grupos",
-      "Una unidad administrativa con permisos de solo lectura sobre los nombres de todos los grupos de la organización",
+      "Una unidad administrativa con permisos de solo lectura sobre los nombres de todos los grupos de toda la organización",
       "Una directiva de acceso condicional basada en el nombre del grupo"
     ],
     "opts_en": [
@@ -5937,7 +5937,7 @@
     "q_en": "The security team wants to require that users can only access Exchange Online and SharePoint Online from mobile devices if the device is an iPhone or iPad running iOS 16 or later, blocking access from Android devices or earlier iOS versions. Which Conditional Access policy condition allows distinguishing the device's operating system and platform?",
     "opts_es": [
       "La condición de plataformas de dispositivo, combinada con una directiva de cumplimiento de Intune que verifique la versión del SO",
-      "La condición de aplicaciones cliente únicamente, sin ninguna posibilidad de filtrar por sistema operativo o plataforma",
+      "La condición de aplicaciones cliente únicamente, sin ninguna posibilidad real de filtrar por sistema operativo ni por plataforma",
       "Una etiqueta de confidencialidad aplicada al dispositivo",
       "Las ubicaciones con nombre, configuradas con la dirección IP del dispositivo"
     ],
@@ -5963,7 +5963,7 @@
     "q_en": "An organization configured multi-factor authentication some time ago using the legacy 'per-user MFA' settings for individual users. They now want to centralize and standardize MFA requirements using Conditional Access policies, which offer greater flexibility and reporting options. What should they do with the existing per-user MFA settings to avoid conflicts or redundant requirements?",
     "opts_es": [
       "Deshabilitar la MFA por usuario para esos usuarios una vez que las directivas de acceso condicional equivalentes estén activas y probadas",
-      "Mantener la MFA por usuario habilitada para todos, ya que es complementaria y no afecta a las directivas de acceso condicional",
+      "Mantener la MFA por usuario habilitada para todos los usuarios, ya que es complementaria y no afecta a las directivas de acceso condicional",
       "Eliminar la licencia de Microsoft Entra ID P1 de esos usuarios",
       "Convertir la MFA por usuario en una etiqueta de confidencialidad"
     ],
@@ -5990,7 +5990,7 @@
     "opts_es": [
       "Inicios de sesión de riesgo (risky sign-ins) para el primer caso, y usuarios de riesgo (risky users) para el segundo",
       "Usuarios de riesgo para el primer caso, e inicios de sesión de riesgo para el segundo",
-      "Ambos casos se reflejan únicamente en el informe de Auditoría unificado de Microsoft Entra ID y Purview",
+      "Ambos casos se reflejan únicamente en el informe de Auditoría unificado de Microsoft Entra ID y Microsoft Purview",
       "Ambos casos se reflejan únicamente en el panel de Estado del servicio"
     ],
     "opts_en": [
@@ -6022,7 +6022,7 @@
     "opts_en": [
       "A custom detection rule based on that Advanced Hunting query",
       "A Conditional Access policy based on the KQL query",
-      "A retention policy that runs the query periodically",
+      "A retention policy that runs and logs the query periodically",
       "A scheduled Service health report"
     ],
     "correct": [
@@ -6043,7 +6043,7 @@
       "Protección de cuentas prioritarias (Priority account protection)",
       "Una unidad administrativa restringida",
       "Una directiva de retención de 10 años",
-      "Acceso condicional basado en el cargo del usuario"
+      "Acceso condicional basado en el cargo o puesto del usuario en la empresa"
     ],
     "opts_en": [
       "Priority account protection",
@@ -6119,13 +6119,13 @@
     "q_en": "An IT team needs to onboard thousands of existing Windows machines to Microsoft Defender for Endpoint. Most machines are already managed via Microsoft Intune, but a group of Windows Server machines is not enrolled in Intune and is managed via scripts and local Group Policy. Which statement correctly describes the available onboarding options?",
     "opts_es": [
       "Los dispositivos administrados por Intune se incorporan con una directiva de Intune, y los no administrados mediante script local o GPO",
-      "Solo es posible incorporar dispositivos a Microsoft Defender for Endpoint si están inscritos y administrados por Microsoft Intune",
+      "Solo es posible incorporar dispositivos a Microsoft Defender for Endpoint si están inscritos y administrados por Microsoft Intune únicamente",
       "La incorporación a Microsoft Defender for Endpoint requiere desinstalar Group Policy de todos los servidores",
       "Microsoft Defender for Endpoint solo admite la incorporación mediante Microsoft Entra Connect"
     ],
     "opts_en": [
       "Devices managed by Intune can be onboarded via an Intune policy, while non-Intune servers can use a local script or Group Policy",
-      "Devices can only be onboarded to Microsoft Defender for Endpoint if they are enrolled and managed by Microsoft Intune",
+      "Devices can only ever be onboarded to Microsoft Defender for Endpoint if they are enrolled and fully managed by Microsoft Intune",
       "Onboarding to Microsoft Defender for Endpoint requires uninstalling Group Policy from all servers",
       "Microsoft Defender for Endpoint only supports onboarding via Microsoft Entra Connect"
     ],
