@@ -4873,7 +4873,7 @@
       "Al ser un grupo asignable a roles (role-assignable group), solo administradores de roles privilegiados pueden gestionar su pertenencia, no propietarios normales",
       "No aplica ninguna restricción especial; cualquier propietario del grupo puede gestionar la pertenencia igual que en un grupo normal",
       "El grupo debe convertirse primero en un grupo de seguridad dinámico para poder asignarle roles",
-      "Los grupos con roles asignados nunca pueden tener propietarios delegados bajo ninguna circunstancia, ni siquiera administradores de roles privilegiados"
+      "Los grupos con roles asignados nunca pueden tener propietarios delegados bajo ninguna circunstancia, ni siquiera administradores de roles privilegiados en absoluto"
     ],
     "opts_en": [
       "Because it is a role-assignable group, only Privileged Role Administrators can manage its membership, not regular group owners",
@@ -12963,7 +12963,7 @@
     ],
     "opts_en": [
       "A sensitivity label with encryption that applies user-defined usage permissions, such as 'Do Not Forward', restricting forwarding, printing, and copying",
-      "A retention label, which only determines how long the message is kept in the mailbox, without ever restricting any action the recipient might take",
+      "A retention label, which only determines how long the message is kept in the mailbox, without ever restricting any action the recipient might take at all",
       "A quarantine policy, which holds the message before delivery but doesn't impose restrictions after delivery",
       "A trainable classifier, which only detects the type of content without applying any usage restriction"
     ],
@@ -13405,7 +13405,7 @@
     ],
     "opts_en": [
       "The common attachment types filter in the anti-malware policy, which blocks messages with attachments of the specified extensions",
-      "Safe Links, which only analyzes URLs within the message body and can't filter messages by attachment file extension at all",
+      "Safe Links, which only analyzes URLs within the message body and can't filter messages by attachment file extension at all, ever",
       "A retention policy, which only affects already-delivered messages and can't block delivery of new messages",
       "User impersonation protection, which has no relation to filtering attachments by extension"
     ],
@@ -13425,7 +13425,7 @@
     "q_en": "An organization has thousands of devices onboarded to Microsoft Defender for Endpoint, distributed across several departments (Finance, Engineering, HR) and with different criticality levels. They want to be able to filter the device inventory, apply differentiated security policies, and configure different response automation levels based on each device's department and criticality, without managing each device individually. What Defender for Endpoint feature allows organizing devices this way?",
     "opts_es": [
       "Los grupos y etiquetas de dispositivos (device groups and tags), que permiten clasificar dispositivos según criterios como departamento o criticidad",
-      "El registro de auditoría unificado, que solo muestra eventos históricos sin ninguna capacidad de agrupación ni clasificación de dispositivos",
+      "El registro de auditoría unificado, que solo muestra eventos históricos sin ninguna capacidad de agrupación ni clasificación alguna de dispositivos",
       "Una directiva de retención aplicada a cada dispositivo individualmente, sin posibilidad de agrupación",
       "El catálogo de aplicaciones empresariales, que organiza aplicaciones SaaS pero no dispositivos"
     ],
@@ -13529,7 +13529,7 @@
     "q_en": "An organization's security team has noticed that some employees are installing third-party apps from the integrated Microsoft 365 store (such as Outlook add-ins or Teams apps) without any prior review by IT, raising concerns about exposing corporate data to these apps. They want to restrict or disable end users' ability to install this type of app on their own, requiring IT to approve and deploy them centrally. Where is this restriction configured at the organizational level?",
     "opts_es": [
       "En 'Configuración' > 'Organización' > 'Aplicaciones y servicios propiedad del usuario', dentro del Centro de administración de Microsoft 365, donde se deshabilita el acceso a la tienda",
-      "En una directiva de acceso condicional dirigida específicamente a la tienda de aplicaciones integrada, que es la única forma posible de restringir su acceso de cualquier modo",
+      "En una directiva de acceso condicional dirigida específicamente a la tienda de aplicaciones integrada, que es la única forma posible de restringir su acceso de cualquier modo posible",
       "En el registro de auditoría unificado, que solo permite revisar instalaciones pasadas sin poder restringir instalaciones futuras",
       "En una etiqueta de confidencialidad aplicada a cada complemento individual de Outlook o Teams"
     ],
@@ -13583,7 +13583,7 @@
       "Directivas de protección de aplicaciones de Intune combinadas con el acceso condicional, que restringen el acceso a Exchange Online a apps aprobadas como Outlook móvil y aplican protección de datos",
       "Una directiva de retención aplicada a los buzones de correo, que determina qué aplicación móvil pueden usar los usuarios para acceder al correo",
       "El catálogo de aplicaciones empresariales, que únicamente permite instalar aplicaciones SaaS basadas en navegador y no aplicaciones móviles nativas",
-      "Una etiqueta de confidencialidad aplicada a nivel de inquilino, que bloquea automáticamente cualquier cliente de correo distinto de Outlook móvil sin ninguna configuración adicional necesaria"
+      "Una etiqueta de confidencialidad aplicada a nivel de inquilino, que bloquea automáticamente cualquier cliente de correo distinto de Outlook móvil sin ninguna configuración adicional alguna necesaria"
     ],
     "opts_en": [
       "Microsoft Intune app protection policies combined with Conditional Access, restricting access to Exchange Online to approved client apps",
@@ -13639,7 +13639,7 @@
     ],
     "opts_en": [
       "Restore the deleted user from the Microsoft 365 admin center (or Microsoft Entra ID) within the 30-day retention period, along with mailbox and OneDrive",
-      "It's not possible to recover deleted users under any circumstances; entirely new accounts must always be created and content rebuilt manually",
+      "It's not possible to recover deleted users under any circumstances; entirely new accounts must always be created and content rebuilt entirely manually",
       "Wait for Microsoft to automatically restore the account with no action from the administrator, which happens exactly at 30 days",
       "Restore only the Exchange Online mailbox from a third-party backup, since Microsoft Entra ID never allows restoring deleted accounts"
     ],
@@ -13691,7 +13691,7 @@
     ],
     "opts_en": [
       "Microsoft Entra Connect cloud sync, which uses lightweight provisioning agents and is configured and managed primarily from the Microsoft Entra ID portal in the cloud",
-      "Microsoft Entra Connect (the full version), which always requires a local SQL Server Express or full installation and a mandatory local configuration console",
+      "Microsoft Entra Connect (the full version), which always requires a local SQL Server Express or full installation and a mandatory local configuration console at all times",
       "AD FS federation, which performs no identity synchronization and only redirects authentication requests",
       "Staging mode, which is a configuration of traditional Microsoft Entra Connect and not an independent synchronization alternative"
     ],
@@ -13739,13 +13739,13 @@
       "La herramienta '¿Qué pasaría si?' de acceso condicional, que evalúa qué directivas se aplicarían a un usuario en condiciones hipotéticas, sin afectar el acceso real",
       "El modo de solo informe (report-only mode), que solo puede activarse después de habilitar la directiva y nunca antes",
       "La búsqueda avanzada en Microsoft Defender XDR, que no tiene ninguna relación con la simulación de directivas de acceso condicional",
-      "Las revisiones de acceso de PIM, que solo evalúan asignaciones de roles privilegiados y no tienen ninguna relación con las directivas de acceso condicional"
+      "Las revisiones de acceso de PIM, que solo evalúan asignaciones de roles privilegiados y no tienen ninguna relación con las directivas de acceso condicional en absoluto"
     ],
     "opts_en": [
       "The Conditional Access 'What If' tool, which evaluates which policies would apply under hypothetical conditions, without affecting real access",
       "Report-only mode, which can only be enabled after the policy is enabled and never before",
       "Advanced hunting in Microsoft Defender XDR, which has no relation to simulating Conditional Access policies",
-      "PIM access reviews, which only evaluate privileged role assignments and have no relation whatsoever to Conditional Access policies"
+      "PIM access reviews, which only evaluate privileged role assignments and have no relation whatsoever to Conditional Access policies of any kind"
     ],
     "correct": [
       0
@@ -13763,7 +13763,7 @@
     "q_en": "An organization collaborates with external users invited as B2B guests in its tenant to access a specific SharePoint site. However, the security team wants to prevent these external users from being able to access the Microsoft 365 admin center or any other administrative application of the tenant, even if they somehow obtained the URL, while access to the shared SharePoint site should continue working normally. What Conditional Access approach addresses this requirement?",
     "opts_es": [
       "Una directiva de acceso condicional dirigida a usuarios invitados/externos, con el Centro de administración de Microsoft 365 como destino y 'Bloquear el acceso', excluyendo el sitio compartido de SharePoint",
-      "Eliminar por completo la cuenta de invitado después de cada sesión de trabajo, lo que impide cualquier acceso futuro incluso al sitio de SharePoint compartido de forma legítima y sin excepción alguna",
+      "Eliminar por completo la cuenta de invitado después de cada sesión de trabajo, lo que impide cualquier acceso futuro incluso al sitio de SharePoint compartido de forma legítima y sin ninguna excepción alguna",
       "Una directiva de retención que oculta el Centro de administración de Microsoft 365 únicamente para usuarios con licencias gratuitas",
       "El acceso condicional no puede dirigirse específicamente a usuarios invitados o externos como condición"
     ],
@@ -13796,7 +13796,7 @@
     "opts_en": [
       "Report-only mode, which logs what would have happened if the policy had been enforced, without actually affecting user access",
       "Staging mode, which is a feature exclusive to Microsoft Entra Connect with no relation to risk policies",
-      "Permanent block mode, which immediately enforces all configured restrictions with no possibility of prior testing",
+      "Permanent block mode, which immediately enforces all configured restrictions with no possibility of any prior testing at all",
       "Identity Protection offers no testing mode; all policies are enforced immediately upon creation"
     ],
     "correct": [
@@ -13848,7 +13848,7 @@
     "opts_en": [
       "Unified RBAC, which allows defining granular roles and permissions that apply consistently across multiple Defender workloads from a single dashboard",
       "A retention policy, which manages the data lifecycle but not analysts' access permissions",
-      "Microsoft Entra ID administrative units, which only manage the scope of directory administrative roles, not Defender XDR-specific roles",
+      "Microsoft Entra ID administrative units, which only manage the scope of directory administrative roles, not Defender XDR-specific roles of any kind",
       "Communication compliance, which has no relation to permission management for security analysts"
     ],
     "correct": [
@@ -13893,7 +13893,7 @@
     "q_en": "An individual user has manually added an external vendor's email address to their own Safe Senders list in Outlook, since they trust that sender, even though the organization's anti-spam filter generally classifies it as spam for all other users. An administrator, reviewing the tenant-level inbound anti-spam configuration, finds no entry for that sender. How is this difference between the individual user's configuration and the organization-level configuration explained?",
     "opts_es": [
       "Las listas de remitentes seguros y bloqueados configuradas por usuarios individuales en Outlook son independientes de la configuración antispam a nivel de organización gestionada por administradores",
-      "Es imposible que un usuario individual tenga su propia lista de remitentes seguros; cualquier configuración de remitente solo puede hacerse a nivel de organización por un administrador",
+      "Es imposible que un usuario individual tenga su propia lista de remitentes seguros; cualquier configuración de remitente solo puede hacerse a nivel de organización por un administrador autorizado",
       "La lista de remitentes seguros del usuario individual sobrescribe automáticamente y de forma permanente la configuración antispam de toda la organización para todos los usuarios",
       "Esta diferencia indica necesariamente un error de sincronización entre Outlook y Exchange Online Protection que debe corregirse de inmediato"
     ],
@@ -13926,7 +13926,7 @@
     "opts_en": [
       "A mail flow rule (transport rule), which can detect the keyword in the subject and append a disclaimer when the recipient is external",
       "A retention policy, which only affects email preservation and can't modify its content when sent",
-      "A sensitivity label, which only visually classifies the message but can never automatically modify the message body content",
+      "A sensitivity label, which only visually classifies the message but can never automatically modify the message body content in any way",
       "User impersonation protection, which is designed to detect spoofed senders, not to add text to outgoing messages"
     ],
     "correct": [
@@ -13951,7 +13951,7 @@
     ],
     "opts_en": [
       "Web content filtering, which allows blocking categories of websites and specific domains at the network level on devices",
-      "Attack surface reduction rules, which only control Office application behaviors and never website access at all",
+      "Attack surface reduction rules, which only control Office application behaviors and never website access at all, ever",
       "Controlled folder access, which protects files against ransomware encryption but doesn't control web access",
       "Live response, which provides an interactive remote console but doesn't apply ongoing web access restrictions"
     ],
@@ -13997,13 +13997,13 @@
     "q_en": "An organization's legal department needs to ensure that certain contractual documents, once labeled, can't be modified or deleted by any user (including administrators) during a legally required period, unlike standard retention labels, which only determine when content is deleted but don't prevent editing during the retention period. What type of Microsoft Purview retention label provides this additional immutability?",
     "opts_es": [
       "Una etiqueta de retención marcada como 'registro' (record label), que impone restricciones adicionales para evitar la edición o eliminación durante la retención",
-      "Una etiqueta de confidencialidad estándar, que clasifica el contenido pero no afecta de ningún modo a su capacidad de edición o eliminación posterior",
+      "Una etiqueta de confidencialidad estándar, que clasifica el contenido pero no afecta de ningún modo a su capacidad de edición o eliminación posterior de ningún modo",
       "Una directiva de prevención de pérdida de datos, que detecta el contenido pero no puede imponer restricciones de inmutabilidad",
       "Las etiquetas de retención estándar ya proporcionan inmutabilidad completa por defecto, sin necesidad de ninguna configuración adicional"
     ],
     "opts_en": [
       "A retention label marked as a 'record' label, which imposes additional restrictions to prevent editing or deleting content during retention",
-      "A standard sensitivity label, which classifies content but doesn't affect its ability to be edited or deleted in any way at all",
+      "A standard sensitivity label, which classifies content but doesn't affect its ability to be edited or deleted in any way at all, ever at all",
       "A data loss prevention policy, which detects content but can't impose immutability restrictions",
       "Standard retention labels already provide full immutability by default, with no additional configuration needed"
     ],
@@ -14029,7 +14029,7 @@
     ],
     "opts_en": [
       "Sequence detection identifies combinations of multiple risk indicators occurring within a defined time period, representing greater risk",
-      "A sensitivity label, which only classifies individual files without considering any temporal sequence of related events at all",
+      "A sensitivity label, which only classifies individual files without considering any temporal sequence of related events of any kind at all",
       "A retention policy, which preserves downloaded files but doesn't evaluate any sequence of user behavior",
       "Communication compliance, which analyzes message content but doesn't combine multiple types of activity into a sequence"
     ],
@@ -14160,7 +14160,7 @@
     "opts_en": [
       "This is known as a tenant-to-tenant migration, and among the key considerations is planning the migration of identities, mail, and SharePoint/OneDrive content between both tenants",
       "Microsoft 365 automatically and transparently merges two tenants into one as soon as it detects they belong to the same organization, with no planning required",
-      "It's not possible to migrate content between two Microsoft 365 tenants under any circumstances; each tenant must continue operating completely independently forever",
+      "It's not possible to migrate content between two Microsoft 365 tenants under any circumstances; each tenant must continue operating completely independently and forever without exception",
       "This migration only affects assigned licenses and involves no considerations related to identities, mail, or content"
     ],
     "correct": [
@@ -14238,7 +14238,7 @@
     "opts_en": [
       "Seamless single sign-on (Seamless SSO), which is enabled alongside PHS or PTA and allows users to be automatically authenticated when on domain-joined devices within the corporate network",
       "Password writeback, which allows users to change their passwords from the cloud but doesn't provide any automatic sign-in",
-      "Domain-based filtering, which determines which users are synced but doesn't affect the sign-in experience of already-synced users, nor does it enable single sign-on access for users",
+      "Domain-based filtering, which determines which users are synced but doesn't affect the sign-in experience of already-synced users, nor does it enable single sign-on access for synced users",
       "Soft match, which is only relevant during initial synchronization setup and doesn't affect the ongoing sign-in experience"
     ],
     "correct": [
@@ -14257,13 +14257,13 @@
     "q_en": "An organization wants to create a Conditional Access policy that requires multi-factor authentication only when users sign in from outside corporate offices (whose public IP address ranges are known), allowing a smoother sign-in experience when users are physically in the office and connected to the corporate network. What Microsoft Entra ID configuration element is used to define these office IP ranges, so they can be referenced as a condition in the Conditional Access policy?",
     "opts_es": [
       "Las ubicaciones con nombre (named locations), donde se pueden definir rangos de direcciones IP (marcados opcionalmente como de confianza) que luego se usan como condición de 'Ubicaciones' en las directivas de acceso condicional",
-      "Las unidades administrativas, que agrupan usuarios y dispositivos para delegación administrativa pero no pueden usarse como condición de ubicación en el acceso condicional, ni permiten definir rangos de direcciones IP",
+      "Las unidades administrativas, que agrupan usuarios y dispositivos para delegación administrativa pero no pueden usarse como condición de ubicación en el acceso condicional, ni permiten definir rangos de direcciones IP de ningún tipo",
       "Las etiquetas de confidencialidad, que clasifican documentos pero no tienen ninguna relación con direcciones IP o ubicaciones de red",
       "El filtrado de contenido web de Defender for Endpoint, que controla el acceso a sitios web pero no puede usarse como condición en directivas de acceso condicional"
     ],
     "opts_en": [
       "Named locations, where IP address ranges can be defined (optionally marked as trusted) and then used as a 'Locations' condition in Conditional Access policies",
-      "Administrative units, which group users and devices for administrative delegation but can't be used as a location condition in Conditional Access",
+      "Administrative units, which group users and devices for administrative delegation but can't be used as a location condition in Conditional Access policies at all",
       "Sensitivity labels, which classify documents but have no relation to IP addresses or network locations",
       "Defender for Endpoint web content filtering, which controls access to websites but can't be used as a condition in Conditional Access policies"
     ],
@@ -14290,7 +14290,7 @@
     "opts_en": [
       "Terms of use (ToU), which are configured as a document that users must accept and are enforced via a Conditional Access policy as a grant control, recording the acceptance with a timestamp",
       "A retention policy, which preserves legal documents but doesn't require users to accept them before accessing resources",
-      "A sensitivity label applied to the SharePoint site, which automatically hides content until the user signs a separate external document, with no Conditional Access integration",
+      "A sensitivity label applied to the SharePoint site, which automatically hides content until the user signs a separate external document, with no Conditional Access integration or acceptance tracking",
       "Web content filtering, which blocks access to websites by category but doesn't present legal documents for acceptance"
     ],
     "correct": [
@@ -14316,7 +14316,7 @@
     "opts_en": [
       "Access reviews in Microsoft Entra ID Governance, which can be scheduled periodically so that group/team owners review guest membership and automatically remove those who aren't confirmed",
       "Identity Protection risk policies, which detect risky sign-ins but don't manage the periodic removal of guests from Teams teams",
-      "A retention policy applied to the Teams team, which automatically deletes the team's content after a period of time but doesn't manage user membership or access for guests",
+      "A retention policy applied to the Teams team, which automatically deletes the team's content after a period of time but doesn't manage user membership, access, or periodic review for guests at all",
       "Conditional Access, which can block guest access but doesn't provide a periodic review workflow by owners"
     ],
     "correct": [
@@ -14341,7 +14341,7 @@
     ],
     "opts_en": [
       "Lifecycle workflows, which automate tasks such as account creation, license assignment, and group membership tied to employee lifecycle events",
-      "Access reviews, which only allow manually reviewing and confirming existing access, but don't automate the creation of new accounts",
+      "Access reviews, which only allow manually reviewing and confirming existing access, but don't automate the creation of new accounts at all",
       "PIM for Groups, which only manages temporary activation of privileged group membership and not new employee onboarding",
       "Group-based licensing alone, with no other additional feature, fully automates the entire onboarding process described"
     ],
@@ -14362,13 +14362,13 @@
     "opts_es": [
       "Microsoft Secure Score, que proporciona una puntuación numérica del estado de seguridad, una comparación con organizaciones similares, y una lista de acciones de mejora priorizadas con seguimiento del progreso a lo largo del tiempo",
       "El registro de auditoría unificado, que solo proporciona registros de actividad sin ninguna puntuación ni recomendaciones de seguridad",
-      "El simulador de ataques, que solo se utiliza para entrenar a los empleados frente a correos de phishing y no proporciona ninguna puntuación general del inquilino ni recomendaciones de seguridad priorizadas comparables",
+      "El simulador de ataques, que solo se utiliza para entrenar a los empleados frente a correos de phishing y no proporciona ninguna puntuación general del inquilino ni recomendaciones de seguridad priorizadas comparables de ningún tipo",
       "El explorador de amenazas, que solo permite investigar correos electrónicos maliciosos específicos y no proporciona una puntuación general de seguridad"
     ],
     "opts_en": [
       "Microsoft Secure Score, which provides a numerical security posture score, a comparison with similar organizations, and a list of prioritized improvement actions with progress tracking over time",
       "The Unified audit log, which only provides activity records with no security score or recommendations",
-      "Attack simulation training, which is only used to train employees against phishing emails and doesn't provide any overall tenant security score, improvement actions, or progress tracking",
+      "Attack simulation training, which is only used to train employees against phishing emails and doesn't provide any overall tenant security score, improvement actions, or progress tracking of any kind",
       "Threat Explorer, which only allows investigating specific malicious emails and doesn't provide an overall security score"
     ],
     "correct": [
@@ -14395,7 +14395,7 @@
       "Attack simulation training, which allows running realistic simulated phishing campaigns, identifying vulnerable users, and automatically enrolling them in targeted awareness training modules",
       "Anti-spam policies, which block incoming phishing emails but can't send simulated phishing campaigns to employees",
       "Threat Explorer, which only allows searching delivered emails but can't generate or send phishing simulation campaigns",
-      "Defender Vulnerability Management, which assesses software vulnerabilities on devices but has no relation to simulated phishing campaigns or enrollment or vulnerability scoring"
+      "Defender Vulnerability Management, which assesses software vulnerabilities on devices but has no relation to simulated phishing campaigns or enrollment or vulnerability scoring of any kind"
     ],
     "correct": [
       0
@@ -14413,13 +14413,13 @@
     "q_en": "An organization wants to protect against two types of email-borne threats: (1) attachments containing malware, including zero-day malware not yet detected by known signatures, and (2) links within the email body pointing to phishing sites, including links that appear safe at delivery time but become malicious afterward. What two Microsoft Defender for Office 365 features respectively address these two threats through real-time analysis (sandboxing and URL rewriting/verification at click-time)?",
     "opts_es": [
       "Archivos seguros (Safe Attachments), que analiza los adjuntos en un entorno aislado (sandbox) antes de la entrega; y Vínculos seguros (Safe Links), que reescribe las URL y las vuelve a verificar en el momento en que el usuario hace clic",
-      "El acceso controlado a carpetas y las reglas de reducción de superficie de ataque, que son funcionalidades de Defender for Endpoint sin relación con la protección de correo electrónico ni con el análisis de adjuntos o enlaces",
+      "El acceso controlado a carpetas y las reglas de reducción de superficie de ataque, que son funcionalidades de Defender for Endpoint sin relación con la protección de correo electrónico ni con el análisis de adjuntos o enlaces de ningún tipo",
       "El filtrado de contenido web y la protección contra suplantación, que solo se aplican a la navegación web y no a los correos electrónicos ni sus archivos adjuntos",
       "Las directivas de retención y las etiquetas de confidencialidad, que clasifican y conservan correos pero no analizan archivos adjuntos ni reescriben enlaces"
     ],
     "opts_en": [
       "Safe Attachments, which analyzes attachments in an isolated environment (sandbox) before delivery; and Safe Links, which rewrites URLs and re-checks them at the moment the user clicks",
-      "Controlled folder access and attack surface reduction rules, which are Defender for Endpoint features unrelated to email protection or attachment/link analysis features",
+      "Controlled folder access and attack surface reduction rules, which are Defender for Endpoint features unrelated to email protection or attachment/link analysis features of any kind",
       "Web content filtering and impersonation protection, which only apply to web browsing and not to emails or their attachments",
       "Retention policies and sensitivity labels, which classify and retain emails but don't analyze attachments or rewrite links"
     ],
@@ -14465,13 +14465,13 @@
     "q_en": "An organization is concerned about the use of unapproved cloud applications by employees ('shadow IT'), such as personal storage services or non-corporate collaboration tools, accessed from managed devices. They want to gain visibility into which cloud applications are actually being used across the organization, by analyzing network traffic logged by devices, without needing to install additional agents on each device. What Microsoft Defender for Cloud Apps feature provides this visibility?",
     "opts_es": [
       "El descubrimiento de aplicaciones en la nube (Cloud Discovery), que analiza los registros de tráfico (a menudo integrados desde Defender for Endpoint) para identificar qué aplicaciones en la nube se utilizan en la organización y evaluar su nivel de riesgo",
-      "Las directivas de sesión, que controlan el acceso en tiempo real a aplicaciones ya conectadas mediante app connectors, pero no proporcionan ningún descubrimiento de aplicaciones no conectadas ni visibilidad sobre el tráfico de red registrado",
+      "Las directivas de sesión, que controlan el acceso en tiempo real a aplicaciones ya conectadas mediante app connectors, pero no proporcionan ningún descubrimiento de aplicaciones no conectadas ni visibilidad sobre el tráfico de red registrado por los dispositivos",
       "El filtrado de contenido web de Defender for Endpoint, que es la única funcionalidad capaz de identificar el uso de aplicaciones en la nube no aprobadas",
       "La gestión de vulnerabilidades de Defender, que evalúa vulnerabilidades de software instalado pero no el uso de aplicaciones SaaS en la nube"
     ],
     "opts_en": [
       "Cloud Discovery, which analyzes traffic logs (often integrated from Defender for Endpoint) to identify which cloud apps are used across the organization and assess their risk level",
-      "Session policies, which control real-time access to apps already connected via app connectors, but provide no discovery of unconnected apps or logs or risk assessment",
+      "Session policies, which control real-time access to apps already connected via app connectors, but provide no discovery of unconnected apps or logs or risk assessment of any kind",
       "Defender for Endpoint web content filtering, which is the only feature capable of identifying the use of unapproved cloud apps",
       "Defender Vulnerability Management, which assesses installed software vulnerabilities but not the use of SaaS cloud applications"
     ],
@@ -14497,7 +14497,7 @@
     ],
     "opts_en": [
       "Lateral movement paths, which graphically visualize the possible paths an attacker could follow from a compromised account to sensitive accounts, based on detected sign-in activity and group relationships",
-      "Web content filtering, which blocks access to websites but doesn't analyze lateral movement relationships between accounts and on-premises systems or sign-in activity detected or group data",
+      "Web content filtering, which blocks access to websites but doesn't analyze lateral movement relationships between accounts and on-premises systems or sign-in activity detected or group membership data at all",
       "Retention policies, which preserve activity logs but don't generate any lateral movement path visualization",
       "Attack simulation training, which only simulates phishing emails and doesn't analyze privilege escalation paths in the on-premises environment"
     ],
@@ -14518,14 +14518,14 @@
     "opts_es": [
       "Las sugerencias de directiva (policy tips) con la opción de anulación por parte del usuario (user override), que notifican al usuario sobre la infracción y, si está permitido, le permiten justificar y continuar con la acción de forma registrada",
       "Las reglas de flujo de correo, que solo pueden bloquear o permitir mensajes sin mostrar ningún mensaje emergente interactivo al usuario",
-      "Las etiquetas de retención, que determinan cuánto tiempo se conserva un documento pero no muestran mensajes emergentes ni permiten anulaciones por parte del usuario, ni evalúan el contenido en busca de información sensible ni el riesgo",
+      "Las etiquetas de retención, que determinan cuánto tiempo se conserva un documento pero no muestran mensajes emergentes ni permiten anulaciones por parte del usuario, ni evalúan el contenido en busca de información sensible ni el riesgo de la acción",
       "El acceso condicional, que bloquea el acceso a aplicaciones completas pero no puede mostrar mensajes emergentes sobre el contenido específico de un documento"
     ],
     "opts_en": [
       "Policy tips with the user override option, which notify the user about the violation and, if allowed, let them justify and proceed with the action in a logged manner",
       "Mail flow rules, which can only block or allow messages without showing any interactive pop-up message to the user",
       "Retention labels, which determine how long a document is retained but don't show pop-up messages or allow user overrides",
-      "Conditional Access, which blocks access to entire applications but can't show pop-up messages about a specific document's content or allow justified overrides"
+      "Conditional Access, which blocks access to entire applications but can't show pop-up messages about a specific document's content or allow any justified overrides"
     ],
     "correct": [
       0
@@ -14550,7 +14550,7 @@
     "opts_en": [
       "Custodian management within an eDiscovery (Premium) case, which allows adding custodians, sending and tracking legal hold notifications, and managing associated data sources",
       "Retention labels, which apply to individual documents but provide no organized custodian management within a legal case",
-      "Communication compliance, which reviews messages against internal policies but doesn't manage legal hold notifications or data source tracking or custodian setup",
+      "Communication compliance, which reviews messages against internal policies but doesn't manage legal hold notifications or data source tracking or custodian setup of any kind",
       "Access reviews, which manage group and role membership, but have no functionality related to custodian management in legal investigations"
     ],
     "correct": [
