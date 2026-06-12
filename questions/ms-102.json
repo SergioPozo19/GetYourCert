@@ -15,7 +15,7 @@
     ],
     "opts_en": [
       "A TXT record containing the verification value provided by Microsoft 365",
-      "An A record pointing to the admin center's IP address",
+      "An A record pointing to the IP address of the admin center portal",
       "A CNAME record pointing to outlook.office365.com",
       "A reverse-resolution PTR record for the domain"
     ],
@@ -93,7 +93,7 @@
     ],
     "opts_en": [
       "Network connectivity (Network Connectivity dashboard)",
-      "Message analyzer",
+      "Message analyzer tool for diagnosing email delivery issues",
       "Secure Score",
       "Purview Activity explorer"
     ],
@@ -951,7 +951,7 @@
     ],
     "opts_en": [
       "Microsoft Authenticator push notifications as a multi-factor authentication method",
-      "Time-based one-time password (TOTP) sent by email",
+      "Time-based one-time password (TOTP) codes sent to the user's email address each time",
       "Client certificate-based authentication",
       "Conditional Access based on network location"
     ],
@@ -1133,7 +1133,7 @@
     ],
     "opts_en": [
       "A Temporary Access Pass (TAP) issued by an administrator or agent with the appropriate role",
-      "Automatic self-service password reset with no additional verification",
+      "Automatic self-service password reset with no additional identity verification required",
       "A Conditional Access policy fully excluding that user from MFA",
       "Completely deleting and recreating the user's account"
     ],
@@ -2693,7 +2693,7 @@
     ],
     "opts_en": [
       "Granular Delegated Admin Privileges (GDAP) relationships",
-      "A restricted administrative unit",
+      "A restricted administrative unit scoped to that customer tenant",
       "A cross-tenant access policy",
       "A custom role via Microsoft Graph"
     ],
@@ -4769,13 +4769,13 @@
       "En las directivas de buzón de Outlook en la web (OWA mailbox policies) del centro de administración de Exchange",
       "En una directiva de retención de Microsoft Purview",
       "En la configuración de Microsoft Entra Connect",
-      "En el Centro de mensajes del centro de administración de Microsoft 365"
+      "En el Centro de mensajes del centro de administración de Microsoft 365, en la sección de cambios próximos"
     ],
     "opts_en": [
       "In Outlook on the web mailbox policies (OWA mailbox policies) in the Exchange admin center",
       "In a Microsoft Purview retention policy",
       "In Microsoft Entra Connect settings",
-      "In the Message center of the Microsoft 365 admin center"
+      "In the Message center of the Microsoft 365 admin center, under upcoming changes"
     ],
     "correct": [
       0
@@ -4818,14 +4818,14 @@
     "q_es": "El equipo de identidad recibe una alerta de Microsoft Entra Connect Health indicando un alto número de errores de sincronización relacionados con un atributo duplicado entre varios objetos de usuario en Active Directory. ¿Qué proporciona principalmente Microsoft Entra Connect Health en este escenario?",
     "q_en": "The identity team receives a Microsoft Entra Connect Health alert indicating a high number of synchronization errors related to a duplicate attribute across several user objects in Active Directory. What does Microsoft Entra Connect Health primarily provide in this scenario?",
     "opts_es": [
-      "Supervisión y alertas sobre el estado de la sincronización, incluyendo detalles de los errores específicos para facilitar su resolución",
-      "Corrección automática de los atributos duplicados sin intervención del administrador",
+      "Supervisión y alertas sobre el estado de la sincronización, con detalles de los errores específicos",
+      "Corrección automática de los atributos duplicados en Active Directory sin intervención del administrador",
       "Bloqueo automático de las cuentas afectadas hasta que se resuelva el conflicto",
       "Eliminación automática de los objetos duplicados en Microsoft Entra ID"
     ],
     "opts_en": [
-      "Monitoring and alerting on synchronization health, including details of specific errors to facilitate their resolution",
-      "Automatic correction of duplicate attributes without administrator intervention",
+      "Monitoring and alerting on synchronization health, with details of specific errors",
+      "Automatic correction of duplicate attributes in Active Directory without administrator intervention",
       "Automatic blocking of affected accounts until the conflict is resolved",
       "Automatic deletion of duplicate objects in Microsoft Entra ID"
     ],
@@ -4846,7 +4846,7 @@
     "opts_es": [
       "Atributos de seguridad personalizados (custom security attributes)",
       "Unidades administrativas",
-      "Directivas de nombres de grupo",
+      "Directivas de nombres de grupo para aplicar convenciones de nomenclatura",
       "Etiquetas de confidencialidad"
     ],
     "opts_en": [
@@ -4870,13 +4870,13 @@
     "q_es": "Una organización quiere delegar la gestión de la pertenencia de un grupo específico a un administrador de departamento, de modo que esa persona pueda agregar o quitar miembros del grupo. Sin embargo, ese mismo grupo también tiene asignado el rol de 'Administrador de Exchange' mediante asignación de roles basada en grupos (PIM para grupos). ¿Qué consideración especial aplica a este grupo respecto a quién puede gestionar su pertenencia?",
     "q_en": "An organization wants to delegate management of a specific group's membership to a department administrator, so that person can add or remove group members. However, that same group also has the 'Exchange Administrator' role assigned via group-based role assignment (PIM for groups). What special consideration applies to this group regarding who can manage its membership?",
     "opts_es": [
-      "Al ser un grupo asignable a roles (role-assignable group), solo los administradores de roles privilegiados (o roles equivalentes) pueden gestionar su pertenencia, no se puede delegar a propietarios normales del grupo",
+      "Al ser un grupo asignable a roles (role-assignable group), solo administradores de roles privilegiados pueden gestionar su pertenencia, no propietarios normales",
       "No aplica ninguna restricción especial; cualquier propietario del grupo puede gestionar la pertenencia igual que en un grupo normal",
       "El grupo debe convertirse primero en un grupo de seguridad dinámico para poder asignarle roles",
       "Los grupos con roles asignados no pueden tener propietarios delegados bajo ninguna circunstancia, ni siquiera administradores de roles privilegiados"
     ],
     "opts_en": [
-      "Because it is a role-assignable group, only Privileged Role Administrators (or equivalent roles) can manage its membership; it cannot be delegated to regular group owners",
+      "Because it is a role-assignable group, only Privileged Role Administrators can manage its membership, not regular group owners",
       "No special restriction applies; any group owner can manage membership the same as a normal group",
       "The group must first be converted to a dynamic security group before roles can be assigned to it",
       "Groups with assigned roles can never have delegated owners under any circumstance, not even Privileged Role Administrators"
@@ -4924,7 +4924,7 @@
     "opts_es": [
       "Riesgo de inicio de sesión (sign-in risk) para la primera, y riesgo de usuario (user risk) para la segunda",
       "Riesgo de usuario para la primera, y riesgo de inicio de sesión para la segunda",
-      "Ambas directivas deben basarse en el mismo tipo de riesgo: riesgo de inicio de sesión",
+      "Ambas directivas deben basarse obligatoriamente en el mismo tipo de riesgo: riesgo de inicio de sesión",
       "Ambas directivas deben basarse en el mismo tipo de riesgo: riesgo de usuario"
     ],
     "opts_en": [
@@ -4957,7 +4957,7 @@
       "It automatically correlates them and groups them into a single incident representing the entire attack chain",
       "It automatically deletes them to avoid duplicates, keeping only the first alert",
       "It automatically converts them into a Conditional Access policy",
-      "It only sends them as an email notification to the administrator, without grouping them"
+      "It only sends them as separate email notifications to the administrator, without any grouping or correlation"
     ],
     "correct": [
       0
@@ -5159,7 +5159,7 @@
       "Gestión de riesgos internos (Insider Risk Management), usando plantillas de directiva predefinidas",
       "Information barriers",
       "Una directiva de retención con eliminación automática",
-      "Una directiva de acceso condicional basada en riesgo de usuario"
+      "Una directiva de acceso condicional basada en el nivel de riesgo de usuario detectado"
     ],
     "opts_en": [
       "Insider Risk Management, using predefined policy templates",
@@ -5209,7 +5209,7 @@
     "q_en": "An organization wants its helpdesk team to be able to reset passwords for standard users and update their contact phone numbers, but without being able to modify Exchange Online settings, create new users, or reset administrators' passwords. Which Microsoft Entra ID built-in role is most appropriate for this team?",
     "opts_es": [
       "Administrador de soporte técnico (Helpdesk Administrator)",
-      "Administrador de Exchange",
+      "Administrador de Exchange, con acceso completo a la configuración de correo",
       "Administrador global",
       "Administrador de usuarios"
     ],
@@ -5234,14 +5234,14 @@
     "q_es": "Una organización quiere que los usuarios puedan compartir archivos de OneDrive y SharePoint con personas externas a la organización, pero solo si esas personas se autentican (por ejemplo, mediante un código de un solo uso enviado por correo electrónico), prohibiendo los enlaces 'cualquiera con el vínculo' que no requieren ninguna autenticación. ¿Dónde se configura este nivel de uso compartido externo a nivel de inquilino?",
     "q_en": "An organization wants users to be able to share OneDrive and SharePoint files with people outside the organization, but only if those people authenticate (for example, via a one-time passcode sent by email), prohibiting 'anyone with the link' links that require no authentication at all. Where is this tenant-level external sharing setting configured?",
     "opts_es": [
-      "En la configuración de uso compartido del centro de administración de SharePoint, estableciendo el nivel en 'Usuarios externos nuevos y existentes' en lugar de 'Cualquier persona'",
-      "En una directiva de acceso condicional que bloquee el acceso anónimo a Microsoft Graph",
+      "En la configuración de uso compartido de SharePoint, cambiando el nivel a 'Usuarios externos nuevos y existentes'",
+      "En una directiva de acceso condicional que bloquee específicamente el acceso anónimo a Microsoft Graph y SharePoint",
       "En el centro de administración de Exchange, en la configuración de conectores",
       "En Microsoft Entra Connect, deshabilitando la sincronización de usuarios externos"
     ],
     "opts_en": [
-      "In the SharePoint admin center sharing settings, setting the level to 'New and existing guests' instead of 'Anyone'",
-      "In a Conditional Access policy that blocks anonymous access to Microsoft Graph",
+      "In the SharePoint admin center sharing settings, setting the external sharing level to 'New and existing guests'",
+      "In a Conditional Access policy that specifically blocks anonymous access to Microsoft Graph and SharePoint",
       "In the Exchange admin center, under connector settings",
       "In Microsoft Entra Connect, by disabling synchronization of external users"
     ],
@@ -5263,7 +5263,7 @@
       "Enviar en nombre de (Send on Behalf) para el primer caso, y Acceso completo (Full Access) para el segundo",
       "Acceso completo para el primer caso, y Enviar como (Send As) para el segundo",
       "Enviar como para ambos casos",
-      "Acceso completo para ambos casos, ya que incluye automáticamente Enviar en nombre de"
+      "Acceso completo para ambos casos, ya que técnicamente incluye de forma automática el permiso de Enviar en nombre de"
     ],
     "opts_en": [
       "Send on Behalf for the first case, and Full Access for the second",
@@ -5341,12 +5341,12 @@
       "Ejecutar el cmdlet Start-ADSyncSyncCycle con el parámetro -PolicyType Delta en el servidor de Microsoft Entra Connect",
       "Reiniciar el controlador de dominio local",
       "Eliminar y volver a crear la configuración completa de Microsoft Entra Connect",
-      "Esperar obligatoriamente al ciclo automático, ya que no existe forma de forzarlo"
+      "Esperar obligatoriamente al ciclo automático de sincronización delta, ya que no existe forma de forzarlo manualmente"
     ],
     "opts_en": [
-      "Run the Start-ADSyncSyncCycle cmdlet with the -PolicyType Delta parameter on the Microsoft Entra Connect server",
+      "Run the Start-ADSyncSyncCycle cmdlet with -PolicyType Delta on the Entra Connect server",
       "Restart the on-premises domain controller",
-      "Delete and recreate the entire Microsoft Entra Connect configuration",
+      "Delete and recreate the entire Microsoft Entra Connect configuration from scratch",
       "Wait for the automatic cycle, as there is no way to force it"
     ],
     "correct": [
@@ -5390,13 +5390,13 @@
     "q_es": "Una organización quiere exigir MFA específicamente cuando los usuarios accedan a Salesforce (una aplicación SaaS de terceros conectada mediante SSO), pero no quiere exigir MFA al acceder a una aplicación interna de bajo riesgo usada para reservar plazas de aparcamiento. ¿Cómo deberían configurar el ámbito de la directiva de acceso condicional para lograr esto?",
     "q_en": "An organization wants to require MFA specifically when users access Salesforce (a third-party SaaS app connected via SSO), but does not want to require MFA when accessing a low-risk internal app used for booking parking spaces. How should they configure the scope of the Conditional Access policy to achieve this?",
     "opts_es": [
-      "Crear una directiva de acceso condicional cuya condición de aplicaciones cloud incluya específicamente Salesforce, en lugar de seleccionar 'Todas las aplicaciones en la nube'",
+      "Crear una directiva de acceso condicional cuya condición de aplicaciones cloud incluya específicamente Salesforce, no 'Todas las apps'",
       "Aplicar la directiva a 'Todas las aplicaciones en la nube' y luego desactivar MFA manualmente para cada usuario al acceder a la app de aparcamiento",
       "Crear una directiva de cumplimiento de dispositivos que distinga entre ambas aplicaciones",
       "No es posible aplicar acceso condicional de forma diferenciada por aplicación"
     ],
     "opts_en": [
-      "Create a Conditional Access policy whose cloud apps condition specifically includes Salesforce, rather than selecting 'All cloud apps'",
+      "Create a Conditional Access policy whose cloud apps condition specifically includes Salesforce, not 'All cloud apps'",
       "Apply the policy to 'All cloud apps' and then manually disable MFA for each user when accessing the parking app",
       "Create a device compliance policy that distinguishes between the two applications",
       "It is not possible to apply Conditional Access differently per application"
@@ -5425,7 +5425,7 @@
       "The request remains pending and the designated approvers are notified; the role is only activated once one of them approves it",
       "The role is activated immediately, and approval is requested afterward, retroactively",
       "The request is automatically rejected because PIM does not support approval workflows",
-      "The user must manually contact the approver by email, since PIM does not send notifications"
+      "The user must manually contact the designated approver by email, since PIM does not send any notifications automatically"
     ],
     "correct": [
       0
@@ -5442,13 +5442,13 @@
     "q_es": "Microsoft Entra ID Protection detecta que un usuario tiene un riesgo de inicio de sesión 'medio' debido a propiedades de inicio de sesión inusuales. La organización quiere que, en estos casos, el propio usuario pueda resolver automáticamente el riesgo completando una autenticación multifactor exitosa, sin necesidad de que un administrador intervenga manualmente para descartar el riesgo. ¿Qué deben configurar?",
     "q_en": "Microsoft Entra ID Protection detects that a user has a 'medium' sign-in risk due to unfamiliar sign-in properties. The organization wants that, in these cases, the user can automatically resolve the risk themselves by completing successful multi-factor authentication, without an administrator needing to manually dismiss the risk. What should they configure?",
     "opts_es": [
-      "Una directiva de acceso condicional basada en riesgo de inicio de sesión que exija MFA, lo que permite la autorremediación automática del riesgo al completarse correctamente",
+      "Una directiva de acceso condicional basada en riesgo de inicio de sesión que exija MFA, permitiendo la autorremediación automática",
       "Una directiva que bloquee el acceso permanentemente hasta que un administrador revise manualmente cada inicio de sesión riesgoso",
       "Desactivar Microsoft Entra ID Protection para evitar falsos positivos",
       "Una directiva de retención que registre el evento para revisión trimestral"
     ],
     "opts_en": [
-      "A sign-in risk-based Conditional Access policy that requires MFA, which enables automatic self-remediation of the risk upon successful completion",
+      "A sign-in risk-based Conditional Access policy requiring MFA, enabling automatic self-remediation of the risk",
       "A policy that permanently blocks access until an administrator manually reviews each risky sign-in",
       "Disable Microsoft Entra ID Protection to avoid false positives",
       "A retention policy that logs the event for quarterly review"
@@ -5468,14 +5468,14 @@
     "q_es": "En un centro de operaciones de seguridad (SOC) con varios analistas, el responsable del equipo quiere que los nuevos incidentes de Microsoft Defender XDR se distribuyan automáticamente o se filtren por gravedad, estado y entidad afectada, de modo que cada analista pueda centrarse en los incidentes que le han sido asignados o que coinciden con su área de especialización. ¿Dónde se gestiona principalmente esta organización del trabajo?",
     "q_en": "In a security operations center (SOC) with several analysts, the team lead wants new Microsoft Defender XDR incidents to be automatically distributed or filtered by severity, status, and affected entity, so each analyst can focus on incidents assigned to them or matching their area of expertise. Where is this work organization primarily managed?",
     "opts_es": [
-      "En la cola de incidentes (incident queue) del portal de Microsoft Defender, usando filtros y la asignación de incidentes a analistas",
-      "En el centro de administración de Exchange, mediante reglas de flujo de correo",
+      "En la cola de incidentes del portal de Microsoft Defender, usando filtros y asignación a analistas",
+      "En el centro de administración de Exchange, mediante reglas de flujo de correo y transporte",
       "En Microsoft Entra ID, mediante unidades administrativas",
       "En el Explorador de contenido de Microsoft Purview"
     ],
     "opts_en": [
-      "In the incident queue of the Microsoft Defender portal, using filters and assigning incidents to analysts",
-      "In the Exchange admin center, via mail flow rules",
+      "In the Defender portal incident queue, using filters and analyst assignment",
+      "In the Exchange admin center, via mail flow and transport rules",
       "In Microsoft Entra ID, via administrative units",
       "In Microsoft Purview Content explorer"
     ],
@@ -5494,14 +5494,14 @@
     "q_es": "Una organización ya utiliza Microsoft Sentinel como su plataforma SIEM para correlacionar registros de múltiples fuentes, incluidas fuentes ajenas a Microsoft 365. Quieren que las alertas e incidentes generados por Microsoft Defender XDR se incorporen automáticamente a Microsoft Sentinel, conservando los metadatos y el estado de los incidentes sincronizado en ambas direcciones. ¿Qué deberían habilitar?",
     "q_en": "An organization already uses Microsoft Sentinel as its SIEM platform to correlate logs from multiple sources, including sources outside Microsoft 365. They want alerts and incidents generated by Microsoft Defender XDR to be automatically ingested into Microsoft Sentinel, keeping incident metadata and status synchronized in both directions. What should they enable?",
     "opts_es": [
-      "El conector de Microsoft Defender XDR (Microsoft 365 Defender) en Microsoft Sentinel, con sincronización bidireccional de incidentes",
-      "Una directiva de retención que exporte los incidentes a un sitio de SharePoint",
+      "El conector de Microsoft Defender XDR en Microsoft Sentinel, con sincronización bidireccional de incidentes",
+      "Una directiva de retención que exporte automáticamente los incidentes y sus metadatos a un sitio de SharePoint",
       "Microsoft Entra Connect, configurado para exportar registros de seguridad",
       "Un conector de Cloud Discovery basado en registros de firewall"
     ],
     "opts_en": [
-      "The Microsoft Defender XDR (Microsoft 365 Defender) connector in Microsoft Sentinel, with bidirectional incident synchronization",
-      "A retention policy that exports incidents to a SharePoint site",
+      "The Microsoft Defender XDR connector in Microsoft Sentinel, with bidirectional incident sync",
+      "A retention policy that automatically exports incidents and their metadata to a SharePoint site",
       "Microsoft Entra Connect, configured to export security logs",
       "A Cloud Discovery connector based on firewall logs"
     ],
@@ -5520,13 +5520,13 @@
     "q_es": "Una organización ha configurado una directiva de cuarentena para correos detectados como spam de confianza media. Quieren que los usuarios finales puedan ver estos mensajes en cuarentena y solicitar su liberación, pero que esa liberación deba ser aprobada por un administrador antes de que el mensaje llegue a la bandeja de entrada, en lugar de que el usuario pueda liberarlo directamente. ¿Qué configuración de la directiva de cuarentena permite esto?",
     "q_en": "An organization has configured a quarantine policy for emails detected as medium-confidence spam. They want end users to be able to see these quarantined messages and request their release, but that release must be approved by an administrator before the message reaches the inbox, rather than the user being able to release it directly. What quarantine policy setting enables this?",
     "opts_es": [
-      "Configurar los permisos de la directiva de cuarentena para permitir 'solicitar la liberación' (request release) en lugar de 'liberar' (release) directamente",
-      "Configurar la directiva de cuarentena para eliminar automáticamente todos los mensajes después de 1 día",
+      "Configurar los permisos de la directiva de cuarentena para permitir 'solicitar la liberación' en lugar de 'liberar' directamente",
+      "Configurar la directiva de cuarentena para eliminar automáticamente todos los mensajes después de 1 día sin notificación",
       "Deshabilitar las notificaciones de cuarentena para todos los usuarios",
       "Otorgar a todos los usuarios el rol de Administrador de seguridad"
     ],
     "opts_en": [
-      "Configure the quarantine policy permissions to allow 'request release' instead of 'release' directly",
+      "Configure the quarantine policy to allow 'request release' instead of 'release' directly",
       "Configure the quarantine policy to automatically delete all messages after 1 day",
       "Disable quarantine notifications for all users",
       "Grant all users the Security Administrator role"
@@ -5548,7 +5548,7 @@
     "opts_es": [
       "El filtro de tipos de archivos adjuntos comunes (Common Attachment Types Filter) dentro de la directiva antimalware",
       "Una etiqueta de confidencialidad que cifre los archivos ejecutables",
-      "Una regla de reducción de la superficie de ataque en los dispositivos cliente únicamente",
+      "Una regla de reducción de la superficie de ataque aplicada únicamente en los dispositivos cliente con Windows",
       "Una directiva de retención que elimine los archivos después de 30 días"
     ],
     "opts_en": [
@@ -5573,7 +5573,7 @@
     "q_en": "The security team wants to measure how many employees would click on a realistic phishing link and submit their credentials on a fake sign-in page, with the goal of identifying users who need additional training, all within a controlled environment with no real risk. Which Microsoft Defender for Office 365 tool is designed for this?",
     "opts_es": [
       "Entrenamiento de simulación de ataques (Attack simulation training)",
-      "Vínculos seguros (Safe Links) en modo de bloqueo",
+      "Vínculos seguros (Safe Links) configurados en modo de bloqueo estricto",
       "El Explorador de amenazas",
       "La directiva de cumplimiento de comunicaciones"
     ],
@@ -5624,14 +5624,14 @@
     "q_es": "El equipo de seguridad ha ejecutado Cloud Discovery en Microsoft Defender for Cloud Apps a partir de los registros de tráfico del firewall y ha obtenido un catálogo de cientos de aplicaciones en la nube que los empleados utilizan, cada una con una puntuación de riesgo basada en factores como cumplimiento normativo, seguridad de datos y riesgo legal. ¿Para qué se usa principalmente esta puntuación de riesgo de las aplicaciones?",
     "q_en": "The security team has run Cloud Discovery in Microsoft Defender for Cloud Apps from firewall traffic logs and obtained a catalog of hundreds of cloud apps employees use, each with a risk score based on factors such as regulatory compliance, data security, and legal risk. What is this app risk score primarily used for?",
     "opts_es": [
-      "Para priorizar qué aplicaciones de TI en la sombra (shadow IT) deben sancionarse, supervisarse o bloquearse mediante una directiva",
-      "Para asignar automáticamente licencias de Microsoft 365 a los usuarios de cada aplicación",
+      "Para priorizar qué aplicaciones de TI en la sombra deben sancionarse, supervisarse o bloquearse",
+      "Para asignar y revisar automáticamente las licencias de Microsoft 365 de los usuarios de cada aplicación",
       "Para generar etiquetas de confidencialidad para los documentos creados en cada aplicación",
       "Para configurar automáticamente Microsoft Entra Connect"
     ],
     "opts_en": [
-      "To prioritize which shadow IT applications should be sanctioned, monitored, or blocked via a policy",
-      "To automatically assign Microsoft 365 licenses to users of each application",
+      "To prioritize which shadow IT apps should be sanctioned, monitored, or blocked",
+      "To automatically assign and review Microsoft 365 licenses for users of each application",
       "To generate sensitivity labels for documents created in each application",
       "To automatically configure Microsoft Entra Connect"
     ],
@@ -5650,14 +5650,14 @@
     "q_es": "El equipo de seguridad quiere recibir una alerta automática y, opcionalmente, poner en cuarentena un archivo cuando un usuario comparta externamente, desde OneDrive o SharePoint, un archivo que Microsoft Defender for Cloud Apps clasifique como que contiene información financiera confidencial, basándose en su contenido. ¿Qué tipo de directiva de Defender for Cloud Apps cumple este requisito?",
     "q_en": "The security team wants to receive an automatic alert and, optionally, quarantine a file when a user externally shares, from OneDrive or SharePoint, a file that Microsoft Defender for Cloud Apps classifies as containing confidential financial information, based on its content. What type of Defender for Cloud Apps policy meets this requirement?",
     "opts_es": [
-      "Una directiva de archivo (file policy) que combine una condición de clasificación de contenido con el uso compartido externo, y una acción de gobernanza como cuarentena",
-      "Una directiva de actividad basada únicamente en la dirección IP de origen",
+      "Una directiva de archivo que combine clasificación de contenido, uso compartido externo y cuarentena",
+      "Una directiva de actividad basada únicamente en la dirección IP de origen del usuario, sin otras condiciones",
       "Una directiva de Cloud Discovery basada en el catálogo de aplicaciones",
       "Una directiva de acceso condicional aplicada a Microsoft Entra ID"
     ],
     "opts_en": [
-      "A file policy combining a content classification condition with external sharing, and a governance action such as quarantine",
-      "An activity policy based solely on the source IP address",
+      "A file policy combining content classification with external sharing and a quarantine action",
+      "An activity policy based solely on the user's source IP address, with no other conditions",
       "A Cloud Discovery policy based on the app catalog",
       "A Conditional Access policy applied to Microsoft Entra ID"
     ],
@@ -5676,15 +5676,15 @@
     "q_es": "Una organización aplica una etiqueta de retención a nivel de sitio de SharePoint que indica que todo el contenido del sitio debe conservarse durante 3 años. Más adelante, descubren que necesitan que un subconjunto específico de archivos dentro de ese sitio, relacionados con un proyecto concreto, se conserve durante 10 años en lugar de 3. ¿Cómo pueden lograr esto sin afectar al resto del contenido del sitio?",
     "q_en": "An organization applies a SharePoint site-level retention label indicating that all content on the site must be kept for 3 years. Later, they discover that a specific subset of files within that site, related to a particular project, needs to be retained for 10 years instead of 3. How can they achieve this without affecting the rest of the site's content?",
     "opts_es": [
-      "Aplicar manualmente o mediante una directiva de etiquetado automático una etiqueta de retención de 10 años directamente a esos archivos específicos, que tendrá precedencia sobre la etiqueta del sitio",
+      "Aplicar una etiqueta de retención de 10 años directamente a esos archivos, que prevalece sobre la del sitio",
       "Cambiar la etiqueta de retención de todo el sitio a 10 años para todos los archivos",
-      "Crear un nuevo sitio de SharePoint solo para esos archivos y aplicar la etiqueta de 10 años al nuevo sitio",
+      "Crear un nuevo sitio de SharePoint solo para esos archivos y aplicarles la etiqueta de retención de 10 años allí",
       "No es posible aplicar diferentes periodos de retención dentro del mismo sitio de SharePoint"
     ],
     "opts_en": [
-      "Manually apply, or apply via an auto-labeling policy, a 10-year retention label directly to those specific files, which will take precedence over the site-level label",
+      "Apply a 10-year retention label directly to those files, which takes precedence over the site-level label",
       "Change the retention label for the entire site to 10 years for all files",
-      "Create a new SharePoint site just for those files and apply the 10-year label to the new site",
+      "Create a new SharePoint site just for those files and apply the 10-year retention label there",
       "It is not possible to apply different retention periods within the same SharePoint site"
     ],
     "correct": [
@@ -5702,15 +5702,15 @@
     "q_es": "Una organización tiene dos directivas de prevención de pérdida de datos que podrían aplicarse al mismo correo electrónico saliente: la Directiva A bloquea el envío si se detectan números de tarjeta de crédito, y la Directiva B solo muestra un consejo de directiva (sin bloquear) si se detecta cualquier tipo de información personal. Un correo contiene tanto un número de tarjeta de crédito como otra información personal. ¿Qué determina qué acción se aplica finalmente al mensaje?",
     "q_en": "An organization has two data loss prevention policies that could both apply to the same outbound email: Policy A blocks sending if credit card numbers are detected, and Policy B only shows a policy tip (without blocking) if any personal information is detected. An email contains both a credit card number and other personal information. What determines which action is ultimately applied to the message?",
     "opts_es": [
-      "El orden de prioridad de las directivas DLP, donde la directiva con mayor prioridad (normalmente la de número más bajo) se evalúa primero y, si su acción detiene la regla, las directivas de menor prioridad para esa coincidencia no se aplican",
+      "El orden de prioridad de las directivas DLP: la de mayor prioridad se evalúa primero y detiene el procesamiento de las demás",
       "Ambas acciones se aplican siempre simultáneamente sin ningún orden",
-      "Solo se aplica la directiva creada más recientemente, independientemente del orden configurado",
+      "Solo se aplica la directiva creada más recientemente, independientemente del orden de prioridad configurado por el administrador",
       "Microsoft 365 selecciona aleatoriamente cuál de las dos directivas se aplica"
     ],
     "opts_en": [
-      "The DLP policy priority order, where the higher-priority policy (typically the lower-numbered one) is evaluated first, and if its action stops further rule processing, lower-priority policies for that match do not apply",
+      "The DLP policy priority order: the higher-priority policy is evaluated first and stops further processing",
       "Both actions always apply simultaneously with no ordering",
-      "Only the most recently created policy applies, regardless of configured order",
+      "Only the most recently created policy applies, regardless of the priority order configured by the administrator",
       "Microsoft 365 randomly selects which of the two policies applies"
     ],
     "correct": [
@@ -5730,7 +5730,7 @@
     "opts_es": [
       "La Herramienta de implementación de Office (Office Deployment Tool) y un archivo de configuración XML",
       "Microsoft Entra Connect y un archivo de sincronización CSV",
-      "El centro de administración de Intune, mediante una directiva de cumplimiento",
+      "El centro de administración de Intune, mediante un perfil de configuración de aplicaciones",
       "Microsoft Purview, mediante una directiva de retención"
     ],
     "opts_en": [
@@ -5754,8 +5754,8 @@
     "q_es": "Una organización deja de pagar su suscripción a Microsoft 365 y esta entra en un periodo de gracia, tras el cual pasa a un estado de suscripción deshabilitada. Los usuarios descubren que ya no pueden enviar ni recibir correo, ni acceder a SharePoint, aunque sus datos siguen existiendo. ¿Qué describe correctamente el comportamiento del inquilino durante el periodo posterior a la expiración antes de la eliminación definitiva de los datos?",
     "q_en": "An organization stops paying for its Microsoft 365 subscription, which enters a grace period, after which it moves to a disabled subscription state. Users find they can no longer send or receive mail, or access SharePoint, although their data still exists. What correctly describes the tenant's behavior during the period after expiration before data is permanently deleted?",
     "opts_es": [
-      "Durante el periodo de suspensión, el acceso a los servicios se bloquea para los usuarios, pero los datos se conservan durante un periodo adicional antes de eliminarse permanentemente, dando tiempo para renovar la suscripción",
-      "Todos los datos del inquilino se eliminan inmediatamente al expirar la suscripción, sin periodo de gracia adicional",
+      "Durante la suspensión, el acceso se bloquea pero los datos se conservan un periodo adicional antes de eliminarse, dando tiempo para renovar",
+      "Todos los datos del inquilino se eliminan inmediatamente al expirar la suscripción, sin ningún periodo de gracia adicional para recuperarlos",
       "El inquilino se convierte automáticamente en una suscripción gratuita permanente sin pérdida de funcionalidad",
       "Los usuarios mantienen acceso de solo lectura indefinido a todos los servicios sin necesidad de renovar"
     ],
@@ -5763,8 +5763,8 @@
       0
     ],
     "opts_en": [
-      "During the suspended period, access to services is blocked for users, but data is retained for an additional period before being permanently deleted, giving time to renew the subscription",
-      "All tenant data is immediately deleted upon subscription expiration, with no additional grace period",
+      "During suspension, access is blocked but data is retained an additional period before deletion, allowing time to renew",
+      "All tenant data is immediately deleted upon subscription expiration, with no additional grace period to recover it",
       "The tenant automatically converts to a permanent free subscription with no loss of functionality",
       "Users retain indefinite read-only access to all services without needing to renew"
     ],
