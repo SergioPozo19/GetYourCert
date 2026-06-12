@@ -6820,16 +6820,16 @@
     "q_es": "Una organización ha tenido problemas con empleados creando grupos de Microsoft 365 con nombres ofensivos o que suplantan a departamentos oficiales (por ejemplo, 'RRHH-Oficial'). El administrador quiere impedir automáticamente ciertas palabras en los nombres de los grupos y, además, que todos los grupos creados por usuarios incluyan el prefijo 'grp-' y el sufijo '-ext'. ¿Qué deberían configurar?",
     "q_en": "An organization has had problems with employees creating Microsoft 365 groups with offensive names or names that impersonate official departments (for example, 'HR-Official'). The administrator wants to automatically block certain words in group names and also require that all user-created groups include the prefix 'grp-' and the suffix '-ext'. What should they configure?",
     "opts_es": [
-      "Una directiva de nomenclatura de grupos (group naming policy) con lista de palabras bloqueadas y plantilla de prefijo/sufijo",
+      "Una directiva de nomenclatura de grupos (group naming policy) con palabras bloqueadas y prefijo/sufijo",
       "Una directiva de acceso condicional que bloquee la creación de grupos",
       "Una etiqueta de retención aplicada a los grupos",
-      "Una directiva de prevención de pérdida de datos sobre los nombres de grupo"
+      "Una directiva de prevención de pérdida de datos que detecte y bloquee ciertos nombres de grupo"
     ],
     "opts_en": [
       "A group naming policy with a blocked words list and a prefix/suffix template",
       "A Conditional Access policy that blocks group creation",
       "A retention label applied to groups",
-      "A data loss prevention policy on group names"
+      "A data loss prevention policy that detects and blocks certain group names"
     ],
     "correct": [
       0
@@ -6872,15 +6872,15 @@
     "q_es": "Una organización quiere que un grupo llamado 'Aprobadores-Facturación' obtenga acceso elevado a un recurso solo cuando sea necesario, requiriendo justificación y aprobación, y que esa pertenencia (y por tanto el acceso elevado de todos los miembros del grupo) expire automáticamente después de unas horas. La organización quiere gestionar esto a nivel del grupo en lugar de configurar cada rol individualmente para cada miembro. ¿Qué funcionalidad de Microsoft Entra ID Governance permite esto?",
     "q_en": "An organization wants a group called 'Billing-Approvers' to gain elevated access to a resource only when needed, requiring justification and approval, with that membership (and therefore the elevated access of all group members) expiring automatically after a few hours. The organization wants to manage this at the group level instead of configuring each role individually for each member. Which Microsoft Entra ID Governance feature enables this?",
     "opts_es": [
-      "Grupos de acceso con privilegios (Privileged Access groups) en Privileged Identity Management",
+      "Grupos de acceso con privilegios (Privileged Access groups) en PIM para grupos",
       "Unidades administrativas",
-      "Una directiva de nomenclatura de grupos",
+      "Una directiva de nomenclatura de grupos con prefijos por departamento",
       "Acceso de invitados B2B"
     ],
     "opts_en": [
       "Privileged Access groups in Privileged Identity Management",
       "Administrative units",
-      "A group naming policy",
+      "A group naming policy with department-based prefixes",
       "B2B guest access"
     ],
     "correct": [
@@ -7057,13 +7057,13 @@
       "El registro de auditoría unificado (Unified audit log) en el portal de cumplimiento de Microsoft Purview",
       "El Centro de mensajes (Message Center)",
       "El Explorador de amenazas (Threat Explorer)",
-      "El panel de Puntuación de seguridad (Secure Score)"
+      "El panel de Puntuación de seguridad (Secure Score) y sus recomendaciones de mejora de seguridad"
     ],
     "opts_en": [
       "The Unified audit log in the Microsoft Purview compliance portal",
       "The Message Center",
       "Threat Explorer",
-      "The Secure Score dashboard"
+      "The Secure Score dashboard and its security improvement recommendations"
     ],
     "correct": [
       0
@@ -7080,14 +7080,14 @@
     "q_es": "Un equipo de seguridad ha confirmado que un dominio externo específico, 'promo-ofertas.net', envía constantemente correos de phishing que las directivas estándar de Microsoft Defender for Office 365 no siempre detectan como malintencionados. El equipo quiere bloquear de forma inmediata y manual todos los correos de ese dominio durante las próximas 24 horas mientras se investiga, sin esperar a que el sistema de aprendizaje automático actualice sus modelos. ¿Qué deberían usar?",
     "q_en": "A security team has confirmed that a specific external domain, 'promo-deals.net', is consistently sending phishing emails that Microsoft Defender for Office 365's standard policies don't always detect as malicious. The team wants to immediately and manually block all email from that domain for the next 24 hours while they investigate, without waiting for the machine learning models to update. What should they use?",
     "opts_es": [
-      "La lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List), añadiendo el dominio del remitente como entrada bloqueada",
-      "Una directiva de acceso condicional que bloquee el correo entrante",
+      "La lista de permitidos y bloqueados de inquilino, añadiendo el dominio del remitente como entrada bloqueada",
+      "Una directiva de acceso condicional que bloquee todo el correo entrante de ese dominio específico",
       "Microsoft Defender for Cloud Apps, sancionar la aplicación",
       "Una etiqueta de confidencialidad aplicada a los correos entrantes"
     ],
     "opts_en": [
       "The Tenant Allow/Block List, adding the sender domain as a blocked entry",
-      "A Conditional Access policy that blocks inbound mail",
+      "A Conditional Access policy that blocks all inbound mail from that specific domain",
       "Microsoft Defender for Cloud Apps, sanctioning the app",
       "A sensitivity label applied to incoming emails"
     ],
@@ -7108,13 +7108,13 @@
     "opts_es": [
       "Marcar estas cuentas como cuentas prioritarias (priority accounts) y aplicarles la directiva de seguridad preestablecida 'Estricta'",
       "Crear una etiqueta de confidencialidad 'Ejecutivos' aplicada manualmente",
-      "Agregar estas cuentas a un grupo de Microsoft Entra excluido de todas las directivas",
+      "Agregar estas cuentas a un grupo de Microsoft Entra ID excluido manualmente de todas las directivas de seguridad existentes",
       "Habilitar Microsoft Defender for Identity únicamente para estas cuentas"
     ],
     "opts_en": [
       "Mark these accounts as priority accounts and apply the 'Strict' preset security policy to them",
       "Create an 'Executives' sensitivity label applied manually",
-      "Add these accounts to a Microsoft Entra group excluded from all policies",
+      "Add these accounts to a Microsoft Entra ID group manually excluded from all existing security policies",
       "Enable Microsoft Defender for Identity only for these accounts"
     ],
     "correct": [
@@ -7132,16 +7132,16 @@
     "q_es": "Una organización ha incorporado dispositivos de distintos departamentos a Microsoft Defender for Endpoint y ha organizado esos dispositivos en grupos de dispositivos separados (Finanzas, Producción, TI). Para los dispositivos del grupo 'Producción', que ejecutan software industrial sensible, el equipo de seguridad quiere que la investigación y respuesta automatizadas (AIR) genere recomendaciones de remediación para que un analista las revise y apruebe manualmente, en lugar de aplicar acciones de remediación de forma totalmente automática. ¿Qué deberían configurar para ese grupo de dispositivos?",
     "q_en": "An organization has onboarded devices from different departments to Microsoft Defender for Endpoint and organized those devices into separate device groups (Finance, Production, IT). For devices in the 'Production' group, which run sensitive industrial software, the security team wants automated investigation and response (AIR) to generate remediation recommendations for an analyst to manually review and approve, instead of applying remediation actions fully automatically. What should they configure for that device group?",
     "opts_es": [
-      "Establecer el nivel de automatización del grupo de dispositivos en 'Semiautomático: requiere aprobación para todas las carpetas' (o equivalente que requiera aprobación)",
+      "Establecer el nivel de automatización del grupo en 'Semiautomático: requiere aprobación para todas las carpetas'",
       "Excluir el grupo de dispositivos de Defender for Endpoint por completo",
-      "Aplicar una directiva de reducción de la superficie de ataque sin reglas activas",
+      "Aplicar una directiva de reducción de la superficie de ataque sin ninguna regla activa configurada",
       "Configurar el grupo como 'No supervisado' en Microsoft Defender for Cloud Apps"
     ],
     "opts_en": [
-      "Set the device group's automation level to one that requires approval for all remediation (e.g. 'Semi - require approval for any remediation')",
+      "Set the device group's automation level to one requiring approval for all remediation actions",
       "Exclude the device group from Defender for Endpoint entirely",
       "Apply an attack surface reduction policy with no active rules",
-      "Configure the group as 'Unmonitored' in Microsoft Defender for Cloud Apps"
+      "Configure the group as 'Unmonitored' in Microsoft Defender for Cloud Apps entirely"
     ],
     "correct": [
       0
@@ -7192,7 +7192,7 @@
     "opts_en": [
       "App governance in Microsoft Defender for Cloud Apps",
       "Microsoft Entra Connect Health",
-      "An auto-labeling sensitivity policy",
+      "An auto-labeling sensitivity policy applied to documents",
       "Threat Explorer"
     ],
     "correct": [
@@ -7262,14 +7262,14 @@
     "q_es": "Una organización quiere evitar que los empleados copien archivos que contengan números de tarjetas de crédito desde su equipo de Windows a unidades USB extraíbles. Sin embargo, en lugar de bloquear la acción de inmediato sin avisar al usuario, quieren que, la primera vez que un usuario intente esta acción, se le muestre un mensaje educativo explicando la política y se le permita justificar la acción para continuar, registrando el evento para revisión posterior. ¿Qué deberían configurar?",
     "q_en": "An organization wants to prevent employees from copying files containing credit card numbers from their Windows device to removable USB drives. However, instead of immediately blocking the action without warning the user, they want that, the first time a user attempts this action, an educational policy tip is shown explaining the policy and the user can justify the action to proceed, with the event logged for later review. What should they configure?",
     "opts_es": [
-      "Una directiva de prevención de pérdida de datos para puntos de conexión (Endpoint DLP) con una acción de 'Avisar' (sugerencia de directiva) que permita la anulación con justificación",
-      "Una directiva de acceso condicional que bloquee dispositivos sin cumplimiento",
+      "Endpoint DLP con una acción de 'Avisar' (policy tip) que permita anular la acción con justificación",
+      "Una directiva de acceso condicional que bloquee dispositivos sin cumplimiento de Intune",
       "Acceso controlado a carpetas en Microsoft Defender for Endpoint",
       "Una etiqueta de confidencialidad sin acciones de protección automáticas"
     ],
     "opts_en": [
       "An Endpoint DLP policy with a 'Warn' action (policy tip) that allows override with justification",
-      "A Conditional Access policy that blocks noncompliant devices",
+      "A Conditional Access policy that blocks devices not compliant with Intune policies",
       "Controlled folder access in Microsoft Defender for Endpoint",
       "A sensitivity label with no automatic protection actions"
     ],
@@ -7288,16 +7288,16 @@
     "q_es": "Una organización con 3.000 equipos Windows quiere gestionar de forma centralizada qué versión de Microsoft 365 Apps for Enterprise se instala en cada dispositivo, agrupar los equipos en distintos perfiles de actualización (por ejemplo, un grupo piloto que recibe actualizaciones antes que el resto) y supervisar el estado de las actualizaciones desde un panel en la nube, sin depender de Configuration Manager. ¿Qué herramienta deberían usar?",
     "q_en": "An organization with 3,000 Windows computers wants to centrally manage which version of Microsoft 365 Apps for Enterprise is installed on each device, group computers into different update profiles (for example, a pilot group that receives updates before the rest), and monitor update status from a cloud dashboard, without relying on Configuration Manager. Which tool should they use?",
     "opts_es": [
-      "El Centro de administración de Microsoft 365 Apps, con perfiles de actualización en la nube (Cloud Update)",
-      "El Centro de mensajes (Message Center)",
+      "El Centro de administración de Microsoft 365 Apps, con perfiles de Cloud Update",
+      "El Centro de mensajes, donde se anuncian los cambios de versión de Office",
       "Microsoft Entra Connect Health",
-      "El Panel de conectividad de red"
+      "El Panel de conectividad de red para diagnosticar problemas de rendimiento"
     ],
     "opts_en": [
-      "The Microsoft 365 Apps admin center, using Cloud Update servicing profiles",
-      "The Message Center",
+      "The Microsoft 365 Apps admin center, using Cloud Update profiles",
+      "The Message Center, where Office version change announcements appear",
       "Microsoft Entra Connect Health",
-      "The Network Connectivity dashboard"
+      "The Network Connectivity dashboard for diagnosing performance issues"
     ],
     "correct": [
       0
@@ -7340,14 +7340,14 @@
     "q_es": "Un buzón compartido llamado 'Soporte-Clientes' ha crecido hasta superar los 50 GB porque varios agentes lo usan para almacenar archivos adjuntos de tickets antiguos. Los usuarios empiezan a recibir errores al enviar correo desde ese buzón porque, al no tener una licencia asignada, su límite de almacenamiento está restringido a 50 GB. ¿Cuál es la solución recomendada para resolver este problema sin convertir el buzón compartido en un buzón de usuario normal?",
     "q_en": "A shared mailbox called 'Customer-Support' has grown beyond 50 GB because several agents use it to store attachments from old tickets. Users start receiving errors when sending mail from that mailbox because, with no license assigned, its storage limit is restricted to 50 GB. What is the recommended solution to resolve this without converting the shared mailbox into a regular user mailbox?",
     "opts_es": [
-      "Asignar al buzón compartido una licencia que incluya Exchange Online Plan 2 (o un complemento de almacenamiento) para aumentar el límite a 100 GB",
-      "Crear un segundo buzón compartido y dividir manualmente los correos entre ambos",
+      "Asignar al buzón una licencia con Exchange Online Plan 2, ampliando el límite de almacenamiento a 100 GB",
+      "Crear un segundo buzón compartido y dividir manualmente los correos antiguos entre ambos buzones",
       "Habilitar el archivado local en cada PC de los agentes",
       "Eliminar el buzón compartido y recrear uno nuevo cada 6 meses"
     ],
     "opts_en": [
-      "Assign the shared mailbox a license that includes Exchange Online Plan 2 (or a storage add-on) to increase the limit to 100 GB",
-      "Create a second shared mailbox and manually split the emails between both",
+      "Assign the shared mailbox a license with Exchange Online Plan 2, increasing the storage limit to 100 GB",
+      "Create a second shared mailbox and manually split the old emails between both shared mailboxes",
       "Enable local archiving on each agent's PC",
       "Delete the shared mailbox and recreate a new one every 6 months"
     ],
@@ -7473,13 +7473,13 @@
       "Exigir una fuerza de autenticación (authentication strength) personalizada que incluya solo métodos resistentes al phishing",
       "Exigir el cumplimiento del dispositivo (device compliance) únicamente",
       "Exigir una contraseña de aplicación (app password)",
-      "Exigir la unión híbrida de Microsoft Entra (hybrid Azure AD join) únicamente"
+      "Exigir la unión híbrida de Microsoft Entra (hybrid Azure AD join) como único requisito adicional de dispositivo"
     ],
     "opts_en": [
       "Require a custom authentication strength that includes only phishing-resistant methods",
       "Require device compliance only",
       "Require an app password",
-      "Require Microsoft Entra hybrid join only"
+      "Require Microsoft Entra hybrid join as the only additional device requirement"
     ],
     "correct": [
       0
@@ -7524,13 +7524,13 @@
     "opts_es": [
       "Una directiva de acceso condicional basada en el riesgo del usuario que exija un cambio seguro de contraseña cuando el riesgo sea medio o alto",
       "Una directiva que bloquee permanentemente al usuario hasta que un administrador lo desbloquee manualmente",
-      "Una directiva basada en el riesgo de inicio de sesión que exija MFA en cada acceso, sin opción de cambio de contraseña",
+      "Una directiva basada en el riesgo de inicio de sesión que exija MFA en cada acceso del usuario, sin ninguna opción de cambio de contraseña",
       "Una directiva de cumplimiento de dispositivos que ponga el dispositivo en cuarentena"
     ],
     "opts_en": [
       "A user risk-based Conditional Access policy requiring a secure password change when risk is medium or high",
       "A policy that permanently blocks the user until an administrator manually unblocks them",
-      "A sign-in risk-based policy requiring MFA on every access, with no password change option",
+      "A sign-in risk-based policy requiring MFA on every single access, with no password change option available",
       "A device compliance policy that quarantines the device"
     ],
     "correct": [
@@ -7548,14 +7548,14 @@
     "q_es": "Un nuevo administrador de seguridad revisa el panel de Puntuación de seguridad (Secure Score) de Microsoft y observa que algunas acciones de mejora otorgan puntos automáticamente en cuanto se configuran (por ejemplo, habilitar una directiva), mientras que otras requieren que un administrador marque manualmente la acción como completada después de verificar un proceso (por ejemplo, una práctica organizativa o de formación). ¿A qué se debe esta diferencia?",
     "q_en": "A new security administrator reviews Microsoft's Secure Score dashboard and notices that some improvement actions award points automatically as soon as they are configured (for example, enabling a policy), while others require an administrator to manually mark the action as completed after verifying a process (for example, an organizational or training practice). What explains this difference?",
     "opts_es": [
-      "Las acciones técnicas configurables se puntúan automáticamente al detectarse la configuración, mientras que las acciones de proceso/comportamiento (no verificables técnicamente) requieren confirmación manual del administrador",
-      "Todas las acciones requieren siempre confirmación manual; la puntuación automática no existe",
+      "Las acciones técnicas se puntúan automáticamente al detectarse, y las de proceso requieren confirmación manual del administrador",
+      "Todas las acciones requieren siempre confirmación manual del administrador; la puntuación automática no existe en Secure Score",
       "La puntuación automática solo aplica a licencias E5, y la manual a licencias E3",
       "Las acciones manuales son errores de configuración del panel que deben ignorarse"
     ],
     "opts_en": [
-      "Technically configurable actions are scored automatically once the configuration is detected, while process/behavioral actions (not technically verifiable) require manual administrator confirmation",
-      "All actions always require manual confirmation; automatic scoring does not exist",
+      "Technically configurable actions are scored automatically once detected, while process actions require manual confirmation",
+      "All actions always require manual administrator confirmation; automatic scoring does not exist in Secure Score",
       "Automatic scoring only applies to E5 licenses, and manual scoring to E3 licenses",
       "Manually-scored actions are dashboard configuration errors that should be ignored"
     ],
@@ -7574,16 +7574,16 @@
     "q_es": "Microsoft Defender XDR ha generado un incidente que agrupa tres alertas independientes: una de Microsoft Defender for Office 365 (un correo de phishing entregado), una de Microsoft Defender for Endpoint (ejecución de un archivo descargado desde el enlace de ese correo) y una de Microsoft Defender for Identity (uso anómalo de las credenciales del mismo usuario poco después en el controlador de dominio local). ¿Qué describe mejor la capacidad de Microsoft Defender XDR que permite esta agrupación en un único incidente?",
     "q_en": "Microsoft Defender XDR has generated an incident that groups three independent alerts: one from Microsoft Defender for Office 365 (a phishing email delivered), one from Microsoft Defender for Endpoint (execution of a file downloaded from that email's link), and one from Microsoft Defender for Identity (anomalous use of the same user's credentials shortly after on the on-premises domain controller). What best describes the Microsoft Defender XDR capability that enables this grouping into a single incident?",
     "opts_es": [
-      "Correlación entre dominios (cross-domain correlation) que vincula alertas relacionadas de múltiples cargas de trabajo de Defender en un único incidente para mostrar la cadena de ataque completa",
+      "Correlación entre dominios, que vincula alertas relacionadas de varias cargas de trabajo en un único incidente",
       "Cada alerta genera siempre un incidente independiente; la agrupación es manual",
       "Solo las alertas de Defender for Endpoint pueden formar parte de incidentes",
-      "La agrupación solo es posible si las tres alertas se producen exactamente en el mismo segundo"
+      "La agrupación solo es posible si las tres alertas se producen exactamente en el mismo segundo del día"
     ],
     "opts_en": [
-      "Cross-domain correlation, which links related alerts from multiple Defender workloads into a single incident to show the full attack chain",
+      "Cross-domain correlation, linking related alerts from multiple workloads into a single incident",
       "Each alert always generates an independent incident; grouping is manual",
       "Only Microsoft Defender for Endpoint alerts can be part of incidents",
-      "Grouping is only possible if all three alerts occur in exactly the same second"
+      "Grouping is only possible if all three alerts occur in exactly the same second of the day"
     ],
     "correct": [
       0
@@ -7626,14 +7626,14 @@
     "q_es": "Una organización recibe grandes cantidades de correo no deseado procedente de servidores de correo mal configurados que no implementan ninguna autenticación de remitente (SPF, DKIM, DKIM) y que generalmente provienen de rangos de IP con muy mala reputación a nivel global, no específicos de esta organización. El equipo de seguridad quiere aplicar un filtrado más agresivo basado en esta reputación global de IP antes incluso de evaluar el contenido del mensaje, complementando las directivas de correo no deseado existentes. ¿Qué función deberían habilitar?",
     "q_en": "An organization receives large amounts of unwanted email from misconfigured mail servers that implement no sender authentication (SPF, DKIM, DMARC) and that generally come from IP ranges with very poor reputation globally, not specific to this organization. The security team wants to apply more aggressive filtering based on this global IP reputation even before evaluating the message content, complementing existing anti-spam policies. What feature should they enable?",
     "opts_es": [
-      "Bloqueo perimetral basado en directorio (Directory-based edge blocking, DBEB) y filtrado de conexión basado en la reputación de IP",
-      "Una etiqueta de confidencialidad sobre los correos entrantes",
+      "Bloqueo perimetral basado en directorio (DBEB) y filtrado de conexión por reputación de IP",
+      "Una etiqueta de confidencialidad aplicada automáticamente sobre los correos entrantes sospechosos",
       "Acceso condicional basado en la ubicación del remitente",
       "Microsoft Defender for Identity"
     ],
     "opts_en": [
       "Directory-based edge blocking (DBEB) and connection filtering based on IP reputation",
-      "A sensitivity label on incoming emails",
+      "A sensitivity label automatically applied to suspicious incoming emails",
       "Conditional Access based on the sender's location",
       "Microsoft Defender for Identity"
     ],
@@ -7655,7 +7655,7 @@
       "Evaluación de líneas base de seguridad (Security baselines assessment)",
       "Acceso controlado a carpetas",
       "Tenant Allow/Block List",
-      "Microsoft Defender for Cloud Apps Cloud Discovery"
+      "Microsoft Defender for Cloud Apps Cloud Discovery basado en registros de tráfico"
     ],
     "opts_en": [
       "Security baselines assessment",
@@ -7707,7 +7707,7 @@
       "Control de aplicaciones de acceso condicional (Conditional Access App Control) mediante proxy inverso",
       "Cloud Discovery con análisis de registros de firewall",
       "Una directiva de gobernanza de aplicaciones (App governance)",
-      "Una directiva de prevención de pérdida de datos para puntos de conexión"
+      "Una directiva de prevención de pérdida de datos para puntos de conexión (Endpoint DLP) específica"
     ],
     "opts_en": [
       "Conditional Access App Control via reverse proxy",
@@ -7834,16 +7834,16 @@
     "q_es": "El equipo de seguridad ha observado que varios empleados han concedido, sin supervisión, permisos de lectura de correo y archivos a aplicaciones de terceros registradas en Microsoft Entra ID a través del consentimiento de usuario, algunas de las cuales solicitan permisos excesivos. La organización quiere que, a partir de ahora, ningún usuario pueda conceder consentimiento por sí mismo a nuevas aplicaciones que requieran permisos de alto impacto, y que dichas solicitudes se enrutan a un administrador para su revisión. ¿Qué deberían configurar?",
     "q_en": "The security team has observed that several employees have, without oversight, granted mail and file read permissions to third-party applications registered in Microsoft Entra ID via user consent, some of which request excessive permissions. The organization wants that, from now on, no user can self-consent to new applications requiring high-impact permissions, and that such requests are routed to an administrator for review. What should they configure?",
     "opts_es": [
-      "Restringir el consentimiento del usuario para permisos de alto impacto y habilitar el flujo de solicitudes de consentimiento del administrador (admin consent workflow)",
+      "Restringir el consentimiento del usuario para permisos de alto impacto y habilitar el flujo de aprobación del administrador",
       "Deshabilitar por completo el registro de aplicaciones para todos los usuarios",
       "Eliminar todas las aplicaciones empresariales existentes del inquilino",
-      "Aplicar una directiva de prevención de pérdida de datos sobre las aplicaciones"
+      "Aplicar una directiva de prevención de pérdida de datos sobre los datos accedidos por las aplicaciones registradas"
     ],
     "opts_en": [
-      "Restrict user consent for high-impact permissions and enable the admin consent request workflow",
+      "Restrict user consent for high-impact permissions and enable the admin consent approval workflow",
       "Completely disable application registration for all users",
       "Delete all existing enterprise applications from the tenant",
-      "Apply a data loss prevention policy on applications"
+      "Apply a data loss prevention policy on the data accessed by all registered applications"
     ],
     "correct": [
       0
@@ -7860,15 +7860,15 @@
     "q_es": "Un administrador eliminó accidentalmente un grupo de Microsoft 365 llamado 'Proyecto-Fenix' hace 10 días, incluyendo el sitio de SharePoint, el bloc de notas y el equipo de Teams asociados. Los usuarios necesitan recuperar el acceso al contenido lo antes posible. ¿Qué debe saber el administrador sobre la posibilidad de recuperación?",
     "q_en": "An administrator accidentally deleted a Microsoft 365 group called 'Project-Phoenix' 10 days ago, including its associated SharePoint site, notebook, and Teams team. Users need access to the content restored as soon as possible. What should the administrator know about the possibility of recovery?",
     "opts_es": [
-      "El grupo y sus recursos asociados pueden restaurarse dentro de los 30 días posteriores a la eliminación mediante el Centro de administración de Microsoft 365 o Microsoft Graph PowerShell",
+      "El grupo y sus recursos pueden restaurarse en 30 días mediante el Centro de administración o Graph PowerShell",
       "Los grupos de Microsoft 365 no se pueden recuperar bajo ninguna circunstancia tras su eliminación",
-      "Solo el sitio de SharePoint puede recuperarse; el equipo de Teams se pierde de forma permanente",
+      "Solo el sitio de SharePoint puede recuperarse; el equipo de Teams y el bloc de notas se pierden de forma permanente",
       "La recuperación solo es posible si se eliminó hace menos de 24 horas"
     ],
     "opts_en": [
-      "The group and its associated resources can be restored within 30 days of deletion via the Microsoft 365 admin center or Microsoft Graph PowerShell",
+      "The group and its resources can be restored within 30 days via the admin center or Graph PowerShell",
       "Microsoft 365 groups cannot be recovered under any circumstances after deletion",
-      "Only the SharePoint site can be recovered; the Teams team is permanently lost",
+      "Only the SharePoint site can be recovered; the Teams team and notebook are permanently lost",
       "Recovery is only possible if deleted less than 24 hours ago"
     ],
     "correct": [
@@ -7886,13 +7886,13 @@
     "q_es": "Una organización quiere permitir que los usuarios compartan archivos de OneDrive y SharePoint con personas externas mediante enlaces 'cualquier persona con el enlace', pero solo para el departamento de Marketing, que colabora frecuentemente con agencias externas. El resto de departamentos debe seguir restringido a compartir únicamente con usuarios autenticados de la organización o invitados específicos. ¿Qué enfoque permite aplicar configuraciones de uso compartido externo diferentes por departamento?",
     "q_en": "An organization wants to allow users to share OneDrive and SharePoint files externally via 'anyone with the link' links, but only for the Marketing department, which frequently collaborates with external agencies. All other departments must remain restricted to sharing only with authenticated organization users or specific guests. What approach allows different external sharing settings per department?",
     "opts_es": [
-      "Configurar el nivel de uso compartido externo más permisivo a nivel de organización y luego aplicar directivas de uso compartido más restrictivas a nivel de sitio de SharePoint para los demás departamentos",
+      "Configurar el nivel de uso compartido externo más permisivo a nivel de organización y aplicar directivas más restrictivas a nivel de sitio",
       "No es posible aplicar configuraciones de uso compartido diferentes; el ajuste es siempre global e idéntico para todos los sitios",
       "Crear un inquilino independiente solo para el departamento de Marketing",
       "Usar únicamente etiquetas de confidencialidad para controlar el uso compartido externo"
     ],
     "opts_en": [
-      "Set the most permissive external sharing level at the organization level, then apply more restrictive sharing policies at the SharePoint site level for the other departments",
+      "Set the most permissive external sharing level organization-wide, then apply more restrictive policies at the site level",
       "It is not possible to apply different sharing settings; the setting is always global and identical for all sites",
       "Create a separate tenant just for the Marketing department",
       "Use only sensitivity labels to control external sharing"
@@ -7941,7 +7941,7 @@
       "Filtrado basado en grupos (group-based filtering), sincronizando solo los miembros del grupo de seguridad designado",
       "Filtrado basado en unidades organizativas (OU-based filtering)",
       "Filtrado de dominios completos",
-      "No es posible filtrar por pertenencia a grupos; solo por OU o atributo"
+      "No es posible filtrar la sincronización por pertenencia a grupos de seguridad; solo por OU, dominio completo o atributo personalizado"
     ],
     "opts_en": [
       "Group-based filtering, syncing only the members of the designated security group",
@@ -7992,13 +7992,13 @@
     "opts_es": [
       "Coincidencia de números (Number matching) en las notificaciones push de Microsoft Authenticator",
       "Pase de acceso temporal (Temporary Access Pass)",
-      "Restricciones de inquilino (tenant restrictions)",
+      "Restricciones de inquilino (tenant restrictions) aplicadas a dispositivos no administrados",
       "Bloqueo inteligente (Smart Lockout)"
     ],
     "opts_en": [
       "Number matching in Microsoft Authenticator push notifications",
       "Temporary Access Pass",
-      "Tenant restrictions",
+      "Tenant restrictions applied to unmanaged devices",
       "Smart Lockout"
     ],
     "correct": [
@@ -8199,13 +8199,13 @@
     "q_en": "During the investigation of a compromised device, a security analyst needs to collect a complete forensic evidence package -including the Windows event log, running process memory, autorun information, and active network connections- for later offline analysis, without permanently isolating the device yet. What Microsoft Defender for Endpoint action should they use?",
     "opts_es": [
       "Recopilar paquete de investigación (Collect investigation package) mediante una sesión de respuesta activa",
-      "Aislar el dispositivo de la red",
+      "Aislar el dispositivo de la red corporativa, permitiendo únicamente la comunicación con el servicio Defender",
       "Ejecutar un análisis antivirus completo",
       "Restringir la ejecución de aplicaciones"
     ],
     "opts_en": [
       "Collect investigation package via a live response session",
-      "Isolate the device from the network",
+      "Isolate the device from the corporate network, allowing only communication with the Defender service",
       "Run a full antivirus scan",
       "Restrict app execution"
     ],
@@ -8227,7 +8227,7 @@
       "Revisiones de acceso (Access reviews) aplicadas a los permisos de aplicaciones empresariales",
       "Microsoft Entra Connect Health",
       "Cloud Discovery en Microsoft Defender for Cloud Apps",
-      "Una directiva de acceso condicional que bloquee todas las aplicaciones"
+      "Una directiva de acceso condicional que bloquee todas las aplicaciones de terceros del inquilino"
     ],
     "opts_en": [
       "Access reviews applied to enterprise application permissions",
@@ -8276,14 +8276,14 @@
     "q_es": "Una organización quiere que una etiqueta de retención de 5 años se aplique automáticamente a cualquier documento de SharePoint que contenga números de pasaporte (un tipo de información confidencial integrado), sin que los usuarios tengan que aplicar la etiqueta manualmente. ¿Qué deben crear para lograr este comportamiento?",
     "q_en": "An organization wants a 5-year retention label to be automatically applied to any SharePoint document containing passport numbers (a built-in sensitive information type), without users having to apply the label manually. What should they create to achieve this behavior?",
     "opts_es": [
-      "Una directiva de etiquetado automático (auto-apply label policy) basada en el tipo de información confidencial 'Número de pasaporte'",
+      "Una directiva de etiquetado automático basada en el tipo de información confidencial 'Número de pasaporte'",
       "Una directiva de prevención de pérdida de datos sin etiqueta de retención asociada",
-      "Una etiqueta de retención que los usuarios deben seleccionar manualmente desde Outlook",
+      "Una etiqueta de retención que los usuarios deben seleccionar manualmente desde Outlook o SharePoint",
       "Una directiva de acceso condicional que exija MFA para abrir el documento"
     ],
     "opts_en": [
       "An auto-apply label policy based on the 'Passport number' sensitive information type",
-      "A data loss prevention policy with no associated retention label",
+      "A data loss prevention policy with no retention label associated with the document",
       "A retention label that users must manually select from Outlook",
       "A Conditional Access policy requiring MFA to open the document"
     ],
@@ -8328,15 +8328,15 @@
     "q_es": "Una organización con información altamente sensible quiere que, si un usuario inicia sesión en Outlook en la Web o SharePoint desde un navegador en un equipo público o no administrado y permanece inactivo durante 10 minutos, se cierre automáticamente su sesión y se le solicite volver a autenticarse, sin afectar a los inicios de sesión desde la aplicación de escritorio de Outlook ni desde dispositivos administrados. ¿Qué deberían configurar?",
     "q_en": "An organization with highly sensitive information wants that, if a user signs in to Outlook on the web or SharePoint from a browser on a public or unmanaged computer and remains idle for 10 minutes, their session is automatically signed out and they are prompted to re-authenticate, without affecting sign-ins from the Outlook desktop app or from managed devices. What should they configure?",
     "opts_es": [
-      "Una directiva de tiempo de espera de sesión inactiva (idle session timeout) para aplicaciones web de Microsoft 365, con ámbito a dispositivos no administrados",
-      "Reducir el tiempo de vida del token de actualización (refresh token) para todos los dispositivos",
+      "Una directiva de tiempo de espera de sesión inactiva para apps web de Microsoft 365, con ámbito a dispositivos no administrados",
+      "Reducir el tiempo de vida del token de actualización (refresh token) para todos los dispositivos no administrados",
       "Una directiva de retención que elimine los correos tras 10 minutos",
       "Deshabilitar Outlook en la Web para toda la organización"
     ],
     "opts_en": [
-      "An idle session timeout policy for Microsoft 365 web apps, scoped to unmanaged devices",
-      "Reducing the refresh token lifetime for all devices",
-      "A retention policy that deletes emails after 10 minutes",
+      "An idle session timeout policy for Microsoft 365 web apps, scoped to unmanaged devices only",
+      "Reducing the refresh token lifetime for all unmanaged devices in the tenant",
+      "A retention policy that automatically deletes emails after 10 minutes of inactivity",
       "Disabling Outlook on the web for the entire organization"
     ],
     "correct": [
@@ -8354,13 +8354,13 @@
     "q_es": "Una organización colabora habitualmente con dos empresas asociadas de confianza y quiere que los usuarios invitados B2B solo puedan provenir de los inquilinos de Microsoft Entra ID de esas dos empresas específicas, bloqueando automáticamente cualquier intento de colaboración B2B procedente de cualquier otro inquilino externo, sin tener que gestionar una lista de usuarios individuales bloqueados. ¿Qué deberían configurar?",
     "q_en": "An organization regularly collaborates with two trusted partner companies and wants B2B guest users to only be able to come from the Microsoft Entra ID tenants of those two specific companies, automatically blocking any B2B collaboration attempt from any other external tenant, without managing a list of individually blocked users. What should they configure?",
     "opts_es": [
-      "Configuración de acceso entre inquilinos (cross-tenant access settings) con una directiva de organizaciones, permitiendo solo a esos dos inquilinos y bloqueando el resto por defecto",
-      "Restricciones de inquilino (tenant restrictions) en las redes locales únicamente",
+      "Configuración de acceso entre inquilinos con una directiva de organizaciones que permita solo a esos dos inquilinos",
+      "Restricciones de inquilino (tenant restrictions) aplicadas únicamente en las redes locales de la organización",
       "Una directiva de acceso condicional que bloquee a todos los usuarios invitados sin excepción",
       "Eliminar manualmente cualquier usuario invitado que no pertenezca a esas dos empresas cada semana"
     ],
     "opts_en": [
-      "Cross-tenant access settings with an organization-specific policy, allowing only those two tenants and blocking all others by default",
+      "Cross-tenant access settings with an organization-specific policy allowing only those two tenants",
       "Tenant restrictions on on-premises networks only",
       "A Conditional Access policy that blocks all guest users without exception",
       "Manually removing any guest user that doesn't belong to those two companies every week"
@@ -8433,7 +8433,7 @@
     "q_en": "An organization wants to protect its 5 Global Administrators and IT security team members from having their accounts modified, passwords reset, or deleted by other administrators with roles such as User Administrator, even if those administrators have the role assigned tenant-wide. What Microsoft Entra ID solution allows restricting which administrators can manage the accounts of specific other administrators?",
     "opts_es": [
       "Una unidad administrativa restringida (restricted management administrative unit) que contenga esas cuentas",
-      "Una directiva de acceso condicional que bloquee el acceso de Administrador de usuarios",
+      "Una directiva de acceso condicional que bloquee el acceso del rol Administrador de usuarios a esas cuentas",
       "Marcar las cuentas como cuentas prioritarias (priority accounts)",
       "Eliminar el rol de Administrador de usuarios de todo el inquilino"
     ],
@@ -8484,14 +8484,14 @@
     "q_es": "Durante una reestructuración de Active Directory, un administrador necesita mover varios objetos de usuario a un nuevo bosque de Active Directory mediante una herramienta de migración entre bosques. Es crítico que, tras la migración, Microsoft Entra Connect Sync siga reconociendo a estos usuarios como las MISMAS identidades en la nube (conservando sus buzones, archivos de OneDrive y pertenencias a grupos), en lugar de crear cuentas nuevas y duplicadas. ¿Qué deben asegurarse de preservar durante la migración entre bosques?",
     "q_en": "During an Active Directory restructuring, an administrator needs to move several user objects to a new Active Directory forest using a cross-forest migration tool. It is critical that, after the migration, Microsoft Entra Connect Sync continues to recognize these users as the SAME cloud identities (preserving their mailboxes, OneDrive files, and group memberships), instead of creating new, duplicate accounts. What must they ensure is preserved during the cross-forest migration?",
     "opts_es": [
-      "El valor del atributo usado como ancla de origen (sourceAnchor/ms-DS-ConsistencyGuid), para que coincida con el ImmutableId existente en Microsoft Entra ID",
-      "El nombre de inicio de sesión (sAMAccountName), sin importar el resto de atributos",
+      "El atributo usado como ancla de origen (sourceAnchor), que debe coincidir con el ImmutableId existente en la nube",
+      "El nombre de inicio de sesión (sAMAccountName) del usuario, sin importar los demás atributos sincronizados",
       "La pertenencia al mismo grupo de seguridad 'Domain Users'",
       "La ruta de la carpeta de inicio (home directory) del usuario"
     ],
     "opts_en": [
-      "The value of the attribute used as the source anchor (sourceAnchor/ms-DS-ConsistencyGuid), so it matches the existing ImmutableId in Microsoft Entra ID",
-      "The logon name (sAMAccountName), regardless of other attributes",
+      "The attribute used as the source anchor (sourceAnchor), matching the existing ImmutableId in the cloud",
+      "The user's logon name (sAMAccountName), regardless of any other synchronized attributes",
       "Membership in the same 'Domain Users' security group",
       "The user's home directory path"
     ],
@@ -8539,13 +8539,13 @@
       "En la configuración de usuarios de Microsoft Entra ID, establecer '¿Pueden los usuarios registrar aplicaciones?' en 'No'",
       "Eliminar el rol de Usuario predeterminado para todos los empleados",
       "Habilitar el modo de almacenamiento provisional en Microsoft Entra Connect",
-      "Aplicar una directiva de prevención de pérdida de datos sobre el portal de Azure"
+      "Aplicar una directiva de prevención de pérdida de datos sobre el acceso al portal de Azure y al Centro de administración de Entra"
     ],
     "opts_en": [
       "In Microsoft Entra ID user settings, set 'Users can register applications' to 'No'",
       "Remove the default User role from all employees",
       "Enable staging mode in Microsoft Entra Connect",
-      "Apply a data loss prevention policy on the Azure portal"
+      "Apply a data loss prevention policy on access to the Azure portal and the Entra admin center"
     ],
     "correct": [
       0
