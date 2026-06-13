@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@
           "@type": "Quiz",
           "position": 1,
           "name": "AZ-900: Microsoft Azure Fundamentals - Examen de práctica",
-          "url": "https://earnyourcert.com/",
+          "url": "https://earnyourcert.com/az-900.html",
           "educationalLevel": "Fundamentals",
           "about": "Microsoft Certified: AZ-900"
         },
@@ -64,7 +64,7 @@
           "@type": "Quiz",
           "position": 2,
           "name": "AB-900: Microsoft 365 Copilot and Agent Administration Fundamentals - Examen de práctica",
-          "url": "https://earnyourcert.com/",
+          "url": "https://earnyourcert.com/ab-900.html",
           "educationalLevel": "Fundamentals",
           "about": "Microsoft Certified: AB-900"
         },
@@ -72,7 +72,7 @@
           "@type": "Quiz",
           "position": 3,
           "name": "MS-700: Microsoft Teams Administrator Associate - Examen de práctica",
-          "url": "https://earnyourcert.com/",
+          "url": "https://earnyourcert.com/ms-700.html",
           "educationalLevel": "Associate",
           "about": "Microsoft Certified: MS-700"
         },
@@ -80,7 +80,7 @@
           "@type": "Quiz",
           "position": 4,
           "name": "MS-102: Microsoft 365 Administrator Expert - Examen de práctica",
-          "url": "https://earnyourcert.com/",
+          "url": "https://earnyourcert.com/ms-102.html",
           "educationalLevel": "Expert",
           "about": "Microsoft Certified: MS-102"
         }
@@ -2940,6 +2940,15 @@ if(!EXAMS.length){
 updateAccountUI();
 initGoogleAuth();
 restoreSession();
+
+// Deep link from SEO landing pages: /?exam=az-900 opens that exam directly
+(function(){
+  const wanted=new URLSearchParams(location.search).get('exam');
+  if(wanted && EXAMS.some(e=>e.id===wanted)){
+    history.replaceState(null,'',location.pathname+location.hash);
+    requireLogin(()=>selectExam(wanted));
+  }
+})();
 
 // Share result
 // Exporta un informe imprimible (PDF via diálogo de impresión) con el detalle
