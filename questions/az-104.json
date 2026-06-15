@@ -210,27 +210,29 @@
   {
     "dom": 1,
     "obj": "1.1",
-    "q_es": "Un usuario necesita poder restablecer su propia contraseña sin intervención del departamento de TI. ¿Qué característica de Microsoft Entra ID debe habilitarse y configurarse para ese usuario?",
-    "q_en": "A user needs to be able to reset their own password without IT involvement. Which Microsoft Entra ID feature must be enabled and configured for that user?",
-    "opts_es": [
-      "Bloqueos de recursos a nivel de suscripción (Resource locks)",
-      "Acceso condicional basado en la ubicación del usuario (Conditional Access)",
-      "Autoservicio de restablecimiento de contraseña (SSPR)",
-      "Roles personalizados con permisos de restablecimiento (Custom roles)"
+    "type": "yesno",
+    "q_es": "Tu organización ha habilitado el restablecimiento de contraseña autoservicio (SSPR) para los usuarios de Microsoft Entra ID. Para cada afirmación, indica si es verdadera.",
+    "q_en": "Your organization has enabled self-service password reset (SSPR) for Microsoft Entra ID users. For each statement, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Un usuario puede restablecer su propia contraseña sin contactar con el departamento de soporte técnico, siempre que SSPR esté habilitado para su cuenta.",
+        "en": "A user can reset their own password without contacting the help desk, as long as SSPR is enabled for their account.",
+        "ans": true
+      },
+      {
+        "es": "Un usuario debe registrar al menos un método de autenticación (como un número de teléfono o una aplicación de autenticación) antes de poder usar SSPR.",
+        "en": "A user must register at least one authentication method (such as a phone number or authenticator app) before they can use SSPR.",
+        "ans": true
+      },
+      {
+        "es": "SSPR permite a un usuario cambiar su nombre principal de usuario (UPN) además de restablecer su contraseña.",
+        "en": "SSPR allows a user to change their user principal name (UPN) in addition to resetting their password.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Subscription-level resource locks",
-      "Conditional Access based on the user's location",
-      "Self-service password reset (SSPR)",
-      "Custom roles with reset permissions"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "SSPR permite a los usuarios restablecer su propia contraseña tras registrar uno o varios métodos de verificación (correo alternativo, teléfono, app de autenticación), reduciendo la carga del soporte técnico.",
-    "exp_en": "SSPR allows users to reset their own password after registering one or more verification methods (alternate email, phone, authenticator app), reducing the burden on the help desk.",
+    "exp_es": "SSPR permite a los usuarios restablecer su propia contraseña sin intervención del soporte técnico, pero antes deben registrar uno o más métodos de autenticación. SSPR solo gestiona la contraseña, no permite cambiar el UPN del usuario (eso requiere un administrador).",
+    "exp_en": "SSPR lets users reset their own password without help desk intervention, but they must first register one or more authentication methods. SSPR only manages the password and does not allow changing the user's UPN (that requires an administrator).",
     "id": 9,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -392,27 +394,29 @@
   {
     "dom": 1,
     "obj": "1.1",
-    "q_es": "¿Cuál de los siguientes NO es un método de autenticación válido que un usuario puede registrar para SSPR (Self-Service Password Reset)?",
-    "q_en": "Which of the following is NOT a valid authentication method a user can register for SSPR (Self-Service Password Reset)?",
-    "opts_es": [
-      "App de autenticación (Microsoft Authenticator)",
-      "Teléfono móvil (SMS o llamada)",
-      "Correo electrónico alternativo",
-      "Una etiqueta (tag) de recurso de Azure"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre los métodos de autenticación de Microsoft Entra ID, indica si es verdadera.",
+    "q_en": "For each statement about Microsoft Entra ID authentication methods, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "La aprobación de notificaciones push mediante la aplicación Microsoft Authenticator es un método de verificación admitido.",
+        "en": "Approving push notifications via the Microsoft Authenticator app is a supported verification method.",
+        "ans": true
+      },
+      {
+        "es": "Una clave de seguridad FIDO2 puede registrarse como método de autenticación sin contraseña (passwordless).",
+        "en": "A FIDO2 security key can be registered as a passwordless authentication method.",
+        "ans": true
+      },
+      {
+        "es": "Un PIN estático de cuatro dígitos, definido una sola vez y que nunca cambia, es el método recomendado por Microsoft para proteger cuentas con privilegios administrativos.",
+        "en": "A static four-digit PIN, set once and never changed, is the method Microsoft recommends for protecting accounts with administrative privileges.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Authenticator app (Microsoft Authenticator)",
-      "Mobile phone (SMS or call)",
-      "Alternate email address",
-      "An Azure resource tag"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Las etiquetas de recursos son metadatos de Azure Resource Manager y no tienen relación con la autenticación de usuarios; los métodos válidos para SSPR incluyen correo alternativo, teléfono y app de autenticación.",
-    "exp_en": "Resource tags are Azure Resource Manager metadata and have nothing to do with user authentication; valid SSPR methods include alternate email, phone, and an authenticator app.",
+    "exp_es": "Microsoft Authenticator (push) y las claves de seguridad FIDO2 son métodos de autenticación admitidos, y FIDO2 además permite el acceso sin contraseña. Microsoft no recomienda un PIN estático e inmutable para cuentas con privilegios; recomienda MFA robusto (Authenticator, FIDO2) y PIM para activación temporal de roles.",
+    "exp_en": "Microsoft Authenticator push approval and FIDO2 security keys are supported authentication methods, and FIDO2 also enables passwordless sign-in. Microsoft does not recommend a static, unchanging PIN for privileged accounts; it recommends strong MFA (Authenticator, FIDO2) and PIM for time-bound role activation.",
     "id": 16,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -470,27 +474,48 @@
   {
     "dom": 1,
     "obj": "1.2",
-    "q_es": "Quieres conceder a un auditor externo la posibilidad de ver la configuración de todos los recursos de una suscripción, sin permitirle realizar ningún cambio. ¿Qué rol integrado de RBAC deberías asignarle?",
-    "q_en": "You want to give an external auditor the ability to view the configuration of all resources in a subscription, without allowing any changes. Which built-in RBAC role should you assign?",
-    "opts_es": [
-      "Propietario (Owner)",
-      "Lector (Reader)",
-      "Colaborador (Contributor)",
-      "Administrador de acceso de usuarios"
+    "type": "dropdown",
+    "q_es": "Selecciona el rol integrado de Azure RBAC más adecuado para cada escenario.",
+    "q_en": "Select the most appropriate Azure RBAC built-in role for each scenario.",
+    "rows": [
+      {
+        "es": "Un auditor externo debe poder ver la configuración de todos los recursos de una suscripción, pero no debe poder modificar ni crear nada.",
+        "en": "An external auditor must be able to view the configuration of all resources in a subscription, but must not be able to modify or create anything.",
+        "opts_es": [
+          "Lector (Reader)",
+          "Colaborador (Contributor)",
+          "Propietario (Owner)",
+          "Administrador de acceso de usuarios"
+        ],
+        "opts_en": [
+          "Reader",
+          "Contributor",
+          "Owner",
+          "User Access Administrator"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Un equipo de operaciones necesita poder crear, modificar y eliminar recursos dentro de un grupo de recursos, pero no debe poder conceder acceso a otros usuarios.",
+        "en": "An operations team needs to create, modify, and delete resources within a resource group, but must not be able to grant access to other users.",
+        "opts_es": [
+          "Lector (Reader)",
+          "Colaborador (Contributor)",
+          "Propietario (Owner)",
+          "Administrador de acceso de usuarios"
+        ],
+        "opts_en": [
+          "Reader",
+          "Contributor",
+          "Owner",
+          "User Access Administrator"
+        ],
+        "correct": 1
+      }
     ],
-    "opts_en": [
-      "Owner",
-      "Reader",
-      "Contributor",
-      "User Access Administrator"
-    ],
-    "correct": [
-      1
-    ],
-    "exp_es": "El rol Lector permite ver todos los recursos y su configuración, pero no permite crear, modificar ni eliminar nada, lo que lo hace ideal para tareas de auditoría.",
-    "exp_en": "The Reader role allows viewing all resources and their configuration, but does not permit creating, modifying, or deleting anything, making it ideal for auditing tasks.",
+    "exp_es": "El rol Lector solo permite ver recursos y su configuración, sin posibilidad de cambios, ideal para auditoría. El rol Colaborador permite crear y administrar recursos, pero no incluye la capacidad de gestionar asignaciones de roles, que requiere Propietario o Administrador de acceso de usuarios.",
+    "exp_en": "The Reader role only allows viewing resources and their configuration, with no ability to make changes, ideal for auditing. The Contributor role allows creating and managing resources, but does not include the ability to manage role assignments, which requires Owner or User Access Administrator.",
     "id": 19,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -652,27 +677,48 @@
   {
     "dom": 1,
     "obj": "1.2",
-    "q_es": "¿Qué permite hacer el rol integrado 'Administrador de acceso de usuarios' (User Access Administrator) que el rol 'Colaborador' no permite?",
-    "q_en": "What does the built-in 'User Access Administrator' role allow that the 'Contributor' role does not?",
-    "opts_es": [
-      "Modificar reglas de red virtual y grupos de seguridad de red asociados a las subredes",
-      "Gestionar el acceso de otros usuarios a recursos de Azure (asignar y quitar roles RBAC)",
-      "Crear y eliminar máquinas virtuales, discos y conjuntos de escalado dentro del grupo",
-      "Ver el contenido de las cuentas de almacenamiento, incluidos blobs y archivos compartidos"
+    "type": "dropdown",
+    "q_es": "Relaciona cada rol integrado de Azure RBAC con la capacidad que proporciona.",
+    "q_en": "Match each Azure RBAC built-in role with the capability it provides.",
+    "rows": [
+      {
+        "es": "Permite gestionar el acceso de otros usuarios a los recursos de Azure, sin poder administrar los recursos en sí.",
+        "en": "Allows managing other users' access to Azure resources, without being able to manage the resources themselves.",
+        "opts_es": [
+          "Lector (Reader)",
+          "Colaborador (Contributor)",
+          "Administrador de acceso de usuarios",
+          "Propietario (Owner)"
+        ],
+        "opts_en": [
+          "Reader",
+          "Contributor",
+          "User Access Administrator",
+          "Owner"
+        ],
+        "correct": 2
+      },
+      {
+        "es": "Combina la capacidad de administrar recursos con la capacidad de gestionar el acceso de otros usuarios a esos recursos.",
+        "en": "Combines the ability to manage resources with the ability to manage other users' access to those resources.",
+        "opts_es": [
+          "Lector (Reader)",
+          "Colaborador (Contributor)",
+          "Administrador de acceso de usuarios",
+          "Propietario (Owner)"
+        ],
+        "opts_en": [
+          "Reader",
+          "Contributor",
+          "User Access Administrator",
+          "Owner"
+        ],
+        "correct": 3
+      }
     ],
-    "opts_en": [
-      "Modify virtual network rules and network security groups associated with the subnets",
-      "Manage other users' access to Azure resources (assign and remove RBAC roles)",
-      "Create and delete virtual machines, disks, and scale sets within the group",
-      "View the contents of storage accounts, including blobs and file shares"
-    ],
-    "correct": [
-      1
-    ],
-    "exp_es": "El rol Administrador de acceso de usuarios permite gestionar el acceso de los usuarios a los recursos de Azure (asignar roles RBAC), pero no concede permisos para administrar los recursos en sí, al contrario que Colaborador.",
-    "exp_en": "The User Access Administrator role allows managing users' access to Azure resources (assigning RBAC roles), but does not grant permissions to manage the resources themselves, unlike Contributor.",
+    "exp_es": "Administrador de acceso de usuarios solo gestiona asignaciones de roles, sin permisos sobre los recursos. Propietario (Owner) tiene todos los permisos de Colaborador más la capacidad de asignar roles, por lo que combina ambas capacidades.",
+    "exp_en": "User Access Administrator only manages role assignments, with no permissions over the resources themselves. Owner has all Contributor permissions plus the ability to assign roles, so it combines both capabilities.",
     "id": 26,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -782,27 +828,29 @@
   {
     "dom": 1,
     "obj": "1.2",
-    "q_es": "¿Cuál de las siguientes afirmaciones sobre las políticas de Acceso Condicional y Azure RBAC es correcta?",
-    "q_en": "Which of the following statements about Conditional Access policies and Azure RBAC is correct?",
-    "opts_es": [
-      "RBAC y Acceso Condicional son lo mismo y se configuran desde el mismo blade de Microsoft Entra ID, sin distinción entre ambos",
-      "RBAC controla el inicio de sesión exigiendo MFA, mientras que el Acceso Condicional controla qué acciones puede realizar el usuario sobre los recursos",
-      "El Acceso Condicional controla CÓMO y BAJO QUÉ CONDICIONES un usuario puede iniciar sesión (por ejemplo, exigiendo MFA), mientras que RBAC controla QUÉ puede hacer una vez autenticado",
-      "El Acceso Condicional sustituye por completo a RBAC, por lo que ya no es necesario asignar roles a los usuarios"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre el acceso condicional y Azure RBAC, indica si es verdadera.",
+    "q_en": "For each statement about Conditional Access and Azure RBAC, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "El acceso condicional puede bloquear el inicio de sesión de un usuario aunque ese usuario tenga asignado el rol Propietario sobre una suscripción.",
+        "en": "Conditional Access can block a user's sign-in even if that user has been assigned the Owner role on a subscription.",
+        "ans": true
+      },
+      {
+        "es": "Azure RBAC controla a qué acciones de administración puede acceder un usuario una vez que ha iniciado sesión correctamente.",
+        "en": "Azure RBAC controls which management actions a user can access once they have signed in successfully.",
+        "ans": true
+      },
+      {
+        "es": "El acceso condicional sustituye por completo la necesidad de asignar roles de Azure RBAC a los usuarios.",
+        "en": "Conditional Access completely replaces the need to assign Azure RBAC roles to users.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "RBAC and Conditional Access are the same thing and are configured from the same Microsoft Entra ID blade, with no distinction between them",
-      "RBAC controls sign-in by requiring MFA, while Conditional Access controls which actions the user can perform on resources",
-      "Conditional Access controls HOW and UNDER WHICH CONDITIONS a user can sign in (for example, requiring MFA), while RBAC controls WHAT they can do once authenticated",
-      "Conditional Access fully replaces RBAC, so it is no longer necessary to assign roles to users"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "El Acceso Condicional es una herramienta de Microsoft Entra ID que aplica controles de acceso en el momento del inicio de sesión (como requerir MFA o un dispositivo conforme), mientras que Azure RBAC define los permisos sobre los recursos de Azure una vez autenticado el usuario.",
-    "exp_en": "Conditional Access is a Microsoft Entra ID tool that enforces sign-in controls (such as requiring MFA or a compliant device), while Azure RBAC defines permissions over Azure resources once the user is authenticated.",
+    "exp_es": "El acceso condicional evalúa señales (ubicación, dispositivo, riesgo) antes de permitir el inicio de sesión, independientemente de los roles que tenga asignados el usuario. Azure RBAC, en cambio, determina qué puede hacer un usuario una vez autenticado. Ambos mecanismos son complementarios: ninguno sustituye al otro.",
+    "exp_en": "Conditional Access evaluates signals (location, device, risk) before allowing sign-in, regardless of the roles assigned to the user. Azure RBAC, on the other hand, determines what an authenticated user can do. The two mechanisms are complementary: neither replaces the other.",
     "id": 31,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -834,27 +882,29 @@
   {
     "dom": 1,
     "obj": "1.2",
-    "q_es": "¿Qué describe correctamente Privileged Identity Management (PIM) en Microsoft Entra ID?",
-    "q_en": "What correctly describes Privileged Identity Management (PIM) in Microsoft Entra ID?",
+    "type": "sentence",
+    "q_es": "Selecciona la respuesta que completa correctamente la frase.",
+    "q_en": "Select the answer that correctly completes the sentence.",
+    "pre_es": "Privileged Identity Management (PIM) de Microsoft Entra proporciona",
+    "post_es": ".",
+    "pre_en": "Microsoft Entra Privileged Identity Management (PIM) provides",
+    "post_en": ".",
     "opts_es": [
-      "Es un servicio de copia de seguridad para máquinas virtuales que programa snapshots automáticos según una directiva de retención configurada",
-      "Sustituye a los bloqueos de recursos, impidiendo que cualquier usuario elimine o modifique recursos protegidos sin aprobación previa",
-      "Es la herramienta para crear unidades administrativas que delegan la gestión de usuarios y dispositivos por departamento",
-      "Permite convertir asignaciones de roles en 'admisibles' (eligible), que el usuario debe activar de forma justo a tiempo y por tiempo limitado, en lugar de tenerlas siempre activas"
+      "acceso restringido a los servicios de Microsoft 365",
+      "la administración del ciclo de vida de los usuarios",
+      "la administración de las aplicaciones empresariales",
+      "la activación de roles por tiempo limitado"
     ],
     "opts_en": [
-      "It is a backup service for virtual machines that schedules automatic snapshots according to a configured retention policy",
-      "It replaces resource locks, preventing any user from deleting or modifying protected resources without prior approval",
-      "It is the tool for creating administrative units that delegate management of users and devices by department",
-      "It lets you convert role assignments into 'eligible' assignments, which the user must activate just-in-time and for a limited duration, instead of being always active"
+      "restricted access to Microsoft 365 services",
+      "the lifecycle management of users",
+      "the management of enterprise applications",
+      "time-bound role activation"
     ],
-    "correct": [
-      3
-    ],
-    "exp_es": "PIM permite asignaciones de roles 'admisibles' (eligible), que requieren que el usuario las active explícitamente (a menudo con aprobación y MFA) durante un periodo de tiempo limitado, reduciendo la exposición de privilegios permanentes.",
-    "exp_en": "PIM enables 'eligible' role assignments, which require the user to explicitly activate them (often with approval and MFA) for a limited time, reducing the exposure of standing privileges.",
+    "correct": 3,
+    "exp_es": "La función principal de PIM es permitir la activación 'justo a tiempo' (just-in-time) de roles con privilegios durante un periodo de tiempo limitado, en lugar de mantener asignaciones permanentes. PIM no gestiona el ciclo de vida de los usuarios ni las aplicaciones empresariales, ni restringe por sí mismo el acceso a Microsoft 365.",
+    "exp_en": "PIM's core function is to allow just-in-time activation of privileged roles for a limited period of time, instead of maintaining permanent assignments. PIM does not manage user lifecycle or enterprise applications, nor does it by itself restrict access to Microsoft 365.",
     "id": 33,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -1432,27 +1482,29 @@
   {
     "dom": 1,
     "obj": "1.1",
-    "q_es": "Un grupo de Microsoft 365 se eliminó por error hace 15 días. ¿Es posible recuperarlo?",
-    "q_en": "A Microsoft 365 group was accidentally deleted 15 days ago. Can it be recovered?",
-    "opts_es": [
-      "Solo si se contacta con el soporte de Microsoft pagando una tarifa adicional, ya que el periodo de recuperación estándar ya ha expirado",
-      "No, los grupos de Microsoft 365 no se pueden restaurar nunca una vez eliminados, independientemente del tiempo transcurrido",
-      "Sí, los grupos de Microsoft 365 se pueden restaurar durante un periodo de 30 días tras su eliminación",
-      "Solo si el grupo era de pertenencia dinámica, los grupos de pertenencia asignada no se pueden restaurar"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre la eliminación y recuperación de grupos en Microsoft Entra ID, indica si es verdadera.",
+    "q_en": "For each statement about deleting and recovering groups in Microsoft Entra ID, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Un grupo de Microsoft 365 eliminado puede recuperarse durante un periodo de 30 días tras su eliminación.",
+        "en": "A deleted Microsoft 365 group can be recovered within a 30-day period after deletion.",
+        "ans": true
+      },
+      {
+        "es": "Un grupo de seguridad eliminado en Microsoft Entra ID también puede restaurarse dentro del periodo de retención de eliminación temporal de 30 días.",
+        "en": "A deleted security group in Microsoft Entra ID can also be restored within the 30-day soft-delete retention period.",
+        "ans": true
+      },
+      {
+        "es": "Una vez transcurridos los 30 días de retención, el soporte técnico de Microsoft puede recuperar el grupo eliminado a petición del administrador.",
+        "en": "After the 30-day retention period has elapsed, Microsoft support can recover the deleted group at the administrator's request.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Only by contacting Microsoft support and paying an additional fee, since the standard recovery period has already expired",
-      "No, Microsoft 365 groups can never be restored once deleted, regardless of how much time has passed",
-      "Yes, Microsoft 365 groups can be restored within a 30-day period after deletion",
-      "Only if the group had dynamic membership; assigned-membership groups cannot be restored"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "De forma similar a los usuarios, los grupos de Microsoft 365 eliminados se conservan en estado de 'eliminación temporal' durante 30 días y pueden restaurarse junto con su contenido (sitio de SharePoint, buzón, etc.) durante ese periodo.",
-    "exp_en": "Similar to users, deleted Microsoft 365 groups are kept in a 'soft-deleted' state for 30 days and can be restored along with their content (SharePoint site, mailbox, etc.) during that period.",
+    "exp_es": "Tanto los grupos de Microsoft 365 como los grupos de seguridad eliminados en Microsoft Entra ID pueden restaurarse durante 30 días gracias a la eliminación temporal (soft delete). Una vez transcurrido ese plazo, el grupo se elimina de forma permanente y ni siquiera el soporte técnico de Microsoft puede recuperarlo.",
+    "exp_en": "Both Microsoft 365 groups and security groups deleted in Microsoft Entra ID can be restored for 30 days thanks to soft delete. After that period, the group is permanently deleted and even Microsoft support cannot recover it.",
     "id": 56,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -1614,53 +1666,76 @@
   {
     "dom": 2,
     "obj": "2.1",
-    "q_es": "¿Qué tipo de punto de conexión de Azure permite que el tráfico hacia una cuenta de almacenamiento se realice íntegramente a través de una dirección IP privada dentro de una red virtual, sin pasar por Internet público?",
-    "q_en": "Which type of Azure endpoint allows traffic to a storage account to travel entirely over a private IP address within a virtual network, without traversing the public Internet?",
-    "opts_es": [
-      "SAS de delegación de usuario",
-      "Punto de conexión privado (Private Endpoint)",
-      "Etiqueta de servicio (Service Tag) pública",
-      "Punto de conexión de servicio (Service Endpoint)"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre los puntos de conexión de red de Azure Storage, indica si es verdadera.",
+    "q_en": "For each statement about Azure Storage network endpoints, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Un punto de conexión privado (Private Endpoint) asigna a la cuenta de almacenamiento una dirección IP privada dentro de la red virtual del cliente.",
+        "en": "A Private Endpoint assigns the storage account a private IP address within the customer's virtual network.",
+        "ans": true
+      },
+      {
+        "es": "Cuando se usa un punto de conexión privado, el tráfico hacia la cuenta de almacenamiento sigue atravesando la red pública de Internet.",
+        "en": "When using a Private Endpoint, traffic to the storage account still travels over the public Internet.",
+        "ans": false
+      },
+      {
+        "es": "Un punto de conexión de servicio (Service Endpoint) permite restringir el acceso a la cuenta de almacenamiento a una subred específica sin asignarle una dirección IP privada.",
+        "en": "A Service Endpoint allows restricting access to the storage account to a specific subnet without assigning it a private IP address.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "User delegation SAS",
-      "Private Endpoint",
-      "Public Service Tag",
-      "Service Endpoint"
-    ],
-    "correct": [
-      1
-    ],
-    "exp_es": "Un punto de conexión privado crea una interfaz de red con una dirección IP privada de la VNet que se asocia a la cuenta de almacenamiento, de forma que el tráfico nunca atraviesa la red pública de Internet.",
-    "exp_en": "A private endpoint creates a network interface with a private IP address from the VNet that maps to the storage account, so traffic never traverses the public Internet.",
+    "exp_es": "Un punto de conexión privado conecta la cuenta de almacenamiento directamente a la red virtual mediante una IP privada, eliminando el tráfico por Internet pública. Un punto de conexión de servicio mantiene la IP pública del recurso pero permite restringir el acceso a subredes concretas, sin asignar una IP privada al recurso.",
+    "exp_en": "A private endpoint connects the storage account directly to the virtual network via a private IP, removing traffic from the public Internet. A service endpoint keeps the resource's public IP but allows restricting access to specific subnets, without assigning the resource a private IP.",
     "id": 63,
-    "type": "mc",
     "exam": "az-104"
   },
   {
     "dom": 2,
     "obj": "2.1",
-    "q_es": "¿Cuál de los siguientes tipos de SAS permite generar un token de acceso firmado con las credenciales de Microsoft Entra ID de un usuario, en lugar de con las claves de la cuenta de almacenamiento?",
-    "q_en": "Which of the following SAS types lets you generate an access token signed with a user's Microsoft Entra ID credentials, instead of the storage account keys?",
-    "opts_es": [
-      "SAS de cuenta (Account SAS)",
-      "Ninguna; todas las SAS usan claves de cuenta",
-      "SAS de servicio (Service SAS)",
-      "SAS de delegación de usuario (User delegation SAS)"
+    "type": "dropdown",
+    "q_es": "Selecciona el tipo de firma de acceso compartido (SAS) más adecuado para cada escenario.",
+    "q_en": "Select the most appropriate shared access signature (SAS) type for each scenario.",
+    "rows": [
+      {
+        "es": "Conceder acceso delegado a varios servicios de Azure Storage (blobs, archivos, colas y tablas) dentro de una cuenta de almacenamiento mediante un único token.",
+        "en": "Grant delegated access to multiple Azure Storage services (blobs, files, queues, and tables) within a storage account using a single token.",
+        "opts_es": [
+          "SAS de cuenta (Account SAS)",
+          "SAS de servicio (Service SAS)",
+          "SAS de usuario delegado (User delegation SAS)",
+          "Clave de acceso de cuenta"
+        ],
+        "opts_en": [
+          "Account SAS",
+          "Service SAS",
+          "User delegation SAS",
+          "Account access key"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Conceder acceso a un recurso específico de Blob Storage, donde la firma se protege con credenciales de Microsoft Entra ID en lugar de la clave de la cuenta.",
+        "en": "Grant access to a specific Blob Storage resource, where the signature is secured with Microsoft Entra ID credentials instead of the account key.",
+        "opts_es": [
+          "SAS de cuenta (Account SAS)",
+          "SAS de servicio (Service SAS)",
+          "SAS de usuario delegado (User delegation SAS)",
+          "Clave de acceso de cuenta"
+        ],
+        "opts_en": [
+          "Account SAS",
+          "Service SAS",
+          "User delegation SAS",
+          "Account access key"
+        ],
+        "correct": 2
+      }
     ],
-    "opts_en": [
-      "Account SAS",
-      "None; all SAS types use account keys",
-      "Service SAS",
-      "User delegation SAS"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "La SAS de delegación de usuario se firma con una clave de seguridad de Microsoft Entra ID obtenida con las credenciales del usuario (mediante RBAC), lo que evita depender de las claves de acceso de la cuenta de almacenamiento.",
-    "exp_en": "A user delegation SAS is signed with a Microsoft Entra ID security key obtained using the user's credentials (via RBAC), avoiding reliance on the storage account access keys.",
+    "exp_es": "Una SAS de cuenta puede abarcar varios servicios de almacenamiento con un único token firmado con la clave de la cuenta. Una SAS de usuario delegado se firma con credenciales de Microsoft Entra ID en lugar de la clave de la cuenta y solo aplica a Blob Storage, lo que mejora la seguridad al evitar compartir la clave.",
+    "exp_en": "An account SAS can span multiple storage services with a single token signed with the account key. A user delegation SAS is signed with Microsoft Entra ID credentials instead of the account key and only applies to Blob Storage, improving security by avoiding sharing the account key.",
     "id": 64,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -1770,27 +1845,29 @@
   {
     "dom": 2,
     "obj": "2.1",
-    "q_es": "¿Qué ocurre si deshabilitas la opción 'Permitir acceso de clave compartida' (Allow shared key access) en una cuenta de almacenamiento?",
-    "q_en": "What happens if you disable the 'Allow shared key access' option on a storage account?",
-    "opts_es": [
-      "Se deshabilita el cifrado en reposo de todos los blobs existentes, y los nuevos blobs se almacenan sin cifrar hasta que se reactive",
-      "Se elimina la cuenta de almacenamiento junto con todos sus contenedores, blobs y configuraciones de acceso de forma irreversible",
-      "Se habilita automáticamente el acceso público anónimo a todos los contenedores de la cuenta, sobrescribiendo su configuración actual",
-      "Las solicitudes autenticadas con la clave de la cuenta o con SAS firmadas por clave compartida dejarán de funcionar; solo se permitirá autenticación mediante Microsoft Entra ID"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre la opción 'Permitir acceso de clave compartida' (Allow shared key access) de una cuenta de almacenamiento, indica si es verdadera.",
+    "q_en": "For each statement about the 'Allow shared key access' setting of a storage account, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Si se deshabilita el acceso de clave compartida, las solicitudes autenticadas con las claves de acceso de la cuenta de almacenamiento dejan de autorizarse.",
+        "en": "If shared key access is disabled, requests authenticated with the storage account's access keys are no longer authorized.",
+        "ans": true
+      },
+      {
+        "es": "Al deshabilitar el acceso de clave compartida, las solicitudes autenticadas mediante Microsoft Entra ID siguen funcionando con normalidad.",
+        "en": "Disabling shared key access does not affect requests authenticated using Microsoft Entra ID, which continue to work normally.",
+        "ans": true
+      },
+      {
+        "es": "Deshabilitar el acceso de clave compartida invalida de forma permanente todas las URL con SAS generadas previamente, incluso si se vuelve a habilitar más adelante.",
+        "en": "Disabling shared key access permanently invalidates all previously generated SAS URLs, even if it is re-enabled later.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Encryption at rest is disabled for all existing blobs, and new blobs are stored unencrypted until it is re-enabled",
-      "The storage account is deleted along with all its containers, blobs, and access configurations irreversibly",
-      "Anonymous public access is automatically enabled for all containers in the account, overriding its current configuration",
-      "Requests authenticated with the account key or with shared-key-signed SAS will stop working; only Microsoft Entra ID authentication will be allowed"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Deshabilitar el acceso de clave compartida obliga a que todas las solicitudes a los servicios de datos se autentiquen mediante Microsoft Entra ID (RBAC), reforzando la seguridad al eliminar la dependencia de las claves de cuenta y las SAS basadas en ellas.",
-    "exp_en": "Disabling shared key access forces all requests to data services to authenticate via Microsoft Entra ID (RBAC), improving security by removing reliance on account keys and SAS tokens based on them.",
+    "exp_es": "Deshabilitar el acceso de clave compartida bloquea tanto las solicitudes con las claves de la cuenta como las SAS firmadas con esas claves, pero el acceso mediante Microsoft Entra ID (RBAC) no se ve afectado. El efecto no es permanente: si la opción se vuelve a habilitar, las SAS basadas en clave que aún no hayan expirado vuelven a funcionar.",
+    "exp_en": "Disabling shared key access blocks both requests using the account keys and SAS tokens signed with those keys, but Microsoft Entra ID (RBAC) access is unaffected. The effect is not permanent: if the setting is re-enabled, key-based SAS tokens that have not yet expired work again.",
     "id": 69,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -2004,27 +2081,29 @@
   {
     "dom": 2,
     "obj": "2.2",
-    "q_es": "¿Qué tipo de cuenta de almacenamiento es necesaria para usar funciones avanzadas de gestión de datos como ciclo de vida, niveles de acceso (Hot/Cool/Archive) y Azure Data Lake Storage Gen2?",
-    "q_en": "Which storage account type is required to use advanced data management features such as lifecycle management, access tiers (Hot/Cool/Archive), and Azure Data Lake Storage Gen2?",
+    "type": "sentence",
+    "q_es": "Selecciona la respuesta que completa correctamente la frase.",
+    "q_en": "Select the answer that correctly completes the sentence.",
+    "pre_es": "Para usar funciones avanzadas de administración de datos, como las directivas de ciclo de vida o el versionado de blobs, la cuenta de almacenamiento debe configurarse con el tipo",
+    "post_es": ".",
+    "pre_en": "To use advanced data management features, such as lifecycle management policies or blob versioning, the storage account must be configured with the",
+    "post_en": "type.",
     "opts_es": [
-      "Cuenta de tipo BlobStorage heredada exclusivamente",
-      "Cuenta de uso general v2 (StorageV2 / General-purpose v2)",
-      "Cuenta de uso general v1 únicamente",
-      "No es necesario ningún tipo específico"
+      "Uso general v1 (General-purpose v1)",
+      "Uso general v2 (General-purpose v2)",
+      "BlockBlobStorage Premium",
+      "FileStorage Premium"
     ],
     "opts_en": [
-      "Legacy BlobStorage account type only",
-      "General-purpose v2 (StorageV2) account",
-      "General-purpose v1 account only",
-      "No specific type is required"
+      "General-purpose v1",
+      "General-purpose v2",
+      "Premium BlockBlobStorage",
+      "Premium FileStorage"
     ],
-    "correct": [
-      1
-    ],
-    "exp_es": "Las cuentas de almacenamiento de uso general v2 (StorageV2) son el tipo recomendado y admiten todos los servicios y características modernas, incluyendo niveles de acceso, políticas de ciclo de vida y la opción de habilitar Data Lake Storage Gen2 (espacio de nombres jerárquico).",
-    "exp_en": "General-purpose v2 (StorageV2) storage accounts are the recommended type and support all modern services and features, including access tiers, lifecycle management policies, and the option to enable Data Lake Storage Gen2 (hierarchical namespace).",
+    "correct": 1,
+    "exp_es": "Las cuentas de uso general v2 admiten todas las funciones modernas de administración de datos, incluidas las directivas de ciclo de vida, el versionado de blobs y los niveles de acceso (Hot/Cool/Archive). Las cuentas v1 son un tipo heredado que no admite estas funciones, y los tipos Premium especializados tienen otras limitaciones.",
+    "exp_en": "General-purpose v2 accounts support all modern data management features, including lifecycle management policies, blob versioning, and access tiers (Hot/Cool/Archive). v1 accounts are a legacy type that does not support these features, and the specialized Premium types have other limitations.",
     "id": 78,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -2160,27 +2239,48 @@
   {
     "dom": 2,
     "obj": "2.2",
-    "q_es": "¿Qué política se puede configurar en una cuenta de almacenamiento para mover automáticamente los blobs a una capa de acceso más económica después de un determinado número de días sin acceso, y eliminarlos tras otro periodo?",
-    "q_en": "What policy can be configured on a storage account to automatically move blobs to a cheaper access tier after a certain number of days without access, and delete them after another period?",
-    "opts_es": [
-      "Una directiva de acceso almacenada vinculada al contenedor de destino",
-      "Una regla de CORS configurada para permitir solicitudes externas",
-      "Una directiva de administración del ciclo de vida (lifecycle management policy)",
-      "Una etiqueta de recurso con valor 'archive' aplicada al contenedor"
+    "type": "dropdown",
+    "q_es": "Selecciona la acción de la directiva de ciclo de vida (lifecycle management) más adecuada para cada escenario.",
+    "q_en": "Select the most appropriate lifecycle management policy action for each scenario.",
+    "rows": [
+      {
+        "es": "Los blobs no se han modificado en 30 días, se acceden con poca frecuencia, pero deben seguir disponibles para lectura ocasional con un coste de almacenamiento menor.",
+        "en": "Blobs have not been modified for 30 days, are accessed infrequently, but must remain available for occasional reads at a lower storage cost.",
+        "opts_es": [
+          "Mover a la capa Cool",
+          "Mover a la capa Archive",
+          "Eliminar el blob",
+          "Crear una instantánea"
+        ],
+        "opts_en": [
+          "Move to the Cool tier",
+          "Move to the Archive tier",
+          "Delete the blob",
+          "Create a snapshot"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Los blobs no se han modificado en 180 días y solo deben conservarse por motivos de cumplimiento normativo, sin necesidad de acceso inmediato.",
+        "en": "Blobs have not been modified for 180 days and only need to be retained for regulatory compliance, with no need for immediate access.",
+        "opts_es": [
+          "Mover a la capa Cool",
+          "Mover a la capa Archive",
+          "Eliminar el blob",
+          "Crear una instantánea"
+        ],
+        "opts_en": [
+          "Move to the Cool tier",
+          "Move to the Archive tier",
+          "Delete the blob",
+          "Create a snapshot"
+        ],
+        "correct": 1
+      }
     ],
-    "opts_en": [
-      "A stored access policy linked to the destination container",
-      "A CORS rule configured to allow external requests",
-      "A lifecycle management policy",
-      "A resource tag with value 'archive' applied to the container"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "Las directivas de administración del ciclo de vida permiten definir reglas basadas en reglas de filtrado y acciones (por ejemplo, mover a Cool tras 30 días sin acceso, a Archive tras 90 días, y eliminar tras 365 días) que se ejecutan automáticamente.",
-    "exp_en": "Lifecycle management policies let you define rules based on filters and actions (for example, move to Cool after 30 days without access, to Archive after 90 days, and delete after 365 days) that run automatically.",
+    "exp_es": "La capa Cool reduce el coste de almacenamiento manteniendo el acceso disponible para datos poco usados pero aún necesarios. La capa Archive ofrece el coste más bajo para datos que casi nunca se necesitan y que pueden tardar horas en rehidratarse, ideal para retención por cumplimiento normativo.",
+    "exp_en": "The Cool tier reduces storage cost while keeping access available for data that is rarely used but still needed. The Archive tier offers the lowest cost for data that is almost never needed and may take hours to rehydrate, ideal for regulatory retention.",
     "id": 84,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -2212,27 +2312,29 @@
   {
     "dom": 2,
     "obj": "2.2",
-    "q_es": "¿Qué función protege una cuenta de almacenamiento completa frente a la eliminación accidental, permitiendo recuperarla durante un periodo configurable tras su eliminación?",
-    "q_en": "Which feature protects an entire storage account from accidental deletion, allowing it to be recovered for a configurable period after deletion?",
-    "opts_es": [
-      "Una SAS de cuenta con permisos limitados a operaciones de lectura sobre contenedores específicos",
-      "Redes virtuales (VNet rules), que restringen el acceso a la cuenta según la subred de origen",
-      "Lifecycle management, que mueve blobs entre niveles de acceso según reglas de antigüedad",
-      "Soft delete a nivel de cuenta de almacenamiento (container/blob soft delete y recuperación de cuentas eliminadas)"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre la protección de una cuenta de almacenamiento mediante bloqueos (locks) y eliminación temporal (soft delete), indica si es verdadera.",
+    "q_en": "For each statement about protecting a storage account using locks and soft delete, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Un bloqueo de tipo 'CanNotDelete' aplicado a una cuenta de almacenamiento evita que un usuario con permisos de Colaborador la elimine accidentalmente.",
+        "en": "A 'CanNotDelete' lock applied to a storage account prevents a user with Contributor permissions from accidentally deleting it.",
+        "ans": true
+      },
+      {
+        "es": "La eliminación temporal (soft delete) de blobs protege automáticamente toda la cuenta de almacenamiento frente a su eliminación.",
+        "en": "Soft delete for blobs automatically protects the entire storage account from being deleted.",
+        "ans": false
+      },
+      {
+        "es": "Un bloqueo de tipo 'ReadOnly' aplicado a una cuenta de almacenamiento impide cargar nuevos blobs, aunque el usuario tenga permisos de Colaborador.",
+        "en": "A 'ReadOnly' lock applied to a storage account prevents uploading new blobs, even if the user has Contributor permissions.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "An account SAS with permissions limited to read operations on specific containers",
-      "Virtual network (VNet) rules, which restrict access to the account based on the source subnet",
-      "Lifecycle management, which moves blobs between access tiers based on age-based rules",
-      "Soft delete at the storage account level (container/blob soft delete and deleted account recovery)"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Azure ofrece capacidades de recuperación ante eliminación accidental tanto a nivel de datos (soft delete de blobs y contenedores) como, en determinados casos, recuperación de la propia cuenta eliminada durante un periodo limitado.",
-    "exp_en": "Azure provides accidental-deletion recovery capabilities both at the data level (blob and container soft delete) and, in certain cases, recovery of the deleted account itself for a limited period.",
+    "exp_es": "Los bloqueos de recursos ('CanNotDelete' y 'ReadOnly') protegen la cuenta de almacenamiento como recurso, independientemente del rol RBAC del usuario. La eliminación temporal de blobs solo protege los blobs individuales frente a su eliminación o sobrescritura, no protege la cuenta de almacenamiento en sí.",
+    "exp_en": "Resource locks ('CanNotDelete' and 'ReadOnly') protect the storage account resource itself, regardless of the user's RBAC role. Blob soft delete only protects individual blobs from deletion or overwrite, it does not protect the storage account resource itself.",
     "id": 86,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -2680,27 +2782,29 @@
   {
     "dom": 2,
     "obj": "2.3",
-    "q_es": "¿Qué característica de Blob Storage permite asignar pares clave-valor a blobs individuales (por ejemplo, 'Proyecto=Alfa') y luego buscar y filtrar blobs por esos valores sin listar todo el contenedor?",
-    "q_en": "Which Blob Storage feature lets you assign key-value pairs to individual blobs (for example, 'Project=Alpha') and then search and filter blobs by those values without listing the entire container?",
-    "opts_es": [
-      "Etiquetas de índice de blobs (Blob index tags)",
-      "Metadatos de la cuenta de almacenamiento, visibles solo a nivel de cuenta",
-      "Reglas de CORS configuradas para permitir solicitudes externas",
-      "Directivas de acceso almacenadas vinculadas a un contenedor"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre las etiquetas de índice de blobs (blob index tags), indica si es verdadera.",
+    "q_en": "For each statement about blob index tags, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Las etiquetas de índice de blobs son pares clave-valor que se pueden asignar a blobs individuales.",
+        "en": "Blob index tags are key-value pairs that can be assigned to individual blobs.",
+        "ans": true
+      },
+      {
+        "es": "Las etiquetas de índice de blobs permiten buscar y filtrar blobs dentro de una cuenta de almacenamiento sin necesidad de conocer su ruta completa.",
+        "en": "Blob index tags allow finding and filtering blobs within a storage account without needing to know their full path.",
+        "ans": true
+      },
+      {
+        "es": "Al aplicar una etiqueta de índice al contenedor, esta se asigna automáticamente a todos los blobs que contiene.",
+        "en": "Applying an index tag to the container automatically assigns it to every blob it contains.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Blob index tags",
-      "Storage account metadata, visible only at the account level",
-      "CORS rules configured to allow external requests",
-      "Stored access policies linked to a container"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Las etiquetas de índice de blobs son atributos clave-valor a nivel de blob que se indexan automáticamente, permitiendo búsquedas y filtrados eficientes (por ejemplo, mediante 'Find blobs by tags') sin recorrer todo el contenedor.",
-    "exp_en": "Blob index tags are key-value attributes at the blob level that are automatically indexed, enabling efficient search and filtering (for example, via 'Find blobs by tags') without scanning the entire container.",
+    "exp_es": "Las etiquetas de índice de blobs son metadatos clave-valor indexados a nivel de blob individual, que permiten búsquedas mediante 'Búsqueda de blobs'. No existen etiquetas de índice a nivel de contenedor que se propaguen a los blobs; cada blob debe etiquetarse de forma independiente.",
+    "exp_en": "Blob index tags are indexed key-value metadata at the individual blob level, enabling searches via 'Blob Index' / Find Blobs by Tags. There is no container-level index tag that propagates to blobs; each blob must be tagged independently.",
     "id": 104,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3096,27 +3200,29 @@
   {
     "dom": 3,
     "obj": "3.1",
-    "q_es": "¿Qué propiedad de una plantilla ARM se utiliza para devolver valores (por ejemplo, la dirección IP pública asignada a un recurso recién creado) tras finalizar el despliegue?",
-    "q_en": "Which property of an ARM template is used to return values (for example, the public IP address assigned to a newly created resource) after the deployment finishes?",
-    "opts_es": [
-      "variables",
-      "parameters",
-      "outputs",
-      "dependsOn"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre la sección 'outputs' de una plantilla ARM o de un archivo Bicep, indica si es verdadera.",
+    "q_en": "For each statement about the 'outputs' section of an ARM template or Bicep file, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "La sección 'outputs' se utiliza para devolver valores, como la dirección IP pública de un recurso recién creado, una vez completado el despliegue.",
+        "en": "The 'outputs' section is used to return values, such as the public IP address of a newly created resource, once the deployment completes.",
+        "ans": true
+      },
+      {
+        "es": "Los valores devueltos en 'outputs' pueden hacer referencia a propiedades de recursos definidos en la misma plantilla mediante la función 'reference' (o el acceso directo a propiedades en Bicep).",
+        "en": "Values returned in 'outputs' can reference properties of resources defined in the same template using the 'reference' function (or direct property access in Bicep).",
+        "ans": true
+      },
+      {
+        "es": "La sección 'outputs' es obligatoria en toda plantilla ARM, y el despliegue falla si no está presente.",
+        "en": "The 'outputs' section is mandatory in every ARM template, and the deployment fails if it is missing.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "variables",
-      "parameters",
-      "outputs",
-      "dependsOn"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "La sección 'outputs' de una plantilla ARM permite definir valores que se devuelven al finalizar el despliegue, como identificadores de recursos, direcciones IP o cadenas de conexión generadas dinámicamente.",
-    "exp_en": "The 'outputs' section of an ARM template lets you define values returned after the deployment completes, such as resource IDs, IP addresses, or dynamically generated connection strings.",
+    "exp_es": "'outputs' permite devolver valores tras el despliegue, incluyendo propiedades de recursos recién creados mediante 'reference' o acceso directo en Bicep. Sin embargo, es una sección opcional: una plantilla sin 'outputs' se despliega correctamente, simplemente no devuelve ningún valor adicional.",
+    "exp_en": "'outputs' allows returning values after deployment, including properties of newly created resources via 'reference' or direct access in Bicep. However, it is an optional section: a template without 'outputs' deploys successfully, it simply returns no additional values.",
     "id": 120,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3252,27 +3358,48 @@
   {
     "dom": 3,
     "obj": "3.2",
-    "q_es": "¿Qué función de Azure permite que un grupo de máquinas virtuales idénticas aumente o reduzca automáticamente su número de instancias en función de la carga (por ejemplo, uso de CPU)?",
-    "q_en": "Which Azure feature allows a group of identical virtual machines to automatically increase or decrease the number of instances based on load (for example, CPU usage)?",
-    "opts_es": [
-      "Conjuntos de escalado de máquinas virtuales (Virtual Machine Scale Sets) con reglas de escalado automático",
-      "Discos Ultra, que ofrecen rendimiento configurable de forma independiente del tamaño del disco",
-      "Conjuntos de disponibilidad, que distribuyen VMs entre dominios de error y actualización",
-      "Azure Bastion, que proporciona acceso RDP/SSH seguro sin IP pública"
+    "type": "dropdown",
+    "q_es": "Selecciona la opción de alta disponibilidad/escalado de Azure más adecuada para cada escenario.",
+    "q_en": "Select the most appropriate Azure high-availability/scaling option for each scenario.",
+    "rows": [
+      {
+        "es": "Una aplicación necesita aumentar o reducir automáticamente el número de instancias de máquina virtual en función de la demanda de CPU.",
+        "en": "An application needs to automatically increase or decrease the number of virtual machine instances based on CPU demand.",
+        "opts_es": [
+          "Conjunto de disponibilidad (Availability set)",
+          "Conjunto de escalado de VM (VM scale set)",
+          "Una sola zona de disponibilidad",
+          "Grupo de recursos"
+        ],
+        "opts_en": [
+          "Availability set",
+          "VM scale set",
+          "A single availability zone",
+          "Resource group"
+        ],
+        "correct": 1
+      },
+      {
+        "es": "Una aplicación con un número fijo de máquinas virtuales debe protegerse frente al fallo de un único punto de error de hardware (rack) dentro de un centro de datos, sin necesidad de escalado automático.",
+        "en": "An application with a fixed number of virtual machines must be protected from the failure of a single hardware fault point (rack) within a datacenter, without needing autoscaling.",
+        "opts_es": [
+          "Conjunto de disponibilidad (Availability set)",
+          "Conjunto de escalado de VM (VM scale set)",
+          "Una sola zona de disponibilidad",
+          "Grupo de recursos"
+        ],
+        "opts_en": [
+          "Availability set",
+          "VM scale set",
+          "A single availability zone",
+          "Resource group"
+        ],
+        "correct": 0
+      }
     ],
-    "opts_en": [
-      "Virtual Machine Scale Sets with autoscale rules",
-      "Ultra disks, which offer configurable performance independent of disk size",
-      "Availability sets, which distribute VMs across fault and update domains",
-      "Azure Bastion, which provides secure RDP/SSH access without a public IP"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Los conjuntos de escalado de máquinas virtuales (VMSS) permiten desplegar y administrar un conjunto de VMs idénticas que pueden escalar automáticamente (horizontalmente) hacia arriba o abajo según reglas de escalado basadas en métricas.",
-    "exp_en": "Virtual Machine Scale Sets (VMSS) let you deploy and manage a set of identical VMs that can automatically scale (horizontally) up or down based on metric-based autoscale rules.",
+    "exp_es": "Un conjunto de escalado de VM aumenta o reduce automáticamente el número de instancias según reglas de escalado. Un conjunto de disponibilidad distribuye un número fijo de VMs entre distintos dominios de error y de actualización dentro de un centro de datos, sin escalado automático.",
+    "exp_en": "A VM scale set automatically increases or decreases the number of instances based on scaling rules. An availability set distributes a fixed number of VMs across different fault and update domains within a datacenter, without autoscaling.",
     "id": 126,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3304,27 +3431,29 @@
   {
     "dom": 3,
     "obj": "3.2",
-    "q_es": "¿Qué función de seguridad de Azure cifra los datos temporales y de caché de disco directamente en el host de la máquina virtual, además del cifrado estándar del disco administrado?",
-    "q_en": "Which Azure security feature encrypts the VM's temporary disk and disk caches directly on the host, in addition to standard managed disk encryption?",
-    "opts_es": [
-      "Cifrado del lado del cliente con AzCopy",
-      "Etiquetas de índice de blobs",
-      "SAS de delegación de usuario",
-      "Cifrado en el host (Encryption at host)"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre el cifrado en el host (Encryption at host) en Azure, indica si es verdadera.",
+    "q_en": "For each statement about Encryption at host in Azure, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "El cifrado en el host cifra los datos de los discos del sistema operativo y de datos, incluyendo la memoria caché, directamente en el host de Azure que aloja la máquina virtual.",
+        "en": "Encryption at host encrypts the data on the OS and data disks, including the cache, directly on the Azure host that hosts the virtual machine.",
+        "ans": true
+      },
+      {
+        "es": "El cifrado en el host es lo mismo que Azure Disk Encryption (ADE), que utiliza BitLocker o DM-Crypt dentro del sistema operativo invitado.",
+        "en": "Encryption at host is the same as Azure Disk Encryption (ADE), which uses BitLocker or DM-Crypt inside the guest operating system.",
+        "ans": false
+      },
+      {
+        "es": "El cifrado en el host debe habilitarse antes de crear la máquina virtual o el conjunto de escalado, y no todas las series de VM lo admiten.",
+        "en": "Encryption at host must be enabled before creating the virtual machine or scale set, and not all VM series support it.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "Client-side encryption with AzCopy",
-      "Blob index tags",
-      "User delegation SAS",
-      "Encryption at host"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "El cifrado en el host garantiza que los datos almacenados en el host físico de la VM, incluidos el disco temporal y las cachés de los discos del sistema operativo y de datos, se cifren en reposo y se envíen cifrados al servicio de almacenamiento.",
-    "exp_en": "Encryption at host ensures that data stored on the VM's physical host, including the temporary disk and the OS/data disk caches, is encrypted at rest and sent encrypted to the storage service.",
+    "exp_es": "El cifrado en el host cifra los datos en el propio host de Azure (incluida la caché), de forma transparente al sistema operativo invitado, a diferencia de Azure Disk Encryption, que cifra dentro del SO mediante BitLocker/DM-Crypt. Requiere habilitarse en la suscripción y al crear el recurso, y depende del soporte de la serie de VM y la región.",
+    "exp_en": "Encryption at host encrypts data on the Azure host itself (including the cache), transparently to the guest OS, unlike Azure Disk Encryption, which encrypts inside the OS using BitLocker/DM-Crypt. It must be enabled on the subscription and when creating the resource, and depends on VM series and region support.",
     "id": 128,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3382,27 +3511,29 @@
   {
     "dom": 3,
     "obj": "3.2",
-    "q_es": "Quieres crear una imagen reutilizable a partir de una VM ya configurada, de forma que se pueda usar para implementar muchas VMs nuevas sin información específica del equipo original (como el nombre de host o el SID). ¿Qué paso es necesario antes de capturar la imagen?",
-    "q_en": "You want to create a reusable image from an already-configured VM, so it can be used to deploy many new VMs without machine-specific information (such as the hostname or SID). What step is necessary before capturing the image?",
+    "type": "sentence",
+    "q_es": "Selecciona la respuesta que completa correctamente la frase.",
+    "q_en": "Select the answer that correctly completes the sentence.",
+    "pre_es": "Para crear una imagen reutilizable a partir de una máquina virtual ya configurada y poder compartirla con control de versiones entre varias suscripciones y regiones, debes usar",
+    "post_es": ".",
+    "pre_en": "To create a reusable image from an already configured virtual machine and share it with version control across multiple subscriptions and regions, you should use",
+    "post_en": ".",
     "opts_es": [
-      "Aplicar un bloqueo ReadOnly al disco para impedir cambios posteriores",
-      "Especializar la VM, conservando el nombre de host y el SID original",
-      "Habilitar el versionado de blobs en el disco para conservar versiones anteriores",
-      "Generalizar la VM (por ejemplo, ejecutando sysprep en Windows o el comando waagent -deprovision en Linux)"
+      "una instantánea de disco (disk snapshot)",
+      "Azure Compute Gallery (antes Shared Image Gallery)",
+      "un grupo de recursos compartido",
+      "una plantilla ARM exportada"
     ],
     "opts_en": [
-      "Apply a ReadOnly lock to the disk to prevent further changes",
-      "Specialize the VM, keeping the original hostname and SID",
-      "Enable blob versioning on the disk to preserve earlier versions",
-      "Generalize the VM (for example, by running sysprep on Windows or the waagent -deprovision command on Linux)"
+      "a disk snapshot",
+      "Azure Compute Gallery (formerly Shared Image Gallery)",
+      "a shared resource group",
+      "an exported ARM template"
     ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Para crear una imagen genérica reutilizable, primero debe 'generalizarse' la VM eliminando información específica del equipo (sysprep en Windows, waagent -deprovision en Linux); una imagen 'especializada' conserva esa información y solo sirve para restaurar esa máquina concreta.",
-    "exp_en": "To create a reusable generic image, the VM must first be 'generalized' by removing machine-specific information (sysprep on Windows, waagent -deprovision on Linux); a 'specialized' image retains that information and is only useful to restore that specific machine.",
+    "correct": 1,
+    "exp_es": "Azure Compute Gallery permite publicar imágenes con control de versiones y replicarlas a múltiples regiones, además de compartirlas con otras suscripciones o inquilinos. Una instantánea de disco es solo una copia puntual de un disco, sin versionado ni capacidades de distribución entre suscripciones.",
+    "exp_en": "Azure Compute Gallery allows publishing versioned images and replicating them to multiple regions, as well as sharing them with other subscriptions or tenants. A disk snapshot is just a point-in-time copy of a disk, without versioning or cross-subscription distribution capabilities.",
     "id": 131,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3668,27 +3799,48 @@
   {
     "dom": 3,
     "obj": "3.3",
-    "q_es": "¿Qué servicio de Azure está diseñado para ejecutar aplicaciones de microservicios en contenedores con escalado automático basado en eventos (incluido escalado a cero), sin necesidad de administrar directamente un clúster de Kubernetes?",
-    "q_en": "Which Azure service is designed to run containerized microservice applications with event-driven autoscaling (including scale to zero), without needing to directly manage a Kubernetes cluster?",
-    "opts_es": [
-      "Azure ExpressRoute",
-      "Azure Bastion",
-      "Azure Virtual Machine Scale Sets",
-      "Azure Container Apps"
+    "type": "dropdown",
+    "q_es": "Selecciona el servicio de Azure más adecuado para cada escenario de contenedores.",
+    "q_en": "Select the most appropriate Azure service for each container scenario.",
+    "rows": [
+      {
+        "es": "Ejecutar un único contenedor de corta duración para procesar un trabajo por lotes, pagando solo por el tiempo de ejecución y sin administrar un clúster.",
+        "en": "Run a single short-lived container to process a batch job, paying only for execution time and without managing a cluster.",
+        "opts_es": [
+          "Azure Container Instances",
+          "Azure Kubernetes Service (AKS)",
+          "Azure App Service",
+          "Azure Virtual Machines"
+        ],
+        "opts_en": [
+          "Azure Container Instances",
+          "Azure Kubernetes Service (AKS)",
+          "Azure App Service",
+          "Azure Virtual Machines"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Ejecutar una aplicación de microservicios compuesta por decenas de contenedores que requiere orquestación avanzada, escalado y autorrecuperación.",
+        "en": "Run a microservices application made up of dozens of containers that requires advanced orchestration, scaling, and self-healing.",
+        "opts_es": [
+          "Azure Container Instances",
+          "Azure Kubernetes Service (AKS)",
+          "Azure App Service",
+          "Azure Virtual Machines"
+        ],
+        "opts_en": [
+          "Azure Container Instances",
+          "Azure Kubernetes Service (AKS)",
+          "Azure App Service",
+          "Azure Virtual Machines"
+        ],
+        "correct": 1
+      }
     ],
-    "opts_en": [
-      "Azure ExpressRoute",
-      "Azure Bastion",
-      "Azure Virtual Machine Scale Sets",
-      "Azure Container Apps"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Azure Container Apps es un servicio de cómputo serverless para contenedores, basado en Kubernetes y KEDA pero sin exponer su administración, que admite escalado automático basado en HTTP, eventos o métricas, incluido el escalado a cero instancias.",
-    "exp_en": "Azure Container Apps is a serverless compute service for containers, built on Kubernetes and KEDA but without exposing its management, supporting autoscaling based on HTTP traffic, events, or metrics, including scaling to zero instances.",
+    "exp_es": "Azure Container Instances está pensado para ejecutar contenedores individuales de forma rápida y aislada, ideal para trabajos por lotes de corta duración. Azure Kubernetes Service proporciona orquestación completa (escalado, autorrecuperación, balanceo) para aplicaciones de microservicios con muchos contenedores.",
+    "exp_en": "Azure Container Instances is designed to run individual containers quickly and in isolation, ideal for short-lived batch jobs. Azure Kubernetes Service provides full orchestration (scaling, self-healing, load balancing) for microservices applications with many containers.",
     "id": 142,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3720,27 +3872,29 @@
   {
     "dom": 3,
     "obj": "3.3",
-    "q_es": "En Azure Container Apps, ¿qué término se utiliza para referirse a una versión inmutable y con control de versiones de la configuración y de la imagen de la aplicación, que permite realizar despliegues graduales (por ejemplo, división de tráfico entre dos versiones)?",
-    "q_en": "In Azure Container Apps, what term refers to an immutable, versioned snapshot of the application's configuration and image, enabling staged rollouts (for example, splitting traffic between two versions)?",
-    "opts_es": [
-      "Revisión (revision)",
-      "Réplica geográfica",
-      "Grupo de contenedores (container group)",
-      "Conjunto de escalado"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre las revisiones (revisions) en Azure Container Apps, indica si es verdadera.",
+    "q_en": "For each statement about revisions in Azure Container Apps, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Una revisión es una instantánea inmutable de una versión de la aplicación de contenedores, incluyendo su configuración e imágenes de contenedor.",
+        "en": "A revision is an immutable snapshot of a version of the container app, including its configuration and container images.",
+        "ans": true
+      },
+      {
+        "es": "Azure Container Apps solo permite que una revisión esté activa a la vez; no es posible dividir el tráfico entre varias revisiones.",
+        "en": "Azure Container Apps only allows one revision to be active at a time; it is not possible to split traffic across multiple revisions.",
+        "ans": false
+      },
+      {
+        "es": "Las revisiones permiten realizar despliegues graduales dirigiendo un porcentaje del tráfico hacia la nueva revisión antes de pasar al 100%.",
+        "en": "Revisions enable gradual rollouts by directing a percentage of traffic to the new revision before moving to 100%.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "Revision",
-      "Geo-replica",
-      "Container group",
-      "Scale set"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Cada vez que se actualiza la configuración o la imagen de una Container App se crea una nueva 'revisión'; Azure Container Apps permite dividir el tráfico entre varias revisiones activas para realizar despliegues progresivos o pruebas A/B.",
-    "exp_en": "Every time a Container App's configuration or image is updated, a new 'revision' is created; Azure Container Apps allows splitting traffic between multiple active revisions for staged rollouts or A/B testing.",
+    "exp_es": "Cada revisión captura el estado de la aplicación de contenedores en un momento dado. Container Apps admite el modo de varias revisiones activas, permitiendo dividir el tráfico entre ellas, lo que facilita despliegues graduales o pruebas A/B.",
+    "exp_en": "Each revision captures the state of the container app at a point in time. Container Apps supports a multiple-active-revisions mode, allowing traffic to be split between them, which enables gradual rollouts or A/B testing.",
     "id": 144,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -3928,27 +4082,29 @@
   {
     "dom": 3,
     "obj": "3.4",
-    "q_es": "Al realizar un intercambio (swap) entre la ranura de 'staging' y la de producción en App Service, ¿qué ocurre con la configuración marcada como 'configuración de ranura' (slot setting / sticky setting)?",
-    "q_en": "When performing a swap between the 'staging' slot and the production slot in App Service, what happens to settings marked as 'slot settings' (sticky settings)?",
-    "opts_es": [
-      "Permanecen asociadas a su ranura original (no se intercambian), lo que permite mantener cadenas de conexión específicas de cada entorno",
-      "Se eliminan automáticamente tras el intercambio y deben volver a configurarse manualmente",
-      "Se convierten en variables de entorno globales para toda la suscripción tras el intercambio",
-      "Se intercambian junto con todo el resto de la configuración, incluidas las cadenas de conexión"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre el intercambio (swap) de ranuras de implementación (deployment slots) en Azure App Service, indica si es verdadera.",
+    "q_en": "For each statement about swapping deployment slots in Azure App Service, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Antes de redirigir el tráfico, App Service realiza un 'calentamiento' (warm-up) de la aplicación en la ranura de destino, lo que ayuda a evitar tiempo de inactividad durante el intercambio.",
+        "en": "Before redirecting traffic, App Service 'warms up' the application in the target slot, which helps avoid downtime during the swap.",
+        "ans": true
+      },
+      {
+        "es": "La configuración marcada como 'configuración de ranura' (slot setting) se intercambia junto con el código de la aplicación al hacer un swap.",
+        "en": "Settings marked as 'slot setting' are swapped along with the application code when a swap occurs.",
+        "ans": false
+      },
+      {
+        "es": "Es posible revertir un intercambio realizando un nuevo intercambio entre las mismas dos ranuras.",
+        "en": "It is possible to revert a swap by performing another swap between the same two slots.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "They remain attached to their original slot (they are not swapped), allowing each environment to keep its own connection strings",
-      "They are automatically deleted after the swap and must be manually reconfigured",
-      "They become global environment variables for the entire subscription after the swap",
-      "They are swapped along with all other settings, including connection strings"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Las 'configuraciones de ranura' (slot settings) se marcan para que permanezcan fijas en su ranura durante un intercambio, lo que es útil para mantener cadenas de conexión u otros valores específicos de staging o producción que no deben cambiar tras el swap.",
-    "exp_en": "'Slot settings' are marked to stay attached to their slot during a swap, which is useful for keeping connection strings or other staging/production-specific values that must not change after the swap.",
+    "exp_es": "App Service calienta la aplicación en la ranura de destino antes de redirigir el tráfico para minimizar el tiempo de inactividad. Las 'configuraciones de ranura' (sticky settings) permanecen ligadas a la ranura y NO se intercambian con el código; por eso se usan para valores específicos de cada entorno. Un intercambio se puede revertir realizando otro swap entre las mismas dos ranuras.",
+    "exp_en": "App Service warms up the app in the target slot before redirecting traffic to minimize downtime. 'Slot settings' (sticky settings) stay attached to the slot and are NOT swapped with the code; that's why they're used for environment-specific values. A swap can be reverted by performing another swap between the same two slots.",
     "id": 152,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -4188,53 +4344,76 @@
   {
     "dom": 4,
     "obj": "4.1",
-    "q_es": "¿Qué SKU de dirección IP pública de Azure es necesaria para asociarla a un Azure Load Balancer Standard o a Azure Bastion?",
-    "q_en": "Which Azure public IP address SKU is required to associate with a Standard Azure Load Balancer or Azure Bastion?",
-    "opts_es": [
-      "Basic",
-      "Classic",
-      "Standard",
-      "Dynamic"
+    "type": "dropdown",
+    "q_es": "Selecciona el SKU de IP pública más adecuado para cada escenario.",
+    "q_en": "Select the most appropriate public IP SKU for each scenario.",
+    "rows": [
+      {
+        "es": "Se necesita asociar una dirección IP pública a un Azure Load Balancer que debe abarcar varias zonas de disponibilidad mediante una única IP frontend de zona redundante.",
+        "en": "A public IP address must be associated with an Azure Load Balancer that needs to span multiple availability zones using a single zone-redundant frontend IP.",
+        "opts_es": [
+          "IP pública Básica (Basic)",
+          "IP pública Estándar (Standard)",
+          "IP privada Estándar",
+          "Prefijo de IP pública dinámico"
+        ],
+        "opts_en": [
+          "Basic public IP",
+          "Standard public IP",
+          "Standard private IP",
+          "Dynamic public IP prefix"
+        ],
+        "correct": 1
+      },
+      {
+        "es": "Se necesita una dirección IP pública sencilla, sin garantías de zona de disponibilidad ni SLA específico, para pruebas internas de bajo coste.",
+        "en": "A simple public IP address is needed, with no availability zone guarantees or specific SLA, for low-cost internal testing.",
+        "opts_es": [
+          "IP pública Básica (Basic)",
+          "IP pública Estándar (Standard)",
+          "IP privada Estándar",
+          "Prefijo de IP pública dinámico"
+        ],
+        "opts_en": [
+          "Basic public IP",
+          "Standard public IP",
+          "Standard private IP",
+          "Dynamic public IP prefix"
+        ],
+        "correct": 0
+      }
     ],
-    "opts_en": [
-      "Basic",
-      "Classic",
-      "Standard",
-      "Dynamic"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "Los recursos como Azure Load Balancer Standard, Azure Bastion o NAT Gateway requieren direcciones IP públicas de SKU Standard, que además son seguras por defecto (requieren NSG explícito) y son siempre estáticas.",
-    "exp_en": "Resources such as Standard Azure Load Balancer, Azure Bastion, or NAT Gateway require Standard SKU public IP addresses, which are also secure by default (require an explicit NSG) and are always static.",
+    "exp_es": "El SKU Estándar admite la zona redundante y es el requerido para asociarse a un Azure Load Balancer Standard que abarque varias zonas de disponibilidad. El SKU Básico es más sencillo y económico, adecuado para pruebas internas sin requisitos de SLA ni zonas.",
+    "exp_en": "The Standard SKU supports zone redundancy and is required to associate with an Azure Load Balancer Standard spanning multiple availability zones. The Basic SKU is simpler and cheaper, suitable for internal testing with no SLA or zone requirements.",
     "id": 162,
-    "type": "mc",
     "exam": "az-104"
   },
   {
     "dom": 4,
     "obj": "4.1",
-    "q_es": "¿Qué diferencia hay entre una dirección IP pública 'Estática' y una 'Dinámica' en Azure?",
-    "q_en": "What is the difference between a 'Static' and a 'Dynamic' public IP address in Azure?",
-    "opts_es": [
-      "No hay ninguna diferencia funcional entre ambas; el comportamiento de la dirección IP es idéntico en todos los casos",
-      "Las IP estáticas solo se pueden usar con VMs Spot y no están disponibles para otros tipos de recursos de Azure",
-      "Las IP dinámicas son más caras que las estáticas debido al coste adicional de reasignación frecuente",
-      "Una IP estática mantiene la misma dirección durante todo su ciclo de vida; una dinámica puede cambiar cuando el recurso asociado se detiene y reinicia"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre las direcciones IP públicas 'Estática' y 'Dinámica' en Azure, indica si es verdadera.",
+    "q_en": "For each statement about 'Static' and 'Dynamic' public IP addresses in Azure, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Una dirección IP pública 'Estática' no cambia durante toda la vida del recurso, incluso si la VM asociada se detiene y se vuelve a iniciar.",
+        "en": "A 'Static' public IP address does not change for the entire lifetime of the resource, even if the associated VM is stopped and restarted.",
+        "ans": true
+      },
+      {
+        "es": "Una dirección IP pública 'Dinámica' puede cambiar si la VM asociada se detiene (y libera sus recursos) y se vuelve a iniciar.",
+        "en": "A 'Dynamic' public IP address can change if the associated VM is stopped (deallocated) and started again.",
+        "ans": true
+      },
+      {
+        "es": "El SKU 'Básico' (Basic) de IP pública admite la asignación a una zona de disponibilidad específica, igual que el SKU 'Estándar'.",
+        "en": "The 'Basic' public IP SKU supports assignment to a specific availability zone, just like the 'Standard' SKU.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "There is no functional difference between the two; the IP address behaves identically in all cases",
-      "Static IPs can only be used with Spot VMs and are not available for other types of Azure resources",
-      "Dynamic IPs are more expensive than static ones due to the additional cost of frequent reassignment",
-      "A static IP keeps the same address throughout its lifecycle; a dynamic one can change when the associated resource is stopped and restarted"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Una dirección IP pública 'Estática' se asigna de forma permanente y no cambia hasta que se elimina el recurso; una 'Dinámica' se asigna cuando el recurso se inicia y puede cambiar si el recurso se detiene/reinicia.",
-    "exp_en": "A 'Static' public IP is permanently assigned and does not change until the resource is deleted; a 'Dynamic' one is assigned when the resource starts and may change if the resource is stopped/restarted.",
+    "exp_es": "Una IP estática permanece fija durante toda la vida del recurso. Una IP dinámica se asigna al iniciar la VM y puede cambiar si la VM se detiene y libera. La asignación a zonas de disponibilidad solo está disponible con el SKU Estándar, no con el Básico.",
+    "exp_en": "A static IP remains fixed for the lifetime of the resource. A dynamic IP is assigned when the VM starts and can change if the VM is stopped and deallocated. Availability zone assignment is only available with the Standard SKU, not Basic.",
     "id": 163,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -4578,27 +4757,29 @@
   {
     "dom": 4,
     "obj": "4.2",
-    "q_es": "¿Qué son los grupos de seguridad de aplicaciones (Application Security Groups, ASG) en Azure?",
-    "q_en": "What are Application Security Groups (ASGs) in Azure?",
-    "opts_es": [
-      "Un sustituto de las reglas de Azure Policy que se aplica automáticamente a todas las suscripciones del inquilino sin configuración adicional",
-      "Un servicio de cifrado de discos administrados que protege los datos en reposo mediante claves gestionadas por Azure o por el cliente",
-      "Una forma de agrupar lógicamente máquinas virtuales por función (por ejemplo, 'servidores web') para poder referenciarlas como origen o destino en reglas de NSG, sin usar direcciones IP individuales",
-      "Un tipo de máquina virtual optimizada para aplicaciones de seguridad, con hardware especializado y un precio superior al de las VMs estándar"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre los grupos de seguridad de aplicaciones (Application Security Groups, ASG) en Azure, indica si es verdadera.",
+    "q_en": "For each statement about Application Security Groups (ASGs) in Azure, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Los ASG permiten agrupar interfaces de red por función (por ejemplo, servidores web) y usar ese grupo como origen o destino en las reglas de una NSG.",
+        "en": "ASGs allow grouping network interfaces by function (for example, web servers) and using that group as a source or destination in NSG rules.",
+        "ans": true
+      },
+      {
+        "es": "Un ASG puede usarse directamente como ámbito al que asociar una NSG, en lugar de una subred o una interfaz de red.",
+        "en": "An ASG can be used directly as a scope to associate an NSG with, instead of a subnet or network interface.",
+        "ans": false
+      },
+      {
+        "es": "Las interfaces de red incluidas en un ASG deben pertenecer a la misma red virtual que el resto de interfaces del grupo.",
+        "en": "Network interfaces included in an ASG must belong to the same virtual network as the other interfaces in the group.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "A substitute for Azure Policy rules that is automatically applied to all subscriptions in the tenant with no additional configuration",
-      "A managed disk encryption service that protects data at rest using Azure-managed or customer-managed keys",
-      "A way to logically group virtual machines by function (for example, 'web servers') so they can be referenced as source or destination in NSG rules, without using individual IP addresses",
-      "A type of virtual machine optimized for security applications, with specialized hardware and a higher price than standard VMs"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "Los ASG permiten agrupar interfaces de red de VMs según su función (por ejemplo, 'WebServers', 'DBServers') y usar esos grupos como origen/destino en reglas de NSG, simplificando la gestión de reglas a medida que cambian las direcciones IP de las VMs.",
-    "exp_en": "ASGs let you group VM network interfaces by function (for example, 'WebServers', 'DBServers') and use those groups as source/destination in NSG rules, simplifying rule management as VM IP addresses change.",
+    "exp_es": "Los ASG agrupan lógicamente NICs por función para simplificar las reglas de NSG, usándose como origen/destino en dichas reglas. Sin embargo, una NSG se asocia a subredes o NICs, nunca directamente a un ASG. Además, todas las NICs de un ASG deben estar en la misma red virtual.",
+    "exp_en": "ASGs logically group NICs by function to simplify NSG rules, being used as the source/destination in those rules. However, an NSG is associated with subnets or NICs, never directly with an ASG. Also, all NICs in an ASG must be in the same virtual network.",
     "id": 177,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -4812,27 +4993,29 @@
   {
     "dom": 4,
     "obj": "4.2",
-    "q_es": "¿Qué tecnología subyacente utiliza Azure Private Link para permitir que el tráfico hacia un servicio PaaS (como una cuenta de almacenamiento o SQL Database) permanezca dentro de la red de Microsoft mediante una IP privada en la VNet del cliente?",
-    "q_en": "Which underlying technology does Azure Private Link use to allow traffic to a PaaS service (such as a storage account or SQL Database) to remain within the Microsoft network via a private IP in the customer's VNet?",
-    "opts_es": [
-      "Puntos de conexión privados (Private Endpoints)",
-      "Tablas de rutas definidas por el usuario (UDR)",
-      "Azure Bastion para acceso seguro",
-      "Grupos de seguridad de aplicaciones (ASG)"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre Azure Private Link, indica si es verdadera.",
+    "q_en": "For each statement about Azure Private Link, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Azure Private Link permite acceder a un servicio PaaS (como una cuenta de almacenamiento o una base de datos SQL) mediante una dirección IP privada dentro de la red virtual del cliente.",
+        "en": "Azure Private Link allows accessing a PaaS service (such as a storage account or SQL database) using a private IP address within the customer's virtual network.",
+        "ans": true
+      },
+      {
+        "es": "El tráfico que circula por una conexión de Private Link se enruta a través de la red pública de Internet, aunque viaje cifrado.",
+        "en": "Traffic flowing over a Private Link connection is routed over the public Internet, even though it is encrypted.",
+        "ans": false
+      },
+      {
+        "es": "Un proveedor de servicios puede exponer su propia aplicación mediante un 'servicio de vínculo privado' (Private Link Service), permitiendo que otros inquilinos se conecten a ella de forma privada.",
+        "en": "A service provider can expose its own application via a 'Private Link Service', allowing other tenants to connect to it privately.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "Private Endpoints",
-      "User-defined route tables (UDR)",
-      "Azure Bastion for secure access",
-      "Application security groups (ASG)"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Azure Private Link utiliza puntos de conexión privados, que son interfaces de red con una dirección IP privada de la VNet del cliente asignada a un servicio PaaS específico, evitando que el tráfico salga a la red pública de Internet.",
-    "exp_en": "Azure Private Link uses private endpoints, which are network interfaces with a private IP address from the customer's VNet mapped to a specific PaaS service, preventing traffic from traversing the public Internet.",
+    "exp_es": "Private Link asigna una IP privada del cliente al servicio PaaS, de forma que el tráfico permanece dentro de la red troncal de Microsoft y nunca atraviesa Internet pública. Además, cualquier proveedor de servicios puede publicar su propio servicio como 'Private Link Service' para que otros inquilinos se conecten de forma privada.",
+    "exp_en": "Private Link assigns the customer a private IP for the PaaS service, so traffic stays on Microsoft's backbone network and never crosses the public Internet. Additionally, any service provider can publish their own service as a 'Private Link Service' so other tenants can connect to it privately.",
     "id": 186,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -5098,79 +5281,104 @@
   {
     "dom": 4,
     "obj": "4.3",
-    "q_es": "¿Qué método de enrutamiento de Azure Traffic Manager dirige a los usuarios al endpoint más cercano geográficamente para minimizar la latencia?",
-    "q_en": "Which Azure Traffic Manager routing method directs users to the geographically closest endpoint to minimize latency?",
+    "type": "sentence",
+    "q_es": "Selecciona la respuesta que completa correctamente la frase.",
+    "q_en": "Select the answer that correctly completes the sentence.",
+    "pre_es": "El método de enrutamiento de Azure Traffic Manager que dirige a los usuarios hacia el extremo (endpoint) con menor latencia de red desde su ubicación se denomina enrutamiento",
+    "post_es": ".",
+    "pre_en": "The Azure Traffic Manager routing method that directs users to the endpoint with the lowest network latency from their location is called",
+    "post_en": " routing.",
     "opts_es": [
-      "Rendimiento (Performance)",
-      "Geográfico (Geographic), exclusivamente basado en restricciones legales",
-      "Prioridad (Priority)",
-      "Ponderado (Weighted)"
+      "Ponderado (Weighted)",
+      "Por prioridad (Priority)",
+      "De rendimiento (Performance)",
+      "Geográfico (Geographic)"
     ],
     "opts_en": [
-      "Performance",
-      "Geographic, exclusively based on legal restrictions",
+      "Weighted",
       "Priority",
-      "Weighted"
+      "Performance",
+      "Geographic"
     ],
-    "correct": [
-      0
-    ],
-    "exp_es": "El método de enrutamiento 'Rendimiento' de Traffic Manager utiliza la tabla de latencia de Internet de Azure para dirigir a los clientes hacia el endpoint con menor latencia de red desde su ubicación.",
-    "exp_en": "Traffic Manager's 'Performance' routing method uses Azure's Internet latency table to direct clients to the endpoint with the lowest network latency from their location.",
+    "correct": 2,
+    "exp_es": "El enrutamiento de rendimiento dirige a los usuarios al endpoint con menor latencia de red según una tabla de latencias mantenida por Microsoft. El enrutamiento geográfico se basa en la ubicación geográfica del usuario por motivos de cumplimiento o soberanía de datos, no en la latencia.",
+    "exp_en": "Performance routing directs users to the endpoint with the lowest network latency, based on a latency table maintained by Microsoft. Geographic routing is based on the user's geographic location for compliance or data sovereignty reasons, not latency.",
     "id": 197,
-    "type": "mc",
     "exam": "az-104"
   },
   {
     "dom": 4,
     "obj": "4.3",
-    "q_es": "Una aplicación interna necesita un balanceador de carga que distribuya el tráfico entre varias VMs backend, pero accesible únicamente desde dentro de la red virtual de la empresa, sin exponer una dirección IP pública. ¿Qué tipo de Azure Load Balancer deberías desplegar?",
-    "q_en": "An internal application needs a load balancer that distributes traffic across several backend VMs, but accessible only from within the company's virtual network, without exposing a public IP address. Which type of Azure Load Balancer should you deploy?",
-    "opts_es": [
-      "Balanceador de carga público (Public Load Balancer), con una IP de frontend visible desde Internet",
-      "Azure Bastion, para acceso RDP/SSH a las VMs sin IP pública",
-      "Application Gateway con WAF, expuesto mediante una IP pública de frontend",
-      "Balanceador de carga interno (Internal Load Balancer / private frontend IP)"
+    "type": "dropdown",
+    "q_es": "Selecciona el tipo de balanceador de carga de Azure más adecuado para cada escenario.",
+    "q_en": "Select the most appropriate Azure load balancer type for each scenario.",
+    "rows": [
+      {
+        "es": "Una aplicación interna necesita distribuir el tráfico entre varias máquinas virtuales de una subred, sin exponer ningún punto de conexión a Internet.",
+        "en": "An internal application needs to distribute traffic across several virtual machines in a subnet, without exposing any endpoint to the Internet.",
+        "opts_es": [
+          "Azure Load Balancer público",
+          "Azure Load Balancer interno (privado)",
+          "Azure Application Gateway con IP pública",
+          "Azure Traffic Manager"
+        ],
+        "opts_en": [
+          "Public Azure Load Balancer",
+          "Internal (private) Azure Load Balancer",
+          "Azure Application Gateway with public IP",
+          "Azure Traffic Manager"
+        ],
+        "correct": 1
+      },
+      {
+        "es": "Los usuarios de Internet necesitan acceder a un servicio mediante una dirección IP pública que distribuya las conexiones entre varias VMs ubicadas en distintas zonas de disponibilidad.",
+        "en": "Internet users need to access a service via a public IP address that distributes connections across several VMs located in different availability zones.",
+        "opts_es": [
+          "Azure Load Balancer público",
+          "Azure Load Balancer interno (privado)",
+          "Azure Application Gateway con IP pública",
+          "Azure Traffic Manager"
+        ],
+        "opts_en": [
+          "Public Azure Load Balancer",
+          "Internal (private) Azure Load Balancer",
+          "Azure Application Gateway with public IP",
+          "Azure Traffic Manager"
+        ],
+        "correct": 0
+      }
     ],
-    "opts_en": [
-      "A Public Load Balancer, with a frontend IP visible from the Internet",
-      "Azure Bastion, for RDP/SSH access to VMs without a public IP",
-      "Application Gateway with WAF, exposed via a public frontend IP",
-      "An Internal Load Balancer (private frontend IP)"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Un balanceador de carga interno (con dirección IP de frontend privada) distribuye el tráfico entre instancias backend dentro de una VNet (o conectadas mediante VPN/ExpressRoute), sin exponer ningún punto de conexión a Internet.",
-    "exp_en": "An internal load balancer (with a private frontend IP address) distributes traffic across backend instances within a VNet (or connected via VPN/ExpressRoute), without exposing any endpoint to the Internet.",
+    "exp_es": "Un balanceador de carga interno (privado) usa solo una IP frontend privada, ideal para tráfico que nunca debe salir a Internet. Un balanceador de carga público con SKU Estándar puede distribuir tráfico de Internet entre VMs de varias zonas de disponibilidad usando una IP frontend de zona redundante.",
+    "exp_en": "An internal (private) load balancer uses only a private frontend IP, ideal for traffic that should never reach the Internet. A public Standard SKU load balancer can distribute Internet traffic across VMs in multiple availability zones using a zone-redundant frontend IP.",
     "id": 198,
-    "type": "mc",
     "exam": "az-104"
   },
   {
     "dom": 4,
     "obj": "4.3",
-    "q_es": "¿Qué afirmación describe correctamente una característica de Azure Load Balancer Standard relacionada con la seguridad, en comparación con Basic?",
-    "q_en": "Which statement correctly describes a security-related characteristic of Standard Azure Load Balancer compared to Basic?",
-    "opts_es": [
-      "Basic requiere certificados TLS obligatorios para todos los backends y Standard no impone ese requisito en ningún caso",
-      "Standard no admite NSGs en absoluto y cualquier tráfico llega siempre a los backends sin posibilidad de filtrarlo",
-      "Basic ofrece un SLA respaldado económicamente y Standard no ofrece ningún tipo de garantía de disponibilidad",
-      "Standard es 'seguro por defecto': el tráfico se bloquea a menos que una NSG lo permita explícitamente, mientras que Basic permite el tráfico por defecto"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre Azure Load Balancer SKU Estándar (Standard), indica si es verdadera.",
+    "q_en": "For each statement about the Standard SKU of Azure Load Balancer, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Con el SKU Estándar, el tráfico hacia los backends está bloqueado por defecto y se requiere una NSG que lo permita explícitamente.",
+        "en": "With the Standard SKU, traffic to the backends is blocked by default and an NSG is required to explicitly allow it.",
+        "ans": true
+      },
+      {
+        "es": "Azure Load Balancer Estándar puede abarcar varias zonas de disponibilidad de una región mediante una única dirección IP frontend de zona redundante.",
+        "en": "A Standard Azure Load Balancer can span multiple availability zones in a region using a single zone-redundant frontend IP address.",
+        "ans": true
+      },
+      {
+        "es": "El SKU Estándar, igual que el Básico, no genera ningún cargo adicional por las reglas de balanceo configuradas.",
+        "en": "The Standard SKU, just like Basic, incurs no additional charge for the configured load-balancing rules.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Basic requires mandatory TLS certificates for all backends and Standard does not impose that requirement in any case",
-      "Standard does not support NSGs at all, and all traffic always reaches the backends with no way to filter it",
-      "Basic offers a financially backed SLA and Standard offers no availability guarantee of any kind",
-      "Standard is 'secure by default': traffic is blocked unless an NSG explicitly allows it, while Basic allows traffic by default"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Azure Load Balancer Standard sigue el principio de 'seguro por defecto': el tráfico hacia los endpoints solo se permite si una NSG asociada lo autoriza explícitamente; en Basic, el tráfico se permite por defecto salvo que se bloquee explícitamente.",
-    "exp_en": "Standard Azure Load Balancer follows the 'secure by default' principle: traffic to endpoints is only allowed if an associated NSG explicitly authorizes it; in Basic, traffic is allowed by default unless explicitly blocked.",
+    "exp_es": "El SKU Estándar es 'seguro por defecto': bloquea el tráfico entrante salvo que una NSG lo permita explícitamente. Además admite IPs frontend de zona redundante para abarcar varias zonas. A diferencia del SKU Básico (gratuito), el SKU Estándar tiene un coste asociado a las reglas de balanceo y de NAT configuradas.",
+    "exp_en": "The Standard SKU is 'secure by default': it blocks inbound traffic unless an NSG explicitly allows it. It also supports zone-redundant frontend IPs to span multiple zones. Unlike the free Basic SKU, the Standard SKU has a cost associated with the configured load-balancing and NAT rules.",
     "id": 199,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -5332,27 +5540,29 @@
   {
     "dom": 4,
     "obj": "4.2",
-    "q_es": "¿Qué afirmación sobre las etiquetas de servicio (Service Tags) en las reglas de NSG es correcta?",
-    "q_en": "Which statement about service tags in NSG rules is correct?",
-    "opts_es": [
-      "Una etiqueta de servicio representa un grupo de prefijos de direcciones IP de un servicio de Azure (como 'Storage', 'SQL' o 'Internet'), que Azure mantiene y actualiza automáticamente",
-      "Una etiqueta de servicio es un nombre personalizado que el administrador debe crear y asignar manualmente a cada dirección IP de la organización",
-      "Las etiquetas de servicio reemplazan por completo la necesidad de cualquier regla de NSG en la red virtual, incluso en escenarios híbridos",
-      "Las etiquetas de servicio solo se pueden usar en las reglas de Azure Firewall, nunca en las reglas de un NSG, sin excepciones de ningún tipo"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre las etiquetas de servicio (Service Tags) en las reglas de NSG, indica si es verdadera.",
+    "q_en": "For each statement about Service Tags in NSG rules, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Una etiqueta de servicio representa un grupo de prefijos de direcciones IP de un servicio de Azure determinado, gestionado y actualizado automáticamente por Microsoft.",
+        "en": "A Service Tag represents a group of IP address prefixes for a given Azure service, automatically managed and updated by Microsoft.",
+        "ans": true
+      },
+      {
+        "es": "La etiqueta de servicio 'Internet' representa el tráfico que se origina o se dirige fuera del espacio de direcciones de la red virtual y de las redes conectadas.",
+        "en": "The 'Internet' Service Tag represents traffic that originates from or is destined to outside the address space of the virtual network and connected networks.",
+        "ans": true
+      },
+      {
+        "es": "Para usar etiquetas de servicio en las reglas de una NSG, el administrador debe actualizar manualmente los rangos de IP cada vez que Microsoft los modifica.",
+        "en": "To use Service Tags in NSG rules, the administrator must manually update the IP ranges every time Microsoft changes them.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "A service tag represents a group of IP address prefixes for an Azure service (such as 'Storage', 'SQL', or 'Internet'), which Azure automatically maintains and updates",
-      "A service tag is a custom name that the administrator must create and manually assign to each IP address in the organization",
-      "Service tags completely eliminate the need for any NSG rule in the virtual network, even in hybrid scenarios",
-      "Service tags can only be used in Azure Firewall rules, never in NSG rules, with no exceptions of any kind"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Las etiquetas de servicio agrupan rangos de direcciones IP de servicios de Azure específicos (por ejemplo, 'Storage.WestEurope', 'AzureCloud', 'Internet') y Azure las actualiza automáticamente a medida que cambian esos rangos, simplificando las reglas de NSG sin necesidad de mantener listas de IP manualmente.",
-    "exp_en": "Service tags group IP address ranges for specific Azure services (for example, 'Storage.WestEurope', 'AzureCloud', 'Internet') and Azure automatically updates them as those ranges change, simplifying NSG rules without needing to manually maintain IP lists.",
+    "exp_es": "Las etiquetas de servicio representan grupos de prefijos IP de un servicio (por ejemplo, 'Storage' o 'Sql') que Microsoft mantiene y actualiza automáticamente. La etiqueta 'Internet' cubre el tráfico externo a la VNet y a las redes conectadas. Al usar etiquetas de servicio, el administrador no necesita actualizar manualmente ningún rango de IP.",
+    "exp_en": "Service Tags represent groups of IP prefixes for a service (for example, 'Storage' or 'Sql') that Microsoft maintains and updates automatically. The 'Internet' tag covers traffic external to the VNet and connected networks. When using Service Tags, the administrator never needs to manually update any IP ranges.",
     "id": 206,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -5592,27 +5802,48 @@
   {
     "dom": 5,
     "obj": "5.1",
-    "q_es": "¿Qué solución de Azure Monitor proporciona una vista completa del rendimiento y la salud de las máquinas virtuales, incluyendo el uso de CPU, memoria, disco y red, así como el mapa de dependencias entre procesos?",
-    "q_en": "Which Azure Monitor solution provides a comprehensive view of virtual machine performance and health, including CPU, memory, disk, and network usage, as well as a process dependency map?",
-    "opts_es": [
-      "Azure Bastion",
-      "Azure Site Recovery",
-      "Recovery Services vault",
-      "VM Insights"
+    "type": "dropdown",
+    "q_es": "Selecciona la solución de Azure Monitor más adecuada para cada escenario.",
+    "q_en": "Select the most appropriate Azure Monitor solution for each scenario.",
+    "rows": [
+      {
+        "es": "Monitorizar el rendimiento, las excepciones y las dependencias de una aplicación web personalizada, incluyendo trazas de extremo a extremo de las solicitudes.",
+        "en": "Monitor the performance, exceptions, and dependencies of a custom web application, including end-to-end request traces.",
+        "opts_es": [
+          "Application Insights",
+          "VM insights",
+          "Container insights",
+          "Network Watcher"
+        ],
+        "opts_en": [
+          "Application Insights",
+          "VM insights",
+          "Container insights",
+          "Network Watcher"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Obtener una vista del estado, el rendimiento y el uso de recursos de un clúster de Azure Kubernetes Service y sus contenedores.",
+        "en": "Get a view of the health, performance, and resource usage of an Azure Kubernetes Service cluster and its containers.",
+        "opts_es": [
+          "Application Insights",
+          "VM insights",
+          "Container insights",
+          "Network Watcher"
+        ],
+        "opts_en": [
+          "Application Insights",
+          "VM insights",
+          "Container insights",
+          "Network Watcher"
+        ],
+        "correct": 2
+      }
     ],
-    "opts_en": [
-      "Azure Bastion",
-      "Azure Site Recovery",
-      "Recovery Services vault",
-      "VM Insights"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "VM Insights supervisa el estado y rendimiento de las máquinas virtuales mostrando métricas clave (CPU, memoria, disco, red) y un mapa de dependencias que visualiza los procesos en ejecución y sus conexiones de red entre máquinas.",
-    "exp_en": "VM Insights monitors the health and performance of virtual machines, showing key metrics (CPU, memory, disk, network) and a dependency map that visualizes running processes and their network connections between machines.",
+    "exp_es": "Application Insights está diseñado para monitorizar aplicaciones, incluyendo rendimiento, excepciones y dependencias mediante trazas de extremo a extremo. Container insights está diseñado específicamente para clústeres AKS y otros entornos de contenedores, mostrando el estado y el uso de recursos de nodos, pods y contenedores.",
+    "exp_en": "Application Insights is designed to monitor applications, including performance, exceptions, and dependencies via end-to-end traces. Container insights is specifically designed for AKS clusters and other container environments, showing the health and resource usage of nodes, pods, and containers.",
     "id": 216,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -5722,27 +5953,29 @@
   {
     "dom": 5,
     "obj": "5.1",
-    "q_es": "¿Qué afirmación describe correctamente la diferencia entre el período de retención predeterminado de las métricas de la plataforma de Azure y el de los datos de un área de trabajo de Log Analytics?",
-    "q_en": "Which statement correctly describes the difference between the default retention period of Azure platform metrics and that of Log Analytics workspace data?",
-    "opts_es": [
-      "Las métricas de la plataforma se retienen un tiempo limitado de forma predeterminada (normalmente 93 días), mientras que la retención de Log Analytics es configurable y puede extenderse durante más tiempo (por ejemplo, hasta 2 años)",
-      "Ambas se retienen indefinidamente sin coste adicional, sin importar el plan de suscripción, la región o la configuración del área de trabajo de Log Analytics",
-      "Log Analytics no permite configurar la retención de datos en absoluto; siempre utiliza exactamente el mismo período fijo de 93 días que las métricas de la plataforma",
-      "Las métricas de la plataforma nunca se almacenan en ningún lugar, solo se muestran en tiempo real y desaparecen por completo en cuanto se cierra el panel de visualización"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre los periodos de retención de los datos de monitorización en Azure, indica si es verdadera.",
+    "q_en": "For each statement about data retention periods for Azure monitoring data, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "El registro de actividad (Activity log) de Azure conserva los eventos durante 90 días de forma predeterminada, sin coste adicional, sin necesidad de configurar nada.",
+        "en": "The Azure Activity log retains events for 90 days by default, at no additional cost, without any configuration.",
+        "ans": true
+      },
+      {
+        "es": "Para conservar los datos del registro de actividad durante más de 90 días, es necesario configurar una exportación, por ejemplo a un área de trabajo de Log Analytics o a una cuenta de almacenamiento.",
+        "en": "To retain Activity log data for longer than 90 days, you must configure an export, for example to a Log Analytics workspace or a storage account.",
+        "ans": true
+      },
+      {
+        "es": "El periodo de retención de un área de trabajo de Log Analytics es fijo y no se puede configurar; siempre es de 90 días para todos los tipos de datos.",
+        "en": "The retention period of a Log Analytics workspace is fixed and cannot be configured; it is always 90 days for all data types.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Platform metrics are retained for a limited time by default (typically 93 days), while Log Analytics retention is configurable and can be extended much longer (for example, up to 2 years)",
-      "Both are retained indefinitely at no additional cost, regardless of the subscription plan, region, or Log Analytics workspace configuration",
-      "Log Analytics does not allow configuring data retention at all; it always uses exactly the same fixed 93-day period as platform metrics",
-      "Platform metrics are never stored anywhere, only shown in real time, and disappear completely as soon as the visualization panel is closed"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Las métricas de la plataforma de Azure se almacenan automáticamente durante un período limitado (típicamente 93 días); los datos de un área de trabajo de Log Analytics tienen un período de retención configurable, que se puede ajustar (por ejemplo, de 30 días hasta 2 años) según las necesidades de cumplimiento.",
-    "exp_en": "Azure platform metrics are automatically stored for a limited period (typically 93 days); data in a Log Analytics workspace has a configurable retention period that can be adjusted (for example, from 30 days up to 2 years) based on compliance needs.",
+    "exp_es": "El registro de actividad se conserva 90 días sin coste y sin configuración adicional. Para retenerlo más tiempo hay que exportarlo (por ejemplo, a Log Analytics o a una cuenta de almacenamiento). El periodo de retención de un área de trabajo de Log Analytics es configurable, con valores que pueden ir más allá de 90 días e incluso definirse por tabla.",
+    "exp_en": "The activity log is retained for 90 days at no cost and with no extra configuration. To retain it longer, it must be exported (for example, to Log Analytics or a storage account). The retention period of a Log Analytics workspace is configurable, with values that can extend beyond 90 days and can even be set per table.",
     "id": 221,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -5852,27 +6085,29 @@
   {
     "dom": 5,
     "obj": "5.1",
-    "q_es": "¿Qué describe mejor un 'libro' (Workbook) de Azure Monitor?",
-    "q_en": "What best describes an Azure Monitor 'Workbook'?",
-    "opts_es": [
-      "Un script de PowerShell programado que se ejecuta automáticamente cada noche sobre todos los recursos de la suscripción",
-      "Un tipo especial de cuenta de almacenamiento diseñado exclusivamente para guardar registros de diagnóstico de larga duración",
-      "Un informe interactivo y personalizable que combina texto, consultas de registros/métricas, parámetros y visualizaciones para análisis y narración de datos",
-      "Una regla de Azure Policy que audita automáticamente el cumplimiento normativo de los recursos desplegados en la suscripción"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre los libros (Workbooks) de Azure Monitor, indica si es verdadera.",
+    "q_en": "For each statement about Azure Monitor Workbooks, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Un Workbook permite combinar texto, consultas de registros (logs), métricas y parámetros en un informe interactivo.",
+        "en": "A Workbook allows combining text, log queries, metrics, and parameters into an interactive report.",
+        "ans": true
+      },
+      {
+        "es": "Los Workbooks solo pueden mostrar datos de Azure Monitor Logs (Log Analytics) y no admiten datos de métricas.",
+        "en": "Workbooks can only display data from Azure Monitor Logs (Log Analytics) and do not support metrics data.",
+        "ans": false
+      },
+      {
+        "es": "Azure proporciona plantillas de Workbook predefinidas para escenarios comunes, que se pueden usar como punto de partida y personalizar.",
+        "en": "Azure provides predefined Workbook templates for common scenarios, which can be used as a starting point and customized.",
+        "ans": true
+      }
     ],
-    "opts_en": [
-      "A scheduled PowerShell script that runs automatically every night against all resources in the subscription",
-      "A special type of storage account designed exclusively for storing long-term diagnostic logs",
-      "An interactive, customizable report that combines text, log/metric queries, parameters, and visualizations for analysis and data storytelling",
-      "An Azure Policy rule that automatically audits the regulatory compliance of resources deployed in the subscription"
-    ],
-    "correct": [
-      2
-    ],
-    "exp_es": "Los libros (Workbooks) de Azure Monitor son informes flexibles e interactivos que combinan texto, consultas (de métricas o de Log Analytics), parámetros y diversas visualizaciones, permitiendo crear paneles de análisis ricos y reutilizables.",
-    "exp_en": "Azure Monitor Workbooks are flexible, interactive reports that combine text, queries (metrics or Log Analytics), parameters, and various visualizations, enabling rich, reusable analytical dashboards.",
+    "exp_es": "Los Workbooks combinan múltiples fuentes de datos (logs, métricas, parámetros) y texto enriquecido en un único informe interactivo, y pueden mostrar tanto métricas como registros. Azure ofrece una galería de plantillas predefinidas para escenarios comunes que sirven como punto de partida.",
+    "exp_en": "Workbooks combine multiple data sources (logs, metrics, parameters) and rich text into a single interactive report, and can display both metrics and logs. Azure provides a gallery of predefined templates for common scenarios that serve as a starting point.",
     "id": 226,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -6060,27 +6295,48 @@
   {
     "dom": 5,
     "obj": "5.2",
-    "q_es": "¿Qué define una directiva de copia de seguridad (Backup policy) en Azure Backup?",
-    "q_en": "What does a Backup policy define in Azure Backup?",
-    "opts_es": [
-      "La frecuencia con la que se realizan las copias de seguridad y el período de retención de los puntos de recuperación",
-      "La región donde se ejecuta la máquina virtual y su grupo de recursos asociado",
-      "Solo el tamaño máximo del disco que se puede proteger, sin considerar la frecuencia de copias",
-      "El tipo de cifrado de red utilizado por la VPN site-to-site de la organización"
+    "type": "dropdown",
+    "q_es": "Relaciona cada componente de una directiva de copia de seguridad (Backup policy) de Azure Backup con su definición.",
+    "q_en": "Match each component of an Azure Backup policy with its definition.",
+    "rows": [
+      {
+        "es": "Define con qué frecuencia se crean los puntos de recuperación, por ejemplo, diariamente a una hora determinada.",
+        "en": "Defines how often recovery points are created, for example, daily at a specific time.",
+        "opts_es": [
+          "Programación de copia de seguridad (Backup schedule)",
+          "Configuración de retención (Retention settings)",
+          "Replicación geográfica del almacén",
+          "Configuración de cifrado"
+        ],
+        "opts_en": [
+          "Backup schedule",
+          "Retention settings",
+          "Vault geo-replication",
+          "Encryption settings"
+        ],
+        "correct": 0
+      },
+      {
+        "es": "Define durante cuánto tiempo se conserva cada punto de recuperación antes de eliminarse automáticamente.",
+        "en": "Defines how long each recovery point is kept before it is automatically deleted.",
+        "opts_es": [
+          "Programación de copia de seguridad (Backup schedule)",
+          "Configuración de retención (Retention settings)",
+          "Replicación geográfica del almacén",
+          "Configuración de cifrado"
+        ],
+        "opts_en": [
+          "Backup schedule",
+          "Retention settings",
+          "Vault geo-replication",
+          "Encryption settings"
+        ],
+        "correct": 1
+      }
     ],
-    "opts_en": [
-      "The frequency at which backups are taken and the retention period of the recovery points",
-      "The region where the virtual machine and its associated resource group run",
-      "Only the maximum disk size that can be protected, without considering backup frequency",
-      "The type of network encryption used by the organization's site-to-site VPN"
-    ],
-    "correct": [
-      0
-    ],
-    "exp_es": "Una directiva de copia de seguridad especifica cuándo se toman las copias de seguridad (por ejemplo, diaria o semanalmente, a una hora determinada) y durante cuánto tiempo se conservan los puntos de recuperación resultantes (retención diaria, semanal, mensual, anual).",
-    "exp_en": "A Backup policy specifies when backups are taken (for example, daily or weekly, at a specified time) and how long the resulting recovery points are retained (daily, weekly, monthly, yearly retention).",
+    "exp_es": "La programación de copia de seguridad determina cuándo se crean los puntos de recuperación (por ejemplo, diariamente o semanalmente a una hora concreta). La configuración de retención determina cuánto tiempo se conserva cada punto de recuperación antes de purgarse automáticamente.",
+    "exp_en": "The backup schedule determines when recovery points are created (for example, daily or weekly at a specific time). The retention settings determine how long each recovery point is kept before being automatically purged.",
     "id": 234,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -6164,53 +6420,57 @@
   {
     "dom": 5,
     "obj": "5.2",
-    "q_es": "¿Qué servicio de Azure permite replicar máquinas virtuales completas (no solo sus datos) hacia otra región para habilitar la recuperación ante desastres y la conmutación por error (failover) en caso de interrupción regional?",
-    "q_en": "Which Azure service allows replicating entire virtual machines (not just their data) to another region to enable disaster recovery and failover in case of a regional outage?",
+    "type": "sentence",
+    "q_es": "Selecciona la respuesta que completa correctamente la frase.",
+    "q_en": "Select the answer that correctly completes the sentence.",
+    "pre_es": "El servicio de Azure que replica máquinas virtuales completas hacia una región secundaria y permite conmutar (failover) las cargas de trabajo en caso de desastre se denomina",
+    "post_es": ".",
+    "pre_en": "The Azure service that replicates entire virtual machines to a secondary region and enables failing over workloads in the event of a disaster is called",
+    "post_en": ".",
     "opts_es": [
-      "Azure DNS",
-      "Azure Backup únicamente",
-      "Azure Bastion",
-      "Azure Site Recovery"
+      "Azure Backup",
+      "Azure Site Recovery",
+      "Azure Storage Mover",
+      "Azure Migrate"
     ],
     "opts_en": [
-      "Azure DNS",
-      "Azure Backup only",
-      "Azure Bastion",
-      "Azure Site Recovery"
+      "Azure Backup",
+      "Azure Site Recovery",
+      "Azure Storage Mover",
+      "Azure Migrate"
     ],
-    "correct": [
-      3
-    ],
-    "exp_es": "Azure Site Recovery replica máquinas virtuales completas (incluyendo su configuración y datos) hacia otra región de Azure (o desde on-premises a Azure), permitiendo realizar una conmutación por error (failover) de la carga de trabajo completa en caso de desastre.",
-    "exp_en": "Azure Site Recovery replicates entire virtual machines (including their configuration and data) to another Azure region (or from on-premises to Azure), enabling a full workload failover in the event of a disaster.",
+    "correct": 1,
+    "exp_es": "Azure Site Recovery replica máquinas virtuales completas hacia una región secundaria y orquesta la conmutación por error de las cargas de trabajo durante un desastre, dando continuidad al negocio. Azure Backup, en cambio, se centra en proteger y restaurar datos a partir de puntos de recuperación, no en mantener una réplica activa lista para failover.",
+    "exp_en": "Azure Site Recovery replicates entire virtual machines to a secondary region and orchestrates workload failover during a disaster, providing business continuity. Azure Backup, on the other hand, focuses on protecting and restoring data from recovery points, not on keeping an active replica ready for failover.",
     "id": 238,
-    "type": "mc",
     "exam": "az-104"
   },
   {
     "dom": 5,
     "obj": "5.2",
-    "q_es": "¿Cuál es la diferencia principal entre Azure Backup y Azure Site Recovery?",
-    "q_en": "What is the main difference between Azure Backup and Azure Site Recovery?",
-    "opts_es": [
-      "Azure Site Recovery solo respalda archivos individuales sueltos dentro de una carpeta y no puede replicar máquinas virtuales completas ni coordinar una conmutación por error",
-      "Azure Backup crea copias de los datos para restaurarlos en caso de pérdida o corrupción; Azure Site Recovery replica cargas de trabajo completas para conmutar por error y mantener la continuidad del negocio durante una interrupción",
-      "Azure Backup replica máquinas virtuales completas de forma continua a otra región distinta y permite conmutar por error automáticamente en caso de interrupción regional",
-      "Son exactamente el mismo servicio subyacente, solo con nombres distintos según la región donde se despliegan y el tipo de suscripción utilizada por el cliente"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre Azure Backup y Azure Site Recovery, indica si es verdadera.",
+    "q_en": "For each statement about Azure Backup and Azure Site Recovery, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "Azure Backup está diseñado principalmente para proteger datos frente a su pérdida o corrupción, permitiendo restaurarlos a un estado anterior.",
+        "en": "Azure Backup is primarily designed to protect data from loss or corruption, allowing it to be restored to a previous state.",
+        "ans": true
+      },
+      {
+        "es": "Azure Site Recovery está diseñado principalmente para la continuidad del negocio, permitiendo conmutar (failover) cargas de trabajo completas hacia una región secundaria en caso de desastre.",
+        "en": "Azure Site Recovery is primarily designed for business continuity, enabling complete workloads to fail over to a secondary region in the event of a disaster.",
+        "ans": true
+      },
+      {
+        "es": "Azure Backup y Azure Site Recovery son mutuamente excluyentes: una organización debe elegir solo uno de los dos servicios para proteger sus máquinas virtuales.",
+        "en": "Azure Backup and Azure Site Recovery are mutually exclusive: an organization must choose only one of the two services to protect its virtual machines.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Azure Site Recovery only backs up individual loose files within a folder and cannot replicate entire virtual machines or coordinate a failover",
-      "Azure Backup creates copies of data to restore in case of loss or corruption; Azure Site Recovery replicates entire workloads to fail over and maintain business continuity during an outage",
-      "Azure Backup continuously replicates entire virtual machines to a different region and allows automatic failover in the event of a regional outage",
-      "They are exactly the same underlying service, only with different names depending on the region they are deployed in and the subscription type used by the customer"
-    ],
-    "correct": [
-      1
-    ],
-    "exp_es": "Azure Backup se centra en la protección de datos (crear copias para restaurar en caso de eliminación accidental, corrupción o ransomware), mientras que Azure Site Recovery se centra en la continuidad del negocio y la recuperación ante desastres, replicando cargas de trabajo completas para poder conmutarlas a otra ubicación.",
-    "exp_en": "Azure Backup focuses on data protection (creating copies to restore in case of accidental deletion, corruption, or ransomware), while Azure Site Recovery focuses on business continuity and disaster recovery, replicating entire workloads so they can be failed over to another location.",
+    "exp_es": "Azure Backup protege datos mediante puntos de recuperación restaurables, mientras que Azure Site Recovery mantiene una réplica de las VMs lista para conmutar en caso de desastre, orientado a la continuidad del negocio. Ambos servicios son complementarios y se usan habitualmente juntos sobre las mismas VMs, cada uno cubriendo un objetivo distinto.",
+    "exp_en": "Azure Backup protects data via restorable recovery points, while Azure Site Recovery maintains a replica of the VMs ready to fail over during a disaster, focused on business continuity. The two services are complementary and are commonly used together on the same VMs, each covering a different objective.",
     "id": 239,
-    "type": "mc",
     "exam": "az-104"
   },
   {
@@ -6320,27 +6580,29 @@
   {
     "dom": 5,
     "obj": "5.2",
-    "q_es": "¿Qué configuración de un almacén de Recovery Services ayuda a proteger las copias de seguridad frente a eliminaciones accidentales o malintencionadas, retrasando la eliminación definitiva de los datos durante un período tras una eliminación de elementos protegidos?",
-    "q_en": "Which Recovery Services vault setting helps protect backups against accidental or malicious deletion, delaying the permanent removal of data for a period after protected items are deleted?",
-    "opts_es": [
-      "Etiquetas de recursos",
-      "Política de cumplimiento de Azure Policy",
-      "Replicación geo-redundante",
-      "Eliminación temporal (Soft delete)"
+    "type": "yesno",
+    "q_es": "Para cada afirmación sobre las funciones de protección de un almacén de Recovery Services en Azure, indica si es verdadera.",
+    "q_en": "For each statement about the protection features of a Recovery Services vault in Azure, indicate whether it is true.",
+    "rows": [
+      {
+        "es": "La eliminación temporal (soft delete) de un almacén de Recovery Services conserva los datos de copia de seguridad durante un periodo adicional después de eliminar un elemento, permitiendo recuperarlos.",
+        "en": "Soft delete for a Recovery Services vault retains backup data for an additional period after an item is deleted, allowing it to be recovered.",
+        "ans": true
+      },
+      {
+        "es": "La 'autenticación multifactor para operaciones críticas' (MFA for critical operations) añade una capa adicional de protección, como un PIN de seguridad, para operaciones como deshabilitar la eliminación temporal.",
+        "en": "'Multi-factor authentication for critical operations' adds an extra layer of protection, such as a security PIN, for operations like disabling soft delete.",
+        "ans": true
+      },
+      {
+        "es": "Una vez habilitada, la eliminación temporal de un almacén de Recovery Services no se puede deshabilitar bajo ninguna circunstancia.",
+        "en": "Once enabled, soft delete for a Recovery Services vault can never be disabled under any circumstances.",
+        "ans": false
+      }
     ],
-    "opts_en": [
-      "Resource tags",
-      "Azure Policy compliance rule",
-      "Geo-redundant replication",
-      "Soft delete"
-    ],
-    "correct": [
-      3
-    ],
-    "exp_es": "La eliminación temporal (soft delete) en un almacén de Recovery Services conserva los datos de copia de seguridad durante un período adicional (normalmente 14 días) después de que se eliminen, permitiendo recuperarlos si la eliminación fue accidental o resultado de un ataque de ransomware.",
-    "exp_en": "Soft delete in a Recovery Services vault retains backup data for an additional period (typically 14 days) after it is deleted, allowing recovery if the deletion was accidental or the result of a ransomware attack.",
+    "exp_es": "La eliminación temporal protege los datos de copia de seguridad durante un periodo adicional tras su eliminación. La MFA para operaciones críticas exige un PIN de seguridad adicional para operaciones sensibles, como deshabilitar la eliminación temporal. La eliminación temporal puede deshabilitarse, aunque requiere permisos elevados y, si está habilitada la MFA para operaciones críticas, completar ese proceso de verificación adicional.",
+    "exp_en": "Soft delete protects backup data for an extra period after deletion. MFA for critical operations requires an additional security PIN for sensitive operations, such as disabling soft delete. Soft delete can be disabled, although it requires elevated permissions and, if MFA for critical operations is enabled, completing that additional verification process.",
     "id": 244,
-    "type": "mc",
     "exam": "az-104"
   },
   {
