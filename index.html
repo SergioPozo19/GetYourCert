@@ -961,7 +961,11 @@ let currentExam = null;
 async function loadQuestions(examId){
   if(QUESTIONS_CACHE[examId]) return QUESTIONS_CACHE[examId];
   try{
-    const res = await fetch('questions/'+examId+'.json');
+    // El query param cambia cuando cambia el número de preguntas, lo que
+    // genera una URL nueva y evita servir una copia cacheada (HTTP/SW) desactualizada.
+    const ex=EXAMS.find(e=>e.id===examId);
+    const v=(ex&&ex.questionCount)?('?v='+ex.questionCount):'';
+    const res = await fetch('questions/'+examId+'.json'+v);
     if(!res.ok) throw new Error('HTTP '+res.status);
     QUESTIONS_CACHE[examId] = await res.json();
   }catch(e){
