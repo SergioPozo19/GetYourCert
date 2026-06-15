@@ -1337,6 +1337,10 @@ function saveExamState(){
 function clearExamState(){ Store.del('exam'); }
 function getResumable(){ return Store.get('exam',null); }
 
+// ===== Persistencia de la pantalla activa (para restaurar tras recargar) =====
+function saveView(view){ if(view)Store.set('view',view); else Store.del('view'); }
+function getView(){ return Store.get('view',null); }
+
 // ===== Favoritos (marcadores persistentes) =====
 function getBookmarks(){ return Store.get('bookmarks',[]); }
 function isBookmarked(id){ return getBookmarks().indexOf(id)>=0; }
@@ -2186,11 +2190,13 @@ function openExplore(){
     domList().map(d=>'<option value="'+d+'">'+t('domainOf')+' '+d+'</option>').join('');
   $('#exSearch').value='';
   renderExplore();
+  if(currentExam)saveView({screen:'explore',examId:currentExam.id});
   window.scrollTo(0,0);
 }
 function closeExplore(){
   $('#explore').classList.add('hidden');
   $('#home').classList.remove('hidden');
+  if(currentExam)saveView({screen:'home',examId:currentExam.id});
   window.scrollTo(0,0);
 }
 function exQuestionText(q){ return (L(q,'q'))||''; }
@@ -2271,6 +2277,7 @@ function openProgress(){
     $('#catalog').classList.add('hidden');
     $('#progress').classList.remove('hidden');
     renderProgress();
+    saveView({screen:'progress'});
     window.scrollTo(0,0);
   });
 }
@@ -2278,6 +2285,7 @@ function closeProgress(){
   $('#progress').classList.add('hidden');
   $('#catalog').classList.remove('hidden');
   renderCatalog();
+  saveView(null);
   window.scrollTo(0,0);
 }
 // Cuenta los días consecutivos (terminando hoy o ayer) con al menos un intento.
@@ -2503,6 +2511,7 @@ async function selectExam(id){
   $('#domPick').classList.add('hidden');
   $$('#modes .mode').forEach((m,i)=>m.classList.toggle('sel',i===0));
   mode='exam';
+  saveView({screen:'home',examId:id});
   window.scrollTo(0,0);
 }
 
@@ -2548,6 +2557,7 @@ function backToCatalog(){
   $('#explore').classList.add('hidden');
   $('#catalog').classList.remove('hidden');
   renderCatalog();
+  saveView(null);
   window.scrollTo(0,0);
 }
 
@@ -2560,6 +2570,7 @@ function goHome(){
   $('#explore').classList.add('hidden');
   $('#home').classList.remove('hidden');
   updateModeBadges();
+  if(currentExam)saveView({screen:'home',examId:currentExam.id});
   window.scrollTo(0,0);
 }
 
@@ -2947,8 +2958,26 @@ restoreSession();
   if(wanted && EXAMS.some(e=>e.id===wanted)){
     history.replaceState(null,'',location.pathname+location.hash);
     requireLogin(()=>selectExam(wanted));
+    return;
   }
+  restoreView();
 })();
+
+// Restaura la pantalla en la que estaba el usuario antes de recargar
+function restoreView(){
+  if(getResumable()){ requireLogin(()=>resumeExam().catch(()=>{})); return; }
+  const view=getView();
+  if(!view)return;
+  if(view.screen==='home'&&EXAMS.some(e=>e.id===view.examId)){
+    requireLogin(()=>selectExam(view.examId));
+  }else if(view.screen==='explore'&&EXAMS.some(e=>e.id===view.examId)){
+    requireLogin(()=>selectExam(view.examId).then(openExplore));
+  }else if(view.screen==='progress'){
+    openProgress();
+  }else{
+    saveView(null);
+  }
+}
 
 // Share result
 // Exporta un informe imprimible (PDF via diálogo de impresión) con el detalle
