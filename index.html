@@ -1131,6 +1131,15 @@ const Store={
   del(key){ if(!this.ok)return; try{localStorage.removeItem(STORE_PREFIX+key);}catch(e){} }
 };
 
+// Igual que Store pero en sessionStorage: solo afecta a la pestaña actual,
+// para no "secuestrar" pestañas nuevas con la pantalla de otra pestaña.
+const SessionStore={
+  ok:(()=>{try{const k='__gyc_t';sessionStorage.setItem(k,'1');sessionStorage.removeItem(k);return true;}catch(e){return false;}})(),
+  get(key,def){ if(!this.ok)return def; try{const v=sessionStorage.getItem(STORE_PREFIX+key);return v==null?def:JSON.parse(v);}catch(e){return def;} },
+  set(key,val){ if(!this.ok)return; try{sessionStorage.setItem(STORE_PREFIX+key,JSON.stringify(val));}catch(e){} },
+  del(key){ if(!this.ok)return; try{sessionStorage.removeItem(STORE_PREFIX+key);}catch(e){} }
+};
+
 // ===== Freemium: límite diario de preguntas + desbloqueo Pro =====
 const DAILY_LIMIT=20;
 function todayStr(){ return new Date().toISOString().slice(0,10); }
@@ -1338,8 +1347,10 @@ function clearExamState(){ Store.del('exam'); }
 function getResumable(){ return Store.get('exam',null); }
 
 // ===== Persistencia de la pantalla activa (para restaurar tras recargar) =====
-function saveView(view){ if(view)Store.set('view',view); else Store.del('view'); }
-function getView(){ return Store.get('view',null); }
+// Usa sessionStorage: una pestaña nueva siempre empieza en el catálogo,
+// pero recargar la misma pestaña vuelve a la pantalla donde estabas.
+function saveView(view){ if(view)SessionStore.set('view',view); else SessionStore.del('view'); }
+function getView(){ return SessionStore.get('view',null); }
 
 // ===== Favoritos (marcadores persistentes) =====
 function getBookmarks(){ return Store.get('bookmarks',[]); }
@@ -1615,6 +1626,7 @@ function startExam(){
   render();
   examActive=true;
   saveExamState();
+  saveView({screen:'exam',examId:currentExam.id});
   window.scrollTo(0,0);
 }
 function startTimer(){
@@ -2540,7 +2552,9 @@ async function resumeExam(){
   examActive=true;
   if(st.isExamMode){ timeLeft=st.timeLeft||0; $('#timer').classList.remove('hidden'); startTimer(); }
   else { $('#timer').classList.add('hidden'); if(timerInt)clearInterval(timerInt); }
-  buildCells(); render(); window.scrollTo(0,0);
+  buildCells(); render();
+  saveView({screen:'exam',examId:currentExam.id});
+  window.scrollTo(0,0);
   return true;
 }
 
@@ -2965,8 +2979,8 @@ restoreSession();
 
 // Restaura la pantalla en la que estaba el usuario antes de recargar
 function restoreView(){
-  if(getResumable()){ requireLogin(()=>resumeExam().catch(()=>{})); return; }
   const view=getView();
+  if(view&&view.screen==='exam'&&getResumable()){ requireLogin(()=>resumeExam().catch(()=>{})); return; }
   if(!view)return;
   if(view.screen==='home'&&EXAMS.some(e=>e.id===view.examId)){
     requireLogin(()=>selectExam(view.examId));
