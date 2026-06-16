@@ -572,6 +572,29 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
   .brand{flex:1 1 100%}
   .tools{flex:1 1 100%;justify-content:flex-end}
 }
+/* ---- Reseñas de usuarios ---- */
+.reviews-section{margin-top:40px;padding-top:32px;border-top:1px solid var(--line-2)}
+.reviews-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.reviews-head h3{font-size:18px;font-weight:700}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.review-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.review-card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.review-avatar-init{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.review-author{font-size:14px;font-weight:600;line-height:1.3}
+.review-date{font-size:12px;color:var(--ink-3)}
+.review-stars{color:#F5A623;letter-spacing:2px;margin-bottom:6px;font-size:15px}
+.review-body{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.reviews-empty{color:var(--ink-3);font-size:14px;text-align:center;padding:32px 0}
+/* Modal reseña */
+.rv-modal{max-width:460px}
+.rv-star-row{display:flex;gap:10px;justify-content:center;margin:14px 0 20px}
+.rv-star{font-size:30px;cursor:pointer;color:var(--line);transition:color .1s;background:none;border:none;padding:0;line-height:1}
+.rv-star.on{color:#F5A623}
+.rv-textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel-2);font-family:var(--sans);font-size:14px;color:var(--ink);resize:vertical;min-height:90px;outline:none;transition:border-color .15s}
+.rv-textarea:focus{border-color:var(--accent)}
+.rv-delete{font-size:12.5px;color:var(--ink-3);margin-top:12px;text-align:center}
+.rv-delete button{background:none;border:none;color:var(--bad);cursor:pointer;font-size:12.5px;text-decoration:underline}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-787WSXCK5H"></script>
@@ -652,6 +675,16 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </button>
     </div>
     <div class="exam-grid" id="examGrid"></div>
+    <div class="reviews-section" id="reviewsSection">
+      <div class="reviews-head">
+        <h3 data-i="rvSectionTitle">Lo que dicen nuestros usuarios</h3>
+        <button class="btn btn-ghost btn-sm" id="writeReviewBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span id="writeReviewBtnLabel" data-i="rvWriteBtn">Escribe una reseña</span>
+        </button>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+    </div>
   </section>
 
   <section id="progress" class="hidden">
@@ -933,6 +966,30 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <p class="login-consent" id="loginConsent" style="margin-top:14px;font-size:12px;color:var(--ink-3);text-align:center"></p>
   </div>
 </div>
+<div class="modal-ov" id="reviewModal">
+  <div class="modal rv-modal" role="dialog" aria-modal="true" aria-labelledby="rvModalTitle">
+    <button class="modal-close-btn" id="reviewModalClose" aria-label="Cerrar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h4 id="rvModalTitle" data-i="rvModalTitle">Escribe una reseña</h4>
+    <p style="font-size:14px;color:var(--ink-2);margin:6px 0 0" data-i="rvModalSub">Comparte tu experiencia con EarnYourCert</p>
+    <div class="rv-star-row" id="rvStarRow" role="group" aria-label="Puntuación">
+      <button class="rv-star" data-v="1" aria-label="1 estrella">★</button>
+      <button class="rv-star" data-v="2" aria-label="2 estrellas">★</button>
+      <button class="rv-star" data-v="3" aria-label="3 estrellas">★</button>
+      <button class="rv-star" data-v="4" aria-label="4 estrellas">★</button>
+      <button class="rv-star" data-v="5" aria-label="5 estrellas">★</button>
+    </div>
+    <textarea class="rv-textarea" id="rvBody" maxlength="1000" rows="4" data-i-ph="rvPlaceholder" placeholder="Cuéntanos tu experiencia preparando el examen… (opcional)"></textarea>
+    <div class="modal-actions" style="margin-top:16px">
+      <button class="btn btn-ghost" id="rvCancel" data-i="rvCancel">Cancelar</button>
+      <button class="btn btn-primary" id="rvSubmit" data-i="rvSubmit">Publicar reseña</button>
+    </div>
+    <div class="rv-delete hidden" id="rvDeleteWrap">
+      <button id="rvDeleteBtn" data-i="rvDeleteBtn">Borrar mi reseña</button>
+    </div>
+  </div>
+</div>
 <div class="toast-wrap" id="toastWrap"></div>
 
 <footer class="site-footer">
@@ -1044,7 +1101,14 @@ const I18N = {
     footerSupportPre:"¿Dudas, problemas o sugerencias? Escríbenos a",
     proLink:"Hazte Pro",
     loginGoogle:"Iniciar sesión con Google", logout:"Cerrar sesión", loginOk:"¡Sesión iniciada! Tu progreso se sincronizará.", syncError:"No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.",
-    loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso."
+    loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso.",
+    rvSectionTitle:"Lo que dicen nuestros usuarios", rvWriteBtn:"Escribe una reseña", rvEditBtn:"Editar tu reseña",
+    rvModalTitle:"Escribe una reseña", rvModalSub:"Comparte tu experiencia con EarnYourCert",
+    rvSubmit:"Publicar reseña", rvCancel:"Cancelar", rvPlaceholder:"Cuéntanos tu experiencia preparando el examen… (opcional)",
+    rvNeedLogin:"Inicia sesión para escribir una reseña.", rvNeedQuestions:"Necesitas responder al menos 10 preguntas para escribir una reseña.",
+    rvPosted:"¡Reseña publicada!", rvUpdated:"¡Reseña actualizada!", rvError:"No se pudo publicar la reseña. Inténtalo de nuevo.",
+    rvNeedRating:"Elige al menos 1 estrella.", rvEmpty:"Sé el primero en dejar una reseña.",
+    rvDeleteBtn:"Borrar mi reseña", rvDeleted:"Reseña borrada."
   },
   en:{
     brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
@@ -1111,7 +1175,14 @@ const I18N = {
     footerSupportPre:"Questions, issues or suggestions? Email us at",
     proLink:"Get Pro",
     loginGoogle:"Sign in with Google", logout:"Sign out", loginOk:"Signed in! Your progress will sync.", syncError:"Couldn't connect to the server. Please try again later.",
-    loginRequiredTitle:"Sign in to continue", loginRequiredSub:"You need to sign in with Google to access exams and save your progress."
+    loginRequiredTitle:"Sign in to continue", loginRequiredSub:"You need to sign in with Google to access exams and save your progress.",
+    rvSectionTitle:"What our users say", rvWriteBtn:"Write a review", rvEditBtn:"Edit your review",
+    rvModalTitle:"Write a review", rvModalSub:"Share your experience with EarnYourCert",
+    rvSubmit:"Post review", rvCancel:"Cancel", rvPlaceholder:"Tell us about your experience preparing for the exam… (optional)",
+    rvNeedLogin:"Sign in to write a review.", rvNeedQuestions:"You need to answer at least 10 questions to write a review.",
+    rvPosted:"Review posted!", rvUpdated:"Review updated!", rvError:"Couldn't post the review. Please try again.",
+    rvNeedRating:"Please select at least 1 star.", rvEmpty:"Be the first to leave a review.",
+    rvDeleteBtn:"Delete my review", rvDeleted:"Review deleted."
   }
 };
 
@@ -1401,6 +1472,7 @@ const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 $('#logoutBtn').addEventListener('click',async()=>{
   try{ await fetch('/api/auth/logout.php',{method:'POST',headers:authHeaders()}); }catch(e){}
   Store.del('session');Store.del('account');
+  rvUserReview = null;
   updateAccountUI();
   // Cerrar sesión corta el acceso al examen en curso: vuelve al catálogo,
   // donde seleccionar cualquier examen exigirá iniciar sesión de nuevo.
@@ -2964,6 +3036,7 @@ if(!EXAMS.length){
   $('#examGrid').innerHTML='<p style="color:var(--bad);padding:20px;text-align:center">Error loading exam data. Please reload the page.</p>';
 }else{
   renderCatalog();
+  loadReviews();
   // Preload question files in background so entering an exam is instant
   setTimeout(()=>{ EXAMS.forEach(ex=>loadQuestions(ex.id).catch(()=>{})); }, 800);
 }
@@ -3078,6 +3151,115 @@ function shareResult(){
     navigator.clipboard.writeText(text+' '+url).then(()=>showToast(t('shareCopied'),'ok',2400));
   }
 }
+
+// ===== REVIEWS =====
+let rvRating = 0;
+let rvUserReview = null;
+
+async function loadReviews() {
+  try {
+    const res = await fetch('/api/reviews.php');
+    const data = await res.json();
+    if (!data.ok) return;
+    const acc = Store.get('account', null);
+    if (acc && isLoggedIn()) {
+      const own = data.reviews.find(r => r.name === acc.name);
+      if (own) rvUserReview = { rating: +own.rating, body: own.body || '' };
+    }
+    renderReviews(data.reviews);
+  } catch(e) {}
+}
+
+function renderReviews(reviews) {
+  const grid = $('#reviewsGrid');
+  const label = $('#writeReviewBtnLabel');
+  if (label) { label.setAttribute('data-i', rvUserReview ? 'rvEditBtn' : 'rvWriteBtn'); label.textContent = t(rvUserReview ? 'rvEditBtn' : 'rvWriteBtn'); }
+  if (!reviews.length) { grid.innerHTML = '<p class="reviews-empty">'+t('rvEmpty')+'</p>'; return; }
+  const loc = lang === 'es' ? 'es-ES' : 'en-US';
+  grid.innerHTML = reviews.map(r => {
+    const filled = '★'.repeat(+r.rating);
+    const empty  = '☆'.repeat(5 - +r.rating);
+    const date   = new Date(r.ts * 1000).toLocaleDateString(loc, { year:'numeric', month:'long' });
+    const av = r.avatar_url
+      ? `<img class="review-avatar" src="${esc(r.avatar_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
+      : `<div class="review-avatar-init">${esc((r.name||'?')[0].toUpperCase())}</div>`;
+    return `<div class="review-card"><div class="review-card-top">${av}<div><div class="review-author">${esc(r.name||'')}</div><div class="review-date">${date}</div></div></div><div class="review-stars">${filled}${empty}</div>${r.body?`<p class="review-body">${esc(r.body)}</p>`:''}</div>`;
+  }).join('');
+}
+
+function openReviewModal() {
+  if (!isLoggedIn()) { showToast(t('rvNeedLogin'), 'warn'); openLoginModal(); return; }
+  const srsCount = Object.keys(Store.get('srs', {})).length;
+  if (srsCount < 10) { showToast(t('rvNeedQuestions'), 'warn'); return; }
+  rvRating = rvUserReview ? rvUserReview.rating : 0;
+  $('#rvBody').value = rvUserReview ? (rvUserReview.body || '') : '';
+  $('#rvDeleteWrap').classList.toggle('hidden', !rvUserReview);
+  updateRvStars();
+  $('#reviewModal').classList.add('show');
+}
+
+function updateRvStars(hov) {
+  const active = hov !== undefined ? hov : rvRating;
+  $$('#rvStarRow .rv-star').forEach(s => s.classList.toggle('on', +s.dataset.v <= active));
+}
+
+async function submitReview() {
+  if (rvRating === 0) { showToast(t('rvNeedRating'), 'warn'); return; }
+  const body = $('#rvBody').value.trim();
+  const btn = $('#rvSubmit');
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/reviews.php', {
+      method: 'POST',
+      headers: Object.assign({'Content-Type':'application/json'}, authHeaders()),
+      body: JSON.stringify({ rating: rvRating, body })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      const wasEdit = !!rvUserReview;
+      rvUserReview = { rating: rvRating, body };
+      showToast(t(wasEdit ? 'rvUpdated' : 'rvPosted'), 'ok');
+      $('#reviewModal').classList.remove('show');
+      loadReviews();
+    } else if (data.error === 'need_more_questions') {
+      showToast(t('rvNeedQuestions'), 'warn');
+    } else {
+      showToast(t('rvError'), 'warn');
+    }
+  } catch(e) {
+    showToast(t('rvError'), 'warn');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function deleteReview() {
+  try {
+    const res = await fetch('/api/reviews.php', {
+      method: 'DELETE',
+      headers: authHeaders()
+    });
+    const data = await res.json();
+    if (data.ok) {
+      rvUserReview = null;
+      showToast(t('rvDeleted'), 'ok');
+      $('#reviewModal').classList.remove('show');
+      loadReviews();
+    }
+  } catch(e) {}
+}
+
+$('#writeReviewBtn').addEventListener('click', openReviewModal);
+$('#reviewModalClose').addEventListener('click', () => $('#reviewModal').classList.remove('show'));
+$('#reviewModal').addEventListener('click', e => { if (e.target === $('#reviewModal')) $('#reviewModal').classList.remove('show'); });
+$('#rvCancel').addEventListener('click', () => $('#reviewModal').classList.remove('show'));
+$('#rvSubmit').addEventListener('click', submitReview);
+$('#rvDeleteBtn').addEventListener('click', deleteReview);
+$('#rvStarRow').addEventListener('mouseleave', () => updateRvStars());
+$$('#rvStarRow .rv-star').forEach(s => {
+  s.addEventListener('mouseenter', () => updateRvStars(+s.dataset.v));
+  s.addEventListener('click', () => { rvRating = +s.dataset.v; updateRvStars(); });
+});
 
 // Service Worker + offline indicator
 if('serviceWorker' in navigator){
