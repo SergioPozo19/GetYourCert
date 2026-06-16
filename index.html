@@ -499,8 +499,12 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .exp{margin-top:18px;padding:16px 18px;border-radius:var(--radius-s);background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--accent)}
 .exp h5{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:7px;font-weight:600;font-family:var(--mono)}
 .exp p{font-size:14.5px;color:var(--ink-2);line-height:1.6}
-.exp-report{margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink-3);font-size:12.5px;font-weight:600;cursor:pointer;transition:.14s}
-.exp-report:hover{border-color:var(--accent);color:var(--accent)}
+.exp-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.exp-report{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink-3);font-size:12.5px;font-weight:600;cursor:pointer;transition:.14s}
+.exp-report:hover{border-color:var(--ink-2);color:var(--ink-2)}
+.disc-open-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--accent);border-radius:8px;background:var(--panel);color:var(--accent);font-size:12.5px;font-weight:600;cursor:pointer;transition:.14s}
+.disc-open-btn:hover,.disc-open-btn.on{background:var(--accent);color:#fff}
+.disc-open-btn.on .disc-badge{background:rgba(255,255,255,.3);color:#fff}
 .nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}
 .nav-mid{display:flex;gap:8px;align-items:center}
 .flag-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid var(--line);border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink-2);background:var(--panel)}
@@ -820,10 +824,16 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="exp hidden" id="qExp">
         <h5 data-i="expTitle">Explicación</h5>
         <p id="qExpText"></p>
-        <button class="exp-report" id="qExpReport" type="button">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          <span data-i="reportIssue">Enviar comentario sobre esta pregunta</span>
-        </button>
+        <div class="exp-actions">
+          <button class="exp-report" id="qExpReport" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <span data-i="reportIssue">Enviar comentario sobre esta pregunta</span>
+          </button>
+          <button class="disc-open-btn" id="discBtn" aria-pressed="false" onclick="toggleDisc()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i="discussion">Discusión</span><span id="discBadge" class="disc-badge hidden"></span>
+          </button>
+        </div>
       </div>
       <div class="disc-panel hidden" id="discPanel">
         <h5>
@@ -853,10 +863,6 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
         <button class="flag-btn" id="bmBtn" aria-pressed="false">
           <svg id="bmIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           <span id="bmLabel" data-i="bookmark">Favorita</span>
-        </button>
-        <button class="flag-btn" id="discBtn" aria-pressed="false" onclick="toggleDisc()">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span data-i="discussion">Discusión</span><span id="discBadge" class="disc-badge hidden"></span>
         </button>
       </div>
       <button class="btn btn-primary btn-sm" id="nextBtn">
