@@ -2,17 +2,29 @@
 header('Content-Type: application/json');
 require __DIR__ . '/_db.php';
 
-$pdo = db();
+try {
+    $pdo = db();
+} catch (\Throwable $e) {
+    error_log('[reviews.php] db: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => 'db']);
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = $pdo->query(
-        'SELECT r.rating, r.body, UNIX_TIMESTAMP(r.updated_at) AS ts,
-                u.name, u.avatar_url
-         FROM reviews r
-         INNER JOIN users u ON u.id = r.user_id
-         ORDER BY r.updated_at DESC'
-    );
-    echo json_encode(['ok' => true, 'reviews' => $stmt->fetchAll(PDO::FETCH_ASSOC)]);
+    try {
+        $stmt = $pdo->query(
+            'SELECT r.rating, r.body, UNIX_TIMESTAMP(r.updated_at) AS ts,
+                    u.name, u.avatar_url
+             FROM reviews r
+             INNER JOIN users u ON u.id = r.user_id
+             ORDER BY r.updated_at DESC'
+        );
+        echo json_encode(['ok' => true, 'reviews' => $stmt->fetchAll(PDO::FETCH_ASSOC)]);
+    } catch (\Throwable $e) {
+        error_log('[reviews.php] GET: ' . $e->getMessage());
+        echo json_encode(['ok' => true, 'reviews' => []]);
+    }
     exit;
 }
 
