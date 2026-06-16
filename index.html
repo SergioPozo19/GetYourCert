@@ -305,6 +305,27 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .attempt .a-badge.fail{background:var(--bad-soft,#fee2e2);color:#991b1b}
 .prog-empty{max-width:960px;margin:0 auto;text-align:center;color:var(--ink-3);padding:40px 20px;border:1px dashed var(--line);border-radius:14px}
 @media(max-width:600px){.prog-cards{grid-template-columns:repeat(2,1fr)}.prog-card .pv{font-size:22px}}
+/* ---- Header stats (streak + daily goal) ---- */
+.header-stats{display:flex;align-items:center;gap:8px}
+.hstat-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-3);white-space:nowrap;cursor:default;user-select:none}
+.hstat-pill.streak-on{color:#ea580c;border-color:rgba(234,88,12,.35);background:#fff7ed}
+[data-theme="dark"] .hstat-pill.streak-on{background:#3a1800;border-color:rgba(234,88,12,.25)}
+.hstat-goal{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-3);white-space:nowrap;user-select:none}
+.hstat-goal.done{color:var(--ok);border-color:var(--ok-soft)}
+.goal-track{width:44px;height:4px;border-radius:2px;background:var(--line);overflow:hidden;flex-shrink:0}
+.goal-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .5s}
+.hstat-goal.done .goal-fill{background:var(--ok)}
+/* ---- Achievement badges ---- */
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.badge-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center;transition:transform .2s,box-shadow .2s}
+.badge-card.unlocked{border-color:var(--accent);background:var(--accent-soft)}
+.badge-card.unlocked:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.badge-icon{font-size:26px;display:block;margin-bottom:6px;line-height:1.2}
+.badge-card.locked .badge-icon{filter:grayscale(1);opacity:.25}
+.badge-name{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.2}
+.badge-card.locked .badge-name,.badge-card.locked .badge-desc{color:var(--ink-3)}
+.badge-desc{font-size:11px;color:var(--ink-2);margin-top:4px;line-height:1.35}
+@media(max-width:480px){.header-stats{display:none}}
 .check-btn{margin-top:14px;width:100%}
 /* ---- Modos de estudio + explorador ---- */
 .mode-badge{display:inline-block;min-width:20px;padding:1px 7px;border-radius:999px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;font-family:var(--mono);vertical-align:middle;margin-left:4px}
@@ -658,6 +679,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <button class="icon-btn" id="themeBtn" aria-label="Switch to dark mode">
         <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
+      <div class="header-stats hidden" id="headerStats">
+        <span class="hstat-pill" id="headerStreak"></span>
+        <span class="hstat-goal" id="headerGoal"><span id="headerGoalTxt"></span><span class="goal-track"><span class="goal-fill" id="headerGoalFill"></span></span></span>
+      </div>
       <div class="account-area" id="accountArea">
         <div id="gsiButton" class="gsi-btn"></div>
         <div id="accountMenu" class="account-menu hidden">
@@ -1141,6 +1166,8 @@ const I18N = {
     myProgress:"Mi progreso", progTitle:"Mi progreso", progAttempts:"Intentos", progAvg:"Media", progBest:"Mejor", progPassRate:"Aprobados", progStreak:"Racha", progWeak:"Dominios a reforzar", progRecent:"Intentos recientes", progEmpty:"Aún no has completado ningún examen. ¡Haz uno para ver tu progreso!", progClear:"Borrar historial", confirmClearHist:"¿Borrar todo el historial de intentos?", progExport:"Exportar CSV", progExported:"Historial exportado",
     progTrend:"Tendencia de puntuación", progTrendSub:"Últimos {n} intentos · línea discontinua = aprobado (70%)", progByExam:"Progreso por examen", progDomains:"Dominio de las áreas practicadas", progAttemptsShort:"intentos", progNoTrend:"Completa al menos 2 exámenes para ver tu tendencia.",
     streakDays:"{n} días", streakDay:"{n} día",
+    dailyGoalTxt:"{c}/{g} hoy", dailyGoalDone:"¡Objetivo cumplido! 🎉",
+    progAchievements:"Logros", badgeUnlocked:"¡Logro desbloqueado!", badgeLocked:"Bloqueado",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
     catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
@@ -1219,6 +1246,8 @@ const I18N = {
     myProgress:"My progress", progTitle:"My progress", progAttempts:"Attempts", progAvg:"Average", progBest:"Best", progPassRate:"Pass rate", progStreak:"Streak", progWeak:"Domains to improve", progRecent:"Recent attempts", progEmpty:"You haven't completed any exams yet. Take one to see your progress!", progClear:"Clear history", confirmClearHist:"Clear all attempt history?", progExport:"Export CSV", progExported:"History exported",
     progTrend:"Score trend", progTrendSub:"Last {n} attempts · dashed line = passing (70%)", progByExam:"Progress by exam", progDomains:"Mastery by practiced domain", progAttemptsShort:"attempts", progNoTrend:"Complete at least 2 exams to see your trend.",
     streakDays:"{n} days", streakDay:"{n} day",
+    dailyGoalTxt:"{c}/{g} today", dailyGoalDone:"Goal reached! 🎉",
+    progAchievements:"Achievements", badgeUnlocked:"Achievement unlocked!", badgeLocked:"Locked",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
     catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
@@ -1352,7 +1381,8 @@ function syncPush(){
         srs:Store.get('srs',{}),
         bookmarks:Store.get('bookmarks',[]),
         lang:Store.get('lang','en'),
-        theme:Store.get('theme',null)
+        theme:Store.get('theme',null),
+        achievements:Store.get('achievements',{unlocked:[]})
       })
     }).catch(()=>{});
   },3000);
@@ -1385,6 +1415,11 @@ function syncMergeAndPush(server){
   });
   mergedHist.sort((a,b)=>a.date-b.date);
   Store.set('history',mergedHist.slice(-200));
+
+  const localAch=Store.get('achievements',{unlocked:[]});
+  const remoteAch=data.achievements||{unlocked:[]};
+  const mergedUnlocked=[...new Set([...(localAch.unlocked||[]),...(remoteAch.unlocked||[])])];
+  Store.set('achievements',{unlocked:mergedUnlocked});
 
   if(data.lang&&data.lang!==lang){
     lang=data.lang;
@@ -2080,6 +2115,8 @@ function gradeExam(){
   hist.push({examId:currentExam?currentExam.id:'', code:currentExam?currentExam.code:'', date:Date.now(),
              pct, passed, correct, total:exam.length, mode, dom:domSummary});
   Store.set('history',hist.slice(-200)); syncPush();
+  checkAchievements(hist.slice(-200));
+  updateDailyGoal(exam.length);
   examActive=false; clearExamState();
   window.scrollTo(0,0);
 }
@@ -2461,6 +2498,80 @@ function computeStreak(hist){
   while(days.has(cursor.toISOString().slice(0,10))){ streak++; cursor.setDate(cursor.getDate()-1); }
   return streak;
 }
+// ===== GAMIFICATION: achievements + daily goal =====
+const ACHIEVEMENTS=[
+  {id:'first_exam',  icon:'🎓', name_es:'Primer examen',    name_en:'First exam',      desc_es:'Completaste tu primer examen',           desc_en:'Completed your first exam',            check:h=>h.length>=1},
+  {id:'first_pass',  icon:'✅', name_es:'Primer aprobado',  name_en:'First pass',      desc_es:'Aprobaste tu primer examen',             desc_en:'Passed your first exam',               check:h=>h.some(x=>x.passed)},
+  {id:'perfect',     icon:'💯', name_es:'Perfecto',         name_en:'Perfect score',   desc_es:'100% en un examen',                      desc_en:'Scored 100% on an exam',               check:h=>h.some(x=>x.pct===100)},
+  {id:'streak_3',    icon:'🔥', name_es:'En racha ×3',      name_en:'On fire ×3',      desc_es:'3 días consecutivos practicando',        desc_en:'3 consecutive days of practice',       check:h=>computeStreak(h)>=3},
+  {id:'streak_7',    icon:'🏆', name_es:'Semana completa',  name_en:'Full week',       desc_es:'7 días seguidos practicando',            desc_en:'7 consecutive days of practice',       check:h=>computeStreak(h)>=7},
+  {id:'streak_30',   icon:'🌟', name_es:'Mes completo',     name_en:'Full month',      desc_es:'30 días seguidos practicando',           desc_en:'30 consecutive days of practice',      check:h=>computeStreak(h)>=30},
+  {id:'exams_5',     icon:'📚', name_es:'Estudioso',        name_en:'Studious',        desc_es:'5 exámenes completados',                 desc_en:'5 exams completed',                    check:h=>h.length>=5},
+  {id:'exams_25',    icon:'🎯', name_es:'Dedicado',         name_en:'Dedicated',       desc_es:'25 exámenes completados',                desc_en:'25 exams completed',                   check:h=>h.length>=25},
+  {id:'exams_100',   icon:'🏅', name_es:'Veterano',         name_en:'Veteran',         desc_es:'100 exámenes completados',               desc_en:'100 exams completed',                  check:h=>h.length>=100},
+  {id:'pass_rate',   icon:'⭐', name_es:'Alto rendimiento', name_en:'High achiever',   desc_es:'80% de aprobados (mín. 5 exámenes)',    desc_en:'80% pass rate (min. 5 exams)',         check:h=>h.length>=5&&h.filter(x=>x.passed).length/h.length>=0.8},
+  {id:'multixam',    icon:'🌐', name_es:'Polivalente',      name_en:'Multitasker',     desc_es:'Practicado en 3 certificaciones distintas', desc_en:'Practiced 3 different certifications', check:h=>new Set(h.map(x=>x.examId)).size>=3},
+];
+const DAILY_GOAL_TARGET=20;
+
+function todayStr(){ return new Date().toISOString().slice(0,10); }
+
+function getDailyGoal(){
+  const dg=Store.get('dailyGoal',{date:'',count:0});
+  if(dg.date!==todayStr()) return {date:todayStr(),count:0};
+  return dg;
+}
+
+function updateDailyGoal(added){
+  const dg=getDailyGoal();
+  const wasNotDone=dg.count<DAILY_GOAL_TARGET;
+  dg.count+=added;
+  Store.set('dailyGoal',dg);
+  if(wasNotDone&&dg.count>=DAILY_GOAL_TARGET) showToast(t('dailyGoalDone'),'ok');
+  updateHeaderStats();
+}
+
+function checkAchievements(hist){
+  const ach=Store.get('achievements',{unlocked:[]});
+  const before=new Set(ach.unlocked||[]);
+  const newlyUnlocked=[];
+  ACHIEVEMENTS.forEach(a=>{
+    if(!before.has(a.id)&&a.check(hist)){
+      newlyUnlocked.push(a);
+      before.add(a.id);
+    }
+  });
+  if(!newlyUnlocked.length)return;
+  Store.set('achievements',{unlocked:[...before]});
+  syncPush();
+  newlyUnlocked.forEach((a,i)=>{
+    setTimeout(()=>showToast(t('badgeUnlocked')+' '+a.icon+' '+L(a,'name'),'ok'),i*1200);
+  });
+}
+
+function updateHeaderStats(){
+  const hist=Store.get('history',[]);
+  const streak=computeStreak(hist);
+  const dg=getDailyGoal();
+  const el=$('#headerStats');
+  if(!el)return;
+  const sp=$('#headerStreak');
+  const gp=$('#headerGoal');
+  const gt=$('#headerGoalTxt');
+  const gf=$('#headerGoalFill');
+  if(!sp||!gp||!gt||!gf)return;
+  // streak pill
+  sp.textContent=(streak?'🔥 ':'')+t(streak===1?'streakDay':'streakDays').replace('{n}',streak||0);
+  sp.classList.toggle('streak-on',streak>0);
+  // daily goal pill
+  const done=dg.count>=DAILY_GOAL_TARGET;
+  const pct=Math.min(100,Math.round(dg.count/DAILY_GOAL_TARGET*100));
+  gt.textContent=done?t('dailyGoalDone'):t('dailyGoalTxt').replace('{c}',dg.count).replace('{g}',DAILY_GOAL_TARGET);
+  gf.style.width=pct+'%';
+  gp.classList.toggle('done',done);
+  el.classList.remove('hidden');
+}
+
 // Iconos para las tarjetas de resumen de progreso
 const PROG_ICONS={
   attempts:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v2H9z"/><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 12h6M9 16h6M9 8h6"/></svg>',
@@ -2531,6 +2642,23 @@ function renderProgress(){
   const streakTxt=t(streak===1?'streakDay':'streakDays').replace('{n}',streak);
   cards.innerHTML=card(n,'progAttempts','','attempts')+card(avg+'%','progAvg','','avg')+card(best+'%','progBest','best','best')+card(passRate+'%','progPassRate','pass','pass')+card((streak?'🔥 ':'')+streakTxt,'progStreak','streak','streak');
   body.appendChild(cards);
+  // logros / achievements
+  const unlockedSet=new Set((Store.get('achievements',{unlocked:[]}).unlocked)||[]);
+  const secAch=document.createElement('div'); secAch.className='prog-section';
+  const achSvg='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/></svg>';
+  const grid=document.createElement('div'); grid.className='badge-grid';
+  ACHIEVEMENTS.forEach(a=>{
+    const on=unlockedSet.has(a.id);
+    const bc=document.createElement('div'); bc.className='badge-card'+(on?' unlocked':' locked');
+    bc.innerHTML='<span class="badge-icon">'+a.icon+'</span>'+
+      '<div class="badge-name">'+esc(L(a,'name'))+'</div>'+
+      '<div class="badge-desc">'+esc(L(a,'desc'))+'</div>';
+    if(!on) bc.title=t('badgeLocked');
+    grid.appendChild(bc);
+  });
+  secAch.innerHTML='<h3>'+achSvg+'<span>'+t('progAchievements')+'</span></h3>';
+  secAch.appendChild(grid);
+  body.appendChild(secAch);
   // tendencia de puntuación
   const secChart=document.createElement('div'); secChart.className='prog-section';
   secChart.innerHTML='<h3>'+'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/></svg>'+
@@ -3116,6 +3244,7 @@ if(!EXAMS.length){
 }
 
 updateAccountUI();
+updateHeaderStats();
 initGoogleAuth();
 restoreSession();
 
