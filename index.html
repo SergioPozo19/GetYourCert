@@ -315,6 +315,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .goal-track{width:44px;height:4px;border-radius:2px;background:var(--line);overflow:hidden;flex-shrink:0}
 .goal-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .5s}
 .hstat-goal.done .goal-fill{background:var(--ok)}
+.hs-label{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);opacity:.7;margin-right:1px}
+.hstat-pill.streak-on .hs-label{color:#ea580c;opacity:.8}
+.hstat-goal.done .hs-label{color:var(--ok);opacity:.9}
 /* ---- Achievement badges ---- */
 .badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .badge-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center;transition:transform .2s,box-shadow .2s}
@@ -681,7 +684,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </button>
       <div class="header-stats hidden" id="headerStats">
         <span class="hstat-pill" id="headerStreak"></span>
-        <span class="hstat-goal" id="headerGoal"><span id="headerGoalTxt"></span><span class="goal-track"><span class="goal-fill" id="headerGoalFill"></span></span></span>
+        <span class="hstat-goal" id="headerGoal"></span>
       </div>
       <div class="account-area" id="accountArea">
         <div id="gsiButton" class="gsi-btn"></div>
@@ -1167,6 +1170,7 @@ const I18N = {
     progTrend:"Tendencia de puntuación", progTrendSub:"Últimos {n} intentos · línea discontinua = aprobado (70%)", progByExam:"Progreso por examen", progDomains:"Dominio de las áreas practicadas", progAttemptsShort:"intentos", progNoTrend:"Completa al menos 2 exámenes para ver tu tendencia.",
     streakDays:"{n} días", streakDay:"{n} día",
     dailyGoalTxt:"{c}/{g} hoy", dailyGoalDone:"¡Objetivo cumplido! 🎉",
+    streakLabel:"Racha", goalLabel:"Hoy",
     progAchievements:"Logros", badgeUnlocked:"¡Logro desbloqueado!", badgeLocked:"Bloqueado",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
@@ -1247,6 +1251,7 @@ const I18N = {
     progTrend:"Score trend", progTrendSub:"Last {n} attempts · dashed line = passing (70%)", progByExam:"Progress by exam", progDomains:"Mastery by practiced domain", progAttemptsShort:"attempts", progNoTrend:"Complete at least 2 exams to see your trend.",
     streakDays:"{n} days", streakDay:"{n} day",
     dailyGoalTxt:"{c}/{g} today", dailyGoalDone:"Goal reached! 🎉",
+    streakLabel:"Streak", goalLabel:"Today",
     progAchievements:"Achievements", badgeUnlocked:"Achievement unlocked!", badgeLocked:"Locked",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
@@ -2557,17 +2562,17 @@ function updateHeaderStats(){
   if(!el)return;
   const sp=$('#headerStreak');
   const gp=$('#headerGoal');
-  const gt=$('#headerGoalTxt');
-  const gf=$('#headerGoalFill');
-  if(!sp||!gp||!gt||!gf)return;
+  if(!sp||!gp)return;
   // streak pill
-  sp.textContent=(streak?'🔥 ':'')+t(streak===1?'streakDay':'streakDays').replace('{n}',streak||0);
+  const streakVal=t(streak===1?'streakDay':'streakDays').replace('{n}',streak||0);
+  sp.innerHTML='<span class="hs-label">'+t('streakLabel')+'</span>'+(streak?'🔥 ':'')+streakVal;
   sp.classList.toggle('streak-on',streak>0);
   // daily goal pill
   const done=dg.count>=DAILY_GOAL_TARGET;
   const pct=Math.min(100,Math.round(dg.count/DAILY_GOAL_TARGET*100));
-  gt.textContent=done?t('dailyGoalDone'):t('dailyGoalTxt').replace('{c}',dg.count).replace('{g}',DAILY_GOAL_TARGET);
-  gf.style.width=pct+'%';
+  const goalVal=done?t('dailyGoalDone'):dg.count+'/'+DAILY_GOAL_TARGET;
+  const barHtml=done?'':'<span class="goal-track"><span class="goal-fill" style="width:'+pct+'%"></span></span>';
+  gp.innerHTML='<span class="hs-label">'+t('goalLabel')+'</span>'+goalVal+barHtml;
   gp.classList.toggle('done',done);
   el.classList.remove('hidden');
 }
