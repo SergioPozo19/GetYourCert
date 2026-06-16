@@ -307,7 +307,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 @media(max-width:600px){.prog-cards{grid-template-columns:repeat(2,1fr)}.prog-card .pv{font-size:22px}}
 /* ---- Header stats (streak + daily goal) ---- */
 .header-stats{display:flex;align-items:center;gap:8px}
-.hstat-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-3);white-space:nowrap;cursor:default;user-select:none}
+.hstat-pill,.hstat-goal{display:inline-flex}
+.hstat-pill{align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-3);white-space:nowrap;cursor:default;user-select:none}
 .hstat-pill.streak-on{color:#ea580c;border-color:rgba(234,88,12,.35);background:#fff7ed}
 [data-theme="dark"] .hstat-pill.streak-on{background:#3a1800;border-color:rgba(234,88,12,.25)}
 .hstat-goal{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-3);white-space:nowrap;user-select:none}
@@ -2565,18 +2566,29 @@ function updateHeaderStats(){
   const sp=$('#headerStreak');
   const gp=$('#headerGoal');
   if(!sp||!gp)return;
-  // streak pill
-  const streakVal=t(streak===1?'streakDay':'streakDays').replace('{n}',streak||0);
-  sp.innerHTML='<span class="hs-label">'+t('streakLabel')+'</span>'+(streak?'🔥 ':'')+streakVal;
-  sp.classList.toggle('streak-on',streak>0);
-  // daily goal pill
-  const done=dg.count>=DAILY_GOAL_TARGET;
-  const pct=Math.min(100,Math.round(dg.count/DAILY_GOAL_TARGET*100));
-  const goalVal=done?t('dailyGoalDone'):dg.count+'/'+DAILY_GOAL_TARGET;
-  const barHtml=done?'':'<span class="goal-track"><span class="goal-fill" style="width:'+pct+'%"></span></span>';
-  gp.innerHTML='<span class="hs-label">'+t('goalLabel')+'</span>'+goalVal+barHtml;
-  gp.classList.toggle('done',done);
-  el.classList.remove('hidden');
+  // streak pill: solo visible si hay racha activa
+  if(streak>0){
+    const streakVal=t(streak===1?'streakDay':'streakDays').replace('{n}',streak);
+    sp.innerHTML='<span class="hs-label">'+t('streakLabel')+'</span>🔥 '+streakVal;
+    sp.classList.add('streak-on');
+    sp.classList.remove('hidden');
+  }else{
+    sp.classList.add('hidden');
+  }
+  // daily goal pill: solo visible si el usuario ya ha respondido preguntas hoy
+  if(dg.count>0){
+    const done=dg.count>=DAILY_GOAL_TARGET;
+    const pct=Math.min(100,Math.round(dg.count/DAILY_GOAL_TARGET*100));
+    const goalVal=done?t('dailyGoalDone'):dg.count+'/'+DAILY_GOAL_TARGET;
+    const barHtml=done?'':'<span class="goal-track"><span class="goal-fill" style="width:'+pct+'%"></span></span>';
+    gp.innerHTML='<span class="hs-label">'+t('goalLabel')+'</span>'+goalVal+barHtml;
+    gp.classList.toggle('done',done);
+    gp.classList.remove('hidden');
+  }else{
+    gp.classList.add('hidden');
+  }
+  // mostrar el contenedor solo si al menos un pill es visible
+  el.classList.toggle('hidden',streak===0&&dg.count===0);
 }
 
 // Iconos para las tarjetas de resumen de progreso
