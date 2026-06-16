@@ -51,6 +51,15 @@ CREATE TABLE patreon_pledges (
 );
 CREATE INDEX idx_patreon_pledges_email ON patreon_pledges (email);
 
+-- ===== Estadísticas comunitarias por pregunta =====
+CREATE TABLE question_stats (
+  exam VARCHAR(32) NOT NULL,
+  question_id INT NOT NULL,
+  correct INT UNSIGNED NOT NULL DEFAULT 0,
+  total INT UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (exam, question_id)
+);
+
 -- ===== Discusiones por pregunta =====
 CREATE TABLE question_comments (
   id INT AUTO_INCREMENT PRIMARY KEY,

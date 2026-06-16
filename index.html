@@ -599,6 +599,11 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .rv-textarea:focus{border-color:var(--accent)}
 .rv-delete{font-size:12.5px;color:var(--ink-3);margin-top:12px;text-align:center}
 .rv-delete button{background:none;border:none;color:var(--bad);cursor:pointer;font-size:12.5px;text-decoration:underline}
+/* ---- Estadísticas comunitarias ---- */
+.q-stat{display:flex;align-items:center;gap:10px;margin-top:12px;margin-bottom:2px}
+.q-stat-bar{width:90px;height:5px;background:var(--line-2);border-radius:5px;overflow:hidden;flex-shrink:0}
+.q-stat-fill{height:100%;border-radius:5px;transition:width .55s ease}
+.q-stat-text{font-size:12px;color:var(--ink-3)}
 /* ---- Discusión por pregunta ---- */
 .disc-panel{border-top:1px solid var(--line-2);margin-top:20px;padding-top:18px}
 .disc-panel>h5{font-size:13.5px;font-weight:700;color:var(--ink);margin:0 0 14px;display:flex;align-items:center;gap:6px}
@@ -824,6 +829,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <div class="exp hidden" id="qExp">
         <h5 data-i="expTitle">Explicación</h5>
         <p id="qExpText"></p>
+        <div class="q-stat hidden" id="qStat">
+          <div class="q-stat-bar"><div class="q-stat-fill" id="qStatFill"></div></div>
+          <span class="q-stat-text" id="qStatText"></span>
+        </div>
         <div class="exp-actions">
           <button class="exp-report" id="qExpReport" type="button">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
@@ -1157,6 +1166,7 @@ const I18N = {
     rvPosted:"¡Reseña publicada!", rvUpdated:"¡Reseña actualizada!", rvError:"No se pudo publicar la reseña. Inténtalo de nuevo.",
     rvNeedRating:"Elige al menos 1 estrella.", rvEmpty:"Sé el primero en dejar una reseña.",
     rvDeleteBtn:"Borrar mi reseña", rvDeleted:"Reseña borrada.",
+    statText:"{pct}% de acierto · {n} intentos",
     discussion:"Discusión", discPlaceholder:"Escribe un comentario...", discPost:"Publicar",
     discNeedLogin:"Inicia sesión para comentar.", discEmpty:"Sé el primero en comentar.",
     discDeleted:"Comentario eliminado.", discPosted:"Comentario publicado.", discDel:"Eliminar"
@@ -1234,6 +1244,7 @@ const I18N = {
     rvPosted:"Review posted!", rvUpdated:"Review updated!", rvError:"Couldn't post the review. Please try again.",
     rvNeedRating:"Please select at least 1 star.", rvEmpty:"Be the first to leave a review.",
     rvDeleteBtn:"Delete my review", rvDeleted:"Review deleted.",
+    statText:"{pct}% correct · {n} attempts",
     discussion:"Discussion", discPlaceholder:"Write a comment...", discPost:"Post",
     discNeedLogin:"Sign in to comment.", discEmpty:"Be the first to comment.",
     discDeleted:"Comment deleted.", discPosted:"Comment posted.", discDel:"Delete"
@@ -1247,6 +1258,7 @@ let exam=[], cur=0;                               // active exam questions + cur
 let answers={}, flags={}, revealed={};            // per-question state
 let graded=false, reviewFilter='wrong';           // results state
 let discCache={}, discOpen=false;                  // discussion per question
+let statCache={};                                  // community stats per question id
 let lastWrongIds=[], retryExtra=0, retryFromWrong=false; // retry config
 let timerInt=null, timeLeft=0;                    // exam timer
 let examActive=false;                             // guard: unsaved exam in progress
@@ -1832,11 +1844,16 @@ function render(){
   const expEl=$('#qExp');
   if(showAns){
     // registrar en repetición espaciada una vez por pregunta y sesión
-    if(instantFeedback()&&!srsRecorded[cur]){ updateSrs(q.id,isCorrect(cur)); srsRecorded[cur]=true; }
+    if(instantFeedback()&&!srsRecorded[cur]){
+      updateSrs(q.id,isCorrect(cur)); srsRecorded[cur]=true;
+      recordStat(q.exam,q.id,isCorrect(cur));
+    }else{
+      showStatFromCache(q.id);
+    }
     $('#qExpText').textContent=L(q,'exp');
     expEl.classList.remove('hidden');
     announce((isCorrect(cur)?t('aOk'):t('aWrong')));
-  }else expEl.classList.add('hidden');
+  }else{ expEl.classList.add('hidden'); $('#qStat').classList.add('hidden'); }
 
   // flag
   $('#flagBtn').classList.toggle('on',!!flags[cur]);
@@ -2016,7 +2033,7 @@ function gradeExam(){
     domStat[q.dom].t++;
     if(ok){correct++;domStat[q.dom].c++;}
     else{lastWrongIds.push(q.id);}
-    if(!srsRecorded[i]){ updateSrs(q.id,ok); srsRecorded[i]=true; }
+    if(!srsRecorded[i]){ updateSrs(q.id,ok); srsRecorded[i]=true; recordStat(q.exam,q.id,ok); }
   });
   const pct=Math.round(correct/exam.length*100);
   const passed=pct>=((currentExam&&currentExam.pass)?currentExam.pass:70);
@@ -3317,6 +3334,38 @@ $$('#rvStarRow .rv-star').forEach(s => {
   s.addEventListener('mouseenter', () => updateRvStars(+s.dataset.v));
   s.addEventListener('click', () => { rvRating = +s.dataset.v; updateRvStars(); });
 });
+
+// ===== ESTADÍSTICAS COMUNITARIAS =====
+async function recordStat(examId,qid,correct){
+  try{
+    const r=await fetch('/api/stats.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({exam:examId,qid,correct})
+    });
+    const data=await r.json();
+    if(data.ok){
+      statCache[qid]={correct:data.correct,total:data.total};
+      if(exam[cur]&&exam[cur].ref&&exam[cur].ref.id===qid) displayStat(data.correct,data.total);
+    }
+  }catch(e){}
+}
+
+function showStatFromCache(qid){
+  const s=statCache[qid];
+  if(s) displayStat(s.correct,s.total);
+  else $('#qStat').classList.add('hidden');
+}
+
+function displayStat(correct,total){
+  if(!total) return;
+  const pct=Math.round(correct/total*100);
+  const color=pct>=70?'var(--ok)':pct>=50?'var(--warn)':'var(--bad)';
+  const n=total.toLocaleString(t('locale'));
+  $('#qStatFill').style.cssText='width:'+pct+'%;background:'+color;
+  $('#qStatText').textContent=t('statText').replace('{pct}',pct).replace('{n}',n);
+  $('#qStat').classList.remove('hidden');
+}
 
 // ===== DISCUSIÓN POR PREGUNTA =====
 async function toggleDisc(){
