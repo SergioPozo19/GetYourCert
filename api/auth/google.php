@@ -55,14 +55,18 @@ try {
   // Si el correo coincide con un mecenas de Patreon activo y aún no está vinculado,
   // activamos Pro automáticamente y guardamos la vinculación.
   if(!$user['is_pro']){
-    $stmt = $pdo->prepare('SELECT member_id FROM patreon_pledges WHERE email = ? AND active = 1');
-    $stmt->execute([$email]);
-    $pledge = $stmt->fetch(PDO::FETCH_ASSOC);
-    if($pledge){
-      $upd = $pdo->prepare('UPDATE users SET is_pro = 1, patreon_member_id = ? WHERE id = ?');
-      $upd->execute([$pledge['member_id'], $user['id']]);
-      $user['is_pro'] = 1;
-      $user['patreon_member_id'] = $pledge['member_id'];
+    try {
+      $stmt = $pdo->prepare('SELECT member_id FROM patreon_pledges WHERE email = ? AND active = 1');
+      $stmt->execute([$email]);
+      $pledge = $stmt->fetch(PDO::FETCH_ASSOC);
+      if($pledge){
+        $upd = $pdo->prepare('UPDATE users SET is_pro = 1, patreon_member_id = ? WHERE id = ?');
+        $upd->execute([$pledge['member_id'], $user['id']]);
+        $user['is_pro'] = 1;
+        $user['patreon_member_id'] = $pledge['member_id'];
+      }
+    } catch (\Throwable $ignored) {
+      // patreon_pledges table may not exist yet — login still succeeds
     }
   }
 
@@ -81,7 +85,8 @@ try {
     ],
     'data' => $user['data'] ? json_decode($user['data']) : null,
   ]);
-} catch (Exception $e) {
+} catch (\Throwable $e) {
+  error_log('[google.php] ' . $e->getMessage());
   http_response_code(500);
   echo json_encode(['ok' => false, 'error' => 'server']);
 }
