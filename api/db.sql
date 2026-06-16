@@ -51,6 +51,26 @@ CREATE TABLE patreon_pledges (
 );
 CREATE INDEX idx_patreon_pledges_email ON patreon_pledges (email);
 
+-- ===== Discusiones por pregunta =====
+CREATE TABLE question_comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  exam VARCHAR(32) NOT NULL,
+  question_id INT NOT NULL,
+  user_id INT NOT NULL,
+  body TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_q (exam, question_id),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE question_comment_likes (
+  comment_id INT NOT NULL,
+  user_id INT NOT NULL,
+  PRIMARY KEY (comment_id, user_id),
+  FOREIGN KEY (comment_id) REFERENCES question_comments(id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
 -- ===== Reseñas de usuarios =====
 CREATE TABLE reviews (
   id INT AUTO_INCREMENT PRIMARY KEY,

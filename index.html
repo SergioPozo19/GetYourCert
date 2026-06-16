@@ -595,6 +595,31 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .rv-textarea:focus{border-color:var(--accent)}
 .rv-delete{font-size:12.5px;color:var(--ink-3);margin-top:12px;text-align:center}
 .rv-delete button{background:none;border:none;color:var(--bad);cursor:pointer;font-size:12.5px;text-decoration:underline}
+/* ---- Discusión por pregunta ---- */
+.disc-panel{border-top:1px solid var(--line-2);margin-top:20px;padding-top:18px}
+.disc-panel>h5{font-size:13.5px;font-weight:700;color:var(--ink);margin:0 0 14px;display:flex;align-items:center;gap:6px}
+.disc-comment{padding:11px 0;border-bottom:1px solid var(--line-2)}
+.disc-comment:last-of-type{border-bottom:none}
+.disc-comment-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.disc-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.disc-avatar-init{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.disc-meta{flex:1;min-width:0}
+.disc-author{font-size:13px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.disc-date{font-size:11.5px;color:var(--ink-3)}
+.disc-del{background:none;border:none;color:var(--ink-3);cursor:pointer;font-size:17px;line-height:1;padding:0 2px;margin-left:auto}
+.disc-del:hover{color:var(--bad)}
+.disc-body{font-size:13.5px;color:var(--ink-2);line-height:1.55;margin:0 0 8px;white-space:pre-wrap;word-break:break-word}
+.disc-actions{display:flex;align-items:center;gap:10px}
+.disc-like-btn{background:none;border:none;color:var(--ink-3);cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12.5px;padding:0;transition:color .15s}
+.disc-like-btn:hover,.disc-like-btn.liked{color:var(--accent)}
+.disc-like-count{font-size:12px}
+.disc-input{margin-top:16px;border-top:1px solid var(--line-2);padding-top:14px}
+.disc-textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel-2);font-family:var(--sans);font-size:13.5px;color:var(--ink);resize:vertical;min-height:72px;outline:none;transition:border-color .15s;box-sizing:border-box}
+.disc-textarea:focus{border-color:var(--accent)}
+.disc-input-row{display:flex;justify-content:flex-end;margin-top:8px}
+.disc-empty,.disc-need-login{font-size:13.5px;color:var(--ink-3);padding:14px 0;text-align:center;margin:0}
+.disc-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:20px;font-size:10px;font-weight:700;padding:0 5px;min-width:16px;height:16px;vertical-align:middle;margin-left:3px}
+.disc-loading{font-size:13px;color:var(--ink-3);padding:14px 0;text-align:center}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-787WSXCK5H"></script>
@@ -800,6 +825,19 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
           <span data-i="reportIssue">Enviar comentario sobre esta pregunta</span>
         </button>
       </div>
+      <div class="disc-panel hidden" id="discPanel">
+        <h5>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span data-i="discussion">Discusión</span>
+        </h5>
+        <div id="discList"></div>
+        <div class="disc-input hidden" id="discInput">
+          <textarea class="disc-textarea" id="discBody" rows="3"></textarea>
+          <div class="disc-input-row">
+            <button class="btn btn-primary btn-sm" id="discSubmit" data-i="discPost">Publicar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="nav-row">
@@ -815,6 +853,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
         <button class="flag-btn" id="bmBtn" aria-pressed="false">
           <svg id="bmIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           <span id="bmLabel" data-i="bookmark">Favorita</span>
+        </button>
+        <button class="flag-btn" id="discBtn" aria-pressed="false" onclick="toggleDisc()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span data-i="discussion">Discusión</span><span id="discBadge" class="disc-badge hidden"></span>
         </button>
       </div>
       <button class="btn btn-primary btn-sm" id="nextBtn">
@@ -1108,7 +1150,10 @@ const I18N = {
     rvNeedLogin:"Inicia sesión para escribir una reseña.", rvNeedQuestions:"Necesitas responder al menos 10 preguntas para escribir una reseña.",
     rvPosted:"¡Reseña publicada!", rvUpdated:"¡Reseña actualizada!", rvError:"No se pudo publicar la reseña. Inténtalo de nuevo.",
     rvNeedRating:"Elige al menos 1 estrella.", rvEmpty:"Sé el primero en dejar una reseña.",
-    rvDeleteBtn:"Borrar mi reseña", rvDeleted:"Reseña borrada."
+    rvDeleteBtn:"Borrar mi reseña", rvDeleted:"Reseña borrada.",
+    discussion:"Discusión", discPlaceholder:"Escribe un comentario...", discPost:"Publicar",
+    discNeedLogin:"Inicia sesión para comentar.", discEmpty:"Sé el primero en comentar.",
+    discDeleted:"Comentario eliminado.", discPosted:"Comentario publicado.", discDel:"Eliminar"
   },
   en:{
     brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
@@ -1182,7 +1227,10 @@ const I18N = {
     rvNeedLogin:"Sign in to write a review.", rvNeedQuestions:"You need to answer at least 10 questions to write a review.",
     rvPosted:"Review posted!", rvUpdated:"Review updated!", rvError:"Couldn't post the review. Please try again.",
     rvNeedRating:"Please select at least 1 star.", rvEmpty:"Be the first to leave a review.",
-    rvDeleteBtn:"Delete my review", rvDeleted:"Review deleted."
+    rvDeleteBtn:"Delete my review", rvDeleted:"Review deleted.",
+    discussion:"Discussion", discPlaceholder:"Write a comment...", discPost:"Post",
+    discNeedLogin:"Sign in to comment.", discEmpty:"Be the first to comment.",
+    discDeleted:"Comment deleted.", discPosted:"Comment posted.", discDel:"Delete"
   }
 };
 
@@ -1192,6 +1240,7 @@ let mode='exam', domainPick=1;                    // study mode config
 let exam=[], cur=0;                               // active exam questions + cursor
 let answers={}, flags={}, revealed={};            // per-question state
 let graded=false, reviewFilter='wrong';           // results state
+let discCache={}, discOpen=false;                  // discussion per question
 let lastWrongIds=[], retryExtra=0, retryFromWrong=false; // retry config
 let timerInt=null, timeLeft=0;                    // exam timer
 let examActive=false;                             // guard: unsaved exam in progress
@@ -1798,6 +1847,8 @@ function render(){
 
   updateCells();
   if(examActive&&!graded)saveExamState();
+  if(discOpen){ discOpen=false; $('#discPanel').classList.add('hidden'); const db=$('#discBtn'); if(db){db.classList.remove('on');db.setAttribute('aria-pressed','false');} }
+  updateDiscBadge();
 }
 
 // --- Opción múltiple (comportamiento original) ---
@@ -3260,6 +3311,150 @@ $$('#rvStarRow .rv-star').forEach(s => {
   s.addEventListener('mouseenter', () => updateRvStars(+s.dataset.v));
   s.addEventListener('click', () => { rvRating = +s.dataset.v; updateRvStars(); });
 });
+
+// ===== DISCUSIÓN POR PREGUNTA =====
+async function toggleDisc(){
+  const q=exam[cur]?.ref;
+  if(!q) return;
+  discOpen=!discOpen;
+  $('#discPanel').classList.toggle('hidden',!discOpen);
+  const btn=$('#discBtn');
+  btn.classList.toggle('on',discOpen);
+  btn.setAttribute('aria-pressed',String(discOpen));
+  if(discOpen) await loadDiscComments(q.exam,q.id);
+}
+
+async function loadDiscComments(examId,qid){
+  const list=$('#discList');
+  if(discCache[qid]!==undefined){ renderDiscComments(discCache[qid]); return; }
+  list.innerHTML='<div class="disc-loading">…</div>';
+  try{
+    const r=await fetch('/api/comments.php?exam='+encodeURIComponent(examId)+'&qid='+qid,{headers:authHeaders()});
+    const data=await r.json();
+    if(data.ok){ discCache[qid]=data.comments; renderDiscComments(data.comments); }
+    else list.innerHTML='<div class="disc-empty">Error al cargar.</div>';
+  }catch(e){
+    list.innerHTML='<div class="disc-empty">Error al cargar.</div>';
+  }
+}
+
+function renderDiscComments(comments){
+  const list=$('#discList');
+  list.innerHTML='';
+  const q=exam[cur]?.ref;
+  const badge=$('#discBadge');
+  if(badge){ badge.textContent=comments.length||''; badge.classList.toggle('hidden',!comments.length); }
+  if(!comments.length){
+    const em=document.createElement('div');
+    em.className='disc-empty'; em.textContent=t('discEmpty');
+    list.appendChild(em);
+  }else{
+    comments.forEach(c=>list.appendChild(buildDiscComment(c)));
+  }
+  const inp=$('#discInput');
+  if(isLoggedIn()){
+    inp.classList.remove('hidden');
+    $('#discBody').value='';
+    $('#discBody').setAttribute('placeholder',t('discPlaceholder'));
+  }else{
+    inp.classList.add('hidden');
+    const p=document.createElement('p');
+    p.className='disc-need-login'; p.textContent=t('discNeedLogin');
+    list.appendChild(p);
+  }
+}
+
+function buildDiscComment(c){
+  const div=document.createElement('div');
+  div.className='disc-comment';
+  const initials=(c.name||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  const avatarHTML=c.avatar_url
+    ?'<img class="disc-avatar" src="'+esc(c.avatar_url)+'" alt="" loading="lazy">'
+    :'<div class="disc-avatar disc-avatar-init">'+initials+'</div>';
+  const dateStr=new Date(c.ts*1000).toLocaleDateString(t('locale'),{day:'numeric',month:'short',year:'numeric'});
+  const fillCol=c.liked_by_me?'currentColor':'none';
+  div.innerHTML='<div class="disc-comment-top">'+avatarHTML
+    +'<div class="disc-meta"><span class="disc-author">'+esc(c.name||'Usuario')+'</span><span class="disc-date">'+dateStr+'</span></div>'
+    +(c.is_mine?'<button class="disc-del" data-id="'+c.id+'" aria-label="'+t('discDel')+'">×</button>':'')
+    +'</div>'
+    +'<p class="disc-body">'+esc(c.body)+'</p>'
+    +'<div class="disc-actions">'
+    +'<button class="disc-like-btn'+(c.liked_by_me?' liked':'')+'" data-id="'+c.id+'">'
+    +'<svg width="13" height="13" viewBox="0 0 24 24" fill="'+fillCol+'" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>'
+    +'<span class="disc-like-count">'+c.likes+'</span></button>'
+    +'</div>';
+  div.querySelector('.disc-like-btn').onclick=()=>toggleDiscLike(c.id);
+  if(c.is_mine) div.querySelector('.disc-del').onclick=()=>deleteDiscComment(c.id);
+  return div;
+}
+
+async function toggleDiscLike(id){
+  if(!isLoggedIn()) return;
+  try{
+    const r=await fetch('/api/comments.php',{method:'POST',headers:{...authHeaders(),'Content-Type':'application/json'},body:JSON.stringify({action:'like',id})});
+    const data=await r.json();
+    if(!data.ok) return;
+    const q=exam[cur]?.ref;
+    if(q&&discCache[q.id]){ const c=discCache[q.id].find(x=>x.id===id); if(c){c.liked_by_me=data.liked;c.likes=data.likes;} }
+    const btn=$('.disc-like-btn[data-id="'+id+'"]');
+    if(btn){
+      btn.classList.toggle('liked',data.liked);
+      btn.querySelector('svg').setAttribute('fill',data.liked?'currentColor':'none');
+      btn.querySelector('.disc-like-count').textContent=data.likes;
+    }
+  }catch(e){}
+}
+
+async function postDiscComment(){
+  if(!isLoggedIn()) return;
+  const body=$('#discBody').value.trim();
+  if(!body) return;
+  const q=exam[cur]?.ref;
+  if(!q) return;
+  const btn=$('#discSubmit');
+  btn.disabled=true;
+  try{
+    const r=await fetch('/api/comments.php',{method:'POST',headers:{...authHeaders(),'Content-Type':'application/json'},body:JSON.stringify({action:'post',exam:q.exam,qid:q.id,body})});
+    const data=await r.json();
+    if(data.ok){
+      if(!discCache[q.id]) discCache[q.id]=[];
+      discCache[q.id].push(data.comment);
+      renderDiscComments(discCache[q.id]);
+    }
+  }catch(e){}
+  btn.disabled=false;
+}
+
+async function deleteDiscComment(id){
+  if(!isLoggedIn()) return;
+  try{
+    const r=await fetch('/api/comments.php?id='+id,{method:'DELETE',headers:authHeaders()});
+    const data=await r.json();
+    if(data.ok){
+      const q=exam[cur]?.ref;
+      if(q&&discCache[q.id]){
+        discCache[q.id]=discCache[q.id].filter(c=>c.id!==id);
+        renderDiscComments(discCache[q.id]);
+      }
+    }
+  }catch(e){}
+}
+
+function updateDiscBadge(){
+  const q=exam[cur]?.ref;
+  const badge=$('#discBadge');
+  if(!badge) return;
+  if(q&&discCache[q.id]!==undefined){
+    const n=discCache[q.id].length;
+    badge.textContent=n||'';
+    badge.classList.toggle('hidden',!n);
+  }else{
+    badge.textContent='';
+    badge.classList.add('hidden');
+  }
+}
+
+$('#discSubmit').addEventListener('click',postDiscComment);
 
 // Service Worker + offline indicator
 if('serviceWorker' in navigator){
