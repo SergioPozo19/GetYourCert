@@ -204,13 +204,58 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .save-progress-card{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 20px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin:0 0 20px}
 .save-progress-card.hidden{display:none}
 .save-progress-card p{margin:0;font-size:14px;color:var(--ink-2)}
-.onboard-modal{max-width:480px}
-.onboard-modal .ob-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 20px}
-.onboard-modal .ob-card{padding:14px 10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);text-align:center}
-.onboard-modal .ob-icon{font-size:24px;margin-bottom:6px}
-.onboard-modal .ob-title{font-size:12.5px;font-weight:600;margin-bottom:4px;color:var(--ink)}
-.onboard-modal .ob-desc{font-size:11.5px;color:var(--ink-3);line-height:1.4}
-@media(max-width:520px){.onboard-modal .ob-cards{grid-template-columns:1fr}}
+.onboard-modal{max-width:500px;padding:0;overflow:hidden}
+.ob-progress{height:3px;background:var(--line)}
+.ob-progress-fill{height:100%;background:var(--accent);transition:width .45s cubic-bezier(.4,0,.2,1)}
+.ob-steps-wrap{position:relative;min-height:290px}
+.ob-step{position:absolute;inset:0;padding:22px 28px 8px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .32s ease,transform .32s ease;transform:translateX(28px)}
+.ob-step.ob-prev{transform:translateX(-28px)}
+.ob-step.ob-active{opacity:1;pointer-events:auto;transform:translateX(0)}
+.ob-illus{border-radius:8px;background:var(--accent-soft);margin-bottom:16px;overflow:hidden;flex-shrink:0;height:118px;display:flex;align-items:center;justify-content:center;padding:16px 20px}
+.ob-tag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.ob-h{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
+.ob-p{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin:0}
+.ob-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 28px 22px}
+.ob-dots-row{display:flex;gap:7px;align-items:center}
+.ob-dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:.25s}
+.ob-dot.ob-active{background:var(--accent);width:18px;border-radius:3.5px}
+.ob-skip{background:none;border:none;font-size:13px;color:var(--ink-3);cursor:pointer;padding:4px 8px;font-family:var(--sans);transition:.15s}
+.ob-skip:hover{color:var(--ink)}
+.ob-flow{display:flex;align-items:center;gap:8px;width:100%}
+.ob-flow-box{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 6px;text-align:center;font-size:11px;font-weight:600;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1.3}
+.ob-flow-box svg{color:var(--accent)}
+.ob-flow-arr{color:var(--ink-3);font-size:13px;flex-shrink:0}
+.ob-srs{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+.ob-srs-wrong{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22);border-radius:8px;padding:10px}
+.ob-srs-right{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.22);border-radius:8px;padding:10px}
+.ob-srs-lbl{font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.ob-srs-wrong .ob-srs-lbl{color:#ef4444}
+.ob-srs-right .ob-srs-lbl{color:#22c55e}
+.ob-srs-line{height:5px;border-radius:3px;background:var(--line);margin-bottom:4px}
+.ob-srs-row{display:flex;align-items:center;gap:4px;margin-top:7px;font-size:10px;font-weight:600}
+.ob-doms{width:100%;display:flex;flex-direction:column;gap:9px}
+.ob-dom-row{display:flex;align-items:center;gap:8px}
+.ob-dom-lbl{font-size:10.5px;color:var(--ink-3);width:90px;text-align:right;flex-shrink:0}
+.ob-dom-track{flex:1;height:7px;border-radius:4px;background:var(--line);overflow:hidden}
+.ob-dom-fill{height:100%;border-radius:4px;background:var(--accent);width:0;transition:width .7s ease}
+.ob-dom-pct{font-size:10.5px;font-weight:600;color:var(--ink-2);width:26px;flex-shrink:0}
+.ob-step.ob-active .ob-dom-fill{width:var(--w)}
+.ob-dom-row:nth-child(1) .ob-dom-fill{transition-delay:.08s}
+.ob-dom-row:nth-child(2) .ob-dom-fill{transition-delay:.25s}
+.ob-dom-row:nth-child(3) .ob-dom-fill{transition-delay:.42s}
+.ob-dom-row:nth-child(4) .ob-dom-fill{transition-delay:.58s}
+@keyframes obFadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.ob-step.ob-active .ob-tag{animation:obFadeUp .3s .04s ease both}
+.ob-step.ob-active .ob-h{animation:obFadeUp .3s .11s ease both}
+.ob-step.ob-active .ob-p{animation:obFadeUp .3s .19s ease both}
+.ob-step.ob-active .ob-flow-box:nth-child(1){animation:obFadeUp .3s .08s ease both}
+.ob-step.ob-active .ob-flow-arr:nth-child(2){animation:obFadeUp .3s .16s ease both}
+.ob-step.ob-active .ob-flow-box:nth-child(3){animation:obFadeUp .3s .22s ease both}
+.ob-step.ob-active .ob-flow-arr:nth-child(4){animation:obFadeUp .3s .28s ease both}
+.ob-step.ob-active .ob-flow-box:nth-child(5){animation:obFadeUp .3s .34s ease both}
+.ob-step.ob-active .ob-srs-wrong{animation:obFadeUp .3s .1s ease both}
+.ob-step.ob-active .ob-srs-right{animation:obFadeUp .3s .24s ease both}
+@media(max-width:480px){.ob-dom-lbl{width:68px;font-size:10px}}
 /* ---- Catálogo de exámenes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
@@ -1142,31 +1187,90 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 </div>
 
 <div class="modal-ov" id="onboardModal">
-  <div class="modal onboard-modal" role="dialog" aria-modal="true" aria-labelledby="onboardTitle">
-    <div style="text-align:center;margin-bottom:4px">
-      <img src="icon.svg" alt="" width="44" height="44" style="border-radius:10px">
+  <div class="modal onboard-modal" role="dialog" aria-modal="true" aria-labelledby="obTitle0">
+    <div class="ob-progress"><div class="ob-progress-fill" id="obFill" style="width:33.33%"></div></div>
+    <div class="ob-steps-wrap">
+
+      <!-- Paso 1: Flujo del examen -->
+      <div class="ob-step ob-active" data-ob="0">
+        <div class="ob-illus">
+          <div class="ob-flow">
+            <div class="ob-flow-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span>Elige<br>certificación</span>
+            </div>
+            <div class="ob-flow-arr">›</div>
+            <div class="ob-flow-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Simulacro<br>50 preguntas</span>
+            </div>
+            <div class="ob-flow-arr">›</div>
+            <div class="ob-flow-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Resultado<br>inmediato</span>
+            </div>
+          </div>
+        </div>
+        <div class="ob-tag" data-i="ob1tag">Paso 1 de 3</div>
+        <h3 class="ob-h" id="obTitle0" data-i="ob1t">Preguntas reales, condiciones reales</h3>
+        <p class="ob-p" data-i="ob1d">Más de 2.500 preguntas originales para 5 certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.</p>
+      </div>
+
+      <!-- Paso 2: SRS / Aprendizaje -->
+      <div class="ob-step" data-ob="1">
+        <div class="ob-illus">
+          <div class="ob-srs">
+            <div class="ob-srs-wrong">
+              <div class="ob-srs-lbl">Respuesta incorrecta</div>
+              <div class="ob-srs-line" style="width:88%"></div>
+              <div class="ob-srs-line" style="width:65%"></div>
+              <div class="ob-srs-row" style="color:#ef4444">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                Marcado para repasar
+              </div>
+            </div>
+            <div class="ob-srs-right">
+              <div class="ob-srs-lbl">Explicación</div>
+              <div class="ob-srs-line" style="width:100%"></div>
+              <div class="ob-srs-line" style="width:78%"></div>
+              <div class="ob-srs-row" style="color:#22c55e">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Repaso automático (SRS)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ob-tag" data-i="ob2tag">Paso 2 de 3</div>
+        <h3 class="ob-h" data-i="ob2t">Aprende de cada respuesta</h3>
+        <p class="ob-p" data-i="ob2d">Explicación detallada en cada pregunta. El sistema SRS detecta tus puntos débiles y los repite hasta que los dominas.</p>
+      </div>
+
+      <!-- Paso 3: Progreso por dominio -->
+      <div class="ob-step" data-ob="2">
+        <div class="ob-illus">
+          <div class="ob-doms">
+            <div class="ob-dom-row"><span class="ob-dom-lbl">Seguridad</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:82%"></div></div><span class="ob-dom-pct">82%</span></div>
+            <div class="ob-dom-row"><span class="ob-dom-lbl">Identidad</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:54%"></div></div><span class="ob-dom-pct">54%</span></div>
+            <div class="ob-dom-row"><span class="ob-dom-lbl">Redes</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:67%"></div></div><span class="ob-dom-pct">67%</span></div>
+            <div class="ob-dom-row"><span class="ob-dom-lbl">Gobernanza</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:38%"></div></div><span class="ob-dom-pct">38%</span></div>
+          </div>
+        </div>
+        <div class="ob-tag" data-i="ob3tag">Paso 3 de 3</div>
+        <h3 class="ob-h" data-i="ob3t">Controla tu evolución</h3>
+        <p class="ob-p" data-i="ob3d">Rastrea tu precisión por dominio a lo largo del tiempo. Identifica dónde reforzar antes del examen real.</p>
+      </div>
+
     </div>
-    <h3 id="onboardTitle" style="text-align:center;margin:10px 0 2px;font-size:19px" data-i="onboardTitle">Bienvenido a EarnYourCert</h3>
-    <p style="text-align:center;color:var(--ink-3);font-size:13.5px;margin:0 0 2px" data-i="onboardSub">La forma más efectiva de preparar tu certificación Microsoft</p>
-    <div class="ob-cards">
-      <div class="ob-card">
-        <div class="ob-icon">🏆</div>
-        <div class="ob-title" data-i="ob1t">Exámenes reales</div>
-        <div class="ob-desc" data-i="ob1d">Preguntas originales basadas en la guía oficial de Microsoft</div>
+    <div class="ob-footer">
+      <div class="ob-dots-row" id="obDots">
+        <button class="ob-dot ob-active" data-ob="0" aria-label="Paso 1"></button>
+        <button class="ob-dot" data-ob="1" aria-label="Paso 2"></button>
+        <button class="ob-dot" data-ob="2" aria-label="Paso 3"></button>
       </div>
-      <div class="ob-card">
-        <div class="ob-icon">📈</div>
-        <div class="ob-title" data-i="ob2t">Seguimiento inteligente</div>
-        <div class="ob-desc" data-i="ob2d">Repaso con repetición espaciada para reforzar tus puntos débiles</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="ob-skip" id="obSkipBtn" data-i="onboardSkip">Saltar</button>
+        <button class="btn btn-primary" id="onboardStartBtn" data-i="onboardNext" style="min-width:120px">Siguiente →</button>
       </div>
-      <div class="ob-card">
-        <div class="ob-icon">🎯</div>
-        <div class="ob-title" data-i="ob3t">Gratis para empezar</div>
-        <div class="ob-desc" data-i="ob3d">20 preguntas gratis cada día, sin necesidad de registrarte</div>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <button class="btn btn-primary" id="onboardStartBtn" data-i="onboardCta" style="min-width:180px">Empezar gratis →</button>
     </div>
   </div>
 </div>
@@ -1342,10 +1446,10 @@ const I18N = {
     saveProgressCta:"Guardar progreso →",
     onboardTitle:"Bienvenido a EarnYourCert",
     onboardSub:"La forma más efectiva de preparar tu certificación Microsoft",
-    ob1t:"Exámenes reales", ob1d:"Preguntas originales basadas en la guía oficial de Microsoft",
-    ob2t:"Seguimiento inteligente", ob2d:"Repaso con repetición espaciada para reforzar tus puntos débiles",
-    ob3t:"Gratis para empezar", ob3d:"20 preguntas gratis cada día, sin necesidad de registrarte",
-    onboardCta:"Empezar gratis →",
+    ob1tag:"Paso 1 de 3", ob1t:"Preguntas reales, condiciones reales", ob1d:"Más de 2.500 preguntas originales para 5 certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.",
+    ob2tag:"Paso 2 de 3", ob2t:"Aprende de cada respuesta", ob2d:"Explicación detallada en cada pregunta. El sistema SRS detecta tus puntos débiles y los repite hasta que los dominas.",
+    ob3tag:"Paso 3 de 3", ob3t:"Controla tu evolución", ob3d:"Rastrea tu precisión por dominio a lo largo del tiempo. Identifica dónde reforzar antes del examen real.",
+    onboardNext:"Siguiente →", onboardSkip:"Saltar", onboardCta:"Empezar gratis →",
     quotaWarnToast:"Solo te quedan {n} preguntas gratis hoy"
   },
   en:{
@@ -1437,10 +1541,10 @@ const I18N = {
     saveProgressCta:"Save progress →",
     onboardTitle:"Welcome to EarnYourCert",
     onboardSub:"The most effective way to prepare for your Microsoft certification",
-    ob1t:"Real exam questions", ob1d:"Original questions based on Microsoft's official guide",
-    ob2t:"Smart tracking", ob2d:"Spaced repetition review to reinforce your weak spots",
-    ob3t:"Free to start", ob3d:"20 free questions a day, no sign-up required",
-    onboardCta:"Start for free →",
+    ob1tag:"Step 1 of 3", ob1t:"Real questions, real conditions", ob1d:"Over 2,500 original questions for 5 Microsoft certifications. Each mock exam weights domains exactly like the official test.",
+    ob2tag:"Step 2 of 3", ob2t:"Learn from every answer", ob2d:"Detailed explanation on every question. The SRS system spots your weak points and repeats them until you master them.",
+    ob3tag:"Step 3 of 3", ob3t:"Track your progress", ob3d:"Monitor your accuracy per domain over time. Know exactly where to focus before the real exam.",
+    onboardNext:"Next →", onboardSkip:"Skip", onboardCta:"Start for free →",
     quotaWarnToast:"Only {n} free questions left today"
   }
 };
@@ -3206,11 +3310,28 @@ function maybeShowOnboarding(){
   if(Store.get('onboarded',false))return;
   setTimeout(()=>{ const m=$('#onboardModal'); if(m)m.classList.add('show'); },600);
 }
-$('#onboardStartBtn').addEventListener('click',()=>{
-  Store.set('onboarded',true);
-  $('#onboardModal').classList.remove('show');
-});
-$('#onboardModal').addEventListener('click',e=>{ if(e.target===$('#onboardModal')){ Store.set('onboarded',true); $('#onboardModal').classList.remove('show'); } });
+let _obCur=0;
+const _obN=3;
+function _obClose(){ Store.set('onboarded',true); $('#onboardModal').classList.remove('show'); }
+function _obGo(n){
+  const steps=Array.from($$('#onboardModal .ob-step'));
+  const dots=Array.from($$('#obDots .ob-dot'));
+  steps.forEach((s,i)=>{
+    s.classList.remove('ob-active','ob-prev');
+    if(i<n) s.classList.add('ob-prev');
+  });
+  steps[n].getBoundingClientRect(); // force reflow for animation replay
+  steps[n].classList.add('ob-active');
+  dots.forEach((d,i)=>d.classList.toggle('ob-active',i===n));
+  const fill=$('#obFill'); if(fill) fill.style.width=((n+1)/_obN*100)+'%';
+  _obCur=n;
+  const btn=$('#onboardStartBtn');
+  if(btn){ const last=n>=_obN-1; btn.dataset.i=last?'onboardCta':'onboardNext'; btn.textContent=t(last?'onboardCta':'onboardNext'); }
+}
+$('#onboardStartBtn').addEventListener('click',()=>{ if(_obCur<_obN-1){ _obGo(_obCur+1); return; } _obClose(); });
+$('#obSkipBtn').addEventListener('click',_obClose);
+$('#obDots').addEventListener('click',e=>{ const d=e.target.closest('.ob-dot'); if(d) _obGo(parseInt(d.dataset.ob)); });
+$('#onboardModal').addEventListener('click',e=>{ if(e.target===$('#onboardModal')) _obClose(); });
 $('#proLinkBtn').addEventListener('click',()=>openProModal('manual'));
 $('#quotaProLink').addEventListener('click',()=>openProModal('manual'));
 // Estudio: favorito en el examen + explorador
