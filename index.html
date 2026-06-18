@@ -49,40 +49,75 @@
       "inLanguage": ["es", "en"]
     },
     {
+      "@type": "Organization",
+      "name": "EarnYourCert",
+      "url": "https://earnyourcert.com",
+      "description": "Plataforma de exámenes de práctica gratuitos para certificaciones de Microsoft con preguntas originales, explicaciones y repaso inteligente.",
+      "logo": { "@type": "ImageObject", "url": "https://earnyourcert.com/icon-512.png" }
+    },
+    {
       "@type": "ItemList",
       "name": "Exámenes de práctica disponibles en EarnYourCert",
       "itemListElement": [
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 1,
-          "name": "AZ-900: Microsoft Azure Fundamentals - Examen de práctica",
-          "url": "https://earnyourcert.com/az-900.html",
-          "educationalLevel": "Fundamentals",
-          "about": "Microsoft Certified: AZ-900"
+          "item": {
+            "@type": ["Quiz", "LearningResource"],
+            "name": "AZ-900: Microsoft Azure Fundamentals — Examen de práctica gratuito",
+            "url": "https://earnyourcert.com/az-900.html",
+            "educationalLevel": "beginner",
+            "isAccessibleForFree": true,
+            "numberOfItems": 559
+          }
         },
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 2,
-          "name": "AB-900: Microsoft 365 Copilot and Agent Administration Fundamentals - Examen de práctica",
-          "url": "https://earnyourcert.com/ab-900.html",
-          "educationalLevel": "Fundamentals",
-          "about": "Microsoft Certified: AB-900"
+          "item": {
+            "@type": ["Quiz", "LearningResource"],
+            "name": "AZ-104: Microsoft Azure Administrator — Examen de práctica gratuito",
+            "url": "https://earnyourcert.com/az-104.html",
+            "educationalLevel": "intermediate",
+            "isAccessibleForFree": true,
+            "numberOfItems": 257
+          }
         },
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 3,
-          "name": "MS-700: Microsoft Teams Administrator Associate - Examen de práctica",
-          "url": "https://earnyourcert.com/ms-700.html",
-          "educationalLevel": "Associate",
-          "about": "Microsoft Certified: MS-700"
+          "item": {
+            "@type": ["Quiz", "LearningResource"],
+            "name": "AB-900: Microsoft 365 Copilot and Agent Administration Fundamentals — Examen de práctica gratuito",
+            "url": "https://earnyourcert.com/ab-900.html",
+            "educationalLevel": "beginner",
+            "isAccessibleForFree": true,
+            "numberOfItems": 622
+          }
         },
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 4,
-          "name": "MS-102: Microsoft 365 Administrator Expert - Examen de práctica",
-          "url": "https://earnyourcert.com/ms-102.html",
-          "educationalLevel": "Expert",
-          "about": "Microsoft Certified: MS-102"
+          "item": {
+            "@type": ["Quiz", "LearningResource"],
+            "name": "MS-700: Microsoft Teams Administrator Associate — Examen de práctica gratuito",
+            "url": "https://earnyourcert.com/ms-700.html",
+            "educationalLevel": "intermediate",
+            "isAccessibleForFree": true,
+            "numberOfItems": 621
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": ["Quiz", "LearningResource"],
+            "name": "MS-102: Microsoft 365 Administrator Expert — Examen de práctica gratuito",
+            "url": "https://earnyourcert.com/ms-102.html",
+            "educationalLevel": "advanced",
+            "isAccessibleForFree": true,
+            "numberOfItems": 560
+          }
         }
       ]
     }
