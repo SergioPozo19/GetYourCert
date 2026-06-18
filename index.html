@@ -204,58 +204,53 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .save-progress-card{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 20px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin:0 0 20px}
 .save-progress-card.hidden{display:none}
 .save-progress-card p{margin:0;font-size:14px;color:var(--ink-2)}
-.onboard-modal{max-width:500px;padding:0;overflow:hidden}
+.onboard-modal{max-width:540px;padding:0;overflow:hidden}
 .ob-progress{height:3px;background:var(--line)}
 .ob-progress-fill{height:100%;background:var(--accent);transition:width .45s cubic-bezier(.4,0,.2,1)}
-.ob-steps-wrap{position:relative;min-height:290px}
-.ob-step{position:absolute;inset:0;padding:22px 28px 8px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .32s ease,transform .32s ease;transform:translateX(28px)}
-.ob-step.ob-prev{transform:translateX(-28px)}
+.ob-steps-wrap{position:relative;height:368px}
+.ob-step{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;transform:translateX(32px)}
+.ob-step.ob-prev{transform:translateX(-32px)}
 .ob-step.ob-active{opacity:1;pointer-events:auto;transform:translateX(0)}
-.ob-illus{border-radius:8px;background:var(--accent-soft);margin-bottom:16px;overflow:hidden;flex-shrink:0;height:118px;display:flex;align-items:center;justify-content:center;padding:16px 20px}
+.ob-illus{height:192px;flex-shrink:0;background:linear-gradient(160deg,var(--accent-soft) 0%,var(--bg) 100%);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+.ob-illus svg{display:block;width:100%;height:100%}
+.ob-illus-inner{position:absolute;inset:0;padding:18px 28px;display:flex;flex-direction:column;justify-content:center}
+.ob-content{padding:16px 28px 8px}
 .ob-tag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
 .ob-h{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
 .ob-p{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin:0}
-.ob-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 28px 22px}
+.ob-footer{display:flex;align-items:center;justify-content:space-between;padding:13px 28px 22px;border-top:1px solid var(--line)}
 .ob-dots-row{display:flex;gap:7px;align-items:center}
 .ob-dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:.25s}
-.ob-dot.ob-active{background:var(--accent);width:18px;border-radius:3.5px}
+.ob-dot.ob-active{background:var(--accent);width:20px;border-radius:3.5px}
 .ob-skip{background:none;border:none;font-size:13px;color:var(--ink-3);cursor:pointer;padding:4px 8px;font-family:var(--sans);transition:.15s}
 .ob-skip:hover{color:var(--ink)}
-.ob-flow{display:flex;align-items:center;gap:8px;width:100%}
-.ob-flow-box{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 6px;text-align:center;font-size:11px;font-weight:600;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1.3}
-.ob-flow-box svg{color:var(--accent)}
-.ob-flow-arr{color:var(--ink-3);font-size:13px;flex-shrink:0}
-.ob-srs{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
-.ob-srs-wrong{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22);border-radius:8px;padding:10px}
-.ob-srs-right{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.22);border-radius:8px;padding:10px}
-.ob-srs-lbl{font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
-.ob-srs-wrong .ob-srs-lbl{color:#ef4444}
-.ob-srs-right .ob-srs-lbl{color:#22c55e}
-.ob-srs-line{height:5px;border-radius:3px;background:var(--line);margin-bottom:4px}
-.ob-srs-row{display:flex;align-items:center;gap:4px;margin-top:7px;font-size:10px;font-weight:600}
-.ob-doms{width:100%;display:flex;flex-direction:column;gap:9px}
-.ob-dom-row{display:flex;align-items:center;gap:8px}
-.ob-dom-lbl{font-size:10.5px;color:var(--ink-3);width:90px;text-align:right;flex-shrink:0}
-.ob-dom-track{flex:1;height:7px;border-radius:4px;background:var(--line);overflow:hidden}
-.ob-dom-fill{height:100%;border-radius:4px;background:var(--accent);width:0;transition:width .7s ease}
-.ob-dom-pct{font-size:10.5px;font-weight:600;color:var(--ink-2);width:26px;flex-shrink:0}
-.ob-step.ob-active .ob-dom-fill{width:var(--w)}
-.ob-dom-row:nth-child(1) .ob-dom-fill{transition-delay:.08s}
-.ob-dom-row:nth-child(2) .ob-dom-fill{transition-delay:.25s}
-.ob-dom-row:nth-child(3) .ob-dom-fill{transition-delay:.42s}
-.ob-dom-row:nth-child(4) .ob-dom-fill{transition-delay:.58s}
-@keyframes obFadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.ob-step.ob-active .ob-tag{animation:obFadeUp .3s .04s ease both}
-.ob-step.ob-active .ob-h{animation:obFadeUp .3s .11s ease both}
-.ob-step.ob-active .ob-p{animation:obFadeUp .3s .19s ease both}
-.ob-step.ob-active .ob-flow-box:nth-child(1){animation:obFadeUp .3s .08s ease both}
-.ob-step.ob-active .ob-flow-arr:nth-child(2){animation:obFadeUp .3s .16s ease both}
-.ob-step.ob-active .ob-flow-box:nth-child(3){animation:obFadeUp .3s .22s ease both}
-.ob-step.ob-active .ob-flow-arr:nth-child(4){animation:obFadeUp .3s .28s ease both}
-.ob-step.ob-active .ob-flow-box:nth-child(5){animation:obFadeUp .3s .34s ease both}
-.ob-step.ob-active .ob-srs-wrong{animation:obFadeUp .3s .1s ease both}
-.ob-step.ob-active .ob-srs-right{animation:obFadeUp .3s .24s ease both}
-@media(max-width:480px){.ob-dom-lbl{width:68px;font-size:10px}}
+/* step 3: domain bars */
+.ob-drow{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ob-drow:last-of-type{margin-bottom:0}
+.ob-dlbl{font-size:10px;color:var(--ink-3);width:100px;text-align:right;flex-shrink:0}
+.ob-dtrack{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.ob-dfill{height:100%;border-radius:3px;background:var(--accent);width:0;transition:width .75s cubic-bezier(.4,0,.2,1)}
+.ob-dpct{font-size:10px;font-weight:700;color:var(--accent);width:28px;flex-shrink:0}
+.ob-dstats{margin-top:10px;padding-top:9px;border-top:1px solid var(--line);display:flex;gap:0;font-size:10px;color:var(--ink-3);justify-content:center}
+.ob-dstats span{padding:0 10px;border-right:1px solid var(--line)}
+.ob-dstats span:last-child{border-right:none}
+.ob-step.ob-active .ob-dfill{width:var(--w)}
+.ob-drow:nth-child(1) .ob-dfill{transition-delay:.08s}
+.ob-drow:nth-child(2) .ob-dfill{transition-delay:.24s}
+.ob-drow:nth-child(3) .ob-dfill{transition-delay:.40s}
+.ob-drow:nth-child(4) .ob-dfill{transition-delay:.56s}
+/* svg group animations */
+@keyframes obFadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes obFadeIn{from{opacity:0}to{opacity:1}}
+.ob-step.ob-active .ob-tag{animation:obFadeUp .32s .04s ease both}
+.ob-step.ob-active .ob-h{animation:obFadeUp .32s .12s ease both}
+.ob-step.ob-active .ob-p{animation:obFadeUp .32s .20s ease both}
+.ob-step.ob-active .ob-gi{animation:obFadeIn .4s ease both}
+.ob-step.ob-active .ob-gi-1{animation-delay:.06s}
+.ob-step.ob-active .ob-gi-2{animation-delay:.2s}
+.ob-step.ob-active .ob-gi-3{animation-delay:.36s}
+.ob-step.ob-active .ob-gi-4{animation-delay:.52s}
+@media(max-width:500px){.ob-dlbl{width:72px}}
 /* ---- Catálogo de exámenes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
@@ -1191,73 +1186,149 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <div class="ob-progress"><div class="ob-progress-fill" id="obFill" style="width:33.33%"></div></div>
     <div class="ob-steps-wrap">
 
-      <!-- Paso 1: Flujo del examen -->
+      <!-- PASO 1: Simulacro de examen -->
       <div class="ob-step ob-active" data-ob="0">
         <div class="ob-illus">
-          <div class="ob-flow">
-            <div class="ob-flow-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              <span>Elige<br>certificación</span>
-            </div>
-            <div class="ob-flow-arr">›</div>
-            <div class="ob-flow-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Simulacro<br>50 preguntas</span>
-            </div>
-            <div class="ob-flow-arr">›</div>
-            <div class="ob-flow-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>Resultado<br>inmediato</span>
-            </div>
-          </div>
+          <svg viewBox="0 0 540 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- card shadow -->
+            <rect x="32" y="20" width="476" height="160" rx="13" fill="var(--ink)" opacity=".04"/>
+            <!-- card -->
+            <rect x="28" y="16" width="476" height="160" rx="13" fill="var(--panel)" stroke="var(--line)" stroke-width="1.2"/>
+            <!-- g1: header -->
+            <g class="ob-gi ob-gi-1">
+              <!-- progress track -->
+              <rect x="44" y="34" width="444" height="2.5" rx="1.25" fill="var(--line)"/>
+              <!-- progress fill 24% -->
+              <rect x="44" y="34" width="107" height="2.5" rx="1.25" fill="var(--accent)"/>
+              <!-- left: question counter placeholder -->
+              <rect x="44" y="25" width="96" height="6" rx="3" fill="var(--ink)" opacity=".14"/>
+              <!-- right: timer placeholder -->
+              <rect x="420" y="25" width="68" height="6" rx="3" fill="var(--ink)" opacity=".1"/>
+            </g>
+            <!-- g2: question text -->
+            <g class="ob-gi ob-gi-2">
+              <rect x="44" y="46" width="310" height="8.5" rx="4.25" fill="var(--ink)" opacity=".2"/>
+              <rect x="44" y="59" width="240" height="8.5" rx="4.25" fill="var(--ink)" opacity=".13"/>
+            </g>
+            <!-- g3: options A and B (B selected) -->
+            <g class="ob-gi ob-gi-3">
+              <!-- option A -->
+              <rect x="44" y="78" width="444" height="23" rx="6" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+              <circle cx="62" cy="89.5" r="5.5" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+              <rect x="76" y="86" width="136" height="7" rx="3.5" fill="var(--ink)" opacity=".22"/>
+              <!-- option B — selected & correct -->
+              <rect x="44" y="105" width="444" height="23" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+              <circle cx="62" cy="116.5" r="6" fill="var(--accent)"/>
+              <path d="M59.2 116.5l2.2 2.2 4.2-4.2" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="76" y="113" width="164" height="7" rx="3.5" fill="var(--accent)" opacity=".55"/>
+              <!-- checkmark badge -->
+              <circle cx="468" cy="116.5" r="8" fill="var(--accent)"/>
+              <path d="M464.5 116.5l2.5 2.5 5-5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- g4: options C and D -->
+            <g class="ob-gi ob-gi-4">
+              <rect x="44" y="132" width="215" height="23" rx="6" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+              <circle cx="62" cy="143.5" r="5.5" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+              <rect x="76" y="140" width="114" height="7" rx="3.5" fill="var(--ink)" opacity=".2"/>
+              <rect x="269" y="132" width="215" height="23" rx="6" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+              <circle cx="287" cy="143.5" r="5.5" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+              <rect x="301" y="140" width="108" height="7" rx="3.5" fill="var(--ink)" opacity=".2"/>
+            </g>
+          </svg>
         </div>
-        <div class="ob-tag" data-i="ob1tag">Paso 1 de 3</div>
-        <h3 class="ob-h" id="obTitle0" data-i="ob1t">Preguntas reales, condiciones reales</h3>
-        <p class="ob-p" data-i="ob1d">Más de 2.500 preguntas originales para 5 certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.</p>
+        <div class="ob-content">
+          <div class="ob-tag" data-i="ob1tag">Paso 1 de 3</div>
+          <h3 class="ob-h" id="obTitle0" data-i="ob1t">Preguntas reales, condiciones reales</h3>
+          <p class="ob-p" data-i="ob1d">Más de 2.500 preguntas para 5 certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.</p>
+        </div>
       </div>
 
-      <!-- Paso 2: SRS / Aprendizaje -->
+      <!-- PASO 2: Aprende de cada respuesta -->
       <div class="ob-step" data-ob="1">
         <div class="ob-illus">
-          <div class="ob-srs">
-            <div class="ob-srs-wrong">
-              <div class="ob-srs-lbl">Respuesta incorrecta</div>
-              <div class="ob-srs-line" style="width:88%"></div>
-              <div class="ob-srs-line" style="width:65%"></div>
-              <div class="ob-srs-row" style="color:#ef4444">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                Marcado para repasar
-              </div>
-            </div>
-            <div class="ob-srs-right">
-              <div class="ob-srs-lbl">Explicación</div>
-              <div class="ob-srs-line" style="width:100%"></div>
-              <div class="ob-srs-line" style="width:78%"></div>
-              <div class="ob-srs-row" style="color:#22c55e">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Repaso automático (SRS)
-              </div>
-            </div>
-          </div>
+          <svg viewBox="0 0 540 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- left card: wrong answer -->
+            <g class="ob-gi ob-gi-1">
+              <rect x="28" y="16" width="226" height="162" rx="13" fill="rgba(239,68,68,.07)" stroke="rgba(239,68,68,.28)" stroke-width="1.3"/>
+              <!-- header strip -->
+              <rect x="28" y="16" width="226" height="44" rx="13" fill="rgba(239,68,68,.1)"/>
+              <rect x="28" y="46" width="226" height="14" fill="rgba(239,68,68,.1)"/>
+              <!-- X icon -->
+              <circle cx="54" cy="38" r="10" fill="rgba(239,68,68,.18)" stroke="#ef4444" stroke-width="1.5"/>
+              <path d="M50 34l8 8M58 34l-8 8" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- label lines -->
+              <rect x="72" y="32" width="76" height="7" rx="3.5" fill="#ef4444" opacity=".45"/>
+              <rect x="72" y="43" width="55" height="5.5" rx="2.75" fill="var(--ink)" opacity=".18"/>
+              <!-- body text lines -->
+              <rect x="44" y="72" width="194" height="6.5" rx="3.25" fill="var(--ink)" opacity=".14"/>
+              <rect x="44" y="82" width="162" height="6.5" rx="3.25" fill="var(--ink)" opacity=".1"/>
+              <rect x="44" y="92" width="178" height="6.5" rx="3.25" fill="var(--ink)" opacity=".12"/>
+              <!-- selected wrong answer row -->
+              <rect x="44" y="108" width="194" height="22" rx="6" fill="rgba(239,68,68,.1)" stroke="rgba(239,68,68,.3)" stroke-width="1"/>
+              <rect x="56" y="115" width="118" height="6.5" rx="3.25" fill="#ef4444" opacity=".4"/>
+            </g>
+            <!-- right card: explanation -->
+            <g class="ob-gi ob-gi-2">
+              <rect x="286" y="16" width="226" height="162" rx="13" fill="rgba(34,197,94,.06)" stroke="rgba(34,197,94,.28)" stroke-width="1.3"/>
+              <!-- header strip -->
+              <rect x="286" y="16" width="226" height="44" rx="13" fill="rgba(34,197,94,.1)"/>
+              <rect x="286" y="46" width="226" height="14" fill="rgba(34,197,94,.1)"/>
+              <!-- check icon -->
+              <circle cx="312" cy="38" r="10" fill="rgba(34,197,94,.18)" stroke="#22c55e" stroke-width="1.5"/>
+              <path d="M307.5 38l3 3 6-6" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- label lines -->
+              <rect x="330" y="32" width="80" height="7" rx="3.5" fill="#22c55e" opacity=".5"/>
+              <rect x="330" y="43" width="58" height="5.5" rx="2.75" fill="var(--ink)" opacity=".18"/>
+              <!-- body text lines -->
+              <rect x="302" y="72" width="194" height="6.5" rx="3.25" fill="var(--ink)" opacity=".16"/>
+              <rect x="302" y="82" width="172" height="6.5" rx="3.25" fill="var(--ink)" opacity=".11"/>
+              <rect x="302" y="92" width="188" height="6.5" rx="3.25" fill="var(--ink)" opacity=".13"/>
+              <!-- correct answer row -->
+              <rect x="302" y="108" width="194" height="22" rx="6" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.3)" stroke-width="1"/>
+              <rect x="314" y="115" width="128" height="6.5" rx="3.25" fill="#22c55e" opacity=".45"/>
+            </g>
+            <!-- g3: arrow between cards -->
+            <g class="ob-gi ob-gi-3">
+              <line x1="258" y1="97" x2="282" y2="97" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M275 90l8 7-8 7" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- g4: SRS badge -->
+            <g class="ob-gi ob-gi-4">
+              <rect x="170" y="148" width="200" height="24" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="1"/>
+              <!-- refresh icon -->
+              <path d="M186 158 a5 5 0 1 1 5 5" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M191 159l-1.5-3.5 3.5-.5" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="200" y="154" width="95" height="6" rx="3" fill="var(--ink)" opacity=".22"/>
+              <rect x="200" y="163" width="64" height="5" rx="2.5" fill="var(--accent)" opacity=".35"/>
+            </g>
+          </svg>
         </div>
-        <div class="ob-tag" data-i="ob2tag">Paso 2 de 3</div>
-        <h3 class="ob-h" data-i="ob2t">Aprende de cada respuesta</h3>
-        <p class="ob-p" data-i="ob2d">Explicación detallada en cada pregunta. El sistema SRS detecta tus puntos débiles y los repite hasta que los dominas.</p>
+        <div class="ob-content">
+          <div class="ob-tag" data-i="ob2tag">Paso 2 de 3</div>
+          <h3 class="ob-h" data-i="ob2t">Aprende de cada respuesta</h3>
+          <p class="ob-p" data-i="ob2d">Explicación detallada en cada pregunta. El sistema SRS detecta tus puntos débiles y los repite hasta que los dominas.</p>
+        </div>
       </div>
 
-      <!-- Paso 3: Progreso por dominio -->
+      <!-- PASO 3: Progreso por dominio -->
       <div class="ob-step" data-ob="2">
         <div class="ob-illus">
-          <div class="ob-doms">
-            <div class="ob-dom-row"><span class="ob-dom-lbl">Seguridad</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:82%"></div></div><span class="ob-dom-pct">82%</span></div>
-            <div class="ob-dom-row"><span class="ob-dom-lbl">Identidad</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:54%"></div></div><span class="ob-dom-pct">54%</span></div>
-            <div class="ob-dom-row"><span class="ob-dom-lbl">Redes</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:67%"></div></div><span class="ob-dom-pct">67%</span></div>
-            <div class="ob-dom-row"><span class="ob-dom-lbl">Gobernanza</span><div class="ob-dom-track"><div class="ob-dom-fill" style="--w:38%"></div></div><span class="ob-dom-pct">38%</span></div>
+          <div class="ob-illus-inner">
+            <div style="font-size:10.5px;font-weight:700;color:var(--ink-2);margin-bottom:13px;letter-spacing:.01em">AZ-900 · Progreso por dominio</div>
+            <div class="ob-drow"><span class="ob-dlbl">Conceptos Azure</span><div class="ob-dtrack"><div class="ob-dfill" style="--w:82%"></div></div><span class="ob-dpct">82%</span></div>
+            <div class="ob-drow"><span class="ob-dlbl">Identidad y acceso</span><div class="ob-dtrack"><div class="ob-dfill" style="--w:54%"></div></div><span class="ob-dpct">54%</span></div>
+            <div class="ob-drow"><span class="ob-dlbl">Servicios Azure</span><div class="ob-dtrack"><div class="ob-dfill" style="--w:71%"></div></div><span class="ob-dpct">71%</span></div>
+            <div class="ob-drow"><span class="ob-dlbl">Precios y soporte</span><div class="ob-dtrack"><div class="ob-dfill" style="--w:38%"></div></div><span class="ob-dpct">38%</span></div>
+            <div class="ob-dstats">
+              <span>12 exámenes</span><span>73% media</span><span>Racha 5 días</span>
+            </div>
           </div>
         </div>
-        <div class="ob-tag" data-i="ob3tag">Paso 3 de 3</div>
-        <h3 class="ob-h" data-i="ob3t">Controla tu evolución</h3>
-        <p class="ob-p" data-i="ob3d">Rastrea tu precisión por dominio a lo largo del tiempo. Identifica dónde reforzar antes del examen real.</p>
+        <div class="ob-content">
+          <div class="ob-tag" data-i="ob3tag">Paso 3 de 3</div>
+          <h3 class="ob-h" data-i="ob3t">Controla tu evolución</h3>
+          <p class="ob-p" data-i="ob3d">Rastrea tu precisión por dominio a lo largo del tiempo. Identifica dónde reforzar antes del examen real.</p>
+        </div>
       </div>
 
     </div>
