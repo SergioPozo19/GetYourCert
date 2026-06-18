@@ -1420,7 +1420,7 @@ const I18N = {
     shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!", shareLinkedin:"Compartir en LinkedIn",
     spTitle:"Plan de estudio — 14 días", spProgress:"{d}/14 días completados", spQuestionsLabel:"{n} preguntas · ", spFinalDay:"Simulacro final", spFinalTip:"Haz un examen completo y comprueba tu nivel real.", studyPlanBtn:"Plan de estudio (14 días)",
     certBtn:"Descargar certificado de práctica",
-    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro →", planFree:"Free", planPro:"PRO",
+    quotaLeft:"{n}/20 preguntas gratis hoy", guestQuotaLeft:"{n}/5 preguntas de prueba", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro →", planFree:"Free", planPro:"PRO",
     proModalDetails:"Ver todos los beneficios Pro →",
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
     proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
@@ -1515,7 +1515,7 @@ const I18N = {
     shareResult:"Share result", shareCopied:"Link copied!", shareLinkedin:"Share on LinkedIn",
     spTitle:"14-Day Study Plan", spProgress:"{d}/14 days completed", spQuestionsLabel:"{n} questions · ", spFinalDay:"Final mock exam", spFinalTip:"Take a full exam and check your real level.", studyPlanBtn:"Study Plan (14 days)",
     certBtn:"Download practice certificate",
-    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro →", planFree:"Free", planPro:"PRO",
+    quotaLeft:"{n}/20 free questions today", guestQuotaLeft:"{n}/5 trial questions", proLabel:"PRO · unlimited", quotaProLink:"Get Pro →", planFree:"Free", planPro:"PRO",
     proModalDetails:"See all Pro benefits →",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
     proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
@@ -1582,6 +1582,7 @@ const SessionStore={
 
 // ===== Freemium: límite diario de preguntas + desbloqueo Pro =====
 const DAILY_LIMIT=20;
+const GUEST_LIMIT=5;
 function todayStr(){ return new Date().toISOString().slice(0,10); }
 function quotaKey(){
   if(isLoggedIn()){
@@ -1603,13 +1604,15 @@ function isPro(){
   }
   return !!Store.get('pro',null);
 }
-function remainingQuota(){ return isPro()?Infinity:Math.max(0,DAILY_LIMIT-getQuota().count); }
+function effectiveLimit(){ return isLoggedIn()?DAILY_LIMIT:GUEST_LIMIT; }
+function remainingQuota(){ return isPro()?Infinity:Math.max(0,effectiveLimit()-getQuota().count); }
 function consumeQuota(n){
   if(isPro()||n<=0)return;
   const q=getQuota();
   Store.set(quotaKey(),{date:q.date,count:q.count+n});
   const rem=remainingQuota();
-  if(rem>0&&rem<=3)showToast(t('quotaWarnToast').replace('{n}',rem),'warn',4000);
+  const warnAt=isLoggedIn()?3:1;
+  if(rem>0&&rem<=warnAt)showToast(t('quotaWarnToast').replace('{n}',rem),'warn',4000);
 }
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
@@ -1881,7 +1884,7 @@ function updateQuotaBadge(){
   const el=$('#quotaPill'); if(!el)return;
   const link=$('#quotaProLink');
   if(isPro()){ el.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>'+t('proLabel')+'</span>'; el.classList.add('pro'); el.classList.remove('warn'); if(link)link.classList.add('hidden'); }
-  else{ const rem=remainingQuota(); el.textContent=t('quotaLeft').replace('{n}',rem); el.classList.remove('pro'); el.classList.toggle('warn',rem<=5&&rem>0); if(link)link.classList.remove('hidden'); }
+  else{ const rem=remainingQuota(); el.textContent=(isLoggedIn()?t('quotaLeft'):t('guestQuotaLeft')).replace('{n}',rem); el.classList.remove('pro'); el.classList.toggle('warn',rem<=(isLoggedIn()?5:1)&&rem>0); if(link)link.classList.remove('hidden'); }
 }
 // --- Dominios dinámicos según el examen activo ---
 function domList(){
@@ -2383,13 +2386,15 @@ function gradeExam(){
   renderReview();
   updateRetryWrongBox();
   // --- Persistencia: registrar intento e invalidar el examen en curso ---
-  const domSummary={}; domList().forEach(d=>{ if(domStat[d]) domSummary[d]={c:domStat[d].c,t:domStat[d].t}; });
-  const hist=Store.get('history',[]);
-  hist.push({examId:currentExam?currentExam.id:'', code:currentExam?currentExam.code:'', date:Date.now(),
-             pct, passed, correct, total:exam.length, mode, dom:domSummary});
-  Store.set('history',hist.slice(-200)); syncPush();
-  checkAchievements(hist.slice(-200));
-  updateDailyGoal(exam.length);
+  if(isLoggedIn()){
+    const domSummary={}; domList().forEach(d=>{ if(domStat[d]) domSummary[d]={c:domStat[d].c,t:domStat[d].t}; });
+    const hist=Store.get('history',[]);
+    hist.push({examId:currentExam?currentExam.id:'', code:currentExam?currentExam.code:'', date:Date.now(),
+               pct, passed, correct, total:exam.length, mode, dom:domSummary});
+    Store.set('history',hist.slice(-200)); syncPush();
+    checkAchievements(hist.slice(-200));
+    updateDailyGoal(exam.length);
+  }
   examActive=false; clearExamState();
   window.scrollTo(0,0);
 }
@@ -2798,6 +2803,7 @@ function getDailyGoal(){
 }
 
 function updateDailyGoal(added){
+  if(!isLoggedIn())return;
   const dg=getDailyGoal();
   const wasNotDone=dg.count<DAILY_GOAL_TARGET;
   dg.count+=added;
@@ -2807,6 +2813,7 @@ function updateDailyGoal(added){
 }
 
 function checkAchievements(hist){
+  if(!isLoggedIn())return;
   const ach=Store.get('achievements',{unlocked:[]});
   const before=new Set(ach.unlocked||[]);
   const newlyUnlocked=[];
@@ -2825,6 +2832,8 @@ function checkAchievements(hist){
 }
 
 function updateHeaderStats(){
+  const el=$('#headerStats');
+  if(!isLoggedIn()){ if(el)el.classList.add('hidden'); return; }
   const hist=Store.get('history',[]);
   const streak=computeStreak(hist);
   const dg=getDailyGoal();
