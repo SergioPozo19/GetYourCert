@@ -3307,12 +3307,12 @@ function closeProModal(){ $('#proModal').classList.remove('show'); }
 $('#proModalClose').addEventListener('click',closeProModal);
 $('#proModal').addEventListener('click',e=>{ if(e.target===$('#proModal')) closeProModal(); });
 function maybeShowOnboarding(){
-  if(Store.get('onboarded',false))return;
+  if(isLoggedIn())return;
   setTimeout(()=>{ const m=$('#onboardModal'); if(m)m.classList.add('show'); },600);
 }
 let _obCur=0;
 const _obN=3;
-function _obClose(){ Store.set('onboarded',true); $('#onboardModal').classList.remove('show'); }
+function _obClose(){ $('#onboardModal').classList.remove('show'); }
 function _obGo(n){
   const steps=Array.from($$('#onboardModal .ob-step'));
   const dots=Array.from($$('#obDots .ob-dot'));
