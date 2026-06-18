@@ -190,7 +190,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:22px}
 .quota-wrap{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .quota-pill{display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:600;font-family:var(--mono);white-space:nowrap}
-.quota-pill.pro{background:var(--ok-soft);color:var(--ok)}
+.quota-pill.pro{background:linear-gradient(135deg,#c9920a,#a87208);color:#fff;font-family:var(--sans);font-size:12px;letter-spacing:.02em;box-shadow:0 1px 8px rgba(180,120,0,.28);border:1px solid rgba(255,255,255,.15)}
 .quota-pill:empty{display:none}
 .quota-pro-link{background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--accent);cursor:pointer;transition:.15s;text-decoration:none;white-space:nowrap}
 .quota-pro-link:hover{background:var(--accent-soft);border-color:var(--accent)}
@@ -1698,7 +1698,7 @@ function updateQuotaBadge(){
   updateAccountUI();
   const el=$('#quotaPill'); if(!el)return;
   const link=$('#quotaProLink');
-  if(isPro()){ el.textContent=t('proLabel'); el.classList.add('pro'); if(link)link.classList.add('hidden'); }
+  if(isPro()){ el.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>'+t('proLabel')+'</span>'; el.classList.add('pro'); if(link)link.classList.add('hidden'); }
   else{ el.textContent=t('quotaLeft').replace('{n}',remainingQuota()); el.classList.remove('pro'); if(link)link.classList.remove('hidden'); }
 }
 // --- Dominios dinámicos según el examen activo ---
