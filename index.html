@@ -839,7 +839,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 
     <div class="quota-wrap">
       <div class="quota-pill" id="quotaPill"></div>
-      <button class="quota-pro-link hidden" id="quotaProLink" data-i="quotaProLink">Hazte Pro</button>
+      <a href="/pro.html" class="quota-pro-link hidden" id="quotaProLink" data-i="quotaProLink">Hazte Pro</a>
     </div>
     <div class="modes" id="modes">
       <div class="mode sel" data-mode="exam">
@@ -1099,6 +1099,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <span data-i="support">Apóyame en Patreon</span>
     </a>
     <p class="pro-auto-note" data-i="proAutoNote">El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.</p>
+    <a href="/pro.html" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:600" data-i="proModalDetails">Ver todos los beneficios Pro →</a>
   </div>
 </div>
 
@@ -1157,7 +1158,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.8 2.4c-3.9 0-7.1 3.2-7.1 7.1 0 3.9 3.2 7.1 7.1 7.1 3.9 0 7.1-3.2 7.1-7.1 0-3.9-3.2-7.1-7.1-7.1zM2.4 21.6V2.4h3.5v19.2H2.4z"/></svg>
     <span data-i="support">Apóyame en Patreon</span>
   </a>
-  <button class="pro-link" id="proLinkBtn" data-i="proLink">Hazte Pro</button>
+  <a href="/pro.html" class="pro-link" id="proLinkBtn" data-i="proLink">Hazte Pro</a>
   <p class="footer-support"><span data-i="footerSupportPre">¿Dudas, problemas o sugerencias? Escríbenos a</span> <a href="mailto:soporte@earnyourcert.com">soporte@earnyourcert.com</a></p>
   <p data-i="disclaimer">Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.</p>
   <p data-i="copyright" style="margin-top:10px">© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.</p>
@@ -1259,7 +1260,8 @@ const I18N = {
     shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!", shareLinkedin:"Compartir en LinkedIn",
     spTitle:"Plan de estudio — 14 días", spProgress:"{d}/14 días completados", spQuestionsLabel:"{n} preguntas · ", spFinalDay:"Simulacro final", spFinalTip:"Haz un examen completo y comprueba tu nivel real.", studyPlanBtn:"Plan de estudio (14 días)",
     certBtn:"Descargar certificado de práctica",
-    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro", planFree:"Free", planPro:"PRO",
+    quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro →", planFree:"Free", planPro:"PRO",
+    proModalDetails:"Ver todos los beneficios Pro →",
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
     proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
     proAutoNote:"El acceso Pro se activa automáticamente al iniciar sesión con la cuenta de Google asociada a tu suscripción de Patreon.",
@@ -1342,7 +1344,8 @@ const I18N = {
     shareResult:"Share result", shareCopied:"Link copied!", shareLinkedin:"Share on LinkedIn",
     spTitle:"14-Day Study Plan", spProgress:"{d}/14 days completed", spQuestionsLabel:"{n} questions · ", spFinalDay:"Final mock exam", spFinalTip:"Take a full exam and check your real level.", studyPlanBtn:"Study Plan (14 days)",
     certBtn:"Download practice certificate",
-    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro", planFree:"Free", planPro:"PRO",
+    quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro →", planFree:"Free", planPro:"PRO",
+    proModalDetails:"See all Pro benefits →",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
     proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
     proAutoNote:"Pro activates automatically when you log in with the Google account linked to your Patreon subscription.",
