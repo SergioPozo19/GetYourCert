@@ -429,6 +429,21 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .len-modal{max-width:500px;text-align:center;padding:32px 28px 28px;position:relative}
 .modal-close-btn{position:absolute;top:14px;right:14px;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;color:var(--ink-3);transition:.15s}
 .modal-close-btn:hover{background:var(--line);color:var(--ink)}
+.sp-modal{max-width:520px;max-height:80vh;overflow-y:auto;position:relative}
+.sp-sub{margin:0 0 12px;color:var(--ink-2);font-size:13px}
+.sp-progress-bar{height:6px;background:var(--line);border-radius:3px;margin:0 0 4px}
+.sp-progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .4s}
+.sp-progress-text{font-size:12px;color:var(--ink-3);margin:0 0 16px;text-align:right}
+.sp-days{display:flex;flex-direction:column;gap:8px}
+.sp-day{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1px solid var(--line-2);border-radius:10px;cursor:pointer;transition:.15s;background:var(--panel)}
+.sp-day:hover{border-color:var(--accent);background:var(--accent-soft)}
+.sp-day.done{background:var(--ok-soft);border-color:var(--ok)}
+.sp-day-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink-3)}
+.sp-day.done .sp-day-num{background:var(--ok);border-color:var(--ok);color:#fff}
+.sp-day-body{flex:1;min-width:0}
+.sp-day-title{font-weight:600;font-size:14px;color:var(--ink);margin:0 0 2px}
+.sp-day-meta{font-size:12px;color:var(--ink-3)}
+.sp-day-tip{font-size:12px;color:var(--ink-2);margin-top:3px;font-style:italic}
 .len-modal-icon{font-size:38px;line-height:1;margin-bottom:14px}
 .len-modal h3{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--ink)}
 .len-modal-sub{font-size:13.5px;color:var(--ink-2);margin-bottom:24px;line-height:1.5}
@@ -816,6 +831,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
         <span data-i="exploreBtn">Catálogo de Preguntas</span>
         <span class="pro-badge" id="exploreProBadge">PRO</span>
       </button>
+      <button class="btn btn-ghost" id="studyPlanBtn" onclick="openStudyPlan()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+        <span data-i="studyPlanBtn">Plan de estudio (14 días)</span>
+      </button>
     </div>
 
     <div class="quota-wrap">
@@ -982,6 +1001,14 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
           <span data-i="exportReport">Exportar informe (PDF)</span>
         </button>
+        <button class="btn btn-ghost hidden" id="certBtn" onclick="downloadCertificate()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <span data-i="certBtn">Descargar certificado</span>
+        </button>
+        <button class="btn btn-ghost" id="linkedinBtn" onclick="shareLinkedIn()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span data-i="shareLinkedin">Compartir en LinkedIn</span>
+        </button>
       </div>
       <div class="retry-wrong hidden" id="retryWrongBox">
         <div class="rw-title" id="rwTitle" data-i="rwTitle">Repetir con las preguntas falladas</div>
@@ -1111,6 +1138,18 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     </div>
   </div>
 </div>
+<div class="modal-ov" id="studyPlanModal">
+  <div class="modal sp-modal" role="dialog" aria-modal="true" aria-labelledby="spTitle">
+    <button class="modal-close-btn" id="spModalClose" aria-label="Cerrar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h3 id="spTitle" data-i="spTitle">Plan de estudio</h3>
+    <p id="spSub" class="sp-sub"></p>
+    <div class="sp-progress-bar"><div id="spProgressFill" class="sp-progress-fill"></div></div>
+    <p id="spProgressText" class="sp-progress-text"></p>
+    <div id="spDays" class="sp-days"></div>
+  </div>
+</div>
 <div class="toast-wrap" id="toastWrap"></div>
 
 <footer class="site-footer">
@@ -1217,7 +1256,9 @@ const I18N = {
     disclaimer:"Esta plataforma es independiente y no está afiliada, asociada ni respaldada por Microsoft. Microsoft, Microsoft 365 y Copilot son marcas registradas de Microsoft Corporation. Las preguntas son material de práctica original y no reproducen el examen oficial.",
     copyright:"© 2026 EarnYourCert · Todos los derechos reservados. Queda prohibida la reproducción total o parcial del contenido sin autorización expresa por escrito.",
     privacyPolicy:"Política de privacidad", loginConsent:"Al continuar, aceptas nuestra {link}.",
-    shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!",
+    shareResult:"Compartir resultado", shareCopied:"¡Enlace copiado!", shareLinkedin:"Compartir en LinkedIn",
+    spTitle:"Plan de estudio — 14 días", spProgress:"{d}/14 días completados", spQuestionsLabel:"{n} preguntas · ", spFinalDay:"Simulacro final", spFinalTip:"Haz un examen completo y comprueba tu nivel real.", studyPlanBtn:"Plan de estudio (14 días)",
+    certBtn:"Descargar certificado de práctica",
     quotaLeft:"{n}/20 preguntas gratis hoy", proLabel:"PRO · ilimitado", quotaProLink:"Hazte Pro", planFree:"Free", planPro:"PRO",
     proLimitTitle:"Límite diario alcanzado", proLimitSub:"Has usado tus 20 preguntas gratuitas de hoy. Vuelve mañana o hazte mecenas en Patreon para desbloquear acceso ilimitado.",
     proManualTitle:"Desbloquea acceso ilimitado", proManualSub:"Hazte mecenas en Patreon con el mismo correo de tu cuenta de Google y el acceso Pro se activará automáticamente.",
@@ -1298,7 +1339,9 @@ const I18N = {
     disclaimer:"This platform is independent and is not affiliated with, associated with, or endorsed by Microsoft. Microsoft, Microsoft 365, and Copilot are registered trademarks of Microsoft Corporation. The questions are original practice material and do not reproduce the official exam.",
     copyright:"© 2026 EarnYourCert · All rights reserved. Reproduction of any content in whole or in part without prior written permission is strictly prohibited.",
     privacyPolicy:"Privacy Policy", loginConsent:"By continuing, you accept our {link}.",
-    shareResult:"Share result", shareCopied:"Link copied!",
+    shareResult:"Share result", shareCopied:"Link copied!", shareLinkedin:"Share on LinkedIn",
+    spTitle:"14-Day Study Plan", spProgress:"{d}/14 days completed", spQuestionsLabel:"{n} questions · ", spFinalDay:"Final mock exam", spFinalTip:"Take a full exam and check your real level.", studyPlanBtn:"Study Plan (14 days)",
+    certBtn:"Download practice certificate",
     quotaLeft:"{n}/20 free questions today", proLabel:"PRO · unlimited", quotaProLink:"Get Pro", planFree:"Free", planPro:"PRO",
     proLimitTitle:"Daily limit reached", proLimitSub:"You've used your 20 free questions for today. Come back tomorrow, or become a Patreon supporter to unlock unlimited access.",
     proManualTitle:"Unlock unlimited access", proManualSub:"Become a Patreon supporter using the same email as your Google account, and Pro will activate automatically.",
@@ -2117,6 +2160,7 @@ function gradeExam(){
   $('#exam').classList.add('hidden');
   $('#results').classList.remove('hidden');
   $('#exportReportBtn').classList.toggle('hidden',!isPro());
+  $('#certBtn').classList.toggle('hidden', pct < 80);
   $('#scorePct').textContent=pct+'%';
   const ring=$('#ring'),circ=465;
   ring.style.stroke=passed?'var(--ok)':'var(--bad)';
@@ -3405,9 +3449,147 @@ function shareResult(){
   if(navigator.share){
     navigator.share({title:'EarnYourCert',text,url}).catch(()=>{});
   }else{
-    navigator.clipboard.writeText(text+' '+url).then(()=>showToast(t('shareCopied'),'ok',2400));
+    shareLinkedIn();
   }
 }
+
+function shareLinkedIn(){
+  const pct=$('#scorePct').textContent;
+  const code=currentExam?currentExam.code:'';
+  const pageUrl='https://earnyourcert.com/'+(currentExam?currentExam.id+'.html':'');
+  const title=lang==='es'
+    ?`He sacado ${pct} en el simulacro ${code} · EarnYourCert`
+    :`I scored ${pct} on the ${code} practice exam · EarnYourCert`;
+  const summary=lang==='es'
+    ?`Practica gratis para tu certificación Microsoft ${code} en EarnYourCert`
+    :`Free practice for your Microsoft ${code} certification at EarnYourCert`;
+  const url=`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(summary)}`;
+  window.open(url,'_blank','width=600,height=620,noopener,noreferrer');
+}
+
+// ===== STUDY PLAN =====
+const STUDY_PLANS = {
+  'az-900': [
+    {labelEs:'Conceptos de la nube (I)',labelEn:'Cloud concepts (I)',dom:1,q:30,tipEs:'Diferencias entre IaaS, PaaS y SaaS, y tipos de nube.',tipEn:'IaaS vs PaaS vs SaaS and cloud types.'},
+    {labelEs:'Conceptos de la nube (II)',labelEn:'Cloud concepts (II)',dom:1,q:30,tipEs:'Modelos de nube: pública, privada e híbrida. Alta disponibilidad.',tipEn:'Cloud models: public, private, hybrid. High availability.'},
+    {labelEs:'Arquitectura de Azure (I)',labelEn:'Azure architecture (I)',dom:2,q:35,tipEs:'Regiones, zonas de disponibilidad y grupos de recursos.',tipEn:'Regions, availability zones and resource groups.'},
+    {labelEs:'Arquitectura de Azure (II)',labelEn:'Azure architecture (II)',dom:2,q:35,tipEs:'Máquinas virtuales, App Service y Azure Functions.',tipEn:'Virtual machines, App Service and Azure Functions.'},
+    {labelEs:'Arquitectura de Azure (III)',labelEn:'Azure architecture (III)',dom:2,q:35,tipEs:'Almacenamiento: Blob, Files, Queues y Tables.',tipEn:'Storage: Blob, Files, Queues and Tables.'},
+    {labelEs:'Arquitectura de Azure (IV)',labelEn:'Azure architecture (IV)',dom:2,q:35,tipEs:'Redes: VNet, VPN Gateway y ExpressRoute.',tipEn:'Networking: VNet, VPN Gateway and ExpressRoute.'},
+    {labelEs:'Administración de Azure (I)',labelEn:'Azure management (I)',dom:3,q:30,tipEs:'Azure Resource Manager, grupos de administración y RBAC.',tipEn:'Azure Resource Manager, management groups and RBAC.'},
+    {labelEs:'Administración de Azure (II)',labelEn:'Azure management (II)',dom:3,q:30,tipEs:'Azure Policy, Azure Blueprints y Cost Management.',tipEn:'Azure Policy, Blueprints and Cost Management.'},
+    {labelEs:'Repaso Dominio 1',labelEn:'Domain 1 review',dom:1,q:40,tipEs:'Repasa todos los conceptos de la nube que hayas fallado.',tipEn:'Review all cloud concepts you missed.'},
+    {labelEs:'Repaso Dominio 2',labelEn:'Domain 2 review',dom:2,q:40,tipEs:'Repasa arquitectura y servicios de Azure.',tipEn:'Review Azure architecture and services.'},
+    {labelEs:'Repaso Dominio 3',labelEn:'Domain 3 review',dom:3,q:40,tipEs:'Repasa administración y gobernanza de Azure.',tipEn:'Review Azure management and governance.'},
+    {labelEs:'Repaso global',labelEn:'Global review',dom:0,q:50,tipEs:'Mezcla de todos los dominios. Identifica tus puntos débiles.',tipEn:'Mix of all domains. Identify your weak spots.'},
+    {labelEs:'Simulacro previo',labelEn:'Practice run',dom:0,q:50,tipEs:'Examen completo. Anota qué dominios necesitas reforzar.',tipEn:'Full exam. Note which domains need more work.'},
+    {labelEs:'Simulacro final',labelEn:'Final mock exam',dom:0,q:50,tipEs:'¡Estás listo! Haz tu mejor examen.',tipEn:"You're ready! Give it your best shot.",final:true}
+  ],
+  'az-104': [
+    {labelEs:'Identidades y gobernanza (I)',labelEn:'Identities & governance (I)',dom:1,q:20,tipEs:'Azure AD: usuarios, grupos y roles.',tipEn:'Azure AD: users, groups and roles.'},
+    {labelEs:'Identidades y gobernanza (II)',labelEn:'Identities & governance (II)',dom:1,q:20,tipEs:'Suscripciones, grupos de administración y RBAC.',tipEn:'Subscriptions, management groups and RBAC.'},
+    {labelEs:'Almacenamiento (I)',labelEn:'Storage (I)',dom:2,q:20,tipEs:'Cuentas de almacenamiento, redundancia y niveles de acceso.',tipEn:'Storage accounts, redundancy and access tiers.'},
+    {labelEs:'Almacenamiento (II)',labelEn:'Storage (II)',dom:2,q:20,tipEs:'Azure Files, Blob lifecycle y Azure Import/Export.',tipEn:'Azure Files, Blob lifecycle and Azure Import/Export.'},
+    {labelEs:'Recursos de proceso (I)',labelEn:'Compute resources (I)',dom:3,q:20,tipEs:'Máquinas virtuales: tamaños, disponibilidad y extensiones.',tipEn:'Virtual machines: sizes, availability and extensions.'},
+    {labelEs:'Recursos de proceso (II)',labelEn:'Compute resources (II)',dom:3,q:20,tipEs:'App Service, Azure Container Instances y AKS.',tipEn:'App Service, Azure Container Instances and AKS.'},
+    {labelEs:'Redes virtuales (I)',labelEn:'Virtual networks (I)',dom:4,q:20,tipEs:'VNet, subredes, NSG y Azure Firewall.',tipEn:'VNet, subnets, NSG and Azure Firewall.'},
+    {labelEs:'Redes virtuales (II)',labelEn:'Virtual networks (II)',dom:4,q:20,tipEs:'Load Balancer, Application Gateway y VPN Gateway.',tipEn:'Load Balancer, Application Gateway and VPN Gateway.'},
+    {labelEs:'Supervisión (I)',labelEn:'Monitoring (I)',dom:5,q:15,tipEs:'Azure Monitor, Log Analytics y alertas.',tipEn:'Azure Monitor, Log Analytics and alerts.'},
+    {labelEs:'Supervisión (II)',labelEn:'Monitoring (II)',dom:5,q:15,tipEs:'Azure Backup, Site Recovery y Network Watcher.',tipEn:'Azure Backup, Site Recovery and Network Watcher.'},
+    {labelEs:'Repaso Identidades y Almacenamiento',labelEn:'Identity & Storage review',dom:0,q:30,tipEs:'Repasa dominios 1 y 2.',tipEn:'Review domains 1 and 2.'},
+    {labelEs:'Repaso Proceso y Redes',labelEn:'Compute & Networks review',dom:0,q:30,tipEs:'Repasa dominios 3 y 4.',tipEn:'Review domains 3 and 4.'},
+    {labelEs:'Simulacro previo',labelEn:'Practice run',dom:0,q:50,tipEs:'Examen completo. Identifica áreas débiles.',tipEn:'Full exam. Identify weak areas.'},
+    {labelEs:'Simulacro final',labelEn:'Final mock exam',dom:0,q:50,tipEs:'¡A por el AZ-104!',tipEn:"Go for the AZ-104!",final:true}
+  ],
+  'ab-900': [
+    {labelEs:'Conceptos de M365 (I)',labelEn:'M365 concepts (I)',dom:1,q:35,tipEs:'Fundamentos de Microsoft 365: licencias y servicios principales.',tipEn:'Microsoft 365 fundamentals: licenses and core services.'},
+    {labelEs:'Conceptos de M365 (II)',labelEn:'M365 concepts (II)',dom:1,q:35,tipEs:'Identidad, cumplimiento y seguridad en M365.',tipEn:'Identity, compliance and security in M365.'},
+    {labelEs:'Conceptos de M365 (III)',labelEn:'M365 concepts (III)',dom:1,q:35,tipEs:'Microsoft Entra ID, MFA y acceso condicional.',tipEn:'Microsoft Entra ID, MFA and Conditional Access.'},
+    {labelEs:'Seguridad de datos (I)',labelEn:'Data security (I)',dom:2,q:40,tipEs:'Etiquetas de sensibilidad y políticas de protección.',tipEn:'Sensitivity labels and protection policies.'},
+    {labelEs:'Seguridad de datos (II)',labelEn:'Data security (II)',dom:2,q:40,tipEs:'Microsoft Purview: DLP, retención y eDiscovery.',tipEn:'Microsoft Purview: DLP, retention and eDiscovery.'},
+    {labelEs:'Seguridad de datos (III)',labelEn:'Data security (III)',dom:2,q:40,tipEs:'Microsoft Defender for M365 y gestión de amenazas.',tipEn:'Microsoft Defender for M365 and threat management.'},
+    {labelEs:'Seguridad de datos (IV)',labelEn:'Data security (IV)',dom:2,q:40,tipEs:'Clasificación de información y gobierno de datos.',tipEn:'Information classification and data governance.'},
+    {labelEs:'Copilot y agentes (I)',labelEn:'Copilot & agents (I)',dom:3,q:35,tipEs:'Qué es Microsoft 365 Copilot y sus capacidades.',tipEn:'What is Microsoft 365 Copilot and its capabilities.'},
+    {labelEs:'Copilot y agentes (II)',labelEn:'Copilot & agents (II)',dom:3,q:35,tipEs:'Agentes de Copilot: creación, despliegue y gestión.',tipEn:'Copilot agents: creation, deployment and management.'},
+    {labelEs:'Copilot y agentes (III)',labelEn:'Copilot & agents (III)',dom:3,q:35,tipEs:'Gobernanza, privacidad y cumplimiento de Copilot.',tipEn:'Copilot governance, privacy and compliance.'},
+    {labelEs:'Repaso Dominio 1',labelEn:'Domain 1 review',dom:1,q:45,tipEs:'Repasa conceptos de M365 y seguridad.',tipEn:'Review M365 concepts and security.'},
+    {labelEs:'Repaso Dominio 2',labelEn:'Domain 2 review',dom:2,q:45,tipEs:'Repasa seguridad de datos y cumplimiento.',tipEn:'Review data security and compliance.'},
+    {labelEs:'Simulacro previo',labelEn:'Practice run',dom:0,q:50,tipEs:'Examen completo previo al día final.',tipEn:'Full exam before the final day.'},
+    {labelEs:'Simulacro final',labelEn:'Final mock exam',dom:0,q:50,tipEs:'¡Listo para el AB-900!',tipEn:"Ready for AB-900!",final:true}
+  ],
+  'ms-700': [
+    {labelEs:'Entorno de Teams (I)',labelEn:'Teams environment (I)',dom:1,q:40,tipEs:'Configuración del tenant de Teams: políticas y permisos.',tipEn:'Teams tenant configuration: policies and permissions.'},
+    {labelEs:'Entorno de Teams (II)',labelEn:'Teams environment (II)',dom:1,q:40,tipEs:'Integración con Microsoft 365: Exchange, SharePoint y OneDrive.',tipEn:'Integration with M365: Exchange, SharePoint and OneDrive.'},
+    {labelEs:'Entorno de Teams (III)',labelEn:'Teams environment (III)',dom:1,q:40,tipEs:'Seguridad, cumplimiento y gobernanza en Teams.',tipEn:'Security, compliance and governance in Teams.'},
+    {labelEs:'Entorno de Teams (IV)',labelEn:'Teams environment (IV)',dom:1,q:40,tipEs:'Acceso externo, acceso de invitados y federación.',tipEn:'External access, guest access and federation.'},
+    {labelEs:'Equipos y canales (I)',labelEn:'Teams & channels (I)',dom:2,q:25,tipEs:'Ciclo de vida de equipos: creación, gestión y archivado.',tipEn:'Team lifecycle: creation, management and archiving.'},
+    {labelEs:'Equipos y canales (II)',labelEn:'Teams & channels (II)',dom:2,q:25,tipEs:'Aplicaciones de Teams: directivas y gestión.',tipEn:'Teams apps: policies and management.'},
+    {labelEs:'Reuniones y llamadas (I)',labelEn:'Meetings & calls (I)',dom:3,q:25,tipEs:'Configuración de reuniones y directivas de conferencia.',tipEn:'Meeting configuration and conferencing policies.'},
+    {labelEs:'Reuniones y llamadas (II)',labelEn:'Meetings & calls (II)',dom:3,q:25,tipEs:'Telefonía: planes de llamada y enrutamiento directo.',tipEn:'Telephony: calling plans and direct routing.'},
+    {labelEs:'Supervisión (I)',labelEn:'Monitoring (I)',dom:4,q:20,tipEs:'Informes de uso de Teams y panel de calidad de llamadas.',tipEn:'Teams usage reports and Call Quality Dashboard.'},
+    {labelEs:'Supervisión (II)',labelEn:'Monitoring (II)',dom:4,q:20,tipEs:'Solución de problemas de audio, vídeo y conectividad.',tipEn:'Audio, video and connectivity troubleshooting.'},
+    {labelEs:'Repaso Entorno de Teams',labelEn:'Teams environment review',dom:1,q:45,tipEs:'El dominio más importante: repasa bien las directivas.',tipEn:'The most important domain: review policies carefully.'},
+    {labelEs:'Repaso global',labelEn:'Global review',dom:0,q:50,tipEs:'Todos los dominios mezclados.',tipEn:'All domains mixed.'},
+    {labelEs:'Simulacro previo',labelEn:'Practice run',dom:0,q:50,tipEs:'Examen completo antes del día final.',tipEn:'Full exam before the final day.'},
+    {labelEs:'Simulacro final',labelEn:'Final mock exam',dom:0,q:50,tipEs:'¡A por el MS-700!',tipEn:"Go for the MS-700!",final:true}
+  ],
+  'ms-102': [
+    {labelEs:'Tenant M365 (I)',labelEn:'M365 tenant (I)',dom:1,q:30,tipEs:'Configuración inicial del tenant: roles y licencias.',tipEn:'Initial tenant setup: roles and licenses.'},
+    {labelEs:'Tenant M365 (II)',labelEn:'M365 tenant (II)',dom:1,q:30,tipEs:'Microsoft 365 Apps: despliegue y actualizaciones.',tipEn:'Microsoft 365 Apps: deployment and updates.'},
+    {labelEs:'Identidad Entra (I)',labelEn:'Entra identity (I)',dom:2,q:30,tipEs:'Microsoft Entra ID: usuarios, grupos y RBAC.',tipEn:'Microsoft Entra ID: users, groups and RBAC.'},
+    {labelEs:'Identidad Entra (II)',labelEn:'Entra identity (II)',dom:2,q:30,tipEs:'Sincronización de identidades: Entra Connect y cloud sync.',tipEn:'Identity sync: Entra Connect and cloud sync.'},
+    {labelEs:'Identidad Entra (III)',labelEn:'Entra identity (III)',dom:2,q:30,tipEs:'Acceso condicional, MFA y Privileged Identity Management.',tipEn:'Conditional Access, MFA and Privileged Identity Management.'},
+    {labelEs:'Seguridad Defender (I)',labelEn:'Defender security (I)',dom:3,q:35,tipEs:'Microsoft Defender for Office 365: protección ante amenazas.',tipEn:'Microsoft Defender for Office 365: threat protection.'},
+    {labelEs:'Seguridad Defender (II)',labelEn:'Defender security (II)',dom:3,q:35,tipEs:'Microsoft Defender XDR: respuesta a incidentes.',tipEn:'Microsoft Defender XDR: incident response.'},
+    {labelEs:'Seguridad Defender (III)',labelEn:'Defender security (III)',dom:3,q:35,tipEs:'Secure Score, alertas y políticas anti-phishing.',tipEn:'Secure Score, alerts and anti-phishing policies.'},
+    {labelEs:'Cumplimiento Purview (I)',labelEn:'Purview compliance (I)',dom:4,q:20,tipEs:'Etiquetas de retención, DLP y eDiscovery en Purview.',tipEn:'Retention labels, DLP and eDiscovery in Purview.'},
+    {labelEs:'Cumplimiento Purview (II)',labelEn:'Purview compliance (II)',dom:4,q:20,tipEs:'Comunicaciones, auditorías y gestión de registros.',tipEn:'Communications, audits and records management.'},
+    {labelEs:'Repaso Identidad y Tenant',labelEn:'Identity & Tenant review',dom:0,q:45,tipEs:'Repasa dominios 1 y 2.',tipEn:'Review domains 1 and 2.'},
+    {labelEs:'Repaso Seguridad y Cumplimiento',labelEn:'Security & Compliance review',dom:0,q:45,tipEs:'Repasa dominios 3 y 4.',tipEn:'Review domains 3 and 4.'},
+    {labelEs:'Simulacro previo',labelEn:'Practice run',dom:0,q:50,tipEs:'Examen completo. Identifica los dominios a reforzar.',tipEn:'Full exam. Identify domains to strengthen.'},
+    {labelEs:'Simulacro final',labelEn:'Final mock exam',dom:0,q:50,tipEs:'¡Listo para el MS-102!',tipEn:"Ready for the MS-102!",final:true}
+  ]
+};
+
+function openStudyPlan(){
+  if(!currentExam)return;
+  const plan=STUDY_PLANS[currentExam.id];
+  if(!plan){showToast('Plan no disponible','warn',2000);return;}
+  const key='sp_'+currentExam.id;
+  const done=Store.get(key,[]);
+  const donePct=Math.round(done.length/plan.length*100);
+  $('#spTitle').textContent=(lang==='es'?'Plan de estudio — '+currentExam.code:'Study Plan — '+currentExam.code);
+  $('#spSub').textContent=(lang==='es'
+    ?'Sigue este plan de 14 días para preparar el '+currentExam.code+' de forma estructurada.'
+    :'Follow this 14-day plan to prepare for the '+currentExam.code+' in a structured way.');
+  $('#spProgressFill').style.width=donePct+'%';
+  $('#spProgressText').textContent=t('spProgress').replace('{d}',done.length);
+  const container=$('#spDays');container.innerHTML='';
+  plan.forEach((day,i)=>{
+    const dayNum=i+1;
+    const isDone=done.includes(dayNum);
+    const label=lang==='es'?day.labelEs:day.labelEn;
+    const tip=lang==='es'?day.tipEs:day.tipEn;
+    const el=document.createElement('div');
+    el.className='sp-day'+(isDone?' done':'');
+    el.innerHTML=`<div class="sp-day-num">${isDone?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>':dayNum}</div><div class="sp-day-body"><div class="sp-day-title">${label}</div><div class="sp-day-meta">${t('spQuestionsLabel').replace('{n}',day.q)}${(lang==='es'?'Dominio ':'Domain ')+(day.dom||t('allWord'))}</div>${tip?`<div class="sp-day-tip">${tip}</div>`:''}</div>`;
+    el.addEventListener('click',()=>togglePlanDay(dayNum,currentExam.id));
+    container.appendChild(el);
+  });
+  $('#studyPlanModal').classList.add('show');
+}
+
+function togglePlanDay(dayNum,examId){
+  const key='sp_'+examId;
+  const done=Store.get(key,[]);
+  const idx=done.indexOf(dayNum);
+  if(idx===-1)done.push(dayNum);else done.splice(idx,1);
+  Store.set(key,done);
+  openStudyPlan();
+}
+
+$('#spModalClose').addEventListener('click',()=>$('#studyPlanModal').classList.remove('show'));
+$('#studyPlanModal').addEventListener('click',e=>{if(e.target===$('#studyPlanModal'))$('#studyPlanModal').classList.remove('show');});
 
 // ===== REVIEWS =====
 let rvRating = 0;
@@ -3710,6 +3892,121 @@ if('serviceWorker' in navigator){
       });
     }catch(e){ /* no SW: app works online-only */ }
   });
+}
+
+// ===== CERTIFICATE =====
+function downloadCertificate(){
+  const pct=parseInt($('#scorePct').textContent);
+  const code=currentExam?currentExam.code:'';
+  const name_=currentExam?currentExam.name:'';
+  const acc=Store.get('account',null);
+  const userName=acc&&acc.name?acc.name:'Estudiante';
+  const now=new Date();
+  const dateStr=now.toLocaleDateString(lang==='es'?'es-ES':'en-US',{year:'numeric',month:'long',day:'numeric'});
+
+  const canvas=document.createElement('canvas');
+  canvas.width=900;canvas.height=636;
+  const ctx=canvas.getContext('2d');
+
+  // Polyfill roundRect
+  if(!ctx.roundRect)ctx.roundRect=function(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();};
+
+  // Background
+  ctx.fillStyle='#ffffff';
+  ctx.fillRect(0,0,900,636);
+
+  // Top bar
+  ctx.fillStyle='#0F6CBD';
+  ctx.fillRect(0,0,900,8);
+
+  // Bottom bar
+  ctx.fillStyle='#E3E8EF';
+  ctx.fillRect(0,628,900,8);
+
+  // Border
+  ctx.strokeStyle='#E3E8EF';
+  ctx.lineWidth=1;
+  ctx.strokeRect(32,24,836,588);
+
+  // Corner accents
+  ctx.strokeStyle='#0F6CBD';
+  ctx.lineWidth=3;
+  ctx.beginPath();ctx.moveTo(32,64);ctx.lineTo(32,24);ctx.lineTo(72,24);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(828,24);ctx.lineTo(868,24);ctx.lineTo(868,64);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(32,572);ctx.lineTo(32,612);ctx.lineTo(72,612);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(868,572);ctx.lineTo(868,612);ctx.lineTo(828,612);ctx.stroke();
+
+  // Brand
+  ctx.fillStyle='#0F6CBD';
+  ctx.font='bold 18px IBM Plex Sans, system-ui, sans-serif';
+  ctx.textAlign='center';
+  ctx.fillText('EarnYourCert',450,72);
+
+  // Title
+  ctx.fillStyle='#1A1D21';
+  ctx.font='bold 32px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(lang==='es'?'Certificado de Práctica':'Practice Certificate',450,150);
+
+  // Divider line
+  ctx.strokeStyle='#E3E8EF';
+  ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(120,170);ctx.lineTo(780,170);ctx.stroke();
+
+  // "Se certifica que" text
+  ctx.fillStyle='#727A83';
+  ctx.font='16px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(lang==='es'?'Este certificado reconoce que':'This certificate recognizes that',450,210);
+
+  // User name
+  ctx.fillStyle='#1A1D21';
+  ctx.font='bold 36px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(userName,450,262);
+
+  // "ha completado" text
+  ctx.fillStyle='#727A83';
+  ctx.font='16px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(lang==='es'?'ha completado con éxito el simulacro de práctica':'has successfully completed the practice exam',450,300);
+
+  // Exam name
+  ctx.fillStyle='#0F6CBD';
+  ctx.font='bold 26px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(code+(name_?' · '+name_:''),450,348);
+
+  // Score badge background
+  ctx.fillStyle='#EAF3FB';
+  ctx.roundRect(350,370,200,80,12);
+  ctx.fill();
+
+  // Score
+  ctx.fillStyle='#0F6CBD';
+  ctx.font='bold 40px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(pct+'%',450,420);
+
+  ctx.fillStyle='#4A5057';
+  ctx.font='13px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(lang==='es'?'Puntuación':'Score',450,445);
+
+  // Date
+  ctx.fillStyle='#727A83';
+  ctx.font='14px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(dateStr,450,500);
+
+  // Footer note
+  ctx.fillStyle='#AEB6C0';
+  ctx.font='11px IBM Plex Sans, system-ui, sans-serif';
+  ctx.fillText(lang==='es'
+    ?'Certificado de práctica independiente. No afiliado a Microsoft.'
+    :'Independent practice certificate. Not affiliated with Microsoft.',450,560);
+  ctx.fillText('earnyourcert.com',450,578);
+
+  // Download
+  canvas.toBlob(blob=>{
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='EarnYourCert-'+code+'-'+pct+'pct.png';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  },'image/png');
 }
 
 // Offline / online indicator
