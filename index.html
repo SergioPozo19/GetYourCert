@@ -197,6 +197,20 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .quota-pro-link.hidden{display:none}
 .pro-badge{display:inline-block;background:#d4af37;color:#fff;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:999px;vertical-align:middle}
 .pro-badge.hidden{display:none}
+.quota-pill.warn{background:rgba(220,80,0,.12);color:#c94f00}
+.guest-banner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin-bottom:16px}
+.guest-banner p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.guest-banner.hidden{display:none}
+.save-progress-card{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 20px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin:0 0 20px}
+.save-progress-card.hidden{display:none}
+.save-progress-card p{margin:0;font-size:14px;color:var(--ink-2)}
+.onboard-modal{max-width:480px}
+.onboard-modal .ob-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 20px}
+.onboard-modal .ob-card{padding:14px 10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);text-align:center}
+.onboard-modal .ob-icon{font-size:24px;margin-bottom:6px}
+.onboard-modal .ob-title{font-size:12.5px;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.onboard-modal .ob-desc{font-size:11.5px;color:var(--ink-3);line-height:1.4}
+@media(max-width:520px){.onboard-modal .ob-cards{grid-template-columns:1fr}}
 /* ---- Catálogo de exámenes ---- */
 .cat-head{text-align:center;margin-bottom:28px}
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
@@ -843,6 +857,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
         </button>
       </div>
     </div>
+    <div class="guest-banner hidden" id="guestBanner">
+      <p data-i="guestBannerText">Practicando como invitado. Crea una cuenta gratis para guardar tu progreso.</p>
+      <button class="btn btn-primary" style="font-size:13px;padding:6px 14px" onclick="openLoginModal()" data-i="guestBannerCta">Crear cuenta gratis →</button>
+    </div>
     <div class="modes" id="modes">
       <div class="mode sel" data-mode="exam">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
@@ -1030,6 +1048,11 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       </div>
     </div>
 
+    <div class="save-progress-card hidden" id="saveProgressCard">
+      <p data-i="saveProgressText">Inicia sesión para guardar tu progreso y ver tu evolución.</p>
+      <button class="btn btn-primary" style="font-size:13px;padding:6px 14px" onclick="openLoginModal()" data-i="saveProgressCta">Guardar progreso →</button>
+    </div>
+
     <div class="review-head">
       <h3 data-i="reviewTitle">Revisión de respuestas</h3>
       <div class="filter-tabs" id="filterTabs">
@@ -1117,6 +1140,37 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <p class="login-consent" id="loginConsent" style="margin-top:14px;font-size:12px;color:var(--ink-3);text-align:center"></p>
   </div>
 </div>
+
+<div class="modal-ov" id="onboardModal">
+  <div class="modal onboard-modal" role="dialog" aria-modal="true" aria-labelledby="onboardTitle">
+    <div style="text-align:center;margin-bottom:4px">
+      <img src="icon.svg" alt="" width="44" height="44" style="border-radius:10px">
+    </div>
+    <h3 id="onboardTitle" style="text-align:center;margin:10px 0 2px;font-size:19px" data-i="onboardTitle">Bienvenido a EarnYourCert</h3>
+    <p style="text-align:center;color:var(--ink-3);font-size:13.5px;margin:0 0 2px" data-i="onboardSub">La forma más efectiva de preparar tu certificación Microsoft</p>
+    <div class="ob-cards">
+      <div class="ob-card">
+        <div class="ob-icon">🏆</div>
+        <div class="ob-title" data-i="ob1t">Exámenes reales</div>
+        <div class="ob-desc" data-i="ob1d">Preguntas originales basadas en la guía oficial de Microsoft</div>
+      </div>
+      <div class="ob-card">
+        <div class="ob-icon">📈</div>
+        <div class="ob-title" data-i="ob2t">Seguimiento inteligente</div>
+        <div class="ob-desc" data-i="ob2d">Repaso con repetición espaciada para reforzar tus puntos débiles</div>
+      </div>
+      <div class="ob-card">
+        <div class="ob-icon">🎯</div>
+        <div class="ob-title" data-i="ob3t">Gratis para empezar</div>
+        <div class="ob-desc" data-i="ob3d">20 preguntas gratis cada día, sin necesidad de registrarte</div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <button class="btn btn-primary" id="onboardStartBtn" data-i="onboardCta" style="min-width:180px">Empezar gratis →</button>
+    </div>
+  </div>
+</div>
+
 <div class="modal-ov" id="reviewModal">
   <div class="modal rv-modal" role="dialog" aria-modal="true" aria-labelledby="rvModalTitle">
     <button class="modal-close-btn" id="reviewModalClose" aria-label="Cerrar">
@@ -1281,7 +1335,18 @@ const I18N = {
     statText:"{pct}% de acierto · {n} intentos",
     discussion:"Discusión", discPlaceholder:"Escribe un comentario...", discPost:"Publicar",
     discNeedLogin:"Inicia sesión para comentar.", discEmpty:"Sé el primero en comentar.",
-    discDeleted:"Comentario eliminado.", discPosted:"Comentario publicado.", discDel:"Eliminar"
+    discDeleted:"Comentario eliminado.", discPosted:"Comentario publicado.", discDel:"Eliminar",
+    guestBannerText:"Practicando como invitado. Crea una cuenta gratis para guardar tu progreso.",
+    guestBannerCta:"Crear cuenta gratis →",
+    saveProgressText:"Inicia sesión para guardar tu progreso y ver tu evolución.",
+    saveProgressCta:"Guardar progreso →",
+    onboardTitle:"Bienvenido a EarnYourCert",
+    onboardSub:"La forma más efectiva de preparar tu certificación Microsoft",
+    ob1t:"Exámenes reales", ob1d:"Preguntas originales basadas en la guía oficial de Microsoft",
+    ob2t:"Seguimiento inteligente", ob2d:"Repaso con repetición espaciada para reforzar tus puntos débiles",
+    ob3t:"Gratis para empezar", ob3d:"20 preguntas gratis cada día, sin necesidad de registrarte",
+    onboardCta:"Empezar gratis →",
+    quotaWarnToast:"Solo te quedan {n} preguntas gratis hoy"
   },
   en:{
     brandTitle:"AB-900 · Practice exam", heroMaster:"Master the {code} exam",
@@ -1365,7 +1430,18 @@ const I18N = {
     statText:"{pct}% correct · {n} attempts",
     discussion:"Discussion", discPlaceholder:"Write a comment...", discPost:"Post",
     discNeedLogin:"Sign in to comment.", discEmpty:"Be the first to comment.",
-    discDeleted:"Comment deleted.", discPosted:"Comment posted.", discDel:"Delete"
+    discDeleted:"Comment deleted.", discPosted:"Comment posted.", discDel:"Delete",
+    guestBannerText:"Practicing as guest. Create a free account to save your progress.",
+    guestBannerCta:"Create free account →",
+    saveProgressText:"Sign in to save your progress and track your improvement.",
+    saveProgressCta:"Save progress →",
+    onboardTitle:"Welcome to EarnYourCert",
+    onboardSub:"The most effective way to prepare for your Microsoft certification",
+    ob1t:"Real exam questions", ob1d:"Original questions based on Microsoft's official guide",
+    ob2t:"Smart tracking", ob2d:"Spaced repetition review to reinforce your weak spots",
+    ob3t:"Free to start", ob3d:"20 free questions a day, no sign-up required",
+    onboardCta:"Start for free →",
+    quotaWarnToast:"Only {n} free questions left today"
   }
 };
 
@@ -1428,6 +1504,8 @@ function consumeQuota(n){
   if(isPro()||n<=0)return;
   const q=getQuota();
   Store.set(quotaKey(),{date:q.date,count:q.count+n});
+  const rem=remainingQuota();
+  if(rem>0&&rem<=3)showToast(t('quotaWarnToast').replace('{n}',rem),'warn',4000);
 }
 function examQuotaCap(n){ return isPro()?n:Math.min(n,remainingQuota()); }
 
@@ -1698,8 +1776,8 @@ function updateQuotaBadge(){
   updateAccountUI();
   const el=$('#quotaPill'); if(!el)return;
   const link=$('#quotaProLink');
-  if(isPro()){ el.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>'+t('proLabel')+'</span>'; el.classList.add('pro'); if(link)link.classList.add('hidden'); }
-  else{ el.textContent=t('quotaLeft').replace('{n}',remainingQuota()); el.classList.remove('pro'); if(link)link.classList.remove('hidden'); }
+  if(isPro()){ el.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>'+t('proLabel')+'</span>'; el.classList.add('pro'); el.classList.remove('warn'); if(link)link.classList.add('hidden'); }
+  else{ const rem=remainingQuota(); el.textContent=t('quotaLeft').replace('{n}',rem); el.classList.remove('pro'); el.classList.toggle('warn',rem<=5&&rem>0); if(link)link.classList.remove('hidden'); }
 }
 // --- Dominios dinámicos según el examen activo ---
 function domList(){
@@ -2164,6 +2242,7 @@ function gradeExam(){
 
   $('#exam').classList.add('hidden');
   $('#results').classList.remove('hidden');
+  const _sp=$('#saveProgressCard');if(_sp)_sp.classList.toggle('hidden',isLoggedIn());
   $('#exportReportBtn').classList.toggle('hidden',!isPro());
   $('#certBtn').classList.toggle('hidden', pct < 80);
   $('#scorePct').textContent=pct+'%';
@@ -2420,7 +2499,7 @@ function renderCatalog(){
       '<div class="ec-badges">'+badge+levelBadge+newBadge+'</div>'+
       '<div class="ec-desc">'+(L(ex,'desc'))+'</div>'+
       meta+go;
-    if(!ex.soon)card.onclick=()=>requireLogin(()=>selectExam(ex.id));
+    if(!ex.soon)card.onclick=()=>selectExam(ex.id);
     grid.appendChild(card);
   });
   // Tarjeta genérica: más exámenes próximamente (la plataforma se actualiza)
@@ -2903,6 +2982,7 @@ async function selectExam(id){
   $('#exam').classList.add('hidden');
   $('#results').classList.add('hidden');
   $('#home').classList.remove('hidden');
+  const _gb=$('#guestBanner');if(_gb)_gb.classList.toggle('hidden',isLoggedIn());
   $('#domPick').classList.add('hidden');
   $$('#modes .mode').forEach((m,i)=>m.classList.toggle('sel',i===0));
   mode='exam';
@@ -3122,6 +3202,15 @@ function openProModal(reason){
 function closeProModal(){ $('#proModal').classList.remove('show'); }
 $('#proModalClose').addEventListener('click',closeProModal);
 $('#proModal').addEventListener('click',e=>{ if(e.target===$('#proModal')) closeProModal(); });
+function maybeShowOnboarding(){
+  if(Store.get('onboarded',false))return;
+  setTimeout(()=>{ const m=$('#onboardModal'); if(m)m.classList.add('show'); },600);
+}
+$('#onboardStartBtn').addEventListener('click',()=>{
+  Store.set('onboarded',true);
+  $('#onboardModal').classList.remove('show');
+});
+$('#onboardModal').addEventListener('click',e=>{ if(e.target===$('#onboardModal')){ Store.set('onboarded',true); $('#onboardModal').classList.remove('show'); } });
 $('#proLinkBtn').addEventListener('click',()=>openProModal('manual'));
 $('#quotaProLink').addEventListener('click',()=>openProModal('manual'));
 // Estudio: favorito en el examen + explorador
@@ -3360,6 +3449,7 @@ restoreSession();
     return;
   }
   restoreView();
+  maybeShowOnboarding();
 })();
 
 // Restaura la pantalla en la que estaba el usuario antes de recargar
