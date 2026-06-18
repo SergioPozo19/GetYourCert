@@ -2834,11 +2834,10 @@ function checkAchievements(hist){
 function updateHeaderStats(){
   const el=$('#headerStats');
   if(!isLoggedIn()){ if(el)el.classList.add('hidden'); return; }
+  if(!el)return;
   const hist=Store.get('history',[]);
   const streak=computeStreak(hist);
   const dg=getDailyGoal();
-  const el=$('#headerStats');
-  if(!el)return;
   const sp=$('#headerStreak');
   const gp=$('#headerGoal');
   if(!sp||!gp)return;
