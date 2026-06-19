@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json');
+require __DIR__ . '/_db.php';
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
   http_response_code(405);
@@ -7,8 +8,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
   exit;
 }
 
-$input = json_decode(file_get_contents('php://input'), true);
-if(!is_array($input)){
+// Throttle feedback submissions: max 10 per hour per IP.
+rate_limit_or_429('feedback', 10, 3600);
+
+$input = read_json_body(8192);
+if($input === null){
   echo json_encode(['ok' => false, 'error' => 'invalid']);
   exit;
 }

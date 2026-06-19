@@ -36,8 +36,9 @@ if (!$user) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $input = json_decode(file_get_contents('php://input'), true);
-    if (!is_array($input)) {
+    rate_limit_or_429('review_post', 10, 3600);
+    $input = read_json_body(4096);
+    if ($input === null) {
         echo json_encode(['ok' => false, 'error' => 'invalid']);
         exit;
     }

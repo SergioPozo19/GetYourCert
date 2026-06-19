@@ -57,12 +57,16 @@ if (!$user) {
 }
 
 if ($method === 'POST') {
-    $input = json_decode(file_get_contents('php://input'), true);
-    if (!is_array($input)) {
+    $input = read_json_body(8192);
+    if ($input === null) {
         echo json_encode(['ok' => false, 'error' => 'invalid']);
         exit;
     }
     $action = $input['action'] ?? 'post';
+    // Throttle new comments (likes are cheap and idempotent, so they are exempt).
+    if ($action === 'post') {
+        rate_limit_or_429('comment_post', 20, 3600);
+    }
 
     if ($action === 'like') {
         $comment_id = (int)($input['id'] ?? 0);

@@ -22,8 +22,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  $input = json_decode(file_get_contents('php://input'), true);
-  if(!is_array($input)){
+  // Cap the stored payload so a single account cannot bloat the DB.
+  $input = read_json_body(262144); // 256 KB
+  if($input === null){
     echo json_encode(['ok' => false, 'error' => 'invalid']);
     exit;
   }

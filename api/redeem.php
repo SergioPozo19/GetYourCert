@@ -8,8 +8,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
   exit;
 }
 
-$input = json_decode(file_get_contents('php://input'), true);
-$code = isset($input['code']) ? strtoupper(trim($input['code'])) : '';
+// Throttle code guesses: max 5 attempts per 10 minutes per IP.
+rate_limit_or_429('redeem', 5, 600);
+
+$input = read_json_body(4096);
+$code = ($input && isset($input['code'])) ? strtoupper(trim($input['code'])) : '';
 
 if($code === ''){
   echo json_encode(['ok' => false, 'error' => 'invalid']);
