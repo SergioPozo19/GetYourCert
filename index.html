@@ -449,8 +449,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 /* ---- Modal de confirmación ---- */
 .modal-ov{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .18s}
 .modal-ov.show{opacity:1;pointer-events:auto}
-.modal{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:420px;width:calc(100% - 40px);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(8px) scale(.98);transition:transform .18s}
-.modal-ov.show .modal{transform:none}
+.modal{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:420px;width:calc(100% - 40px);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .modal h4{margin:0 0 8px;font-size:17px;color:var(--ink)}
 .modal p{margin:0 0 20px;color:var(--ink-2);font-size:14px;line-height:1.5}
 .modal-actions{display:flex;gap:10px;justify-content:flex-end}
@@ -1822,14 +1821,7 @@ function requireLogin(action){
   pendingAction=action;
   openLoginModal();
 }
-function openLoginModal(){
-  $('#loginModal').classList.add('show');
-  try{
-    const c=$('#gsiButtonModal');
-    c.innerHTML='';
-    google.accounts.id.renderButton(c,{theme:'outline',size:'large',type:'standard',shape:'pill'});
-  }catch(e){}
-}
+function openLoginModal(){ $('#loginModal').classList.add('show'); }
 function closeLoginModal(){ $('#loginModal').classList.remove('show'); pendingAction=null; }
 
 function restoreSession(){
