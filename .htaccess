@@ -21,12 +21,11 @@
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-  # CSP: the app's CSS/JS are inline (so 'unsafe-inline' is required). It uses
-  # Google Identity Services (script + iframe + injected stylesheet from
-  # accounts.google.com), Google Fonts, and Google Analytics (gtag). Avatars
-  # come from Google's user-content CDNs over https. If a Google feature breaks
-  # after a deploy, widen the matching directive here first.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://apis.google.com https://www.gstatic.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-src 'self' https://accounts.google.com; base-uri 'self'; object-src 'none'; form-action 'self' https://www.patreon.com"
+  # CSP: the app's CSS/JS are inline (so 'unsafe-inline' is required), and it
+  # talks to Google Identity Services + Google Fonts. Avatars come from Google's
+  # user-content CDNs over https. If Google login ever breaks after a deploy,
+  # widen script-src/frame-src/connect-src here first.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://apis.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com; frame-src 'self' https://accounts.google.com; base-uri 'self'; object-src 'none'"
   # ───────────────────────────────────────────────────────────────────────────
 
   <FilesMatch "^sw\.js$">

@@ -6,14 +6,8 @@ try {
     $pdo = db();
 } catch (\Throwable $e) {
     error_log('[reviews.php] db: ' . $e->getMessage());
-    // Reviews are non-essential: GET degrades to an empty list instead of 500
-    // so the homepage reviews section never errors if the DB is unreachable.
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        echo json_encode(['ok' => true, 'reviews' => []]);
-    } else {
-        http_response_code(500);
-        echo json_encode(['ok' => false, 'error' => 'db']);
-    }
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => 'db']);
     exit;
 }
 
