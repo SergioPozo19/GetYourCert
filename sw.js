@@ -1,9 +1,10 @@
-const CACHE_NAME = 'eyc-v7';
+const CACHE_NAME = 'eyc-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './icon.svg'
+  './icon.svg',
+  'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap'
 ];
 const QUESTION_ASSETS = [
   './questions/ab-900.json',
@@ -28,12 +29,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-
-  // Only handle same-origin requests. Cross-origin resources (Google Fonts,
-  // user avatars, GSI, analytics) are left to the browser so they load under
-  // their own CSP directives (style-src/font-src/img-src/script-src) instead of
-  // connect-src, which is what a SW fetch() would otherwise require.
-  if(url.origin !== self.location.origin) return;
 
   // Stale-while-revalidate for question JSON files (large, mostly-stable data):
   // serve the cached copy immediately if present, but always re-fetch in the
@@ -60,22 +55,22 @@ self.addEventListener('fetch', e => {
         const clone = res.clone();
         caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
         return res;
-      }).catch(() => caches.match(e.request).then(c => c || new Response('', {status: 504})))
+      }).catch(() => caches.match(e.request))
     );
     return;
   }
 
-  // Cache-first for other same-origin static assets (icons, manifest)
+  // Cache-first for all other static assets (fonts, icons)
   e.respondWith(
     caches.match(e.request).then(cached => {
       if(cached) return cached;
       return fetch(e.request).then(res => {
-        if(res.ok && url.pathname.match(/\.(png|svg|ico|json|woff2?)$/)) {
+        if(res.ok && (e.request.url.startsWith('https://fonts.') || url.pathname.match(/\.(png|svg|ico|json|woff2?)$/))) {
           const clone = res.clone();
           caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
         }
         return res;
-      }).catch(() => cached || new Response('', {status: 504}));
+      }).catch(() => cached);
     })
   );
 });
