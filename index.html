@@ -2095,9 +2095,6 @@ function buildExamSet(){
 }
 // shuffle options per question, keep mapping
 function qType(q){return q.type||'mc';}
-// Enunciado de la pregunta. Algunas preguntas yesno/dropdown guardan el texto
-// en los campos bare es/en en lugar de q_es/q_en; se cae a ellos como respaldo.
-function qStem(q){ return L(q,'q')||L(q)||''; }
 
 // Baraja el orden de presentación de las opciones de un tipo compuesto.
 function prepQuestion(q){
@@ -2208,7 +2205,7 @@ function render(){
   $('#progBar').style.width=pct+'%';
   $('#progressBar').setAttribute('aria-valuenow',pct);
   $('#progressBar').setAttribute('aria-label',t('questionWord')+' '+(cur+1)+' '+t('ofWord')+' '+exam.length);
-  $('#qText').textContent=qStem(q);
+  $('#qText').textContent=L(q,'q');
 
   const box=$('#opts');box.innerHTML='';
   box.removeAttribute('role');box.removeAttribute('aria-label');
@@ -2251,9 +2248,8 @@ function render(){
     }else{
       showStatFromCache(q.id);
     }
-    const expTxt=L(q,'exp');
-    $('#qExpText').textContent=expTxt;
-    expEl.classList.toggle('hidden',!expTxt);
+    $('#qExpText').textContent=L(q,'exp');
+    expEl.classList.remove('hidden');
     announce((isCorrect(cur)?t('aOk'):t('aWrong')));
   }else{ expEl.classList.add('hidden'); $('#qStat').classList.add('hidden'); }
 
@@ -2568,9 +2564,9 @@ function renderReview(){
         '<button class="exq-bm rev-bm'+(isBookmarked(q.id)?' on':'')+'" data-qid="'+q.id+'" title="'+t('bookmark')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="'+(isBookmarked(q.id)?'currentColor':'none')+'" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>'+
         '<button class="exq-bm rev-report" data-qid="'+q.id+'" title="'+t('reportIssue')+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></button>'+
       '</div>'+
-      '<div class="rqt">'+esc(qStem(q))+'</div>'+
+      '<div class="rqt">'+(L(q,'q'))+'</div>'+
       body+
-      (L(q,'exp')?'<div class="exp"><h5>'+t('expTitle')+'</h5><p>'+esc(L(q,'exp'))+'</p></div>':'');
+      '<div class="exp"><h5>'+t('expTitle')+'</h5><p>'+(L(q,'exp'))+'</p></div>';
     list.appendChild(card);
   });
   if(shown===0){
@@ -2773,7 +2769,7 @@ function closeExplore(){
   if(currentExam)saveView({screen:'home',examId:currentExam.id});
   window.scrollTo(0,0);
 }
-function exQuestionText(q){ return qStem(q); }
+function exQuestionText(q){ return (L(q,'q'))||''; }
 const EXPLORE_PAGE_SIZE = 25;
 let _exploreMatches = [];
 
@@ -2841,7 +2837,7 @@ function exploreAnswer(q,tp){
       h+='<div class="ex-opt correct">'+esc(L(r))+' ? '+esc(ans)+'</div>';
     });
   }
-  if(L(q,'exp')) h+='<div class="exq-exp">'+esc(L(q,'exp'))+'</div>';
+  h+='<div class="exq-exp">'+esc(L(q,'exp'))+'</div>';
   return h;
 }
 
@@ -3723,9 +3719,9 @@ function exportReportPdf(){
     rows+='<div class="q">'+
       '<div class="qh"><b>#'+(i+1)+'</b> · '+esc(t('domainOf')+' '+q.dom+' · '+q.obj)+
       ' · <span class="'+(ok?'ok':'bad')+'">'+(ok?esc(t('correctAns')):esc(t('wrongAns')))+'</span></div>'+
-      '<div class="qt">'+esc(qStem(q))+'</div>'+
+      '<div class="qt">'+esc(L(q,'q'))+'</div>'+
       reviewBody(item,i,tp)+
-      (L(q,'exp')?'<div class="qe"><b>'+esc(t('expTitle'))+':</b> '+esc(L(q,'exp'))+'</div>':'')+
+      '<div class="qe"><b>'+esc(t('expTitle'))+':</b> '+esc(L(q,'exp'))+'</div>'+
     '</div>';
   });
 
