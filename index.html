@@ -456,7 +456,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 /* ---- Toasts ---- */
 .toast-wrap{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:210;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
 /* ---- Banner de instalación PWA ---- */
-.install-banner{position:fixed;left:16px;right:16px;bottom:16px;max-width:440px;margin:0 auto;z-index:150;display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 44px rgba(0,0,0,.20)}
+.install-banner{position:fixed;left:16px;right:16px;bottom:16px;max-width:440px;margin:0 auto;z-index:205;display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 44px rgba(0,0,0,.20)}
 .install-banner.hidden{display:none}
 .ib-icon{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
 .ib-text{display:flex;flex-direction:column;flex:1;min-width:0}
@@ -4268,8 +4268,6 @@ window.addEventListener('appinstalled', ()=>{
       const wasShown=(m.oldValue||'').includes('show');
       if(shown && !wasShown){
         lastFocus=document.activeElement;
-        // El banner de instalación no debe solaparse con un modal abierto.
-        const ib=$('#installBanner'); if(ib) ib.classList.add('hidden');
         const f=ov.querySelector(FOCUSABLE_SEL);
         if(f) setTimeout(()=>{ try{ f.focus(); }catch(e){} }, 50);
       }else if(!shown && wasShown){
