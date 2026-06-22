@@ -256,7 +256,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .cat-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
 .cat-head p{color:var(--ink-3);font-size:15px;max-width:560px;margin:0 auto}
 .exam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.exam-card{padding:26px;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .2s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;gap:14px;text-align:left;position:relative;overflow:hidden}
+.exam-card{padding:26px;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .2s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;gap:14px;text-align:left;position:relative;overflow:hidden;width:100%;box-sizing:border-box;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .exam-card>*{cursor:pointer}
 /* brillo diagonal que recorre la tarjeta al pasar el ratón */
 .exam-card::before{content:"";position:absolute;top:0;left:-60%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);opacity:0;transition:opacity .2s;pointer-events:none}
@@ -447,7 +447,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 /* ---- Modal de confirmación ---- */
 .modal-ov{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .18s}
 .modal-ov.show{opacity:1;pointer-events:auto}
-.modal{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:420px;width:calc(100% - 40px);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(8px) scale(.98);transition:transform .18s;max-height:90vh;overflow-y:auto}
+.modal{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:420px;width:calc(100% - 40px);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(8px) scale(.98);transition:transform .18s}
 .modal-ov.show .modal{transform:none}
 .modal h4{margin:0 0 8px;font-size:17px;color:var(--ink)}
 .modal p{margin:0 0 20px;color:var(--ink-2);font-size:14px;line-height:1.5}
@@ -501,7 +501,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .len-modal h3{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--ink)}
 .len-modal-sub{font-size:13.5px;color:var(--ink-2);margin-bottom:24px;line-height:1.5}
 .len-modal-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
-.len-chip{padding:12px 22px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:16px;font-weight:700;cursor:pointer;transition:.15s;min-width:70px;pointer-events:auto}
+.len-chip{padding:12px 22px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:var(--mono);font-size:16px;font-weight:700;cursor:pointer;transition:.15s;min-width:70px;pointer-events:auto;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .len-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 .len-chip.on{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(15,108,189,.25)}
 .len-modal-custom{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-10px 0 24px;font-size:13px;color:var(--ink-2)}
@@ -527,7 +527,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .site-footer p a{color:var(--accent)}
 .login-consent a{color:var(--accent)}
 .footer-privacy{margin-top:16px!important;padding-top:14px;border-top:1px solid var(--line-2);font-size:13px}
-.mode{padding:22px;text-align:left;cursor:pointer;transition:.16s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.mode{padding:22px;text-align:left;cursor:pointer;transition:.16s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .mode:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .mode.sel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .mode .mi{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:12px}
@@ -536,7 +536,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .dom-pick{padding:18px 22px;margin-bottom:18px}
 .dom-pick h4{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);margin-bottom:12px;font-weight:600}
 .dom-opts{display:flex;flex-direction:column;gap:8px}
-.dom-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-s);cursor:pointer;transition:.14s}
+.dom-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-s);cursor:pointer;transition:.14s;width:100%;box-sizing:border-box;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .dom-opt:hover{border-color:var(--accent)}
 .dom-opt.sel{border-color:var(--accent);background:var(--accent-soft)}
 .dom-opt .check{width:20px;height:20px;border-radius:6px;border:2px solid var(--line-2);display:grid;place-items:center;flex:none;background:var(--panel);color:#fff}
@@ -3358,7 +3358,7 @@ $('#modes').addEventListener('click',e=>{
 });
 $('#lenModalClose').addEventListener('click',()=>$('#lenModal').classList.remove('show'));
 $('#lenModalOk').addEventListener('click',()=>{ applyCustomLen(); $('#lenModal').classList.remove('show'); startExam(); });
-$('#lenModal').addEventListener('click',e=>{ if(!e.target.closest('.modal')) $('#lenModal').classList.remove('show'); });
+$('#lenModal').addEventListener('click',e=>{ if(e.target===$('#lenModal')) $('#lenModal').classList.remove('show'); });
 $('#lenCustomInput').addEventListener('input',applyCustomLen);
 $('#lenCustomInput').addEventListener('change',applyCustomLen);
 
