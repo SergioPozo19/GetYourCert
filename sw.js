@@ -1,4 +1,4 @@
-const CACHE_NAME = 'eyc-v15';
+const CACHE_NAME = 'eyc-v16';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -8,7 +8,8 @@ const STATIC_ASSETS = [
 ];
 const QUESTION_ASSETS = [
   './questions/ab-900.json',
-  './questions/ms-700.json'
+  './questions/ms-700.json',
+  './questions/ms-721.json'
 ];
 
 self.addEventListener('install', e => {
