@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es"
+  data-title-es="EarnYourCert Pro — Acceso ilimitado a exámenes de práctica de Microsoft"
+  data-title-en="EarnYourCert Pro — Unlimited Access to Microsoft Practice Exams"
+  data-desc-es="Desbloquea acceso ilimitado a todos los exámenes de práctica de Microsoft con EarnYourCert Pro. Sin límite diario de preguntas, informe PDF detallado y catálogo completo."
+  data-desc-en="Unlock unlimited access to all Microsoft practice exams with EarnYourCert Pro. No daily question limit, detailed PDF report, and full catalog."
+  data-og-title-es="EarnYourCert Pro — Acceso ilimitado"
+  data-og-title-en="EarnYourCert Pro — Unlimited Access">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +15,7 @@
 <meta name="theme-color" content="#0F6CBD">
 <meta property="og:type" content="website">
 <meta property="og:title" content="EarnYourCert Pro — Acceso ilimitado">
-<meta property="og:description" content="Acceso ilimitado a todos los exámenes de práctica de Microsoft: AZ-900, AZ-104, AB-900, MS-700, MS-102 y MD-102.">
+<meta property="og:description" content="Acceso ilimitado a todos los exámenes de práctica de Microsoft: AZ-900, AZ-104, AB-900, MS-700, MS-102, MD-102 y MS-721.">
 <meta property="og:url" content="https://earnyourcert.com/pro.html">
 <meta property="og:image" content="https://earnyourcert.com/icon-512.png">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
@@ -19,7 +25,7 @@
 <style>
 :root{
   --accent:#0F6CBD;--accent-d:#0A4A9A;--accent-soft:#EAF3FB;
-  --gold:#C9920A;--gold-bg:rgba(201,146,10,.1);--gold-border:rgba(201,146,10,.28);
+  --gold:#C9920A;--gold-bg:rgba(201,146,10,.1);
   --ok:#107C41;--ok-soft:#E4F2EA;
   --bg:#EEF2F7;--panel:#FFFFFF;
   --ink:#0D1520;--ink-2:#3A4452;--ink-3:#68737F;
@@ -33,16 +39,23 @@
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
 a{text-decoration:none}
 
+/* lang hiding */
+[data-lang="es"] [lang="en"],[data-lang="en"] [lang="es"]{display:none}
+
 /* layout */
 .wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
 
 /* topbar */
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
 .brand-name{font-weight:700;font-size:17px;letter-spacing:-.01em}
+.topbar-right{display:flex;align-items:center;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:600;font-size:14px;transition:.18s;border:1.5px solid transparent;white-space:nowrap;cursor:pointer;font-family:var(--sans);line-height:1}
 .btn-back{background:var(--panel);color:var(--ink-2);border-color:var(--line);box-shadow:var(--sh-s)}
 .btn-back:hover{border-color:var(--accent);color:var(--accent)}
+.toggle{display:flex;border:1.5px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}
+.toggle button{padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink-3);cursor:pointer;border:none;background:none;font-family:var(--sans)}
+.toggle button.on{background:var(--accent);color:#fff}
 
 /* hero */
 .hero{
@@ -209,10 +222,16 @@ footer a:hover{text-decoration:underline}
       <img src="icon.svg" alt="EarnYourCert" width="36" height="36" style="border-radius:8px">
       <span class="brand-name">EarnYourCert</span>
     </a>
-    <a href="/" class="btn btn-back">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      Volver
-    </a>
+    <div class="topbar-right">
+      <div class="toggle" id="langToggle" role="group" aria-label="Idioma / Language">
+        <button data-lang="es" class="on" aria-pressed="true">ES</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="/" class="btn btn-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span lang="es">Volver</span><span lang="en">Back</span>
+      </a>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -221,79 +240,181 @@ footer a:hover{text-decoration:underline}
       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       Pro
     </div>
-    <h1>Prepárate sin límites.<br><span>Certifícate con confianza.</span></h1>
-    <p class="hero-sub">Acceso ilimitado a todos los exámenes de práctica de Microsoft. Catálogo completo e informe PDF tras cada simulacro.</p>
+    <h1 lang="es">Prepárate sin límites.<br><span>Certifícate con confianza.</span></h1>
+    <h1 lang="en">Study without limits.<br><span>Certify with confidence.</span></h1>
+    <p class="hero-sub" lang="es">Acceso ilimitado a todos los exámenes de práctica de Microsoft. Catálogo completo e informe PDF tras cada simulacro.</p>
+    <p class="hero-sub" lang="en">Unlimited access to all Microsoft practice exams. Full catalog and PDF report after every mock exam.</p>
     <a href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer" class="hero-btn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.82 2.41C18.78 2.41 22 5.65 22 9.62c0 3.96-3.22 7.19-7.18 7.19-3.95 0-7.17-3.23-7.17-7.19 0-3.97 3.22-7.21 7.17-7.21M2 21.6V2.41h3.5V21.6H2z"/></svg>
-      Hazte mecenas en Patreon
+      <span lang="es">Hazte mecenas en Patreon</span>
+      <span lang="en">Become a patron on Patreon</span>
     </a>
-    <p class="hero-trust">Activación automática · Cancela cuando quieras</p>
+    <p class="hero-trust" lang="es">Activación automática · Cancela cuando quieras</p>
+    <p class="hero-trust" lang="en">Instant activation · Cancel anytime</p>
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">5+</div><div class="hstat-l">Certificaciones</div></div>
-      <div class="hstat"><div class="hstat-n">2.500+</div><div class="hstat-l">Preguntas</div></div>
-      <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Modos de práctica</div></div>
-      <div class="hstat"><div class="hstat-n">∞</div><div class="hstat-l">Sin límite Pro</div></div>
+      <div class="hstat">
+        <div class="hstat-n">7+</div>
+        <div class="hstat-l" lang="es">Certificaciones</div>
+        <div class="hstat-l" lang="en">Certifications</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">2.700+</div>
+        <div class="hstat-l" lang="es">Preguntas</div>
+        <div class="hstat-l" lang="en">Questions</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">5</div>
+        <div class="hstat-l" lang="es">Modos de práctica</div>
+        <div class="hstat-l" lang="en">Practice modes</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">∞</div>
+        <div class="hstat-l" lang="es">Sin límite Pro</div>
+        <div class="hstat-l" lang="en">Unlimited Pro</div>
+      </div>
     </div>
   </div>
 
   <!-- PLANES -->
-  <div class="sec-hd"><h2>Elige tu plan</h2><p>Empieza gratis hoy, actualiza cuando quieras</p></div>
+  <div class="sec-hd">
+    <h2 lang="es">Elige tu plan</h2>
+    <h2 lang="en">Choose your plan</h2>
+    <p lang="es">Empieza gratis hoy, actualiza cuando quieras</p>
+    <p lang="en">Start free today, upgrade whenever you want</p>
+  </div>
   <div class="plans">
 
     <div class="plan">
-      <div class="plan-name">Gratis</div>
+      <div class="plan-name" lang="es">Gratis</div>
+      <div class="plan-name" lang="en">Free</div>
       <div class="plan-price">€0</div>
-      <p class="plan-psub">Sin registro obligatorio.<br>Empieza a practicar ahora mismo.</p>
+      <p class="plan-psub" lang="es">Sin registro obligatorio.<br>Empieza a practicar ahora mismo.</p>
+      <p class="plan-psub" lang="en">No registration required.<br>Start practising right now.</p>
       <div class="plan-sep"></div>
       <ul class="plan-feats">
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>5 preguntas de prueba sin cuenta</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>20 preguntas gratuitas al día con cuenta</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>+5 certificaciones Microsoft</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Repaso inteligente (SRS)</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Seguimiento de progreso y logros</li>
-        <li class="dimmed"><span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Preguntas ilimitadas</li>
-        <li class="dimmed"><span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Catálogo completo de preguntas</li>
-        <li class="dimmed"><span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Exportar informe PDF</li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">5 preguntas de prueba sin cuenta</span>
+          <span lang="en">5 trial questions without an account</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">20 preguntas gratuitas al día con cuenta</span>
+          <span lang="en">20 free questions per day with an account</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">7+ certificaciones Microsoft</span>
+          <span lang="en">7+ Microsoft certifications</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">Repaso inteligente SRS (con cuenta)</span>
+          <span lang="en">Smart SRS review (with account)</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">Seguimiento de progreso (con cuenta)</span>
+          <span lang="en">Progress tracking (with account)</span>
+        </li>
+        <li class="dimmed">
+          <span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+          <span lang="es">Preguntas ilimitadas</span>
+          <span lang="en">Unlimited questions</span>
+        </li>
+        <li class="dimmed">
+          <span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+          <span lang="es">Catálogo completo de preguntas</span>
+          <span lang="en">Full question catalog</span>
+        </li>
+        <li class="dimmed">
+          <span class="fi fi-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+          <span lang="es">Exportar informe PDF</span>
+          <span lang="en">Export PDF report</span>
+        </li>
       </ul>
-      <a href="/" class="plan-cta plan-cta-free">Empezar gratis</a>
+      <a href="/" class="plan-cta plan-cta-free">
+        <span lang="es">Empezar gratis</span>
+        <span lang="en">Start for free</span>
+      </a>
     </div>
 
     <div class="plan plan-pro">
-      <div class="plan-tag">Recomendado</div>
+      <div class="plan-tag" lang="es">Recomendado</div>
+      <div class="plan-tag" lang="en">Recommended</div>
       <div class="plan-name plan-name-pro">Pro</div>
       <div class="plan-price plan-price-pro" style="font-size:22px;letter-spacing:-.01em">Via Patreon</div>
-      <p class="plan-psub">Conéctate con Google. Activación automática.<br>Cancela en cualquier momento.</p>
+      <p class="plan-psub" lang="es">Conéctate con Google. Activación automática.<br>Cancela en cualquier momento.</p>
+      <p class="plan-psub" lang="en">Sign in with Google. Instant activation.<br>Cancel at any time.</p>
       <div class="plan-sep"></div>
       <ul class="plan-feats">
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Todo lo del plan gratuito</li>
-        <li class="pro-only"><span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><strong>Preguntas ilimitadas</strong> cada día</li>
-        <li class="pro-only"><span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><strong>Catálogo completo</strong> de preguntas</li>
-        <li class="pro-only"><span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>Informe <strong>PDF detallado</strong> por dominio</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Repaso inteligente sin límite</li>
-        <li><span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Apoya el proyecto y nuevos exámenes</li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">Todo lo del plan gratuito</span>
+          <span lang="en">Everything in the free plan</span>
+        </li>
+        <li class="pro-only">
+          <span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <span lang="es"><strong>Preguntas ilimitadas</strong> cada día</span>
+          <span lang="en"><strong>Unlimited questions</strong> every day</span>
+        </li>
+        <li class="pro-only">
+          <span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <span lang="es"><strong>Catálogo completo</strong> de preguntas</span>
+          <span lang="en"><strong>Full catalog</strong> of questions</span>
+        </li>
+        <li class="pro-only">
+          <span class="fi fi-star"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <span lang="es">Informe <strong>PDF detallado</strong> por dominio</span>
+          <span lang="en">Detailed <strong>PDF report</strong> by domain</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">Repaso inteligente sin límite</span>
+          <span lang="en">Unlimited smart review</span>
+        </li>
+        <li>
+          <span class="fi fi-ok"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span lang="es">Apoya el proyecto y nuevos exámenes</span>
+          <span lang="en">Support the project and new exams</span>
+        </li>
       </ul>
-      <a href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer" class="plan-cta plan-cta-pro">Hazte mecenas en Patreon →</a>
+      <a href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer" class="plan-cta plan-cta-pro">
+        <span lang="es">Hazte mecenas en Patreon →</span>
+        <span lang="en">Become a patron on Patreon →</span>
+      </a>
     </div>
 
   </div>
 
   <!-- CÓMO FUNCIONA -->
-  <div class="sec-hd"><h2>¿Cómo funciona la activación?</h2><p>Tres pasos, sin fricciones</p></div>
+  <div class="sec-hd">
+    <h2 lang="es">¿Cómo funciona la activación?</h2>
+    <h2 lang="en">How does activation work?</h2>
+    <p lang="es">Tres pasos, sin fricciones</p>
+    <p lang="en">Three steps, no friction</p>
+  </div>
   <div class="steps">
     <div class="step">
       <div class="step-n">1</div>
-      <h3>Suscríbete en Patreon</h3>
-      <p>Hazte mecenas con el correo de tu cuenta de Google. Elige el tier que prefieras.</p>
+      <h3 lang="es">Suscríbete en Patreon</h3>
+      <h3 lang="en">Subscribe on Patreon</h3>
+      <p lang="es">Hazte mecenas con el correo de tu cuenta de Google. Elige el tier que prefieras.</p>
+      <p lang="en">Become a patron using your Google account email. Choose your preferred tier.</p>
     </div>
     <div class="step">
       <div class="step-n">2</div>
-      <h3>Inicia sesión con Google</h3>
-      <p>Accede a EarnYourCert con el mismo correo que usaste al suscribirte en Patreon.</p>
+      <h3 lang="es">Inicia sesión con Google</h3>
+      <h3 lang="en">Sign in with Google</h3>
+      <p lang="es">Accede a EarnYourCert con el mismo correo que usaste al suscribirte en Patreon.</p>
+      <p lang="en">Log in to EarnYourCert with the same email you used when subscribing on Patreon.</p>
     </div>
     <div class="step">
       <div class="step-n">3</div>
-      <h3>Acceso Pro activado</h3>
-      <p>Tu cuenta se actualiza al instante. Sin códigos, sin esperas, sin pasos adicionales.</p>
+      <h3 lang="es">Acceso Pro activado</h3>
+      <h3 lang="en">Pro access activated</h3>
+      <p lang="es">Tu cuenta se actualiza al instante. Sin códigos, sin esperas, sin pasos adicionales.</p>
+      <p lang="en">Your account updates instantly. No codes, no waiting, no extra steps.</p>
     </div>
   </div>
 
@@ -303,81 +424,123 @@ footer a:hover{text-decoration:underline}
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h3>Sin límite diario</h3>
-      <p>Practica cuantas preguntas necesites, sin cortes ni restricciones por día.</p>
+      <h3 lang="es">Sin límite diario</h3>
+      <h3 lang="en">No daily limit</h3>
+      <p lang="es">Practica cuantas preguntas necesites, sin cortes ni restricciones por día.</p>
+      <p lang="en">Practice as many questions as you need, with no daily cuts or restrictions.</p>
     </div>
     <div class="feat">
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </div>
-      <h3>Catálogo completo</h3>
-      <p>Explora y filtra las 2.500+ preguntas de todos los exámenes sin ninguna restricción.</p>
+      <h3 lang="es">Catálogo completo</h3>
+      <h3 lang="en">Full catalog</h3>
+      <p lang="es">Explora y filtra las 2.700+ preguntas de todos los exámenes sin ninguna restricción.</p>
+      <p lang="en">Browse and filter 2,700+ questions across all exams with no restrictions.</p>
     </div>
     <div class="feat">
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       </div>
-      <h3>Informe PDF</h3>
-      <p>Exporta un informe detallado con análisis por dominio tras cada simulacro.</p>
+      <h3 lang="es">Informe PDF</h3>
+      <h3 lang="en">PDF report</h3>
+      <p lang="es">Exporta un informe detallado con análisis por dominio tras cada simulacro.</p>
+      <p lang="en">Export a detailed report with per-domain analysis after each mock exam.</p>
     </div>
     <div class="feat">
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.5 2.8L3 8"/><path d="M3 4v4h4"/></svg>
       </div>
-      <h3>SRS sin límite</h3>
-      <p>Usa el repaso inteligente todo lo que quieras. Refuerza tus puntos débiles al máximo.</p>
+      <h3 lang="es">SRS sin límite</h3>
+      <h3 lang="en">Unlimited SRS</h3>
+      <p lang="es">Usa el repaso inteligente todo lo que quieras. Refuerza tus puntos débiles al máximo.</p>
+      <p lang="en">Use smart spaced-repetition review as much as you want. Reinforce your weak spots fully.</p>
     </div>
     <div class="feat">
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
-      <h3>Activación instantánea</h3>
-      <p>Sin esperas ni validaciones manuales. El acceso se activa al iniciar sesión.</p>
+      <h3 lang="es">Activación instantánea</h3>
+      <h3 lang="en">Instant activation</h3>
+      <p lang="es">Sin esperas ni validaciones manuales. El acceso se activa al iniciar sesión.</p>
+      <p lang="en">No waiting or manual validation. Access activates the moment you sign in.</p>
     </div>
     <div class="feat">
       <div class="feat-ico">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-      <h3>Apoya el proyecto</h3>
-      <p>Tu contribución financia nuevos exámenes y mantiene la plataforma gratuita para todos.</p>
+      <h3 lang="es">Apoya el proyecto</h3>
+      <h3 lang="en">Support the project</h3>
+      <p lang="es">Tu contribución financia nuevos exámenes y mantiene la plataforma gratuita para todos.</p>
+      <p lang="en">Your contribution funds new exams and keeps the platform free for everyone.</p>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="cta-section">
-    <h2>¿Listo para aprobar?</h2>
-    <p>Únete a EarnYourCert Pro y prepárate sin límites para tu certificación de Microsoft.</p>
+    <h2 lang="es">¿Listo para aprobar?</h2>
+    <h2 lang="en">Ready to pass?</h2>
+    <p lang="es">Únete a EarnYourCert Pro y prepárate sin límites para tu certificación de Microsoft.</p>
+    <p lang="en">Join EarnYourCert Pro and prepare without limits for your Microsoft certification.</p>
     <a href="https://www.patreon.com/earnyourcert/membership" target="_blank" rel="noopener noreferrer" class="cta-btn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.82 2.41C18.78 2.41 22 5.65 22 9.62c0 3.96-3.22 7.19-7.18 7.19-3.95 0-7.17-3.23-7.17-7.19 0-3.97 3.22-7.21 7.17-7.21M2 21.6V2.41h3.5V21.6H2z"/></svg>
-      Hazte mecenas en Patreon →
+      <span lang="es">Hazte mecenas en Patreon →</span>
+      <span lang="en">Become a patron on Patreon →</span>
     </a>
   </div>
 
   <!-- FAQ -->
-  <div class="sec-hd"><h2>Preguntas frecuentes</h2><p>Todo lo que necesitas saber sobre el plan Pro</p></div>
+  <div class="sec-hd">
+    <h2 lang="es">Preguntas frecuentes</h2>
+    <h2 lang="en">Frequently asked questions</h2>
+    <p lang="es">Todo lo que necesitas saber sobre el plan Pro</p>
+    <p lang="en">Everything you need to know about the Pro plan</p>
+  </div>
   <div class="faq">
     <details open>
-      <summary>¿Cómo se activa el acceso Pro?</summary>
-      <p class="faq-ans">Hazte mecenas en Patreon con el mismo correo que usas en Google. Al iniciar sesión en EarnYourCert, el acceso Pro se activa automáticamente. No necesitas introducir ningún código ni realizar pasos adicionales.</p>
+      <summary>
+        <span lang="es">¿Cómo se activa el acceso Pro?</span>
+        <span lang="en">How is Pro access activated?</span>
+      </summary>
+      <p class="faq-ans" lang="es">Hazte mecenas en Patreon con el mismo correo que usas en Google. Al iniciar sesión en EarnYourCert, el acceso Pro se activa automáticamente. No necesitas introducir ningún código ni realizar pasos adicionales.</p>
+      <p class="faq-ans" lang="en">Become a patron on Patreon using the same email you use with Google. When you sign in to EarnYourCert, Pro access is activated automatically. No codes or extra steps required.</p>
     </details>
     <details>
-      <summary>¿Puedo cancelar en cualquier momento?</summary>
-      <p class="faq-ans">Sí, puedes cancelar tu mecenazgo en Patreon cuando quieras. El acceso Pro permanece activo hasta el final del periodo de facturación en curso, sin cargos adicionales.</p>
+      <summary>
+        <span lang="es">¿Puedo cancelar en cualquier momento?</span>
+        <span lang="en">Can I cancel at any time?</span>
+      </summary>
+      <p class="faq-ans" lang="es">Sí, puedes cancelar tu mecenazgo en Patreon cuando quieras. El acceso Pro permanece activo hasta el final del periodo de facturación en curso, sin cargos adicionales.</p>
+      <p class="faq-ans" lang="en">Yes, you can cancel your Patreon membership whenever you want. Pro access remains active until the end of the current billing period, with no additional charges.</p>
     </details>
     <details>
-      <summary>¿Qué pasa con mi progreso si dejo de ser Pro?</summary>
-      <p class="faq-ans">Tu historial, marcadores, datos de SRS y logros se conservan siempre. La única diferencia es que vuelve a aplicarse el límite de 20 preguntas gratuitas al día.</p>
+      <summary>
+        <span lang="es">¿Qué pasa con mi progreso si dejo de ser Pro?</span>
+        <span lang="en">What happens to my progress if I stop being Pro?</span>
+      </summary>
+      <p class="faq-ans" lang="es">Tu historial, marcadores y datos de SRS se conservan siempre. La única diferencia es que vuelve a aplicarse el límite de 20 preguntas gratuitas al día.</p>
+      <p class="faq-ans" lang="en">Your history, bookmarks and SRS data are always kept. The only difference is that the 20 free questions per day limit applies again.</p>
     </details>
     <details>
-      <summary>¿La versión gratuita tiene las mismas preguntas?</summary>
-      <p class="faq-ans">Sí, las preguntas son exactamente las mismas. La diferencia está en el límite diario, el acceso al catálogo completo para explorar y filtrar preguntas, y la exportación de informes PDF.</p>
+      <summary>
+        <span lang="es">¿La versión gratuita tiene las mismas preguntas?</span>
+        <span lang="en">Does the free version have the same questions?</span>
+      </summary>
+      <p class="faq-ans" lang="es">Sí, las preguntas son exactamente las mismas. La diferencia está en el límite diario, el acceso al catálogo completo para explorar y filtrar preguntas, y la exportación de informes PDF.</p>
+      <p class="faq-ans" lang="en">Yes, the questions are exactly the same. The difference is the daily limit, access to the full catalog to browse and filter questions, and PDF report exports.</p>
     </details>
   </div>
 
   <footer>
-    <p>© 2026 EarnYourCert · <a href="/privacy.html">Política de privacidad</a> · <a href="/">Volver al catálogo</a></p>
+    <p>
+      © 2026 EarnYourCert ·
+      <a href="/privacy.html"><span lang="es">Política de privacidad</span><span lang="en">Privacy policy</span></a>
+      ·
+      <a href="/"><span lang="es">Volver al catálogo</span><span lang="en">Back to the catalog</span></a>
+    </p>
   </footer>
 
 </div>
+<script src="seo-assets/landing.js"></script>
 </body>
 </html>
