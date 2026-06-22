@@ -300,6 +300,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .ec-badge.soon-b{background:var(--panel-2);color:var(--ink-3)}
 .ec-badge.level-b{background:var(--warn-soft);color:var(--warn)}
 .ec-badge.new-b{background:var(--ok-soft);color:var(--ok)}
+.ec-badge.wip-b{background:#fff7ed;color:#c2410c}
+[data-theme="dark"] .ec-badge.wip-b{background:#3a1800;color:#fb923c}
 .back-cat{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--ink-3);font-size:13px;cursor:pointer;padding:6px 10px;border-radius:8px;transition:.13s;font-family:inherit}
 .back-cat:hover{background:var(--panel-2);color:var(--accent)}
 .brand.clickable{cursor:pointer}
@@ -1480,7 +1482,7 @@ const I18N = {
     progAchievements:"Logros", badgeUnlocked:"¡Logro desbloqueado!", badgeLocked:"Bloqueado",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
-    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad",
+    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad", catWip:"En construcción",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
     support:"Apóyame en Patreon",
@@ -1575,7 +1577,7 @@ const I18N = {
     progAchievements:"Achievements", badgeUnlocked:"Achievement unlocked!", badgeLocked:"Locked",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
-    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New",
+    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New", catWip:"Under construction",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
     support:"Support me on Patreon",
@@ -2651,7 +2653,9 @@ function renderCatalog(){
     card.className='exam-card'+(ex.soon?' soon':'');
     const badge=ex.soon
       ?'<span class="ec-badge soon-b" data-i="catSoon">Próximamente</span>'
-      :'<span class="ec-badge" data-i="catReady">Disponible</span>';
+      :(!ex.soon && ex.questionCount && ex.questionCount<300)
+        ?'<span class="ec-badge wip-b" data-i="catWip">En construcción</span>'
+        :'<span class="ec-badge" data-i="catReady">Disponible</span>';
     const levelKey=ex.level?'lvl'+ex.level.charAt(0).toUpperCase()+ex.level.slice(1):'';
     const levelBadge=levelKey?'<span class="ec-badge level-b" data-i="'+levelKey+'"></span>':'';
     const newBadge=(!ex.soon && ex.newUntil && new Date()<new Date(ex.newUntil))
