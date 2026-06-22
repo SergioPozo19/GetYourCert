@@ -210,7 +210,8 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .ob-steps-wrap{position:relative;height:368px}
 .ob-step{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;transform:translateX(32px)}
 .ob-step.ob-prev{transform:translateX(-32px)}
-.ob-step.ob-active{opacity:1;pointer-events:auto;transform:translateX(0)}
+.ob-step.ob-active{opacity:1;transform:translateX(0)}
+#onboardModal.show .ob-step.ob-active{pointer-events:auto}
 .ob-illus{height:192px;flex-shrink:0;background:linear-gradient(160deg,var(--accent-soft) 0%,var(--bg) 100%);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
 .ob-illus svg{display:block;width:100%;height:100%}
 .ob-illus-inner{position:absolute;inset:0;padding:18px 28px;display:flex;flex-direction:column;justify-content:center}
@@ -3378,11 +3379,12 @@ $('#proModalClose').addEventListener('click',closeProModal);
 $('#proModal').addEventListener('click',e=>{ if(e.target===$('#proModal')) closeProModal(); });
 function maybeShowOnboarding(){
   if(isLoggedIn())return;
+  try{if(localStorage.getItem('eyc_onboarded'))return;}catch(e){}
   setTimeout(()=>{ const m=$('#onboardModal'); if(m)m.classList.add('show'); },600);
 }
 let _obCur=0;
 const _obN=3;
-function _obClose(){ $('#onboardModal').classList.remove('show'); }
+function _obClose(){ $('#onboardModal').classList.remove('show'); try{localStorage.setItem('eyc_onboarded','1')}catch(e){} }
 function _obGo(n){
   const steps=Array.from($$('#onboardModal .ob-step'));
   const dots=Array.from($$('#obDots .ob-dot'));

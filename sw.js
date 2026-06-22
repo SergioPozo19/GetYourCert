@@ -1,4 +1,4 @@
-const CACHE_NAME = 'eyc-v10';
+const CACHE_NAME = 'eyc-v11';
 const STATIC_ASSETS = [
   './',
   './index.html',
