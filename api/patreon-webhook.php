@@ -8,6 +8,13 @@ $secret = $config['patreon_webhook_secret'] ?? '';
 $raw = file_get_contents('php://input');
 $sig = $_SERVER['HTTP_X_PATREON_SIGNATURE'] ?? '';
 
+// Log every incoming webhook for debugging
+$logFile = __DIR__ . '/patreon-webhook.log';
+$logEntry = date('Y-m-d H:i:s') . ' | event=' . ($_SERVER['HTTP_X_PATREON_EVENT'] ?? 'none')
+  . ' | sig=' . substr($sig, 0, 8) . '...'
+  . ' | body=' . substr($raw, 0, 500) . "\n";
+file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
+
 if(empty($secret) || !hash_equals(hash_hmac('md5', $raw, $secret), (string)$sig)){
   http_response_code(403);
   echo json_encode(['ok' => false, 'error' => 'invalid_signature']);
@@ -27,15 +34,25 @@ if(!$data || ($data['type'] ?? '') !== 'member'){
 $memberId = $data['id'];
 $patronStatus = $data['attributes']['patron_status'] ?? null;
 
-$email = null;
-foreach($included as $item){
-  if(($item['type'] ?? '') === 'user'){
-    $email = $item['attributes']['email'] ?? null;
-    break;
+// Patreon API v2 puts email directly in data.attributes
+$email = $data['attributes']['email'] ?? null;
+if(!$email){
+  foreach($included as $item){
+    if(($item['type'] ?? '') === 'user'){
+      $email = $item['attributes']['email'] ?? null;
+      break;
+    }
   }
 }
 
 if(!$email){
+  // Log missing email so we can diagnose
+  file_put_contents($logFile,
+    date('Y-m-d H:i:s') . ' | NO_EMAIL | memberId=' . $memberId
+    . ' | patron_status=' . $patronStatus
+    . ' | included_types=' . implode(',', array_column($included, 'type')) . "\n",
+    FILE_APPEND | LOCK_EX
+  );
   echo json_encode(['ok' => true]);
   exit;
 }
