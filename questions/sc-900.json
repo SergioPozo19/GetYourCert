@@ -1,0 +1,3674 @@
+[
+ {
+  "id": 1,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "En el modelo de responsabilidad compartida, ¿qué responsabilidad corresponde siempre al cliente con independencia del tipo de servicio en la nube (IaaS, PaaS, SaaS)?",
+  "q_en": "In the shared responsibility model, which responsibility always remains with the customer regardless of the cloud service type (IaaS, PaaS, SaaS)?",
+  "opts_es": [
+   "La información y los datos, y las cuentas e identidades que acceden a ellos",
+   "La seguridad física del centro de datos",
+   "La aplicación de revisiones al hipervisor",
+   "El cableado físico de la red"
+  ],
+  "opts_en": [
+   "Information and data, and the accounts and identities that access them",
+   "Physical security of the datacenter",
+   "Patching the hypervisor",
+   "Physical network cabling"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los clientes siempre son responsables de sus datos, endpoints, cuentas e identidades. El proveedor siempre es responsable del centro de datos físico, los hosts y la red.",
+  "exp_en": "Customers always own their data, endpoints, accounts and identities. The cloud provider always owns the physical datacenter, hosts and network."
+ },
+ {
+  "id": 2,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿En qué modelo de servicio en la nube tiene el cliente MENOS responsabilidad de seguridad sobre el sistema operativo?",
+  "q_en": "In which cloud service model does the customer have the LEAST security responsibility for the operating system?",
+  "opts_es": [
+   "SaaS",
+   "IaaS",
+   "Local",
+   "Una máquina virtual en una nube privada"
+  ],
+  "opts_en": [
+   "SaaS",
+   "IaaS",
+   "On-premises",
+   "A virtual machine in a private cloud"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Con SaaS, el proveedor administra el sistema operativo, la plataforma y la aplicación; el cliente administra los datos, usuarios y acceso.",
+  "exp_en": "With SaaS, the provider manages the operating system, platform and application; the customer manages data, users and access."
+ },
+ {
+  "id": 3,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué enfoque de seguridad usa varias capas de protección para que, si una falla, las demás sigan protegiendo los datos?",
+  "q_en": "Which security approach uses multiple layers of protection so that if one layer fails, others still protect the data?",
+  "opts_es": [
+   "Defensa en profundidad",
+   "Inicio de sesión único",
+   "Soberanía de los datos",
+   "Herencia de roles"
+  ],
+  "opts_en": [
+   "Defense in depth",
+   "Single sign-on",
+   "Data sovereignty",
+   "Role inheritance"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La defensa en profundidad superpone protecciones físicas, de identidad, de perímetro, de red, de proceso, de aplicación y de datos.",
+  "exp_en": "Defense in depth layers physical, identity, perimeter, network, compute, application and data protections."
+ },
+ {
+  "id": 4,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Cuáles son los tres principios rectores del modelo de Confianza cero?",
+  "q_en": "Which are the three guiding principles of the Zero Trust model?",
+  "opts_es": [
+   "Verificar explícitamente, usar acceso con privilegios mínimos, asumir que hay brecha",
+   "Confiar en el tráfico interno, bloquear el externo, registrar todo",
+   "Cifrar, replicar, archivar",
+   "Autenticar una vez, confiar siempre, auditar anualmente"
+  ],
+  "opts_en": [
+   "Verify explicitly, use least privilege access, assume breach",
+   "Trust internal traffic, block external traffic, log everything",
+   "Encrypt, replicate, archive",
+   "Authenticate once, trust always, audit yearly"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Confianza cero trata cada solicitud como no confiable: verificar explícitamente, conceder privilegios mínimos y asumir que ya ha habido una brecha.",
+  "exp_en": "Zero Trust treats every request as untrusted: verify explicitly, grant least privilege and assume a breach has already occurred."
+ },
+ {
+  "id": 5,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Una empresa quiere ofuscar los datos para que solo pueda leerlos quien tenga la clave correcta. ¿Qué concepto es este?",
+  "q_en": "A company wants to scramble data so that only someone with the correct key can read it. Which concept is this?",
+  "opts_es": [
+   "Cifrado",
+   "Hash",
+   "Federación",
+   "Tokenización de identidad"
+  ],
+  "opts_en": [
+   "Encryption",
+   "Hashing",
+   "Federation",
+   "Tokenization of identity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El cifrado transforma los datos con una clave y las partes autorizadas pueden revertirlo; el hash es una función unidireccional.",
+  "exp_en": "Encryption transforms data with a key and can be reversed by authorized parties; hashing is a one-way function."
+ },
+ {
+  "id": 6,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Cuál es la principal característica del hash frente al cifrado?",
+  "q_en": "What is the main characteristic of hashing compared to encryption?",
+  "opts_es": [
+   "Es una operación unidireccional que genera un valor de longitud fija y no se puede revertir",
+   "Usa una clave pública y una privada",
+   "Siempre conserva el tamaño original de los datos",
+   "Solo se usa para el tráfico de red"
+  ],
+  "opts_en": [
+   "It is a one-way operation that produces a fixed-length value and cannot be reversed",
+   "It uses a public and a private key",
+   "It always preserves the original data size",
+   "It is used only for network traffic"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El hash se usa habitualmente para verificar la integridad y almacenar contraseñas; el valor original no se puede recuperar del hash.",
+  "exp_en": "Hashing is commonly used to verify integrity and to store passwords; the original value cannot be recovered from the hash."
+ },
+ {
+  "id": 7,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué término describe el enfoque de alinear las actividades de gobernanza, gestión de riesgos y cumplimiento con los objetivos de la organización?",
+  "q_en": "Which term describes the approach of aligning governance, risk management and compliance activities to organizational objectives?",
+  "opts_es": [
+   "GRC (gobernanza, riesgo y cumplimiento)",
+   "SIEM",
+   "DDoS",
+   "PIM"
+  ],
+  "opts_en": [
+   "GRC (Governance, Risk and Compliance)",
+   "SIEM",
+   "DDoS",
+   "PIM"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "GRC es un enfoque estructurado que une gobernanza, gestión de riesgos y cumplimiento normativo.",
+  "exp_en": "GRC is a structured approach that ties governance, risk management and regulatory compliance together."
+ },
+ {
+  "id": 8,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué modelo de nube permite a una empresa mantener cargas sensibles en local mientras usa recursos de nube pública para otras?",
+  "q_en": "Which cloud model lets a company keep sensitive workloads on-premises while using public cloud resources for other workloads?",
+  "opts_es": [
+   "Nube híbrida",
+   "Solo nube pública",
+   "Nube privada hospedada por un proveedor",
+   "Nube perimetral"
+  ],
+  "opts_en": [
+   "Hybrid cloud",
+   "Public cloud only",
+   "Private cloud hosted by a provider",
+   "Edge cloud"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una nube híbrida combina infraestructura local o privada con servicios de nube pública.",
+  "exp_en": "A hybrid cloud combines on-premises or private infrastructure with public cloud services."
+ },
+ {
+  "id": 9,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el modelo de responsabilidad compartida, indica si es verdadera o falsa.",
+  "q_en": "For each statement about the shared responsibility model, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "En SaaS, el cliente sigue siendo responsable de administrar las identidades que acceden al servicio.",
+    "en": "In SaaS, the customer is still responsible for managing the identities that access the service.",
+    "ans": true
+   },
+   {
+    "es": "En IaaS, el proveedor de la nube es responsable de aplicar revisiones al sistema operativo invitado.",
+    "en": "In IaaS, the cloud provider is responsible for patching the guest operating system.",
+    "ans": false
+   },
+   {
+    "es": "El proveedor de la nube es siempre responsable del centro de datos físico.",
+    "en": "The cloud provider is always responsible for the physical datacenter.",
+    "ans": true
+   }
+  ],
+  "exp_es": "En IaaS el cliente administra el sistema operativo invitado (incluidas las revisiones); el proveedor siempre administra la infraestructura física.",
+  "exp_en": "In IaaS the customer manages the guest OS (including patching); the provider always manages the physical infrastructure."
+ },
+ {
+  "id": 10,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Confianza cero y la defensa en profundidad, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Zero Trust and defense in depth, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Confianza cero asume que ya podría haber ocurrido una brecha.",
+    "en": "Zero Trust assumes that a breach could already have happened.",
+    "ans": true
+   },
+   {
+    "es": "Confianza cero se basa principalmente en confiar en todos los dispositivos de la red corporativa.",
+    "en": "Zero Trust relies mainly on trusting every device inside the corporate network.",
+    "ans": false
+   },
+   {
+    "es": "La defensa en profundidad usa varias capas para que un fallo no exponga todo.",
+    "en": "Defense in depth uses several layers so one failure does not expose everything.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Confianza cero elimina la confianza implícita basada en la ubicación de red.",
+  "exp_en": "Zero Trust removes implicit trust based on network location."
+ },
+ {
+  "id": 11,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el concepto que corresponde a cada descripción.",
+  "q_en": "Select the concept that matches each description.",
+  "rows": [
+   {
+    "es": "Verifica que un archivo descargado no se ha alterado comparando un resumen de longitud fija.",
+    "en": "Verifies that a downloaded file has not been altered by comparing a fixed-length digest.",
+    "opts_es": [
+     "Cifrado",
+     "Hash",
+     "Defensa en profundidad",
+     "Confianza cero"
+    ],
+    "opts_en": [
+     "Encryption",
+     "Hashing",
+     "Defense in depth",
+     "Zero Trust"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Protege los datos para que solo se puedan leer con una clave y luego se puedan descifrar.",
+    "en": "Protects data so it can be read only with a key and can later be decrypted.",
+    "opts_es": [
+     "Cifrado",
+     "Hash",
+     "Defensa en profundidad",
+     "Confianza cero"
+    ],
+    "opts_en": [
+     "Encryption",
+     "Hashing",
+     "Defense in depth",
+     "Zero Trust"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "El hash es unidireccional y sirve para la integridad; el cifrado es reversible con la clave adecuada.",
+  "exp_en": "Hashing is one-way and used for integrity; encryption is reversible with the right key."
+ },
+ {
+  "id": 12,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Según el modelo de responsabilidad compartida, el proveedor de la nube es siempre responsable de la ",
+  "pre_en": "Under the shared responsibility model, the cloud provider is always responsible for the ",
+  "post_es": " del centro de datos.",
+  "post_en": " of the datacenter.",
+  "opts_es": [
+   "seguridad física",
+   "contraseñas de los usuarios",
+   "clasificación de los datos",
+   "directivas de acceso"
+  ],
+  "opts_en": [
+   "physical security",
+   "user passwords",
+   "data classification",
+   "access policies"
+  ],
+  "correct": 0,
+  "exp_es": "El proveedor protege las instalaciones físicas, los hosts y la red; el cliente protege los datos y las identidades.",
+  "exp_en": "The provider secures the physical facility, hosts and network; the customer secures data and identities."
+ },
+ {
+  "id": 13,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Por qué se suele llamar a la identidad el nuevo perímetro de seguridad?",
+  "q_en": "Why is identity often called the new security perimeter?",
+  "opts_es": [
+   "Porque usuarios, dispositivos y aplicaciones acceden a los recursos desde cualquier lugar, por lo que las decisiones de acceso se basan en quién o qué solicita el acceso",
+   "Porque ya no hacen falta firewalls",
+   "Porque nunca se usan contraseñas",
+   "Porque las identidades sustituyen al cifrado"
+  ],
+  "opts_en": [
+   "Because users, devices and apps access resources from anywhere, so access decisions are based on who or what is requesting access",
+   "Because firewalls are no longer needed",
+   "Because passwords are never used",
+   "Because identities replace encryption"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Con el trabajo remoto y las aplicaciones en la nube, el borde de la red ya no define la confianza; la define la verificación de la identidad.",
+  "exp_en": "With remote work and cloud apps, the network edge no longer defines trust; verifying identity does."
+ },
+ {
+  "id": 14,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cuál es la diferencia entre autenticación y autorización?",
+  "q_en": "What is the difference between authentication and authorization?",
+  "opts_es": [
+   "La autenticación demuestra quién eres; la autorización determina a qué puedes acceder",
+   "La autenticación determina los permisos; la autorización demuestra la identidad",
+   "Son el mismo proceso",
+   "La autenticación solo se aplica a dispositivos"
+  ],
+  "opts_en": [
+   "Authentication proves who you are; authorization determines what you can access",
+   "Authentication determines permissions; authorization proves identity",
+   "They are the same process",
+   "Authentication applies only to devices"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La autenticación verifica la identidad; la autorización concede acceso a recursos según esa identidad.",
+  "exp_en": "Authentication verifies identity; authorization grants access to resources based on that identity."
+ },
+ {
+  "id": 15,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué es un proveedor de identidades (IdP)?",
+  "q_en": "What is an identity provider (IdP)?",
+  "opts_es": [
+   "Un servicio que crea, mantiene y autentica identidades de usuario y emite tokens para aplicaciones",
+   "Una herramienta que solo almacena claves de cifrado",
+   "Un dispositivo de firewall",
+   "Un informe de inicios de sesión de riesgo"
+  ],
+  "opts_en": [
+   "A service that creates, maintains and authenticates user identities and issues tokens to applications",
+   "A tool that only stores encryption keys",
+   "A firewall appliance",
+   "A report of risky sign-ins"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Microsoft Entra ID es un ejemplo de proveedor de identidades; autentica a los usuarios y emite tokens de seguridad.",
+  "exp_en": "Microsoft Entra ID is an example of an identity provider; it authenticates users and issues security tokens."
+ },
+ {
+  "id": 16,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué concepto permite que los usuarios de una organización inicien sesión en las aplicaciones de otra con sus propias credenciales, mediante una relación de confianza?",
+  "q_en": "Which concept lets users from one organization sign in to another organization's apps using their own credentials, based on a trust relationship?",
+  "opts_es": [
+   "Federación",
+   "Hash",
+   "Cifrado en reposo",
+   "Segmentación de red"
+  ],
+  "opts_en": [
+   "Federation",
+   "Hashing",
+   "Encryption at rest",
+   "Network segmentation"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "En la federación, dos partes confían en el proveedor de identidades de la otra, de modo que los usuarios usan una única identidad en ambas.",
+  "exp_en": "In federation, two parties trust each other's identity provider so users can use a single identity across them."
+ },
+ {
+  "id": 17,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué es Active Directory Domain Services (AD DS)?",
+  "q_en": "What is Active Directory Domain Services (AD DS)?",
+  "opts_es": [
+   "Un servicio de directorio local que almacena objetos como usuarios, equipos y grupos y los autentica en un dominio",
+   "Un firewall solo en la nube",
+   "Una solución SIEM",
+   "Una herramienta de clasificación de datos"
+  ],
+  "opts_en": [
+   "An on-premises directory service that stores objects such as users, computers and groups and authenticates them in a domain",
+   "A cloud-only firewall",
+   "A SIEM solution",
+   "A data classification tool"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "AD DS es el directorio local tradicional; Microsoft Entra ID es el servicio de identidad en la nube y ambos se pueden conectar en una identidad híbrida.",
+  "exp_en": "AD DS is the traditional on-premises directory; Microsoft Entra ID is the cloud identity service and the two can be connected in hybrid identity."
+ },
+ {
+  "id": 18,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la autenticación y la autorización, indica si es verdadera o falsa.",
+  "q_en": "For each statement about authentication and authorization, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Iniciar sesión con una contraseña y un código de verificación es un ejemplo de autenticación.",
+    "en": "A sign-in with a password and a verification code is an example of authentication.",
+    "ans": true
+   },
+   {
+    "es": "Asignar a un usuario el rol Lector en un recurso es un ejemplo de autenticación.",
+    "en": "Assigning a user the Reader role on a resource is an example of authentication.",
+    "ans": false
+   },
+   {
+    "es": "La autorización ocurre después de que se ha verificado la identidad.",
+    "en": "Authorization happens after the identity has been verified.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los roles y permisos son autorización; verificar la identidad del usuario es autenticación.",
+  "exp_en": "Roles and permissions are authorization; verifying the user's identity is authentication."
+ },
+ {
+  "id": 19,
+  "exam": "sc-900",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Verificar que un usuario es quien dice ser se denomina ",
+  "pre_en": "Verifying that a user is who they claim to be is called ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "autenticación",
+   "autorización",
+   "contabilidad",
+   "cifrado"
+  ],
+  "opts_en": [
+   "authentication",
+   "authorization",
+   "accounting",
+   "encryption"
+  ],
+  "correct": 0,
+  "exp_es": "La autenticación confirma la identidad; la autorización decide el acceso.",
+  "exp_en": "Authentication confirms identity; authorization decides access."
+ },
+ {
+  "id": 20,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué es Microsoft Entra ID?",
+  "q_en": "What is Microsoft Entra ID?",
+  "opts_es": [
+   "El servicio de administración de identidades y acceso en la nube de Microsoft",
+   "Un firewall para redes virtuales de Azure",
+   "Una herramienta de prevención de pérdida de datos",
+   "Un SIEM para búsqueda de amenazas"
+  ],
+  "opts_en": [
+   "Microsoft's cloud-based identity and access management service",
+   "A firewall for Azure virtual networks",
+   "A data loss prevention tool",
+   "A SIEM for threat hunting"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Microsoft Entra ID (antes Azure Active Directory) proporciona autenticación, autorización y administración de identidades para entornos en la nube e híbridos.",
+  "exp_en": "Microsoft Entra ID (formerly Azure Active Directory) provides authentication, authorization and identity management for cloud and hybrid environments."
+ },
+ {
+  "id": 21,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué tipo de identidad usa una aplicación o servicio para acceder a otros recursos sin que inicie sesión una persona?",
+  "q_en": "Which type of identity is used by an application or service to access other resources without a human signing in?",
+  "opts_es": [
+   "Una identidad de carga de trabajo",
+   "Un usuario invitado",
+   "Una identidad solo de dispositivo",
+   "Un grupo de distribución"
+  ],
+  "opts_en": [
+   "A workload identity",
+   "A guest user",
+   "A device-only identity",
+   "A distribution group"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las identidades de carga de trabajo incluyen entidades de servicio e identidades administradas.",
+  "exp_en": "Workload identities include service principals and managed identities."
+ },
+ {
+  "id": 22,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué tipo de identidad de carga de trabajo de Azure elimina la necesidad de que los desarrolladores administren credenciales?",
+  "q_en": "Which type of Azure workload identity eliminates the need for developers to manage credentials?",
+  "opts_es": [
+   "Identidad administrada",
+   "Cuenta de usuario local",
+   "Buzón compartido",
+   "Cuenta de invitado"
+  ],
+  "opts_en": [
+   "Managed identity",
+   "Local user account",
+   "Shared mailbox",
+   "Guest account"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las identidades administradas se administran automáticamente en Microsoft Entra ID; Azure se encarga de rotar las credenciales.",
+  "exp_en": "Managed identities are automatically managed in Microsoft Entra ID; Azure handles credential rotation."
+ },
+ {
+  "id": 23,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una organización tiene usuarios en un Active Directory local y también usa Microsoft 365. ¿Qué modelo de identidad permite que estos usuarios usen la misma identidad en ambos lugares?",
+  "q_en": "An organization has users in an on-premises Active Directory and also uses Microsoft 365. Which identity model lets these users use the same identity in both places?",
+  "opts_es": [
+   "Identidad híbrida",
+   "Identidad solo en la nube",
+   "Identidad de invitado",
+   "Identidad solo local"
+  ],
+  "opts_en": [
+   "Hybrid identity",
+   "Cloud-only identity",
+   "Guest identity",
+   "Local-only identity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La identidad híbrida sincroniza identidades locales con Microsoft Entra ID, por ejemplo con Microsoft Entra Connect.",
+  "exp_en": "Hybrid identity synchronizes on-premises identities to Microsoft Entra ID, for example with Microsoft Entra Connect."
+ },
+ {
+  "id": 24,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué tipo de identidad representa a un usuario de un socio externo invitado a colaborar en recursos de tu inquilino?",
+  "q_en": "Which identity type represents an external partner user invited to collaborate on resources in your tenant?",
+  "opts_es": [
+   "Identidad externa (invitado)",
+   "Identidad administrada",
+   "Entidad de servicio",
+   "Identidad de dispositivo"
+  ],
+  "opts_en": [
+   "External (guest) identity",
+   "Managed identity",
+   "Service principal",
+   "Device identity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las identidades externas, como los usuarios invitados B2B, colaboran sin recibir cuentas internas.",
+  "exp_en": "External identities, such as B2B guest users, collaborate without being given internal accounts."
+ },
+ {
+  "id": 25,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Microsoft Entra ID y los tipos de identidad, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Entra ID and identity types, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una entidad de servicio se puede usar como identidad de una aplicación.",
+    "en": "A service principal can be used as an identity for an application.",
+    "ans": true
+   },
+   {
+    "es": "Microsoft Entra ID solo puede administrar usuarios, no dispositivos.",
+    "en": "Microsoft Entra ID can only manage users, not devices.",
+    "ans": false
+   },
+   {
+    "es": "Microsoft Entra Connect puede sincronizar las identidades de Active Directory local con Microsoft Entra ID.",
+    "en": "Microsoft Entra Connect can synchronize on-premises Active Directory identities with Microsoft Entra ID.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Entra ID administra usuarios, grupos, dispositivos e identidades de carga de trabajo; Entra Connect sincroniza directorios locales.",
+  "exp_en": "Entra ID manages users, groups, devices and workload identities; Entra Connect synchronizes on-premises directories."
+ },
+ {
+  "id": 26,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el tipo de identidad que corresponde a cada escenario.",
+  "q_en": "Select the identity type that matches each scenario.",
+  "rows": [
+   {
+    "es": "Una Azure Function lee secretos de Key Vault sin almacenar credenciales.",
+    "en": "An Azure Function reads secrets from Key Vault without storing credentials.",
+    "opts_es": [
+     "Identidad administrada",
+     "Usuario invitado",
+     "Identidad híbrida",
+     "Cuenta de servicio con contraseña compartida"
+    ],
+    "opts_en": [
+     "Managed identity",
+     "Guest user",
+     "Hybrid identity",
+     "Service account with a shared password"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Un empleado de un proveedor necesita acceder a un sitio de SharePoint de tu inquilino.",
+    "en": "A supplier's employee needs to access a SharePoint site in your tenant.",
+    "opts_es": [
+     "Identidad administrada",
+     "Usuario invitado",
+     "Identidad híbrida",
+     "Cuenta de servicio con contraseña compartida"
+    ],
+    "opts_en": [
+     "Managed identity",
+     "Guest user",
+     "Hybrid identity",
+     "Service account with a shared password"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las identidades administradas eliminan la gestión de credenciales de los recursos de Azure; los usuarios invitados representan colaboradores externos.",
+  "exp_en": "Managed identities remove credential handling for Azure resources; guest users represent external collaborators."
+ },
+ {
+  "id": 27,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Microsoft Entra ",
+  "pre_en": "Microsoft Entra ",
+  "post_es": " sincroniza las identidades de Active Directory local con Microsoft Entra ID.",
+  "post_en": " synchronizes on-premises Active Directory identities to Microsoft Entra ID.",
+  "opts_es": [
+   "Connect",
+   "Verified ID Wallet",
+   "Permissions Management",
+   "Internet Access"
+  ],
+  "opts_en": [
+   "Connect",
+   "Verified ID Wallet",
+   "Permissions Management",
+   "Internet Access"
+  ],
+  "correct": 0,
+  "exp_es": "Microsoft Entra Connect (y Cloud Sync) proporcionan la sincronización de directorios para la identidad híbrida.",
+  "exp_en": "Microsoft Entra Connect (and Cloud Sync) provide directory synchronization for hybrid identity."
+ },
+ {
+  "id": 28,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Cuál de los siguientes se considera el método de autenticación MÁS seguro y resistente al phishing en Microsoft Entra ID?",
+  "q_en": "Which of the following is considered the MOST secure and phishing-resistant authentication method in Microsoft Entra ID?",
+  "opts_es": [
+   "Clave de seguridad FIDO2 o passkey",
+   "Solo contraseña",
+   "Código SMS",
+   "Preguntas de seguridad"
+  ],
+  "opts_en": [
+   "FIDO2 security key or passkey",
+   "Password only",
+   "SMS code",
+   "Security questions"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las claves FIDO2 y las passkeys usan criptografía de clave pública vinculada al sitio, lo que las hace resistentes al phishing.",
+  "exp_en": "FIDO2 keys and passkeys use public-key cryptography bound to the site, which makes them phishing-resistant."
+ },
+ {
+  "id": 29,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué requiere la autenticación multifactor (MFA)?",
+  "q_en": "What does multifactor authentication (MFA) require?",
+  "opts_es": [
+   "Dos o más factores de verificación de categorías diferentes: algo que sabes, tienes o eres",
+   "Dos contraseñas",
+   "Una contraseña de más de 20 caracteres",
+   "Dos nombres de usuario distintos"
+  ],
+  "opts_en": [
+   "Two or more verification factors from different categories: something you know, have or are",
+   "Two passwords",
+   "A password that is longer than 20 characters",
+   "Two different usernames"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "MFA combina factores como una contraseña (sabes), una aplicación de autenticación o clave de seguridad (tienes) y biometría (eres).",
+  "exp_en": "MFA combines factors such as a password (know), an authenticator app or security key (have) and biometrics (are)."
+ },
+ {
+  "id": 30,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué característica permite a los usuarios restablecer sus propias contraseñas olvidadas sin llamar al servicio de asistencia?",
+  "q_en": "Which feature lets users reset their own forgotten passwords without calling the help desk?",
+  "opts_es": [
+   "Restablecimiento de contraseña por autoservicio (SSPR)",
+   "Acceso condicional",
+   "Privileged Identity Management",
+   "Revisiones de acceso"
+  ],
+  "opts_en": [
+   "Self-service password reset (SSPR)",
+   "Conditional Access",
+   "Privileged Identity Management",
+   "Access reviews"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "SSPR permite que los usuarios verifiquen su identidad con métodos registrados y restablezcan su propia contraseña.",
+  "exp_en": "SSPR lets users verify their identity with registered methods and reset their own password."
+ },
+ {
+  "id": 31,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué característica de Microsoft Entra impide que los usuarios elijan contraseñas débiles o muy comunes, como las de una lista global de contraseñas prohibidas?",
+  "q_en": "Which Microsoft Entra feature blocks users from choosing commonly used or weak passwords, such as passwords on a global banned list?",
+  "opts_es": [
+   "Protección con contraseña de Microsoft Entra",
+   "Revisiones de acceso",
+   "Administración de derechos",
+   "Solo la puntuación de seguridad de identidad"
+  ],
+  "opts_en": [
+   "Microsoft Entra Password Protection",
+   "Access reviews",
+   "Entitlement management",
+   "Identity Secure Score only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La protección con contraseña usa una lista global de contraseñas prohibidas y permite añadir una lista personalizada.",
+  "exp_en": "Password Protection uses a global banned password list and can add a custom banned list."
+ },
+ {
+  "id": 32,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué método de autenticación permite iniciar sesión con un código de un solo uso válido durante un tiempo limitado y se usa normalmente en la incorporación o la recuperación?",
+  "q_en": "Which authentication method lets a user sign in with a one-time code that is valid for a limited time and is typically used for onboarding or recovery?",
+  "opts_es": [
+   "Pase de acceso temporal",
+   "Preguntas de seguridad",
+   "Anclaje de certificados",
+   "Secreto compartido"
+  ],
+  "opts_en": [
+   "Temporary Access Pass",
+   "Security questions",
+   "Certificate pinning",
+   "Shared secret"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un pase de acceso temporal es un código con vigencia limitada que permite a los usuarios registrar métodos sin contraseña.",
+  "exp_en": "A Temporary Access Pass is a time-limited passcode that lets users register passwordless methods."
+ },
+ {
+  "id": 33,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Cuál es el beneficio de la autenticación sin contraseña?",
+  "q_en": "What is the benefit of passwordless authentication?",
+  "opts_es": [
+   "Elimina las contraseñas como objetivo de ataque, lo que reduce el riesgo de phishing y de ataques de difusión de contraseñas",
+   "Obliga a los usuarios a recordar contraseñas más complejas",
+   "Deshabilita la autenticación multifactor",
+   "Solo funciona para usuarios invitados"
+  ],
+  "opts_en": [
+   "It removes passwords as an attack target, which reduces phishing and password spray risk",
+   "It requires users to remember more complex passwords",
+   "It disables multifactor authentication",
+   "It only works for guest users"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Windows Hello para empresas, la aplicación Microsoft Authenticator y las claves FIDO2 son opciones sin contraseña.",
+  "exp_en": "Windows Hello for Business, the Microsoft Authenticator app and FIDO2 keys are passwordless options."
+ },
+ {
+  "id": 34,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los métodos de autenticación de Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about authentication methods in Microsoft Entra ID, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La aplicación Microsoft Authenticator se puede usar para notificaciones push e inicio de sesión sin contraseña.",
+    "en": "The Microsoft Authenticator app can be used for push notifications and passwordless sign-in.",
+    "ans": true
+   },
+   {
+    "es": "SMS y llamada de voz se consideran más resistentes al phishing que FIDO2.",
+    "en": "SMS and voice call are considered more phishing-resistant than FIDO2.",
+    "ans": false
+   },
+   {
+    "es": "Windows Hello para empresas es un método sin contraseña que usa biometría o un PIN vinculado al dispositivo.",
+    "en": "Windows Hello for Business is a passwordless method that uses biometrics or a PIN tied to the device.",
+    "ans": true
+   }
+  ],
+  "exp_es": "FIDO2 y las passkeys son los más fuertes; SMS y voz son más débiles pero aun así mejores que solo una contraseña.",
+  "exp_en": "FIDO2 and passkeys are the strongest; SMS and voice are weaker but still better than a password alone."
+ },
+ {
+  "id": 35,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el restablecimiento de contraseña por autoservicio y la protección con contraseña, indica si es verdadera o falsa.",
+  "q_en": "For each statement about self-service password reset and password protection, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "SSPR puede exigir que los usuarios registren métodos de autenticación antes de poder restablecer una contraseña.",
+    "en": "SSPR can require users to register authentication methods before they can reset a password.",
+    "ans": true
+   },
+   {
+    "es": "La protección con contraseña puede añadir una lista personalizada de palabras prohibidas.",
+    "en": "Password protection can add a custom list of banned words.",
+    "ans": true
+   },
+   {
+    "es": "SSPR siempre elimina la necesidad de MFA.",
+    "en": "SSPR always removes the need for MFA.",
+    "ans": false
+   }
+  ],
+  "exp_es": "SSPR y MFA son capacidades independientes y se pueden combinar.",
+  "exp_en": "SSPR and MFA are independent capabilities and can be combined."
+ },
+ {
+  "id": 36,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la mejor capacidad de autenticación para cada requisito.",
+  "q_en": "Select the best authentication capability for each requirement.",
+  "rows": [
+   {
+    "es": "Reducir las llamadas al servicio de asistencia de usuarios que olvidaron su contraseña.",
+    "en": "Reduce help desk calls from users who forgot their password.",
+    "opts_es": [
+     "Protección con contraseña de Microsoft Entra",
+     "Restablecimiento de contraseña por autoservicio",
+     "Clave de seguridad FIDO2",
+     "Pase de acceso temporal"
+    ],
+    "opts_en": [
+     "Microsoft Entra Password Protection",
+     "Self-service password reset",
+     "FIDO2 security key",
+     "Temporary Access Pass"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Evitar que los usuarios elijan contraseñas fáciles de adivinar.",
+    "en": "Stop users from choosing passwords that are easy to guess.",
+    "opts_es": [
+     "Protección con contraseña de Microsoft Entra",
+     "Restablecimiento de contraseña por autoservicio",
+     "Clave de seguridad FIDO2",
+     "Pase de acceso temporal"
+    ],
+    "opts_en": [
+     "Microsoft Entra Password Protection",
+     "Self-service password reset",
+     "FIDO2 security key",
+     "Temporary Access Pass"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "SSPR resuelve las contraseñas olvidadas; la protección con contraseña resuelve las contraseñas débiles.",
+  "exp_en": "SSPR addresses forgotten passwords; Password Protection addresses weak passwords."
+ },
+ {
+  "id": 37,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Usar algo que sabes, algo que tienes y algo que eres son las tres categorías de factores de ",
+  "pre_en": "Using something you know, something you have and something you are are the three categories of ",
+  "post_es": ".",
+  "post_en": " factors.",
+  "opts_es": [
+   "autenticación",
+   "cifrado",
+   "cumplimiento",
+   "clasificación"
+  ],
+  "opts_en": [
+   "authentication",
+   "encryption",
+   "compliance",
+   "classification"
+  ],
+  "correct": 0,
+  "exp_es": "MFA requiere factores de al menos dos categorías de autenticación distintas.",
+  "exp_en": "MFA requires factors from at least two different authentication categories."
+ },
+ {
+  "id": 38,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Los valores predeterminados de seguridad de Microsoft Entra ID proporcionan protecciones preconfiguradas, como exigir ",
+  "pre_en": "Security defaults in Microsoft Entra ID provide preconfigured protections such as requiring ",
+  "post_es": " para todos los usuarios.",
+  "post_en": " for all users.",
+  "opts_es": [
+   "autenticación multifactor",
+   "un buzón más grande",
+   "un dominio personalizado",
+   "acceso de invitados"
+  ],
+  "opts_en": [
+   "multifactor authentication",
+   "a larger mailbox",
+   "a custom domain",
+   "guest access"
+  ],
+  "correct": 0,
+  "exp_es": "Los valores predeterminados de seguridad son una base gratuita que habilita el registro de MFA y bloquea la autenticación heredada.",
+  "exp_en": "Security defaults are a free baseline that enables MFA registration and blocks legacy authentication."
+ },
+ {
+  "id": 39,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué hace el acceso condicional de Microsoft Entra?",
+  "q_en": "What does Microsoft Entra Conditional Access do?",
+  "opts_es": [
+   "Evalúa señales como usuario, dispositivo, ubicación y riesgo para decidir si concede, bloquea o exige controles adicionales",
+   "Cifra los mensajes de correo",
+   "Hace copia de seguridad de máquinas virtuales de Azure",
+   "Clasifica documentos confidenciales"
+  ],
+  "opts_en": [
+   "Evaluates signals such as user, device, location and risk to decide whether to grant, block or require extra controls",
+   "Encrypts email messages",
+   "Backs up Azure virtual machines",
+   "Classifies sensitive documents"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El acceso condicional es el motor de directivas de Confianza cero en Entra: si las señales coinciden, se aplican controles como MFA.",
+  "exp_en": "Conditional Access is the policy engine of Zero Trust in Entra: if signals match, then enforce controls such as MFA."
+ },
+ {
+  "id": 40,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una empresa quiere exigir MFA solo cuando los empleados inicien sesión desde fuera de la red corporativa. ¿Qué característica debe usar?",
+  "q_en": "A company wants to require MFA only when employees sign in from outside the corporate network. Which feature should it use?",
+  "opts_es": [
+   "Una directiva de acceso condicional que use la ubicación como condición",
+   "Una lista de distribución",
+   "Azure Policy",
+   "Una etiqueta de retención"
+  ],
+  "opts_en": [
+   "A Conditional Access policy that uses location as a condition",
+   "A distribution list",
+   "Azure Policy",
+   "A retention label"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El acceso condicional puede combinar ubicaciones con nombre con el control de concesión Requerir autenticación multifactor.",
+  "exp_en": "Conditional Access can combine named locations with a grant control of Require multifactor authentication."
+ },
+ {
+  "id": 41,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito del control de acceso basado en roles (RBAC)?",
+  "q_en": "What is the purpose of role-based access control (RBAC)?",
+  "opts_es": [
+   "Asignar permisos a los usuarios mediante roles que contienen solo los permisos necesarios para un trabajo",
+   "Cifrar datos en reposo",
+   "Detectar malware",
+   "Bloquear ataques DDoS"
+  ],
+  "opts_en": [
+   "Assign permissions to users through roles that contain only the permissions needed for a job",
+   "Encrypt data at rest",
+   "Detect malware",
+   "Block DDoS attacks"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "RBAC favorece los privilegios mínimos al conceder permisos mediante roles en lugar de hacerlo individualmente.",
+  "exp_en": "RBAC supports least privilege by granting permissions through roles instead of individually."
+ },
+ {
+  "id": 42,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué rol asignarías a un administrador que solo necesita restablecer contraseñas de usuarios no administradores?",
+  "q_en": "Which role would you assign to an administrator who only needs to reset passwords for non-administrator users?",
+  "opts_es": [
+   "Administrador del departamento de soporte técnico",
+   "Administrador global",
+   "Administrador de roles con privilegios",
+   "Administrador de seguridad"
+  ],
+  "opts_en": [
+   "Helpdesk Administrator",
+   "Global Administrator",
+   "Privileged Role Administrator",
+   "Security Administrator"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Privilegios mínimos: el Administrador de soporte técnico puede restablecer contraseñas de usuarios no administradores sin control total del inquilino.",
+  "exp_en": "Least privilege: Helpdesk Administrator can reset passwords for non-admins without full tenant control."
+ },
+ {
+  "id": 43,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el acceso condicional y los roles en Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Conditional Access and roles in Microsoft Entra ID, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una directiva de acceso condicional puede bloquear el acceso desde un país concreto.",
+    "en": "A Conditional Access policy can block access from a specific country.",
+    "ans": true
+   },
+   {
+    "es": "Asignar el rol de Administrador global a todo el personal de TI sigue el principio de privilegios mínimos.",
+    "en": "Assigning the Global Administrator role to every IT employee follows the least-privilege principle.",
+    "ans": false
+   },
+   {
+    "es": "Los roles de Entra controlan lo que pueden hacer los administradores en Microsoft Entra ID y Microsoft 365.",
+    "en": "Entra roles control what administrators can do in Microsoft Entra ID and Microsoft 365.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El rol de Administrador global debe limitarse al menor número posible de personas.",
+  "exp_en": "Global Administrator should be limited to as few people as possible."
+ },
+ {
+  "id": 44,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona el control de acceso que encaja con cada situación.",
+  "q_en": "Select the access control that fits each situation.",
+  "rows": [
+   {
+    "es": "Exigir un dispositivo compatible y MFA para acceder a las aplicaciones de finanzas.",
+    "en": "Require a compliant device and MFA for access to finance apps.",
+    "opts_es": [
+     "Acceso condicional",
+     "Control de acceso basado en roles",
+     "Restablecimiento de contraseña por autoservicio",
+     "Sincronización de hash de contraseñas"
+    ],
+    "opts_en": [
+     "Conditional Access",
+     "Role-based access control",
+     "Self-service password reset",
+     "Password hash synchronization"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Permitir que un ingeniero administre máquinas virtuales pero no la facturación.",
+    "en": "Let an engineer manage virtual machines but not billing.",
+    "opts_es": [
+     "Acceso condicional",
+     "Control de acceso basado en roles",
+     "Restablecimiento de contraseña por autoservicio",
+     "Sincronización de hash de contraseñas"
+    ],
+    "opts_en": [
+     "Conditional Access",
+     "Role-based access control",
+     "Self-service password reset",
+     "Password hash synchronization"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "El acceso condicional condiciona los inicios de sesión según señales; RBAC delimita los permisos que tiene alguien.",
+  "exp_en": "Conditional Access gates sign-ins on signals; RBAC scopes what permissions someone has."
+ },
+ {
+  "id": 45,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Microsoft Entra ",
+  "pre_en": "Microsoft Entra ",
+  "post_es": " es el motor de directivas que combina señales para tomar decisiones de acceso.",
+  "post_en": " is the policy engine that combines signals to make access decisions.",
+  "opts_es": [
+   "acceso condicional",
+   "Connect Health",
+   "Verified ID",
+   "Workload ID"
+  ],
+  "opts_en": [
+   "Conditional Access",
+   "Connect Health",
+   "Verified ID",
+   "Workload ID"
+  ],
+  "correct": 0,
+  "exp_es": "El acceso condicional actúa con reglas si-entonces: si se cumplen las condiciones, se aplican los controles de concesión o de sesión.",
+  "exp_en": "Conditional Access acts on if-then rules: if the conditions match, then apply the grant or session controls."
+ },
+ {
+  "id": 46,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Microsoft Entra detecta inicios de sesión de riesgo y usuarios de riesgo con señales de aprendizaje automático?",
+  "q_en": "Which Microsoft Entra capability detects risky sign-ins and risky users using machine learning signals?",
+  "opts_es": [
+   "Microsoft Entra ID Protection",
+   "Azure Bastion",
+   "Microsoft Purview eDiscovery",
+   "Azure Firewall"
+  ],
+  "opts_en": [
+   "Microsoft Entra ID Protection",
+   "Azure Bastion",
+   "Microsoft Purview eDiscovery",
+   "Azure Firewall"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ID Protection identifica riesgos como credenciales filtradas o viajes imposibles y puede alimentar directivas de acceso condicional.",
+  "exp_en": "ID Protection identifies risk such as leaked credentials or impossible travel and can feed Conditional Access policies."
+ },
+ {
+  "id": 47,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito de Microsoft Entra Privileged Identity Management (PIM)?",
+  "q_en": "What is the purpose of Microsoft Entra Privileged Identity Management (PIM)?",
+  "opts_es": [
+   "Proporcionar activación de roles con privilegios justo a tiempo, con duración limitada y basada en aprobación",
+   "Analizar archivos en busca de malware",
+   "Cifrar correos electrónicos",
+   "Administrar rutas de red"
+  ],
+  "opts_en": [
+   "Provide just-in-time, time-bound and approval-based activation of privileged roles",
+   "Scan files for malware",
+   "Encrypt emails",
+   "Manage network routes"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "PIM reduce el acceso privilegiado permanente al hacer los roles elegibles y exigir la activación cuando se necesitan.",
+  "exp_en": "PIM reduces standing privileged access by making roles eligible and requiring activation when needed."
+ },
+ {
+  "id": 48,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué ayudan a hacer las revisiones de acceso de Microsoft Entra ID Governance a una organización?",
+  "q_en": "What do access reviews in Microsoft Entra ID Governance help an organization do?",
+  "opts_es": [
+   "Verificar periódicamente que los usuarios siguen necesitando acceso a grupos, aplicaciones y roles",
+   "Medir la latencia de red",
+   "Hacer copias de seguridad de máquinas virtuales",
+   "Detectar malware en los endpoints"
+  ],
+  "opts_en": [
+   "Periodically verify that users still need access to groups, apps and roles",
+   "Measure network latency",
+   "Back up virtual machines",
+   "Detect malware on endpoints"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las revisiones de acceso eliminan el acceso innecesario y ayudan a evitar la acumulación de permisos.",
+  "exp_en": "Access reviews remove unnecessary access and help prevent permission creep."
+ },
+ {
+  "id": 49,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué característica de Microsoft Entra ID Governance agrupa recursos como grupos, aplicaciones y sitios en paquetes que los usuarios pueden solicitar?",
+  "q_en": "Which Microsoft Entra ID Governance feature bundles resources such as groups, apps and sites into packages that users can request?",
+  "opts_es": [
+   "Paquetes de acceso de administración de derechos",
+   "Valores predeterminados de seguridad",
+   "Grupos de seguridad de red",
+   "Caja de seguridad del cliente"
+  ],
+  "opts_en": [
+   "Entitlement management access packages",
+   "Security defaults",
+   "Network security groups",
+   "Customer Lockbox"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La administración de derechos automatiza las solicitudes de acceso, las aprobaciones y la caducidad mediante paquetes de acceso.",
+  "exp_en": "Entitlement management automates access requests, approvals and expiration through access packages."
+ },
+ {
+  "id": 50,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Microsoft Entra ID Protection, PIM y las revisiones de acceso, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Entra ID Protection, PIM and access reviews, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "PIM puede exigir aprobación antes de activar un rol elegible.",
+    "en": "PIM can require approval before an eligible role is activated.",
+    "ans": true
+   },
+   {
+    "es": "ID Protection puede usar niveles de riesgo en las directivas de acceso condicional.",
+    "en": "ID Protection can use risk levels in Conditional Access policies.",
+    "ans": true
+   },
+   {
+    "es": "Las revisiones de acceso se usan para inspeccionar el tráfico de red.",
+    "en": "Access reviews are used to inspect network traffic.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las revisiones de acceso son una característica de gobernanza de identidades, no una herramienta de red.",
+  "exp_en": "Access reviews are an identity governance feature, not a network tool."
+ },
+ {
+  "id": 51,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad de Entra que corresponde a cada necesidad.",
+  "q_en": "Select the Entra capability that matches each need.",
+  "rows": [
+   {
+    "es": "Conceder a un administrador el rol de Administrador global durante dos horas solo cuando se necesite.",
+    "en": "Grant an administrator the Global Administrator role for two hours only when needed.",
+    "opts_es": [
+     "Privileged Identity Management",
+     "ID Protection",
+     "Revisiones de acceso",
+     "Administración de derechos"
+    ],
+    "opts_en": [
+     "Privileged Identity Management",
+     "ID Protection",
+     "Access reviews",
+     "Entitlement management"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Cada trimestre, pedir a los responsables que confirmen que los miembros del grupo siguen necesitando acceso.",
+    "en": "Every quarter, ask managers to confirm that group members still need access.",
+    "opts_es": [
+     "Privileged Identity Management",
+     "ID Protection",
+     "Revisiones de acceso",
+     "Administración de derechos"
+    ],
+    "opts_en": [
+     "Privileged Identity Management",
+     "ID Protection",
+     "Access reviews",
+     "Entitlement management"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "PIM proporciona activación justo a tiempo; las revisiones de acceso proporcionan una recertificación periódica.",
+  "exp_en": "PIM provides just-in-time activation; access reviews provide recurring recertification."
+ },
+ {
+  "id": 52,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "sentence",
+  "pre_es": "En PIM, un usuario con una asignación ",
+  "pre_en": "In PIM, a user with an ",
+  "post_es": " de un rol debe activarlo antes de usarlo.",
+  "post_en": " role assignment must activate the role before using it.",
+  "opts_es": [
+   "elegible",
+   "permanente",
+   "de invitado",
+   "híbrida"
+  ],
+  "opts_en": [
+   "eligible",
+   "permanent",
+   "guest",
+   "hybrid"
+  ],
+  "correct": 0,
+  "exp_es": "Las asignaciones elegibles reducen los privilegios permanentes porque la activación es temporal.",
+  "exp_en": "Eligible assignments reduce standing privileges because activation is time-bound."
+ },
+ {
+  "id": 53,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "sentence",
+  "pre_es": "Microsoft Entra ID Protection clasifica el nivel de riesgo de un usuario o inicio de sesión como bajo, medio o ",
+  "pre_en": "Microsoft Entra ID Protection classifies a user's or a sign-in's risk level as low, medium or ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "alto",
+   "crítico",
+   "nulo",
+   "caducado"
+  ],
+  "opts_en": [
+   "high",
+   "critical",
+   "none",
+   "expired"
+  ],
+  "correct": 0,
+  "exp_es": "Los niveles de riesgo (bajo, medio, alto) se pueden usar en el acceso condicional para exigir MFA o un cambio de contraseña.",
+  "exp_en": "Risk levels (low, medium, high) can be used in Conditional Access to require MFA or a password change."
+ },
+ {
+  "id": 54,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure protege aplicaciones y recursos de ataques volumétricos y de protocolo que intentan saturarlos con tráfico?",
+  "q_en": "Which Azure service protects applications and resources from volumetric and protocol attacks that try to overwhelm them with traffic?",
+  "opts_es": [
+   "Azure DDoS Protection",
+   "Azure Key Vault",
+   "Azure Bastion",
+   "Microsoft Purview Audit"
+  ],
+  "opts_en": [
+   "Azure DDoS Protection",
+   "Azure Key Vault",
+   "Azure Bastion",
+   "Microsoft Purview Audit"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "DDoS Protection supervisa el tráfico y mitiga ataques de denegación de servicio distribuido contra recursos con IP pública.",
+  "exp_en": "DDoS Protection monitors traffic and mitigates distributed denial-of-service attacks against public IP resources."
+ },
+ {
+  "id": 55,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure es un firewall administrado, nativo de la nube y con estado que puede filtrar el tráfico con reglas de red y de aplicación e inteligencia sobre amenazas?",
+  "q_en": "Which Azure service is a managed, cloud-native, stateful firewall that can filter traffic using network and application rules and threat intelligence?",
+  "opts_es": [
+   "Azure Firewall",
+   "Grupo de seguridad de red",
+   "Azure Policy",
+   "Azure Monitor"
+  ],
+  "opts_en": [
+   "Azure Firewall",
+   "Network security group",
+   "Azure Policy",
+   "Azure Monitor"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Azure Firewall es un servicio de firewall administrado de forma centralizada con alta disponibilidad integrada y filtrado por FQDN.",
+  "exp_en": "Azure Firewall is a centrally managed firewall service with built-in high availability and FQDN filtering."
+ },
+ {
+  "id": 56,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure protege las aplicaciones web de vulnerabilidades habituales como la inyección SQL y el cross-site scripting?",
+  "q_en": "Which Azure service protects web applications from common exploits such as SQL injection and cross-site scripting?",
+  "opts_es": [
+   "Azure Web Application Firewall (WAF)",
+   "Azure Bastion",
+   "Azure Key Vault",
+   "Azure DDoS Protection"
+  ],
+  "opts_en": [
+   "Azure Web Application Firewall (WAF)",
+   "Azure Bastion",
+   "Azure Key Vault",
+   "Azure DDoS Protection"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "WAF inspecciona el tráfico HTTP/S mediante reglas como el conjunto de reglas básicas de OWASP y se puede implementar en Application Gateway o Front Door.",
+  "exp_en": "WAF inspects HTTP/S traffic using rules such as the OWASP core rule set and can be deployed on Application Gateway or Front Door."
+ },
+ {
+  "id": 57,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito de la segmentación de red en las redes virtuales de Azure?",
+  "q_en": "What is the purpose of network segmentation in Azure virtual networks?",
+  "opts_es": [
+   "Dividir una red en partes más pequeñas para poder controlar el tráfico entre ellas y limitar el impacto de una brecha",
+   "Aumentar el número de direcciones IP públicas",
+   "Sustituir la necesidad de cifrado",
+   "Hacer copia de seguridad de máquinas virtuales"
+  ],
+  "opts_en": [
+   "Divide a network into smaller parts so traffic between them can be controlled and the impact of a breach is limited",
+   "Increase the number of public IP addresses",
+   "Replace the need for encryption",
+   "Backing up virtual machines"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las subredes, las redes virtuales y los NSG ayudan a aislar cargas de trabajo y a restringir el movimiento lateral.",
+  "exp_en": "Subnets, virtual networks and NSGs help isolate workloads and restrict lateral movement."
+ },
+ {
+  "id": 58,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué hace un grupo de seguridad de red (NSG)?",
+  "q_en": "What does a network security group (NSG) do?",
+  "opts_es": [
+   "Filtra el tráfico de red entrante y saliente hacia los recursos de Azure mediante reglas de permiso y denegación",
+   "Almacena secretos y certificados",
+   "Recopila eventos de seguridad de muchos orígenes",
+   "Clasifica documentos"
+  ],
+  "opts_en": [
+   "Filters inbound and outbound network traffic to Azure resources using allow and deny rules",
+   "Stores secrets and certificates",
+   "Collects security events from many sources",
+   "Classifies documents"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las reglas de un NSG se basan en origen, destino, puerto y protocolo y se pueden aplicar a subredes o interfaces de red.",
+  "exp_en": "NSG rules are based on source, destination, port and protocol and can be applied to subnets or network interfaces."
+ },
+ {
+  "id": 59,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure proporciona conectividad RDP y SSH segura a máquinas virtuales directamente desde Azure Portal sin exponer direcciones IP públicas en las VM?",
+  "q_en": "Which Azure service provides secure RDP and SSH connectivity to virtual machines directly from the Azure portal without exposing public IP addresses on the VMs?",
+  "opts_es": [
+   "Azure Bastion",
+   "Azure Firewall",
+   "Azure Front Door",
+   "Azure Backup"
+  ],
+  "opts_en": [
+   "Azure Bastion",
+   "Azure Firewall",
+   "Azure Front Door",
+   "Azure Backup"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Bastion es un servicio PaaS administrado que se conecta mediante TLS, por lo que las VM no necesitan IP públicas para su administración.",
+  "exp_en": "Bastion is a managed PaaS service that connects over TLS, so VMs do not need public IPs for management."
+ },
+ {
+  "id": 60,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure almacena y administra de forma segura secretos, claves y certificados?",
+  "q_en": "Which Azure service securely stores and manages secrets, keys and certificates?",
+  "opts_es": [
+   "Azure Key Vault",
+   "Azure Monitor",
+   "Azure Policy",
+   "Microsoft Sentinel"
+  ],
+  "opts_en": [
+   "Azure Key Vault",
+   "Azure Monitor",
+   "Azure Policy",
+   "Microsoft Sentinel"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Key Vault centraliza secretos y claves, controla el acceso con Entra ID y puede usar módulos de seguridad de hardware.",
+  "exp_en": "Key Vault centralizes secrets and keys, controls access with Entra ID and can use hardware security modules."
+ },
+ {
+  "id": 61,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los servicios de seguridad de infraestructura de Azure, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Azure infrastructure security services, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Azure Bastion permite administrar máquinas virtuales por TLS sin asignarles direcciones IP públicas.",
+    "en": "Azure Bastion lets you manage VMs over TLS without assigning them public IP addresses.",
+    "ans": true
+   },
+   {
+    "es": "Azure DDoS Protection se usa para analizar código en busca de secretos.",
+    "en": "Azure DDoS Protection is used to scan code for secrets.",
+    "ans": false
+   },
+   {
+    "es": "Azure Key Vault puede almacenar secretos de aplicación como cadenas de conexión y claves de API.",
+    "en": "Azure Key Vault can store application secrets such as connection strings and API keys.",
+    "ans": true
+   },
+   {
+    "es": "Un NSG es lo mismo que Azure Firewall.",
+    "en": "An NSG is the same as Azure Firewall.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los NSG filtran el tráfico en las capas 3 y 4; Azure Firewall es un firewall con estado administrado de forma centralizada con filtrado de nivel de aplicación.",
+  "exp_en": "NSGs filter traffic at layers 3 and 4; Azure Firewall is a centrally managed, stateful firewall with application-level filtering."
+ },
+ {
+  "id": 62,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de red en Azure, indica si es verdadera o falsa.",
+  "q_en": "For each statement about network security in Azure, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los NSG se pueden asociar a una subred o a una interfaz de red.",
+    "en": "NSGs can be associated with a subnet or a network interface.",
+    "ans": true
+   },
+   {
+    "es": "Azure Firewall puede usar inteligencia sobre amenazas para alertar o denegar el tráfico de direcciones IP maliciosas conocidas.",
+    "en": "Azure Firewall can use threat intelligence to alert on or deny traffic from known malicious IP addresses.",
+    "ans": true
+   },
+   {
+    "es": "WAF protege el tráfico que no es HTTP, como SMTP.",
+    "en": "WAF protects non-HTTP traffic such as SMTP.",
+    "ans": false
+   }
+  ],
+  "exp_es": "WAF solo protege cargas de trabajo web (HTTP/S).",
+  "exp_en": "WAF protects web (HTTP/S) workloads only."
+ },
+ {
+  "id": 63,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el servicio de Azure que encaja con cada requisito.",
+  "q_en": "Select the Azure service that fits each requirement.",
+  "rows": [
+   {
+    "es": "Bloquear intentos de inyección SQL contra una aplicación web pública.",
+    "en": "Block SQL injection attempts against a public web application.",
+    "opts_es": [
+     "Azure Firewall",
+     "Azure Web Application Firewall",
+     "Azure Bastion",
+     "Azure Key Vault"
+    ],
+    "opts_en": [
+     "Azure Firewall",
+     "Azure Web Application Firewall",
+     "Azure Bastion",
+     "Azure Key Vault"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Conectarse a una VM con RDP desde el portal sin exponer el puerto 3389 a internet.",
+    "en": "Connect to a VM with RDP from the portal without exposing port 3389 to the internet.",
+    "opts_es": [
+     "Azure Firewall",
+     "Azure Web Application Firewall",
+     "Azure Bastion",
+     "Azure Key Vault"
+    ],
+    "opts_en": [
+     "Azure Firewall",
+     "Azure Web Application Firewall",
+     "Azure Bastion",
+     "Azure Key Vault"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "WAF gestiona vulnerabilidades web; Bastion elimina la necesidad de puertos de administración públicos.",
+  "exp_en": "WAF handles web exploits; Bastion removes the need for public management ports."
+ },
+ {
+  "id": 64,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el servicio de Azure que encaja con cada requisito.",
+  "q_en": "Select the Azure service that fits each requirement.",
+  "rows": [
+   {
+    "es": "Mitigar una avalancha de tráfico dirigida a una dirección IP pública.",
+    "en": "Mitigate a flood of traffic aimed at a public IP address.",
+    "opts_es": [
+     "Azure DDoS Protection",
+     "Azure Firewall",
+     "Grupo de seguridad de red",
+     "Azure Key Vault"
+    ],
+    "opts_en": [
+     "Azure DDoS Protection",
+     "Azure Firewall",
+     "Network security group",
+     "Azure Key Vault"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Almacenar el certificado y las claves que usa una aplicación.",
+    "en": "Store the certificate and keys used by an application.",
+    "opts_es": [
+     "Azure DDoS Protection",
+     "Azure Firewall",
+     "Grupo de seguridad de red",
+     "Azure Key Vault"
+    ],
+    "opts_en": [
+     "Azure DDoS Protection",
+     "Azure Firewall",
+     "Network security group",
+     "Azure Key Vault"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "DDoS Protection gestiona los ataques volumétricos; Key Vault almacena secretos, claves y certificados.",
+  "exp_en": "DDoS Protection handles volumetric attacks; Key Vault stores secrets, keys and certificates."
+ },
+ {
+  "id": 65,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Azure ",
+  "pre_en": "Azure ",
+  "post_es": " permite que los administradores se conecten a las máquinas virtuales mediante TLS desde Azure Portal sin direcciones IP públicas en las VM.",
+  "post_en": " lets administrators connect to virtual machines over TLS from the Azure portal without public IP addresses on the VMs.",
+  "opts_es": [
+   "Bastion",
+   "Advisor",
+   "Monitor",
+   "Policy"
+  ],
+  "opts_en": [
+   "Bastion",
+   "Advisor",
+   "Monitor",
+   "Policy"
+  ],
+  "correct": 0,
+  "exp_es": "Bastion proporciona conectividad RDP y SSH segura desde el navegador.",
+  "exp_en": "Bastion provides secure browser-based RDP and SSH connectivity."
+ },
+ {
+  "id": 66,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Un ",
+  "pre_en": "A ",
+  "post_es": " en Azure filtra el tráfico desde y hacia los recursos mediante reglas basadas en origen, destino, puerto y protocolo.",
+  "post_en": " in Azure filters traffic to and from resources using rules based on source, destination, port and protocol.",
+  "opts_es": [
+   "grupo de seguridad de red",
+   "bloqueo de recursos",
+   "grupo de administración",
+   "etiqueta"
+  ],
+  "opts_en": [
+   "network security group",
+   "resource lock",
+   "management group",
+   "tag"
+  ],
+  "correct": 0,
+  "exp_es": "Las reglas de seguridad de un NSG permiten o deniegan el tráfico y se evalúan por prioridad.",
+  "exp_en": "NSG security rules allow or deny traffic and are evaluated by priority."
+ },
+ {
+  "id": 67,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué es Microsoft Defender for Cloud?",
+  "q_en": "What is Microsoft Defender for Cloud?",
+  "opts_es": [
+   "Una plataforma de protección de aplicaciones nativas de la nube que combina la administración de la posición de seguridad y la protección de cargas de trabajo para Azure, híbrido y multinube",
+   "Un servicio de filtrado de correo",
+   "Un administrador de contraseñas",
+   "Un servicio de escritorio virtual"
+  ],
+  "opts_en": [
+   "A cloud-native application protection platform that combines security posture management and workload protection for Azure, hybrid and multicloud",
+   "An email filtering service",
+   "A password manager",
+   "A virtual desktop service"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender for Cloud ofrece capacidades de CSPM y CWPP para Azure, otras nubes y servidores locales.",
+  "exp_en": "Defender for Cloud provides CSPM and CWPP capabilities for Azure, other clouds and on-premises servers."
+ },
+ {
+  "id": 68,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué hace la administración de la posición de seguridad en la nube (CSPM)?",
+  "q_en": "What does Cloud Security Posture Management (CSPM) do?",
+  "opts_es": [
+   "Evalúa continuamente los recursos en busca de errores de configuración y ofrece recomendaciones para reforzar la posición de seguridad",
+   "Bloquea ataques DDoS",
+   "Cifra todo el correo",
+   "Sustituye a los proveedores de identidades"
+  ],
+  "opts_en": [
+   "Continuously assesses resources for misconfigurations and provides recommendations to strengthen security posture",
+   "Blocks DDoS attacks",
+   "Encrypts all email",
+   "Replaces identity providers"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "CSPM identifica puntos débiles, ofrece una puntuación de seguridad y recomienda soluciones.",
+  "exp_en": "CSPM identifies weaknesses, gives a secure score and recommends fixes."
+ },
+ {
+  "id": 69,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "En Defender for Cloud, ¿qué representa la puntuación de seguridad?",
+  "q_en": "In Defender for Cloud, what does the secure score represent?",
+  "opts_es": [
+   "Una medida de la posición de seguridad de la organización basada en las recomendaciones de seguridad completadas",
+   "El número de usuarios con MFA",
+   "El número de máquinas virtuales",
+   "La factura de la cuenta de almacenamiento"
+  ],
+  "opts_en": [
+   "A measure of the organization's security posture based on completed security recommendations",
+   "The number of users with MFA",
+   "The number of virtual machines",
+   "The storage account bill"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una puntuación de seguridad más alta significa que se han implementado más controles recomendados.",
+  "exp_en": "A higher secure score means more of the recommended controls are implemented."
+ },
+ {
+  "id": 70,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Defender for Cloud proporciona detección de amenazas y protección avanzada para cargas de trabajo como servidores, bases de datos y contenedores?",
+  "q_en": "Which Defender for Cloud capability provides threat detection and advanced protection for workloads such as servers, databases and containers?",
+  "opts_es": [
+   "Protección de cargas de trabajo en la nube (planes de Defender)",
+   "Administración de derechos",
+   "Compliance Manager",
+   "Service Trust Portal"
+  ],
+  "opts_en": [
+   "Cloud workload protection (Defender plans)",
+   "Entitlement management",
+   "Compliance Manager",
+   "Service Trust Portal"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los planes de Defender agregan protección frente a amenazas específica de cada carga de trabajo, como servidores, almacenamiento, SQL y contenedores.",
+  "exp_en": "Defender plans add workload-specific threat protection such as for servers, storage, SQL and containers."
+ },
+ {
+  "id": 71,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué son las recomendaciones de seguridad en Defender for Cloud?",
+  "q_en": "What are security recommendations in Defender for Cloud?",
+  "opts_es": [
+   "Pasos accionables para corregir errores de configuración y mejorar la posición de seguridad",
+   "Copias de seguridad de máquinas virtuales",
+   "Avisos legales sobre privacidad",
+   "Reglas de filtrado de correo"
+  ],
+  "opts_en": [
+   "Actionable steps to remediate misconfigurations and improve the security posture",
+   "Backups of virtual machines",
+   "Legal notices about privacy",
+   "Email filtering rules"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las recomendaciones se asignan a estándares y directivas de seguridad e incluyen orientación para corregir.",
+  "exp_en": "Recommendations map to security standards and policies and include remediation guidance."
+ },
+ {
+  "id": 72,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Microsoft Defender for Cloud, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Defender for Cloud, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Puede evaluar recursos en Azure y en otras nubes como AWS y GCP.",
+    "en": "It can assess resources in Azure and in other clouds such as AWS and GCP.",
+    "ans": true
+   },
+   {
+    "es": "Proporciona recomendaciones que ayudan a mejorar la puntuación de seguridad.",
+    "en": "It provides recommendations that help improve the secure score.",
+    "ans": true
+   },
+   {
+    "es": "Solo está disponible para servidores locales.",
+    "en": "It is only available for on-premises servers.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Defender for Cloud cubre entornos de Azure, multinube e híbridos.",
+  "exp_en": "Defender for Cloud covers Azure, multicloud and hybrid environments."
+ },
+ {
+  "id": 73,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las directivas de seguridad, los estándares y la protección de cargas de trabajo en la nube, indica si es verdadera o falsa.",
+  "q_en": "For each statement about security policies, standards and cloud workload protection, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Aplicar un estándar normativo en Defender for Cloud muestra qué grado de cumplimiento tienen los recursos con ese estándar.",
+    "en": "Applying a regulatory standard in Defender for Cloud shows how compliant resources are with that standard.",
+    "ans": true
+   },
+   {
+    "es": "Las características de seguridad mejoradas requieren habilitar planes de Defender en los tipos de recurso que se quieren proteger.",
+    "en": "Enhanced security features require enabling Defender plans on the resource types you want to protect.",
+    "ans": true
+   },
+   {
+    "es": "Las recomendaciones de seguridad son fijas y no se pueden asignar a un estándar.",
+    "en": "Security recommendations are fixed and cannot be mapped to a standard.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Defender for Cloud asigna las recomendaciones a estándares como el Microsoft cloud security benchmark.",
+  "exp_en": "Defender for Cloud maps recommendations to standards such as the Microsoft cloud security benchmark."
+ },
+ {
+  "id": 74,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad de Defender for Cloud que corresponde a cada necesidad.",
+  "q_en": "Select the Defender for Cloud capability that matches each need.",
+  "rows": [
+   {
+    "es": "Encontrar una cuenta de almacenamiento que permite acceso público y obtener una recomendación para corregirlo.",
+    "en": "Find a storage account that allows public access and get a recommendation to fix it.",
+    "opts_es": [
+     "Administración de la posición de seguridad en la nube",
+     "Protección de cargas de trabajo en la nube",
+     "Revisiones de acceso",
+     "Barreras de información"
+    ],
+    "opts_en": [
+     "Cloud security posture management",
+     "Cloud workload protection",
+     "Access reviews",
+     "Information barriers"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Detectar un comportamiento sospechoso en un servidor SQL y generar una alerta de amenaza.",
+    "en": "Detect suspicious behavior on a SQL server and raise a threat alert.",
+    "opts_es": [
+     "Administración de la posición de seguridad en la nube",
+     "Protección de cargas de trabajo en la nube",
+     "Revisiones de acceso",
+     "Barreras de información"
+    ],
+    "opts_en": [
+     "Cloud security posture management",
+     "Cloud workload protection",
+     "Access reviews",
+     "Information barriers"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "CSPM informa de errores de configuración; la protección de cargas de trabajo detecta amenazas contra cargas en ejecución.",
+  "exp_en": "CSPM reports misconfigurations; workload protection detects threats against running workloads."
+ },
+ {
+  "id": 75,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "La ",
+  "pre_en": "Defender for Cloud's ",
+  "post_es": " de Defender for Cloud mide qué tan bien ha implementado una organización los controles de seguridad recomendados.",
+  "post_en": " score measures how well an organization has implemented recommended security controls.",
+  "opts_es": [
+   "puntuación de seguridad",
+   "puntuación de cumplimiento",
+   "puntuación de opinión",
+   "puntuación de latencia"
+  ],
+  "opts_en": [
+   "secure",
+   "compliance",
+   "sentiment",
+   "latency"
+  ],
+  "correct": 0,
+  "exp_es": "Una puntuación de seguridad más alta indica una posición de seguridad más sólida.",
+  "exp_en": "A higher secure score indicates a stronger security posture."
+ },
+ {
+  "id": 76,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "CSPM significa administración de la posición de seguridad en la nube; las siglas corresponden a Cloud Security ",
+  "pre_en": "CSPM stands for Cloud Security ",
+  "post_es": " Management.",
+  "post_en": " Management.",
+  "opts_es": [
+   "Posture",
+   "Policy",
+   "Protection",
+   "Perimeter"
+  ],
+  "opts_en": [
+   "Posture",
+   "Policy",
+   "Protection",
+   "Perimeter"
+  ],
+  "correct": 0,
+  "exp_es": "CSPM = Cloud Security Posture Management.",
+  "exp_en": "CSPM = Cloud Security Posture Management."
+ },
+ {
+  "id": 77,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué es Microsoft Sentinel?",
+  "q_en": "What is Microsoft Sentinel?",
+  "opts_es": [
+   "Una solución nativa de la nube de administración de eventos e información de seguridad (SIEM) y de orquestación, automatización y respuesta de seguridad (SOAR)",
+   "Un dispositivo de firewall",
+   "Una herramienta de administración de dispositivos",
+   "Un servicio de restablecimiento de contraseñas"
+  ],
+  "opts_en": [
+   "A cloud-native security information and event management (SIEM) and security orchestration, automation and response (SOAR) solution",
+   "A firewall appliance",
+   "A device management tool",
+   "A password reset service"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Sentinel recopila datos a escala de nube, detecta amenazas y automatiza la respuesta.",
+  "exp_en": "Sentinel collects data at cloud scale, detects threats and automates response."
+ },
+ {
+  "id": 78,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué significa SIEM?",
+  "q_en": "What does SIEM stand for?",
+  "opts_es": [
+   "Administración de eventos e información de seguridad",
+   "Integración de sistemas y supervisión de endpoints",
+   "Administración segura de identidad y cifrado",
+   "Monitor de eventos de infraestructura de servidores"
+  ],
+  "opts_en": [
+   "Security information and event management",
+   "System integration and endpoint monitoring",
+   "Secure identity and encryption management",
+   "Server infrastructure event monitor"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un SIEM recopila y correlaciona datos de seguridad de muchos orígenes para detectar amenazas.",
+  "exp_en": "A SIEM collects and correlates security data from many sources to detect threats."
+ },
+ {
+  "id": 79,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué permite SOAR en un centro de operaciones de seguridad?",
+  "q_en": "What does SOAR enable in a security operations center?",
+  "opts_es": [
+   "Automatizar las respuestas a alertas e incidentes mediante cuadernos de estrategias",
+   "Cifrar datos en tránsito",
+   "Administrar licencias",
+   "Aprovisionar redes virtuales"
+  ],
+  "opts_en": [
+   "Automating responses to alerts and incidents with playbooks",
+   "Encrypting data in transit",
+   "Managing licenses",
+   "Provisioning virtual networks"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "En Sentinel, los cuadernos de estrategias basados en Azure Logic Apps automatizan las acciones de respuesta.",
+  "exp_en": "In Sentinel, playbooks built on Azure Logic Apps automate response actions."
+ },
+ {
+  "id": 80,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué característica de Microsoft Sentinel permite a los analistas buscar amenazas de forma proactiva en sus datos mediante consultas?",
+  "q_en": "Which Microsoft Sentinel feature lets analysts proactively search for threats across their data using queries?",
+  "opts_es": [
+   "Búsqueda proactiva (hunting)",
+   "Valores predeterminados de seguridad",
+   "Caja de seguridad del cliente",
+   "Bloqueos de recursos"
+  ],
+  "opts_en": [
+   "Hunting",
+   "Security defaults",
+   "Customer Lockbox",
+   "Resource locks"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La búsqueda proactiva usa consultas KQL para buscar actividad sospechosa antes de que se activen las alertas.",
+  "exp_en": "Hunting uses KQL queries to look for suspicious activity before alerts fire."
+ },
+ {
+  "id": 81,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "En Microsoft Sentinel, ¿qué agrupa alertas relacionadas en un único elemento accionable que un analista puede investigar?",
+  "q_en": "In Microsoft Sentinel, what groups related alerts into a single actionable item that an analyst can investigate?",
+  "opts_es": [
+   "Un incidente",
+   "Un bloqueo de recursos",
+   "Una subred",
+   "Un grupo de administración"
+  ],
+  "opts_en": [
+   "An incident",
+   "A resource lock",
+   "A subnet",
+   "A management group"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los incidentes agregan alertas y entidades para que los analistas puedan investigar y responder en conjunto.",
+  "exp_en": "Incidents aggregate alerts and entities so analysts can investigate and respond together."
+ },
+ {
+  "id": 82,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Microsoft Sentinel, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Sentinel, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Sentinel puede recopilar datos de servicios de Microsoft, otras nubes y soluciones de terceros mediante conectores de datos.",
+    "en": "Sentinel can collect data from Microsoft services, other clouds and third-party solutions through data connectors.",
+    "ans": true
+   },
+   {
+    "es": "Los cuadernos de estrategias de Sentinel se usan para automatizar acciones de respuesta.",
+    "en": "Playbooks in Sentinel are used to automate response actions.",
+    "ans": true
+   },
+   {
+    "es": "Sentinel se usa para administrar las actualizaciones de Windows en los endpoints.",
+    "en": "Sentinel is used to manage Windows updates on endpoints.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Sentinel es una solución SIEM/SOAR, no una herramienta de administración de endpoints.",
+  "exp_en": "Sentinel is a SIEM/SOAR solution, not an endpoint management tool."
+ },
+ {
+  "id": 83,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad de Sentinel que corresponde a cada necesidad.",
+  "q_en": "Select the Sentinel capability that matches each need.",
+  "rows": [
+   {
+    "es": "Bloquear automáticamente a un usuario comprometido cuando se crea un incidente.",
+    "en": "Automatically block a compromised user when an incident is created.",
+    "opts_es": [
+     "Conector de datos",
+     "Regla de análisis",
+     "Cuaderno de estrategias (playbook)",
+     "Consulta de búsqueda proactiva"
+    ],
+    "opts_en": [
+     "Data connector",
+     "Analytics rule",
+     "Playbook",
+     "Hunting query"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Incorporar a Sentinel los registros de inicio de sesión de otro servicio.",
+    "en": "Bring sign-in logs from another service into Sentinel.",
+    "opts_es": [
+     "Conector de datos",
+     "Regla de análisis",
+     "Cuaderno de estrategias (playbook)",
+     "Consulta de búsqueda proactiva"
+    ],
+    "opts_en": [
+     "Data connector",
+     "Analytics rule",
+     "Playbook",
+     "Hunting query"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Los cuadernos de estrategias automatizan las respuestas; los conectores de datos incorporan datos.",
+  "exp_en": "Playbooks automate responses; data connectors ingest data."
+ },
+ {
+  "id": 84,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "sentence",
+  "pre_es": "Microsoft Sentinel usa ",
+  "pre_en": "Microsoft Sentinel uses ",
+  "post_es": " para detectar amenazas a partir de los datos recopilados.",
+  "post_en": " rules to detect threats from the collected data.",
+  "opts_es": [
+   "reglas de análisis",
+   "reglas de ciclo de vida",
+   "reglas de facturación",
+   "reglas de enrutamiento"
+  ],
+  "opts_en": [
+   "analytics",
+   "lifecycle",
+   "billing",
+   "routing"
+  ],
+  "correct": 0,
+  "exp_es": "Las reglas de análisis ejecutan consultas de forma programada o casi en tiempo real para generar alertas e incidentes.",
+  "exp_en": "Analytics rules run queries on a schedule or in near real time to generate alerts and incidents."
+ },
+ {
+  "id": 85,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "sentence",
+  "pre_es": "En Microsoft Sentinel, los flujos de respuesta automatizados se crean como ",
+  "pre_en": "In Microsoft Sentinel, automated response workflows are built as ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "cuadernos de estrategias (playbooks)",
+   "planos (blueprints)",
+   "instantáneas",
+   "etiquetas"
+  ],
+  "opts_en": [
+   "playbooks",
+   "blueprints",
+   "snapshots",
+   "tags"
+  ],
+  "correct": 0,
+  "exp_es": "Los cuadernos de estrategias son colecciones de acciones creadas con Azure Logic Apps.",
+  "exp_en": "Playbooks are collections of actions built with Azure Logic Apps."
+ },
+ {
+  "id": 86,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué es Microsoft Defender XDR?",
+  "q_en": "What is Microsoft Defender XDR?",
+  "opts_es": [
+   "Un conjunto de defensa empresarial unificado, previo y posterior a la brecha, que coordina la detección, prevención, investigación y respuesta en endpoints, identidades, correo y aplicaciones",
+   "Un servicio de copia de seguridad",
+   "Un conmutador de red",
+   "Un portal de licencias"
+  ],
+  "opts_en": [
+   "A unified pre- and post-breach enterprise defense suite that coordinates detection, prevention, investigation and response across endpoints, identities, email and apps",
+   "A backup service",
+   "A network switch",
+   "A licensing portal"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender XDR correlaciona señales de Defender for Endpoint, Office 365, Identity y Cloud Apps.",
+  "exp_en": "Defender XDR correlates signals across Defender for Endpoint, Office 365, Identity and Cloud Apps."
+ },
+ {
+  "id": 87,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué producto de Defender protege el correo y las herramientas de colaboración de amenazas como el phishing y los archivos adjuntos maliciosos?",
+  "q_en": "Which Defender product protects email and collaboration tools from threats such as phishing and malicious attachments?",
+  "opts_es": [
+   "Microsoft Defender for Office 365",
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Identity",
+   "Microsoft Defender Vulnerability Management"
+  ],
+  "opts_en": [
+   "Microsoft Defender for Office 365",
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Identity",
+   "Microsoft Defender Vulnerability Management"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender for Office 365 proporciona Vínculos seguros, Datos adjuntos seguros y protección contra phishing.",
+  "exp_en": "Defender for Office 365 provides Safe Links, Safe Attachments and anti-phishing protection."
+ },
+ {
+  "id": 88,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué producto de Defender proporciona detección y respuesta en el endpoint (EDR) y prevención para dispositivos?",
+  "q_en": "Which Defender product provides endpoint detection and response (EDR) and prevention for devices?",
+  "opts_es": [
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Cloud Apps",
+   "Azure Firewall",
+   "Azure Bastion"
+  ],
+  "opts_en": [
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Cloud Apps",
+   "Azure Firewall",
+   "Azure Bastion"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender for Endpoint protege dispositivos Windows, macOS, Linux, iOS y Android.",
+  "exp_en": "Defender for Endpoint protects Windows, macOS, Linux, iOS and Android devices."
+ },
+ {
+  "id": 89,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué producto de Defender es un agente de seguridad de acceso a la nube (CASB) que ofrece visibilidad y control sobre las aplicaciones en la nube y la TI en la sombra?",
+  "q_en": "Which Defender product is a cloud access security broker (CASB) that gives visibility and control over cloud apps and shadow IT?",
+  "opts_es": [
+   "Microsoft Defender for Cloud Apps",
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Office 365",
+   "Microsoft Sentinel"
+  ],
+  "opts_en": [
+   "Microsoft Defender for Cloud Apps",
+   "Microsoft Defender for Endpoint",
+   "Microsoft Defender for Office 365",
+   "Microsoft Sentinel"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender for Cloud Apps descubre las aplicaciones en uso, aplica directivas y protege los datos en aplicaciones SaaS.",
+  "exp_en": "Defender for Cloud Apps discovers apps in use, enforces policies and protects data in SaaS apps."
+ },
+ {
+  "id": 90,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué producto de Defender usa señales del Active Directory local para detectar identidades comprometidas y movimiento lateral?",
+  "q_en": "Which Defender product uses on-premises Active Directory signals to detect compromised identities and lateral movement?",
+  "opts_es": [
+   "Microsoft Defender for Identity",
+   "Microsoft Defender for Office 365",
+   "Azure DDoS Protection",
+   "Microsoft Purview Audit"
+  ],
+  "opts_en": [
+   "Microsoft Defender for Identity",
+   "Microsoft Defender for Office 365",
+   "Azure DDoS Protection",
+   "Microsoft Purview Audit"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender for Identity supervisa los controladores de dominio en busca de actividad sospechosa como pass-the-hash y reconocimiento.",
+  "exp_en": "Defender for Identity monitors domain controllers for suspicious activity such as pass-the-hash and reconnaissance."
+ },
+ {
+  "id": 91,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué capacidad detecta, prioriza y ayuda a corregir vulnerabilidades de software y errores de configuración en dispositivos?",
+  "q_en": "Which capability discovers, prioritizes and helps remediate software vulnerabilities and misconfigurations on devices?",
+  "opts_es": [
+   "Microsoft Defender Vulnerability Management",
+   "Microsoft Entra Connect",
+   "Azure Bastion",
+   "Compliance Manager"
+  ],
+  "opts_en": [
+   "Microsoft Defender Vulnerability Management",
+   "Microsoft Entra Connect",
+   "Azure Bastion",
+   "Compliance Manager"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender Vulnerability Management ofrece detección continua y priorización basada en riesgo.",
+  "exp_en": "Defender Vulnerability Management provides continuous discovery and risk-based prioritization."
+ },
+ {
+  "id": 92,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Dónde administran los equipos de seguridad incidentes, alertas, búsqueda avanzada e informes en los productos de Defender?",
+  "q_en": "Where do security teams manage incidents, alerts, advanced hunting and reports across Defender products?",
+  "opts_es": [
+   "El portal de Microsoft Defender",
+   "El portal de Azure Cost Management",
+   "El centro de administración de Exchange",
+   "El centro de administración de Teams"
+  ],
+  "opts_en": [
+   "The Microsoft Defender portal",
+   "The Azure Cost Management portal",
+   "The Exchange admin center",
+   "The Teams admin center"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El portal de Defender (security.microsoft.com) unifica los incidentes y la búsqueda en todo el conjunto de Defender.",
+  "exp_en": "The Defender portal (security.microsoft.com) unifies incidents and hunting across the Defender suite."
+ },
+ {
+  "id": 93,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Para qué se usa Microsoft Threat Intelligence?",
+  "q_en": "What is Microsoft Threat Intelligence used for?",
+  "opts_es": [
+   "Proporcionar información sobre actores de amenazas, herramientas y técnicas para ayudar a los defensores a investigar y responder a amenazas",
+   "Aprovisionar máquinas virtuales",
+   "Cifrar copias de seguridad",
+   "Asignar licencias"
+  ],
+  "opts_en": [
+   "Providing insight into threat actors, tools and techniques to help defenders investigate and respond to threats",
+   "Provisioning virtual machines",
+   "Encrypting backups",
+   "Assigning licenses"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Defender Threat Intelligence aporta contexto sobre adversarios e indicadores para enriquecer las investigaciones.",
+  "exp_en": "Defender Threat Intelligence provides context on adversaries and indicators to enrich investigations."
+ },
+ {
+  "id": 94,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los servicios de Microsoft Defender XDR, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Defender XDR services, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Defender for Endpoint puede detectar amenazas en los dispositivos y responder a ellas.",
+    "en": "Defender for Endpoint can detect and respond to threats on devices.",
+    "ans": true
+   },
+   {
+    "es": "Defender for Identity se centra en proteger las identidades de Active Directory local.",
+    "en": "Defender for Identity focuses on protecting on-premises Active Directory identities.",
+    "ans": true
+   },
+   {
+    "es": "Defender for Office 365 administra las directivas de cumplimiento de dispositivos.",
+    "en": "Defender for Office 365 manages device compliance policies.",
+    "ans": false
+   },
+   {
+    "es": "Defender XDR correlaciona señales de varios productos de Defender.",
+    "en": "Defender XDR correlates signals from several Defender products.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las directivas de cumplimiento de dispositivos las administra Microsoft Intune, no Defender for Office 365.",
+  "exp_en": "Device compliance policies are managed by Microsoft Intune, not Defender for Office 365."
+ },
+ {
+  "id": 95,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Microsoft Defender for Office 365 y Defender for Cloud Apps, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Defender for Office 365 and Defender for Cloud Apps, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Datos adjuntos seguros comprueba los archivos adjuntos en un entorno aislado para detectar contenido malicioso.",
+    "en": "Safe Attachments checks attachments in a sandbox environment for malicious content.",
+    "ans": true
+   },
+   {
+    "es": "Vínculos seguros protege a los usuarios de direcciones URL maliciosas en el correo y las aplicaciones de Office.",
+    "en": "Safe Links protects users from malicious URLs in email and Office apps.",
+    "ans": true
+   },
+   {
+    "es": "Defender for Cloud Apps no puede descubrir a qué aplicaciones en la nube acceden los usuarios.",
+    "en": "Defender for Cloud Apps cannot discover which cloud apps users access.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Cloud Discovery en Defender for Cloud Apps revela la TI en la sombra.",
+  "exp_en": "Cloud Discovery in Defender for Cloud Apps reveals shadow IT."
+ },
+ {
+  "id": 96,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "dropdown",
+  "q_es": "Selecciona el producto de Defender que encaja con cada escenario.",
+  "q_en": "Select the Defender product that fits each scenario.",
+  "rows": [
+   {
+    "es": "Bloquear correos de phishing que contienen vínculos maliciosos.",
+    "en": "Block phishing emails that contain malicious links.",
+    "opts_es": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "opts_en": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Detectar ataques pass-the-hash contra controladores de dominio.",
+    "en": "Detect pass-the-hash attacks against domain controllers.",
+    "opts_es": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "opts_en": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Cada producto de Defender protege una carga de trabajo específica: correo, endpoints, identidades o aplicaciones en la nube.",
+  "exp_en": "Each Defender product protects a specific workload: email, endpoints, identities or cloud apps."
+ },
+ {
+  "id": 97,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "dropdown",
+  "q_es": "Selecciona el producto de Defender que encaja con cada escenario.",
+  "q_en": "Select the Defender product that fits each scenario.",
+  "rows": [
+   {
+    "es": "Aislar de la red un portátil comprometido.",
+    "en": "Isolate a compromised laptop from the network.",
+    "opts_es": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "opts_en": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Descubrir que los empleados usan aplicaciones de uso compartido de archivos no autorizadas.",
+    "en": "Discover that employees use unsanctioned file-sharing apps.",
+    "opts_es": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "opts_en": [
+     "Defender for Office 365",
+     "Defender for Endpoint",
+     "Defender for Identity",
+     "Defender for Cloud Apps"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "El aislamiento de dispositivos es una acción de respuesta en el endpoint; el descubrimiento de aplicaciones en la nube revela la TI en la sombra.",
+  "exp_en": "Device isolation is an endpoint response action; Cloud App discovery reveals shadow IT."
+ },
+ {
+  "id": 98,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "sentence",
+  "pre_es": "Microsoft ",
+  "pre_en": "Microsoft ",
+  "post_es": " es el portal unificado donde los equipos de seguridad investigan incidentes en los productos de Defender.",
+  "post_en": " is the unified portal where security teams investigate incidents across Defender products.",
+  "opts_es": [
+   "Defender portal",
+   "Purview portal",
+   "Intune admin center",
+   "Teams admin center"
+  ],
+  "opts_en": [
+   "Defender portal",
+   "Purview portal",
+   "Intune admin center",
+   "Teams admin center"
+  ],
+  "correct": 0,
+  "exp_es": "El portal de Microsoft Defender reúne incidentes XDR, alertas y búsqueda avanzada.",
+  "exp_en": "The Microsoft Defender portal brings XDR incidents, alerts and advanced hunting together."
+ },
+ {
+  "id": 99,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "sentence",
+  "pre_es": "Microsoft Defender for ",
+  "pre_en": "Microsoft Defender for ",
+  "post_es": " usa Vínculos seguros y Datos adjuntos seguros para proteger a los usuarios en el correo y las herramientas de colaboración.",
+  "post_en": " uses Safe Links and Safe Attachments to protect users in email and collaboration tools.",
+  "opts_es": [
+   "Office 365",
+   "Identity",
+   "Endpoint",
+   "Cloud"
+  ],
+  "opts_en": [
+   "Office 365",
+   "Identity",
+   "Endpoint",
+   "Cloud"
+  ],
+  "correct": 0,
+  "exp_es": "Vínculos seguros y Datos adjuntos seguros son características de Defender for Office 365.",
+  "exp_en": "Safe Links and Safe Attachments are Defender for Office 365 features."
+ },
+ {
+  "id": 100,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "sentence",
+  "pre_es": "Microsoft Defender for ",
+  "pre_en": "Microsoft Defender for ",
+  "post_es": " da visibilidad de la TI en la sombra al analizar a qué aplicaciones en la nube acceden los usuarios.",
+  "post_en": " gives visibility into shadow IT by analyzing which cloud apps users access.",
+  "opts_es": [
+   "Cloud Apps",
+   "Office 365",
+   "Identity",
+   "IoT"
+  ],
+  "opts_en": [
+   "Cloud Apps",
+   "Office 365",
+   "Identity",
+   "IoT"
+  ],
+  "correct": 0,
+  "exp_es": "Cloud Discovery en Defender for Cloud Apps analiza registros de tráfico para identificar las aplicaciones en uso.",
+  "exp_en": "Cloud Discovery in Defender for Cloud Apps analyzes traffic logs to identify apps in use."
+ },
+ {
+  "id": 101,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Qué es el Service Trust Portal de Microsoft?",
+  "q_en": "What is the Microsoft Service Trust Portal?",
+  "opts_es": [
+   "Un portal que ofrece informes de auditoría, guías de cumplimiento y otros documentos sobre cómo los servicios en la nube de Microsoft cumplen los estándares de seguridad y cumplimiento",
+   "Un portal para comprar licencias de Microsoft 365",
+   "Una herramienta para administrar actualizaciones de endpoints",
+   "Una puerta de enlace de red virtual"
+  ],
+  "opts_en": [
+   "A portal that provides audit reports, compliance guides and other documents about how Microsoft cloud services meet security and compliance standards",
+   "A portal to buy Microsoft 365 licenses",
+   "A tool to manage endpoint updates",
+   "A virtual network gateway"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El Service Trust Portal aloja informes de auditoría independientes, certificaciones y recursos de cumplimiento de los servicios en la nube de Microsoft.",
+  "exp_en": "The Service Trust Portal hosts independent audit reports, certifications and compliance resources for Microsoft cloud services."
+ },
+ {
+  "id": 102,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Cuál es uno de los seis principios de privacidad de Microsoft?",
+  "q_en": "Which is one of Microsoft's six privacy principles?",
+  "opts_es": [
+   "Transparencia",
+   "Ocultación",
+   "Monetización de los datos del cliente",
+   "Retención ilimitada"
+  ],
+  "opts_en": [
+   "Transparency",
+   "Obscurity",
+   "Monetization of customer data",
+   "Unlimited retention"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los seis principios son control, transparencia, seguridad, protecciones legales sólidas, ausencia de segmentación basada en contenido y beneficios para los clientes.",
+  "exp_en": "The six principles are control, transparency, security, strong legal protections, no content-based targeting and benefits to customers."
+ },
+ {
+  "id": 103,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Según el principio de privacidad de control de Microsoft, ¿qué pueden hacer los clientes?",
+  "q_en": "Under Microsoft's privacy principle of control, what can customers do?",
+  "opts_es": [
+   "Decidir cómo se usan sus datos y administrar sus opciones de privacidad",
+   "Acceder al código fuente de Microsoft",
+   "Eliminar las copias de seguridad de Microsoft",
+   "Establecer los precios de Microsoft"
+  ],
+  "opts_en": [
+   "Decide how their data is used and manage their privacy choices",
+   "Access Microsoft's source code",
+   "Delete Microsoft's backups",
+   "Set Microsoft's pricing"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El control consiste en dar a los clientes las herramientas y opciones para administrar sus datos y su privacidad.",
+  "exp_en": "Control means giving customers the tools and choices to manage their data and privacy."
+ },
+ {
+  "id": 104,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el Service Trust Portal y los principios de privacidad de Microsoft, indica si es verdadera o falsa.",
+  "q_en": "For each statement about the Service Trust Portal and Microsoft privacy principles, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El Service Trust Portal ofrece informes de auditoría sobre los servicios en la nube de Microsoft.",
+    "en": "The Service Trust Portal offers audit reports about Microsoft cloud services.",
+    "ans": true
+   },
+   {
+    "es": "Microsoft usa el contenido de los clientes para la segmentación publicitaria.",
+    "en": "Microsoft uses customer content for advertising targeting.",
+    "ans": false
+   },
+   {
+    "es": "La transparencia es uno de los principios de privacidad de Microsoft.",
+    "en": "Transparency is one of Microsoft's privacy principles.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Microsoft declara que no usa los datos de los clientes con fines publicitarios.",
+  "exp_en": "Microsoft states it does not use customer data for advertising purposes."
+ },
+ {
+  "id": 105,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "sentence",
+  "pre_es": "El ",
+  "pre_en": "The Microsoft ",
+  "post_es": " de Microsoft ofrece informes de auditoría y documentación de cumplimiento de los servicios en la nube de Microsoft.",
+  "post_en": " provides audit reports and compliance documentation for Microsoft cloud services.",
+  "opts_es": [
+   "Service Trust Portal",
+   "portal de Defender",
+   "centro de administración de Intune",
+   "Azure Marketplace"
+  ],
+  "opts_en": [
+   "Service Trust Portal",
+   "Defender portal",
+   "Intune admin center",
+   "Azure Marketplace"
+  ],
+  "correct": 0,
+  "exp_es": "Usa el Service Trust Portal para obtener informes de auditoría independientes, certificaciones y orientación de cumplimiento.",
+  "exp_en": "Use the Service Trust Portal for independent audit reports, certifications and compliance guidance."
+ },
+ {
+  "id": 106,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Para qué se usa el portal de Microsoft Purview?",
+  "q_en": "What is the Microsoft Purview portal used for?",
+  "opts_es": [
+   "Administrar soluciones de seguridad de datos, gobernanza y cumplimiento desde un único lugar",
+   "Administrar redes virtuales",
+   "Aprovisionar suscripciones de Azure",
+   "Aplicar revisiones a servidores Windows"
+  ],
+  "opts_en": [
+   "Managing data security, governance and compliance solutions from a single place",
+   "Managing virtual networks",
+   "Provisioning Azure subscriptions",
+   "Patching Windows servers"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El portal de Microsoft Purview da acceso a soluciones como Compliance Manager, Information Protection, DLP y eDiscovery.",
+  "exp_en": "The Microsoft Purview portal provides access to solutions such as Compliance Manager, Information Protection, DLP and eDiscovery."
+ },
+ {
+  "id": 107,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué ayuda a hacer Microsoft Purview Compliance Manager a una organización?",
+  "q_en": "What does Microsoft Purview Compliance Manager help an organization do?",
+  "opts_es": [
+   "Evaluar la posición de cumplimiento frente a normativas y completar acciones de mejora para aumentar una puntuación de cumplimiento",
+   "Crear máquinas virtuales",
+   "Bloquear ataques de red",
+   "Restablecer contraseñas de usuarios"
+  ],
+  "opts_en": [
+   "Assess compliance posture against regulations and complete improvement actions to raise a compliance score",
+   "Create virtual machines",
+   "Block network attacks",
+   "Reset user passwords"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Compliance Manager ofrece evaluaciones, plantillas, acciones de mejora y una puntuación de cumplimiento.",
+  "exp_en": "Compliance Manager provides assessments, templates, improvement actions and a compliance score."
+ },
+ {
+  "id": 108,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué representa la puntuación de cumplimiento en Compliance Manager?",
+  "q_en": "What does the compliance score in Compliance Manager represent?",
+  "opts_es": [
+   "El progreso en la implementación de controles que ayudan a cumplir los requisitos de cumplimiento",
+   "El número de empleados formados",
+   "El almacenamiento total usado",
+   "El número de mensajes de correo analizados"
+  ],
+  "opts_en": [
+   "The progress in implementing controls that help meet compliance requirements",
+   "The number of employees trained",
+   "The total storage used",
+   "The number of email messages scanned"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La puntuación refleja las acciones de mejora completadas; no garantiza que la organización cumpla la normativa.",
+  "exp_en": "The score reflects completed improvement actions; it does not guarantee that the organization is compliant."
+ },
+ {
+  "id": 109,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Compliance Manager, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Compliance Manager, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Compliance Manager incluye plantillas para evaluar frente a requisitos normativos.",
+    "en": "Compliance Manager includes templates for assessing against regulatory requirements.",
+    "ans": true
+   },
+   {
+    "es": "Una puntuación de cumplimiento alta garantiza que la organización supera todas las auditorías.",
+    "en": "A high compliance score guarantees the organization passes every audit.",
+    "ans": false
+   },
+   {
+    "es": "Las acciones de mejora se pueden asignar y supervisar.",
+    "en": "Improvement actions can be assigned and tracked.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La puntuación mide el progreso en los controles; no es una garantía de cumplimiento.",
+  "exp_en": "The score measures progress on controls; it is not a guarantee of compliance."
+ },
+ {
+  "id": 110,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "Microsoft Purview Compliance Manager ofrece a una organización una ",
+  "pre_en": "Microsoft Purview Compliance Manager gives an organization a ",
+  "post_es": " basada en las acciones de mejora que completa.",
+  "post_en": " score based on the improvement actions it completes.",
+  "opts_es": [
+   "puntuación de cumplimiento",
+   "puntuación de latencia",
+   "puntuación de facturación",
+   "puntuación de licencias"
+  ],
+  "opts_en": [
+   "compliance",
+   "latency",
+   "billing",
+   "licensing"
+  ],
+  "correct": 0,
+  "exp_es": "La puntuación de cumplimiento ayuda a seguir el progreso hacia los requisitos normativos.",
+  "exp_en": "The compliance score helps track progress toward regulatory requirements."
+ },
+ {
+  "id": 111,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Para qué se usan las etiquetas de confidencialidad en Microsoft Purview?",
+  "q_en": "What are sensitivity labels in Microsoft Purview used for?",
+  "opts_es": [
+   "Clasificar y proteger contenido aplicando marcas, cifrado y restricciones de acceso",
+   "Decidir cuánto tiempo se retiene el contenido",
+   "Supervisar el tráfico de red",
+   "Crear cuentas de usuario"
+  ],
+  "opts_en": [
+   "Classify and protect content by applying markings, encryption and access restrictions",
+   "Decide how long content is retained",
+   "Monitor network traffic",
+   "Create user accounts"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las etiquetas de confidencialidad acompañan al contenido y pueden aplicar cifrado, marcas de contenido y control de acceso.",
+  "exp_en": "Sensitivity labels travel with the content and can enforce encryption, content markings and access control."
+ },
+ {
+  "id": 112,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Qué controlan las directivas de retención y las etiquetas de retención?",
+  "q_en": "What do retention policies and retention labels control?",
+  "opts_es": [
+   "Cuánto tiempo se conserva el contenido y qué ocurre después, como eliminarlo",
+   "Quién puede iniciar sesión",
+   "Qué puertos están abiertos",
+   "Qué dispositivos son compatibles"
+  ],
+  "opts_en": [
+   "How long content is kept and what happens to it afterward, such as deleting it",
+   "Who can sign in",
+   "Which ports are open",
+   "Which devices are compliant"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La configuración de retención ayuda a conservar lo que se necesita y eliminar lo que no.",
+  "exp_en": "Retention settings help keep what you need and delete what you do not."
+ },
+ {
+  "id": 113,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Qué hace la prevención de pérdida de datos (DLP) de Microsoft Purview?",
+  "q_en": "What does Microsoft Purview data loss prevention (DLP) do?",
+  "opts_es": [
+   "Identifica información confidencial y ayuda a evitar que se comparta de forma inapropiada",
+   "Hace copias de seguridad de recursos de Azure",
+   "Aprovisiona redes virtuales",
+   "Administra contraseñas"
+  ],
+  "opts_en": [
+   "Identifies sensitive information and helps prevent it from being shared inappropriately",
+   "Backs up Azure resources",
+   "Provisions virtual networks",
+   "Manages passwords"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las directivas DLP pueden avisar o bloquear cuando los usuarios intentan compartir datos confidenciales, como números de tarjeta de crédito.",
+  "exp_en": "DLP policies can warn or block when users try to share sensitive data such as credit card numbers."
+ },
+ {
+  "id": 114,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Purview identifica y clasifica automáticamente el contenido confidencial mediante clasificadores integrados y entrenables?",
+  "q_en": "Which Purview capability automatically identifies and classifies sensitive content using built-in and trainable classifiers?",
+  "opts_es": [
+   "Clasificación de datos",
+   "Caja de seguridad del cliente",
+   "Revisiones de acceso",
+   "Acceso condicional"
+  ],
+  "opts_en": [
+   "Data classification",
+   "Customer Lockbox",
+   "Access reviews",
+   "Conditional Access"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La clasificación de datos usa tipos de información confidencial, clasificadores entrenables y coincidencia exacta de datos.",
+  "exp_en": "Data classification uses sensitive information types, trainable classifiers and exact data match."
+ },
+ {
+  "id": 115,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Qué ayudan a hacer a un administrador el Explorador de contenido y el Explorador de actividad de Microsoft Purview?",
+  "q_en": "What do Content explorer and Activity explorer in Microsoft Purview help an administrator do?",
+  "opts_es": [
+   "Ver qué contenido confidencial existe y qué acciones se han realizado sobre el contenido etiquetado",
+   "Administrar redes virtuales de Azure",
+   "Restablecer contraseñas",
+   "Asignar licencias de Windows"
+  ],
+  "opts_en": [
+   "See which sensitive content exists and what actions have been taken on labeled content",
+   "Manage Azure virtual networks",
+   "Reset passwords",
+   "Assign Windows licenses"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El Explorador de contenido muestra los elementos clasificados; el Explorador de actividad muestra las actividades relacionadas con etiquetas a lo largo del tiempo.",
+  "exp_en": "Content explorer shows classified items; Activity explorer shows label-related activities over time."
+ },
+ {
+  "id": 116,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Para qué se usa la administración de registros de Microsoft Purview?",
+  "q_en": "What is records management in Microsoft Purview used for?",
+  "opts_es": [
+   "Administrar registros legales, críticos para el negocio y normativos con controles de retención y eliminación",
+   "Analizar en busca de malware",
+   "Administrar usuarios invitados",
+   "Supervisar el uso de CPU"
+  ],
+  "opts_en": [
+   "Managing legal, business-critical and regulatory records with retention and disposition controls",
+   "Scanning for malware",
+   "Managing guest users",
+   "Monitoring CPU usage"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La administración de registros usa etiquetas de retención para declarar elementos como registros y los hace inmutables cuando es necesario.",
+  "exp_en": "Records management uses retention labels to declare items as records, making them immutable when required."
+ },
+ {
+  "id": 117,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las etiquetas de confidencialidad y la retención, indica si es verdadera o falsa.",
+  "q_en": "For each statement about sensitivity labels and retention, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una etiqueta de confidencialidad puede aplicar cifrado a un documento.",
+    "en": "A sensitivity label can apply encryption to a document.",
+    "ans": true
+   },
+   {
+    "es": "Una etiqueta de retención puede conservar el contenido durante un período fijo y luego eliminarlo.",
+    "en": "A retention label can keep content for a fixed period and then delete it.",
+    "ans": true
+   },
+   {
+    "es": "Las etiquetas de confidencialidad y las de retención son la misma característica.",
+    "en": "Sensitivity labels and retention labels are the same feature.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las etiquetas de confidencialidad protegen y clasifican contenido; las de retención regulan cuánto tiempo se conserva.",
+  "exp_en": "Sensitivity labels protect and classify content; retention labels govern how long it is kept."
+ },
+ {
+  "id": 118,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la clasificación de datos y DLP de Microsoft Purview, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Purview data classification and DLP, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los tipos de información confidencial detectan patrones como números de tarjeta de crédito.",
+    "en": "Sensitive information types detect patterns such as credit card numbers.",
+    "ans": true
+   },
+   {
+    "es": "Una directiva DLP puede bloquear el uso compartido de contenido confidencial con destinatarios externos.",
+    "en": "A DLP policy can block sharing of sensitive content with external recipients.",
+    "ans": true
+   },
+   {
+    "es": "Los clasificadores entrenables solo pueden detectar patrones fijos definidos por expresiones regulares.",
+    "en": "Trainable classifiers can only detect fixed patterns defined by regular expressions.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los clasificadores entrenables aprenden a reconocer categorías de contenido a partir de ejemplos, no de patrones fijos.",
+  "exp_en": "Trainable classifiers learn to recognize content categories from examples rather than fixed patterns."
+ },
+ {
+  "id": 119,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la solución de Purview que corresponde a cada requisito.",
+  "q_en": "Select the Purview solution that matches each requirement.",
+  "rows": [
+   {
+    "es": "Cifrar documentos confidenciales y agregar una marca de agua.",
+    "en": "Encrypt confidential documents and add a watermark.",
+    "opts_es": [
+     "Etiqueta de confidencialidad",
+     "Etiqueta de retención",
+     "Directiva de prevención de pérdida de datos",
+     "Administración de registros"
+    ],
+    "opts_en": [
+     "Sensitivity label",
+     "Retention label",
+     "Data loss prevention policy",
+     "Records management"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Avisar a los usuarios antes de que envíen por correo números de tarjeta de crédito fuera de la empresa.",
+    "en": "Warn users before they email credit card numbers outside the company.",
+    "opts_es": [
+     "Etiqueta de confidencialidad",
+     "Etiqueta de retención",
+     "Directiva de prevención de pérdida de datos",
+     "Administración de registros"
+    ],
+    "opts_en": [
+     "Sensitivity label",
+     "Retention label",
+     "Data loss prevention policy",
+     "Records management"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las etiquetas protegen el contenido; las directivas DLP evitan el uso compartido inapropiado.",
+  "exp_en": "Labels protect content; DLP policies prevent inappropriate sharing."
+ },
+ {
+  "id": 120,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la solución de Purview que corresponde a cada requisito.",
+  "q_en": "Select the Purview solution that matches each requirement.",
+  "rows": [
+   {
+    "es": "Conservar los documentos financieros durante siete años y luego eliminarlos.",
+    "en": "Keep financial documents for seven years and then delete them.",
+    "opts_es": [
+     "Etiqueta de confidencialidad",
+     "Etiqueta de retención",
+     "Directiva de prevención de pérdida de datos",
+     "Explorador de contenido"
+    ],
+    "opts_en": [
+     "Sensitivity label",
+     "Retention label",
+     "Data loss prevention policy",
+     "Content explorer"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Ver dónde se almacenan los documentos con tipos de información confidencial.",
+    "en": "See where documents containing sensitive information types are stored.",
+    "opts_es": [
+     "Etiqueta de confidencialidad",
+     "Etiqueta de retención",
+     "Directiva de prevención de pérdida de datos",
+     "Explorador de contenido"
+    ],
+    "opts_en": [
+     "Sensitivity label",
+     "Retention label",
+     "Data loss prevention policy",
+     "Content explorer"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "Las etiquetas de retención controlan el ciclo de vida; el Explorador de contenido enumera los elementos clasificados.",
+  "exp_en": "Retention labels control the lifecycle; Content explorer lists classified items."
+ },
+ {
+  "id": 121,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "sentence",
+  "pre_es": "Las ",
+  "pre_en": "Microsoft Purview ",
+  "post_es": " de Microsoft Purview pueden cifrar un documento y aplicar una marca de agua visible.",
+  "post_en": " labels can encrypt a document and apply a visible watermark.",
+  "opts_es": [
+   "etiquetas de confidencialidad",
+   "etiquetas de retención",
+   "etiquetas de auditoría",
+   "etiquetas de enrutamiento"
+  ],
+  "opts_en": [
+   "sensitivity",
+   "retention",
+   "audit",
+   "routing"
+  ],
+  "correct": 0,
+  "exp_es": "Las etiquetas de confidencialidad pueden aplicar cifrado y marcas de contenido.",
+  "exp_en": "Sensitivity labels can enforce encryption and content markings."
+ },
+ {
+  "id": 122,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "sentence",
+  "pre_es": "Una ",
+  "pre_en": "A Microsoft Purview ",
+  "post_es": " de Microsoft Purview puede avisar o bloquear a los usuarios que intentan compartir información confidencial como números de tarjeta de crédito.",
+  "post_en": " policy can warn or block users who try to share sensitive information such as credit card numbers.",
+  "opts_es": [
+   "directiva de prevención de pérdida de datos",
+   "directiva de revisión de acceso",
+   "directiva de puntuación de cumplimiento",
+   "directiva de búsqueda"
+  ],
+  "opts_en": [
+   "data loss prevention",
+   "access review",
+   "compliance score",
+   "hunting"
+  ],
+  "correct": 0,
+  "exp_es": "Las directivas DLP detectan contenido confidencial y aplican acciones como avisar, bloquear o auditar.",
+  "exp_en": "DLP policies detect sensitive content and apply actions like warn, block or audit."
+ },
+ {
+  "id": 123,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué ayuda a detectar Microsoft Purview Insider Risk Management?",
+  "q_en": "What does Microsoft Purview Insider Risk Management help detect?",
+  "opts_es": [
+   "Actividades de riesgo realizadas por usuarios de la organización, como robo o filtración de datos, mediante indicadores de directiva",
+   "Ataques DDoS",
+   "Redes virtuales mal configuradas",
+   "Servidores sin revisiones"
+  ],
+  "opts_en": [
+   "Risky activities by users inside the organization, such as data theft or leaks, using policy indicators",
+   "DDoS attacks",
+   "Misconfigured virtual networks",
+   "Unpatched servers"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Insider Risk Management correlaciona señales para identificar actividad de usuario potencialmente de riesgo protegiendo la privacidad.",
+  "exp_en": "Insider Risk Management correlates signals to identify potentially risky user activity while protecting privacy."
+ },
+ {
+  "id": 124,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito de Microsoft Purview eDiscovery?",
+  "q_en": "What is the purpose of Microsoft Purview eDiscovery?",
+  "opts_es": [
+   "Buscar, retener y exportar contenido para necesidades legales o de investigación",
+   "Cifrar el tráfico de red",
+   "Administrar contraseñas de usuarios",
+   "Asignar roles en Azure"
+  ],
+  "opts_en": [
+   "Search for, hold and export content for legal or investigative needs",
+   "Encrypt network traffic",
+   "Manage user passwords",
+   "Assign roles in Azure"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "eDiscovery permite a los equipos legales encontrar contenido en Exchange, SharePoint, OneDrive y Teams, aplicar retenciones y exportar resultados.",
+  "exp_en": "eDiscovery lets legal teams find content across Exchange, SharePoint, OneDrive and Teams, place holds and export results."
+ },
+ {
+  "id": 125,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué proporciona la solución Microsoft Purview Audit?",
+  "q_en": "What does the Microsoft Purview Audit solution provide?",
+  "opts_es": [
+   "Un registro de las actividades de usuarios y administradores en los servicios de Microsoft 365 para investigación y cumplimiento",
+   "Una copia de seguridad de buzones",
+   "Un firewall para máquinas virtuales",
+   "Claves de cifrado"
+  ],
+  "opts_en": [
+   "A record of user and administrator activities across Microsoft 365 services for investigation and compliance",
+   "A backup of mailboxes",
+   "A firewall for virtual machines",
+   "Encryption keys"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El registro de auditoría unificado registra las actividades para que los investigadores puedan determinar quién hizo qué y cuándo.",
+  "exp_en": "The unified audit log records activities so investigators can determine who did what and when."
+ },
+ {
+  "id": 126,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el riesgo interno, eDiscovery y la auditoría, indica si es verdadera o falsa.",
+  "q_en": "For each statement about insider risk, eDiscovery and audit, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "eDiscovery puede aplicar una retención legal al contenido para conservarlo.",
+    "en": "eDiscovery can place a legal hold on content to preserve it.",
+    "ans": true
+   },
+   {
+    "es": "Auditoría se usa para detectar ataques DDoS externos.",
+    "en": "Audit is used to detect external DDoS attacks.",
+    "ans": false
+   },
+   {
+    "es": "Insider Risk Management usa indicadores de directiva para detectar actividad de usuario de riesgo.",
+    "en": "Insider Risk Management uses policy indicators to detect risky user activity.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Auditoría registra actividades; la protección DDoS es un servicio de red.",
+  "exp_en": "Audit records activities; DDoS protection is a network service."
+ },
+ {
+  "id": 127,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "dropdown",
+  "q_es": "Selecciona la solución de Purview que encaja con cada escenario.",
+  "q_en": "Select the Purview solution that fits each scenario.",
+  "rows": [
+   {
+    "es": "El asesor legal necesita recopilar y conservar el buzón de un usuario para una demanda.",
+    "en": "Legal counsel needs to collect and preserve a user's mailbox for a lawsuit.",
+    "opts_es": [
+     "Insider Risk Management",
+     "eDiscovery",
+     "Auditoría",
+     "Compliance Manager"
+    ],
+    "opts_en": [
+     "Insider Risk Management",
+     "eDiscovery",
+     "Audit",
+     "Compliance Manager"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Seguridad necesita revisar quién eliminó un archivo de SharePoint y cuándo.",
+    "en": "Security needs to review who deleted a SharePoint file and when.",
+    "opts_es": [
+     "Insider Risk Management",
+     "eDiscovery",
+     "Auditoría",
+     "Compliance Manager"
+    ],
+    "opts_en": [
+     "Insider Risk Management",
+     "eDiscovery",
+     "Audit",
+     "Compliance Manager"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "eDiscovery gestiona las retenciones legales y las exportaciones; Auditoría registra las actividades.",
+  "exp_en": "eDiscovery handles legal holds and exports; Audit records activities."
+ },
+ {
+  "id": 128,
+  "exam": "sc-900",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "sentence",
+  "pre_es": "Microsoft Purview ",
+  "pre_en": "Microsoft Purview ",
+  "post_es": " permite a los equipos legales buscar, retener y exportar contenido para investigaciones.",
+  "post_en": " lets legal teams search, hold and export content for investigations.",
+  "opts_es": [
+   "eDiscovery",
+   "Compliance Manager",
+   "Defender XDR",
+   "Key Vault"
+  ],
+  "opts_en": [
+   "eDiscovery",
+   "Compliance Manager",
+   "Defender XDR",
+   "Key Vault"
+  ],
+  "correct": 0,
+  "exp_es": "eDiscovery admite retención legal, búsqueda y exportación.",
+  "exp_en": "eDiscovery supports legal hold, search and export."
+ }
+]
