@@ -60,14 +60,14 @@
   "q_es": "¿Qué principio se centra en que los sistemas de IA funcionen de forma coherente y segura, incluso en condiciones inesperadas?",
   "q_en": "Which principle focuses on AI systems performing consistently and safely, including under unexpected conditions?",
   "opts_es": [
-   "Responsabilidad",
-   "Inclusión",
+   "Responsabilidad sobre los resultados",
+   "Inclusión de todos los grupos de usuarios",
    "Equidad",
    "Fiabilidad y seguridad"
   ],
   "opts_en": [
-   "Accountability",
-   "Inclusiveness",
+   "Accountability for outcomes",
+   "Inclusiveness of all user groups",
    "Fairness",
    "Reliability and safety"
   ],
@@ -86,15 +86,15 @@
   "q_es": "Un equipo prueba rigurosamente un modelo de asistencia a la conducción con lluvia, nieve y poca luz antes de su lanzamiento. ¿Qué principio respalda esto?",
   "q_en": "A team rigorously tests a driver-assistance model in rain, snow and low light before release. Which principle does this support?",
   "opts_es": [
-   "Equidad",
+   "Equidad entre grupos de usuarios",
    "Fiabilidad y seguridad",
-   "Transparencia",
+   "Transparencia de las decisiones del modelo",
    "Inclusión"
   ],
   "opts_en": [
-   "Fairness",
+   "Fairness across user groups",
    "Reliability and safety",
-   "Transparency",
+   "Transparency of model decisions",
    "Inclusiveness"
   ],
   "correct": [
@@ -372,16 +372,16 @@
   "q_es": "¿Qué práctica ayuda a los usuarios a entender por qué se hizo una recomendación de IA?",
   "q_en": "Which practice helps users understand why an AI recommendation was made?",
   "opts_es": [
-   "Proporcionar explicaciones de los principales factores influyentes",
+   "Explicar los principales factores influyentes",
    "Eliminar el registro",
-   "Aumentar el tamaño del modelo",
-   "Mantener en secreto el comportamiento del modelo"
+   "Aumentar el tamaño del modelo y los datos de entrenamiento",
+   "Mantener en secreto el comportamiento del modelo ante los usuarios"
   ],
   "opts_en": [
-   "Providing explanations of the main influencing factors",
+   "Explaining the main influencing factors",
    "Removing logging",
-   "Increasing the model size",
-   "Keeping the model's behavior secret"
+   "Increasing the model size and the training data",
+   "Keeping the model's behavior secret from all users"
   ],
   "correct": [
    0
@@ -606,15 +606,15 @@
   "q_es": "¿Qué acción ayuda a proteger una aplicación de IA frente a la inyección de instrucciones y el uso indebido?",
   "q_en": "Which action helps protect an AI app from prompt injection and misuse?",
   "opts_es": [
-   "Publicar las claves de API en la aplicación",
-   "Validar las entradas, limitar los permisos y aplicar filtros de seguridad",
-   "Deshabilitar el registro para proteger la privacidad",
+   "Publicar las claves de API en la app para que los usuarios prueben el modelo",
+   "Validar entradas, limitar permisos y usar filtros de seguridad",
+   "Deshabilitar el registro para que nunca se guarde ni revise ningún prompt",
    "Dar derechos de administrador al modelo"
   ],
   "opts_en": [
-   "Publish the API keys in the app",
-   "Validate inputs, limit permissions and apply safety filters",
-   "Disable logging to protect privacy",
+   "Publish the API keys in the app so users can test the model directly",
+   "Validate inputs, limit permissions and use safety filters",
+   "Disable logging so no prompt or response is ever stored or reviewed",
    "Give the model administrator rights"
   ],
   "correct": [
@@ -1334,15 +1334,15 @@
   "q_es": "¿Qué representan los embeddings?",
   "q_en": "What do embeddings represent?",
   "opts_es": [
-   "Las credenciales almacenadas de un usuario",
-   "El nivel de precios de un modelo",
-   "Vectores numéricos que capturan el significado de texto u otros datos",
+   "Copias cifradas de las credenciales almacenadas del usuario",
+   "El nivel de precios y los límites de tokens de un modelo implementado",
+   "Vectores numéricos que capturan el significado de los datos",
    "La paleta de colores de una imagen"
   ],
   "opts_en": [
-   "A user's stored credentials",
-   "The pricing tier of a model",
-   "Numeric vectors that capture the meaning of text or other data",
+   "Encrypted copies of the user's stored credentials",
+   "The pricing tier and token limits of a deployed model",
+   "Numeric vectors that capture the meaning of data",
    "The color palette of an image"
   ],
   "correct": [
@@ -1439,15 +1439,15 @@
   "q_en": "What does the context window of a model limit?",
   "opts_es": [
    "La resolución de pantalla de la aplicación cliente",
-   "La cantidad de texto (tokens) que el modelo puede considerar en una solicitud",
-   "El tamaño de los datos de entrenamiento del modelo",
-   "El número de usuarios por día"
+   "La cantidad de tokens que el modelo puede considerar en una solicitud",
+   "El tamaño de los datos de entrenamiento usados para el modelo base",
+   "El número de usuarios que pueden llamar a la implementación cada día"
   ],
   "opts_en": [
    "The screen resolution of the client app",
-   "The amount of text (tokens) the model can consider in one request",
-   "The size of the model's training data",
-   "The number of users per day"
+   "The amount of tokens the model can consider in one request",
+   "The size of the training data used to build the base model",
+   "The number of users who can call the deployment every day"
   ],
   "correct": [
    1
@@ -1568,15 +1568,15 @@
   "q_es": "¿Qué controla top_p (muestreo de núcleo)?",
   "q_en": "What does top_p (nucleus sampling) control?",
   "opts_es": [
-   "El rango de tokens más probables que se consideran al elegir el siguiente token",
-   "La longitud máxima del prompt",
-   "El número de GPU usadas para la solicitud",
+   "Qué tokens más probables se consideran para el siguiente",
+   "La longitud máxima del prompt que el modelo aceptará",
+   "El número de GPU que usa la implementación en cada solicitud",
    "El periodo de facturación de la implementación"
   ],
   "opts_en": [
-   "The range of most likely tokens considered when choosing the next token",
-   "The maximum length of the prompt",
-   "The number of GPUs used for the request",
+   "Which most likely tokens are considered for the next token",
+   "The maximum length of the prompt that the model will accept",
+   "The number of GPUs that the deployment uses for each request",
    "The billing period of the deployment"
   ],
   "correct": [
@@ -1828,16 +1828,16 @@
   "q_es": "¿Qué técnica basa las respuestas de un modelo en tus propios documentos recuperando contenido relevante y añadiéndolo a la solicitud?",
   "q_en": "Which technique grounds a model's answers in your own documents by retrieving relevant content and adding it to the prompt?",
   "opts_es": [
-   "Muestreo aleatorio",
-   "Síntesis de voz",
+   "Ajuste fino del modelo con muestras aleatorias de documentos",
+   "Prompts con pocos ejemplos en el mensaje del sistema",
    "Generación aumentada por recuperación (RAG)",
-   "Aumento de escala de imágenes"
+   "Aumentar el tamaño de la ventana de contexto de la implementación"
   ],
   "opts_en": [
-   "Random sampling",
-   "Speech synthesis",
+   "Fine-tuning the model on random document samples",
+   "Few-shot prompting with examples in the system message",
    "Retrieval-augmented generation (RAG)",
-   "Image upscaling"
+   "Increasing the context window size of the deployment"
   ],
   "correct": [
    2
@@ -2507,16 +2507,16 @@
   "q_es": "Una empresa quiere encontrar los temas principales mencionados en miles de reseñas de clientes. ¿Qué técnica de análisis de texto encaja?",
   "q_en": "A company wants to find the main topics mentioned in thousands of customer reviews. Which text analysis technique fits?",
   "opts_es": [
-   "Detección de objetos",
-   "Extracción de frases clave (palabras clave)",
+   "Detección de objetos en imágenes de reseñas",
+   "Extracción de frases clave",
    "Síntesis de voz",
-   "Generación de imágenes"
+   "Solo detección de idioma"
   ],
   "opts_en": [
-   "Object detection",
-   "Key phrase (keyword) extraction",
+   "Object detection on review images",
+   "Key phrase extraction",
    "Speech synthesis",
-   "Image generation"
+   "Language detection only"
   ],
   "correct": [
    1
@@ -2535,14 +2535,14 @@
   "opts_es": [
    "Reconocimiento de voz",
    "Análisis de opiniones",
-   "Extracción de frases clave",
-   "Detección de entidades (reconocimiento de entidades con nombre)"
+   "Extracción de frases clave con vinculación",
+   "Detección de entidades (NER)"
   ],
   "opts_en": [
    "Speech recognition",
    "Sentiment analysis",
-   "Key phrase extraction",
-   "Entity detection (named entity recognition)"
+   "Key phrase extraction with linking",
+   "Entity detection (NER)"
   ],
   "correct": [
    3
@@ -2663,16 +2663,16 @@
   "q_es": "¿Qué carga de trabajo de IA convierte audio hablado en texto escrito?",
   "q_en": "Which AI workload converts spoken audio into written text?",
   "opts_es": [
-   "Síntesis de voz",
+   "Síntesis de voz (texto a voz)",
    "Clasificación de imágenes",
    "Reconocimiento de voz (voz a texto)",
-   "Detección de entidades"
+   "Detección de entidades en el flujo de audio"
   ],
   "opts_en": [
-   "Speech synthesis",
+   "Speech synthesis (text-to-speech)",
    "Image classification",
    "Speech recognition (speech-to-text)",
-   "Entity detection"
+   "Entity detection on the audio stream"
   ],
   "correct": [
    2
@@ -2794,15 +2794,15 @@
   "q_en": "Which computer vision capability reads printed or handwritten text from images?",
   "opts_es": [
    "Reconocimiento óptico de caracteres (OCR)",
-   "Detección de anomalías",
+   "Detección de anomalías en píxeles de imagen",
    "Síntesis de voz",
-   "Clasificación de imágenes"
+   "Clasificación de imágenes con etiquetas personalizadas"
   ],
   "opts_en": [
    "Optical character recognition (OCR)",
-   "Anomaly detection",
+   "Anomaly detection on image pixels",
    "Speech synthesis",
-   "Image classification"
+   "Image classification with custom tags"
   ],
   "correct": [
    0
@@ -2872,15 +2872,15 @@
   "q_en": "A finance team wants to pull vendor name, invoice date and total from thousands of scanned invoices. Which workload fits?",
   "opts_es": [
    "Extracción de información de documentos",
-   "Análisis de opiniones",
-   "Síntesis de voz",
-   "Generación de imágenes"
+   "Análisis de opiniones del texto de la factura",
+   "Síntesis de voz de las páginas escaneadas",
+   "Generación de imágenes a partir de plantillas"
   ],
   "opts_en": [
    "Information extraction from documents",
-   "Sentiment analysis",
-   "Speech synthesis",
-   "Image generation"
+   "Sentiment analysis of the invoice text",
+   "Speech synthesis of the scanned pages",
+   "Image generation from invoice templates"
   ],
   "correct": [
    0
@@ -2897,16 +2897,16 @@
   "q_es": "¿Qué carga de trabajo extrae momentos clave, transcripciones y resúmenes de vídeo o audio grabados?",
   "q_en": "Which workload extracts key moments, transcripts and summaries from recorded video or audio?",
   "opts_es": [
-   "Clasificación de imágenes",
+   "Solo clasificación de imágenes de fotogramas individuales",
    "Extracción de información de audio y vídeo",
-   "Análisis de regresión",
-   "Detección de anomalías"
+   "Síntesis de voz que lee en voz alta las grabaciones",
+   "Detección de anomalías en el volumen de audio a lo largo del tiempo"
   ],
   "opts_en": [
-   "Image classification",
+   "Image classification of individual video frames only",
    "Information extraction from audio and video",
-   "Regression analysis",
-   "Anomaly detection"
+   "Speech synthesis that reads the recordings aloud",
+   "Anomaly detection on the audio volume over time"
   ],
   "correct": [
    1
@@ -3795,15 +3795,15 @@
   "q_es": "Un prompt dice «Resume esto» pero la salida es demasiado larga y no está estructurada. ¿Cómo se debe mejorar el prompt?",
   "q_en": "A prompt says 'Summarize this' but the output is too long and unstructured. How should the prompt be improved?",
   "opts_es": [
-   "Eliminar el mensaje del sistema",
-   "Subir la temperatura al máximo",
-   "Especificar la longitud y el formato de salida, por ejemplo tres viñetas",
+   "Eliminar el mensaje del sistema para que el modelo tenga más espacio",
+   "Subir la temperatura al máximo para que la respuesta sea concisa",
+   "Especificar la longitud y el formato, por ejemplo tres viñetas",
    "Quitar todas las instrucciones"
   ],
   "opts_en": [
-   "Delete the system message",
-   "Increase the temperature to maximum",
-   "Specify the length and output format, such as three bullet points",
+   "Delete the system message so the model has more room to answer",
+   "Increase the temperature to maximum so the answer becomes concise",
+   "Specify the length and format, such as three bullet points",
    "Remove all instructions"
   ],
   "correct": [
@@ -3821,16 +3821,16 @@
   "q_es": "¿Qué prompt es más probable que produzca una respuesta JSON fiable y bien formada?",
   "q_en": "Which prompt would most likely produce a reliable, well-formed JSON answer?",
   "opts_es": [
-   "Escribe la respuesta como un poema",
+   "Escribe la respuesta como un poema corto que mencione el producto",
    "Adivina los detalles del producto",
-   "Cuéntame algo sobre el producto",
-   "Devuelve el resultado como JSON solo con los campos name y price"
+   "Cuéntame algo del producto, en el formato que prefieras",
+   "Devuelve el resultado como JSON solo con nombre y precio"
   ],
   "opts_en": [
-   "Write the answer as a poem",
+   "Write the answer as a short poem that mentions the product",
    "Guess the product details",
-   "Tell me something about the product",
-   "Return the result as JSON with the fields name and price only"
+   "Tell me something about the product, in whatever format you like",
+   "Return the result as JSON with only name and price"
   ],
   "correct": [
    3
@@ -3874,15 +3874,15 @@
   "q_en": "Which technique asks the model to reason step by step before giving a final answer?",
   "opts_es": [
    "Prompts de tipo cadena de pensamiento",
-   "Rotación de claves",
-   "Moderación de contenido",
-   "Aumento de escala de imágenes"
+   "Prompts con pocos ejemplos de respuestas etiquetadas",
+   "Fundamentar la respuesta con documentos recuperados",
+   "Bajar la temperatura y top_p a cero"
   ],
   "opts_en": [
    "Chain-of-thought style prompting",
-   "Key rotation",
-   "Content moderation",
-   "Image upscaling"
+   "Few-shot prompting with labeled answer examples",
+   "Grounding the answer with retrieved documents",
+   "Lowering the temperature and top_p to zero"
   ],
   "correct": [
    0
@@ -3952,15 +3952,15 @@
   "q_en": "Which details do you need to connect a client app to a deployed model in Foundry?",
   "opts_es": [
    "La contraseña de inicio de sesión del usuario",
-   "Solo el nombre del modelo en el catálogo",
-   "Una GPU local con los pesos del modelo",
-   "El punto de conexión, el nombre de la implementación (modelo) y las credenciales"
+   "Solo el nombre del modelo en el catálogo y su número de versión",
+   "Una GPU local con los pesos del modelo y el conjunto de entrenamiento",
+   "El punto de conexión, el nombre de implementación y credenciales"
   ],
   "opts_en": [
    "The user's sign-in password",
-   "Only the model's name in the catalog",
-   "A local GPU with the model weights",
-   "The endpoint, the deployment (model) name and credentials"
+   "Only the model's name in the catalog and its version number",
+   "A local GPU with the model weights and the training dataset",
+   "The endpoint, the deployment name and credentials"
   ],
   "correct": [
    3
@@ -3978,15 +3978,15 @@
   "q_en": "Which authentication approach is preferred over embedding an API key in application code?",
   "opts_es": [
    "Sin autenticación",
-   "Una clave compartida pública",
+   "Una clave compartida en un repositorio público",
    "Microsoft Entra ID (identidad administrada)",
-   "Contraseñas escritas en el código"
+   "Contraseñas escritas en el archivo de configuración"
   ],
   "opts_en": [
    "No authentication",
-   "A public shared key",
+   "A shared key stored in a public repo",
    "Microsoft Entra ID (managed identity)",
-   "Hard-coded passwords"
+   "Hard-coded passwords in the config file"
   ],
   "correct": [
    2
@@ -4003,16 +4003,16 @@
   "q_es": "¿Cuál es el papel del SDK de Foundry en una aplicación cliente?",
   "q_en": "What is the role of the Foundry SDK in a client application?",
   "opts_es": [
-   "Simplifica llamar desde el código a modelos y agentes de tu proyecto de Foundry",
-   "Sustituye al modelo implementado",
+   "Simplifica llamar desde código a modelos y agentes de tu proyecto",
+   "Sustituye el modelo implementado por una copia local que funciona sin conexión",
    "Cifra el tráfico del portal de Foundry",
-   "Crea suscripciones de Azure automáticamente"
+   "Crea suscripciones de Azure y grupos de recursos automáticamente"
   ],
   "opts_en": [
-   "It simplifies calling models and agents in your Foundry project from code",
-   "It replaces the deployed model",
+   "It simplifies calling models and agents in your project from code",
+   "It replaces the deployed model with a local copy that runs offline",
    "It encrypts the Foundry portal traffic",
-   "It creates Azure subscriptions automatically"
+   "It creates Azure subscriptions and resource groups automatically"
   ],
   "correct": [
    0
@@ -4029,15 +4029,15 @@
   "q_es": "Un cliente de chat envía un mensaje nuevo pero el modelo ignora los turnos anteriores. ¿Cuál es la causa más probable?",
   "q_en": "A chat client sends a new message but the model ignores earlier turns. What is the most likely cause?",
   "opts_es": [
-   "La aplicación no incluyó el historial de la conversación en la solicitud",
-   "La temperatura está demasiado baja",
-   "Cambió la región de la implementación",
+   "La aplicación no envió el historial de la conversación",
+   "La temperatura es demasiado baja para que el modelo recuerde turnos anteriores",
+   "Cambió la región de implementación y se borró la caché de sesión",
    "Se eliminó la implementación del modelo"
   ],
   "opts_en": [
-   "The app did not include the conversation history in the request",
-   "The temperature is set too low",
-   "The deployment region changed",
+   "The app did not send the conversation history",
+   "The temperature is too low for the model to remember earlier turns",
+   "The deployment region changed and the session cache was cleared",
    "The model deployment was deleted"
   ],
   "correct": [
@@ -4263,16 +4263,16 @@
   "q_es": "¿Dónde puedes crear y probar una solución de un solo agente sin escribir código?",
   "q_en": "Where can you create and test a single-agent solution without writing code?",
   "opts_es": [
-   "El portal de facturación",
+   "El portal de facturación de la suscripción de Azure que hospeda el proyecto",
    "La consola DNS",
-   "El playground de agentes del portal de Foundry",
-   "Una hoja de cálculo con macros"
+   "El área de juegos de agentes del portal de Foundry",
+   "Una hoja de cálculo con macros que llama al punto de conexión"
   ],
   "opts_en": [
-   "The billing portal",
+   "The billing portal of the Azure subscription that hosts the project",
    "The DNS console",
    "The agents playground in the Foundry portal",
-   "A spreadsheet with macros"
+   "A spreadsheet with macros that calls the model endpoint"
   ],
   "correct": [
    2
@@ -4315,16 +4315,16 @@
   "q_es": "Una aplicación cliente quiere usar un agente ya creado en un proyecto de Foundry. ¿Qué necesita normalmente?",
   "q_en": "A client app wants to use an agent already created in a Foundry project. What does it typically need?",
   "opts_es": [
-   "Una implementación de modelo nueva por solicitud",
-   "La contraseña de administrador",
+   "Una nueva implementación de modelo creada para cada solicitud",
+   "La contraseña de administrador del portal de Foundry y el ID de suscripción",
    "Solo el color del agente",
-   "El punto de conexión del proyecto, las credenciales y el identificador del agente"
+   "El punto de conexión del proyecto, credenciales y el ID del agente"
   ],
   "opts_en": [
-   "A new model deployment per request",
-   "The admin password",
+   "A new model deployment created for every single request",
+   "The admin password of the Foundry portal and the subscription ID",
    "Only the agent's color",
-   "The project endpoint, credentials and the agent's identifier"
+   "The project endpoint, credentials and the agent ID"
   ],
   "correct": [
    3
@@ -4963,16 +4963,16 @@
   "q_es": "Una aplicación ligera debe detectar opiniones, frases clave y entidades en comentarios de clientes. ¿Qué capacidad de Foundry ofrece estas funciones de análisis de texto?",
   "q_en": "A lightweight app must detect sentiment, key phrases and entities in customer comments. Which Foundry capability provides these text analysis features?",
   "opts_es": [
-   "Azure Speech",
+   "Azure Speech con transcripción en tiempo real",
    "Una puerta de enlace VPN",
-   "Un modelo de generación de imágenes",
-   "Capacidades de Azure Language (análisis de texto)"
+   "Un modelo de generación de imágenes con subtítulos",
+   "Azure Language (análisis de texto)"
   ],
   "opts_en": [
-   "Azure Speech",
+   "Azure Speech with real-time transcription",
    "A VPN gateway",
-   "An image-generation model",
-   "Azure Language capabilities (text analysis)"
+   "An image-generation model with captions",
+   "Azure Language (text analysis)"
   ],
   "correct": [
    3
@@ -4990,15 +4990,15 @@
   "q_en": "What does a sentiment analysis response typically include for each document?",
   "opts_es": [
    "Un archivo de audio traducido",
-   "Un cuadro delimitador para cada palabra",
-   "Solo el recuento de palabras del documento",
-   "Una etiqueta de opinión, como positiva, neutra o negativa, con puntuaciones de confianza"
+   "Un cuadro delimitador para cada palabra y su posición en la página",
+   "Solo el recuento de palabras y el idioma detectado del documento",
+   "Una etiqueta de opinión (positiva, neutra o negativa) con puntuaciones"
   ],
   "opts_en": [
    "A translated audio file",
-   "A bounding box for each word",
-   "Only the word count of the document",
-   "A sentiment label such as positive, neutral or negative with confidence scores"
+   "A bounding box for each word and its position on the page",
+   "Only the word count and the detected language of the document",
+   "A sentiment label (positive, neutral or negative) with scores"
   ],
   "correct": [
    3
@@ -5015,16 +5015,16 @@
   "q_es": "¿Cómo se envía texto a un servicio de análisis de texto desde una aplicación cliente?",
   "q_en": "How do you send text to a text analysis service from a client app?",
   "opts_es": [
-   "Imprimir el texto y escanearlo",
+   "Subir el texto al catálogo de modelos de Foundry como conjunto de datos",
    "Subir el texto a un servidor DNS",
-   "Enviar el texto por correo al equipo de soporte",
-   "Llamar al punto de conexión del servicio con credenciales, pasando los documentos a analizar"
+   "Agregar el texto al prompt del sistema de una implementación de chat",
+   "Llamar al punto de conexión con credenciales y los documentos"
   ],
   "opts_en": [
-   "Print the text and scan it",
+   "Upload the text to the Foundry model catalog as a dataset",
    "Upload the text to a DNS server",
-   "Email the text to the support team",
-   "Call the service endpoint with credentials, passing the documents to analyze"
+   "Add the text to the system prompt of a chat model deployment",
+   "Call the service endpoint with credentials and the documents"
   ],
   "correct": [
    3
@@ -5119,16 +5119,16 @@
   "q_es": "Una aplicación de soporte debe entender que «reserva un vuelo a París mañana» expresa una intención con entidades como destino y fecha. ¿Qué capacidad es relevante?",
   "q_en": "A support app must understand that 'book a flight to Paris tomorrow' expresses an intent with entities such as destination and date. Which capability is relevant?",
   "opts_es": [
-   "Síntesis de voz",
-   "Detección de objetos",
-   "Comprensión del lenguaje conversacional (reconocimiento de intenciones y entidades)",
-   "Descripción de imágenes"
+   "Síntesis de voz con etiquetas de intención SSML",
+   "Detección de objetos en capturas de la solicitud",
+   "Comprensión del lenguaje conversacional (CLU)",
+   "Extracción de frases clave con vinculación de entidades"
   ],
   "opts_en": [
-   "Speech synthesis",
-   "Object detection",
-   "Conversational language understanding (intent and entity recognition)",
-   "Image captioning"
+   "Speech synthesis with SSML intent tags",
+   "Object detection on screenshots of the request",
+   "Conversational language understanding (CLU)",
+   "Key phrase extraction with entity linking"
   ],
   "correct": [
    2
@@ -5171,15 +5171,15 @@
   "q_es": "¿Qué tipo de interacción con un modelo admite conversaciones habladas de ida y vuelta con baja latencia?",
   "q_en": "Which type of model interaction supports low-latency, back-and-forth spoken conversations with a model?",
   "opts_es": [
-   "Un extractor de frases clave",
+   "Un extractor de frases clave que se ejecuta en cada transcripción",
    "Un modelo de audio en tiempo real (voz a voz)",
-   "Un clasificador de imágenes por lotes",
+   "Un clasificador de imágenes por lotes con un complemento de voz",
    "Un informe de análisis estático"
   ],
   "opts_en": [
-   "A key phrase extractor",
+   "A key phrase extractor that runs on each transcript",
    "A real-time audio (speech-to-speech) model",
-   "A batch image classifier",
+   "A batch image classifier with a speech add-on",
    "A static analytics report"
   ],
   "correct": [
@@ -5198,15 +5198,15 @@
   "q_en": "You deploy a model that accepts audio input. What does the app send to ask a spoken question?",
   "opts_es": [
    "El nombre de un grupo de recursos",
-   "El audio grabado como parte del contenido del mensaje",
-   "Una consulta DNS del punto de conexión",
-   "Un código de color para la voz"
+   "El audio grabado en el contenido del mensaje",
+   "Una consulta DNS al punto de conexión con la transcripción adjunta",
+   "Un código de color para la voz y el nombre del hablante"
   ],
   "opts_en": [
    "A resource group name",
-   "The recorded audio as part of the message content",
-   "A DNS query for the endpoint",
-   "A color code for the voice"
+   "The recorded audio in the message content",
+   "A DNS query for the endpoint with the transcript attached",
+   "A color code for the voice and the speaker's display name"
   ],
   "correct": [
    1
@@ -5301,16 +5301,16 @@
   "q_es": "¿Para qué se usa SSML en la síntesis de voz?",
   "q_en": "What is SSML used for in speech synthesis?",
   "opts_es": [
-   "Para almacenar archivos de audio en un contenedor",
-   "Para controlar la pronunciación, el tono, la velocidad y el estilo de la voz generada",
+   "Almacenar archivos de audio generados en un contenedor con metadatos",
+   "Controlar la pronunciación, el tono, la velocidad y el estilo de la voz",
    "Para cifrar el audio sintetizado",
-   "Para detectar el idioma del hablante"
+   "Detectar el idioma y el acento del hablante en tiempo real"
   ],
   "opts_en": [
-   "To store audio files in a container",
-   "To control pronunciation, pitch, speed and style of the generated speech",
+   "To store generated audio files in a container with metadata",
+   "To control pronunciation, pitch, speed and style of speech",
    "To encrypt synthesized audio",
-   "To detect the language of the speaker"
+   "To detect the language and accent of the speaker in real time"
   ],
   "correct": [
    1
@@ -5327,16 +5327,16 @@
   "q_es": "¿Qué dos valores necesita normalmente una configuración del SDK de Speech para conectarse al servicio?",
   "q_en": "Which two values does a Speech SDK configuration typically need to connect to the service?",
   "opts_es": [
-   "Las credenciales (clave o token) y la región o punto de conexión del servicio",
-   "La temperatura y top_p del modelo",
+   "La clave o token y la región o punto de conexión",
+   "La temperatura, top_p y el máximo de tokens del modelo",
    "Los ID del hilo y de la ejecución",
-   "El idioma OCR y el tamaño de la imagen"
+   "El idioma OCR y el tamaño de imagen de los archivos de entrada"
   ],
   "opts_en": [
-   "The credentials (key or token) and the service region/endpoint",
-   "The model's temperature and top_p",
+   "The key or token and the service region or endpoint",
+   "The model's temperature, top_p and maximum output tokens",
    "The thread and run IDs",
-   "The OCR language and image size"
+   "The OCR language and the image size of the input files"
   ],
   "correct": [
    0
@@ -5431,16 +5431,16 @@
   "q_es": "Una aplicación debe admitir usuarios que hablan varios idiomas. ¿Con qué se debe configurar el reconocedor de voz?",
   "q_en": "An app must support users who speak several languages. What should the speech recognizer be configured with?",
   "opts_es": [
-   "Una plantilla PDF",
+   "Una plantilla PDF para las transcripciones generadas",
    "El idioma o idiomas de reconocimiento esperados",
-   "Un ID de hilo",
-   "Una resolución de imagen"
+   "Una temperatura más alta para adaptarse a cada usuario",
+   "Una voz neuronal personalizada para cada usuario"
   ],
   "opts_en": [
-   "A PDF template",
+   "A PDF template for the generated transcripts",
    "The expected recognition language(s)",
-   "A thread ID",
-   "An image resolution"
+   "A higher temperature so it adapts to each user",
+   "A custom neural voice for every supported user"
   ],
   "correct": [
    1
@@ -5457,16 +5457,16 @@
   "q_es": "¿Qué afirmación sobre los resultados del análisis de texto es correcta?",
   "q_en": "Which statement about text analysis results is correct?",
   "opts_es": [
-   "Los resultados siempre incluyen archivos de audio",
-   "Los resultados se devuelven por documento e incluyen puntuaciones o categorías",
+   "Los resultados siempre incluyen un audio que lee cada documento",
+   "Los resultados se devuelven por documento con puntuaciones o categorías",
    "Los resultados nunca incluyen confianza",
-   "Los resultados solo están disponibles en el portal"
+   "Los resultados solo están en el portal, nunca a través de la API"
   ],
   "opts_en": [
-   "Results always include audio files",
-   "Results are returned per document and include scores or categories",
+   "Results always include an audio file that reads each document aloud",
+   "Results are returned per document with scores or categories",
    "Results never include confidence",
-   "Results are available only in the portal"
+   "Results are available only in the portal, never through the API"
   ],
   "correct": [
    1
@@ -6037,16 +6037,16 @@
   "q_es": "¿Cómo puedes hacer a un modelo multimodal una pregunta sobre una foto?",
   "q_en": "How can you ask a multimodal model a question about a photo?",
   "opts_es": [
-   "Solo bajar la temperatura",
+   "Bajar la temperatura y describir la foto en el mensaje del sistema",
    "Enviar la imagen a un servidor DNS",
-   "Incluir la imagen (URL o datos codificados) junto con el texto en el mensaje del usuario",
-   "Cambiar el nombre de la implementación del modelo"
+   "Incluir la imagen (URL o datos) con el texto en el mensaje del usuario",
+   "Subir la foto al catálogo de modelos y volver a implementar el modelo"
   ],
   "opts_en": [
-   "Lower the temperature only",
+   "Lower the temperature and describe the photo in the system message",
    "Send the image to a DNS server",
-   "Include the image (URL or encoded data) together with the text in the user message",
-   "Rename the model deployment"
+   "Include the image (URL or data) with the text in the user message",
+   "Upload the photo to the model catalog and redeploy the model"
   ],
   "correct": [
    2
@@ -6141,16 +6141,16 @@
   "q_es": "¿Qué prompt es más probable que produzca una imagen generada específica y utilizable?",
   "q_en": "Which prompt would most likely produce a specific, usable generated image?",
   "opts_es": [
-   "Una pintura a la acuarela de un faro al amanecer, luz suave, composición amplia",
-   "Algo con buen aspecto",
+   "Una acuarela de un faro al amanecer, luz suave, plano amplio",
+   "Algo bonito que guste a la gente en el sitio web",
    "Una imagen",
-   "Hazme una imagen"
+   "Hazme una imagen, cualquier estilo vale, solo sorpréndeme por favor"
   ],
   "opts_en": [
-   "A watercolor painting of a lighthouse at sunrise, soft light, wide composition",
-   "Something nice-looking",
+   "A watercolor of a lighthouse at sunrise, soft light, wide shot",
+   "Something nice-looking that people will like on the website",
    "An image",
-   "Make a picture for me"
+   "Make a picture for me, any style is fine, just surprise me please"
   ],
   "correct": [
    0
@@ -6167,16 +6167,16 @@
   "q_es": "¿Qué ajustes se pueden elegir normalmente al generar una imagen?",
   "q_en": "Which settings can typically be chosen when generating an image?",
   "opts_es": [
-   "Solo la fuente",
+   "Solo la fuente del texto incrustado en la imagen",
    "Tamaño, calidad y número de imágenes",
-   "El códec de audio",
-   "El ID del hilo"
+   "El códec de audio y la frecuencia de muestreo de la salida",
+   "La temperatura y la secuencia de parada de tokens"
   ],
   "opts_en": [
-   "Only the font",
+   "Only the font of any text embedded in the image",
    "Size, quality and number of images",
-   "The audio codec",
-   "The thread ID"
+   "The audio codec and sample rate of the output",
+   "The temperature and the stop sequence for tokens"
   ],
   "correct": [
    1
@@ -6375,15 +6375,15 @@
   "q_es": "¿Por qué deben las aplicaciones que analizan imágenes de personas seguir prácticas de IA responsable?",
   "q_en": "Why should apps that analyze images of people follow responsible AI practices?",
   "opts_es": [
-   "Los modelos no pueden leer imágenes en absoluto",
+   "Los modelos no pueden leer imágenes salvo que las personas den aprobación escrita",
    "Las fotos siempre salen demasiado borrosas para analizarlas",
-   "Las imágenes no se pueden guardar en la nube",
+   "Las imágenes no pueden guardarse en la nube según ninguna ley de protección",
    "Las imágenes de personas plantean problemas de privacidad, equidad y consentimiento"
   ],
   "opts_en": [
-   "Models cannot read images at all",
+   "Models cannot read images at all unless people give written approval",
    "Photos are always too blurry to analyze",
-   "Images cannot be stored in the cloud",
+   "Images cannot be stored in the cloud under any data protection law",
    "Images of people raise privacy, fairness and consent concerns"
   ],
   "correct": [
@@ -6428,14 +6428,14 @@
   "q_en": "When should you choose a multimodal chat model instead of a fixed image analysis API?",
   "opts_es": [
    "Cuando no tienes imagen",
-   "Cuando solo necesitas cuadros delimitadores",
-   "Cuando solo necesitas salida de audio",
+   "Cuando solo necesitas cuadros delimitadores para un conjunto fijo de objetos",
+   "Cuando solo necesitas salida de audio y no se proporciona ninguna imagen",
    "Cuando necesitas respuestas flexibles y libres sobre una imagen"
   ],
   "opts_en": [
    "When you have no image",
-   "When you only need bounding boxes",
-   "When you need audio output only",
+   "When you only need bounding boxes for a fixed set of objects",
+   "When you need audio output only and no image is provided at all",
    "When you need flexible, free-form answers about an image"
   ],
   "correct": [
@@ -7055,15 +7055,15 @@
   "q_en": "What is the purpose of Azure Content Understanding in Foundry Tools?",
   "opts_es": [
    "Administrar zonas DNS",
-   "Convertir contenido no estructurado, como documentos, imágenes, audio y vídeo, en datos estructurados",
-   "Alojar máquinas virtuales",
-   "Solo entrenar un modelo desde cero"
+   "Convertir documentos, imágenes, audio y vídeo en datos estructurados",
+   "Hospedar máquinas virtuales que ejecutan sistemas de gestión de contenido",
+   "Entrenar un modelo fundacional nuevo desde cero con tu propio contenido"
   ],
   "opts_en": [
    "To manage DNS zones",
-   "To turn unstructured content such as documents, images, audio and video into structured data",
-   "To host virtual machines",
-   "To train a model from scratch only"
+   "To turn documents, images, audio and video into structured data",
+   "To host virtual machines that run content management systems",
+   "To train a new foundation model from scratch on your own content"
   ],
   "correct": [
    1
@@ -7184,16 +7184,16 @@
   "q_es": "¿Qué tipos de contenido puede analizar Content Understanding?",
   "q_en": "Which content types can Content Understanding analyze?",
   "opts_es": [
-   "Solo texto sin formato",
+   "Solo archivos de texto sin formato y páginas PDF escaneadas",
    "Documentos, imágenes, audio y vídeo",
-   "Solo correos electrónicos",
-   "Solo hojas de cálculo"
+   "Solo correos y los archivos adjuntos que incluyen",
+   "Solo hojas de cálculo y sus exportaciones CSV"
   ],
   "opts_en": [
-   "Only plain text",
+   "Only plain text files and scanned PDF pages",
    "Documents, images, audio and video",
-   "Only emails",
-   "Only spreadsheets"
+   "Only emails and the attachments they include",
+   "Only spreadsheets and their CSV exports"
   ],
   "correct": [
    1
@@ -7263,15 +7263,15 @@
   "q_en": "What does a confidence score returned with an extracted field indicate?",
   "opts_es": [
    "El idioma del documento",
-   "El precio del análisis",
-   "La longitud del documento",
-   "Cuán seguro está el servicio del valor extraído"
+   "El precio de analizar ese campo en el documento",
+   "La posición del campo respecto a la longitud de página",
+   "Cuán seguro está el servicio del valor"
   ],
   "opts_en": [
    "The language of the document",
-   "The price of the analysis",
-   "The length of the document",
-   "How certain the service is about the extracted value"
+   "The price of analyzing that field in the document",
+   "The position of the field relative to page length",
+   "How certain the service is about the value"
   ],
   "correct": [
    3
@@ -7418,14 +7418,14 @@
   "q_es": "El análisis de vídeo puede dividir un vídeo en partes con significado. ¿Cómo se suelen llamar?",
   "q_en": "Video analysis can split a video into meaningful parts. What are these parts commonly called?",
   "opts_es": [
-   "Hilos",
-   "Implementaciones",
+   "Hilos y ejecuciones",
+   "Implementaciones de modelo",
    "Tokens",
    "Segmentos o tomas"
   ],
   "opts_en": [
-   "Threads",
-   "Deployments",
+   "Threads and runs",
+   "Model deployments",
    "Tokens",
    "Segments or shots"
   ],
@@ -7471,15 +7471,15 @@
   "q_en": "How does a lightweight app typically use Content Understanding?",
   "opts_es": [
    "Edita los registros DNS del contenido",
-   "Imprime el contenido antes de analizarlo",
-   "Implementa una VM nueva para cada archivo",
-   "Envía contenido a un analizador mediante el SDK o la API REST y lee los resultados"
+   "Ajusta un modelo de lenguaje con el contenido antes de cada análisis",
+   "Implementa una máquina virtual nueva para cada archivo que hay que analizar",
+   "Envía contenido a un analizador mediante SDK o REST y lee los resultados"
   ],
   "opts_en": [
    "It edits the DNS records of the content",
-   "It prints the content before analysis",
-   "It deploys a new VM for every file",
-   "It submits content to an analyzer through the SDK or REST API and reads the results"
+   "It fine-tunes a language model on the content before each analysis",
+   "It deploys a new virtual machine for every file that must be analyzed",
+   "It submits content to an analyzer via SDK or REST and reads results"
   ],
   "correct": [
    3
@@ -7496,16 +7496,16 @@
   "q_es": "El análisis de un vídeo grande puede tardar. ¿Cómo obtiene normalmente el cliente los resultados?",
   "q_en": "Analysis of a large video file can take time. How does a client usually get the results?",
   "opts_es": [
-   "Espera un correo con los resultados",
-   "Inicia el análisis y consulta la operación hasta que termina",
+   "Espera un correo del servicio con los resultados extraídos",
+   "Inicia el análisis y sondea la operación hasta que termina",
    "Rota la clave hasta que aparezcan los resultados",
-   "Reinicia el servicio y vuelve a intentarlo"
+   "Reinicia el servicio y reintenta la carga hasta que funciona"
   ],
   "opts_en": [
-   "It waits for an email with the results",
-   "It starts the analysis and polls the operation until it completes",
+   "It waits for an email from the service with the extracted results",
+   "It starts the analysis and polls the operation until done",
    "It rotates the key until results appear",
-   "It reboots the service and retries"
+   "It reboots the service and retries the upload until it succeeds"
   ],
   "correct": [
    1
@@ -7522,16 +7522,16 @@
   "q_es": "¿Qué entrada puedes proporcionar a un analizador en lugar de subir un archivo?",
   "q_en": "Which input can you provide to an analyzer instead of uploading a file?",
   "opts_es": [
-   "Un número de teléfono",
+   "Un ID de hilo de un agente",
    "Una URL que apunte al contenido",
-   "Una zona DNS",
-   "Un ID de facturación"
+   "Una zona DNS que hospeda el contenido",
+   "Un ID de facturación para el análisis"
   ],
   "opts_en": [
-   "A phone number",
+   "A thread ID from an agent",
    "A URL that points to the content",
-   "A DNS zone",
-   "A billing ID"
+   "A DNS zone that hosts the content",
+   "A billing ID for the analysis run"
   ],
   "correct": [
    1
@@ -7601,15 +7601,15 @@
   "q_en": "Which part of a field definition helps the service understand what to extract?",
   "opts_es": [
    "Una descripción clara del campo",
-   "El medidor de facturación",
-   "El grupo de recursos",
-   "El ID del hilo"
+   "El tipo de datos asignado al campo",
+   "La versión del modelo que usa el analizador",
+   "El valor mínimo del umbral de confianza"
   ],
   "opts_en": [
    "A clear description of the field",
-   "The billing meter",
-   "The resource group",
-   "The thread ID"
+   "The data type assigned to the field",
+   "The model version used by the analyzer",
+   "The minimum confidence threshold value"
   ],
   "correct": [
    0
@@ -7626,15 +7626,15 @@
   "q_es": "¿Por qué es útil que los analizadores puedan procesar audio, imágenes y vídeo además de documentos?",
   "q_en": "Why is it useful that analyzers can process audio, images and video in addition to documents?",
   "opts_es": [
-   "Elimina la necesidad de credenciales",
-   "Garantiza una precisión perfecta",
-   "Un mismo enfoque puede extraer datos estructurados de tipos de contenido mixtos",
+   "Elimina la necesidad de credenciales al llamar al analizador",
+   "Garantiza una precisión perfecta para cada tipo de archivo analizado",
+   "Un mismo enfoque extrae datos estructurados de contenido mixto",
    "Sustituye a todas las bases de datos"
   ],
   "opts_en": [
-   "It removes the need for any credentials",
-   "It guarantees perfect accuracy",
-   "One approach can extract structured data from mixed content types",
+   "It removes the need for credentials when calling the analyzer",
+   "It guarantees perfect accuracy for every file type that is analyzed",
+   "One approach extracts structured data from mixed content",
    "It replaces all databases"
   ],
   "correct": [
@@ -7704,16 +7704,16 @@
   "q_es": "¿Cómo puedes clasificar documentos entrantes, por ejemplo en factura, recibo o contrato, como parte de la extracción?",
   "q_en": "How can you classify incoming documents, for example into invoice, receipt or contract, as part of extraction?",
   "opts_es": [
-   "Convertir primero los documentos en audio",
-   "Definir una clasificación en el analizador o usar un campo de clasificación",
+   "Convertir los documentos en audio y usar análisis de voz",
+   "Definir una clasificación en el analizador",
    "Imprimirlos y ordenarlos manualmente",
-   "Eliminar duplicados antes del análisis"
+   "Usar análisis de opiniones para deducir el tipo de documento"
   ],
   "opts_en": [
-   "Convert the documents to audio first",
-   "Define a classification in the analyzer or use a classification field",
+   "Convert the documents to audio and use speech analytics",
+   "Define a classification in the analyzer",
    "Print them and sort them manually",
-   "Delete duplicates before analysis"
+   "Use sentiment analysis to infer the document type"
   ],
   "correct": [
    1
@@ -8352,16 +8352,16 @@
   "q_es": "¿Cuál es el propósito de publicar documentación sobre los usos previstos y las limitaciones de un modelo?",
   "q_en": "What is the purpose of publishing documentation about a model's intended uses and limitations?",
   "opts_es": [
-   "Ayudar a los usuarios a aplicar el modelo adecuadamente y entender sus riesgos",
-   "Para que el modelo responda más rápido",
+   "Ayudar a los usuarios a aplicar el modelo correctamente y entender sus riesgos",
+   "Hacer que el modelo responda más rápido almacenando las respuestas documentadas",
    "Para sustituir las pruebas del modelo",
-   "Para reducir el coste de almacenamiento del modelo"
+   "Reducir el coste de almacenamiento del modelo quitando pesos no usados"
   ],
   "opts_en": [
-   "To help users apply the model appropriately and understand its risks",
-   "To make the model respond faster",
+   "To help users apply the model properly and understand its risks",
+   "To make the model respond faster by caching the documented answers",
    "To replace testing of the model",
-   "To reduce the storage cost of the model"
+   "To reduce the storage cost of the model by removing unused weights"
   ],
   "correct": [
    0
@@ -8583,15 +8583,15 @@
   "q_es": "Una solicitud a una implementación de modelo devuelve un error 429. ¿Qué indica normalmente y cómo debe responder el cliente?",
   "q_en": "A request to a model deployment returns a 429 error. What does it usually indicate and how should the client respond?",
   "opts_es": [
-   "La región está llena; renombrar el proyecto",
-   "Se superó el límite de velocidad; reintentar con espera progresiva o reducir la tasa de solicitudes",
-   "El modelo se eliminó; crear una suscripción nueva",
+   "La región está llena; renombrar el proyecto y moverlo a otra región",
+   "Límite de velocidad superado; reintentar con espera o reducir ritmo",
+   "El modelo se eliminó; crear una nueva suscripción y volver a implementarlo",
    "El prompt es demasiado corto; añadir palabras"
   ],
   "opts_en": [
-   "The region is full; rename the project",
-   "The rate limit was exceeded; retry with backoff or reduce the request rate",
-   "The model was deleted; create a new subscription",
+   "The region is full; rename the project and move it to another region",
+   "Rate limit exceeded; retry with backoff or slow down",
+   "The model was deleted; create a new subscription and redeploy it",
    "The prompt is too short; add words"
   ],
   "correct": [
@@ -8715,16 +8715,16 @@
   "q_es": "¿Qué entrada debe proporcionar una solicitud de análisis de texto para cada elemento a analizar?",
   "q_en": "Which input must a text analysis request provide for each item to analyze?",
   "opts_es": [
-   "Un documento con un identificador y el texto (y opcionalmente un idioma)",
-   "Un cuadro delimitador alrededor de cada palabra",
+   "Un documento con un ID y el texto, opcionalmente un idioma",
+   "Un cuadro delimitador alrededor de cada palabra y el número de página",
    "Un segmento de vídeo con una transcripción",
-   "Un archivo WAV con el texto hablado"
+   "Un archivo WAV con el texto hablado y el perfil de voz del hablante"
   ],
   "opts_en": [
-   "A document with an identifier and the text (and optionally a language)",
-   "A bounding box around each word",
+   "A document with an ID and the text, optionally a language",
+   "A bounding box around each word and the page number of the text",
    "A video segment with a transcript",
-   "A WAV file with the spoken text"
+   "A WAV file with the spoken text and the speaker's voice profile"
   ],
   "correct": [
    0
@@ -8788,15 +8788,15 @@
   "q_es": "¿Qué política se aplica al uso de IA para identificar personas a partir de imágenes faciales?",
   "q_en": "Which policy applies to using AI to identify people from facial images?",
   "opts_es": [
-   "No tiene restricciones para nadie",
-   "Nunca necesita consentimiento",
-   "El acceso está restringido y requiere un uso responsable y aprobación",
+   "No tiene restricciones para ningún cliente de Azure",
+   "Nunca necesita consentimiento si las imágenes están en Azure",
+   "El acceso está restringido y requiere aprobación",
    "Siempre es gratuito"
   ],
   "opts_en": [
-   "It is unrestricted for everyone",
-   "It never needs consent",
-   "Access is restricted and requires responsible use and approval",
+   "It is unrestricted for every Azure customer by default",
+   "It never needs consent when images are stored in Azure",
+   "Access is restricted and needs approval",
    "It is always free"
   ],
   "correct": [
@@ -8814,14 +8814,14 @@
   "q_es": "¿Cómo puedes reducir el coste de enviar imágenes a un modelo de chat con visión cuando no se necesita mucho detalle?",
   "q_en": "How can you reduce the cost of sending images to a vision-capable chat model when fine detail is not needed?",
   "opts_es": [
-   "Subir la temperatura",
-   "Añadir más mensajes del sistema",
-   "Usar un ajuste de detalle de imagen más bajo o imágenes más pequeñas",
+   "Subir la temperatura para que el modelo responda con menos tokens",
+   "Añadir más mensajes del sistema que describan la imagen con detalle",
+   "Usar un ajuste de detalle menor o imágenes más pequeñas",
    "Eliminar la implementación"
   ],
   "opts_en": [
-   "Raise the temperature",
-   "Add more system messages",
+   "Raise the temperature so the model answers in fewer tokens",
+   "Add more system messages that describe the image in detail",
    "Use a lower image detail setting or smaller images",
    "Delete the deployment"
   ],
@@ -8894,16 +8894,16 @@
   "q_es": "Un contrato de varias páginas debe analizarse de modo que las tablas y cláusulas conserven su estructura. ¿Qué salida ayuda a preservar esa estructura?",
   "q_en": "A multi-page contract must be analyzed so that tables and clauses keep their structure. Which output helps preserve this structure?",
   "opts_es": [
-   "Una grabación de audio",
+   "Una grabación de audio del contrato leído en voz alta",
    "Un único recuento de palabras",
-   "Un histograma de color",
-   "Markdown que incluye el diseño y las tablas"
+   "Un histograma de color de cada página del contrato",
+   "Markdown que conserva el diseño y las tablas"
   ],
   "opts_en": [
-   "An audio recording",
+   "An audio recording of the contract being read aloud",
    "A single plain word count",
-   "A color histogram",
-   "Markdown that includes layout and tables"
+   "A color histogram of each page of the contract",
+   "Markdown that keeps layout and tables"
   ],
   "correct": [
    3
