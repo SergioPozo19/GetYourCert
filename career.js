@@ -313,7 +313,7 @@ async function careerRenderCatalog(){
   let host=$('#careerCatalog');
   if(!host){
     host=document.createElement('div'); host.id='careerCatalog';
-    const tools=cat.querySelector('.cat-tools'); cat.insertBefore(host,tools||cat.firstChild);
+    const anchor=cat.querySelector('.cat-head')||cat.querySelector('.cat-tools'); cat.insertBefore(host,anchor||cat.firstChild);
   }
   host.innerHTML='';
   // renewal alert (Pro, logged in)

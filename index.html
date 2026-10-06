@@ -2646,16 +2646,18 @@ function filteredExams(){
   const term=($('#catSearch')?.value||'').trim().toLowerCase();
   const level=$('#catLevel')?.value||'';
   return EXAMS.filter(ex=>{
+    if(window.heroFilter && !heroFilter(ex))return false;
     if(level && ex.level!==level)return false;
     if(term){
       const haystack=[ex.code,ex.title_es,ex.title_en].join(' ').toLowerCase();
       if(!haystack.includes(term))return false;
     }
     return true;
-  });
+  }).map((ex,i)=>({ex,i,n:(window.heroIsNew&&heroIsNew(ex))?0:1})).sort((a,b)=>a.n-b.n||a.i-b.i).map(o=>o.ex);
 }
 
 function renderCatalog(){
+  if(window.heroRender)heroRender();
   if(window.careerRenderCatalog)careerRenderCatalog();
   const grid=$('#examGrid');grid.innerHTML='';
   const exams=filteredExams();
@@ -2671,6 +2673,7 @@ function renderCatalog(){
     const card=document.createElement('button');
     card.type='button';
     card.className='exam-card'+(ex.soon?' soon':'');
+    if(ex.level)card.dataset.level=ex.level;
     const badge=ex.soon
       ?'<span class="ec-badge soon-b" data-i="catSoon">Próximamente</span>'
       :(!ex.soon && ex.questionCount && ex.questionCount<300)
@@ -2680,6 +2683,7 @@ function renderCatalog(){
     const levelBadge=levelKey?'<span class="ec-badge level-b" data-i="'+levelKey+'"></span>':'';
     const newBadge=(!ex.soon && ex.newUntil && new Date()<new Date(ex.newUntil))
       ?'<span class="ec-badge new-b" data-i="catNew">Novedad</span>':'';
+    if(newBadge)card.classList.add('is-new');
     const retBadge=(ex.retiresOn && new Date()<new Date(ex.retiresOn))
       ?'<span class="ec-badge ret-b" data-i="catRetires">Se retira 30/11/2026</span>':'';
     const meta=ex.soon
@@ -2698,6 +2702,7 @@ function renderCatalog(){
       ?'<span class="ec-go soon-go"><span data-i="catSoonGo">Disponible pronto</span></span>'
       :'<span class="ec-go"><span data-i="catStart">Empezar</span> →</span>';
     card.innerHTML=
+      (newBadge?'<span class="ec-ribbon" data-i="catNew">Novedad</span>':'')+
       '<div class="ec-top">'+
         '<div class="ec-logo">'+examIcon(ex)+'</div>'+
         '<div><div class="ec-code">'+ex.code+'</div>'+
@@ -4418,5 +4423,6 @@ window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
 <script src="career.js?v=1"></script>
+<script src="hero.js?v=1"></script>
 </body>
 </html>
