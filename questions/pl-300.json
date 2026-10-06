@@ -86,16 +86,16 @@
   "q_es": "Quieres que los analistas creen informes sobre un conjunto de datos certificado existente sin duplicar datos. ¿A qué deben conectarse?",
   "q_en": "You want analysts to build reports on an existing certified dataset without duplicating data. What should they connect to?",
   "opts_es": [
-   "Una nueva copia en CSV",
-   "Una captura de pantalla",
+   "Una nueva exportación CSV de los datos para cada analista",
+   "Un archivo PBIX independiente con datos importados para cada analista",
    "El modelo semántico compartido",
-   "Archivos adjuntos de correo"
+   "Una copia del modelo publicada en cada área de trabajo"
   ],
   "opts_en": [
-   "A new CSV copy",
-   "A screenshot",
+   "A new CSV export of the data for each analyst",
+   "A separate PBIX file with imported data per analyst",
    "The shared semantic model",
-   "Email attachments"
+   "A copy of the model published to each workspace"
   ],
   "correct": [
    2
@@ -313,7 +313,7 @@
   "q_en": "Which option lets you profile an entire dataset instead of the default first 1,000 rows?",
   "opts_es": [
    "Generación de perfiles de columna basada en todo el conjunto de datos",
-   "Mantener filas superiores",
+   "Conservar las filas superiores",
    "Reducir filas",
    "Quitar filas superiores"
   ],
@@ -673,16 +673,16 @@
   "q_es": "Una columna contiene texto JSON que debe expandirse en columnas. ¿Qué característica de Power Query lo gestiona?",
   "q_en": "A column contains JSON text that must be expanded into columns. Which Power Query feature handles this?",
   "opts_es": [
-   "Usar un marcador",
+   "Dividir columna por delimitador",
    "Analizar como JSON y expandir el registro o la lista",
-   "Agregar una segmentación",
-   "Crear una medida"
+   "Anular dinamización de columnas",
+   "Transponer la tabla"
   ],
   "opts_en": [
-   "Use a bookmark",
+   "Split Column by Delimiter",
    "Parse as JSON and expand the record or list",
-   "Add a slicer",
-   "Create a measure"
+   "Unpivot Columns",
+   "Transpose the table"
   ],
   "correct": [
    1
@@ -951,15 +951,15 @@
   "q_es": "¿Qué debes hacer con una tabla de fechas personalizada para que las funciones de inteligencia de tiempo funcionen correctamente?",
   "q_en": "What must you do with a custom date table so time intelligence functions work correctly?",
   "opts_es": [
-   "Usar fechas de texto",
-   "Eliminar relaciones",
-   "Ocultar todo el modelo",
+   "Guardar las fechas como texto",
+   "Eliminar las relaciones con las tablas de hechos",
+   "Ocultar la tabla de fechas en el modelo",
    "Marcarla como tabla de fechas con una columna de fecha única"
   ],
   "opts_en": [
-   "Use text dates",
-   "Delete relationships",
-   "Hide the whole model",
+   "Store the dates as text",
+   "Delete the relationships to the fact tables",
+   "Hide the date table in the model",
    "Mark it as a date table with a unique date column"
   ],
   "correct": [
@@ -1183,13 +1183,13 @@
   "q_en": "Which measure returns total sales for the previous year?",
   "opts_es": [
    "CALCULATE(SUM(Sales[Amount]), SAMEPERIODLASTYEAR('Date'[Date]))",
-   "DISTINCT(Sales)",
+   "COUNTROWS(Sales) - 1",
    "SUM(Sales[Amount]) + 1",
    "RELATED(Sales[Amount])"
   ],
   "opts_en": [
    "CALCULATE(SUM(Sales[Amount]), SAMEPERIODLASTYEAR('Date'[Date]))",
-   "DISTINCT(Sales)",
+   "COUNTROWS(Sales) - 1",
    "SUM(Sales[Amount]) + 1",
    "RELATED(Sales[Amount])"
   ],
@@ -1442,15 +1442,15 @@
   "q_es": "Se crea una medida rápida en el informe. ¿Cuál es un beneficio clave?",
   "q_en": "A quick measure is created in the report. What is a key benefit?",
   "opts_es": [
-   "Elimina el modelo",
-   "Publica el informe",
-   "Cifra el archivo",
+   "Elimina las tablas del modelo sin usar",
+   "Publica el informe en el servicio",
+   "Cifra el archivo PBIX",
    "Genera el DAX de cálculos comunes desde un cuadro de diálogo sin escribir código"
   ],
   "opts_en": [
-   "It deletes the model",
-   "It publishes the report",
-   "It encrypts the file",
+   "It deletes unused model tables",
+   "It publishes the report to the service",
+   "It encrypts the PBIX file",
    "It generates the DAX for common calculations from a dialog without writing code"
   ],
   "correct": [
@@ -1591,15 +1591,15 @@
   "q_en": "Which action most reduces model size and improves refresh performance?",
   "opts_es": [
    "Quitar las columnas y filas no usadas y reducir la cardinalidad de las columnas",
-   "Usar texto en lugar de números",
-   "Deshabilitar la compresión",
-   "Agregar más columnas"
+   "Usar texto en lugar de números para las claves",
+   "Deshabilitar la compresión del modelo",
+   "Agregar más columnas calculadas"
   ],
   "opts_en": [
    "Remove unused columns and rows and reduce column cardinality",
-   "Use text instead of numbers",
-   "Disable compression",
-   "Add more columns"
+   "Use text instead of numbers for keys",
+   "Disable compression of the model",
+   "Add more calculated columns"
   ],
   "correct": [
    0
@@ -1668,16 +1668,16 @@
   "q_es": "Una columna DateTime tiene una cardinalidad alta por las marcas de tiempo y solo se usa por fecha. ¿Cómo puedes mejorar la compresión?",
   "q_en": "A DateTime column has high cardinality because of time stamps and is only used by date. How can you improve compression?",
   "opts_es": [
-   "Duplicarla",
+   "Duplicar la columna en la tabla de hechos",
    "Dividirla en columnas Fecha y Hora independientes o conservar solo la fecha",
-   "Convertirla en texto",
-   "Conservar los milisegundos"
+   "Convertir la columna a texto",
+   "Conservar los milisegundos para mayor precisión"
   ],
   "opts_en": [
-   "Duplicate it",
+   "Duplicate the column in the fact table",
    "Split into separate Date and Time columns or keep only the date",
-   "Convert to text",
-   "Keep milliseconds"
+   "Convert the column to text",
+   "Keep the milliseconds for precision"
   ],
   "correct": [
    1
@@ -1721,15 +1721,15 @@
   "q_en": "Which setting can reduce the hidden date tables Power BI creates automatically for each date column?",
   "opts_es": [
    "Deshabilitar Fecha y hora automáticas y usar una tabla de fechas dedicada",
-   "Agregar marcadores",
-   "Habilitar más tablas automáticas",
-   "Usar fechas de texto"
+   "Agregar más marcadores al informe",
+   "Habilitar más tablas de fechas automáticas",
+   "Guardar las fechas como texto"
   ],
   "opts_en": [
    "Disable Auto date/time and use a dedicated date table",
-   "Add bookmarks",
-   "Enable more auto tables",
-   "Use text dates"
+   "Add more bookmarks to the report",
+   "Enable more auto date tables",
+   "Store the dates as text"
   ],
   "correct": [
    0
@@ -1951,15 +1951,15 @@
   "q_es": "¿Qué opción de formato condicional colorea las celdas de una tabla según el valor de una medida?",
   "q_en": "Which conditional formatting option colors cells in a table based on a measure's value?",
   "opts_es": [
-   "Marcadores",
-   "Solo temas",
-   "Obtención de detalles",
+   "Marcadores con selecciones",
+   "Solo un tema de informe",
+   "Filtros de obtención de detalles",
    "Color de fondo por reglas o escala de color"
   ],
   "opts_en": [
-   "Bookmarks",
-   "Themes only",
-   "Drillthrough",
+   "Bookmarks with selections",
+   "A report theme only",
+   "Drillthrough filters",
    "Background color by rules or color scale"
   ],
   "correct": [
@@ -2029,16 +2029,16 @@
   "q_es": "¿Cómo puedes aplicar de forma coherente los colores de marca de una organización en los informes?",
   "q_en": "How can you apply an organization's brand colors consistently across reports?",
   "opts_es": [
-   "Cambiar manualmente el color de cada objeto visual",
+   "Cambiar el color de cada objeto visual manualmente",
    "Importar un archivo JSON de tema de informe",
-   "Usar capturas de pantalla",
-   "Eliminar el tema"
+   "Pegar capturas de la paleta de colores",
+   "Eliminar el tema predeterminado"
   ],
   "opts_en": [
    "Recolor each visual manually",
    "Import a report theme JSON file",
-   "Use screenshots",
-   "Delete the theme"
+   "Paste screenshots of the palette",
+   "Delete the default theme"
   ],
   "correct": [
    1
@@ -2056,15 +2056,15 @@
   "q_en": "What can Copilot in Power BI do when you ask it to build a new report page?",
   "opts_es": [
    "Sugerir y crear objetos visuales a partir del modelo semántico según el tema que describas",
-   "Cambiar las contraseñas de los usuarios",
-   "Publicar en la web automáticamente",
-   "Eliminar el modelo semántico"
+   "Cambiar las contraseñas de los usuarios del informe",
+   "Publicar el informe en la web automáticamente",
+   "Eliminar el modelo semántico tras redactar"
   ],
   "opts_en": [
    "Suggest and create visuals based on the semantic model for the topic you describe",
-   "Change user passwords",
-   "Publish to web automatically",
-   "Delete the semantic model"
+   "Change the passwords of report users",
+   "Publish the report to the web automatically",
+   "Delete the semantic model after drafting"
   ],
   "correct": [
    0
@@ -2081,16 +2081,16 @@
   "q_es": "¿Qué son los cálculos visuales en Power BI?",
   "q_en": "What are visual calculations in Power BI?",
   "opts_es": [
-   "Flujos de datos",
+   "Flujos de datos que preparan los datos",
    "Cálculos DAX definidos y evaluados directamente en el objeto visual, que hacen referencia a campos de ese visual",
-   "Temas de informe",
-   "Marcadores"
+   "Temas de informe aplicados a todas las páginas",
+   "Marcadores que guardan estados de los objetos visuales"
   ],
   "opts_en": [
-   "Dataflows",
+   "Dataflows that prepare the data",
    "DAX calculations defined and evaluated directly on the visual, referring to fields in that visual",
-   "Report themes",
-   "Bookmarks"
+   "Report themes applied to all pages",
+   "Bookmarks that save visual states"
   ],
   "correct": [
    1
@@ -2675,14 +2675,14 @@
   "opts_es": [
    "Analizar (Explicar el aumento o la disminución)",
    "Marcadores",
-   "Temas",
-   "Parámetros"
+   "Sincronizar segmentaciones",
+   "Parámetros de campo"
   ],
   "opts_en": [
    "Analyze (Explain the increase/decrease)",
    "Bookmarks",
-   "Themes",
-   "Parameters"
+   "Sync slicers",
+   "Field parameters"
   ],
   "correct": [
    0
@@ -2699,16 +2699,16 @@
   "q_es": "¿Con qué ayuda Copilot cuando le pides que resuma el modelo semántico subyacente?",
   "q_en": "What does Copilot help with when you ask it to summarize the underlying semantic model?",
   "opts_es": [
-   "Restablecer credenciales",
+   "Restablecer las credenciales del origen de datos",
    "Describir las tablas, medidas y relaciones para comprender el modelo",
-   "Eliminar tablas",
-   "Imprimir"
+   "Eliminar tablas sin usar del modelo",
+   "Imprimir el diagrama del modelo"
   ],
   "opts_en": [
-   "Resetting credentials",
+   "Resetting data source credentials",
    "Describing the tables, measures and relationships to understand the model",
-   "Deleting tables",
-   "Printing"
+   "Deleting unused tables from the model",
+   "Printing the model diagram"
   ],
   "correct": [
    1
@@ -2827,14 +2827,14 @@
   "q_en": "Which method distributes a curated set of dashboards and reports to a broad audience as a packaged experience?",
   "opts_es": [
    "Una aplicación de Power BI",
-   "Enviar un archivo PBIX por correo",
-   "Capturas de pantalla",
+   "Enviar por correo un archivo PBIX a cada usuario",
+   "Compartir capturas de pantalla de los informes",
    "Publicar en la web"
   ],
   "opts_en": [
    "A Power BI app",
-   "Email a PBIX file",
-   "Screenshots",
+   "Emailing a PBIX file to each user",
+   "Sharing screenshots of the reports",
    "Publish to web"
   ],
   "correct": [
@@ -3109,15 +3109,15 @@
   "q_es": "¿Qué permiso permite a un usuario crear nuevos informes usando un modelo semántico que no es de su propiedad?",
   "q_en": "Which permission lets a user create new reports using a semantic model they do not own?",
   "opts_es": [
-   "Solo volver a compartir",
-   "Lector en un panel",
-   "Solo lectura",
+   "Solo el permiso de volver a compartir",
+   "Lector de un panel",
+   "Solo el permiso de lectura",
    "Permiso de compilación en el modelo semántico"
   ],
   "opts_en": [
-   "Reshare only",
+   "Reshare permission only",
    "Viewer on a dashboard",
-   "Read only",
+   "Read permission only",
    "Build permission on the semantic model"
   ],
   "correct": [
@@ -3187,14 +3187,14 @@
   "q_es": "¿Dónde se agregan usuarios o grupos de seguridad a un rol de RLS tras publicar un modelo semántico?",
   "q_en": "Where do you add users or security groups to an RLS role after publishing a semantic model?",
   "opts_es": [
-   "En el panel de formato",
-   "En Power Query",
-   "En el panel Selección",
+   "En el panel Formato del informe",
+   "En el Editor de Power Query",
+   "En el panel de selección",
    "En el servicio Power BI, en la configuración de seguridad del modelo semántico"
   ],
   "opts_en": [
-   "In the Format pane",
-   "In Power Query",
+   "In the Format pane of the report",
+   "In Power Query Editor",
    "In the Selection pane",
    "In the Power BI service under the semantic model's Security settings"
   ],
@@ -3935,15 +3935,15 @@
   "q_en": "An analyst wants to reuse a dataflow's cleaned tables across several semantic models. What should they connect to?",
   "opts_es": [
    "El conector de flujo de datos",
-   "Una copia local de un archivo de texto",
-   "Una captura de pantalla",
-   "Un marcador"
+   "Una copia local en archivo de texto de las tablas",
+   "Una exportación a Excel de cada tabla",
+   "Un marcador en cada informe"
   ],
   "opts_en": [
    "The Dataflow connector",
-   "A local text file copy",
-   "A screenshot",
-   "A bookmark"
+   "A local text file copy of the tables",
+   "An Excel export of each table",
+   "A bookmark in each report"
   ],
   "correct": [
    0
@@ -3960,16 +3960,16 @@
   "q_es": "¿Qué método de autenticación se usa habitualmente para conectarse a Azure SQL Database desde Power BI Desktop?",
   "q_en": "Which authentication method is commonly used to connect to Azure SQL Database from Power BI Desktop?",
   "opts_es": [
-   "Windows Hello",
+   "Windows Hello para empresas",
    "Credenciales de base de datos o cuenta organizativa (Microsoft Entra)",
    "Sin autenticación",
-   "Solo anónima"
+   "Solo acceso anónimo"
   ],
   "opts_en": [
-   "Windows Hello",
+   "Windows Hello for Business",
    "Database credentials or Organizational account (Microsoft Entra)",
    "No authentication",
-   "Anonymous only"
+   "Anonymous access only"
   ],
   "correct": [
    1
@@ -3987,15 +3987,15 @@
   "q_en": "What does a Power Query parameter of type Text containing a server name help with during deployment?",
   "opts_es": [
    "Cambiar entre orígenes de desarrollo y producción sin editar cada consulta",
-   "Dar formato a objetos visuales",
-   "Ordenar una tabla",
-   "Crear marcadores"
+   "Dar formato coherente a los objetos visuales",
+   "Ordenar una tabla en el informe",
+   "Crear marcadores para cada entorno"
   ],
   "opts_en": [
    "Switching between development and production sources without editing each query",
-   "Formatting visuals",
-   "Sorting a table",
-   "Creating bookmarks"
+   "Formatting the visuals consistently",
+   "Sorting a table in the report",
+   "Creating bookmarks for each environment"
   ],
   "correct": [
    0
@@ -4191,16 +4191,16 @@
   "q_es": "¿Qué transformación cambia valores de texto como «ny» y «NY» a un uso coherente de mayúsculas y minúsculas?",
   "q_en": "Which transformation changes text values like 'ny' and 'NY' to a consistent case?",
   "opts_es": [
-   "Anular dinamización",
-   "Combinar",
+   "Anular dinamización de columnas",
+   "Combinar consultas",
    "Formato: MAYÚSCULAS / minúsculas / Poner en mayúscula cada palabra",
-   "Anexar"
+   "Anexar consultas"
   ],
   "opts_en": [
-   "Unpivot",
-   "Merge",
+   "Unpivot Columns",
+   "Merge Queries",
    "Format: UPPERCASE / lowercase / Capitalize",
-   "Append"
+   "Append Queries"
   ],
   "correct": [
    2
@@ -4217,16 +4217,16 @@
   "q_es": "¿Qué paso ayuda a gestionar un error de carga de datos causado por una ruta de archivo que falta en una consulta con parámetros?",
   "q_en": "Which step helps handle a data load error caused by a missing file path in a parameterized query?",
   "opts_es": [
-   "Agregar una segmentación",
-   "Cambiar el tema",
+   "Agregar una segmentación para la ruta del archivo",
+   "Cambiar el tema del informe",
    "Actualizar el valor del parámetro o la configuración del origen de datos",
-   "Crear un marcador"
+   "Crear un marcador para la página que falla"
   ],
   "opts_en": [
-   "Add a slicer",
-   "Change the theme",
+   "Add a slicer for the file path",
+   "Change the report theme",
    "Update the parameter value or the data source settings",
-   "Create a bookmark"
+   "Create a bookmark for the failing page"
   ],
   "correct": [
    2
@@ -4422,14 +4422,14 @@
   "q_es": "¿Qué diseño de clave es mejor para una relación entre una tabla de hechos Ventas y una tabla de dimensión Producto?",
   "q_en": "Which key design is best for a relationship between a Sales fact table and a Product dimension table?",
   "opts_es": [
-   "Sin clave",
-   "Una columna de fecha",
+   "Sin clave, relacionando por el nombre del producto",
+   "Una columna de fecha de la tabla de hechos",
    "Una clave de texto concatenada con espacios",
    "Una clave única de una sola columna como ProductKey en la dimensión"
   ],
   "opts_en": [
-   "No key",
-   "A date column",
+   "No key, relating on the product name",
+   "A date column from the fact table",
    "A concatenated text key with spaces",
    "A single-column, unique key such as ProductKey in the dimension"
   ],
@@ -4500,15 +4500,15 @@
   "q_es": "¿Por qué se recomienda filtrar filas y quitar columnas innecesarias al principio de una consulta de Power Query?",
   "q_en": "Why is it recommended to filter rows and remove unneeded columns early in a Power Query query?",
   "opts_es": [
-   "No tiene ningún efecto",
-   "Hace los objetos visuales más bonitos",
-   "Lo exige DAX",
+   "No tiene ningún efecto en el rendimiento",
+   "Hace que los objetos visuales se vean mejor",
+   "Lo exige DAX para evaluar medidas",
    "Reduce los datos procesados en pasos posteriores y puede mejorar el plegado de consultas y la velocidad de actualización"
   ],
   "opts_en": [
-   "It has no effect",
-   "It makes visuals prettier",
-   "It is required by DAX",
+   "It has no effect on performance",
+   "It makes the visuals look better",
+   "It is required by DAX to evaluate measures",
    "It reduces the data processed in later steps and can improve query folding and refresh speed"
   ],
   "correct": [
@@ -4700,16 +4700,16 @@
   "q_es": "¿Cuándo es apropiada una relación de varios a varios?",
   "q_en": "When is a many-to-many relationship appropriate?",
   "opts_es": [
-   "Siempre en esquemas de estrella",
-   "Solo con columnas de texto",
+   "Siempre, en todos los esquemas de estrella",
+   "Solo cuando las claves son columnas de texto",
    "Cuando ningún lado tiene valores únicos y una tabla puente no es práctica, usada con cuidado",
-   "Nunca"
+   "Nunca, no es compatible"
   ],
   "opts_en": [
-   "Always in star schemas",
-   "Only with text columns",
+   "Always, in every star schema",
+   "Only when the keys are text columns",
    "When neither side has unique values and a bridge table is not practical, used carefully",
-   "Never"
+   "Never, it is not supported"
   ],
   "correct": [
    2
@@ -4752,15 +4752,15 @@
   "q_es": "¿Por qué ocultar las columnas de clave externa y las columnas numéricas usadas solo por medidas en la vista de informe?",
   "q_en": "Why hide foreign key columns and numeric columns used only by measures in the report view?",
   "opts_es": [
-   "Para acelerar internet",
-   "Lo exige DAX",
-   "Para eliminarlas",
+   "Para que el informe se cargue en móvil",
+   "Porque DAX exige claves ocultas",
+   "Para eliminarlas del modelo",
    "Para reducir el desorden y fomentar el uso de medidas"
   ],
   "opts_en": [
-   "To speed up the internet",
-   "It is required by DAX",
-   "To delete them",
+   "To make the report load on mobile",
+   "Because DAX requires hidden keys",
+   "To delete them from the model",
    "To reduce clutter and encourage use of measures"
   ],
   "correct": [
@@ -5445,16 +5445,16 @@
   "q_es": "¿Qué herramienta externa ayuda a analizar el tamaño y las relaciones del modelo en Power BI Desktop y a optimizar DAX?",
   "q_en": "Which external tool helps analyze model size and relationships in Power BI Desktop and optimize DAX?",
   "opts_es": [
-   "Outlook",
+   "Microsoft Outlook",
    "DAX Studio o Tabular Editor mediante Herramientas externas",
    "Solo el Bloc de notas de Windows",
-   "PowerPoint"
+   "Microsoft PowerPoint"
   ],
   "opts_en": [
-   "Outlook",
+   "Microsoft Outlook",
    "DAX Studio or Tabular Editor via External Tools",
    "Windows Notepad only",
-   "PowerPoint"
+   "Microsoft PowerPoint"
   ],
   "correct": [
    1
@@ -5677,15 +5677,15 @@
   "q_en": "A matrix visual is used to…",
   "opts_es": [
    "Mostrar datos en filas y columnas con jerarquías expandibles y subtotales",
-   "Ejecutar consultas DAX",
-   "Mostrar solo un número",
-   "Editar el modelo de datos"
+   "Ejecutar consultas DAX sobre el modelo",
+   "Mostrar solo un número de forma destacada",
+   "Editar las relaciones del modelo de datos"
   ],
   "opts_en": [
    "Show data in rows and columns with expandable hierarchies and subtotals",
-   "Run DAX queries",
-   "Show only one number",
-   "Edit the data model"
+   "Run DAX queries against the model",
+   "Show only one number prominently",
+   "Edit the data model relationships"
   ],
   "correct": [
    0
@@ -5882,15 +5882,15 @@
   "q_en": "Which feature makes a report page easy to use for people with visual impairments using screen readers?",
   "opts_es": [
    "Texto alternativo, orden de tabulación y títulos en los objetos visuales",
-   "Fuentes más pequeñas",
-   "Más animaciones",
-   "Ocultar todos los títulos"
+   "Fuentes más pequeñas en toda la página",
+   "Más animaciones en los objetos visuales",
+   "Ocultar todos los títulos de objetos visuales"
   ],
   "opts_en": [
    "Alt text, tab order and titles on visuals",
-   "Smaller fonts",
-   "More animations",
-   "Hiding all titles"
+   "Smaller fonts across the page",
+   "More animations on visuals",
+   "Hiding all visual titles"
   ],
   "correct": [
    0
@@ -6639,13 +6639,13 @@
   "q_es": "¿Cómo se comprueba si un paso de Power Query se pliega?",
   "q_en": "How do you check whether a Power Query step folds?",
   "opts_es": [
-   "Comprobar el tema",
+   "Comprobar el tema del informe",
    "Abrir el panel de marcadores",
    "Hacer clic con el botón derecho en el paso y comprobar si Ver consulta nativa está disponible",
    "Ejecutar solo el Analizador de rendimiento"
   ],
   "opts_en": [
-   "Check the theme",
+   "Check the report theme",
    "Open the bookmarks pane",
    "Right-click the step and check whether View Native Query is available",
    "Run Performance Analyzer only"
@@ -7750,16 +7750,16 @@
   "q_es": "¿Qué licencia suele requerirse para compartir contenido con usuarios que no tienen licencia Pro, cuando el área de trabajo está en capacidad Premium o Fabric?",
   "q_en": "Which license is generally required to share content with users who do not have a Pro license, when the workspace is on Premium or Fabric capacity?",
   "opts_es": [
-   "Ninguna licencia nunca",
+   "Nunca se necesita licencia",
    "Los usuarios gratuitos pueden ver el contenido si el área de trabajo está en una capacidad suficiente",
    "Solo licencias de Windows",
-   "Una licencia de puerta de enlace"
+   "Una licencia de puerta de enlace para cada lector"
   ],
   "opts_en": [
-   "No license ever",
+   "No license is ever needed",
    "Content can be viewed by free users if the workspace is in a sufficient capacity",
    "Only Windows licenses",
-   "A gateway license"
+   "A gateway license for each viewer"
   ],
   "correct": [
    1
@@ -7854,16 +7854,16 @@
   "q_es": "Una actualización programada falla porque las credenciales caducaron. ¿Qué debes hacer?",
   "q_en": "A scheduled refresh fails because credentials expired. What should you do?",
   "opts_es": [
-   "Agregar una segmentación",
+   "Agregar una segmentación al informe",
    "Actualizar las credenciales del origen de datos en la configuración del modelo semántico",
-   "Cambiar el tema",
-   "Eliminar el informe"
+   "Cambiar el tema del informe",
+   "Eliminar el informe y volver a publicarlo"
   ],
   "opts_en": [
-   "Add a slicer",
+   "Add a slicer to the report",
    "Update the data source credentials in the semantic model settings",
-   "Change the theme",
-   "Delete the report"
+   "Change the report theme",
+   "Delete the report and republish"
   ],
   "correct": [
    1
@@ -7932,16 +7932,16 @@
   "q_es": "¿Dónde puedes probar los roles de RLS en el servicio Power BI como un usuario o rol específico?",
   "q_en": "Where can you test RLS roles in the Power BI service as a specific user or role?",
   "opts_es": [
-   "Segmentaciones",
+   "En el panel de segmentaciones",
    "Probar como rol en la configuración de seguridad del modelo semántico",
-   "Marcadores",
-   "Galería de temas"
+   "En el panel de marcadores",
+   "En la galería de temas"
   ],
   "opts_en": [
-   "Slicers",
+   "In the slicer panel",
    "Test as role in the semantic model security settings",
-   "Bookmarks",
-   "Theme gallery"
+   "In the bookmarks pane",
+   "In the theme gallery"
   ],
   "correct": [
    1
@@ -7984,15 +7984,15 @@
   "q_es": "¿Qué efecto tiene marcar un modelo semántico como Certificado?",
   "q_en": "What is the effect of marking a semantic model as Certified?",
   "opts_es": [
-   "Elimina versiones antiguas",
-   "Cifra el modelo",
-   "Agrega RLS",
+   "Elimina las versiones antiguas del modelo",
+   "Cifra el modelo con una clave",
+   "Agrega seguridad de nivel de fila automáticamente",
    "Indica a los usuarios que un revisor autorizado lo ha verificado como de alta calidad"
   ],
   "opts_en": [
-   "It deletes old versions",
-   "It encrypts the model",
-   "It adds RLS",
+   "It deletes old versions of the model",
+   "It encrypts the model with a key",
+   "It adds row-level security automatically",
    "Signals to users that an authorized reviewer verified it as high quality"
   ],
   "correct": [
@@ -8684,13 +8684,13 @@
   "q_es": "¿Qué opción de formato colorea las celdas de una tabla en un degradado según sus valores?",
   "q_en": "Which formatting option colors table cells along a gradient according to their values?",
   "opts_es": [
-   "Un marcador",
+   "Un marcador con selecciones",
    "Un tema de informe",
    "Una página de información sobre herramientas",
    "Formato condicional con una escala de color"
   ],
   "opts_en": [
-   "A bookmark",
+   "A bookmark with selections",
    "A report theme",
    "A tooltip page",
    "Conditional formatting with a color scale"
