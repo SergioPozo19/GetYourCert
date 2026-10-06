@@ -128,7 +128,7 @@
 :root{
   --accent:#0F6CBD; --accent-d:#0C5AA6; --accent-l:#2886DE; --accent-soft:#EAF3FB;
   --ok:#107C41; --ok-soft:#E3F2E9; --bad:#C42B1C; --bad-soft:#FBEAE8; --warn:#9A6700; --warn-soft:#FFF8E6;
-  --bg:#F5F7FA; --panel:#FFFFFF; --panel-2:#FBFCFE; --ink:#1A1D21; --ink-2:#4A5057; --ink-3:#727A83;
+  --bg:#F5F7FA; --panel:#FFFFFF; --panel-2:#FBFCFE; --ink:#1A1D21; --ink-2:#4A5057; --ink-3:#646D77;
   --line:#E3E8EF; --line-2:#EDF1F6; --shadow:0 1px 3px rgba(16,24,40,.06),0 6px 24px rgba(16,24,40,.06);
   --shadow-lg:0 12px 48px rgba(16,24,40,.14); --radius:14px; --radius-s:10px;
   --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'IBM Plex Sans',-apple-system,system-ui,sans-serif;
@@ -830,7 +830,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
     <div class="cat-tools">
       <div class="cat-filters">
         <input type="text" id="catSearch" class="ex-search" data-i-ph="catSearchPh" placeholder="Buscar examen…">
-        <select id="catLevel" class="ex-dom">
+        <select id="catLevel" class="ex-dom" aria-label="Nivel / Level">
           <option value="" data-i="catLevelAll">Todos los niveles</option>
           <option value="fundamentals" data-i="lvlFundamentals">Fundamentals</option>
           <option value="associate" data-i="lvlAssociate">Asociado</option>
@@ -1129,11 +1129,11 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 
 <div class="modal-ov" id="confirmModal">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cmTitle" aria-describedby="cmMsg">
-    <h4 id="cmTitle"></h4>
+    <h4 id="cmTitle">Confirmar</h4>
     <p id="cmMsg"></p>
     <div class="modal-actions">
-      <button class="btn btn-ghost" id="cmCancel"></button>
-      <button class="btn btn-primary" id="cmOk"></button>
+      <button class="btn btn-ghost" id="cmCancel">Cancelar</button>
+      <button class="btn btn-primary" id="cmOk">Aceptar</button>
     </div>
   </div>
 </div>

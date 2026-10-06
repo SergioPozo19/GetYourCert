@@ -134,6 +134,9 @@ css.textContent=[
 /* mobile fixes */
 '@media(max-width:700px){.mkt-chip .hq{display:none}.mkt{padding:26px 22px;border-radius:16px}.mkt-stats{flex:1 1 100%;grid-template-columns:repeat(2,1fr)}.mkt-stat b{font-size:21px}}',
 '@media(max-width:600px){.cat-tools{flex-direction:column;align-items:stretch}.cat-filters{width:100%}.cat-filters .ex-search{max-width:none}.cat-filters .ex-dom{flex:0 0 140px}.cat-tools #progressBtn{margin-left:0;width:100%;justify-content:center}}',
+'html[data-theme="dark"] .btn-primary,html[data-theme="dark"] #langToggle button.on,html[data-theme="dark"] .toggle button.on,html[data-theme="dark"] #quotaProLink,html[data-theme="dark"] .cr-step em,html[data-theme="dark"] .cr-dot{color:#04121F}',
+'.pro-badge{color:#2A2000 !important}',
+'html[data-theme="dark"] .support-btn,html[data-theme="dark"] #supportBtn,html[data-theme="dark"] #srsBadge,html[data-theme="dark"] .mode-badge{color:#04121F}',
 '@media(prefers-reduced-motion:reduce){.mkt-eyebrow i{animation:none}.mkt-btn:hover,.mkt-chip:hover{transform:none}}'
 ].join('\n');
 document.head.appendChild(css);
