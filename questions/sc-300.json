@@ -1587,14 +1587,14 @@
   "q_en": "Which type of identity can ID Protection detect risk for in addition to users?",
   "opts_es": [
    "Buzones compartidos",
-   "Impresoras",
-   "Zonas DNS",
+   "Grupos de seguridad",
+   "Unidades administrativas",
    "Identidades de carga de trabajo"
   ],
   "opts_en": [
    "Shared mailboxes",
-   "Printers",
-   "DNS zones",
+   "Security groups",
+   "Administrative units",
    "Workload identities"
   ],
   "correct": [
@@ -3777,15 +3777,15 @@
   "q_en": "A group-based license assignment shows an error because two assigned products contain conflicting service plans. What should you do?",
   "opts_es": [
    "Deshabilitar la MFA de los usuarios afectados",
-   "Quitar a todos los usuarios del grupo",
+   "Quitar a todos los usuarios del grupo y volver a agregarlos",
    "Deshabilitar el plan de servicio en conflicto en una de las licencias y volver a procesar",
-   "Eliminar la licencia del inquilino"
+   "Asignar una tercera licencia para resolver el conflicto"
   ],
   "opts_en": [
    "Disable MFA for the affected users",
-   "Remove all users from the group",
+   "Remove all users from the group and re-add them",
    "Disable the conflicting service plan in one of the licenses and reprocess",
-   "Delete the tenant license"
+   "Assign a third license to resolve the conflict"
   ],
   "correct": [
    2
@@ -3854,16 +3854,16 @@
   "q_es": "¿Dónde pueden ver los administradores la clave de recuperación de BitLocker de un dispositivo Windows unido a Microsoft Entra?",
   "q_en": "Where can administrators view the BitLocker recovery key of a Microsoft Entra joined Windows device?",
   "opts_es": [
-   "En la directiva de Azure Firewall",
+   "En las directivas de acceso de Azure Key Vault",
    "En las propiedades del dispositivo en el centro de administración de Microsoft Entra, si la clave tiene copia de seguridad",
-   "En la directiva de nomenclatura de grupos",
-   "En la zona DNS del dominio"
+   "En la directiva de acceso condicional del dispositivo",
+   "En la página de métodos de autenticación del usuario"
   ],
   "opts_en": [
-   "In the Azure Firewall policy",
+   "In the Azure Key Vault access policies",
    "In the device's properties in the Microsoft Entra admin center, if the key is backed up",
-   "In the group naming policy",
-   "In the DNS zone of the domain"
+   "In the Conditional Access policy for the device",
+   "In the user's authentication methods page"
   ],
   "correct": [
    1
@@ -6730,15 +6730,15 @@
   "q_en": "What does the Cloud app catalog provide?",
   "opts_es": [
    "Programaciones de copia de seguridad de aplicaciones SaaS",
-   "Una lista de tamaños de VM de Azure",
+   "Listas de precios de tamaños de VM de Azure",
    "Puntuaciones de riesgo y detalles de cumplimiento de miles de aplicaciones en la nube",
-   "Registros DNS de aplicaciones en la nube"
+   "Un catálogo de configuraciones de dispositivos de Intune"
   ],
   "opts_en": [
    "Backup schedules for SaaS apps",
-   "A list of Azure VM sizes",
+   "Price lists for Azure VM sizes",
    "Risk scores and compliance details for thousands of cloud apps",
-   "DNS records for cloud apps"
+   "A catalog of Intune device configurations"
   ],
   "correct": [
    2
@@ -6755,16 +6755,16 @@
   "q_es": "Marcas una aplicación en la nube como no autorizada en Defender for Cloud Apps. ¿Qué puedes hacer a continuación?",
   "q_en": "You mark a cloud app as unsanctioned in Defender for Cloud Apps. What can you do next?",
   "opts_es": [
-   "Restablecer todas las contraseñas de usuarios",
+   "Restablecer todas las contraseñas de usuario de la aplicación",
    "Bloquear la aplicación integrándola con Defender for Endpoint o un dispositivo de red",
-   "Eliminar el inquilino",
-   "Deshabilitar la MFA de la aplicación"
+   "Eliminar el registro de la aplicación en el inquilino",
+   "Deshabilitar la MFA de los usuarios de la aplicación"
   ],
   "opts_en": [
-   "Reset all user passwords",
+   "Reset all user passwords for the app",
    "Block the app by integrating with Defender for Endpoint or a network appliance",
-   "Delete the tenant",
-   "Disable MFA for the app"
+   "Delete the app registration in the tenant",
+   "Disable MFA for the app's users"
   ],
   "correct": [
    1
@@ -6961,14 +6961,14 @@
   "q_en": "What does an access package assignment expiration do?",
   "opts_es": [
    "Elimina automáticamente el acceso del usuario cuando termina la asignación, salvo que se renueve",
-   "Elimina el catálogo",
-   "Bloquea a todos los invitados de forma permanente",
+   "Elimina el catálogo que contiene el paquete",
+   "Bloquea al usuario en todas las solicitudes futuras",
    "Restablece la contraseña del usuario"
   ],
   "opts_en": [
    "Automatically removes the user's access when the assignment ends unless it is renewed",
-   "Deletes the catalog",
-   "Blocks all guests permanently",
+   "Deletes the catalog that holds the package",
+   "Blocks the user from all future requests",
    "Resets the user's password"
   ],
   "correct": [
@@ -7014,14 +7014,14 @@
   "opts_es": [
    "Solo mediante scripts de PowerShell",
    "Mediante acceso condicional o como requisito de un paquete de acceso",
-   "Solo mediante registros DNS",
-   "No se pueden aplicar"
+   "Solo mediante niveles de autenticación",
+   "Solo mediante directivas de cumplimiento de Intune"
   ],
   "opts_en": [
    "Only through PowerShell scripts",
    "Through Conditional Access or as a requirement of an access package",
-   "Only through DNS records",
-   "They cannot be enforced"
+   "Only through authentication strengths",
+   "Only through Intune compliance policies"
   ],
   "correct": [
    1
@@ -7440,14 +7440,14 @@
   "opts_es": [
    "Se asignaron roles con privilegios directamente, omitiendo los controles de PIM",
    "Una escasez de licencias en el inquilino",
-   "Se envió una invitación de invitado",
-   "Un error DNS del dominio del inquilino"
+   "Un administrador invitó a usuarios invitados",
+   "Una revisión de acceso no se completó a tiempo"
   ],
   "opts_en": [
    "Privileged roles were assigned directly, bypassing PIM controls",
    "A license shortage in the tenant",
-   "A guest invitation was sent",
-   "A DNS error for the tenant domain"
+   "Guest users were invited by an administrator",
+   "An access review was not completed in time"
   ],
   "correct": [
    0
@@ -7695,16 +7695,16 @@
   "q_es": "Quieres un informe diario de inicios de sesión fallidos enviado al equipo de seguridad. ¿Qué debes combinar?",
   "q_en": "You want a daily report of failed sign-ins sent to the security team. What should you combine?",
   "opts_es": [
-   "Una puerta de enlace VPN",
-   "Una invitación de invitado",
+   "Una puerta de enlace VPN y una cuenta de almacenamiento",
+   "Una invitación de invitado y un canal de Teams",
    "Configuración de diagnóstico en Log Analytics más una regla de alertas de Azure Monitor o un libro programado",
-   "Una zona DNS"
+   "Una zona DNS y un perfil de Traffic Manager"
   ],
   "opts_en": [
-   "A VPN gateway",
-   "A guest invitation",
+   "A VPN gateway and a storage account",
+   "A guest invitation and a Teams channel",
    "Diagnostic settings to Log Analytics plus an Azure Monitor alert rule or scheduled workbook",
-   "A DNS zone"
+   "A DNS zone and a Traffic Manager profile"
   ],
   "correct": [
    2
@@ -7722,15 +7722,15 @@
   "q_en": "What does Identity Secure Score provide?",
   "opts_es": [
    "Recomendaciones para mejorar la posición de seguridad de identidad, con una puntuación que se puede seguir",
-   "Un informe de estado de DNS",
+   "Un informe de estado de los servidores DNS locales",
    "Solo una lista de usuarios con licencia",
-   "Un resumen del estado de las copias de seguridad"
+   "Un resumen del estado de las copias de seguridad de los datos del directorio"
   ],
   "opts_en": [
    "Recommendations to improve identity security posture, with a score that can be tracked",
-   "A DNS health report",
+   "A health report of the on-premises DNS servers",
    "A list of licensed users only",
-   "A backup status summary"
+   "A backup status summary for directory data"
   ],
   "correct": [
    0
@@ -7896,15 +7896,15 @@
   "q_en": "Which Azure role assignment must you create so a managed identity can read blobs in a storage account?",
   "opts_es": [
    "Asignar a la identidad administrada un rol como Lector de datos de blobs de almacenamiento en la cuenta de almacenamiento",
-   "Agregarla como invitada",
-   "Convertirla en Administrador global",
-   "Asignar Lector de facturación"
+   "Agregar la identidad como usuario invitado",
+   "Convertirla en administrador global",
+   "Asignarle el rol Lector de facturación"
   ],
   "opts_en": [
    "Assign the managed identity a role such as Storage Blob Data Reader on the storage account",
-   "Add it as a guest",
+   "Add the identity as a guest user",
    "Make it a Global Administrator",
-   "Assign Billing Reader"
+   "Assign it the Billing Reader role"
   ],
   "correct": [
    0
@@ -7921,15 +7921,15 @@
   "q_es": "Quieres que un icono de aplicación aparezca automáticamente para todos los empleados en el portal Mis aplicaciones. ¿Qué debes configurar?",
   "q_en": "You want an app tile to appear automatically for all employees in the My Apps portal. What should you configure?",
   "opts_es": [
-   "Crear una invitación de invitado",
-   "Habilitar la escritura diferida de contraseñas",
-   "Agregar un dominio personalizado",
+   "Crear una invitación de invitado para cada empleado",
+   "Habilitar la escritura diferida de contraseñas para la aplicación",
+   "Agregar un dominio personalizado al inquilino",
    "Asignar la aplicación a un grupo que contenga a todos los empleados y mantenerla visible para los usuarios"
   ],
   "opts_en": [
-   "Create a guest invitation",
-   "Enable password writeback",
-   "Add a custom domain",
+   "Create a guest invitation for each employee",
+   "Enable password writeback for the app",
+   "Add a custom domain to the tenant",
    "Assign the app to a group containing all employees and keep it visible to users"
   ],
   "correct": [
@@ -8306,11 +8306,11 @@
    "El catálogo de aplicaciones en la nube",
    "Los registros de aprovisionamiento",
    "Los informes de actividad y registro de métodos de autenticación",
-   "La puntuación de seguridad de dispositivos"
+   "Puntuación de seguridad de dispositivos"
   ],
   "opts_en": [
-   "Cloud app catalog",
-   "Provisioning logs",
+   "The Cloud app catalog",
+   "The provisioning logs",
    "Authentication methods activity and registration reports",
    "Secure Score for devices"
   ],
@@ -8589,15 +8589,15 @@
   "q_en": "Which statement describes why PIM requires a justification when activating a role?",
   "opts_es": [
    "Crea un rastro de auditoría que explica por qué se necesitó el acceso con privilegios",
-   "Deshabilita MFA",
-   "Aumenta el tamaño del buzón",
-   "Elimina el rol"
+   "Deshabilita la MFA para la activación",
+   "Aumenta el tamaño del buzón del administrador",
+   "Elimina el rol tras su uso"
   ],
   "opts_en": [
    "It creates an audit trail explaining why privileged access was needed",
-   "It disables MFA",
-   "It increases mailbox size",
-   "It deletes the role"
+   "It disables MFA for the activation",
+   "It increases the mailbox size of the admin",
+   "It deletes the role after use"
   ],
   "correct": [
    0

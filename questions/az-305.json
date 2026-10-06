@@ -827,13 +827,13 @@
    "Pedir a los usuarios que agreguen la etiqueta manualmente",
    "Aplicar un bloqueo de recursos de solo lectura",
    "Asignar una directiva de Azure Policy con el efecto Modify que herede la etiqueta",
-   "Crear una alerta de presupuesto para la etiqueta"
+   "Crear una alerta de presupuesto filtrada por la etiqueta"
   ],
   "opts_en": [
    "Ask users to add the tag manually",
    "Apply a read-only resource lock",
    "Assign an Azure Policy with the Modify effect that inherits the tag",
-   "Create a budget alert for the tag"
+   "Create a budget alert filtered by the tag"
   ],
   "correct": [
    2
@@ -5308,16 +5308,16 @@
   "q_es": "¿Qué característica le notifica cuando el gasto alcanza umbrales definidos y puede desencadenar automatización?",
   "q_en": "Which feature notifies you when spending reaches defined thresholds and can trigger automation?",
   "opts_es": [
-   "Conjuntos de disponibilidad",
+   "Solo los grupos de acciones de Azure Monitor",
    "Presupuestos de Cost Management con alertas",
-   "Solo grupos de administración",
-   "Bloqueos de recursos"
+   "Configuración de la jerarquía de grupos de administración",
+   "Recomendaciones de costes de Azure Advisor"
   ],
   "opts_en": [
-   "Availability sets",
+   "Azure Monitor action groups alone",
    "Cost Management budgets with alerts",
-   "Management groups only",
-   "Resource locks"
+   "Management group hierarchy settings",
+   "Azure Advisor cost recommendations"
   ],
   "correct": [
    1
@@ -6864,15 +6864,15 @@
   "q_en": "Which automation tool should deploy application code from a repository to Azure with build, test and release stages?",
   "opts_es": [
    "Una canalización de CI/CD como GitHub Actions o Azure Pipelines",
-   "Cargas manuales por FTP",
-   "Copiar archivos con una unidad USB",
-   "Archivos adjuntos de correo con el código"
+   "Cargas manuales por FTP desde portátiles de desarrolladores",
+   "Copiar archivos con una unidad extraíble",
+   "Enviar el código por correo al equipo de operaciones"
   ],
   "opts_en": [
    "A CI/CD pipeline such as GitHub Actions or Azure Pipelines",
-   "Manual FTP uploads",
-   "Copying files with a USB drive",
-   "Email attachments with the code"
+   "Manual FTP uploads from developer laptops",
+   "Copying files with a removable drive",
+   "Emailing the code to the operations team"
   ],
   "correct": [
    0
@@ -7501,14 +7501,14 @@
   "opts_es": [
    "Análisis de costes",
    "Comprobación de flujo IP y solución de problemas de conexión",
-   "Corrección de directivas",
-   "Informes de copias de seguridad"
+   "Tareas de corrección de directivas",
+   "Informes de Azure Backup"
   ],
   "opts_en": [
    "Cost analysis",
    "IP flow verify and connection troubleshoot",
-   "Policy remediation",
-   "Backup reports"
+   "Policy remediation tasks",
+   "Azure Backup reports"
   ],
   "correct": [
    1
@@ -7603,14 +7603,14 @@
   "q_es": "¿Qué característica puede aplicar automáticamente la corrección de cumplimiento de Azure Policy a los recursos existentes no conformes?",
   "q_en": "Which feature can automatically apply Azure Policy compliance remediation to existing non-compliant resources?",
   "opts_es": [
-   "Bloqueos de recursos",
-   "Solo etiquetas",
+   "Bloqueos de recursos en cada recurso",
+   "Etiquetas aplicadas manualmente",
    "Presupuestos con alertas",
    "Tareas de corrección para directivas DeployIfNotExists y Modify"
   ],
   "opts_en": [
-   "Resource locks",
-   "Tags only",
+   "Resource locks on each resource",
+   "Tags applied by hand",
    "Budgets with alerts",
    "Remediation tasks for DeployIfNotExists and Modify policies"
   ],
@@ -8237,15 +8237,15 @@
   "q_en": "An application should be able to reuse tested infrastructure modules across teams with parameters. Which IaC feature supports this in Bicep?",
   "opts_es": [
    "Módulos y un registro privado",
-   "Capturas de pantalla",
-   "Copiar y pegar manualmente",
-   "Etiquetas"
+   "Capturas de pantalla de la configuración del portal",
+   "Copiar y pegar plantillas manualmente",
+   "Etiquetas de recursos que describen los módulos"
   ],
   "opts_en": [
    "Modules and a private registry",
-   "Screenshots",
-   "Manual copy and paste",
-   "Tags"
+   "Screenshots of the portal settings",
+   "Manual copy and paste of templates",
+   "Resource tags describing the modules"
   ],
   "correct": [
    0
@@ -8419,15 +8419,15 @@
   "q_en": "Which design reduces latency for globally distributed users by serving static content from locations close to them?",
   "opts_es": [
    "Una CDN como Azure Front Door con almacenamiento en caché perimetral",
-   "Un NSG más grande",
-   "Una única VM regional",
-   "Etiquetas"
+   "Un grupo de seguridad de red más grande",
+   "Una sola VM regional con una SKU mayor",
+   "Más etiquetas de recursos en la cuenta de almacenamiento"
   ],
   "opts_en": [
    "A CDN such as Azure Front Door caching at the edge",
-   "A larger NSG",
-   "A single regional VM",
-   "Tags"
+   "A larger network security group",
+   "A single regional VM with a bigger SKU",
+   "More resource tags on the storage account"
   ],
   "correct": [
    0
@@ -9093,15 +9093,15 @@
   "q_es": "¿Qué configuración de la cuenta de almacenamiento ayuda a garantizar que los datos se cifran con claves que controlas en Azure Key Vault?",
   "q_en": "Which storage account setting helps ensure data is encrypted with keys you control in Azure Key Vault?",
   "opts_es": [
-   "Acceso anónimo",
-   "Compartir la clave de cuenta",
-   "Acceso a la red pública",
+   "Permitir el acceso anónimo a blobs",
+   "Compartir las claves de la cuenta con el equipo",
+   "Habilitar el acceso a la red pública",
    "Claves administradas por el cliente para el cifrado del almacenamiento"
   ],
   "opts_en": [
-   "Anonymous access",
-   "Account key sharing",
-   "Public network access",
+   "Allowing anonymous blob access",
+   "Sharing the account keys with the team",
+   "Enabling public network access",
    "Customer-managed keys for storage encryption"
   ],
   "correct": [
