@@ -8,16 +8,16 @@
   "q_es": "¿Qué configuración de PIM garantiza que un administrador deba justificar y que una segunda persona apruebe antes de activar el rol Propietario en una suscripción de producción?",
   "q_en": "Which PIM setting ensures an administrator must justify and have a second person approve before activating the Owner role on a production subscription?",
   "opts_es": [
-   "Asignación activa permanente",
+   "Asignación apta sin requisito de aprobación",
    "Exigir justificación y aprobación en la configuración del rol",
-   "Deshabilitar MFA",
-   "Asignar Lector"
+   "Exigir solo MFA al activar",
+   "Solo un correo de notificación al propietario del rol"
   ],
   "opts_en": [
-   "Permanent active assignment",
+   "Eligible assignment with no approval requirement",
    "Require justification and approval in the role settings",
-   "Disable MFA",
-   "Assign Reader"
+   "Require MFA on activation only",
+   "A notification email to the role owner only"
   ],
   "correct": [
    1
@@ -34,16 +34,16 @@
   "q_es": "¿Qué control de acceso condicional usarías para exigir MFA resistente al phishing en la administración de Azure?",
   "q_en": "Which Conditional Access control would you use to require phishing-resistant MFA for Azure management?",
   "opts_es": [
-   "Solo una ubicación con nombre",
-   "Frecuencia de inicio de sesión establecida en nunca",
+   "Exigir solo el control de concesión de dispositivo compatible",
+   "Frecuencia de inicio de sesión de 1 hora para todas las aplicaciones",
    "Fortaleza de autenticación dirigida a la aplicación Microsoft Azure Management",
-   "Modo de solo informe de forma permanente"
+   "Bloquear las aplicaciones cliente de autenticación heredada"
   ],
   "opts_en": [
-   "A named location only",
-   "Sign-in frequency set to never",
+   "Require a compliant device grant control only",
+   "Sign-in frequency of 1 hour for all apps",
    "Authentication strength targeting the Microsoft Azure Management app",
-   "Report-only mode permanently"
+   "Block legacy authentication client apps"
   ],
   "correct": [
    2
@@ -60,16 +60,16 @@
   "q_es": "Un inquilino quiere que los usuarios no puedan dar su consentimiento a aplicaciones que solicitan permisos de gran impacto, pero que puedan solicitar la aprobación del administrador. ¿Qué debes configurar?",
   "q_en": "A tenant wants users unable to consent to apps requesting high-impact permissions, while allowing them to request admin approval. What should you configure?",
   "opts_es": [
-   "Permitir el consentimiento de usuario para todas las aplicaciones",
+   "Permitir el consentimiento de usuario solo para aplicaciones de editores verificados",
    "Configuración de consentimiento de usuario restringida más el flujo de consentimiento del administrador",
-   "Deshabilitar todas las aplicaciones",
-   "Eliminar el inquilino"
+   "Deshabilitar el registro de aplicaciones por los usuarios",
+   "Exigir MFA en todos los inicios de sesión de aplicaciones"
   ],
   "opts_en": [
-   "Allow user consent for all apps",
+   "Allow user consent for apps from verified publishers only",
    "User consent settings restricted plus the admin consent workflow",
-   "Disable all apps",
-   "Delete the tenant"
+   "Disable user registration of applications",
+   "Require MFA for all application sign-ins"
   ],
   "correct": [
    1
@@ -139,15 +139,15 @@
   "q_en": "Where do you review and revoke OAuth permission grants given to an enterprise application by users?",
   "opts_es": [
    "La página de permisos de la aplicación empresarial",
-   "La directiva de nomenclatura de grupos",
-   "La configuración de dispositivos",
-   "La personalización de marca"
+   "La página Usuarios y grupos de la aplicación",
+   "La página Aprovisionamiento de la aplicación empresarial",
+   "La página Inicio de sesión único de la aplicación empresarial"
   ],
   "opts_en": [
    "The Permissions page of the enterprise application",
-   "Group naming policy",
-   "Device settings",
-   "Company branding"
+   "The Users and groups page of the application",
+   "The Provisioning page of the enterprise application",
+   "The Single sign-on page of the enterprise application"
   ],
   "correct": [
    0
@@ -260,15 +260,15 @@
   "q_es": "¿Qué configuración de red de Key Vault restringe el acceso para que solo las redes virtuales y los intervalos de IP seleccionados puedan llegar al almacén?",
   "q_en": "Which Key Vault network setting restricts access so that only selected virtual networks and IP ranges can reach the vault?",
   "opts_es": [
-   "Permitir todas las redes",
-   "Deshabilitar el registro",
-   "Contenedor de blobs público",
+   "Permitir que los servicios de confianza de Microsoft omitan el firewall",
+   "Eliminación temporal y protección contra purga",
+   "Asignaciones de rol en el ámbito del almacén",
    "Firewalls y redes virtuales con redes seleccionadas"
   ],
   "opts_en": [
-   "Allow all networks",
-   "Disable logging",
-   "Public blob container",
+   "Allow trusted Microsoft services to bypass the firewall",
+   "Soft delete and purge protection",
+   "Role assignments at the vault scope",
    "Firewalls and virtual networks with selected networks"
   ],
   "correct": [
@@ -287,15 +287,15 @@
   "q_en": "A certificate stored in Key Vault should be renewed automatically before expiry. What should you configure?",
   "opts_es": [
    "Una directiva de certificados con renovación automática y un emisor integrado",
-   "Un bloqueo de recursos",
-   "Un recordatorio manual en el calendario",
-   "Una etiqueta más larga"
+   "Una directiva de acceso con el permiso de obtención de certificados",
+   "Un runbook que vuelve a emitir el certificado manualmente cada año",
+   "Una configuración de diagnóstico que envía los registros a Log Analytics"
   ],
   "opts_en": [
    "A certificate policy with auto-renewal and an integrated issuer",
-   "A resource lock",
-   "A manual calendar reminder",
-   "A longer tag"
+   "An access policy with the Certificate get permission",
+   "A runbook that reissues the certificate manually each year",
+   "A diagnostic setting that sends logs to Log Analytics"
   ],
   "correct": [
    0
@@ -338,16 +338,16 @@
   "q_es": "¿Cómo puedes encontrar secretos codificados, como contraseñas o tokens, en el código, las configuraciones de VM o las plantillas de IaC de tu entorno en la nube?",
   "q_en": "How can you find hardcoded secrets such as passwords or tokens stored in code, VM configurations or IaC templates in your cloud environment?",
   "opts_es": [
-   "Eliminar el repositorio",
+   "Habilitar la evaluación de vulnerabilidades de registros de contenedores",
    "Habilitar el análisis de secretos en Defender CSPM",
-   "Usar más etiquetas",
-   "Ignorarlos"
+   "Habilitar Defender for DNS en la suscripción",
+   "Revisar el panel de cumplimiento normativo"
   ],
   "opts_en": [
-   "Delete the repo",
+   "Enable vulnerability assessment for container registries",
    "Enable secrets scanning in Defender CSPM",
-   "Use more tags",
-   "Ignore them"
+   "Enable Defender for DNS on the subscription",
+   "Review the regulatory compliance dashboard"
   ],
   "correct": [
    1
@@ -365,14 +365,14 @@
   "q_en": "Which Key Vault feature prevents accidental deletion by retaining deleted vaults and objects for a period, and optionally blocks permanent purge?",
   "opts_es": [
    "Eliminación temporal con protección contra purga",
-   "Etiquetas de recursos",
-   "DNS privado",
+   "Un bloqueo de recursos CanNotDelete",
+   "Directivas de acceso de Key Vault",
    "Configuración de diagnóstico"
   ],
   "opts_en": [
    "Soft delete with purge protection",
-   "Resource tags",
-   "Private DNS",
+   "A CanNotDelete resource lock",
+   "Key Vault access policies",
    "Diagnostic settings"
   ],
   "correct": [
@@ -564,16 +564,16 @@
   "q_es": "¿Cómo puede una organización aplicar configuraciones de seguridad mediante revisión de código e implementación automatizada, en lugar de clics en el portal?",
   "q_en": "How can an organization enforce security configurations through code review and automated deployment, rather than portal clicks?",
   "opts_es": [
-   "Capturas de pantalla",
+   "Documentar cada cambio en un wiki interno tras la implementación",
    "Infraestructura como código con Bicep/Terraform en canalizaciones, analizada en busca de errores de configuración",
-   "Aprobaciones por correo",
-   "Solo cambios manuales"
+   "Aprobar por correo los cambios del portal antes de hacerlos",
+   "Conceder Colaborador a cada ingeniero para editar directamente en el portal"
   ],
   "opts_en": [
-   "Screenshots",
+   "Document each change in an internal wiki after deployment",
    "Infrastructure as code with Bicep/Terraform in pipelines, scanned for misconfigurations",
-   "Email approvals",
-   "Manual changes only"
+   "Approve portal changes by email before they are made",
+   "Grant Contributor to every engineer for direct portal edits"
   ],
   "correct": [
    1
@@ -590,16 +590,16 @@
   "q_es": "¿Qué característica de seguridad de Azure Backup protege contra el ransomware exigiendo un segundo aprobador para operaciones críticas como eliminar copias de seguridad?",
   "q_en": "Which Azure Backup security feature protects against ransomware by requiring a second approver for critical operations like deleting backups?",
   "opts_es": [
-   "Un almacén público",
-   "Un nombre de VM más largo",
+   "Solo eliminación temporal con retención de 14 días",
+   "Replicación con almacenamiento con redundancia geográfica del almacén",
    "Autorización multiusuario con Resource Guard",
-   "Deshabilitar la eliminación temporal"
+   "Restauración entre regiones"
   ],
   "opts_en": [
-   "A public vault",
-   "A longer VM name",
+   "Soft delete with a 14-day retention only",
+   "Geo-redundant storage replication of the vault",
    "Multi-user authorization with Resource Guard",
-   "Disabling soft delete"
+   "Cross-region restore"
   ],
   "correct": [
    2
@@ -822,15 +822,15 @@
   "q_en": "How can Azure Files shares be accessed using identity-based authentication instead of storage keys?",
   "opts_es": [
    "Habilitar la autenticación basada en identidad, como Kerberos de Microsoft Entra o AD DS",
-   "Compartir la clave de cuenta",
-   "Permitir SMB anónimo",
-   "Usar FTP"
+   "Montar el recurso compartido con la clave de la cuenta de almacenamiento desde cada cliente",
+   "Habilitar el acceso SMB anónimo al recurso compartido",
+   "Exponer el recurso compartido solo mediante una URL SAS pública"
   ],
   "opts_en": [
    "Enable identity-based authentication such as Microsoft Entra Kerberos or AD DS",
-   "Share the account key",
-   "Allow anonymous SMB",
-   "Use FTP"
+   "Mount the share with the storage account key from every client",
+   "Enable anonymous SMB access to the share",
+   "Expose the share through a public SAS URL only"
   ],
   "correct": [
    0
@@ -917,15 +917,15 @@
   "q_es": "¿Qué característica de Azure SQL cifra de forma transparente los archivos de datos en reposo y puede usar una clave administrada por el cliente en Key Vault?",
   "q_en": "Which Azure SQL feature encrypts data files at rest transparently and can use a customer-managed key in Key Vault?",
   "opts_es": [
-   "Enmascaramiento dinámico de datos",
-   "Grupo elástico",
-   "Seguridad a nivel de fila",
+   "Always Encrypted con claves maestras de columna",
+   "Funciones de predicado de seguridad de nivel de fila",
+   "Reglas de enmascaramiento dinámico de datos en columnas",
    "Cifrado de datos transparente (TDE) con clave administrada por el cliente"
   ],
   "opts_en": [
-   "Dynamic data masking",
-   "Elastic pool",
-   "Row-level security",
+   "Always Encrypted with column master keys",
+   "Row-level security predicate functions",
+   "Dynamic data masking rules on columns",
    "Transparent data encryption (TDE) with customer-managed key"
   ],
   "correct": [
@@ -970,15 +970,15 @@
   "q_en": "Where can Azure SQL Database auditing events be sent?",
   "opts_es": [
    "Una cuenta de almacenamiento, un área de trabajo de Log Analytics o Event Hubs",
-   "Azure Resource Graph",
-   "Azure Service Health",
-   "Azure Advisor"
+   "Azure Resource Graph, Azure Advisor o Service Health",
+   "Solo registros de inicio de sesión de Microsoft Entra y Azure Policy",
+   "Solo métricas de Azure Monitor y Application Insights"
   ],
   "opts_en": [
    "A storage account, Log Analytics workspace or Event Hubs",
-   "Azure Resource Graph",
-   "Azure Service Health",
-   "Azure Advisor"
+   "Azure Resource Graph, Azure Advisor or Service Health",
+   "Microsoft Entra sign-in logs and Azure Policy only",
+   "Azure Monitor metrics and Application Insights only"
   ],
   "correct": [
    0
@@ -1122,15 +1122,15 @@
   "q_es": "¿Qué característica permite crear reglas de administración de seguridad que se aplican en muchas redes virtuales y tienen prioridad sobre las reglas de NSG?",
   "q_en": "Which feature lets you create security admin rules that are enforced across many virtual networks and take precedence over NSG rules?",
   "opts_es": [
-   "Grupos de seguridad de aplicaciones",
-   "Bloqueos de recursos",
-   "Etiquetas de Azure Policy",
+   "Grupos de seguridad de aplicaciones asignados a interfaces de red",
+   "Grupos de seguridad de red aplicados solo a cada subred",
+   "Rutas definidas por el usuario en una tabla de rutas",
    "Reglas de administración de seguridad de Azure Virtual Network Manager"
   ],
   "opts_en": [
-   "Application security groups",
-   "Resource locks",
-   "Azure Policy tags",
+   "Application security groups assigned to network interfaces",
+   "Network security groups applied to each subnet only",
+   "User-defined routes in a route table",
    "Azure Virtual Network Manager security admin rules"
   ],
   "correct": [
@@ -1148,16 +1148,16 @@
   "q_es": "¿Qué característica simplifica las reglas de NSG agrupando las VM por rol de aplicación y usando el grupo como origen o destino?",
   "q_en": "Which feature simplifies NSG rules by grouping VMs by application role and using the group as a source or destination?",
   "opts_es": [
-   "Grupos de recursos",
-   "Etiquetas",
+   "Registros de flujo de grupos de seguridad de red",
+   "Etiquetas de servicio",
    "Grupos de seguridad de aplicaciones",
-   "Grupos de administración"
+   "Emparejamiento de redes virtuales"
   ],
   "opts_en": [
-   "Resource groups",
-   "Tags",
+   "Network security group flow logs",
+   "Service tags",
    "Application security groups",
-   "Management groups"
+   "Virtual network peering"
   ],
   "correct": [
    2
@@ -1227,14 +1227,14 @@
   "q_en": "Which Azure Firewall rule type translates inbound internet traffic to a private IP and port in the virtual network?",
   "opts_es": [
    "Reglas de aplicación",
-   "Etiquetas",
-   "Solo inteligencia sobre amenazas",
+   "Reglas de red",
+   "Filtrado basado en inteligencia sobre amenazas",
    "Reglas DNAT"
   ],
   "opts_en": [
    "Application rules",
-   "Tags",
-   "Threat intelligence only",
+   "Network rules",
+   "Threat intelligence-based filtering",
    "DNAT rules"
   ],
   "correct": [
@@ -1252,16 +1252,16 @@
   "q_es": "Una organización quiere proteger un concentrador de Virtual WAN con inspección de firewall del tráfico entre sucursales y de internet. ¿Qué debe implementar?",
   "q_en": "An organization wants to secure a Virtual WAN hub with firewall inspection of branch-to-branch and internet traffic. What should it deploy?",
   "opts_es": [
-   "Un único NSG",
+   "Grupos de seguridad de red en cada conexión de sucursal",
    "Un concentrador virtual protegido con Azure Firewall e intención de enrutamiento",
-   "Una IP pública en cada sucursal",
-   "Sin firewall"
+   "Una dirección IP pública en cada dispositivo de sucursal",
+   "Un centro virtual sin intención de enrutamiento ni firewall"
   ],
   "opts_en": [
-   "A single NSG",
+   "Network security groups on each branch connection",
    "A secured virtual hub with Azure Firewall and routing intent",
-   "A public IP on each branch",
-   "No firewall"
+   "A public IP address on each branch device",
+   "A virtual hub without routing intent or a firewall"
   ],
   "correct": [
    1
@@ -1278,15 +1278,15 @@
   "q_es": "¿Qué opción de autenticación de punto a sitio de VPN Gateway permite a los usuarios iniciar sesión con Microsoft Entra ID y acceso condicional?",
   "q_en": "Which VPN Gateway point-to-site authentication option lets users sign in with Microsoft Entra ID and Conditional Access?",
   "opts_es": [
-   "Solo clave previamente compartida",
-   "Anónima",
-   "Autenticación básica",
+   "Solo una clave precompartida configurada en la puerta de enlace",
+   "Autenticación por certificado sin integración con acceso condicional",
+   "Autenticación RADIUS con una base de datos de contraseñas local",
    "Autenticación de Microsoft Entra con el cliente de Azure VPN"
   ],
   "opts_en": [
-   "Shared pre-shared key only",
-   "Anonymous",
-   "Basic auth",
+   "A pre-shared key configured on the gateway only",
+   "Certificate authentication without Conditional Access integration",
+   "RADIUS authentication against a local password database",
    "Microsoft Entra authentication with the Azure VPN Client"
   ],
   "correct": [
@@ -1332,14 +1332,14 @@
   "opts_es": [
    "Punto de conexión privado",
    "Punto de conexión de servicio",
-   "Punto de conexión público",
-   "Bloqueo de recursos"
+   "Una dirección IP pública con reglas de firewall",
+   "Una puerta de enlace NAT"
   ],
   "opts_en": [
    "Private endpoint",
    "Service endpoint",
-   "Public endpoint",
-   "Resource lock"
+   "A public IP address with firewall rules",
+   "A NAT gateway"
   ],
   "correct": [
    0
@@ -1557,15 +1557,15 @@
   "q_en": "Before enabling Microsoft 365 Copilot, a company finds that many SharePoint sites are shared with everyone in the organization. What is the main risk?",
   "opts_es": [
    "Copilot puede mostrar contenido a los usuarios que tienen acceso, lo que expone el uso compartido excesivo",
-   "Copilot cifra todos los archivos",
-   "Copilot elimina los sitios",
-   "No hay ningún riesgo"
+   "Copilot ignora los permisos de uso compartido y muestra todos los archivos a todos",
+   "Copilot solo lee el OneDrive del usuario, así que el uso compartido es irrelevante",
+   "Copilot elimina los vínculos de uso compartido amplio antes de responder"
   ],
   "opts_en": [
    "Copilot can surface content to users who have access, exposing oversharing",
-   "Copilot encrypts all files",
-   "Copilot deletes the sites",
-   "There is no risk"
+   "Copilot ignores sharing permissions and shows every file to everyone",
+   "Copilot only reads the user's OneDrive, so sharing is irrelevant",
+   "Copilot removes broad sharing links before answering"
   ],
   "correct": [
    0
@@ -1610,15 +1610,15 @@
   "q_es": "¿Qué solución de Microsoft Purview detecta y ayuda a mitigar los riesgos de seguridad de datos del uso de IA generativa, incluido Copilot?",
   "q_en": "Which Microsoft Purview solution discovers and helps mitigate data security risks from generative AI usage, including Copilot?",
   "opts_es": [
-   "Intune Suite",
-   "Solo Compliance Manager",
-   "Azure Firewall",
+   "Microsoft Purview Compliance Manager",
+   "Solo la detección de Defender for Cloud Apps",
+   "IDPS de Azure Firewall Premium",
    "Data Security Posture Management (DSPM) for AI"
   ],
   "opts_en": [
-   "Intune Suite",
-   "Compliance Manager only",
-   "Azure Firewall",
+   "Microsoft Purview Compliance Manager",
+   "Defender for Cloud Apps discovery only",
+   "Azure Firewall Premium IDPS",
    "Data Security Posture Management (DSPM) for AI"
   ],
   "correct": [
@@ -1637,15 +1637,15 @@
   "q_es": "¿Para qué se usa Microsoft Entra Agent ID?",
   "q_en": "What is Microsoft Entra Agent ID used for?",
   "opts_es": [
-   "Imprimir documentos",
-   "Administrar DNS",
-   "Cifrar discos",
+   "Sustituir el acceso condicional de los usuarios humanos",
+   "Almacenar los prompts de los agentes y los pesos del modelo",
+   "Facturación y asignación de costes del uso de agentes",
    "Proporcionar identidades y controles de acceso para agentes de IA de modo que se puedan gobernar como otras identidades"
   ],
   "opts_en": [
-   "Printing documents",
-   "Managing DNS",
-   "Encrypting disks",
+   "Replacing Conditional Access for human users",
+   "Storing agent prompts and model weights",
+   "Billing and cost allocation for agent usage",
    "Providing identities and access controls for AI agents so they can be governed like other identities"
   ],
   "correct": [
@@ -1664,16 +1664,16 @@
   "q_es": "¿Qué pueden añadir las capacidades de puerta de enlace de IA de Azure API Management delante de los puntos de conexión de modelos de IA?",
   "q_en": "What can Azure API Management AI gateway capabilities add in front of AI model endpoints?",
   "opts_es": [
-   "Impresoras",
+   "Solo protección DDoS de nivel de red para los puntos de conexión",
    "Directivas como límites de tokens, autenticación, seguridad de contenido y supervisión",
-   "Zonas DNS",
-   "Servidores físicos"
+   "Ajuste fino automático de los modelos con el tráfico de la puerta de enlace",
+   "Reserva de capacidad de GPU física para los puntos de conexión"
   ],
   "opts_en": [
-   "Printers",
+   "Only network-level DDoS protection for the endpoints",
    "Policies such as token limits, authentication, content safety and monitoring",
-   "DNS zones",
-   "Physical servers"
+   "Automatic fine-tuning of models on gateway traffic",
+   "Physical GPU capacity reservation for the endpoints"
   ],
   "correct": [
    1
@@ -1747,14 +1747,14 @@
   "opts_es": [
    "El área de administración de agentes del centro de administración de Microsoft 365",
    "El portal de Azure Cost Management",
-   "La lista de reuniones de Teams",
-   "El editor de zonas DNS"
+   "Las directivas de reunión del centro de administración de Microsoft Teams",
+   "Solo la búsqueda del registro de auditoría de Microsoft Purview"
   ],
   "opts_en": [
    "The agents management area of the Microsoft 365 admin center",
    "The Azure Cost Management portal",
-   "The Teams meeting list",
-   "The DNS zone editor"
+   "The Microsoft Teams admin center meeting policies",
+   "The Microsoft Purview audit log search only"
   ],
   "correct": [
    0
@@ -1901,15 +1901,15 @@
   "q_en": "Which feature opens management ports on VMs only for approved requests and for a limited time?",
   "opts_es": [
    "Acceso a VM justo a tiempo en Defender for Cloud",
-   "RDP siempre abierto",
-   "NSG deshabilitados",
-   "IP pública en cada VM"
+   "Etiquetas de servicio de grupos de seguridad de red",
+   "Reglas DNAT de Azure Firewall que permanecen habilitadas",
+   "Un efecto de denegación de Azure Policy en reglas RDP"
   ],
   "opts_en": [
    "Just-in-time VM access in Defender for Cloud",
-   "Always-open RDP",
-   "Disabled NSGs",
-   "Public IP on every VM"
+   "Network security group service tags",
+   "Azure Firewall DNAT rules that stay enabled",
+   "An Azure Policy deny effect on RDP rules"
   ],
   "correct": [
    0
@@ -1978,16 +1978,16 @@
   "q_es": "¿Qué hace el análisis sin agente de VM en Defender for Servers?",
   "q_en": "What does agentless scanning for VMs in Defender for Servers do?",
   "opts_es": [
-   "Reinicia VM",
+   "Instala automáticamente el agente de Log Analytics en cada VM",
    "Analiza instantáneas de disco de la VM en busca de vulnerabilidades, secretos y malware sin instalar un agente",
-   "Traslada VM a otra región",
-   "Elimina VM"
+   "Replica las VM en una región secundaria para recuperación ante desastres",
+   "Aplica las revisiones del SO que faltan durante una ventana de mantenimiento"
   ],
   "opts_en": [
-   "Reboots VMs",
+   "Installs the Log Analytics agent on every VM automatically",
    "Scans VM disk snapshots for vulnerabilities, secrets and malware without installing an agent",
-   "Moves VMs to another region",
-   "Deletes VMs"
+   "Replicates VMs to a secondary region for disaster recovery",
+   "Applies missing OS patches during a maintenance window"
   ],
   "correct": [
    1
@@ -2178,16 +2178,16 @@
   "q_es": "¿Qué característica de AKS autoriza el acceso a Kubernetes mediante identidades de Microsoft Entra y Azure RBAC?",
   "q_en": "Which AKS feature authorizes Kubernetes access using Microsoft Entra identities and Azure RBAC?",
   "opts_es": [
-   "Tokens compartidos",
+   "Tokens de kubeconfig estáticos compartidos con el equipo",
    "Integración con Microsoft Entra y Azure RBAC para la autorización de Kubernetes",
-   "Solo cuentas de administrador locales",
-   "Acceso anónimo"
+   "Solo cuentas locales de Kubernetes con certificados estáticos",
+   "Autenticación anónima habilitada en el servidor de API"
   ],
   "opts_en": [
-   "Shared tokens",
+   "Static kubeconfig tokens shared with the team",
    "Microsoft Entra integration with Azure RBAC for Kubernetes authorization",
-   "Local admin accounts only",
-   "Anonymous access"
+   "Local Kubernetes accounts with static certificates only",
+   "Anonymous authentication enabled on the API server"
   ],
   "correct": [
    1
@@ -2256,16 +2256,16 @@
   "q_es": "¿Cómo puedes restringir el acceso entrante a una aplicación de App Service a una red virtual concreta sin exponerla públicamente?",
   "q_en": "How can you restrict inbound access to an App Service app to a specific virtual network without exposing it publicly?",
   "opts_es": [
-   "Dejar la aplicación pública",
+   "Añadir una restricción de IP para la IP pública de la red virtual",
    "Usar un punto de conexión privado y deshabilitar el acceso a la red pública",
-   "Permitir todas las IP",
-   "Compartir el perfil de publicación"
+   "Permitir todas las IP de entrada y confiar en la autenticación de la aplicación",
+   "Compartir el perfil de publicación con el equipo de red"
   ],
   "opts_en": [
-   "Leave the app public",
+   "Add an IP restriction for the virtual network's public IP",
    "Use a private endpoint and disable public network access",
-   "Allow all IPs",
-   "Share the publish profile"
+   "Allow all inbound IPs and rely on app authentication",
+   "Share the publish profile with the network team"
   ],
   "correct": [
    1
@@ -2334,16 +2334,16 @@
   "q_es": "¿Cómo debe proteger una aplicación lógica de Azure las entradas y salidas sensibles del historial de ejecuciones?",
   "q_en": "How should an Azure Logic App protect sensitive inputs and outputs in run history?",
   "opts_es": [
-   "Compartir públicamente el historial de ejecuciones",
+   "Guardar los secretos como texto sin formato en la configuración de la aplicación",
    "Habilitar entradas seguras y salidas seguras en las acciones",
-   "Registrar secretos en texto sin formato",
-   "Deshabilitar la autenticación"
+   "Registrar los cuerpos completos de solicitud y respuesta en Log Analytics",
+   "Restringir el acceso al historial de ejecuciones solo por dirección IP"
   ],
   "opts_en": [
-   "Share run history publicly",
+   "Store the secrets in app settings as plain text",
    "Enable secure inputs and secure outputs on actions",
-   "Log secrets in plain text",
-   "Disable authentication"
+   "Log full request and response bodies to Log Analytics",
+   "Restrict run history access by IP address only"
   ],
   "correct": [
    1
@@ -2435,16 +2435,16 @@
   "q_es": "¿Qué capacidad de Defender CSPM ayuda a priorizar los riesgos mostrando cómo un atacante podría pasar de una VM expuesta a internet a datos sensibles?",
   "q_en": "Which Defender CSPM capability helps prioritize risks by showing how an attacker could move from an internet-exposed VM to sensitive data?",
   "opts_es": [
-   "Solo la puntuación de seguridad",
+   "Recomendaciones de puntuación de seguridad sin rutas de ataque",
    "Análisis de rutas de ataque y el explorador de seguridad en la nube",
-   "Panel de cumplimiento normativo",
-   "Acceso a VM Just-in-Time"
+   "El panel de cumplimiento normativo de estándares ISO",
+   "Solicitudes de acceso Just-in-Time a puertos de administración"
   ],
   "opts_en": [
-   "Secure score only",
+   "Secure score recommendations without attack paths",
    "Attack path analysis and the cloud security explorer",
-   "Regulatory compliance dashboard",
-   "Just-in-time VM access"
+   "The regulatory compliance dashboard for ISO standards",
+   "Just-in-time access requests for management ports"
   ],
   "correct": [
    1
@@ -2461,16 +2461,16 @@
   "q_es": "¿Cómo puedes evaluar los recursos de AWS y GCP en Defender for Cloud?",
   "q_en": "How can you assess AWS and GCP resources in Defender for Cloud?",
   "opts_es": [
-   "No es posible",
+   "Solo se pueden evaluar los recursos de Azure",
    "Conectar las cuentas en la nube mediante conectores multinube",
-   "Trasladar primero los recursos a Azure",
-   "Usar capturas de pantalla"
+   "Migrar primero los recursos de AWS y GCP a Azure",
+   "Cargar manualmente inventarios de recursos como archivos CSV"
   ],
   "opts_en": [
-   "It is not possible",
+   "Only Azure resources can be assessed",
    "Connect the cloud accounts with multicloud connectors",
-   "Move resources to Azure first",
-   "Use screenshots"
+   "Migrate the AWS and GCP resources to Azure first",
+   "Upload resource inventories as CSV files manually"
   ],
   "correct": [
    1
@@ -2513,16 +2513,16 @@
   "q_es": "¿Qué capacidad ofrece la evaluación de vulnerabilidades de las VM de Azure mediante Microsoft Defender Vulnerability Management?",
   "q_en": "Which capability provides vulnerability assessment for Azure VMs using Microsoft Defender Vulnerability Management?",
   "opts_es": [
-   "Bloqueos de recursos",
-   "Etiquetas de Azure Policy",
+   "Un analizador de Qualys implementado manualmente en cada VM",
+   "Asignaciones de configuración de invitado de Azure Policy",
    "La solución de evaluación de vulnerabilidades incluida con Defender for Servers",
-   "Azure Budgets"
+   "Evaluación de Azure Update Manager"
   ],
   "opts_en": [
-   "Resource locks",
-   "Azure Policy tags",
+   "A Qualys scanner deployed manually on every VM",
+   "Azure Policy guest configuration assignments",
    "The vulnerability assessment solution included with Defender for Servers",
-   "Azure Budgets"
+   "Azure Update Manager assessment"
   ],
   "correct": [
    2
@@ -2661,15 +2661,15 @@
   "q_es": "¿Qué método de conector ingiere a escala registros de recursos de Azure como los de Key Vault o los registros de flujo de NSG?",
   "q_en": "Which connector method ingests Azure resource logs such as Key Vault or NSG flow logs at scale?",
   "opts_es": [
-   "Impresión",
-   "Copia manual",
-   "Correo electrónico",
+   "Solo tareas de corrección de Azure Policy",
+   "Consultas de Azure Resource Graph",
+   "Exportaciones de recomendaciones de Azure Advisor",
    "Configuración de diagnóstico, a menudo implementada mediante Azure Policy"
   ],
   "opts_en": [
-   "Printing",
-   "Manual copy",
-   "Email",
+   "Azure Policy remediation tasks only",
+   "Azure Resource Graph queries",
+   "Azure Advisor recommendation exports",
    "Diagnostic settings, often deployed via Azure Policy"
   ],
   "correct": [
@@ -2714,15 +2714,15 @@
   "q_en": "How do you collect Linux syslog and appliance CEF data in Sentinel?",
   "opts_es": [
    "Usar los conectores Syslog y CEF mediante AMA con una regla de recopilación de datos",
-   "Usar Intune",
-   "Usar Azure Backup",
-   "Usar Azure Bastion"
+   "Instalar el agente de Log Analytics y habilitar el conector de eventos de seguridad de Windows",
+   "Crear una configuración de diagnóstico en la cuenta de almacenamiento",
+   "Usar el conector de Azure Activity con una tabla personalizada"
   ],
   "opts_en": [
    "Use the Syslog and CEF via AMA connectors with a data collection rule",
-   "Use Intune",
-   "Use Azure Backup",
-   "Use Azure Bastion"
+   "Install the Log Analytics agent and enable the Windows Security Events connector",
+   "Create a diagnostic setting on the storage account",
+   "Use the Azure Activity connector with a custom table"
   ],
   "correct": [
    0
@@ -2739,16 +2739,16 @@
   "q_es": "¿Qué enfoque recopila eventos de seguridad de Windows de muchos servidores mediante un recopilador central?",
   "q_en": "Which approach collects Windows security events from many servers via a central collector?",
   "opts_es": [
-   "Vínculos seguros",
+   "Usar el conector de Azure Activity en el nivel de suscripción",
    "Reenvío de eventos de Windows con el conector de Eventos de seguridad de Windows mediante AMA",
-   "Etiquetas",
-   "Azure Firewall"
+   "Habilitar configuraciones de diagnóstico en la interfaz de red de cada servidor",
+   "Configurar la automatización de flujos de trabajo de Defender for Cloud para exportar eventos"
   ],
   "opts_en": [
-   "Safe Links",
+   "Use the Azure Activity connector at the subscription level",
    "Windows Event Forwarding with the Windows Security Events via AMA connector",
-   "Tags",
-   "Azure Firewall"
+   "Enable diagnostic settings on each server's network interface",
+   "Configure Defender for Cloud workflow automation to export events"
   ],
   "correct": [
    1
@@ -2791,15 +2791,15 @@
   "q_es": "¿Cómo puedes conservar durante años y a menor coste registros de Sentinel de gran volumen y poco valor?",
   "q_en": "How can you keep high-volume, low-value Sentinel logs for years at lower cost?",
   "opts_es": [
-   "Eliminar semanalmente",
-   "Mantener todo en análisis para siempre",
-   "Ignorar la retención",
+   "Eliminar los registros cada semana para controlar el coste de almacenamiento",
+   "Mantener todo en el nivel de análisis con la retención predeterminada",
+   "Deshabilitar la ingesta de las tablas que se consultan poco",
    "Configurar la retención de datos y niveles de menor coste como el nivel de lago de datos"
   ],
   "opts_en": [
-   "Delete weekly",
-   "Keep everything in analytics forever",
-   "Ignore retention",
+   "Delete the logs every week to control storage cost",
+   "Keep everything in the analytics tier with default retention",
+   "Disable ingestion for tables you rarely query",
    "Configure data retention and lower-cost tiers such as the data lake tier"
   ],
   "correct": [
@@ -2940,16 +2940,16 @@
   "q_es": "¿Cómo se administran normalmente el acceso y los roles de Security Copilot?",
   "q_en": "How are access and roles for Security Copilot typically managed?",
   "opts_es": [
-   "Cualquiera puede usarlo sin roles",
-   "Solo mediante DNS",
+   "Cualquier persona del inquilino puede usarlo sin un rol",
+   "Solo mediante asignaciones de propietario de la suscripción de Azure",
    "Mediante los roles de Security Copilot y los permisos de los productos de Microsoft subyacentes del usuario",
-   "Mediante cuentas de invitado"
+   "Mediante cuentas de invitado agregadas al área de trabajo"
   ],
   "opts_en": [
-   "Anyone can use it with no roles",
-   "Only via DNS",
+   "Anyone in the tenant can use it without a role",
+   "Only through Azure subscription Owner assignments",
    "Through Security Copilot roles and the user's underlying Microsoft product permissions",
-   "Through guest accounts"
+   "Through guest accounts invited to the workspace"
   ],
   "correct": [
    2
@@ -2968,15 +2968,15 @@
   "q_en": "What do plugins in Security Copilot provide?",
   "opts_es": [
    "Acceso a datos y acciones de productos de seguridad de Microsoft y de terceros",
-   "Hardware físico",
-   "Un servicio DNS",
-   "Un nuevo inquilino"
+   "Hardware dedicado para ejecutar modelos localmente",
+   "Un servicio DNS que resuelve los puntos de conexión de los productos",
+   "Un inquilino independiente para cada producto conectado"
   ],
   "opts_en": [
    "Access to data and actions from Microsoft and third-party security products",
-   "Physical hardware",
-   "A DNS service",
-   "A new tenant"
+   "Dedicated hardware for running models locally",
+   "A DNS service that resolves product endpoints",
+   "A separate tenant for each connected product"
   ],
   "correct": [
    0
@@ -2995,15 +2995,15 @@
   "q_en": "What are Security Copilot agents designed to do?",
   "opts_es": [
    "Automatizar tareas de seguridad como la clasificación y la investigación bajo la supervisión de un administrador",
-   "Reemplazar a los proveedores de identidades",
-   "Administrar zonas DNS",
-   "Imprimir informes"
+   "Sustituir el proveedor de identidades del inquilino",
+   "Administrar las zonas DNS de la organización",
+   "Imprimir informes ejecutivos semanales"
   ],
   "opts_en": [
    "Automate security tasks such as triage and investigation under administrator oversight",
-   "Replace identity providers",
-   "Manage DNS zones",
-   "Print reports"
+   "Replace the identity provider of the tenant",
+   "Manage the DNS zones of the organization",
+   "Print weekly executive summary reports"
   ],
   "correct": [
    0
@@ -4018,15 +4018,15 @@
   "q_es": "¿Qué alerta de PIM indica que los roles con privilegios se están activando fuera del proceso de PIM?",
   "q_en": "Which PIM alert indicates privileged roles are being activated outside the PIM process?",
   "opts_es": [
-   "Disco lleno",
-   "Error de DNS",
-   "Presupuesto superado",
+   "Hay demasiados administradores globales",
+   "Hay posibles cuentas obsoletas en un rol con privilegios",
+   "Los roles no exigen MFA para activarse",
    "Los roles se asignan fuera de PIM"
   ],
   "opts_en": [
-   "Disk full",
-   "DNS error",
-   "Budget exceeded",
+   "There are too many global administrators",
+   "There are potential stale accounts in a privileged role",
+   "Roles do not require MFA for activation",
    "Roles are being assigned outside of PIM"
   ],
   "correct": [
@@ -4070,16 +4070,16 @@
   "q_es": "¿Qué control de concesión del acceso condicional exige que los usuarios usen un dispositivo inscrito y en buen estado en Intune?",
   "q_en": "Which Conditional Access grant control requires users to use a device enrolled and healthy in Intune?",
   "opts_es": [
-   "Deshabilitar MFA",
+   "Exigir autenticación multifactor",
    "Requerir que el dispositivo se marque como compatible",
-   "Requerir un nuevo inquilino",
-   "Bloquear siempre el acceso"
+   "Exigir aplicación cliente aprobada",
+   "Exigir dispositivo unido a Microsoft Entra híbrido"
   ],
   "opts_en": [
-   "Disable MFA",
+   "Require multifactor authentication",
    "Require device to be marked as compliant",
-   "Require a new tenant",
-   "Block access always"
+   "Require approved client app",
+   "Require Microsoft Entra hybrid joined device"
   ],
   "correct": [
    1
@@ -4096,16 +4096,16 @@
   "q_es": "¿Cuál es el beneficio de un pase de acceso temporal para incorporar a un nuevo administrador con métodos sin contraseña?",
   "q_en": "What is the benefit of a Temporary Access Pass for onboarding a new admin with passwordless methods?",
   "opts_es": [
-   "Sustituye MFA de forma permanente",
+   "Reemplaza permanentemente la MFA de la cuenta",
    "Permite que el usuario registre passkeys o Authenticator sin una credencial existente",
-   "Elimina la cuenta",
-   "Concede Administrador global"
+   "Elimina los métodos de autenticación existentes del usuario",
+   "Concede el rol de administrador de autenticación"
   ],
   "opts_en": [
-   "It permanently replaces MFA",
+   "It permanently replaces MFA for the account",
    "It lets the user register passkeys or Authenticator without an existing credential",
-   "It deletes the account",
-   "It grants Global Admin"
+   "It removes the user's existing authentication methods",
+   "It grants the Authentication Administrator role"
   ],
   "correct": [
    1
@@ -4123,15 +4123,15 @@
   "q_en": "Which Entra feature lets you review and revoke a service principal's API permissions granted by admins?",
   "opts_es": [
    "La página de permisos de la aplicación empresarial",
-   "La configuración de dispositivos",
-   "La directiva de nomenclatura de grupos",
-   "La personalización de marca"
+   "La página de ubicaciones con nombre de acceso condicional",
+   "La página de configuración de sincronización de Entra Connect",
+   "La directiva de métodos de autenticación"
   ],
   "opts_en": [
    "Permissions page of the enterprise application",
-   "Device settings",
-   "Group naming policy",
-   "Company branding"
+   "The Conditional Access named locations page",
+   "The Entra Connect sync settings page",
+   "The Authentication methods policy"
   ],
   "correct": [
    0
@@ -4324,16 +4324,16 @@
   "q_es": "¿Cómo debe una aplicación que se ejecuta en App Service leer un secreto de Key Vault sin almacenar credenciales?",
   "q_en": "How should an application running on App Service read a secret from Key Vault without storing credentials?",
   "opts_es": [
-   "Guardar la clave del almacén en la configuración de la aplicación",
-   "Compartir la contraseña de administrador",
+   "Guardar la clave de acceso del almacén en la configuración de la aplicación",
+   "Compartir una contraseña de administrador con la aplicación",
    "Usar una identidad administrada y una referencia a Key Vault con acceso RBAC",
-   "Insertar el secreto en el código"
+   "Incrustar el secreto en el código de la aplicación"
   ],
   "opts_en": [
-   "Store the vault key in app settings",
-   "Share the admin password",
+   "Store the vault access key in app settings",
+   "Share an administrator password with the app",
    "Use a managed identity and a Key Vault reference with RBAC access",
-   "Embed the secret in code"
+   "Embed the secret in the application code"
   ],
   "correct": [
    2
@@ -4376,16 +4376,16 @@
   "q_es": "¿Qué característica de Key Vault rota las claves automáticamente según una programación?",
   "q_en": "Which Key Vault feature automatically rotates keys on a schedule?",
   "opts_es": [
-   "Presupuesto",
-   "Bloqueo de recursos",
+   "Directivas de acceso de Key Vault",
+   "Eliminación temporal",
    "Directiva de rotación de claves",
-   "Sitio web estático"
+   "Una configuración de diagnóstico"
   ],
   "opts_en": [
-   "Budget",
-   "Resource lock",
+   "Key Vault access policies",
+   "Soft delete",
    "Key rotation policy",
-   "Static website"
+   "A diagnostic setting"
   ],
   "correct": [
    2
@@ -4402,16 +4402,16 @@
   "q_es": "¿Qué configuración permite que los servicios de Azure de confianza omitan el firewall de Key Vault?",
   "q_en": "Which setting allows trusted Azure services to bypass the Key Vault firewall?",
   "opts_es": [
-   "Permitir todo el acceso público",
+   "Permitir el acceso público desde todas las redes",
    "Permitir que los servicios de Microsoft de confianza omitan este firewall",
-   "Deshabilitar todas las redes",
-   "Eliminar el firewall"
+   "Deshabilitar el acceso desde todas las redes",
+   "Habilitar solo un punto de conexión privado"
   ],
   "opts_en": [
-   "Allow all public access",
+   "Allow public access from all networks",
    "Allow trusted Microsoft services to bypass this firewall",
-   "Disable all networks",
-   "Delete the firewall"
+   "Disable access from all networks",
+   "Enable a private endpoint only"
   ],
   "correct": [
    1
@@ -4454,16 +4454,16 @@
   "q_es": "¿Cuál es una forma recomendada de auditar todas las operaciones de un Key Vault?",
   "q_en": "What is a recommended way to audit all operations on a Key Vault?",
   "opts_es": [
-   "Imprimir registros",
+   "Revisar solo las entradas del registro de actividad de Azure",
    "Habilitar la configuración de diagnóstico para enviar registros AuditEvent a Log Analytics",
-   "Deshabilitar el registro",
-   "Enviar registros por correo"
+   "Habilitar la eliminación temporal y la protección contra purga",
+   "Asignar Lector de Key Vault a los auditores"
   ],
   "opts_en": [
-   "Print logs",
+   "Review Azure Activity log entries only",
    "Enable diagnostic settings to send AuditEvent logs to Log Analytics",
-   "Disable logging",
-   "Email logs"
+   "Enable soft delete and purge protection",
+   "Assign Key Vault Reader to the auditors"
   ],
   "correct": [
    1
@@ -4755,16 +4755,16 @@
   "q_es": "¿Qué característica de la cuenta de almacenamiento restringe el acceso a la cuenta desde instancias de recursos de Azure específicas, como una aplicación lógica concreta?",
   "q_en": "Which storage account feature restricts access to the account from specific Azure resource instances such as a particular Logic App?",
   "opts_es": [
-   "Una etiqueta",
-   "Acceso público a blobs",
+   "Directivas de punto de conexión de servicio de red virtual",
+   "Acceso público a blobs combinado con tokens SAS",
    "Reglas de instancia de recurso en el firewall de almacenamiento",
-   "Claves compartidas"
+   "Restricciones de la autorización con clave compartida"
   ],
   "opts_en": [
-   "A tag",
-   "Public blob access",
+   "Virtual network service endpoint policies",
+   "Public blob access combined with SAS tokens",
    "Resource instance rules in the storage firewall",
-   "Shared keys"
+   "Restrictions on shared key authorization"
   ],
   "correct": [
    2
@@ -4807,16 +4807,16 @@
   "q_es": "¿Qué característica garantiza que los datos de blobs no se puedan modificar ni eliminar durante un período determinado para cumplir requisitos normativos?",
   "q_en": "Which feature ensures blob data cannot be modified or deleted for a set period to meet regulatory requirements?",
   "opts_es": [
-   "Nivel de acceso frecuente",
-   "Regla de eliminación del ciclo de vida",
+   "Una regla de ciclo de vida que elimina blobs tras siete años",
+   "Control de versiones de blobs combinado con eliminación temporal",
    "Almacenamiento inmutable con una directiva de retención basada en el tiempo",
-   "Sitio web estático"
+   "Un bloqueo de recursos de solo lectura en la cuenta de almacenamiento"
   ],
   "opts_en": [
-   "Hot access tier",
-   "Lifecycle deletion rule",
+   "A lifecycle rule that deletes blobs after seven years",
+   "Blob versioning combined with soft delete",
    "Immutable storage with a time-based retention policy",
-   "Static website"
+   "A read-only resource lock on the storage account"
   ],
   "correct": [
    2
@@ -4833,16 +4833,16 @@
   "q_es": "¿Cómo puedes restringir el acceso de una red virtual solo a cuentas de almacenamiento aprobadas, impidiendo la exfiltración de datos a otras cuentas?",
   "q_en": "How can you restrict a virtual network's access to only approved storage accounts, preventing data exfiltration to other accounts?",
   "opts_es": [
-   "Claves compartidas",
+   "Autorización con clave compartida de la cuenta de almacenamiento",
    "Directivas de punto de conexión de servicio",
-   "Puntos de conexión públicos",
-   "Bloqueos de recursos"
+   "Puntos de conexión públicos con reglas de IP",
+   "Reglas de salida de NSG hacia la etiqueta de servicio Storage"
   ],
   "opts_en": [
-   "Shared keys",
+   "Storage account shared key authorization",
    "Service endpoint policies",
-   "Public endpoints",
-   "Resource locks"
+   "Public endpoints with IP rules",
+   "NSG outbound rules to the Storage service tag"
   ],
   "correct": [
    1
@@ -4911,16 +4911,16 @@
   "q_es": "Un token SAS debe ser lo más restrictivo posible. ¿Qué propiedades debes limitar?",
   "q_en": "A SAS token must be as restrictive as possible. Which properties should you limit?",
   "opts_es": [
-   "Solo el color del contenedor",
+   "El nivel de acceso y el tipo de replicación predeterminados",
    "Permisos, hora de caducidad, IP permitidas y protocolo",
-   "Nada",
-   "El nombre del inquilino"
+   "El nombre y la región de la cuenta de almacenamiento",
+   "El número de contenedores de la cuenta"
   ],
   "opts_en": [
-   "Only the color of the container",
+   "The default access tier and replication type",
    "Permissions, expiry time, allowed IPs and protocol",
-   "Nothing",
-   "The tenant name"
+   "The storage account name and region",
+   "The number of containers in the account"
   ],
   "correct": [
    1
@@ -5038,16 +5038,16 @@
   "q_es": "¿Qué configuración de Azure SQL permite que solo los intervalos de IP y servicios de Azure especificados se conecten a nivel de servidor?",
   "q_en": "Which Azure SQL setting allows only specified IP ranges and Azure services to connect at the server level?",
   "opts_es": [
-   "Deshabilitar TDE",
+   "Configuración del cifrado de datos transparente",
    "Reglas de firewall a nivel de servidor y reglas de red virtual",
-   "Bloqueos de recursos",
-   "Acceso público sin reglas"
+   "Bloqueos de recursos en el servidor",
+   "Acceso de red pública sin reglas de firewall"
   ],
   "opts_en": [
-   "Disable TDE",
+   "Transparent data encryption settings",
    "Server-level firewall rules and virtual network rules",
-   "Resource locks",
-   "Public access with no rules"
+   "Resource locks on the server",
+   "Public network access with no firewall rules"
   ],
   "correct": [
    1
@@ -5116,16 +5116,16 @@
   "q_es": "¿Qué enfoque de autenticación debe usar Azure SQL para las aplicaciones que se ejecutan en Azure y evitar contraseñas almacenadas?",
   "q_en": "Which authentication approach should Azure SQL use for applications running in Azure to avoid stored passwords?",
   "opts_es": [
-   "Contraseña SQL compartida",
-   "Cuenta sa",
+   "Un inicio de sesión SQL compartido guardado en la configuración de la aplicación",
+   "La cuenta sa con una contraseña larga",
    "Identidad administrada con autenticación de Microsoft Entra",
-   "Anónima"
+   "Acceso anónimo limitado a redes privadas"
   ],
   "opts_en": [
-   "Shared SQL password",
-   "Sa account",
+   "A shared SQL login stored in app settings",
+   "The sa account with a long password",
    "Managed identity with Microsoft Entra authentication",
-   "Anonymous"
+   "Anonymous access limited to private networks"
   ],
   "correct": [
    2
@@ -5142,16 +5142,16 @@
   "q_es": "¿Adónde escribe sus registros la auditoría de SQL Managed Instance?",
   "q_en": "Where does auditing for SQL Managed Instance write its logs?",
   "opts_es": [
-   "Archivos de escritorio locales",
-   "Chats de Teams",
+   "Archivos locales en el host de la instancia",
+   "Solo los registros de auditoría de Microsoft 365",
    "Azure Storage, Log Analytics o Event Hubs",
-   "Impresoras"
+   "Solo el registro de actividad de Azure"
   ],
   "opts_en": [
-   "Local desktop files",
-   "Teams chats",
+   "Local files on the instance host",
+   "Microsoft 365 audit logs only",
    "Azure Storage, Log Analytics or Event Hubs",
-   "Printers"
+   "The Azure Activity log only"
   ],
   "correct": [
    2
@@ -5168,16 +5168,16 @@
   "q_es": "¿Qué característica de Cosmos DB deshabilita la autenticación basada en claves y aplica la autorización de Microsoft Entra?",
   "q_en": "Which Cosmos DB feature disables key-based authentication and enforces Microsoft Entra authorization?",
   "opts_es": [
-   "Deshabilitar los registros de auditoría",
+   "Deshabilitar los registros de auditoría de la cuenta",
    "Deshabilitar la autenticación local y usar RBAC",
-   "Habilitar el acceso público",
-   "Compartir las claves de cuenta"
+   "Habilitar el acceso a la red pública",
+   "Compartir las claves de la cuenta con las aplicaciones"
   ],
   "opts_en": [
-   "Disable audit logs",
+   "Disable audit logs on the account",
    "Disable local authentication and use RBAC",
-   "Enable public access",
-   "Share account keys"
+   "Enable public network access",
+   "Share the account keys with applications"
   ],
   "correct": [
    1
@@ -5194,14 +5194,14 @@
   "q_es": "¿Qué opción de conectividad privada mantiene el tráfico entre una red virtual y Azure SQL Database fuera de internet público?",
   "q_en": "Which private connectivity option keeps traffic between a VNet and Azure SQL Database off the public internet?",
   "opts_es": [
-   "Un vínculo anónimo",
-   "Una etiqueta",
+   "Un punto de conexión de servicio a la etiqueta de servicio SQL",
+   "Un punto de conexión público con reglas de firewall de IP",
    "Un punto de conexión privado",
    "Punto de conexión público con firewall abierto"
   ],
   "opts_en": [
-   "An anonymous link",
-   "A tag",
+   "A service endpoint to the SQL service tag",
+   "A public endpoint with IP firewall rules",
    "A private endpoint",
    "Public endpoint with open firewall"
   ],
@@ -5316,16 +5316,16 @@
   "q_es": "¿Qué característica de Azure Virtual Network Manager agrupa redes virtuales para que las configuraciones se apliquen a muchas a la vez?",
   "q_en": "Which Azure Virtual Network Manager feature groups virtual networks so configurations apply to many at once?",
   "opts_es": [
-   "Etiquetas",
+   "Grupos de administración",
    "Grupos de recursos",
    "Grupos de red",
-   "Conjuntos de disponibilidad"
+   "Subredes dentro de una red virtual"
   ],
   "opts_en": [
-   "Tags",
+   "Management groups",
    "Resource groups",
    "Network groups",
-   "Availability sets"
+   "Subnets within one virtual network"
   ],
   "correct": [
    2
@@ -5394,16 +5394,16 @@
   "q_es": "¿Qué configuración de la puerta de enlace VPN protege los túneles de sitio a sitio con criptografía sólida y parámetros personalizados?",
   "q_en": "Which VPN gateway setting protects site-to-site tunnels with strong cryptography and custom parameters?",
   "opts_es": [
-   "Una etiqueta",
+   "La directiva IPsec predeterminada",
    "Directivas IPsec/IKE personalizadas",
-   "Sin cifrado",
-   "Solo IP pública"
+   "Una puerta de enlace de SKU Basic",
+   "Un prefijo de IP pública"
   ],
   "opts_en": [
-   "A tag",
+   "The default IPsec policy",
    "Custom IPsec/IKE policies",
-   "No encryption",
-   "Public IP only"
+   "A Basic SKU gateway",
+   "A public IP prefix"
   ],
   "correct": [
    1
@@ -5446,16 +5446,16 @@
   "q_es": "Para que un punto de conexión privado se resuelva correctamente, ¿qué recurso de Azure debe integrarse?",
   "q_en": "To make a private endpoint resolve correctly, which Azure resource should be integrated?",
   "opts_es": [
-   "Un grupo de seguridad de red",
+   "Un grupo de seguridad de red con una regla que permite DNS",
    "Solo una zona DNS pública",
    "Una zona DNS privada vinculada a la red virtual",
-   "Una tabla de rutas"
+   "Una tabla de rutas con una ruta predeterminada a internet"
   ],
   "opts_en": [
-   "A network security group",
+   "A network security group with an allow rule for DNS",
    "A public DNS zone only",
    "A private DNS zone linked to the virtual network",
-   "A route table"
+   "A route table with a default route to the internet"
   ],
   "correct": [
    2
@@ -5472,16 +5472,16 @@
   "q_es": "¿Qué característica de registro de Network Watcher registra información sobre el tráfico IP que fluye por las redes virtuales para su análisis?",
   "q_en": "Which Network Watcher logging feature records information about IP traffic flowing through virtual networks for analysis?",
   "opts_es": [
-   "Service Health",
+   "Monitor de conexión de Network Watcher",
    "Registros de flujo de red virtual (y registros de flujo de NSG)",
-   "Advisor",
-   "Análisis de costes"
+   "Captura de paquetes de Network Watcher",
+   "Mapa de VM insights de Azure Monitor"
   ],
   "opts_en": [
-   "Service health",
+   "Network Watcher connection monitor",
    "Virtual network flow logs (and NSG flow logs)",
-   "Advisor",
-   "Cost analysis"
+   "Network Watcher packet capture",
+   "VM insights map in Azure Monitor"
   ],
   "correct": [
    1
@@ -5702,15 +5702,15 @@
   "q_en": "Which control can help reduce the risk that Copilot surfaces sensitive documents by labeling them and applying encryption?",
   "opts_es": [
    "Etiquetas de confidencialidad de Microsoft Purview",
-   "Temas",
-   "Presupuestos",
-   "Marcadores"
+   "Directivas de sesión de Defender for Cloud Apps",
+   "Asignaciones de denegación de Azure Policy",
+   "Revisiones de acceso de Microsoft Entra"
   ],
   "opts_en": [
    "Microsoft Purview sensitivity labels",
-   "Themes",
-   "Budgets",
-   "Bookmarks"
+   "Defender for Cloud Apps session policies",
+   "Azure Policy deny assignments",
+   "Microsoft Entra access reviews"
   ],
   "correct": [
    0
@@ -5728,16 +5728,16 @@
   "q_es": "¿Por qué es importante aplicar el mínimo privilegio a la identidad de un agente de IA?",
   "q_en": "Why is it important to apply least privilege to an AI agent's identity?",
   "opts_es": [
-   "No es importante",
+   "Solo importa para las cuentas de usuarios humanos",
    "Un agente con demasiados permisos podría acceder a muchos más datos de los necesarios o modificarlos si se usa mal o se compromete",
-   "Elimina el registro",
-   "Hace que los agentes sean más lentos"
+   "Reduce el coste de la inferencia del modelo",
+   "Es necesario para habilitar el ajuste fino del modelo"
   ],
   "opts_en": [
-   "It is not important",
+   "It only matters for human user accounts",
    "An over-permissioned agent could access or modify far more data than needed if misused or compromised",
-   "It removes logging",
-   "It makes agents slower"
+   "It reduces the cost of model inference",
+   "It is required to enable model fine-tuning"
   ],
   "correct": [
    1
@@ -5783,15 +5783,15 @@
   "q_en": "What is the purpose of real-time protection for Copilot Studio agents?",
   "opts_es": [
    "Supervisar y bloquear las acciones arriesgadas o inseguras de los agentes mientras se ejecutan",
-   "Eliminar el agente",
-   "Cambiar el nombre del agente",
-   "Imprimir registros"
+   "Entrenar el modelo de lenguaje del agente con los prompts de los usuarios",
+   "Reducir la latencia de respuesta del agente",
+   "Archivar las conversaciones del agente para eDiscovery"
   ],
   "opts_en": [
    "To monitor and block risky or unsafe agent actions as they run",
-   "To delete the agent",
-   "To rename the agent",
-   "To print logs"
+   "To train the agent's language model on user prompts",
+   "To reduce the agent's response latency",
+   "To archive agent conversations for eDiscovery"
   ],
   "correct": [
    0
@@ -6012,16 +6012,16 @@
   "q_es": "¿Qué capacidad de Azure Bastion permite conectarte a una VM mediante el cliente RDP o SSH nativo de tu equipo?",
   "q_en": "Which Azure Bastion capability lets you connect to a VM using the native RDP or SSH client on your computer?",
   "opts_es": [
-   "Una etiqueta",
+   "Vínculos para compartir con acceso desde el navegador",
    "Compatibilidad con el cliente nativo (SKU Estándar o superior)",
-   "Una VPN por usuario",
-   "RDP público"
+   "Una conexión VPN de punto a sitio por usuario",
+   "Exposición pública de RDP mediante una regla de NSG"
   ],
   "opts_en": [
-   "A tag",
+   "Shareable links for browser-based access",
    "Native client support (Standard SKU or higher)",
-   "A VPN per user",
-   "Public RDP"
+   "A point-to-site VPN connection per user",
+   "Public RDP exposure through an NSG rule"
   ],
   "correct": [
    1
@@ -6038,15 +6038,15 @@
   "q_es": "¿Qué hace el modo «aplicar» de Azure Machine Configuration en comparación con el modo «auditar»?",
   "q_en": "What does Azure Machine Configuration's 'enforce' mode do compared with 'audit' mode?",
   "opts_es": [
-   "Detiene el registro",
-   "No hace nada",
-   "Elimina la VM",
+   "Deja de informar del estado de la configuración",
+   "Solo cambia la programación de auditoría",
+   "Elimina automáticamente las VM no conformes",
    "Corrige la desviación de configuración en lugar de solo informar de ella"
   ],
   "opts_en": [
-   "It stops logging",
-   "It does nothing",
-   "It deletes the VM",
+   "It stops reporting configuration state",
+   "It only changes the audit schedule",
+   "It deletes noncompliant VMs automatically",
    "It remediates the configuration drift instead of only reporting it"
   ],
   "correct": [
@@ -6212,16 +6212,16 @@
   "q_es": "¿Qué característica de ACR restringe qué redes pueden extraer e insertar imágenes?",
   "q_en": "Which ACR feature restricts which networks can pull and push images?",
   "opts_es": [
-   "Extracción anónima pública",
-   "Una etiqueta",
+   "Solo tokens con ámbito de repositorio",
+   "Replicación geográfica a una segunda región",
    "Reglas de red y puntos de conexión privados (Premium)",
-   "Usuario administrador"
+   "La cuenta de usuario administrador del registro"
   ],
   "opts_en": [
-   "Public anonymous pull",
-   "A tag",
+   "Repository-scoped tokens only",
+   "Geo-replication to a second region",
    "Network rules and private endpoints (Premium)",
-   "Admin user"
+   "The registry admin user account"
   ],
   "correct": [
    2
@@ -6238,15 +6238,15 @@
   "q_es": "¿Qué configuración de Azure Container Apps permite que la aplicación use una identidad administrada para acceder a los secretos de Key Vault?",
   "q_en": "Which Azure Container Apps setting lets the app use a managed identity to access Key Vault secrets?",
   "opts_es": [
-   "Usar acceso anónimo",
-   "Deshabilitar la autenticación",
-   "Almacenar secretos en la imagen",
+   "Habilitar el acceso anónimo al almacén",
+   "Guardar los secretos dentro de la imagen del contenedor",
+   "Poner secretos en texto sin formato en variables de entorno",
    "Asignar una identidad administrada y hacer referencia a secretos de Key Vault"
   ],
   "opts_en": [
-   "Use anonymous access",
-   "Disable authentication",
-   "Store secrets in the image",
+   "Enable anonymous access to the vault",
+   "Store the secrets inside the container image",
+   "Put plain-text secrets in environment variables",
    "Assign a managed identity and reference Key Vault secrets"
   ],
   "correct": [
@@ -6264,15 +6264,15 @@
   "q_es": "¿Qué configuración de Azure Functions restringe qué intervalos de IP o redes virtuales pueden acceder a la aplicación de funciones?",
   "q_en": "Which Azure Functions setting restricts which IP ranges or virtual networks can reach the function app?",
   "opts_es": [
-   "Una etiqueta",
-   "Claves de función anónimas",
-   "CORS abierto a todos",
+   "Claves de función en el nivel de autorización",
+   "La configuración Always On",
+   "Orígenes permitidos de CORS",
    "Restricciones de acceso"
   ],
   "opts_en": [
-   "A tag",
-   "Anonymous function keys",
-   "Open CORS to all",
+   "Function keys at the authorization level",
+   "The Always On setting",
+   "CORS allowed origins",
    "Access restrictions"
   ],
   "correct": [
@@ -6290,16 +6290,16 @@
   "q_es": "¿Cómo puede una aplicación de App Service llegar a una base de datos de back-end privada a través de una red virtual?",
   "q_en": "How can an App Service app reach a private backend database over a virtual network?",
   "opts_es": [
-   "Punto de conexión público de la base de datos",
+   "Un punto de conexión público de base de datos con reglas de firewall",
    "Integración de red virtual regional",
-   "Una etiqueta",
-   "Inicio de sesión anónimo"
+   "Una etiqueta de servicio en el NSG de la aplicación",
+   "Una IP pública en la instancia de la aplicación"
   ],
   "opts_en": [
-   "Public database endpoint",
+   "A public database endpoint with firewall rules",
    "Regional virtual network integration",
-   "A tag",
-   "Anonymous login"
+   "A service tag in the app's NSG",
+   "A public IP on the app instance"
   ],
   "correct": [
    1
@@ -6469,16 +6469,16 @@
   "q_es": "¿Qué representa la puntuación de seguridad de Defender for Cloud?",
   "q_en": "What does the Defender for Cloud secure score represent?",
   "opts_es": [
-   "La longitud del nombre del inquilino",
-   "El coste de almacenamiento",
+   "El número de alertas generadas en los últimos 30 días",
+   "El coste mensual de los planes de Defender habilitados",
    "El porcentaje de controles de seguridad recomendados que se han implementado",
-   "El número de VM"
+   "El recuento de suscripciones del inquilino"
   ],
   "opts_en": [
-   "The tenant name length",
-   "The storage cost",
+   "The number of alerts raised in the last 30 days",
+   "The monthly cost of the enabled Defender plans",
    "The percentage of recommended security controls that are implemented",
-   "The number of VMs"
+   "The count of subscriptions in the tenant"
   ],
   "correct": [
    2
@@ -6547,16 +6547,16 @@
   "q_es": "¿Qué tipo de hallazgo proporciona Microsoft Defender Vulnerability Management para las VM de Azure?",
   "q_en": "Which type of finding does Microsoft Defender Vulnerability Management provide for Azure VMs?",
   "opts_es": [
-   "Calidad de llamadas de Teams",
+   "Anomalías de facturación y previsiones de coste",
    "Vulnerabilidades de software y errores de configuración con corrección priorizada",
-   "Anomalías de facturación",
-   "Valores TTL de DNS"
+   "Mediciones de latencia de red y pérdida de paquetes",
+   "Configuración de retención de registros de auditoría"
   ],
   "opts_en": [
-   "Teams call quality",
+   "Billing anomalies and cost forecasts",
    "Software vulnerabilities and misconfigurations with prioritized remediation",
-   "Billing anomalies",
-   "DNS TTL values"
+   "Network latency and packet loss measurements",
+   "Audit log retention settings"
   ],
   "correct": [
    1
@@ -6799,16 +6799,16 @@
   "q_es": "¿Qué enfoque reduce el coste de ingesta de Sentinel filtrando los eventos de Windows irrelevantes antes de almacenarlos?",
   "q_en": "Which approach reduces Sentinel ingestion cost by filtering irrelevant Windows events before they are stored?",
   "opts_es": [
-   "Deshabilitar Sentinel",
-   "Almacenarlo todo",
+   "Deshabilitar las reglas de análisis fuera del horario laboral",
+   "Almacenar todos los eventos sin filtrar solo como registros básicos",
    "Usar filtros de regla de recopilación de datos o consultas XPath",
-   "Eliminar el área de trabajo"
+   "Aumentar el periodo de retención del área de trabajo"
   ],
   "opts_en": [
-   "Disable Sentinel",
-   "Store everything",
+   "Disable analytics rules during off-hours",
+   "Store all events unfiltered as Basic logs only",
    "Use data collection rule filters or XPath queries",
-   "Delete the workspace"
+   "Increase the retention period of the workspace"
   ],
   "correct": [
    2
@@ -6923,15 +6923,15 @@
   "q_en": "How does Security Copilot ensure analysts only see data they are authorized to access?",
   "opts_es": [
    "Usa los permisos existentes del analista en los productos subyacentes",
-   "Deshabilita RBAC",
-   "Ignora los permisos",
-   "Concede derechos de administrador a todos"
+   "Se ejecuta con una cuenta de servicio compartida con todos los permisos",
+   "Almacena en caché datos de las sesiones de otros usuarios",
+   "Exige que los analistas sean administradores globales"
   ],
   "opts_en": [
    "It uses the analyst's existing permissions in the underlying products",
-   "It disables RBAC",
-   "It ignores permissions",
-   "It grants everyone admin rights"
+   "It runs with a shared service account that has all permissions",
+   "It caches data from other users' sessions",
+   "It requires analysts to be Global Administrators"
   ],
   "correct": [
    0
@@ -6977,15 +6977,15 @@
   "q_en": "Where can organizations find and enable agents built by Microsoft and partners for Security Copilot?",
   "opts_es": [
    "La Security Store y la administración de agentes de Security Copilot",
-   "El portal de costes de Azure",
-   "La lista de reuniones de Teams",
-   "El editor de zonas DNS"
+   "Azure Marketplace de imágenes de VM",
+   "La galería de aplicaciones de Microsoft Entra",
+   "La página de cumplimiento normativo de Defender for Cloud"
   ],
   "opts_en": [
    "The Security Store and agent management in Security Copilot",
-   "The Azure Cost portal",
-   "The Teams meeting list",
-   "The DNS zone editor"
+   "The Azure Marketplace for VM images",
+   "The Microsoft Entra application gallery",
+   "The Defender for Cloud regulatory compliance page"
   ],
   "correct": [
    0
@@ -7132,15 +7132,15 @@
   "q_es": "Un registro de aplicación necesita acceso a Microsoft Graph sin un usuario con sesión iniciada. ¿Qué tipo de permiso se requiere?",
   "q_en": "An app registration needs access to Microsoft Graph without a signed-in user. Which permission type is required?",
   "opts_es": [
-   "Sin permisos",
-   "Solo permisos delegados",
-   "Permisos de invitado",
+   "Permisos delegados con consentimiento del usuario",
+   "Permisos delegados concedidos por el usuario con sesión iniciada",
+   "Permisos de usuarios invitados del inquilino",
    "Permisos de aplicación con consentimiento del administrador"
   ],
   "opts_en": [
-   "No permissions",
-   "Delegated permissions only",
-   "Guest permissions",
+   "Delegated permissions with user consent",
+   "Delegated permissions granted by the signed-in user",
+   "Guest user permissions in the tenant",
    "Application permissions with admin consent"
   ],
   "correct": [
@@ -7233,16 +7233,16 @@
   "q_es": "¿Cuál es la diferencia clave entre las directivas de acceso de Key Vault y Azure RBAC?",
   "q_en": "What is the key difference between Key Vault access policies and Azure RBAC?",
   "opts_es": [
-   "RBAC no se puede usar para secretos",
+   "RBAC se aplica solo a claves, no a secretos",
    "RBAC ofrece una autorización centralizada y detallada coherente con el resto de Azure; las directivas de acceso son específicas del almacén",
-   "Son idénticas",
-   "Las directivas de acceso son más nuevas y recomendadas"
+   "Son idénticos en comportamiento y ámbito",
+   "Las directivas de acceso son más nuevas y son el modelo recomendado"
   ],
   "opts_en": [
-   "RBAC cannot be used for secrets",
+   "RBAC applies only to keys, not to secrets",
    "RBAC offers centralized, granular authorization consistent with the rest of Azure; access policies are vault-specific",
-   "They are identical",
-   "Access policies are newer and recommended"
+   "They are identical in behavior and scope",
+   "Access policies are newer and are the recommended model"
   ],
   "correct": [
    1
@@ -7585,16 +7585,16 @@
   "q_es": "¿Qué modelo de implementación de Azure Firewall protege el tráfico de muchas redes virtuales y sucursales mediante concentrador y radios?",
   "q_en": "Which Azure Firewall deployment model protects traffic across many virtual networks and branches using hub-and-spoke?",
   "opts_es": [
-   "Sin firewall",
-   "Una IP pública por VM",
+   "Un firewall independiente en cada máquina virtual",
+   "Una IP pública por VM protegida con NSG",
    "Azure Firewall en una red virtual concentradora o en un concentrador de Virtual WAN protegido",
-   "Un firewall por VM"
+   "Un Azure Firewall por red virtual sin directiva central"
   ],
   "opts_en": [
-   "No firewall",
-   "A public IP per VM",
+   "A separate firewall on every virtual machine",
+   "A public IP per VM protected by NSGs",
    "Azure Firewall in a hub virtual network or secured Virtual WAN hub",
-   "One firewall per VM"
+   "One Azure Firewall per virtual network with no central policy"
   ],
   "correct": [
    2
@@ -7612,15 +7612,15 @@
   "q_en": "Which NSG feature uses Azure service tags like Storage or Sql instead of listing IP ranges?",
   "opts_es": [
    "Etiquetas de servicio",
-   "Etiquetas de recursos",
-   "Etiquetas de costes",
-   "Etiquetas de directiva"
+   "Grupos de seguridad de aplicaciones",
+   "Registros de flujo de NSG",
+   "Etiquetas FQDN de Azure Firewall"
   ],
   "opts_en": [
    "Service tags",
-   "Resource tags",
-   "Cost tags",
-   "Policy tags"
+   "Application security groups",
+   "NSG flow logs",
+   "Azure Firewall FQDN tags"
   ],
   "correct": [
    0
@@ -7712,15 +7712,15 @@
   "q_es": "¿Por qué debe gobernarse el acceso a los agentes de IA mediante identidad y acceso condicional?",
   "q_en": "Why should access to AI agents be governed through identity and conditional access?",
   "opts_es": [
-   "Los agentes no necesitan identidades",
-   "Los agentes nunca acceden a datos",
-   "No es necesario",
+   "Los agentes no necesitan identidades porque se ejecutan como usuarios",
+   "Los agentes solo leen datos públicos, así que el riesgo es mínimo",
+   "La gobernanza es opcional solo para agentes que no son de producción",
    "Los agentes pueden actuar a gran escala, por lo que las identidades no administradas aumentan el radio de impacto del mal uso o del compromiso"
   ],
   "opts_en": [
-   "Agents do not need identities",
-   "Agents never access data",
-   "It is not necessary",
+   "Agents do not need identities because they run as users",
+   "Agents only read public data, so risk is minimal",
+   "Governance is optional for non-production agents only",
    "Agents can act at scale, so unmanaged identities increase the blast radius of misuse or compromise"
   ],
   "correct": [
@@ -7811,16 +7811,16 @@
   "q_es": "¿Qué configuración de Defender for Servers proporciona análisis de vulnerabilidades sin instalar un agente en cada VM?",
   "q_en": "Which Defender for Servers setting provides vulnerability scanning without installing an agent on each VM?",
   "opts_es": [
-   "Inventario manual",
-   "Etiquetas",
+   "Scripts de inventario manuales en cada VM",
+   "Implementar el agente de Log Analytics",
    "Análisis sin agente",
-   "Imprimir registros"
+   "Supervisión de integridad de archivos"
   ],
   "opts_en": [
-   "Manual inventory",
-   "Tags",
+   "Manual inventory scripts on each VM",
+   "Deploying the Log Analytics agent",
    "Agentless scanning",
-   "Printing logs"
+   "File integrity monitoring"
   ],
   "correct": [
    2
@@ -8111,13 +8111,13 @@
   "opts_es": [
    "Listas de seguimiento",
    "Cuadernos de estrategias",
-   "Bloqueos de recursos",
+   "Plantillas de reglas de análisis",
    "Libros"
   ],
   "opts_en": [
    "Watchlists",
    "Playbooks",
-   "Resource locks",
+   "Analytics rule templates",
    "Workbooks"
   ],
   "correct": [
@@ -8311,14 +8311,14 @@
   "opts_es": [
    "Directiva de nomenclatura de grupos",
    "Configuración de usuario: Los usuarios pueden registrar aplicaciones establecido en No",
-   "Personalización de marca",
-   "Configuración de dispositivos"
+   "Configuración de colaboración externa",
+   "Configuración de acceso entre inquilinos"
   ],
   "opts_en": [
    "Group naming policy",
    "User settings: Users can register applications set to No",
-   "Company branding",
-   "Device settings"
+   "External collaboration settings",
+   "Cross-tenant access settings"
   ],
   "correct": [
    1
@@ -8335,16 +8335,16 @@
   "q_es": "Un administrador quiere ver qué roles con privilegios tienen asignaciones activas permanentes. ¿Qué informe de PIM ayuda?",
   "q_en": "An admin wants to see which privileged roles have standing active assignments. Which PIM report helps?",
   "opts_es": [
-   "Análisis de costes",
-   "Advisor",
+   "Informes de Azure Cost Management",
+   "Recomendaciones de Azure Advisor",
    "Informes de asignaciones de roles y revisiones de acceso de PIM",
-   "Service Health"
+   "Historial de Service Health"
   ],
   "opts_en": [
-   "Cost analysis",
-   "Advisor",
+   "Azure Cost Management reports",
+   "Azure Advisor recommendations",
    "PIM role assignments and access review reports",
-   "Service health"
+   "Service Health history"
   ],
   "correct": [
    2
@@ -8492,15 +8492,15 @@
   "q_en": "Which VPN gateway SKU feature supports zone redundancy for high availability across availability zones?",
   "opts_es": [
    "SKU de VPN Gateway con redundancia de zona (SKU AZ)",
-   "Sin puerta de enlace",
-   "SKU Basic",
-   "Una etiqueta"
+   "Una puerta de enlace de SKU Basic",
+   "Una puerta de enlace de una sola instancia sin zonas",
+   "Una puerta de enlace con una IP pública de SKU Basic"
   ],
   "opts_en": [
    "Zone-redundant VPN Gateway SKUs (AZ SKUs)",
-   "No gateway",
-   "Basic SKU",
-   "A tag"
+   "A Basic SKU gateway",
+   "A single-instance non-zonal gateway",
+   "A gateway with a Basic SKU public IP"
   ],
   "correct": [
    0
@@ -8517,16 +8517,16 @@
   "q_es": "¿Cuál es un buen primer paso al prepararse para implementar Copilot en un entorno con un uso compartido excesivo generalizado?",
   "q_en": "What is a good first step when preparing to deploy Copilot in an environment with extensive oversharing?",
   "opts_es": [
-   "Eliminar todos los sitios",
+   "Eliminar todos los sitios que contienen contenido confidencial",
    "Evaluar el uso compartido excesivo, limpiar permisos y aplicar etiquetas de confidencialidad",
-   "Habilitar Copilot para todos de inmediato",
-   "Deshabilitar todas las etiquetas"
+   "Habilitar Copilot para todos los usuarios de inmediato",
+   "Deshabilitar las etiquetas de confidencialidad para simplificar el acceso"
   ],
   "opts_en": [
-   "Delete all sites",
+   "Delete all sites that hold sensitive content",
    "Assess oversharing, clean up permissions and apply sensitivity labels",
-   "Enable Copilot for everyone immediately",
-   "Disable all labels"
+   "Enable Copilot for every user immediately",
+   "Disable sensitivity labels to simplify access"
   ],
   "correct": [
    1
@@ -8544,16 +8544,16 @@
   "q_es": "¿Qué control ayuda a prevenir la inyección de indicaciones y la fuga de datos en una aplicación de Azure AI personalizada?",
   "q_en": "Which control helps prevent prompt injection and data leakage in a custom Azure AI application?",
   "opts_es": [
-   "Publicar las claves del modelo",
-   "Deshabilitar todo el registro",
+   "Publicar las claves del modelo en la configuración de la aplicación",
+   "Deshabilitar el registro para proteger la privacidad",
    "Barreras de seguridad de contenido, validación de entradas y acceso a datos con mínimo privilegio",
-   "Conceder derechos de administrador a la aplicación"
+   "Conceder a la aplicación derechos de administrador sobre todos los datos"
   ],
   "opts_en": [
-   "Publishing the model keys",
-   "Disabling all logging",
+   "Publishing the model keys in the app configuration",
+   "Disabling logging to protect privacy",
    "Content safety guardrails, input validation and least-privilege data access",
-   "Granting admin rights to the app"
+   "Granting the app admin rights over all data"
   ],
   "correct": [
    2
@@ -8597,16 +8597,16 @@
   "q_es": "¿Qué implementación de Azure Bastion evita la necesidad de una IP pública en las VM de destino y expone solo el servicio Bastion en la red virtual?",
   "q_en": "Which Azure Bastion deployment prevents the need for a public IP on target VMs and exposes only the Bastion service in the VNet?",
   "opts_es": [
-   "Una IP pública en cada VM",
-   "RDP abierto en el NSG",
+   "Una dirección IP pública en cada VM de destino",
+   "Una regla de NSG que abre RDP desde internet",
    "Azure Bastion implementado en una subred AzureBastionSubnet dedicada",
-   "Sin administración"
+   "Una VM de salto con una IP pública"
   ],
   "opts_en": [
-   "A public IP on every VM",
-   "Open RDP in the NSG",
+   "A public IP address on every target VM",
+   "An NSG rule that opens RDP from the internet",
    "Azure Bastion deployed in a dedicated AzureBastionSubnet",
-   "No management"
+   "A jump box VM with a public IP"
   ],
   "correct": [
    2
@@ -8649,15 +8649,15 @@
   "q_es": "¿Qué característica de Azure Container Registry permite restringir el acceso de extracción a ámbitos específicos y genera credenciales con ámbito de repositorio?",
   "q_en": "Which Azure Container Registry feature lets you restrict pull access to specific scopes and generates repository-scoped credentials?",
   "opts_es": [
-   "El usuario administrador",
-   "Extracción anónima",
-   "Una etiqueta",
+   "El usuario administrador del registro",
+   "Acceso de extracción anónimo",
+   "Replicación geográfica",
    "Tokens con ámbito de repositorio"
   ],
   "opts_en": [
-   "The admin user",
-   "Anonymous pull",
-   "A tag",
+   "The registry admin user",
+   "Anonymous pull access",
+   "Geo-replication",
    "Repository-scoped tokens"
   ],
   "correct": [
@@ -8727,15 +8727,15 @@
   "q_es": "¿Qué característica de Sentinel estandariza cómo se implementan los conectores y las reglas como código entre áreas de trabajo?",
   "q_en": "Which Sentinel feature standardizes how connectors and rules are deployed as code across workspaces?",
   "opts_es": [
-   "Capturas de pantalla",
-   "Etiquetas",
-   "Clics manuales en el portal",
+   "Exportar libros a PDF",
+   "Etiquetar recursos manualmente",
+   "Cambios manuales en el portal en cada área de trabajo",
    "Repositorios (CI/CD) y plantillas ARM/Bicep"
   ],
   "opts_en": [
-   "Screenshots",
-   "Tags",
-   "Manual portal clicks",
+   "Exporting workbooks to PDF",
+   "Tagging resources manually",
+   "Manual portal changes in each workspace",
    "Repositories (CI/CD) and ARM/Bicep templates"
   ],
   "correct": [
@@ -8780,15 +8780,15 @@
   "q_en": "What should administrators review periodically for Security Copilot plugins and agents?",
   "opts_es": [
    "Qué complementos y agentes están habilitados, sus permisos y su uso",
-   "Nada",
-   "Solo el tema de color",
-   "La zona DNS"
+   "Solo si los nombres de producto están bien escritos",
+   "Solo el tema de color del portal",
+   "La zona DNS de la organización"
   ],
   "opts_en": [
    "Which plugins and agents are enabled, their permissions and their usage",
-   "Nothing",
-   "Only the color theme",
-   "The DNS zone"
+   "Only whether product names are spelled correctly",
+   "Only the color theme of the portal",
+   "The DNS zone of the organization"
   ],
   "correct": [
    0

@@ -8,16 +8,16 @@
   "q_es": "El SOC quiere recibir un correo cada vez que se cree un incidente de gravedad alta en Microsoft Defender XDR. ¿Qué debes configurar?",
   "q_en": "The SOC wants an email whenever a new high-severity incident is created in Microsoft Defender XDR. What should you configure?",
   "opts_es": [
-   "Una directiva de cumplimiento de Intune",
+   "Una regla de automatización de Sentinel que cierra incidentes",
    "Una regla de notificación por correo de incidentes en la configuración del portal de Defender",
-   "Un libro de Sentinel",
-   "Una directiva de retención"
+   "Una directiva de Safe Links de Defender for Office 365",
+   "Una directiva de retención de Purview para alertas"
   ],
   "opts_en": [
-   "An Intune compliance policy",
+   "A Sentinel automation rule that closes incidents",
    "An incident email notification rule in the Defender portal settings",
-   "A Sentinel workbook",
-   "A retention policy"
+   "A Defender for Office 365 Safe Links policy",
+   "A Purview retention policy for alerts"
   ],
   "correct": [
    1
@@ -34,15 +34,15 @@
   "q_es": "Una alerta ruidosa se activa continuamente por una herramienta de administración legítima. ¿Qué puedes crear para que la alerta deje de aparecer en ese escenario concreto?",
   "q_en": "A noisy alert keeps triggering for a known-good admin tool. What can you create so the alert no longer appears for that specific scenario?",
   "opts_es": [
-   "Un nuevo inquilino",
-   "Una cuenta de invitado",
-   "Un registro DNS",
+   "Una nueva regla de detección personalizada para la misma herramienta",
+   "Una exclusión adicional de acceso condicional",
+   "Una lista de seguimiento de Sentinel que solo contiene el nombre de la herramienta",
    "Una regla de supresión de alertas (ajuste) limitada a los dispositivos y condiciones afectados"
   ],
   "opts_en": [
-   "A new tenant",
-   "A guest account",
-   "A DNS record",
+   "A new custom detection rule for the same tool",
+   "An extra Conditional Access exclusion",
+   "A Sentinel watchlist containing only the tool's name",
    "An alert suppression (tuning) rule scoped to the affected devices and conditions"
   ],
   "correct": [
@@ -60,15 +60,15 @@
   "q_es": "¿Qué hace la correlación de incidentes en Microsoft Defender XDR?",
   "q_en": "What does incident correlation in Microsoft Defender XDR do?",
   "opts_es": [
-   "Bloquea el correo",
+   "Bloquea el correo malicioso en la puerta de enlace de correo",
    "Agrupa alertas relacionadas de diferentes productos en un único incidente para que los analistas vean la historia completa del ataque",
-   "Cifra las alertas",
+   "Cifra los datos de alertas almacenados en el portal",
    "Elimina alertas duplicadas de forma permanente"
   ],
   "opts_en": [
-   "Blocks email",
+   "Blocks malicious email at the mail gateway",
    "Groups related alerts from different products into a single incident so analysts see the full attack story",
-   "Encrypts alerts",
+   "Encrypts alert data stored in the portal",
    "Deletes duplicate alerts permanently"
   ],
   "correct": [
@@ -86,15 +86,15 @@
   "q_es": "¿Dónde se habilitan características como la respuesta en vivo, la protección contra alteraciones y EDR en modo de bloqueo para Defender for Endpoint?",
   "q_en": "Where do you enable features such as live response, tamper protection and EDR in block mode for Defender for Endpoint?",
   "opts_es": [
-   "Centro de administración de Teams",
-   "Azure Advisor",
-   "Directiva de nomenclatura de grupos",
+   "Configuración del centro de administración de Microsoft Teams",
+   "Recomendaciones de Azure Advisor",
+   "Configuración de cumplimiento de dispositivos de Microsoft Intune",
    "Características avanzadas en la configuración de Endpoints del portal de Defender"
   ],
   "opts_en": [
-   "Teams admin center",
-   "Azure Advisor",
-   "Group naming policy",
+   "Microsoft Teams admin center settings",
+   "Azure Advisor recommendations",
+   "Microsoft Intune device compliance settings",
    "Advanced features under Endpoints settings in the Defender portal"
   ],
   "correct": [
@@ -113,15 +113,15 @@
   "q_en": "A device group in Defender for Endpoint is set to 'Full - remediate threats automatically'. What does this mean for automated investigations?",
   "opts_es": [
    "Las acciones de corrección se realizan automáticamente sin esperar aprobación",
-   "Los dispositivos se borran",
-   "Nunca se realiza ninguna corrección",
-   "Solo se analiza el correo"
+   "Las acciones de corrección esperan la aprobación de un administrador de seguridad",
+   "Solo se recopilan datos de investigación, sin corrección",
+   "Los dispositivos se aíslan hasta que un analista los libera"
   ],
   "opts_en": [
    "Remediation actions are taken automatically without waiting for approval",
-   "Devices are wiped",
-   "No remediation ever occurs",
-   "Only email is scanned"
+   "Remediation actions wait for approval from a Security Administrator",
+   "Only investigation data is collected, with no remediation",
+   "Devices are isolated until an analyst releases them"
   ],
   "correct": [
    0
@@ -139,15 +139,15 @@
   "q_en": "Which element controls which devices an analyst role can see and act on in Defender for Endpoint?",
   "opts_es": [
    "Grupos de dispositivos combinados con control de acceso basado en roles",
-   "Ubicaciones con nombre",
-   "Paquetes de acceso",
-   "Dominios personalizados"
+   "Ubicaciones con nombre en acceso condicional",
+   "Paquetes de acceso de administración de derechos",
+   "Dominios personalizados en Microsoft Entra ID"
   ],
   "opts_en": [
    "Device groups combined with role-based access control",
-   "Named locations",
-   "Access packages",
-   "Custom domains"
+   "Named locations in Conditional Access",
+   "Entitlement management access packages",
+   "Custom domains in Microsoft Entra ID"
   ],
   "correct": [
    0
@@ -165,15 +165,15 @@
   "q_en": "Which type of indicator in Defender for Endpoint lets you block a known-malicious file hash across all devices?",
   "opts_es": [
    "Un indicador de hash de archivo (IoC) con acción de bloqueo",
-   "Una ubicación con nombre",
-   "Una etiqueta de retención",
-   "Una directiva de nomenclatura de grupos"
+   "Una ubicación con nombre de acceso condicional",
+   "Una etiqueta de retención de Purview",
+   "Una directiva de reuniones de Teams"
   ],
   "opts_en": [
    "A file hash indicator (IoC) with a block action",
-   "A named location",
-   "A retention label",
-   "A group naming policy"
+   "A Conditional Access named location",
+   "A Purview retention label",
+   "A Teams meeting policy"
   ],
   "correct": [
    0
@@ -190,16 +190,16 @@
   "q_es": "¿Qué hace la interrupción automática de ataques cuando detecta un ataque de ransomware de alta confianza?",
   "q_en": "What does automatic attack disruption do when it detects a high-confidence ransomware attack?",
   "opts_es": [
-   "Elimina el inquilino",
-   "Espera un informe mensual",
+   "Espera a que un analista apruebe cada acción de contención",
+   "Solo crea un informe para la revisión mensual",
    "Contiene los activos afectados, por ejemplo aislando dispositivos o deshabilitando cuentas comprometidas",
-   "Envía un boletín"
+   "Envía un correo de alerta sin realizar ninguna acción"
   ],
   "opts_en": [
-   "Deletes the tenant",
-   "Waits for a monthly report",
+   "Waits for an analyst to approve each containment action",
+   "Only creates a report for the monthly review",
    "Contains affected assets, for example by isolating devices or disabling compromised accounts",
-   "Sends a newsletter"
+   "Sends an alert email without taking any action"
   ],
   "correct": [
    2
@@ -243,15 +243,15 @@
   "q_en": "An automation rule must run a playbook. What permission is required for Sentinel to run it?",
   "opts_es": [
    "Administrador global para cada analista",
-   "No se necesita ningún permiso",
+   "El cuaderno de estrategias se ejecuta sin conceder ningún permiso",
    "Sentinel debe tener permiso sobre el grupo de recursos que contiene el cuaderno de estrategias",
-   "Una cuenta de invitado"
+   "Una cuenta de invitado agregada al flujo de Logic Apps"
   ],
   "opts_en": [
    "Global Administrator for every analyst",
-   "No permission is needed",
+   "The playbook runs without any permission being granted",
    "Sentinel must be granted permission on the resource group that contains the playbook",
-   "A guest account"
+   "A guest account added to the Logic Apps workflow"
   ],
   "correct": [
    2
@@ -499,16 +499,16 @@
   "q_es": "¿Por qué enviaría una organización registros ruidosos y de baja fidelidad al nivel de lago de datos de Sentinel en lugar del nivel de análisis?",
   "q_en": "Why would an organization send noisy, low-fidelity logs to the Sentinel data lake tier instead of the analytics tier?",
   "opts_es": [
-   "Para deshabilitar las detecciones",
-   "Para aumentar los costes de licencia",
+   "Para deshabilitar las reglas de análisis sobre esos datos",
+   "Para aumentar el coste de licencia del nivel de análisis",
    "Para conservar grandes volúmenes a menor coste y poder consultarlos con trabajos KQL cuando sea necesario",
-   "Para eliminar la compatibilidad con KQL"
+   "Para quitar la compatibilidad con KQL de esas tablas"
   ],
   "opts_en": [
-   "To disable detections",
-   "To increase license costs",
+   "To disable analytics rules on that data",
+   "To increase the analytics-tier license cost",
    "To retain large volumes at lower cost while still querying them with KQL jobs when needed",
-   "To remove KQL support"
+   "To remove KQL support for those tables"
   ],
   "correct": [
    2
@@ -525,16 +525,16 @@
   "q_es": "¿Qué proporciona la optimización del SOC en Microsoft Sentinel?",
   "q_en": "What does SOC optimization in Microsoft Sentinel provide?",
   "opts_es": [
-   "Un escritorio virtual",
+   "Un escritorio virtual administrado para analistas",
    "Recomendaciones para mejorar la cobertura de detección de escenarios de amenazas y reducir la ingesta de datos no usados",
-   "El despido automático de analistas",
-   "Una caché DNS"
+   "Asignación automática de incidentes según la carga de trabajo de los analistas",
+   "Una caché de consultas DNS para la búsqueda de amenazas"
   ],
   "opts_en": [
-   "A virtual desktop",
+   "A managed virtual desktop for analysts",
    "Recommendations to improve detection coverage for threat scenarios and to reduce ingestion of unused data",
-   "Automatic firing of analysts",
-   "A DNS cache"
+   "Automatic assignment of incidents by analyst workload",
+   "A cache of DNS queries for hunting"
   ],
   "correct": [
    1
@@ -782,15 +782,15 @@
   "q_es": "¿Qué enfoque recopila eventos de seguridad de muchos servidores Windows reenviándolos primero a un servidor recopilador?",
   "q_en": "Which approach collects security events from many Windows servers by forwarding them to a collector server first?",
   "opts_es": [
-   "Azure Bastion",
-   "Simulación de ataques",
-   "Vínculos seguros",
+   "Habilitar el conector de Azure Activity",
+   "Configurar la automatización de flujos de trabajo de Defender for Cloud",
+   "Implementar Syslog mediante AMA en cada servidor",
    "Reenvío de eventos de Windows (WEF) con el conector AMA en el recopilador"
   ],
   "opts_en": [
-   "Azure Bastion",
-   "Attack simulation",
-   "Safe Links",
+   "Enabling the Azure Activity connector",
+   "Configuring Defender for Cloud workflow automation",
+   "Deploying Syslog via AMA on each server",
    "Windows Event Forwarding (WEF) with the AMA connector on the collector"
   ],
   "correct": [
@@ -835,15 +835,15 @@
   "q_en": "How do you collect Azure subscription activity logs into Sentinel at scale for many subscriptions?",
   "opts_es": [
    "Usar Azure Policy para implementar la configuración de diagnóstico que envíe el registro de actividad al área de trabajo",
-   "Enviar los registros por correo",
-   "Imprimir los registros",
-   "Copiar archivos manualmente"
+   "Configurar el conector de Microsoft Entra ID para cada suscripción",
+   "Instalar el Azure Monitor Agent en cada suscripción",
+   "Crear manualmente una regla de recopilación de datos para cada grupo de recursos"
   ],
   "opts_en": [
    "Use Azure Policy to deploy diagnostic settings that send the Activity log to the workspace",
-   "Email the logs",
-   "Print the logs",
-   "Manually copy files"
+   "Configure the Microsoft Entra ID connector for each subscription",
+   "Install the Azure Monitor Agent on every subscription",
+   "Create a data collection rule for each resource group manually"
   ],
   "correct": [
    0
@@ -912,16 +912,16 @@
   "q_es": "¿Cómo puedes reducir el coste de ingesta descartando columnas innecesarias o filtrando eventos antes de almacenarlos?",
   "q_en": "How can you reduce ingestion cost by dropping unnecessary columns or filtering events before they are stored?",
   "opts_es": [
-   "Desactivar MFA",
-   "Eliminar el área de trabajo a diario",
+   "Desactivar las transformaciones en el momento de la ingesta",
+   "Eliminar el área de trabajo cada día",
    "Aplicar transformaciones en la regla de recopilación de datos",
-   "Deshabilitar Sentinel"
+   "Aumentar el periodo de retención de datos"
   ],
   "opts_en": [
-   "Switch off MFA",
-   "Delete the workspace daily",
+   "Turn off ingestion-time transformations",
+   "Delete the workspace every day",
    "Apply transformations in the data collection rule",
-   "Disable Sentinel"
+   "Increase the data retention period"
   ],
   "correct": [
    2
@@ -1119,15 +1119,15 @@
   "q_es": "Quieres una detección de Defender XDR que ejecute una consulta de búsqueda avanzada de forma programada y aísle automáticamente los dispositivos que coincidan. ¿Qué debes crear?",
   "q_en": "You want a Defender XDR detection that runs an advanced hunting query on a schedule and automatically isolates matching devices. What should you create?",
   "opts_es": [
-   "Una directiva de retención",
-   "Una lista de seguimiento",
-   "Una directiva de reuniones de Teams",
+   "Una directiva de retención de Purview",
+   "Una lista de seguimiento de Sentinel",
+   "Una regla de ajuste de alertas con una acción de supresión",
    "Una regla de detección personalizada con una acción de aislar dispositivo"
   ],
   "opts_en": [
-   "A retention policy",
-   "A watchlist",
-   "A Teams meeting policy",
+   "A Purview retention policy",
+   "A Sentinel watchlist",
+   "An alert tuning rule with a suppression action",
    "A custom detection rule with an isolate device action"
   ],
   "correct": [
@@ -1223,15 +1223,15 @@
   "q_es": "¿Cuál es el propósito de la asignación de entidades en una regla de análisis de Sentinel?",
   "q_en": "What is the purpose of entity mapping in a Sentinel analytics rule?",
   "opts_es": [
-   "Facturar a los usuarios",
-   "Eliminar datos",
-   "Cambiar el nombre del área de trabajo",
+   "Para facturar a los usuarios el uso de consultas",
+   "Para eliminar datos de más de 90 días",
+   "Para cambiar el nombre de las tablas del área de trabajo",
    "Identificar usuarios, hosts e IP en los resultados para poder correlacionar e investigar las alertas"
   ],
   "opts_en": [
-   "To bill users",
-   "To delete data",
-   "To rename the workspace",
+   "To bill users for query usage",
+   "To delete data older than 90 days",
+   "To rename the workspace tables",
    "To identify users, hosts and IPs in the results so alerts can be correlated and investigated"
   ],
   "correct": [
@@ -1249,16 +1249,16 @@
   "q_es": "¿Qué característica muestra qué tácticas y técnicas de MITRE ATT&CK cubren actualmente tus reglas de análisis?",
   "q_en": "Which feature shows which MITRE ATT&CK tactics and techniques your analytics rules currently cover?",
   "opts_es": [
-   "Etiqueta de retención",
+   "La galería de plantillas de reglas de análisis",
    "La página de cobertura de MITRE ATT&CK en Sentinel",
-   "Directiva de nomenclatura de grupos",
-   "Un libro de facturación"
+   "La vista de tareas de incidentes",
+   "La página de conectores de datos"
   ],
   "opts_en": [
-   "Retention label",
+   "The analytics rule template gallery",
    "The MITRE ATT&CK coverage page in Sentinel",
-   "Group naming policy",
-   "Workbook of billing"
+   "The incident tasks view",
+   "The data connectors page"
   ],
   "correct": [
    1
@@ -1301,16 +1301,16 @@
   "q_es": "Las reglas de anomalía de Sentinel están inicialmente en modo de prueba (flighting). ¿Qué significa?",
   "q_en": "Anomaly rules in Sentinel are initially in flighting mode. What does that mean?",
   "opts_es": [
-   "Crean facturas",
+   "Se facturan por separado como facturas",
    "Se ejecutan en segundo plano para recopilar resultados para su evaluación antes de decidir usar el modo de producción",
    "Están deshabilitadas permanentemente",
-   "Eliminan datos"
+   "Eliminan datos de más de 30 días"
   ],
   "opts_en": [
-   "They create invoices",
+   "They are billed separately as invoices",
    "They run in the background to collect results for evaluation before you decide to use production mode",
    "They are permanently disabled",
-   "They delete data"
+   "They delete data older than 30 days"
   ],
   "correct": [
    1
@@ -1327,16 +1327,16 @@
   "q_es": "Una alerta de una regla programada genera muchas alertas duplicadas del mismo host. ¿Qué configuración puede agrupar las alertas relacionadas en un único incidente?",
   "q_en": "An alert from a scheduled rule produces many duplicate alerts for the same host. Which setting can group related alerts into a single incident?",
   "opts_es": [
-   "Cumplimiento de dispositivos",
-   "Etiqueta de retención",
+   "Agrupación de eventos configurada para generar una alerta por evento",
+   "Supresión aplicada tras ejecutar la consulta",
    "Agrupación de alertas en la configuración de incidentes",
-   "Directiva de nomenclatura de grupos"
+   "Una invalidación de la gravedad de la alerta"
   ],
   "opts_en": [
-   "Device compliance",
-   "Retention label",
+   "Event grouping set to trigger an alert for each event",
+   "Suppression applied after running the query",
    "Alert grouping in the incident settings",
-   "Group naming policy"
+   "An alert severity override"
   ],
   "correct": [
    2
@@ -1423,16 +1423,16 @@
   "q_es": "Un correo de phishing se entregó en 200 buzones. ¿Qué acción de Defender for Office 365 elimina los mensajes de las bandejas de entrada?",
   "q_en": "A phishing email was delivered to 200 mailboxes. Which Defender for Office 365 action removes the messages from the inboxes?",
   "opts_es": [
-   "Eliminar el inquilino",
-   "Restablecer la contraseña de todos los usuarios",
+   "Deshabilitar la regla de flujo de correo",
+   "Restablecer la contraseña de cada usuario",
    "Eliminación temporal o traslado a cuarentena mediante el explorador de amenazas o una investigación automatizada",
-   "Deshabilitar DNS"
+   "Bloquear solo el dominio del remitente en DNS"
   ],
   "opts_en": [
-   "Delete the tenant",
+   "Disable the mail flow rule",
    "Reset every user's password",
    "Soft delete or move to quarantine using Threat Explorer or an automated investigation",
-   "Disable DNS"
+   "Block the sender domain in DNS only"
   ],
   "correct": [
    2
@@ -1476,15 +1476,15 @@
   "q_en": "A Defender for Cloud Apps alert shows a user downloaded thousands of files in minutes from a sanctioned app. What is a suitable response?",
   "opts_es": [
    "Investigar la actividad y suspender al usuario o exigir que inicie sesión de nuevo si está comprometido",
-   "Comprar más licencias",
-   "Cambiar el nombre de la aplicación",
-   "Ignorarlo"
+   "Marcar la aplicación como no autorizada e ignorar al usuario",
+   "Cambiar el nombre de la aplicación en el catálogo",
+   "Ignorarlo porque la aplicación está autorizada"
   ],
   "opts_en": [
    "Investigate the activity and suspend the user or require sign-in again if compromised",
-   "Buy more licenses",
-   "Rename the app",
-   "Ignore it"
+   "Mark the app as unsanctioned and ignore the user",
+   "Rename the app in the catalog",
+   "Ignore it because the app is sanctioned"
   ],
   "correct": [
    0
@@ -1502,15 +1502,15 @@
   "q_en": "Which action should you take for a user that Microsoft Entra ID Protection has confirmed as compromised?",
   "opts_es": [
    "Revocar las sesiones, exigir un restablecimiento de contraseña seguro y revisar la actividad reciente",
-   "No hacer nada",
-   "Deshabilitar el registro de auditoría",
-   "Agregarlo a los administradores globales"
+   "Descartar el riesgo porque el usuario superó la MFA una vez",
+   "Deshabilitar el registro de auditoría del usuario",
+   "Agregar al usuario a administradores globales"
   ],
   "opts_en": [
    "Revoke sessions, require a secure password reset and review recent activity",
-   "Do nothing",
-   "Disable audit logging",
-   "Add them to Global Administrators"
+   "Dismiss the risk because the user passed MFA once",
+   "Disable audit logging for the user",
+   "Add the user to Global Administrators"
   ],
   "correct": [
    0
@@ -1605,15 +1605,15 @@
   "q_es": "¿Qué puede hacer Microsoft Security Copilot integrado en el portal de Defender durante la investigación de un incidente?",
   "q_en": "What can embedded Microsoft Security Copilot do inside the Defender portal during an incident investigation?",
   "opts_es": [
-   "Reemplazar a todos los analistas",
-   "Eliminar incidentes automáticamente",
-   "Deshabilitar alertas",
+   "Sustituir a todos los analistas del SOC",
+   "Eliminar incidentes automáticamente tras 30 días",
+   "Deshabilitar las alertas que no puede resumir",
    "Resumir el incidente, sugerir pasos de respuesta guiada y ayudar a generar KQL"
   ],
   "opts_en": [
-   "Replace all analysts",
-   "Delete incidents automatically",
-   "Disable alerts",
+   "Replace all analysts in the SOC",
+   "Delete incidents automatically after 30 days",
+   "Disable the alerts it cannot summarize",
    "Summarize the incident, suggest guided response steps and help generate KQL"
   ],
   "correct": [
@@ -1631,22 +1631,22 @@
   "q_es": "¿Qué clasificación debes elegir al cerrar un incidente desencadenado por una actividad legítima de un administrador?",
   "q_en": "Which classification should you choose when closing an incident that was triggered by a legitimate admin activity?",
   "opts_es": [
-   "Solo informativo esperado",
-   "No clasificar",
+   "Falso positivo, porque los administradores siempre son de confianza",
+   "Dejar la clasificación en blanco",
    "Verdadero positivo: malicioso",
-   "Positivo benigno o falso positivo, según si la detección fue precisa"
+   "Informativo, actividad esperada en Defender, o Positivo benigno en Sentinel"
   ],
   "opts_en": [
-   "Informational expected only",
-   "Do not classify",
+   "False positive, because administrators are always trusted",
+   "Leave the classification blank",
    "True positive - malicious",
-   "Benign positive or false positive, depending on whether the detection was accurate"
+   "Informational, expected activity in Defender, or Benign positive in Sentinel"
   ],
   "correct": [
    3
   ],
-  "exp_es": "La clasificación mejora las detecciones y los informes.",
-  "exp_en": "Classification improves detections and reporting."
+  "exp_es": "La actividad legítima detectada correctamente se clasifica como informativa/esperada (Defender) o positivo benigno (Sentinel); un falso positivo significa que la lógica de detección era incorrecta.",
+  "exp_en": "Legitimate activity that was detected correctly is classified as informational/expected (Defender) or benign positive (Sentinel); a false positive means the detection logic was wrong."
  },
  {
   "id": 61,
@@ -1657,16 +1657,16 @@
   "q_es": "¿Qué capacidades de administración de casos ayudan a los equipos del SOC a coordinar el trabajo en incidentes?",
   "q_en": "Which case management capabilities help SOC teams coordinate work on incidents?",
   "opts_es": [
-   "Editar DNS",
-   "Imprimir registros",
+   "Etiquetado de recursos para facturación",
+   "Asignación automática de licencias",
    "Asignar propietarios, etiquetas, comentarios, tareas y actualizaciones de estado",
-   "Cambiar el nombre del inquilino"
+   "Informes de cumplimiento de dispositivos"
   ],
   "opts_en": [
-   "Editing DNS",
-   "Printing logs",
+   "Resource tagging for billing",
+   "Automatic license assignment",
    "Assigning owners, tags, comments, tasks and status updates",
-   "Changing the tenant name"
+   "Device compliance reporting"
   ],
   "correct": [
    2
@@ -1684,15 +1684,15 @@
   "q_en": "An attack begins with a phishing email, then a compromised device, then an identity abuse and cloud app access. How does Defender XDR present this?",
   "opts_es": [
    "Como un único incidente de varias fases con una historia del ataque entre productos",
-   "Solo como alertas no relacionadas",
-   "Como un informe de facturación",
-   "Como un registro DNS"
+   "Solo como alertas independientes sin relación",
+   "Como incidentes distintos por producto",
+   "Como una exportación del registro de auditoría"
   ],
   "opts_en": [
    "As a single multi-stage incident with an attack story across products",
-   "As unrelated alerts only",
-   "As a billing report",
-   "As a DNS log"
+   "As separate unrelated alerts only",
+   "As separate incidents per product",
+   "As an audit log export"
   ],
   "correct": [
    0
@@ -1709,15 +1709,15 @@
   "q_es": "¿Qué solución de Purview puede mostrar a un usuario comprometido o de riesgo mediante alertas de Insider Risk Management que investigas desde el portal de Defender?",
   "q_en": "Which Purview solution can surface a compromised or risky user through Insider Risk Management alerts that you investigate from the Defender portal?",
   "opts_es": [
-   "Azure Firewall",
-   "Teams Rooms",
-   "Correcciones de Intune",
+   "Microsoft Purview Communication Compliance",
+   "Detección de Defender for Cloud Apps",
+   "Microsoft Entra Verified ID",
    "Microsoft Purview Insider Risk Management"
   ],
   "opts_en": [
-   "Azure Firewall",
-   "Teams Rooms",
-   "Intune Remediations",
+   "Microsoft Purview Communication Compliance",
+   "Defender for Cloud Apps discovery",
+   "Microsoft Entra Verified ID",
    "Microsoft Purview Insider Risk Management"
   ],
   "correct": [
@@ -1968,16 +1968,16 @@
   "q_es": "¿Qué hace aislar un dispositivo en Defender for Endpoint?",
   "q_en": "What does isolating a device in Defender for Endpoint do?",
   "opts_es": [
-   "Deshabilita al usuario",
+   "Deshabilita la cuenta de usuario en Microsoft Entra ID",
    "Lo desconecta de la red excepto para la comunicación con el servicio de Defender",
-   "Lo elimina de Entra ID",
-   "Borra el dispositivo"
+   "Elimina el objeto de dispositivo de Microsoft Entra ID",
+   "Borra el dispositivo y reinstala Windows"
   ],
   "opts_en": [
-   "Disables the user",
+   "Disables the user account in Microsoft Entra ID",
    "Disconnects it from the network except for communication with the Defender service",
-   "Deletes the device from Entra ID",
-   "Wipes the device"
+   "Deletes the device object from Microsoft Entra ID",
+   "Wipes the device and reinstalls Windows"
   ],
   "correct": [
    1
@@ -2020,16 +2020,16 @@
   "q_es": "¿Qué hace restringir la ejecución de aplicaciones en un dispositivo?",
   "q_en": "What does restricting app execution on a device do?",
   "opts_es": [
-   "Restablece la contraseña",
+   "Restablece la contraseña del usuario",
    "Elimina el perfil de usuario",
    "Permite ejecutar solo ejecutables firmados por Microsoft",
-   "Bloquea todo el acceso a internet"
+   "Bloquea todo el acceso a internet del dispositivo"
   ],
   "opts_en": [
-   "Resets the password",
+   "Resets the user's password",
    "Deletes the user profile",
    "Allows only Microsoft-signed executables to run",
-   "Blocks all internet access"
+   "Blocks all internet access from the device"
   ],
   "correct": [
    2
@@ -2194,16 +2194,16 @@
   "q_es": "¿Qué herramienta puede buscar contenido en buzones y sitios y luego purgar correos maliciosos tras un incidente?",
   "q_en": "Which tool can search content across mailboxes and sites and then purge malicious emails after an incident?",
   "opts_es": [
-   "Correcciones de Intune",
+   "Seguimiento de mensajes en el centro de administración de Exchange",
    "La búsqueda de contenido de Microsoft Purview eDiscovery con una acción de purga",
-   "Teams Rooms",
-   "Azure Bastion"
+   "Directivas de archivos de Defender for Cloud Apps",
+   "Entrega dinámica de Safe Attachments"
   ],
   "opts_en": [
-   "Intune Remediations",
+   "Message trace in the Exchange admin center",
    "Content search in Microsoft Purview eDiscovery with a purge action",
-   "Teams Rooms",
-   "Azure Bastion"
+   "Defender for Cloud Apps file policies",
+   "Safe Attachments dynamic delivery"
   ],
   "correct": [
    1
@@ -2550,15 +2550,15 @@
   "q_es": "¿Qué proporciona el análisis de amenazas en Microsoft Defender XDR?",
   "q_en": "What does threat analytics in Microsoft Defender XDR provide?",
   "opts_es": [
-   "Un informe de licencias",
-   "Un resumen de facturación",
-   "Una programación de copia de seguridad",
+   "Un informe de usuarios con licencia por carga de trabajo",
+   "Un resumen del gasto en la nube",
+   "Una programación de copias de seguridad de dispositivos",
    "Informes sobre amenazas emergentes con la exposición, los activos afectados y las mitigaciones recomendadas"
   ],
   "opts_en": [
-   "A license report",
-   "A billing summary",
-   "A backup schedule",
+   "A report of licensed users per workload",
+   "A summary of cloud spend",
+   "A schedule of device backups",
    "Reports on emerging threats with exposure, impacted assets and recommended mitigations"
   ],
   "correct": [
@@ -2602,16 +2602,16 @@
   "q_es": "¿Qué ayudan a visualizar a un analista los gráficos de búsqueda, como el análisis del radio de impacto?",
   "q_en": "What do hunting graphs, such as blast radius analysis, help an analyst visualize?",
   "opts_es": [
-   "El historial de facturación",
+   "Uso de licencias por usuario a lo largo del tiempo",
    "Las relaciones entre entidades y el posible impacto de un activo comprometido",
-   "Los valores TTL de DNS",
-   "Los tamaños de los buzones"
+   "Solo ubicaciones de inicio de sesión en un mapa",
+   "Solo la secuencia de alertas por gravedad"
   ],
   "opts_en": [
-   "Billing history",
+   "License usage per user over time",
    "Relationships between entities and the potential impact of a compromised asset",
-   "DNS TTL values",
-   "Mailbox sizes"
+   "Sign-in locations on a map only",
+   "The sequence of alerts by severity only"
   ],
   "correct": [
    1
@@ -2807,16 +2807,16 @@
   "q_es": "¿Para qué se usan las reglas de resumen en Microsoft Sentinel?",
   "q_en": "What are summary rules in Microsoft Sentinel used for?",
   "opts_es": [
-   "Enviar boletines por correo",
+   "Enviar resúmenes programados por correo a los directivos",
    "Agregar grandes volúmenes de datos de forma programada en tablas personalizadas resumidas para acelerar las consultas y reducir el coste",
-   "Restablecer contraseñas",
-   "Administrar licencias"
+   "Restablecer las contraseñas de usuarios de riesgo",
+   "Administrar la asignación de licencias de los analistas"
   ],
   "opts_en": [
-   "Sending email newsletters",
+   "Sending scheduled email summaries to executives",
    "Aggregating large volumes of data on a schedule into summarized custom tables to speed up queries and reduce cost",
-   "Resetting passwords",
-   "Managing licenses"
+   "Resetting passwords of risky users",
+   "Managing license assignments for analysts"
   ],
   "correct": [
    1
@@ -2833,15 +2833,15 @@
   "q_es": "¿Qué es un trabajo KQL en el lago de datos de Sentinel?",
   "q_en": "What is a KQL job in the Sentinel data lake?",
   "opts_es": [
-   "Un trabajo de facturación",
-   "Una tarea de hardware",
-   "Una reunión de Teams",
+   "Un trabajo de facturación que calcula el coste de ingesta",
+   "Una tarea en segundo plano que instala agentes",
+   "Un cuaderno de estrategias activado por un incidente",
    "Una consulta KQL única o programada sobre datos del lago de datos, cuyos resultados se pueden promover al nivel de análisis"
   ],
   "opts_en": [
-   "A billing job",
-   "A hardware task",
-   "A Teams meeting",
+   "A billing job that calculates ingestion cost",
+   "A background task that installs agents",
+   "A playbook triggered by an incident",
    "A one-time or scheduled KQL query over data lake data, whose results can be promoted to the analytics tier"
   ],
   "correct": [
@@ -2885,16 +2885,16 @@
   "q_es": "¿Qué habilita el servidor MCP de Microsoft Sentinel?",
   "q_en": "What does the Microsoft Sentinel MCP server enable?",
   "opts_es": [
-   "La impresión",
+   "Replicación de los datos de Sentinel en otra región",
    "Que los asistentes y agentes de IA consulten y razonen sobre los datos de Sentinel de forma segura",
-   "Las actualizaciones de Windows",
-   "La resolución DNS"
+   "Actualizaciones automáticas de Windows para los servidores supervisados",
+   "Resolución DNS dentro del área de trabajo"
   ],
   "opts_en": [
-   "Printing",
+   "Replication of Sentinel data to another region",
    "AI assistants and agents to securely query and reason over Sentinel data",
-   "Windows updates",
-   "DNS resolution"
+   "Automatic Windows updates for monitored servers",
+   "DNS resolution inside the workspace"
   ],
   "correct": [
    1
@@ -3059,16 +3059,16 @@
   "q_es": "Un incidente contiene alertas de Defender for Office 365, Defender for Endpoint y Entra ID Protection. ¿Por dónde debe empezar la investigación el analista?",
   "q_en": "An incident contains alerts from Defender for Office 365, Defender for Endpoint and Entra ID Protection. Where should the analyst start the investigation?",
   "opts_es": [
-   "La página de facturación de cada producto",
-   "El centro de administración de Teams",
+   "La cola de alertas de cada producto, una por una",
+   "El centro de administración de Microsoft Teams",
    "La página del incidente y la historia del ataque en el portal de Defender",
-   "La lista de inscripciones de Intune"
+   "La lista de inscripción de dispositivos de Intune"
   ],
   "opts_en": [
-   "Each product's billing page",
-   "The Teams admin center",
+   "Each product's own alert queue, one at a time",
+   "The Microsoft Teams admin center",
    "The incident page and attack story in the Defender portal",
-   "The Intune enrollment list"
+   "The Intune device enrollment list"
   ],
   "correct": [
    2
@@ -3085,16 +3085,16 @@
   "q_es": "Una alerta de Defender for Cloud informa de actividad sospechosa en una VM de Azure. ¿Qué primer paso ayuda a contener la amenaza conservando las evidencias?",
   "q_en": "A Defender for Cloud alert reports suspicious activity on an Azure VM. Which first step helps contain the threat while preserving evidence?",
   "opts_es": [
-   "Reiniciar la VM repetidamente",
+   "Reiniciar la VM repetidamente hasta que desaparezca la alerta",
    "Aislar la VM de la red mediante un NSG o el aislamiento de Defender y capturar una instantánea del disco",
-   "Eliminar la VM de inmediato",
-   "Ignorar la alerta"
+   "Eliminar la VM de inmediato sin instantánea",
+   "Cerrar la alerta como falso positivo"
   ],
   "opts_en": [
-   "Reboot the VM repeatedly",
+   "Reboot the VM repeatedly until the alert clears",
    "Isolate the VM from the network using an NSG or Defender isolation and capture a disk snapshot",
-   "Delete the VM immediately",
-   "Ignore the alert"
+   "Delete the VM immediately without a snapshot",
+   "Close the alert as a false positive"
   ],
   "correct": [
    1
@@ -3189,15 +3189,15 @@
   "q_es": "¿Qué debe comprobar primero un analista cuando la interrupción automática de ataques de Defender XDR ha contenido un dispositivo y deshabilitado a un usuario?",
   "q_en": "What should an analyst check first when Defender XDR automatic attack disruption has contained a device and disabled a user?",
   "opts_es": [
-   "Nada; las acciones son permanentes",
-   "Abrir una incidencia de facturación",
-   "Eliminar al usuario",
+   "Nada; las acciones son permanentes y no se pueden liberar",
+   "Abrir un incidente de facturación con Microsoft",
+   "Eliminar la cuenta de usuario afectada",
    "Los detalles del incidente y las acciones realizadas, para validar el alcance y decidir si se libera la contención"
   ],
   "opts_en": [
-   "Nothing; actions are permanent",
-   "Open a billing ticket",
-   "Delete the user",
+   "Nothing; the actions are permanent and cannot be released",
+   "Open a billing ticket with Microsoft",
+   "Delete the affected user account",
    "The incident details and actions taken, then validate scope and decide whether to release the containment"
   ],
   "correct": [
@@ -3321,16 +3321,16 @@
   "q_es": "Un analista quiere ver lo que hizo el usuario antes y después de abrir un archivo malicioso. ¿Qué enfoque ayuda más?",
   "q_en": "An analyst wants to see what the user did before and after opening a malicious file. Which approach helps most?",
   "opts_es": [
-   "Abrir el centro de administración de Teams",
+   "Revisar la asignación de licencias del usuario",
    "Revisar la cronología del dispositivo alrededor del evento de ejecución del archivo",
-   "Comprobar las asignaciones de licencias",
-   "Cambiar el nombre del dispositivo"
+   "Comprobar solo los registros de inicio de sesión de acceso condicional",
+   "Cambiar el nombre del dispositivo y volver a incorporarlo"
   ],
   "opts_en": [
-   "Open the Teams admin center",
+   "Review the license assignment of the user",
    "Review the device timeline around the file execution event",
-   "Check license assignments",
-   "Rename the device"
+   "Check Conditional Access sign-in logs only",
+   "Rename the device and re-onboard it"
   ],
   "correct": [
    1
@@ -3348,14 +3348,14 @@
   "q_en": "An attacker created an inbox rule in a compromised mailbox to forward mail externally. Which log source helps you find who created the rule and when?",
   "opts_es": [
    "Microsoft Purview Audit (actividades de administración y de buzón de Exchange)",
-   "Cumplimiento de Intune",
-   "Registros DNS",
+   "Informes de cumplimiento de dispositivos de Intune",
+   "Registros de consultas de Azure DNS",
    "Análisis de llamadas de Teams"
   ],
   "opts_en": [
    "Microsoft Purview Audit (Exchange admin and mailbox activities)",
-   "Intune compliance",
-   "DNS logs",
+   "Intune device compliance reports",
+   "Azure DNS query logs",
    "Teams call analytics"
   ],
   "correct": [
@@ -3865,15 +3865,15 @@
   "q_es": "Debes implementar una nueva regla ASR sin interrumpir a los usuarios. ¿Cuál es el enfoque recomendado?",
   "q_en": "You must roll out a new ASR rule without disrupting users. What is the recommended approach?",
   "opts_es": [
-   "Esperar a un ataque",
+   "Esperar a un ataque antes de habilitar la regla",
    "Implementarla en modo de auditoría, revisar los eventos, agregar exclusiones si es necesario y pasar después a bloqueo",
-   "Deshabilitar todas las reglas ASR",
+   "Deshabilitar todas las reglas ASR para evitar interrupciones",
    "Implementarla en modo de bloqueo en todos los dispositivos a la vez"
   ],
   "opts_en": [
-   "Wait for an attack",
+   "Wait for an attack before enabling the rule",
    "Deploy in Audit mode, review the events, add exclusions if needed and then switch to Block",
-   "Disable all ASR rules",
+   "Disable all ASR rules to avoid disruption",
    "Deploy in Block mode on all devices at once"
   ],
   "correct": [
@@ -3918,15 +3918,15 @@
   "q_en": "In Defender for Endpoint, what happens in EDR in block mode?",
   "opts_es": [
    "EDR puede bloquear y corregir artefactos maliciosos tras la intrusión incluso cuando otro antivirus es la solución principal",
-   "EDR se desactiva",
-   "EDR solo registra el correo",
-   "EDR elimina usuarios"
+   "EDR se desactiva cuando hay otro antivirus activo",
+   "EDR solo registra eventos de correo",
+   "EDR elimina las cuentas de usuario que generan alertas"
   ],
   "opts_en": [
    "EDR can block and remediate malicious artifacts post-breach even when another antivirus is the primary solution",
-   "EDR is turned off",
-   "EDR only logs email",
-   "EDR deletes users"
+   "EDR is turned off when another antivirus is active",
+   "EDR only logs email events",
+   "EDR deletes user accounts that trigger alerts"
   ],
   "correct": [
    0
@@ -3943,16 +3943,16 @@
   "q_es": "¿Qué significa que la opción «Investigación automatizada» de Defender for Endpoint esté deshabilitada para un grupo de dispositivos?",
   "q_en": "What does the Defender for Endpoint 'Automated investigation' setting being disabled mean for a device group?",
   "opts_es": [
-   "Se bloquea el correo",
-   "Los dispositivos se desvinculan",
+   "Se bloquea la entrega de correo en los dispositivos",
+   "Los dispositivos se dan de baja de Defender for Endpoint",
    "Las alertas no desencadenarán investigaciones y correcciones automatizadas en esos dispositivos",
-   "Se eliminan todos los datos"
+   "Se eliminan todos los datos recopilados del dispositivo"
   ],
   "opts_en": [
-   "Email is blocked",
-   "The devices are offboarded",
+   "Email delivery is blocked for the devices",
+   "The devices are offboarded from Defender for Endpoint",
    "Alerts will not trigger automated investigations and remediation for those devices",
-   "All data is deleted"
+   "All collected device data is deleted"
   ],
   "correct": [
    2
@@ -3995,15 +3995,15 @@
   "q_es": "Se necesita una exclusión para que Defender Antivirus no marque un script interno de confianza. ¿Dónde se puede configurar de forma centralizada?",
   "q_en": "An exclusion is needed so a trusted internal script is not flagged by Defender Antivirus. Where can this be configured centrally?",
   "opts_es": [
-   "En Purview Audit",
-   "En Azure Bastion",
-   "En el centro de administración de Teams",
+   "En la configuración de Microsoft Purview Audit",
+   "En la configuración de Azure Bastion",
+   "En las directivas del centro de administración de Teams",
    "En directivas de exclusión de antivirus implementadas mediante Intune o la administración de configuración de seguridad de Defender for Endpoint"
   ],
   "opts_en": [
-   "In Purview Audit",
-   "In Azure Bastion",
-   "In the Teams admin center",
+   "In Microsoft Purview Audit settings",
+   "In the Azure Bastion configuration",
+   "In the Teams admin center policies",
    "In antivirus exclusion policies deployed through Intune or Defender for Endpoint security settings management"
   ],
   "correct": [
@@ -4021,16 +4021,16 @@
   "q_es": "¿Cuál es el propósito de la recopilación de datos personalizada en Defender for Endpoint?",
   "q_en": "What is the purpose of custom data collection in Defender for Endpoint?",
   "opts_es": [
-   "Recopilar datos de facturación",
-   "Recopilar contraseñas de usuarios",
+   "Para recopilar datos de facturación de cada dispositivo",
+   "Para recopilar contraseñas de usuarios para comprobar inicios de sesión",
    "Recopilar eventos de endpoint adicionales más allá de la telemetría predeterminada para la búsqueda y las detecciones",
-   "Recopilar los niveles de tinta de las impresoras"
+   "Para recopilar los niveles de consumibles de impresoras"
   ],
   "opts_en": [
-   "To collect billing data",
-   "To collect user passwords",
+   "To collect billing data for each device",
+   "To collect users' passwords for sign-in checks",
    "To collect additional endpoint events beyond the default telemetry for hunting and detections",
-   "To collect printer ink levels"
+   "To collect printer consumable levels"
   ],
   "correct": [
    2
@@ -4047,15 +4047,15 @@
   "q_es": "¿Qué tipo de notificación por correo de Defender XDR le informa cuando una investigación automatizada requiere aprobación?",
   "q_en": "Which email notification type in Defender XDR informs you when an automated investigation requires approval?",
   "opts_es": [
-   "Notificación de retención",
-   "Invitación de invitado",
-   "Notificación de facturación",
+   "Un resumen diario de nuevas vulnerabilidades",
+   "Un resumen semanal de análisis de amenazas",
+   "Un mensaje del estado de incorporación de dispositivos",
    "Notificación de acciones (acciones de respuesta)"
   ],
   "opts_en": [
-   "Retention notification",
-   "Guest invitation",
-   "Billing notification",
+   "A daily digest of new vulnerabilities",
+   "A weekly threat analytics summary",
+   "A device onboarding status message",
    "Actions notification (response actions)"
   ],
   "correct": [
@@ -4100,14 +4100,14 @@
   "q_en": "Which actions can a Sentinel automation rule take without a playbook?",
   "opts_es": [
    "Asignar un propietario, cambiar el estado o la gravedad, agregar etiquetas y agregar tareas",
-   "Reinstalar la imagen de un dispositivo",
-   "Enviar una carta postal",
+   "Reinstalar un dispositivo de forma remota",
+   "Aislar un dispositivo de la red",
    "Rotar un certificado"
   ],
   "opts_en": [
    "Assign an owner, change status or severity, add tags and add tasks",
-   "Reimage a device",
-   "Send a physical letter",
+   "Reimage a device remotely",
+   "Isolate a device from the network",
    "Rotate a certificate"
   ],
   "correct": [
@@ -4125,15 +4125,15 @@
   "q_es": "Varias reglas de automatización se aplican al mismo incidente. ¿Cómo se determina su orden de ejecución?",
   "q_en": "Multiple automation rules apply to the same incident. How is their execution order determined?",
   "opts_es": [
-   "Al azar",
-   "Alfabéticamente por usuario",
-   "Por tamaño de archivo",
+   "Por la hora de creación del incidente",
+   "Alfabéticamente por nombre de regla",
+   "Por el analista que creó la regla",
    "Por el número de orden asignado a cada regla"
   ],
   "opts_en": [
-   "Randomly",
-   "Alphabetically by user",
-   "By file size",
+   "By the incident creation time",
+   "Alphabetically by rule name",
+   "By the analyst who created the rule",
    "By the order number assigned to each rule"
   ],
   "correct": [
@@ -4151,16 +4151,16 @@
   "q_es": "Una regla de automatización debe aplicarse solo a incidentes de una regla de análisis específica y solo hasta el final de una ventana de investigación. ¿Qué característica ayuda?",
   "q_en": "An automation rule should apply only to incidents from a specific analytics rule and only until the end of an investigation window. Which feature helps?",
   "opts_es": [
-   "Una etiqueta de retención",
+   "Una regla de supresión en la regla de análisis",
    "Condiciones de la regla y una fecha de caducidad",
-   "Un libro",
-   "Una lista de seguimiento"
+   "Un filtro de libro",
+   "Una lista de seguimiento de hosts excluidos"
   ],
   "opts_en": [
-   "A retention label",
+   "A suppression rule on the analytics rule",
    "Rule conditions and an expiration date",
-   "A workbook",
-   "A watchlist"
+   "A workbook filter",
+   "A watchlist of excluded hosts"
   ],
   "correct": [
    1
@@ -4177,15 +4177,15 @@
   "q_es": "¿Cómo debe autenticarse un cuaderno de estrategias de Sentinel en Microsoft Graph o en recursos de Azure sin secretos almacenados?",
   "q_en": "How should a Sentinel playbook authenticate to Microsoft Graph or Azure resources without stored secrets?",
   "opts_es": [
-   "Con una contraseña de administrador compartida",
-   "Con códigos SMS",
-   "Con acceso anónimo",
+   "Con una contraseña de administrador compartida almacenada en el cuaderno de estrategias",
+   "Con códigos SMS enviados al propietario",
+   "Con acceso anónimo al recurso",
    "Con una identidad administrada a la que se concedan los permisos necesarios"
   ],
   "opts_en": [
-   "With a shared admin password",
-   "With SMS codes",
-   "With anonymous access",
+   "With a shared admin password stored in the playbook",
+   "With SMS codes sent to the owner",
+   "With anonymous access to the resource",
    "With a managed identity granted the needed permissions"
   ],
   "correct": [
@@ -4489,15 +4489,15 @@
   "q_en": "What is the benefit of onboarding a Sentinel workspace to the Microsoft Defender portal?",
   "opts_es": [
    "Una experiencia unificada del SOC con incidentes, búsqueda e investigación en Defender XDR y Sentinel",
-   "Licencias gratuitas para todos los usuarios",
-   "Eliminación de todas las alertas",
-   "Un inquilino nuevo"
+   "Licencias gratuitas para todos los usuarios de Sentinel",
+   "Eliminación de todas las alertas de gravedad baja",
+   "Un inquilino independiente para los datos de seguridad"
   ],
   "opts_en": [
    "A unified SOC experience with incidents, hunting and investigation across Defender XDR and Sentinel",
-   "Free licenses for all users",
-   "Removal of all alerts",
-   "A new tenant"
+   "Free licenses for all Sentinel users",
+   "Removal of all low-severity alerts",
+   "A separate tenant for security data"
   ],
   "correct": [
    0
@@ -4514,15 +4514,15 @@
   "q_es": "¿Qué recomienda la optimización del SOC cuando encuentra orígenes de datos que se ingieren pero casi no los usa ninguna detección?",
   "q_en": "What does SOC optimization recommend when it finds data sources that are ingested but rarely used by any detection?",
   "opts_es": [
-   "Comprar más licencias",
+   "Comprar más capacidad del nivel de análisis",
    "Eliminar el área de trabajo",
-   "Deshabilitar todas las reglas",
+   "Deshabilitar todas las reglas de análisis",
    "Reducir los datos o moverlos a un nivel de menor coste para ahorrar"
   ],
   "opts_en": [
-   "Buy more licenses",
+   "Buy more analytics-tier capacity",
    "Delete the workspace",
-   "Disable all rules",
+   "Disable all analytics rules",
    "Reduce or move the data to a lower-cost tier to save costs"
   ],
   "correct": [
@@ -4761,13 +4761,13 @@
   "q_es": "¿Qué conector de Sentinel usa la inteligencia sobre amenazas propia de Microsoft para importar indicadores?",
   "q_en": "Which Sentinel connector uses Microsoft's own threat intelligence to import indicators?",
   "opts_es": [
-   "Azure Policy",
+   "Inteligencia sobre amenazas: TAXII",
    "Syslog mediante AMA",
    "Conector de Microsoft Defender Threat Intelligence",
    "Reenvío de eventos de Windows"
   ],
   "opts_en": [
-   "Azure Policy",
+   "Threat intelligence - TAXII",
    "Syslog via AMA",
    "Microsoft Defender Threat Intelligence connector",
    "Windows Event Forwarding"
@@ -4787,16 +4787,16 @@
   "q_es": "¿Qué ocurre con los indicadores de amenazas en Sentinel cuando pasa su fecha de caducidad?",
   "q_en": "What happens to threat indicators in Sentinel when they have an expiration date that passes?",
   "opts_es": [
-   "Eliminan el área de trabajo",
-   "Se vuelven más graves",
+   "Se eliminan del área de trabajo de inmediato",
+   "Su puntuación de confianza se duplica",
    "Dejan de considerarse activos para la coincidencia",
-   "Se envían por correo a los usuarios"
+   "Se exportan al portal de Defender como incidentes"
   ],
   "opts_en": [
-   "They delete the workspace",
-   "They become more severe",
+   "They are deleted from the workspace immediately",
+   "Their confidence score doubles",
    "They are no longer considered active for matching",
-   "They are emailed to users"
+   "They are exported to the Defender portal as incidents"
   ],
   "correct": [
    2
@@ -4891,15 +4891,15 @@
   "q_es": "Un origen de datos envía eventos detallados y solo se necesita el 10%. ¿Cómo puedes reducir el volumen de ingesta antes del almacenamiento?",
   "q_en": "A data source sends verbose events and only 10% are needed. How can you reduce ingestion volume before storage?",
   "opts_es": [
-   "Deshabilitar alertas",
-   "Almacenar todo y filtrar después",
-   "Desactivar Sentinel",
+   "Deshabilitar las reglas de alerta que usan los datos",
+   "Almacenar todo y filtrar más tarde en las consultas",
+   "Desactivar por completo el conector de datos",
    "Filtrar en el origen con una transformación de regla de recopilación de datos"
   ],
   "opts_en": [
-   "Disable alerts",
-   "Store everything and filter later",
-   "Turn off Sentinel",
+   "Disable the alert rules that use the data",
+   "Store everything and filter in queries later",
+   "Turn off the data connector entirely",
    "Filter at the source with a data collection rule transformation"
   ],
   "correct": [
@@ -5096,15 +5096,15 @@
   "q_es": "¿Qué columnas debe devolver una consulta de detección personalizada para que Defender XDR pueda crear alertas y aplicar acciones?",
   "q_en": "Which columns must a custom detection query return so Defender XDR can create alerts and apply actions?",
   "opts_es": [
-   "Solo la línea de asunto",
-   "Solo el número de teléfono del usuario",
-   "No se necesitan columnas",
+   "Solo la columna del título de la alerta",
+   "Solo una columna de gravedad",
+   "No se requiere ninguna columna",
    "Timestamp, ReportId y columnas que identifiquen entidades afectadas, como DeviceId"
   ],
   "opts_en": [
-   "Only the subject line",
-   "Only the user's phone number",
-   "No columns are needed",
+   "Only the alert title column",
+   "Only a severity column",
+   "No columns are required",
    "Timestamp, ReportId and columns that identify affected entities such as DeviceId"
   ],
   "correct": [
@@ -5200,15 +5200,15 @@
   "q_es": "¿Qué hace el enriquecimiento de alertas con detalles personalizados en una regla de análisis?",
   "q_en": "What does alert enrichment with custom details do in an analytics rule?",
   "opts_es": [
-   "Cambia la licencia",
-   "Elimina la alerta",
-   "Reinicia el SIEM",
+   "Cambia la licencia de la regla",
+   "Elimina la alerta tras la clasificación",
+   "Reinicia el conector de datos",
    "Muestra campos de evento adicionales en la alerta para una clasificación más rápida"
   ],
   "opts_en": [
-   "Changes the license",
-   "Deletes the alert",
-   "Reboots the SIEM",
+   "Changes the license of the rule",
+   "Deletes the alert after triage",
+   "Reboots the data connector",
    "Surfaces extra event fields in the alert for faster triage"
   ],
   "correct": [
@@ -5252,16 +5252,16 @@
   "q_es": "¿Cuál es el propósito de UEBA (análisis del comportamiento de usuarios y entidades) en Sentinel?",
   "q_en": "What is the purpose of UEBA (User and Entity Behavior Analytics) in Sentinel?",
   "opts_es": [
-   "Actualiza dispositivos",
-   "Aprovisiona licencias",
+   "Aplica actualizaciones de seguridad a los dispositivos",
+   "Aprovisiona licencias para los usuarios",
    "Crea líneas base de comportamiento y enriquece las investigaciones con actividad anómala",
-   "Reemplaza a Active Directory"
+   "Sustituye a Active Directory Domain Services"
   ],
   "opts_en": [
-   "Updates devices",
-   "Provisions licenses",
+   "Applies security updates to devices",
+   "Provisions licenses for users",
    "Builds behavioral baselines and enriches investigations with anomalous activity",
-   "Replaces Active Directory"
+   "Replaces Active Directory Domain Services"
   ],
   "correct": [
    2
@@ -5304,16 +5304,16 @@
   "q_es": "¿Qué característica de Sentinel permite a los analistas ajustar los umbrales de detección de anomalías y evaluarlos en pruebas antes de usarlos en producción?",
   "q_en": "Which Sentinel feature lets analysts adjust anomaly detection thresholds and evaluate them in flighting before using them in production?",
   "opts_es": [
-   "Etiqueta de retención",
-   "Alerta de facturación",
+   "Plantillas personalizadas de reglas de análisis",
+   "Alertas de facturación",
    "Reglas de anomalía personalizables",
-   "Directiva de nomenclatura de grupos"
+   "Plantillas de listas de seguimiento"
   ],
   "opts_en": [
-   "Retention label",
-   "Billing alert",
+   "Custom analytics rule templates",
+   "Billing alerts",
    "Customizable anomaly rules",
-   "Group naming policy"
+   "Watchlist templates"
   ],
   "correct": [
    2
@@ -5437,15 +5437,15 @@
   "q_en": "Two incidents describe the same attack in Defender XDR. What can an analyst do?",
   "opts_es": [
    "Combinar los incidentes para que las evidencias se sigan en un solo lugar",
-   "Ignorarlos",
+   "Dejar ambos abiertos y duplicar el trabajo",
    "Cambiar el nombre del inquilino",
-   "Eliminar ambos"
+   "Eliminar ambos incidentes"
   ],
   "opts_en": [
    "Merge the incidents so evidence is tracked in one place",
-   "Ignore them",
+   "Leave both open and duplicate the work",
    "Rename the tenant",
-   "Delete both"
+   "Delete both incidents"
   ],
   "correct": [
    0
@@ -5462,16 +5462,16 @@
   "q_es": "¿Qué acciones de corrección de Defender for Office 365 se pueden aplicar al correo ya entregado?",
   "q_en": "Which Defender for Office 365 remediation actions can be applied to delivered email?",
   "opts_es": [
-   "Reiniciar el servidor de correo",
-   "Eliminar el inquilino",
+   "Bloquear la IP del remitente en el firewall",
+   "Deshabilitar el buzón del destinatario",
    "Mover a correo no deseado, eliminación temporal, eliminación definitiva o mover a cuarentena",
-   "Cambiar la contraseña del remitente"
+   "Restablecer la contraseña del destinatario"
   ],
   "opts_en": [
-   "Reboot the mail server",
-   "Delete the tenant",
+   "Block the sender's IP at the firewall",
+   "Disable the recipient's mailbox",
    "Move to Junk, soft delete, hard delete or move to quarantine",
-   "Change the sender's password"
+   "Reset the recipient's password"
   ],
   "correct": [
    2
@@ -5540,16 +5540,16 @@
   "q_es": "¿Qué alerta de Defender for Identity indica que un atacante solicita vales de servicio de cuentas con SPN para descifrar contraseñas sin conexión?",
   "q_en": "Which Defender for Identity alert indicates an attacker requesting service tickets for accounts with SPNs to crack passwords offline?",
   "opts_es": [
-   "Inscripción de dispositivo",
-   "Clic en Vínculos seguros",
+   "Sospecha de ataque DCSync",
+   "Sospecha de ataque pass-the-hash",
    "Kerberoasting (sospecha de exposición de SPN de Kerberos)",
-   "Unión a una reunión de Teams"
+   "Actividad de cuenta honeytoken"
   ],
   "opts_en": [
-   "Device enrollment",
-   "Safe Links click",
+   "Suspected DCSync attack",
+   "Suspected pass-the-hash attack",
    "Kerberoasting (suspected Kerberos SPN exposure)",
-   "Teams meeting join"
+   "Honeytoken account activity"
   ],
   "correct": [
    2
@@ -5566,15 +5566,15 @@
   "q_es": "¿Qué es una cuenta honeytoken en Defender for Identity?",
   "q_en": "What is a honeytoken account in Defender for Identity?",
   "opts_es": [
-   "Un usuario invitado",
-   "Una cuenta de administrador con derechos completos",
-   "Una licencia",
+   "Una cuenta de servicio con privilegios de administrador",
+   "Una cuenta de administrador usada por los sensores",
+   "Una cuenta de servicio administrada de grupo",
    "Una cuenta señuelo que activa una alerta cuando alguien intenta usarla"
   ],
   "opts_en": [
-   "A guest user",
-   "An administrator account with full rights",
-   "A license",
+   "A privileged service account with admin rights",
+   "An administrator account used by the sensors",
+   "A group-managed service account",
    "A decoy account that triggers an alert when someone tries to use it"
   ],
   "correct": [
@@ -5593,15 +5593,15 @@
   "q_en": "A Defender for Cloud alert indicates suspicious access to a storage account from an anonymous Tor exit node. What should you review first?",
   "opts_es": [
    "Los detalles de la alerta y los registros de acceso al almacenamiento para determinar qué se accedió y si se filtraron credenciales o tokens SAS",
-   "La lista de inscripciones de Intune",
-   "La página de licencias",
-   "La lista de reuniones de Teams"
+   "El informe de cumplimiento de dispositivos",
+   "La página de asignación de licencias",
+   "La lista de directivas de acceso condicional"
   ],
   "opts_en": [
    "The alert details and storage access logs to determine what was accessed and whether credentials or SAS tokens leaked",
-   "The Intune enrollment list",
-   "The license page",
-   "The Teams meeting list"
+   "The device compliance report",
+   "The license assignment page",
+   "The Conditional Access policy list"
   ],
   "correct": [
    0
@@ -5670,15 +5670,15 @@
   "q_es": "¿Qué motivo de cierre de incidente de Sentinel debe elegir un analista cuando una alerta fue activada por una prueba de penetración autorizada?",
   "q_en": "Which Sentinel incident close reason should an analyst choose when an alert was triggered by authorized penetration testing?",
   "opts_es": [
-   "Solo indeterminado",
+   "Falso positivo: lógica de alerta incorrecta",
    "Positivo benigno: sospechoso pero esperado",
-   "No cerrar",
+   "Informativo, sin necesidad de investigar",
    "Verdadero positivo: malicioso"
   ],
   "opts_en": [
-   "Undetermined only",
+   "False positive - incorrect alert logic",
    "Benign positive - suspicious but expected",
-   "Do not close",
+   "Informational, no investigation needed",
    "True positive - malicious"
   ],
   "correct": [
@@ -5971,15 +5971,15 @@
   "q_es": "Un analista necesita ejecutar un script de PowerShell de confianza en un dispositivo comprometido durante la respuesta en vivo. ¿Cómo puede hacerlo?",
   "q_en": "An analyst needs to run a trusted PowerShell script on a compromised device during live response. How can they do this?",
   "opts_es": [
-   "Abrir Teams",
+   "Pegar el script en un chat de Teams",
    "Enviar el script por correo al usuario",
-   "Imprimir el script",
+   "Imprimir el script y ejecutarlo manualmente",
    "Cargar el script en la biblioteca y ejecutarlo con el comando run"
   ],
   "opts_en": [
-   "Open Teams",
+   "Paste the script into a Teams chat",
    "Email the script to the user",
-   "Print the script",
+   "Print the script and run it manually",
    "Upload the script to the library and run it with the run command"
   ],
   "correct": [
@@ -6049,15 +6049,15 @@
   "q_es": "¿Qué hace «Ejecutar análisis antivirus» como acción de dispositivo?",
   "q_en": "What does 'Run antivirus scan' do as a device action?",
   "opts_es": [
-   "Elimina al usuario",
-   "Formatea el disco",
-   "Cierra la sesión de todos los usuarios del inquilino",
+   "Aísla el dispositivo de la red",
+   "Recopila un paquete de investigación",
+   "Restringe la ejecución de aplicaciones a las firmadas por Microsoft",
    "Inicia de forma remota un análisis de Microsoft Defender Antivirus en el dispositivo"
   ],
   "opts_en": [
-   "Deletes the user",
-   "Formats the disk",
-   "Signs out all users in the tenant",
+   "Isolates the device from the network",
+   "Collects an investigation package",
+   "Restricts app execution to Microsoft-signed apps",
    "Starts a Microsoft Defender Antivirus scan remotely on the device"
   ],
   "correct": [
@@ -6228,16 +6228,16 @@
   "q_es": "Una búsqueda de contenido de eDiscovery usa una consulta KQL. ¿Qué consulta encontraría correos de un remitente con «invoice» en el asunto?",
   "q_en": "An eDiscovery content search uses a KQL query. Which query would find emails from a sender with 'invoice' in the subject?",
   "opts_es": [
-   "ipconfig /all",
+   "sender=sender@contoso.com & subject==invoice",
    "from:sender@contoso.com AND subject:invoice",
-   "SELECT * FROM mail",
-   "ping contoso.com"
+   "mail.from = contoso AND topic = invoice",
+   "search sender contoso.com subject invoice"
   ],
   "opts_en": [
-   "ipconfig /all",
+   "sender=sender@contoso.com & subject==invoice",
    "from:sender@contoso.com AND subject:invoice",
-   "SELECT * FROM mail",
-   "ping contoso.com"
+   "mail.from = contoso AND topic = invoice",
+   "search sender contoso.com subject invoice"
   ],
   "correct": [
    1
@@ -6254,16 +6254,16 @@
   "q_es": "¿Qué permiso se requiere en Purview para ejecutar una acción de purga desde la búsqueda de contenido?",
   "q_en": "Which permission is required in Purview to run a purge action from Content search?",
   "opts_es": [
-   "Ninguno",
+   "Solo el rol Mailbox Import Export",
    "Un rol que incluya el permiso Buscar y purgar",
-   "Invitador de invitados",
-   "Lector de facturación"
+   "El rol eDiscovery Reviewer",
+   "El rol Message Center Reader"
   ],
   "opts_en": [
-   "None",
+   "Only the Mailbox Import Export role",
    "A role that includes the Search And Purge permission",
-   "Guest Inviter",
-   "Billing Reader"
+   "The eDiscovery Reviewer role",
+   "The Message Center Reader role"
   ],
   "correct": [
    1
@@ -6641,16 +6641,16 @@
   "q_es": "¿Qué operador devuelve la fila con el valor más reciente de una columna para cada grupo?",
   "q_en": "Which operator returns the row with the latest value of a column for each group?",
   "opts_es": [
-   "union",
-   "solo take 1",
+   "top 1 by Timestamp",
+   "take 1 para toda la tabla",
    "summarize arg_max(Timestamp, *) by DeviceId",
-   "project DeviceId"
+   "project DeviceId, Timestamp"
   ],
   "opts_en": [
-   "union",
-   "take 1 only",
+   "top 1 by Timestamp",
+   "take 1 for the whole table",
    "summarize arg_max(Timestamp, *) by DeviceId",
-   "project DeviceId"
+   "project DeviceId, Timestamp"
   ],
   "correct": [
    2
@@ -6668,15 +6668,15 @@
   "q_en": "What does the KQL bin() function help you do when analyzing time series?",
   "opts_es": [
    "Agrupar marcas de tiempo en intervalos de tamaño fijo, como 1 hora",
-   "Eliminar filas antiguas",
-   "Cifrar columnas",
-   "Combinar tablas"
+   "Clasificar filas por valor",
+   "Extraer campos de JSON",
+   "Combinar dos tablas por una clave"
   ],
   "opts_en": [
    "Group timestamps into fixed-size intervals such as 1 hour",
-   "Delete old rows",
-   "Encrypt columns",
-   "Join tables"
+   "Rank rows by value",
+   "Extract fields from JSON",
+   "Join two tables on a key"
   ],
   "correct": [
    0
@@ -6694,15 +6694,15 @@
   "q_en": "In threat analytics, what does the exposure section show?",
   "opts_es": [
    "Cuántos dispositivos son vulnerables o están mal configurados respecto a la amenaza",
-   "Las colas de impresión",
-   "El uso de Teams",
-   "Los ingresos de la empresa"
+   "Reglas de buzón creadas por los usuarios",
+   "El nivel de licencia de los usuarios",
+   "El número de incidencias abiertas"
   ],
   "opts_en": [
    "How many devices are vulnerable or misconfigured relative to the threat",
-   "Printer queues",
-   "Teams usage",
-   "The company's revenue"
+   "Mailbox rules created by users",
+   "The licensing level of users",
+   "The number of tickets opened"
   ],
   "correct": [
    0
@@ -6951,15 +6951,15 @@
   "q_en": "What is MSTICPy used for in Sentinel notebooks?",
   "opts_es": [
    "Una biblioteca de Python con herramientas de análisis de seguridad, enriquecimiento y visualización para la búsqueda",
-   "Un servidor DNS",
-   "Una herramienta de licencias",
-   "Un dispositivo de firewall"
+   "Un clúster de Spark administrado",
+   "Un resaltador de sintaxis de KQL",
+   "Un conector de datos de SIEM"
   ],
   "opts_en": [
    "A Python library with security analysis, enrichment and visualization tools for hunting",
-   "A DNS server",
-   "A license tool",
-   "A firewall appliance"
+   "A managed Spark cluster",
+   "A KQL syntax highlighter",
+   "A SIEM data connector"
   ],
   "correct": [
    0
@@ -7002,16 +7002,16 @@
   "q_es": "Un trabajo KQL en el lago de datos encuentra actividad poco habitual. ¿Cómo pueden consultar después los analistas los resultados en la búsqueda avanzada junto con otros datos del nivel de análisis?",
   "q_en": "A KQL job in the data lake finds rare activity. How can analysts then query the results in advanced hunting with other analytics-tier data?",
   "opts_es": [
-   "Eliminar el lago",
-   "Imprimirlos",
+   "Copiar los datos del lago a un archivo CSV",
+   "Esperar a una exportación diaria automática",
    "Promover los resultados del trabajo al nivel de análisis",
-   "Deshabilitar KQL"
+   "Volver a ejecutar el trabajo en registros básicos"
   ],
   "opts_en": [
-   "Delete the lake",
-   "Print them",
+   "Copy the lake data to a CSV file",
+   "Wait for an automatic daily export",
    "Promote the job results to the analytics tier",
-   "Disable KQL"
+   "Re-run the job on Basic logs"
   ],
   "correct": [
    2
@@ -7028,15 +7028,15 @@
   "q_es": "¿Qué capacidad de búsqueda de Sentinel ayuda a visualizar las relaciones de una entidad y las posibles rutas de ataque?",
   "q_en": "Which Sentinel hunting capability helps visualize an entity's relationships and likely attack paths?",
   "opts_es": [
-   "Gráficos DNS",
-   "Gráficos de facturación",
-   "Gráficos de Teams",
+   "Mapas de calor de libros",
+   "Gráficos de puntuación de anomalías",
+   "Tablas de listas de seguimiento",
    "Gráfico de Sentinel y análisis del radio de impacto"
   ],
   "opts_en": [
-   "DNS graphs",
-   "Billing graphs",
-   "Teams graphs",
+   "Workbook heat maps",
+   "Anomaly score charts",
+   "Watchlist tables",
    "Sentinel graph and blast radius analysis"
   ],
   "correct": [
@@ -7155,15 +7155,15 @@
   "q_es": "¿Qué característica asigna una regla a tácticas de ataque como Acceso inicial o Persistencia?",
   "q_en": "Which feature maps a rule to attack tactics such as Initial Access or Persistence?",
   "opts_es": [
-   "Tipo de licencia",
-   "Directiva de nomenclatura de grupos",
-   "Etiqueta de facturación",
+   "Niveles de gravedad de alertas",
+   "Asignación de entidades",
+   "Categoría del conector de datos",
    "Tácticas y técnicas de MITRE ATT&CK en la regla"
   ],
   "opts_en": [
-   "License type",
-   "Group naming policy",
-   "Billing tag",
+   "Alert severity levels",
+   "Entity mapping",
+   "Data connector category",
    "MITRE ATT&CK tactics and techniques in the rule"
   ],
   "correct": [
@@ -7181,16 +7181,16 @@
   "q_es": "Una tabla necesita columnas personalizadas para registros enviados desde una aplicación empresarial. ¿Qué creas primero?",
   "q_en": "A table needs custom columns for records sent from a business application. What do you create first?",
   "opts_es": [
-   "Un usuario invitado",
-   "Un nuevo inquilino",
+   "Una nueva plantilla de regla de análisis",
+   "Una lista de seguimiento con las columnas personalizadas",
    "Una tabla personalizada (y una DCR) en el área de trabajo",
-   "Una zona DNS"
+   "Un libro que analiza los registros"
   ],
   "opts_en": [
-   "A guest user",
-   "A new tenant",
+   "A new analytics rule template",
+   "A watchlist with the custom columns",
    "A custom table (and DCR) in the workspace",
-   "A DNS zone"
+   "A workbook that parses the records"
   ],
   "correct": [
    2
@@ -7260,15 +7260,15 @@
   "q_en": "An alert shows an admin account created a mailbox rule that forwards mail externally. Which incident response step is appropriate?",
   "opts_es": [
    "Deshabilitar la regla, investigar cómo se comprometió la cuenta y restablecer las credenciales",
-   "Ignorarlo",
-   "Habilitar más reenvíos",
-   "Eliminar el inquilino"
+   "Solo supervisar la regla durante una semana",
+   "Añadir una segunda regla de reenvío para auditoría",
+   "Restablecer solo la contraseña del destinatario"
   ],
   "opts_en": [
    "Disable the rule, investigate how the account was compromised and reset credentials",
-   "Ignore it",
-   "Enable more forwarding",
-   "Delete the tenant"
+   "Only monitor the rule for a week",
+   "Add a second forwarding rule for auditing",
+   "Reset the password of the recipient only"
   ],
   "correct": [
    0
@@ -7337,15 +7337,15 @@
   "q_es": "¿Qué herramienta debes usar para investigar qué aplicaciones e identidades realizaron llamadas sospechosas a Microsoft Graph?",
   "q_en": "Which tool should you use to investigate which apps and identities made suspicious calls to Microsoft Graph?",
   "opts_es": [
-   "Los registros de cumplimiento de Intune",
-   "La caché DNS",
-   "La lista de reuniones de Teams",
+   "Registros de cumplimiento de dispositivos de Intune",
+   "Registros de consultas de Azure DNS",
+   "Panel de calidad de llamadas de Teams",
    "Los registros de actividad de Microsoft Graph en Log Analytics"
   ],
   "opts_en": [
-   "Intune compliance logs",
-   "DNS cache",
-   "Teams meeting list",
+   "Intune device compliance logs",
+   "Azure DNS query logs",
+   "Teams call quality dashboard",
    "Microsoft Graph activity logs in Log Analytics"
   ],
   "correct": [
@@ -7811,16 +7811,16 @@
   "q_es": "¿Qué hace la instrucción let de KQL?",
   "q_en": "What does the KQL let statement do?",
   "opts_es": [
-   "Envía un correo",
-   "Elimina datos",
+   "Envía los resultados de la consulta por correo",
+   "Elimina las filas coincidentes",
    "Define una variable o expresión reutilizable para la consulta",
-   "Crea un usuario"
+   "Crea una función en el área de trabajo"
   ],
   "opts_en": [
-   "Sends an email",
-   "Deletes data",
+   "Sends the query results by email",
+   "Deletes the matching rows",
    "Defines a variable or reusable expression for the query",
-   "Creates a user"
+   "Creates a function in the workspace"
   ],
   "correct": [
    2
@@ -8454,13 +8454,13 @@
    "Restablecer la contraseña, revocar las sesiones, comprobar los inicios de sesión y eliminar los correos relacionados",
    "Solo notificar al usuario por correo",
    "Eliminar el buzón del usuario",
-   "No hacer nada"
+   "Cerrar la alerta como positivo benigno"
   ],
   "opts_en": [
    "Reset the password, revoke sessions, check sign-ins and remove related emails",
    "Only notify the user by email",
    "Delete the user's mailbox",
-   "Do nothing"
+   "Close the alert as a benign positive"
   ],
   "correct": [
    0
@@ -8478,15 +8478,15 @@
   "q_en": "Which Defender for Cloud alert category would indicate a crypto-mining process on an Azure VM?",
   "opts_es": [
    "Una alerta de detección de amenazas de Defender for Servers",
-   "Una alerta de retención",
-   "Una alerta de Teams",
-   "Solo una alerta de facturación"
+   "Una alerta de retención de Microsoft Purview",
+   "Una alerta de Defender for Office 365",
+   "Una alerta de Microsoft Entra Connect Health"
   ],
   "opts_en": [
    "A Defender for Servers threat detection alert",
-   "A retention alert",
-   "A Teams alert",
-   "A billing alert only"
+   "A Microsoft Purview retention alert",
+   "A Defender for Office 365 alert",
+   "A Microsoft Entra Connect Health alert"
   ],
   "correct": [
    0
@@ -8504,15 +8504,15 @@
   "q_en": "Which information appears in a Sentinel incident's entities tab?",
   "opts_es": [
    "Cuentas, hosts, direcciones IP y otras entidades asignadas implicadas en las alertas",
-   "Solo recuentos de licencias",
-   "Solo los TTL de DNS",
-   "Solo detalles de facturación"
+   "Solo el recuento de licencias del inquilino",
+   "Solo los valores TTL de DNS del dominio",
+   "Solo los detalles de facturación del área de trabajo"
   ],
   "opts_en": [
    "Accounts, hosts, IP addresses and other mapped entities involved in the alerts",
-   "Only license counts",
-   "Only DNS TTLs",
-   "Only billing details"
+   "Only the license counts of the tenant",
+   "Only DNS TTL values of the domain",
+   "Only billing details of the workspace"
   ],
   "correct": [
    0
@@ -8531,14 +8531,14 @@
   "opts_es": [
    "Seleccionar una clasificación y agregar comentarios que documenten los hallazgos y las acciones",
    "Cambiar el nombre del inquilino",
-   "Eliminar el incidente",
-   "No reasignarlo a nadie"
+   "Eliminar el incidente para mantener limpia la cola",
+   "Reasignarlo a nadie"
   ],
   "opts_en": [
    "Select a classification and add comments documenting findings and actions",
    "Change the tenant name",
-   "Delete the incident",
-   "Reassign to nobody"
+   "Delete the incident to keep the queue clean",
+   "Reassign it to nobody"
   ],
   "correct": [
    0
@@ -8582,15 +8582,15 @@
   "q_en": "A device was contained by automatic attack disruption. What should an analyst verify before releasing it?",
   "opts_es": [
    "Que la amenaza esté corregida y se comprenda el alcance del incidente",
-   "Que el recuento de licencias sea correcto",
-   "Nada",
-   "Que Teams esté instalado"
+   "Que el recuento de licencias es correcto",
+   "Que el usuario ha cambiado el fondo de pantalla",
+   "Que Teams está instalado en el dispositivo"
   ],
   "opts_en": [
    "That the threat is remediated and the incident scope is understood",
    "That the license count is correct",
-   "Nothing",
-   "That Teams is installed"
+   "That the user has changed the wallpaper",
+   "That Teams is installed on the device"
   ],
   "correct": [
    0
@@ -8610,13 +8610,13 @@
    "La búsqueda en el registro de auditoría filtrada por nombre de archivo o actividad",
    "Compliance Manager",
    "Etiquetas de retención",
-   "Simulación de ataques"
+   "Entrenamiento de simulación de ataques"
   ],
   "opts_en": [
    "Audit log search filtered by file name or activity",
    "Compliance Manager",
    "Retention labels",
-   "Attack simulation"
+   "Attack simulation training"
   ],
   "correct": [
    0
@@ -8685,15 +8685,15 @@
   "q_es": "Una detección personalizada de Defender XDR debe alertar cuando un proceso poco habitual lanza PowerShell con un comando codificado. ¿En qué debe basarse la regla?",
   "q_en": "A Defender XDR custom detection should alert when a rare process spawns PowerShell with an encoded command. What should the rule be based on?",
   "opts_es": [
-   "Una directiva de nomenclatura de grupos",
-   "Una etiqueta de retención",
-   "Una directiva de reuniones de Teams",
+   "Una directiva de retención de Purview",
+   "Una lista de seguimiento de Sentinel",
+   "Una directiva de cumplimiento de Intune",
    "Una consulta de búsqueda avanzada sobre DeviceProcessEvents"
   ],
   "opts_en": [
-   "A group naming policy",
-   "A retention label",
-   "A Teams meeting policy",
+   "A Purview retention policy",
+   "A Sentinel watchlist",
+   "An Intune compliance policy",
    "An advanced hunting query over DeviceProcessEvents"
   ],
   "correct": [
@@ -8737,16 +8737,16 @@
   "q_es": "¿Qué ventaja ofrecen las reglas de resumen a un SOC que ejecuta cada hora la misma consulta costosa sobre registros grandes?",
   "q_en": "What advantage do summary rules give a SOC that runs the same expensive query on large logs every hour?",
   "opts_es": [
-   "Eliminan los registros",
-   "Agregan licencias",
+   "Eliminan los registros tras ejecutar la consulta",
+   "Añaden licencias al área de trabajo",
    "Precalculan el resultado en una tabla más pequeña que es más barata y rápida de consultar",
-   "Deshabilitan las detecciones"
+   "Deshabilitan las detecciones de la tabla de origen"
   ],
   "opts_en": [
-   "They delete the logs",
-   "They add licenses",
+   "They delete the logs after the query runs",
+   "They add licenses to the workspace",
    "They precompute the result into a smaller table that is cheaper and faster to query",
-   "They disable detections"
+   "They disable detections on the source table"
   ],
   "correct": [
    2
