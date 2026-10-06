@@ -19402,5 +19402,1311 @@
   "correct": 0,
   "exp_es": "Una regla de alertas de búsqueda de registros ejecuta una consulta KQL de forma programada y activa un grupo de acciones cuando se cumple la condición.",
   "exp_en": "A log search alert rule runs a KQL query on a schedule and triggers an action group when the condition is met."
+ },
+ {
+  "id": 691,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los tipos de unión de dispositivos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about device join types, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La unión a Microsoft Entra está pensada para dispositivos de la organización que inician sesión con cuentas profesionales.",
+    "en": "Microsoft Entra join is intended for organization-owned devices that sign in with work accounts.",
+    "ans": true
+   },
+   {
+    "es": "El registro en Microsoft Entra se usa normalmente en dispositivos personales (BYOD).",
+    "en": "Microsoft Entra registration is typically used for personal (BYOD) devices.",
+    "ans": true
+   },
+   {
+    "es": "La unión híbrida a Microsoft Entra requiere que el dispositivo esté unido también a Active Directory local.",
+    "en": "Microsoft Entra hybrid join requires the device to be joined to on-premises Active Directory as well.",
+    "ans": true
+   },
+   {
+    "es": "Un dispositivo registrado en Microsoft Entra pasa a estar totalmente administrado por los controladores de dominio de la organización.",
+    "en": "A device registered with Microsoft Entra becomes fully managed by the organization's domain controllers.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La unión a Entra se adapta a dispositivos corporativos administrados en la nube, el registro a BYOD, y la unión híbrida mantiene el dispositivo en AD local y en Entra ID.",
+  "exp_en": "Entra join suits corporate cloud-managed devices, registration suits BYOD, and hybrid join keeps the device in on-premises AD and Entra ID."
+ },
+ {
+  "id": 692,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el tipo de unión que encaja con cada escenario.",
+  "q_en": "Select the join type that fits each scenario.",
+  "rows": [
+   {
+    "es": "Una empresa solo en la nube entrega portátiles nuevos y quiere que los usuarios inicien sesión con su cuenta profesional.",
+    "en": "A cloud-only company issues new laptops and wants users to sign in with their work account.",
+    "opts_es": [
+     "Unión a Microsoft Entra",
+     "Registro en Microsoft Entra",
+     "Unión híbrida a Microsoft Entra",
+     "Solo grupo de trabajo"
+    ],
+    "opts_en": [
+     "Microsoft Entra join",
+     "Microsoft Entra registration",
+     "Microsoft Entra hybrid join",
+     "Workgroup only"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Los empleados quieren acceder al correo de la empresa desde su PC Windows personal sin ceder el control del equipo.",
+    "en": "Employees want to access company email from their personal Windows PC without giving up control of the PC.",
+    "opts_es": [
+     "Unión a Microsoft Entra",
+     "Registro en Microsoft Entra",
+     "Unión híbrida a Microsoft Entra",
+     "Solo grupo de trabajo"
+    ],
+    "opts_en": [
+     "Microsoft Entra join",
+     "Microsoft Entra registration",
+     "Microsoft Entra hybrid join",
+     "Workgroup only"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "La unión a Entra es para dispositivos corporativos; el registro es para dispositivos personales que solo necesitan acceso a recursos.",
+  "exp_en": "Entra join is for corporate devices; registration is for personally owned devices that only need access to resources."
+ },
+ {
+  "id": 693,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Un grupo dinámico de dispositivos en Microsoft Entra ID usa una ",
+  "pre_en": "A dynamic device group in Microsoft Entra ID uses a membership ",
+  "post_es": " de pertenencia que evalúa automáticamente los atributos del dispositivo.",
+  "post_en": " that evaluates device attributes automatically.",
+  "opts_es": [
+   "regla",
+   "licencia",
+   "certificado",
+   "token"
+  ],
+  "opts_en": [
+   "rule",
+   "license",
+   "certificate",
+   "token"
+  ],
+  "correct": 0,
+  "exp_es": "Los grupos dinámicos se rellenan con reglas de pertenencia como (device.deviceOwnership -eq \"Company\").",
+  "exp_en": "Dynamic groups are populated by membership rules such as (device.deviceOwnership -eq \"Company\")."
+ },
+ {
+  "id": 694,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los grupos de dispositivos en Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about groups for devices in Microsoft Entra ID, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un grupo dinámico de dispositivos puede agregar dispositivos automáticamente según propiedades como el sistema operativo.",
+    "en": "A dynamic device group can add devices automatically based on properties such as the operating system.",
+    "ans": true
+   },
+   {
+    "es": "Un dispositivo puede agregarse a un grupo de tipo asignado eligiendo los miembros manualmente.",
+    "en": "A device can be added to a group of type assigned by choosing members manually.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas dinámicas de pertenencia para dispositivos y usuarios se pueden mezclar en el mismo grupo.",
+    "en": "Dynamic membership rules for devices and users can be mixed in the same group.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Un grupo dinámico evalúa usuarios o dispositivos, pero no ambos en el mismo grupo.",
+  "exp_en": "A dynamic group evaluates either users or devices, not both in one group."
+ },
+ {
+  "id": 695,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el método de inscripción de Android para cada escenario.",
+  "q_en": "Select the Android enrollment approach for each scenario.",
+  "rows": [
+   {
+    "es": "Los empleados usan sus propios teléfonos y la empresa solo administra un contenedor de trabajo aparte.",
+    "en": "Employees use their own phones and the company only manages a separate work container.",
+    "opts_es": [
+     "Perfil de trabajo de Android Enterprise en dispositivo personal",
+     "Android Enterprise totalmente administrado",
+     "Android Enterprise dedicado",
+     "Android Enterprise con perfil de trabajo de propiedad corporativa"
+    ],
+    "opts_en": [
+     "Android Enterprise personally-owned work profile",
+     "Android Enterprise fully managed",
+     "Android Enterprise dedicated",
+     "Android Enterprise corporate-owned work profile"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Un almacén usa lectores compartidos que ejecutan una única aplicación bloqueada.",
+    "en": "A warehouse uses shared scanners that run a single locked-down app.",
+    "opts_es": [
+     "Perfil de trabajo de Android Enterprise en dispositivo personal",
+     "Android Enterprise totalmente administrado",
+     "Android Enterprise dedicado",
+     "Android Enterprise con perfil de trabajo de propiedad corporativa"
+    ],
+    "opts_en": [
+     "Android Enterprise personally-owned work profile",
+     "Android Enterprise fully managed",
+     "Android Enterprise dedicated",
+     "Android Enterprise corporate-owned work profile"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "El perfil de trabajo en dispositivo personal separa datos laborales y personales; los dispositivos dedicados (quiosco) son de un solo propósito y compartidos.",
+  "exp_en": "Personally-owned work profile separates work and personal data; dedicated (kiosk) devices are single-purpose, shared devices."
+ },
+ {
+  "id": 696,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la inscripción de dispositivos Apple en Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about enrolling Apple devices in Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Se requiere un certificado push MDM de Apple para administrar dispositivos iOS, iPadOS y macOS.",
+    "en": "An Apple MDM push certificate is required to manage iOS, iPadOS and macOS devices.",
+    "ans": true
+   },
+   {
+    "es": "Apple Business Manager puede inscribir automáticamente dispositivos corporativos al encenderlos por primera vez.",
+    "en": "Apple Business Manager can automatically enroll corporate devices at first power on.",
+    "ans": true
+   },
+   {
+    "es": "Los iPhone personales deben usar la inscripción automatizada de Apple Business Manager.",
+    "en": "Personal iPhones must use Apple Business Manager automated enrollment.",
+    "ans": false
+   },
+   {
+    "es": "El certificado push MDM de Apple nunca caduca.",
+    "en": "The Apple MDM push certificate never expires.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los dispositivos corporativos usan la inscripción automatizada de ABM; BYOD usa inscripción de usuario o protección de aplicaciones. El certificado push se renueva cada año.",
+  "exp_en": "Corporate devices use ABM automated device enrollment; BYOD uses user enrollment or app protection. The push certificate must be renewed every year."
+ },
+ {
+  "id": 697,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para inscribir automáticamente dispositivos Samsung corporativos en el primer arranque, Intune puede integrarse con Samsung ",
+  "pre_en": "To enroll corporate Samsung devices automatically at first boot, Intune can integrate with Samsung ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Knox Mobile Enrollment",
+   "Smart Switch",
+   "Galaxy Store",
+   "Bixby Routines"
+  ],
+  "opts_en": [
+   "Knox Mobile Enrollment",
+   "Smart Switch",
+   "Galaxy Store",
+   "Bixby Routines"
+  ],
+  "correct": 0,
+  "exp_es": "Knox Mobile Enrollment (y zero-touch de Google) proporcionan la inscripción automatizada de dispositivos Android corporativos.",
+  "exp_en": "Knox Mobile Enrollment (and Google zero-touch) provide automated enrollment of corporate Android devices."
+ },
+ {
+  "id": 698,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Los dispositivos Windows pueden inscribirse automáticamente en Intune cuando un usuario los une a Entra ID si se configura la ",
+  "pre_en": "Windows devices can be enrolled automatically in Intune when a user joins them to Entra ID if ",
+  "post_es": " para los usuarios correctos.",
+  "post_en": " is configured for the right users.",
+  "opts_es": [
+   "inscripción automática de MDM",
+   "una aplicación Win32",
+   "un anillo de actualización",
+   "una etiqueta de ámbito"
+  ],
+  "opts_en": [
+   "automatic MDM enrollment",
+   "a Win32 app",
+   "an update ring",
+   "a scope tag"
+  ],
+  "correct": 0,
+  "exp_es": "El ámbito de usuarios MDM en Entra ID habilita la inscripción automática en Intune al unir o registrar el dispositivo.",
+  "exp_en": "MDM user scope in Entra ID enables automatic enrollment into Intune upon join or registration."
+ },
+ {
+  "id": 699,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el control de acceso basado en roles de Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Intune role-based access control, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las etiquetas de ámbito limitan qué objetos de Intune puede ver y administrar un administrador.",
+    "en": "Scope tags limit which Intune objects an administrator can see and manage.",
+    "ans": true
+   },
+   {
+    "es": "Se puede crear un rol personalizado de Intune con solo los permisos que necesita un equipo.",
+    "en": "A custom Intune role can be created with only the permissions a team needs.",
+    "ans": true
+   },
+   {
+    "es": "Las etiquetas de ámbito se usan para filtrar qué dispositivos reciben una directiva.",
+    "en": "Scope tags are used to filter which devices receive a policy.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las etiquetas de ámbito controlan la visibilidad administrativa; las asignaciones y filtros de asignación controlan qué dispositivos reciben una directiva.",
+  "exp_en": "Scope tags control administrative visibility; assignments and assignment filters control which devices get a policy."
+ },
+ {
+  "id": 700,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de identidad o cumplimiento que corresponde a cada requisito.",
+  "q_en": "Select the identity or compliance feature that matches each requirement.",
+  "rows": [
+   {
+    "es": "Rotar y respaldar automáticamente la contraseña del administrador local.",
+    "en": "Rotate and back up the local administrator password automatically.",
+    "opts_es": [
+     "Windows LAPS",
+     "Windows Hello for Business",
+     "Directiva de cumplimiento con acceso condicional",
+     "Etiquetas de ámbito"
+    ],
+    "opts_en": [
+     "Windows LAPS",
+     "Windows Hello for Business",
+     "Compliance policy with Conditional Access",
+     "Scope tags"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Permitir el acceso a Exchange Online solo desde dispositivos marcados como compatibles.",
+    "en": "Allow access to Exchange Online only from devices marked compliant.",
+    "opts_es": [
+     "Windows LAPS",
+     "Windows Hello for Business",
+     "Directiva de cumplimiento con acceso condicional",
+     "Etiquetas de ámbito"
+    ],
+    "opts_en": [
+     "Windows LAPS",
+     "Windows Hello for Business",
+     "Compliance policy with Conditional Access",
+     "Scope tags"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "LAPS administra la contraseña del administrador local; el acceso condicional junto con el cumplimiento condiciona el acceso a recursos al estado del dispositivo.",
+  "exp_en": "LAPS manages the local admin password; Conditional Access plus compliance gates resource access on device health."
+ },
+ {
+  "id": 701,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "sentence",
+  "pre_es": "Para exigir que solo los dispositivos compatibles accedan a los recursos de la empresa, se crea una directiva de acceso condicional que requiere que el dispositivo esté marcado como ",
+  "pre_en": "To require that only compliant devices can reach company resources, you create a Conditional Access policy that requires the device to be marked as ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "compatible",
+   "unido híbrido",
+   "registrado",
+   "dinámico"
+  ],
+  "opts_en": [
+   "compliant",
+   "hybrid joined",
+   "registered",
+   "dynamic"
+  ],
+  "correct": 0,
+  "exp_es": "El control de concesión Requerir que el dispositivo se marque como compatible evalúa el estado de cumplimiento de Intune.",
+  "exp_en": "The grant control Require device to be marked as compliant evaluates the Intune compliance state."
+ },
+ {
+  "id": 702,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Windows LAPS con Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Windows LAPS with Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Windows LAPS puede respaldar la contraseña del administrador local administrada en Microsoft Entra ID.",
+    "en": "Windows LAPS can back up the managed local administrator password to Microsoft Entra ID.",
+    "ans": true
+   },
+   {
+    "es": "La contraseña puede rotarse manualmente desde el dispositivo en el centro de administración de Intune.",
+    "en": "The password can be rotated manually from the device in the Intune admin center.",
+    "ans": true
+   },
+   {
+    "es": "LAPS concede derechos de administrador local a todos los usuarios.",
+    "en": "LAPS gives every user local administrator rights.",
+    "ans": false
+   }
+  ],
+  "exp_es": "LAPS administra la contraseña de la cuenta de administrador local; no concede derechos de administrador a los usuarios.",
+  "exp_en": "LAPS manages the password of the local admin account; it does not grant admin rights to users."
+ },
+ {
+  "id": 703,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "sentence",
+  "pre_es": "La configuración del inicio de sesión sin contraseña en Windows con biometría o PIN se realiza con Windows Hello para ",
+  "pre_en": "Configuration of passwordless sign-in for Windows with biometrics or PIN is done with Windows Hello for ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Empresas",
+   "Educación solamente",
+   "Hogar solamente",
+   "Desarrolladores"
+  ],
+  "opts_en": [
+   "Business",
+   "Education only",
+   "Home only",
+   "Developers"
+  ],
+  "correct": 0,
+  "exp_es": "Windows Hello para empresas se puede configurar con directivas de Intune en dispositivos unidos a Entra.",
+  "exp_en": "Windows Hello for Business can be configured with Intune policies for Entra-joined devices."
+ },
+ {
+  "id": 704,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre Windows Autopilot, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Windows Autopilot, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El modo controlado por el usuario asocia el dispositivo con el usuario que inicia sesión durante la configuración.",
+    "en": "User-driven mode associates the device with the user who signs in during setup.",
+    "ans": true
+   },
+   {
+    "es": "El modo de autoimplementación no requiere que un usuario inicie sesión durante la configuración y se usa en dispositivos compartidos o de quiosco.",
+    "en": "Self-deploying mode requires no user to sign in during setup and is used for shared or kiosk devices.",
+    "ans": true
+   },
+   {
+    "es": "El aprovisionamiento previo permite que un técnico o un partner prepare el dispositivo antes de que llegue al usuario.",
+    "en": "Pre-provisioning lets a technician or partner prepare the device before it reaches the user.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de preparación de dispositivos requieren cargar un hash de hardware.",
+    "en": "Device preparation policies require a hardware hash to be uploaded.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los perfiles de implementación de Autopilot necesitan hashes de hardware registrados; las directivas de preparación de dispositivos no usan el registro del hash de hardware.",
+  "exp_en": "Autopilot deployment profiles need registered hardware hashes; device preparation policies do not use hardware hash registration."
+ },
+ {
+  "id": 705,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el modo de implementación de Autopilot que encaja con cada escenario.",
+  "q_en": "Select the Autopilot deployment mode that fits each scenario.",
+  "rows": [
+   {
+    "es": "Un empleado nuevo abre la caja de un portátil e inicia sesión para completar la configuración.",
+    "en": "A new employee unboxes a laptop and signs in to complete setup.",
+    "opts_es": [
+     "Controlado por el usuario",
+     "Autoimplementación",
+     "Aprovisionamiento previo",
+     "Solo unión híbrida"
+    ],
+    "opts_en": [
+     "User-driven",
+     "Self-deploying",
+     "Pre-provisioning",
+     "Hybrid join only"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Un dispositivo de sala de reuniones debe configurarse solo, sin ningún usuario presente.",
+    "en": "A conference room device must configure itself with no user present.",
+    "opts_es": [
+     "Controlado por el usuario",
+     "Autoimplementación",
+     "Aprovisionamiento previo",
+     "Solo unión híbrida"
+    ],
+    "opts_en": [
+     "User-driven",
+     "Self-deploying",
+     "Pre-provisioning",
+     "Hybrid join only"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "El modo controlado por el usuario necesita que un usuario se autentique; la autoimplementación configura un dispositivo sin usuario, mediante atestación TPM.",
+  "exp_en": "User-driven needs a user to authenticate; self-deploying configures a device with no user, using TPM attestation."
+ },
+ {
+  "id": 706,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "La página que muestra el progreso de instalación y puede bloquear el escritorio hasta que terminen las aplicaciones y directivas necesarias es la ",
+  "pre_en": "The page that shows installation progress and can block the desktop until required apps and policies finish is the ",
+  "post_es": " (ESP).",
+  "post_en": " (ESP).",
+  "opts_es": [
+   "página de estado de inscripción",
+   "directiva de seguridad de endpoints",
+   "paquete de soporte extendido",
+   "página de inicio de sesión empresarial"
+  ],
+  "opts_en": [
+   "Enrollment Status Page",
+   "Endpoint Security Policy",
+   "Extended Support Package",
+   "Enterprise Sign-in Page"
+  ],
+  "correct": 0,
+  "exp_es": "La ESP supervisa la configuración del dispositivo y del usuario durante Autopilot y puede restringir el uso hasta que finaliza.",
+  "exp_en": "The ESP tracks device and user setup during Autopilot and can restrict use until it completes."
+ },
+ {
+  "id": 707,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Los Cloud PC de Windows 365 se crean en Intune mediante una ",
+  "pre_en": "Windows 365 Cloud PCs are created in Intune using a ",
+  "post_es": " que define la imagen, la región y la red.",
+  "post_en": " policy that defines the image, region and network.",
+  "opts_es": [
+   "directiva de aprovisionamiento",
+   "directiva de cumplimiento",
+   "directiva de protección de aplicaciones",
+   "directiva de anillo de actualización"
+  ],
+  "opts_en": [
+   "provisioning",
+   "compliance",
+   "app protection",
+   "update ring"
+  ],
+  "correct": 0,
+  "exp_es": "Las directivas de aprovisionamiento definen la imagen, el tipo de unión, la conexión de red y la asignación de los Cloud PC.",
+  "exp_en": "Provisioning policies define the image, join type, network connection and assignment for Cloud PCs."
+ },
+ {
+  "id": 708,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la actualización a Windows 11 con Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about upgrading to Windows 11 with Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las directivas de actualización de características pueden llevar los dispositivos aptos a una versión concreta de Windows.",
+    "en": "Feature update policies can move eligible devices to a specific Windows version.",
+    "ans": true
+   },
+   {
+    "es": "Los dispositivos deben cumplir los requisitos de hardware de Windows 11 para que se les ofrezca la actualización.",
+    "en": "Devices must meet the Windows 11 hardware requirements to be offered the upgrade.",
+    "ans": true
+   },
+   {
+    "es": "La actualización siempre requiere reinstalar la imagen del dispositivo.",
+    "en": "The upgrade always requires reimaging the device.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Intune puede realizar actualizaciones en el sitio en dispositivos aptos; los informes de preparación ayudan a identificar los que cumplen los requisitos.",
+  "exp_en": "Intune can perform in-place upgrades on eligible devices; readiness reports help identify devices that meet the requirements."
+ },
+ {
+  "id": 709,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los perfiles de configuración de Intune para Windows, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Intune configuration profiles for Windows, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El análisis de directivas de grupo puede evaluar qué configuraciones de GPO locales admite MDM.",
+    "en": "Group Policy analytics can assess which on-premises GPO settings are supported by MDM.",
+    "ans": true
+   },
+   {
+    "es": "Se pueden importar archivos ADMX para configurar valores adicionales.",
+    "en": "ADMX files can be imported to configure additional settings.",
+    "ans": true
+   },
+   {
+    "es": "El catálogo de configuración contiene solo unos pocos valores.",
+    "en": "The settings catalog contains only a handful of settings.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El análisis de directivas de grupo y la importación de ADMX ayudan a migrar desde GPO; el catálogo de configuración es una lista amplia y con búsqueda de valores.",
+  "exp_en": "Group Policy analytics and ADMX import help migrate from GPO; the settings catalog is a large, searchable list of settings."
+ },
+ {
+  "id": 710,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de segmentación que encaja con cada requisito.",
+  "q_en": "Select the targeting feature that fits each requirement.",
+  "rows": [
+   {
+    "es": "Aplicar un perfil solo a dispositivos Windows de cierto fabricante dentro de un grupo asignado.",
+    "en": "Apply a profile only to Windows devices of a certain manufacturer inside an assigned group.",
+    "opts_es": [
+     "Filtro de asignación",
+     "Etiqueta de ámbito",
+     "Restricción de inscripción",
+     "Grupo dinámico de usuarios"
+    ],
+    "opts_en": [
+     "Assignment filter",
+     "Scope tag",
+     "Enrollment restriction",
+     "Dynamic user group"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Permitir que los administradores regionales vean solo los objetos de su región.",
+    "en": "Let regional administrators see only the objects of their region.",
+    "opts_es": [
+     "Filtro de asignación",
+     "Etiqueta de ámbito",
+     "Restricción de inscripción",
+     "Grupo dinámico de usuarios"
+    ],
+    "opts_en": [
+     "Assignment filter",
+     "Scope tag",
+     "Enrollment restriction",
+     "Dynamic user group"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los filtros de asignación afinan quién recibe una directiva; las etiquetas de ámbito restringen lo que pueden ver los administradores.",
+  "exp_en": "Assignment filters refine who receives a policy; scope tags restrict what administrators can see."
+ },
+ {
+  "id": 711,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Los perfiles de configuración de dispositivos para Microsoft Teams Rooms, HoloLens 2 o dispositivos Zebra son ejemplos de perfiles para dispositivos ",
+  "pre_en": "Device configuration profiles for Microsoft Teams Rooms, HoloLens 2 or Zebra devices are examples of profiles for ",
+  "post_es": ".",
+  "post_en": " devices.",
+  "opts_es": [
+   "especializados",
+   "virtuales",
+   "heredados",
+   "no administrados"
+  ],
+  "opts_en": [
+   "specialty",
+   "virtual",
+   "legacy",
+   "unmanaged"
+  ],
+  "correct": 0,
+  "exp_es": "Los objetivos del examen de Intune agrupan estos tipos de dispositivos como dispositivos especializados.",
+  "exp_en": "The Intune exam objectives group these device types as specialty devices."
+ },
+ {
+  "id": 712,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las capacidades de Microsoft Intune Suite, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Intune Suite capabilities, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Endpoint Privilege Management permite que usuarios estándar ejecuten tareas aprobadas con derechos elevados.",
+    "en": "Endpoint Privilege Management lets standard users run approved tasks with elevated rights.",
+    "ans": true
+   },
+   {
+    "es": "Microsoft Cloud PKI emite certificados sin requerir una entidad de certificación local.",
+    "en": "Microsoft Cloud PKI issues certificates without requiring an on-premises certification authority.",
+    "ans": true
+   },
+   {
+    "es": "Remote Help se incluye gratis en todas las licencias de Intune.",
+    "en": "Remote Help is included for free in every Intune license.",
+    "ans": false
+   }
+  ],
+  "exp_es": "EPM y Cloud PKI forman parte de Intune Suite; Remote Help también es una capacidad complementaria de Intune Suite.",
+  "exp_en": "EPM and Cloud PKI are part of the Intune Suite; Remote Help is an Intune Suite add-on capability as well."
+ },
+ {
+  "id": 713,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "sentence",
+  "pre_es": "Para obtener una clave de recuperación de BitLocker nueva en un dispositivo tras usar la anterior, el administrador ejecuta la acción remota ",
+  "pre_en": "To get a fresh BitLocker recovery key for a device after the old key was used, the admin runs the remote action ",
+  "post_es": " en Intune.",
+  "post_en": " in Intune.",
+  "opts_es": [
+   "Rotar claves de BitLocker",
+   "Restablecimiento de Autopilot",
+   "Recopilar diagnósticos",
+   "Nuevo comienzo"
+  ],
+  "opts_en": [
+   "Rotate BitLocker keys",
+   "Autopilot reset",
+   "Collect diagnostics",
+   "Fresh start"
+  ],
+  "correct": 0,
+  "exp_es": "La acción remota rota la clave de recuperación de BitLocker y guarda la nueva clave en Microsoft Entra ID.",
+  "exp_en": "The remote action rotates the BitLocker recovery key and stores the new key in Microsoft Entra ID."
+ },
+ {
+  "id": 714,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "dropdown",
+  "q_es": "Selecciona la acción remota que encaja con cada situación.",
+  "q_en": "Select the remote action that fits each situation.",
+  "rows": [
+   {
+    "es": "Un empleado se marcha y la empresa quiere eliminar solo los datos corporativos de un dispositivo BYOD.",
+    "en": "An employee leaves and the company wants to remove only company data from a BYOD device.",
+    "opts_es": [
+     "Retirar",
+     "Borrar",
+     "Sincronizar",
+     "Recopilar diagnósticos"
+    ],
+    "opts_en": [
+     "Retire",
+     "Wipe",
+     "Sync",
+     "Collect diagnostics"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Un portátil corporativo se ha perdido y debe volver a los valores de fábrica.",
+    "en": "A corporate laptop is lost and must be returned to factory settings.",
+    "opts_es": [
+     "Retirar",
+     "Borrar",
+     "Sincronizar",
+     "Recopilar diagnósticos"
+    ],
+    "opts_en": [
+     "Retire",
+     "Wipe",
+     "Sync",
+     "Collect diagnostics"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Retirar elimina los datos corporativos y la administración; borrar restablece el dispositivo a los valores de fábrica.",
+  "exp_en": "Retire removes company data and management; wipe resets the device to factory settings."
+ },
+ {
+  "id": 715,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la implementación de aplicaciones con Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about deploying apps with Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las aplicaciones Win32 se empaquetan en formato .intunewin antes de cargarse.",
+    "en": "Win32 apps are packaged in the .intunewin format before upload.",
+    "ans": true
+   },
+   {
+    "es": "Las aplicaciones de línea de negocio se pueden implementar desde un instalador cargado, como un MSI.",
+    "en": "Line-of-business apps can be deployed from an uploaded installer such as an MSI.",
+    "ans": true
+   },
+   {
+    "es": "Managed Google Play se usa para aprobar e implementar aplicaciones en dispositivos Android Enterprise.",
+    "en": "Managed Google Play is used to approve and deploy apps to Android Enterprise devices.",
+    "ans": true
+   },
+   {
+    "es": "Una aplicación Win32 no puede tener reglas de detección.",
+    "en": "A Win32 app cannot have detection rules.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las aplicaciones Win32 usan reglas de detección para determinar el estado de instalación, y el paquete .intunewin se crea con la herramienta de preparación de contenido Win32.",
+  "exp_en": "Win32 apps use detection rules to determine installation state, and the .intunewin package is created with the Win32 Content Prep Tool."
+ },
+ {
+  "id": 716,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el método de implementación que encaja con cada tipo de aplicación.",
+  "q_en": "Select the deployment method that fits each app type.",
+  "rows": [
+   {
+    "es": "Un instalador de escritorio personalizado con reglas de detección y requisitos personalizadas.",
+    "en": "A custom desktop installer with custom detection and requirement rules.",
+    "opts_es": [
+     "Aplicación Win32 (.intunewin)",
+     "Aplicación de Microsoft Store (nueva)",
+     "Aplicación de Managed Google Play",
+     "Aplicación de Apple VPP/ABM"
+    ],
+    "opts_en": [
+     "Win32 app (.intunewin)",
+     "Microsoft Store app (new)",
+     "Managed Google Play app",
+     "Apple VPP/ABM app"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Una aplicación de la tienda para Android Enterprise aprobada por la organización.",
+    "en": "A store app for Android Enterprise approved by the organization.",
+    "opts_es": [
+     "Aplicación Win32 (.intunewin)",
+     "Aplicación de Microsoft Store (nueva)",
+     "Aplicación de Managed Google Play",
+     "Aplicación de Apple VPP/ABM"
+    ],
+    "opts_en": [
+     "Win32 app (.intunewin)",
+     "Microsoft Store app (new)",
+     "Managed Google Play app",
+     "Apple VPP/ABM app"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "El empaquetado Win32 se adapta a instaladores de escritorio personalizados; Managed Google Play gestiona la aprobación de aplicaciones de Android Enterprise.",
+  "exp_en": "Win32 packaging suits custom desktop installers; Managed Google Play handles Android Enterprise app approval."
+ },
+ {
+  "id": 717,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Aplicaciones de Microsoft 365 se pueden implementar con Intune mediante la ",
+  "pre_en": "Microsoft 365 Apps can be deployed with Intune by using the ",
+  "post_es": ".",
+  "post_en": " app type.",
+  "opts_es": [
+   "aplicación Microsoft 365 Apps para Windows 10 y posteriores",
+   "aplicación de vínculo web",
+   "aplicación macOS DMG",
+   "aplicación de tienda iOS"
+  ],
+  "opts_en": [
+   "Microsoft 365 Apps for Windows 10 and later",
+   "Web link",
+   "macOS DMG",
+   "iOS store app"
+  ],
+  "correct": 0,
+  "exp_es": "Intune tiene un tipo de aplicación integrado de Microsoft 365 Apps para Windows que se puede configurar con los valores de la herramienta de implementación de Office.",
+  "exp_en": "Intune has a built-in Microsoft 365 Apps app type for Windows that can be configured with the Office Deployment Tool settings."
+ },
+ {
+  "id": 718,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Para administrar canales de actualización y directivas en la nube de Aplicaciones de Microsoft 365, un administrador usa el ",
+  "pre_en": "To manage update channels and cloud policies for Microsoft 365 Apps, an administrator uses the Microsoft 365 ",
+  "post_es": ".",
+  "post_en": " admin center.",
+  "opts_es": [
+   "Centro de administración de Aplicaciones de Microsoft 365",
+   "Centro de administración de Teams",
+   "Centro de administración de Exchange",
+   "Centro de administración de Power Platform"
+  ],
+  "opts_en": [
+   "Apps",
+   "Teams",
+   "Exchange",
+   "Power Platform"
+  ],
+  "correct": 0,
+  "exp_es": "El centro de administración de Aplicaciones de Microsoft 365 ofrece inventario y administración de canales de actualización y directivas.",
+  "exp_en": "The Microsoft 365 Apps admin center provides inventory, update channel and policy management for Microsoft 365 Apps."
+ },
+ {
+  "id": 719,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las directivas de protección de aplicaciones, indica si es verdadera o falsa.",
+  "q_en": "For each statement about app protection policies, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las directivas de protección de aplicaciones pueden proteger datos corporativos en aplicaciones de dispositivos no inscritos en Intune.",
+    "en": "App protection policies can protect corporate data in apps on devices that are not enrolled in Intune.",
+    "ans": true
+   },
+   {
+    "es": "Una directiva puede restringir copiar y pegar entre aplicaciones administradas y no administradas.",
+    "en": "A policy can restrict copy and paste between managed and unmanaged apps.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de protección de aplicaciones requieren que el dispositivo esté inscrito y totalmente administrado.",
+    "en": "App protection policies require the device to be enrolled and fully managed.",
+    "ans": false
+   }
+  ],
+  "exp_es": "MAM funciona con o sin inscripción de dispositivos, por lo que encaja con escenarios BYOD.",
+  "exp_en": "MAM works with or without device enrollment, which is why it suits BYOD scenarios."
+ },
+ {
+  "id": 720,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el tipo de directiva que encaja con cada requisito.",
+  "q_en": "Select the policy type that fits each requirement.",
+  "rows": [
+   {
+    "es": "Exigir un PIN para abrir Outlook en un teléfono personal y bloquear el guardado de archivos en almacenamiento personal.",
+    "en": "Require a PIN to open Outlook on a personal phone and block saving files to personal storage.",
+    "opts_es": [
+     "Directiva de protección de aplicaciones",
+     "Directiva de configuración de aplicaciones",
+     "Directiva de cumplimiento",
+     "Anillo de actualización"
+    ],
+    "opts_en": [
+     "App protection policy",
+     "App configuration policy",
+     "Compliance policy",
+     "Update ring"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Rellenar de antemano la configuración de cuenta y el nombre del servidor de Outlook para los usuarios.",
+    "en": "Prepopulate the account settings and server name in Outlook for users.",
+    "opts_es": [
+     "Directiva de protección de aplicaciones",
+     "Directiva de configuración de aplicaciones",
+     "Directiva de cumplimiento",
+     "Anillo de actualización"
+    ],
+    "opts_en": [
+     "App protection policy",
+     "App configuration policy",
+     "Compliance policy",
+     "Update ring"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las directivas de protección protegen los datos dentro de las aplicaciones; las de configuración preestablecen los valores de las aplicaciones.",
+  "exp_en": "App protection policies protect data inside apps; app configuration policies preset app settings."
+ },
+ {
+  "id": 721,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "Una directiva de acceso condicional puede exigir una ",
+  "pre_en": "A Conditional Access policy can require an ",
+  "post_es": " para que solo las aplicaciones con protección de Intune puedan acceder a Exchange Online en dispositivos móviles.",
+  "post_en": " so that only apps with Intune protection can reach Exchange Online on mobile devices.",
+  "opts_es": [
+   "directiva de protección de aplicaciones",
+   "directiva de anillo de actualización",
+   "perfil de Autopilot",
+   "etiqueta de ámbito"
+  ],
+  "opts_en": [
+   "app protection policy",
+   "update ring",
+   "Autopilot profile",
+   "scope tag"
+  ],
+  "correct": 0,
+  "exp_es": "El control de concesión Requerir directiva de protección de aplicaciones garantiza que los datos solo se acceden desde aplicaciones protegidas.",
+  "exp_en": "The grant control Require app protection policy ensures that data is accessed only from protected apps."
+ },
+ {
+  "id": 722,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Para implementar aplicaciones de iOS que una organización compró en volumen, Intune se integra con Apple Business Manager mediante las compras ",
+  "pre_en": "To deploy iOS apps that an organization purchased in bulk, Intune integrates with Apple Business Manager ",
+  "post_es": ".",
+  "post_en": " purchases.",
+  "opts_es": [
+   "en volumen",
+   "de una sola licencia personal",
+   "de versiones de prueba",
+   "con tarjetas regalo"
+  ],
+  "opts_en": [
+   "volume",
+   "single",
+   "trial",
+   "gift"
+  ],
+  "correct": 0,
+  "exp_es": "Las aplicaciones y libros comprados en volumen en Apple Business Manager se sincronizan con Intune mediante un token y se asignan a dispositivos o usuarios.",
+  "exp_en": "Apps and books purchased in volume in Apple Business Manager are synced to Intune with a token and assigned to devices or users."
+ },
+ {
+  "id": 723,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las directivas de seguridad de endpoints en Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about endpoint security policies in Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Seguridad de los endpoints tiene tipos de directiva específicos, como antivirus, firewall y cifrado de disco.",
+    "en": "Endpoint security has dedicated policy types such as antivirus, firewall and disk encryption.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de cifrado de disco pueden aplicar BitLocker y respaldar las claves de recuperación.",
+    "en": "Disk encryption policies can enforce BitLocker and back up recovery keys.",
+    "ans": true
+   },
+   {
+    "es": "Las líneas base de seguridad son un conjunto de valores recomendados que Microsoft proporciona para una carga de trabajo.",
+    "en": "Security baselines are a set of recommended settings Microsoft provides for a workload.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de firewall de Intune se aplican solo a macOS.",
+    "en": "Firewall policies in Intune apply only to macOS.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las directivas de seguridad de endpoints cubren varias plataformas; se admiten directivas de firewall de Windows además de las de macOS.",
+  "exp_en": "Endpoint security policies cover several platforms; Windows firewall policies are supported along with macOS firewall policies."
+ },
+ {
+  "id": 724,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de seguridad de endpoints que encaja con cada necesidad.",
+  "q_en": "Select the endpoint security feature that fits each need.",
+  "rows": [
+   {
+    "es": "Bloquear que las aplicaciones de Office creen procesos secundarios.",
+    "en": "Block Office apps from creating child processes.",
+    "opts_es": [
+     "Reglas de reducción de superficie de ataque",
+     "Cifrado de disco BitLocker",
+     "App Control for Business",
+     "Línea base de seguridad"
+    ],
+    "opts_en": [
+     "Attack surface reduction rules",
+     "BitLocker disk encryption",
+     "App Control for Business",
+     "Security baseline"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Permitir que solo se ejecuten en un dispositivo aplicaciones de confianza y aprobadas.",
+    "en": "Allow only trusted, approved applications to run on a device.",
+    "opts_es": [
+     "Reglas de reducción de superficie de ataque",
+     "Cifrado de disco BitLocker",
+     "App Control for Business",
+     "Línea base de seguridad"
+    ],
+    "opts_en": [
+     "Attack surface reduction rules",
+     "BitLocker disk encryption",
+     "App Control for Business",
+     "Security baseline"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las reglas ASR reducen comportamientos de ataque habituales; App Control for Business restringe qué código puede ejecutarse.",
+  "exp_en": "ASR rules reduce common attack behaviors; App Control for Business restricts which code is allowed to run."
+ },
+ {
+  "id": 725,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "sentence",
+  "pre_es": "Para investigar amenazas y clasificar incidentes en dispositivos administrados por Intune, los administradores usan la integración de Microsoft Defender for Endpoint con la detección y ",
+  "pre_en": "To investigate threats and triage incidents for Intune-managed devices, administrators use the Microsoft Defender for Endpoint integration with Endpoint Detection and ",
+  "post_es": " en el endpoint (EDR).",
+  "post_en": " (EDR).",
+  "opts_es": [
+   "respuesta",
+   "recuperación",
+   "reporte",
+   "restricción"
+  ],
+  "opts_en": [
+   "Response",
+   "Recovery",
+   "Reporting",
+   "Restriction"
+  ],
+  "correct": 0,
+  "exp_es": "EDR significa detección y respuesta en el endpoint y se puede configurar con directivas de seguridad de endpoints de Intune.",
+  "exp_en": "EDR stands for Endpoint Detection and Response and can be configured with Intune endpoint security policies."
+ },
+ {
+  "id": 726,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "sentence",
+  "pre_es": "Las reglas de reducción de superficie de ataque pueden ejecutarse en modo de auditoría, que solo ",
+  "pre_en": "Attack surface reduction rules can run in audit mode, which only ",
+  "post_es": " los eventos sin bloquearlos.",
+  "post_en": " the events without blocking.",
+  "opts_es": [
+   "registra",
+   "elimina",
+   "cifra",
+   "carga"
+  ],
+  "opts_en": [
+   "logs",
+   "deletes",
+   "encrypts",
+   "uploads"
+  ],
+  "correct": 0,
+  "exp_es": "El modo de auditoría registra lo que se habría bloqueado, lo que permite evaluar el impacto antes de aplicar la regla.",
+  "exp_en": "Audit mode logs what would have been blocked, allowing the impact to be assessed before enforcement."
+ },
+ {
+  "id": 727,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración de actualizaciones de Windows en Intune, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Windows update management in Intune, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los anillos de actualización controlan cómo se aplazan e instalan las actualizaciones de calidad y de características.",
+    "en": "Update rings control how quality and feature updates are deferred and installed.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de actualización de características pueden fijar los dispositivos a una versión concreta de Windows.",
+    "en": "Feature update policies can pin devices to a specific Windows version.",
+    "ans": true
+   },
+   {
+    "es": "La Optimización de distribución permite que los dispositivos compartan contenido de actualización para reducir el ancho de banda de internet.",
+    "en": "Delivery Optimization lets devices share update content to reduce internet bandwidth.",
+    "ans": true
+   },
+   {
+    "es": "Los anillos de actualización solo se pueden aplicar a dispositivos iOS.",
+    "en": "Update rings can only be applied to iOS devices.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los anillos de actualización, las directivas de características y la Optimización de distribución se aplican a dispositivos Windows; iOS y macOS usan otros tipos de directiva.",
+  "exp_en": "Windows update rings, feature update policies and Delivery Optimization apply to Windows devices; iOS and macOS use other policy types."
+ },
+ {
+  "id": 728,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el tipo de directiva de actualización que encaja con cada requisito de plataforma.",
+  "q_en": "Select the update policy type that fits each platform requirement.",
+  "rows": [
+   {
+    "es": "Mantener los dispositivos en Windows 11 24H2 hasta nuevo aviso.",
+    "en": "Keep devices on Windows 11 24H2 until further notice.",
+    "opts_es": [
+     "Anillo de actualización de Windows",
+     "Directiva de actualización de características de Windows",
+     "Directiva de actualización con catálogo de configuración para dispositivos Apple",
+     "Implementación FOTA de Android"
+    ],
+    "opts_en": [
+     "Windows update ring",
+     "Windows feature update policy",
+     "Settings catalog update policy for Apple devices",
+     "Android FOTA deployment"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Controlar el momento de las actualizaciones del sistema en iPad y Mac.",
+    "en": "Control OS update timing on iPads and Macs.",
+    "opts_es": [
+     "Anillo de actualización de Windows",
+     "Directiva de actualización de características de Windows",
+     "Directiva de actualización con catálogo de configuración para dispositivos Apple",
+     "Implementación FOTA de Android"
+    ],
+    "opts_en": [
+     "Windows update ring",
+     "Windows feature update policy",
+     "Settings catalog update policy for Apple devices",
+     "Android FOTA deployment"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las directivas de actualización de características fijan una versión de Windows; las actualizaciones de Apple se administran con directivas de catálogo de configuración.",
+  "exp_en": "Feature update policies pin a Windows version; Apple updates are managed with settings catalog update policies."
+ },
+ {
+  "id": 729,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "La ",
+  "pre_en": "Windows ",
+  "post_es": " permite que los dispositivos descarguen partes de actualizaciones de otros equipos de la red local.",
+  "post_en": " Optimization lets devices download update parts from peers on the local network.",
+  "opts_es": [
+   "Optimización de distribución",
+   "Optimización de Defender",
+   "Optimización de Autopilot",
+   "Optimización de Hotpatch"
+  ],
+  "opts_en": [
+   "Delivery",
+   "Defender",
+   "Autopilot",
+   "Hotpatch"
+  ],
+  "correct": 0,
+  "exp_es": "La Optimización de distribución usa el uso compartido entre equipos y Connected Cache para reducir el consumo de ancho de banda.",
+  "exp_en": "Delivery Optimization uses peer-to-peer sharing and Connected Cache to reduce bandwidth use."
+ },
+ {
+  "id": 730,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "En Intune, ",
+  "pre_en": "In Intune, ",
+  "post_es": " definen los períodos de aplazamiento y el comportamiento de reinicio de las actualizaciones de calidad y de características de Windows.",
+  "post_en": " rings define deferral periods and restart behavior for Windows quality and feature updates.",
+  "opts_es": [
+   "los anillos de actualización",
+   "los anillos de inscripción",
+   "los anillos de filtro",
+   "los anillos de ámbito"
+  ],
+  "opts_en": [
+   "update",
+   "enrollment",
+   "filter",
+   "scope"
+  ],
+  "correct": 0,
+  "exp_es": "Los anillos de actualización de Windows son directivas que controlan cuándo y cómo se instalan las actualizaciones.",
+  "exp_en": "Windows update rings are policies that control when and how updates are installed."
  }
 ]
