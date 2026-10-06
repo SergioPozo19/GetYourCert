@@ -781,58 +781,6 @@
   "exp_en": "Intelligent recap and custom branding are exclusive to Teams Premium. E2E encryption does NOT require Premium (available with standard licenses). Premium features apply per user, not to the whole tenant with one license."
  },
  {
-  "id": 1176,
-  "exam": "ms-721",
-  "dom": 2,
-  "obj": "2.1",
-  "type": "mc",
-  "q_es": "Un administrador quiere configurar Teams de modo que todas las grabaciones de reuniones de canal se guarden automáticamente en SharePoint en lugar de OneDrive. ¿Qué tipo de reunión garantiza que las grabaciones se guarden en SharePoint del equipo?",
-  "q_en": "An administrator wants to configure Teams so that all channel meeting recordings are automatically saved to SharePoint instead of OneDrive. Which type of meeting ensures recordings are saved to the team's SharePoint site?",
-  "opts_es": [
-   "Reuniones que no son de canal",
-   "Reuniones de canal",
-   "Seminarios web",
-   "Citas virtuales"
-  ],
-  "opts_en": [
-   "Non-channel meetings",
-   "Channel meetings",
-   "Webinars",
-   "Virtual appointments"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "Las grabaciones de reuniones de canal se guardan automáticamente en el sitio de SharePoint del equipo. Las grabaciones de reuniones que no son de canal (programadas desde el calendario) se guardan en OneDrive del organizador o del grabador.",
-  "exp_en": "Channel meeting recordings are automatically saved to the team's SharePoint site. Recordings of non-channel meetings (scheduled from the calendar) are saved to the organizer's or recorder's OneDrive."
- },
- {
-  "id": 1177,
-  "exam": "ms-721",
-  "dom": 2,
-  "obj": "2.2",
-  "type": "mc",
-  "q_es": "Un usuario necesita unirse a reuniones de Teams marcando un número de teléfono porque está en una zona sin acceso a internet. ¿Qué debe asignar el administrador al organizador de la reunión?",
-  "q_en": "A user needs to join Teams meetings by dialing a phone number because they are in an area without internet access. What must the administrator assign to the meeting organizer?",
-  "opts_es": [
-   "Una licencia de Teams Phone Standard",
-   "Una licencia de audioconferencia (Audio Conferencing)",
-   "Una directiva de enrutamiento de voz para llamadas entrantes",
-   "Una licencia de teléfono de área común"
-  ],
-  "opts_en": [
-   "A Teams Phone Standard license",
-   "An Audio Conferencing license",
-   "A voice routing policy for inbound calls",
-   "A Common Area Phone license"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "La licencia de audioconferencia asignada al organizador es la que agrega un número de acceso telefónico a las invitaciones de reunión. Sin ella, los asistentes no pueden marcar para unirse a las reuniones.",
-  "exp_en": "The Audio Conferencing license assigned to the organizer is what adds a dial-in number to meeting invitations. Without it, attendees cannot dial in to join meetings."
- },
- {
   "id": 1178,
   "exam": "ms-721",
   "dom": 2,
@@ -1322,32 +1270,6 @@
   ],
   "exp_es": "La función de devolución de llamada (callback) en la cola de llamadas de Teams Phone permite a los llamantes solicitar que se les llame de vuelta cuando un agente esté disponible, evitando la espera en cola. Se habilita directamente en la configuración de la cola.",
   "exp_en": "The callback feature in the Teams Phone call queue allows callers to request a call back when an agent is available, avoiding waiting in the queue. It is enabled directly in the call queue configuration."
- },
- {
-  "id": 1195,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.3",
-  "type": "mc",
-  "q_es": "Un administrador necesita configurar Teams Phone para que cuando un usuario en la oficina de Barcelona marque 112, los servicios de emergencia reciban la dirección de Barcelona. El usuario se conecta a través de la Wi-Fi corporativa. ¿Qué debe configurar el administrador?",
-  "q_en": "An administrator needs to configure Teams Phone so that when a user at the Barcelona office dials 112, emergency services receive the Barcelona address. The user connects via corporate Wi-Fi. What must the administrator configure?",
-  "opts_es": [
-   "Una directiva de llamadas de emergencia con la dirección de Barcelona configurada como ubicación predeterminada para todos los usuarios",
-   "El Servicio de información de ubicación (LIS) con el punto de acceso Wi-Fi asignado a la dirección de emergencia de Barcelona",
-   "Una ruta de enrutamiento directo dedicada para las llamadas al 112 originadas desde la subred de Barcelona",
-   "Una cola de llamadas configurada para enrutar las llamadas al 112 directamente al servicio de seguridad del edificio de Barcelona"
-  ],
-  "opts_en": [
-   "An emergency calling policy with the Barcelona address configured as default location for all users",
-   "Location Information Service (LIS) with the Wi-Fi access point mapped to the Barcelona emergency address",
-   "A Direct Routing voice route dedicated to 112 calls originating from the Barcelona subnet",
-   "A call queue configured to route 112 calls directly to the Barcelona building security desk"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "El LIS asigna identificadores de red (puntos de acceso Wi-Fi, subredes, puertos de conmutadores) a ubicaciones de emergencia verificadas. Cuando el usuario llama al 112 desde esa Wi-Fi, el LIS transmite automáticamente la dirección de Barcelona a los servicios de emergencia.",
-  "exp_en": "LIS maps network identifiers (Wi-Fi access points, subnets, switch ports) to verified emergency locations. When the user calls 112 from that Wi-Fi, LIS automatically transmits the Barcelona address to emergency services."
  },
  {
   "id": 1196,
@@ -3268,32 +3190,6 @@
   "exp_en": "The SkypeSettings.xml file is the configuration method for customizing front-of-room display layouts and other advanced Teams Rooms on Windows options. It is placed in the device's local configuration folder."
  },
  {
-  "id": 1266,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.4",
-  "type": "mc",
-  "q_es": "Un administrador quiere configurar un dispositivo Teams Rooms para que los participantes remotos en una reunión puedan ver el contenido de la pizarra física de la sala con mejoras de imagen. ¿Qué función debe configurar?",
-  "q_en": "An administrator wants to configure a Teams Rooms device so remote participants in a meeting can see the physical whiteboard content with image enhancements. Which feature should be configured?",
-  "opts_es": [
-   "Ingesta HDMI para la señal de la cámara de la pizarra",
-   "Cámara de contenido (content camera) con mejoras de pizarra",
-   "Teams casting desde el dispositivo móvil del presentador",
-   "RTMP-out para retransmitir el contenido de la pizarra"
-  ],
-  "opts_en": [
-   "HDMI ingest for the whiteboard camera signal",
-   "Content camera with whiteboard enhancements",
-   "Teams casting from the presenter's mobile device",
-   "RTMP-out to retransmit whiteboard content"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "La cámara de contenido (content camera) de Teams Rooms está diseñada para capturar pizarras físicas con mejoras de imagen (eliminación de reflejos, mejora del contraste, superposición del presentador) para que los participantes remotos vean el contenido con claridad.",
-  "exp_en": "The Teams Rooms content camera is designed to capture physical whiteboards with image enhancements (glare removal, contrast enhancement, presenter overlay) so remote participants can clearly see the content."
- },
- {
   "id": 1267,
   "exam": "ms-721",
   "dom": 4,
@@ -3318,39 +3214,6 @@
   ],
   "exp_es": "La función 'Room remote' (control remoto de sala) de Teams permite a los usuarios en la sala controlar la cámara, el audio y otras funciones del dispositivo Teams Rooms desde su propio teléfono móvil a través de la aplicación de Teams.",
   "exp_en": "The Teams 'Room remote' feature allows users in the room to control the Teams Rooms device's camera, audio, and other functions from their own mobile phone through the Teams app."
- },
- {
-  "id": 1268,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.5",
-  "type": "yesno",
-  "es": "Para cada afirmación sobre los puestos de trabajo reservables (bookable desks) en Teams, indica si es verdadera o falsa.",
-  "en": "For each statement about bookable desks in Teams, indicate whether it is true or false.",
-  "rows": [
-   {
-    "es": "Los puestos de trabajo reservables en Teams permiten a los usuarios reservar un puesto específico desde la aplicación de Teams.",
-    "en": "Bookable desks in Teams allow users to reserve a specific desk from the Teams app.",
-    "ans": true
-   },
-   {
-    "es": "La configuración de puestos de trabajo reservables requiere crear tipos de sala y asignar el hardware a esos tipos.",
-    "en": "Setting up bookable desks requires creating room types and assigning hardware to those types.",
-    "ans": true
-   },
-   {
-    "es": "El hardware de los espacios BYOD debe inscribirse obligatoriamente en Microsoft Intune para ser detectable.",
-    "en": "BYOD space hardware must be mandatorily enrolled in Microsoft Intune to be discoverable.",
-    "ans": false
-   },
-   {
-    "es": "Los administradores pueden gestionar el inventario de hardware de los espacios BYOD importándolo mediante un archivo CSV.",
-    "en": "Administrators can manage BYOD space hardware inventory by importing it via a CSV file.",
-    "ans": true
-   }
-  ],
-  "exp_es": "Los puestos reservables usan tipos de sala y asignación de hardware. El hardware NO necesita inscribirse en Intune — puede detectarse por red o importarse manualmente mediante CSV. Las tres afirmaciones verdaderas son correctas.",
-  "exp_en": "Bookable desks use room types and hardware assignment. Hardware does NOT need to be enrolled in Intune — it can be discovered via network or imported manually via CSV. The three true statements are correct."
  },
  {
   "id": 1269,
@@ -3596,32 +3459,6 @@
   "exp_en": "Teams Premium provides automatic webinar email reminders and expanded attendee limits for town halls (up to 20,000). These capabilities are not included in base Microsoft 365 licenses."
  },
  {
-  "id": 1277,
-  "exam": "ms-721",
-  "dom": 1,
-  "obj": "1.2",
-  "type": "mc",
-  "q_es": "Una empresa quiere portar sus números de teléfono existentes a Microsoft Teams (Planes de llamadas). ¿Qué debe hacer el administrador para iniciar el proceso de portabilidad?",
-  "q_en": "A company wants to port their existing phone numbers to Microsoft Teams (Calling Plans). What must the administrator do to initiate the porting process?",
-  "opts_es": [
-   "Enviar un formulario de portabilidad de número a través del centro de administración de Teams",
-   "Llamar directamente al operador de telefonía actual para que inicie el proceso de transferencia",
-   "Abrir una incidencia de soporte técnico en Microsoft Purview para gestionar la portabilidad del número",
-   "Configurar primero el Enrutamiento directo en el tenant y luego migrar los números al Plan de llamadas"
-  ],
-  "opts_en": [
-   "Submit a number porting order through the Teams admin center",
-   "Call the current telephony carrier directly to initiate the transfer process",
-   "Open a technical support ticket in Microsoft Purview to manage the number porting",
-   "First configure Direct Routing in the tenant and then migrate the numbers to Calling Plan"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "La portabilidad de números a Planes de llamadas de Microsoft se inicia mediante un pedido de portabilidad en el centro de administración de Teams (Voz > Números de teléfono > Portar). Microsoft gestiona el proceso con el operador actual.",
-  "exp_en": "Number porting to Microsoft Calling Plans is initiated through a porting order in the Teams admin center (Voice > Phone numbers > Port). Microsoft manages the process with the current carrier."
- },
- {
   "id": 1278,
   "exam": "ms-721",
   "dom": 1,
@@ -3830,32 +3667,6 @@
   ],
   "exp_es": "Los paneles de Teams requieren una licencia específica de Teams Panels (no Teams Rooms). Esta licencia es para el dispositivo de panel de programación que muestra la disponibilidad y permite la reserva de salas directamente en la entrada.",
   "exp_en": "Teams panels require a specific Teams Panels license (not Teams Rooms). This license is for the scheduling panel device that shows availability and allows room booking directly at the entrance."
- },
- {
-  "id": 1285,
-  "exam": "ms-721",
-  "dom": 1,
-  "obj": "1.3",
-  "type": "mc",
-  "q_es": "Una organización tiene teléfonos de área común en zonas compartidas de la oficina (recepción, sala de descanso) que no necesitan ser asignados a ningún usuario específico. ¿Qué licencia necesita cada teléfono de área común?",
-  "q_en": "An organization has common area phones in shared office areas (reception, break room) that do not need to be assigned to any specific user. What license does each common area phone need?",
-  "opts_es": [
-   "Teams Phone Standard asignada individualmente a cada teléfono de área común compartida",
-   "Una licencia de teléfono de área común de Microsoft Teams (Common Area Phone license)",
-   "Teams Rooms Basic asignada a cada teléfono de área común para habilitar funciones de sala",
-   "Microsoft 365 E3 sin licencia adicional de teléfono para los teléfonos de zona compartida"
-  ],
-  "opts_en": [
-   "Teams Phone Standard assigned individually to each shared common area phone",
-   "A Microsoft Teams Common Area Phone license",
-   "Teams Rooms Basic assigned to each common area phone to enable room features",
-   "Microsoft 365 E3 without additional phone license for shared area phones"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "Los teléfonos de área común necesitan la licencia de Microsoft Teams Common Area Phone (CAP), que es específica para dispositivos compartidos sin usuario dedicado. Esta licencia es más económica que una licencia de usuario completa.",
-  "exp_en": "Common area phones need the Microsoft Teams Common Area Phone (CAP) license, which is specific to shared devices without a dedicated user. This license is more economical than a full user license."
  },
  {
   "id": 1286,
@@ -5189,39 +5000,6 @@
   "exp_en": "The calling policy controls forwarding, simultaneous ringing, and voicemail. It does NOT control DSCP values (that is network-level QoS) nor restricts calls to the address book only (that is done by the outbound call restriction policy)."
  },
  {
-  "id": 1331,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.1",
-  "type": "yesno",
-  "es": "Para cada afirmación sobre los planes de marcado (dial plans) de Teams Phone, indica si es verdadera o falsa.",
-  "en": "For each statement about Teams Phone dial plans, indicate whether it is true or false.",
-  "rows": [
-   {
-    "es": "Un plan de marcado de tenant puede añadirse encima del plan de marcado de servicio predeterminado de Microsoft.",
-    "en": "A tenant dial plan can be added on top of Microsoft's default service dial plan.",
-    "ans": true
-   },
-   {
-    "es": "Las reglas de normalización de un plan de marcado se aplican en el orden en que se definen; la primera que coincide gana.",
-    "en": "Normalization rules in a dial plan are applied in the order they are defined; the first match wins.",
-    "ans": true
-   },
-   {
-    "es": "Un plan de marcado puede tener hasta 100 reglas de normalización.",
-    "en": "A dial plan can have up to 100 normalization rules.",
-    "ans": false
-   },
-   {
-    "es": "Los planes de marcado de Teams Phone usan expresiones regulares para definir patrones de número.",
-    "en": "Teams Phone dial plans use regular expressions to define number patterns.",
-    "ans": true
-   }
-  ],
-  "exp_es": "El límite de reglas de normalización por plan de marcado de tenant es 50 (no 100). El plan de tenant se combina con el de servicio. Las reglas se evalúan en orden y la primera coincidencia se aplica. Se usan expresiones regulares.",
-  "exp_en": "The normalization rule limit per tenant dial plan is 50 (not 100). The tenant plan combines with the service plan. Rules are evaluated in order and the first match applies. Regular expressions are used."
- },
- {
   "id": 1332,
   "exam": "ms-721",
   "dom": 3,
@@ -5866,39 +5644,6 @@
   "exp_en": "Common area phones need the Microsoft Teams Common Area Phone (CAP) license plus a Calling Plan assigned to the device to make and receive PSTN calls. The CAP license is more economical than a full user license."
  },
  {
-  "id": 1353,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.4",
-  "type": "yesno",
-  "es": "Para cada afirmación sobre los requisitos de licencias en Teams Phone, indica si es verdadera o falsa.",
-  "en": "For each statement about Teams Phone licensing requirements, indicate whether it is true or false.",
-  "rows": [
-   {
-    "es": "La licencia de cuenta de recurso de Teams Phone es gratuita y necesaria para operadores automáticos y colas de llamadas.",
-    "en": "The Teams Phone Resource Account license is free and required for auto attendants and call queues.",
-    "ans": true
-   },
-   {
-    "es": "Un usuario que solo necesita hacer llamadas de Teams a Teams (sin PSTN) necesita una licencia de Teams Phone Standard.",
-    "en": "A user who only needs to make Teams-to-Teams calls (no PSTN) needs a Teams Phone Standard license.",
-    "ans": false
-   },
-   {
-    "es": "Para asignar un número de servicio a un operador automático, la cuenta de recurso asociada debe tener una licencia de cuenta de recurso de Teams Phone.",
-    "en": "To assign a service number to an auto attendant, the associated resource account must have a Teams Phone Resource Account license.",
-    "ans": true
-   },
-   {
-    "es": "La licencia de Teams Phone Standard incluye un Plan de llamadas integrado en todas las regiones.",
-    "en": "The Teams Phone Standard license includes a built-in Calling Plan in all regions.",
-    "ans": false
-   }
-  ],
-  "exp_es": "Las llamadas Teams a Teams no requieren Teams Phone Standard (están incluidas en las licencias de Teams base). La licencia de cuenta de recurso es gratuita para operadores y colas. Teams Phone Standard NO incluye Plan de llamadas; es una licencia separada.",
-  "exp_en": "Teams-to-Teams calls do not require Teams Phone Standard (they are included in base Teams licenses). The resource account license is free for auto attendants and queues. Teams Phone Standard does NOT include a Calling Plan; it is a separate license."
- },
- {
   "id": 1354,
   "exam": "ms-721",
   "dom": 3,
@@ -5949,32 +5694,6 @@
   ],
   "exp_es": "Los usuarios de Teams Phone pueden configurar el reenvío de llamadas, el tono simultáneo y el correo de voz directamente desde las Configuración de Teams (Configuración → Llamadas), siempre que la directiva de llamadas del administrador lo permita.",
   "exp_en": "Teams Phone users can configure call forwarding, simultaneous ringing, and voicemail directly from Teams Settings (Settings → Calls), as long as the administrator's calling policy allows it."
- },
- {
-  "id": 1356,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.5",
-  "type": "mc",
-  "q_es": "Un usuario quiere que las llamadas entrantes suenen simultáneamente en su teléfono de Teams y en su móvil personal. ¿Qué función de Teams Phone debe configurar?",
-  "q_en": "A user wants incoming calls to ring simultaneously on their Teams phone and their personal mobile. Which Teams Phone feature should be configured?",
-  "opts_es": [
-   "Delegación de llamadas al número de móvil con el móvil configurado como delegado de llamadas",
-   "Tono simultáneo (simultaneous ring) con el número de móvil",
-   "Reenvío de llamadas incondicional al número de móvil sin que suene el teléfono de Teams",
-   "Captura de llamadas de grupo con el número de móvil añadido como miembro del grupo"
-  ],
-  "opts_en": [
-   "Call delegation to the mobile number with the mobile configured as call delegate",
-   "Simultaneous ring with the mobile number",
-   "Unconditional call forwarding to the mobile number without ringing the Teams phone",
-   "Group call pickup with the mobile number added as a member of the group"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "El tono simultáneo (simultaneous ring) en Teams Phone permite que las llamadas entrantes suenen al mismo tiempo en Teams y en un número de teléfono adicional (como el móvil personal). Si el usuario no responde en Teams, puede responder en el móvil.",
-  "exp_en": "Simultaneous ring in Teams Phone allows incoming calls to ring at the same time on Teams and an additional phone number (like a personal mobile). If the user doesn't answer in Teams, they can answer on the mobile."
  },
  {
   "id": 1357,
@@ -6220,32 +5939,6 @@
   "exp_en": "Media bypass in Direct Routing allows media traffic to go directly between the Teams client and the SBC, bypassing Microsoft's media processors. This reduces latency and bandwidth consumption."
  },
  {
-  "id": 1365,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.6",
-  "type": "mc",
-  "q_es": "Una organización con Enrutamiento directo quiere que las reuniones de Teams del tenant usen la infraestructura PSTN del SBC para las partes que se unen por teléfono, en lugar de usar el puente de audioconferencia de Microsoft. ¿Qué función habilita esto?",
-  "q_en": "An organization with Direct Routing wants Teams meetings in the tenant to use the SBC's PSTN infrastructure for parties joining by phone, instead of using Microsoft's audio conferencing bridge. Which feature enables this?",
-  "opts_es": [
-   "Derivación de medios con habilitación de conferencia",
-   "Conferencia en red (on-network conferencing)",
-   "Enrutamiento basado en ubicación (LBR)",
-   "Plan de marcado del tenant con números de audioconferencia locales"
-  ],
-  "opts_en": [
-   "Media bypass with conferencing enablement",
-   "On-network conferencing",
-   "Location-Based Routing (LBR)",
-   "Tenant dial plan with local audio conferencing numbers"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "La conferencia en red (on-network conferencing) en Enrutamiento directo permite que las llamadas de marcación entrante a reuniones de Teams se enruten a través del SBC de la organización en lugar del puente de audioconferencia de Microsoft, reduciendo el coste de llamadas.",
-  "exp_en": "On-network conferencing in Direct Routing allows dial-in calls to Teams meetings to be routed through the organization's SBC instead of Microsoft's audio conferencing bridge, reducing call costs."
- },
- {
   "id": 1366,
   "exam": "ms-721",
   "dom": 3,
@@ -6270,39 +5963,6 @@
   ],
   "exp_es": "New-CsOnlinePSTNGateway es el cmdlet de PowerShell que crea un nuevo registro de SBC (PSTN Gateway) para Enrutamiento directo. Set-CsOnlinePSTNGateway modifica un SBC existente. New-CsOnlineVoiceRoute crea rutas de voz.",
   "exp_en": "New-CsOnlinePSTNGateway is the PowerShell cmdlet that creates a new SBC (PSTN Gateway) registration for Direct Routing. Set-CsOnlinePSTNGateway modifies an existing SBC. New-CsOnlineVoiceRoute creates voice routes."
- },
- {
-  "id": 1367,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.6",
-  "type": "yesno",
-  "es": "Para cada afirmación sobre la configuración de Enrutamiento directo en Teams Phone, indica si es verdadera o falsa.",
-  "en": "For each statement about Direct Routing configuration in Teams Phone, indicate whether it is true or false.",
-  "rows": [
-   {
-    "es": "Los registros de uso PSTN (PSTN usage records) son cadenas de texto que vinculan las directivas de enrutamiento de voz con las rutas de voz.",
-    "en": "PSTN usage records are text strings that link voice routing policies to voice routes.",
-    "ans": true
-   },
-   {
-    "es": "Una ruta de voz especifica el patrón de número (expresión regular) y el SBC a través del cual se enrutan las llamadas coincidentes.",
-    "en": "A voice route specifies the number pattern (regular expression) and the SBC through which matching calls are routed.",
-    "ans": true
-   },
-   {
-    "es": "Un usuario puede tener asignadas múltiples directivas de enrutamiento de voz simultáneamente.",
-    "en": "A user can have multiple voice routing policies assigned simultaneously.",
-    "ans": false
-   },
-   {
-    "es": "Las reglas de traducción de tronco en el SBC pueden modificar el número marcado antes de enviarlo al operador PSTN.",
-    "en": "Trunk translation rules on the SBC can modify the dialed number before sending it to the PSTN operator.",
-    "ans": true
-   }
-  ],
-  "exp_es": "Un usuario solo puede tener UNA directiva de enrutamiento de voz asignada. Las demás afirmaciones son correctas: los registros de uso PSTN vinculan políticas y rutas, las rutas de voz tienen patrones y SBCs, y las reglas de traducción modifican números.",
-  "exp_en": "A user can only have ONE voice routing policy assigned. The other statements are correct: PSTN usage records link policies and routes, voice routes have patterns and SBCs, and translation rules modify numbers."
  },
  {
   "id": 1368,
@@ -6546,32 +6206,6 @@
   "correct": 0,
   "exp_es": "Teams Rooms Pro es la licencia que desbloquea las capacidades avanzadas de gestión: portal Pro, señales de estado, gestión de incidencias, anillos de actualización. Teams Rooms Basic solo ofrece gestión básica sin estas funciones avanzadas.",
   "exp_en": "Teams Rooms Pro is the license that unlocks advanced management capabilities: Pro portal, health signals, incident management, update rings. Teams Rooms Basic only offers basic management without these advanced features."
- },
- {
-  "id": 1376,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.2",
-  "type": "mc",
-  "q_es": "Un administrador necesita inscribir teléfonos IP de Teams basados en Android en Microsoft Intune para su gestión. ¿Qué método de inscripción de Intune es compatible con los dispositivos de Teams basados en Android?",
-  "q_en": "An administrator needs to enroll Android-based Teams IP phones in Microsoft Intune for management. Which Intune enrollment method is compatible with Android-based Teams devices?",
-  "opts_es": [
-   "Android Enterprise con perfil de trabajo",
-   "Administrador de dispositivos Android (DA)",
-   "AOSP (Android Open Source Project) sin GMS",
-   "Inscripción directa de iOS con Apple Configurator"
-  ],
-  "opts_en": [
-   "Android Enterprise with work profile",
-   "Android Device Administrator (DA)",
-   "AOSP (Android Open Source Project) without GMS",
-   "iOS Direct Enrollment with Apple Configurator"
-  ],
-  "correct": [
-   2
-  ],
-  "exp_es": "Los dispositivos de Teams Rooms y teléfonos IP de Teams basados en Android usan el método de inscripción AOSP (Android Open Source Project) en Intune, ya que muchos de estos dispositivos no tienen los Servicios de Google Mobile (GMS) disponibles.",
-  "exp_en": "Teams Rooms and Teams IP phones based on Android use the AOSP (Android Open Source Project) enrollment method in Intune, since many of these devices do not have Google Mobile Services (GMS) available."
  },
  {
   "id": 1377,
@@ -6961,32 +6595,6 @@
   "exp_en": "SkypeSettings.xml is the standard name for the Teams Rooms on Windows configuration file. It is placed in C:\\Users\\Skype\\AppData\\Local\\Packages\\Microsoft.SkypeRoomSystem_8wekyb3d8bbwe\\LocalState\\ and allows customizing device behavior."
  },
  {
-  "id": 1390,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.4",
-  "type": "mc",
-  "q_es": "Un administrador quiere configurar Teams Rooms para que los participantes remotos puedan ver lo que se escribe en la pizarra física de la sala en tiempo real, con eliminación del reflejo y mejora del contraste. ¿Qué función debe configurar?",
-  "q_en": "An administrator wants to configure Teams Rooms so remote participants can see what is written on the room's physical whiteboard in real time, with glare removal and contrast enhancement. Which feature should be configured?",
-  "opts_es": [
-   "Ingesta HDMI con captura de pantalla de la cámara",
-   "Cámara de contenido (content camera) con IA de mejora de pizarra",
-   "Uso compartido de pantalla del portátil del presentador",
-   "Microsoft Whiteboard en modo de colaboración"
-  ],
-  "opts_en": [
-   "HDMI ingest with camera screen capture",
-   "Content camera with whiteboard enhancement AI",
-   "Laptop presenter screen sharing",
-   "Microsoft Whiteboard in collaboration mode"
-  ],
-  "correct": [
-   1
-  ],
-  "exp_es": "La función de cámara de contenido de Teams Rooms usa IA para mejorar la imagen de la pizarra capturada por la cámara dedicada: elimina el reflejo, aumenta el contraste y puede superponer la silueta del presentador de forma transparente para no obstruir la visión de la pizarra.",
-  "exp_en": "The Teams Rooms content camera feature uses AI to enhance the whiteboard image captured by the dedicated camera: removes glare, increases contrast, and can overlay the presenter's silhouette transparently to not obstruct the view of the whiteboard."
- },
- {
   "id": 1391,
   "exam": "ms-721",
   "dom": 4,
@@ -7338,8 +6946,8 @@
  {
   "id": 1402,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador necesita investigar un problema de calidad de llamada que afecta a un único usuario específico de Teams Phone. ¿Qué herramienta debe usar para ver los detalles de llamada de ese usuario en concreto?",
   "q_en": "An administrator needs to investigate a call quality issue affecting a single specific Teams Phone user. Which tool should be used to view call details for that specific user?",
@@ -7364,8 +6972,8 @@
  {
   "id": 1403,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador quiere crear informes de calidad de llamadas que muestren qué edificios y plantas tienen peor calidad de audio. ¿Qué debe hacer antes de que el CQD pueda mostrar datos por edificio?",
   "q_en": "An administrator wants to create call quality reports showing which buildings and floors have the worst audio quality. What must be done before CQD can show data by building?",
@@ -7390,8 +6998,8 @@
  {
   "id": 1404,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "¿Cuál es la diferencia clave entre el Panel de calidad de llamadas (CQD) y el análisis de llamadas por usuario en Teams?",
   "q_en": "What is the key difference between the Call Quality Dashboard (CQD) and per-user call analytics in Teams?",
@@ -7416,8 +7024,8 @@
  {
   "id": 1405,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador quiere ver en tiempo real las métricas de calidad de una llamada en curso (jitter, pérdida de paquetes, latencia) para ayudar a un usuario que tiene problemas en ese momento. ¿Qué herramienta permite ver esto en tiempo real?",
   "q_en": "An administrator wants to see real-time quality metrics of an ongoing call (jitter, packet loss, latency) to help a user having issues at that moment. Which tool allows viewing this in real time?",
@@ -7442,8 +7050,8 @@
  {
   "id": 1406,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador ve en el CQD que la tasa de llamadas deficientes (Poor Call Rate) en la red de la oficina de Barcelona es del 8%. ¿Qué umbral de Poor Call Rate indica problemas de calidad que requieren investigación según las guías de Microsoft?",
   "q_en": "An administrator sees in CQD that the Poor Call Rate (PCR) in the Barcelona office network is 8%. What Poor Call Rate threshold indicates quality problems requiring investigation according to Microsoft guidelines?",
@@ -7468,8 +7076,8 @@
  {
   "id": 1407,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador usa el CQD para analizar la calidad de las llamadas de la organización y quiere ver quién hizo una llamada de baja calidad específica para contactarle. Sin embargo, el CQD muestra los datos de forma anónima. ¿Qué rol de directorio de Azure AD debe tener el administrador para ver los datos de identidad de usuario (EUII) en el CQD?",
   "q_en": "An administrator uses CQD to analyze organizational call quality and wants to see who made a specific poor quality call to contact them. However, CQD shows data anonymously. Which Azure AD directory role must the administrator have to view user identity (EUII) data in CQD?",
@@ -7494,8 +7102,8 @@
  {
   "id": 1408,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre el Panel de calidad de llamadas (CQD) de Teams, indica si es verdadera o falsa.",
   "en": "For each statement about the Teams Call Quality Dashboard (CQD), indicate whether it is true or false.",
@@ -7527,8 +7135,8 @@
  {
   "id": 1409,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre el análisis de llamadas por usuario en Teams, indica si es verdadera o falsa.",
   "en": "For each statement about Teams per-user call analytics, indicate whether it is true or false.",
@@ -7560,8 +7168,8 @@
  {
   "id": 1410,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "dropdown",
   "es": "Selecciona la herramienta correcta para cada escenario de análisis de calidad de llamadas en Teams.",
   "en": "Select the correct tool for each Teams call quality analysis scenario.",
@@ -7607,8 +7215,8 @@
  {
   "id": 1411,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "sentence",
   "pre_es": "Para identificar si la calidad de las llamadas de Teams en la oficina de Madrid es problemática a nivel organizacional (no para un usuario específico), el administrador debe cargar primero datos de edificio en el CQD y luego revisar el",
   "pre_en": "To identify whether Teams call quality at the Madrid office is problematic at an organizational level (not for a specific user), the administrator must first upload building data to CQD and then review the",
@@ -7633,8 +7241,8 @@
  {
   "id": 1412,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.1",
   "type": "mc",
   "q_es": "Un usuario de Teams Phone informa de que sus llamadas salientes fallan con el mensaje 'El número marcado no es válido'. El administrador sospecha que el plan de marcado no está normalizando correctamente el número. ¿Qué cmdlet de PowerShell permite probar la normalización de un número específico?",
   "q_en": "A Teams Phone user reports that their outbound calls fail with the message 'The dialed number is not valid'. The administrator suspects the dial plan is not correctly normalizing the number. Which PowerShell cmdlet allows testing the normalization of a specific number?",
@@ -7659,8 +7267,8 @@
  {
   "id": 1413,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un SBC de Enrutamiento directo muestra un estado 'Inactivo' en el panel de estado de Enrutamiento directo del centro de administración de Teams. ¿Qué comprobación inicial debe hacer el administrador para diagnosticar el problema?",
   "q_en": "A Direct Routing SBC shows an 'Inactive' status in the Direct Routing health dashboard in the Teams admin center. What initial check should the administrator perform to diagnose the issue?",
@@ -7685,8 +7293,8 @@
  {
   "id": 1414,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.5",
   "type": "mc",
   "q_es": "Los usuarios de Teams Phone se quejan de que las llamadas entrantes no llegan a su teléfono de Teams sino que van directamente al correo de voz. El administrador verifica que el usuario tiene Teams Phone configurado correctamente y el número asignado. ¿Qué debe revisar a continuación?",
   "q_en": "Teams Phone users complain that incoming calls don't reach their Teams phone but go directly to voicemail. The administrator verifies the user has Teams Phone correctly configured and the number assigned. What should be checked next?",
@@ -7711,8 +7319,8 @@
  {
   "id": 1415,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un administrador necesita verificar si la directiva de enrutamiento de voz asignada a un usuario de Enrutamiento directo puede enrutar llamadas a un número específico. ¿Qué cmdlet de PowerShell permite probar el enrutamiento de una llamada saliente?",
   "q_en": "An administrator needs to verify if the voice routing policy assigned to a Direct Routing user can route calls to a specific number. Which PowerShell cmdlet allows testing the routing of an outbound call?",
@@ -7737,8 +7345,8 @@
  {
   "id": 1416,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un usuario reporta que sus llamadas de Teams Phone tienen eco. El administrador verifica que el problema ocurre solo cuando el usuario usa los altavoces del portátil (no auriculares). ¿Cuál es la causa más probable y la solución?",
   "q_en": "A user reports their Teams Phone calls have echo. The administrator verifies the problem only occurs when the user uses the laptop speakers (not headphones). What is the most likely cause and solution?",
@@ -7763,8 +7371,8 @@
  {
   "id": 1417,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 1,
+  "obj": "1.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre el diagnóstico de problemas de calidad de llamadas en Teams Phone, indica si es verdadera o falsa.",
   "en": "For each statement about diagnosing Teams Phone call quality issues, indicate whether it is true or false.",
@@ -7796,8 +7404,8 @@
  {
   "id": 1418,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.6",
   "type": "yesno",
   "es": "Para cada afirmación sobre el diagnóstico de problemas de Enrutamiento directo en Teams Phone, indica si es verdadera o falsa.",
   "en": "For each statement about diagnosing Direct Routing issues in Teams Phone, indicate whether it is true or false.",
@@ -7829,8 +7437,8 @@
  {
   "id": 1419,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.1",
   "type": "dropdown",
   "es": "Selecciona la herramienta o acción correcta para cada escenario de diagnóstico de Teams Phone.",
   "en": "Select the correct tool or action for each Teams Phone diagnostic scenario.",
@@ -7876,8 +7484,8 @@
  {
   "id": 1420,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "mc",
   "q_es": "Un administrador recibe una alerta del portal de gestión de Teams Rooms Pro indicando que una sala de conferencias tiene una señal de estado de audio 'roja'. ¿Qué indica típicamente una señal de estado roja en Teams Rooms Pro?",
   "q_en": "An administrator receives an alert from the Teams Rooms Pro Management portal indicating that a conference room has a 'red' audio health signal. What does a red health signal typically indicate in Teams Rooms Pro?",
@@ -7902,8 +7510,8 @@
  {
   "id": 1421,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "mc",
   "q_es": "Un administrador necesita reiniciar remotamente un dispositivo de Teams Rooms en Windows que parece estar bloqueado. ¿Cómo puede hacerlo desde el centro de administración de Teams sin acceso físico al dispositivo?",
   "q_en": "An administrator needs to remotely restart a Teams Rooms on Windows device that appears to be frozen. How can they do this from the Teams admin center without physical access to the device?",
@@ -7928,8 +7536,8 @@
  {
   "id": 1422,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "mc",
   "q_es": "Los participantes de una reunión de Teams Rooms se quejan de que el audio de la sala suena distorsionado. El administrador verifica que el dispositivo de Teams Rooms muestra un estado de dispositivo de audio 'crítico' en el portal Pro. ¿Cuál es el primer paso de resolución?",
   "q_en": "Meeting participants in a Teams Rooms complain that the room audio sounds distorted. The administrator verifies the Teams Rooms device shows a 'critical' audio device status in the Pro portal. What is the first resolution step?",
@@ -7954,8 +7562,8 @@
  {
   "id": 1423,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "mc",
   "q_es": "Un administrador quiere configurar notificaciones automáticas por correo electrónico cuando algún dispositivo de Teams Rooms tenga problemas de salud. ¿Dónde se configuran estas alertas?",
   "q_en": "An administrator wants to configure automatic email notifications when any Teams Rooms device has health issues. Where are these alerts configured?",
@@ -7980,8 +7588,8 @@
  {
   "id": 1424,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "yesno",
   "es": "Para cada afirmación sobre la monitorización de Teams Rooms con el portal de gestión Pro, indica si es verdadera o falsa.",
   "en": "For each statement about monitoring Teams Rooms with the Pro Management portal, indicate whether it is true or false.",
@@ -8013,8 +7621,8 @@
  {
   "id": 1425,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "dropdown",
   "es": "Selecciona la herramienta correcta para cada escenario de monitorización de Teams Rooms.",
   "en": "Select the correct tool for each Teams Rooms monitoring scenario.",
@@ -8060,8 +7668,8 @@
  {
   "id": 1426,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Los participantes de una reunión de Teams se quejan de que el audio suena entrecortado y con retardos. El administrador sospecha que es un problema de red. ¿Qué herramienta de Microsoft permite evaluar la idoneidad de la red para Teams antes de o durante el problema?",
   "q_en": "Teams meeting participants complain that audio sounds choppy with delays. The administrator suspects a network issue. Which Microsoft tool allows evaluating network suitability for Teams before or during the problem?",
@@ -8086,8 +7694,8 @@
  {
   "id": 1427,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 2,
+  "obj": "2.1",
   "type": "mc",
   "q_es": "Un participante externo de una reunión de Teams reporta que no puede unirse a la reunión y ve el mensaje 'Esperando en el lobby'. El organizador no recibe ninguna notificación para admitirle. ¿Cuál es la causa más probable?",
   "q_en": "An external meeting participant reports they cannot join a Teams meeting and sees the 'Waiting in lobby' message. The organizer receives no notification to admit them. What is the most likely cause?",
@@ -8112,8 +7720,8 @@
  {
   "id": 1428,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 2,
+  "obj": "2.1",
   "type": "mc",
   "q_es": "Un usuario reporta que no puede grabar una reunión de Teams que ha organizado. El botón de grabación está en gris. ¿Cuál es la comprobación más probable que debe hacer el administrador?",
   "q_en": "A user reports they cannot record a Teams meeting they have organized. The recording button is grayed out. What is the most likely check the administrator should perform?",
@@ -8138,8 +7746,8 @@
  {
   "id": 1429,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 2,
+  "obj": "2.2",
   "type": "mc",
   "q_es": "Los participantes de audioconferencia de Teams se quejan de que cuando marcan el número de acceso, escuchan un tono de error. El administrador verifica que el número de puente está configurado correctamente. ¿Qué debe verificar a continuación?",
   "q_en": "Teams Audio Conferencing participants complain that when they dial the access number, they hear an error tone. The administrator verifies the bridge number is correctly configured. What should be verified next?",
@@ -8164,8 +7772,8 @@
  {
   "id": 1430,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador quiere verificar si un problema de calidad de reuniones de Teams está causado por la red del usuario o por los servidores de Microsoft. ¿Qué información en el análisis de llamadas por usuario indica si el problema está del lado del cliente o de la red?",
   "q_en": "An administrator wants to verify whether a Teams meeting quality issue is caused by the user's network or by Microsoft servers. What information in per-user call analytics indicates whether the issue is client-side or network-related?",
@@ -8190,8 +7798,8 @@
  {
   "id": 1431,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 2,
+  "obj": "2.1",
   "type": "yesno",
   "es": "Para cada afirmación sobre el diagnóstico de problemas de reuniones de Teams, indica si es verdadera o falsa.",
   "en": "For each statement about diagnosing Teams meeting issues, indicate whether it is true or false.",
@@ -8223,8 +7831,8 @@
  {
   "id": 1432,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 1,
+  "obj": "1.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre las causas comunes de problemas en reuniones de Teams, indica si es verdadera o falsa.",
   "en": "For each statement about common causes of Teams meeting issues, indicate whether it is true or false.",
@@ -8256,8 +7864,8 @@
  {
   "id": 1433,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 1,
+  "obj": "1.4",
   "type": "dropdown",
   "es": "Selecciona la herramienta o acción correcta para cada escenario de diagnóstico de reuniones de Teams.",
   "en": "Select the correct tool or action for each Teams meeting diagnostic scenario.",
@@ -8303,8 +7911,8 @@
  {
   "id": 1434,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "¿Qué rol de Azure AD debe tener el administrador de soporte de nivel 1 para acceder al análisis de llamadas por usuario (per-user call analytics) pero sin acceso a otras configuraciones de Teams?",
   "q_en": "Which Azure AD role should a level 1 support administrator have to access per-user call analytics but without access to other Teams settings?",
@@ -8329,8 +7937,8 @@
  {
   "id": 1435,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un administrador nota que la mayoría de las llamadas de Enrutamiento directo fallan con un código de respuesta SIP '403 Forbidden' en los registros del SBC. ¿Cuál es la causa más probable?",
   "q_en": "An administrator notices most Direct Routing calls fail with SIP response code '403 Forbidden' in the SBC logs. What is the most likely cause?",
@@ -8355,8 +7963,8 @@
  {
   "id": 1436,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un administrador configura Enrutamiento basado en ubicación (LBR) en Teams. ¿Qué ocurre cuando un usuario habilitado para LBR intenta hacer una llamada PSTN desde una ubicación de red no habilitada para LBR?",
   "q_en": "An administrator configures Location-Based Routing (LBR) in Teams. What happens when an LBR-enabled user tries to make a PSTN call from a network location not enabled for LBR?",
@@ -8381,8 +7989,8 @@
  {
   "id": 1437,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 4,
+  "obj": "4.1",
   "type": "mc",
   "q_es": "El portal de gestión de Teams Rooms Pro muestra que la señal de cámara de un dispositivo de Teams Rooms está en rojo. El administrador verifica remotamente que el dispositivo está encendido y conectado a la red. ¿Cuál es el siguiente paso de diagnóstico?",
   "q_en": "The Teams Rooms Pro Management portal shows a camera signal for a Teams Rooms device is red. The administrator verifies remotely that the device is on and network-connected. What is the next diagnostic step?",
@@ -8407,8 +8015,8 @@
  {
   "id": 1438,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 2,
+  "obj": "2.1",
   "type": "mc",
   "q_es": "Los participantes de una reunión grande de Teams (200+ personas) reportan que el audio es de mala calidad para todos, pero el organizador tiene buen audio. ¿Qué es lo más probable que esté causando el problema?",
   "q_en": "Participants in a large Teams meeting (200+ people) report poor audio quality for everyone, but the organizer has good audio. What is most likely causing the issue?",
@@ -8613,32 +8221,6 @@
   "exp_en": "Teams auto attendants can be configured to recognize both DTMF key presses and voice inputs (speech recognition). Speech recognition allows callers to say the name of the person they want to reach or speak the menu option."
  },
  {
-  "id": 1446,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.2",
-  "type": "mc",
-  "q_es": "Un administrador configura una cola de llamadas de Teams para el equipo de ventas con 10 agentes. Quiere que las llamadas se distribuyan de forma que el agente que lleva más tiempo sin recibir una llamada sea el primero en recibir la siguiente. ¿Qué método de enrutamiento debe seleccionar?",
-  "q_en": "An administrator configures a Teams call queue for the sales team with 10 agents. They want calls distributed so the agent who has gone the longest without receiving a call is the first to receive the next call. Which routing method should be selected?",
-  "opts_es": [
-   "Operador",
-   "Round robin (turno rotativo)",
-   "Más inactivo (Longest idle)",
-   "En paralelo (Attendant routing)"
-  ],
-  "opts_en": [
-   "Attendant (parallel)",
-   "Round robin",
-   "Longest idle",
-   "Serial"
-  ],
-  "correct": [
-   2
-  ],
-  "exp_es": "El método de enrutamiento 'Más inactivo' (Longest idle) dirige la siguiente llamada al agente que ha estado más tiempo sin recibir una llamada, basándose en el tiempo de inactividad. Esto equilibra la carga de trabajo de forma más equitativa entre agentes con diferentes tiempos de gestión de llamadas.",
-  "exp_en": "The 'Longest idle' routing method routes the next call to the agent who has gone the longest without receiving a call, based on idle time. This balances workload more equitably among agents with different call handling times."
- },
- {
   "id": 1447,
   "exam": "ms-721",
   "dom": 4,
@@ -8667,8 +8249,8 @@
  {
   "id": 1448,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un administrador quiere usar el CQD para identificar problemas de calidad relacionados con una red Wi-Fi específica de la empresa. ¿Qué datos debe cargar en el CQD para que sea posible filtrar por nombre de red Wi-Fi?",
   "q_en": "An administrator wants to use CQD to identify quality issues related to a specific company Wi-Fi network. What data must be uploaded to CQD to enable filtering by Wi-Fi network name?",
@@ -8693,8 +8275,8 @@
  {
   "id": 1449,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "El análisis de llamadas por usuario de Teams muestra para una sesión un valor de 'Jitter' de 80 ms y 'Pérdida de paquetes' del 2%. El usuario se quejó de audio entrecortado. ¿Cuál es la conclusión más probable?",
   "q_en": "Teams per-user call analytics shows for a session a 'Jitter' value of 80 ms and 'Packet loss' of 2%. The user complained of choppy audio. What is the most likely conclusion?",
@@ -8927,32 +8509,6 @@
   "exp_en": "Communication Credits act as prepaid balance consumed for calls to destinations not covered by the Calling Plan (such as out-of-plan international calls) or when the plan balance runs out. They are configured in the Microsoft 365 admin center."
  },
  {
-  "id": 1457,
-  "exam": "ms-721",
-  "dom": 1,
-  "obj": "1.2",
-  "type": "mc",
-  "q_es": "Un usuario es el organizador habitual de reuniones de Teams y necesita que los asistentes externos sin acceso a internet puedan unirse marcando un número de teléfono. ¿A quién debe asignarse la licencia de Audioconferencia?",
-  "q_en": "A user regularly organizes Teams meetings and needs external attendees without internet access to join by dialing a phone number. Who must be assigned the Audio Conferencing license?",
-  "opts_es": [
-   "Al organizador de la reunión",
-   "A todos los asistentes que quieran marcar para unirse",
-   "Solo a los asistentes externos de la organización",
-   "Al administrador de Teams"
-  ],
-  "opts_en": [
-   "To the meeting organizer",
-   "To all attendees who want to dial in",
-   "Only to external attendees from outside the organization",
-   "To the Teams administrator"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "La licencia de Audioconferencia debe asignarse al organizador de la reunión. Es el organizador quien genera la invitación con el número de acceso telefónico. Los asistentes que marcan no necesitan la licencia.",
-  "exp_en": "The Audio Conferencing license must be assigned to the meeting organizer. It is the organizer who generates the meeting invitation with the dial-in phone number. Attendees who dial in do not need the license."
- },
- {
   "id": 1458,
   "exam": "ms-721",
   "dom": 1,
@@ -9156,32 +8712,6 @@
   "exp_en": "DLP and retention can be applied to Teams messages. When a retention exists, deleted messages are preserved in Microsoft's compliance substrate even though the user cannot see them. Information Barriers block team co-membership between incompatible segments."
  },
  {
-  "id": 1465,
-  "exam": "ms-721",
-  "dom": 1,
-  "obj": "1.3",
-  "type": "mc",
-  "q_es": "Un responsable de cumplimiento necesita revisar mensajes de Teams de empleados específicos que pueden contener términos inadecuados o información sensible, con la posibilidad de escalar y documentar infracciones. ¿Qué solución de Microsoft Purview debe utilizar?",
-  "q_en": "A compliance officer needs to review Teams messages from specific employees that may contain inappropriate terms or sensitive information, with the ability to escalate and document violations. Which Microsoft Purview solution should they use?",
-  "opts_es": [
-   "Cumplimiento de comunicaciones (Communication Compliance)",
-   "Barreras de información (Information Barriers)",
-   "Prevención de pérdida de datos (DLP)",
-   "Gestión de registros (Records Management)"
-  ],
-  "opts_en": [
-   "Communication Compliance",
-   "Information Barriers",
-   "Data Loss Prevention (DLP)",
-   "Records Management"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "Communication Compliance permite definir directivas que capturan mensajes de Teams (y otros canales) para revisión humana. Los revisores asignados pueden clasificar los mensajes, escalar casos y documentar infracciones. Es distinto de DLP, que bloquea automáticamente sin revisión humana.",
-  "exp_en": "Communication Compliance lets you define policies that capture Teams messages (and other channels) for human review. Assigned reviewers can classify messages, escalate cases, and document violations. It differs from DLP, which blocks automatically without human review."
- },
- {
   "id": 1466,
   "exam": "ms-721",
   "dom": 1,
@@ -9258,32 +8788,6 @@
   ],
   "exp_es": "El acceso de invitado incorpora a usuarios externos al directorio de Azure AD como invitados y los añade a equipos específicos. El acceso externo (federación) permite comunicarse (chat y llamadas) con usuarios de otras organizaciones de Teams sin que entren al directorio ni a ningún equipo.",
   "exp_en": "Guest access brings external users into the Azure AD directory as guests and adds them to specific teams. External access (federation) allows communicating (chat and calls) with users from other Teams organizations without them entering the directory or any team."
- },
- {
-  "id": 1469,
-  "exam": "ms-721",
-  "dom": 1,
-  "obj": "1.4",
-  "type": "mc",
-  "q_es": "¿Qué tipo de canal de Teams permite a usuarios de organizaciones externas colaborar directamente en el mismo canal sin necesidad de ser invitados al directorio de Azure AD del tenant anfitrión?",
-  "q_en": "Which type of Teams channel allows users from external organizations to collaborate directly in the same channel without needing to be guests in the host tenant's Azure AD directory?",
-  "opts_es": [
-   "Canal compartido (shared channel) mediante B2B Direct Connect",
-   "Canal privado con acceso externo habilitado",
-   "Canal estándar con acceso de invitado activado",
-   "Canal federado mediante el acceso externo clásico"
-  ],
-  "opts_en": [
-   "Shared channel using B2B Direct Connect",
-   "Private channel with external access enabled",
-   "Standard channel with guest access enabled",
-   "Federated channel via classic external access"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "Los canales compartidos de Teams utilizan B2B Direct Connect para permitir que usuarios externos colaboren en el canal usando su propia identidad de Azure AD, sin necesidad de ser invitados al tenant anfitrión. El acceso se configura en la configuración de acceso entre inquilinos (cross-tenant access settings).",
-  "exp_en": "Teams shared channels use B2B Direct Connect to let external users collaborate in the channel using their own Azure AD identity, without needing to be guests in the host tenant. Access is configured in cross-tenant access settings."
  },
  {
   "id": 1470,
@@ -9702,58 +9206,6 @@
   "correct": 0,
   "exp_es": "Las grabaciones de reuniones de canal de Teams se almacenan en la carpeta Recordings del sitio de SharePoint del canal. Las reuniones que no son de canal (chat de grupo, reuniones programadas sin canal) guardan la grabación en el OneDrive del usuario que la inicia.",
   "exp_en": "Teams channel meeting recordings are stored in the Recordings folder of the channel's SharePoint site. Non-channel meetings (group chats, scheduled meetings without a channel) save the recording to the OneDrive of the user who initiates it."
- },
- {
-  "id": 1485,
-  "exam": "ms-721",
-  "dom": 2,
-  "obj": "2.2",
-  "type": "mc",
-  "q_es": "¿Cuántos asistentes puede tener como máximo un town hall de Teams en una organización con Microsoft 365 E3?",
-  "q_en": "What is the maximum number of attendees a Teams town hall can have in an organization with Microsoft 365 E3?",
-  "opts_es": [
-   "10 000 asistentes",
-   "1 000 asistentes",
-   "20 000 asistentes (requiere Teams Premium)",
-   "500 asistentes"
-  ],
-  "opts_en": [
-   "10,000 attendees",
-   "1,000 attendees",
-   "20,000 attendees (requires Teams Premium)",
-   "500 attendees"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "Los town halls de Teams admiten hasta 10 000 asistentes con las licencias estándar de Microsoft 365. Con Teams Premium, el límite se amplía a 20 000 asistentes. Los webinars tienen un límite diferente (1 000 asistentes para M365 E3, más con Teams Premium).",
-  "exp_en": "Teams town halls support up to 10,000 attendees with standard Microsoft 365 licenses. With Teams Premium, the limit expands to 20,000 attendees. Webinars have a different limit (1,000 attendees for M365 E3, more with Teams Premium)."
- },
- {
-  "id": 1486,
-  "exam": "ms-721",
-  "dom": 2,
-  "obj": "2.3",
-  "type": "mc",
-  "q_es": "Una empresa quiere transferir sus números de teléfono existentes de su proveedor de telefonía actual a Microsoft Teams Calling Plan. ¿Cómo debe hacerlo?",
-  "q_en": "A company wants to transfer their existing phone numbers from their current telephony provider to Microsoft Teams Calling Plan. How should they do this?",
-  "opts_es": [
-   "Enviar una solicitud de portabilidad (port order) desde el Teams admin center",
-   "Contactar con soporte de Microsoft para que Microsoft solicite la portabilidad directamente al proveedor",
-   "Crear nuevos números en Teams y cancelar los antiguos con el proveedor existente",
-   "Configurar un SBC de Direct Routing para redirigir temporalmente las llamadas durante la migración"
-  ],
-  "opts_en": [
-   "Submit a port order from the Teams admin center",
-   "Contact Microsoft support so Microsoft requests the port directly from the provider",
-   "Create new numbers in Teams and cancel the old ones with the existing provider",
-   "Set up a Direct Routing SBC to temporarily redirect calls during migration"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "La portabilidad de números (LNP) a Microsoft Teams se gestiona mediante una solicitud de portabilidad (port order) enviada desde el Teams admin center. El proceso requiere información de la cuenta del proveedor actual y una Letter of Authorization (LOA).",
-  "exp_en": "Number portability (LNP) to Microsoft Teams is managed through a port order submitted from the Teams admin center. The process requires information from the current provider account and a Letter of Authorization (LOA)."
  },
  {
   "id": 1487,
@@ -10679,32 +10131,6 @@
   "exp_en": "Sideloading requires enablement in the policy. Third-party apps go through Microsoft validation. The global policy does not automatically block new apps (depends on Allow/Block configuration). Individual apps can be blocked from Manage apps."
  },
  {
-  "id": 1519,
-  "exam": "ms-721",
-  "dom": 3,
-  "obj": "3.4",
-  "type": "mc",
-  "q_es": "¿Qué configuración del Teams admin center permite controlar a nivel de organización si los usuarios pueden interactuar con aplicaciones de terceros en Teams?",
-  "q_en": "Which Teams admin center setting allows controlling at the organization level whether users can interact with third-party apps in Teams?",
-  "opts_es": [
-   "Teams apps > Manage apps > Org-wide app settings",
-   "Teams policies > App permissions > Global policy",
-   "Meeting settings > Third-party app integrations",
-   "External Access > Third-party app federation"
-  ],
-  "opts_en": [
-   "Teams apps > Manage apps > Org-wide app settings",
-   "Teams policies > App permissions > Global policy",
-   "Meeting settings > Third-party app integrations",
-   "External Access > Third-party app federation"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "La sección 'Org-wide app settings' en Teams apps > Manage apps contiene los controles globales para toda la organización: permitir/bloquear apps de terceros, apps personalizadas y nuevas apps de terceros por defecto. Es el primer nivel de control antes de las directivas de permisos individuales.",
-  "exp_en": "The 'Org-wide app settings' section in Teams apps > Manage apps contains global controls for the entire organization: allow/block third-party apps, custom apps, and new third-party apps by default. It is the first level of control before individual permission policies."
- },
- {
   "id": 1520,
   "exam": "ms-721",
   "dom": 3,
@@ -11085,32 +10511,6 @@
   "exp_en": "By uploading building data (subnets mapped to physical locations), CQD can classify calls as 'inside' (corporate network) or 'outside' (external network). This allows identifying whether quality issues originate from the internal network or from clients outside the company."
  },
  {
-  "id": 1533,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.1",
-  "type": "mc",
-  "q_es": "¿Cuál es la diferencia principal entre el Call Quality Dashboard (CQD) y el análisis de llamadas por usuario (Call Analytics) en Teams?",
-  "q_en": "What is the main difference between the Call Quality Dashboard (CQD) and per-user Call Analytics in Teams?",
-  "opts_es": [
-   "CQD proporciona datos de calidad agregados a nivel organizacional para identificar tendencias; Call Analytics muestra el detalle de llamadas individuales de un usuario específico",
-   "CQD muestra las llamadas en tiempo real; Call Analytics muestra el historial de llamadas",
-   "CQD solo está disponible con Teams Premium; Call Analytics está disponible para todos",
-   "CQD requiere cargar datos de edificios para funcionar; Call Analytics funciona sin ninguna configuración"
-  ],
-  "opts_en": [
-   "CQD provides aggregated quality data at the org level to identify trends; Call Analytics shows individual call details for a specific user",
-   "CQD shows calls in real time; Call Analytics shows call history",
-   "CQD is only available with Teams Premium; Call Analytics is available to all",
-   "CQD requires building data to function; Call Analytics works without any configuration"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "CQD es para análisis de tendencias org-wide (muchos usuarios, muchas llamadas, durante periodos). Call Analytics es para diagnóstico de llamadas específicas de un usuario individual. Ambos están disponibles sin Teams Premium. CQD funciona sin datos de edificios, aunque son muy útiles.",
-  "exp_en": "CQD is for org-wide trend analysis (many users, many calls, over periods). Call Analytics is for diagnosing specific calls of an individual user. Both are available without Teams Premium. CQD works without building data, though they are very useful."
- },
- {
   "id": 1534,
   "exam": "ms-721",
   "dom": 4,
@@ -11255,32 +10655,6 @@
   "exp_en": "By uploading building data (CSV with subnets, building names, city, country), CQD can segment quality data by location. The administrator can then filter or compare quality between the Madrid and Barcelona offices."
  },
  {
-  "id": 1539,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.2",
-  "type": "mc",
-  "q_es": "¿Qué portal proporciona gestión avanzada, monitorización de salud e incidentes para dispositivos Teams Rooms con licencia Pro?",
-  "q_en": "Which portal provides advanced management, health monitoring, and incident tracking for Teams Rooms devices with a Pro license?",
-  "opts_es": [
-   "Portal de gestión Pro de Teams Rooms (Teams Rooms Pro Management Portal)",
-   "Centro de administración de Microsoft 365",
-   "Teams admin center > Devices > Teams Rooms",
-   "Microsoft Intune con perfil de dispositivo Teams Rooms"
-  ],
-  "opts_en": [
-   "Teams Rooms Pro Management Portal",
-   "Microsoft 365 admin center",
-   "Teams admin center > Devices > Teams Rooms",
-   "Microsoft Intune with Teams Rooms device profile"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "El Teams Rooms Pro Management Portal es una plataforma dedicada (accesible desde el Teams admin center) que ofrece monitorización en tiempo real del estado de las salas, gestión de incidentes, historial de salud, actualizaciones gestionadas y soporte avanzado para dispositivos con licencia Teams Rooms Pro.",
-  "exp_en": "The Teams Rooms Pro Management Portal is a dedicated platform (accessible from the Teams admin center) that provides real-time room health monitoring, incident management, health history, managed updates, and advanced support for devices with a Teams Rooms Pro license."
- },
- {
   "id": 1540,
   "exam": "ms-721",
   "dom": 4,
@@ -11305,39 +10679,6 @@
   ],
   "exp_es": "Desde el Teams admin center, los administradores pueden realizar acciones remotas en dispositivos certificados: cerrar sesión (sign out), reiniciar, actualizar firmware, ver detalles de diagnóstico y asignar perfiles de configuración. No se puede formatear el disco ni instalar apps arbitrarias de terceros desde TAC.",
   "exp_en": "From the Teams admin center, administrators can perform remote actions on certified devices: sign out, restart, update firmware, view diagnostic details, and assign configuration profiles. They cannot format the disk or install arbitrary third-party apps from TAC."
- },
- {
-  "id": 1541,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.2",
-  "type": "yesno",
-  "es": "Para cada afirmación sobre Teams Rooms Pro y Basic, indica si es verdadera o falsa.",
-  "en": "For each statement about Teams Rooms Pro and Basic, indicate whether it is true or false.",
-  "rows": [
-   {
-    "es": "Teams Rooms Pro incluye acceso al portal de gestión Pro con monitorización de salud e incidentes en tiempo real.",
-    "en": "Teams Rooms Pro includes access to the Pro Management Portal with real-time health and incident monitoring.",
-    "ans": true
-   },
-   {
-    "es": "Teams Rooms Basic es gratuito y cubre hasta 25 dispositivos de sala por organización.",
-    "en": "Teams Rooms Basic is free and covers up to 25 room devices per organization.",
-    "ans": true
-   },
-   {
-    "es": "Teams Rooms Basic y Teams Rooms Pro incluyen las mismas capacidades de inteligencia artificial en reuniones.",
-    "en": "Teams Rooms Basic and Teams Rooms Pro include the same AI meeting capabilities.",
-    "ans": false
-   },
-   {
-    "es": "El portal de gestión Pro de Teams Rooms permite ver el estado de salud de las salas y gestionar incidentes de forma remota.",
-    "en": "The Teams Rooms Pro Management Portal allows viewing room health status and managing incidents remotely.",
-    "ans": true
-   }
-  ],
-  "exp_es": "Teams Rooms Pro tiene el portal de gestión avanzado con IA. Basic es gratuito hasta 25 salas pero con funciones limitadas. Pro incluye IA avanzada (Intelligent Speaker, transcripción mejorada), Basic no. El portal Pro sí ofrece visibilidad de salud y gestión de incidentes.",
-  "exp_en": "Teams Rooms Pro has the advanced management portal with AI. Basic is free for up to 25 rooms but with limited features. Pro includes advanced AI (Intelligent Speaker, enhanced transcription), Basic does not. The Pro portal provides health visibility and incident management."
  },
  {
   "id": 1542,
@@ -11489,32 +10830,6 @@
   ],
   "exp_es": "Los informes de uso de Teams en el centro de administración de Microsoft 365 conservan datos durante periodos de 7, 30, 90 o 180 días. El máximo disponible de forma predeterminada es de 180 días. Para datos históricos más largos se puede usar la integración con Microsoft Graph API.",
   "exp_en": "Teams usage reports in the Microsoft 365 admin center retain data for periods of 7, 30, 90, or 180 days. The maximum available by default is 180 days. For longer historical data, Microsoft Graph API integration can be used."
- },
- {
-  "id": 1547,
-  "exam": "ms-721",
-  "dom": 4,
-  "obj": "4.3",
-  "type": "mc",
-  "q_es": "Un agente de soporte de nivel 1 necesita acceder al análisis de llamadas de un usuario específico para diagnosticar problemas de calidad. ¿Qué rol debe asignar el administrador a este agente?",
-  "q_en": "A Level 1 support agent needs to access the call analytics of a specific user to diagnose quality issues. Which role should the administrator assign to this agent?",
-  "opts_es": [
-   "Especialista de soporte de comunicaciones de Teams (Teams Communications Support Specialist) o Ingeniero de soporte de comunicaciones de Teams",
-   "Administrador de Teams (Teams Administrator)",
-   "Administrador global (Global Administrator)",
-   "Lector de informes (Reports Reader)"
-  ],
-  "opts_en": [
-   "Teams Communications Support Specialist or Teams Communications Support Engineer",
-   "Teams Administrator",
-   "Global Administrator",
-   "Reports Reader"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "El rol Teams Communications Support Specialist (Tier 1) permite ver el análisis de llamadas de un usuario específico con información básica. El rol Teams Communications Support Engineer (Tier 2) permite ver información más detallada de red y dispositivo. Ambos roles están diseñados para el helpdesk de Teams.",
-  "exp_en": "The Teams Communications Support Specialist role (Tier 1) allows viewing a specific user's call analytics with basic information. The Teams Communications Support Engineer role (Tier 2) allows viewing more detailed network and device information. Both roles are designed for the Teams helpdesk."
  },
  {
   "id": 1548,
@@ -11970,8 +11285,8 @@
  {
   "id": 1564,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "mc",
   "q_es": "Una empresa con sede en España quiere que sus empleados puedan realizar llamadas a cualquier número de teléfono nacional utilizando la infraestructura PSTN de Microsoft. ¿Qué solución de conectividad PSTN de Teams debe contratar?",
   "q_en": "A company based in Spain wants its employees to make calls to any domestic phone number using Microsoft's PSTN infrastructure. Which Teams PSTN connectivity solution should they purchase?",
@@ -11996,8 +11311,8 @@
  {
   "id": 1565,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "mc",
   "q_es": "¿Qué tipo de Calling Plan de Teams cobra al usuario según los minutos reales consumidos en lugar de proporcionar un paquete de minutos mensual fijo?",
   "q_en": "Which type of Teams Calling Plan charges users based on actual minutes consumed rather than providing a fixed monthly minute bundle?",
@@ -12022,8 +11337,8 @@
  {
   "id": 1566,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "mc",
   "q_es": "¿Cuál es la principal ventaja de Operator Connect frente a Direct Routing para conectar Teams a la PSTN?",
   "q_en": "What is the main advantage of Operator Connect over Direct Routing for connecting Teams to the PSTN?",
@@ -12048,8 +11363,8 @@
  {
   "id": 1567,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "yesno",
   "es": "Para cada afirmación sobre los planes de llamadas de Teams y Communication Credits, indica si es verdadera o falsa.",
   "en": "For each statement about Teams Calling Plans and Communication Credits, indicate whether it is true or false.",
@@ -12081,8 +11396,8 @@
  {
   "id": 1568,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "mc",
   "q_es": "Un administrador quiere que los Communication Credits de la organización se recarguen automáticamente cuando el saldo baje de 100 €, añadiendo 500 € en cada recarga. ¿Qué debe configurar?",
   "q_en": "An administrator wants the organization's Communication Credits to automatically recharge when the balance drops below €100, adding €500 each time. What should they configure?",
@@ -12107,8 +11422,8 @@
  {
   "id": 1569,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 3,
+  "obj": "3.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre la asignación de números de teléfono y ubicaciones de emergencia en Teams, indica si es verdadera o falsa.",
   "en": "For each statement about phone number assignment and emergency locations in Teams, indicate whether it is true or false.",
@@ -12140,8 +11455,8 @@
  {
   "id": 1570,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 3,
+  "obj": "3.3",
   "type": "mc",
   "q_es": "¿Qué requisito debe cumplirse antes de que un número de teléfono de Teams Calling Plan pueda usarse para realizar llamadas de emergencia (112)?",
   "q_en": "What requirement must be met before a Teams Calling Plan phone number can be used to make emergency calls (112)?",
@@ -12166,8 +11481,8 @@
  {
   "id": 1571,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 1,
+  "obj": "1.2",
   "type": "dropdown",
   "es": "Selecciona la solución de conectividad PSTN de Teams más adecuada para cada escenario.",
   "en": "Select the most appropriate Teams PSTN connectivity solution for each scenario.",
@@ -12213,8 +11528,8 @@
  {
   "id": 1572,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.1",
+  "dom": 3,
+  "obj": "3.2",
   "type": "mc",
   "q_es": "Un administrador configura un operador automático y una cola de llamadas en Teams. ¿Qué licencia gratuita necesita asignar a las cuentas de recurso asociadas si no necesitan un número de teléfono directo?",
   "q_en": "An administrator sets up an auto attendant and call queue in Teams. Which free license must be assigned to the associated resource accounts if they do not need a direct phone number?",
@@ -12239,8 +11554,8 @@
  {
   "id": 1573,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "mc",
   "q_es": "Un administrador configura un operador automático para que durante el horario comercial reproduzca un menú de opciones, y fuera de ese horario redirija las llamadas al buzón de voz del departamento. ¿Qué debe configurar en el operador automático?",
   "q_en": "An administrator configures an auto attendant to play an options menu during business hours, and outside those hours redirect calls to the department voicemail. What should they configure in the auto attendant?",
@@ -12265,8 +11580,8 @@
  {
   "id": 1574,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "mc",
   "q_es": "Una cola de llamadas de Teams tiene 50 llamadas en espera y llega una nueva. La cola ya está al máximo de capacidad. ¿Qué sucede con la llamada según la configuración de desbordamiento (overflow)?",
   "q_en": "A Teams call queue has 50 calls waiting and a new one arrives. The queue is already at maximum capacity. What happens to the call according to the overflow configuration?",
@@ -12289,36 +11604,10 @@
   "exp_en": "Teams call queues have a maximum number of calls waiting (up to 200 by default). When the limit is reached, new calls trigger the configured overflow action: disconnect, redirect to another destination, or send to shared voicemail."
  },
  {
-  "id": 1575,
-  "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
-  "type": "mc",
-  "q_es": "¿Qué licencia es necesaria para una cuenta de recurso de Teams que necesita tener asignado un número de teléfono para un operador automático o cola de llamadas?",
-  "q_en": "Which license is required for a Teams resource account that needs a phone number assigned for an auto attendant or call queue?",
-  "opts_es": [
-   "Teams Phone Resource Account (antes llamada Virtual User, es gratuita)",
-   "Teams Phone Standard",
-   "Microsoft 365 E3",
-   "Audio Conferencing add-on"
-  ],
-  "opts_en": [
-   "Teams Phone Resource Account (formerly called Virtual User, it is free)",
-   "Teams Phone Standard",
-   "Microsoft 365 E3",
-   "Audio Conferencing add-on"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "Las cuentas de recurso que necesitan tener un número de teléfono directo asignado (para que los llamantes puedan marcar directamente al operador automático o cola de llamadas) requieren la licencia Teams Phone Resource Account, que es gratuita y se asigna desde el centro de administración de Microsoft 365.",
-  "exp_en": "Resource accounts that need a direct phone number assigned (so callers can dial directly into the auto attendant or call queue) require the Teams Phone Resource Account license, which is free and assigned from the Microsoft 365 admin center."
- },
- {
   "id": 1576,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "yesno",
   "es": "Para cada afirmación sobre los operadores automáticos y las colas de llamadas de Teams, indica si es verdadera o falsa.",
   "en": "For each statement about Teams auto attendants and call queues, indicate whether it is true or false.",
@@ -12350,8 +11639,8 @@
  {
   "id": 1577,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "mc",
   "q_es": "Un administrador quiere reemplazar la música de espera predeterminada en una cola de llamadas de Teams por una grabación de audio personalizada de la empresa. ¿Cómo puede hacerlo?",
   "q_en": "An administrator wants to replace the default hold music in a Teams call queue with a custom company audio recording. How can they do this?",
@@ -12376,8 +11665,8 @@
  {
   "id": 1578,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "yesno",
   "es": "Para cada afirmación sobre la configuración de las colas de llamadas de Teams, indica si es verdadera o falsa.",
   "en": "For each statement about Teams call queue configuration, indicate whether it is true or false.",
@@ -12409,8 +11698,8 @@
  {
   "id": 1579,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "mc",
   "q_es": "¿Qué permite hacer los 'operadores automáticos anidados' en Teams?",
   "q_en": "What do 'nested auto attendants' allow in Teams?",
@@ -12433,36 +11722,10 @@
   "exp_en": "Nested auto attendants allow creating hierarchical menu structures: the first AA greets and presents options, and one of them redirects the caller to another AA that presents sub-options. This is useful for organizations with multiple departments that have their own sub-menus."
  },
  {
-  "id": 1580,
-  "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
-  "type": "mc",
-  "q_es": "Un operador automático de Teams tiene configurado un menú para el horario comercial. ¿Qué opciones de enrutamiento puede configurar el administrador para las llamadas que llegan fuera del horario comercial?",
-  "q_en": "A Teams auto attendant has a menu configured for business hours. What routing options can the administrator configure for calls that arrive outside business hours?",
-  "opts_es": [
-   "Reproducir un saludo personalizado y redirigir la llamada a: buzón de voz compartido, otro operador automático, cola de llamadas, persona específica o desconectar",
-   "Solo desconectar la llamada fuera del horario comercial",
-   "Solo enviar al buzón de voz del administrador del sistema",
-   "Mantener la misma configuración que el horario comercial sin posibilidad de cambio"
-  ],
-  "opts_en": [
-   "Play a custom greeting and redirect the call to: shared voicemail, another auto attendant, call queue, specific person, or disconnect",
-   "Only disconnect the call outside business hours",
-   "Only send to the system administrator's voicemail",
-   "Keep the same configuration as business hours with no option to change"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "Los operadores automáticos de Teams tienen configuración separada para horario comercial y fuera de horario. Para las llamadas fuera de horario, el administrador puede reproducir un saludo distinto y configurar diferentes acciones de enrutamiento: buzón compartido, otro AA, cola, persona o desconexión.",
-  "exp_en": "Teams auto attendants have separate configuration for business hours and after-hours. For after-hours calls, the administrator can play a different greeting and configure different routing actions: shared mailbox, another AA, queue, person, or disconnect."
- },
- {
   "id": 1581,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.2",
+  "dom": 3,
+  "obj": "3.2",
   "type": "sentence",
   "pre_es": "Para que los usuarios puedan marcar directamente al número de teléfono asignado a un operador automático de Teams, el administrador debe crear primero",
   "pre_en": "For users to dial directly to the phone number assigned to a Teams auto attendant, the administrator must first create",
@@ -12487,8 +11750,8 @@
  {
   "id": 1582,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "¿Qué requisito debe cumplir el FQDN (nombre de dominio completo) del SBC en una implementación de Direct Routing de Teams?",
   "q_en": "What requirement must the FQDN (fully qualified domain name) of the SBC meet in a Teams Direct Routing deployment?",
@@ -12513,8 +11776,8 @@
  {
   "id": 1583,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "¿Cuál es la principal diferencia entre Direct Routing y un Calling Plan de Microsoft en Teams?",
   "q_en": "What is the main difference between Direct Routing and a Microsoft Calling Plan in Teams?",
@@ -12539,8 +11802,8 @@
  {
   "id": 1584,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "En Direct Routing de Teams, ¿qué conjunto de objetos de configuración determina por qué ruta PSTN se envían las llamadas salientes de un usuario?",
   "q_en": "In Teams Direct Routing, which set of configuration objects determines which PSTN route outgoing calls from a user take?",
@@ -12565,8 +11828,8 @@
  {
   "id": 1585,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "yesno",
   "es": "Para cada afirmación sobre los requisitos de Direct Routing en Teams, indica si es verdadera o falsa.",
   "en": "For each statement about Teams Direct Routing requirements, indicate whether it is true or false.",
@@ -12598,8 +11861,8 @@
  {
   "id": 1586,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "¿Qué beneficio proporciona el 'desvío de medios' (media bypass) en una implementación de Direct Routing de Teams?",
   "q_en": "What benefit does 'media bypass' provide in a Teams Direct Routing deployment?",
@@ -12624,8 +11887,8 @@
  {
   "id": 1587,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "yesno",
   "es": "Para cada afirmación sobre las características avanzadas de Direct Routing en Teams, indica si es verdadera o falsa.",
   "en": "For each statement about advanced Teams Direct Routing features, indicate whether it is true or false.",
@@ -12655,36 +11918,10 @@
   "exp_en": "Media bypass reduces latency. LMO is advanced media bypass for multi-site networks. SBCs send SIP OPTIONS for keepalive. Direct Routing does NOT require a Calling Plan; it is an alternative to Calling Plans (Teams Phone Standard + direct routing voice routing policy)."
  },
  {
-  "id": 1588,
-  "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
-  "type": "mc",
-  "q_es": "¿Qué cmdlet de PowerShell se usa para registrar (parear) un SBC nuevo en una implementación de Direct Routing de Teams?",
-  "q_en": "Which PowerShell cmdlet is used to register (pair) a new SBC in a Teams Direct Routing deployment?",
-  "opts_es": [
-   "New-CsOnlinePSTNGateway",
-   "Add-CsDirectRoutingSBC",
-   "Register-CsOnlineSBC",
-   "Set-CsVoiceRoute -SBC"
-  ],
-  "opts_en": [
-   "New-CsOnlinePSTNGateway",
-   "Add-CsDirectRoutingSBC",
-   "Register-CsOnlineSBC",
-   "Set-CsVoiceRoute -SBC"
-  ],
-  "correct": [
-   0
-  ],
-  "exp_es": "El cmdlet New-CsOnlinePSTNGateway (módulo MicrosoftTeams de PowerShell) crea y registra un nuevo SBC en Direct Routing de Teams. Requiere el FQDN del SBC y el puerto SIP. Posteriormente se usa Set-CsOnlinePSTNGateway para modificar la configuración.",
-  "exp_en": "The New-CsOnlinePSTNGateway cmdlet (MicrosoftTeams PowerShell module) creates and registers a new SBC in Teams Direct Routing. It requires the SBC FQDN and SIP port. Set-CsOnlinePSTNGateway is then used to modify the configuration."
- },
- {
   "id": 1589,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "¿Por qué envía el SBC mensajes SIP OPTIONS periódicamente a Microsoft en una implementación de Direct Routing?",
   "q_en": "Why does the SBC send periodic SIP OPTIONS messages to Microsoft in a Direct Routing deployment?",
@@ -12709,8 +11946,8 @@
  {
   "id": 1590,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.3",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "¿Qué versión de TLS es requerida para la conexión SIP entre el SBC y Microsoft en Direct Routing de Teams?",
   "q_en": "Which TLS version is required for the SIP connection between the SBC and Microsoft in Teams Direct Routing?",
@@ -12735,8 +11972,8 @@
  {
   "id": 1591,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 1,
+  "obj": "1.4",
   "type": "mc",
   "q_es": "Un usuario de Teams Phone reporta que sus llamadas tienen mala calidad: mucho eco y cortes. ¿Qué herramienta del Teams admin center debe usar el administrador para ver el detalle de esas llamadas específicas?",
   "q_en": "A Teams Phone user reports poor call quality: lots of echo and choppy audio. Which Teams admin center tool should the administrator use to view the details of those specific calls?",
@@ -12761,8 +11998,8 @@
  {
   "id": 1592,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un SBC de Direct Routing de Teams muestra el estado 'Inactivo' en el Teams admin center. ¿Cuál es la causa más probable y cómo se diagnostica?",
   "q_en": "A Teams Direct Routing SBC shows 'Inactive' status in the Teams admin center. What is the most likely cause and how is it diagnosed?",
@@ -12787,8 +12024,8 @@
  {
   "id": 1593,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.4",
   "type": "yesno",
   "es": "Para cada afirmación sobre la resolución de problemas de Teams Phone, indica si es verdadera o falsa.",
   "en": "For each statement about Teams Phone troubleshooting, indicate whether it is true or false.",
@@ -12820,8 +12057,8 @@
  {
   "id": 1594,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.1",
   "type": "mc",
   "q_es": "Un usuario de Teams con Direct Routing marca un número con formato local (por ejemplo, '912345678') pero Teams no puede encontrar una ruta y la llamada falla. ¿Cuál es la causa más probable?",
   "q_en": "A Teams Direct Routing user dials a number in local format (e.g., '912345678') but Teams cannot find a route and the call fails. What is the most likely cause?",
@@ -12846,8 +12083,8 @@
  {
   "id": 1595,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.6",
   "type": "mc",
   "q_es": "Un usuario de Teams Direct Routing obtiene el error 'No available routes' al intentar llamar a un número. Después de verificar que el número es correcto y tiene licencia, ¿qué debe revisar el administrador a continuación?",
   "q_en": "A Teams Direct Routing user gets 'No available routes' when trying to call a number. After verifying the number is correct and the user is licensed, what should the administrator check next?",
@@ -12872,8 +12109,8 @@
  {
   "id": 1596,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.3",
   "type": "mc",
   "q_es": "Un administrador intenta asignar una dirección de emergencia a un usuario de Teams Calling Plan pero recibe un error que indica que la dirección no es válida. ¿Qué debe verificar?",
   "q_en": "An administrator tries to assign an emergency address to a Teams Calling Plan user but receives an error indicating the address is invalid. What should they verify?",
@@ -12898,8 +12135,8 @@
  {
   "id": 1597,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.4",
   "type": "mc",
   "q_es": "Un usuario reporta que no puede realizar llamadas PSTN salientes con Teams Phone. El administrador verifica que el usuario tiene Teams instalado y puede unirse a reuniones. ¿Cuáles son los dos elementos más importantes que debe verificar el administrador?",
   "q_en": "A user reports they cannot make outbound PSTN calls with Teams Phone. The administrator verifies the user has Teams installed and can join meetings. What are the two most important elements the administrator should verify?",
@@ -12924,8 +12161,8 @@
  {
   "id": 1598,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.6",
   "type": "yesno",
   "es": "Para cada afirmación sobre la resolución de problemas comunes en Teams Phone, indica si es verdadera o falsa.",
   "en": "For each statement about common Teams Phone troubleshooting, indicate whether it is true or false.",
@@ -12957,8 +12194,8 @@
  {
   "id": 1599,
   "exam": "ms-721",
-  "dom": 5,
-  "obj": "5.4",
+  "dom": 3,
+  "obj": "3.6",
   "type": "sentence",
   "pre_es": "Para identificar por qué una llamada de Direct Routing falla con un error '503 Service Unavailable' devuelto por el SBC, el administrador debe analizar en primer lugar",
   "pre_en": "To identify why a Direct Routing call fails with a '503 Service Unavailable' error returned by the SBC, the administrator should first analyze",
