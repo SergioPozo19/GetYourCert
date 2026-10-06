@@ -138,15 +138,15 @@
   "q_es": "Varios equipos necesitan acceder solo a los registros de sus propios recursos en un área de trabajo de Log Analytics compartida. ¿Qué modo de control de acceso lo admite?",
   "q_en": "Several teams need access only to the logs of their own resources in a shared Log Analytics workspace. Which access control mode supports this?",
   "opts_es": [
-   "Compartir la clave del área de trabajo",
-   "Convertir a todos en Propietario",
-   "Deshabilitar el control de acceso",
+   "Dar a cada equipo el rol Colaborador de Log Analytics en el nivel del área de trabajo",
+   "Convertir a cada equipo en propietario de la suscripción",
+   "Deshabilitar el modo de control de acceso del área de trabajo",
    "Control de acceso de contexto de recurso con Azure RBAC en los recursos"
   ],
   "opts_en": [
-   "Sharing the workspace key",
-   "Making everyone Owner",
-   "Disabling access control",
+   "Give each team the workspace-level Log Analytics Contributor role",
+   "Make each team an Owner of the subscription",
+   "Disable the access control mode of the workspace",
    "Resource-context access control with Azure RBAC on the resources"
   ],
   "correct": [
@@ -164,16 +164,16 @@
   "q_es": "¿Cuándo debes diseñar varias áreas de trabajo de Log Analytics en lugar de una?",
   "q_en": "When should you design multiple Log Analytics workspaces instead of one?",
   "opts_es": [
-   "Nunca",
+   "Siempre que el número de VM supere 100",
    "Cuando se aplican requisitos de residencia de datos, facturación separada o aislamiento estricto",
-   "Siempre, una por VM",
-   "Solo para invitados"
+   "Siempre, un área de trabajo por VM",
+   "Solo cuando los invitados necesitan acceso"
   ],
   "opts_en": [
-   "Never",
+   "Whenever the VM count exceeds 100",
    "When data residency, separate billing or strict isolation requirements apply",
-   "Always, one per VM",
-   "Only for guests"
+   "Always, one workspace per VM",
+   "Only when guests need access"
   ],
   "correct": [
    1
@@ -333,16 +333,16 @@
   "q_es": "Una aplicación usada por clientes necesita registro e inicio de sesión con identidades sociales y flujos personalizados. ¿Qué servicio debes recomendar?",
   "q_en": "An application used by customers needs sign-up and sign-in with social identities and branded flows. Which service should you recommend?",
   "opts_es": [
-   "Azure Bastion",
+   "Microsoft Entra Domain Services",
    "Microsoft Entra External ID (identidad de cliente)",
-   "Azure Key Vault",
-   "Microsoft Entra Domain Services"
+   "Proxy de aplicaciones de Microsoft Entra",
+   "Microsoft Entra Connect Cloud Sync"
   ],
   "opts_en": [
-   "Azure Bastion",
+   "Microsoft Entra Domain Services",
    "Microsoft Entra External ID (customer identity)",
-   "Azure Key Vault",
-   "Microsoft Entra Domain Services"
+   "Microsoft Entra Application Proxy",
+   "Microsoft Entra Connect Cloud Sync"
   ],
   "correct": [
    1
@@ -412,14 +412,14 @@
   "q_en": "An Azure VM must access Azure SQL Database without any password in its configuration. What should you recommend?",
   "opts_es": [
    "Una identidad administrada con autenticación de Microsoft Entra en la base de datos",
-   "Acceso anónimo",
-   "Un inicio de sesión SQL compartido",
+   "Acceso anónimo restringido por reglas de firewall",
+   "Una contraseña guardada en una variable de entorno",
    "Una contraseña en la configuración de la aplicación"
   ],
   "opts_en": [
    "A managed identity with Microsoft Entra authentication on the database",
-   "Anonymous access",
-   "A shared SQL login",
+   "Anonymous access restricted by firewall rules",
+   "A password stored in an environment variable",
    "A password in app settings"
   ],
   "correct": [
@@ -490,15 +490,15 @@
   "q_en": "What is the difference between Azure RBAC and Microsoft Entra roles?",
   "opts_es": [
    "Azure RBAC controla el acceso a recursos de Azure; los roles de Entra controlan el acceso a objetos y configuración del directorio",
-   "Azure RBAC solo administra usuarios",
-   "Son idénticos",
-   "Los roles de Entra administran VM"
+   "Azure RBAC administra solo usuarios del directorio",
+   "Son idénticos en ámbito y propósito",
+   "Los roles de Entra administran la configuración de máquinas virtuales"
   ],
   "opts_en": [
    "Azure RBAC controls access to Azure resources; Entra roles control access to directory objects and settings",
-   "Azure RBAC manages only users",
-   "They are identical",
-   "Entra roles manage VMs"
+   "Azure RBAC manages only directory users",
+   "They are identical in scope and purpose",
+   "Entra roles manage virtual machine settings"
   ],
   "correct": [
    0
@@ -746,16 +746,16 @@
   "q_es": "Una empresa quiere aplicar las mismas directivas y asignaciones de roles a muchas suscripciones. ¿Qué estructura debes recomendar?",
   "q_en": "A company wants to apply the same policies and role assignments to many subscriptions. Which structure should you recommend?",
   "opts_es": [
-   "Un grupo de recursos por VM",
-   "Solo etiquetas",
+   "Un grupo de recursos independiente para cada VM",
+   "Solo etiquetas de recursos",
    "Grupos de administración con directivas y RBAC asignados a nivel de grupo",
-   "Una suscripción para todo"
+   "Una suscripción para todos los entornos"
   ],
   "opts_en": [
-   "A resource group per VM",
-   "Tags only",
+   "A separate resource group for every VM",
+   "Resource tags only",
    "Management groups with policies and RBAC assigned at the group level",
-   "One subscription for everything"
+   "One subscription for all environments"
   ],
   "correct": [
    2
@@ -824,16 +824,16 @@
   "q_es": "¿Cómo puedes garantizar que cada recurso nuevo herede una etiqueta CostCenter de su grupo de recursos?",
   "q_en": "How can you ensure every new resource inherits a CostCenter tag from its resource group?",
   "opts_es": [
-   "Pedir a los usuarios que lo recuerden",
-   "Usar bloqueos de recursos",
+   "Pedir a los usuarios que agreguen la etiqueta manualmente",
+   "Aplicar un bloqueo de recursos de solo lectura",
    "Asignar una directiva de Azure Policy con el efecto Modify que herede la etiqueta",
-   "Usar Azure Bastion"
+   "Crear una alerta de presupuesto para la etiqueta"
   ],
   "opts_en": [
-   "Ask users to remember",
-   "Use resource locks",
+   "Ask users to add the tag manually",
+   "Apply a read-only resource lock",
    "Assign an Azure Policy with the Modify effect that inherits the tag",
-   "Use Azure Bastion"
+   "Create a budget alert for the tag"
   ],
   "correct": [
    2
@@ -851,15 +851,15 @@
   "q_en": "Which feature groups multiple policy definitions to achieve a regulatory compliance goal, such as ISO 27001?",
   "opts_es": [
    "Una iniciativa de directivas (conjunto de directivas)",
-   "Un conjunto de disponibilidad",
-   "Una etiqueta",
-   "Un bloqueo de recursos"
+   "Un grupo de administración",
+   "Una exención de directiva",
+   "Una asignación de rol"
   ],
   "opts_en": [
    "A policy initiative (policy set)",
-   "An availability set",
-   "A tag",
-   "A resource lock"
+   "A management group",
+   "A policy exemption",
+   "A role assignment"
   ],
   "correct": [
    0
@@ -902,14 +902,14 @@
   "q_es": "¿Qué característica impide la eliminación accidental de un recurso crítico incluso por parte de usuarios con permisos de Propietario?",
   "q_en": "Which feature prevents accidental deletion of a critical resource even by users with Owner permissions?",
   "opts_es": [
-   "Una etiqueta",
-   "Un presupuesto",
+   "Una asignación de Azure Policy de solo lectura",
+   "Una etiqueta de recurso llamada Protected",
    "Un bloqueo de recursos CanNotDelete",
    "Una configuración de diagnóstico"
   ],
   "opts_en": [
-   "A tag",
-   "A budget",
+   "A read-only Azure Policy assignment",
+   "A resource tag named Protected",
    "A CanNotDelete resource lock",
    "A diagnostic setting"
   ],
@@ -1442,16 +1442,16 @@
   "q_es": "¿Qué factor es más importante al elegir una clave de partición de Cosmos DB?",
   "q_en": "Which factor is most important when choosing a Cosmos DB partition key?",
   "opts_es": [
-   "El color del elemento",
-   "Un valor constante para todos los elementos",
+   "La clave de partición debe ser un valor booleano",
+   "Un valor constante para todos los elementos para simplificar las consultas",
    "Una cardinalidad alta que distribuya las solicitudes y el almacenamiento de forma uniforme",
-   "La longitud del nombre del inquilino"
+   "El valor de cadena más corto posible"
   ],
   "opts_en": [
-   "The item's color",
-   "A constant value for all items",
+   "The partition key must be a boolean value",
+   "A constant value for all items to simplify queries",
    "High cardinality that distributes requests and storage evenly",
-   "The tenant name length"
+   "The shortest possible string value"
   ],
   "correct": [
    2
@@ -1470,14 +1470,14 @@
   "opts_es": [
    "Mantener todos los blobs en el nivel de acceso frecuente",
    "Una directiva de administración del ciclo de vida que traslade los blobs a los niveles esporádico/frío/archivo",
-   "Eliminar a los 90 días",
-   "Almacenar en una base de datos"
+   "Eliminar los blobs a los 90 días",
+   "Copiar los blobs en una base de datos SQL"
   ],
   "opts_en": [
    "Keep all blobs in the hot tier",
    "Lifecycle management policy moving blobs to cool/cold/archive tiers",
-   "Delete at 90 days",
-   "Store in a database"
+   "Delete the blobs at 90 days",
+   "Copy the blobs into a SQL database"
   ],
   "correct": [
    1
@@ -2112,16 +2112,16 @@
   "q_es": "Azure SQL Database debe restaurarse a cualquier punto de los últimos 14 días tras la eliminación accidental de filas. ¿Qué característica lo proporciona?",
   "q_en": "Azure SQL Database must be restored to any point in the last 14 days after an accidental deletion of rows. Which feature provides this?",
   "opts_es": [
-   "Bloqueo de recursos",
+   "Un bloqueo de recursos en la base de datos",
    "Restauración a un momento dado desde copias de seguridad automáticas",
-   "Grupo elástico",
-   "Azure Policy"
+   "Un grupo elástico con más DTU",
+   "Una asignación de Azure Policy"
   ],
   "opts_en": [
-   "Resource lock",
+   "A resource lock on the database",
    "Point-in-time restore from automated backups",
-   "Elastic pool",
-   "Azure Policy"
+   "An elastic pool with more DTUs",
+   "An Azure Policy assignment"
   ],
   "correct": [
    1
@@ -2164,15 +2164,15 @@
   "q_es": "¿Qué característica ayuda a proteger las copias de seguridad del ransomware impidiendo su eliminación anticipada, incluso por administradores comprometidos?",
   "q_en": "Which feature helps protect backups from ransomware by preventing early deletion, even by compromised administrators?",
   "opts_es": [
-   "Claves compartidas",
+   "Claves compartidas de la cuenta de almacenamiento",
    "Almacenes inmutables y autorización multiusuario de Azure Backup",
-   "Deshabilitar la eliminación temporal",
+   "Deshabilitar la eliminación temporal en el almacén",
    "Acceso público al almacén"
   ],
   "opts_en": [
-   "Shared keys",
+   "Storage account shared keys",
    "Immutable vaults and multi-user authorization for Azure Backup",
-   "Disabling soft delete",
+   "Disabling soft delete on the vault",
    "Public access to the vault"
   ],
   "correct": [
@@ -2191,15 +2191,15 @@
   "q_en": "Blob data must be protected with long-term retention and protection from deletion in a separate security boundary. Which solution fits?",
   "opts_es": [
    "Azure Backup para blobs con copias de seguridad en almacén",
-   "Sin copia de seguridad",
-   "Contenedores públicos",
-   "Una única cuenta LRS"
+   "Confiar solo en la eliminación temporal de blobs",
+   "Replicar en un contenedor público",
+   "Usar una sola cuenta de almacenamiento LRS"
   ],
   "opts_en": [
    "Azure Backup for Blobs with vaulted backups",
-   "No backup",
-   "Public containers",
-   "A single LRS account"
+   "Rely on the blob soft delete setting only",
+   "Replicate to a public container",
+   "Use a single LRS storage account"
   ],
   "correct": [
    0
@@ -2242,16 +2242,16 @@
   "q_es": "¿Qué característica de Azure Backup permite restaurar una VM en otra región cuando la región principal no está disponible?",
   "q_en": "Which feature in Azure Backup lets you restore a VM into another region when the primary region is unavailable?",
   "opts_es": [
-   "Bloqueo de recursos",
+   "Un bloqueo de recursos en la VM",
    "Restauración entre regiones con almacenes GRS",
-   "Conjunto de disponibilidad",
-   "Grupo de selección de ubicación de proximidad"
+   "Un conjunto de disponibilidad",
+   "Un grupo de ubicación por proximidad"
   ],
   "opts_en": [
-   "Resource lock",
+   "A resource lock on the VM",
    "Cross-region restore with GRS vaults",
-   "Availability set",
-   "Proximity placement group"
+   "An availability set",
+   "A proximity placement group"
   ],
   "correct": [
    1
@@ -2400,15 +2400,15 @@
   "q_es": "¿Qué protege a las VM de fallos de hardware y de mantenimiento planificado dentro de un único centro de datos?",
   "q_en": "What protects VMs from hardware failures and planned maintenance within a single datacenter?",
   "opts_es": [
-   "Una etiqueta",
-   "Un bloqueo de recursos",
-   "Una configuración de diagnóstico",
+   "Un grupo de ubicación por proximidad",
+   "Un conjunto de escalado con una sola instancia",
+   "Una sola VM con un disco Premium SSD",
    "Un conjunto de disponibilidad con dominios de error y de actualización"
   ],
   "opts_en": [
-   "A tag",
-   "A resource lock",
-   "A diagnostic setting",
+   "A proximity placement group",
+   "A scale set with a single instance",
+   "A single VM with a Premium SSD",
    "An availability set with fault and update domains"
   ],
   "correct": [
@@ -2452,13 +2452,13 @@
   "q_es": "¿Qué opción de Azure SQL proporciona redundancia de zona automática para las réplicas de la base de datos?",
   "q_en": "Which Azure SQL option provides automatic zone redundancy for the database replicas?",
   "opts_es": [
-   "Table Storage",
+   "Redundancia geográfica de Azure Table Storage",
    "Pausa automática sin servidor",
    "Solo grupo elástico",
    "Configuración con redundancia de zona en Uso general o Business Critical"
   ],
   "opts_en": [
-   "Table Storage",
+   "Azure Table Storage geo-redundancy",
    "Serverless auto-pause",
    "Elastic pool only",
    "Zone-redundant configuration in General Purpose or Business Critical"
@@ -2530,16 +2530,16 @@
   "q_es": "Una cuenta de Cosmos DB necesita una disponibilidad del 99,999 % para lecturas y escrituras. ¿Qué configuración se requiere?",
   "q_en": "A Cosmos DB account needs 99.999% availability for reads and writes. What configuration is required?",
   "opts_es": [
-   "Una única región",
-   "Sin servidor en una región",
+   "Una sola región con redundancia de zona",
+   "Serverless en una región",
    "Varias regiones con escrituras en varias regiones",
-   "Sin replicación"
+   "Dos regiones con escrituras en una sola región"
   ],
   "opts_en": [
-   "A single region",
+   "A single region with zone redundancy",
    "Serverless in one region",
    "Multiple regions with multi-region writes",
-   "No replication"
+   "Two regions with single-region writes"
   ],
   "correct": [
    2
@@ -2559,13 +2559,13 @@
    "Ranuras de implementación",
    "Dominios personalizados",
    "Redundancia de zona en el plan de App Service",
-   "Bloqueos de recursos"
+   "La configuración Always On"
   ],
   "opts_en": [
    "Deployment slots",
    "Custom domains",
    "Zone redundancy on the App Service plan",
-   "Resource locks"
+   "The Always On setting"
   ],
   "correct": [
    2
@@ -3148,14 +3148,14 @@
   "q_es": "¿Qué enfoque automatiza implementaciones de infraestructura repetibles mediante archivos declarativos almacenados en el control de código fuente?",
   "q_en": "Which approach automates repeatable infrastructure deployments using declarative files stored in source control?",
   "opts_es": [
-   "Enviar capturas de pantalla por correo",
-   "Usar etiquetas",
+   "Enviar por correo capturas del portal con la configuración",
+   "Usar etiquetas para describir los recursos",
    "Clics manuales en el portal",
    "Infraestructura como código con Bicep o plantillas ARM en una canalización de CI/CD"
   ],
   "opts_en": [
-   "Emailing screenshots",
-   "Using tags",
+   "Emailing portal screenshots of the configuration",
+   "Using tags to describe resources",
    "Manual portal clicks",
    "Infrastructure as code with Bicep or ARM templates in a CI/CD pipeline"
   ],
@@ -3505,15 +3505,15 @@
   "q_en": "An on-premises ASP.NET web app can be moved to Azure PaaS with minimal changes. Which target fits and which tool helps assess it?",
   "opts_es": [
    "Azure App Service, evaluada con Azure Migrate y el asistente de migración de App Service",
-   "Azure Bastion",
+   "Azure Kubernetes Service tras reescribir en microservicios",
    "Azure Batch",
-   "Azure Backup"
+   "Azure Virtual Desktop"
   ],
   "opts_en": [
    "Azure App Service, assessed with Azure Migrate and the App Service migration assistant",
-   "Azure Bastion",
+   "Azure Kubernetes Service after a rewrite to microservices",
    "Azure Batch",
-   "Azure Backup"
+   "Azure Virtual Desktop"
   ],
   "correct": [
    0
@@ -3631,16 +3631,16 @@
   "q_es": "¿Cómo puedes proporcionar una ruta de conmutación por error para ExpressRoute si falla el circuito?",
   "q_en": "How can you provide a failover path for ExpressRoute if the circuit fails?",
   "opts_es": [
-   "Eliminar la puerta de enlace",
-   "Deshabilitar BGP",
+   "Eliminar la puerta de enlace de ExpressRoute",
+   "Deshabilitar BGP en el circuito",
    "Configurar una VPN de sitio a sitio como respaldo o usar circuitos redundantes",
-   "Usar un solo circuito"
+   "Usar solo un circuito"
   ],
   "opts_en": [
-   "Delete the gateway",
-   "Disable BGP",
+   "Delete the ExpressRoute gateway",
+   "Disable BGP on the circuit",
    "Configure a site-to-site VPN as backup or use redundant circuits",
-   "Use only one circuit"
+   "Use only a single circuit"
   ],
   "correct": [
    2
@@ -3840,15 +3840,15 @@
   "q_en": "Which feature keeps traffic to Azure PaaS services on the Microsoft backbone and assigns private IPs from your virtual network?",
   "opts_es": [
    "Puntos de conexión privados con Azure Private Link",
-   "Acceso anónimo",
-   "Un sitio web estático",
-   "Puntos de conexión públicos"
+   "Puntos de conexión de servicio",
+   "Un punto de conexión de sitio web estático",
+   "Puntos de conexión públicos con reglas de firewall"
   ],
   "opts_en": [
    "Private endpoints with Azure Private Link",
-   "Anonymous access",
-   "A static website",
-   "Public endpoints"
+   "Service endpoints",
+   "A static website endpoint",
+   "Public endpoints with firewall rules"
   ],
   "correct": [
    0
@@ -4633,15 +4633,15 @@
   "q_es": "¿Qué componente define a quién se notifica o qué acción automatizada se ejecuta cuando se activa una alerta?",
   "q_en": "Which component defines who is notified or what automated action runs when an alert fires?",
   "opts_es": [
-   "Un bloqueo de recursos",
-   "Una etiqueta",
-   "Un grupo de administración",
+   "Una regla de procesamiento de alertas",
+   "Una configuración de diagnóstico",
+   "El ámbito de la regla de alertas",
    "Un grupo de acciones"
   ],
   "opts_en": [
-   "A resource lock",
-   "A tag",
-   "A management group",
+   "An alert processing rule",
+   "A diagnostic setting",
+   "The scope of the alert rule",
    "An action group"
   ],
   "correct": [
@@ -4739,14 +4739,14 @@
   "opts_es": [
    "Azure Monitor Agent con reglas de recopilación de datos",
    "Agente heredado de Log Analytics",
-   "Azure Bastion",
-   "Solo Azure Policy"
+   "El agente de Azure Network Watcher",
+   "El SDK de Application Insights"
   ],
   "opts_en": [
    "Azure Monitor Agent with data collection rules",
    "Legacy Log Analytics agent",
-   "Azure Bastion",
-   "Azure Policy only"
+   "The Azure Network Watcher agent",
+   "The Application Insights SDK"
   ],
   "correct": [
    0
@@ -4763,16 +4763,16 @@
   "q_es": "Un arquitecto quiere un único panel para visualizar métricas y registros de varios servicios de Azure en paneles compartidos. ¿Qué característica de Azure Monitor encaja?",
   "q_en": "An architect wants a single pane to visualize metrics and logs from multiple Azure services in shared dashboards. Which Azure Monitor feature fits?",
   "opts_es": [
-   "Iniciativas de directivas",
-   "Bloqueos de recursos",
+   "Iniciativas de directiva",
+   "Informes de Azure Advisor",
    "Libros",
-   "Etiquetas de costes"
+   "Alertas del registro de actividad"
   ],
   "opts_en": [
    "Policy initiatives",
-   "Resource locks",
+   "Azure Advisor reports",
    "Workbooks",
-   "Cost tags"
+   "Activity log alerts"
   ],
   "correct": [
    2
@@ -4895,16 +4895,16 @@
   "q_es": "Los empleados de una organización asociada necesitan acceder a una aplicación interna con sus propias credenciales corporativas. ¿Qué enfoque debes recomendar?",
   "q_en": "A partner organization's employees need access to an internal app using their own corporate credentials. Which approach should you recommend?",
   "opts_es": [
-   "Compartir la contraseña de administrador",
+   "Crear cuentas locales para cada usuario del socio",
    "Colaboración B2B de Microsoft Entra con usuarios invitados",
-   "Crear cuentas compartidas",
-   "Usar acceso anónimo"
+   "Usar Microsoft Entra Domain Services",
+   "Publicarla con el proxy de aplicaciones y acceso anónimo"
   ],
   "opts_en": [
-   "Share the admin password",
+   "Create local accounts for each partner user",
    "Microsoft Entra B2B collaboration with guest users",
-   "Create shared accounts",
-   "Use anonymous access"
+   "Use Microsoft Entra Domain Services",
+   "Publish it with Application Proxy and anonymous access"
   ],
   "correct": [
    1
@@ -4948,15 +4948,15 @@
   "q_en": "An organization wants single sign-on and passwordless access for its employees across cloud and on-premises apps. Which hybrid approach reduces complexity?",
   "opts_es": [
    "Microsoft Entra Connect con sincronización de hash de contraseñas y SSO de conexión directa o métodos sin contraseña",
-   "Un bosque nuevo por aplicación",
-   "Solo cuentas locales",
-   "Buzones compartidos"
+   "Federación con un proveedor de identidades personalizado por aplicación",
+   "Cuentas locales en cada servidor de aplicaciones",
+   "Solo Microsoft Entra Domain Services"
   ],
   "opts_en": [
    "Microsoft Entra Connect with password hash sync and seamless SSO or passwordless methods",
-   "A new forest per application",
-   "Local accounts only",
-   "Shared mailboxes"
+   "Federation with a custom identity provider per application",
+   "Local accounts on each application server",
+   "Microsoft Entra Domain Services only"
   ],
   "correct": [
    0
@@ -5051,16 +5051,16 @@
   "q_es": "¿Qué solución concede a aplicaciones locales de Windows acceso a recursos de Azure con una entidad de servicio sin almacenar secretos, cuando se ejecutan en servidores habilitados para Azure Arc?",
   "q_en": "Which solution grants on-premises Windows applications access to Azure resources using a service principal without storing secrets, when running on Azure Arc-enabled servers?",
   "opts_es": [
-   "Acceso anónimo",
+   "Acceso anónimo al punto de conexión de Azure",
    "Una identidad administrada para el servidor habilitado para Arc",
    "Una cuenta de administrador compartida",
-   "Claves públicas en scripts"
+   "Claves públicas incrustadas en scripts"
   ],
   "opts_en": [
-   "Anonymous access",
+   "Anonymous access to the Azure endpoint",
    "A managed identity for the Arc-enabled server",
-   "A shared admin account",
-   "Public keys in scripts"
+   "A shared administrator account",
+   "Public keys embedded in scripts"
   ],
   "correct": [
    1
@@ -5387,15 +5387,15 @@
   "q_en": "Which resource organization design is recommended to separate production and non-production workloads with different governance?",
   "opts_es": [
    "Suscripciones separadas bajo grupos de administración con directivas diferentes",
-   "Un grupo de recursos para todo",
-   "Una VM compartida",
-   "Solo etiquetas"
+   "Un grupo de recursos para todas las cargas de trabajo",
+   "Una VM compartida para todos los entornos",
+   "Solo etiquetas en una suscripción"
   ],
   "opts_en": [
    "Separate subscriptions under management groups with different policies",
-   "One resource group for everything",
-   "One shared VM",
-   "Tags only"
+   "One resource group for all workloads",
+   "One shared VM for every environment",
+   "Tags only on one subscription"
   ],
   "correct": [
    0
@@ -5566,15 +5566,15 @@
   "q_en": "A read-heavy reporting workload slows down the primary Azure SQL Database. Which feature offloads read-only queries?",
   "opts_es": [
    "Escalabilidad horizontal de lectura con réplicas secundarias legibles",
-   "Etiquetas",
+   "Consulta elástica",
    "Enmascaramiento dinámico de datos",
-   "Bloqueo de recursos"
+   "Ajuste automático"
   ],
   "opts_en": [
    "Read scale-out with readable secondary replicas",
-   "Tags",
+   "Elastic query",
    "Dynamic data masking",
-   "Resource lock"
+   "Automatic tuning"
   ],
   "correct": [
    0
@@ -5591,16 +5591,16 @@
   "q_es": "Una aplicación SaaS multiinquilino debe escalar horizontalmente entre muchas bases de datos por inquilino. ¿Qué patrón y herramientas admite Azure SQL?",
   "q_en": "A multitenant SaaS app must scale out across many databases by tenant. Which pattern and tooling does Azure SQL support?",
   "opts_es": [
-   "Azure Backup",
-   "Table Storage",
+   "Azure Backup para cada base de datos de inquilino",
+   "Azure Table Storage con una sola partición",
    "Particionamiento horizontal (sharding) con herramientas de bases de datos elásticas y grupos elásticos",
-   "Solo una única VM enorme"
+   "Una sola VM grande con SQL Server"
   ],
   "opts_en": [
-   "Azure Backup",
-   "Table Storage",
+   "Azure Backup for each tenant database",
+   "Azure Table Storage with one partition",
    "Sharding with elastic database tools and elastic pools",
-   "A single huge VM only"
+   "A single large VM running SQL Server"
   ],
   "correct": [
    2
@@ -5822,16 +5822,16 @@
   "q_es": "Una empresa debe impedir que nadie, incluidos los administradores, modifique o elimine registros de cumplimiento durante 7 años. ¿Qué característica de Blob lo cumple?",
   "q_en": "A company must prevent anyone, including administrators, from modifying or deleting compliance records for 7 years. Which Blob feature meets this?",
   "opts_es": [
-   "Contenedores públicos",
-   "Solo eliminación temporal",
+   "Contenedores públicos con tokens SAS",
+   "Solo eliminación temporal de blobs",
    "Almacenamiento inmutable con una directiva de retención basada en el tiempo (WORM)",
-   "Nivel de acceso frecuente"
+   "El nivel de acceso frecuente"
   ],
   "opts_en": [
-   "Public containers",
-   "Soft delete only",
+   "Public containers with SAS tokens",
+   "Blob soft delete only",
    "Immutable storage with a time-based retention policy (WORM)",
-   "Hot tier"
+   "The hot access tier"
   ],
   "correct": [
    2
@@ -5997,15 +5997,15 @@
   "q_en": "Which service provides a cloud data warehouse for large-scale SQL analytics with separated storage and compute?",
   "opts_es": [
    "Azure Synapse Analytics (grupo de SQL dedicado) o Fabric Warehouse",
-   "Azure Key Vault",
-   "Azure Queue Storage",
-   "Azure Bastion"
+   "Azure Cosmos DB",
+   "Azure Database for MySQL",
+   "Azure Cache for Redis"
   ],
   "opts_en": [
    "Azure Synapse Analytics (dedicated SQL pool) or Fabric Warehouse",
-   "Azure Key Vault",
-   "Azure Queue Storage",
-   "Azure Bastion"
+   "Azure Cosmos DB",
+   "Azure Database for MySQL",
+   "Azure Cache for Redis"
   ],
   "correct": [
    0
@@ -6144,14 +6144,14 @@
   "q_es": "¿Qué permite hacer un plan de recuperación en Azure Site Recovery?",
   "q_en": "A recovery plan in Azure Site Recovery allows you to do what?",
   "opts_es": [
-   "Crear presupuestos",
-   "Eliminar las VM principales",
-   "Cambiar nombres DNS de forma permanente",
+   "Crear presupuestos para las VM recuperadas",
+   "Eliminar las VM principales tras la conmutación por error",
+   "Cambiar los nombres DNS de forma permanente",
    "Agrupar VM y ordenar su conmutación por error, agregar scripts y pasos manuales para una recuperación orquestada"
   ],
   "opts_en": [
-   "Create budgets",
-   "Delete the primary VMs",
+   "Create budgets for the recovered VMs",
+   "Delete the primary VMs after failover",
    "Change DNS names permanently",
    "Group VMs and order their failover, add scripts and manual steps for an orchestrated recovery"
   ],
@@ -6297,16 +6297,16 @@
   "q_es": "¿Qué proporciona una región emparejada para los servicios de Azure?",
   "q_en": "What does a paired region provide for Azure services?",
   "opts_es": [
-   "Licencias gratuitas",
-   "Una suscripción compartida",
+   "Licencias de software gratuitas en ambas regiones",
+   "Una suscripción compartida entre ambas regiones",
    "Recuperación priorizada y algunos destinos de replicación con redundancia geográfica entre dos regiones de la misma geografía",
-   "Ahorro de costes automático"
+   "Ahorro de costes automático para servicios emparejados"
   ],
   "opts_en": [
-   "Free licenses",
-   "A shared subscription",
+   "Free software licenses in both regions",
+   "A shared subscription across both regions",
    "Prioritized recovery and some geo-redundant replication targets between two regions in the same geography",
-   "Automatic cost savings"
+   "Automatic cost savings for paired services"
   ],
   "correct": [
    2
@@ -6325,14 +6325,14 @@
   "opts_es": [
    "Basic Load Balancer",
    "Standard Load Balancer con front-end con redundancia de zona",
-   "Una única IP pública en una VM",
-   "Sin equilibrador de carga"
+   "Una sola IP pública asignada a una VM",
+   "Solo un registro DNS round-robin"
   ],
   "opts_en": [
    "Basic Load Balancer",
    "Standard Load Balancer with zone-redundant frontend",
-   "A single public IP on a VM",
-   "No load balancer"
+   "A single public IP assigned to a VM",
+   "A DNS round-robin record only"
   ],
   "correct": [
    1
@@ -6349,16 +6349,16 @@
   "q_es": "Un nivel web con estado debe conservar las sesiones durante la conmutación entre zonas. ¿Qué diseño ayuda?",
   "q_en": "A stateful web tier must keep sessions during failover between zones. What design helps?",
   "opts_es": [
-   "Almacenar las sesiones en el disco local de cada VM",
-   "Deshabilitar las sesiones",
+   "Guardar las sesiones en el disco local de cada VM",
+   "Deshabilitar las sesiones de la aplicación",
    "Externalizar el estado de sesión a una caché con redundancia de zona como Azure Cache for Redis",
-   "Usar una única VM"
+   "Usar una sola VM para el nivel web"
   ],
   "opts_en": [
    "Store sessions on each VM's local disk",
-   "Disable sessions",
+   "Disable sessions for the application",
    "Externalize session state to a zone-redundant cache such as Azure Cache for Redis",
-   "Use a single VM"
+   "Use a single VM for the web tier"
   ],
   "correct": [
    2
@@ -6376,13 +6376,13 @@
   "q_en": "Which Azure SQL Managed Instance feature provides geo-replication of the instance to another region with failover groups?",
   "opts_es": [
    "Bloqueos de recursos",
-   "Sin servidor",
+   "Nivel de proceso sin servidor",
    "Grupos de conmutación por error",
    "Grupos elásticos"
   ],
   "opts_en": [
    "Resource locks",
-   "Serverless",
+   "Serverless compute tier",
    "Failover groups",
    "Elastic pools"
   ],
@@ -6865,14 +6865,14 @@
   "opts_es": [
    "Una canalización de CI/CD como GitHub Actions o Azure Pipelines",
    "Cargas manuales por FTP",
-   "Bloqueos de recursos",
-   "Archivos adjuntos de correo"
+   "Copiar archivos con una unidad USB",
+   "Archivos adjuntos de correo con el código"
   ],
   "opts_en": [
    "A CI/CD pipeline such as GitHub Actions or Azure Pipelines",
    "Manual FTP uploads",
-   "Resource locks",
-   "Email attachments"
+   "Copying files with a USB drive",
+   "Email attachments with the code"
   ],
   "correct": [
    0
@@ -7094,15 +7094,15 @@
   "q_es": "¿Qué es una consideración clave antes de migrar una base de datos mediante migración en línea con DMS?",
   "q_en": "What is a key consideration before migrating a database using online migration with DMS?",
   "opts_es": [
-   "Deshabilitar las redes",
-   "Eliminar el origen de inmediato",
-   "Omitir la evaluación",
+   "Deshabilitar las redes en la base de datos de origen",
+   "Eliminar de inmediato la base de datos de origen",
+   "Omitir la fase de evaluación",
    "Asegurar que se admite la replicación continua y planificar la ventana de transición"
   ],
   "opts_en": [
-   "Disable networking",
-   "Delete the source immediately",
-   "Skip assessment",
+   "Disable networking on the source database",
+   "Delete the source database immediately",
+   "Skip the assessment phase",
    "Ensure continuous replication is supported and plan the cutover window"
   ],
   "correct": [
@@ -7192,14 +7192,14 @@
   "opts_es": [
    "Emparejamiento global de redes virtuales",
    "Emparejamiento de IP públicas",
-   "Un bloqueo de recursos",
-   "Azure Policy"
+   "Puntos de conexión de servicio entre regiones",
+   "Asignaciones de Azure Policy"
   ],
   "opts_en": [
    "Global virtual network peering",
    "Public IP peering",
-   "A resource lock",
-   "Azure Policy"
+   "Service endpoints between regions",
+   "Azure Policy assignments"
   ],
   "correct": [
    0
@@ -7473,16 +7473,16 @@
   "q_es": "Un arquitecto debe correlacionar registros de VM, App Service y Azure SQL en una única consulta. ¿Qué diseño lo permite?",
   "q_en": "An architect must correlate logs from VMs, App Service and Azure SQL in a single query. Which design supports this?",
   "opts_es": [
-   "Mantener los registros en archivos locales separados",
-   "Usar solo etiquetas",
+   "Mantener los registros en archivos locales separados por servicio",
+   "Usar solo etiquetas para correlacionar eventos",
    "Enviar todos los registros de recursos al mismo área de trabajo de Log Analytics y usar combinaciones KQL",
-   "Enviar cada registro por correo"
+   "Enviar cada registro por correo al arquitecto"
   ],
   "opts_en": [
-   "Keep logs in separate local files",
-   "Use only tags",
+   "Keep logs in separate local files per service",
+   "Use only tags to correlate events",
    "Send all resource logs to the same Log Analytics workspace and use KQL joins",
-   "Email each log"
+   "Email each log to the architect"
   ],
   "correct": [
    2
@@ -7502,13 +7502,13 @@
    "Análisis de costes",
    "Comprobación de flujo IP y solución de problemas de conexión",
    "Corrección de directivas",
-   "Azure Backup"
+   "Informes de copias de seguridad"
   ],
   "opts_en": [
    "Cost analysis",
    "IP flow verify and connection troubleshoot",
    "Policy remediation",
-   "Azure Backup"
+   "Backup reports"
   ],
   "correct": [
    1
@@ -7551,15 +7551,15 @@
   "q_es": "¿Qué característica de Entra debe recomendar un arquitecto para reducir los privilegios de administrador permanentes en las suscripciones de Azure?",
   "q_en": "Which Entra feature should an architect recommend to reduce standing administrator privileges for Azure subscriptions?",
   "opts_es": [
-   "Asignaciones permanentes de Propietario",
-   "Deshabilitar MFA",
-   "Cuentas compartidas",
+   "Asignaciones permanentes de propietario para administradores",
+   "Deshabilitar la MFA de los administradores",
+   "Cuentas de administrador compartidas",
    "Privileged Identity Management con asignaciones elegibles"
   ],
   "opts_en": [
-   "Permanent Owner assignments",
-   "Disabling MFA",
-   "Shared accounts",
+   "Permanent Owner assignments for administrators",
+   "Disabling MFA for administrators",
+   "Shared administrator accounts",
    "Privileged Identity Management with eligible assignments"
   ],
   "correct": [
@@ -7578,15 +7578,15 @@
   "q_en": "Which Azure construct is the boundary for billing and many service limits, and the typical unit for separating environments?",
   "opts_es": [
    "Una suscripción",
-   "Una VM",
+   "Una máquina virtual",
    "Una subred",
-   "Una etiqueta"
+   "Una etiqueta de recurso"
   ],
   "opts_en": [
    "A subscription",
-   "A VM",
+   "A virtual machine",
    "A subnet",
-   "A tag"
+   "A resource tag"
   ],
   "correct": [
    0
@@ -7605,13 +7605,13 @@
   "opts_es": [
    "Bloqueos de recursos",
    "Solo etiquetas",
-   "Presupuestos",
+   "Presupuestos con alertas",
    "Tareas de corrección para directivas DeployIfNotExists y Modify"
   ],
   "opts_en": [
    "Resource locks",
    "Tags only",
-   "Budgets",
+   "Budgets with alerts",
    "Remediation tasks for DeployIfNotExists and Modify policies"
   ],
   "correct": [
@@ -7958,15 +7958,15 @@
   "q_es": "¿Qué debes configurar para probar regularmente un plan de recuperación ante desastres para cargas híbridas con un impacto mínimo?",
   "q_en": "What should you configure to test a disaster recovery plan for hybrid workloads regularly with minimal impact?",
   "opts_es": [
-   "Deshabilitar la supervisión",
-   "Sin pruebas",
-   "Eliminar réplicas",
+   "Deshabilitar la supervisión durante el simulacro",
+   "No probar hasta que ocurra una interrupción real",
+   "Eliminar las réplicas antes de probar",
    "Simulacros de DR programados con conmutaciones por error de prueba de Site Recovery"
   ],
   "opts_en": [
-   "Disable monitoring",
-   "No testing",
-   "Delete replicas",
+   "Disable monitoring during the drill",
+   "Skip testing until a real outage",
+   "Delete replicas before testing",
    "Scheduled DR drills using Site Recovery test failovers"
   ],
   "correct": [
@@ -8011,15 +8011,15 @@
   "q_en": "Which design choice shortens RTO for a web app by keeping a scaled-down copy running in a secondary region?",
   "opts_es": [
    "Una estrategia de DR de espera caliente / luz piloto",
-   "Reconstrucción manual",
-   "Solo copia de seguridad",
-   "Sin DR"
+   "Una reconstrucción manual tras una interrupción",
+   "Solo copias de seguridad, restauradas bajo demanda",
+   "Sin plan de DR, confiando solo en las zonas"
   ],
   "opts_en": [
    "A warm standby / pilot light DR strategy",
-   "Manual rebuild",
-   "Backup only",
-   "No DR"
+   "A manual rebuild after an outage",
+   "Backups only, restored on demand",
+   "No DR plan, relying on zones only"
   ],
   "correct": [
    0
@@ -8036,15 +8036,15 @@
   "q_es": "¿Qué principio de diseño de SLA de Azure debes seguir para aumentar la disponibilidad de un servicio que depende de varios componentes?",
   "q_en": "Which Azure SLA design principle should you follow to increase availability of a service that depends on multiple components?",
   "opts_es": [
-   "Agregar más dependencias en serie",
-   "Usar una única instancia",
-   "Ignorar los SLA",
+   "Añadir más dependencias en serie",
+   "Usar una sola instancia por simplicidad",
+   "Ignorar los SLA de los servicios dependientes",
    "Agregar redundancia a los componentes más débiles y minimizar las dependencias en serie"
   ],
   "opts_en": [
    "Add more serial dependencies",
-   "Use a single instance",
-   "Ignore SLAs",
+   "Use a single instance for simplicity",
+   "Ignore SLAs of dependent services",
    "Add redundancy to the weakest components and minimize serial dependencies"
   ],
   "correct": [
@@ -8062,15 +8062,15 @@
   "q_es": "Azure Traffic Manager está configurado con enrutamiento por prioridad. ¿Qué ocurre cuando falla el sondeo de estado del punto de conexión principal?",
   "q_en": "Azure Traffic Manager is configured with priority routing. What happens when the primary endpoint health probe fails?",
   "opts_es": [
-   "Se elimina el punto de conexión",
+   "Se elimina el punto de conexión principal",
    "Se descarta todo el tráfico",
-   "Se reinicia una VM",
+   "Se reinicia una VM de la región principal",
    "Las respuestas DNS dirigen a los clientes al siguiente punto de conexión en buen estado"
   ],
   "opts_en": [
-   "The endpoint is deleted",
+   "The primary endpoint is deleted",
    "All traffic is dropped",
-   "A VM is rebooted",
+   "A VM in the primary region is rebooted",
    "DNS responses direct clients to the next healthy endpoint"
   ],
   "correct": [
