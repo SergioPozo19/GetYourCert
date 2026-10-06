@@ -34,15 +34,15 @@
   "q_es": "¿Qué control de acceso condicional usarías para exigir MFA resistente al phishing en la administración de Azure?",
   "q_en": "Which Conditional Access control would you use to require phishing-resistant MFA for Azure management?",
   "opts_es": [
-   "Exigir solo el control de concesión de dispositivo compatible",
-   "Frecuencia de inicio de sesión de 1 hora para todas las aplicaciones",
-   "Fortaleza de autenticación dirigida a la aplicación Microsoft Azure Management",
+   "Exigir solo el control de concesión de dispositivo compatible, para todas las apps",
+   "Frecuencia de inicio de sesión de 1 hora para todas las apps y roles de administrador",
+   "Intensidad de autenticación dirigida a Microsoft Azure Management",
    "Bloquear las aplicaciones cliente de autenticación heredada"
   ],
   "opts_en": [
-   "Require a compliant device grant control only",
-   "Sign-in frequency of 1 hour for all apps",
-   "Authentication strength targeting the Microsoft Azure Management app",
+   "Require a compliant device grant control only, for all cloud apps",
+   "Sign-in frequency of 1 hour for all apps and all administrator roles",
+   "Authentication strength targeting Microsoft Azure Management",
    "Block legacy authentication client apps"
   ],
   "correct": [
@@ -112,14 +112,14 @@
   "q_es": "¿Qué método de autenticación es resistente al phishing y se puede exigir a los administradores?",
   "q_en": "Which authentication method is phishing-resistant and can be required for administrators?",
   "opts_es": [
-   "Preguntas de seguridad",
-   "Códigos SMS",
+   "Preguntas de seguridad con correo de respaldo",
+   "Códigos de un solo uso por SMS al teléfono",
    "Llamadas de voz",
    "Claves de seguridad FIDO2 o passkeys"
   ],
   "opts_en": [
-   "Security questions",
-   "SMS codes",
+   "Security questions with a backup email",
+   "SMS one-time codes sent to a phone",
    "Voice calls",
    "FIDO2 security keys or passkeys"
   ],
@@ -691,15 +691,15 @@
   "q_es": "¿Qué configuración de la cuenta de almacenamiento impide el acceso de lectura público anónimo a los blobs a nivel de cuenta?",
   "q_en": "Which storage account setting prevents anonymous public read access to blobs at the account level?",
   "opts_es": [
-   "Deshabilitar «Permitir acceso anónimo a blobs»",
-   "Habilitar contenedores públicos",
-   "Habilitar sitio web estático",
+   "Deshabilitar 'Permitir acceso anónimo a blobs'",
+   "Habilitar contenedores públicos con SAS de solo lectura",
+   "Habilitar sitio web estático con un dominio personalizado",
    "Usar claves de cuenta en el código"
   ],
   "opts_en": [
    "Disable 'Allow Blob anonymous access'",
-   "Enable public containers",
-   "Enable static website",
+   "Enable public containers with read-only SAS",
+   "Enable static website with a custom domain",
    "Use account keys in code"
   ],
   "correct": [
@@ -943,15 +943,15 @@
   "q_es": "¿Qué configuración elimina la autenticación SQL y permite que solo las identidades de Microsoft Entra inicien sesión en Azure SQL?",
   "q_en": "Which configuration removes SQL authentication and allows only Microsoft Entra identities to sign in to Azure SQL?",
   "opts_es": [
-   "Permitir todos los inicios de sesión SQL",
+   "Permitir todos los inicios de sesión SQL con contraseñas seguras",
    "Autenticación solo de Microsoft Entra",
-   "Acceso anónimo",
+   "Acceso anónimo restringido por reglas de firewall",
    "Contraseña sa compartida"
   ],
   "opts_en": [
-   "Allow all SQL logins",
+   "Allow all SQL logins with strong passwords",
    "Microsoft Entra-only authentication",
-   "Anonymous access",
+   "Anonymous access restricted by firewall rules",
    "Shared sa password"
   ],
   "correct": [
@@ -1383,14 +1383,14 @@
   "q_en": "Which Network Watcher tool shows all effective security rules applied to a network interface across NSGs?",
   "opts_es": [
    "Reglas de seguridad efectivas",
-   "Azure Advisor",
-   "Service Health",
+   "Puntuación de seguridad de Azure Advisor",
+   "Vista de incidentes de Service Health",
    "Análisis de costes"
   ],
   "opts_en": [
    "Effective security rules",
-   "Azure Advisor",
-   "Service Health",
+   "Azure Advisor security score",
+   "Service Health incident view",
    "Cost analysis"
   ],
   "correct": [
@@ -1637,16 +1637,16 @@
   "q_es": "¿Para qué se usa Microsoft Entra Agent ID?",
   "q_en": "What is Microsoft Entra Agent ID used for?",
   "opts_es": [
-   "Sustituir el acceso condicional de los usuarios humanos",
-   "Almacenar los prompts de los agentes y los pesos del modelo",
+   "Sustituir el acceso condicional para usuarios humanos en todo el inquilino",
+   "Almacenar prompts de agentes, pesos del modelo e historial de conversación",
    "Facturación y asignación de costes del uso de agentes",
-   "Proporcionar identidades y controles de acceso para agentes de IA de modo que se puedan gobernar como otras identidades"
+   "Dar a los agentes de IA identidades y controles de acceso para gobernarlos"
   ],
   "opts_en": [
-   "Replacing Conditional Access for human users",
-   "Storing agent prompts and model weights",
+   "Replacing Conditional Access for human users in the whole tenant",
+   "Storing agent prompts, model weights and conversation history",
    "Billing and cost allocation for agent usage",
-   "Providing identities and access controls for AI agents so they can be governed like other identities"
+   "Giving AI agents identities and access controls to govern them"
   ],
   "correct": [
    3
@@ -1875,15 +1875,15 @@
   "q_en": "Which Azure Bastion SKU adds features such as native client support and shareable links for production use?",
   "opts_es": [
    "Estándar (o Premium)",
-   "Solo Basic",
+   "Solo Básico, con una IP pública",
    "Sin SKU",
-   "Solo Developer"
+   "Solo Desarrollador, por usuario"
   ],
   "opts_en": [
    "Standard (or Premium)",
-   "Basic only",
+   "Basic only, with a public IP",
    "No SKU",
-   "Developer only"
+   "Developer only, per user"
   ],
   "correct": [
    0
@@ -1926,15 +1926,15 @@
   "q_es": "¿Qué servicio permite proyectar servidores locales o multinube en Azure para que Defender for Servers y Azure Policy puedan administrarlos?",
   "q_en": "Which service lets you project on-premises or multicloud servers into Azure so Defender for Servers and Azure Policy can manage them?",
   "opts_es": [
-   "Azure Front Door",
+   "Azure Front Door con grupos de origen",
    "Servidores habilitados para Azure Arc",
-   "Azure Backup",
+   "Azure Backup para servidores locales",
    "Azure Bastion"
   ],
   "opts_en": [
-   "Azure Front Door",
+   "Azure Front Door with origin groups",
    "Azure Arc-enabled servers",
-   "Azure Backup",
+   "Azure Backup for on-premises servers",
    "Azure Bastion"
   ],
   "correct": [
@@ -1978,15 +1978,15 @@
   "q_es": "¿Qué hace el análisis sin agente de VM en Defender for Servers?",
   "q_en": "What does agentless scanning for VMs in Defender for Servers do?",
   "opts_es": [
-   "Instala automáticamente el agente de Log Analytics en cada VM",
-   "Analiza instantáneas de disco de la VM en busca de vulnerabilidades, secretos y malware sin instalar un agente",
-   "Replica las VM en una región secundaria para recuperación ante desastres",
+   "Instala automáticamente el agente de Log Analytics en cada VM al implementarla",
+   "Examina instantáneas de discos de VM en busca de vulnerabilidades, secretos y malware",
+   "Replica las VM a una región secundaria para analizarlas para recuperación ante desastres",
    "Aplica las revisiones del SO que faltan durante una ventana de mantenimiento"
   ],
   "opts_en": [
-   "Installs the Log Analytics agent on every VM automatically",
-   "Scans VM disk snapshots for vulnerabilities, secrets and malware without installing an agent",
-   "Replicates VMs to a secondary region for disaster recovery",
+   "Installs the Log Analytics agent on every VM automatically at deployment time",
+   "Scans VM disk snapshots for vulnerabilities, secrets and malware",
+   "Replicates VMs to a secondary region so they can be scanned for disaster recovery",
    "Applies missing OS patches during a maintenance window"
   ],
   "correct": [
@@ -2030,16 +2030,16 @@
   "q_es": "¿Qué servicio audita o aplica la configuración del sistema operativo, como las directivas de contraseñas, dentro de servidores de Azure y habilitados para Arc?",
   "q_en": "Which service audits or enforces operating system settings, such as password policies, inside Azure and Arc-enabled servers?",
   "opts_es": [
-   "Cuentas Run As de Azure Automation",
-   "Azure Machine Configuration (configuración de invitado) con Azure Policy",
+   "Cuentas de ejecución de Azure Automation con scripts programados",
+   "Azure Machine Configuration con Azure Policy",
    "Azure Update Manager",
-   "Análisis de vulnerabilidades de Defender for Servers"
+   "Examen de vulnerabilidades de Defender for Servers con corrección automática"
   ],
   "opts_en": [
-   "Azure Automation Run As accounts",
-   "Azure Machine Configuration (guest configuration) with Azure Policy",
+   "Azure Automation Run As accounts with scheduled scripts",
+   "Azure Machine Configuration with Azure Policy",
    "Azure Update Manager",
-   "Defender for Servers vulnerability scan"
+   "Defender for Servers vulnerability scan with auto-fix"
   ],
   "correct": [
    1
@@ -2513,15 +2513,15 @@
   "q_es": "¿Qué capacidad ofrece la evaluación de vulnerabilidades de las VM de Azure mediante Microsoft Defender Vulnerability Management?",
   "q_en": "Which capability provides vulnerability assessment for Azure VMs using Microsoft Defender Vulnerability Management?",
   "opts_es": [
-   "Un analizador de Qualys implementado manualmente en cada VM",
-   "Asignaciones de configuración de invitado de Azure Policy",
-   "La solución de evaluación de vulnerabilidades incluida con Defender for Servers",
+   "Un escáner de Qualys que implementas y licencias manualmente en cada VM",
+   "Asignaciones de configuración de invitado de Azure Policy con una base de CVE",
+   "La evaluación de vulnerabilidades incluida con Defender for Servers",
    "Evaluación de Azure Update Manager"
   ],
   "opts_en": [
-   "A Qualys scanner deployed manually on every VM",
-   "Azure Policy guest configuration assignments",
-   "The vulnerability assessment solution included with Defender for Servers",
+   "A Qualys scanner that you deploy and license manually on every VM",
+   "Azure Policy guest configuration assignments with a CVE baseline",
+   "The vulnerability assessment included with Defender for Servers",
    "Azure Update Manager assessment"
   ],
   "correct": [
@@ -2940,15 +2940,15 @@
   "q_es": "¿Cómo se administran normalmente el acceso y los roles de Security Copilot?",
   "q_en": "How are access and roles for Security Copilot typically managed?",
   "opts_es": [
-   "Cualquier persona del inquilino puede usarlo sin un rol",
-   "Solo mediante asignaciones de propietario de la suscripción de Azure",
-   "Mediante los roles de Security Copilot y los permisos de los productos de Microsoft subyacentes del usuario",
+   "Cualquiera del inquilino puede usarlo sin rol ni licencia asignada",
+   "Solo mediante asignaciones del rol Propietario de la suscripción en cada recurso",
+   "Roles de Security Copilot y los permisos de producto del usuario",
    "Mediante cuentas de invitado agregadas al área de trabajo"
   ],
   "opts_en": [
-   "Anyone in the tenant can use it without a role",
-   "Only through Azure subscription Owner assignments",
-   "Through Security Copilot roles and the user's underlying Microsoft product permissions",
+   "Anyone in the tenant can use it without a role or any license assigned",
+   "Only through Azure subscription Owner role assignments on each resource",
+   "Security Copilot roles plus the user's product permissions",
    "Through guest accounts invited to the workspace"
   ],
   "correct": [
@@ -2967,16 +2967,16 @@
   "q_es": "¿Qué proporcionan los complementos de Security Copilot?",
   "q_en": "What do plugins in Security Copilot provide?",
   "opts_es": [
-   "Acceso a datos y acciones de productos de seguridad de Microsoft y de terceros",
-   "Hardware dedicado para ejecutar modelos localmente",
+   "Datos y acciones de herramientas de seguridad de Microsoft y terceros",
+   "Hardware dedicado para ejecutar los modelos de lenguaje localmente",
    "Un servicio DNS que resuelve los puntos de conexión de los productos",
-   "Un inquilino independiente para cada producto conectado"
+   "Un inquilino independiente para cada producto conectado y sus administradores"
   ],
   "opts_en": [
-   "Access to data and actions from Microsoft and third-party security products",
-   "Dedicated hardware for running models locally",
+   "Data and actions from Microsoft and third-party security tools",
+   "Dedicated hardware for running the language models locally on-premises",
    "A DNS service that resolves product endpoints",
-   "A separate tenant for each connected product"
+   "A separate tenant for each connected product and its administrators"
   ],
   "correct": [
    0
@@ -2994,16 +2994,16 @@
   "q_es": "¿Para qué están diseñados los agentes de Security Copilot?",
   "q_en": "What are Security Copilot agents designed to do?",
   "opts_es": [
-   "Automatizar tareas de seguridad como la clasificación y la investigación bajo la supervisión de un administrador",
-   "Sustituir el proveedor de identidades del inquilino",
+   "Automatizar tareas como triaje e investigación bajo supervisión del administrador",
+   "Sustituir el proveedor de identidad del inquilino por un directorio basado en IA",
    "Administrar las zonas DNS de la organización",
-   "Imprimir informes ejecutivos semanales"
+   "Imprimir informes ejecutivos semanales y enviarlos por correo a la dirección"
   ],
   "opts_en": [
-   "Automate security tasks such as triage and investigation under administrator oversight",
-   "Replace the identity provider of the tenant",
+   "Automate tasks such as triage and investigation under admin oversight",
+   "Replace the identity provider of the tenant with an AI-driven directory",
    "Manage the DNS zones of the organization",
-   "Print weekly executive summary reports"
+   "Print weekly executive summary reports and email them to the board"
   ],
   "correct": [
    0
@@ -4096,15 +4096,15 @@
   "q_es": "¿Cuál es el beneficio de un pase de acceso temporal para incorporar a un nuevo administrador con métodos sin contraseña?",
   "q_en": "What is the benefit of a Temporary Access Pass for onboarding a new admin with passwordless methods?",
   "opts_es": [
-   "Reemplaza permanentemente la MFA de la cuenta",
-   "Permite que el usuario registre passkeys o Authenticator sin una credencial existente",
-   "Elimina los métodos de autenticación existentes del usuario",
+   "Sustituye permanentemente la MFA de la cuenta, así que no se necesita otro método",
+   "El usuario puede registrar claves de acceso o Authenticator sin una credencial",
+   "Quita los métodos de autenticación existentes del usuario antes de la incorporación",
    "Concede el rol de administrador de autenticación"
   ],
   "opts_en": [
-   "It permanently replaces MFA for the account",
-   "It lets the user register passkeys or Authenticator without an existing credential",
-   "It removes the user's existing authentication methods",
+   "It permanently replaces MFA for the account so no other method is needed",
+   "The user can register passkeys or Authenticator without a credential",
+   "It removes the user's existing authentication methods before onboarding",
    "It grants the Authentication Administrator role"
   ],
   "correct": [
@@ -4174,16 +4174,16 @@
   "q_es": "¿Qué fortaleza de autenticación exigirías a los administradores que acceden a recursos sensibles?",
   "q_en": "Which authentication strength would you require for administrators accessing sensitive resources?",
   "opts_es": [
-   "Sin MFA",
+   "MFA por código SMS con dispositivos recordados",
    "MFA resistente al phishing",
    "Solo SMS",
-   "Solo contraseña"
+   "Solo contraseña con rotación frecuente"
   ],
   "opts_en": [
-   "No MFA",
+   "MFA by SMS code with remembered devices",
    "Phishing-resistant MFA",
    "SMS only",
-   "Password only"
+   "Password only with frequent rotation"
   ],
   "correct": [
    1
@@ -4324,15 +4324,15 @@
   "q_es": "¿Cómo debe una aplicación que se ejecuta en App Service leer un secreto de Key Vault sin almacenar credenciales?",
   "q_en": "How should an application running on App Service read a secret from Key Vault without storing credentials?",
   "opts_es": [
-   "Guardar la clave de acceso del almacén en la configuración de la aplicación",
-   "Compartir una contraseña de administrador con la aplicación",
-   "Usar una identidad administrada y una referencia a Key Vault con acceso RBAC",
+   "Guardar la clave de acceso del almacén en la configuración y rotarla cada mes",
+   "Compartir una contraseña de administrador con la app mediante una ranura",
+   "Usar una identidad administrada y una referencia de Key Vault con RBAC",
    "Incrustar el secreto en el código de la aplicación"
   ],
   "opts_en": [
-   "Store the vault access key in app settings",
-   "Share an administrator password with the app",
-   "Use a managed identity and a Key Vault reference with RBAC access",
+   "Store the vault access key in app settings and rotate it every month",
+   "Share an administrator password with the app through a deployment slot",
+   "Use a managed identity and a Key Vault reference with RBAC",
    "Embed the secret in the application code"
   ],
   "correct": [
@@ -4350,16 +4350,16 @@
   "q_es": "¿Qué nivel de Key Vault admite claves protegidas por HSM?",
   "q_en": "Which Key Vault tier supports HSM-protected keys?",
   "opts_es": [
-   "Nivel gratuito",
-   "Solo Estándar",
+   "Nivel gratuito con claves de software",
+   "Solo el nivel Estándar",
    "Premium (y Managed HSM)",
-   "Ninguno"
+   "Ninguno, las claves HSM requieren una VM"
   ],
   "opts_en": [
-   "Free tier",
-   "Standard only",
+   "Free tier with software keys",
+   "Standard tier only",
    "Premium (and Managed HSM)",
-   "None"
+   "None, HSM keys need a VM"
   ],
   "correct": [
    2
@@ -4402,16 +4402,16 @@
   "q_es": "¿Qué configuración permite que los servicios de Azure de confianza omitan el firewall de Key Vault?",
   "q_en": "Which setting allows trusted Azure services to bypass the Key Vault firewall?",
   "opts_es": [
-   "Permitir el acceso público desde todas las redes",
+   "Permitir acceso público desde todas las redes con una regla de etiqueta de servicio",
    "Permitir que los servicios de Microsoft de confianza omitan este firewall",
    "Deshabilitar el acceso desde todas las redes",
-   "Habilitar solo un punto de conexión privado"
+   "Habilitar solo un punto de conexión privado, sin otras excepciones de red"
   ],
   "opts_en": [
-   "Allow public access from all networks",
+   "Allow public access from all networks with a service tag rule",
    "Allow trusted Microsoft services to bypass this firewall",
    "Disable access from all networks",
-   "Enable a private endpoint only"
+   "Enable a private endpoint only, with no other network exceptions"
   ],
   "correct": [
    1
@@ -4454,15 +4454,15 @@
   "q_es": "¿Cuál es una forma recomendada de auditar todas las operaciones de un Key Vault?",
   "q_en": "What is a recommended way to audit all operations on a Key Vault?",
   "opts_es": [
-   "Revisar solo las entradas del registro de actividad de Azure",
-   "Habilitar la configuración de diagnóstico para enviar registros AuditEvent a Log Analytics",
-   "Habilitar la eliminación temporal y la protección contra purga",
+   "Revisar solo el registro de actividad de Azure, que lista cada lectura de secretos",
+   "Enviar los registros AuditEvent a Log Analytics con la configuración de diagnóstico",
+   "Habilitar eliminación temporal y protección de purga para registrar cada cambio",
    "Asignar Lector de Key Vault a los auditores"
   ],
   "opts_en": [
-   "Review Azure Activity log entries only",
-   "Enable diagnostic settings to send AuditEvent logs to Log Analytics",
-   "Enable soft delete and purge protection",
+   "Review Azure Activity log entries only, which list every secret read",
+   "Send AuditEvent logs to Log Analytics via diagnostic settings",
+   "Enable soft delete and purge protection so every change is recorded",
    "Assign Key Vault Reader to the auditors"
   ],
   "correct": [
@@ -4859,16 +4859,16 @@
   "q_es": "¿Qué capacidad de Defender for Storage detecta el acceso desde nodos de salida de Tor o patrones inusuales de exfiltración de datos?",
   "q_en": "Which Defender for Storage capability detects access from Tor exit nodes or unusual data exfiltration patterns?",
   "opts_es": [
-   "Sitio web estático",
+   "Registros de hospedaje de sitio web estático",
    "Detección de amenazas mediante la supervisión de actividad",
-   "Replicación de objetos",
-   "Administración del ciclo de vida"
+   "Replicación de objetos entre cuentas",
+   "Reglas de directiva de administración del ciclo de vida en blobs"
   ],
   "opts_en": [
-   "Static website",
+   "Static website hosting logs",
    "Activity monitoring threat detection",
-   "Object replication",
-   "Lifecycle management"
+   "Object replication between accounts",
+   "Lifecycle management policy rules on blobs"
   ],
   "correct": [
    1
@@ -4938,14 +4938,14 @@
   "q_en": "Which Azure Files feature backs up and restores shares using snapshots managed by Azure Backup?",
   "opts_es": [
    "Azure DNS",
-   "Azure Bastion",
-   "Azure Policy",
+   "Grabación de sesiones de Azure Bastion",
+   "Azure Policy con una regla de etiqueta de copia",
    "Azure Backup para Azure Files"
   ],
   "opts_en": [
    "Azure DNS",
-   "Azure Bastion",
-   "Azure Policy",
+   "Azure Bastion session recording",
+   "Azure Policy with a backup tag rule",
    "Azure Backup for Azure Files"
   ],
   "correct": [
@@ -5064,15 +5064,15 @@
   "q_es": "¿Qué característica enmascara valores de columnas sensibles, como direcciones de correo, en los resultados de consultas para usuarios sin privilegios?",
   "q_en": "Which feature masks sensitive column values such as email addresses in query results for non-privileged users?",
   "opts_es": [
-   "TDE",
+   "Cifrado de datos transparente (TDE)",
    "Grupos elásticos",
-   "Auditoría",
+   "Auditoría en una cuenta de almacenamiento",
    "Enmascaramiento dinámico de datos"
   ],
   "opts_en": [
-   "TDE",
+   "Transparent data encryption (TDE)",
    "Elastic pools",
-   "Auditing",
+   "Auditing to a storage account",
    "Dynamic data masking"
   ],
   "correct": [
@@ -5728,15 +5728,15 @@
   "q_es": "¿Por qué es importante aplicar el mínimo privilegio a la identidad de un agente de IA?",
   "q_en": "Why is it important to apply least privilege to an AI agent's identity?",
   "opts_es": [
-   "Solo importa para las cuentas de usuarios humanos",
-   "Un agente con demasiados permisos podría acceder a muchos más datos de los necesarios o modificarlos si se usa mal o se compromete",
-   "Reduce el coste de la inferencia del modelo",
+   "Solo importa para cuentas de usuario humanas que inician sesión de forma interactiva",
+   "Un agente comprometido con permisos amplios podría acceder a muchos más datos",
+   "Reduce el coste de inferencia del modelo al limitar los tokens usados",
    "Es necesario para habilitar el ajuste fino del modelo"
   ],
   "opts_en": [
-   "It only matters for human user accounts",
-   "An over-permissioned agent could access or modify far more data than needed if misused or compromised",
-   "It reduces the cost of model inference",
+   "It only matters for human user accounts that sign in interactively",
+   "A compromised agent with broad rights could reach far more data",
+   "It reduces the cost of model inference by limiting the tokens used",
    "It is required to enable model fine-tuning"
   ],
   "correct": [
@@ -5755,14 +5755,14 @@
   "q_es": "¿Qué vista de Defender for Cloud ayuda a evaluar la posición de seguridad de las cargas de trabajo de IA, como las implementaciones de modelos y los orígenes de datos?",
   "q_en": "Which Defender for Cloud view helps assess security posture across AI workloads such as model deployments and data sources?",
   "opts_es": [
-   "El análisis de costes",
-   "Service Health",
+   "Análisis de costes filtrado por recursos de IA",
+   "Alertas de estado del servicio para regiones de IA",
    "El centro de administración de Teams",
    "El panel de seguridad de datos e IA"
   ],
   "opts_en": [
-   "Cost analysis",
-   "Service health",
+   "Cost analysis filtered by AI resources",
+   "Service health alerts for AI regions",
    "The Teams admin center",
    "The Data and AI security dashboard"
   ],
@@ -5934,14 +5934,14 @@
   "q_es": "¿Qué opción de cifrado de disco de VM cifra los datos en reposo con claves administradas por la plataforma o por el cliente a nivel del servicio de almacenamiento de forma predeterminada?",
   "q_en": "Which VM disk encryption option encrypts data at rest with platform-managed or customer-managed keys at the storage service level by default?",
   "opts_es": [
-   "Sin cifrado",
-   "Claves compartidas",
+   "Sin cifrado, porque los discos son privados",
+   "Firmas de acceso compartido en discos",
    "Texto sin formato",
    "Cifrado del lado servidor"
   ],
   "opts_en": [
-   "No encryption",
-   "Shared keys",
+   "No encryption, as disks are private",
+   "Shared access signatures on disks",
    "Plain text",
    "Server-side encryption"
   ],
@@ -5986,14 +5986,14 @@
   "q_es": "¿Qué característica de Defender for Servers Plan 2 detecta cambios inesperados en archivos críticos del sistema operativo y de aplicaciones?",
   "q_en": "Which feature in Defender for Servers Plan 2 detects unexpected changes to critical OS and application files?",
   "opts_es": [
-   "Eliminación temporal",
-   "Sitio web estático",
+   "Eliminación temporal para discos del sistema",
+   "Protección de red adaptable",
    "Supervisión de la integridad de archivos",
    "Grupos elásticos"
   ],
   "opts_en": [
-   "Soft delete",
-   "Static website",
+   "Soft delete for OS disks",
+   "Adaptive network hardening",
    "File integrity monitoring",
    "Elastic pools"
   ],
@@ -6038,16 +6038,16 @@
   "q_es": "¿Qué hace el modo «aplicar» de Azure Machine Configuration en comparación con el modo «auditar»?",
   "q_en": "What does Azure Machine Configuration's 'enforce' mode do compared with 'audit' mode?",
   "opts_es": [
-   "Deja de informar del estado de la configuración",
+   "Deja de informar el estado de configuración para ahorrar costes de Log Analytics",
    "Solo cambia la programación de auditoría",
-   "Elimina automáticamente las VM no conformes",
-   "Corrige la desviación de configuración en lugar de solo informar de ella"
+   "Elimina automáticamente las VM no conformes y las vuelve a implementar",
+   "Corrige la desviación de configuración en lugar de solo informarla"
   ],
   "opts_en": [
-   "It stops reporting configuration state",
+   "It stops reporting configuration state to save Log Analytics costs",
    "It only changes the audit schedule",
-   "It deletes noncompliant VMs automatically",
-   "It remediates the configuration drift instead of only reporting it"
+   "It deletes noncompliant VMs automatically and redeploys them from images",
+   "It remediates configuration drift instead of only reporting it"
   ],
   "correct": [
    3
@@ -6316,15 +6316,15 @@
   "q_es": "¿Qué capacidad de WAF en Front Door o Application Gateway bloquea el tráfico automatizado de bots mediante inteligencia sobre amenazas de Microsoft?",
   "q_en": "Which WAF capability on Front Door or Application Gateway blocks automated bot traffic using Microsoft threat intelligence?",
   "opts_es": [
-   "Reglas de restricción de IP",
+   "Reglas de restricción de IP para rangos conocidos",
    "Conjunto de reglas administradas de protección contra bots",
-   "Filtrado geográfico",
+   "Filtrado geográfico por país de origen",
    "Limitación de velocidad"
   ],
   "opts_en": [
-   "IP restriction rules",
+   "IP restriction rules for known ranges",
    "Bot protection managed rule set",
-   "Geo-filtering",
+   "Geo-filtering by country of origin",
    "Rate limiting"
   ],
   "correct": [
@@ -6521,15 +6521,15 @@
   "q_es": "¿Qué configuración de conector de Defender for Cloud incorpora una cuenta de AWS para la administración de la posición y la protección de cargas de trabajo?",
   "q_en": "Which Defender for Cloud connector setting onboards an AWS account for posture management and workload protection?",
   "opts_es": [
-   "Solo un área de trabajo de Log Analytics",
+   "Un área de trabajo de Log Analytics que recibe exportaciones de CloudTrail",
    "Un conector de entorno de AWS con los planes necesarios",
-   "Un conector de entorno de GCP",
+   "Un conector de entorno de GCP configurado con el ID de la cuenta de AWS",
    "Solo un agente de Azure Arc"
   ],
   "opts_en": [
-   "A Log Analytics workspace only",
-   "An AWS environment connector with the required plans",
-   "A GCP environment connector",
+   "A Log Analytics workspace that receives AWS CloudTrail exports",
+   "An AWS environment connector with the needed plans",
+   "A GCP environment connector configured with the AWS account ID",
    "An Azure Arc agent only"
   ],
   "correct": [
@@ -6547,15 +6547,15 @@
   "q_es": "¿Qué tipo de hallazgo proporciona Microsoft Defender Vulnerability Management para las VM de Azure?",
   "q_en": "Which type of finding does Microsoft Defender Vulnerability Management provide for Azure VMs?",
   "opts_es": [
-   "Anomalías de facturación y previsiones de coste",
-   "Vulnerabilidades de software y errores de configuración con corrección priorizada",
-   "Mediciones de latencia de red y pérdida de paquetes",
+   "Anomalías de facturación y previsiones de coste por cada máquina",
+   "Vulnerabilidades de software y configuraciones erróneas, priorizadas",
+   "Mediciones de latencia y pérdida de paquetes entre subredes",
    "Configuración de retención de registros de auditoría"
   ],
   "opts_en": [
-   "Billing anomalies and cost forecasts",
-   "Software vulnerabilities and misconfigurations with prioritized remediation",
-   "Network latency and packet loss measurements",
+   "Billing anomalies and cost forecasts for each scanned machine",
+   "Software vulnerabilities and misconfigurations, prioritized",
+   "Network latency and packet loss measurements between subnets",
    "Audit log retention settings"
   ],
   "correct": [
@@ -6773,15 +6773,15 @@
   "q_es": "¿Qué conector permite que Sentinel ingiera incidentes de Microsoft Defender XDR y datos sin procesar de búsqueda avanzada?",
   "q_en": "Which connector lets Sentinel ingest Microsoft Defender XDR incidents and raw advanced hunting data?",
   "opts_es": [
-   "Syslog",
-   "TAXII",
-   "Azure Activity",
+   "Syslog mediante Azure Monitor Agent",
+   "Fuentes de inteligencia de amenazas TAXII",
+   "Registros de diagnóstico de Azure Activity",
    "Conector de Microsoft Defender XDR"
   ],
   "opts_en": [
-   "Syslog",
-   "TAXII",
-   "Azure Activity",
+   "Syslog via the Azure Monitor Agent",
+   "TAXII threat intelligence feeds",
+   "Azure Activity diagnostic logs",
    "Microsoft Defender XDR connector"
   ],
   "correct": [
@@ -7233,16 +7233,16 @@
   "q_es": "¿Cuál es la diferencia clave entre las directivas de acceso de Key Vault y Azure RBAC?",
   "q_en": "What is the key difference between Key Vault access policies and Azure RBAC?",
   "opts_es": [
-   "RBAC se aplica solo a claves, no a secretos",
-   "RBAC ofrece una autorización centralizada y detallada coherente con el resto de Azure; las directivas de acceso son específicas del almacén",
-   "Son idénticos en comportamiento y ámbito",
-   "Las directivas de acceso son más nuevas y son el modelo recomendado"
+   "RBAC se aplica solo a claves y certificados, nunca a los secretos del almacén",
+   "RBAC es centralizado y granular en todo Azure; las directivas son por almacén",
+   "Son idénticos en comportamiento y ámbito; solo cambia la hoja del portal",
+   "Las directivas de acceso son más nuevas y el modelo recomendado para cada almacén nuevo"
   ],
   "opts_en": [
-   "RBAC applies only to keys, not to secrets",
-   "RBAC offers centralized, granular authorization consistent with the rest of Azure; access policies are vault-specific",
-   "They are identical in behavior and scope",
-   "Access policies are newer and are the recommended model"
+   "RBAC applies only to keys and certificates, never to secrets in the vault",
+   "RBAC is centralized and granular across Azure; policies are per vault",
+   "They are identical in behavior and scope, and only the portal blade differs",
+   "Access policies are newer and are the recommended model for every new vault"
   ],
   "correct": [
    1
@@ -7531,15 +7531,15 @@
   "q_es": "¿Qué característica de Azure SQL evalúa continuamente las bases de datos en busca de datos sensibles y sugiere etiquetas de clasificación?",
   "q_en": "Which Azure SQL feature continuously evaluates databases for sensitive data and suggests classification labels?",
   "opts_es": [
-   "Grupos elásticos",
+   "Grupos elásticos con escalado automático",
    "Sin servidor",
-   "Grupos de conmutación por error",
+   "Grupos de conmutación por error con réplicas de lectura",
    "Detección y clasificación de datos"
   ],
   "opts_en": [
-   "Elastic pools",
+   "Elastic pools with auto-scaling",
    "Serverless",
-   "Failover groups",
+   "Failover groups with read replicas",
    "Data discovery and classification"
   ],
   "correct": [
@@ -7712,16 +7712,16 @@
   "q_es": "¿Por qué debe gobernarse el acceso a los agentes de IA mediante identidad y acceso condicional?",
   "q_en": "Why should access to AI agents be governed through identity and conditional access?",
   "opts_es": [
-   "Los agentes no necesitan identidades porque se ejecutan como usuarios",
-   "Los agentes solo leen datos públicos, así que el riesgo es mínimo",
+   "Los agentes no necesitan identidades porque siempre se ejecutan como el usuario",
+   "Los agentes solo leen datos públicos, así que el riesgo es mínimo y no requiere controles",
    "La gobernanza es opcional solo para agentes que no son de producción",
-   "Los agentes pueden actuar a gran escala, por lo que las identidades no administradas aumentan el radio de impacto del mal uso o del compromiso"
+   "Los agentes actúan a escala, así que las identidades no administradas amplían el impacto"
   ],
   "opts_en": [
-   "Agents do not need identities because they run as users",
-   "Agents only read public data, so risk is minimal",
+   "Agents do not need identities because they always run as the signed-in user",
+   "Agents only read public data, so the risk is minimal and needs no controls",
    "Governance is optional for non-production agents only",
-   "Agents can act at scale, so unmanaged identities increase the blast radius of misuse or compromise"
+   "Agents act at scale, so unmanaged identities widen the blast radius"
   ],
   "correct": [
    3
@@ -8309,15 +8309,15 @@
   "q_es": "¿Qué configuración de Entra limita qué usuarios pueden registrar aplicaciones en el inquilino?",
   "q_en": "Which Entra setting limits which users can register applications in the tenant?",
   "opts_es": [
-   "Directiva de nomenclatura de grupos",
-   "Configuración de usuario: Los usuarios pueden registrar aplicaciones establecido en No",
-   "Configuración de colaboración externa",
+   "Directiva de nomenclatura de grupos aplicada a grupos de seguridad de aplicaciones",
+   "Configuración de usuario: Los usuarios pueden registrar aplicaciones = No",
+   "Configuración de colaboración externa para invitaciones de invitados",
    "Configuración de acceso entre inquilinos"
   ],
   "opts_en": [
-   "Group naming policy",
-   "User settings: Users can register applications set to No",
-   "External collaboration settings",
+   "Group naming policy applied to app-related security groups",
+   "User settings: Users can register applications = No",
+   "External collaboration settings for guest invitations",
    "Cross-tenant access settings"
   ],
   "correct": [
@@ -8335,14 +8335,14 @@
   "q_es": "Un administrador quiere ver qué roles con privilegios tienen asignaciones activas permanentes. ¿Qué informe de PIM ayuda?",
   "q_en": "An admin wants to see which privileged roles have standing active assignments. Which PIM report helps?",
   "opts_es": [
-   "Informes de Azure Cost Management",
-   "Recomendaciones de Azure Advisor",
-   "Informes de asignaciones de roles y revisiones de acceso de PIM",
+   "Informes de Azure Cost Management filtrados por cuenta de administrador",
+   "Recomendaciones de Azure Advisor para configuración de identidad y acceso",
+   "Asignaciones de roles de PIM e informes de revisiones de acceso",
    "Historial de Service Health"
   ],
   "opts_en": [
-   "Azure Cost Management reports",
-   "Azure Advisor recommendations",
+   "Azure Cost Management reports filtered by administrator account",
+   "Azure Advisor recommendations for identity and access settings",
    "PIM role assignments and access review reports",
    "Service Health history"
   ],
@@ -8387,15 +8387,15 @@
   "q_es": "¿Qué iniciativa de Azure Policy puede aplicar rápidamente un amplio conjunto de controles de seguridad alineados con el Microsoft cloud security benchmark?",
   "q_en": "Which Azure Policy initiative can quickly apply a broad set of security controls aligned to the Microsoft cloud security benchmark?",
   "opts_es": [
-   "Una exención de directiva",
+   "Una exención de directiva aplicada a cada suscripción del inquilino",
    "Una directiva de etiquetas personalizada",
-   "La puntuación de seguridad de Defender for Cloud",
+   "La puntuación de seguridad de Defender for Cloud como destino de asignación",
    "La iniciativa integrada Microsoft cloud security benchmark"
   ],
   "opts_en": [
-   "A policy exemption",
+   "A policy exemption applied to every subscription in the tenant",
    "A custom tag policy",
-   "The Defender for Cloud secure score",
+   "The Defender for Cloud secure score set as an assignment target",
    "The built-in Microsoft cloud security benchmark initiative"
   ],
   "correct": [
@@ -8413,16 +8413,16 @@
   "q_es": "¿Qué característica de Azure Storage elimina automáticamente versiones antiguas de blobs o las traslada a niveles más fríos para controlar el coste?",
   "q_en": "Which Azure Storage feature automatically deletes old blob versions or moves them to cooler tiers to control cost?",
   "opts_es": [
-   "Transferencia segura",
+   "Configuración de transferencia segura obligatoria",
    "Sitio web estático",
    "Directiva de administración del ciclo de vida",
-   "Replicación de objetos"
+   "Replicación de objetos a otra cuenta"
   ],
   "opts_en": [
-   "Secure transfer",
+   "Secure transfer required setting",
    "Static website",
    "Lifecycle management policy",
-   "Object replication"
+   "Object replication to another account"
   ],
   "correct": [
    2
@@ -8517,16 +8517,16 @@
   "q_es": "¿Cuál es un buen primer paso al prepararse para implementar Copilot en un entorno con un uso compartido excesivo generalizado?",
   "q_en": "What is a good first step when preparing to deploy Copilot in an environment with extensive oversharing?",
   "opts_es": [
-   "Eliminar todos los sitios que contienen contenido confidencial",
-   "Evaluar el uso compartido excesivo, limpiar permisos y aplicar etiquetas de confidencialidad",
+   "Eliminar todos los sitios con contenido confidencial antes de habilitar Copilot",
+   "Evaluar el uso compartido excesivo, corregir permisos y aplicar etiquetas",
    "Habilitar Copilot para todos los usuarios de inmediato",
-   "Deshabilitar las etiquetas de confidencialidad para simplificar el acceso"
+   "Deshabilitar las etiquetas para que Copilot pueda leer todo el contenido más fácilmente"
   ],
   "opts_en": [
-   "Delete all sites that hold sensitive content",
-   "Assess oversharing, clean up permissions and apply sensitivity labels",
+   "Delete all sites that hold sensitive content before enabling Copilot",
+   "Assess oversharing, fix permissions and apply sensitivity labels",
    "Enable Copilot for every user immediately",
-   "Disable sensitivity labels to simplify access"
+   "Disable sensitivity labels so Copilot can read all content more easily"
   ],
   "correct": [
    1
@@ -8544,16 +8544,16 @@
   "q_es": "¿Qué control ayuda a prevenir la inyección de indicaciones y la fuga de datos en una aplicación de Azure AI personalizada?",
   "q_en": "Which control helps prevent prompt injection and data leakage in a custom Azure AI application?",
   "opts_es": [
-   "Publicar las claves del modelo en la configuración de la aplicación",
+   "Publicar las claves del modelo en la configuración de la app para que los usuarios prueben",
    "Deshabilitar el registro para proteger la privacidad",
-   "Barreras de seguridad de contenido, validación de entradas y acceso a datos con mínimo privilegio",
-   "Conceder a la aplicación derechos de administrador sobre todos los datos"
+   "Protecciones de seguridad de contenido, validación de entradas y datos con privilegios mínimos",
+   "Conceder a la app derechos de administrador sobre todos los datos para filtrar respuestas"
   ],
   "opts_en": [
-   "Publishing the model keys in the app configuration",
+   "Publishing the model keys in the app configuration so users can test it",
    "Disabling logging to protect privacy",
-   "Content safety guardrails, input validation and least-privilege data access",
-   "Granting the app admin rights over all data"
+   "Content safety guardrails, input validation and least-privilege data",
+   "Granting the app admin rights over all data so it can filter responses"
   ],
   "correct": [
    2
@@ -8624,15 +8624,15 @@
   "q_en": "Which AKS feature secures secrets by mounting them from Key Vault into pods?",
   "opts_es": [
    "Montajes anónimos",
-   "El proveedor de Azure Key Vault para el controlador CSI de Secrets Store",
-   "Secretos en la imagen",
-   "Secretos en ConfigMaps"
+   "Controlador CSI de Secrets Store con el proveedor de Key Vault",
+   "Secretos incluidos en la imagen del contenedor al compilarla",
+   "Secretos guardados como valores sin cifrar en ConfigMaps de Kubernetes"
   ],
   "opts_en": [
    "Anonymous mounts",
-   "The Azure Key Vault provider for Secrets Store CSI Driver",
-   "Secrets in the image",
-   "Secrets in ConfigMaps"
+   "Secrets Store CSI Driver with the Key Vault provider",
+   "Secrets baked into the container image at build time",
+   "Secrets stored as plain values in Kubernetes ConfigMaps"
   ],
   "correct": [
    1
@@ -8753,15 +8753,15 @@
   "q_es": "En Sentinel, ¿qué configuración controla cuánto tiempo permanecen los datos en retención interactiva antes de pasar a un nivel de menor coste o eliminarse?",
   "q_en": "In Sentinel, which setting controls how long data stays in interactive retention before moving to a lower-cost tier or being deleted?",
   "opts_es": [
-   "Tema del libro",
+   "Tema y rango de tiempo del libro",
    "Etiqueta",
-   "Nombre del cuaderno de estrategias",
+   "Nombre y tipo de desencadenador del cuaderno",
    "Configuración de retención de tablas"
   ],
   "opts_en": [
-   "Workbook theme",
+   "Workbook theme and time range",
    "Tag",
-   "Playbook name",
+   "Playbook name and trigger type",
    "Table retention settings"
   ],
   "correct": [
@@ -8779,16 +8779,16 @@
   "q_es": "¿Qué deben revisar periódicamente los administradores de los complementos y agentes de Security Copilot?",
   "q_en": "What should administrators review periodically for Security Copilot plugins and agents?",
   "opts_es": [
-   "Qué complementos y agentes están habilitados, sus permisos y su uso",
-   "Solo si los nombres de producto están bien escritos",
+   "Qué plugins y agentes están habilitados, sus permisos y su uso",
+   "Solo si los nombres y descripciones de productos están bien escritos en la lista",
    "Solo el tema de color del portal",
-   "La zona DNS de la organización"
+   "La zona DNS de la organización y los certificados que usa cada plugin"
   ],
   "opts_en": [
-   "Which plugins and agents are enabled, their permissions and their usage",
-   "Only whether product names are spelled correctly",
+   "Which plugins and agents are enabled, their permissions and usage",
+   "Only whether product names and descriptions are spelled correctly in the list",
    "Only the color theme of the portal",
-   "The DNS zone of the organization"
+   "The DNS zone of the organization and the certificates used by each plugin"
   ],
   "correct": [
    0
