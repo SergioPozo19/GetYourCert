@@ -2483,6 +2483,7 @@ function gradeExam(){
     checkAchievements(hist.slice(-200));
     updateDailyGoal(exam.length);
   }
+  if(window.careerAfterResults)careerAfterResults({pct,passed,domStat,passMark});
   examActive=false; clearExamState();
   window.scrollTo(0,0);
 }
@@ -4422,7 +4423,7 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
-<script src="career.js?v=1"></script>
+<script src="career.js?v=2"></script>
 <script src="hero.js?v=1"></script>
 </body>
 </html>

@@ -21,7 +21,11 @@ const CT={
   newsTitle:'Novedades', newsAll:'Ver todas', newsNone:'Sin novedades.', newsClose:'Cerrar', newsPractice:'Practicar paquete', newsProOnly:'Solo Pro',
   tNew:'Nuevo', tSyllabus:'Temario', tRetire:'Retirada', tPack:'Paquete',
   alertTitle:'Renovación pendiente', alertBody:'{code} caduca en {n} días. Haz un repaso antes de renovar.', alertExpired:'{code} ha caducado. Renuévala cuando puedas.', alertCta:'Ver mis certificaciones',
-  hubTitle:'Tu carrera', packSub:'Paquete de novedades'
+  hubTitle:'Tu carrera', packSub:'Paquete de novedades',
+  nextTitle:'Tu siguiente paso', vsPrev:'{d} puntos respecto a tu intento anterior', vsPrevSame:'Igual que tu intento anterior',
+  readyNow:'Preparación estimada', weakNow:'Refuerza estos dominios', passedNext:'¡Aprobado! Siguiente en tu ruta:', passedAdd:'¿Ya te certificaste en {code}? Añádela para recibir avisos de renovación.',
+  addCert:'Añadir a Mis certificaciones', certAlready:'Ya está en Mis certificaciones', keepGoing:'Sigue practicando: aún no llegas al aprobado.',
+  proTeaser:'Con Pro: panel de preparación, avisos de renovación, rutas de carrera y paquetes de novedades.', proCta:'Ver plan Pro →', signTeaser:'Crea una cuenta gratis para guardar tu progreso y ver tu evolución.', signCta:'Registrarse gratis'
  },
  en:{
   readyTitle:'Exam readiness', readySub:'Estimate based on your recent attempts, weighted by each domain\'s official weight. It is a guide, not a guarantee.',
@@ -40,7 +44,11 @@ const CT={
   newsTitle:'What\'s new', newsAll:'See all', newsNone:'No news.', newsClose:'Close', newsPractice:'Practice pack', newsProOnly:'Pro only',
   tNew:'New', tSyllabus:'Outline', tRetire:'Retirement', tPack:'Pack',
   alertTitle:'Renewal due', alertBody:'{code} expires in {n} days. Do a review before renewing.', alertExpired:'{code} has expired. Renew it when you can.', alertCta:'See my certifications',
-  hubTitle:'Your career', packSub:'Updates pack'
+  hubTitle:'Your career', packSub:'Updates pack',
+  nextTitle:'Your next step', vsPrev:'{d} points vs your previous attempt', vsPrevSame:'Same as your previous attempt',
+  readyNow:'Estimated readiness', weakNow:'Reinforce these domains', passedNext:'Passed! Next on your path:', passedAdd:'Did you already certify in {code}? Add it to get renewal alerts.',
+  addCert:'Add to My certifications', certAlready:'Already in My certifications', keepGoing:'Keep practicing: you have not reached the pass mark yet.',
+  proTeaser:'With Pro: readiness dashboard, renewal alerts, career paths and news packs.', proCta:'See Pro plan →', signTeaser:'Create a free account to save your progress and track your improvement.', signCta:'Sign up free'
  }
 };
 const ct=k=>(CT[lang]&&CT[lang][k])||CT.es[k]||k;
@@ -341,9 +349,88 @@ async function careerRenderCatalog(){
 }
 window.careerRenderCatalog=careerRenderCatalog;
 
+
+/* ---------- results screen: next step ---------- */
+window.careerAfterResults=function(ctx){
+  try{
+    const ex=currentExam; if(!ex)return;
+    const res=$('#results'); if(!res)return;
+    res.dataset.outcome=ctx.passed?'pass':'fail';
+    const old=$('#crNext'); if(old)old.remove();
+    const logged=isLoggedIn(), pro=isPro();
+    const hist=Store.get('history',[]);
+    const card=document.createElement('div'); card.id='crNext'; card.className='card cr-next';
+    let html='<h3>'+esc(ct('nextTitle'))+'</h3>';
+    if(logged){
+      const prev=hist.filter(h=>h.examId===ex.id&&h.mode===mode).slice(-2,-1)[0];
+      if(prev){
+        const d=ctx.pct-prev.pct;
+        html+='<p class="cr-delta '+(d>0?'up':d<0?'down':'')+'">'+esc(d===0?ct('vsPrevSame'):fmt(ct('vsPrev'),{d:(d>0?'+':'')+d}))+'</p>';
+      }
+      if(pro){ const r=readiness(ex,hist); if(r)html+='<p class="cr-ready">'+esc(ct('readyNow'))+': <b style="color:'+lvlColor(r.lvl)+'">'+r.score+'% · '+esc(ct(r.lvl))+'</b></p>'; }
+    }
+    card.innerHTML=html;
+    const row=document.createElement('div'); row.className='cr-next-actions';
+    const weak=Object.keys(ctx.domStat).map(d=>({id:+d,s:ctx.domStat[d]})).filter(x=>x.s.t>0&&Math.round(x.s.c/x.s.t*100)<ctx.passMark).sort((a,b)=>a.s.c/a.s.t-b.s.c/b.s.t).slice(0,3);
+    if(!ctx.passed){ const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('keepGoing'); card.appendChild(p); }
+    if(weak.length){
+      const t2=document.createElement('div'); t2.className='cr-weak-t'; t2.textContent=ct('weakNow'); card.appendChild(t2);
+      weak.forEach(w=>{
+        const b=document.createElement('button'); b.type='button'; b.className='cr-dom';
+        const nm=(ex.domains.find(d=>d.id===w.id)||{});
+        b.innerHTML='<span>'+esc(L(nm,'name')||('D'+w.id))+'</span><em>'+Math.round(w.s.c/w.s.t*100)+'%</em><strong>'+esc(ct('practiceDom'))+' ›</strong>';
+        b.onclick=()=>launch(ex.id,'domain',w.id);
+        card.appendChild(b);
+      });
+    }
+    if(ctx.passed && logged){
+      const have=getCerts().some(c=>c.examId===ex.id);
+      const p=document.createElement('p'); p.className='cr-sub'; p.textContent=have?ct('certAlready'):fmt(ct('passedAdd'),{code:ex.code}); card.appendChild(p);
+      if(!have){
+        const b=document.createElement('button'); b.type='button'; b.className='btn btn-ghost btn-sm'; b.textContent=ct('addCert');
+        b.onclick=()=>{ const all=getCerts(); all.push({examId:ex.id,earned:isoToday()}); setCerts(all); showToast(ct('certAdded')+' ✓','ok',2500); b.disabled=true; b.textContent=ct('certAlready'); };
+        row.appendChild(b);
+      }
+    }
+    if(ctx.passed){
+      const certs=getCerts(); let nextId=null;
+      for(const pth of PATHS){
+        const i=pth.steps.indexOf(ex.id); if(i<0)continue;
+        const n=pth.steps.slice(i+1).find(id=>exById(id)&&!certs.some(c=>c.examId===id)); if(n){nextId=n;break;}
+      }
+      if(nextId){
+        const nx=exById(nextId);
+        const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm';
+        b.textContent=ct('passedNext')+' '+nx.code+' →'; b.onclick=()=>selectExam(nextId); row.appendChild(b);
+      }
+    }
+    if(row.children.length)card.appendChild(row);
+    if(!logged){
+      const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('signTeaser'); card.appendChild(p);
+      const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm'; b.textContent=ct('signCta'); b.onclick=()=>openLoginModal(); card.appendChild(b);
+    }else if(!pro){
+      const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('proTeaser'); card.appendChild(p);
+      const b=document.createElement('a'); b.className='btn btn-primary btn-sm'; b.href='/pro.html'; b.textContent=ct('proCta'); card.appendChild(b);
+    }
+    const hero=res.querySelector('.result-hero'); if(hero)hero.insertAdjacentElement('afterend',card);
+  }catch(e){ console.error('career results',e); }
+};
+
 /* ---------- styles ---------- */
 const css=document.createElement('style');
 css.textContent=[
+'.cr-next{padding:22px 26px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}',
+'.cr-next h3{margin:0;font-size:16px}',
+'.cr-next .cr-dom{width:100%}',
+'.cr-delta{font-size:13.5px;font-weight:600;color:var(--ink-2)}.cr-delta.up{color:var(--ok)}.cr-delta.down{color:var(--bad)}',
+'.cr-ready{font-size:13.5px;color:var(--ink-2)}',
+'.cr-next-actions{display:flex;gap:8px;flex-wrap:wrap}',
+'.cr-next .cr-sub{margin:0}',
+'#results .result-hero{position:relative;overflow:hidden}',
+'#results .result-hero>*{position:relative}',
+'#results .result-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 260px at 50% -30%,var(--accent-soft),transparent 70%)}',
+'#results[data-outcome="pass"] .result-hero::before{background:radial-gradient(700px 280px at 50% -30%,var(--ok-soft),transparent 72%)}',
+'#results[data-outcome="fail"] .result-hero::before{background:radial-gradient(700px 280px at 50% -30%,var(--bad-soft),transparent 72%)}',
 '.cr-sub{font-size:12.5px;color:var(--ink-3);margin:-4px 0 12px;line-height:1.5}',
 '.cr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}',
 '.cr-card{display:flex;flex-direction:column;gap:10px}',
