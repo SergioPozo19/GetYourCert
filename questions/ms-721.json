@@ -12216,5 +12216,698 @@
   "correct": 0,
   "exp_es": "Los registros SIP del SBC muestran la secuencia exacta de mensajes SIP intercambiados durante el intento de llamada. Un '503 Service Unavailable' del SBC indica que no pudo procesar la llamada (problema de capacidad, enrutamiento interno o error de configuración). Correlacionarlo con Call Analytics ayuda a confirmar qué recibió el cliente de Teams.",
   "exp_en": "The SBC SIP traces show the exact sequence of SIP messages exchanged during the call attempt. A '503 Service Unavailable' from the SBC indicates it could not process the call (capacity issue, internal routing error, or configuration problem). Correlating with Call Analytics helps confirm what the Teams client received."
+ },
+ {
+  "id": 1600,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Una empresa quiere que los participantes sin acceso a internet se unan a las reuniones de Teams por teléfono. ¿Qué servicio debes planificar?",
+  "q_en": "A company wants participants without internet access to join Teams meetings by phone. Which service should you plan for?",
+  "opts_es": [
+   "Audioconferencia PSTN con números de acceso telefónico",
+   "Teams Rooms Basic",
+   "Vínculos seguros",
+   "Estacionamiento de llamadas"
+  ],
+  "opts_en": [
+   "PSTN audio conferencing with dial-in numbers",
+   "Teams Rooms Basic",
+   "Safe Links",
+   "Call park"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La audioconferencia agrega números de acceso telefónico y un identificador de conferencia a las reuniones.",
+  "exp_en": "Audio Conferencing adds dial-in numbers and a conference ID to meetings."
+ },
+ {
+  "id": 1601,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "La empresa quiere resúmenes de reuniones con IA y protección avanzada como marcas de agua. ¿Qué ofertas debes recomendar evaluar?",
+  "q_en": "The business wants AI meeting recaps and advanced protection such as watermarks. Which offerings should you recommend evaluating?",
+  "opts_es": [
+   "Microsoft 365 Copilot y Teams Premium",
+   "Solo Teams Rooms Basic",
+   "Solo Operator Connect",
+   "Solo adaptadores de teléfono analógico"
+  ],
+  "opts_en": [
+   "Microsoft 365 Copilot and Teams Premium",
+   "Teams Rooms Basic only",
+   "Operator Connect only",
+   "Analog telephone adapters only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Copilot ofrece asistencia con IA; Teams Premium añade protección y características avanzadas de reuniones.",
+  "exp_en": "Copilot provides AI assistance; Teams Premium adds advanced meeting protection and features."
+ },
+ {
+  "id": 1602,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué tipo de reunión es el mejor para un evento grande y estructurado con presentadores y una audiencia que consume el contenido principalmente?",
+  "q_en": "Which meeting type is best for a large, structured event with presenters and an audience that mostly consumes content?",
+  "opts_es": [
+   "Un ayuntamiento (town hall) o un seminario web según el tamaño y las necesidades de interacción",
+   "Una llamada uno a uno",
+   "Una publicación de canal",
+   "Un buzón de voz"
+  ],
+  "opts_en": [
+   "A town hall or webinar depending on size and interaction needs",
+   "A one-to-one call",
+   "A channel post",
+   "A voicemail"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los town halls escalan a audiencias muy grandes con difusión de uno a muchos; los seminarios web admiten registro y preguntas y respuestas.",
+  "exp_en": "Town halls scale to very large audiences with one-to-many broadcast; webinars support registration and Q&A."
+ },
+ {
+  "id": 1603,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué método asigna directivas de Teams a muchos usuarios a la vez y se aplica automáticamente a los nuevos miembros?",
+  "q_en": "Which method assigns Teams policies to many users at once and applies to new members automatically?",
+  "opts_es": [
+   "Asignación de directivas por grupo",
+   "Asignar a cada usuario individualmente",
+   "Editar solo la directiva global",
+   "Enviar un correo a los usuarios"
+  ],
+  "opts_en": [
+   "Group policy assignment",
+   "Assigning each user individually",
+   "Editing the Global policy only",
+   "Sending an email to users"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La asignación por grupo escala y mantiene sincronizados los cambios de pertenencia.",
+  "exp_en": "Group assignment scales and keeps membership changes in sync."
+ },
+ {
+  "id": 1604,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Una empresa de un país sin planes de llamadas de Microsoft quiere conservar su operador actual. ¿Qué diseño lo admite con un mínimo de equipamiento local?",
+  "q_en": "A company in a country without Microsoft Calling Plans wants to keep its current carrier. Which design supports this with minimal on-premises equipment?",
+  "opts_es": [
+   "Operator Connect",
+   "Plan de llamadas de Microsoft",
+   "Teams Rooms Basic",
+   "Solo audioconferencia"
+  ],
+  "opts_en": [
+   "Operator Connect",
+   "Microsoft Calling Plan",
+   "Teams Rooms Basic",
+   "Audio Conferencing only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Operator Connect permite que los operadores proporcionen conectividad PSTN administrada directamente desde el centro de administración de Teams.",
+  "exp_en": "Operator Connect lets operators provide PSTN connectivity directly managed from Teams admin center."
+ },
+ {
+  "id": 1605,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Teams Phone permite que varios usuarios compartan un conjunto de números y minutos de un plan de llamadas en una sucursal?",
+  "q_en": "Which Teams Phone capability lets multiple users share a pool of Calling Plan numbers and minutes at a branch?",
+  "opts_es": [
+   "Llamadas compartidas (Shared Calling)",
+   "Estacionamiento de llamadas",
+   "Colas de llamadas",
+   "Buzón de voz en la nube"
+  ],
+  "opts_en": [
+   "Shared Calling",
+   "Call park",
+   "Call queues",
+   "Cloud voicemail"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Shared Calling usa un número de teléfono compartido y una ubicación de emergencia para un grupo de usuarios.",
+  "exp_en": "Shared Calling uses a shared phone number and emergency location for a group of users."
+ },
+ {
+  "id": 1606,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué característica permite a los supervisores administrar los agentes de colas de llamadas desde el cliente de Teams y requiere licencia de Teams Premium?",
+  "q_en": "Which feature allows supervisors to manage call queue agents from the Teams client and requires Teams Premium licensing?",
+  "opts_es": [
+   "La aplicación Queues",
+   "Estacionamiento de llamadas",
+   "Interoperabilidad de vídeo en la nube",
+   "Transmisión de Teams"
+  ],
+  "opts_en": [
+   "The Queues app",
+   "Call park",
+   "Cloud video interop",
+   "Teams casting"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La aplicación Queues permite que los responsables autorizados incluyan o excluyan agentes y vean métricas de la cola.",
+  "exp_en": "The Queues app lets authorized leads opt agents in or out and view queue metrics."
+ },
+ {
+  "id": 1608,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cuándo encaja bien el SMS en Teams con números de planes de llamadas de Microsoft?",
+  "q_en": "When is SMS in Teams with Microsoft Calling Plan numbers a good fit?",
+  "opts_es": [
+   "Cuando los usuarios necesitan enviar y recibir mensajes de texto desde su número de teléfono asignado en Teams en mercados compatibles",
+   "Cuando los dispositivos de Teams necesitan actualizaciones de firmware",
+   "Cuando las salas necesitan entrada HDMI",
+   "Cuando los usuarios necesitan una VPN"
+  ],
+  "opts_en": [
+   "When users need to send and receive text messages from their Teams-assigned phone number in supported markets",
+   "When Teams devices need firmware updates",
+   "When rooms need HDMI ingest",
+   "When users need a VPN"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La compatibilidad con SMS depende del tipo de número y de la disponibilidad por país.",
+  "exp_en": "SMS support depends on number type and country availability."
+ },
+ {
+  "id": 1609,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la planificación de Teams Phone, indica si es verdadera o falsa.",
+  "q_en": "For each statement about planning Teams Phone, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Operator Connect permite que los operadores administren la conectividad PSTN mediante el centro de administración de Teams.",
+    "en": "Operator Connect enables operators to manage PSTN connectivity through Teams admin center.",
+    "ans": true
+   },
+   {
+    "es": "Shared Calling permite que varios usuarios compartan números de teléfono y minutos.",
+    "en": "Shared Calling allows several users to share phone numbers and minutes.",
+    "ans": true
+   },
+   {
+    "es": "La aplicación Queues no requiere licencia.",
+    "en": "The Queues app requires no license.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La aplicación Queues requiere licencias de Teams Phone y Teams Premium.",
+  "exp_en": "The Queues app requires Teams Phone and Teams Premium licensing."
+ },
+ {
+  "id": 1610,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el enfoque de PSTN para cada requisito.",
+  "q_en": "Select the PSTN approach for each requirement.",
+  "rows": [
+   {
+    "es": "Mantener la relación con un operador local pero evitar administrar un SBC.",
+    "en": "Keep a local carrier relationship but avoid managing an SBC.",
+    "opts_es": [
+     "Plan de llamadas de Microsoft",
+     "Operator Connect",
+     "Enrutamiento directo",
+     "Llamadas compartidas"
+    ],
+    "opts_en": [
+     "Microsoft Calling Plan",
+     "Operator Connect",
+     "Direct Routing",
+     "Shared Calling"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Conectar con cualquier operador mediante un SBC administrado por la organización.",
+    "en": "Connect to any carrier using an organization-managed SBC.",
+    "opts_es": [
+     "Plan de llamadas de Microsoft",
+     "Operator Connect",
+     "Enrutamiento directo",
+     "Llamadas compartidas"
+    ],
+    "opts_en": [
+     "Microsoft Calling Plan",
+     "Operator Connect",
+     "Direct Routing",
+     "Shared Calling"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Operator Connect evita administrar un SBC; el enrutamiento directo ofrece flexibilidad de operador con tu propio SBC.",
+  "exp_en": "Operator Connect avoids SBC management; Direct Routing offers carrier flexibility with your own SBC."
+ },
+ {
+  "id": 1611,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "La aplicación ",
+  "pre_en": "The ",
+  "post_es": " permite que los responsables autorizados administren los agentes de las colas de llamadas desde el cliente de Teams.",
+  "post_en": " app lets authorized leads manage call queue agents from the Teams client.",
+  "opts_es": [
+   "Queues",
+   "Planner",
+   "Whiteboard",
+   "Viva Learning"
+  ],
+  "opts_en": [
+   "Queues",
+   "Planner",
+   "Whiteboard",
+   "Viva Learning"
+  ],
+  "correct": 0,
+  "exp_es": "Queues requiere Teams Phone y Teams Premium.",
+  "exp_en": "Queues requires Teams Phone and Teams Premium."
+ },
+ {
+  "id": 1612,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "mc",
+  "q_es": "¿Qué configuración permite crear informes que muestren la calidad de las llamadas por edificio o sede en Call Quality Dashboard?",
+  "q_en": "Which configuration lets you create reports showing call quality by building or site in the Call Quality Dashboard?",
+  "opts_es": [
+   "Cargar datos del inquilino (asignaciones de edificios y endpoints) en CQD",
+   "Habilitar Vínculos seguros",
+   "Crear una cola de llamadas",
+   "Asignar un paquete de directivas"
+  ],
+  "opts_en": [
+   "Uploading tenant data (building and endpoint mappings) to CQD",
+   "Enabling Safe Links",
+   "Creating a call queue",
+   "Assigning a policy package"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los archivos de datos del inquilino asignan subredes y redes a ubicaciones.",
+  "exp_en": "Tenant data files map subnets and networks to locations."
+ },
+ {
+  "id": 1613,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "mc",
+  "q_es": "¿Qué característica de Teams permite agregar etiquetas personalizadas a los datos de llamadas en Call Analytics para filtrar por ubicaciones o departamentos?",
+  "q_en": "Which Teams feature lets you add custom labels to call data in Call Analytics so you can filter by locations or departments?",
+  "opts_es": [
+   "Etiquetas de informes",
+   "Plantillas de reunión",
+   "Directivas de estacionamiento de llamadas",
+   "Escritorio compartido"
+  ],
+  "opts_en": [
+   "Reporting labels",
+   "Meeting templates",
+   "Call park policies",
+   "Hot desking"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las etiquetas de informes agrupan subredes y endpoints para el análisis.",
+  "exp_en": "Reporting labels group subnets and endpoints for analytics."
+ },
+ {
+  "id": 1614,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "mc",
+  "q_es": "¿Qué directiva de red limita la velocidad de bits máxima que pueden usar los medios de Teams en enlaces con restricciones?",
+  "q_en": "Which network policy limits the maximum bit rate Teams media can use on constrained links?",
+  "opts_es": [
+   "Configuración de velocidad de bits de medios (MBR) en la topología de red",
+   "Una directiva de retención",
+   "Una directiva de nomenclatura",
+   "Una directiva de invitados"
+  ],
+  "opts_en": [
+   "Media bit rate (MBR) settings in the network topology",
+   "A retention policy",
+   "A naming policy",
+   "A guest policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "MBR controla el consumo de ancho de banda por sede o enlace.",
+  "exp_en": "MBR controls bandwidth usage per site or link."
+ },
+ {
+  "id": 1615,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "dropdown",
+  "q_es": "Selecciona la configuración de red para cada requisito.",
+  "q_en": "Select the network configuration for each requirement.",
+  "rows": [
+   {
+    "es": "Marcar los paquetes de audio para su priorización en la red.",
+    "en": "Mark audio packets for prioritization on the network.",
+    "opts_es": [
+     "Directiva de QoS",
+     "Límite de velocidad de bits de medios",
+     "Directiva de itinerancia de red",
+     "Etiquetas de informes"
+    ],
+    "opts_en": [
+     "QoS policy",
+     "Media bit rate limit",
+     "Network roaming policy",
+     "Reporting labels"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Reducir el consumo de ancho de banda en el enlace lento de una oficina remota.",
+    "en": "Reduce bandwidth use on a slow branch office link.",
+    "opts_es": [
+     "Directiva de QoS",
+     "Límite de velocidad de bits de medios",
+     "Directiva de itinerancia de red",
+     "Etiquetas de informes"
+    ],
+    "opts_en": [
+     "QoS policy",
+     "Media bit rate limit",
+     "Network roaming policy",
+     "Reporting labels"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "QoS prioriza el tráfico; MBR limita el ancho de banda.",
+  "exp_en": "QoS prioritizes traffic; MBR caps bandwidth."
+ },
+ {
+  "id": 1616,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué característica debe recomendarse para que los participantes remotos puedan unirse a una reunión de Teams desde un sistema de sala de terceros mediante SIP o H.323?",
+  "q_en": "Which feature should be recommended so remote participants can join a Teams meeting from a third-party room system using SIP or H.323?",
+  "opts_es": [
+   "Interoperabilidad de vídeo en la nube (CVI)",
+   "Colas de llamadas",
+   "Transmisión de Teams",
+   "Cuentas de recurso"
+  ],
+  "opts_en": [
+   "Cloud Video Interop (CVI)",
+   "Call queues",
+   "Teams casting",
+   "Resource accounts"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "CVI conecta VTC de terceros con reuniones de Teams mediante proveedores certificados.",
+  "exp_en": "CVI connects third-party VTCs to Teams meetings through certified providers."
+ },
+ {
+  "id": 1617,
+  "exam": "ms-721",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué plantilla de reunión de Teams Premium ofrece controles preestablecidos como restricciones de omisión de sala de espera, quién puede presentar y quién puede grabar en reuniones externas sensibles?",
+  "q_en": "Which Teams Premium meeting template provides preset controls such as lobby bypass restrictions, who can present and who can record for sensitive external meetings?",
+  "opts_es": [
+   "Plantilla de acceso a contenido controlado",
+   "Solo la directiva global predeterminada",
+   "Directiva de llamadas",
+   "Directiva de llamadas de emergencia"
+  ],
+  "opts_en": [
+   "Controlled content access template",
+   "Default Global policy only",
+   "Calling policy",
+   "Emergency calling policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La plantilla de acceso a contenido controlado aplica valores predeterminados estrictos para reuniones con participantes externos.",
+  "exp_en": "The controlled content access template applies tight defaults for meetings with external participants."
+ },
+ {
+  "id": 1618,
+  "exam": "ms-721",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué configuración de la directiva de reuniones puedes usar para controlar si los participantes pueden usar avatares en las reuniones de Teams?",
+  "q_en": "Which meeting policy setting can you use to control whether participants can use avatars in Teams meetings?",
+  "opts_es": [
+   "La configuración de avatares de la directiva de reuniones",
+   "Reglas de normalización del plan de marcado",
+   "Estacionamiento de llamadas",
+   "Directiva de enrutamiento de voz"
+  ],
+  "opts_en": [
+   "The avatars settings in the meeting policy",
+   "Dial plan normalization rules",
+   "Call park",
+   "Voice routing policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las directivas de reuniones controlan características como los avatares, la grabación y la transcripción.",
+  "exp_en": "Meeting policies control features such as avatars, recording and transcription."
+ },
+ {
+  "id": 1619,
+  "exam": "ms-721",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las directivas y plantillas de reuniones de Teams, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Teams meeting policies and templates, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las plantillas de reunión pueden preestablecer opciones para tipos de reuniones específicos.",
+    "en": "Meeting templates can preset options for specific types of meetings.",
+    "ans": true
+   },
+   {
+    "es": "La plantilla de acceso a contenido controlado está diseñada para reuniones con participantes externos.",
+    "en": "The controlled content access template is designed for meetings with external participants.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de reuniones solo afectan a las llamadas telefónicas.",
+    "en": "Meeting policies affect only phone calls.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las directivas de reuniones controlan características de reuniones, no solo llamadas.",
+  "exp_en": "Meeting policies control meeting features, not just calls."
+ },
+ {
+  "id": 1620,
+  "exam": "ms-721",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué solución de Microsoft ayuda a reducir el consumo de ancho de banda durante un town hall grande al permitir que los espectadores obtengan el contenido de cachés locales?",
+  "q_en": "Which Microsoft solution helps reduce bandwidth use during a large town hall by letting viewers get content from local caches?",
+  "opts_es": [
+   "Red de entrega de contenido empresarial (eCDN)",
+   "Operator Connect",
+   "Llamadas compartidas",
+   "Estacionamiento de llamadas"
+  ],
+  "opts_en": [
+   "Enterprise Content Delivery Network (eCDN)",
+   "Operator Connect",
+   "Shared Calling",
+   "Call park"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "eCDN distribuye el vídeo de forma eficiente dentro de la red corporativa.",
+  "exp_en": "eCDN distributes video efficiently inside the corporate network."
+ },
+ {
+  "id": 1621,
+  "exam": "ms-721",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué característica de Teams Rooms permite que las personas lleven su propio dispositivo y se unan a una reunión conectándolo a la entrada HDMI de la sala?",
+  "q_en": "Which Teams Rooms feature lets people bring their own device to join a meeting by plugging it into the room's HDMI input?",
+  "opts_es": [
+   "Entrada HDMI (HDMI ingest)",
+   "Interoperabilidad de vídeo en la nube",
+   "Llamadas compartidas",
+   "Etiquetas de informes"
+  ],
+  "opts_en": [
+   "HDMI ingest",
+   "Cloud video interop",
+   "Shared Calling",
+   "Reporting labels"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La entrada HDMI muestra el contenido de un dispositivo conectado en la pantalla de la sala.",
+  "exp_en": "HDMI ingest shows content from a connected device on the room's display."
+ },
+ {
+  "id": 1622,
+  "exam": "ms-721",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué característica permite que una persona entre en una sala y reserve o use temporalmente cualquier escritorio o dispositivo compartido disponible con su propia cuenta?",
+  "q_en": "Which feature lets a person walk into a room and reserve or use any available desk or shared device temporarily with their own account?",
+  "opts_es": [
+   "Escritorio compartido (hot desking) en dispositivos compartidos de Teams",
+   "Transmisión de Teams",
+   "Conmutación por error del SBC",
+   "Traducción de troncales"
+  ],
+  "opts_en": [
+   "Hot desking on Teams shared devices",
+   "Teams casting",
+   "SBC failover",
+   "Trunk translation"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El hot desking permite que los usuarios inicien sesión temporalmente en dispositivos compartidos.",
+  "exp_en": "Hot desking lets users sign in to shared devices temporarily."
+ },
+ {
+  "id": 1623,
+  "exam": "ms-721",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las características opcionales de Teams Rooms, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Teams Rooms optional features, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La entrada HDMI muestra el contenido de un dispositivo conectado en la pantalla de la sala.",
+    "en": "HDMI ingest displays content from a connected device on the room screen.",
+    "ans": true
+   },
+   {
+    "es": "Una cámara de contenido puede mostrar una pizarra física a los participantes remotos.",
+    "en": "A content camera can show a physical whiteboard to remote participants.",
+    "ans": true
+   },
+   {
+    "es": "La unión por proximidad requiere un cable de red entre teléfonos.",
+    "en": "Proximity join requires a wired network cable between phones.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La unión por proximidad usa señales Bluetooth o ultrasonidos.",
+  "exp_en": "Proximity join uses Bluetooth or ultrasound signals."
+ },
+ {
+  "id": 1624,
+  "exam": "ms-721",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de sala para cada escenario.",
+  "q_en": "Select the room feature for each scenario.",
+  "rows": [
+   {
+    "es": "Un presentador quiere mostrar la pantalla de un portátil mediante un cable.",
+    "en": "A presenter wants to show a laptop screen using a cable.",
+    "opts_es": [
+     "Entrada HDMI",
+     "Cámara de contenido",
+     "Hot desking",
+     "Transmisión de Teams"
+    ],
+    "opts_en": [
+     "HDMI ingest",
+     "Content camera",
+     "Hot desking",
+     "Teams casting"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Los participantes remotos deben ver la pizarra física de la sala.",
+    "en": "Remote participants should see the physical whiteboard in the room.",
+    "opts_es": [
+     "Entrada HDMI",
+     "Cámara de contenido",
+     "Hot desking",
+     "Transmisión de Teams"
+    ],
+    "opts_en": [
+     "HDMI ingest",
+     "Content camera",
+     "Hot desking",
+     "Teams casting"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "La entrada HDMI gestiona contenido por cable; una cámara de contenido captura pizarras.",
+  "exp_en": "HDMI ingest handles cabled content; a content camera captures whiteboards."
  }
 ]
