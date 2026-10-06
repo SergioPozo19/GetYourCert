@@ -1,0 +1,6130 @@
+[
+ {
+  "id": 1,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué rol de área de trabajo de Fabric puede eliminar el área de trabajo y agregar o quitar a otros administradores?",
+  "q_en": "Which Fabric workspace role can delete the workspace and add or remove other administrators?",
+  "opts_es": [
+   "Administrador",
+   "Miembro",
+   "Colaborador",
+   "Lector"
+  ],
+  "opts_en": [
+   "Admin",
+   "Member",
+   "Contributor",
+   "Viewer"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Solo los administradores tienen control total, incluida la eliminación del área de trabajo.",
+  "exp_en": "Only Admins have full control, including deleting the workspace."
+ },
+ {
+  "id": 2,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un ingeniero de datos debe crear y ejecutar cuadernos y escribir datos en un lakehouse, pero no administrar el acceso al área de trabajo. ¿Qué rol con menos privilegios encaja?",
+  "q_en": "A data engineer must create and run notebooks and write data to a lakehouse, but must not manage workspace access. Which role is the least privileged that fits?",
+  "opts_es": [
+   "Colaborador",
+   "Lector",
+   "Administrador",
+   "Miembro"
+  ],
+  "opts_en": [
+   "Contributor",
+   "Viewer",
+   "Admin",
+   "Member"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los colaboradores pueden crear y editar elementos pero no administrar permisos.",
+  "exp_en": "Contributors can create and edit items but cannot manage permissions."
+ },
+ {
+  "id": 3,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué rol del área de trabajo puede agregar usuarios con roles inferiores y compartir elementos pero no eliminar el área de trabajo?",
+  "q_en": "Which workspace role can add users with lower roles and share items but cannot delete the workspace?",
+  "opts_es": [
+   "Miembro",
+   "Colaborador",
+   "Lector",
+   "Ninguno de ellos"
+  ],
+  "opts_en": [
+   "Member",
+   "Contributor",
+   "Viewer",
+   "None of them"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los miembros tienen amplios derechos por debajo del administrador, incluido compartir.",
+  "exp_en": "Members have broad rights below Admin, including sharing."
+ },
+ {
+  "id": 4,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Quieres que un usuario consulte un almacén solo con T-SQL, sin acceso a sus archivos de OneLake y sin rol de área de trabajo. ¿Qué debes hacer?",
+  "q_en": "You want a user to query a warehouse with T-SQL only, without access to its OneLake files and without a workspace role. What should you do?",
+  "opts_es": [
+   "Compartir el almacén y conceder el permiso de lectura de datos (ReadData)",
+   "Hacer al usuario administrador del área de trabajo",
+   "Conceder ReadAll en el almacén",
+   "Compartir todo el área de trabajo como lector"
+  ],
+  "opts_en": [
+   "Share the warehouse and grant the Read data (ReadData) permission",
+   "Make the user a workspace Admin",
+   "Grant ReadAll on the warehouse",
+   "Share the entire workspace as Viewer"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Compartir el elemento con ReadData expone solo el punto de conexión SQL.",
+  "exp_en": "Item sharing with ReadData exposes only the SQL endpoint."
+ },
+ {
+  "id": 5,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué permiso de elemento permite a un usuario leer los archivos y tablas Delta subyacentes de un lakehouse mediante OneLake, por ejemplo con Spark?",
+  "q_en": "Which item permission lets a user read the underlying files and Delta tables of a lakehouse through OneLake, for example with Spark?",
+  "opts_es": [
+   "ReadAll",
+   "ReadData",
+   "Compilar",
+   "Volver a compartir"
+  ],
+  "opts_en": [
+   "ReadAll",
+   "ReadData",
+   "Build",
+   "Reshare"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ReadAll da acceso a los datos de OneLake; ReadData solo da acceso SQL.",
+  "exp_en": "ReadAll grants access to OneLake data; ReadData only grants SQL access."
+ },
+ {
+  "id": 6,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Cómo se implementa la seguridad de nivel de fila en un almacén de Fabric?",
+  "q_en": "How do you implement row-level security in a Fabric warehouse?",
+  "opts_es": [
+   "Crear una función con valores de tabla insertada como predicado y una directiva de seguridad",
+   "Ocultar filas con un rol de área de trabajo de solo vista",
+   "Aplicar una etiqueta de confidencialidad a la tabla",
+   "Crear una regla de implementación"
+  ],
+  "opts_en": [
+   "Create an inline table-valued function as a predicate and a security policy",
+   "Hide rows with a view-only workspace role",
+   "Apply a sensitivity label to the table",
+   "Create a deployment rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "RLS en el almacén usa funciones de predicado enlazadas por una directiva de seguridad.",
+  "exp_en": "RLS in the warehouse uses predicate functions bound by a security policy."
+ },
+ {
+  "id": 7,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Una tabla del almacén tiene una columna Salary que solo RR. HH. debe leer. ¿Qué característica de T-SQL restringe el acceso a columnas concretas?",
+  "q_en": "A warehouse table has a Salary column that only HR should read. Which T-SQL feature restricts access to specific columns?",
+  "opts_es": [
+   "Seguridad de nivel de columna con GRANT SELECT en las columnas permitidas",
+   "Una directiva de seguridad en filas",
+   "Aprobación como certificado",
+   "Una regla de canalización de implementación"
+  ],
+  "opts_en": [
+   "Column-level security with GRANT SELECT on allowed columns",
+   "A security policy on rows",
+   "Endorsement as Certified",
+   "A deployment pipeline rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La seguridad de columna se aplica con GRANT/DENY a nivel de columna.",
+  "exp_en": "Column-level security is enforced with column-level GRANT/DENY."
+ },
+ {
+  "id": 8,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué característica oculta las direcciones de correo en los resultados de consulta para usuarios sin privilegios sin cambiar los datos almacenados?",
+  "q_en": "Which feature obscures email addresses in query results for non-privileged users without changing the stored data?",
+  "opts_es": [
+   "Enmascaramiento dinámico de datos",
+   "Seguridad de nivel de fila",
+   "Aprobación de elementos",
+   "Integración de Git"
+  ],
+  "opts_en": [
+   "Dynamic data masking",
+   "Row-level security",
+   "Item endorsement",
+   "Git integration"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El enmascaramiento dinámico aplica una máscara en el momento de la consulta.",
+  "exp_en": "Dynamic data masking applies a mask at query time."
+ },
+ {
+  "id": 9,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un modelo semántico contiene una tabla Cost que algunos roles ni siquiera deben ver en la lista de campos. ¿Qué característica oculta tablas o columnas a roles concretos?",
+  "q_en": "A semantic model contains a Cost table that some roles must not even see in the field list. Which feature hides tables or columns from specific roles?",
+  "opts_es": [
+   "Seguridad de nivel de objeto (OLS)",
+   "Seguridad de nivel de fila (RLS)",
+   "Etiquetas de confidencialidad",
+   "Promoción"
+  ],
+  "opts_en": [
+   "Object-level security (OLS)",
+   "Row-level security (RLS)",
+   "Sensitivity labels",
+   "Promotion"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "OLS restringe el acceso a tablas y columnas por rol.",
+  "exp_en": "OLS restricts access to tables and columns by role."
+ },
+ {
+  "id": 10,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué herramienta se usa normalmente para definir la seguridad de nivel de objeto en un modelo semántico?",
+  "q_en": "Which tool is typically used to define object-level security on a semantic model?",
+  "opts_es": [
+   "Tabular Editor u otra herramienta basada en XMLA",
+   "La aplicación móvil de Power BI",
+   "Un Dataflow Gen2",
+   "Un cuaderno de Spark"
+  ],
+  "opts_en": [
+   "Tabular Editor or another XMLA-based tool",
+   "The Power BI mobile app",
+   "A Dataflow Gen2",
+   "A Spark notebook"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "OLS se configura en los metadatos del modelo, a menudo con Tabular Editor.",
+  "exp_en": "OLS is configured in the model metadata, often with Tabular Editor."
+ },
+ {
+  "id": 11,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Fabric restringe el acceso a carpetas o tablas concretas dentro de un lakehouse para ciertos usuarios?",
+  "q_en": "Which Fabric capability restricts access to specific folders or tables inside a lakehouse for certain users?",
+  "opts_es": [
+   "Roles de acceso a datos de OneLake",
+   "Rol de lector del área de trabajo",
+   "Enmascaramiento dinámico de datos",
+   "Canalizaciones de implementación"
+  ],
+  "opts_en": [
+   "OneLake data access roles",
+   "Workspace Viewer role",
+   "Dynamic data masking",
+   "Deployment pipelines"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los roles de acceso a datos de OneLake dan control a nivel de archivo y carpeta.",
+  "exp_en": "OneLake data access roles provide file- and folder-level control."
+ },
+ {
+  "id": 12,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué afirmación sobre la seguridad de nivel de fila en un modelo semántico es correcta?",
+  "q_en": "Which statement about row-level security in a semantic model is correct?",
+  "opts_es": [
+   "Los roles se definen con expresiones de filtro DAX y los miembros se asignan en el servicio",
+   "RLS se aplica a todos los administradores del área de trabajo de forma predeterminada",
+   "RLS solo se puede definir en el servicio Power BI",
+   "RLS requiere una etiqueta de confidencialidad"
+  ],
+  "opts_en": [
+   "Roles are defined with DAX filter expressions and members are assigned in the service",
+   "RLS applies to every workspace Admin by default",
+   "RLS can only be defined in the Power BI service",
+   "RLS requires a sensitivity label"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los roles de RLS usan filtros DAX; los miembros se agregan tras publicar.",
+  "exp_en": "RLS roles use DAX filters; members are added after publishing."
+ },
+ {
+  "id": 13,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué usuarios NO están restringidos por la RLS del modelo semántico porque tienen permiso de escritura sobre el modelo?",
+  "q_en": "Which users are NOT restricted by semantic model RLS because they have write permission on the model?",
+  "opts_es": [
+   "Administradores, miembros y colaboradores del área de trabajo",
+   "Lectores del área de trabajo",
+   "Usuarios con solo permiso de compilación",
+   "Consumidores de informes mediante una aplicación"
+  ],
+  "opts_en": [
+   "Workspace Admins, Members and Contributors",
+   "Workspace Viewers",
+   "Users with only Build permission",
+   "Report consumers through an app"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "RLS se aplica a los lectores; quienes tienen acceso de escritura ven todos los datos.",
+  "exp_en": "RLS applies to Viewers; users with write access see all data."
+ },
+ {
+  "id": 14,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Microsoft proporciona las etiquetas de confidencialidad que se pueden aplicar a los elementos de Fabric?",
+  "q_en": "Which Microsoft service provides the sensitivity labels that you can apply to Fabric items?",
+  "opts_es": [
+   "Microsoft Purview Information Protection",
+   "Microsoft Intune",
+   "Azure Monitor",
+   "Solo Microsoft Defender for Cloud Apps"
+  ],
+  "opts_en": [
+   "Microsoft Purview Information Protection",
+   "Microsoft Intune",
+   "Azure Monitor",
+   "Microsoft Defender for Cloud Apps only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Fabric usa etiquetas de Microsoft Purview Information Protection.",
+  "exp_en": "Fabric uses Purview Information Protection labels."
+ },
+ {
+  "id": 15,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué ocurre con una etiqueta de confidencialidad cuando se exportan datos de un elemento etiquetado a Excel o PDF?",
+  "q_en": "What happens to a sensitivity label when data is exported from a labeled item to Excel or PDF?",
+  "opts_es": [
+   "La etiqueta y su configuración de protección acompañan al archivo exportado",
+   "La etiqueta siempre se elimina",
+   "La exportación siempre se bloquea",
+   "Solo cambia el nombre del archivo"
+  ],
+  "opts_en": [
+   "The label and its protection settings follow the exported file",
+   "The label is always removed",
+   "The export is always blocked",
+   "Only the file name changes"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las etiquetas viajan con el contenido exportado.",
+  "exp_en": "Labels travel with exported content."
+ },
+ {
+  "id": 16,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué nivel de aprobación solo pueden aplicar los usuarios que el administrador del inquilino ha autorizado como revisores?",
+  "q_en": "Which endorsement level can only be applied by users that the tenant admin has authorized as reviewers?",
+  "opts_es": [
+   "Certificado",
+   "Promovido",
+   "Compartido",
+   "Destacado"
+  ],
+  "opts_en": [
+   "Certified",
+   "Promoted",
+   "Shared",
+   "Highlighted"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La certificación requiere revisores autorizados.",
+  "exp_en": "Certification requires authorized reviewers."
+ },
+ {
+  "id": 17,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué aprobación está pensada para lakehouses, almacenes y otros elementos de datos que son la fuente autoritativa de datos?",
+  "q_en": "Which endorsement is intended for lakehouses, warehouses and other data items that are the authoritative source of data?",
+  "opts_es": [
+   "Datos maestros",
+   "Promovido",
+   "Vista previa",
+   "Archivado"
+  ],
+  "opts_en": [
+   "Master data",
+   "Promoted",
+   "Preview",
+   "Archived"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La aprobación de datos maestros marca los elementos de datos autoritativos.",
+  "exp_en": "Master data endorsement marks authoritative data items."
+ },
+ {
+  "id": 18,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "El propietario de un equipo quiere destacar un modelo semántico como listo para un uso más amplio sin revisión formal. ¿Qué aprobación encaja?",
+  "q_en": "A team owner wants to highlight a semantic model as ready for wider use without a formal review. Which endorsement fits?",
+  "opts_es": [
+   "Promovido",
+   "Certificado",
+   "Datos maestros",
+   "Etiqueta de confidencialidad"
+  ],
+  "opts_en": [
+   "Promoted",
+   "Certified",
+   "Master data",
+   "Sensitivity label"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Cualquier usuario con permiso de escritura puede promover un elemento.",
+  "exp_en": "Any user with write permission can promote an item."
+ },
+ {
+  "id": 19,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los usuarios necesitan crear informes nuevos sobre un modelo semántico compartido sin unirse al área de trabajo. ¿Qué permiso necesitan?",
+  "q_en": "Users need to build new reports on a shared semantic model without joining the workspace. Which permission do they need?",
+  "opts_es": [
+   "Compilar en el modelo semántico",
+   "Colaborador del área de trabajo",
+   "ReadAll en el lakehouse",
+   "Administrador en la capacidad"
+  ],
+  "opts_en": [
+   "Build on the semantic model",
+   "Workspace Contributor",
+   "ReadAll on the lakehouse",
+   "Admin on the capacity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El permiso de compilación permite crear contenido sobre un modelo.",
+  "exp_en": "Build permission lets users create content on a model."
+ },
+ {
+  "id": 20,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Cómo se pueden restringir filas en una base de datos KQL de un Eventhouse para distintos usuarios?",
+  "q_en": "How can you restrict rows in a KQL database in an Eventhouse for different users?",
+  "opts_es": [
+   "Usar una directiva de seguridad de nivel de fila en la tabla",
+   "Usar un parámetro de flujo de datos",
+   "Usar un marcador de Power BI",
+   "Usar una configuración de sesión de Spark"
+  ],
+  "opts_en": [
+   "Use a row level security policy on the table",
+   "Use a dataflow parameter",
+   "Use a Power BI bookmark",
+   "Use a Spark session setting"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las bases de datos KQL admiten directivas de seguridad de nivel de fila.",
+  "exp_en": "KQL databases support row level security policies."
+ },
+ {
+  "id": 21,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un lector del área de trabajo no debe leer una tabla confidencial del almacén aunque los lectores normalmente pueden consultar el punto de conexión SQL. ¿Qué puedes usar?",
+  "q_en": "A viewer in the workspace should not read a sensitive warehouse table even though Viewers can normally query the SQL endpoint. What can you use?",
+  "opts_es": [
+   "Un DENY de T-SQL en la tabla",
+   "Una aprobación Promovido",
+   "Una regla de implementación",
+   "Un tema nuevo del área de trabajo"
+  ],
+  "opts_en": [
+   "A T-SQL DENY on the table",
+   "A Promoted endorsement",
+   "A deployment rule",
+   "A new workspace theme"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los permisos de T-SQL pueden restringir aún más a los lectores del área de trabajo.",
+  "exp_en": "T-SQL permissions can further restrict workspace Viewers."
+ },
+ {
+  "id": 22,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué configuración garantiza que los usuarios etiqueten cada elemento nuevo, según exige el cumplimiento?",
+  "q_en": "Which setting makes sure that every new item is labeled by users, as required by compliance?",
+  "opts_es": [
+   "Una directiva de etiquetado obligatorio en Purview",
+   "Una aprobación Certificado",
+   "Una directiva de rama de Git",
+   "Una pausa de capacidad"
+  ],
+  "opts_en": [
+   "A mandatory labeling policy in Purview",
+   "A Certified endorsement",
+   "A Git branch policy",
+   "A capacity pause"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El etiquetado obligatorio exige una etiqueta en el contenido nuevo.",
+  "exp_en": "Mandatory labeling forces a label on new content."
+ },
+ {
+  "id": 23,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un elemento hereda una etiqueta de confidencialidad de su elemento ascendente. ¿Cómo se llama esto?",
+  "q_en": "An item inherits a sensitivity label from its upstream item. What is this called?",
+  "opts_es": [
+   "Herencia descendente",
+   "Promoción de elementos",
+   "Escalado de capacidad",
+   "Reserva"
+  ],
+  "opts_en": [
+   "Downstream inheritance",
+   "Item promotion",
+   "Capacity scaling",
+   "Fallback"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las etiquetas pueden fluir a los elementos descendentes.",
+  "exp_en": "Labels can flow to downstream items."
+ },
+ {
+  "id": 24,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Compartes un lakehouse con un usuario sin seleccionar ningún permiso adicional. ¿Qué puede hacer el usuario?",
+  "q_en": "You share a lakehouse with a user without selecting any additional permission. What can the user do?",
+  "opts_es": [
+   "Conectarse al elemento y verlo, pero no leer datos hasta que se concedan más permisos",
+   "Leer todos los archivos de OneLake",
+   "Eliminar el lakehouse",
+   "Administrar los miembros del área de trabajo"
+  ],
+  "opts_en": [
+   "Connect to the item and see it, but not read data until further permissions are granted",
+   "Read all files in OneLake",
+   "Delete the lakehouse",
+   "Manage workspace members"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El uso compartido básico solo da acceso de conexión.",
+  "exp_en": "The base share gives connect access only."
+ },
+ {
+  "id": 25,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué enfoque de gobernanza agrupa varias áreas de trabajo bajo un área de negocio para delegar configuración y visibilidad?",
+  "q_en": "Which governance approach groups multiple workspaces under a business area so that settings and discoverability can be delegated?",
+  "opts_es": [
+   "Dominios de Fabric",
+   "Reglas de implementación",
+   "Enmascaramiento dinámico de datos",
+   "Accesos directos de OneLake"
+  ],
+  "opts_en": [
+   "Fabric domains",
+   "Deployment rules",
+   "Dynamic data masking",
+   "OneLake shortcuts"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los dominios organizan las áreas de trabajo por área de negocio.",
+  "exp_en": "Domains organize workspaces by business area."
+ },
+ {
+  "id": 26,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué modelo de seguridad debes usar para que un director de ventas solo vea las filas de su región en un informe de Power BI?",
+  "q_en": "Which security model should you use so that a sales manager only sees rows for their own region in a Power BI report?",
+  "opts_es": [
+   "Seguridad dinámica de nivel de fila con USERPRINCIPALNAME()",
+   "Una aprobación Certificado",
+   "Un rol de lector del área de trabajo",
+   "Seguridad de nivel de objeto en la columna de región"
+  ],
+  "opts_en": [
+   "Dynamic row-level security using USERPRINCIPALNAME()",
+   "A Certified endorsement",
+   "A workspace Viewer role",
+   "Object-level security on the region column"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La RLS dinámica asigna el usuario con sesión iniciada a una tabla de seguridad.",
+  "exp_en": "Dynamic RLS maps the signed-in user to a security table."
+ },
+ {
+  "id": 27,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los roles del área de trabajo y los permisos de elementos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about workspace roles and item permissions, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los lectores no pueden crear ni editar elementos.",
+    "en": "Viewers cannot create or edit items.",
+    "ans": true
+   },
+   {
+    "es": "El permiso ReadData da acceso a los archivos de OneLake mediante Spark.",
+    "en": "The ReadData permission gives access to OneLake files through Spark.",
+    "ans": false
+   },
+   {
+    "es": "Los colaboradores pueden escribir datos pero no administrar permisos del área de trabajo.",
+    "en": "Contributors can write data but cannot manage workspace permissions.",
+    "ans": true
+   }
+  ],
+  "exp_es": "ReadData es solo acceso SQL; ReadAll es para datos de OneLake.",
+  "exp_en": "ReadData is SQL access only; ReadAll is for OneLake data."
+ },
+ {
+  "id": 28,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de nivel de fila y de columna, indica si es verdadera o falsa.",
+  "q_en": "For each statement about row-level and column-level security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un almacén puede aplicar RLS con una directiva de seguridad.",
+    "en": "A warehouse can enforce RLS with a security policy.",
+    "ans": true
+   },
+   {
+    "es": "La seguridad de nivel de columna oculta filas completas a los usuarios.",
+    "en": "Column-level security hides entire rows from users.",
+    "ans": false
+   },
+   {
+    "es": "El enmascaramiento dinámico de datos cambia los valores almacenados de forma permanente.",
+    "en": "Dynamic data masking changes the stored values permanently.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El enmascaramiento y la CLS afectan a los resultados, no a los datos almacenados.",
+  "exp_en": "Masking and CLS affect query results, not stored data."
+ },
+ {
+  "id": 29,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las etiquetas de confidencialidad y la aprobación, indica si es verdadera o falsa.",
+  "q_en": "For each statement about sensitivity labels and endorsement, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las etiquetas de confidencialidad provienen de Microsoft Purview Information Protection.",
+    "en": "Sensitivity labels come from Microsoft Purview Information Protection.",
+    "ans": true
+   },
+   {
+    "es": "Cualquier usuario puede marcar un elemento como certificado.",
+    "en": "Any user can mark an item as Certified.",
+    "ans": false
+   },
+   {
+    "es": "La promoción está disponible para usuarios con permiso de escritura en el elemento.",
+    "en": "Promotion is available to users with write permission on the item.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La certificación necesita revisores autorizados.",
+  "exp_en": "Certification needs authorized reviewers."
+ },
+ {
+  "id": 30,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de los modelos semánticos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about semantic model security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los roles de RLS se definen con filtros DAX.",
+    "en": "RLS roles are defined with DAX filters.",
+    "ans": true
+   },
+   {
+    "es": "OLS puede ocultar una columna para que no sea visible a un rol.",
+    "en": "OLS can hide a column so it is not visible to a role.",
+    "ans": true
+   },
+   {
+    "es": "Los administradores del área de trabajo siempre están limitados por los roles de RLS.",
+    "en": "Workspace Admins are always limited by RLS roles.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los usuarios con acceso de escritura omiten la RLS.",
+  "exp_en": "Users with write access bypass RLS."
+ },
+ {
+  "id": 31,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el acceso a OneLake y a los lakehouses, indica si es verdadera o falsa.",
+  "q_en": "For each statement about OneLake and lakehouse access, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los roles de acceso a datos de OneLake pueden limitar el acceso a carpetas seleccionadas.",
+    "en": "OneLake data access roles can limit access to selected folders.",
+    "ans": true
+   },
+   {
+    "es": "Compartir un elemento siempre concede ReadAll de forma predeterminada.",
+    "en": "Sharing an item always grants ReadAll by default.",
+    "ans": false
+   },
+   {
+    "es": "Una base de datos KQL puede usar una directiva de seguridad de nivel de fila.",
+    "en": "A KQL database can use a row level security policy.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Compartir un elemento es de mínimo privilegio de forma predeterminada.",
+  "exp_en": "Item sharing is least-privilege by default."
+ },
+ {
+  "id": 32,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las características de gobernanza, indica si es verdadera o falsa.",
+  "q_en": "For each statement about governance features, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La aprobación de datos maestros marca elementos de datos autoritativos.",
+    "en": "Master data endorsement marks authoritative data items.",
+    "ans": true
+   },
+   {
+    "es": "Las etiquetas pueden ser heredadas por elementos descendentes.",
+    "en": "Labels can be inherited by downstream items.",
+    "ans": true
+   },
+   {
+    "es": "La aprobación cifra el contenido del elemento.",
+    "en": "Endorsement encrypts the item content.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La aprobación señala confianza; no cifra.",
+  "exp_en": "Endorsement signals trust; it does not encrypt."
+ },
+ {
+  "id": 33,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el mecanismo de seguridad para cada requisito.",
+  "q_en": "Select the security mechanism for each requirement.",
+  "rows": [
+   {
+    "es": "Cada director ve solo las filas de su departamento.",
+    "en": "Each manager sees only their own department's rows.",
+    "opts_es": [
+     "Seguridad de nivel de fila",
+     "Seguridad de nivel de columna",
+     "Enmascaramiento dinámico de datos",
+     "Rol de acceso a datos de OneLake"
+    ],
+    "opts_en": [
+     "Row-level security",
+     "Column-level security",
+     "Dynamic data masking",
+     "OneLake data access role"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Solo RR. HH. puede seleccionar la columna Salary.",
+    "en": "Only HR can select the Salary column.",
+    "opts_es": [
+     "Seguridad de nivel de fila",
+     "Seguridad de nivel de columna",
+     "Enmascaramiento dinámico de datos",
+     "Rol de acceso a datos de OneLake"
+    ],
+    "opts_en": [
+     "Row-level security",
+     "Column-level security",
+     "Dynamic data masking",
+     "OneLake data access role"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "RLS filtra filas; CLS controla columnas.",
+  "exp_en": "RLS filters rows; CLS controls columns."
+ },
+ {
+  "id": 34,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el mecanismo para cada requisito.",
+  "q_en": "Select the mechanism for each requirement.",
+  "rows": [
+   {
+    "es": "Mostrar solo la primera cifra de un teléfono al personal de soporte.",
+    "en": "Show only the first letter of a phone number to support staff.",
+    "opts_es": [
+     "Enmascaramiento dinámico de datos",
+     "Rol de acceso a datos de OneLake",
+     "Seguridad de nivel de objeto",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Dynamic data masking",
+     "OneLake data access role",
+     "Object-level security",
+     "Row-level security"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Permitir que un grupo lea solo la carpeta /Files/finance de un lakehouse.",
+    "en": "Allow a group to read only the /Files/finance folder of a lakehouse.",
+    "opts_es": [
+     "Enmascaramiento dinámico de datos",
+     "Rol de acceso a datos de OneLake",
+     "Seguridad de nivel de objeto",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Dynamic data masking",
+     "OneLake data access role",
+     "Object-level security",
+     "Row-level security"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "El enmascaramiento oculta valores; los roles de acceso a datos limitan carpetas.",
+  "exp_en": "Masking obscures values; data access roles scope folders."
+ },
+ {
+  "id": 35,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el permiso o rol para cada usuario.",
+  "q_en": "Select the permission or role for each user.",
+  "rows": [
+   {
+    "es": "Un analista consulta un almacén solo con SQL.",
+    "en": "An analyst queries a warehouse with SQL only.",
+    "opts_es": [
+     "Administrador del área de trabajo",
+     "Colaborador del área de trabajo",
+     "Permiso de elemento ReadAll",
+     "Permiso de elemento ReadData"
+    ],
+    "opts_en": [
+     "Workspace Admin",
+     "Workspace Contributor",
+     "ReadAll item permission",
+     "ReadData item permission"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Un desarrollador de Spark lee archivos Delta de un lakehouse compartido.",
+    "en": "A Spark developer reads Delta files from a shared lakehouse.",
+    "opts_es": [
+     "Administrador del área de trabajo",
+     "Colaborador del área de trabajo",
+     "Permiso de elemento ReadAll",
+     "Permiso de elemento ReadData"
+    ],
+    "opts_en": [
+     "Workspace Admin",
+     "Workspace Contributor",
+     "ReadAll item permission",
+     "ReadData item permission"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "ReadData es solo SQL; ReadAll es para archivos de OneLake.",
+  "exp_en": "ReadData is SQL only; ReadAll is for OneLake files."
+ },
+ {
+  "id": 36,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la aprobación para cada situación.",
+  "q_en": "Select the endorsement for each situation.",
+  "rows": [
+   {
+    "es": "Un lakehouse es la fuente oficial de datos de clientes.",
+    "en": "A lakehouse is the official source of customer data.",
+    "opts_es": [
+     "Promovido",
+     "Certificado",
+     "Datos maestros",
+     "Sin aprobación"
+    ],
+    "opts_en": [
+     "Promoted",
+     "Certified",
+     "Master data",
+     "No endorsement"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Un revisor autorizado verificó que un modelo semántico cumple los estándares.",
+    "en": "An authorized reviewer verified a semantic model meets standards.",
+    "opts_es": [
+     "Promovido",
+     "Certificado",
+     "Datos maestros",
+     "Sin aprobación"
+    ],
+    "opts_en": [
+     "Promoted",
+     "Certified",
+     "Master data",
+     "No endorsement"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Datos maestros marca elementos autoritativos; Certificado requiere un revisor.",
+  "exp_en": "Master data marks authoritative data items; Certified requires a reviewer."
+ },
+ {
+  "id": 37,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de T-SQL o directiva para cada necesidad.",
+  "q_en": "Select the T-SQL or policy feature for each need.",
+  "rows": [
+   {
+    "es": "Filtrar filas según el usuario con sesión iniciada.",
+    "en": "Filter rows by the signed-in user.",
+    "opts_es": [
+     "GRANT SELECT en columnas",
+     "Directiva de seguridad con una función de predicado",
+     "DENY en una tabla",
+     "Regla de enmascaramiento dinámico de datos"
+    ],
+    "opts_en": [
+     "GRANT SELECT on columns",
+     "Security policy with a predicate function",
+     "DENY on a table",
+     "Dynamic data masking rule"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Impedir que un lector concreto lea una tabla confidencial.",
+    "en": "Block a specific Viewer from reading a sensitive table.",
+    "opts_es": [
+     "GRANT SELECT en columnas",
+     "Directiva de seguridad con una función de predicado",
+     "DENY en una tabla",
+     "Regla de enmascaramiento dinámico de datos"
+    ],
+    "opts_en": [
+     "GRANT SELECT on columns",
+     "Security policy with a predicate function",
+     "DENY on a table",
+     "Dynamic data masking rule"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las funciones de predicado filtran filas; DENY bloquea el acceso.",
+  "exp_en": "Predicate functions filter rows; DENY blocks access."
+ },
+ {
+  "id": 38,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Para que un usuario lea solo las filas de su región, crea ",
+  "pre_en": "To let a user read only the rows for their own region, create ",
+  "post_es": " en el modelo semántico.",
+  "post_en": " in the semantic model.",
+  "opts_es": [
+   "un rol de seguridad de nivel de fila",
+   "una canalización de implementación",
+   "un Dataflow Gen2",
+   "un acceso directo"
+  ],
+  "opts_en": [
+   "a row-level security role",
+   "a deployment pipeline",
+   "a Dataflow Gen2",
+   "a shortcut"
+  ],
+  "correct": 0,
+  "exp_es": "Los roles de RLS filtran filas por usuario.",
+  "exp_en": "RLS roles filter rows by user."
+ },
+ {
+  "id": 39,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Solo los usuarios autorizados por el administrador del inquilino pueden aplicar la aprobación ",
+  "pre_en": "Only users authorized by the tenant admin can apply the ",
+  "post_es": ".",
+  "post_en": " endorsement.",
+  "opts_es": [
+   "Certificado",
+   "Promovido",
+   "Destacado",
+   "Anclado"
+  ],
+  "opts_en": [
+   "Certified",
+   "Promoted",
+   "Highlighted",
+   "Pinned"
+  ],
+  "correct": 0,
+  "exp_es": "La certificación se limita a revisores autorizados.",
+  "exp_en": "Certification is limited to authorized reviewers."
+ },
+ {
+  "id": 40,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué proveedores de Git se pueden conectar a un área de trabajo de Fabric para el control de versiones?",
+  "q_en": "Which Git providers can you connect to a Fabric workspace for version control?",
+  "opts_es": [
+   "Azure DevOps y GitHub",
+   "Solo un recurso compartido de archivos local",
+   "Solo SharePoint",
+   "Cualquier servidor FTP"
+  ],
+  "opts_en": [
+   "Azure DevOps and GitHub",
+   "Only a local file share",
+   "Only SharePoint",
+   "Any FTP server"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La integración de Git de Fabric admite Azure DevOps y GitHub.",
+  "exp_en": "Fabric Git integration supports Azure DevOps and GitHub."
+ },
+ {
+  "id": 41,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué almacena la integración de Git de un área de trabajo de Fabric en el repositorio?",
+  "q_en": "What does Git integration in a Fabric workspace store in the repository?",
+  "opts_es": [
+   "Las definiciones de los elementos (metadatos), no los datos",
+   "Todos los archivos de datos del lakehouse",
+   "La configuración de la capacidad",
+   "Los registros de inicio de sesión de usuarios"
+  ],
+  "opts_en": [
+   "The item definitions (metadata), not the data",
+   "All lakehouse data files",
+   "The capacity configuration",
+   "User sign-in logs"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Git registra las definiciones de los elementos; los datos permanecen en OneLake.",
+  "exp_en": "Git tracks item definitions; data stays in OneLake."
+ },
+ {
+  "id": 42,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Un desarrollador quiere una copia aislada del área de trabajo para crear una característica sin afectar a otros. ¿Qué acción se recomienda?",
+  "q_en": "A developer wants an isolated copy of the workspace to build a feature without affecting others. What is the recommended action?",
+  "opts_es": [
+   "Crear una rama en un área de trabajo nueva",
+   "Compartir el área de trabajo de producción como administrador",
+   "Eliminar la rama principal",
+   "Pausar la capacidad"
+  ],
+  "opts_en": [
+   "Branch out to a new workspace",
+   "Share the production workspace as Admin",
+   "Delete the main branch",
+   "Pause the capacity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las ramas de características se asignan a áreas de trabajo independientes.",
+  "exp_en": "Feature branches map to separate workspaces."
+ },
+ {
+  "id": 43,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Tras cambiar un informe en un área de trabajo conectada a Git, ¿qué acción guarda los cambios en la rama conectada?",
+  "q_en": "After changing a report in a Git-connected workspace, which action saves the changes to the connected branch?",
+  "opts_es": [
+   "Confirmar (commit)",
+   "Actualizar todo",
+   "Implementar en producción",
+   "Aprobar"
+  ],
+  "opts_en": [
+   "Commit",
+   "Update all",
+   "Deploy to production",
+   "Endorse"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Commit envía los cambios del área de trabajo a Git.",
+  "exp_en": "Commit pushes workspace changes to Git."
+ },
+ {
+  "id": 44,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Un compañero envió cambios a la rama conectada. ¿Cómo los traes a tu área de trabajo?",
+  "q_en": "A colleague pushed changes to the connected branch. How do you bring them into your workspace?",
+  "opts_es": [
+   "Actualizar desde Git",
+   "Confirmar (commit)",
+   "Aplicar una etiqueta de confidencialidad",
+   "Crear una regla de implementación"
+  ],
+  "opts_en": [
+   "Update from Git",
+   "Commit",
+   "Apply a sensitivity label",
+   "Create a deployment rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Actualizar trae el último contenido de Git al área de trabajo.",
+  "exp_en": "Update pulls the latest Git content into the workspace."
+ },
+ {
+  "id": 45,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué es un proyecto de Power BI Desktop (.pbip)?",
+  "q_en": "What is a Power BI Desktop project (.pbip)?",
+  "opts_es": [
+   "Un formato basado en carpetas que guarda el informe y el modelo semántico como definiciones de texto independientes",
+   "Un único archivo binario con solo datos importados",
+   "Una fase de canalización de implementación",
+   "Una SKU de capacidad de Fabric"
+  ],
+  "opts_en": [
+   "A folder-based format that saves the report and semantic model as separate text-based definitions",
+   "A single binary file with imported data only",
+   "A deployment pipeline stage",
+   "A Fabric capacity SKU"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "PBIP permite el control de código fuente y el desarrollo conjunto.",
+  "exp_en": "PBIP enables source control and co-development."
+ },
+ {
+  "id": 46,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué formato de texto se usa para definir un modelo semántico en un proyecto de Power BI Desktop?",
+  "q_en": "Which text-based format is used to define a semantic model in a Power BI Desktop project?",
+  "opts_es": [
+   "TMDL (Tabular Model Definition Language)",
+   "CSV",
+   "PDF",
+   "XLSX"
+  ],
+  "opts_en": [
+   "TMDL (Tabular Model Definition Language)",
+   "CSV",
+   "PDF",
+   "XLSX"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "TMDL guarda los metadatos del modelo como texto legible.",
+  "exp_en": "TMDL stores model metadata as readable text."
+ },
+ {
+  "id": 47,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cuántas fases tiene una canalización de implementación de forma predeterminada?",
+  "q_en": "How many stages does a deployment pipeline have by default?",
+  "opts_es": [
+   "Tres: Desarrollo, Prueba y Producción",
+   "Una",
+   "Siete",
+   "Dos"
+  ],
+  "opts_en": [
+   "Three: Development, Test and Production",
+   "One",
+   "Seven",
+   "Two"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La canalización predeterminada tiene las fases Dev, Test y Prod.",
+  "exp_en": "The default pipeline has Dev, Test and Prod stages."
+ },
+ {
+  "id": 48,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Implementas un modelo semántico de Prueba a Producción pero necesita conectarse a otro origen de datos en Producción. ¿Qué debes configurar?",
+  "q_en": "You deploy a semantic model from Test to Production but need it to connect to a different data source in Production. What should you configure?",
+  "opts_es": [
+   "Una regla de implementación (de origen de datos o de parámetro)",
+   "Un rol de lector del área de trabajo",
+   "Una aprobación Certificado",
+   "Un conjunto de consultas KQL"
+  ],
+  "opts_en": [
+   "A deployment rule (data source or parameter rule)",
+   "A workspace Viewer role",
+   "A Certified endorsement",
+   "A KQL queryset"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las reglas de implementación cambian orígenes o parámetros por fase.",
+  "exp_en": "Deployment rules change sources or parameters per stage."
+ },
+ {
+  "id": 49,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué característica de una canalización de implementación muestra las diferencias entre elementos de dos fases antes de implementar?",
+  "q_en": "Which feature of a deployment pipeline shows the differences between items in two stages before deploying?",
+  "opts_es": [
+   "Comparar fases",
+   "Análisis de impacto",
+   "Enmascaramiento dinámico de datos",
+   "Accesos directos"
+  ],
+  "opts_en": [
+   "Compare stages",
+   "Impact analysis",
+   "Dynamic data masking",
+   "Shortcuts"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La comparación de fases resalta elementos cambiados, nuevos y ausentes.",
+  "exp_en": "Stage comparison highlights changed, new and missing items."
+ },
+ {
+  "id": 50,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Antes de cambiar un lakehouse, quieres ver qué modelos semánticos, informes y paneles dependen de él. ¿Qué característica ayuda?",
+  "q_en": "Before changing a lakehouse, you want to see which semantic models, reports and dashboards depend on it. Which feature helps?",
+  "opts_es": [
+   "Análisis de impacto en la vista de linaje",
+   "Seguridad de nivel de fila",
+   "Una actualización de flujo de datos",
+   "Solo métricas de capacidad"
+  ],
+  "opts_en": [
+   "Impact analysis in the lineage view",
+   "Row-level security",
+   "A dataflow refresh",
+   "Capacity metrics only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El análisis de impacto enumera los elementos descendentes y los usuarios afectados.",
+  "exp_en": "Impact analysis lists downstream items and affected users."
+ },
+ {
+  "id": 51,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué punto de conexión permite que herramientas como Tabular Editor o SSMS lean y escriban los metadatos de un modelo semántico en una capacidad de Fabric?",
+  "q_en": "Which endpoint lets tools such as Tabular Editor or SSMS read and write the metadata of a semantic model in a Fabric capacity?",
+  "opts_es": [
+   "El punto de conexión XMLA",
+   "El punto de conexión de análisis SQL",
+   "El punto de conexión DFS de OneLake",
+   "El URI de consulta KQL"
+  ],
+  "opts_en": [
+   "The XMLA endpoint",
+   "The SQL analytics endpoint",
+   "The OneLake DFS endpoint",
+   "The KQL query URI"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El punto de conexión XMLA admite operaciones de lectura y escritura en modelos.",
+  "exp_en": "The XMLA endpoint supports read/write operations on models."
+ },
+ {
+  "id": 52,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué configuración debe habilitarse en la capacidad para poder implementar cambios en un modelo semántico mediante el punto de conexión XMLA?",
+  "q_en": "Which setting must be enabled in the capacity so that you can deploy changes to a semantic model through the XMLA endpoint?",
+  "opts_es": [
+   "Punto de conexión XMLA establecido en Lectura y escritura",
+   "Enmascaramiento dinámico de datos",
+   "Disponibilidad de OneLake",
+   "Directiva de etiquetado obligatorio"
+  ],
+  "opts_en": [
+   "XMLA endpoint set to Read Write",
+   "Dynamic data masking",
+   "OneLake availability",
+   "Sensitivity label mandatory policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El punto de conexión XMLA debe permitir lectura y escritura.",
+  "exp_en": "The XMLA endpoint must allow read-write."
+ },
+ {
+  "id": 53,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué tipo de archivo empaqueta un informe, su definición de modelo y sus consultas sin los datos, y solicita parámetros al abrirse?",
+  "q_en": "Which file type packages a report, its model definition and queries without the data, and prompts for parameters when opened?",
+  "opts_es": [
+   "Plantilla de Power BI (.pbit)",
+   "Origen de datos de Power BI (.pbids)",
+   "Una exportación .csv",
+   "Un .zip de archivos Delta"
+  ],
+  "opts_en": [
+   "Power BI template (.pbit)",
+   "Power BI data source (.pbids)",
+   "A .csv export",
+   "A .zip of Delta files"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": ".pbit es una plantilla sin datos.",
+  "exp_en": ".pbit is a template without data."
+ },
+ {
+  "id": 54,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué contiene un archivo de origen de datos de Power BI (.pbids)?",
+  "q_en": "What does a Power BI data source file (.pbids) contain?",
+  "opts_es": [
+   "Información de conexión de un origen de datos, no los datos",
+   "Una copia completa de los datos",
+   "Un tema de informe",
+   "Una definición de canalización de implementación"
+  ],
+  "opts_en": [
+   "Connection information for a data source, not the data itself",
+   "A full copy of the data",
+   "A report theme",
+   "A deployment pipeline definition"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": ".pbids guarda los detalles de conexión para que los usuarios partan de un origen coherente.",
+  "exp_en": ".pbids stores connection details so users start from a consistent source."
+ },
+ {
+  "id": 55,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Muchos autores de informes deben reutilizar un modelo semántico gobernado en lugar de crear sus propias copias. ¿Qué enfoque encaja?",
+  "q_en": "Many report authors should reuse one governed semantic model instead of creating their own copies. Which approach fits?",
+  "opts_es": [
+   "Crear informes sobre un modelo semántico compartido",
+   "Exportar los datos a Excel para cada autor",
+   "Crear un PBIX por autor con datos importados",
+   "Dar a cada autor el rol de administrador"
+  ],
+  "opts_en": [
+   "Build reports on a shared semantic model",
+   "Export the data to Excel for each author",
+   "Create one PBIX per author with imported data",
+   "Give every author the Admin role"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un modelo compartido da una única fuente de verdad.",
+  "exp_en": "A shared model gives one source of truth."
+ },
+ {
+  "id": 56,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Un equipo guarda archivos PBIP en un repositorio Git. ¿Qué ventaja ofrecen las definiciones basadas en texto?",
+  "q_en": "A team stores PBIP files in a Git repository. What benefit do text-based definitions provide?",
+  "opts_es": [
+   "Diferencias y combinaciones significativas de los cambios del modelo y del informe",
+   "Actualización automática de datos",
+   "Seguridad de nivel de fila automática",
+   "Menor coste de capacidad"
+  ],
+  "opts_en": [
+   "Meaningful diffs and merges of model and report changes",
+   "Automatic data refresh",
+   "Automatic row-level security",
+   "Lower capacity cost"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las definiciones de texto permiten revisar y combinar cambios.",
+  "exp_en": "Text definitions allow reviewing and merging changes."
+ },
+ {
+  "id": 57,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué permiso se necesita para configurar las fases y reglas de una canalización de implementación?",
+  "q_en": "Which role is needed to configure a deployment pipeline's stages and rules?",
+  "opts_es": [
+   "Administrador de la canalización más acceso adecuado a las áreas de trabajo",
+   "Lector del área de trabajo",
+   "Cualquier usuario anónimo",
+   "Solo derechos de pausa de capacidad"
+  ],
+  "opts_en": [
+   "Pipeline admin plus appropriate access to the workspaces",
+   "Workspace Viewer",
+   "Any anonymous user",
+   "Capacity pause rights only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los administradores de la canalización gestionan fases y reglas de implementación.",
+  "exp_en": "Pipeline admins manage stages and deployment rules."
+ },
+ {
+  "id": 58,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué secuencia refleja mejor un buen flujo de CI/CD para una solución de Fabric?",
+  "q_en": "Which sequence best reflects a good CI/CD flow for a Fabric solution?",
+  "opts_es": [
+   "Desarrollar en una rama de característica, combinar en main y promover con una canalización de implementación",
+   "Editar directamente en Producción y confirmar después",
+   "Eliminar la fase de Prueba",
+   "Implementar solo enviando archivos por correo"
+  ],
+  "opts_en": [
+   "Develop on a feature branch, merge to main, then promote with a deployment pipeline",
+   "Edit directly in Production and commit later",
+   "Delete the Test stage",
+   "Deploy only by e-mailing files"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las ramas y la promoción por fases reducen el riesgo.",
+  "exp_en": "Branching plus staged promotion reduces risk."
+ },
+ {
+  "id": 59,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Al abrir un archivo .pbit, Power BI solicita valores de parámetros. ¿Para qué escenario es útil?",
+  "q_en": "When you open a .pbit file, Power BI asks for parameter values. Which scenario is this useful for?",
+  "opts_es": [
+   "Distribuir un diseño de informe estándar que cada equipo apunta a sus propios datos",
+   "Cifrar un lakehouse",
+   "Crear un acceso directo",
+   "Aplicar enmascaramiento dinámico de datos"
+  ],
+  "opts_en": [
+   "Distributing a standard report layout that each team points to its own data",
+   "Encrypting a lakehouse",
+   "Creating a shortcut",
+   "Applying dynamic data masking"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las plantillas estandarizan informes entre equipos.",
+  "exp_en": "Templates standardize reports across teams."
+ },
+ {
+  "id": 60,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Una implementación de Prueba a Producción no sobrescribió nada pero añadió un informe nuevo. ¿Dónde puedes revisar qué se implementó y cuándo?",
+  "q_en": "A deployment from Test to Production overwrote nothing but added a new report. Where can you review what was deployed and when?",
+  "opts_es": [
+   "El historial de implementaciones de la canalización",
+   "La auditoría de etiquetas de confidencialidad",
+   "Solo el registro de sesiones de Spark",
+   "El esquema de la base de datos KQL"
+  ],
+  "opts_en": [
+   "The deployment history of the pipeline",
+   "The sensitivity label audit",
+   "The Spark session log only",
+   "The KQL database schema"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las canalizaciones conservan un historial de implementaciones.",
+  "exp_en": "Pipelines keep a deployment history."
+ },
+ {
+  "id": 61,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué herramienta puede comparar dos versiones de un modelo semántico e implementar solo las diferencias?",
+  "q_en": "Which tool can compare two versions of a semantic model and deploy only the differences?",
+  "opts_es": [
+   "ALM Toolkit (mediante el punto de conexión XMLA)",
+   "Bloc de notas de Windows",
+   "Aplicación móvil de Power BI",
+   "Azure Monitor"
+  ],
+  "opts_en": [
+   "ALM Toolkit (via the XMLA endpoint)",
+   "Windows Notepad",
+   "Power BI mobile app",
+   "Azure Monitor"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ALM Toolkit compara esquemas e implementa de forma selectiva.",
+  "exp_en": "ALM Toolkit performs schema comparison and selective deployment."
+ },
+ {
+  "id": 62,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la integración de Git y PBIP, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Git integration and PBIP, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un área de trabajo puede conectarse a una rama de un repositorio Git.",
+    "en": "A workspace can be connected to one branch of a Git repository.",
+    "ans": true
+   },
+   {
+    "es": "La integración de Git almacena los datos del lakehouse en el repositorio.",
+    "en": "Git integration stores the lakehouse data in the repository.",
+    "ans": false
+   },
+   {
+    "es": "Un proyecto .pbip guarda las definiciones del informe y del modelo en carpetas separadas.",
+    "en": "A .pbip project saves report and model definitions as separate folders.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Solo se versionan las definiciones, no los datos.",
+  "exp_en": "Only definitions are versioned, not data."
+ },
+ {
+  "id": 63,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las canalizaciones de implementación, indica si es verdadera o falsa.",
+  "q_en": "For each statement about deployment pipelines, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las reglas de implementación pueden cambiar un origen de datos entre fases.",
+    "en": "Deployment rules can change a data source between stages.",
+    "ans": true
+   },
+   {
+    "es": "La comparación de fases ayuda a ver diferencias antes de implementar.",
+    "en": "Stage comparison helps you see differences before deploying.",
+    "ans": true
+   },
+   {
+    "es": "Una canalización siempre tiene exactamente dos fases.",
+    "en": "A pipeline always has exactly two stages.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las canalizaciones tienen tres fases de forma predeterminada y son personalizables.",
+  "exp_en": "Pipelines default to three stages and are customizable."
+ },
+ {
+  "id": 64,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los recursos reutilizables, indica si es verdadera o falsa.",
+  "q_en": "For each statement about reusable assets, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una plantilla .pbit no contiene datos.",
+    "en": "A .pbit template does not contain data.",
+    "ans": true
+   },
+   {
+    "es": "Un archivo .pbids almacena una copia de los datos.",
+    "en": "A .pbids file stores a copy of the data.",
+    "ans": false
+   },
+   {
+    "es": "Un modelo semántico compartido puede ser usado por muchos informes.",
+    "en": "A shared semantic model can be used by many reports.",
+    "ans": true
+   }
+  ],
+  "exp_es": ".pbids solo contiene los detalles de conexión.",
+  "exp_en": ".pbids holds connection details only."
+ },
+ {
+  "id": 65,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el punto de conexión XMLA, indica si es verdadera o falsa.",
+  "q_en": "For each statement about the XMLA endpoint, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Permite que herramientas como Tabular Editor implementen cambios del modelo.",
+    "en": "It allows tools like Tabular Editor to deploy model changes.",
+    "ans": true
+   },
+   {
+    "es": "Debe estar en Lectura y escritura para operaciones de escritura.",
+    "en": "It must be set to Read Write for write operations.",
+    "ans": true
+   },
+   {
+    "es": "Se usa para consultar tablas Delta con T-SQL.",
+    "en": "It is used to query Delta tables with T-SQL.",
+    "ans": false
+   }
+  ],
+  "exp_es": "T-SQL usa el punto de conexión de análisis SQL.",
+  "exp_en": "T-SQL uses the SQL analytics endpoint."
+ },
+ {
+  "id": 66,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el análisis de impacto, indica si es verdadera o falsa.",
+  "q_en": "For each statement about impact analysis, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Muestra los elementos descendentes que dependen de un elemento seleccionado.",
+    "en": "It shows downstream items that depend on a selected item.",
+    "ans": true
+   },
+   {
+    "es": "Puede ayudar a notificar a los propietarios del contenido afectado.",
+    "en": "It can help you notify owners of affected content.",
+    "ans": true
+   },
+   {
+    "es": "Cambia los datos almacenados en un lakehouse.",
+    "en": "It changes the data stored in a lakehouse.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El análisis de impacto es solo visibilidad.",
+  "exp_en": "Impact analysis is read-only visibility."
+ },
+ {
+  "id": 67,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica del ciclo de vida para cada necesidad.",
+  "q_en": "Select the lifecycle feature for each need.",
+  "rows": [
+   {
+    "es": "Promover contenido probado de Prueba a Producción.",
+    "en": "Promote tested content from Test to Production.",
+    "opts_es": [
+     "Integración de Git",
+     "Canalización de implementación",
+     "Análisis de impacto",
+     "Plantilla .pbit"
+    ],
+    "opts_en": [
+     "Git integration",
+     "Deployment pipeline",
+     "Impact analysis",
+     ".pbit template"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Registrar cambios y revisar el historial de elementos del área de trabajo.",
+    "en": "Track changes and review history of workspace items.",
+    "opts_es": [
+     "Integración de Git",
+     "Canalización de implementación",
+     "Análisis de impacto",
+     "Plantilla .pbit"
+    ],
+    "opts_en": [
+     "Git integration",
+     "Deployment pipeline",
+     "Impact analysis",
+     ".pbit template"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Git registra versiones; las canalizaciones promueven contenido.",
+  "exp_en": "Git tracks versions; pipelines promote content."
+ },
+ {
+  "id": 68,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el recurso reutilizable para cada necesidad.",
+  "q_en": "Select the reusable asset for each need.",
+  "rows": [
+   {
+    "es": "Dar a los autores una conexión preconfigurada a la base de datos de ventas.",
+    "en": "Give authors a pre-configured connection to the sales database.",
+    "opts_es": [
+     "Plantilla .pbit",
+     "Archivo .pbids",
+     "Modelo semántico compartido",
+     "Regla de implementación"
+    ],
+    "opts_en": [
+     ".pbit template",
+     ".pbids file",
+     "Shared semantic model",
+     "Deployment rule"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Distribuir un diseño de informe estándar sin datos.",
+    "en": "Distribute a standard report layout without any data.",
+    "opts_es": [
+     "Plantilla .pbit",
+     "Archivo .pbids",
+     "Modelo semántico compartido",
+     "Regla de implementación"
+    ],
+    "opts_en": [
+     ".pbit template",
+     ".pbids file",
+     "Shared semantic model",
+     "Deployment rule"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": ".pbids comparte una conexión; .pbit comparte un diseño.",
+  "exp_en": ".pbids shares a connection; .pbit shares a layout."
+ },
+ {
+  "id": 69,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la herramienta o punto de conexión para cada tarea.",
+  "q_en": "Select the tool or endpoint for each task.",
+  "rows": [
+   {
+    "es": "Implementar un modelo con Tabular Editor.",
+    "en": "Deploy a model with Tabular Editor.",
+    "opts_es": [
+     "Punto de conexión XMLA",
+     "Punto de conexión de análisis SQL",
+     "Análisis de impacto",
+     "Crear rama en un área de trabajo nueva"
+    ],
+    "opts_en": [
+     "XMLA endpoint",
+     "SQL analytics endpoint",
+     "Impact analysis",
+     "Branch out to a new workspace"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Trabajar en una característica de forma aislada.",
+    "en": "Work on a feature in isolation.",
+    "opts_es": [
+     "Punto de conexión XMLA",
+     "Punto de conexión de análisis SQL",
+     "Análisis de impacto",
+     "Crear rama en un área de trabajo nueva"
+    ],
+    "opts_en": [
+     "XMLA endpoint",
+     "SQL analytics endpoint",
+     "Impact analysis",
+     "Branch out to a new workspace"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "XMLA para implementar modelos; las ramas para aislamiento.",
+  "exp_en": "XMLA for model deployment; branching for isolation."
+ },
+ {
+  "id": 70,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la acción para cada escenario de Git.",
+  "q_en": "Select the action for each Git scenario.",
+  "rows": [
+   {
+    "es": "Guardar los cambios de tu área de trabajo en la rama conectada.",
+    "en": "Save your workspace changes to the connected branch.",
+    "opts_es": [
+     "Confirmar (commit)",
+     "Actualizar desde Git",
+     "Crear rama",
+     "Desconectar"
+    ],
+    "opts_en": [
+     "Commit",
+     "Update from Git",
+     "Branch out",
+     "Disconnect"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Traer los cambios de un compañero a tu área de trabajo.",
+    "en": "Pull a colleague's changes into your workspace.",
+    "opts_es": [
+     "Confirmar (commit)",
+     "Actualizar desde Git",
+     "Crear rama",
+     "Desconectar"
+    ],
+    "opts_en": [
+     "Commit",
+     "Update from Git",
+     "Branch out",
+     "Disconnect"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Commit envía; Actualizar trae.",
+  "exp_en": "Commit pushes; Update pulls."
+ },
+ {
+  "id": 71,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de implementación para cada requisito.",
+  "q_en": "Select the deployment feature for each requirement.",
+  "rows": [
+   {
+    "es": "Apuntar el modelo de Producción al servidor de producción.",
+    "en": "Point the Production model to the production server.",
+    "opts_es": [
+     "Regla de origen de datos",
+     "Regla de parámetro",
+     "Comparar fases",
+     "Historial de implementaciones"
+    ],
+    "opts_en": [
+     "Data source rule",
+     "Parameter rule",
+     "Compare stages",
+     "Deployment history"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Ver qué difiere entre Prueba y Producción.",
+    "en": "See what differs between Test and Production.",
+    "opts_es": [
+     "Regla de origen de datos",
+     "Regla de parámetro",
+     "Comparar fases",
+     "Historial de implementaciones"
+    ],
+    "opts_en": [
+     "Data source rule",
+     "Parameter rule",
+     "Compare stages",
+     "Deployment history"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las reglas cambian la configuración por fase; comparar muestra diferencias.",
+  "exp_en": "Rules change settings per stage; compare shows differences."
+ },
+ {
+  "id": 72,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el permiso o herramienta para cada tarea del ciclo de vida.",
+  "q_en": "Select the permission or tool for each lifecycle task.",
+  "rows": [
+   {
+    "es": "Comparar dos versiones de un modelo e implementar las diferencias.",
+    "en": "Compare two model versions and deploy differences.",
+    "opts_es": [
+     "ALM Toolkit",
+     "Proyecto de Power BI Desktop",
+     "Vista de linaje",
+     "Aplicación de plantilla"
+    ],
+    "opts_en": [
+     "ALM Toolkit",
+     "Power BI Desktop project",
+     "Lineage view",
+     "Template app"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Guardar informe y modelo como texto para el control de código fuente.",
+    "en": "Save report and model as text for source control.",
+    "opts_es": [
+     "ALM Toolkit",
+     "Proyecto de Power BI Desktop",
+     "Vista de linaje",
+     "Aplicación de plantilla"
+    ],
+    "opts_en": [
+     "ALM Toolkit",
+     "Power BI Desktop project",
+     "Lineage view",
+     "Template app"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "ALM Toolkit compara modelos; PBIP admite control de código fuente.",
+  "exp_en": "ALM Toolkit compares models; PBIP supports source control."
+ },
+ {
+  "id": 73,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Una ",
+  "pre_en": "A deployment ",
+  "post_es": " de implementación promueve contenido por las fases de Desarrollo, Prueba y Producción.",
+  "post_en": " pipeline promotes content through the Development, Test and Production stages.",
+  "opts_es": [
+   "canalización",
+   "canalización de retención",
+   "canalización de replicación",
+   "canalización de acceso directo"
+  ],
+  "opts_en": [
+   "deployment",
+   "retention",
+   "mirroring",
+   "shortcut"
+  ],
+  "correct": 0,
+  "exp_es": "Las canalizaciones de implementación gestionan la promoción por fases.",
+  "exp_en": "Deployment pipelines manage stage promotion."
+ },
+ {
+  "id": 74,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Usa el punto de conexión XMLA establecido en ",
+  "pre_en": "Use the XMLA endpoint set to ",
+  "post_es": " para implementar cambios del modelo desde herramientas externas.",
+  "post_en": " to deploy model changes from external tools.",
+  "opts_es": [
+   "Lectura y escritura",
+   "Desactivado",
+   "Solo lectura",
+   "Vista previa"
+  ],
+  "opts_en": [
+   "Read Write",
+   "Off",
+   "Read Only",
+   "Preview"
+  ],
+  "correct": 0,
+  "exp_es": "Las operaciones de escritura necesitan Lectura y escritura.",
+  "exp_en": "Write operations need Read Write."
+ },
+ {
+  "id": 75,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para ver qué elementos dependen de un lakehouse, usa el ",
+  "pre_en": "To see which items depend on a lakehouse, use ",
+  "post_es": " en la vista de linaje.",
+  "post_en": " in the lineage view.",
+  "opts_es": [
+   "análisis de impacto",
+   "enmascaramiento dinámico",
+   "OLS",
+   "replicación"
+  ],
+  "opts_en": [
+   "impact analysis",
+   "dynamic masking",
+   "OLS",
+   "mirroring"
+  ],
+  "correct": 0,
+  "exp_es": "El análisis de impacto muestra dependencias descendentes.",
+  "exp_en": "Impact analysis shows downstream dependencies."
+ },
+ {
+  "id": 76,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Necesitas acceder desde un lakehouse de Fabric a archivos almacenados en Amazon S3 sin copiarlos. ¿Qué debes crear?",
+  "q_en": "You need to access files stored in Amazon S3 from a Fabric lakehouse without copying them. What should you create?",
+  "opts_es": [
+   "Un acceso directo de OneLake al bucket de S3",
+   "Una canalización de implementación",
+   "Un grupo de cálculo",
+   "Una aprobación"
+  ],
+  "opts_en": [
+   "A OneLake shortcut to the S3 bucket",
+   "A deployment pipeline",
+   "A calculation group",
+   "An endorsement"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los accesos directos referencian datos externos sin moverlos.",
+  "exp_en": "Shortcuts reference external data in place."
+ },
+ {
+  "id": 77,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué ocurre con los datos de origen cuando eliminas un acceso directo de OneLake?",
+  "q_en": "What happens to the source data when you delete a OneLake shortcut?",
+  "opts_es": [
+   "Los datos de destino no se eliminan",
+   "Los datos de destino se eliminan permanentemente",
+   "Se elimina el área de trabajo",
+   "Se pausa la capacidad"
+  ],
+  "opts_en": [
+   "The target data is not deleted",
+   "The target data is permanently deleted",
+   "The workspace is deleted",
+   "The capacity is paused"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Eliminar un acceso directo solo quita el vínculo.",
+  "exp_en": "Deleting a shortcut removes only the link."
+ },
+ {
+  "id": 78,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿A qué orígenes puede apuntar un acceso directo de OneLake?",
+  "q_en": "Which sources can a OneLake shortcut point to?",
+  "opts_es": [
+   "Otras ubicaciones de OneLake, Azure Data Lake Storage Gen2, Amazon S3 y Google Cloud Storage",
+   "Solo archivos CSV locales",
+   "Solo informes de Power BI",
+   "Solo inicios de sesión de SQL Server"
+  ],
+  "opts_en": [
+   "Other OneLake locations, Azure Data Lake Storage Gen2, Amazon S3 and Google Cloud Storage",
+   "Only local CSV files",
+   "Only Power BI reports",
+   "Only SQL Server logins"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los accesos directos admiten almacenamiento interno y externo.",
+  "exp_en": "Shortcuts support internal and external storage."
+ },
+ {
+  "id": 79,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una base de datos de Azure SQL debe replicarse en OneLake de forma continua con configuración mínima y sin canalización ETL. ¿Qué característica encaja?",
+  "q_en": "An Azure SQL Database must be replicated into OneLake continuously with minimal setup and no ETL pipeline. Which feature fits?",
+  "opts_es": [
+   "Replicación (mirroring)",
+   "Un Dataflow Gen2 programado con recarga completa",
+   "Una exportación manual a CSV",
+   "Un informe paginado"
+  ],
+  "opts_en": [
+   "Mirroring",
+   "A scheduled Dataflow Gen2 with full reload",
+   "A manual CSV export",
+   "A paginated report"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La replicación mantiene una copia Delta casi en tiempo real en OneLake.",
+  "exp_en": "Mirroring keeps a near-real-time Delta copy in OneLake."
+ },
+ {
+  "id": 80,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿En qué formato se almacenan en OneLake los datos replicados?",
+  "q_en": "In which format is mirrored data stored in OneLake?",
+  "opts_es": [
+   "Tablas Delta (Parquet)",
+   "Archivos XLSX",
+   "Blobs binarios propietarios",
+   "Registros de texto sin formato"
+  ],
+  "opts_en": [
+   "Delta tables (Parquet)",
+   "XLSX files",
+   "Proprietary binary blobs",
+   "Plain text logs"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los datos replicados llegan como tablas Delta.",
+  "exp_en": "Mirrored data lands as Delta tables."
+ },
+ {
+  "id": 81,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Necesitas orquestar la copia de datos de un SQL Server local a un lakehouse con una programación, reintentos y notificaciones. ¿Qué elemento encaja mejor?",
+  "q_en": "You need to orchestrate copying data from an on-premises SQL Server into a lakehouse on a schedule, with retries and notifications. Which item fits best?",
+  "opts_es": [
+   "Una canalización de datos con una actividad Copiar datos",
+   "Un modelo semántico",
+   "Un conjunto de consultas KQL",
+   "Un tema de informe"
+  ],
+  "opts_en": [
+   "A data pipeline with a Copy data activity",
+   "A semantic model",
+   "A KQL queryset",
+   "A report theme"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las canalizaciones orquestan el movimiento de datos y el flujo de control.",
+  "exp_en": "Pipelines orchestrate data movement and control flow."
+ },
+ {
+  "id": 82,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué se necesita para conectar Fabric a un origen de datos dentro de una red corporativa sin punto de conexión público?",
+  "q_en": "What is required to connect Fabric to a data source inside a corporate network that has no public endpoint?",
+  "opts_es": [
+   "Una puerta de enlace de datos local o una puerta de enlace de datos de red virtual",
+   "Una etiqueta de confidencialidad",
+   "Una regla de implementación",
+   "Un acceso directo a un informe"
+  ],
+  "opts_en": [
+   "An on-premises data gateway or a virtual network data gateway",
+   "A sensitivity label",
+   "A deployment rule",
+   "A shortcut to a report"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las puertas de enlace conectan redes privadas con Fabric.",
+  "exp_en": "Gateways bridge private networks to Fabric."
+ },
+ {
+  "id": 83,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Dónde se descubren y exploran los elementos de datos disponibles en la organización, incluidos los aprobados?",
+  "q_en": "Where do you discover and browse available data items across the organization, including endorsed items?",
+  "opts_es": [
+   "Catálogo de OneLake",
+   "El punto de conexión XMLA",
+   "Una canalización de implementación",
+   "La interfaz de Spark"
+  ],
+  "opts_en": [
+   "OneLake catalog",
+   "The XMLA endpoint",
+   "A deployment pipeline",
+   "The Spark UI"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El catálogo de OneLake es el centro de descubrimiento.",
+  "exp_en": "The OneLake catalog is the discovery hub."
+ },
+ {
+  "id": 84,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Dónde se pueden descubrir orígenes de datos de streaming como Eventstreams y eventos de Azure?",
+  "q_en": "Where can you discover streaming data sources such as Eventstreams and Azure events?",
+  "opts_es": [
+   "Centro de tiempo real (Real-Time hub)",
+   "Opciones de Power BI Desktop",
+   "Solo la configuración del área de trabajo",
+   "El historial de implementaciones"
+  ],
+  "opts_en": [
+   "Real-Time hub",
+   "Power BI Desktop options",
+   "Workspace settings only",
+   "The deployment history"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Real-Time hub centraliza los datos de streaming.",
+  "exp_en": "Real-Time hub centralizes streaming data."
+ },
+ {
+  "id": 85,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento de Fabric es el mejor para grandes volúmenes de archivos no estructurados y semiestructurados procesados con Spark y almacenados como tablas Delta?",
+  "q_en": "Which Fabric item is best for large volumes of unstructured and semi-structured files processed with Spark and stored as Delta tables?",
+  "opts_es": [
+   "Lakehouse",
+   "Almacén",
+   "Eventhouse",
+   "Modelo semántico"
+  ],
+  "opts_en": [
+   "Lakehouse",
+   "Warehouse",
+   "Eventhouse",
+   "Semantic model"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Lakehouse combina archivos y tablas Delta con Spark.",
+  "exp_en": "Lakehouse combines files and Delta tables with Spark."
+ },
+ {
+  "id": 86,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento debes elegir cuando necesitas compatibilidad completa con DDL y DML de T-SQL y transacciones de varias tablas sobre datos estructurados?",
+  "q_en": "Which item should you choose when you need full T-SQL DDL and DML support and multi-table transactions over structured data?",
+  "opts_es": [
+   "Almacén",
+   "Punto de conexión de análisis SQL del lakehouse",
+   "Eventstream",
+   "Dataflow Gen2"
+  ],
+  "opts_en": [
+   "Warehouse",
+   "Lakehouse SQL analytics endpoint",
+   "Eventstream",
+   "Dataflow Gen2"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un almacén admite escrituras T-SQL completas y transacciones.",
+  "exp_en": "A warehouse supports full T-SQL writes and transactions."
+ },
+ {
+  "id": 87,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento está optimizado para series temporales y datos de registro de alto volumen consultados con KQL?",
+  "q_en": "Which item is optimized for high-volume time series and log data queried with KQL?",
+  "opts_es": [
+   "Eventhouse",
+   "Almacén",
+   "Sección Files del lakehouse",
+   "Informe paginado"
+  ],
+  "opts_en": [
+   "Eventhouse",
+   "Warehouse",
+   "Lakehouse Files section",
+   "Paginated report"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Eventhouse está diseñado para análisis en tiempo real.",
+  "exp_en": "Eventhouse is built for real-time analytics."
+ },
+ {
+  "id": 88,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué puedes hacer con el punto de conexión de análisis SQL de un lakehouse?",
+  "q_en": "What can you do with the SQL analytics endpoint of a lakehouse?",
+  "opts_es": [
+   "Consultar tablas Delta con T-SQL de solo lectura y crear vistas",
+   "Insertar filas en tablas Delta con T-SQL",
+   "Ejecutar cuadernos de Spark",
+   "Crear bases de datos KQL"
+  ],
+  "opts_en": [
+   "Query Delta tables with read-only T-SQL and create views",
+   "Insert rows into Delta tables with T-SQL",
+   "Run Spark notebooks",
+   "Create KQL databases"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El punto de conexión SQL de un lakehouse es de solo lectura para las tablas.",
+  "exp_en": "The SQL endpoint of a lakehouse is read-only for tables."
+ },
+ {
+  "id": 89,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cómo puede un almacén consultar una tabla de un lakehouse del mismo área de trabajo sin copiar datos?",
+  "q_en": "How can a warehouse query a table in a lakehouse of the same workspace without copying data?",
+  "opts_es": [
+   "Usar una consulta entre bases de datos con nombres de tres partes",
+   "Exportar a CSV y volver a importar",
+   "Crear un grupo de cálculo",
+   "Usar una regla de implementación"
+  ],
+  "opts_en": [
+   "Use a cross-database query with three-part naming",
+   "Export to CSV and re-import",
+   "Create a calculation group",
+   "Use a deployment rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las consultas entre bases de datos funcionan entre elementos de un mismo área de trabajo.",
+  "exp_en": "Cross-database queries work across items in one workspace."
+ },
+ {
+  "id": 90,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué instrucción T-SQL carga archivos desde almacenamiento en una tabla de un almacén de forma eficiente?",
+  "q_en": "Which T-SQL statement loads files from storage into a warehouse table efficiently?",
+  "opts_es": [
+   "COPY INTO",
+   "ALTER ROLE",
+   "CREATE SECURITY POLICY",
+   "DBCC CHECKDB"
+  ],
+  "opts_en": [
+   "COPY INTO",
+   "ALTER ROLE",
+   "CREATE SECURITY POLICY",
+   "DBCC CHECKDB"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "COPY INTO ingiere datos en tablas del almacén.",
+  "exp_en": "COPY INTO ingests data into warehouse tables."
+ },
+ {
+  "id": 91,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué herramienta es la mejor para una transformación de bajo código con Power Query que envíe resultados a una tabla de un lakehouse?",
+  "q_en": "Which tool is best for a low-code transformation with Power Query that outputs results to a lakehouse table?",
+  "opts_es": [
+   "Dataflow Gen2",
+   "Eventstream",
+   "Base de datos KQL",
+   "Canalización de implementación"
+  ],
+  "opts_en": [
+   "Dataflow Gen2",
+   "Eventstream",
+   "KQL database",
+   "Deployment pipeline"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Dataflows Gen2 usa Power Query Online con destinos de datos.",
+  "exp_en": "Dataflows Gen2 use Power Query Online with data destinations."
+ },
+ {
+  "id": 92,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento de Fabric ingiere, transforma y enruta eventos en tiempo real desde orígenes como Event Hubs a destinos como un Eventhouse o un lakehouse?",
+  "q_en": "Which Fabric item ingests, transforms and routes real-time events from sources such as Event Hubs to destinations like an Eventhouse or lakehouse?",
+  "opts_es": [
+   "Eventstream",
+   "Dataflow Gen1",
+   "Aplicación de plantilla",
+   "Informe paginado"
+  ],
+  "opts_en": [
+   "Eventstream",
+   "Dataflow Gen1",
+   "Template app",
+   "Paginated report"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Eventstreams gestiona el enrutamiento de eventos en tiempo real.",
+  "exp_en": "Eventstreams handle real-time event routing."
+ },
+ {
+  "id": 93,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué hace habilitar la disponibilidad de OneLake en una base de datos KQL?",
+  "q_en": "What does enabling OneLake availability on a KQL database do?",
+  "opts_es": [
+   "Expone los datos de las tablas como tablas Delta en OneLake",
+   "Elimina registros antiguos",
+   "Convierte la base de datos en un almacén",
+   "Aplica una etiqueta de confidencialidad automáticamente"
+  ],
+  "opts_en": [
+   "Exposes the table data as Delta tables in OneLake",
+   "Deletes older records",
+   "Turns the database into a warehouse",
+   "Applies a sensitivity label automatically"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La disponibilidad de OneLake hace accesibles los datos de Eventhouse como Delta.",
+  "exp_en": "OneLake availability makes Eventhouse data accessible as Delta."
+ },
+ {
+  "id": 94,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito de la integración de OneLake para modelos semánticos?",
+  "q_en": "What is the purpose of OneLake integration for semantic models?",
+  "opts_es": [
+   "Escribir en OneLake los datos de las tablas en modo de importación como tablas Delta para reutilizarlos con otros motores",
+   "Cifrar el modelo semántico",
+   "Reemplazar la seguridad de nivel de fila",
+   "Mover informes a Git"
+  ],
+  "opts_en": [
+   "Write import-mode table data to OneLake as Delta tables for reuse by other engines",
+   "Encrypt the semantic model",
+   "Replace row-level security",
+   "Move reports to Git"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La integración comparte los datos del modelo como Delta en OneLake.",
+  "exp_en": "The integration shares model data as Delta in OneLake."
+ },
+ {
+  "id": 95,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un acceso directo a una tabla de un lakehouse debe poder usarse como tabla Delta en la sección Tables. ¿Qué debe cumplir el destino?",
+  "q_en": "A lakehouse table shortcut must be usable as a Delta table in the Tables section. What must be true of the target?",
+  "opts_es": [
+   "El destino debe estar en formato Delta",
+   "El destino debe ser un archivo CSV",
+   "El destino debe ser un archivo de Excel",
+   "El destino debe ser un PDF"
+  ],
+  "opts_en": [
+   "The target must be in Delta format",
+   "The target must be a CSV file",
+   "The target must be an Excel file",
+   "The target must be a PDF"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los accesos directos de la sección Tables deben referenciar tablas Delta.",
+  "exp_en": "Tables-section shortcuts must reference Delta tables."
+ },
+ {
+  "id": 96,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué actividad ejecuta un cuaderno de Spark como paso de una canalización de datos?",
+  "q_en": "Which activity runs a Spark notebook as a step in a data pipeline?",
+  "opts_es": [
+   "Actividad de cuaderno",
+   "Actividad Copiar datos",
+   "Actividad Establecer variable",
+   "Actividad Esperar"
+  ],
+  "opts_en": [
+   "Notebook activity",
+   "Copy data activity",
+   "Set variable activity",
+   "Wait activity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las canalizaciones pueden llamar a cuadernos mediante una actividad de cuaderno.",
+  "exp_en": "Pipelines can call notebooks through a Notebook activity."
+ },
+ {
+  "id": 97,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Debes ingerir 500 archivos cuyos nombres figuran en una tabla, usando la misma lógica de copia para cada uno. ¿Qué construcción de canalización encaja?",
+  "q_en": "You must ingest 500 files whose names are listed in a table, using the same copy logic for each. Which pipeline construct fits?",
+  "opts_es": [
+   "Una actividad ForEach con una actividad Copiar datos parametrizada",
+   "Quinientas canalizaciones independientes",
+   "Un grupo de cálculo",
+   "Una etiqueta de confidencialidad"
+  ],
+  "opts_en": [
+   "A ForEach activity with a parameterized Copy data activity",
+   "Five hundred separate pipelines",
+   "A calculation group",
+   "A sensitivity label"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ForEach recorre elementos con parámetros.",
+  "exp_en": "ForEach loops over items with parameters."
+ },
+ {
+  "id": 98,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué identidad se usa cuando un usuario lee datos a través de un acceso directo que apunta a otra ubicación de OneLake?",
+  "q_en": "Which identity is used when a user reads data through a shortcut that points to another OneLake location?",
+  "opts_es": [
+   "La identidad del usuario que llama se comprueba en el destino",
+   "Una identidad anónima compartida",
+   "Siempre el administrador de la capacidad",
+   "No se necesita identidad"
+  ],
+  "opts_en": [
+   "The calling user's identity is checked against the target",
+   "A shared anonymous identity",
+   "The capacity admin always",
+   "No identity is needed"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los accesos directos de OneLake propagan los permisos del usuario.",
+  "exp_en": "OneLake shortcuts pass through the user's permissions."
+ },
+ {
+  "id": 99,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué opción reduce el tiempo de copia en Dataflow Gen2 para orígenes grandes cuando es compatible?",
+  "q_en": "Which option reduces copy time in Dataflow Gen2 for large sources when supported?",
+  "opts_es": [
+   "Copia rápida",
+   "Enmascaramiento dinámico de datos",
+   "Seguridad de nivel de fila",
+   "Aprobación"
+  ],
+  "opts_en": [
+   "Fast copy",
+   "Dynamic data masking",
+   "Row-level security",
+   "Endorsement"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La copia rápida acelera la ingesta de gran volumen.",
+  "exp_en": "Fast copy accelerates high-volume ingestion."
+ },
+ {
+  "id": 100,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un equipo necesita un almacén relacional transaccional dentro de Fabric para una aplicación operativa. ¿Qué elemento encaja?",
+  "q_en": "A team needs a relational transactional store inside Fabric for an operational application. Which item fits?",
+  "opts_es": [
+   "Base de datos SQL en Fabric",
+   "Eventstream",
+   "Sección Files del lakehouse",
+   "Aplicación de plantilla"
+  ],
+  "opts_en": [
+   "SQL database in Fabric",
+   "Eventstream",
+   "Lakehouse Files section",
+   "Template app"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La base de datos SQL en Fabric está orientada a cargas OLTP.",
+  "exp_en": "SQL database in Fabric targets OLTP workloads."
+ },
+ {
+  "id": 101,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los accesos directos de OneLake y la replicación, indica si es verdadera o falsa.",
+  "q_en": "For each statement about OneLake shortcuts and mirroring, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un acceso directo referencia datos sin copiarlos.",
+    "en": "A shortcut references data without copying it.",
+    "ans": true
+   },
+   {
+    "es": "La replicación exige crear y programar una canalización ETL.",
+    "en": "Mirroring requires you to build and schedule an ETL pipeline.",
+    "ans": false
+   },
+   {
+    "es": "Los datos replicados se pueden consultar mediante un punto de conexión de análisis SQL.",
+    "en": "Mirrored data can be queried through a SQL analytics endpoint.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La replicación copia de forma continua y expone datos Delta.",
+  "exp_en": "Mirroring replicates continuously and exposes Delta data."
+ },
+ {
+  "id": 102,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la elección de un almacén de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about choosing a data store, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un almacén admite transacciones de varias tablas con T-SQL.",
+    "en": "A warehouse supports multi-table transactions with T-SQL.",
+    "ans": true
+   },
+   {
+    "es": "Un Eventhouse es la mejor opción para el procesamiento de archivos no estructurados solo con Spark.",
+    "en": "An Eventhouse is the best choice for Spark-only unstructured file processing.",
+    "ans": false
+   },
+   {
+    "es": "Un lakehouse puede almacenar archivos y tablas Delta.",
+    "en": "A lakehouse can store both files and Delta tables.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Eventhouse se orienta al análisis KQL en tiempo real.",
+  "exp_en": "Eventhouse targets real-time KQL analytics."
+ },
+ {
+  "id": 103,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el descubrimiento de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about discovering data, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El catálogo de OneLake ayuda a los usuarios a encontrar elementos entre áreas de trabajo.",
+    "en": "The OneLake catalog helps users find items across workspaces.",
+    "ans": true
+   },
+   {
+    "es": "Real-Time hub enumera orígenes de datos de streaming.",
+    "en": "Real-Time hub lists streaming data sources.",
+    "ans": true
+   },
+   {
+    "es": "Solo los administradores del área de trabajo pueden ver el catálogo de OneLake.",
+    "en": "Only workspace Admins can see the OneLake catalog.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El catálogo está disponible para los usuarios según sus permisos.",
+  "exp_en": "The catalog is available to users based on their permissions."
+ },
+ {
+  "id": 104,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las herramientas de movimiento de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about data movement tools, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una actividad Copiar datos puede mover datos de orígenes locales mediante una puerta de enlace.",
+    "en": "A Copy data activity can move data from on-premises sources through a gateway.",
+    "ans": true
+   },
+   {
+    "es": "Dataflow Gen2 puede escribir en un destino de lakehouse.",
+    "en": "Dataflow Gen2 can write to a lakehouse destination.",
+    "ans": true
+   },
+   {
+    "es": "Un Eventstream se usa para crear medidas DAX.",
+    "en": "An Eventstream is used to author DAX measures.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Eventstreams enruta eventos en tiempo real.",
+  "exp_en": "Eventstreams route real-time events."
+ },
+ {
+  "id": 105,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la integración con OneLake, indica si es verdadera o falsa.",
+  "q_en": "For each statement about OneLake integration, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los datos de un Eventhouse pueden estar disponibles en OneLake como Delta.",
+    "en": "Eventhouse data can be made available in OneLake as Delta.",
+    "ans": true
+   },
+   {
+    "es": "Los datos de un modelo semántico se pueden escribir en OneLake como tablas Delta.",
+    "en": "Semantic model data can be written to OneLake as Delta tables.",
+    "ans": true
+   },
+   {
+    "es": "La integración con OneLake elimina la necesidad de cualquier permiso.",
+    "en": "OneLake integration removes the need for any permissions.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los permisos siguen aplicándose a los datos de OneLake.",
+  "exp_en": "Permissions still apply to OneLake data."
+ },
+ {
+  "id": 106,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el mejor almacén de datos para cada carga de trabajo.",
+  "q_en": "Select the best data store for each workload.",
+  "rows": [
+   {
+    "es": "Telemetría de miles de sensores analizada con KQL.",
+    "en": "Telemetry from thousands of sensors analyzed with KQL.",
+    "opts_es": [
+     "Lakehouse",
+     "Almacén",
+     "Eventhouse",
+     "Base de datos SQL en Fabric"
+    ],
+    "opts_en": [
+     "Lakehouse",
+     "Warehouse",
+     "Eventhouse",
+     "SQL database in Fabric"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Archivos JSON y Parquet sin procesar con Spark.",
+    "en": "Raw JSON and Parquet files processed with Spark.",
+    "opts_es": [
+     "Lakehouse",
+     "Almacén",
+     "Eventhouse",
+     "Base de datos SQL en Fabric"
+    ],
+    "opts_en": [
+     "Lakehouse",
+     "Warehouse",
+     "Eventhouse",
+     "SQL database in Fabric"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Eventhouse sirve para telemetría; lakehouse para procesar archivos con Spark.",
+  "exp_en": "Eventhouse suits telemetry; lakehouse suits Spark file processing."
+ },
+ {
+  "id": 107,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la opción de ingesta para cada requisito.",
+  "q_en": "Select the ingestion option for each requirement.",
+  "rows": [
+   {
+    "es": "Exponer datos de S3 en un lakehouse sin moverlos.",
+    "en": "Expose S3 data in a lakehouse without moving it.",
+    "opts_es": [
+     "Acceso directo",
+     "Replicación",
+     "Actividad Copiar datos",
+     "Eventstream"
+    ],
+    "opts_en": [
+     "Shortcut",
+     "Mirroring",
+     "Copy data activity",
+     "Eventstream"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Replicar de forma continua una base de datos de Azure SQL en OneLake.",
+    "en": "Continuously replicate an Azure SQL database into OneLake.",
+    "opts_es": [
+     "Acceso directo",
+     "Replicación",
+     "Actividad Copiar datos",
+     "Eventstream"
+    ],
+    "opts_en": [
+     "Shortcut",
+     "Mirroring",
+     "Copy data activity",
+     "Eventstream"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los accesos directos referencian sin mover; la replicación copia de forma continua.",
+  "exp_en": "Shortcuts reference in place; mirroring replicates continuously."
+ },
+ {
+  "id": 108,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el elemento para cada escenario de ingesta.",
+  "q_en": "Select the item for each ingestion scenario.",
+  "rows": [
+   {
+    "es": "Enrutar eventos en tiempo real de Event Hubs a un Eventhouse.",
+    "en": "Route real-time events from Event Hubs to an Eventhouse.",
+    "opts_es": [
+     "Eventstream",
+     "Dataflow Gen2",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Eventstream",
+     "Dataflow Gen2",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Limpiar un CSV con Power Query y cargarlo en un lakehouse.",
+    "en": "Clean a CSV with Power Query and load it to a lakehouse.",
+    "opts_es": [
+     "Eventstream",
+     "Dataflow Gen2",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Eventstream",
+     "Dataflow Gen2",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Eventstreams para tiempo real; flujos de datos para transformación de bajo código.",
+  "exp_en": "Eventstreams for real-time; dataflows for low-code transformation."
+ },
+ {
+  "id": 109,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de descubrimiento o conectividad para cada necesidad.",
+  "q_en": "Select the discovery or connectivity feature for each need.",
+  "rows": [
+   {
+    "es": "Encontrar lakehouses aprobados en toda la organización.",
+    "en": "Find endorsed lakehouses across the organization.",
+    "opts_es": [
+     "Catálogo de OneLake",
+     "Real-Time hub",
+     "Puerta de enlace de datos local",
+     "Copia rápida"
+    ],
+    "opts_en": [
+     "OneLake catalog",
+     "Real-Time hub",
+     "On-premises data gateway",
+     "Fast copy"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Llegar a un SQL Server sin punto de conexión público.",
+    "en": "Reach a SQL Server that has no public endpoint.",
+    "opts_es": [
+     "Catálogo de OneLake",
+     "Real-Time hub",
+     "Puerta de enlace de datos local",
+     "Copia rápida"
+    ],
+    "opts_en": [
+     "OneLake catalog",
+     "Real-Time hub",
+     "On-premises data gateway",
+     "Fast copy"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "El catálogo sirve para descubrir; la puerta de enlace para el acceso a redes privadas.",
+  "exp_en": "Catalog for discovery; gateway for private network access."
+ },
+ {
+  "id": 110,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad T-SQL o SQL para cada escenario.",
+  "q_en": "Select the T-SQL or SQL capability for each scenario.",
+  "rows": [
+   {
+    "es": "Cargar archivos Parquet desde almacenamiento en una tabla de almacén.",
+    "en": "Load Parquet files from storage into a warehouse table.",
+    "opts_es": [
+     "COPY INTO",
+     "Consulta entre bases de datos",
+     "Punto de conexión de análisis SQL",
+     "Transacción de almacén"
+    ],
+    "opts_en": [
+     "COPY INTO",
+     "Cross-database query",
+     "SQL analytics endpoint",
+     "Warehouse transaction"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Unir una tabla de almacén con una tabla de lakehouse en una sola consulta.",
+    "en": "Join a warehouse table to a lakehouse table in one query.",
+    "opts_es": [
+     "COPY INTO",
+     "Consulta entre bases de datos",
+     "Punto de conexión de análisis SQL",
+     "Transacción de almacén"
+    ],
+    "opts_en": [
+     "COPY INTO",
+     "Cross-database query",
+     "SQL analytics endpoint",
+     "Warehouse transaction"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "COPY INTO carga archivos; las consultas entre bases de datos unen elementos.",
+  "exp_en": "COPY INTO loads files; cross-database queries join items."
+ },
+ {
+  "id": 111,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica para cada escenario de integración con OneLake.",
+  "q_en": "Select the feature for each OneLake integration scenario.",
+  "rows": [
+   {
+    "es": "Permitir que Spark lea datos de tablas KQL como Delta.",
+    "en": "Let Spark read KQL table data as Delta.",
+    "opts_es": [
+     "Disponibilidad de OneLake para Eventhouse",
+     "Integración de OneLake para modelos semánticos",
+     "Acceso directo",
+     "Replicación"
+    ],
+    "opts_en": [
+     "OneLake availability for Eventhouse",
+     "OneLake integration for semantic models",
+     "Shortcut",
+     "Mirroring"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Escribir en archivos Delta los datos de tablas de importación de un modelo.",
+    "en": "Write import table data of a model to Delta files.",
+    "opts_es": [
+     "Disponibilidad de OneLake para Eventhouse",
+     "Integración de OneLake para modelos semánticos",
+     "Acceso directo",
+     "Replicación"
+    ],
+    "opts_en": [
+     "OneLake availability for Eventhouse",
+     "OneLake integration for semantic models",
+     "Shortcut",
+     "Mirroring"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Ambas características exponen datos como Delta en OneLake.",
+  "exp_en": "Both features expose data as Delta in OneLake."
+ },
+ {
+  "id": 112,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el comportamiento de identidad para cada acceso directo.",
+  "q_en": "Select the identity behavior for each shortcut.",
+  "rows": [
+   {
+    "es": "Un acceso directo a otro lakehouse de OneLake.",
+    "en": "A shortcut to another lakehouse in OneLake.",
+    "opts_es": [
+     "Propagación de la identidad del usuario",
+     "Credenciales de conexión delegadas",
+     "Acceso anónimo",
+     "Identidad de la capacidad"
+    ],
+    "opts_en": [
+     "User identity passthrough",
+     "Delegated connection credentials",
+     "Anonymous access",
+     "Capacity identity"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Un acceso directo a una cuenta ADLS Gen2 externa con una conexión guardada.",
+    "en": "A shortcut to an external ADLS Gen2 account using a saved connection.",
+    "opts_es": [
+     "Propagación de la identidad del usuario",
+     "Credenciales de conexión delegadas",
+     "Acceso anónimo",
+     "Identidad de la capacidad"
+    ],
+    "opts_en": [
+     "User identity passthrough",
+     "Delegated connection credentials",
+     "Anonymous access",
+     "Capacity identity"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los accesos directos internos propagan al usuario; los externos usan una conexión guardada.",
+  "exp_en": "Internal shortcuts pass through the user; external ones use a saved connection."
+ },
+ {
+  "id": 113,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la construcción de canalización para cada necesidad.",
+  "q_en": "Select the pipeline construct for each need.",
+  "rows": [
+   {
+    "es": "Ejecutar la canalización todas las noches a las 2:00.",
+    "en": "Run the pipeline every night at 2 AM.",
+    "opts_es": [
+     "Actividad ForEach",
+     "Actividad de cuaderno",
+     "Actividad Copiar datos",
+     "Desencadenador de programación"
+    ],
+    "opts_en": [
+     "ForEach activity",
+     "Notebook activity",
+     "Copy data activity",
+     "Schedule trigger"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Repetir la misma copia para cada archivo de una lista.",
+    "en": "Repeat the same copy for each file in a list.",
+    "opts_es": [
+     "Actividad ForEach",
+     "Actividad de cuaderno",
+     "Actividad Copiar datos",
+     "Desencadenador de programación"
+    ],
+    "opts_en": [
+     "ForEach activity",
+     "Notebook activity",
+     "Copy data activity",
+     "Schedule trigger"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Las programaciones inician ejecuciones; ForEach repite pasos.",
+  "exp_en": "Schedules start runs; ForEach repeats steps."
+ },
+ {
+  "id": 114,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Un ",
+  "pre_en": "A OneLake ",
+  "post_es": " permite referenciar datos externos sin copiarlos.",
+  "post_en": " lets you reference external data in place without copying it.",
+  "opts_es": [
+   "acceso directo",
+   "etiqueta",
+   "regla de implementación",
+   "grupo de cálculo"
+  ],
+  "opts_en": [
+   "shortcut",
+   "label",
+   "deployment rule",
+   "calculation group"
+  ],
+  "correct": 0,
+  "exp_es": "Los accesos directos referencian los datos donde residen.",
+  "exp_en": "Shortcuts reference data where it lives."
+ },
+ {
+  "id": 115,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Usa ",
+  "pre_en": "Use ",
+  "post_es": " para replicar de forma continua una base de datos operativa en OneLake como tablas Delta.",
+  "post_en": " to continuously replicate an operational database into OneLake as Delta tables.",
+  "opts_es": [
+   "replicación (mirroring)",
+   "aprobación",
+   "marcadores",
+   "temas"
+  ],
+  "opts_en": [
+   "mirroring",
+   "endorsement",
+   "bookmarks",
+   "themes"
+  ],
+  "correct": 0,
+  "exp_es": "La replicación copia datos operativos a OneLake.",
+  "exp_en": "Mirroring replicates operational data to OneLake."
+ },
+ {
+  "id": 116,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "El ",
+  "pre_en": "The ",
+  "post_es": " es el lugar central para descubrir elementos de datos entre áreas de trabajo.",
+  "post_en": " is the central place to discover data items across workspaces.",
+  "opts_es": [
+   "catálogo de OneLake",
+   "punto de conexión XMLA",
+   "grupo de Spark",
+   "historial de implementaciones"
+  ],
+  "opts_en": [
+   "OneLake catalog",
+   "XMLA endpoint",
+   "Spark pool",
+   "deployment history"
+  ],
+  "correct": 0,
+  "exp_es": "El catálogo de OneLake permite descubrir y gobernar.",
+  "exp_en": "The OneLake catalog supports discovery and governance."
+ },
+ {
+  "id": 117,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Un ",
+  "pre_en": "An ",
+  "post_es": " es el elemento de Fabric para análisis en tiempo real con KQL.",
+  "post_en": " is the Fabric item for real-time analytics with KQL.",
+  "opts_es": [
+   "Eventhouse",
+   "almacén",
+   "flujo de datos",
+   "aplicación de plantilla"
+  ],
+  "opts_en": [
+   "Eventhouse",
+   "warehouse",
+   "dataflow",
+   "template app"
+  ],
+  "correct": 0,
+  "exp_es": "Eventhouse aloja bases de datos KQL.",
+  "exp_en": "Eventhouse hosts KQL databases."
+ },
+ {
+  "id": 118,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Una ",
+  "pre_en": "A ",
+  "post_es": " mueve datos de orígenes locales cuando se configura con una puerta de enlace de datos.",
+  "post_en": " moves data from on-premises sources when it is configured with a data gateway.",
+  "opts_es": [
+   "actividad Copiar datos",
+   "conjunto de consultas KQL",
+   "etiqueta de confidencialidad",
+   "grupo de cálculo"
+  ],
+  "opts_en": [
+   "Copy data activity",
+   "KQL queryset",
+   "sensitivity label",
+   "calculation group"
+  ],
+  "correct": 0,
+  "exp_es": "Las actividades de copia pueden usar puertas de enlace para orígenes privados.",
+  "exp_en": "Copy activities can use gateways for private sources."
+ },
+ {
+  "id": 119,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Necesitas exponer a los analistas un conjunto simplificado y ya combinado de columnas de un lakehouse sin copiar datos. ¿Qué puedes crear en el punto de conexión de análisis SQL?",
+  "q_en": "You need to expose a simplified, pre-joined set of columns from a lakehouse to analysts without copying data. What can you create in the SQL analytics endpoint?",
+  "opts_es": [
+   "Una vista",
+   "Una tabla Delta con INSERT",
+   "Una definición de trabajo de Spark",
+   "Un rol de modelo semántico"
+  ],
+  "opts_en": [
+   "A view",
+   "A Delta table with INSERT",
+   "A Spark job definition",
+   "A semantic model role"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las vistas encapsulan combinaciones y filtros sobre tablas Delta.",
+  "exp_en": "Views encapsulate joins and filters over Delta tables."
+ },
+ {
+  "id": 120,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué objeto permite encapsular lógica reutilizable que acepta parámetros y puede contener varias instrucciones T-SQL en un almacén?",
+  "q_en": "Which object lets you encapsulate reusable logic that accepts parameters and can contain several T-SQL statements in a warehouse?",
+  "opts_es": [
+   "Un procedimiento almacenado",
+   "Un marcador",
+   "Una etiqueta de confidencialidad",
+   "Un acceso directo"
+  ],
+  "opts_en": [
+   "A stored procedure",
+   "A bookmark",
+   "A sensitivity label",
+   "A shortcut"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los procedimientos almacenados agrupan instrucciones con parámetros.",
+  "exp_en": "Stored procedures group parameterized statements."
+ },
+ {
+  "id": 121,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué tipo de función devuelve una tabla y se puede usar en la cláusula FROM como una vista con parámetros?",
+  "q_en": "Which function type returns a table and can be used in the FROM clause like a parameterized view?",
+  "opts_es": [
+   "Función con valores de tabla insertada",
+   "Función escalar",
+   "Función de ventana",
+   "Función de agregado"
+  ],
+  "opts_en": [
+   "Inline table-valued function",
+   "Scalar function",
+   "Window function",
+   "Aggregate function"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las funciones con valores de tabla insertada devuelven conjuntos de resultados y aceptan parámetros.",
+  "exp_en": "Inline TVFs return result sets and take parameters."
+ },
+ {
+  "id": 122,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Quieres añadir a una tabla una columna con el margen de beneficio (beneficio dividido entre ingresos) en cada fila, sin cambiar el origen. ¿Cuál es el mejor lugar?",
+  "q_en": "You want to add a column to a table that shows the profit margin (profit divided by revenue) for every row, without changing the source. Where is the best place?",
+  "opts_es": [
+   "Una vista o una columna personalizada en la capa de transformación",
+   "Un rol del área de trabajo",
+   "Una aprobación",
+   "Una regla de implementación"
+  ],
+  "opts_en": [
+   "A view or a custom column in the transformation layer",
+   "A workspace role",
+   "An endorsement",
+   "A deployment rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las columnas derivadas se añaden durante la transformación.",
+  "exp_en": "Derived columns are added during transformation."
+ },
+ {
+  "id": 123,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué diseño se recomienda para modelos analíticos en un lakehouse o almacén para el mejor rendimiento y usabilidad de las consultas?",
+  "q_en": "Which design is recommended for analytical models in a lakehouse or warehouse for best query performance and usability?",
+  "opts_es": [
+   "Un esquema de estrella con tablas de hechos y de dimensiones",
+   "Una tabla por archivo de origen sin claves",
+   "Una única tabla de texto muy ancha",
+   "Solo relaciones de varios a varios"
+  ],
+  "opts_en": [
+   "A star schema with fact and dimension tables",
+   "One table per source file with no keys",
+   "A single very wide text table",
+   "Only many-to-many relationships"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los esquemas de estrella simplifican combinaciones y agregaciones.",
+  "exp_en": "Star schemas simplify joins and aggregations."
+ },
+ {
+  "id": 124,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué contiene normalmente una tabla de hechos?",
+  "q_en": "What does a fact table typically contain?",
+  "opts_es": [
+   "Medidas numéricas y claves externas a dimensiones",
+   "Solo atributos descriptivos",
+   "Roles de seguridad de nivel de fila",
+   "Temas de informe"
+  ],
+  "opts_en": [
+   "Numeric measures and foreign keys to dimensions",
+   "Only descriptive attributes",
+   "Row-level security roles",
+   "Report themes"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los hechos contienen medidas y claves.",
+  "exp_en": "Facts hold measures and keys."
+ },
+ {
+  "id": 125,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una dimensión debe conservar todo el historial cuando cambia la región de un cliente. ¿Qué técnica debes implementar?",
+  "q_en": "A dimension must keep the full history when a customer's region changes. Which technique should you implement?",
+  "opts_es": [
+   "Dimensión de cambio lento de tipo 2",
+   "Dimensión de cambio lento de tipo 1",
+   "Eliminar la dimensión",
+   "Seguridad de nivel de fila"
+  ],
+  "opts_en": [
+   "Slowly changing dimension type 2",
+   "Slowly changing dimension type 1",
+   "Dropping the dimension",
+   "Row-level security"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "SCD de tipo 2 añade una fila nueva con fechas de vigencia.",
+  "exp_en": "SCD type 2 adds a new row with validity dates."
+ },
+ {
+  "id": 126,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito principal de una clave sustituta en una tabla de dimensión?",
+  "q_en": "What is the main purpose of a surrogate key in a dimension table?",
+  "opts_es": [
+   "Proporcionar una clave estable y única independiente de las claves del sistema de origen",
+   "Cifrar datos",
+   "Aplicar una etiqueta de confidencialidad",
+   "Enmascarar valores"
+  ],
+  "opts_en": [
+   "To provide a stable, unique key independent of source system keys",
+   "To encrypt data",
+   "To apply a sensitivity label",
+   "To mask values"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las claves sustitutas desacoplan el modelo de las claves del origen.",
+  "exp_en": "Surrogate keys decouple the model from source keys."
+ },
+ {
+  "id": 127,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué significa normalmente desnormalizar datos en un modelo analítico?",
+  "q_en": "What does denormalizing data usually mean in an analytics model?",
+  "opts_es": [
+   "Combinar tablas relacionadas para almacenar atributos juntos y reducir combinaciones",
+   "Dividir cada tabla en muchas más pequeñas",
+   "Solo eliminar filas duplicadas",
+   "Cifrar columnas"
+  ],
+  "opts_en": [
+   "Combining related tables so attributes are stored together to reduce joins",
+   "Splitting every table into many smaller ones",
+   "Deleting duplicate rows only",
+   "Encrypting columns"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La desnormalización aplana estructuras para lecturas más rápidas.",
+  "exp_en": "Denormalization flattens structures for faster reads."
+ },
+ {
+  "id": 128,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué cláusula de T-SQL calcula totales, como las ventas por mes?",
+  "q_en": "Which T-SQL clause computes totals such as sales per month?",
+  "opts_es": [
+   "GROUP BY con funciones de agregado",
+   "Solo ORDER BY",
+   "Solo TOP",
+   "Solo USE"
+  ],
+  "opts_en": [
+   "GROUP BY with aggregate functions",
+   "ORDER BY only",
+   "TOP only",
+   "USE only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "GROUP BY agrega filas en grupos.",
+  "exp_en": "GROUP BY aggregates rows into groups."
+ },
+ {
+  "id": 129,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué operación de Delta Lake hace un upsert de filas de una tabla de ensayo en una tabla de destino en Spark?",
+  "q_en": "Which Delta Lake operation upserts rows from a staging table into a target table in Spark?",
+  "opts_es": [
+   "MERGE INTO",
+   "DROP TABLE",
+   "SHOW TABLES",
+   "EXPLAIN"
+  ],
+  "opts_en": [
+   "MERGE INTO",
+   "DROP TABLE",
+   "SHOW TABLES",
+   "EXPLAIN"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "MERGE INTO inserta, actualiza o elimina según una coincidencia.",
+  "exp_en": "MERGE INTO inserts, updates or deletes based on a match."
+ },
+ {
+  "id": 130,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Debes conservar solo la fila más reciente por cliente de una tabla con duplicados. ¿Qué patrón de T-SQL es adecuado?",
+  "q_en": "You must keep only the most recent row per customer from a table with duplicates. Which T-SQL pattern is appropriate?",
+  "opts_es": [
+   "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
+   "SELECT * INTO",
+   "TRUNCATE TABLE",
+   "GRANT SELECT"
+  ],
+  "opts_en": [
+   "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
+   "SELECT * INTO",
+   "TRUNCATE TABLE",
+   "GRANT SELECT"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una función de ventana con clasificación identifica el registro más reciente.",
+  "exp_en": "A ranked window function identifies the latest record."
+ },
+ {
+  "id": 131,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué método de PySpark elimina las filas duplicadas exactas de un DataFrame?",
+  "q_en": "Which PySpark method removes exact duplicate rows from a DataFrame?",
+  "opts_es": [
+   "dropDuplicates()",
+   "createOrReplaceTempView()",
+   "show()",
+   "printSchema()"
+  ],
+  "opts_en": [
+   "dropDuplicates()",
+   "createOrReplaceTempView()",
+   "show()",
+   "printSchema()"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "dropDuplicates elimina filas repetidas.",
+  "exp_en": "dropDuplicates removes repeated rows."
+ },
+ {
+  "id": 132,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En Power Query, ¿qué paso elimina las filas duplicadas exactas según las columnas seleccionadas?",
+  "q_en": "In Power Query, which step removes rows that are exact duplicates based on selected columns?",
+  "opts_es": [
+   "Quitar duplicados",
+   "Rellenar hacia abajo",
+   "Anular dinamización",
+   "Transponer"
+  ],
+  "opts_en": [
+   "Remove duplicates",
+   "Fill down",
+   "Unpivot",
+   "Transpose"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Quitar duplicados conserva una fila por combinación de claves.",
+  "exp_en": "Remove duplicates keeps one row per key combination."
+ },
+ {
+  "id": 133,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué función de T-SQL devuelve un valor alternativo cuando una expresión es NULL?",
+  "q_en": "Which T-SQL function returns an alternative value when an expression is NULL?",
+  "opts_es": [
+   "COALESCE",
+   "ROW_NUMBER",
+   "DATEADD",
+   "LEAD"
+  ],
+  "opts_en": [
+   "COALESCE",
+   "ROW_NUMBER",
+   "DATEADD",
+   "LEAD"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "COALESCE devuelve el primer argumento no nulo.",
+  "exp_en": "COALESCE returns the first non-null argument."
+ },
+ {
+  "id": 134,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué llamada de PySpark sustituye los nulos de una columna por un valor predeterminado?",
+  "q_en": "Which PySpark call replaces nulls in a column with a default value?",
+  "opts_es": [
+   "fillna() / na.fill()",
+   "dropTable()",
+   "repartition()",
+   "cache()"
+  ],
+  "opts_en": [
+   "fillna() / na.fill()",
+   "dropTable()",
+   "repartition()",
+   "cache()"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "fillna sustituye valores faltantes.",
+  "exp_en": "fillna substitutes missing values."
+ },
+ {
+  "id": 135,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una columna de origen guarda fechas como texto, por ejemplo '2026-10-05'. ¿Qué función de T-SQL la convierte y devuelve NULL en lugar de error cuando el valor no es válido?",
+  "q_en": "A source column stores dates as text such as '2026-10-05'. Which T-SQL function converts it and returns NULL instead of an error when the value is invalid?",
+  "opts_es": [
+   "TRY_CAST",
+   "Solo CAST",
+   "COUNT",
+   "ISNUMERIC"
+  ],
+  "opts_en": [
+   "TRY_CAST",
+   "CAST only",
+   "COUNT",
+   "ISNUMERIC"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "TRY_CAST devuelve NULL si falla.",
+  "exp_en": "TRY_CAST returns NULL on failure."
+ },
+ {
+  "id": 136,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué expresión de PySpark cambia el tipo de datos de una columna?",
+  "q_en": "Which PySpark expression changes a column's data type?",
+  "opts_es": [
+   "col('Amount').cast('decimal(18,2)')",
+   "col('Amount').alias('decimal')",
+   "df.limit(10)",
+   "df.count()"
+  ],
+  "opts_en": [
+   "col('Amount').cast('decimal(18,2)')",
+   "col('Amount').alias('decimal')",
+   "df.limit(10)",
+   "df.count()"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "cast convierte el tipo.",
+  "exp_en": "cast converts the type."
+ },
+ {
+  "id": 137,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Por qué se recomienda filtrar filas lo antes posible en una consulta de Dataflow Gen2?",
+  "q_en": "Why is it recommended to filter rows as early as possible in a Dataflow Gen2 query?",
+  "opts_es": [
+   "Reduce los datos procesados después y puede habilitar el plegado de consultas",
+   "Cifra los datos",
+   "Crea un esquema de estrella",
+   "Aplica una etiqueta de confidencialidad"
+  ],
+  "opts_en": [
+   "It reduces data processed later and can enable query folding",
+   "It encrypts the data",
+   "It creates a star schema",
+   "It applies a sensitivity label"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Filtrar pronto reduce trabajo y favorece el plegado.",
+  "exp_en": "Early filtering reduces work and favors folding."
+ },
+ {
+  "id": 138,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En una arquitectura medallón, ¿qué capa suele contener datos depurados y conformados listos para enriquecer?",
+  "q_en": "In a medallion architecture, which layer typically contains cleansed, conformed data ready to be enriched?",
+  "opts_es": [
+   "Plata (Silver)",
+   "Bronce (Bronze)",
+   "Oro (Gold)",
+   "Solo registros de aterrizaje"
+  ],
+  "opts_en": [
+   "Silver",
+   "Bronze",
+   "Gold",
+   "Landing logs only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Bronze es crudo, silver depurado y gold seleccionado.",
+  "exp_en": "Bronze is raw, silver is cleansed, gold is curated."
+ },
+ {
+  "id": 139,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué capa de una arquitectura medallón suele contener agregados listos para el negocio y esquemas de estrella para informes?",
+  "q_en": "Which layer of a medallion architecture usually holds business-ready aggregates and star schemas for reporting?",
+  "opts_es": [
+   "Oro (Gold)",
+   "Bronce (Bronze)",
+   "Aterrizaje sin procesar",
+   "Archivo"
+  ],
+  "opts_en": [
+   "Gold",
+   "Bronze",
+   "Raw landing",
+   "Archive"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Gold atiende el consumo analítico.",
+  "exp_en": "Gold serves analytics consumption."
+ },
+ {
+  "id": 140,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué comando de mantenimiento de tablas Delta compacta muchos archivos pequeños para mejorar el rendimiento de lectura?",
+  "q_en": "Which Delta table maintenance command compacts many small files to improve read performance?",
+  "opts_es": [
+   "OPTIMIZE",
+   "Solo VACUUM",
+   "DESCRIBE",
+   "SHOW"
+  ],
+  "opts_en": [
+   "OPTIMIZE",
+   "VACUUM only",
+   "DESCRIBE",
+   "SHOW"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "OPTIMIZE agrupa archivos pequeños.",
+  "exp_en": "OPTIMIZE bin-packs small files."
+ },
+ {
+  "id": 141,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué comando elimina los archivos de datos que ya no referencia una tabla Delta tras el periodo de retención?",
+  "q_en": "Which command removes data files no longer referenced by a Delta table after the retention period?",
+  "opts_es": [
+   "VACUUM",
+   "MERGE",
+   "ALTER ROLE",
+   "CREATE VIEW"
+  ],
+  "opts_en": [
+   "VACUUM",
+   "MERGE",
+   "ALTER ROLE",
+   "CREATE VIEW"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "VACUUM limpia archivos sin referencia.",
+  "exp_en": "VACUUM cleans up unreferenced files."
+ },
+ {
+  "id": 142,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Se necesita una tabla de fechas para un esquema de estrella de almacén. ¿Cuál es la mejor práctica?",
+  "q_en": "A date table is needed for a warehouse star schema. What is the best practice?",
+  "opts_es": [
+   "Crear una dimensión de fecha dedicada con una fila por día",
+   "Guardar las fechas solo como texto en la tabla de hechos",
+   "Omitir fechas y usar números de fila",
+   "Crear una tabla por mes"
+  ],
+  "opts_en": [
+   "Create a dedicated date dimension with one row per day",
+   "Store dates only as text in the fact table",
+   "Skip dates and use row numbers",
+   "Create one table per month"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una dimensión de fecha permite un análisis temporal coherente.",
+  "exp_en": "A date dimension enables consistent time analysis."
+ },
+ {
+  "id": 143,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En Power Query, ¿qué operación combina columnas de dos consultas según claves coincidentes?",
+  "q_en": "In Power Query, which operation combines columns from two queries based on matching keys?",
+  "opts_es": [
+   "Combinar consultas",
+   "Anexar consultas",
+   "Agrupar por",
+   "Dinamizar"
+  ],
+  "opts_en": [
+   "Merge queries",
+   "Append queries",
+   "Group by",
+   "Pivot"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Combinar es un join; anexar apila filas.",
+  "exp_en": "Merge is a join; append stacks rows."
+ },
+ {
+  "id": 144,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué join conserva todas las filas de la tabla izquierda aunque no haya coincidencia en la derecha?",
+  "q_en": "Which join keeps all rows from the left table even when there is no match on the right?",
+  "opts_es": [
+   "Combinación externa izquierda",
+   "Combinación interna",
+   "Solo combinación cruzada",
+   "Combinación anti derecha"
+  ],
+  "opts_en": [
+   "Left outer join",
+   "Inner join",
+   "Cross join only",
+   "Right anti join"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La externa izquierda conserva las filas izquierdas sin coincidencia.",
+  "exp_en": "Left outer keeps unmatched left rows."
+ },
+ {
+  "id": 145,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué API de Spark es la mejor para transformaciones de datos reutilizables y con control de versiones que escalan a tablas Delta grandes?",
+  "q_en": "Which Spark API is best for reusable, version-controlled data transformations that scale to large Delta tables?",
+  "opts_es": [
+   "Un cuaderno de PySpark o Spark SQL",
+   "Un marcador",
+   "Un archivo de tema",
+   "Una página de informe"
+  ],
+  "opts_en": [
+   "A PySpark or Spark SQL notebook",
+   "A bookmark",
+   "A theme file",
+   "A report page"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los cuadernos ejecutan código de Spark escalable.",
+  "exp_en": "Notebooks run scalable Spark code."
+ },
+ {
+  "id": 146,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de esquemas de estrella, indica si es verdadera o falsa.",
+  "q_en": "For each statement about star schema design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una tabla de dimensión contiene atributos descriptivos.",
+    "en": "A dimension table holds descriptive attributes.",
+    "ans": true
+   },
+   {
+    "es": "Una tabla de hechos debe contener texto descriptivo largo para cada atributo.",
+    "en": "A fact table should contain long descriptive text for every attribute.",
+    "ans": false
+   },
+   {
+    "es": "SCD de tipo 2 conserva el historial añadiendo filas nuevas.",
+    "en": "SCD type 2 keeps history by adding new rows.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los hechos contienen medidas; las dimensiones, atributos.",
+  "exp_en": "Facts hold measures; dimensions hold attributes."
+ },
+ {
+  "id": 147,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la limpieza de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about cleaning data, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "COALESCE puede sustituir valores NULL.",
+    "en": "COALESCE can replace NULL values.",
+    "ans": true
+   },
+   {
+    "es": "TRY_CAST genera un error cuando un valor no se puede convertir.",
+    "en": "TRY_CAST raises an error when a value cannot be converted.",
+    "ans": false
+   },
+   {
+    "es": "ROW_NUMBER puede ayudar a identificar filas duplicadas.",
+    "en": "ROW_NUMBER can help identify duplicate rows.",
+    "ans": true
+   }
+  ],
+  "exp_es": "TRY_CAST devuelve NULL en lugar de un error.",
+  "exp_en": "TRY_CAST returns NULL instead of an error."
+ },
+ {
+  "id": 148,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la arquitectura medallón, indica si es verdadera o falsa.",
+  "q_en": "For each statement about medallion architecture, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La capa bronze almacena datos sin procesar.",
+    "en": "The bronze layer stores raw data.",
+    "ans": true
+   },
+   {
+    "es": "La capa gold contiene archivos sin procesar y sin validar.",
+    "en": "The gold layer holds raw, unvalidated files.",
+    "ans": false
+   },
+   {
+    "es": "La capa silver suele contener datos depurados.",
+    "en": "The silver layer typically contains cleansed data.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Gold contiene datos seleccionados y listos para el negocio.",
+  "exp_en": "Gold contains curated, business-ready data."
+ },
+ {
+  "id": 149,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las tablas Delta, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Delta tables, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "OPTIMIZE compacta archivos pequeños.",
+    "en": "OPTIMIZE compacts small files.",
+    "ans": true
+   },
+   {
+    "es": "VACUUM añade filas nuevas a una tabla.",
+    "en": "VACUUM adds new rows to a table.",
+    "ans": false
+   },
+   {
+    "es": "MERGE INTO puede actualizar e insertar filas en una sola instrucción.",
+    "en": "MERGE INTO can update and insert rows in one statement.",
+    "ans": true
+   }
+  ],
+  "exp_es": "VACUUM elimina archivos sin referencia.",
+  "exp_en": "VACUUM removes unreferenced files."
+ },
+ {
+  "id": 150,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los objetos SQL en Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about SQL objects in Fabric, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El punto de conexión de análisis SQL de un lakehouse permite crear vistas.",
+    "en": "The SQL analytics endpoint of a lakehouse supports creating views.",
+    "ans": true
+   },
+   {
+    "es": "Un procedimiento almacenado puede aceptar parámetros.",
+    "en": "A stored procedure can accept parameters.",
+    "ans": true
+   },
+   {
+    "es": "Una función con valores de tabla insertada devuelve un único valor escalar.",
+    "en": "An inline table-valued function returns a single scalar value.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Una función con valores de tabla devuelve una tabla, no un escalar.",
+  "exp_en": "A TVF returns a table, not a scalar."
+ },
+ {
+  "id": 151,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las combinaciones y la fusión de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about joins and merging data, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una combinación externa izquierda conserva todas las filas de la tabla izquierda.",
+    "en": "A left outer join keeps all left-table rows.",
+    "ans": true
+   },
+   {
+    "es": "Anexar consultas combina columnas de dos tablas por clave.",
+    "en": "Appending queries combines columns from two tables by key.",
+    "ans": false
+   },
+   {
+    "es": "Combinar consultas en Power Query funciona como un join.",
+    "en": "Merge queries in Power Query behaves like a join.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Anexar apila filas; combinar une columnas.",
+  "exp_en": "Append stacks rows; merge joins columns."
+ },
+ {
+  "id": 152,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el filtrado y la conversión de tipos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about filtering and type conversion, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Filtrar pronto puede reducir los datos procesados en pasos posteriores.",
+    "en": "Filtering early can reduce the data processed in later steps.",
+    "ans": true
+   },
+   {
+    "es": "CAST puede cambiar una columna de texto a un tipo de fecha.",
+    "en": "CAST can change a text column to a date type.",
+    "ans": true
+   },
+   {
+    "es": "Cambiar un tipo de datos elimina la columna.",
+    "en": "Changing a data type deletes the column.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los cambios de tipo convierten valores; no eliminan columnas.",
+  "exp_en": "Type changes convert values; they do not delete columns."
+ },
+ {
+  "id": 153,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el objeto T-SQL para cada necesidad.",
+  "q_en": "Select the T-SQL object for each need.",
+  "rows": [
+   {
+    "es": "Devolver una tabla filtrada que toma un parámetro de región y se usa en FROM.",
+    "en": "Return a filtered table that takes a region parameter and is used in FROM.",
+    "opts_es": [
+     "Vista",
+     "Procedimiento almacenado",
+     "Función con valores de tabla insertada",
+     "Función escalar"
+    ],
+    "opts_en": [
+     "View",
+     "Stored procedure",
+     "Inline table-valued function",
+     "Scalar function"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Ejecutar varias instrucciones con parámetros como una rutina reutilizable.",
+    "en": "Run several parameterized statements as one reusable routine.",
+    "opts_es": [
+     "Vista",
+     "Procedimiento almacenado",
+     "Función con valores de tabla insertada",
+     "Función escalar"
+    ],
+    "opts_en": [
+     "View",
+     "Stored procedure",
+     "Inline table-valued function",
+     "Scalar function"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las funciones de tabla actúan como vistas con parámetros; los procedimientos agrupan instrucciones.",
+  "exp_en": "TVFs act like parameterized views; procedures group statements."
+ },
+ {
+  "id": 154,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la técnica para cada problema de calidad de datos.",
+  "q_en": "Select the technique for each data quality problem.",
+  "rows": [
+   {
+    "es": "Conservar un registro por clave de negocio.",
+    "en": "Keep one record per business key.",
+    "opts_es": [
+     "COALESCE",
+     "ROW_NUMBER con PARTITION BY",
+     "TRY_CAST",
+     "GROUP BY"
+    ],
+    "opts_en": [
+     "COALESCE",
+     "ROW_NUMBER with PARTITION BY",
+     "TRY_CAST",
+     "GROUP BY"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Sustituir los descuentos NULL por 0.",
+    "en": "Replace NULL discounts with 0.",
+    "opts_es": [
+     "COALESCE",
+     "ROW_NUMBER con PARTITION BY",
+     "TRY_CAST",
+     "GROUP BY"
+    ],
+    "opts_en": [
+     "COALESCE",
+     "ROW_NUMBER with PARTITION BY",
+     "TRY_CAST",
+     "GROUP BY"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "ROW_NUMBER deduplica; COALESCE sustituye NULL.",
+  "exp_en": "ROW_NUMBER deduplicates; COALESCE replaces NULLs."
+ },
+ {
+  "id": 155,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la capa medallón para cada conjunto de datos.",
+  "q_en": "Select the medallion layer for each dataset.",
+  "rows": [
+   {
+    "es": "Archivos JSON tal como se recibieron del origen.",
+    "en": "Raw JSON files exactly as received from the source.",
+    "opts_es": [
+     "Bronze",
+     "Silver",
+     "Gold",
+     "Archivo"
+    ],
+    "opts_en": [
+     "Bronze",
+     "Silver",
+     "Gold",
+     "Archive"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Esquema de estrella de ventas agregado consumido por Power BI.",
+    "en": "Aggregated sales star schema consumed by Power BI.",
+    "opts_es": [
+     "Bronze",
+     "Silver",
+     "Gold",
+     "Archivo"
+    ],
+    "opts_en": [
+     "Bronze",
+     "Silver",
+     "Gold",
+     "Archive"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Bronze es crudo; gold está listo para el consumo.",
+  "exp_en": "Bronze is raw; gold is consumption-ready."
+ },
+ {
+  "id": 156,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el comando de Delta para cada necesidad de mantenimiento.",
+  "q_en": "Select the Delta command for each maintenance need.",
+  "rows": [
+   {
+    "es": "Compactar muchos archivos pequeños.",
+    "en": "Compact many small files.",
+    "opts_es": [
+     "OPTIMIZE",
+     "VACUUM",
+     "MERGE INTO",
+     "DESCRIBE HISTORY"
+    ],
+    "opts_en": [
+     "OPTIMIZE",
+     "VACUUM",
+     "MERGE INTO",
+     "DESCRIBE HISTORY"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Hacer upsert de las filas cambiadas desde una tabla de ensayo.",
+    "en": "Upsert changed rows from a staging table.",
+    "opts_es": [
+     "OPTIMIZE",
+     "VACUUM",
+     "MERGE INTO",
+     "DESCRIBE HISTORY"
+    ],
+    "opts_en": [
+     "OPTIMIZE",
+     "VACUUM",
+     "MERGE INTO",
+     "DESCRIBE HISTORY"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "OPTIMIZE compacta; MERGE hace upsert.",
+  "exp_en": "OPTIMIZE compacts; MERGE upserts."
+ },
+ {
+  "id": 157,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la operación de Power Query para cada requisito.",
+  "q_en": "Select the Power Query operation for each requirement.",
+  "rows": [
+   {
+    "es": "Apilar archivos mensuales que comparten las mismas columnas.",
+    "en": "Stack monthly files that share the same columns.",
+    "opts_es": [
+     "Combinar consultas",
+     "Anexar consultas",
+     "Agrupar por",
+     "Quitar duplicados"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Append queries",
+     "Group by",
+     "Remove duplicates"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Añadir detalles del producto a cada fila de ventas usando ProductKey.",
+    "en": "Add product details to each sales row using ProductKey.",
+    "opts_es": [
+     "Combinar consultas",
+     "Anexar consultas",
+     "Agrupar por",
+     "Quitar duplicados"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Append queries",
+     "Group by",
+     "Remove duplicates"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Anexar apila filas; combinar añade columnas por clave.",
+  "exp_en": "Append stacks rows; merge adds columns by key."
+ },
+ {
+  "id": 158,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la operación de PySpark para cada tarea.",
+  "q_en": "Select the PySpark operation for each task.",
+  "rows": [
+   {
+    "es": "Ingresos totales por país.",
+    "en": "Total revenue per country.",
+    "opts_es": [
+     "dropDuplicates()",
+     "fillna()",
+     "cast()",
+     "groupBy().agg()"
+    ],
+    "opts_en": [
+     "dropDuplicates()",
+     "fillna()",
+     "cast()",
+     "groupBy().agg()"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Convertir una columna de texto a entero.",
+    "en": "Convert a string column to an integer.",
+    "opts_es": [
+     "dropDuplicates()",
+     "fillna()",
+     "cast()",
+     "groupBy().agg()"
+    ],
+    "opts_en": [
+     "dropDuplicates()",
+     "fillna()",
+     "cast()",
+     "groupBy().agg()"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "groupBy agrega; cast convierte tipos.",
+  "exp_en": "groupBy aggregates; cast converts types."
+ },
+ {
+  "id": 159,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la técnica de diseño para cada necesidad de modelado.",
+  "q_en": "Select the design technique for each modeling need.",
+  "rows": [
+   {
+    "es": "Conservar los valores históricos de atributos a lo largo del tiempo.",
+    "en": "Preserve historical attribute values over time.",
+    "opts_es": [
+     "Clave sustituta",
+     "SCD de tipo 2",
+     "Desnormalización",
+     "Dimensión de fecha"
+    ],
+    "opts_en": [
+     "Surrogate key",
+     "SCD type 2",
+     "Denormalization",
+     "Date dimension"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Aplanar una jerarquía de producto en copo de nieve en una sola dimensión.",
+    "en": "Flatten a snowflaked product hierarchy into one dimension.",
+    "opts_es": [
+     "Clave sustituta",
+     "SCD de tipo 2",
+     "Desnormalización",
+     "Dimensión de fecha"
+    ],
+    "opts_en": [
+     "Surrogate key",
+     "SCD type 2",
+     "Denormalization",
+     "Date dimension"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "SCD 2 conserva historial; la desnormalización aplana estructuras.",
+  "exp_en": "SCD 2 keeps history; denormalization flattens structures."
+ },
+ {
+  "id": 160,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la herramienta para cada requisito de transformación.",
+  "q_en": "Select the tool for each transformation requirement.",
+  "rows": [
+   {
+    "es": "Limpieza de bajo código por analistas con interfaz visual.",
+    "en": "Low-code cleaning by analysts with a visual interface.",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Cuaderno de Spark",
+     "T-SQL de almacén",
+     "Eventstream"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Spark notebook",
+     "Warehouse T-SQL",
+     "Eventstream"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Transformaciones complejas y centradas en código sobre datos Delta muy grandes.",
+    "en": "Complex, code-first transformations on very large Delta data.",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Cuaderno de Spark",
+     "T-SQL de almacén",
+     "Eventstream"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Spark notebook",
+     "Warehouse T-SQL",
+     "Eventstream"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los flujos de datos son de bajo código; los cuadernos, de código.",
+  "exp_en": "Dataflows are low-code; notebooks are code-first."
+ },
+ {
+  "id": 161,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Una ",
+  "pre_en": "A ",
+  "post_es": " almacena medidas numéricas y claves a tablas de dimensión.",
+  "post_en": " table stores numeric measures and keys to dimension tables.",
+  "opts_es": [
+   "tabla de hechos",
+   "tabla de dimensión",
+   "tabla de calendario",
+   "tabla de registro"
+  ],
+  "opts_en": [
+   "fact",
+   "dimension",
+   "calendar",
+   "log"
+  ],
+  "correct": 0,
+  "exp_es": "Las tablas de hechos contienen medidas.",
+  "exp_en": "Fact tables hold measures."
+ },
+ {
+  "id": 162,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Usa ",
+  "pre_en": "Use ",
+  "post_es": " para devolver NULL en lugar de un error cuando falla una conversión.",
+  "post_en": " to return NULL instead of an error when a conversion fails.",
+  "opts_es": [
+   "TRY_CAST",
+   "CAST",
+   "COUNT",
+   "TOP"
+  ],
+  "opts_en": [
+   "TRY_CAST",
+   "CAST",
+   "COUNT",
+   "TOP"
+  ],
+  "correct": 0,
+  "exp_es": "TRY_CAST es la conversión segura.",
+  "exp_en": "TRY_CAST is the safe conversion."
+ },
+ {
+  "id": 163,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "En una arquitectura medallón, la capa ",
+  "pre_en": "In a medallion architecture, the ",
+  "post_es": " contiene los datos ingeridos sin procesar.",
+  "post_en": " layer holds raw ingested data.",
+  "opts_es": [
+   "bronze",
+   "silver",
+   "gold",
+   "platinum"
+  ],
+  "opts_en": [
+   "bronze",
+   "silver",
+   "gold",
+   "platinum"
+  ],
+  "correct": 0,
+  "exp_es": "Bronze es la capa sin procesar.",
+  "exp_en": "Bronze is the raw layer."
+ },
+ {
+  "id": 164,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Un analista sin conocimientos de SQL necesita filtrar, agrupar y combinar tablas de un almacén con una interfaz de arrastrar y soltar. ¿Qué herramienta encaja?",
+  "q_en": "An analyst without SQL skills needs to filter, group and join tables of a warehouse using a drag-and-drop interface. Which tool fits?",
+  "opts_es": [
+   "Editor de consultas visual",
+   "Punto de conexión XMLA",
+   "Canalización de implementación",
+   "Eventstream"
+  ],
+  "opts_en": [
+   "Visual query editor",
+   "XMLA endpoint",
+   "Deployment pipeline",
+   "Eventstream"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El editor de consultas visual crea consultas sin código.",
+  "exp_en": "The visual query editor builds queries without code."
+ },
+ {
+  "id": 165,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué operaciones están disponibles en el editor de consultas visual?",
+  "q_en": "Which operations are available in the visual query editor?",
+  "opts_es": [
+   "Elegir columnas, filtrar filas, agrupar, combinar y anexar",
+   "Solo crear áreas de trabajo",
+   "Solo aplicar etiquetas",
+   "Solo configurar Git"
+  ],
+  "opts_en": [
+   "Choose columns, filter rows, group by, merge and append",
+   "Only create workspaces",
+   "Only apply labels",
+   "Only configure Git"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Expone visualmente transformaciones de consulta habituales.",
+  "exp_en": "It exposes common query transformations visually."
+ },
+ {
+  "id": 166,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué cláusula SQL filtra las filas antes de agruparlas?",
+  "q_en": "Which SQL clause filters rows before they are grouped?",
+  "opts_es": [
+   "WHERE",
+   "HAVING",
+   "ORDER BY",
+   "OVER"
+  ],
+  "opts_en": [
+   "WHERE",
+   "HAVING",
+   "ORDER BY",
+   "OVER"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "WHERE filtra filas de origen; HAVING filtra grupos.",
+  "exp_en": "WHERE filters source rows; HAVING filters groups."
+ },
+ {
+  "id": 167,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué cláusula SQL filtra grupos tras la agregación, por ejemplo clientes con ventas totales superiores a 10.000?",
+  "q_en": "Which SQL clause filters groups after aggregation, for example customers with total sales above 10,000?",
+  "opts_es": [
+   "HAVING",
+   "WHERE",
+   "TOP",
+   "DISTINCT"
+  ],
+  "opts_en": [
+   "HAVING",
+   "WHERE",
+   "TOP",
+   "DISTINCT"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "HAVING aplica condiciones a resultados agregados.",
+  "exp_en": "HAVING applies conditions to aggregated results."
+ },
+ {
+  "id": 168,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué característica de T-SQL permite calcular un total acumulado de ventas ordenado por fecha sin colapsar filas?",
+  "q_en": "Which T-SQL feature lets you compute a running total of sales ordered by date without collapsing rows?",
+  "opts_es": [
+   "Una función de ventana con SUM() OVER (ORDER BY ...)",
+   "GROUP BY",
+   "SELECT DISTINCT",
+   "UNION"
+  ],
+  "opts_en": [
+   "A window function with SUM() OVER (ORDER BY ...)",
+   "GROUP BY",
+   "SELECT DISTINCT",
+   "UNION"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las funciones de ventana mantienen el detalle por fila mientras agregan.",
+  "exp_en": "Window functions keep row-level detail while aggregating."
+ },
+ {
+  "id": 169,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué construcción de T-SQL define un conjunto de resultados temporal con nombre que se puede referenciar dentro de una sola consulta?",
+  "q_en": "Which T-SQL construct defines a named temporary result set that you can reference within a single query?",
+  "opts_es": [
+   "Expresión de tabla común (WITH)",
+   "Etiqueta de confidencialidad",
+   "Acceso directo",
+   "Directiva de seguridad"
+  ],
+  "opts_en": [
+   "Common table expression (WITH)",
+   "Sensitivity label",
+   "Shortcut",
+   "Security policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las CTE estructuran consultas complejas.",
+  "exp_en": "CTEs structure complex queries."
+ },
+ {
+  "id": 170,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de T-SQL devuelve el número de días entre dos fechas?",
+  "q_en": "Which T-SQL function returns the number of days between two dates?",
+  "opts_es": [
+   "DATEDIFF",
+   "DATEADD",
+   "FORMAT",
+   "ROUND"
+  ],
+  "opts_en": [
+   "DATEDIFF",
+   "DATEADD",
+   "FORMAT",
+   "ROUND"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "DATEDIFF mide el intervalo entre fechas.",
+  "exp_en": "DATEDIFF measures the interval between dates."
+ },
+ {
+  "id": 171,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué operador SQL devuelve solo las filas que aparecen en ambos conjuntos de resultados?",
+  "q_en": "Which SQL operator returns only rows that appear in both result sets?",
+  "opts_es": [
+   "INTERSECT",
+   "UNION ALL",
+   "EXCEPT",
+   "CROSS APPLY"
+  ],
+  "opts_en": [
+   "INTERSECT",
+   "UNION ALL",
+   "EXCEPT",
+   "CROSS APPLY"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "INTERSECT devuelve las filas comunes.",
+  "exp_en": "INTERSECT returns common rows."
+ },
+ {
+  "id": 172,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "En KQL, ¿qué operador filtra las filas de una tabla?",
+  "q_en": "In KQL, which operator filters rows of a table?",
+  "opts_es": [
+   "where",
+   "project",
+   "extend",
+   "render"
+  ],
+  "opts_en": [
+   "where",
+   "project",
+   "extend",
+   "render"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "where filtra filas mediante un predicado.",
+  "exp_en": "where filters rows by a predicate."
+ },
+ {
+  "id": 173,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "En KQL, ¿qué operador selecciona solo columnas específicas?",
+  "q_en": "In KQL, which operator selects only specific columns?",
+  "opts_es": [
+   "project",
+   "summarize",
+   "join",
+   "take"
+  ],
+  "opts_en": [
+   "project",
+   "summarize",
+   "join",
+   "take"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "project elige y renombra columnas.",
+  "exp_en": "project chooses and renames columns."
+ },
+ {
+  "id": 174,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "En KQL, ¿qué operador agrega una columna calculada al resultado?",
+  "q_en": "In KQL, which operator adds a calculated column to the result?",
+  "opts_es": [
+   "extend",
+   "where",
+   "distinct",
+   "count"
+  ],
+  "opts_en": [
+   "extend",
+   "where",
+   "distinct",
+   "count"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "extend crea columnas calculadas nuevas.",
+  "exp_en": "extend creates new calculated columns."
+ },
+ {
+  "id": 175,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué consulta KQL cuenta eventos por hora durante el último día?",
+  "q_en": "Which KQL query counts events per hour over the last day?",
+  "opts_es": [
+   "Events | where Timestamp > ago(1d) | summarize count() by bin(Timestamp, 1h)",
+   "Events | project count()",
+   "Events | take 1h",
+   "Events | extend ago(1d)"
+  ],
+  "opts_en": [
+   "Events | where Timestamp > ago(1d) | summarize count() by bin(Timestamp, 1h)",
+   "Events | project count()",
+   "Events | take 1h",
+   "Events | extend ago(1d)"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "summarize con bin agrupa el tiempo en intervalos.",
+  "exp_en": "summarize with bin groups time into buckets."
+ },
+ {
+  "id": 176,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué operador de KQL devuelve rápidamente una muestra de filas para explorar una tabla?",
+  "q_en": "Which KQL operator returns a sample of rows quickly for exploring a table?",
+  "opts_es": [
+   "take (limit)",
+   "make-series",
+   "mv-expand",
+   "evaluate"
+  ],
+  "opts_en": [
+   "take (limit)",
+   "make-series",
+   "mv-expand",
+   "evaluate"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "take devuelve un número arbitrario de filas.",
+  "exp_en": "take returns an arbitrary number of rows."
+ },
+ {
+  "id": 177,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué operador de KQL visualiza los resultados como gráfico, por ejemplo un gráfico temporal?",
+  "q_en": "Which KQL operator visualizes results as a chart, for example a time chart?",
+  "opts_es": [
+   "render",
+   "parse",
+   "lookup",
+   "top"
+  ],
+  "opts_en": [
+   "render",
+   "parse",
+   "lookup",
+   "top"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "render dibuja gráficos a partir de los resultados.",
+  "exp_en": "render draws charts from query results."
+ },
+ {
+  "id": 178,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué elemento de Fabric se usa para guardar y compartir consultas KQL contra una base de datos de Eventhouse?",
+  "q_en": "Which Fabric item is used to save and share KQL queries against an Eventhouse database?",
+  "opts_es": [
+   "Conjunto de consultas KQL",
+   "Canalización de datos",
+   "Dataflow Gen2",
+   "Modelo semántico"
+  ],
+  "opts_en": [
+   "KQL queryset",
+   "Data pipeline",
+   "Dataflow Gen2",
+   "Semantic model"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un conjunto de consultas KQL almacena consultas.",
+  "exp_en": "A KQL queryset stores queries."
+ },
+ {
+  "id": 179,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de KQL cuenta el número de valores distintos de una columna?",
+  "q_en": "Which KQL function counts the distinct number of values in a column?",
+  "opts_es": [
+   "dcount()",
+   "count()",
+   "sum()",
+   "any()"
+  ],
+  "opts_en": [
+   "dcount()",
+   "count()",
+   "sum()",
+   "any()"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "dcount devuelve un recuento distinto aproximado.",
+  "exp_en": "dcount returns an approximate distinct count."
+ },
+ {
+  "id": 180,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "En DAX, ¿qué función evalúa una expresión en un contexto de filtro modificado?",
+  "q_en": "In DAX, which function evaluates an expression in a modified filter context?",
+  "opts_es": [
+   "CALCULATE",
+   "FORMAT",
+   "VALUE",
+   "UNICHAR"
+  ],
+  "opts_en": [
+   "CALCULATE",
+   "FORMAT",
+   "VALUE",
+   "UNICHAR"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "CALCULATE modifica el contexto de filtro.",
+  "exp_en": "CALCULATE changes filter context."
+ },
+ {
+  "id": 181,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué palabra clave de DAX inicia una consulta que devuelve una tabla, por ejemplo al ejecutarla en la vista de consulta DAX?",
+  "q_en": "Which DAX keyword starts a query that returns a table, for example when running a query in the DAX query view?",
+  "opts_es": [
+   "EVALUATE",
+   "RETURN",
+   "LOOKUP",
+   "SELECT"
+  ],
+  "opts_en": [
+   "EVALUATE",
+   "RETURN",
+   "LOOKUP",
+   "SELECT"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una consulta DAX comienza con EVALUATE.",
+  "exp_en": "A DAX query begins with EVALUATE."
+ },
+ {
+  "id": 182,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función DAX agrupa por columnas y añade valores agregados en el resultado de una consulta?",
+  "q_en": "Which DAX function groups by columns and adds aggregated values in a query result?",
+  "opts_es": [
+   "SUMMARIZECOLUMNS",
+   "ISBLANK",
+   "USERNAME",
+   "PATH"
+  ],
+  "opts_en": [
+   "SUMMARIZECOLUMNS",
+   "ISBLANK",
+   "USERNAME",
+   "PATH"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "SUMMARIZECOLUMNS es la función de agrupación estándar de las consultas.",
+  "exp_en": "SUMMARIZECOLUMNS is the standard grouping function for queries."
+ },
+ {
+  "id": 183,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función DAX devuelve las N primeras filas de una tabla clasificadas por una expresión?",
+  "q_en": "Which DAX function returns the top N rows of a table ranked by an expression?",
+  "opts_es": [
+   "TOPN",
+   "FIRSTDATE",
+   "EARLIER",
+   "LOOKUPVALUE"
+  ],
+  "opts_en": [
+   "TOPN",
+   "FIRSTDATE",
+   "EARLIER",
+   "LOOKUPVALUE"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "TOPN devuelve filas clasificadas.",
+  "exp_en": "TOPN returns ranked rows."
+ },
+ {
+  "id": 184,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función DAX devuelve el valor de una columna cuando el contexto de filtro tiene un único valor y, si no, un blanco o resultado alternativo?",
+  "q_en": "Which DAX function returns the value of a column when the filter context has a single value, otherwise a blank or alternate result?",
+  "opts_es": [
+   "SELECTEDVALUE",
+   "DISTINCTCOUNT",
+   "TOTALYTD",
+   "CONCATENATEX"
+  ],
+  "opts_en": [
+   "SELECTEDVALUE",
+   "DISTINCTCOUNT",
+   "TOTALYTD",
+   "CONCATENATEX"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "SELECTEDVALUE gestiona selecciones únicas de forma segura.",
+  "exp_en": "SELECTEDVALUE handles single selections safely."
+ },
+ {
+  "id": 185,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿En qué entorno se pueden escribir y ejecutar consultas DAX directamente contra un modelo semántico sin crear un informe?",
+  "q_en": "In which environment can you write and run DAX queries directly against a semantic model without building a report?",
+  "opts_es": [
+   "Vista de consulta DAX",
+   "Editor de Dataflow Gen2",
+   "Lienzo de Eventstream",
+   "Cuadro de diálogo de commit de Git"
+  ],
+  "opts_en": [
+   "DAX query view",
+   "Dataflow Gen2 editor",
+   "Eventstream canvas",
+   "Git commit dialog"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La vista de consulta DAX ejecuta consultas EVALUATE.",
+  "exp_en": "DAX query view runs EVALUATE queries."
+ },
+ {
+  "id": 186,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué lenguaje debes elegir para consultar telemetría en tiempo real almacenada en un Eventhouse?",
+  "q_en": "Which language should you choose to query real-time telemetry stored in an Eventhouse?",
+  "opts_es": [
+   "KQL",
+   "DAX",
+   "M",
+   "Solo MDX"
+  ],
+  "opts_en": [
+   "KQL",
+   "DAX",
+   "M",
+   "MDX only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las bases de datos de Eventhouse se consultan con KQL (y un subconjunto de T-SQL).",
+  "exp_en": "Eventhouse databases are queried with KQL (and T-SQL subset)."
+ },
+ {
+  "id": 187,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué lenguaje es nativo de los cálculos y consultas de modelos semánticos?",
+  "q_en": "Which language is native to semantic model calculations and queries?",
+  "opts_es": [
+   "DAX",
+   "KQL",
+   "PySpark",
+   "Bash"
+  ],
+  "opts_en": [
+   "DAX",
+   "KQL",
+   "PySpark",
+   "Bash"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los modelos semánticos usan DAX.",
+  "exp_en": "Semantic models use DAX."
+ },
+ {
+  "id": 188,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Un usuario quiere explorar tablas de un lakehouse con Spark SQL en un cuaderno. ¿Qué instrucción inicia una celda de consulta con SQL?",
+  "q_en": "A user wants to explore lakehouse tables with Spark SQL in a notebook. Which statement starts a query cell using SQL?",
+  "opts_es": [
+   "%%sql",
+   "%%kql",
+   "%%dax",
+   "%%git"
+  ],
+  "opts_en": [
+   "%%sql",
+   "%%kql",
+   "%%dax",
+   "%%git"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La instrucción mágica %%sql ejecuta Spark SQL.",
+  "exp_en": "The %%sql magic runs Spark SQL."
+ },
+ {
+  "id": 189,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las consultas SQL, indica si es verdadera o falsa.",
+  "q_en": "For each statement about SQL queries, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "WHERE filtra filas antes de la agregación.",
+    "en": "WHERE filters rows before aggregation.",
+    "ans": true
+   },
+   {
+    "es": "HAVING filtra filas individuales antes de agrupar.",
+    "en": "HAVING filters individual rows before grouping.",
+    "ans": false
+   },
+   {
+    "es": "Una función de ventana puede calcular un total acumulado.",
+    "en": "A window function can compute a running total.",
+    "ans": true
+   }
+  ],
+  "exp_es": "HAVING filtra grupos tras la agregación.",
+  "exp_en": "HAVING filters groups after aggregation."
+ },
+ {
+  "id": 190,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre KQL, indica si es verdadera o falsa.",
+  "q_en": "For each statement about KQL, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El operador project selecciona columnas.",
+    "en": "The project operator selects columns.",
+    "ans": true
+   },
+   {
+    "es": "El operador summarize agrupa y agrega filas.",
+    "en": "The summarize operator groups and aggregates rows.",
+    "ans": true
+   },
+   {
+    "es": "KQL es el lenguaje usado para crear medidas DAX.",
+    "en": "KQL is the language used to create DAX measures.",
+    "ans": false
+   }
+  ],
+  "exp_es": "DAX se usa para cálculos del modelo.",
+  "exp_en": "DAX is used for model calculations."
+ },
+ {
+  "id": 191,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las consultas DAX, indica si es verdadera o falsa.",
+  "q_en": "For each statement about DAX queries, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una consulta DAX usa EVALUATE para devolver una tabla.",
+    "en": "A DAX query uses EVALUATE to return a table.",
+    "ans": true
+   },
+   {
+    "es": "SUMMARIZECOLUMNS puede agrupar datos y añadir agregados.",
+    "en": "SUMMARIZECOLUMNS can group data and add aggregates.",
+    "ans": true
+   },
+   {
+    "es": "TOPN devuelve solo las filas inferiores.",
+    "en": "TOPN returns the bottom rows only.",
+    "ans": false
+   }
+  ],
+  "exp_es": "TOPN devuelve las N primeras filas según una expresión.",
+  "exp_en": "TOPN returns the top N rows by an expression."
+ },
+ {
+  "id": 192,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el editor de consultas visual, indica si es verdadera o falsa.",
+  "q_en": "For each statement about the visual query editor, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Permite crear consultas sin escribir código.",
+    "en": "It lets you build queries without writing code.",
+    "ans": true
+   },
+   {
+    "es": "Solo se puede usar con bases de datos KQL.",
+    "en": "It can only be used with KQL databases.",
+    "ans": false
+   },
+   {
+    "es": "Admite operaciones como combinar y anexar.",
+    "en": "It supports operations such as merge and append.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Funciona sobre almacenes y puntos de conexión de análisis SQL.",
+  "exp_en": "It works over warehouses and SQL analytics endpoints."
+ },
+ {
+  "id": 193,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la elección del lenguaje de consulta, indica si es verdadera o falsa.",
+  "q_en": "For each statement about choosing a query language, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "T-SQL puede consultar tablas de almacén.",
+    "en": "T-SQL can query warehouse tables.",
+    "ans": true
+   },
+   {
+    "es": "KQL es el lenguaje principal de las bases de datos de Eventhouse.",
+    "en": "KQL is the primary language for Eventhouse databases.",
+    "ans": true
+   },
+   {
+    "es": "DAX es necesario para consultar la sección Files de un lakehouse.",
+    "en": "DAX is required to query a lakehouse's Files section.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los archivos se leen con Spark o accesos directos, no con DAX.",
+  "exp_en": "Files are read with Spark or shortcuts, not DAX."
+ },
+ {
+  "id": 194,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las consultas basadas en tiempo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about time-based queries, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "ago(1d) en KQL se refiere a un día antes de ahora.",
+    "en": "ago(1d) in KQL refers to one day before now.",
+    "ans": true
+   },
+   {
+    "es": "bin() en KQL agrupa marcas de tiempo en intervalos fijos.",
+    "en": "bin() in KQL groups timestamps into fixed intervals.",
+    "ans": true
+   },
+   {
+    "es": "DATEDIFF en T-SQL suma días a una fecha.",
+    "en": "DATEDIFF in T-SQL adds days to a date.",
+    "ans": false
+   }
+  ],
+  "exp_es": "DATEADD suma; DATEDIFF mide diferencias.",
+  "exp_en": "DATEADD adds; DATEDIFF measures differences."
+ },
+ {
+  "id": 195,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona el lenguaje para cada tarea de consulta.",
+  "q_en": "Select the language for each query task.",
+  "rows": [
+   {
+    "es": "Analizar la última hora de eventos de registro en un Eventhouse.",
+    "en": "Analyze the last hour of log events in an Eventhouse.",
+    "opts_es": [
+     "T-SQL",
+     "KQL",
+     "DAX",
+     "Spark SQL"
+    ],
+    "opts_en": [
+     "T-SQL",
+     "KQL",
+     "DAX",
+     "Spark SQL"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Consultar una medida de un modelo semántico por categoría de producto.",
+    "en": "Query a semantic model's measure by product category.",
+    "opts_es": [
+     "T-SQL",
+     "KQL",
+     "DAX",
+     "Spark SQL"
+    ],
+    "opts_en": [
+     "T-SQL",
+     "KQL",
+     "DAX",
+     "Spark SQL"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "KQL para Eventhouse; DAX para modelos semánticos.",
+  "exp_en": "KQL for Eventhouse; DAX for semantic models."
+ },
+ {
+  "id": 196,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona el operador de KQL para cada necesidad.",
+  "q_en": "Select the KQL operator for each need.",
+  "rows": [
+   {
+    "es": "Conservar solo las filas donde Level es Error.",
+    "en": "Keep only rows where Level is Error.",
+    "opts_es": [
+     "where",
+     "project",
+     "summarize",
+     "render"
+    ],
+    "opts_en": [
+     "where",
+     "project",
+     "summarize",
+     "render"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Contar errores por hora.",
+    "en": "Count errors per hour.",
+    "opts_es": [
+     "where",
+     "project",
+     "summarize",
+     "render"
+    ],
+    "opts_en": [
+     "where",
+     "project",
+     "summarize",
+     "render"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "where filtra; summarize agrega.",
+  "exp_en": "where filters; summarize aggregates."
+ },
+ {
+  "id": 197,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la cláusula SQL para cada necesidad.",
+  "q_en": "Select the SQL clause for each need.",
+  "rows": [
+   {
+    "es": "Conservar clientes cuyo gasto total supera un umbral.",
+    "en": "Keep customers whose total spend exceeds a threshold.",
+    "opts_es": [
+     "WHERE",
+     "GROUP BY",
+     "HAVING",
+     "OVER"
+    ],
+    "opts_en": [
+     "WHERE",
+     "GROUP BY",
+     "HAVING",
+     "OVER"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Calcular totales por región.",
+    "en": "Compute totals per region.",
+    "opts_es": [
+     "WHERE",
+     "GROUP BY",
+     "HAVING",
+     "OVER"
+    ],
+    "opts_en": [
+     "WHERE",
+     "GROUP BY",
+     "HAVING",
+     "OVER"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "GROUP BY agrega; HAVING filtra grupos.",
+  "exp_en": "GROUP BY aggregates; HAVING filters groups."
+ },
+ {
+  "id": 198,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la función DAX para cada necesidad de consulta.",
+  "q_en": "Select the DAX function for each query need.",
+  "rows": [
+   {
+    "es": "Devolver los 10 productos más vendidos.",
+    "en": "Return the 10 best-selling products.",
+    "opts_es": [
+     "EVALUATE",
+     "SUMMARIZECOLUMNS",
+     "TOPN",
+     "SELECTEDVALUE"
+    ],
+    "opts_en": [
+     "EVALUATE",
+     "SUMMARIZECOLUMNS",
+     "TOPN",
+     "SELECTEDVALUE"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Agrupar ventas por año y añadir una columna de total.",
+    "en": "Group sales by year and add a total column.",
+    "opts_es": [
+     "EVALUATE",
+     "SUMMARIZECOLUMNS",
+     "TOPN",
+     "SELECTEDVALUE"
+    ],
+    "opts_en": [
+     "EVALUATE",
+     "SUMMARIZECOLUMNS",
+     "TOPN",
+     "SELECTEDVALUE"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "TOPN clasifica; SUMMARIZECOLUMNS agrupa.",
+  "exp_en": "TOPN ranks; SUMMARIZECOLUMNS groups."
+ },
+ {
+  "id": 199,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la herramienta para cada tarea de análisis.",
+  "q_en": "Select the tool for each analysis task.",
+  "rows": [
+   {
+    "es": "Probar medidas de un modelo semántico sin crear un informe.",
+    "en": "Test measures of a semantic model without building a report.",
+    "opts_es": [
+     "Editor de consultas visual",
+     "Conjunto de consultas KQL",
+     "Vista de consulta DAX",
+     "Editor de consultas SQL"
+    ],
+    "opts_en": [
+     "Visual query editor",
+     "KQL queryset",
+     "DAX query view",
+     "SQL query editor"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Crear una combinación visualmente sin código.",
+    "en": "Build a join visually without code.",
+    "opts_es": [
+     "Editor de consultas visual",
+     "Conjunto de consultas KQL",
+     "Vista de consulta DAX",
+     "Editor de consultas SQL"
+    ],
+    "opts_en": [
+     "Visual query editor",
+     "KQL queryset",
+     "DAX query view",
+     "SQL query editor"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "La vista de consulta DAX prueba modelos; el editor visual evita escribir código.",
+  "exp_en": "DAX query view tests models; the visual editor avoids code."
+ },
+ {
+  "id": 200,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la función T-SQL para cada requisito de fechas.",
+  "q_en": "Select the T-SQL function for each date requirement.",
+  "rows": [
+   {
+    "es": "Número de días entre las fechas de pedido y envío.",
+    "en": "Number of days between order and ship dates.",
+    "opts_es": [
+     "DATEADD",
+     "DATEDIFF",
+     "EOMONTH",
+     "GETDATE"
+    ],
+    "opts_en": [
+     "DATEADD",
+     "DATEDIFF",
+     "EOMONTH",
+     "GETDATE"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Último día del mes de una fecha de pedido.",
+    "en": "Last day of the month of an order date.",
+    "opts_es": [
+     "DATEADD",
+     "DATEDIFF",
+     "EOMONTH",
+     "GETDATE"
+    ],
+    "opts_en": [
+     "DATEADD",
+     "DATEDIFF",
+     "EOMONTH",
+     "GETDATE"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "DATEDIFF mide intervalos; EOMONTH devuelve el fin de mes.",
+  "exp_en": "DATEDIFF measures intervals; EOMONTH returns month end."
+ },
+ {
+  "id": 201,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona el operador o función para cada escenario de análisis.",
+  "q_en": "Select the operator or function for each analysis scenario.",
+  "rows": [
+   {
+    "es": "Clasificar clientes por ventas dentro de cada país.",
+    "en": "Rank customers by sales within each country.",
+    "opts_es": [
+     "Función de ventana",
+     "CTE",
+     "INTERSECT",
+     "UNION ALL"
+    ],
+    "opts_en": [
+     "Window function",
+     "CTE",
+     "INTERSECT",
+     "UNION ALL"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Devolver solo las filas presentes en ambos conjuntos de resultados.",
+    "en": "Return only rows present in both result sets.",
+    "opts_es": [
+     "Función de ventana",
+     "CTE",
+     "INTERSECT",
+     "UNION ALL"
+    ],
+    "opts_en": [
+     "Window function",
+     "CTE",
+     "INTERSECT",
+     "UNION ALL"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las funciones de ventana clasifican; INTERSECT conserva filas comunes.",
+  "exp_en": "Window functions rank; INTERSECT keeps common rows."
+ },
+ {
+  "id": 202,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "En KQL, el operador ",
+  "pre_en": "In KQL, the ",
+  "post_es": " agrupa filas y calcula agregados.",
+  "post_en": " operator groups rows and calculates aggregates.",
+  "opts_es": [
+   "summarize",
+   "project",
+   "render",
+   "take"
+  ],
+  "opts_en": [
+   "summarize",
+   "project",
+   "render",
+   "take"
+  ],
+  "correct": 0,
+  "exp_es": "summarize realiza agregaciones.",
+  "exp_en": "summarize performs aggregation."
+ },
+ {
+  "id": 203,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Una consulta DAX comienza con la palabra clave ",
+  "pre_en": "A DAX query starts with the ",
+  "post_es": ".",
+  "post_en": " keyword.",
+  "opts_es": [
+   "EVALUATE",
+   "SELECT",
+   "FROM",
+   "SHOW"
+  ],
+  "opts_en": [
+   "EVALUATE",
+   "SELECT",
+   "FROM",
+   "SHOW"
+  ],
+  "correct": 0,
+  "exp_es": "EVALUATE devuelve un resultado de tabla.",
+  "exp_en": "EVALUATE returns a table result."
+ },
+ {
+  "id": 204,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Usa ",
+  "pre_en": "Use ",
+  "post_es": " para filtrar grupos tras la agregación en SQL.",
+  "post_en": " to filter groups after aggregation in SQL.",
+  "opts_es": [
+   "HAVING",
+   "WHERE",
+   "TOP",
+   "USE"
+  ],
+  "opts_en": [
+   "HAVING",
+   "WHERE",
+   "TOP",
+   "USE"
+  ],
+  "correct": 0,
+  "exp_es": "Las condiciones de HAVING se aplican a agregados.",
+  "exp_en": "HAVING conditions apply to aggregates."
+ },
+ {
+  "id": 205,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "El editor de consultas visual permite ",
+  "pre_en": "The visual query editor lets you ",
+  "post_es": " consultas sin escribir código.",
+  "post_en": " queries without writing code.",
+  "opts_es": [
+   "crear",
+   "cifrar",
+   "replicar",
+   "implementar"
+  ],
+  "opts_en": [
+   "build",
+   "encrypt",
+   "mirror",
+   "deploy"
+  ],
+  "correct": 0,
+  "exp_es": "Es una herramienta de consultas de bajo código.",
+  "exp_en": "It is a low-code query tool."
+ },
+ {
+  "id": 206,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Una ",
+  "pre_en": "A ",
+  "post_es": " puede calcular totales acumulados sin colapsar filas.",
+  "post_en": " function can compute running totals without collapsing rows.",
+  "opts_es": [
+   "función de ventana",
+   "función escalar",
+   "función de cadena",
+   "función del sistema"
+  ],
+  "opts_en": [
+   "window",
+   "scalar",
+   "string",
+   "system"
+  ],
+  "correct": 0,
+  "exp_es": "Las funciones de ventana mantienen el detalle por fila.",
+  "exp_en": "Window functions keep row-level detail."
+ }
+]
