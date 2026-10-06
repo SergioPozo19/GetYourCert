@@ -164,14 +164,14 @@
   "q_es": "Una tabla del almacén tiene una columna Salary que solo RR. HH. debe leer. ¿Qué característica de T-SQL restringe el acceso a columnas concretas?",
   "q_en": "A warehouse table has a Salary column that only HR should read. Which T-SQL feature restricts access to specific columns?",
   "opts_es": [
-   "Aprobación como certificado",
-   "Una regla de canalización de implementación",
+   "Enmascaramiento dinámico de datos en la columna",
+   "Un rol de acceso a datos de OneLake",
    "Una directiva de seguridad en filas",
    "Seguridad de nivel de columna con GRANT SELECT en las columnas permitidas"
   ],
   "opts_en": [
-   "Endorsement as Certified",
-   "A deployment pipeline rule",
+   "Dynamic data masking on the column",
+   "A OneLake data access role",
    "A security policy on rows",
    "Column-level security with GRANT SELECT on allowed columns"
   ],
@@ -243,15 +243,15 @@
   "q_en": "Which tool is typically used to define object-level security on a semantic model?",
   "opts_es": [
    "Tabular Editor u otra herramienta basada en XMLA",
-   "Un cuaderno de Spark",
-   "Un Dataflow Gen2",
-   "La aplicación móvil de Power BI"
+   "El cuadro de diálogo de uso compartido del servicio Power BI",
+   "La programación de actualización del modelo semántico",
+   "El panel de formato de Power BI Desktop"
   ],
   "opts_en": [
    "Tabular Editor or another XMLA-based tool",
-   "A Spark notebook",
-   "A Dataflow Gen2",
-   "The Power BI mobile app"
+   "The Power BI service sharing dialog",
+   "The semantic model refresh schedule",
+   "Power BI Desktop's formatting pane"
   ],
   "correct": [
    0
@@ -372,16 +372,16 @@
   "q_es": "¿Qué ocurre con una etiqueta de confidencialidad cuando se exportan datos de un elemento etiquetado a Excel o PDF?",
   "q_en": "What happens to a sensitivity label when data is exported from a labeled item to Excel or PDF?",
   "opts_es": [
-   "La etiqueta siempre se elimina",
-   "Solo cambia el nombre del archivo",
+   "La etiqueta se elimina del archivo exportado",
+   "La etiqueta permanece solo en el elemento de origen",
    "La etiqueta y su configuración de protección acompañan al archivo exportado",
-   "La exportación siempre se bloquea"
+   "La exportación se bloquea para todos los elementos etiquetados"
   ],
   "opts_en": [
-   "The label is always removed",
-   "Only the file name changes",
+   "The label is removed from the exported file",
+   "The label stays only on the source item",
    "The label and its protection settings follow the exported file",
-   "The export is always blocked"
+   "The export is blocked for every labeled item"
   ],
   "correct": [
    2
@@ -503,14 +503,14 @@
   "q_en": "How can you restrict rows in a KQL database in an Eventhouse for different users?",
   "opts_es": [
    "Usar una configuración de sesión de Spark",
-   "Usar un marcador de Power BI",
-   "Usar un parámetro de flujo de datos",
+   "Usar un filtro de nivel de informe de Power BI",
+   "Usar un parámetro de Dataflow Gen2",
    "Usar una directiva de seguridad de nivel de fila en la tabla"
   ],
   "opts_en": [
-   "Use a Spark session setting",
-   "Use a Power BI bookmark",
-   "Use a dataflow parameter",
+   "Use a Spark session configuration",
+   "Use a Power BI report-level filter",
+   "Use a Dataflow Gen2 parameter",
    "Use a row level security policy on the table"
   ],
   "correct": [
@@ -554,16 +554,16 @@
   "q_es": "¿Qué configuración garantiza que los usuarios etiqueten cada elemento nuevo, según exige el cumplimiento?",
   "q_en": "Which setting makes sure that every new item is labeled by users, as required by compliance?",
   "opts_es": [
-   "Una directiva de rama de Git",
-   "Una pausa de capacidad",
+   "Una directiva de rama de Git en el área de trabajo",
+   "Una configuración de escalado automático de capacidad",
    "Una directiva de etiquetado obligatorio en Purview",
-   "Una aprobación Certificado"
+   "Una aprobación Certificado en cada elemento"
   ],
   "opts_en": [
-   "A Git branch policy",
-   "A capacity pause",
+   "A Git branch policy on the workspace",
+   "A capacity autoscale setting",
    "A mandatory labeling policy in Purview",
-   "A Certified endorsement"
+   "A Certified endorsement on each item"
   ],
   "correct": [
    2
@@ -609,13 +609,13 @@
    "Conectarse al elemento y verlo, pero no leer datos hasta que se concedan más permisos",
    "Administrar los miembros del área de trabajo",
    "Eliminar el lakehouse",
-   "Leer todos los archivos de OneLake"
+   "Leer todos los archivos de OneLake del elemento"
   ],
   "opts_en": [
    "Connect to the item and see it, but not read data until further permissions are granted",
-   "Manage workspace members",
+   "Manage the workspace members",
    "Delete the lakehouse",
-   "Read all files in OneLake"
+   "Read every file in OneLake for the item"
   ],
   "correct": [
    0
@@ -1165,16 +1165,16 @@
   "q_es": "¿Qué almacena la integración de Git de un área de trabajo de Fabric en el repositorio?",
   "q_en": "What does Git integration in a Fabric workspace store in the repository?",
   "opts_es": [
-   "Los registros de inicio de sesión de usuarios",
+   "Los registros de inicio de sesión de los usuarios del área de trabajo",
    "Las definiciones de los elementos (metadatos), no los datos",
-   "La configuración de la capacidad",
+   "La configuración y la SKU de la capacidad",
    "Todos los archivos de datos del lakehouse"
   ],
   "opts_en": [
-   "User sign-in logs",
+   "The sign-in logs of workspace users",
    "The item definitions (metadata), not the data",
-   "The capacity configuration",
-   "All lakehouse data files"
+   "The capacity configuration and SKU",
+   "All the data files of the lakehouse"
   ],
   "correct": [
    1
@@ -1295,16 +1295,16 @@
   "q_es": "¿Qué formato de texto se usa para definir un modelo semántico en un proyecto de Power BI Desktop?",
   "q_en": "Which text-based format is used to define a semantic model in a Power BI Desktop project?",
   "opts_es": [
-   "CSV",
-   "PDF",
+   "Tablas CSV",
+   "Documentos PDF",
    "TMDL (Tabular Model Definition Language)",
-   "XLSX"
+   "Libros XLSX"
   ],
   "opts_en": [
-   "CSV",
-   "PDF",
+   "CSV tables",
+   "PDF documents",
    "TMDL (Tabular Model Definition Language)",
-   "XLSX"
+   "XLSX workbooks"
   ],
   "correct": [
    2
@@ -1347,16 +1347,16 @@
   "q_es": "Implementas un modelo semántico de Prueba a Producción pero necesita conectarse a otro origen de datos en Producción. ¿Qué debes configurar?",
   "q_en": "You deploy a semantic model from Test to Production but need it to connect to a different data source in Production. What should you configure?",
   "opts_es": [
-   "Un rol de lector del área de trabajo",
+   "Una asignación del rol de lector del área de trabajo",
    "Una regla de implementación (de origen de datos o de parámetro)",
-   "Una aprobación Certificado",
-   "Un conjunto de consultas KQL"
+   "Una aprobación Certificado en el modelo",
+   "Un conjunto de consultas KQL sobre el nuevo origen"
   ],
   "opts_en": [
-   "A workspace Viewer role",
+   "A workspace Viewer role assignment",
    "A deployment rule (data source or parameter rule)",
-   "A Certified endorsement",
-   "A KQL queryset"
+   "A Certified endorsement on the model",
+   "A KQL queryset on the new source"
   ],
   "correct": [
    1
@@ -1556,15 +1556,15 @@
   "q_en": "A team stores PBIP files in a Git repository. What benefit do text-based definitions provide?",
   "opts_es": [
    "Diferencias y combinaciones significativas de los cambios del modelo y del informe",
-   "Menor coste de capacidad",
-   "Actualización automática de datos",
-   "Seguridad de nivel de fila automática"
+   "Un menor coste de capacidad para el modelo",
+   "Actualización automática de datos tras cada commit",
+   "Seguridad de nivel de fila automática para cada rama"
   ],
   "opts_en": [
    "Meaningful diffs and merges of model and report changes",
-   "Lower capacity cost",
-   "Automatic data refresh",
-   "Automatic row-level security"
+   "A lower capacity cost for the model",
+   "Automatic data refresh after each commit",
+   "Automatic row-level security for every branch"
   ],
   "correct": [
    0
@@ -1581,15 +1581,15 @@
   "q_es": "¿Qué permiso se necesita para configurar las fases y reglas de una canalización de implementación?",
   "q_en": "Which role is needed to configure a deployment pipeline's stages and rules?",
   "opts_es": [
-   "Lector del área de trabajo",
+   "Lector del área de trabajo en cada fase",
    "Solo derechos de pausa de capacidad",
-   "Cualquier usuario anónimo",
+   "Cualquier usuario con sesión iniciada en el inquilino",
    "Administrador de la canalización más acceso adecuado a las áreas de trabajo"
   ],
   "opts_en": [
-   "Workspace Viewer",
+   "Workspace Viewer on every stage",
    "Capacity pause rights only",
-   "Any anonymous user",
+   "Any signed-in user in the tenant",
    "Pipeline admin plus appropriate access to the workspaces"
   ],
   "correct": [
@@ -1633,16 +1633,16 @@
   "q_es": "Al abrir un archivo .pbit, Power BI solicita valores de parámetros. ¿Para qué escenario es útil?",
   "q_en": "When you open a .pbit file, Power BI asks for parameter values. Which scenario is this useful for?",
   "opts_es": [
-   "Aplicar enmascaramiento dinámico de datos",
-   "Cifrar un lakehouse",
+   "Aplicar enmascaramiento dinámico de datos a un modelo",
+   "Cifrar los datos de un lakehouse",
    "Distribuir un diseño de informe estándar que cada equipo apunta a sus propios datos",
-   "Crear un acceso directo"
+   "Crear un acceso directo al almacenamiento externo"
   ],
   "opts_en": [
-   "Applying dynamic data masking",
-   "Encrypting a lakehouse",
+   "Applying dynamic data masking to a model",
+   "Encrypting the data of a lakehouse",
    "Distributing a standard report layout that each team points to its own data",
-   "Creating a shortcut"
+   "Creating a shortcut to external storage"
   ],
   "correct": [
    2
@@ -2227,16 +2227,16 @@
   "q_es": "¿A qué orígenes puede apuntar un acceso directo de OneLake?",
   "q_en": "Which sources can a OneLake shortcut point to?",
   "opts_es": [
-   "Solo archivos CSV locales",
+   "Solo archivos CSV locales a través de una puerta de enlace",
    "Otras ubicaciones de OneLake, Azure Data Lake Storage Gen2, Amazon S3 y Google Cloud Storage",
-   "Solo inicios de sesión de SQL Server",
-   "Solo informes de Power BI"
+   "Solo bases de datos de SQL Server con inicios de sesión SQL",
+   "Solo informes y paneles de Power BI"
   ],
   "opts_en": [
-   "Only local CSV files",
+   "Only local CSV files on a gateway",
    "Other OneLake locations, Azure Data Lake Storage Gen2, Amazon S3 and Google Cloud Storage",
-   "Only SQL Server logins",
-   "Only Power BI reports"
+   "Only SQL Server databases with SQL logins",
+   "Only Power BI reports and dashboards"
   ],
   "correct": [
    1
@@ -2305,16 +2305,16 @@
   "q_es": "Necesitas orquestar la copia de datos de un SQL Server local a un lakehouse con una programación, reintentos y notificaciones. ¿Qué elemento encaja mejor?",
   "q_en": "You need to orchestrate copying data from an on-premises SQL Server into a lakehouse on a schedule, with retries and notifications. Which item fits best?",
   "opts_es": [
-   "Un conjunto de consultas KQL",
-   "Un modelo semántico",
+   "Un conjunto de consultas KQL con una consulta programada",
+   "Un modelo semántico con una programación de actualización",
    "Una canalización de datos con una actividad Copiar datos",
-   "Un tema de informe"
+   "Un tema de informe con un origen de datos"
   ],
   "opts_en": [
-   "A KQL queryset",
-   "A semantic model",
+   "A KQL queryset with a scheduled query",
+   "A semantic model with a refresh schedule",
    "A data pipeline with a Copy data activity",
-   "A report theme"
+   "A report theme with a data source"
   ],
   "correct": [
    2
@@ -2331,16 +2331,16 @@
   "q_es": "¿Qué se necesita para conectar Fabric a un origen de datos dentro de una red corporativa sin punto de conexión público?",
   "q_en": "What is required to connect Fabric to a data source inside a corporate network that has no public endpoint?",
   "opts_es": [
-   "Una etiqueta de confidencialidad",
+   "Una etiqueta de confidencialidad en el origen",
    "Una puerta de enlace de datos local o una puerta de enlace de datos de red virtual",
-   "Una regla de implementación",
-   "Un acceso directo a un informe"
+   "Una regla de implementación en la canalización",
+   "Un acceso directo a un informe de Power BI"
   ],
   "opts_en": [
-   "A sensitivity label",
+   "A sensitivity label on the source",
    "An on-premises data gateway or a virtual network data gateway",
-   "A deployment rule",
-   "A shortcut to a report"
+   "A deployment rule on the pipeline",
+   "A shortcut to a Power BI report"
   ],
   "correct": [
    1
@@ -2513,16 +2513,16 @@
   "q_es": "¿Cómo puede un almacén consultar una tabla de un lakehouse del mismo área de trabajo sin copiar datos?",
   "q_en": "How can a warehouse query a table in a lakehouse of the same workspace without copying data?",
   "opts_es": [
-   "Exportar a CSV y volver a importar",
-   "Crear un grupo de cálculo",
+   "Exportar a CSV y volver a importar en el almacén",
+   "Crear un grupo de cálculo sobre el lakehouse",
    "Usar una consulta entre bases de datos con nombres de tres partes",
-   "Usar una regla de implementación"
+   "Usar una regla de implementación entre los elementos"
   ],
   "opts_en": [
-   "Export to CSV and re-import",
-   "Create a calculation group",
+   "Export to CSV and re-import into the warehouse",
+   "Create a calculation group over the lakehouse",
    "Use a cross-database query with three-part naming",
-   "Use a deployment rule"
+   "Use a deployment rule between the items"
   ],
   "correct": [
    2
@@ -2643,16 +2643,16 @@
   "q_es": "¿Cuál es el propósito de la integración de OneLake para modelos semánticos?",
   "q_en": "What is the purpose of OneLake integration for semantic models?",
   "opts_es": [
-   "Cifrar el modelo semántico",
+   "Cifrar el modelo semántico con una clave del cliente",
    "Escribir en OneLake los datos de las tablas en modo de importación como tablas Delta para reutilizarlos con otros motores",
-   "Reemplazar la seguridad de nivel de fila",
-   "Mover informes a Git"
+   "Reemplazar la seguridad de nivel de fila del modelo",
+   "Mover automáticamente las definiciones de informes a Git"
   ],
   "opts_en": [
-   "Encrypt the semantic model",
+   "Encrypt the semantic model with a customer key",
    "Write import-mode table data to OneLake as Delta tables for reuse by other engines",
-   "Replace row-level security",
-   "Move reports to Git"
+   "Replace row-level security in the model",
+   "Move report definitions to Git automatically"
   ],
   "correct": [
    1
@@ -2721,15 +2721,15 @@
   "q_es": "Debes ingerir 500 archivos cuyos nombres figuran en una tabla, usando la misma lógica de copia para cada uno. ¿Qué construcción de canalización encaja?",
   "q_en": "You must ingest 500 files whose names are listed in a table, using the same copy logic for each. Which pipeline construct fits?",
   "opts_es": [
-   "Un grupo de cálculo",
-   "Quinientas canalizaciones independientes",
-   "Una etiqueta de confidencialidad",
+   "Un grupo de cálculo sobre la lista de archivos",
+   "Quinientas canalizaciones independientes, una por archivo",
+   "Una etiqueta de confidencialidad en cada archivo",
    "Una actividad ForEach con una actividad Copiar datos parametrizada"
   ],
   "opts_en": [
-   "A calculation group",
-   "Five hundred separate pipelines",
-   "A sensitivity label",
+   "A calculation group over the file list",
+   "Five hundred separate pipelines, one per file",
+   "A sensitivity label on each file",
    "A ForEach activity with a parameterized Copy data activity"
   ],
   "correct": [
@@ -2748,15 +2748,15 @@
   "q_en": "Which identity is used when a user reads data through a shortcut that points to another OneLake location?",
   "opts_es": [
    "La identidad del usuario que llama se comprueba en el destino",
-   "Siempre el administrador de la capacidad",
+   "Siempre la identidad del administrador de la capacidad",
    "Una identidad anónima compartida",
-   "No se necesita identidad"
+   "No se comprueba ninguna identidad"
   ],
   "opts_en": [
    "The calling user's identity is checked against the target",
-   "The capacity admin always",
+   "The capacity admin's identity always",
    "A shared anonymous identity",
-   "No identity is needed"
+   "No identity is checked"
   ],
   "correct": [
    0
@@ -3549,16 +3549,16 @@
   "q_es": "Quieres añadir a una tabla una columna con el margen de beneficio (beneficio dividido entre ingresos) en cada fila, sin cambiar el origen. ¿Cuál es el mejor lugar?",
   "q_en": "You want to add a column to a table that shows the profit margin (profit divided by revenue) for every row, without changing the source. Where is the best place?",
   "opts_es": [
-   "Un rol del área de trabajo",
+   "Una asignación de rol del área de trabajo",
    "Una vista o una columna personalizada en la capa de transformación",
-   "Una regla de implementación",
-   "Una aprobación"
+   "Una regla de canalización de implementación",
+   "Una aprobación en la tabla"
   ],
   "opts_en": [
-   "A workspace role",
+   "A workspace role assignment",
    "A view or a custom column in the transformation layer",
-   "A deployment rule",
-   "An endorsement"
+   "A deployment pipeline rule",
+   "An endorsement on the table"
   ],
   "correct": [
    1
@@ -3603,14 +3603,14 @@
   "opts_es": [
    "Medidas numéricas y claves externas a dimensiones",
    "Roles de seguridad de nivel de fila",
-   "Solo atributos descriptivos",
-   "Temas de informe"
+   "Solo atributos de texto descriptivos",
+   "Temas y diseños de informe"
   ],
   "opts_en": [
    "Numeric measures and foreign keys to dimensions",
    "Row-level security roles",
-   "Only descriptive attributes",
-   "Report themes"
+   "Only descriptive text attributes",
+   "Report themes and layouts"
   ],
   "correct": [
    0
@@ -3653,14 +3653,14 @@
   "q_es": "¿Cuál es el propósito principal de una clave sustituta en una tabla de dimensión?",
   "q_en": "What is the main purpose of a surrogate key in a dimension table?",
   "opts_es": [
-   "Enmascarar valores",
-   "Cifrar datos",
+   "Para enmascarar valores confidenciales",
+   "Para cifrar los datos de la dimensión",
    "Proporcionar una clave estable y única independiente de las claves del sistema de origen",
-   "Aplicar una etiqueta de confidencialidad"
+   "Para aplicar una etiqueta de confidencialidad"
   ],
   "opts_en": [
-   "To mask values",
-   "To encrypt data",
+   "To mask sensitive values",
+   "To encrypt the dimension data",
    "To provide a stable, unique key independent of source system keys",
    "To apply a sensitivity label"
   ],
@@ -3757,16 +3757,16 @@
   "q_es": "Debes conservar solo la fila más reciente por cliente de una tabla con duplicados. ¿Qué patrón de T-SQL es adecuado?",
   "q_en": "You must keep only the most recent row per customer from a table with duplicates. Which T-SQL pattern is appropriate?",
   "opts_es": [
-   "TRUNCATE TABLE",
+   "TRUNCATE TABLE en el origen",
    "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
-   "GRANT SELECT",
-   "SELECT * INTO"
+   "GRANT SELECT en la tabla",
+   "SELECT * INTO una tabla de respaldo"
   ],
   "opts_en": [
-   "TRUNCATE TABLE",
+   "TRUNCATE TABLE on the source",
    "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
-   "GRANT SELECT",
-   "SELECT * INTO"
+   "GRANT SELECT on the table",
+   "SELECT * INTO a backup table"
   ],
   "correct": [
    1
@@ -3941,14 +3941,14 @@
   "opts_es": [
    "Aplica una etiqueta de confidencialidad",
    "Reduce los datos procesados después y puede habilitar el plegado de consultas",
-   "Cifra los datos",
-   "Crea un esquema de estrella"
+   "Cifra los datos en tránsito",
+   "Crea un esquema de estrella automáticamente"
   ],
   "opts_en": [
    "It applies a sensitivity label",
    "It reduces data processed later and can enable query folding",
-   "It encrypts the data",
-   "It creates a star schema"
+   "It encrypts the data in transit",
+   "It creates a star schema automatically"
   ],
   "correct": [
    1
@@ -4850,15 +4850,15 @@
   "q_en": "Which operations are available in the visual query editor?",
   "opts_es": [
    "Elegir columnas, filtrar filas, agrupar, combinar y anexar",
-   "Solo crear áreas de trabajo",
-   "Solo configurar Git",
-   "Solo aplicar etiquetas"
+   "Solo crear áreas de trabajo nuevas",
+   "Solo configurar la integración de Git",
+   "Solo aplicar etiquetas de confidencialidad"
   ],
   "opts_en": [
    "Choose columns, filter rows, group by, merge and append",
-   "Only create workspaces",
-   "Only configure Git",
-   "Only apply labels"
+   "Only creating new workspaces",
+   "Only configuring Git integration",
+   "Only applying sensitivity labels"
   ],
   "correct": [
    0
@@ -7448,13 +7448,13 @@
    "Duplicarla en todas las tablas",
    "Convertirla a texto",
    "Dividirla en columnas de fecha y hora o quitar la precisión innecesaria",
-   "Convertirla en clave de varios a varios"
+   "Usarla como clave de varios a varios"
   ],
   "opts_en": [
    "Duplicate it in every table",
    "Convert it to text",
    "Split it into separate date and time columns or remove unneeded precision",
-   "Make it a many-to-many key"
+   "Use it as a many-to-many key"
   ],
   "correct": [
    2
@@ -7629,14 +7629,14 @@
   "opts_es": [
    "Automático: puede recurrir a DirectQuery mediante el punto de conexión de análisis SQL",
    "Siempre falla la consulta",
-   "Elimina el modelo",
-   "Cambia a importación en silencio"
+   "Elimina el modelo y lo vuelve a crear",
+   "Cambia al modo de importación en silencio"
   ],
   "opts_en": [
    "Automatic: it can fall back to DirectQuery through the SQL analytics endpoint",
    "It always fails the query",
-   "It deletes the model",
-   "It switches to Import silently"
+   "It deletes the model and recreates it",
+   "It switches to Import mode silently"
   ],
   "correct": [
    0
@@ -7758,15 +7758,15 @@
   "q_en": "Why can many tiny Parquet files hurt Direct Lake performance?",
   "opts_es": [
    "La sobrecarga de archivos y grupos de filas ralentiza la carga de columnas",
-   "Deshabilitan las relaciones",
-   "Fuerzan el modo de importación",
-   "Eliminan las etiquetas de confidencialidad"
+   "Deshabilitan las relaciones del modelo",
+   "Fuerzan el modelo a modo de importación",
+   "Eliminan las etiquetas de confidencialidad de las columnas"
   ],
   "opts_en": [
    "File and row group overhead slows column loading",
-   "They disable relationships",
-   "They force Import mode",
-   "They remove sensitivity labels"
+   "They disable relationships in the model",
+   "They force the model into Import mode",
+   "They remove sensitivity labels from columns"
   ],
   "correct": [
    0
@@ -7783,16 +7783,16 @@
   "q_es": "¿Qué ocurre en Direct Lake cuando una tabla supera las barreras de la capacidad en filas o número de archivos?",
   "q_en": "What happens in Direct Lake when a table exceeds the capacity's guardrails for rows or file count?",
   "opts_es": [
-   "La tabla se elimina",
+   "La tabla se elimina del lakehouse",
    "Las consultas pueden recurrir a DirectQuery (en modo Automático)",
-   "Cambia la etiqueta",
-   "La capacidad se pausa"
+   "Cambia la etiqueta de confidencialidad",
+   "La capacidad se pausa automáticamente"
   ],
   "opts_en": [
-   "The table is deleted",
+   "The table is deleted from the lakehouse",
    "Queries can fall back to DirectQuery (in Automatic mode)",
-   "The label changes",
-   "The capacity is paused"
+   "The sensitivity label changes",
+   "The capacity is paused automatically"
   ],
   "correct": [
    1
@@ -7965,16 +7965,16 @@
   "q_es": "¿Qué añade la opción «Obtener los datos más recientes en tiempo real con DirectQuery» a una directiva de actualización incremental?",
   "q_en": "What does the option \"Get the latest data in real time with DirectQuery\" add to an incremental refresh policy?",
   "opts_es": [
-   "Un área de trabajo nueva",
-   "Un rol de RLS",
+   "Un área de trabajo nueva para los datos más recientes",
+   "Un rol de seguridad de nivel de fila para datos recientes",
    "Una partición DirectQuery para el periodo más reciente, formando una tabla híbrida",
-   "Un grupo de cálculo"
+   "Un grupo de cálculo para el periodo reciente"
   ],
   "opts_en": [
-   "A new workspace",
-   "An RLS role",
+   "A new workspace for the latest data",
+   "A row-level security role for recent data",
    "A DirectQuery partition for the most recent period, forming a hybrid table",
-   "A calculation group"
+   "A calculation group for the recent period"
   ],
   "correct": [
    2
@@ -7992,15 +7992,15 @@
   "q_en": "Why is query folding important for incremental refresh?",
   "opts_es": [
    "Los filtros de fecha se envían al origen y solo se leen los datos de la partición necesaria",
-   "Cifra las particiones",
-   "Crea etiquetas",
-   "Elimina relaciones"
+   "Cifra todas las particiones",
+   "Crea etiquetas de confidencialidad",
+   "Elimina las relaciones entre tablas"
   ],
   "opts_en": [
    "The date filters are pushed to the source so only the needed partition data is read",
-   "It encrypts partitions",
-   "It creates labels",
-   "It removes relationships"
+   "It encrypts every partition",
+   "It creates sensitivity labels",
+   "It removes relationships between tables"
   ],
   "correct": [
    0
@@ -8069,15 +8069,15 @@
   "q_es": "¿Qué configuración de Power BI Desktop reduce el número de consultas enviadas cuando los usuarios cambian varias segmentaciones a la vez?",
   "q_en": "Which setting in Power BI Desktop reduces the number of queries sent when users change several slicers at once?",
   "opts_es": [
-   "Aprobación",
-   "Seguridad de nivel de fila",
-   "Fecha/hora automática",
+   "Aprobación del modelo semántico",
+   "Seguridad de nivel de fila en el modelo",
+   "Tablas de fecha/hora automáticas",
    "Opciones de reducción de consultas (botones Aplicar para segmentaciones y filtros)"
   ],
   "opts_en": [
-   "Endorsement",
-   "Row-level security",
-   "Auto date/time",
+   "Endorsement of the semantic model",
+   "Row-level security on the model",
+   "Auto date/time tables",
    "Query reduction options (Apply buttons for slicers and filters)"
   ],
   "correct": [
