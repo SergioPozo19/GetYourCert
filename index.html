@@ -331,6 +331,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
   border:1px solid var(--line-2);background-color:var(--panel-2);
 }
 .cat-tools #progressBtn{flex:none;margin-left:auto}
+.rv-bonus{margin:12px 0 0;padding:10px 12px;border-radius:var(--radius-s);background:var(--ok-soft);border:1px solid var(--ok);font-size:13px;line-height:1.5;color:var(--ink)}
 .cat-no-results{grid-column:1/-1;text-align:center;color:var(--ink-3);padding:40px 20px;border:1px dashed var(--line);border-radius:14px}
 .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink-2)}
 .btn-ghost:hover{background:var(--panel-2);border-color:var(--accent)}
@@ -1361,6 +1362,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
       <button class="rv-star" data-v="4" aria-label="4 estrellas">★</button>
       <button class="rv-star" data-v="5" aria-label="5 estrellas">★</button>
     </div>
+    <p class="rv-bonus hidden" id="rvBonusNote"></p>
     <textarea class="rv-textarea" id="rvBody" maxlength="1000" rows="4" data-i-ph="rvPlaceholder" placeholder="Cuéntanos tu experiencia preparando el examen… (opcional)"></textarea>
     <div class="modal-actions" style="margin-top:16px">
       <button class="btn btn-ghost" id="rvCancel" data-i="rvCancel">Cancelar</button>
@@ -1677,11 +1679,17 @@ function isPro(){
   return !!Store.get('pro',null);
 }
 function effectiveLimit(){ return isLoggedIn()?DAILY_LIMIT:GUEST_LIMIT; }
-function remainingQuota(){ return isPro()?Infinity:Math.max(0,effectiveLimit()-getQuota().count); }
+// Bolsa de preguntas extra (p. ej. recompensa por reseña): se gasta después del cupo diario
+function bonusKey(){ const acc=Store.get('account',null); return 'bonus_'+((acc&&acc.email)||''); }
+function bonusLeft(){ if(!isLoggedIn())return 0; return Math.max(0,(Store.get(bonusKey(),{left:0}).left)||0); }
+function addBonus(n){ Store.set(bonusKey(),{left:bonusLeft()+n}); }
+function remainingQuota(){ return isPro()?Infinity:Math.max(0,effectiveLimit()-getQuota().count)+bonusLeft(); }
 function consumeQuota(n){
   if(isPro()||n<=0)return;
   const q=getQuota();
-  Store.set(quotaKey(),{date:q.date,count:q.count+n});
+  const daily=Math.max(0,effectiveLimit()-q.count), use=Math.min(n,daily);
+  Store.set(quotaKey(),{date:q.date,count:q.count+use});
+  if(n>use)Store.set(bonusKey(),{left:Math.max(0,bonusLeft()-(n-use))});
   const rem=remainingQuota();
   const warnAt=isLoggedIn()?3:1;
   if(rem>0&&rem<=warnAt)showToast(t('quotaWarnToast').replace('{n}',rem),'warn',4000);
@@ -1795,6 +1803,7 @@ function syncMergeAndPush(server){
     const acc=Store.get('account',null)||{};
     acc.is_pro=!!server.is_pro;
     if(server.pro_code)acc.pro_code=server.pro_code;
+    if(typeof server.review_bonus!=='undefined')acc.review_bonus=!!server.review_bonus;
     Store.set('account',acc);
   }
 
@@ -4027,6 +4036,7 @@ function openReviewModal() {
   rvRating = rvUserReview ? rvUserReview.rating : 0;
   $('#rvBody').value = rvUserReview ? (rvUserReview.body || '') : '';
   $('#rvDeleteWrap').classList.toggle('hidden', !rvUserReview);
+  const _bn=$('#rvBonusNote'); if(_bn){ const ok=window.careerBonus&&careerBonus.eligible(); _bn.textContent=ok?careerBonus.note():''; _bn.classList.toggle('hidden',!ok); }
   updateRvStars();
   $('#reviewModal').classList.add('show');
 }
@@ -4052,6 +4062,13 @@ async function submitReview() {
       const wasEdit = !!rvUserReview;
       rvUserReview = { rating: rvRating, body };
       showToast(t(wasEdit ? 'rvUpdated' : 'rvPosted'), 'ok');
+      if (data.bonus > 0) {
+        addBonus(data.bonus);
+        const _acc = Store.get('account', null) || {}; _acc.review_bonus = true; Store.set('account', _acc);
+        updateQuotaBadge();
+        setTimeout(() => showToast(window.careerBonus ? careerBonus.toast(data.bonus) : ('+' + data.bonus), 'ok', 5000), 600);
+        if (window.careerRenderCatalog) careerRenderCatalog();
+      }
       $('#reviewModal').classList.remove('show');
       loadReviews();
     } else if (data.error === 'need_more_questions') {
@@ -4423,7 +4440,7 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
-<script src="career.js?v=2"></script>
+<script src="career.js?v=3"></script>
 <script src="hero.js?v=1"></script>
 </body>
 </html>

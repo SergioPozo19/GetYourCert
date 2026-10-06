@@ -25,7 +25,9 @@ const CT={
   nextTitle:'Tu siguiente paso', vsPrev:'{d} puntos respecto a tu intento anterior', vsPrevSame:'Igual que tu intento anterior',
   readyNow:'Preparación estimada', weakNow:'Refuerza estos dominios', passedNext:'¡Aprobado! Siguiente en tu ruta:', passedAdd:'¿Ya te certificaste en {code}? Añádela para recibir avisos de renovación.',
   addCert:'Añadir a Mis certificaciones', certAlready:'Ya está en Mis certificaciones', keepGoing:'Sigue practicando: aún no llegas al aprobado.',
-  proTeaser:'Con Pro: panel de preparación, avisos de renovación, rutas de carrera y paquetes de novedades.', proCta:'Ver plan Pro →', signTeaser:'Crea una cuenta gratis para guardar tu progreso y ver tu evolución.', signCta:'Registrarse gratis'
+  proTeaser:'Con Pro: panel de preparación, avisos de renovación, rutas de carrera y paquetes de novedades.', proCta:'Ver plan Pro →', signTeaser:'Crea una cuenta gratis para guardar tu progreso y ver tu evolución.', signCta:'Registrarse gratis',
+  bonusNote:'🎁 Escribe una reseña con comentario (mínimo {m} caracteres) y recibe {n} preguntas gratis. Tu puntuación no importa: queremos opiniones sinceras.',
+  bonusToast:'¡Gracias! Has recibido {n} preguntas gratis.', bonusPromo:'Gana {n} preguntas gratis escribiendo una reseña sincera', bonusCta:'Escribir reseña'
  },
  en:{
   readyTitle:'Exam readiness', readySub:'Estimate based on your recent attempts, weighted by each domain\'s official weight. It is a guide, not a guarantee.',
@@ -48,7 +50,9 @@ const CT={
   nextTitle:'Your next step', vsPrev:'{d} points vs your previous attempt', vsPrevSame:'Same as your previous attempt',
   readyNow:'Estimated readiness', weakNow:'Reinforce these domains', passedNext:'Passed! Next on your path:', passedAdd:'Did you already certify in {code}? Add it to get renewal alerts.',
   addCert:'Add to My certifications', certAlready:'Already in My certifications', keepGoing:'Keep practicing: you have not reached the pass mark yet.',
-  proTeaser:'With Pro: readiness dashboard, renewal alerts, career paths and news packs.', proCta:'See Pro plan →', signTeaser:'Create a free account to save your progress and track your improvement.', signCta:'Sign up free'
+  proTeaser:'With Pro: readiness dashboard, renewal alerts, career paths and news packs.', proCta:'See Pro plan →', signTeaser:'Create a free account to save your progress and track your improvement.', signCta:'Sign up free',
+  bonusNote:'🎁 Write a review with a comment (at least {m} characters) and get {n} free questions. Your rating does not matter: we want honest opinions.',
+  bonusToast:'Thank you! You received {n} free questions.', bonusPromo:'Get {n} free questions by writing an honest review', bonusCta:'Write a review'
  }
 };
 const ct=k=>(CT[lang]&&CT[lang][k])||CT.es[k]||k;
@@ -75,6 +79,19 @@ const getCerts=()=>Store.get('certs',[])||[];
 function setCerts(c){Store.set('certs',c);if(typeof syncPush==='function')syncPush();}
 const expires=(c)=>{const ex=exById(c.examId);return (ex&&ex.level==='fundamentals')?null:(c.expires||addYears(c.earned,1));};
 const refresh=()=>{try{if(!$('#progress').classList.contains('hidden'))renderProgress();}catch(e){} careerRenderCatalog();};
+
+
+/* ---------- review reward (free users) ---------- */
+const BONUS_Q=50, BONUS_MIN=20;
+function bonusEligible(){
+  if(typeof isLoggedIn!=='function'||!isLoggedIn()||isPro())return false;
+  const acc=Store.get('account',null)||{};
+  if(acc.review_bonus)return false;
+  return Object.keys(Store.get('srs',{})).length>=10;
+}
+window.careerBonus={amount:BONUS_Q,min:BONUS_MIN,eligible:bonusEligible,
+  note:()=>fmt(ct('bonusNote'),{n:BONUS_Q,m:BONUS_MIN}),
+  toast:n=>fmt(ct('bonusToast'),{n:n||BONUS_Q})};
 
 /* ---------- readiness ---------- */
 function readiness(ex,hist){
@@ -337,6 +354,13 @@ async function careerRenderCatalog(){
       a.appendChild(b); host.appendChild(a);
     }
   }
+  // review reward (free users who already practiced)
+  if(bonusEligible()){
+    const bx=document.createElement('div'); bx.className='cr-bonus';
+    bx.innerHTML='<span>🎁 <b>'+esc(fmt(ct('bonusPromo'),{n:BONUS_Q}))+'</b></span>';
+    const bb=document.createElement('button'); bb.type='button'; bb.className='btn btn-primary btn-sm'; bb.textContent=ct('bonusCta');
+    bb.onclick=()=>openReviewModal(); bx.appendChild(bb); host.appendChild(bx);
+  }
   // news strip
   if(NEWS&&NEWS.length){
     const un=unreadCount();
@@ -409,6 +433,10 @@ window.careerAfterResults=function(ctx){
       const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('signTeaser'); card.appendChild(p);
       const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm'; b.textContent=ct('signCta'); b.onclick=()=>openLoginModal(); card.appendChild(b);
     }else if(!pro){
+      if(bonusEligible()){
+        const pb=document.createElement('p'); pb.className='cr-sub'; pb.textContent=fmt(ct('bonusPromo'),{n:BONUS_Q}); card.appendChild(pb);
+        const bb=document.createElement('button'); bb.type='button'; bb.className='btn btn-ghost btn-sm'; bb.textContent=ct('bonusCta'); bb.onclick=()=>openReviewModal(); card.appendChild(bb);
+      }
       const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('proTeaser'); card.appendChild(p);
       const b=document.createElement('a'); b.className='btn btn-primary btn-sm'; b.href='/pro.html'; b.textContent=ct('proCta'); card.appendChild(b);
     }
@@ -431,6 +459,7 @@ css.textContent=[
 '#results .result-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 260px at 50% -30%,var(--accent-soft),transparent 70%)}',
 '#results[data-outcome="pass"] .result-hero::before{background:radial-gradient(700px 280px at 50% -30%,var(--ok-soft),transparent 72%)}',
 '#results[data-outcome="fail"] .result-hero::before{background:radial-gradient(700px 280px at 50% -30%,var(--bad-soft),transparent 72%)}',
+'.cr-bonus{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 12px;padding:10px 14px;border-radius:var(--radius-s);background:var(--ok-soft);border:1px solid var(--ok);font-size:13.5px;color:var(--ink)}',
 '.cr-sub{font-size:12.5px;color:var(--ink-3);margin:-4px 0 12px;line-height:1.5}',
 '.cr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}',
 '.cr-card{display:flex;flex-direction:column;gap:10px}',

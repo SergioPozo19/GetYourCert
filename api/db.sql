@@ -91,3 +91,6 @@ CREATE TABLE reviews (
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
   UNIQUE KEY one_per_user (user_id)
 );
+
+-- ===== Recompensa por reseña (preguntas gratis, una sola vez por cuenta) =====
+ALTER TABLE users ADD COLUMN review_bonus_at DATETIME NULL;

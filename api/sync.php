@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     'ok' => true,
     'is_pro' => (bool)$user['is_pro'],
     'pro_code' => $user['pro_code'],
+    'review_bonus' => !empty($user['review_bonus_at']),
     'data' => $user['data'] ? json_decode($user['data']) : null,
   ]);
   exit;

@@ -64,7 +64,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          ON DUPLICATE KEY UPDATE rating = VALUES(rating), body = VALUES(body), updated_at = NOW()'
     );
     $stmt->execute([$user['id'], $rating, $body]);
-    echo json_encode(['ok' => true]);
+
+    // Recompensa única por una reseña con comentario (cualquier puntuación) para cuentas no Pro.
+    // Requiere la columna users.review_bonus_at (ver db.sql); si no existe, simplemente no hay bonus.
+    $bonus = 0;
+    try {
+        if (!$user['is_pro'] && array_key_exists('review_bonus_at', $user) && $user['review_bonus_at'] === null
+            && $body !== null && mb_strlen($body) >= 20) {
+            $upd = $pdo->prepare('UPDATE users SET review_bonus_at = NOW() WHERE id = ? AND review_bonus_at IS NULL');
+            $upd->execute([$user['id']]);
+            if ($upd->rowCount() === 1) $bonus = 50;
+        }
+    } catch (\Throwable $e) {
+        error_log('[reviews.php] bonus: ' . $e->getMessage());
+    }
+
+    echo json_encode(['ok' => true, 'bonus' => $bonus]);
     exit;
 }
 
