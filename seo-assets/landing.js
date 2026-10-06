@@ -63,7 +63,21 @@
     var c=cta.cloneNode(true); c.classList.add('btn-primary'); bar.appendChild(c); document.body.appendChild(bar);
     new IntersectionObserver(function(es){ bar.classList.toggle('show',!es[0].isIntersecting); }).observe(cta);
   }
+  function track(n){
+    try{
+      var th=null,lg='es';
+      try{lg=JSON.parse(localStorage.getItem('gyc:lang'))||'es';}catch(e){}
+      if(navigator.doNotTrack==='1'||location.hostname==='localhost')return;
+      var body=JSON.stringify({n:n,l:lg,a:0,p:0});
+      if(navigator.sendBeacon)navigator.sendBeacon('/api/events.php',new Blob([body],{type:'application/json'}));
+    }catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.cta a, .sticky-cta a'); if(!a)return;
+    track(a.closest('.sticky-cta')?'landing_sticky':'landing_cta');
+  });
   document.addEventListener('DOMContentLoaded',function(){
+    track('visit_landing');
     enhance();
     applyLang(getLang());
     document.querySelectorAll('#langToggle button').forEach(function(b){

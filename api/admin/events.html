@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Eventos · EarnYourCert admin</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:860px;margin:32px auto;padding:0 16px;color:#1a1d21;background:#f5f7fa}
+  h1{font-size:20px} input,select,button{font:inherit;padding:8px 12px;border:1px solid #cfd6df;border-radius:8px}
+  button{background:#0f6cbd;color:#fff;border-color:#0f6cbd;cursor:pointer}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e3e8ef;border-radius:10px;overflow:hidden;margin-top:16px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #edf1f6;font-size:14px} th{background:#f0f4f9}
+  td.n{text-align:right;font-variant-numeric:tabular-nums} th.n{text-align:right}
+  .row{display:flex;gap:8px;flex-wrap:wrap}.muted{color:#727a83;font-size:13px}.bar{height:8px;background:#0f6cbd;border-radius:4px}
+</style>
+</head>
+<body>
+<h1>Eventos agregados</h1>
+<p class="muted">Contadores anónimos (sin cookies ni identificadores). Introduce el secreto de administración.</p>
+<div class="row">
+  <input type="password" id="secret" placeholder="admin_secret" autocomplete="off">
+  <select id="days"><option value="7">7 días</option><option value="30" selected>30 días</option><option value="90">90 días</option></select>
+  <button id="go">Cargar</button>
+</div>
+<p id="msg" class="muted"></p>
+<div id="out"></div>
+<script>
+const $=id=>document.getElementById(id);
+const rate=(a,b)=>b?((a/b)*100).toFixed(1)+'%':'–';
+$('go').onclick=async()=>{
+  $('msg').textContent='Cargando…'; $('out').innerHTML='';
+  try{
+    const r=await fetch('events.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:$('secret').value,days:+$('days').value})});
+    const d=await r.json();
+    if(!d.ok){ $('msg').textContent='Error: '+(d.error||r.status); return; }
+    $('msg').textContent='';
+    const by={}; d.events.forEach(e=>by[e.name]=+e.total);
+    const visits=by.visit_home||0, pro=by.visit_pro||0;
+    let h='<table><tr><th>Embudo</th><th class="n">Valor</th></tr>'
+      +'<tr><td>Visitas a la home</td><td class="n">'+visits+'</td></tr>'
+      +'<tr><td>Clics a Patreon / visitas home</td><td class="n">'+rate((by.patreon_hero||0)+(by.patreon_modal||0)+(by.patreon_footer||0)+(by.patreon_other||0),visits)+'</td></tr>'
+      +'<tr><td>Visitas a pro.html</td><td class="n">'+pro+'</td></tr>'
+      +'<tr><td>Clics a Patreon desde pro.html / visitas</td><td class="n">'+rate(by.patreon_prohtml||0,pro)+'</td></tr>'
+      +'<tr><td>Exámenes aprobados / terminados</td><td class="n">'+rate(by.exam_pass||0,(by.exam_pass||0)+(by.exam_fail||0))+'</td></tr></table>';
+    h+='<table><tr><th>Evento</th><th class="n">Total</th><th class="n">Invitados</th><th class="n">Gratis</th><th class="n">Pro</th></tr>';
+    d.events.forEach(e=>{h+='<tr><td>'+e.name+'</td><td class="n">'+e.total+'</td><td class="n">'+e.guests+'</td><td class="n">'+e.free_users+'</td><td class="n">'+e.pro_users+'</td></tr>';});
+    h+='</table>';
+    const max=Math.max(1,...d.visits_by_day.map(x=>+x.total));
+    h+='<table><tr><th>Día</th><th class="n">Visitas home</th><th></th></tr>';
+    d.visits_by_day.forEach(x=>{h+='<tr><td>'+x.day+'</td><td class="n">'+x.total+'</td><td style="width:40%"><div class="bar" style="width:'+Math.round(x.total/max*100)+'%"></div></td></tr>';});
+    h+='</table>';
+    $('out').innerHTML=h;
+  }catch(e){ $('msg').textContent='Error de red'; }
+};
+</script>
+</body>
+</html>

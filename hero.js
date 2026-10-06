@@ -65,11 +65,12 @@ function heroRender(){
       stat(String(typeof DAILY_LIMIT!=='undefined'?DAILY_LIMIT:20),ht('sFree'))+
     '</div>';
   hero.querySelector('#heroNew').onclick=()=>{
+    if(window.track)track('hero_new');
     newOnly=fresh.length>0; renderCatalog();
     const g=document.getElementById('examGrid'); if(g)g.scrollIntoView({behavior:'smooth',block:'start'});
   };
-  const c=hero.querySelector('#heroCareer'); if(c)c.onclick=()=>openProgress();
-  hero.querySelectorAll('.mkt-chip').forEach(b=>b.onclick=()=>selectExam(b.dataset.id));
+  const c=hero.querySelector('#heroCareer'); if(c)c.onclick=()=>{ if(window.track)track('hero_career'); openProgress(); };
+  hero.querySelectorAll('.mkt-chip').forEach(b=>b.onclick=()=>{ if(window.track)track('hero_chip'); selectExam(b.dataset.id); });
   renderFilterBar();
 }
 function renderFilterBar(){
@@ -88,6 +89,7 @@ window.heroRender=heroRender;
 const css=document.createElement('style');
 css.textContent=[
 'body.has-hero #patreonBanner{display:none}',
+'body{overflow-x:clip}#gsiButton{max-width:calc(100vw - 32px);overflow:hidden}',
 '.mkt{position:relative;overflow:hidden;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-radius:20px;padding:36px 38px;margin:0 0 22px;color:#fff;background:linear-gradient(135deg,#0A4A9A 0%,#0F6CBD 55%,#2886DE 100%);box-shadow:0 16px 44px rgba(15,108,189,.28)}',
 'html[data-theme="dark"] .mkt{background:linear-gradient(135deg,#0B2540 0%,#12457A 60%,#1B5FA8 100%);box-shadow:0 16px 44px rgba(0,0,0,.45)}',
 '.mkt::before{content:"";position:absolute;right:-90px;top:-110px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 68%);pointer-events:none}',

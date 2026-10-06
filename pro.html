@@ -609,5 +609,19 @@ footer a:hover{text-decoration:underline}
 
 </div>
 <script src="seo-assets/landing.js"></script>
+<script>
+(function(){
+  function track(n){
+    try{
+      if(navigator.doNotTrack==='1'||location.hostname==='localhost')return;
+      var lg='es'; try{lg=JSON.parse(localStorage.getItem('gyc:lang'))||'es';}catch(e){}
+      var body=JSON.stringify({n:n,l:lg,a:0,p:0});
+      if(navigator.sendBeacon)navigator.sendBeacon('/api/events.php',new Blob([body],{type:'application/json'}));
+    }catch(e){}
+  }
+  track('visit_pro');
+  document.addEventListener('click',function(e){ if(e.target.closest&&e.target.closest('a[href*="patreon.com"]'))track('patreon_prohtml'); });
+})();
+</script>
 </body>
 </html>

@@ -94,3 +94,14 @@ CREATE TABLE reviews (
 
 -- ===== Recompensa por reseña (preguntas gratis, una sola vez por cuenta) =====
 ALTER TABLE users ADD COLUMN review_bonus_at DATETIME NULL;
+
+-- ===== Contadores de eventos anónimos y agregados (sin datos personales) =====
+CREATE TABLE events (
+  day DATE NOT NULL,
+  name VARCHAR(40) NOT NULL,
+  lang CHAR(2) NOT NULL DEFAULT 'es',
+  logged TINYINT(1) NOT NULL DEFAULT 0,
+  pro TINYINT(1) NOT NULL DEFAULT 0,
+  cnt INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, name, lang, logged, pro)
+);

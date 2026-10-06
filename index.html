@@ -1722,6 +1722,22 @@ function updateAccountUI(){
   $('#progressProBadge')?.classList.toggle('hidden',isPro());
 }
 
+
+// Contadores anónimos y agregados (sin cookies ni identificadores): ver api/events.php
+function track(name){
+  try{
+    if(navigator.doNotTrack==='1'||location.hostname==='localhost')return;
+    const body=JSON.stringify({n:name,l:lang,a:isLoggedIn()?1:0,p:isPro()?1:0});
+    if(navigator.sendBeacon){ navigator.sendBeacon('/api/events.php',new Blob([body],{type:'application/json'})); }
+    else fetch('/api/events.php',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}).catch(()=>{});
+  }catch(e){}
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest&&e.target.closest('a[href*="patreon.com"]'); if(!a)return;
+  track(a.closest('.mkt')?'patreon_hero':a.closest('#proModal')?'patreon_modal':a.id==='supportBtn'?'patreon_footer':'patreon_other');
+});
+try{ if(!sessionStorage.getItem('eyc_v')){ sessionStorage.setItem('eyc_v','1'); setTimeout(()=>track('visit_home'),800); } }catch(e){}
+
 let syncTimer=null;
 function syncPush(){
   if(!isLoggedIn())return;
@@ -2155,6 +2171,7 @@ function isCorrect(i){
 }
 
 function startExam(){
+  track('exam_start');
   retryFromWrong=false;
   exam=buildExamSet().map(prepQuestion);
   consumeQuota(exam.length);
@@ -2492,6 +2509,7 @@ function gradeExam(){
     checkAchievements(hist.slice(-200));
     updateDailyGoal(exam.length);
   }
+  track(passed?'exam_pass':'exam_fail');
   if(window.careerAfterResults)careerAfterResults({pct,passed,domStat,passMark});
   examActive=false; clearExamState();
   window.scrollTo(0,0);
@@ -2857,6 +2875,7 @@ function exploreAnswer(q,tp){
 }
 
 function openProgress(){
+  track('career_open');
   requireLogin(()=>{
     if(!isPro()){ openProModal('manual'); return; }
     $('#catalog').classList.add('hidden');
@@ -3408,6 +3427,7 @@ $('#lenCustomInput').addEventListener('change',applyCustomLen);
 
 // ===== Modal Pro: paywall de límite diario / info de suscripción =====
 function openProModal(reason){
+  track(reason==='manual'?'paywall_manual':'paywall_limit');
   if(reason==='manual'){
     $('#proModalTitle').textContent=t('proManualTitle');
     $('#proModalSub').textContent=t('proManualSub');
@@ -4062,8 +4082,9 @@ async function submitReview() {
       const wasEdit = !!rvUserReview;
       rvUserReview = { rating: rvRating, body };
       showToast(t(wasEdit ? 'rvUpdated' : 'rvPosted'), 'ok');
+      track('review_posted');
       if (data.bonus > 0) {
-        addBonus(data.bonus);
+        addBonus(data.bonus); track('bonus_granted');
         const _acc = Store.get('account', null) || {}; _acc.review_bonus = true; Store.set('account', _acc);
         updateQuotaBadge();
         setTimeout(() => showToast(window.careerBonus ? careerBonus.toast(data.bonus) : ('+' + data.bonus), 'ok', 5000), 600);
@@ -4440,7 +4461,7 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
-<script src="career.js?v=3"></script>
-<script src="hero.js?v=1"></script>
+<script src="career.js?v=4"></script>
+<script src="hero.js?v=2"></script>
 </body>
 </html>

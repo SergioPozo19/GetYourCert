@@ -130,7 +130,7 @@ async function launch(examId,m,arg){
   mode=m;
   $$('#modes .mode').forEach(x=>x.classList.toggle('sel',x.dataset.mode===m));
   if(m==='domain'){ domainPick=arg; $('#domPick').classList.remove('hidden'); buildDomOpts(); openLenModal(); }
-  else if(m==='pack'){ packPick=arg; openLenModal(); }
+  else if(m==='pack'){ packPick=arg; if(window.track)track('pack_start'); openLenModal(); }
   else if(m==='exam'){ confirmStartExam(); }
 }
 window.careerLaunch=launch;
@@ -306,6 +306,7 @@ function newsItemHtml(n){
 }
 function closeNews(){ const m=$('#crNewsModal'); if(m)m.remove(); }
 async function openNews(){
+  if(window.track)track('news_open');
   await loadNews(); closeNews();
   const m=document.createElement('div'); m.id='crNewsModal'; m.className='cr-modal';
   m.innerHTML='<div class="cr-modal-box" role="dialog" aria-modal="true" aria-label="'+esc(ct('newsTitle'))+'"><div class="cr-modal-head"><h3>'+esc(ct('newsTitle'))+'</h3><button type="button" class="btn btn-ghost btn-sm" id="crNewsX">'+esc(ct('newsClose'))+'</button></div><div class="cr-modal-body"></div></div>';
@@ -359,7 +360,7 @@ async function careerRenderCatalog(){
     const bx=document.createElement('div'); bx.className='cr-bonus';
     bx.innerHTML='<span>🎁 <b>'+esc(fmt(ct('bonusPromo'),{n:BONUS_Q}))+'</b></span>';
     const bb=document.createElement('button'); bb.type='button'; bb.className='btn btn-primary btn-sm'; bb.textContent=ct('bonusCta');
-    bb.onclick=()=>openReviewModal(); bx.appendChild(bb); host.appendChild(bx);
+    bb.onclick=()=>{ if(window.track)track('bonus_promo_click'); openReviewModal(); }; bx.appendChild(bb); host.appendChild(bx);
   }
   // news strip
   if(NEWS&&NEWS.length){
@@ -412,7 +413,7 @@ window.careerAfterResults=function(ctx){
       const p=document.createElement('p'); p.className='cr-sub'; p.textContent=have?ct('certAlready'):fmt(ct('passedAdd'),{code:ex.code}); card.appendChild(p);
       if(!have){
         const b=document.createElement('button'); b.type='button'; b.className='btn btn-ghost btn-sm'; b.textContent=ct('addCert');
-        b.onclick=()=>{ const all=getCerts(); all.push({examId:ex.id,earned:isoToday()}); setCerts(all); showToast(ct('certAdded')+' ✓','ok',2500); b.disabled=true; b.textContent=ct('certAlready'); };
+        b.onclick=()=>{ const all=getCerts(); all.push({examId:ex.id,earned:isoToday()}); setCerts(all); if(window.track)track('cert_add'); showToast(ct('certAdded')+' ✓','ok',2500); b.disabled=true; b.textContent=ct('certAlready'); };
         row.appendChild(b);
       }
     }
@@ -431,14 +432,14 @@ window.careerAfterResults=function(ctx){
     if(row.children.length)card.appendChild(row);
     if(!logged){
       const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('signTeaser'); card.appendChild(p);
-      const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm'; b.textContent=ct('signCta'); b.onclick=()=>openLoginModal(); card.appendChild(b);
+      const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm'; b.textContent=ct('signCta'); b.onclick=()=>{ if(window.track)track('results_signup_click'); openLoginModal(); }; card.appendChild(b);
     }else if(!pro){
       if(bonusEligible()){
         const pb=document.createElement('p'); pb.className='cr-sub'; pb.textContent=fmt(ct('bonusPromo'),{n:BONUS_Q}); card.appendChild(pb);
-        const bb=document.createElement('button'); bb.type='button'; bb.className='btn btn-ghost btn-sm'; bb.textContent=ct('bonusCta'); bb.onclick=()=>openReviewModal(); card.appendChild(bb);
+        const bb=document.createElement('button'); bb.type='button'; bb.className='btn btn-ghost btn-sm'; bb.textContent=ct('bonusCta'); bb.onclick=()=>{ if(window.track)track('bonus_promo_click'); openReviewModal(); }; card.appendChild(bb);
       }
       const p=document.createElement('p'); p.className='cr-sub'; p.textContent=ct('proTeaser'); card.appendChild(p);
-      const b=document.createElement('a'); b.className='btn btn-primary btn-sm'; b.href='/pro.html'; b.textContent=ct('proCta'); card.appendChild(b);
+      const b=document.createElement('a'); b.className='btn btn-primary btn-sm'; b.href='/pro.html'; b.textContent=ct('proCta'); b.addEventListener('click',()=>{ if(window.track)track('results_pro_click'); }); card.appendChild(b);
     }
     const hero=res.querySelector('.result-hero'); if(hero)hero.insertAdjacentElement('afterend',card);
   }catch(e){ console.error('career results',e); }
