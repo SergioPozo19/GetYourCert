@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     exit;
   }
 
-  $allowed = ['history', 'srs', 'bookmarks', 'lang', 'theme', 'achievements'];
+  $allowed = ['history', 'srs', 'bookmarks', 'lang', 'theme', 'achievements', 'certs'];
   $data = [];
   foreach($allowed as $key){
     if(array_key_exists($key, $input)) $data[$key] = $input[$key];
