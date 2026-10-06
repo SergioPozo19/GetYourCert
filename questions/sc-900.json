@@ -444,16 +444,16 @@
   "q_es": "¿Qué es Active Directory Domain Services (AD DS)?",
   "q_en": "What is Active Directory Domain Services (AD DS)?",
   "opts_es": [
-   "Una herramienta de clasificación de datos",
-   "Un firewall solo en la nube",
+   "Un servicio en la nube que clasifica documentos confidenciales",
+   "Un servicio solo en la nube que emite certificados digitales",
    "Un servicio de directorio local que almacena objetos como usuarios, equipos y grupos y los autentica en un dominio",
-   "Una solución SIEM"
+   "Una solución SIEM que correlaciona alertas de seguridad"
   ],
   "opts_en": [
-   "A data classification tool",
-   "A cloud-only firewall",
+   "A cloud service that classifies sensitive documents",
+   "A cloud-only service that issues digital certificates",
    "An on-premises directory service that stores objects such as users, computers and groups and authenticates them in a domain",
-   "A SIEM solution"
+   "A SIEM solution that correlates security alerts"
   ],
   "correct": [
    2
@@ -1056,16 +1056,16 @@
   "q_es": "¿Qué hace el acceso condicional de Microsoft Entra?",
   "q_en": "What does Microsoft Entra Conditional Access do?",
   "opts_es": [
-   "Cifra los mensajes de correo",
-   "Hace copia de seguridad de máquinas virtuales de Azure",
+   "Cifra los mensajes de correo en tránsito y en reposo",
+   "Clasifica documentos confidenciales con etiquetas",
    "Evalúa señales como usuario, dispositivo, ubicación y riesgo para decidir si concede, bloquea o exige controles adicionales",
-   "Clasifica documentos confidenciales"
+   "Detecta malware en los puntos de conexión"
   ],
   "opts_en": [
-   "Encrypts email messages",
-   "Backs up Azure virtual machines",
+   "Encrypts email messages in transit and at rest",
+   "Classifies sensitive documents with labels",
    "Evaluates signals such as user, device, location and risk to decide whether to grant, block or require extra controls",
-   "Classifies sensitive documents"
+   "Detects malware on endpoints"
   ],
   "correct": [
    2
@@ -1082,16 +1082,16 @@
   "q_es": "Una empresa quiere exigir MFA solo cuando los empleados inicien sesión desde fuera de la red corporativa. ¿Qué característica debe usar?",
   "q_en": "A company wants to require MFA only when employees sign in from outside the corporate network. Which feature should it use?",
   "opts_es": [
-   "Una etiqueta de retención",
+   "Una etiqueta de confidencialidad con cifrado",
    "Una directiva de acceso condicional que use la ubicación como condición",
-   "Azure Policy",
-   "Una lista de distribución"
+   "Una revisión de acceso de Microsoft Entra",
+   "Una directiva de retención de Microsoft Purview"
   ],
   "opts_en": [
-   "A retention label",
+   "A sensitivity label with encryption",
    "A Conditional Access policy that uses location as a condition",
-   "Azure Policy",
-   "A distribution list"
+   "A Microsoft Entra access review",
+   "A Microsoft Purview retention policy"
   ],
   "correct": [
    1
@@ -1108,16 +1108,16 @@
   "q_es": "¿Cuál es el propósito del control de acceso basado en roles (RBAC)?",
   "q_en": "What is the purpose of role-based access control (RBAC)?",
   "opts_es": [
-   "Bloquear ataques DDoS",
-   "Cifrar datos en reposo",
+   "Bloquear ataques DDoS en puntos de conexión públicos",
+   "Cifrar los datos en reposo en cuentas de almacenamiento",
    "Asignar permisos a los usuarios mediante roles que contienen solo los permisos necesarios para un trabajo",
-   "Detectar malware"
+   "Detectar malware en dispositivos de usuario"
   ],
   "opts_en": [
-   "Block DDoS attacks",
-   "Encrypt data at rest",
+   "Block DDoS attacks on public endpoints",
+   "Encrypt data at rest in storage accounts",
    "Assign permissions to users through roles that contain only the permissions needed for a job",
-   "Detect malware"
+   "Detect malware on user devices"
   ],
   "correct": [
    2
@@ -1288,15 +1288,15 @@
   "q_en": "What is the purpose of Microsoft Entra Privileged Identity Management (PIM)?",
   "opts_es": [
    "Proporcionar activación de roles con privilegios justo a tiempo, con duración limitada y basada en aprobación",
-   "Administrar rutas de red",
-   "Analizar archivos en busca de malware",
-   "Cifrar correos electrónicos"
+   "Clasificar contenido confidencial con etiquetas",
+   "Analizar las VM de Azure en busca de vulnerabilidades",
+   "Detectar inicios de sesión de riesgo automáticamente"
   ],
   "opts_en": [
    "Provide just-in-time, time-bound and approval-based activation of privileged roles",
-   "Manage network routes",
-   "Scan files for malware",
-   "Encrypt emails"
+   "Classify sensitive content with labels",
+   "Scan Azure VMs for vulnerabilities",
+   "Detect risky sign-ins automatically"
   ],
   "correct": [
    0
@@ -1314,15 +1314,15 @@
   "q_en": "What do access reviews in Microsoft Entra ID Governance help an organization do?",
   "opts_es": [
    "Verificar periódicamente que los usuarios siguen necesitando acceso a grupos, aplicaciones y roles",
-   "Medir la latencia de red",
-   "Hacer copias de seguridad de máquinas virtuales",
-   "Detectar malware en los endpoints"
+   "Detectar inicios de sesión de riesgo con aprendizaje automático",
+   "Crear cuentas de usuario automáticamente a partir de datos de RR. HH.",
+   "Cifrar los datos almacenados en sitios de SharePoint"
   ],
   "opts_en": [
    "Periodically verify that users still need access to groups, apps and roles",
-   "Measure network latency",
-   "Back up virtual machines",
-   "Detect malware on endpoints"
+   "Detect risky sign-ins with machine learning",
+   "Automatically create user accounts from HR data",
+   "Encrypt data stored in SharePoint sites"
   ],
   "correct": [
    0
@@ -1339,15 +1339,15 @@
   "q_es": "¿Qué característica de Microsoft Entra ID Governance agrupa recursos como grupos, aplicaciones y sitios en paquetes que los usuarios pueden solicitar?",
   "q_en": "Which Microsoft Entra ID Governance feature bundles resources such as groups, apps and sites into packages that users can request?",
   "opts_es": [
-   "Caja de seguridad del cliente",
-   "Valores predeterminados de seguridad",
-   "Grupos de seguridad de red",
+   "Microsoft Entra Privileged Identity Management",
+   "Valores predeterminados de seguridad de Microsoft Entra",
+   "Microsoft Entra Verified ID",
    "Paquetes de acceso de administración de derechos"
   ],
   "opts_en": [
-   "Customer Lockbox",
-   "Security defaults",
-   "Network security groups",
+   "Microsoft Entra Privileged Identity Management",
+   "Microsoft Entra security defaults",
+   "Microsoft Entra Verified ID",
    "Entitlement management access packages"
   ],
   "correct": [
@@ -1876,16 +1876,16 @@
   "q_es": "¿Qué es Microsoft Defender for Cloud?",
   "q_en": "What is Microsoft Defender for Cloud?",
   "opts_es": [
-   "Un administrador de contraseñas",
+   "Un servicio de administración de contraseñas e inicio de sesión",
    "Una plataforma de protección de aplicaciones nativas de la nube que combina la administración de la posición de seguridad y la protección de cargas de trabajo para Azure, híbrido y multinube",
-   "Un servicio de escritorio virtual",
-   "Un servicio de filtrado de correo"
+   "Un servicio de hospedaje de escritorios virtuales",
+   "Un servicio de filtrado de correo y antiphishing"
   ],
   "opts_en": [
-   "A password manager",
+   "A password management and sign-in service",
    "A cloud-native application protection platform that combines security posture management and workload protection for Azure, hybrid and multicloud",
-   "A virtual desktop service",
-   "An email filtering service"
+   "A virtual desktop hosting service",
+   "An email filtering and anti-phishing service"
   ],
   "correct": [
    1
@@ -1902,16 +1902,16 @@
   "q_es": "¿Qué hace la administración de la posición de seguridad en la nube (CSPM)?",
   "q_en": "What does Cloud Security Posture Management (CSPM) do?",
   "opts_es": [
-   "Sustituye a los proveedores de identidades",
+   "Sustituye a los proveedores de identidad por un servicio de inicio de sesión único",
    "Evalúa continuamente los recursos en busca de errores de configuración y ofrece recomendaciones para reforzar la posición de seguridad",
-   "Bloquea ataques DDoS",
-   "Cifra todo el correo"
+   "Bloquea ataques DDoS volumétricos en IP públicas",
+   "Cifra todos los mensajes de correo del inquilino"
   ],
   "opts_en": [
-   "Replaces identity providers",
+   "Replaces identity providers with a single sign-on service",
    "Continuously assesses resources for misconfigurations and provides recommendations to strengthen security posture",
-   "Blocks DDoS attacks",
-   "Encrypts all email"
+   "Blocks volumetric DDoS attacks on public IPs",
+   "Encrypts all email messages in the tenant"
   ],
   "correct": [
    1
@@ -1928,16 +1928,16 @@
   "q_es": "En Defender for Cloud, ¿qué representa la puntuación de seguridad?",
   "q_en": "In Defender for Cloud, what does the secure score represent?",
   "opts_es": [
-   "La factura de la cuenta de almacenamiento",
-   "El número de usuarios con MFA",
+   "El coste mensual de los recursos protegidos",
+   "El porcentaje de usuarios que usan MFA",
    "Una medida de la posición de seguridad de la organización basada en las recomendaciones de seguridad completadas",
-   "El número de máquinas virtuales"
+   "El número de máquinas virtuales en ejecución"
   ],
   "opts_en": [
-   "The storage account bill",
-   "The number of users with MFA",
+   "The monthly cost of the protected resources",
+   "The percentage of users who use MFA",
    "A measure of the organization's security posture based on completed security recommendations",
-   "The number of virtual machines"
+   "The number of virtual machines that are running"
   ],
   "correct": [
    2
@@ -1980,16 +1980,16 @@
   "q_es": "¿Qué son las recomendaciones de seguridad en Defender for Cloud?",
   "q_en": "What are security recommendations in Defender for Cloud?",
   "opts_es": [
-   "Copias de seguridad de máquinas virtuales",
+   "Copias de seguridad de máquinas virtuales en un almacén",
    "Pasos accionables para corregir errores de configuración y mejorar la posición de seguridad",
-   "Reglas de filtrado de correo",
-   "Avisos legales sobre privacidad"
+   "Reglas de flujo de correo que filtran el correo",
+   "Avisos legales sobre privacidad de datos"
   ],
   "opts_en": [
-   "Backups of virtual machines",
+   "Backups of virtual machines in a vault",
    "Actionable steps to remediate misconfigurations and improve the security posture",
-   "Email filtering rules",
-   "Legal notices about privacy"
+   "Mail flow rules that filter email",
+   "Legal notices about data privacy"
   ],
   "correct": [
    1
@@ -2156,16 +2156,16 @@
   "q_es": "¿Qué es Microsoft Sentinel?",
   "q_en": "What is Microsoft Sentinel?",
   "opts_es": [
-   "Una herramienta de administración de dispositivos",
+   "Una herramienta de administración y cumplimiento de dispositivos",
    "Una solución nativa de la nube de administración de eventos e información de seguridad (SIEM) y de orquestación, automatización y respuesta de seguridad (SOAR)",
-   "Un servicio de restablecimiento de contraseñas",
-   "Un dispositivo de firewall"
+   "Un servicio de restablecimiento de contraseñas de autoservicio",
+   "Un dispositivo de firewall de red"
   ],
   "opts_en": [
-   "A device management tool",
+   "A device management and compliance tool",
    "A cloud-native security information and event management (SIEM) and security orchestration, automation and response (SOAR) solution",
-   "A password reset service",
-   "A firewall appliance"
+   "A self-service password reset service",
+   "A network firewall appliance"
   ],
   "correct": [
    1
@@ -2209,15 +2209,15 @@
   "q_en": "What does SOAR enable in a security operations center?",
   "opts_es": [
    "Automatizar las respuestas a alertas e incidentes mediante cuadernos de estrategias",
-   "Aprovisionar redes virtuales",
-   "Cifrar datos en tránsito",
-   "Administrar licencias"
+   "Aprovisionar redes virtuales automáticamente",
+   "Cifrar los datos en tránsito entre regiones",
+   "Administrar licencias de los analistas de seguridad"
   ],
   "opts_en": [
    "Automating responses to alerts and incidents with playbooks",
-   "Provisioning virtual networks",
-   "Encrypting data in transit",
-   "Managing licenses"
+   "Provisioning virtual networks automatically",
+   "Encrypting data in transit between regions",
+   "Managing licenses for security analysts"
   ],
   "correct": [
    0
@@ -2234,15 +2234,15 @@
   "q_es": "¿Qué característica de Microsoft Sentinel permite a los analistas buscar amenazas de forma proactiva en sus datos mediante consultas?",
   "q_en": "Which Microsoft Sentinel feature lets analysts proactively search for threats across their data using queries?",
   "opts_es": [
-   "Bloqueos de recursos",
-   "Valores predeterminados de seguridad",
-   "Caja de seguridad del cliente",
+   "Reglas de análisis",
+   "Libros",
+   "Conectores de datos",
    "Búsqueda proactiva (hunting)"
   ],
   "opts_en": [
-   "Resource locks",
-   "Security defaults",
-   "Customer Lockbox",
+   "Analytics rules",
+   "Workbooks",
+   "Data connectors",
    "Hunting"
   ],
   "correct": [
@@ -2261,15 +2261,15 @@
   "q_en": "In Microsoft Sentinel, what groups related alerts into a single actionable item that an analyst can investigate?",
   "opts_es": [
    "Un incidente",
-   "Un grupo de administración",
-   "Un bloqueo de recursos",
-   "Una subred"
+   "Un libro",
+   "Una lista de seguimiento",
+   "Un conector de datos"
   ],
   "opts_en": [
    "An incident",
-   "A management group",
-   "A resource lock",
-   "A subnet"
+   "A workbook",
+   "A watchlist",
+   "A data connector"
   ],
   "correct": [
    0
@@ -2413,16 +2413,16 @@
   "q_es": "¿Qué es Microsoft Defender XDR?",
   "q_en": "What is Microsoft Defender XDR?",
   "opts_es": [
-   "Un servicio de copia de seguridad",
+   "Un servicio de copia de seguridad y recuperación para Microsoft 365",
    "Un conjunto de defensa empresarial unificado, previo y posterior a la brecha, que coordina la detección, prevención, investigación y respuesta en endpoints, identidades, correo y aplicaciones",
-   "Un portal de licencias",
-   "Un conmutador de red"
+   "Un portal para asignar licencias de Microsoft 365",
+   "Un conmutador de red con funciones de firewall"
   ],
   "opts_en": [
-   "A backup service",
+   "A backup and recovery service for Microsoft 365",
    "A unified pre- and post-breach enterprise defense suite that coordinates detection, prevention, investigation and response across endpoints, identities, email and apps",
-   "A licensing portal",
-   "A network switch"
+   "A portal for assigning Microsoft 365 licenses",
+   "A hardware network switch with firewall features"
   ],
   "correct": [
    1
@@ -2546,13 +2546,13 @@
    "Microsoft Entra Connect",
    "Azure Bastion",
    "Microsoft Defender Vulnerability Management",
-   "Compliance Manager"
+   "Microsoft Purview Compliance Manager"
   ],
   "opts_en": [
    "Microsoft Entra Connect",
    "Azure Bastion",
    "Microsoft Defender Vulnerability Management",
-   "Compliance Manager"
+   "Microsoft Purview Compliance Manager"
   ],
   "correct": [
    2
@@ -2595,16 +2595,16 @@
   "q_es": "¿Para qué se usa Microsoft Threat Intelligence?",
   "q_en": "What is Microsoft Threat Intelligence used for?",
   "opts_es": [
-   "Asignar licencias",
+   "Asignar licencias a los analistas de seguridad",
    "Proporcionar información sobre actores de amenazas, herramientas y técnicas para ayudar a los defensores a investigar y responder a amenazas",
-   "Aprovisionar máquinas virtuales",
-   "Cifrar copias de seguridad"
+   "Aprovisionar máquinas virtuales para la búsqueda de amenazas",
+   "Cifrar copias de seguridad de registros de seguridad"
   ],
   "opts_en": [
-   "Assigning licenses",
+   "Assigning licenses to security analysts",
    "Providing insight into threat actors, tools and techniques to help defenders investigate and respond to threats",
-   "Provisioning virtual machines",
-   "Encrypting backups"
+   "Provisioning virtual machines for hunting",
+   "Encrypting backups of security logs"
   ],
   "correct": [
    1
@@ -2906,16 +2906,16 @@
   "q_es": "Según el principio de privacidad de control de Microsoft, ¿qué pueden hacer los clientes?",
   "q_en": "Under Microsoft's privacy principle of control, what can customers do?",
   "opts_es": [
-   "Eliminar las copias de seguridad de Microsoft",
-   "Acceder al código fuente de Microsoft",
+   "Eliminar a petición las copias de seguridad internas de Microsoft",
+   "Revisar el código fuente de Microsoft a petición",
    "Decidir cómo se usan sus datos y administrar sus opciones de privacidad",
-   "Establecer los precios de Microsoft"
+   "Fijar los precios de los servicios de Microsoft"
   ],
   "opts_en": [
-   "Delete Microsoft's backups",
-   "Access Microsoft's source code",
+   "Delete Microsoft's internal backups on request",
+   "Review Microsoft's source code on demand",
    "Decide how their data is used and manage their privacy choices",
-   "Set Microsoft's pricing"
+   "Set the prices of Microsoft's services"
   ],
   "correct": [
    2
@@ -2987,15 +2987,15 @@
   "q_en": "What does Microsoft Purview Compliance Manager help an organization do?",
   "opts_es": [
    "Evaluar la posición de cumplimiento frente a normativas y completar acciones de mejora para aumentar una puntuación de cumplimiento",
-   "Bloquear ataques de red",
-   "Crear máquinas virtuales",
-   "Restablecer contraseñas de usuarios"
+   "Bloquear ataques de red con un firewall",
+   "Crear máquinas virtuales para pruebas de cumplimiento",
+   "Restablecer contraseñas de usuarios en bloque"
   ],
   "opts_en": [
    "Assess compliance posture against regulations and complete improvement actions to raise a compliance score",
-   "Block network attacks",
-   "Create virtual machines",
-   "Reset user passwords"
+   "Block network attacks with a firewall",
+   "Create virtual machines for compliance tests",
+   "Reset user passwords in bulk"
   ],
   "correct": [
    0
@@ -3113,15 +3113,15 @@
   "q_es": "¿Qué controlan las directivas de retención y las etiquetas de retención?",
   "q_en": "What do retention policies and retention labels control?",
   "opts_es": [
-   "Qué dispositivos son compatibles",
-   "Qué puertos están abiertos",
-   "Quién puede iniciar sesión",
+   "Qué dispositivos cumplen la directiva",
+   "Qué puertos están abiertos en el firewall",
+   "Quién puede iniciar sesión en el inquilino",
    "Cuánto tiempo se conserva el contenido y qué ocurre después, como eliminarlo"
   ],
   "opts_en": [
-   "Which devices are compliant",
-   "Which ports are open",
-   "Who can sign in",
+   "Which devices are compliant with policy",
+   "Which ports are open on the firewall",
+   "Who can sign in to the tenant",
    "How long content is kept and what happens to it afterward, such as deleting it"
   ],
   "correct": [
@@ -3139,16 +3139,16 @@
   "q_es": "¿Qué hace la prevención de pérdida de datos (DLP) de Microsoft Purview?",
   "q_en": "What does Microsoft Purview data loss prevention (DLP) do?",
   "opts_es": [
-   "Aprovisiona redes virtuales",
+   "Aprovisiona redes virtuales para datos confidenciales",
    "Identifica información confidencial y ayuda a evitar que se comparta de forma inapropiada",
-   "Administra contraseñas",
-   "Hace copias de seguridad de recursos de Azure"
+   "Administra contraseñas de usuarios y restablecimientos",
+   "Hace copia de seguridad de recursos de Azure en un almacén"
   ],
   "opts_en": [
-   "Provisions virtual networks",
+   "Provisions virtual networks for sensitive data",
    "Identifies sensitive information and helps prevent it from being shared inappropriately",
-   "Manages passwords",
-   "Backs up Azure resources"
+   "Manages user passwords and resets",
+   "Backs up Azure resources to a vault"
   ],
   "correct": [
    1
@@ -3191,15 +3191,15 @@
   "q_es": "¿Qué ayudan a hacer a un administrador el Explorador de contenido y el Explorador de actividad de Microsoft Purview?",
   "q_en": "What do Content explorer and Activity explorer in Microsoft Purview help an administrator do?",
   "opts_es": [
-   "Administrar redes virtuales de Azure",
-   "Asignar licencias de Windows",
-   "Restablecer contraseñas",
+   "Administrar redes virtuales de Azure y su emparejamiento",
+   "Asignar licencias de Windows a usuarios",
+   "Restablecer contraseñas de cuentas confidenciales",
    "Ver qué contenido confidencial existe y qué acciones se han realizado sobre el contenido etiquetado"
   ],
   "opts_en": [
-   "Manage Azure virtual networks",
-   "Assign Windows licenses",
-   "Reset passwords",
+   "Manage Azure virtual networks and peering",
+   "Assign Windows licenses to users",
+   "Reset passwords for sensitive accounts",
    "See which sensitive content exists and what actions have been taken on labeled content"
   ],
   "correct": [
@@ -3217,16 +3217,16 @@
   "q_es": "¿Para qué se usa la administración de registros de Microsoft Purview?",
   "q_en": "What is records management in Microsoft Purview used for?",
   "opts_es": [
-   "Analizar en busca de malware",
-   "Administrar usuarios invitados",
+   "Analizar puntos de conexión en busca de malware",
+   "Administrar usuarios invitados del inquilino",
    "Administrar registros legales, críticos para el negocio y normativos con controles de retención y eliminación",
-   "Supervisar el uso de CPU"
+   "Supervisar el uso de CPU de las máquinas virtuales"
   ],
   "opts_en": [
-   "Scanning for malware",
-   "Managing guest users",
+   "Scanning endpoints for malware",
+   "Managing guest users in the tenant",
    "Managing legal, business-critical and regulatory records with retention and disposition controls",
-   "Monitoring CPU usage"
+   "Monitoring CPU usage of virtual machines"
   ],
   "correct": [
    2
@@ -3440,16 +3440,16 @@
   "q_es": "¿Qué ayuda a detectar Microsoft Purview Insider Risk Management?",
   "q_en": "What does Microsoft Purview Insider Risk Management help detect?",
   "opts_es": [
-   "Servidores sin revisiones",
+   "Servidores sin revisiones y actualizaciones que faltan",
    "Redes virtuales mal configuradas",
    "Actividades de riesgo realizadas por usuarios de la organización, como robo o filtración de datos, mediante indicadores de directiva",
-   "Ataques DDoS"
+   "Ataques DDoS volumétricos a IP públicas"
   ],
   "opts_en": [
-   "Unpatched servers",
+   "Unpatched servers and missing updates",
    "Misconfigured virtual networks",
    "Risky activities by users inside the organization, such as data theft or leaks, using policy indicators",
-   "DDoS attacks"
+   "Volumetric DDoS attacks on public IPs"
   ],
   "correct": [
    2
@@ -3467,15 +3467,15 @@
   "q_en": "What is the purpose of Microsoft Purview eDiscovery?",
   "opts_es": [
    "Buscar, retener y exportar contenido para necesidades legales o de investigación",
-   "Cifrar el tráfico de red",
-   "Administrar contraseñas de usuarios",
-   "Asignar roles en Azure"
+   "Cifrar el tráfico de red entre sitios",
+   "Administrar contraseñas de usuarios y restablecimientos",
+   "Asignar roles de Azure a administradores"
   ],
   "opts_en": [
    "Search for, hold and export content for legal or investigative needs",
-   "Encrypt network traffic",
-   "Manage user passwords",
-   "Assign roles in Azure"
+   "Encrypt network traffic between sites",
+   "Manage user passwords and resets",
+   "Assign Azure roles to administrators"
   ],
   "correct": [
    0
@@ -3492,15 +3492,15 @@
   "q_es": "¿Qué proporciona la solución Microsoft Purview Audit?",
   "q_en": "What does the Microsoft Purview Audit solution provide?",
   "opts_es": [
-   "Un firewall para máquinas virtuales",
-   "Claves de cifrado",
-   "Una copia de seguridad de buzones",
+   "Un firewall que protege máquinas virtuales",
+   "Claves de cifrado para contenido confidencial",
+   "Una copia de seguridad de cada buzón del inquilino",
    "Un registro de las actividades de usuarios y administradores en los servicios de Microsoft 365 para investigación y cumplimiento"
   ],
   "opts_en": [
-   "A firewall for virtual machines",
-   "Encryption keys",
-   "A backup of mailboxes",
+   "A firewall that protects virtual machines",
+   "Encryption keys for sensitive content",
+   "A backup of every mailbox in the tenant",
    "A record of user and administrator activities across Microsoft 365 services for investigation and compliance"
   ],
   "correct": [
@@ -3723,15 +3723,15 @@
   "q_es": "¿Qué fomenta el principio de Confianza cero «asumir que hay brecha»?",
   "q_en": "What does the Zero Trust principle 'assume breach' encourage?",
   "opts_es": [
-   "Confiar en todo el tráfico interno",
-   "Eliminar el registro para ahorrar costes",
+   "Confiar en todo el tráfico de red interno",
+   "Quitar el registro para reducir costes",
    "Permitir cuentas de administrador compartidas",
    "Minimizar el radio de impacto con segmentación, cifrado de extremo a extremo y supervisión continua"
   ],
   "opts_en": [
-   "Trusting all internal traffic",
-   "Removing logging to save cost",
-   "Allowing shared admin accounts",
+   "Trusting all internal network traffic",
+   "Removing logging to reduce cost",
+   "Allowing shared administrator accounts",
    "Minimizing blast radius with segmentation, end-to-end encryption and continuous monitoring"
   ],
   "correct": [
@@ -4117,15 +4117,15 @@
   "q_es": "En un flujo de autenticación moderna, ¿qué representa un token de seguridad?",
   "q_en": "In a modern authentication flow, what does a security token represent?",
   "opts_es": [
-   "Un registro DNS",
-   "Una clave de VPN",
-   "Una credencial física",
+   "Un registro DNS que asigna un nombre a una IP",
+   "Una clave VPN usada para cifrar el túnel",
+   "Una credencial física para acceder a un edificio",
    "Una prueba de autenticación o autorización que contiene notificaciones (claims) sobre el usuario o la aplicación"
   ],
   "opts_en": [
-   "A DNS record",
-   "A VPN key",
-   "A physical badge",
+   "A DNS record that maps a name to an IP",
+   "A VPN key used for tunnel encryption",
+   "A physical badge for building access",
    "Proof of authentication or authorization containing claims about the user or app"
   ],
   "correct": [
@@ -4143,15 +4143,15 @@
   "q_es": "¿Por qué es importante un servicio de directorio en la administración de identidades?",
   "q_en": "Why is a directory service important in identity management?",
   "opts_es": [
-   "Solo almacena correos electrónicos",
-   "Cifra discos",
-   "Reemplaza a los firewalls",
+   "Almacena solo mensajes de correo",
+   "Cifra los discos de los dispositivos de usuario",
+   "Sustituye a los firewalls de red",
    "Almacena objetos de identidad como usuarios, grupos y dispositivos y los pone a disposición para la autenticación y autorización"
   ],
   "opts_en": [
-   "It stores only emails",
-   "It encrypts disks",
-   "It replaces firewalls",
+   "It stores only email messages",
+   "It encrypts disks on user devices",
+   "It replaces network firewalls",
    "It stores identity objects such as users, groups and devices and makes them available for authentication and authorization"
   ],
   "correct": [
@@ -4322,16 +4322,16 @@
   "q_es": "¿Qué es un inquilino de Microsoft Entra?",
   "q_en": "What is a Microsoft Entra tenant?",
   "opts_es": [
-   "Una única máquina virtual",
+   "Una sola máquina virtual en Azure",
    "Una instancia dedicada y aislada de Microsoft Entra ID que representa a una organización",
-   "Una cuenta de almacenamiento",
-   "Un centro de datos físico"
+   "Una cuenta de almacenamiento para datos de identidad",
+   "Un centro de datos físico que aloja Entra ID"
   ],
   "opts_en": [
-   "A single virtual machine",
+   "A single virtual machine in Azure",
    "A dedicated, isolated instance of Microsoft Entra ID that represents an organization",
-   "A storage account",
-   "A physical datacenter"
+   "A storage account for identity data",
+   "A physical datacenter that hosts Entra ID"
   ],
   "correct": [
    1
@@ -4426,16 +4426,16 @@
   "q_es": "¿Qué tipo de identidad representa un dispositivo físico o virtual registrado o unido en Microsoft Entra ID?",
   "q_en": "Which identity type represents a physical or virtual device registered or joined in Microsoft Entra ID?",
   "opts_es": [
-   "Un rol",
-   "Una etiqueta",
+   "Una asignación de rol",
+   "Una etiqueta de recurso",
    "Una identidad de dispositivo",
-   "Un usuario invitado"
+   "Una cuenta de usuario invitado"
   ],
   "opts_en": [
-   "A role",
-   "A tag",
+   "A role assignment",
+   "A resource tag",
    "A device identity",
-   "A guest user"
+   "A guest user account"
   ],
   "correct": [
    2
@@ -4553,16 +4553,16 @@
   "q_es": "¿Qué ayuda a evitar la coincidencia de números en las notificaciones push de Microsoft Authenticator?",
   "q_en": "What does number matching in Microsoft Authenticator push notifications help prevent?",
   "opts_es": [
-   "Pérdida de dispositivos",
+   "Dispositivos perdidos o robados",
    "Aprobaciones accidentales o por fatiga de solicitudes de MFA fraudulentas",
-   "Interrupciones de red",
-   "Contraseñas débiles"
+   "Interrupciones de red durante el inicio de sesión",
+   "Elección de contraseñas débiles"
   ],
   "opts_en": [
-   "Lost devices",
+   "Lost or stolen devices",
    "Accidental or fatigue-based approvals of fraudulent MFA prompts",
-   "Network outages",
-   "Weak passwords"
+   "Network outages during sign-in",
+   "Weak passwords being chosen"
   ],
   "correct": [
    1
@@ -4579,16 +4579,16 @@
   "q_es": "¿Qué es el bloqueo inteligente en Microsoft Entra ID?",
   "q_en": "What is smart lockout in Microsoft Entra ID?",
   "opts_es": [
-   "Una regla de firewall",
+   "Una regla de firewall para el tráfico de inicio de sesión",
    "Una forma de eliminar usuarios inactivos",
    "Una característica que ayuda a bloquear a los atacantes que adivinan contraseñas permitiendo que los usuarios legítimos sigan iniciando sesión",
-   "Un algoritmo de cifrado"
+   "Un algoritmo de cifrado para contraseñas"
   ],
   "opts_en": [
-   "A firewall rule",
+   "A firewall rule for sign-in traffic",
    "A way to delete inactive users",
    "A feature that helps lock out attackers who guess passwords while letting legitimate users keep signing in",
-   "An encryption algorithm"
+   "An encryption algorithm for passwords"
   ],
   "correct": [
    2
@@ -4606,13 +4606,13 @@
   "q_en": "Which authentication method generates a time-based code on a device or hardware token that the user types in?",
   "opts_es": [
    "Anclaje de certificados",
-   "Contraseña federada",
+   "Reutilización de contraseñas federadas",
    "OATH TOTP (token de software o hardware)",
    "Preguntas de seguridad"
   ],
   "opts_en": [
    "Certificate pinning",
-   "Federated password",
+   "Federated password reuse",
    "OATH TOTP (software or hardware token)",
    "Security questions"
   ],
@@ -4631,13 +4631,13 @@
   "q_es": "¿Qué característica de protección con contraseña puede extender las comprobaciones de contraseñas prohibidas globales a Active Directory local?",
   "q_en": "Which password protection feature can extend global banned password checks to on-premises Active Directory?",
   "opts_es": [
-   "Revisiones de acceso",
+   "Revisiones de acceso de Microsoft Entra",
    "Azure Policy",
    "Protección con contraseña de Microsoft Entra para Active Directory de Windows Server",
    "Administración de derechos"
   ],
   "opts_en": [
-   "Access reviews",
+   "Microsoft Entra access reviews",
    "Azure Policy",
    "Microsoft Entra Password Protection for Windows Server Active Directory",
    "Entitlement management"
@@ -4836,15 +4836,15 @@
   "q_es": "¿Cuál de las siguientes es una señal que puede evaluar una directiva de acceso condicional?",
   "q_en": "Which of the following is a signal that a Conditional Access policy can evaluate?",
   "opts_es": [
-   "El tamaño del buzón",
-   "La longitud del cargo del usuario",
-   "El color del monitor del usuario",
+   "El tamaño del buzón del usuario",
+   "La longitud del puesto del usuario",
+   "El número de archivos en OneDrive",
    "Ubicación del usuario, estado del dispositivo, aplicación y riesgo de inicio de sesión"
   ],
   "opts_en": [
-   "The size of the mailbox",
-   "The user's job title length",
-   "The color of the user's monitor",
+   "The size of the user's mailbox",
+   "The length of the user's job title",
+   "The number of files in OneDrive",
    "User location, device state, application and sign-in risk"
   ],
   "correct": [
@@ -4943,13 +4943,13 @@
    "Paquetes de acceso",
    "Términos de uso",
    "Control de aplicaciones de acceso condicional / restricciones aplicadas por la aplicación",
-   "Sincronización de hash de contraseñas"
+   "Sincronización de hash de contraseña"
   ],
   "opts_en": [
    "Access packages",
    "Terms of use",
    "Conditional Access App Control / app enforced restrictions",
-   "Password hash sync"
+   "Password hash synchronization"
   ],
   "correct": [
    2
@@ -5068,15 +5068,15 @@
   "q_en": "What is a risk detection in Microsoft Entra ID Protection?",
   "opts_es": [
    "Una señal que indica un inicio de sesión o usuario potencialmente sospechoso, como el uso de una IP anónima o credenciales filtradas",
-   "Un error de DNS",
-   "Un filtro de correo",
-   "Una copia de seguridad programada"
+   "Un inicio de sesión fallido causado solo por una contraseña caducada",
+   "Una regla que bloquea spam en el buzón",
+   "Un informe de licencias sin usar"
   ],
   "opts_en": [
    "A signal indicating a potentially suspicious sign-in or user, such as anonymous IP use or leaked credentials",
-   "A DNS error",
-   "An email filter",
-   "A scheduled backup"
+   "A failed sign-in caused by an expired password only",
+   "A rule that blocks spam in the mailbox",
+   "A report of unused licenses"
   ],
   "correct": [
    0
@@ -5093,16 +5093,16 @@
   "q_es": "¿Qué ayuda a hacer una revisión de acceso de los invitados de un grupo de Microsoft 365?",
   "q_en": "What does an access review of a Microsoft 365 group's guests help you do?",
   "opts_es": [
-   "Aumentar el tamaño del buzón",
+   "Aumentar el tamaño de buzón de los invitados",
    "Confirmar qué invitados deben conservar el acceso y quitar a los que ya no lo necesitan",
-   "Analizar código en busca de secretos",
-   "Bloquear ataques DDoS"
+   "Analizar repositorios de código en busca de secretos",
+   "Bloquear ataques DDoS volumétricos"
   ],
   "opts_en": [
-   "Increase mailbox size",
+   "Increase the mailbox size of guests",
    "Confirm which guests should keep access and remove those who no longer need it",
-   "Scan code for secrets",
-   "Block DDoS attacks"
+   "Scan code repositories for secrets",
+   "Block volumetric DDoS attacks"
   ],
   "correct": [
    1
@@ -5145,16 +5145,16 @@
   "q_es": "¿Cuál es el propósito principal del acceso justo a tiempo (JIT) en PIM?",
   "q_en": "What is the main purpose of just-in-time (JIT) access in PIM?",
   "opts_es": [
-   "Bloquear a todos los administradores",
-   "Deshabilitar MFA",
+   "Impedir que todos los administradores inicien sesión",
+   "Deshabilitar la MFA de los roles con privilegios",
    "Conceder acceso con privilegios solo cuando se necesita y durante un tiempo limitado",
-   "Dar a todos derechos de administrador permanentes"
+   "Dar a cada usuario un rol de administrador permanente"
   ],
   "opts_en": [
-   "Block all admins",
-   "Disable MFA",
+   "Block all administrators from signing in",
+   "Disable MFA for privileged roles",
    "Grant privileged access only when needed and for a limited time",
-   "Give everyone permanent admin rights"
+   "Give every user a permanent admin role"
   ],
   "correct": [
    2
@@ -5293,16 +5293,16 @@
   "q_es": "¿Qué permite hacer Azure Private Link?",
   "q_en": "What does Azure Private Link allow you to do?",
   "opts_es": [
-   "Cifrar el correo",
+   "Cifrar el correo en tránsito",
    "Acceder a servicios PaaS de Azure mediante un punto de conexión privado de tu red virtual en lugar de internet público",
-   "Crear un sitio web público",
-   "Reemplazar Azure Firewall"
+   "Crear un sitio web público para una aplicación PaaS",
+   "Sustituir por completo Azure Firewall"
   ],
   "opts_en": [
-   "Encrypt email",
+   "Encrypt email in transit",
    "Access Azure PaaS services over a private endpoint in your virtual network instead of over the public internet",
-   "Create a public website",
-   "Replace Azure Firewall"
+   "Create a public website for a PaaS app",
+   "Replace Azure Firewall entirely"
   ],
   "correct": [
    1
@@ -5345,15 +5345,15 @@
   "q_es": "Un NSG contiene la regla predeterminada DenyAllInbound. ¿Qué significa para el tráfico que no coincide con ninguna regla de permiso personalizada?",
   "q_en": "An NSG contains the default rule DenyAllInbound. What does it mean for traffic that matches no custom allow rule?",
   "opts_es": [
-   "El tráfico solo se registra",
+   "El tráfico solo se registra y aun así se permite",
    "El tráfico entrante se deniega (salvo el permitido por otras reglas predeterminadas, como el de la red virtual)",
-   "El tráfico se cifra",
-   "Se permite todo el tráfico entrante"
+   "El tráfico se cifra automáticamente",
+   "Se permite todo el tráfico de entrada"
   ],
   "opts_en": [
-   "Traffic is logged only",
+   "The traffic is only logged and still allowed",
    "The inbound traffic is denied (except traffic allowed by other default rules, such as from the virtual network)",
-   "Traffic is encrypted",
+   "The traffic is encrypted automatically",
    "All inbound traffic is allowed"
   ],
   "correct": [
@@ -5423,13 +5423,13 @@
   "q_es": "¿Qué característica de Defender for Cloud reduce la superficie de ataque abriendo los puertos de administración de las VM solo para solicitudes aprobadas y durante un tiempo limitado?",
   "q_en": "Which Defender for Cloud feature reduces the attack surface by opening management ports on VMs only for approved requests and a limited time?",
   "opts_es": [
-   "Bloqueos de recursos",
+   "Un bloqueo de recursos en la VM",
    "Valores predeterminados de seguridad",
-   "Caja de seguridad del cliente",
+   "Customer Lockbox",
    "Acceso a VM justo a tiempo"
   ],
   "opts_en": [
-   "Resource locks",
+   "A resource lock on the VM",
    "Security defaults",
    "Customer Lockbox",
    "Just-in-time VM access"
@@ -5712,15 +5712,15 @@
   "q_en": "What is the Microsoft cloud security benchmark?",
   "opts_es": [
    "Un conjunto de controles y prácticas recomendadas de seguridad que Defender for Cloud usa como estándar predeterminado para las recomendaciones",
-   "Una calculadora de precios",
-   "Una prueba de hardware",
-   "Un servicio DNS"
+   "Una calculadora que estima los precios de Azure",
+   "Un conjunto de pruebas de hardware para servidores",
+   "Un servicio DNS para equipos de seguridad"
   ],
   "opts_en": [
    "A set of security controls and best practices that Defender for Cloud uses as the default standard for recommendations",
-   "A pricing calculator",
-   "A hardware test",
-   "A DNS service"
+   "A calculator that estimates Azure pricing",
+   "A hardware test suite for servers",
+   "A DNS service for security teams"
   ],
   "correct": [
    0
@@ -5886,15 +5886,15 @@
   "q_en": "What must you create first to start using Microsoft Sentinel?",
   "opts_es": [
    "Un área de trabajo de Log Analytics en la que se habilite Sentinel",
-   "Una puerta de enlace VPN",
-   "Una directiva de Intune",
-   "Una máquina virtual"
+   "Una puerta de enlace VPN al área de trabajo",
+   "Una directiva de cumplimiento de Intune",
+   "Una máquina virtual con el agente de Sentinel"
   ],
   "opts_en": [
    "A Log Analytics workspace on which Sentinel is enabled",
-   "A VPN gateway",
-   "An Intune policy",
-   "A virtual machine"
+   "A VPN gateway to the workspace",
+   "An Intune compliance policy",
+   "A virtual machine with the Sentinel agent"
   ],
   "correct": [
    0
@@ -5989,15 +5989,15 @@
   "q_es": "¿Qué hace el análisis del comportamiento de usuarios y entidades (UEBA) en Sentinel?",
   "q_en": "What does User and Entity Behavior Analytics (UEBA) in Sentinel do?",
   "opts_es": [
-   "Aplica revisiones a servidores",
-   "Asigna licencias",
-   "Cifra todos los registros",
+   "Aplica revisiones a los servidores automáticamente",
+   "Asigna licencias a los analistas",
+   "Cifra todos los registros en reposo",
    "Crea perfiles de comportamiento de referencia y señala anomalías que pueden indicar un compromiso"
   ],
   "opts_en": [
-   "Patches servers",
-   "Assigns licenses",
-   "Encrypts all logs",
+   "Patches servers automatically",
+   "Assigns licenses to analysts",
+   "Encrypts all logs at rest",
    "Builds baseline behavior profiles and flags anomalies that may indicate compromise"
   ],
   "correct": [
@@ -6015,16 +6015,16 @@
   "q_es": "¿Cuál es la diferencia entre una regla de automatización y un cuaderno de estrategias en Sentinel?",
   "q_en": "What is the difference between an automation rule and a playbook in Sentinel?",
   "opts_es": [
-   "Son idénticos",
+   "Son idénticos e intercambiables",
    "Las reglas de automatización gestionan la clasificación sencilla de incidentes y pueden desencadenar cuadernos de estrategias; los cuadernos ejecutan flujos más complejos creados con Logic Apps",
-   "Las reglas de automatización requieren una VPN",
-   "Los cuadernos de estrategias solo son para facturación"
+   "Las reglas de automatización requieren una conexión VPN",
+   "Los cuadernos de estrategias solo se usan para alertas de facturación"
   ],
   "opts_en": [
-   "They are identical",
+   "They are identical and interchangeable",
    "Automation rules handle simple incident triage and can trigger playbooks; playbooks run more complex workflows built with Logic Apps",
-   "Automation rules require a VPN",
-   "Playbooks are only for billing"
+   "Automation rules require a VPN connection",
+   "Playbooks are used only for billing alerts"
   ],
   "correct": [
    1
@@ -6199,16 +6199,16 @@
   "q_es": "¿Qué hace la interrupción automática de ataques en Microsoft Defender XDR?",
   "q_en": "What does automatic attack disruption in Microsoft Defender XDR do?",
   "opts_es": [
-   "Crea cuentas de usuario",
-   "Hace copia de seguridad de dispositivos",
+   "Crea cuentas de usuario tras un incidente",
+   "Hace copia de seguridad de dispositivos antes de un ataque",
    "Contiene automáticamente un ataque en curso, por ejemplo deshabilitando una cuenta comprometida o aislando un dispositivo, para limitar su propagación",
-   "Asigna licencias"
+   "Asigna licencias a los usuarios afectados"
   ],
   "opts_en": [
-   "Creates user accounts",
-   "Backs up devices",
+   "Creates user accounts after an incident",
+   "Backs up devices before an attack",
    "Automatically contains an in-progress attack, for example by disabling a compromised account or isolating a device, to limit its spread",
-   "Assigns licenses"
+   "Assigns licenses to affected users"
   ],
   "correct": [
    2
@@ -6252,15 +6252,15 @@
   "q_en": "What does automated investigation and response (AIR) do?",
   "opts_es": [
    "Examina alertas y toma o recomienda acciones de corrección para reducir la carga de los analistas",
-   "Cifra buzones",
-   "Crea usuarios nuevos",
-   "Actualiza el firmware de la BIOS"
+   "Cifra los buzones de los usuarios afectados",
+   "Crea usuarios nuevos para el SOC",
+   "Actualiza el firmware de la BIOS de los dispositivos"
   ],
   "opts_en": [
    "Examines alerts and takes or recommends remediation actions to reduce analyst workload",
-   "Encrypts mailboxes",
-   "Creates new users",
-   "Updates BIOS firmware"
+   "Encrypts mailboxes of affected users",
+   "Creates new users for the SOC",
+   "Updates the BIOS firmware of devices"
   ],
   "correct": [
    0
@@ -6434,15 +6434,15 @@
   "q_en": "What does the Microsoft Secure Score in the Defender portal represent?",
   "opts_es": [
    "Una medición de la posición de seguridad de una organización en las cargas de trabajo de Microsoft 365 con acciones de mejora recomendadas",
-   "Almacenamiento usado",
-   "Velocidad de red",
-   "El número de usuarios con licencia"
+   "La cantidad de almacenamiento que usa el inquilino",
+   "La velocidad de red entre oficinas",
+   "El número de usuarios con licencia del inquilino"
   ],
   "opts_en": [
    "A measurement of an organization's security posture across Microsoft 365 workloads with recommended improvement actions",
-   "Storage used",
-   "Network speed",
-   "The number of licensed users"
+   "The amount of storage used by the tenant",
+   "The network speed between offices",
+   "The number of licensed users in the tenant"
   ],
   "correct": [
    0
@@ -6459,16 +6459,16 @@
   "q_es": "¿Qué ofrece Defender Vulnerability Management para los dispositivos?",
   "q_en": "What does Defender Vulnerability Management provide for devices?",
   "opts_es": [
-   "Cifrado de correo",
+   "Cifrado de correo para mensajes confidenciales",
    "Detección continua de vulnerabilidades y errores de configuración con priorización basada en riesgo y orientación para la corrección",
-   "Filtrado DNS",
-   "Invitaciones de invitados"
+   "Filtrado DNS para la navegación web",
+   "Invitaciones de usuarios invitados para socios"
   ],
   "opts_en": [
-   "Email encryption",
+   "Email encryption for sensitive messages",
    "Continuous discovery of vulnerabilities and misconfigurations with risk-based prioritization and remediation guidance",
-   "DNS filtering",
-   "Guest invitations"
+   "DNS filtering for web browsing",
+   "Guest user invitations for partners"
   ],
   "correct": [
    1
@@ -6877,15 +6877,15 @@
   "q_en": "In Compliance Manager, what is an assessment?",
   "opts_es": [
    "Una agrupación de controles y acciones que se asigna a una normativa o estándar y sigue tu progreso hacia el cumplimiento",
-   "Una cuenta de usuario",
-   "Una directiva de copia de seguridad",
-   "Una regla de red"
+   "Una cuenta de usuario con derechos elevados",
+   "Una directiva de copia de seguridad de datos de cumplimiento",
+   "Una regla de red que bloquea tráfico"
   ],
   "opts_en": [
    "A grouping of controls and actions that map to a regulation or standard and tracks your progress toward compliance",
-   "A user account",
-   "A backup policy",
-   "A network rule"
+   "A user account with elevated rights",
+   "A backup policy for compliance data",
+   "A network rule that blocks traffic"
   ],
   "correct": [
    0
@@ -7035,15 +7035,15 @@
   "q_en": "What are sensitive information types (SITs) in Microsoft Purview?",
   "opts_es": [
    "Patrones predefinidos o personalizados, como números de tarjeta de crédito o de pasaporte, que se usan para detectar contenido confidencial",
-   "Carpetas de correo",
-   "Grupos de usuarios",
-   "Rutas de red"
+   "Carpetas que organizan los mensajes de correo",
+   "Grupos de usuarios con derechos elevados",
+   "Rutas de red para tráfico confidencial"
   ],
   "opts_en": [
    "Predefined or custom patterns, such as credit card or passport numbers, used to detect sensitive content",
-   "Email folders",
-   "User groups",
-   "Network routes"
+   "Folders that organize email messages",
+   "Groups of users with elevated rights",
+   "Network routes for sensitive traffic"
   ],
   "correct": [
    0
@@ -7061,15 +7061,15 @@
   "q_en": "When would you use a trainable classifier?",
   "opts_es": [
    "Para identificar contenido por categoría, como contratos o currículos, a partir de ejemplos y no de un patrón fijo",
-   "Para abrir puertos de firewall",
-   "Para asignar licencias",
-   "Para rotar claves"
+   "Para abrir puertos de firewall automáticamente",
+   "Para asignar licencias a usuarios",
+   "Para rotar claves de cifrado"
   ],
   "opts_en": [
    "To identify content by category, such as contracts or resumes, based on examples rather than a fixed pattern",
-   "To open firewall ports",
-   "To assign licenses",
-   "To rotate keys"
+   "To open firewall ports automatically",
+   "To assign licenses to users",
+   "To rotate encryption keys"
   ],
   "correct": [
    0
@@ -7086,15 +7086,15 @@
   "q_es": "¿Qué hace la coincidencia exacta de datos (EDM)?",
   "q_en": "What does exact data match (EDM) do?",
   "opts_es": [
-   "Cuenta usuarios",
-   "Envía recordatorios",
-   "Crea copias de seguridad",
+   "Cuenta el número de usuarios de un grupo",
+   "Envía recordatorios a los propietarios de los datos",
+   "Crea copias de seguridad de archivos confidenciales",
    "Detecta datos confidenciales comparando valores exactos de una tabla de datos confidenciales con hash, como registros de clientes"
   ],
   "opts_en": [
-   "Counts users",
-   "Sends reminders",
-   "Creates backups",
+   "Counts the number of users in a group",
+   "Sends reminders to data owners",
+   "Creates backups of sensitive files",
    "Detects sensitive data by matching exact values from a hashed sensitive data table, such as customer records"
   ],
   "correct": [
@@ -7138,16 +7138,16 @@
   "q_es": "¿Cuál es el propósito de una directiva de etiquetas de confidencialidad?",
   "q_en": "What is the purpose of a sensitivity label policy?",
   "opts_es": [
-   "Crear máquinas virtuales",
+   "Para crear máquinas virtuales para datos etiquetados",
    "Publicar etiquetas a usuarios y grupos y definir opciones como el etiquetado obligatorio o una etiqueta predeterminada",
-   "Analizar la red",
-   "Restablecer contraseñas"
+   "Para analizar la red en busca de puertos abiertos",
+   "Para restablecer las contraseñas de los propietarios de etiquetas"
   ],
   "opts_en": [
-   "To create virtual machines",
+   "To create virtual machines for labeled data",
    "To publish labels to users and groups and define settings such as mandatory labeling or a default label",
-   "To scan the network",
-   "To reset passwords"
+   "To scan the network for open ports",
+   "To reset passwords of label owners"
   ],
   "correct": [
    1
@@ -7164,16 +7164,16 @@
   "q_es": "¿Qué hace el etiquetado automático en Microsoft Purview?",
   "q_en": "What does auto-labeling in Microsoft Purview do?",
   "opts_es": [
-   "Instala actualizaciones",
-   "Restablece MFA",
+   "Instala actualizaciones en dispositivos",
+   "Restablece la MFA de los usuarios",
    "Aplica automáticamente una etiqueta de confidencialidad al contenido que cumple condiciones como tipos de información confidencial",
-   "Elimina archivos antiguos"
+   "Elimina archivos antiguos tras un año"
   ],
   "opts_en": [
-   "Installs updates",
-   "Resets MFA",
+   "Installs updates on devices",
+   "Resets MFA for users",
    "Automatically applies a sensitivity label to content that matches conditions such as sensitive information types",
-   "Deletes old files"
+   "Deletes old files after one year"
   ],
   "correct": [
    2
@@ -7216,15 +7216,15 @@
   "q_es": "¿Qué puede hacer una sugerencia de directiva DLP?",
   "q_en": "What can a DLP policy tip do?",
   "opts_es": [
-   "Eliminar buzones",
-   "Crear reglas de firewall",
-   "Restablecer contraseñas",
+   "Eliminar el buzón del usuario",
+   "Crear una regla de firewall para el usuario",
+   "Restablecer la contraseña del usuario",
    "Informar a los usuarios de que una acción puede infringir la directiva y permitirles omitirla con justificación si está configurado"
   ],
   "opts_en": [
-   "Delete mailboxes",
-   "Create firewall rules",
-   "Reset passwords",
+   "Delete the user's mailbox",
+   "Create a firewall rule for the user",
+   "Reset the user's password",
    "Inform users that an action may violate policy and allow them to override with justification when configured"
   ],
   "correct": [
@@ -7242,16 +7242,16 @@
   "q_es": "¿Cuál es la diferencia entre una directiva de retención y una etiqueta de retención?",
   "q_en": "What is the difference between a retention policy and a retention label?",
   "opts_es": [
-   "Las directivas solo se aplican a usuarios",
+   "Las directivas se aplican solo a usuarios y las etiquetas solo a dispositivos",
    "Una directiva de retención se aplica de forma amplia a ubicaciones; una etiqueta de retención se aplica a elementos individuales y puede activar la administración de registros",
-   "Son idénticas",
-   "Las etiquetas solo se aplican a redes"
+   "Son idénticas en todos los escenarios",
+   "Las etiquetas se aplican solo al tráfico de red"
   ],
   "opts_en": [
-   "Policies apply only to users",
+   "Policies apply only to users, labels only to devices",
    "A retention policy applies broadly to locations; a retention label is applied to individual items and can trigger records management",
-   "They are identical",
-   "Labels apply only to networks"
+   "They are identical in every scenario",
+   "Labels apply only to network traffic"
   ],
   "correct": [
    1
@@ -7268,13 +7268,13 @@
   "q_es": "¿Qué puede ocurrir al final de un período de retención?",
   "q_en": "What can happen at the end of a retention period?",
   "opts_es": [
-   "Se elimina al usuario",
+   "La cuenta de usuario se elimina",
    "El contenido se puede eliminar automáticamente o enviar a revisión de eliminación",
-   "Se cierra el inquilino",
-   "Se deshabilita el firewall"
+   "El inquilino se cierra",
+   "El firewall se deshabilita"
   ],
   "opts_en": [
-   "The user is deleted",
+   "The user account is deleted",
    "The content can be deleted automatically or sent for disposition review",
    "The tenant is closed",
    "The firewall is disabled"
@@ -7294,16 +7294,16 @@
   "q_es": "¿Qué hace declarar un elemento como registro con una etiqueta de retención?",
   "q_en": "What does declaring an item as a record with a retention label do?",
   "opts_es": [
-   "Cifra la red",
-   "Lo elimina de inmediato",
+   "Cifra el tráfico de red del elemento",
+   "Elimina el elemento de inmediato",
    "Restringe las ediciones y la eliminación según la configuración de la etiqueta para que el elemento se conserve como registro",
-   "Lo hace público"
+   "Hace público el elemento"
   ],
   "opts_en": [
-   "Encrypts the network",
-   "Deletes it immediately",
+   "Encrypts the network traffic of the item",
+   "Deletes the item immediately",
    "Restricts edits and deletion according to the label settings so the item is preserved as a record",
-   "Makes it public"
+   "Makes the item public"
   ],
   "correct": [
    2
@@ -7579,16 +7579,16 @@
   "q_es": "¿Qué tipo de riesgo interno puede ayudar a detectar la plantilla de directiva de robo de datos por usuarios que se marchan?",
   "q_en": "Which type of insider risk can the Data theft by departing users policy template help detect?",
   "opts_es": [
-   "Errores de licencias",
-   "Interrupciones de red",
+   "Errores de licencias en el inquilino",
+   "Interrupciones de red en las sucursales",
    "Empleados que extraen datos poco antes de dejar la organización",
-   "Certificados caducados"
+   "Certificados caducados en servidores"
   ],
   "opts_en": [
-   "Licensing errors",
-   "Network outages",
+   "Licensing errors in the tenant",
+   "Network outages in branch offices",
    "Employees exfiltrating data shortly before leaving the organization",
-   "Expired certificates"
+   "Expired certificates on servers"
   ],
   "correct": [
    2
@@ -7631,15 +7631,15 @@
   "q_es": "¿Qué es un caso en Microsoft Purview eDiscovery?",
   "q_en": "What is a case in Microsoft Purview eDiscovery?",
   "opts_es": [
-   "Una cuenta de facturación",
-   "Un segmento de red",
-   "Un dispositivo de hardware",
+   "Una cuenta de facturación del inquilino",
+   "Un segmento de red para investigadores",
+   "Un dispositivo de hardware para almacenar pruebas",
    "Un contenedor que guarda búsquedas, retenciones y exportaciones relacionadas con una investigación o asunto legal"
   ],
   "opts_en": [
-   "A billing account",
-   "A network segment",
-   "A hardware device",
+   "A billing account for the tenant",
+   "A network segment for investigators",
+   "A hardware device for evidence storage",
    "A container that holds searches, holds and exports related to an investigation or legal matter"
   ],
   "correct": [
@@ -8198,15 +8198,15 @@
   "q_en": "What is a benefit of Azure Front Door with WAF for a global web application?",
   "opts_es": [
    "Equilibrio de carga global y aceleración con protección centralizada contra vulnerabilidades web en el borde",
-   "Reemplaza a Microsoft Entra ID",
-   "Administra licencias de usuario",
-   "Almacena secretos"
+   "Sustituye a Microsoft Entra ID para el inicio de sesión",
+   "Administra licencias de usuario globalmente",
+   "Almacena secretos de aplicaciones web"
   ],
   "opts_en": [
    "Global load balancing and acceleration with centralized protection against web exploits at the edge",
-   "It replaces Microsoft Entra ID",
-   "It manages user licenses",
-   "It stores secrets"
+   "It replaces Microsoft Entra ID for sign-in",
+   "It manages user licenses globally",
+   "It stores secrets for web apps"
   ],
   "correct": [
    0
@@ -8223,15 +8223,15 @@
   "q_es": "¿Qué es una alerta de seguridad de Defender for Cloud?",
   "q_en": "What is a Defender for Cloud security alert?",
   "opts_es": [
-   "Una actualización de DNS",
-   "Una invitación de usuario",
-   "Un recordatorio de factura",
+   "Una actualización DNS de un dominio protegido",
+   "Una invitación de usuario a un recurso protegido",
+   "Un recordatorio de facturación de la suscripción",
    "Una notificación de una amenaza detectada en un recurso protegido, con detalles y pasos de respuesta recomendados"
   ],
   "opts_en": [
-   "A DNS update",
-   "A user invitation",
-   "A bill reminder",
+   "A DNS update for a protected domain",
+   "A user invitation to a protected resource",
+   "A billing reminder for the subscription",
    "A notification about a detected threat to a protected resource, with details and recommended response steps"
   ],
   "correct": [
@@ -8249,16 +8249,16 @@
   "q_es": "¿Qué afirmación sobre una recomendación de Defender for Cloud es correcta?",
   "q_en": "Which statement about a Defender for Cloud recommendation is correct?",
   "opts_es": [
-   "Es un aviso legal",
+   "Es un aviso legal sobre cumplimiento",
    "Describe un cambio de configuración que mejoraría la seguridad, como habilitar MFA o cifrar un disco",
-   "Elimina recursos automáticamente",
-   "Es una clave de licencia"
+   "Elimina automáticamente los recursos no conformes",
+   "Es una clave de licencia de los planes de Defender"
   ],
   "opts_en": [
-   "It is a legal notice",
+   "It is a legal notice about compliance",
    "It describes a configuration change that would improve security, such as enabling MFA or encrypting a disk",
-   "It automatically deletes resources",
-   "It is a license key"
+   "It automatically deletes noncompliant resources",
+   "It is a license key for Defender plans"
   ],
   "correct": [
    1
@@ -8302,15 +8302,15 @@
   "q_en": "What is a data connector in Microsoft Sentinel?",
   "opts_es": [
    "Un componente que ingiere en Sentinel datos de un origen como Microsoft 365, Azure o un producto de terceros",
-   "Una directiva de contraseñas",
-   "Un rol de usuario",
-   "Un cable de red"
+   "Una directiva de contraseñas para analistas",
+   "Un rol de usuario con permisos de analista",
+   "Un cable de red entre centros de datos"
   ],
   "opts_en": [
    "A component that ingests data from a source such as Microsoft 365, Azure or a third-party product into Sentinel",
-   "A password policy",
-   "A user role",
-   "A network cable"
+   "A password policy for analysts",
+   "A user role with analyst permissions",
+   "A network cable between data centers"
   ],
   "correct": [
    0
