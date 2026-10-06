@@ -170,11 +170,6 @@
     "ans": true
    },
    {
-    "es": "Las identidades administradas eliminan la necesidad de almacenar credenciales en aplicaciones hospedadas en Azure.",
-    "en": "Managed identities remove the need to store credentials for Azure-hosted apps.",
-    "ans": true
-   },
-   {
     "es": "El consentimiento de usuario para todas las aplicaciones es la configuración más segura.",
     "en": "User consent for all apps is the most secure setting.",
     "ans": false
@@ -398,11 +393,6 @@
    {
     "es": "Azure RBAC es el modelo de autorización recomendado para el acceso al plano de datos de Key Vault.",
     "en": "Azure RBAC is the recommended authorization model for Key Vault data plane access.",
-    "ans": true
-   },
-   {
-    "es": "Las reglas de firewall de Key Vault pueden restringir el acceso a redes seleccionadas.",
-    "en": "Key Vault firewall rules can restrict access to selected networks.",
     "ans": true
    },
    {
@@ -632,9 +622,9 @@
     "ans": true
    },
    {
-    "es": "Defender for Cloud puede evaluar el cumplimiento frente a estándares de seguridad.",
-    "en": "Defender for Cloud can evaluate compliance against security standards.",
-    "ans": true
+    "es": "Defender for Cloud no puede evaluar el cumplimiento frente a estándares de seguridad.",
+    "en": "Defender for Cloud cannot evaluate compliance against security standards.",
+    "ans": false
    },
    {
     "es": "La inmutabilidad de Azure Backup la puede eludir cualquiera con derechos de Colaborador.",
@@ -858,11 +848,6 @@
   "q_en": "For each statement about storage account security, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Deshabilitar el acceso por clave compartida obliga a usar la autorización de Microsoft Entra.",
-    "en": "Disabling shared key access forces the use of Microsoft Entra authorization.",
-    "ans": true
-   },
-   {
     "es": "Una SAS de delegación de usuario se firma con la clave de cuenta.",
     "en": "A user delegation SAS is signed with the account key.",
     "ans": false
@@ -1063,9 +1048,9 @@
   "q_en": "For each statement about Azure SQL security, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "TDE cifra los datos en reposo y puede usar una clave administrada por el cliente.",
-    "en": "TDE encrypts data at rest and can use a customer-managed key.",
-    "ans": true
+    "es": "TDE cifra los datos en reposo y no puede usar una clave administrada por el cliente.",
+    "en": "TDE encrypts data at rest and cannot use a customer-managed key.",
+    "ans": false
    },
    {
     "es": "La autenticación solo de Microsoft Entra deshabilita los inicios de sesión SQL.",
@@ -1787,9 +1772,9 @@
   "q_en": "For each statement about securing AI solutions, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El contenido de SharePoint compartido en exceso puede quedar expuesto a través de Copilot para los usuarios con acceso.",
-    "en": "Overshared SharePoint content can be exposed through Copilot to users with access.",
-    "ans": true
+    "es": "El contenido de SharePoint compartido en exceso no puede quedar expuesto a través de Copilot para los usuarios con acceso.",
+    "en": "Overshared SharePoint content cannot be exposed through Copilot to users with access.",
+    "ans": false
    },
    {
     "es": "A los agentes se les pueden asignar identidades y gobernarlos con controles de acceso.",
@@ -2071,11 +2056,6 @@
   "q_es": "Para cada afirmación sobre la seguridad de VM y servidores, indica si es verdadera o falsa.",
   "q_en": "For each statement about VM and server security, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "El acceso a VM justo a tiempo reduce la exposición de los puertos de administración.",
-    "en": "JIT VM access reduces exposure of management ports.",
-    "ans": true
-   },
    {
     "es": "El inicio seguro incluye arranque seguro y vTPM.",
     "en": "Trusted Launch includes secure boot and vTPM.",
@@ -2586,11 +2566,6 @@
   "q_en": "For each statement about security posture management, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Defender CSPM proporciona análisis de rutas de ataque.",
-    "en": "Defender CSPM provides attack path analysis.",
-    "ans": true
-   },
-   {
     "es": "Los conectores multinube permiten que Defender for Cloud evalúe AWS y GCP.",
     "en": "Multicloud connectors allow Defender for Cloud to assess AWS and GCP.",
     "ans": true
@@ -2869,11 +2844,6 @@
   "q_en": "For each statement about collecting data into Sentinel, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las soluciones del centro de contenido empaquetan conectores y detecciones para escenarios.",
-    "en": "Content hub solutions package connectors and detections for scenarios.",
-    "ans": true
-   },
-   {
     "es": "Las reglas de recopilación de datos controlan lo que recopila AMA.",
     "en": "Data collection rules control what AMA collects.",
     "ans": true
@@ -3052,11 +3022,6 @@
   "q_en": "For each statement about Microsoft Security Copilot, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Security Copilot necesita que se aprovisione capacidad.",
-    "en": "Security Copilot needs capacity to be provisioned.",
-    "ans": true
-   },
-   {
     "es": "Los complementos pueden conectar Copilot con orígenes de datos adicionales.",
     "en": "Plugins can connect Copilot to additional data sources.",
     "ans": true
@@ -3204,9 +3169,9 @@
   "q_en": "For each statement about Key Vault configuration, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Se puede acceder a Key Vault mediante un punto de conexión privado.",
-    "en": "Key Vault can be reached through a private endpoint.",
-    "ans": true
+    "es": "Se no puede acceder a Key Vault mediante un punto de conexión privado.",
+    "en": "Key Vault cannot be reached through a private endpoint.",
+    "ans": false
    },
    {
     "es": "La eliminación temporal conserva los objetos eliminados durante un período de retención.",
@@ -3509,11 +3474,6 @@
     "ans": true
    },
    {
-    "es": "Las conexiones VPN pueden usar IPsec/IKE para cifrar el tráfico.",
-    "en": "VPN connections can use IPsec/IKE to encrypt traffic.",
-    "ans": true
-   },
-   {
     "es": "La VPN de punto a sitio no puede usar la autenticación de Microsoft Entra.",
     "en": "Point-to-site VPN cannot use Microsoft Entra authentication.",
     "ans": false
@@ -3558,9 +3518,9 @@
   "q_en": "For each statement about securing Copilot and AI apps, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Purview DSPM for AI puede ayudar a identificar riesgos de datos relacionados con IA.",
-    "en": "Purview DSPM for AI can help identify AI-related data risks.",
-    "ans": true
+    "es": "Purview DSPM for AI no puede ayudar a identificar riesgos de datos relacionados con IA.",
+    "en": "Purview DSPM for AI cannot help identify AI-related data risks.",
+    "ans": false
    },
    {
     "es": "Entra Agent ID puede aportar controles de identidad a los agentes de IA.",
@@ -3681,11 +3641,6 @@
   "q_es": "Para cada afirmación sobre la seguridad de servidores híbridos, indica si es verdadera o falsa.",
   "q_en": "For each statement about hybrid server security, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Azure Arc permite que los servidores que no son de Azure usen Defender for Servers.",
-    "en": "Azure Arc lets non-Azure servers use Defender for Servers.",
-    "ans": true
-   },
    {
     "es": "Machine Configuration puede auditar la configuración dentro de servidores habilitados para Arc.",
     "en": "Machine Configuration can audit settings inside Arc-enabled servers.",
@@ -3891,11 +3846,6 @@
     "ans": true
    },
    {
-    "es": "La retención de datos se puede configurar para los almacenes de datos de Sentinel.",
-    "en": "Data retention can be configured for Sentinel data stores.",
-    "ans": true
-   },
-   {
     "es": "Todos los datos de Sentinel se conservan para siempre y no se pueden cambiar.",
     "en": "All Sentinel data is retained forever and cannot be changed.",
     "ans": false
@@ -3987,9 +3937,9 @@
   "q_en": "For each statement about Security Copilot administration, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Los agentes de Security Copilot pueden automatizar tareas de seguridad acotadas.",
-    "en": "Security Copilot agents can automate scoped security tasks.",
-    "ans": true
+    "es": "Los agentes de Security Copilot no pueden automatizar tareas de seguridad acotadas.",
+    "en": "Security Copilot agents cannot automate scoped security tasks.",
+    "ans": false
    },
    {
     "es": "La capacidad de Security Copilot se mide en unidades de proceso de seguridad.",
@@ -4256,11 +4206,6 @@
     "ans": true
    },
    {
-    "es": "Las condiciones de riesgo de inicio de sesión requieren Microsoft Entra ID Protection.",
-    "en": "Sign-in risk conditions require Microsoft Entra ID Protection.",
-    "ans": true
-   },
-   {
     "es": "El acceso condicional solo puede bloquear el acceso y nunca exigir MFA.",
     "en": "Conditional Access can only block access and never require MFA.",
     "ans": false
@@ -4284,9 +4229,9 @@
     "ans": true
    },
    {
-    "es": "Las claves FIDO2 son resistentes al phishing.",
-    "en": "FIDO2 keys are phishing-resistant.",
-    "ans": true
+    "es": "Las claves FIDO2 no son resistentes al phishing.",
+    "en": "FIDO2 keys are not phishing-resistant.",
+    "ans": false
    },
    {
     "es": "Los códigos SMS son resistentes al phishing.",
@@ -4541,11 +4486,6 @@
     "ans": true
    },
    {
-    "es": "La configuración de diagnóstico puede enviar los registros de auditoría de Key Vault a Log Analytics.",
-    "en": "Diagnostic settings can send Key Vault audit logs to Log Analytics.",
-    "ans": true
-   },
-   {
     "es": "Key Vault Estándar admite claves protegidas por HSM.",
     "en": "Key Vault Standard supports HSM-protected keys.",
     "ans": false
@@ -4746,9 +4686,9 @@
     "ans": true
    },
    {
-    "es": "Las definiciones de directivas personalizadas pueden expresar reglas específicas de la organización.",
-    "en": "Custom policy definitions can express organization-specific rules.",
-    "ans": true
+    "es": "Las definiciones de directivas personalizadas no pueden expresar reglas específicas de la organización.",
+    "en": "Custom policy definitions cannot express organization-specific rules.",
+    "ans": false
    },
    {
     "es": "Colaborador puede asignar roles a otros usuarios.",
@@ -5280,11 +5220,6 @@
   "q_es": "Para cada afirmación sobre la seguridad de red e identidad de Azure SQL, indica si es verdadera o falsa.",
   "q_en": "For each statement about Azure SQL network and identity security, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Un punto de conexión privado da al servidor SQL una IP privada en tu red virtual.",
-    "en": "A private endpoint gives the SQL server a private IP in your VNet.",
-    "ans": true
-   },
    {
     "es": "La identidad administrada con autenticación de Entra evita las contraseñas almacenadas.",
     "en": "Managed identity with Entra authentication avoids stored passwords.",
@@ -5907,11 +5842,6 @@
     "ans": true
    },
    {
-    "es": "Una puerta de enlace de IA puede aplicar límites de tokens y autenticación.",
-    "en": "An AI gateway can enforce token limits and authentication.",
-    "ans": true
-   },
-   {
     "es": "A un agente de IA siempre se le deben conceder permisos de administrador de todo el inquilino.",
     "en": "An AI agent should always be granted tenant-wide admin permissions.",
     "ans": false
@@ -6134,11 +6064,6 @@
   "q_es": "Para cada afirmación sobre el cifrado de discos de VM y el refuerzo, indica si es verdadera o falsa.",
   "q_en": "For each statement about VM disk encryption and hardening, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Azure Disk Encryption usa BitLocker o DM-Crypt con claves en Key Vault.",
-    "en": "Azure Disk Encryption uses BitLocker or DM-Crypt with keys in Key Vault.",
-    "ans": true
-   },
    {
     "es": "El cifrado del lado servidor está habilitado de forma predeterminada en los discos administrados.",
     "en": "Server-side encryption is enabled by default for managed disks.",
@@ -6654,11 +6579,6 @@
     "ans": true
    },
    {
-    "es": "EASM inventaría los activos expuestos a internet.",
-    "en": "EASM inventories internet-exposed assets.",
-    "ans": true
-   },
-   {
     "es": "La puntuación de seguridad es el número de máquinas virtuales.",
     "en": "Secure score is the number of virtual machines.",
     "ans": false
@@ -6905,11 +6825,6 @@
   "q_es": "Para cada afirmación sobre los conectores y las tablas de Sentinel, indica si es verdadera o falsa.",
   "q_en": "For each statement about Sentinel connectors and tables, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "La tabla Syslog almacena los mensajes de syslog de hosts Linux.",
-    "en": "The Syslog table stores syslog messages from Linux hosts.",
-    "ans": true
-   },
    {
     "es": "El conector de Defender XDR puede sincronizar incidentes.",
     "en": "The Defender XDR connector can sync incidents.",
@@ -7451,11 +7366,6 @@
     "ans": true
    },
    {
-    "es": "Se pueden crear roles personalizados de Azure para permisos más detallados.",
-    "en": "Custom Azure roles can be created for finer-grained permissions.",
-    "ans": true
-   },
-   {
     "es": "Un bloqueo de recursos elimina la necesidad de RBAC.",
     "en": "A resource lock removes the need for RBAC.",
     "ans": false
@@ -7552,9 +7462,9 @@
     "ans": true
    },
    {
-    "es": "Se puede aplicar la versión mínima de TLS 1.2.",
-    "en": "Minimum TLS version 1.2 can be enforced.",
-    "ans": true
+    "es": "Se no puede aplicar la versión mínima de TLS 1.2.",
+    "en": "Minimum TLS version 1.2 cannot be enforced.",
+    "ans": false
    },
    {
     "es": "Las claves de cuenta de almacenamiento nunca necesitan rotación.",
@@ -7830,11 +7740,6 @@
   "q_en": "For each statement about agent security, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Defender XDR puede ayudar a analizar el radio de impacto de los riesgos vinculados a las identidades de agente.",
-    "en": "Defender XDR can help analyze the blast radius of risks tied to agent identities.",
-    "ans": true
-   },
-   {
     "es": "El acceso condicional se puede aplicar a las identidades de agente.",
     "en": "Conditional Access can be applied to agent identities.",
     "ans": true
@@ -8039,11 +7944,6 @@
     "ans": true
    },
    {
-    "es": "App Service admite identidades administradas.",
-    "en": "App Service supports managed identities.",
-    "ans": true
-   },
-   {
     "es": "El historial de ejecuciones de Logic Apps siempre expone secretos en texto sin formato.",
     "en": "Logic Apps run history always exposes secrets in clear text.",
     "ans": false
@@ -8140,9 +8040,9 @@
     "ans": true
    },
    {
-    "es": "Defender for Cloud puede descubrir activos en AWS y GCP tras conectar las cuentas.",
-    "en": "Defender for Cloud can discover assets on AWS and GCP after connecting accounts.",
-    "ans": true
+    "es": "Defender for Cloud no puede descubrir activos en AWS y GCP tras conectar las cuentas.",
+    "en": "Defender for Cloud cannot discover assets on AWS and GCP after connecting accounts.",
+    "ans": false
    },
    {
     "es": "Habilitar planes de Defender no hace nada para la detección de amenazas.",
@@ -8337,11 +8237,6 @@
   "q_es": "Para cada afirmación sobre la configuración de Security Copilot, indica si es verdadera o falsa.",
   "q_en": "For each statement about Security Copilot configuration, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Se pueden configurar áreas de trabajo para distintos equipos o regiones.",
-    "en": "Workspaces can be configured for different teams or regions.",
-    "ans": true
-   },
    {
     "es": "Los administradores pueden habilitar o deshabilitar los complementos.",
     "en": "Plugins can be enabled or disabled by administrators.",

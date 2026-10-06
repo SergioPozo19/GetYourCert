@@ -1073,11 +1073,6 @@
   "q_en": "For each statement about authentication methods and SSPR, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El pase de acceso temporal se puede usar para registrar métodos de autenticación sin contraseña.",
-    "en": "Temporary Access Pass can be used to register passwordless authentication methods.",
-    "ans": true
-   },
-   {
     "es": "La escritura diferida de contraseñas es necesaria para usuarios solo en la nube.",
     "en": "Password writeback is required for cloud-only users.",
     "ans": false
@@ -1623,9 +1618,9 @@
     "ans": true
    },
    {
-    "es": "Un administrador puede confirmar que un inicio de sesión es seguro para ayudar a mejorar la detección.",
-    "en": "An administrator can confirm a sign-in as safe to help improve detection.",
-    "ans": true
+    "es": "Un administrador no puede confirmar que un inicio de sesión es seguro para ayudar a mejorar la detección.",
+    "en": "An administrator cannot confirm a sign-in as safe to help improve detection.",
+    "ans": false
    },
    {
     "es": "ID Protection solo se puede consultar; no se puede usar en el acceso condicional.",
@@ -2121,9 +2116,9 @@
     "ans": false
    },
    {
-    "es": "El consentimiento del administrador puede conceder permisos en nombre de toda la organización.",
-    "en": "Admin consent can grant permissions on behalf of the entire organization.",
-    "ans": true
+    "es": "El consentimiento del administrador no puede conceder permisos en nombre de toda la organización.",
+    "en": "Admin consent cannot grant permissions on behalf of the entire organization.",
+    "ans": false
    }
   ],
   "exp_es": "El conector de Application Proxy solo realiza conexiones salientes.",
@@ -2705,11 +2700,6 @@
   "q_en": "For each statement about entitlement management, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Los paquetes de acceso pueden incluir grupos, aplicaciones y sitios de SharePoint.",
-    "en": "Access packages can include groups, apps and SharePoint sites.",
-    "ans": true
-   },
-   {
     "es": "Las asignaciones de paquetes de acceso pueden tener fecha de caducidad.",
     "en": "Access package assignments can have an expiration date.",
     "ans": true
@@ -3076,11 +3066,6 @@
     "es": "Una asignación elegible concede acceso permanente sin activación.",
     "en": "An eligible assignment gives permanent access without activation.",
     "ans": false
-   },
-   {
-    "es": "El historial de auditoría de PIM registra las activaciones y cambios de roles.",
-    "en": "PIM audit history records role activations and changes.",
-    "ans": true
    }
   ],
   "exp_es": "Las asignaciones elegibles requieren activación antes de usarse.",
@@ -3278,9 +3263,9 @@
     "ans": true
    },
    {
-    "es": "La configuración de diagnóstico puede enviar los registros de Entra a Azure Event Hubs.",
-    "en": "Diagnostic settings can send Entra logs to Azure Event Hubs.",
-    "ans": true
+    "es": "La configuración de diagnóstico no puede enviar los registros de Entra a Azure Event Hubs.",
+    "en": "Diagnostic settings cannot send Entra logs to Azure Event Hubs.",
+    "ans": false
    },
    {
     "es": "KQL solo se puede usar con los registros de Intune.",
@@ -3896,9 +3881,9 @@
   "q_en": "For each statement about users, groups and devices in Microsoft Entra ID, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Un usuario eliminado se puede restaurar en 30 días.",
-    "en": "A deleted user can be restored within 30 days.",
-    "ans": true
+    "es": "Un usuario eliminado no se puede restaurar en 30 días.",
+    "en": "A deleted user cannot be restored within 30 days.",
+    "ans": false
    },
    {
     "es": "Se requiere una ubicación de uso para asignar la mayoría de las licencias.",
@@ -5346,9 +5331,9 @@
     "ans": false
    },
    {
-    "es": "Una directiva se puede crear a partir de una plantilla.",
-    "en": "A policy can be created from a template.",
-    "ans": true
+    "es": "Una directiva no se puede crear a partir de una plantilla.",
+    "en": "A policy cannot be created from a template.",
+    "ans": false
    }
   ],
   "exp_es": "El acceso condicional aplica todas las directivas coincidentes; los bloqueos prevalecen.",
@@ -5366,11 +5351,6 @@
    {
     "es": "La herramienta What If simula qué directivas se aplicarían.",
     "en": "The What If tool simulates which policies would apply.",
-    "ans": true
-   },
-   {
-    "es": "Los registros de inicio de sesión muestran qué directivas de acceso condicional se aplicaron y el resultado.",
-    "en": "Sign-in logs show which Conditional Access policies applied and the result.",
     "ans": true
    },
    {
@@ -5857,9 +5837,9 @@
     "ans": false
    },
    {
-    "es": "El cliente de Global Secure Access se puede implementar en dispositivos Windows.",
-    "en": "The Global Secure Access client can be deployed to Windows devices.",
-    "ans": true
+    "es": "El cliente de Global Secure Access no se puede implementar en dispositivos Windows.",
+    "en": "The Global Secure Access client cannot be deployed to Windows devices.",
+    "ans": false
    }
   ],
   "exp_es": "Los conectores de Private Access usan conexiones salientes.",
@@ -6026,9 +6006,9 @@
   "q_en": "For each statement about workload identity options, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Una identidad administrada asignada por el usuario se puede asociar a varios recursos.",
-    "en": "A user-assigned managed identity can be attached to multiple resources.",
-    "ans": true
+    "es": "Una identidad administrada asignada por el usuario no se puede asociar a varios recursos.",
+    "en": "A user-assigned managed identity cannot be attached to multiple resources.",
+    "ans": false
    },
    {
     "es": "La federación de identidades de carga de trabajo permite que cargas externas como GitHub Actions se autentiquen sin secretos almacenados.",
@@ -7064,11 +7044,6 @@
     "ans": true
    },
    {
-    "es": "Las organizaciones conectadas permiten que usuarios de otras organizaciones soliciten acceso.",
-    "en": "Connected organizations allow users from other organizations to request access.",
-    "ans": true
-   },
-   {
     "es": "Los paquetes de acceso no pueden caducar.",
     "en": "Access packages cannot expire.",
     "ans": false
@@ -7266,11 +7241,6 @@
    {
     "es": "Los revisores pueden ser propietarios de grupo, responsables o los propios usuarios.",
     "en": "Reviewers can be group owners, managers or the users themselves.",
-    "ans": true
-   },
-   {
-    "es": "Los asistentes de decisión pueden mostrar recomendaciones de último inicio de sesión.",
-    "en": "Decision helpers can show last sign-in recommendations.",
     "ans": true
    },
    {
@@ -7777,11 +7747,6 @@
   "q_es": "Para cada afirmación sobre la supervisión de Microsoft Entra, indica si es verdadera o falsa.",
   "q_en": "For each statement about Microsoft Entra monitoring, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Los registros de inicio de sesión muestran los resultados de la evaluación de acceso condicional.",
-    "en": "Sign-in logs show Conditional Access evaluation results.",
-    "ans": true
-   },
    {
     "es": "Los registros de auditoría registran cambios como las asignaciones de roles.",
     "en": "Audit logs record changes such as role assignments.",
@@ -8497,9 +8462,9 @@
     "ans": true
    },
    {
-    "es": "Las plantillas pueden acelerar la creación de directivas habituales.",
-    "en": "Templates can speed up creating common policies.",
-    "ans": true
+    "es": "Las plantillas no pueden acelerar la creación de directivas habituales.",
+    "en": "Templates cannot speed up creating common policies.",
+    "ans": false
    },
    {
     "es": "Las directivas deben habilitarse para todos los usuarios sin probarlas.",

@@ -1720,11 +1720,6 @@
     "es": "La integración de Git almacena los datos del lakehouse en el repositorio.",
     "en": "Git integration stores the lakehouse data in the repository.",
     "ans": false
-   },
-   {
-    "es": "Un proyecto .pbip guarda las definiciones del informe y del modelo en carpetas separadas.",
-    "en": "A .pbip project saves report and model definitions as separate folders.",
-    "ans": true
    }
   ],
   "exp_es": "Solo se versionan las definiciones, no los datos.",
@@ -1739,11 +1734,6 @@
   "q_es": "Para cada afirmación sobre las canalizaciones de implementación, indica si es verdadera o falsa.",
   "q_en": "For each statement about deployment pipelines, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Las reglas de implementación pueden cambiar un origen de datos entre fases.",
-    "en": "Deployment rules can change a data source between stages.",
-    "ans": true
-   },
    {
     "es": "La comparación de fases ayuda a ver diferencias antes de implementar.",
     "en": "Stage comparison helps you see differences before deploying.",
@@ -2874,9 +2864,9 @@
     "ans": false
    },
    {
-    "es": "Un lakehouse puede almacenar archivos y tablas Delta.",
-    "en": "A lakehouse can store both files and Delta tables.",
-    "ans": true
+    "es": "Un lakehouse no puede almacenar archivos y tablas Delta.",
+    "en": "A lakehouse cannot store both files and Delta tables.",
+    "ans": false
    }
   ],
   "exp_es": "Eventhouse se orienta al análisis KQL en tiempo real.",
@@ -2920,9 +2910,9 @@
   "q_en": "For each statement about data movement tools, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Una actividad Copiar datos puede mover datos de orígenes locales mediante una puerta de enlace.",
-    "en": "A Copy data activity can move data from on-premises sources through a gateway.",
-    "ans": true
+    "es": "Una actividad Copiar datos no puede mover datos de orígenes locales mediante una puerta de enlace.",
+    "en": "A Copy data activity cannot move data from on-premises sources through a gateway.",
+    "ans": false
    },
    {
     "es": "Dataflow Gen2 puede escribir en un destino de lakehouse.",
@@ -4212,9 +4202,9 @@
   "q_en": "For each statement about cleaning data, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "COALESCE puede sustituir valores NULL.",
-    "en": "COALESCE can replace NULL values.",
-    "ans": true
+    "es": "COALESCE no puede sustituir valores NULL.",
+    "en": "COALESCE cannot replace NULL values.",
+    "ans": false
    },
    {
     "es": "TRY_CAST genera un error cuando un valor no se puede convertir.",
@@ -4357,9 +4347,9 @@
     "ans": true
    },
    {
-    "es": "CAST puede cambiar una columna de texto a un tipo de fecha.",
-    "en": "CAST can change a text column to a date type.",
-    "ans": true
+    "es": "CAST no puede cambiar una columna de texto a un tipo de fecha.",
+    "en": "CAST cannot change a text column to a date type.",
+    "ans": false
    },
    {
     "es": "Cambiar un tipo de datos elimina la columna.",
@@ -5492,11 +5482,6 @@
     "es": "HAVING filtra filas individuales antes de agrupar.",
     "en": "HAVING filters individual rows before grouping.",
     "ans": false
-   },
-   {
-    "es": "Una función de ventana puede calcular un total acumulado.",
-    "en": "A window function can compute a running total.",
-    "ans": true
    }
   ],
   "exp_es": "HAVING filtra grupos tras la agregación.",
@@ -5511,11 +5496,6 @@
   "q_es": "Para cada afirmación sobre KQL, indica si es verdadera o falsa.",
   "q_en": "For each statement about KQL, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "El operador project selecciona columnas.",
-    "en": "The project operator selects columns.",
-    "ans": true
-   },
    {
     "es": "El operador summarize agrupa y agrega filas.",
     "en": "The summarize operator groups and aggregates rows.",
@@ -5542,11 +5522,6 @@
    {
     "es": "Una consulta DAX usa EVALUATE para devolver una tabla.",
     "en": "A DAX query uses EVALUATE to return a table.",
-    "ans": true
-   },
-   {
-    "es": "SUMMARIZECOLUMNS puede agrupar datos y añadir agregados.",
-    "en": "SUMMARIZECOLUMNS can group data and add aggregates.",
     "ans": true
    },
    {
@@ -6797,9 +6772,9 @@
     "ans": false
    },
    {
-    "es": "Un modelo compuesto puede mezclar tablas de importación y de DirectQuery.",
-    "en": "A composite model can mix Import and DirectQuery tables.",
-    "ans": true
+    "es": "Un modelo compuesto no puede mezclar tablas de importación y de DirectQuery.",
+    "en": "A composite model cannot mix Import and DirectQuery tables.",
+    "ans": false
    }
   ],
   "exp_es": "La importación requiere actualización para actualizarse.",
@@ -6815,9 +6790,9 @@
   "q_en": "For each statement about relationships and star schemas, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Una tabla puente puede resolver una relación de varios a varios.",
-    "en": "A bridge table can resolve a many-to-many relationship.",
-    "ans": true
+    "es": "Una tabla puente no puede resolver una relación de varios a varios.",
+    "en": "A bridge table cannot resolve a many-to-many relationship.",
+    "ans": false
    },
    {
     "es": "Solo una relación entre dos tablas puede estar activa.",
@@ -6848,9 +6823,9 @@
     "ans": true
    },
    {
-    "es": "SUMX es un iterador que crea un contexto de fila.",
-    "en": "SUMX is an iterator that creates a row context.",
-    "ans": true
+    "es": "SUMX no es un iterador que crea un contexto de fila.",
+    "en": "SUMX is not an iterator that creates a row context.",
+    "ans": false
    },
    {
     "es": "USERELATIONSHIP crea una relación física nueva.",
@@ -6871,9 +6846,9 @@
   "q_en": "For each statement about calculation groups, format strings and field parameters, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Un grupo de cálculo puede aplicar lógica YTD a muchas medidas.",
-    "en": "A calculation group can apply YTD logic to many measures.",
-    "ans": true
+    "es": "Un grupo de cálculo no puede aplicar lógica YTD a muchas medidas.",
+    "en": "A calculation group cannot apply YTD logic to many measures.",
+    "ans": false
    },
    {
     "es": "Las cadenas de formato dinámicas se definen con expresiones DAX.",
@@ -6932,9 +6907,9 @@
     "ans": true
    },
    {
-    "es": "OFFSET puede devolver un valor de una fila anterior en una partición ordenada.",
-    "en": "OFFSET can return a value from a previous row in an ordered partition.",
-    "ans": true
+    "es": "OFFSET no puede devolver un valor de una fila anterior en una partición ordenada.",
+    "en": "OFFSET cannot return a value from a previous row in an ordered partition.",
+    "ans": false
    },
    {
     "es": "ISINSCOPE es una función de formato de texto.",
@@ -8157,11 +8132,6 @@
     "es": "Las columnas de cardinalidad alta suelen comprimirse bien.",
     "en": "High-cardinality columns generally compress well.",
     "ans": false
-   },
-   {
-    "es": "Deshabilitar Fecha/hora automática puede evitar tablas de fechas ocultas.",
-    "en": "Disabling Auto date/time can avoid hidden date tables.",
-    "ans": true
    }
   ],
   "exp_es": "La cardinalidad alta perjudica la compresión.",
@@ -8205,9 +8175,9 @@
   "q_en": "For each statement about Direct Lake behavior, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "En modo Automático una consulta puede recurrir a DirectQuery.",
-    "en": "In Automatic mode a query can fall back to DirectQuery.",
-    "ans": true
+    "es": "En modo Automático una consulta no puede recurrir a DirectQuery.",
+    "en": "In Automatic mode a query cannot fall back to DirectQuery.",
+    "ans": false
    },
    {
     "es": "DirectLakeOnly hace que las consultas recurran a DirectQuery en silencio.",
@@ -8232,11 +8202,6 @@
   "q_es": "Para cada afirmación sobre las variantes de Direct Lake, indica si es verdadera o falsa.",
   "q_en": "For each statement about Direct Lake flavors, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Direct Lake en OneLake no recurre a DirectQuery.",
-    "en": "Direct Lake on OneLake does not fall back to DirectQuery.",
-    "ans": true
-   },
    {
     "es": "Direct Lake en el punto de conexión de análisis SQL puede recurrir a DirectQuery.",
     "en": "Direct Lake on SQL analytics endpoint can fall back to DirectQuery.",
@@ -8319,11 +8284,6 @@
    {
     "es": "Menos objetos visuales por página generan menos consultas.",
     "en": "Fewer visuals per page generate fewer queries.",
-    "ans": true
-   },
-   {
-    "es": "Las opciones de reducción de consultas pueden añadir botones Aplicar a las segmentaciones.",
-    "en": "Query reduction options can add Apply buttons to slicers.",
     "ans": true
    },
    {

@@ -295,9 +295,9 @@
   "q_en": "For each statement about automation in Defender XDR and Sentinel, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las reglas de automatización pueden cambiar la gravedad de los incidentes y asignar propietarios.",
-    "en": "Automation rules can change incident severity and assign owners.",
-    "ans": true
+    "es": "Las reglas de automatización no pueden cambiar la gravedad de los incidentes y asignar propietarios.",
+    "en": "Automation rules cannot change incident severity and assign owners.",
+    "ans": false
    },
    {
     "es": "Los cuadernos de estrategias de Sentinel se crean con Azure Logic Apps.",
@@ -996,9 +996,9 @@
     "ans": true
    },
    {
-    "es": "Las reglas de recopilación de datos pueden filtrar eventos antes de la ingesta.",
-    "en": "Data collection rules can filter events before ingestion.",
-    "ans": true
+    "es": "Las reglas de recopilación de datos no pueden filtrar eventos antes de la ingesta.",
+    "en": "Data collection rules cannot filter events before ingestion.",
+    "ans": false
    },
    {
     "es": "Los datos de syslog solo se pueden recopilar de servidores Windows.",
@@ -1019,9 +1019,9 @@
   "q_en": "For each statement about threat intelligence and custom tables in Sentinel, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Los indicadores se pueden importar mediante STIX/TAXII.",
-    "en": "Indicators can be imported using STIX/TAXII.",
-    "ans": true
+    "es": "Los indicadores no se pueden importar mediante STIX/TAXII.",
+    "en": "Indicators cannot be imported using STIX/TAXII.",
+    "ans": false
    },
    {
     "es": "Las tablas personalizadas usan el sufijo _CL.",
@@ -1356,11 +1356,6 @@
    {
     "es": "Las reglas de detección personalizadas usan consultas de búsqueda avanzada.",
     "en": "Custom detection rules use advanced hunting queries.",
-    "ans": true
-   },
-   {
-    "es": "Las reglas NRT están pensadas para detecciones que necesitan un retraso mínimo.",
-    "en": "NRT rules are intended for detections needing minimal delay.",
     "ans": true
    },
    {
@@ -2078,11 +2073,6 @@
   "q_en": "For each statement about Defender for Endpoint response actions, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La respuesta en vivo puede recuperar archivos de un dispositivo.",
-    "en": "Live response can retrieve files from a device.",
-    "ans": true
-   },
-   {
     "es": "Aislar un dispositivo bloquea toda la comunicación con el servicio de Defender.",
     "en": "Isolating a device blocks all communication with the Defender service.",
     "ans": false
@@ -2285,11 +2275,6 @@
    {
     "es": "Purview Audit registra las actividades de usuarios y administradores.",
     "en": "Purview Audit records user and admin activities.",
-    "ans": true
-   },
-   {
-    "es": "Los registros de actividad de Graph pueden revelar un uso malicioso de Microsoft Graph.",
-    "en": "Graph activity logs can reveal malicious use of Microsoft Graph.",
     "ans": true
    },
    {
@@ -2654,9 +2639,9 @@
     "ans": false
    },
    {
-    "es": "Se puede crear una regla de detección personalizada a partir de una consulta de búsqueda.",
-    "en": "You can create a custom detection rule from a hunting query.",
-    "ans": true
+    "es": "Se no puede crear una regla de detección personalizada a partir de una consulta de búsqueda.",
+    "en": "You cannot create a custom detection rule from a hunting query.",
+    "ans": false
    },
    {
     "es": "El análisis de amenazas enumera las amenazas emergentes y las mitigaciones.",
@@ -2981,11 +2966,6 @@
    {
     "es": "Las reglas de resumen pueden agregar datos en tablas personalizadas de forma programada.",
     "en": "Summary rules can aggregate data into custom tables on a schedule.",
-    "ans": true
-   },
-   {
-    "es": "Los trabajos KQL pueden consultar datos del nivel de lago de datos.",
-    "en": "KQL jobs can query data lake tier data.",
     "ans": true
    },
    {
@@ -3448,11 +3428,6 @@
   "q_en": "For each statement about Defender for Endpoint configuration, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las reglas de reducción de superficie de ataque se pueden implementar mediante Intune u otras herramientas de administración.",
-    "en": "Attack surface reduction rules can be deployed through Intune or other management tools.",
-    "ans": true
-   },
-   {
     "es": "Los indicadores pueden bloquear archivos, IP, URL y certificados.",
     "en": "Indicators can block files, IPs, URLs and certificates.",
     "ans": true
@@ -3523,9 +3498,9 @@
   "q_en": "For each statement about Windows data collection into Sentinel, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El reenvío de eventos de Windows puede centralizar los eventos antes de que lleguen a Sentinel.",
-    "en": "Windows Event Forwarding can centralize events before they reach Sentinel.",
-    "ans": true
+    "es": "El reenvío de eventos de Windows no puede centralizar los eventos antes de que lleguen a Sentinel.",
+    "en": "Windows Event Forwarding cannot centralize events before they reach Sentinel.",
+    "ans": false
    },
    {
     "es": "AMA se configura mediante reglas de recopilación de datos.",
@@ -3699,11 +3674,6 @@
   "q_en": "For each statement about the Microsoft Graph activity logs, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Registran las solicitudes realizadas a la API de Microsoft Graph.",
-    "en": "They record requests made to the Microsoft Graph API.",
-    "ans": true
-   },
-   {
     "es": "Se habilitan mediante la configuración de diagnóstico.",
     "en": "They are enabled through diagnostic settings.",
     "ans": true
@@ -3729,11 +3699,6 @@
    {
     "es": "project selecciona las columnas que se devuelven.",
     "en": "project selects the columns to return.",
-    "ans": true
-   },
-   {
-    "es": "summarize puede agrupar resultados y contar filas.",
-    "en": "summarize can group results and count rows.",
     "ans": true
    },
    {
@@ -4584,11 +4549,6 @@
     "es": "El Operador de cuadernos de estrategias puede ejecutarlos pero no editarlos.",
     "en": "Playbook Operator can run playbooks but not edit them.",
     "ans": true
-   },
-   {
-    "es": "La retención en el nivel de lago de datos puede reducir los costes de almacenamiento a largo plazo.",
-    "en": "Data lake tier retention can reduce long-term storage costs.",
-    "ans": true
    }
   ],
   "exp_es": "Lector es de solo lectura.",
@@ -5371,9 +5331,9 @@
   "q_en": "For each statement about analytics and custom detection rules, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las reglas programadas pueden buscar hasta 14 días atrás.",
-    "en": "Scheduled rules can look back up to 14 days.",
-    "ans": true
+    "es": "Las reglas programadas no pueden buscar hasta 14 días atrás.",
+    "en": "Scheduled rules cannot look back up to 14 days.",
+    "ans": false
    },
    {
     "es": "Las detecciones personalizadas de Defender XDR pueden ejecutarse de forma continua.",
@@ -5817,11 +5777,6 @@
   "q_en": "For each statement about responding in Sentinel and Defender for Cloud, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La automatización de flujos de trabajo de Defender for Cloud puede iniciar un flujo de Logic Apps.",
-    "en": "Defender for Cloud workflow automation can start a Logic Apps workflow.",
-    "ans": true
-   },
-   {
     "es": "Los marcadores de Sentinel se pueden adjuntar a incidentes.",
     "en": "Sentinel bookmarks can be attached to incidents.",
     "ans": true
@@ -6121,9 +6076,9 @@
   "q_en": "For each statement about Defender for Endpoint response, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El aislamiento selectivo puede mantener funcionando Outlook y Teams.",
-    "en": "Selective isolation can keep Outlook and Teams working.",
-    "ans": true
+    "es": "El aislamiento selectivo no puede mantener funcionando Outlook y Teams.",
+    "en": "Selective isolation cannot keep Outlook and Teams working.",
+    "ans": false
    },
    {
     "es": "El comando getfile descarga un archivo del dispositivo.",
@@ -7409,11 +7364,6 @@
   "q_en": "For each statement about device investigations, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La página del dispositivo muestra alertas e inventario de software.",
-    "en": "The device page shows alerts and software inventory.",
-    "ans": true
-   },
-   {
     "es": "La historia de la alerta visualiza los procesos y eventos relacionados.",
     "en": "The alert story visualizes related processes and events.",
     "ans": true
@@ -7619,11 +7569,6 @@
   "q_es": "Para cada afirmación sobre el análisis de amenazas y los gráficos de búsqueda, indica si es verdadera o falsa.",
   "q_en": "For each statement about threat analytics and hunting graphs, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Los informes de análisis de amenazas describen amenazas emergentes y mitigaciones recomendadas.",
-    "en": "Threat analytics reports describe emerging threats and recommended mitigations.",
-    "ans": true
-   },
    {
     "es": "Las vistas del radio de impacto muestran hasta dónde podría afectar un activo comprometido a otros.",
     "en": "Blast radius views show how far a compromised asset could affect others.",
@@ -7893,11 +7838,6 @@
   "q_en": "For each statement about data lake and summary rules in Sentinel, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las reglas de resumen pueden precalcular agregados en tablas personalizadas.",
-    "en": "Summary rules can precompute aggregates into custom tables.",
-    "ans": true
-   },
-   {
     "es": "El nivel de lago de datos es más caro por GB que el nivel de análisis.",
     "en": "The data lake tier is more expensive per GB than the analytics tier.",
     "ans": false
@@ -7993,11 +7933,6 @@
   "q_es": "Para cada afirmación sobre Defender for Identity y Defender for Cloud, indica si es verdadera o falsa.",
   "q_en": "For each statement about Defender for Identity and Defender for Cloud, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Defender for Identity puede detectar actividad de Kerberoasting.",
-    "en": "Defender for Identity can detect Kerberoasting activity.",
-    "ans": true
-   },
    {
     "es": "Las alertas de Defender for Cloud pueden cubrir servidores, almacenamiento y contenedores.",
     "en": "Defender for Cloud alerts can cover servers, storage and containers.",
@@ -8299,11 +8234,6 @@
   "q_en": "For each statement about Sentinel analytics rule settings, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La asignación de entidades ayuda a conectar las alertas con usuarios, hosts y direcciones IP.",
-    "en": "Entity mapping helps connect alerts to users, hosts and IP addresses.",
-    "ans": true
-   },
-   {
     "es": "La supresión de alertas detiene las nuevas alertas durante un período después de que se active una regla.",
     "en": "Alert suppression stops new alerts for a period after a rule triggers.",
     "ans": true
@@ -8447,9 +8377,9 @@
   "q_en": "For each statement about alert tuning and notifications, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las reglas de supresión pueden ocultar alertas de falsos positivos conocidos.",
-    "en": "Suppression rules can hide known false-positive alerts.",
-    "ans": true
+    "es": "Las reglas de supresión no pueden ocultar alertas de falsos positivos conocidos.",
+    "en": "Suppression rules cannot hide known false-positive alerts.",
+    "ans": false
    },
    {
     "es": "Se pueden configurar notificaciones por correo para incidentes.",

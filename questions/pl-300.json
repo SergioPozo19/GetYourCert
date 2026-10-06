@@ -191,11 +191,6 @@
   "q_en": "For each statement about storage modes in Power BI, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El modo Importar almacena los datos en el modelo y necesita actualización para actualizarse.",
-    "en": "Import mode stores data in the model and needs refresh to update.",
-    "ans": true
-   },
-   {
     "es": "DirectQuery consulta el origen en el momento del informe.",
     "en": "DirectQuery queries the source at report time.",
     "ans": true
@@ -1061,9 +1056,9 @@
   "q_en": "For each statement about model design, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La dirección de filtro cruzado única es el valor predeterminado recomendado.",
-    "en": "Single cross-filter direction is the recommended default.",
-    "ans": true
+    "es": "La dirección de filtro cruzado única no es el valor predeterminado recomendado.",
+    "en": "Single cross-filter direction is not the recommended default.",
+    "ans": false
    },
    {
     "es": "Las relaciones inactivas se pueden activar en una medida con USERELATIONSHIP.",
@@ -1476,11 +1471,6 @@
    {
     "es": "CALCULATE puede modificar el contexto de filtro.",
     "en": "CALCULATE can modify filter context.",
-    "ans": true
-   },
-   {
-    "es": "DIVIDE gestiona la división por cero sin generar un error.",
-    "en": "DIVIDE handles division by zero without raising an error.",
     "ans": true
    },
    {
@@ -2458,9 +2448,9 @@
     "ans": true
    },
    {
-    "es": "Sincronizar segmentaciones puede aplicar una selección en varias páginas.",
-    "en": "Sync slicers can apply a selection across several pages.",
-    "ans": true
+    "es": "Sincronizar segmentaciones no puede aplicar una selección en varias páginas.",
+    "en": "Sync slicers cannot apply a selection across several pages.",
+    "ans": false
    },
    {
     "es": "El texto alternativo es irrelevante para la accesibilidad.",
@@ -2736,9 +2726,9 @@
   "q_en": "For each statement about AI visuals and analytics, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Los influenciadores clave pueden clasificar los factores que afectan a una métrica.",
-    "en": "Key influencers can rank factors that affect a metric.",
-    "ans": true
+    "es": "Los influenciadores clave no pueden clasificar los factores que afectan a una métrica.",
+    "en": "Key influencers cannot rank factors that affect a metric.",
+    "ans": false
    },
    {
     "es": "Las líneas de referencia pueden marcar objetivos o promedios en un objeto visual.",
@@ -3024,9 +3014,9 @@
     "ans": true
    },
    {
-    "es": "Se pueden establecer alertas de datos en los iconos de tarjeta de los paneles.",
-    "en": "Data alerts can be set on dashboard card tiles.",
-    "ans": true
+    "es": "Se no pueden establecer alertas de datos en los iconos de tarjeta de los paneles.",
+    "en": "Data alerts cannot be set on dashboard card tiles.",
+    "ans": false
    },
    {
     "es": "Siempre se requiere una puerta de enlace para los orígenes de datos en la nube.",
@@ -3330,11 +3320,6 @@
     "ans": true
    },
    {
-    "es": "Reemplazar valores puede sustituir un valor específico en una columna.",
-    "en": "Replace Values can substitute a specific value in a column.",
-    "ans": true
-   },
-   {
     "es": "Recortar solo elimina caracteres del medio del texto.",
     "en": "Trim removes characters from the middle of text only.",
     "ans": false
@@ -3436,11 +3421,6 @@
     "es": "Las relaciones de varios a varios son el valor predeterminado recomendado en un esquema de estrella.",
     "en": "Many-to-many relationships are the recommended default in a star schema.",
     "ans": false
-   },
-   {
-    "es": "Una clave de dimensión debe ser única en la tabla del lado uno.",
-    "en": "A dimension key should be unique in the one side table.",
-    "ans": true
    }
   ],
   "exp_es": "Los esquemas de estrella usan relaciones de uno a varios.",
@@ -3503,11 +3483,6 @@
   "q_en": "For each statement about DAX contexts, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El contexto de filtro procede de las segmentaciones, filtros y campos del objeto visual.",
-    "en": "Filter context comes from slicers, filters and visual fields.",
-    "ans": true
-   },
-   {
     "es": "El contexto de fila existe al iterar sobre las filas de una tabla, como en una columna calculada.",
     "en": "Row context exists when iterating over table rows, such as in a calculated column.",
     "ans": true
@@ -3531,9 +3506,9 @@
   "q_en": "For each statement about performance tuning, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Reducir la granularidad puede reducir el modelo.",
-    "en": "Reducing granularity can shrink the model.",
-    "ans": true
+    "es": "Reducir la granularidad no puede reducir el modelo.",
+    "en": "Reducing granularity cannot shrink the model.",
+    "ans": false
    },
    {
     "es": "Las tablas de agregaciones pueden acelerar las consultas en tablas enormes.",
@@ -3709,11 +3684,6 @@
   "q_en": "For each statement about using outliers and trends, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las barras de error pueden mostrar un rango de incertidumbre alrededor de los puntos de datos.",
-    "en": "Error bars can show a range of uncertainty around data points.",
-    "ans": true
-   },
-   {
     "es": "La agrupación en clústeres agrupa automáticamente puntos de datos similares en un gráfico de dispersión.",
     "en": "Clustering groups similar data points automatically in a scatter chart.",
     "ans": true
@@ -3784,9 +3754,9 @@
   "q_en": "For each statement about refresh and gateways, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La actualización programada se puede configurar en la configuración del modelo semántico.",
-    "en": "Scheduled refresh can be configured in the semantic model settings.",
-    "ans": true
+    "es": "La actualización programada no se puede configurar en la configuración del modelo semántico.",
+    "en": "Scheduled refresh cannot be configured in the semantic model settings.",
+    "ans": false
    },
    {
     "es": "Se necesita una puerta de enlace para orígenes locales a los que el servicio no puede acceder.",
@@ -3864,9 +3834,9 @@
     "ans": true
    },
    {
-    "es": "Las etiquetas de confidencialidad pueden proteger el contenido cuando se exporta.",
-    "en": "Sensitivity labels can protect content when it is exported.",
-    "ans": true
+    "es": "Las etiquetas de confidencialidad no pueden proteger el contenido cuando se exporta.",
+    "en": "Sensitivity labels cannot protect content when it is exported.",
+    "ans": false
    },
    {
     "es": "Los roles de RLS se definen solo en el servicio Power BI.",
@@ -4557,9 +4527,9 @@
   "q_en": "For each statement about Power Query shaping, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Agrupar por puede agregar filas con funciones como Suma o Recuento.",
-    "en": "Group By can aggregate rows with functions such as Sum or Count.",
-    "ans": true
+    "es": "Agrupar por no puede agregar filas con funciones como Suma o Recuento.",
+    "en": "Group By cannot aggregate rows with functions such as Sum or Count.",
+    "ans": false
    },
    {
     "es": "Dinamizar distribuye los valores en columnas.",
@@ -5222,9 +5192,9 @@
   "q_en": "For each statement about DAX evaluation contexts, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "CALCULATE puede modificar el contexto de filtro.",
-    "en": "CALCULATE can modify the filter context.",
-    "ans": true
+    "es": "CALCULATE no puede modificar el contexto de filtro.",
+    "en": "CALCULATE cannot modify the filter context.",
+    "ans": false
    },
    {
     "es": "Las funciones iteradoras como SUMX crean un contexto de fila.",
@@ -5507,9 +5477,9 @@
     "ans": true
    },
    {
-    "es": "Las agregaciones pueden acelerar las consultas sobre tablas DirectQuery grandes.",
-    "en": "Aggregations can speed up queries over large DirectQuery tables.",
-    "ans": true
+    "es": "Las agregaciones no pueden acelerar las consultas sobre tablas DirectQuery grandes.",
+    "en": "Aggregations cannot speed up queries over large DirectQuery tables.",
+    "ans": false
    },
    {
     "es": "Agregar más columnas siempre hace un modelo más rápido.",
@@ -5759,9 +5729,9 @@
   "q_en": "For each statement about choosing visuals, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Un gráfico de líneas es adecuado para mostrar tendencias a lo largo del tiempo.",
-    "en": "A line chart is suitable for showing trends over time.",
-    "ans": true
+    "es": "Un gráfico de líneas no es adecuado para mostrar tendencias a lo largo del tiempo.",
+    "en": "A line chart is not suitable for showing trends over time.",
+    "ans": false
    },
    {
     "es": "Un gráfico de dispersión puede mostrar la relación entre dos medidas.",
@@ -6221,11 +6191,6 @@
   "q_en": "For each statement about analytic features, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El panel Análisis puede agregar líneas de tendencia y previsiones a los objetos visuales admitidos.",
-    "en": "The Analytics pane can add trend lines and forecasts to supported visuals.",
-    "ans": true
-   },
-   {
     "es": "Los influenciadores clave analizan qué impulsa una métrica.",
     "en": "Key influencers analyzes what drives a metric.",
     "ans": true
@@ -6425,11 +6390,6 @@
   "q_es": "Para cada afirmación sobre las áreas de trabajo y la actualización, indica si es verdadera o falsa.",
   "q_en": "For each statement about workspaces and refresh, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "Se necesita una puerta de enlace local para actualizar orígenes locales en el servicio.",
-    "en": "An on-premises gateway is required to refresh on-premises sources in the service.",
-    "ans": true
-   },
    {
     "es": "La actualización incremental puede reducir el tiempo de actualización de tablas grandes.",
     "en": "Incremental refresh can reduce refresh time on large tables.",
@@ -6893,11 +6853,6 @@
     "ans": true
    },
    {
-    "es": "Deshabilitar Habilitar carga mantiene una consulta fuera del modelo.",
-    "en": "Disabling Enable load keeps a query out of the model.",
-    "ans": true
-   },
-   {
     "es": "Todos los pasos de Power Query se pliegan en cualquier origen.",
     "en": "Every Power Query step folds against any source.",
     "ans": false
@@ -7250,11 +7205,6 @@
    {
     "es": "Generalmente se prefiere un esquema de estrella en Power BI.",
     "en": "A star schema is generally preferred in Power BI.",
-    "ans": true
-   },
-   {
-    "es": "Solo una relación entre dos tablas puede estar activa a la vez.",
-    "en": "Only one relationship between two tables can be active at a time.",
     "ans": true
    },
    {
@@ -7635,11 +7585,6 @@
     "ans": true
    },
    {
-    "es": "Sincronizar segmentaciones puede aplicar una selección a varias páginas.",
-    "en": "Sync slicers can apply one selection to multiple pages.",
-    "ans": true
-   },
-   {
     "es": "Los informes paginados son los mejores para el análisis exploratorio e interactivo.",
     "en": "Paginated reports are best for exploratory, interactive analysis.",
     "ans": false
@@ -7663,9 +7608,9 @@
     "ans": true
    },
    {
-    "es": "Un filtro de fecha relativa puede mostrar los últimos 30 días de forma dinámica.",
-    "en": "A relative date filter can show the last 30 days dynamically.",
-    "ans": true
+    "es": "Un filtro de fecha relativa no puede mostrar los últimos 30 días de forma dinámica.",
+    "en": "A relative date filter cannot show the last 30 days dynamically.",
+    "ans": false
    },
    {
     "es": "Un filtro de N superiores solo puede clasificar por una columna de texto.",
@@ -8094,11 +8039,6 @@
   "q_en": "For each statement about deployment and sharing, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Una aplicación de Power BI puede publicar contenido seleccionado de un área de trabajo.",
-    "en": "A Power BI app can publish curated content from a workspace.",
-    "ans": true
-   },
-   {
     "es": "La integración de Git admite el control de versiones de los elementos del área de trabajo.",
     "en": "Git integration supports version control of workspace items.",
     "ans": true
@@ -8316,11 +8256,6 @@
   "q_es": "Para cada afirmación sobre los objetos visuales de IA en los informes, indica si es verdadera o falsa.",
   "q_en": "For each statement about AI visuals in reports, indicate whether it is true or false.",
   "rows": [
-   {
-    "es": "El árbol de descomposición permite a los usuarios profundizar en una métrica eligiendo dimensiones.",
-    "en": "The decomposition tree lets users drill into a metric by choosing dimensions.",
-    "ans": true
-   },
    {
     "es": "La detección de anomalías puede marcar puntos inusuales en un gráfico de líneas a lo largo del tiempo.",
     "en": "Anomaly detection can flag unusual points in a line chart over time.",
