@@ -40,7 +40,31 @@
     try{localStorage.setItem('gyc:lang',JSON.stringify(lang));}catch(e){}
     applyLang(lang);
   }
+  function applyTheme(){
+    var th=null;
+    try{th=JSON.parse(localStorage.getItem('gyc:theme'));}catch(e){}
+    if(!th&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)th='dark';
+    if(th)document.documentElement.setAttribute('data-theme',th);
+  }
+  applyTheme();
+  function enhance(){
+    // barras de peso por dominio
+    document.querySelectorAll('.dom-row').forEach(function(r){
+      var w=r.querySelector('.dw'); if(!w||r.querySelector('.dbar'))return;
+      var n=(w.textContent.match(/\d+/g)||[]).map(Number); if(!n.length)return;
+      var mid=n.reduce(function(a,b){return a+b;},0)/n.length;
+      var bar=document.createElement('span'); bar.className='dbar'; bar.setAttribute('aria-hidden','true');
+      var i=document.createElement('i'); i.style.width=Math.min(100,mid*2.5)+'%'; bar.appendChild(i);
+      r.insertBefore(bar,w);
+    });
+    // barra CTA fija en móvil cuando el CTA principal sale de pantalla
+    var cta=document.querySelector('.hero .cta a'); if(!cta||!('IntersectionObserver' in window))return;
+    var bar=document.createElement('div'); bar.className='sticky-cta';
+    var c=cta.cloneNode(true); c.classList.add('btn-primary'); bar.appendChild(c); document.body.appendChild(bar);
+    new IntersectionObserver(function(es){ bar.classList.toggle('show',!es[0].isIntersecting); }).observe(cta);
+  }
   document.addEventListener('DOMContentLoaded',function(){
+    enhance();
     applyLang(getLang());
     document.querySelectorAll('#langToggle button').forEach(function(b){
       b.addEventListener('click',function(){ setLang(b.dataset.lang); });
