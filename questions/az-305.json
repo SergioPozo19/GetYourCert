@@ -9109,5 +9109,481 @@
   ],
   "exp_es": "CMK permite a las organizaciones controlar el ciclo de vida de las claves.",
   "exp_en": "CMK lets organizations control the key lifecycle."
+ },
+ {
+  "id": 310,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué diseño cumple el requisito de disponibilidad regional para la base de datos?",
+  "q_en": "Which design meets the regional availability requirement for the database?",
+  "opts_es": [
+   "Una base Premium con retención a largo plazo habilitada",
+   "Una base única solo con almacenamiento de copias redundante por zona",
+   "Dos bases sincronizadas con una exportación bacpac nocturna",
+   "Azure SQL Database con una réplica geográfica activa o grupo de conmutación"
+  ],
+  "opts_en": [
+   "A Premium database with long-term retention enabled",
+   "A single database with zone-redundant backup storage only",
+   "Two databases kept in sync with a nightly bacpac export",
+   "Azure SQL Database with an active geo-replication secondary or failover group"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los grupos de conmutación por error o la replicación geográfica mantienen una réplica en otra región con un RPO de segundos, lo que cumple RPO de 15 minutos y RTO de 1 hora. Las copias por sí solas no cumplen ese RTO.",
+  "exp_en": "Failover groups or active geo-replication keep a readable secondary in another region with an RPO of seconds, meeting a 15-minute RPO and 1-hour RTO. Backups alone can't meet that RTO.",
+  "case_en": "Adatum Insurance",
+  "case_es": "Adatum Insurance",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adatum Insurance runs a claims-processing application on-premises and is migrating it to Azure. Customers in Spain and Portugal upload claim documents, and adjusters review them during business hours."
+   ],
+   [
+    "Requirements",
+    "- The application must stay available if an Azure region becomes unavailable, with an RTO of 1 hour and an RPO of 15 minutes.\n- Claim documents must be stored for 10 years and must not be modified or deleted during that time.\n- Documents older than 90 days are rarely read; storage cost must be minimized.\n- The SQL database must tolerate a zone failure without manual intervention."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Adatum Insurance ejecuta en local una aplicación de tramitación de siniestros y la está migrando a Azure. Clientes de España y Portugal suben documentos y los peritos los revisan en horario laboral."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación debe seguir disponible si una región de Azure deja de estarlo, con un RTO de 1 hora y un RPO de 15 minutos.\n- Los documentos se guardarán 10 años y no podrán modificarse ni eliminarse durante ese tiempo.\n- Los documentos de más de 90 días se leen muy poco; hay que minimizar el coste de almacenamiento.\n- La base de datos SQL debe tolerar el fallo de una zona sin intervención manual."
+   ]
+  ]
+ },
+ {
+  "id": 311,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cómo debe proteger los documentos de siniestros durante 10 años?",
+  "q_en": "How should you protect the claim documents for 10 years?",
+  "opts_es": [
+   "Habilitar la eliminación temporal de blobs con retención de 10 años",
+   "Habilitar el control de versiones y conservar todas las versiones",
+   "Usar una directiva de inmutabilidad basada en tiempo y bloqueada",
+   "Aplicar un bloqueo CanNotDelete a la cuenta"
+  ],
+  "opts_en": [
+   "Enable blob soft delete with a 10-year retention period",
+   "Enable blob versioning and keep all versions",
+   "Use a time-based immutability policy that is locked",
+   "Apply a CanNotDelete lock to the storage account"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Una directiva de retención basada en tiempo bloqueada (WORM) impide modificar y eliminar hasta que caduque, incluso a administradores. Los bloqueos de recurso y la eliminación temporal no garantizan inmutabilidad.",
+  "exp_en": "A locked time-based retention (WORM) policy prevents modification and deletion until the period expires, even by administrators. Resource locks and soft delete don't guarantee immutability.",
+  "case_en": "Adatum Insurance",
+  "case_es": "Adatum Insurance",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adatum Insurance runs a claims-processing application on-premises and is migrating it to Azure. Customers in Spain and Portugal upload claim documents, and adjusters review them during business hours."
+   ],
+   [
+    "Requirements",
+    "- The application must stay available if an Azure region becomes unavailable, with an RTO of 1 hour and an RPO of 15 minutes.\n- Claim documents must be stored for 10 years and must not be modified or deleted during that time.\n- Documents older than 90 days are rarely read; storage cost must be minimized.\n- The SQL database must tolerate a zone failure without manual intervention."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Adatum Insurance ejecuta en local una aplicación de tramitación de siniestros y la está migrando a Azure. Clientes de España y Portugal suben documentos y los peritos los revisan en horario laboral."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación debe seguir disponible si una región de Azure deja de estarlo, con un RTO de 1 hora y un RPO de 15 minutos.\n- Los documentos se guardarán 10 años y no podrán modificarse ni eliminarse durante ese tiempo.\n- Los documentos de más de 90 días se leen muy poco; hay que minimizar el coste de almacenamiento.\n- La base de datos SQL debe tolerar el fallo de una zona sin intervención manual."
+   ]
+  ]
+ },
+ {
+  "id": 312,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cómo debe minimizar el coste de los documentos de más de 90 días?",
+  "q_en": "How should you minimize storage cost for documents older than 90 days?",
+  "opts_es": [
+   "Convertir la cuenta en una premium de blobs en bloques",
+   "Mover los blobs al nivel Cool a mano cada trimestre",
+   "Copiar los blobs a una cuenta de uso general v1",
+   "Crear una regla de ciclo de vida que pase los blobs a Cool o Archive"
+  ],
+  "opts_en": [
+   "Convert the account to a premium block blob account",
+   "Move the blobs to the Cool tier manually every quarter",
+   "Copy the blobs to a general-purpose v1 account",
+   "Create a lifecycle management rule that moves blobs to Cool or Archive"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las reglas de ciclo de vida cambian de nivel automáticamente según la antigüedad; las directivas de inmutabilidad son compatibles con el cambio de nivel.",
+  "exp_en": "Lifecycle management rules automatically transition blobs by age; immutability policies are compatible with tiering.",
+  "case_en": "Adatum Insurance",
+  "case_es": "Adatum Insurance",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adatum Insurance runs a claims-processing application on-premises and is migrating it to Azure. Customers in Spain and Portugal upload claim documents, and adjusters review them during business hours."
+   ],
+   [
+    "Requirements",
+    "- The application must stay available if an Azure region becomes unavailable, with an RTO of 1 hour and an RPO of 15 minutes.\n- Claim documents must be stored for 10 years and must not be modified or deleted during that time.\n- Documents older than 90 days are rarely read; storage cost must be minimized.\n- The SQL database must tolerate a zone failure without manual intervention."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Adatum Insurance ejecuta en local una aplicación de tramitación de siniestros y la está migrando a Azure. Clientes de España y Portugal suben documentos y los peritos los revisan en horario laboral."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación debe seguir disponible si una región de Azure deja de estarlo, con un RTO de 1 hora y un RPO de 15 minutos.\n- Los documentos se guardarán 10 años y no podrán modificarse ni eliminarse durante ese tiempo.\n- Los documentos de más de 90 días se leen muy poco; hay que minimizar el coste de almacenamiento.\n- La base de datos SQL debe tolerar el fallo de una zona sin intervención manual."
+   ]
+  ]
+ },
+ {
+  "id": 313,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué función replica las VM de la aplicación a otra región y permite conmutar?",
+  "q_en": "Which feature provides replication and failover of the application's VMs to another region?",
+  "opts_es": [
+   "Azure Site Recovery con un plan de recuperación",
+   "Un equilibrador con un back-end en otra región",
+   "Azure Backup solo con restauración entre regiones",
+   "Zonas de disponibilidad para cada máquina virtual"
+  ],
+  "opts_en": [
+   "Azure Site Recovery with a recovery plan",
+   "A load balancer with a secondary region backend",
+   "Azure Backup with cross-region restore only",
+   "Availability zones for each virtual machine"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Azure Site Recovery replica las VM de forma continua y los planes de recuperación ordenan la conmutación; las copias restauran datos con un RTO mayor.",
+  "exp_en": "Azure Site Recovery replicates VMs continuously and recovery plans orchestrate ordered failover; backups restore data but with a longer RTO.",
+  "case_en": "Adatum Insurance",
+  "case_es": "Adatum Insurance",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adatum Insurance runs a claims-processing application on-premises and is migrating it to Azure. Customers in Spain and Portugal upload claim documents, and adjusters review them during business hours."
+   ],
+   [
+    "Requirements",
+    "- The application must stay available if an Azure region becomes unavailable, with an RTO of 1 hour and an RPO of 15 minutes.\n- Claim documents must be stored for 10 years and must not be modified or deleted during that time.\n- Documents older than 90 days are rarely read; storage cost must be minimized.\n- The SQL database must tolerate a zone failure without manual intervention."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Adatum Insurance ejecuta en local una aplicación de tramitación de siniestros y la está migrando a Azure. Clientes de España y Portugal suben documentos y los peritos los revisan en horario laboral."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación debe seguir disponible si una región de Azure deja de estarlo, con un RTO de 1 hora y un RPO de 15 minutos.\n- Los documentos se guardarán 10 años y no podrán modificarse ni eliminarse durante ese tiempo.\n- Los documentos de más de 90 días se leen muy poco; hay que minimizar el coste de almacenamiento.\n- La base de datos SQL debe tolerar el fallo de una zona sin intervención manual."
+   ]
+  ]
+ },
+ {
+  "id": 314,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué solución cumple el requisito de acceso con privilegios?",
+  "q_en": "Which solution meets the privileged access requirement?",
+  "opts_es": [
+   "Azure Policy que deniegue escrituras tras 8 horas",
+   "Asignaciones permanentes de Colaborador con revisión trimestral",
+   "Un rol personalizado limitado a horario laboral con acceso condicional",
+   "Privileged Identity Management de Entra con roles elegibles"
+  ],
+  "opts_en": [
+   "Azure Policy that denies write operations after 8 hours",
+   "Permanent Contributor assignments with a quarterly access review",
+   "A custom role limited to business hours through Conditional Access",
+   "Microsoft Entra Privileged Identity Management with eligible roles"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "PIM ofrece activación justo a tiempo de roles RBAC de Azure con aprobación, justificación y duración máxima (por ejemplo, 8 horas).",
+  "exp_en": "PIM provides just-in-time activation of Azure RBAC roles with approval, justification and a maximum duration (such as 8 hours).",
+  "case_en": "Tailwind Manufacturing",
+  "case_es": "Tailwind Manufacturing",
+  "scenario_en": [
+   [
+    "Overview",
+    "Tailwind Manufacturing has 40 subscriptions across three business units and a Microsoft Entra tenant synchronized from on-premises Active Directory."
+   ],
+   [
+    "Requirements",
+    "- Application teams must obtain Contributor access to their own subscription only when needed, with approval and for at most 8 hours.\n- Logs from all subscriptions must be queried centrally, and security data must be retained for 2 years at the lowest cost.\n- Azure functions must access Key Vault without storing credentials.\n- Costs must be reported per business unit."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Tailwind Manufacturing tiene 40 suscripciones en tres unidades de negocio y un inquilino de Microsoft Entra sincronizado desde Active Directory local."
+   ],
+   [
+    "Requisitos",
+    "- Los equipos de aplicaciones deben obtener acceso de Colaborador a su suscripción solo cuando lo necesiten, con aprobación y durante un máximo de 8 horas.\n- Los registros de todas las suscripciones deben consultarse de forma central y los datos de seguridad conservarse 2 años al menor coste.\n- Las funciones de Azure deben acceder a Key Vault sin guardar credenciales.\n- Los costes deben informarse por unidad de negocio."
+   ]
+  ]
+ },
+ {
+  "id": 315,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué debe diseñar para el análisis central de registros y la retención barata?",
+  "q_en": "What should you design for central log analysis and low-cost retention?",
+  "opts_es": [
+   "Métricas de Azure Monitor con retención de 2 años",
+   "Event Hubs reenviando cada registro a un SIEM local",
+   "Un área central con nivel de archivo o exportación a almacenamiento a largo plazo",
+   "Un área de Log Analytics por suscripción con retención de 30 días"
+  ],
+  "opts_en": [
+   "Azure Monitor metrics with a 2-year retention setting",
+   "Event Hubs forwarding every log to an on-premises SIEM",
+   "A central workspace with archive tier or export to storage for the long term",
+   "One Log Analytics workspace per subscription with 30-day retention"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Un área central de Log Analytics permite consultas entre suscripciones; la retención a largo plazo (archivo o exportar a almacenamiento) abarata la retención de 2 años.",
+  "exp_en": "A central Log Analytics workspace supports cross-subscription queries; long-term retention (archive/auxiliary tiers or export to storage) lowers the cost of 2-year retention.",
+  "case_en": "Tailwind Manufacturing",
+  "case_es": "Tailwind Manufacturing",
+  "scenario_en": [
+   [
+    "Overview",
+    "Tailwind Manufacturing has 40 subscriptions across three business units and a Microsoft Entra tenant synchronized from on-premises Active Directory."
+   ],
+   [
+    "Requirements",
+    "- Application teams must obtain Contributor access to their own subscription only when needed, with approval and for at most 8 hours.\n- Logs from all subscriptions must be queried centrally, and security data must be retained for 2 years at the lowest cost.\n- Azure functions must access Key Vault without storing credentials.\n- Costs must be reported per business unit."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Tailwind Manufacturing tiene 40 suscripciones en tres unidades de negocio y un inquilino de Microsoft Entra sincronizado desde Active Directory local."
+   ],
+   [
+    "Requisitos",
+    "- Los equipos de aplicaciones deben obtener acceso de Colaborador a su suscripción solo cuando lo necesiten, con aprobación y durante un máximo de 8 horas.\n- Los registros de todas las suscripciones deben consultarse de forma central y los datos de seguridad conservarse 2 años al menor coste.\n- Las funciones de Azure deben acceder a Key Vault sin guardar credenciales.\n- Los costes deben informarse por unidad de negocio."
+   ]
+  ]
+ },
+ {
+  "id": 316,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cómo deben autenticarse las funciones de Azure en Key Vault?",
+  "q_en": "How should the Azure functions authenticate to Key Vault?",
+  "opts_es": [
+   "Con un certificado cargado en cada app de funciones",
+   "Con un secreto de cliente guardado en la configuración de la app",
+   "Con la clave de la cuenta de almacenamiento de la app",
+   "Con una identidad administrada y el rol Usuario de secretos de Key Vault"
+  ],
+  "opts_en": [
+   "With a certificate uploaded to each function app",
+   "With a client secret stored in the function app settings",
+   "With the storage account key of the function app",
+   "With a managed identity and the Key Vault Secrets User role"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las identidades administradas eliminan la necesidad de guardar credenciales; los roles RBAC del plano de datos, como Usuario de secretos de Key Vault, autorizan el acceso.",
+  "exp_en": "Managed identities remove the need to store credentials; RBAC data-plane roles such as Key Vault Secrets User authorize access.",
+  "case_en": "Tailwind Manufacturing",
+  "case_es": "Tailwind Manufacturing",
+  "scenario_en": [
+   [
+    "Overview",
+    "Tailwind Manufacturing has 40 subscriptions across three business units and a Microsoft Entra tenant synchronized from on-premises Active Directory."
+   ],
+   [
+    "Requirements",
+    "- Application teams must obtain Contributor access to their own subscription only when needed, with approval and for at most 8 hours.\n- Logs from all subscriptions must be queried centrally, and security data must be retained for 2 years at the lowest cost.\n- Azure functions must access Key Vault without storing credentials.\n- Costs must be reported per business unit."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Tailwind Manufacturing tiene 40 suscripciones en tres unidades de negocio y un inquilino de Microsoft Entra sincronizado desde Active Directory local."
+   ],
+   [
+    "Requisitos",
+    "- Los equipos de aplicaciones deben obtener acceso de Colaborador a su suscripción solo cuando lo necesiten, con aprobación y durante un máximo de 8 horas.\n- Los registros de todas las suscripciones deben consultarse de forma central y los datos de seguridad conservarse 2 años al menor coste.\n- Las funciones de Azure deben acceder a Key Vault sin guardar credenciales.\n- Los costes deben informarse por unidad de negocio."
+   ]
+  ]
+ },
+ {
+  "id": 317,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué debe usar para informar de los costes por unidad de negocio?",
+  "q_en": "What should you use to report costs per business unit?",
+  "opts_es": [
+   "Una sola suscripción con un grupo de recursos por equipo",
+   "Bloqueos de recurso con la unidad en las notas",
+   "Grupos de administración por unidad con ámbitos de Cost Management",
+   "Recomendaciones de costes de Azure Advisor exportadas semanalmente"
+  ],
+  "opts_en": [
+   "A single subscription with one resource group per team",
+   "Resource locks with the business unit in the lock notes",
+   "Management groups per business unit with Cost Management scopes",
+   "Azure Advisor cost recommendations exported weekly"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Cost Management puede acotarse a grupos de administración, suscripciones, grupos y etiquetas, de modo que un grupo por unidad da informes y presupuestos agregados.",
+  "exp_en": "Cost Management can scope to management groups, subscriptions, resource groups and tags, so a management group per business unit gives roll-up reports and budgets.",
+  "case_en": "Tailwind Manufacturing",
+  "case_es": "Tailwind Manufacturing",
+  "scenario_en": [
+   [
+    "Overview",
+    "Tailwind Manufacturing has 40 subscriptions across three business units and a Microsoft Entra tenant synchronized from on-premises Active Directory."
+   ],
+   [
+    "Requirements",
+    "- Application teams must obtain Contributor access to their own subscription only when needed, with approval and for at most 8 hours.\n- Logs from all subscriptions must be queried centrally, and security data must be retained for 2 years at the lowest cost.\n- Azure functions must access Key Vault without storing credentials.\n- Costs must be reported per business unit."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Tailwind Manufacturing tiene 40 suscripciones en tres unidades de negocio y un inquilino de Microsoft Entra sincronizado desde Active Directory local."
+   ],
+   [
+    "Requisitos",
+    "- Los equipos de aplicaciones deben obtener acceso de Colaborador a su suscripción solo cuando lo necesiten, con aprobación y durante un máximo de 8 horas.\n- Los registros de todas las suscripciones deben consultarse de forma central y los datos de seguridad conservarse 2 años al menor coste.\n- Las funciones de Azure deben acceder a Key Vault sin guardar credenciales.\n- Los costes deben informarse por unidad de negocio."
+   ]
+  ]
+ },
+ {
+  "id": 318,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para conmutar un grupo de conmutación de Azure SQL.",
+  "q_en": "Put the steps to fail over a failover group of Azure SQL databases in order.",
+  "items_es": [
+   "Crear el grupo de conmutación entre los servidores primario y secundario",
+   "Agregar las bases al grupo y esperar la sincronización inicial",
+   "Apuntar la aplicación a los puntos de conexión del agente de escucha",
+   "Iniciar la conmutación cuando la región primaria no esté disponible"
+  ],
+  "items_en": [
+   "Create the failover group between the primary and secondary servers",
+   "Add the databases to the group and wait for initial seeding",
+   "Point the application at the failover group listener endpoints",
+   "Initiate the failover when the primary region is unavailable"
+  ],
+  "exp_es": "Las aplicaciones deben usar los puntos del grupo de conmutación para que la cadena de conexión no cambie tras conmutar.",
+  "exp_en": "Applications should use the failover group endpoints so connection strings do not change after failover."
+ },
+ {
+  "id": 319,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para proteger cargas de VMware locales con Azure Site Recovery.",
+  "q_en": "Put the steps to protect on-premises VMware workloads with Azure Site Recovery in order.",
+  "items_es": [
+   "Crear un almacén de Recovery Services",
+   "Implementar el dispositivo del servidor de configuración",
+   "Habilitar la replicación de las VM",
+   "Crear un plan de recuperación y ejecutar una conmutación de prueba"
+  ],
+  "items_en": [
+   "Create a Recovery Services vault",
+   "Deploy the configuration server appliance",
+   "Enable replication for the VMs",
+   "Create a recovery plan and run a test failover"
+  ],
+  "exp_es": "Primero van el almacén y el dispositivo; después se habilita la replicación y una conmutación de prueba valida el plan sin afectar a producción.",
+  "exp_en": "The vault and appliance come first; replication is enabled afterwards, and a test failover validates the plan without affecting production."
+ },
+ {
+  "id": 320,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "order",
+  "q_es": "Ordena los pasos para migrar en línea una base SQL Server local a Azure SQL Managed Instance.",
+  "q_en": "Put the steps to migrate an on-premises SQL Server database online to Azure SQL Managed Instance in order.",
+  "items_es": [
+   "Evaluar la preparación con la extensión de migración de Azure SQL",
+   "Crear la instancia administrada de destino",
+   "Iniciar la migración continua desde copias en almacenamiento",
+   "Realizar el corte cuando esté listo"
+  ],
+  "items_en": [
+   "Assess readiness with the Azure SQL migration extension",
+   "Create the target Managed Instance",
+   "Start continuous migration from backups in storage",
+   "Perform cutover when ready"
+  ],
+  "exp_es": "La migración en línea restaura copias completas y de registro de forma continua hasta el corte.",
+  "exp_en": "Online migration restores full and log backups continuously until cutover."
+ },
+ {
+  "id": 321,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para implementar una zona de aterrizaje en una suscripción nueva.",
+  "q_en": "Put the steps to deploy a landing zone for a new subscription in order.",
+  "items_es": [
+   "Crear o ubicar la suscripción en el grupo de administración adecuado",
+   "Heredar directivas y asignaciones RBAC del grupo de administración",
+   "Implementar la VNet radial y emparejarla con la central",
+   "Entregar la suscripción al equipo de la aplicación"
+  ],
+  "items_en": [
+   "Create or place the subscription in the right management group",
+   "Inherit policies and RBAC assignments from the management group",
+   "Deploy the spoke VNet and peer it to the hub",
+   "Hand the subscription over to the application team"
+  ],
+  "exp_es": "Primero se hereda la gobernanza; después se conecta la red al hub antes de que el equipo empiece a implementar.",
+  "exp_en": "Governance is inherited first; networking is then connected to the hub before the workload team starts deploying."
  }
 ]

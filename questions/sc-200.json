@@ -8779,5 +8779,513 @@
   ],
   "exp_es": "MCP expone los datos de Sentinel a las herramientas de IA de forma segura.",
   "exp_en": "MCP exposes Sentinel data to AI tools securely."
+ },
+ {
+  "id": 302,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué acciones debe realizar primero para contener la cuenta y el portátil de María?",
+  "q_en": "Which actions should you take first to contain Maria's account and laptop?",
+  "opts_es": [
+   "Solo restablecer la contraseña y esperar el inicio del usuario",
+   "Deshabilitar la cuenta, revocar sesiones y aislar el dispositivo",
+   "Eliminar el buzón y desinstalar el agente del punto de conexión",
+   "Bloquear el dominio remitente y cerrar el incidente"
+  ],
+  "opts_en": [
+   "Reset the password only and wait for the user to sign in",
+   "Disable the account, revoke sessions and isolate the device",
+   "Delete the mailbox and uninstall the endpoint agent",
+   "Block the sender domain and close the incident"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La contención detiene al atacante: deshabilitar o confirmar el usuario comprometido, revocar tokens y aislar el dispositivo de la red en Defender for Endpoint.",
+  "exp_en": "Containment stops the attacker: disable or confirm compromised user, revoke refresh tokens, and isolate the device from the network in Defender for Endpoint.",
+  "case_en": "Woodgrove Bank incident",
+  "case_es": "Incidente de Woodgrove Bank",
+  "scenario_en": [
+   [
+    "Overview",
+    "Woodgrove Bank uses Microsoft Sentinel and Microsoft Defender XDR. The SOC receives an incident named 'Multi-stage incident involving initial access and credential theft' affecting several users."
+   ],
+   [
+    "Findings",
+    "- A user, Maria, clicked a link in a phishing email and signed in from an unfamiliar country.\n- Defender for Cloud Apps shows a new inbox rule on Maria's mailbox that forwards messages to an external address.\n- A Sentinel analytics rule reports impossible travel for Maria and a second user, Luis.\n- Maria's laptop shows a suspicious PowerShell process in Defender for Endpoint."
+   ],
+   [
+    "Requirements",
+    "- Contain the compromised identity and device quickly.\n- Investigate how far the attacker moved using a single timeline.\n- Automate future responses to similar high-severity incidents."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Woodgrove Bank usa Microsoft Sentinel y Microsoft Defender XDR. El SOC recibe un incidente llamado 'Incidente de varias fases con acceso inicial y robo de credenciales' que afecta a varios usuarios."
+   ],
+   [
+    "Hallazgos",
+    "- Una usuaria, María, hizo clic en un vínculo de un correo de phishing e inició sesión desde un país inusual.\n- Defender for Cloud Apps muestra una nueva regla de bandeja en el buzón de María que reenvía mensajes a una dirección externa.\n- Una regla de análisis de Sentinel informa de viaje imposible para María y un segundo usuario, Luis.\n- El portátil de María muestra un proceso sospechoso de PowerShell en Defender for Endpoint."
+   ],
+   [
+    "Requisitos",
+    "- Contener rápido la identidad y el dispositivo comprometidos.\n- Investigar hasta dónde llegó el atacante con una única cronología.\n- Automatizar respuestas futuras a incidentes similares de gravedad alta."
+   ]
+  ]
+ },
+ {
+  "id": 303,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Cuál es la mejor forma de ver todas las alertas y entidades relacionadas en una cronología?",
+  "q_en": "What is the best way to see all related alerts and entities in one timeline?",
+  "opts_es": [
+   "Ejecutar un libro que cuente alertas por día",
+   "Exportar todas las alertas a una hoja y ordenarlas por hora",
+   "Abrir cada alerta por separado en su portal de origen",
+   "Usar la historia del ataque y el grafo de investigación de la página del incidente"
+  ],
+  "opts_en": [
+   "Run a workbook that counts alerts per day",
+   "Export all alerts to a spreadsheet and sort by time",
+   "Open each alert separately in its source portal",
+   "Use the incident page's attack story and investigation graph"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los incidentes correlacionan alertas y entidades; la historia del ataque y el grafo muestran toda la progresión.",
+  "exp_en": "Incidents correlate alerts and entities; the attack story and investigation graph show the full progression.",
+  "case_en": "Woodgrove Bank incident",
+  "case_es": "Incidente de Woodgrove Bank",
+  "scenario_en": [
+   [
+    "Overview",
+    "Woodgrove Bank uses Microsoft Sentinel and Microsoft Defender XDR. The SOC receives an incident named 'Multi-stage incident involving initial access and credential theft' affecting several users."
+   ],
+   [
+    "Findings",
+    "- A user, Maria, clicked a link in a phishing email and signed in from an unfamiliar country.\n- Defender for Cloud Apps shows a new inbox rule on Maria's mailbox that forwards messages to an external address.\n- A Sentinel analytics rule reports impossible travel for Maria and a second user, Luis.\n- Maria's laptop shows a suspicious PowerShell process in Defender for Endpoint."
+   ],
+   [
+    "Requirements",
+    "- Contain the compromised identity and device quickly.\n- Investigate how far the attacker moved using a single timeline.\n- Automate future responses to similar high-severity incidents."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Woodgrove Bank usa Microsoft Sentinel y Microsoft Defender XDR. El SOC recibe un incidente llamado 'Incidente de varias fases con acceso inicial y robo de credenciales' que afecta a varios usuarios."
+   ],
+   [
+    "Hallazgos",
+    "- Una usuaria, María, hizo clic en un vínculo de un correo de phishing e inició sesión desde un país inusual.\n- Defender for Cloud Apps muestra una nueva regla de bandeja en el buzón de María que reenvía mensajes a una dirección externa.\n- Una regla de análisis de Sentinel informa de viaje imposible para María y un segundo usuario, Luis.\n- El portátil de María muestra un proceso sospechoso de PowerShell en Defender for Endpoint."
+   ],
+   [
+    "Requisitos",
+    "- Contener rápido la identidad y el dispositivo comprometidos.\n- Investigar hasta dónde llegó el atacante con una única cronología.\n- Automatizar respuestas futuras a incidentes similares de gravedad alta."
+   ]
+  ]
+ },
+ {
+  "id": 304,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué consulta KQL encuentra otras reglas de bandeja que reenvían correo al exterior?",
+  "q_en": "Which KQL query finds other inbox rules that forward mail externally?",
+  "opts_es": [
+   "IdentityLogonEvents | where LogonType == \"Interactive\"",
+   "EmailAttachmentInfo | where FileType == \"pdf\"",
+   "DeviceProcessEvents | where FileName == \"powershell.exe\"",
+   "CloudAppEvents | where ActionType == \"New-InboxRule\""
+  ],
+  "opts_en": [
+   "IdentityLogonEvents | where LogonType == \"Interactive\"",
+   "EmailAttachmentInfo | where FileType == \"pdf\"",
+   "DeviceProcessEvents | where FileName == \"powershell.exe\"",
+   "CloudAppEvents | where ActionType == \"New-InboxRule\""
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La creación de reglas de buzón se registra como la acción New-InboxRule en CloudAppEvents; luego se filtra por parámetros de reenvío.",
+  "exp_en": "Mailbox rule creation is recorded as the New-InboxRule action in CloudAppEvents; you can then filter on forwarding parameters.",
+  "case_en": "Woodgrove Bank incident",
+  "case_es": "Incidente de Woodgrove Bank",
+  "scenario_en": [
+   [
+    "Overview",
+    "Woodgrove Bank uses Microsoft Sentinel and Microsoft Defender XDR. The SOC receives an incident named 'Multi-stage incident involving initial access and credential theft' affecting several users."
+   ],
+   [
+    "Findings",
+    "- A user, Maria, clicked a link in a phishing email and signed in from an unfamiliar country.\n- Defender for Cloud Apps shows a new inbox rule on Maria's mailbox that forwards messages to an external address.\n- A Sentinel analytics rule reports impossible travel for Maria and a second user, Luis.\n- Maria's laptop shows a suspicious PowerShell process in Defender for Endpoint."
+   ],
+   [
+    "Requirements",
+    "- Contain the compromised identity and device quickly.\n- Investigate how far the attacker moved using a single timeline.\n- Automate future responses to similar high-severity incidents."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Woodgrove Bank usa Microsoft Sentinel y Microsoft Defender XDR. El SOC recibe un incidente llamado 'Incidente de varias fases con acceso inicial y robo de credenciales' que afecta a varios usuarios."
+   ],
+   [
+    "Hallazgos",
+    "- Una usuaria, María, hizo clic en un vínculo de un correo de phishing e inició sesión desde un país inusual.\n- Defender for Cloud Apps muestra una nueva regla de bandeja en el buzón de María que reenvía mensajes a una dirección externa.\n- Una regla de análisis de Sentinel informa de viaje imposible para María y un segundo usuario, Luis.\n- El portátil de María muestra un proceso sospechoso de PowerShell en Defender for Endpoint."
+   ],
+   [
+    "Requisitos",
+    "- Contener rápido la identidad y el dispositivo comprometidos.\n- Investigar hasta dónde llegó el atacante con una única cronología.\n- Automatizar respuestas futuras a incidentes similares de gravedad alta."
+   ]
+  ]
+ },
+ {
+  "id": 305,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Cómo debe automatizar las respuestas a incidentes similares de gravedad alta?",
+  "q_en": "How should you automate responses to similar high-severity incidents?",
+  "opts_es": [
+   "Agregar los incidentes a un libro que se actualice cada hora",
+   "Aumentar la retención de la tabla SecurityIncident",
+   "Asignar cada incidente a un Lector global",
+   "Crear una regla de automatización que ejecute un cuaderno de estrategias de Logic Apps"
+  ],
+  "opts_en": [
+   "Add the incidents to a workbook that refreshes hourly",
+   "Increase the retention of the SecurityIncident table",
+   "Assign every incident to a Global Reader",
+   "Create an automation rule that runs a Logic Apps playbook"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las reglas de automatización se activan al crear o actualizar incidentes y pueden ejecutar cuadernos de estrategias (Logic Apps) para aislar dispositivos, deshabilitar usuarios o avisar al equipo.",
+  "exp_en": "Automation rules trigger on incident creation or update and can run playbooks (Logic Apps) to isolate devices, disable users or notify the team.",
+  "case_en": "Woodgrove Bank incident",
+  "case_es": "Incidente de Woodgrove Bank",
+  "scenario_en": [
+   [
+    "Overview",
+    "Woodgrove Bank uses Microsoft Sentinel and Microsoft Defender XDR. The SOC receives an incident named 'Multi-stage incident involving initial access and credential theft' affecting several users."
+   ],
+   [
+    "Findings",
+    "- A user, Maria, clicked a link in a phishing email and signed in from an unfamiliar country.\n- Defender for Cloud Apps shows a new inbox rule on Maria's mailbox that forwards messages to an external address.\n- A Sentinel analytics rule reports impossible travel for Maria and a second user, Luis.\n- Maria's laptop shows a suspicious PowerShell process in Defender for Endpoint."
+   ],
+   [
+    "Requirements",
+    "- Contain the compromised identity and device quickly.\n- Investigate how far the attacker moved using a single timeline.\n- Automate future responses to similar high-severity incidents."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Woodgrove Bank usa Microsoft Sentinel y Microsoft Defender XDR. El SOC recibe un incidente llamado 'Incidente de varias fases con acceso inicial y robo de credenciales' que afecta a varios usuarios."
+   ],
+   [
+    "Hallazgos",
+    "- Una usuaria, María, hizo clic en un vínculo de un correo de phishing e inició sesión desde un país inusual.\n- Defender for Cloud Apps muestra una nueva regla de bandeja en el buzón de María que reenvía mensajes a una dirección externa.\n- Una regla de análisis de Sentinel informa de viaje imposible para María y un segundo usuario, Luis.\n- El portátil de María muestra un proceso sospechoso de PowerShell en Defender for Endpoint."
+   ],
+   [
+    "Requisitos",
+    "- Contener rápido la identidad y el dispositivo comprometidos.\n- Investigar hasta dónde llegó el atacante con una única cronología.\n- Automatizar respuestas futuras a incidentes similares de gravedad alta."
+   ]
+  ]
+ },
+ {
+  "id": 306,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Dónde ejecuta la consulta de búsqueda sobre 30 días de datos de puntos de conexión?",
+  "q_en": "Where do you run the hunting query across 30 days of endpoint data?",
+  "opts_es": [
+   "La página de cumplimiento normativo de Defender for Cloud",
+   "La búsqueda de auditoría de Purview",
+   "El libro de registros de inicio de Entra",
+   "Búsqueda avanzada en el portal de Microsoft Defender"
+  ],
+  "opts_en": [
+   "The Defender for Cloud regulatory compliance page",
+   "The Purview audit search",
+   "The Entra sign-in logs workbook",
+   "Advanced hunting in the Microsoft Defender portal"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La búsqueda avanzada consulta tablas de Defender XDR como DeviceProcessEvents con hasta 30 días de datos.",
+  "exp_en": "Advanced hunting queries Defender XDR tables such as DeviceProcessEvents with up to 30 days of data.",
+  "case_en": "Proseware threat hunt",
+  "case_es": "Búsqueda de amenazas en Proseware",
+  "scenario_en": [
+   [
+    "Overview",
+    "Proseware's SOC wants to proactively hunt for living-off-the-land techniques after a threat intelligence report describes an actor using certutil to download payloads."
+   ],
+   [
+    "Requirements",
+    "- Search the last 30 days of endpoint activity across all devices.\n- Turn a successful hunting query into a recurring detection that creates alerts.\n- Keep the hunt's findings, notes and queries for the team."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "El SOC de Proseware quiere buscar de forma proactiva técnicas de living-off-the-land tras un informe de inteligencia que describe a un actor usando certutil para descargar cargas."
+   ],
+   [
+    "Requisitos",
+    "- Buscar en los últimos 30 días de actividad de puntos de conexión de todos los dispositivos.\n- Convertir una consulta de búsqueda correcta en una detección periódica que cree alertas.\n- Conservar hallazgos, notas y consultas de la búsqueda para el equipo."
+   ]
+  ]
+ },
+ {
+  "id": 307,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿De qué tabla y filtro debe partir la consulta?",
+  "q_en": "Which table and filter should the query start from?",
+  "opts_es": [
+   "AlertInfo | where Severity == \"Informational\"",
+   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\"",
+   "DeviceProcessEvents | where FileName =~ \"certutil.exe\" and ProcessCommandLine has \"urlcache\"",
+   "EmailEvents | where DeliveryAction == \"Delivered\""
+  ],
+  "opts_en": [
+   "AlertInfo | where Severity == \"Informational\"",
+   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\"",
+   "DeviceProcessEvents | where FileName =~ \"certutil.exe\" and ProcessCommandLine has \"urlcache\"",
+   "EmailEvents | where DeliveryAction == \"Delivered\""
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los eventos de creación de procesos con la línea de comandos muestran certutil descargando archivos (urlcache).",
+  "exp_en": "Process creation events with the command line show certutil used to download files (urlcache).",
+  "case_en": "Proseware threat hunt",
+  "case_es": "Búsqueda de amenazas en Proseware",
+  "scenario_en": [
+   [
+    "Overview",
+    "Proseware's SOC wants to proactively hunt for living-off-the-land techniques after a threat intelligence report describes an actor using certutil to download payloads."
+   ],
+   [
+    "Requirements",
+    "- Search the last 30 days of endpoint activity across all devices.\n- Turn a successful hunting query into a recurring detection that creates alerts.\n- Keep the hunt's findings, notes and queries for the team."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "El SOC de Proseware quiere buscar de forma proactiva técnicas de living-off-the-land tras un informe de inteligencia que describe a un actor usando certutil para descargar cargas."
+   ],
+   [
+    "Requisitos",
+    "- Buscar en los últimos 30 días de actividad de puntos de conexión de todos los dispositivos.\n- Convertir una consulta de búsqueda correcta en una detección periódica que cree alertas.\n- Conservar hallazgos, notas y consultas de la búsqueda para el equipo."
+   ]
+  ]
+ },
+ {
+  "id": 308,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Cómo convierte la consulta en una detección periódica?",
+  "q_en": "How do you turn the query into a recurring detection?",
+  "opts_es": [
+   "Crear una regla de detección personalizada a partir de la consulta",
+   "Guardarla como favorita y ejecutarla a mano cada semana",
+   "Anclarla a un panel que se actualice cada hora",
+   "Exportar los resultados a CSV y enviarlos por correo"
+  ],
+  "opts_en": [
+   "Create a custom detection rule from the query",
+   "Save it as a favorite and run it manually each week",
+   "Pin it to a dashboard that refreshes every hour",
+   "Export the results to CSV and email them"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las reglas de detección personalizadas ejecutan una consulta con programación y generan alertas y acciones automáticas opcionales.",
+  "exp_en": "Custom detection rules run a query on a schedule and generate alerts and optional automatic actions.",
+  "case_en": "Proseware threat hunt",
+  "case_es": "Búsqueda de amenazas en Proseware",
+  "scenario_en": [
+   [
+    "Overview",
+    "Proseware's SOC wants to proactively hunt for living-off-the-land techniques after a threat intelligence report describes an actor using certutil to download payloads."
+   ],
+   [
+    "Requirements",
+    "- Search the last 30 days of endpoint activity across all devices.\n- Turn a successful hunting query into a recurring detection that creates alerts.\n- Keep the hunt's findings, notes and queries for the team."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "El SOC de Proseware quiere buscar de forma proactiva técnicas de living-off-the-land tras un informe de inteligencia que describe a un actor usando certutil para descargar cargas."
+   ],
+   [
+    "Requisitos",
+    "- Buscar en los últimos 30 días de actividad de puntos de conexión de todos los dispositivos.\n- Convertir una consulta de búsqueda correcta en una detección periódica que cree alertas.\n- Conservar hallazgos, notas y consultas de la búsqueda para el equipo."
+   ]
+  ]
+ },
+ {
+  "id": 309,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué función de Microsoft Sentinel permite seguir juntas consultas, marcadores y notas de búsqueda?",
+  "q_en": "Which Microsoft Sentinel feature lets you track hunting queries, bookmarks and notes together?",
+  "opts_es": [
+   "Conectores de datos",
+   "Búsquedas (Hunts)",
+   "Listas de seguimiento",
+   "Centro de contenido"
+  ],
+  "opts_en": [
+   "Data connectors",
+   "Hunts",
+   "Watchlists",
+   "Content hub"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La función Hunts organiza consultas, marcadores y hallazgos en una búsqueda, que puede convertirse en incidentes o reglas de análisis.",
+  "exp_en": "The Hunts feature organizes queries, bookmarks and findings in a hunt, which can be converted to incidents or analytics rules.",
+  "case_en": "Proseware threat hunt",
+  "case_es": "Búsqueda de amenazas en Proseware",
+  "scenario_en": [
+   [
+    "Overview",
+    "Proseware's SOC wants to proactively hunt for living-off-the-land techniques after a threat intelligence report describes an actor using certutil to download payloads."
+   ],
+   [
+    "Requirements",
+    "- Search the last 30 days of endpoint activity across all devices.\n- Turn a successful hunting query into a recurring detection that creates alerts.\n- Keep the hunt's findings, notes and queries for the team."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "El SOC de Proseware quiere buscar de forma proactiva técnicas de living-off-the-land tras un informe de inteligencia que describe a un actor usando certutil para descargar cargas."
+   ],
+   [
+    "Requisitos",
+    "- Buscar en los últimos 30 días de actividad de puntos de conexión de todos los dispositivos.\n- Convertir una consulta de búsqueda correcta en una detección periódica que cree alertas.\n- Conservar hallazgos, notas y consultas de la búsqueda para el equipo."
+   ]
+  ]
+ },
+ {
+  "id": 310,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "order",
+  "q_es": "Ordena los pasos para crear y usar un cuaderno de estrategias de Sentinel.",
+  "q_en": "Put the steps to create and use a Sentinel playbook in order.",
+  "items_es": [
+   "Crear la Logic App con un desencadenador de Microsoft Sentinel",
+   "Conceder permisos a la identidad del playbook en Sentinel",
+   "Crear una regla de automatización que ejecute el playbook",
+   "Comprobar el historial de ejecución con un incidente de prueba"
+  ],
+  "items_en": [
+   "Create the Logic App with a Microsoft Sentinel trigger",
+   "Grant the playbook's identity permissions on Sentinel",
+   "Create an automation rule that runs the playbook",
+   "Verify the run history on a test incident"
+  ],
+  "exp_es": "El playbook necesita permisos en el área de trabajo antes de que una regla de automatización pueda ejecutarlo.",
+  "exp_en": "The playbook must have permissions on the workspace before an automation rule can run it successfully."
+ },
+ {
+  "id": 311,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para incorporar una fuente de datos a Microsoft Sentinel.",
+  "q_en": "Put the steps to onboard a data source to Microsoft Sentinel in order.",
+  "items_es": [
+   "Habilitar Microsoft Sentinel en un área de Log Analytics",
+   "Instalar la solución desde el Centro de contenido",
+   "Configurar el conector de datos",
+   "Confirmar que llegan datos consultando la tabla"
+  ],
+  "items_en": [
+   "Enable Microsoft Sentinel on a Log Analytics workspace",
+   "Install the solution from the Content hub",
+   "Configure the data connector",
+   "Confirm data arrives by querying the table"
+  ],
+  "exp_es": "Las soluciones agrupan el conector, reglas y libros; se configura el conector y se verifica la ingesta con KQL.",
+  "exp_en": "Solutions bundle the connector, rules and workbooks; configure the connector and verify ingestion with KQL."
+ },
+ {
+  "id": 312,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "order",
+  "q_es": "Ordena las fases del tratamiento de un incidente de phishing confirmado.",
+  "q_en": "Put the phases of handling a confirmed phishing incident in order.",
+  "items_es": [
+   "Clasificar la alerta y confirmar que es un verdadero positivo",
+   "Contener al usuario y al dispositivo",
+   "Erradicar correos y reglas maliciosos",
+   "Recuperar el acceso y documentar lecciones aprendidas"
+  ],
+  "items_en": [
+   "Triage the alert and confirm it is a true positive",
+   "Contain the user and device",
+   "Eradicate malicious emails and rules",
+   "Recover access and document lessons learned"
+  ],
+  "exp_es": "El ciclo del incidente sigue triaje, contención, erradicación y recuperación.",
+  "exp_en": "The incident lifecycle follows triage, containment, eradication and recovery."
+ },
+ {
+  "id": 313,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "order",
+  "q_es": "Ordena los pasos para ingerir datos personalizados con una regla de recopilación de datos.",
+  "q_en": "Put the steps to ingest custom data with a Data Collection Rule in order.",
+  "items_es": [
+   "Crear una tabla personalizada en el área de trabajo",
+   "Crear la regla de recopilación y la transformación",
+   "Asignar la regla a las máquinas con Azure Monitor Agent",
+   "Consultar la tabla personalizada para validar los datos"
+  ],
+  "items_en": [
+   "Create a custom table in the workspace",
+   "Create the data collection rule and transformation",
+   "Assign the rule to the Azure Monitor Agent machines",
+   "Query the custom table to validate the data"
+  ],
+  "exp_es": "Las DCR definen destinos y transformaciones; deben asociarse a las máquinas.",
+  "exp_en": "DCRs define destinations and transformations; they must be associated with the machines."
  }
 ]

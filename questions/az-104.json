@@ -15752,19 +15752,19 @@
   "q_es": "¿Qué solución cumple el requisito de acceso de los administradores a las VM?",
   "q_en": "Which solution meets the requirement for administrator access to the VMs?",
   "opts_es": [
-   "Azure Bastion implementado en una AzureBastionSubnet",
    "Una puerta de enlace NAT asociada a la subred web",
    "Una regla NSG que permita RDP desde internet",
-   "Un equilibrador Básico con una regla NAT de entrada"
+   "Un equilibrador Básico con una regla NAT de entrada",
+   "Azure Bastion implementado en una AzureBastionSubnet"
   ],
   "opts_en": [
-   "Azure Bastion deployed in an AzureBastionSubnet",
    "A NAT gateway associated with the web subnet",
    "An NSG rule allowing RDP from the internet",
-   "A Basic load balancer with an inbound NAT rule"
+   "A Basic load balancer with an inbound NAT rule",
+   "Azure Bastion deployed in an AzureBastionSubnet"
   ],
   "correct": [
-   0
+   3
   ],
   "exp_es": "Azure Bastion ofrece RDP y SSH desde el portal mediante TLS sin IP públicas en las VM. Necesita una subred dedicada llamada AzureBastionSubnet.",
   "exp_en": "Azure Bastion provides RDP and SSH from the portal over TLS without public IPs on the VMs. It needs a dedicated subnet named AzureBastionSubnet.",
@@ -15809,18 +15809,18 @@
   "q_en": "How should you deploy the web tier VMs to meet the availability requirement?",
   "opts_es": [
    "En un conjunto de disponibilidad con dos dominios de error",
-   "En zonas de disponibilidad tras un Load Balancer Estándar",
    "En una sola zona con discos administrados SSD Premium",
-   "En un grupo de selección de ubicación de proximidad"
+   "En un grupo de selección de ubicación de proximidad",
+   "En zonas de disponibilidad tras un Load Balancer Estándar"
   ],
   "opts_en": [
    "In one availability set with two fault domains",
-   "Across availability zones behind a Standard Load Balancer",
    "In a single zone with Premium SSD managed disks",
-   "In a proximity placement group in the region"
+   "In a proximity placement group in the region",
+   "Across availability zones behind a Standard Load Balancer"
   ],
   "correct": [
-   1
+   3
   ],
   "exp_es": "Las zonas de disponibilidad son centros de datos físicamente separados, así que repartir las VM entre zonas protege frente al fallo de un centro de datos. Los conjuntos de disponibilidad solo protegen frente a fallos de bastidor y actualizaciones dentro de un centro.",
   "exp_en": "Availability zones are physically separate datacenters, so spreading VMs across zones protects against a datacenter failure. Availability sets only protect against rack and update failures within one datacenter.",
@@ -15864,19 +15864,19 @@
   "q_es": "¿Qué debe configurar para cumplir el requisito de copias de seguridad?",
   "q_en": "What should you configure to meet the backup requirement?",
   "opts_es": [
-   "Azure Site Recovery con una directiva de puntos de 30 días",
    "Instantáneas de discos tomadas por una Logic App diaria",
    "Una directiva de Azure Backup en un almacén de Recovery Services",
-   "Una regla de ciclo de vida que conserve 30 días"
+   "Una regla de ciclo de vida que conserve 30 días",
+   "Azure Site Recovery con una directiva de puntos de 30 días"
   ],
   "opts_en": [
-   "Azure Site Recovery with a 30-day recovery point policy",
    "Managed disk snapshots taken by a daily Logic App",
    "An Azure Backup policy in a Recovery Services vault",
-   "A storage account lifecycle rule that keeps 30 days"
+   "A storage account lifecycle rule that keeps 30 days",
+   "Azure Site Recovery with a 30-day recovery point policy"
   ],
   "correct": [
-   2
+   1
   ],
   "exp_es": "Las directivas de Azure Backup en un almacén de Recovery Services programan copias diarias con la retención elegida y permiten recuperar archivos de un punto de restauración. Site Recovery es para replicación ante desastres, no para copias.",
   "exp_en": "Azure Backup policies in a Recovery Services vault schedule daily VM backups with the retention you choose and support file-level recovery from a restore point. Site Recovery is for disaster recovery replication, not long-term backups.",
@@ -15983,19 +15983,19 @@
   "q_es": "¿Cómo debe aplicar el requisito de regiones?",
   "q_en": "How should you enforce the region requirement?",
   "opts_es": [
-   "Asignar la directiva Ubicaciones permitidas en Contoso-Root",
    "Crear un presupuesto por región en cada suscripción",
+   "Asignar la directiva Ubicaciones permitidas en Contoso-Root",
    "Aplicar un bloqueo de solo lectura a cada suscripción",
    "Asignar el rol Lector a todos en Contoso-Root"
   ],
   "opts_en": [
-   "Assign the Allowed locations policy at Contoso-Root",
    "Create a budget for each subscription by region",
+   "Assign the Allowed locations policy at Contoso-Root",
    "Apply a read-only lock to each subscription",
    "Assign the Reader role to all users at Contoso-Root"
   ],
   "correct": [
-   0
+   1
   ],
   "exp_es": "Asignar la directiva Ubicaciones permitidas en el grupo de administración la aplica a todas las suscripciones actuales y futuras que contiene.",
   "exp_en": "Assigning the Allowed locations policy at the management group applies it to all current and future subscriptions under it.",
@@ -16033,17 +16033,17 @@
   "opts_es": [
    "Asignar el rol integrado Colaborador de máquina virtual",
    "Asignar el rol Colaborador en cada grupo de recursos",
-   "Crear un rol personalizado con acciones de lectura y reinicio",
-   "Agregar el grupo de soporte al rol Propietario"
+   "Agregar el grupo de soporte al rol Propietario",
+   "Crear un rol personalizado con acciones de lectura y reinicio"
   ],
   "opts_en": [
    "Assign the built-in Virtual Machine Contributor role",
    "Assign the Contributor role on each resource group",
-   "Create a custom role with read and restart actions",
-   "Add the help desk group to the Owner role"
+   "Add the help desk group to the Owner role",
+   "Create a custom role with read and restart actions"
   ],
   "correct": [
-   2
+   3
   ],
   "exp_es": "Colaborador de máquina virtual también puede eliminar y redimensionar VM. Un rol personalizado con Microsoft.Compute/virtualMachines/read y .../restart/action concede solo lo necesario.",
   "exp_en": "Virtual Machine Contributor can also delete and resize VMs. A custom role with Microsoft.Compute/virtualMachines/read and .../restart/action grants only what is needed.",
@@ -16079,19 +16079,19 @@
   "q_es": "¿Qué debe usar para cumplir el requisito de la etiqueta CostCenter?",
   "q_en": "What should you use to meet the CostCenter tag requirement?",
   "opts_es": [
-   "Una directiva que deniegue recursos sin ninguna etiqueta",
-   "Una directiva con efecto Modify que herede la etiqueta",
    "Un grupo de administración con el nombre de cada centro",
-   "Una alerta de costes que avise a quien creó el recurso"
+   "Una alerta de costes que avise a quien creó el recurso",
+   "Una directiva que deniegue recursos sin ninguna etiqueta",
+   "Una directiva con efecto Modify que herede la etiqueta"
   ],
   "opts_en": [
-   "A policy that denies resources without any tags at all",
-   "A policy with the Modify effect that inherits the tag",
    "A management group named after each cost center",
-   "A cost alert that emails the creator of the resource"
+   "A cost alert that emails the creator of the resource",
+   "A policy that denies resources without any tags at all",
+   "A policy with the Modify effect that inherits the tag"
   ],
   "correct": [
-   1
+   3
   ],
   "exp_es": "La directiva integrada 'Heredar una etiqueta del grupo de recursos si falta' usa el efecto Modify para agregar la etiqueta automáticamente; una tarea de corrección arregla los recursos existentes.",
   "exp_en": "The built-in 'Inherit a tag from the resource group if missing' policy uses the Modify effect to add the tag automatically; a remediation task fixes existing resources.",
@@ -16127,19 +16127,19 @@
   "q_es": "¿Cómo puede cumplir el requisito del grupo de recursos de red de producción?",
   "q_en": "How can you meet the requirement for the production networking resource group?",
   "opts_es": [
-   "Aplicar un bloqueo CanNotDelete al grupo de recursos",
    "Mover el grupo de recursos a otra suscripción",
+   "Habilitar la eliminación temporal en las redes virtuales",
    "Quitar todas las asignaciones de Propietario",
-   "Habilitar la eliminación temporal en las redes virtuales"
+   "Aplicar un bloqueo CanNotDelete al grupo de recursos"
   ],
   "opts_en": [
-   "Apply a CanNotDelete lock to the resource group",
    "Move the resource group to a new subscription",
+   "Enable soft delete on the virtual networks",
    "Remove all Owner role assignments from the group",
-   "Enable soft delete on the virtual networks"
+   "Apply a CanNotDelete lock to the resource group"
   ],
   "correct": [
-   0
+   3
   ],
   "exp_es": "Un bloqueo CanNotDelete (Eliminar) permite leer y modificar recursos, pero impide eliminarlos hasta quitar el bloqueo.",
   "exp_en": "A CanNotDelete (Delete) lock lets authorized users read and modify resources but blocks deletion until the lock is removed.",
@@ -16176,15 +16176,15 @@
   "q_en": "How should you configure VNet peering to meet the connectivity requirement?",
   "opts_es": [
    "Permitir tránsito de puerta de enlace en la central; usar puertas remotas en radiales",
-   "Usar puertas remotas en la central; permitir tránsito en las radiales",
+   "Emparejar las radiales entre sí y deshabilitar el emparejamiento central",
    "Habilitar solo el tráfico reenviado en ambos lados de cada emparejamiento",
-   "Emparejar las radiales entre sí y deshabilitar el emparejamiento central"
+   "Usar puertas remotas en la central; permitir tránsito en las radiales"
   ],
   "opts_en": [
    "Allow gateway transit on the hub; use remote gateways on spokes",
-   "Use remote gateways on the hub; allow gateway transit on spokes",
+   "Peer the spokes to each other and disable the hub peering",
    "Enable forwarded traffic only, on both sides of each peering",
-   "Peer the spokes to each other and disable the hub peering"
+   "Use remote gateways on the hub; allow gateway transit on spokes"
   ],
   "correct": [
    0
@@ -16224,18 +16224,18 @@
   "q_en": "What should you implement for the storage account?",
   "opts_es": [
    "Un punto de conexión de servicio y una regla IP de la sede",
-   "Un punto de conexión privado y el acceso público deshabilitado",
    "Una firma de acceso compartido que caduque cada día",
-   "Una puerta de enlace NAT delante de la cuenta"
+   "Una puerta de enlace NAT delante de la cuenta",
+   "Un punto de conexión privado y el acceso público deshabilitado"
   ],
   "opts_en": [
    "A service endpoint and an IP rule for the head office",
-   "A private endpoint and disabled public network access",
    "A shared access signature that expires every day",
-   "A NAT gateway in front of the storage account"
+   "A NAT gateway in front of the storage account",
+   "A private endpoint and disabled public network access"
   ],
   "correct": [
-   1
+   3
   ],
   "exp_es": "Un punto de conexión privado da a la cuenta una IP privada en la VNet; deshabilitar el acceso público bloquea internet. Los puntos de conexión de servicio mantienen el punto público.",
   "exp_en": "A private endpoint gives the storage account a private IP in the VNet; disabling public network access blocks all internet access. Service endpoints keep the public endpoint.",
@@ -16272,15 +16272,15 @@
   "q_en": "How should you meet the name resolution requirement?",
   "opts_es": [
    "Editar el archivo hosts de cada VM con la IP privada",
-   "Crear una zona DNS pública para la cuenta",
+   "Configurar un dominio personalizado en la cuenta",
    "Vincular una zona DNS privada privatelink.blob.core.windows.net a las VNet",
-   "Configurar un dominio personalizado en la cuenta"
+   "Crear una zona DNS pública para la cuenta"
   ],
   "opts_en": [
    "Edit the hosts file on every VM with the private IP",
-   "Create a public DNS zone for the storage account",
+   "Configure a custom domain on the storage account",
    "Link a privatelink.blob.core.windows.net private DNS zone to the VNets",
-   "Configure a custom domain on the storage account"
+   "Create a public DNS zone for the storage account"
   ],
   "correct": [
    2
@@ -16319,19 +16319,19 @@
   "q_es": "¿Qué debe crear para el requisito de CPU?",
   "q_en": "What should you create for the CPU requirement?",
   "opts_es": [
-   "Una alerta de búsqueda en el registro de actividad",
+   "Una regla de alerta de métricas con un grupo de acciones",
    "Una alerta de Service Health para máquinas virtuales",
    "Una alerta de presupuesto con umbral del 85%",
-   "Una regla de alerta de métricas con un grupo de acciones"
+   "Una alerta de búsqueda en el registro de actividad"
   ],
   "opts_en": [
-   "A log search alert on the Activity log",
+   "A metric alert rule with an action group",
    "A Service Health alert for virtual machines",
    "A budget alert with an 85% threshold",
-   "A metric alert rule with an action group"
+   "A log search alert on the Activity log"
   ],
   "correct": [
-   3
+   0
   ],
   "exp_es": "Una alerta de métricas sobre Porcentaje de CPU (media, ventana de 15 minutos, umbral 85) con un grupo de acciones que envíe correo cumple el requisito.",
   "exp_en": "A metric alert on Percentage CPU (average, 15-minute window, threshold 85) with an action group that sends email meets the requirement.",
