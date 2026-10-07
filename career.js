@@ -62,7 +62,7 @@ const day=86400000;
 const PATHS=[
  {id:'security',  k:'pathSecurity', steps:['sc-900','sc-300','sc-200','sc-500']},
  {id:'azure',     k:'pathAzure',    steps:['az-900','az-104','az-305']},
- {id:'m365',      k:'pathM365',     steps:['ab-900','md-102','ms-102']},
+ {id:'m365',      k:'pathM365',     steps:['ab-900','ab-650','md-102','ms-102']},
  {id:'teams',     k:'pathTeams',    steps:['ms-700','ms-721']},
  {id:'data',      k:'pathData',     steps:['ab-900','pl-300']}
 ];
@@ -293,7 +293,7 @@ let NEWS=null;
 async function loadNews(){
   if(NEWS)return NEWS;
   try{
-    const r=await fetch('news.json?v=1'); if(!r.ok)throw new Error(r.status);
+    const r=await fetch('news.json?v=2'); if(!r.ok)throw new Error(r.status);
     NEWS=(await r.json()).sort((a,b)=>b.date.localeCompare(a.date));
   }catch(e){ NEWS=[]; }
   return NEWS;

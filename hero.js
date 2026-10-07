@@ -51,7 +51,7 @@ function heroRender(){
   hero.innerHTML=
     '<div class="mkt-main">'+
       (fresh.length
-        ?'<button type="button" class="mkt-eyebrow" id="heroEyebrow"><i></i>'+esc(eyebrow)+'</button>'
+        ?'<button type="button" class="mkt-eyebrow" id="mktEyebrow"><i></i>'+esc(eyebrow)+'</button>'
         :'<span class="mkt-eyebrow"><i></i>'+esc(eyebrow)+'</span>')+
       '<h1>'+esc(ht('title'))+'</h1>'+
       '<p>'+esc(ht('sub'))+'</p>'+
@@ -71,7 +71,7 @@ function heroRender(){
     const g=document.getElementById('examGrid'); if(g)g.scrollIntoView({behavior:'smooth',block:'start'});
   };
   hero.querySelector('#heroNew').onclick=showNew;
-  const eb=hero.querySelector('#heroEyebrow'); if(eb)eb.onclick=showNew;
+  const eb=hero.querySelector('#mktEyebrow'); if(eb)eb.onclick=showNew;
   const c=hero.querySelector('#heroCareer'); if(c)c.onclick=()=>{ if(window.track)track('hero_career'); openProgress(); };
   renderFilterBar();
 }
