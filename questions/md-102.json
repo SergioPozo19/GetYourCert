@@ -3924,9 +3924,9 @@
     "ans": true
    },
    {
-    "es": "Los dispositivos Android Enterprise de propiedad corporativa con perfil de trabajo (COPE) permiten al usuario tener un perfil personal separado no gestionado por Intune.",
-    "en": "Corporate-owned work profile (COPE) Android Enterprise devices allow the user to have a separate personal profile not managed by Intune.",
-    "ans": true
+    "es": "Los dispositivos Android Enterprise de perfil de trabajo de propiedad corporativa (COPE) dan a Intune control total del perfil personal, incluidas sus apps y datos.",
+    "en": "Corporate-owned work profile (COPE) devices give Intune full control of the personal profile, including its apps and data.",
+    "ans": false
    },
    {
     "es": "Para usar los modos de Android Enterprise en Intune, la organización debe tener una cuenta de Google empresarial conectada a Intune mediante Managed Google Play.",
@@ -3934,8 +3934,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los dispositivos totalmente administrados no permiten apps personales. COPE tiene perfil personal separado. Todos los modos de Android Enterprise requieren Managed Google Play vinculado a Intune.",
-  "exp_en": "Fully managed devices don't allow personal apps. COPE has a separate personal profile. All Android Enterprise modes require Managed Google Play linked to Intune."
+  "exp_es": "Los dispositivos totalmente administrados no permiten apps personales (verdadero). COPE mantiene un perfil personal separado que Intune no administra, así que no controla sus apps ni datos (falso). Todos los modos de Android Enterprise requieren Managed Google Play vinculado a Intune (verdadero).",
+  "exp_en": "Fully managed devices don't allow personal apps (true). COPE keeps a separate personal profile that Intune does not manage, so it does not control personal apps or data (false). All Android Enterprise modes require Managed Google Play linked to Intune (true)."
  },
  {
   "id": 149,
@@ -7163,13 +7163,13 @@
     "ans": true
    },
    {
-    "es": "Las APP de Intune para iOS/iPadOS pueden impedir que los datos corporativos se compartan con aplicaciones de iCloud, incluida la sincronización con iCloud Drive.",
-    "en": "Intune APP for iOS/iPadOS can prevent corporate data from being shared with iCloud apps, including iCloud Drive sync.",
-    "ans": true
+    "es": "Intune APP para iOS/iPadOS solo se aplica después de inscribir completamente el dispositivo en Intune MDM.",
+    "en": "Intune APP for iOS/iPadOS only applies after the device is fully enrolled in Intune MDM.",
+    "ans": false
    }
   ],
-  "exp_es": "Las APP pueden requerir PIN/biometría propia. El borrado selectivo es remoto desde el portal de Intune. Las APP pueden bloquear la sincronización con iCloud Drive para datos corporativos.",
-  "exp_en": "APP can require their own PIN/biometrics. Selective wipe is remote from the Intune portal. APP can block iCloud Drive sync for corporate data."
+  "exp_es": "APP puede exigir su propio PIN o biometría (verdadero). El borrado selectivo se inicia de forma remota desde el portal de Intune (verdadero). APP también funciona en dispositivos no inscritos (BYOD); no requiere inscripción MDM (falso).",
+  "exp_en": "APP can require its own PIN/biometrics (true). Selective wipe is triggered remotely from the Intune portal (true). APP also works on unenrolled (BYOD) devices; MDM enrollment isn't required (false)."
  },
  {
   "id": 272,
@@ -14487,9 +14487,9 @@
     "ans": true
    },
    {
-    "es": "Un perfil de Autopilot puede asignarse directamente a dispositivos individuales.",
-    "en": "An Autopilot profile can be assigned directly to individual devices.",
-    "ans": true
+    "es": "Un perfil de Autopilot solo puede asignarse a grupos de usuarios, nunca a grupos de dispositivos.",
+    "en": "An Autopilot profile can only be assigned to user groups, never to device groups.",
+    "ans": false
    },
    {
     "es": "El perfil de Autopilot puede configurar el idioma y la región durante la OOBE sin intervención del usuario.",
@@ -14497,8 +14497,8 @@
     "ans": true
    }
   ],
-  "exp_es": "El perfil de Autopilot determina el modo de implementación (user-driven, self-deploying, pre-provisioning) (true). Un perfil de Autopilot puede asignarse directamente a dispositivos individuales o a grupos (true). El perfil de Autopilot puede configurar el idioma y la región durante la OOBE si el modo de implementación lo permite (true).",
-  "exp_en": "The Autopilot deployment profile determines the deployment mode (user-driven, self-deploying, pre-provisioning) (true). An Autopilot profile can be assigned directly to individual devices or to groups (true). The Autopilot profile can configure language and region during OOBE if the deployment mode allows it (true)."
+  "exp_es": "El perfil de implementación define el modo de implementación (verdadero). Los perfiles de Autopilot se asignan a grupos de dispositivos, no a grupos de usuarios (falso). El perfil puede configurar idioma y región durante OOBE si el modo lo permite (verdadero).",
+  "exp_en": "The deployment profile sets the deployment mode (true). Autopilot profiles are assigned to device groups, not to user groups (false). The profile can configure language and region during OOBE when the mode allows it (true)."
  },
  {
   "id": 537,
@@ -14658,9 +14658,9 @@
   "q_en": "For each statement about administrative templates (ADMX) in Intune, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Las plantillas administrativas de Intune incluyen más de 2500 configuraciones de directiva de grupo.",
-    "en": "Intune administrative templates include more than 2500 Group Policy settings.",
-    "ans": true
+    "es": "Las plantillas administrativas de Intune solo incluyen opciones de Microsoft Edge.",
+    "en": "Intune administrative templates only include settings for Microsoft Edge.",
+    "ans": false
    },
    {
     "es": "Las plantillas administrativas de Intune solo admiten dispositivos Windows 10/11.",
@@ -14673,8 +14673,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Las plantillas administrativas de Intune incluyen más de 2500 configuraciones de Windows y Office (true). Las plantillas administrativas de Intune solo admiten dispositivos Windows 10/11 con las versiones de sistema operativo soportadas (true). Con las plantillas ADMX se puede importar un archivo .admx de terceros directamente en Intune (true, usando ADMX ingerido o plantillas ADMX importadas).",
-  "exp_en": "Intune administrative templates include over 2500 Windows and Office settings (true). Administrative templates in Intune only support Windows 10/11 devices with supported OS versions (true). With ADMX templates, a third-party .admx file can be imported directly into Intune (true, using ingested/imported ADMX templates)."
+  "exp_es": "Las plantillas administrativas incluyen miles de opciones de Windows, Office y Edge, no solo de Edge (falso). Se aplican a dispositivos Windows 10/11 compatibles (verdadero). Se pueden importar archivos .admx de terceros en Intune (verdadero).",
+  "exp_en": "Administrative templates include thousands of Windows, Office and Edge settings, not only Edge (false). They apply to supported Windows 10/11 devices (true). Third-party .admx files can be imported into Intune (true)."
  },
  {
   "id": 542,
@@ -14841,9 +14841,9 @@
     "ans": true
    },
    {
-    "es": "EPM requiere una licencia adicional de Intune Suite o EPM independiente.",
-    "en": "EPM requires an additional Intune Suite or standalone EPM license.",
-    "ans": true
+    "es": "EPM está incluido en todas las licencias de Intune Plan 1 sin coste adicional.",
+    "en": "EPM is included in every Intune Plan 1 license at no extra cost.",
+    "ans": false
    },
    {
     "es": "Con EPM, un administrador puede configurar que ciertas aplicaciones siempre se ejecuten con privilegios elevados automáticamente.",
@@ -14851,8 +14851,8 @@
     "ans": true
    }
   ],
-  "exp_es": "EPM permite que los usuarios estándar ejecuten aplicaciones específicas con privilegios elevados sin ser administradores locales (true). EPM requiere una licencia adicional de Intune Suite o EPM independiente (true). Con EPM, se puede configurar que ciertas aplicaciones siempre se ejecuten con privilegios elevados automáticamente (true).",
-  "exp_en": "EPM allows standard users to run specific applications with elevated privileges without being local admins (true). EPM requires an additional Intune Suite or standalone EPM license (true). With EPM, certain applications can be configured to always run elevated automatically (true)."
+  "exp_es": "EPM permite que usuarios estándar ejecuten apps concretas con elevación sin ser administradores locales (verdadero). EPM es un complemento de Intune Suite o una licencia independiente, no está incluido en Intune Plan 1 (falso). Se pueden configurar apps para que se eleven siempre automáticamente (verdadero).",
+  "exp_en": "EPM lets standard users run specific apps elevated without being local admins (true). EPM is an Intune Suite add-on or standalone license, not included in Intune Plan 1 (false). Apps can be set to always run elevated automatically (true)."
  },
  {
   "id": 548,
@@ -15964,13 +15964,13 @@
     "ans": true
    },
    {
-    "es": "El PIN de la APP se comparte entre todas las aplicaciones gestionadas por la misma directiva en el dispositivo.",
-    "en": "The APP PIN is shared across all apps managed by the same policy on the device.",
-    "ans": true
+    "es": "El PIN de APP debe ser siempre el mismo que el PIN de la pantalla de bloqueo del dispositivo.",
+    "en": "The APP PIN must always be the same as the device lock screen PIN.",
+    "ans": false
    }
   ],
-  "exp_es": "La directiva APP puede exigir un PIN de la aplicación independiente del PIN del dispositivo (true). El PIN de la APP puede ser numérico o alfanumérico, según la configuración de la directiva (true). El PIN de la APP se comparte entre todas las aplicaciones gestionadas por la misma directiva APP del mismo editor (true; el PIN es común a todas las apps del mismo proveedor de MAM).",
-  "exp_en": "The APP policy can require an application PIN independent of the device PIN (true). The APP PIN can be numeric or alphanumeric, depending on the policy configuration (true). The APP PIN is shared across all applications managed by the same APP policy from the same publisher (true — the PIN is common to all apps from the same MAM provider)."
+  "exp_es": "APP puede exigir un PIN de app independiente del PIN del dispositivo, así que no tiene que coincidir con el de la pantalla de bloqueo (falso). El PIN de APP puede ser numérico o alfanumérico (verdadero). El PIN de APP se comparte entre las apps administradas por la misma directiva y editor (verdadero).",
+  "exp_en": "APP can require an app PIN independent of the device PIN, so it does not have to match the lock screen PIN (false). The APP PIN can be numeric or alphanumeric (true). The APP PIN is shared across apps managed by the same policy and publisher (true)."
  },
  {
   "id": 580,
@@ -16215,13 +16215,13 @@
     "ans": true
    },
    {
-    "es": "Con Tamper Protection activo, los administradores de Intune pueden cambiar la configuración de Defender remotamente.",
-    "en": "With Tamper Protection active, Intune administrators can still change Defender settings remotely.",
-    "ans": true
+    "es": "Con la protección contra alteraciones activa, los administradores de Intune ya no pueden cambiar la configuración de Defender de forma remota.",
+    "en": "With Tamper Protection active, Intune administrators can no longer change Defender settings remotely.",
+    "ans": false
    }
   ],
-  "exp_es": "Tamper Protection impide que usuarios locales o malware desactiven Microsoft Defender Antivirus (true). Tamper Protection puede habilitarse mediante una directiva de seguridad de endpoint en Intune (true). Con Tamper Protection activo, los administradores de Intune SÍ pueden cambiar la configuración de Defender a través de directivas de Intune; Tamper Protection bloquea cambios locales, no los de Intune (true, aunque el enunciado podría decir que los admins NO pueden, lo cual sería falso).",
-  "exp_en": "Tamper Protection prevents local users or malware from disabling Microsoft Defender Antivirus (true). Tamper Protection can be enabled through an endpoint security policy in Intune (true). With Tamper Protection active, Intune admins CAN still change Defender settings via Intune policies — Tamper Protection blocks local changes, not Intune-managed ones (true)."
+  "exp_es": "La protección contra alteraciones impide que usuarios locales o malware deshabiliten Defender Antivirus (verdadero). Se puede habilitar con una directiva de seguridad de Intune (verdadero). Bloquea los cambios locales, no los administrados por Intune, así que los administradores sí pueden cambiar la configuración de Defender desde Intune (falso).",
+  "exp_en": "Tamper Protection prevents local users or malware from disabling Defender Antivirus (true). It can be enabled through an Intune endpoint security policy (true). It blocks local changes, not Intune-managed ones, so admins can still change Defender settings through Intune (false)."
  },
  {
   "id": 588,
@@ -16581,9 +16581,9 @@
     "ans": true
    },
    {
-    "es": "Una vez superada la fecha límite, el dispositivo instala la actualización independientemente de que el usuario esté trabajando.",
-    "en": "Once the deadline is exceeded, the device installs the update regardless of whether the user is working.",
-    "ans": true
+    "es": "Una vez superada la fecha límite, los usuarios pueden seguir posponiendo la actualización indefinidamente.",
+    "en": "Once the deadline is exceeded, users can keep postponing the update indefinitely.",
+    "ans": false
    },
    {
     "es": "El período de gracia de la fecha límite permite al usuario posponer el reinicio requerido hasta 7 días.",
@@ -16591,8 +16591,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La fecha límite de actualización de calidad define cuántos días después de la disponibilidad el dispositivo debe instalar la actualización (true). Una vez superada la fecha límite, el dispositivo instala la actualización independientemente del estado de reinicio (true). El período de gracia de la fecha límite permite al usuario posponer el reinicio sin posponer la instalación (true).",
-  "exp_en": "The quality update deadline defines how many days after availability the device must install the update (true). Once the deadline passes, the device installs the update regardless of restart state (true). The deadline grace period allows the user to postpone the restart without postponing the installation (true)."
+  "exp_es": "La fecha límite de actualizaciones de calidad fija cuántos días después de estar disponible debe instalarse (verdadero). Tras la fecha límite la actualización se instala y los usuarios no pueden posponerla indefinidamente (falso). El periodo de gracia permite posponer el reinicio durante un tiempo limitado (verdadero).",
+  "exp_en": "The quality update deadline sets how many days after availability the update must be installed (true). After the deadline the update is installed and users cannot postpone it indefinitely (false). The grace period lets users postpone the restart for a limited time (true)."
  },
  {
   "id": 598,
@@ -20824,5 +20824,331 @@
   "exp_es": "Los anillos de actualización de Windows son directivas que controlan cuándo y cómo se instalan las actualizaciones.",
   "exp_en": "Windows update rings are policies that control when and how updates are installed.",
   "pack": "md102-oct26"
+ },
+ {
+  "id": 731,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_en": "A company buys 500 Samsung Galaxy devices and wants them to enroll in Intune as corporate devices automatically on first boot. What should you configure?",
+  "q_es": "Una empresa compra 500 dispositivos Samsung Galaxy y quiere que se inscriban automáticamente en Intune como corporativos en el primer arranque. ¿Qué configura?",
+  "opts_en": [
+   "Samsung Knox Mobile Enrollment with an Intune enrollment profile",
+   "An Apple Business Manager token with an automated enrollment profile",
+   "Personal enrollment with the Company Portal and a work profile only",
+   "A Windows Autopilot deployment profile assigned to the Samsung group"
+  ],
+  "opts_es": [
+   "Samsung Knox Mobile Enrollment con un perfil de inscripción de Intune",
+   "Un token de Apple Business Manager con un perfil de inscripción automatizada",
+   "Inscripción personal con Portal de empresa y solo un perfil de trabajo",
+   "Un perfil de implementación de Windows Autopilot asignado al grupo Samsung"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Knox Mobile Enrollment (KME) lets Samsung devices bought through authorized channels enroll in Intune in bulk on first boot, using an Android Enterprise enrollment profile (for example fully managed or dedicated).",
+  "exp_es": "Knox Mobile Enrollment (KME) permite que los dispositivos Samsung comprados por canales autorizados se inscriban en Intune de forma masiva en el primer arranque, con un perfil de Android Enterprise (por ejemplo, totalmente administrado o dedicado)."
+ },
+ {
+  "id": 732,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_en": "Android devices from several manufacturers are bought from an authorized reseller and must enroll as fully managed on first boot. Which option fits?",
+  "q_es": "Se compran dispositivos Android de varios fabricantes a un revendedor autorizado y deben inscribirse como totalmente administrados en el primer arranque. ¿Qué opción encaja?",
+  "opts_en": [
+   "Apple Configurator with a USB enrollment profile",
+   "Google zero-touch enrollment linked to Intune",
+   "Bulk enrollment with a provisioning package",
+   "Device registration in Microsoft Entra ID only"
+  ],
+  "opts_es": [
+   "Apple Configurator con un perfil de inscripción USB",
+   "Inscripción sin intervención de Google vinculada a Intune",
+   "Inscripción masiva con un paquete de aprovisionamiento",
+   "Solo registro del dispositivo en Microsoft Entra ID"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "Google zero-touch enrollment, configured with the Intune DPC extras, provisions supported Android devices bought from zero-touch resellers into Intune automatically on first boot.",
+  "exp_es": "La inscripción sin intervención de Google, configurada con los datos DPC de Intune, aprovisiona automáticamente en Intune en el primer arranque los dispositivos Android compatibles comprados a revendedores zero-touch."
+ },
+ {
+  "id": 733,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_en": "You must add the Helpdesk Entra group to the local Administrators group on all Windows devices without using scripts. Which Intune policy should you use?",
+  "q_es": "Debe agregar el grupo de Entra Helpdesk al grupo local Administradores en todos los dispositivos Windows sin usar scripts. ¿Qué directiva de Intune usa?",
+  "opts_en": [
+   "A compliance policy that requires local admin rights",
+   "A Windows LAPS policy that rotates the admin password",
+   "An app protection policy for Windows with admin access",
+   "Account protection: Local user group membership"
+  ],
+  "opts_es": [
+   "Una directiva de cumplimiento que exija derechos de administrador local",
+   "Una directiva de Windows LAPS que rota la contraseña del administrador",
+   "Una directiva de protección de apps para Windows con acceso de admin",
+   "Protección de cuentas: Pertenencia a grupos de usuarios locales"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_en": "Endpoint security > Account protection includes the Local user group membership profile (LocalUsersAndGroups CSP), which adds, removes or replaces members of local groups such as Administrators.",
+  "exp_es": "Seguridad de puntos de conexión > Protección de cuentas incluye el perfil Pertenencia a grupos de usuarios locales (CSP LocalUsersAndGroups), que agrega, quita o reemplaza miembros de grupos locales como Administradores."
+ },
+ {
+  "id": 734,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "Which statement correctly compares Windows Autopilot device preparation policies with Autopilot deployment profiles?",
+  "q_es": "¿Qué afirmación compara correctamente las directivas de preparación de dispositivos de Windows Autopilot con los perfiles de implementación de Autopilot?",
+  "opts_en": [
+   "Device preparation needs no hardware hash pre-registration",
+   "Device preparation requires hybrid join with an on-premises connector",
+   "Deployment profiles cannot be used for Microsoft Entra join at all",
+   "Device preparation only supports Windows 10 devices with a TPM 1.2"
+  ],
+  "opts_es": [
+   "La preparación de dispositivos no requiere registrar antes el hash",
+   "La preparación de dispositivos exige unión híbrida con un conector local",
+   "Los perfiles de implementación no pueden usarse para la unión a Entra",
+   "La preparación de dispositivos solo admite Windows 10 con un TPM 1.2"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Autopilot device preparation doesn't require importing hardware hashes beforehand; it uses enrollment time grouping to deliver selected apps and scripts during OOBE. Deployment profiles rely on registered devices.",
+  "exp_es": "La preparación de dispositivos de Autopilot no requiere importar antes los hashes de hardware; usa la agrupación en el momento de la inscripción para entregar apps y scripts durante OOBE. Los perfiles de implementación dependen de dispositivos registrados."
+ },
+ {
+  "id": 735,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "Autopilot devices joined to Microsoft Entra ID must be named with the prefix CTS- followed by the serial number. Where do you configure this?",
+  "q_es": "Los dispositivos de Autopilot unidos a Microsoft Entra ID deben llamarse con el prefijo CTS- seguido del número de serie. ¿Dónde lo configura?",
+  "opts_en": [
+   "In a dynamic group rule that renames members by serial",
+   "In the device name template of the deployment profile",
+   "In the Enrollment Status Page with a custom message",
+   "In a compliance policy that checks the device name"
+  ],
+  "opts_es": [
+   "En una regla de grupo dinámico que renombra por número de serie",
+   "En la plantilla de nombre de dispositivo del perfil de implementación",
+   "En la página de estado de inscripción con un mensaje personalizado",
+   "En una directiva de cumplimiento que comprueba el nombre del equipo"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "For Entra join, the Autopilot deployment profile's 'Apply device name template' setting supports macros such as %SERIAL% and %RAND:x% (for example CTS-%SERIAL%), with a 15-character limit.",
+  "exp_es": "Para la unión a Entra, la opción 'Aplicar plantilla de nombre de dispositivo' del perfil de implementación de Autopilot admite macros como %SERIAL% y %RAND:x% (por ejemplo, CTS-%SERIAL%), con un límite de 15 caracteres."
+ },
+ {
+  "id": 736,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "You want Windows 365 Cloud PCs to start from your organization's own Windows image with preinstalled apps. What should you do?",
+  "q_es": "Quiere que los Cloud PC de Windows 365 partan de una imagen de Windows propia con apps preinstaladas. ¿Qué debe hacer?",
+  "opts_en": [
+   "Upload the WIM file to the Company Portal and assign it to users",
+   "Capture the image with Autopilot and attach it to an update ring",
+   "Add a generalized custom image and pick it in the provisioning policy",
+   "Create an app protection policy that installs the image at each sign-in"
+  ],
+  "opts_es": [
+   "Subir el archivo WIM al Portal de empresa y asignarlo a usuarios",
+   "Capturar la imagen con Autopilot y adjuntarla a un anillo de actualización",
+   "Agregar una imagen personalizada generalizada y elegirla en la directiva",
+   "Crear una directiva de protección de apps que instale la imagen en cada inicio"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "Windows 365 supports custom images: you add a generalized Gen2 Azure managed image under Custom images, then choose it in the provisioning policy instead of a gallery image.",
+  "exp_es": "Windows 365 admite imágenes personalizadas: se agrega una imagen administrada de Azure Gen2 generalizada en Imágenes personalizadas y luego se elige en la directiva de aprovisionamiento en lugar de una imagen de la galería."
+ },
+ {
+  "id": 737,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_en": "During Autopilot device preparation, apps must be delivered immediately instead of waiting for a dynamic device group to update. Which feature provides this?",
+  "q_es": "Durante la preparación de dispositivos de Autopilot, las apps deben entregarse de inmediato en lugar de esperar a que se actualice un grupo dinámico. ¿Qué característica lo proporciona?",
+  "opts_en": [
+   "Assignment filters based on the device model property",
+   "Scope tags applied to the Autopilot device records",
+   "Enrollment time grouping with a static device group",
+   "A dynamic group rule using the ZTDId attribute value"
+  ],
+  "opts_es": [
+   "Filtros de asignación basados en la propiedad de modelo",
+   "Etiquetas de ámbito aplicadas a los registros de Autopilot",
+   "Agrupación en la inscripción con un grupo estático",
+   "Una regla de grupo dinámico con el valor del atributo ZTDId"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "Enrollment time grouping adds the device to a specified static security group at enrollment, so policies and apps targeted to that group apply right away without dynamic membership delays.",
+  "exp_es": "La agrupación en el momento de la inscripción agrega el dispositivo a un grupo de seguridad estático indicado al inscribirse, de modo que las directivas y apps de ese grupo se aplican al momento sin los retrasos de la pertenencia dinámica."
+ },
+ {
+  "id": 738,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_en": "Before moving to Intune, you want to know which of your existing GPO settings have an MDM equivalent. Which tool should you use?",
+  "q_es": "Antes de pasar a Intune, quiere saber qué opciones de sus GPO actuales tienen equivalente en MDM. ¿Qué herramienta debe usar?",
+  "opts_en": [
+   "Group Policy analytics with an imported GPO backup XML",
+   "Endpoint analytics startup performance reports per model",
+   "Microsoft Purview Compliance Manager assessments",
+   "The Windows Update for Business compliance report"
+  ],
+  "opts_es": [
+   "Análisis de directivas de grupo con un XML de copia de GPO",
+   "Informes de rendimiento de inicio de Endpoint analytics por modelo",
+   "Evaluaciones de Microsoft Purview Compliance Manager",
+   "El informe de cumplimiento de Windows Update para empresas"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Group Policy analytics imports GPO backup XML files, shows which settings are supported in MDM and can migrate supported settings into a Settings catalog profile.",
+  "exp_es": "El análisis de directivas de grupo importa archivos XML de copias de GPO, muestra qué opciones se admiten en MDM y puede migrar las compatibles a un perfil del catálogo de configuración."
+ },
+ {
+  "id": 739,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_en": "For each statement about managing specialty devices with Intune, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre la administración de dispositivos especiales con Intune, indica si es verdadera o falsa.",
+  "rows": [
+   {
+    "en": "Microsoft Teams Rooms on Windows devices can be enrolled in Intune and receive compliance and configuration policies.",
+    "es": "Los dispositivos Microsoft Teams Rooms en Windows pueden inscribirse en Intune y recibir directivas de cumplimiento y configuración.",
+    "ans": true
+   },
+   {
+    "en": "HoloLens 2 devices can be provisioned with Windows Autopilot self-deploying mode.",
+    "es": "Los dispositivos HoloLens 2 pueden aprovisionarse con el modo de implementación automática de Windows Autopilot.",
+    "ans": true
+   },
+   {
+    "en": "Zebra devices can only be managed by Intune if they run iOS.",
+    "es": "Los dispositivos Zebra solo pueden administrarse con Intune si ejecutan iOS.",
+    "ans": false
+   },
+   {
+    "en": "Dedicated Android devices such as rugged scanners can run in kiosk mode with a single or limited set of apps.",
+    "es": "Los dispositivos Android dedicados, como escáneres robustos, pueden ejecutarse en modo quiosco con una o pocas apps.",
+    "ans": true
+   }
+  ],
+  "exp_en": "Teams Rooms on Windows and HoloLens 2 (via Autopilot self-deploying) are managed with Intune. Zebra devices run Android and can be managed as Android Enterprise dedicated devices, including kiosk mode and FOTA/LifeGuard updates.",
+  "exp_es": "Teams Rooms en Windows y HoloLens 2 (con Autopilot en modo de implementación automática) se administran con Intune. Los dispositivos Zebra ejecutan Android y se administran como dispositivos dedicados de Android Enterprise, incluido el modo quiosco y las actualizaciones FOTA/LifeGuard."
+ },
+ {
+  "id": 740,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_en": "A user says several apps and policies never arrived on their laptop. Where in the Intune admin center can you see that user's assignments, enrollment and install failures in one view?",
+  "q_es": "Un usuario dice que varias apps y directivas nunca llegaron a su portátil. ¿Dónde puede ver en el centro de administración de Intune sus asignaciones, inscripción y errores de instalación en una sola vista?",
+  "opts_en": [
+   "Tenant administration > Connectors and tokens",
+   "Troubleshooting + support > Troubleshoot",
+   "Devices > Enrollment > Device platform restrictions",
+   "Reports > Endpoint analytics > Startup performance"
+  ],
+  "opts_es": [
+   "Administración de inquilinos > Conectores y tokens",
+   "Solución de problemas y soporte técnico > Solucionar problemas",
+   "Dispositivos > Inscripción > Restricciones de plataforma",
+   "Informes > Endpoint analytics > Rendimiento de inicio"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "The Troubleshoot pane under Troubleshooting + support lets you pick a user and review their devices, group memberships, app and policy assignments, enrollment failures and app install status.",
+  "exp_es": "El panel Solucionar problemas de Solución de problemas y soporte técnico permite elegir un usuario y revisar sus dispositivos, grupos, asignaciones de apps y directivas, errores de inscripción y estado de instalación de apps."
+ },
+ {
+  "id": 741,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_en": "You enable App Control for Business but want apps deployed through Intune to keep running without adding each one to the policy. What should you configure?",
+  "q_es": "Habilita App Control for Business, pero quiere que las apps implementadas con Intune sigan funcionando sin agregarlas una a una a la directiva. ¿Qué configura?",
+  "opts_en": [
+   "An attack surface reduction rule that blocks Office macros",
+   "A Windows Defender Firewall rule for each installed application",
+   "The Intune Management Extension as a managed installer",
+   "A security baseline that disables SmartScreen for those apps"
+  ],
+  "opts_es": [
+   "Una regla de reducción de la superficie de ataque que bloquea macros",
+   "Una regla del Firewall de Windows Defender para cada app instalada",
+   "La Extensión de administración de Intune como instalador administrado",
+   "Una línea de base de seguridad que deshabilite SmartScreen para ellas"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "In Endpoint security > App Control for Business, you can set the Intune Management Extension as a managed installer so apps it deploys are trusted automatically by App Control policies.",
+  "exp_es": "En Seguridad de puntos de conexión > App Control for Business se puede definir la Extensión de administración de Intune como instalador administrado, de modo que las apps que implementa se consideran de confianza automáticamente."
+ },
+ {
+  "id": 742,
+  "exam": "md-102",
+  "dom": 5,
+  "obj": "5.2",
+  "type": "yesno",
+  "q_en": "For each statement about monitoring Intune tenant health and alerts, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre la supervisión del estado del inquilino de Intune y las alertas, indica si es verdadera o falsa.",
+  "rows": [
+   {
+    "en": "Tenant status in the Intune admin center shows service health and message center posts relevant to Intune.",
+    "es": "El estado del inquilino en el centro de administración de Intune muestra el estado del servicio y los mensajes del centro de mensajes relevantes para Intune.",
+    "ans": true
+   },
+   {
+    "en": "Intune data sent to Log Analytics can trigger Azure Monitor alert rules, for example on enrollment failures.",
+    "es": "Los datos de Intune enviados a Log Analytics pueden activar reglas de alerta de Azure Monitor, por ejemplo por errores de inscripción.",
+    "ans": true
+   },
+   {
+    "en": "Configuration conflicts are only visible by connecting to each device with Remote Help.",
+    "es": "Los conflictos de configuración solo se ven conectándose a cada dispositivo con Remote Help.",
+    "ans": false
+   },
+   {
+    "en": "Noncompliance actions can send email notifications to end users when their device drifts out of compliance.",
+    "es": "Las acciones por incumplimiento pueden enviar notificaciones por correo a los usuarios cuando su dispositivo deja de cumplir.",
+    "ans": true
+   }
+  ],
+  "exp_en": "Tenant status covers service health and message center. Diagnostic settings send Intune logs to Log Analytics for Azure Monitor alerts. Conflicts appear in configuration status reports, and noncompliance actions can email users.",
+  "exp_es": "El estado del inquilino incluye el estado del servicio y el centro de mensajes. La configuración de diagnóstico envía registros de Intune a Log Analytics para alertas de Azure Monitor. Los conflictos aparecen en los informes de estado de configuración, y las acciones por incumplimiento pueden enviar correos."
  }
 ]
