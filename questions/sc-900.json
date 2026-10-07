@@ -8620,5 +8620,161 @@
   "correct": 3,
   "exp_es": "El explorador de amenazas ofrece herramientas de detección y corrección en tiempo real.",
   "exp_en": "Threat Explorer provides real-time detection and remediation tools."
+ },
+ {
+  "id": 305,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "Which statement best describes a workload identity in Microsoft Entra ID?",
+  "q_es": "¿Qué afirmación describe mejor una identidad de carga de trabajo en Microsoft Entra ID?",
+  "opts_en": [
+   "An identity used by software, such as an app or service, to access resources",
+   "A guest account created for a partner user through B2B collaboration",
+   "A personal Microsoft account linked to a work account for sign-in",
+   "A shared mailbox identity used by several people in a department"
+  ],
+  "opts_es": [
+   "Una identidad que usa software, como una app o servicio, para acceder a recursos",
+   "Una cuenta de invitado creada para un usuario asociado mediante colaboración B2B",
+   "Una cuenta Microsoft personal vinculada a una cuenta profesional para iniciar sesión",
+   "La identidad de un buzón compartido que usan varias personas de un departamento"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Workload identities are identities assigned to software workloads (applications, services, scripts, containers) so they can authenticate and access other resources. They include applications, service principals and managed identities.",
+  "exp_es": "Las identidades de carga de trabajo se asignan a cargas de software (aplicaciones, servicios, scripts, contenedores) para que se autentiquen y accedan a otros recursos. Incluyen aplicaciones, entidades de servicio e identidades administradas."
+ },
+ {
+  "id": 306,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "An Azure VM must read secrets from Key Vault without storing any credentials in code. Which type of identity should it use?",
+  "q_es": "Una VM de Azure debe leer secretos de Key Vault sin guardar credenciales en el código. ¿Qué tipo de identidad debe usar?",
+  "opts_en": [
+   "A member user account with a strong password",
+   "A guest user invited from another tenant",
+   "A managed identity assigned to the VM",
+   "A device identity registered in Entra ID"
+  ],
+  "opts_es": [
+   "Una cuenta de usuario miembro con contraseña segura",
+   "Un usuario invitado de otro inquilino",
+   "Una identidad administrada asignada a la VM",
+   "Una identidad de dispositivo registrada en Entra ID"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "Managed identities are workload identities managed by Azure: Entra ID handles the credentials, so the resource can get tokens to access services like Key Vault without secrets in code.",
+  "exp_es": "Las identidades administradas son identidades de carga de trabajo gestionadas por Azure: Entra ID administra las credenciales, así que el recurso obtiene tokens para acceder a servicios como Key Vault sin secretos en el código."
+ },
+ {
+  "id": 307,
+  "exam": "sc-900",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "What is the difference between system-assigned and user-assigned managed identities?",
+  "q_es": "¿Cuál es la diferencia entre las identidades administradas asignadas por el sistema y las asignadas por el usuario?",
+  "opts_en": [
+   "System-assigned ones are for people; user-assigned ones are for devices",
+   "System-assigned is tied to one resource's lifecycle; user-assigned is standalone and reusable",
+   "System-assigned ones need a password; user-assigned ones use certificates",
+   "System-assigned works only on-premises; user-assigned works only in Azure"
+  ],
+  "opts_es": [
+   "Las asignadas por el sistema son para personas; las de usuario, para dispositivos",
+   "La del sistema va ligada al ciclo de vida de un recurso; la de usuario es independiente y reutilizable",
+   "Las asignadas por el sistema necesitan contraseña; las de usuario usan certificados",
+   "La del sistema solo funciona en local; la de usuario solo funciona en Azure"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "A system-assigned managed identity is created with a resource and deleted with it. A user-assigned managed identity is a standalone Azure resource that can be assigned to several resources.",
+  "exp_es": "Una identidad administrada asignada por el sistema se crea con un recurso y se elimina con él. Una asignada por el usuario es un recurso de Azure independiente que puede asignarse a varios recursos."
+ },
+ {
+  "id": 308,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_en": "Which Microsoft Defender XDR capability continuously discovers software weaknesses and misconfigurations on devices and prioritizes remediation by risk?",
+  "q_es": "¿Qué capacidad de Microsoft Defender XDR detecta de forma continua debilidades de software y configuraciones erróneas en dispositivos y prioriza la corrección por riesgo?",
+  "opts_en": [
+   "Microsoft Defender for Cloud Apps session policies",
+   "Microsoft Defender Vulnerability Management",
+   "Microsoft Defender for Office 365 Safe Links",
+   "Microsoft Purview Compliance Manager scoring"
+  ],
+  "opts_es": [
+   "Directivas de sesión de Defender for Cloud Apps",
+   "Microsoft Defender Vulnerability Management",
+   "Vínculos seguros de Defender para Office 365",
+   "Puntuación de Microsoft Purview Compliance Manager"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "Defender Vulnerability Management provides continuous asset visibility, risk-based assessments and prioritized remediation for vulnerabilities and misconfigurations across devices.",
+  "exp_es": "Defender Vulnerability Management ofrece visibilidad continua de activos, evaluaciones basadas en riesgo y corrección priorizada de vulnerabilidades y configuraciones erróneas en los dispositivos."
+ },
+ {
+  "id": 309,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_en": "What is the main benefit of the Microsoft Defender portal for security operations teams?",
+  "q_es": "¿Cuál es la principal ventaja del portal de Microsoft Defender para los equipos de operaciones de seguridad?",
+  "opts_en": [
+   "It replaces Microsoft Entra ID as the identity provider for users",
+   "It stores retention labels and records for compliance purposes",
+   "One place to investigate correlated incidents across Defender products",
+   "It is used to buy and assign Microsoft 365 licenses to users"
+  ],
+  "opts_es": [
+   "Sustituye a Microsoft Entra ID como proveedor de identidad de usuarios",
+   "Almacena etiquetas de retención y registros con fines de cumplimiento",
+   "Un único lugar para investigar incidentes correlacionados de Defender",
+   "Se usa para comprar y asignar licencias de Microsoft 365 a usuarios"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "The Microsoft Defender portal unifies alerts, incidents, hunting and response across Defender for Endpoint, Office 365, Identity and Cloud Apps, correlating signals into incidents.",
+  "exp_es": "El portal de Microsoft Defender unifica alertas, incidentes, búsqueda y respuesta de Defender para Endpoint, Office 365, Identity y Cloud Apps, correlacionando señales en incidentes."
+ },
+ {
+  "id": 310,
+  "exam": "sc-900",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_en": "An analyst wants context about an IP address seen in an alert, such as related threat actors and infrastructure. Which solution provides this?",
+  "q_es": "Un analista quiere contexto sobre una dirección IP vista en una alerta, como actores de amenazas e infraestructura relacionados. ¿Qué solución lo proporciona?",
+  "opts_en": [
+   "Microsoft Purview Activity explorer reports",
+   "Azure DDoS Protection telemetry dashboards",
+   "Microsoft Entra access reviews history",
+   "Microsoft Defender Threat Intelligence"
+  ],
+  "opts_es": [
+   "Informes del explorador de actividad de Purview",
+   "Paneles de telemetría de Azure DDoS Protection",
+   "Historial de revisiones de acceso de Entra",
+   "Microsoft Defender Threat Intelligence"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_en": "Microsoft Defender Threat Intelligence gives analysts curated intelligence about indicators such as IPs and domains, including linked threat actors, infrastructure and articles.",
+  "exp_es": "Microsoft Defender Threat Intelligence ofrece a los analistas inteligencia sobre indicadores como IP y dominios, incluidos actores de amenazas, infraestructura y artículos relacionados."
  }
 ]
