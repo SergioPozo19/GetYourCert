@@ -992,6 +992,30 @@ button:focus-visible,a:focus-visible,select:focus-visible,.toggle button:focus-v
 .seo-intro .seo-faq{margin-top:12px}.seo-intro .seo-faq h3{font-size:15px;color:var(--ink);margin:0 0 4px}
 .seo-intro .seo-cats{margin-top:14px;font-weight:600}.seo-intro .seo-cats a{margin-right:4px}
 html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{display:none}
+.case-box{margin:0 0 16px;border:1px solid var(--line);border-left:3px solid #7A4FD6;border-radius:var(--radius-s);background:var(--panel-2)}
+.case-box summary{cursor:pointer;padding:11px 14px;font-size:14px;list-style:revert}
+.case-tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7A4FD6;background:rgba(122,79,214,.12);padding:2px 7px;border-radius:6px;margin-right:4px}
+.case-body{padding:2px 16px 12px;max-height:340px;overflow:auto;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.case-body h6{font-size:13px;margin:12px 0 4px;color:var(--ink);text-transform:uppercase;letter-spacing:.04em}
+.case-body p{margin:0 0 6px}.case-body ul{margin:0 0 6px 18px;padding:0}.case-body li{margin:2px 0}
+.ord-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ord-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel-2);cursor:grab;transition:.12s}
+.ord-item.dragging{opacity:.5}.ord-item.over{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.ord-item.locked{cursor:default}
+.ord-item.correct{border-color:var(--ok);background:var(--ok-soft)}.ord-item.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ord-n{flex-shrink:0;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:700;background:var(--accent-soft);color:var(--accent)}
+.ord-t{flex:1;font-size:15px;line-height:1.5}
+.ord-btns{display:flex;gap:4px;flex-shrink:0}
+.ord-btns button{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink-2);cursor:pointer;font-size:12px}
+.ord-btns button:disabled{opacity:.35;cursor:default}.ord-btns button:not(:disabled):hover{border-color:var(--accent);color:var(--accent)}
+.ord-should{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--bad);white-space:nowrap}
+.ord-mark{color:var(--ok)}
+.ord-solution{margin-top:12px;padding:12px 14px;border-radius:var(--radius-s);background:var(--ok-soft);font-size:14px}
+.ord-solution ol{margin:6px 0 0 20px;padding:0}
+.ord-list.rv .ord-item{padding:8px 12px}
+.exp-learn{margin:8px 0 0;font-size:13px}.exp-learn a{color:var(--accent);font-weight:600;text-decoration:none}.exp-learn a:hover{text-decoration:underline}
+.kbd-hint{margin:14px 0 0;font-size:12px;color:var(--ink-3);text-align:center}
+@media(max-width:700px),(hover:none){.kbd-hint{display:none}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-787WSXCK5H"></script>
@@ -1199,6 +1223,7 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
     </div>
 
     <div class="card qcard">
+      <details class="case-box hidden" id="qCase" open><summary><span class="case-tag" data-i="caseTitle">Caso de estudio</span> <b id="qCaseName"></b></summary><div class="case-body" id="qCaseBody"></div></details>
       <div class="qtext" id="qText"></div>
       <div class="qhint hidden" id="qHint">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
@@ -1208,6 +1233,7 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
       <div class="exp hidden" id="qExp">
         <h5 data-i="expTitle">Explicación</h5>
         <p id="qExpText"></p>
+        <p class="exp-learn" id="qExpLearn"></p>
         <div class="q-stat hidden" id="qStat">
           <div class="q-stat-bar"><div class="q-stat-fill" id="qStatFill"></div></div>
           <span class="q-stat-text" id="qStatText"></span>
@@ -1223,6 +1249,7 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
           </button>
         </div>
       </div>
+      <p class="kbd-hint" data-i="kbdHint">Atajos: 1-4 o A-D responder · Intro siguiente · ←/→ navegar · F marcar · B favorito</p>
       <div class="disc-panel hidden" id="discPanel">
         <h5>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1656,7 +1683,7 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
   <p class="footer-privacy"><a href="privacy.html" data-i="privacyPolicy">Política de privacidad</a></p>
 </footer>
 
-<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administración de Microsoft 365 Copilot y agentes: conceptos clave, seguridad, cumplimiento y gobernanza. Basado en la guía oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration: core concepts, security, compliance and governance. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"Administración de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":559,"rev":33},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"Administración de Microsoft Teams: redes, seguridad, cumplimiento, gobernanza, colaboración externa, equipos, reuniones y llamadas. Nivel asociado.","desc_en":"Microsoft Teams administration: networking, security, compliance, governance, external collaboration, teams, meetings and calling. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","level":"associate","questionCount":500,"rev":33},{"id":"ms-102","code":"MS-102","title_es":"Microsoft 365 Certified: Administrator Expert","title_en":"Microsoft 365 Certified: Administrator Expert","desc_es":"Administración de inquilinos de Microsoft 365: identidad y acceso en Microsoft Entra, seguridad y amenazas con Microsoft Defender XDR, y cumplimiento con Microsoft Purview. Nivel experto.","desc_en":"Microsoft 365 tenant administration: identity and access in Microsoft Entra, security and threats with Microsoft Defender XDR, and compliance with Microsoft Purview. Expert level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar un inquilino de Microsoft 365","name_en":"Deploy and manage a Microsoft 365 tenant","weight":"25-30%"},{"id":2,"name_es":"Implementar y administrar identidad y acceso en Microsoft Entra","name_en":"Implement and manage identity and access in Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Administrar la seguridad y las amenazas con Microsoft Defender XDR","name_en":"Manage security and threats by using Microsoft Defender XDR","weight":"30-35%"},{"id":4,"name_es":"Administrar el cumplimiento con Microsoft Purview","name_en":"Manage compliance by using Microsoft Purview","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"shield","level":"expert","questionCount":558,"retiresOn":"2026-12-01T06:00:00Z","successor":"AB-650"},{"id":"md-102","code":"MD-102","title_es":"Microsoft 365 Certified: Endpoint Administrator Associate","title_en":"Microsoft 365 Certified: Endpoint Administrator Associate","desc_es":"Administración de endpoints empresariales con Microsoft Intune y Windows Autopilot: inscripción de dispositivos, configuración, protección, gestión de aplicaciones y actualizaciones. Nivel asociado.","desc_en":"Enterprise endpoint administration with Microsoft Intune and Windows Autopilot: device enrollment, configuration, protection, app management, and updates. Associate level.","logo":"MD","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Preparar la infraestructura para dispositivos","name_en":"Prepare infrastructure for devices","weight":"20-25%"},{"id":2,"name_es":"Administrar y mantener dispositivos","name_en":"Manage and maintain devices","weight":"25-30%"},{"id":3,"name_es":"Administrar y proteger aplicaciones","name_en":"Manage and secure applications","weight":"15-20%"},{"id":4,"name_es":"Proteger dispositivos","name_en":"Protect devices","weight":"15-20%"},{"id":5,"name_es":"Optimizar las operaciones de endpoints mediante automatización, supervisión e informes","name_en":"Optimize endpoint operations by using automation, monitoring, and reporting","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"device-tablet","level":"associate","questionCount":727,"rev":33,"newUntil":"2026-11-06"},{"id":"az-900","code":"AZ-900","title_es":"Microsoft Certified: Azure Fundamentals","title_en":"Microsoft Certified: Azure Fundamentals","desc_es":"Aspectos básicos de Microsoft Azure: conceptos de la nube, arquitectura y servicios de Azure, y administración y gobernanza de Azure. Nivel fundamentos.","desc_en":"Microsoft Azure fundamentals: cloud concepts, Azure architecture and services, and Azure management and governance. Fundamentals level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Descripción de los conceptos de la nube","name_en":"Describe cloud concepts","weight":"25-30%"},{"id":2,"name_es":"Descripción de la arquitectura y los servicios de Azure","name_en":"Describe Azure architecture and services","weight":"35-40%"},{"id":3,"name_es":"Descripción de la administración y la gobernanza de Azure","name_en":"Describe Azure management and governance","weight":"30-35%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"cloud","level":"fundamentals","questionCount":468,"newUntil":"2026-06-26"},{"id":"az-104","code":"AZ-104","title_es":"Microsoft Certified: Azure Administrator Associate","title_en":"Microsoft Certified: Azure Administrator Associate","desc_es":"Administración de Azure: identidades y gobernanza, almacenamiento, recursos de proceso, redes virtuales, y supervisión y mantenimiento. Nivel asociado.","desc_en":"Azure administration: identities and governance, storage, compute resources, virtual networking, and monitoring and maintenance. Associate level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar identidades y gobernanza de Azure","name_en":"Manage Azure identities and governance","weight":"20-25%"},{"id":2,"name_es":"Implementar y administrar el almacenamiento","name_en":"Implement and manage storage","weight":"15-20%"},{"id":3,"name_es":"Implementar y administrar recursos de proceso de Azure","name_en":"Deploy and manage Azure compute resources","weight":"20-25%"},{"id":4,"name_es":"Implementar y administrar redes virtuales","name_en":"Implement and manage virtual networking","weight":"15-20%"},{"id":5,"name_es":"Supervisar y mantener los recursos de Azure","name_en":"Monitor and maintain Azure resources","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"server","level":"associate","questionCount":551,"newUntil":"2026-07-15","rev":33},{"id":"ms-721","code":"MS-721","title_es":"Microsoft 365 Certified: Collaboration Communications Systems Engineer","title_en":"Microsoft 365 Certified: Collaboration Communications Systems Engineer","desc_es":"Teams Phone con Direct Routing, operadores automáticos, llamadas de emergencia, reuniones y eventos, Teams Rooms y dispositivos certificados. Nivel asociado de ingeniero de comunicaciones.","desc_en":"Teams Phone with Direct Routing, auto attendants, emergency calling, meetings and events, Teams Rooms and certified devices. Associate-level communications engineer.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Planificar y diseñar sistemas de comunicaciones colaborativas","name_en":"Plan and design collaboration communications systems","weight":"20-25%"},{"id":2,"name_es":"Configurar y gestionar reuniones, seminarios web y town halls","name_en":"Configure and manage Teams meetings, webinars, and town halls","weight":"15-20%"},{"id":3,"name_es":"Configurar y gestionar Teams Phone","name_en":"Configure and manage Teams Phone","weight":"30-35%"},{"id":4,"name_es":"Configurar y gestionar Teams Rooms y dispositivos","name_en":"Configure and manage Teams Rooms and devices","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"phone","level":"associate","questionCount":449,"newUntil":"2026-07-27","rev":33},{"id":"sc-900","code":"SC-900","title_es":"Microsoft Certified: Security, Compliance, and Identity Fundamentals","title_en":"Microsoft Certified: Security, Compliance, and Identity Fundamentals","desc_es":"Fundamentos de seguridad, cumplimiento e identidad de Microsoft: conceptos, Microsoft Entra, Microsoft Defender, Microsoft Sentinel y Microsoft Purview. Nivel fundamentos.","desc_en":"Microsoft security, compliance and identity fundamentals: concepts, Microsoft Entra, Microsoft Defender, Microsoft Sentinel and Microsoft Purview. Fundamentals level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Describir los conceptos de seguridad, cumplimiento e identidad","name_en":"Describe the concepts of security, compliance, and identity","weight":"10-15%"},{"id":2,"name_es":"Describir las funcionalidades de Microsoft Entra","name_en":"Describe the capabilities of Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Describir las funcionalidades de las soluciones de seguridad de Microsoft","name_en":"Describe the capabilities of Microsoft security solutions","weight":"35-40%"},{"id":4,"name_es":"Describir las funcionalidades de las soluciones de cumplimiento de Microsoft","name_en":"Describe the capabilities of Microsoft compliance solutions","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"shield","level":"fundamentals","questionCount":310,"newUntil":"2026-11-06","rev":33},{"id":"sc-300","code":"SC-300","title_es":"Microsoft Certified: Identity and Access Administrator Associate","title_en":"Microsoft Certified: Identity and Access Administrator Associate","desc_es":"Administración de identidades y acceso con Microsoft Entra: identidades de usuario, externas e híbridas, autenticación, acceso condicional, identidades de carga de trabajo y gobernanza. Nivel asociado.","desc_en":"Identity and access administration with Microsoft Entra: user, external and hybrid identities, authentication, Conditional Access, workload identities and governance. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar identidades de usuario","name_en":"Implement and manage user identities","weight":"20-25%"},{"id":2,"name_es":"Implementar la autenticación y la administración de acceso","name_en":"Implement authentication and access management","weight":"25-30%"},{"id":3,"name_es":"Planificar e implementar identidades de carga de trabajo","name_en":"Plan and implement workload identities","weight":"20-25%"},{"id":4,"name_es":"Planificar y automatizar la gobernanza de identidades","name_en":"Plan and automate identity governance","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":306,"newUntil":"2026-11-06","rev":33},{"id":"sc-200","code":"SC-200","title_es":"Microsoft Certified: Security Operations Analyst Associate","title_en":"Microsoft Certified: Security Operations Analyst Associate","desc_es":"Operaciones de seguridad con Microsoft Defender XDR y Microsoft Sentinel: automatización, ingesta de datos, detecciones, respuesta a incidentes y búsqueda de amenazas con KQL. Nivel asociado.","desc_en":"Security operations with Microsoft Defender XDR and Microsoft Sentinel: automation, data ingestion, detections, incident response and threat hunting with KQL. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar un entorno de operaciones de seguridad","name_en":"Manage a security operations environment","weight":"40-45%"},{"id":2,"name_es":"Responder a incidentes de seguridad","name_en":"Respond to security incidents","weight":"35-40%"},{"id":3,"name_es":"Realizar la búsqueda de amenazas","name_en":"Perform threat hunting","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":301,"newUntil":"2026-11-06","rev":33},{"id":"az-305","code":"AZ-305","title_es":"Microsoft Certified: Azure Solutions Architect Expert","title_en":"Microsoft Certified: Azure Solutions Architect Expert","desc_es":"Diseño de soluciones de infraestructura en Azure: identidad, gobernanza y supervisión, almacenamiento de datos, continuidad del negocio e infraestructura (proceso, aplicaciones, migraciones y redes). Nivel experto.","desc_en":"Designing Azure infrastructure solutions: identity, governance and monitoring, data storage, business continuity and infrastructure (compute, applications, migrations and networking). Expert level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Diseñar soluciones de identidad, gobernanza y supervisión","name_en":"Design identity, governance, and monitoring solutions","weight":"25-30%"},{"id":2,"name_es":"Diseñar soluciones de almacenamiento de datos","name_en":"Design data storage solutions","weight":"20-25%"},{"id":3,"name_es":"Diseñar soluciones de continuidad del negocio","name_en":"Design business continuity solutions","weight":"15-20%"},{"id":4,"name_es":"Diseñar soluciones de infraestructura","name_en":"Design infrastructure solutions","weight":"30-35%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"cloud","level":"expert","questionCount":309,"newUntil":"2026-11-06","rev":33},{"id":"sc-500","code":"SC-500","title_es":"Microsoft Certified: Cloud and AI Security Engineer Associate","title_en":"Microsoft Certified: Cloud and AI Security Engineer Associate","desc_es":"Implementación de controles de seguridad de extremo a extremo para cargas de nube e IA: identidad y gobernanza, almacenamiento, bases de datos y redes, proceso e IA, y administración de la posición de seguridad con Defender for Cloud y Sentinel. Nivel asociado.","desc_en":"Implementing end-to-end security controls for cloud and AI workloads: identity and governance, storage, databases and networking, compute and AI, and security posture management with Defender for Cloud and Sentinel. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar identidad, acceso y gobernanza","name_en":"Manage identity, access, and governance","weight":"20-25%"},{"id":2,"name_es":"Proteger almacenamiento, bases de datos y redes","name_en":"Secure storage, databases, and networking","weight":"25-30%"},{"id":3,"name_es":"Proteger el proceso","name_en":"Secure compute","weight":"20-25%"},{"id":4,"name_es":"Administrar y supervisar la posición de seguridad","name_en":"Manage and monitor security posture","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":302,"newUntil":"2026-11-06","rev":33},{"id":"pl-300","code":"PL-300","title_es":"Microsoft Certified: Power BI Data Analyst Associate","title_en":"Microsoft Certified: Power BI Data Analyst Associate","desc_es":"Análisis de datos con Power BI: preparar los datos con Power Query, modelar con DAX, crear informes y análisis, y administrar y proteger el contenido en el servicio Power BI. Nivel asociado.","desc_en":"Data analysis with Power BI: preparing data with Power Query, modeling with DAX, building reports and analysis, and managing and securing content in the Power BI service. Associate level.","logo":"PL","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Preparar los datos","name_en":"Prepare the data","weight":"25-30%"},{"id":2,"name_es":"Modelar los datos","name_en":"Model the data","weight":"25-30%"},{"id":3,"name_es":"Visualizar y analizar los datos","name_en":"Visualize and analyze the data","weight":"25-30%"},{"id":4,"name_es":"Administrar y proteger Power BI","name_en":"Manage and secure Power BI","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chart","level":"associate","questionCount":302,"newUntil":"2026-11-06","rev":33},{"id":"dp-600","code":"DP-600","title_es":"Microsoft Certified: Fabric Analytics Engineer Associate","title_en":"Microsoft Certified: Fabric Analytics Engineer Associate","desc_es":"Soluciones de análisis con Microsoft Fabric: seguridad y ciclo de vida, preparación de datos con lakehouses, almacenes y KQL, y modelos semánticos con DAX y Direct Lake. Nivel asociado.","desc_en":"Analytics solutions with Microsoft Fabric: security and lifecycle, data preparation with lakehouses, warehouses and KQL, and semantic models with DAX and Direct Lake. Associate level.","logo":"DP","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Mantener una solución de análisis de datos","name_en":"Maintain a data analytics solution","weight":"25-30%"},{"id":2,"name_es":"Preparar los datos","name_en":"Prepare data","weight":"45-50%"},{"id":3,"name_es":"Implementar y administrar modelos semánticos","name_en":"Implement and manage semantic models","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chart","level":"associate","questionCount":309,"newUntil":"2026-11-06","rev":33},{"id":"ai-901","code":"AI-901","title_es":"Microsoft Certified: Azure AI Fundamentals","title_en":"Microsoft Certified: Azure AI Fundamentals","desc_es":"Fundamentos de IA en Azure: IA responsable, modelos generativos, cargas de trabajo de IA, y soluciones con Microsoft Foundry para texto, voz, visión, agentes y extracción de información. Nivel fundamentos.","desc_en":"Azure AI fundamentals: responsible AI, generative models, AI workloads, and solutions with Microsoft Foundry for text, speech, vision, agents and information extraction. Fundamentals level.","logo":"AI","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Identificar conceptos y capacidades de IA","name_en":"Identify AI concepts and capabilities","weight":"40-45%"},{"id":2,"name_es":"Implementar soluciones de IA con Microsoft Foundry","name_en":"Implement AI solutions by using Microsoft Foundry","weight":"55-60%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":302,"newUntil":"2026-11-06","rev":33},{"id":"ab-650","code":"AB-650","title_es":"Microsoft 365 Certified: Microsoft 365 and AI Services Administrator Associate","title_en":"Microsoft 365 Certified: Microsoft 365 and AI Services Administrator Associate","desc_es":"Administración de Microsoft 365 y servicios de IA: inquilino y cargas de trabajo, identidades y acceso con Entra, Defender para Office 365, Purview, Microsoft 365 Copilot, agentes y Agent 365. Nivel asociado (beta).","desc_en":"Microsoft 365 and AI services administration: tenant and workloads, identity and access with Entra, Defender for Office 365, Purview, Microsoft 365 Copilot, agents and Agent 365. Associate level (beta).","logo":"AB","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar inquilinos y cargas de trabajo de Microsoft 365","name_en":"Configure and manage Microsoft 365 tenants and workloads","weight":"20-25%"},{"id":2,"name_es":"Gobernar y proteger inquilinos y cargas de trabajo de Microsoft 365","name_en":"Govern and secure Microsoft 365 tenants and workloads","weight":"40-45%"},{"id":3,"name_es":"Administrar y proteger servicios de IA en Microsoft 365","name_en":"Manage and secure AI services in Microsoft 365","weight":"35-40%"}],"eyebrow_es":"Microsoft 365 Certified Associate","eyebrow_en":"Microsoft 365 Certified Associate","icon":"sparkles","level":"associate","questionCount":303,"newUntil":"2026-12-07","rev":33}]</script>
+<script id="examsdata" type="application/json">[{"id":"ab-900","code":"AB-900","title_es":"Copilot and Agent Administration Fundamentals","title_en":"Copilot and Agent Administration Fundamentals","desc_es":"Fundamentos de administración de Microsoft 365 Copilot y agentes: conceptos clave, seguridad, cumplimiento y gobernanza. Basado en la guía oficial de Microsoft.","desc_en":"Fundamentals of Microsoft 365 Copilot and agent administration: core concepts, security, compliance and governance. Based on Microsoft's official study guide.","logo":"AB","examLen":50,"pass":70,"domains":[{"id":1,"name_es":"Conceptos de M365 y seguridad","name_en":"M365 concepts and security","weight":"30-35%"},{"id":2,"name_es":"Seguridad de datos y cumplimiento","name_en":"Data security and compliance","weight":"35-40%"},{"id":3,"name_es":"Administración de Copilot y agentes","name_en":"Copilot and agent administration","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":559,"rev":34},{"id":"ms-700","code":"MS-700","title_es":"Microsoft 365 Certified: Teams Administrator Associate","title_en":"Microsoft 365 Certified: Teams Administrator Associate","desc_es":"Administración de Microsoft Teams: redes, seguridad, cumplimiento, gobernanza, colaboración externa, equipos, reuniones y llamadas. Nivel asociado.","desc_en":"Microsoft Teams administration: networking, security, compliance, governance, external collaboration, teams, meetings and calling. Associate level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar un entorno de Teams","name_en":"Configure and manage a Teams environment","weight":"40-45%"},{"id":2,"name_es":"Administrar equipos, canales, chats y aplicaciones","name_en":"Manage teams, channels, chats, and apps","weight":"20-25%"},{"id":3,"name_es":"Gestionar reuniones y llamadas","name_en":"Manage meetings and calls","weight":"15-20%"},{"id":4,"name_es":"Supervisar, informar y solucionar problemas de Teams","name_en":"Monitor, report, and troubleshoot Teams","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chat","level":"associate","questionCount":500,"rev":34},{"id":"ms-102","code":"MS-102","title_es":"Microsoft 365 Certified: Administrator Expert","title_en":"Microsoft 365 Certified: Administrator Expert","desc_es":"Administración de inquilinos de Microsoft 365: identidad y acceso en Microsoft Entra, seguridad y amenazas con Microsoft Defender XDR, y cumplimiento con Microsoft Purview. Nivel experto.","desc_en":"Microsoft 365 tenant administration: identity and access in Microsoft Entra, security and threats with Microsoft Defender XDR, and compliance with Microsoft Purview. Expert level.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar un inquilino de Microsoft 365","name_en":"Deploy and manage a Microsoft 365 tenant","weight":"25-30%"},{"id":2,"name_es":"Implementar y administrar identidad y acceso en Microsoft Entra","name_en":"Implement and manage identity and access in Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Administrar la seguridad y las amenazas con Microsoft Defender XDR","name_en":"Manage security and threats by using Microsoft Defender XDR","weight":"30-35%"},{"id":4,"name_es":"Administrar el cumplimiento con Microsoft Purview","name_en":"Manage compliance by using Microsoft Purview","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"shield","level":"expert","questionCount":558,"retiresOn":"2026-12-01T06:00:00Z","successor":"AB-650"},{"id":"md-102","code":"MD-102","title_es":"Microsoft 365 Certified: Endpoint Administrator Associate","title_en":"Microsoft 365 Certified: Endpoint Administrator Associate","desc_es":"Administración de endpoints empresariales con Microsoft Intune y Windows Autopilot: inscripción de dispositivos, configuración, protección, gestión de aplicaciones y actualizaciones. Nivel asociado.","desc_en":"Enterprise endpoint administration with Microsoft Intune and Windows Autopilot: device enrollment, configuration, protection, app management, and updates. Associate level.","logo":"MD","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Preparar la infraestructura para dispositivos","name_en":"Prepare infrastructure for devices","weight":"20-25%"},{"id":2,"name_es":"Administrar y mantener dispositivos","name_en":"Manage and maintain devices","weight":"25-30%"},{"id":3,"name_es":"Administrar y proteger aplicaciones","name_en":"Manage and secure applications","weight":"15-20%"},{"id":4,"name_es":"Proteger dispositivos","name_en":"Protect devices","weight":"15-20%"},{"id":5,"name_es":"Optimizar las operaciones de endpoints mediante automatización, supervisión e informes","name_en":"Optimize endpoint operations by using automation, monitoring, and reporting","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"device-tablet","level":"associate","questionCount":727,"rev":34,"newUntil":"2026-11-06"},{"id":"az-900","code":"AZ-900","title_es":"Microsoft Certified: Azure Fundamentals","title_en":"Microsoft Certified: Azure Fundamentals","desc_es":"Aspectos básicos de Microsoft Azure: conceptos de la nube, arquitectura y servicios de Azure, y administración y gobernanza de Azure. Nivel fundamentos.","desc_en":"Microsoft Azure fundamentals: cloud concepts, Azure architecture and services, and Azure management and governance. Fundamentals level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Descripción de los conceptos de la nube","name_en":"Describe cloud concepts","weight":"25-30%"},{"id":2,"name_es":"Descripción de la arquitectura y los servicios de Azure","name_en":"Describe Azure architecture and services","weight":"35-40%"},{"id":3,"name_es":"Descripción de la administración y la gobernanza de Azure","name_en":"Describe Azure management and governance","weight":"30-35%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"cloud","level":"fundamentals","questionCount":468,"newUntil":"2026-06-26"},{"id":"az-104","code":"AZ-104","title_es":"Microsoft Certified: Azure Administrator Associate","title_en":"Microsoft Certified: Azure Administrator Associate","desc_es":"Administración de Azure: identidades y gobernanza, almacenamiento, recursos de proceso, redes virtuales, y supervisión y mantenimiento. Nivel asociado.","desc_en":"Azure administration: identities and governance, storage, compute resources, virtual networking, and monitoring and maintenance. Associate level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar identidades y gobernanza de Azure","name_en":"Manage Azure identities and governance","weight":"20-25%"},{"id":2,"name_es":"Implementar y administrar el almacenamiento","name_en":"Implement and manage storage","weight":"15-20%"},{"id":3,"name_es":"Implementar y administrar recursos de proceso de Azure","name_en":"Deploy and manage Azure compute resources","weight":"20-25%"},{"id":4,"name_es":"Implementar y administrar redes virtuales","name_en":"Implement and manage virtual networking","weight":"15-20%"},{"id":5,"name_es":"Supervisar y mantener los recursos de Azure","name_en":"Monitor and maintain Azure resources","weight":"10-15%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"server","level":"associate","questionCount":551,"newUntil":"2026-07-15","rev":34},{"id":"ms-721","code":"MS-721","title_es":"Microsoft 365 Certified: Collaboration Communications Systems Engineer","title_en":"Microsoft 365 Certified: Collaboration Communications Systems Engineer","desc_es":"Teams Phone con Direct Routing, operadores automáticos, llamadas de emergencia, reuniones y eventos, Teams Rooms y dispositivos certificados. Nivel asociado de ingeniero de comunicaciones.","desc_en":"Teams Phone with Direct Routing, auto attendants, emergency calling, meetings and events, Teams Rooms and certified devices. Associate-level communications engineer.","logo":"MS","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Planificar y diseñar sistemas de comunicaciones colaborativas","name_en":"Plan and design collaboration communications systems","weight":"20-25%"},{"id":2,"name_es":"Configurar y gestionar reuniones, seminarios web y town halls","name_en":"Configure and manage Teams meetings, webinars, and town halls","weight":"15-20%"},{"id":3,"name_es":"Configurar y gestionar Teams Phone","name_en":"Configure and manage Teams Phone","weight":"30-35%"},{"id":4,"name_es":"Configurar y gestionar Teams Rooms y dispositivos","name_en":"Configure and manage Teams Rooms and devices","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"phone","level":"associate","questionCount":449,"newUntil":"2026-07-27","rev":34},{"id":"sc-900","code":"SC-900","title_es":"Microsoft Certified: Security, Compliance, and Identity Fundamentals","title_en":"Microsoft Certified: Security, Compliance, and Identity Fundamentals","desc_es":"Fundamentos de seguridad, cumplimiento e identidad de Microsoft: conceptos, Microsoft Entra, Microsoft Defender, Microsoft Sentinel y Microsoft Purview. Nivel fundamentos.","desc_en":"Microsoft security, compliance and identity fundamentals: concepts, Microsoft Entra, Microsoft Defender, Microsoft Sentinel and Microsoft Purview. Fundamentals level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Describir los conceptos de seguridad, cumplimiento e identidad","name_en":"Describe the concepts of security, compliance, and identity","weight":"10-15%"},{"id":2,"name_es":"Describir las funcionalidades de Microsoft Entra","name_en":"Describe the capabilities of Microsoft Entra","weight":"25-30%"},{"id":3,"name_es":"Describir las funcionalidades de las soluciones de seguridad de Microsoft","name_en":"Describe the capabilities of Microsoft security solutions","weight":"35-40%"},{"id":4,"name_es":"Describir las funcionalidades de las soluciones de cumplimiento de Microsoft","name_en":"Describe the capabilities of Microsoft compliance solutions","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"shield","level":"fundamentals","questionCount":310,"newUntil":"2026-11-06","rev":34},{"id":"sc-300","code":"SC-300","title_es":"Microsoft Certified: Identity and Access Administrator Associate","title_en":"Microsoft Certified: Identity and Access Administrator Associate","desc_es":"Administración de identidades y acceso con Microsoft Entra: identidades de usuario, externas e híbridas, autenticación, acceso condicional, identidades de carga de trabajo y gobernanza. Nivel asociado.","desc_en":"Identity and access administration with Microsoft Entra: user, external and hybrid identities, authentication, Conditional Access, workload identities and governance. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Implementar y administrar identidades de usuario","name_en":"Implement and manage user identities","weight":"20-25%"},{"id":2,"name_es":"Implementar la autenticación y la administración de acceso","name_en":"Implement authentication and access management","weight":"25-30%"},{"id":3,"name_es":"Planificar e implementar identidades de carga de trabajo","name_en":"Plan and implement workload identities","weight":"20-25%"},{"id":4,"name_es":"Planificar y automatizar la gobernanza de identidades","name_en":"Plan and automate identity governance","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":306,"newUntil":"2026-11-06","rev":34},{"id":"sc-200","code":"SC-200","title_es":"Microsoft Certified: Security Operations Analyst Associate","title_en":"Microsoft Certified: Security Operations Analyst Associate","desc_es":"Operaciones de seguridad con Microsoft Defender XDR y Microsoft Sentinel: automatización, ingesta de datos, detecciones, respuesta a incidentes y búsqueda de amenazas con KQL. Nivel asociado.","desc_en":"Security operations with Microsoft Defender XDR and Microsoft Sentinel: automation, data ingestion, detections, incident response and threat hunting with KQL. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar un entorno de operaciones de seguridad","name_en":"Manage a security operations environment","weight":"40-45%"},{"id":2,"name_es":"Responder a incidentes de seguridad","name_en":"Respond to security incidents","weight":"35-40%"},{"id":3,"name_es":"Realizar la búsqueda de amenazas","name_en":"Perform threat hunting","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":301,"newUntil":"2026-11-06","rev":34},{"id":"az-305","code":"AZ-305","title_es":"Microsoft Certified: Azure Solutions Architect Expert","title_en":"Microsoft Certified: Azure Solutions Architect Expert","desc_es":"Diseño de soluciones de infraestructura en Azure: identidad, gobernanza y supervisión, almacenamiento de datos, continuidad del negocio e infraestructura (proceso, aplicaciones, migraciones y redes). Nivel experto.","desc_en":"Designing Azure infrastructure solutions: identity, governance and monitoring, data storage, business continuity and infrastructure (compute, applications, migrations and networking). Expert level.","logo":"AZ","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Diseñar soluciones de identidad, gobernanza y supervisión","name_en":"Design identity, governance, and monitoring solutions","weight":"25-30%"},{"id":2,"name_es":"Diseñar soluciones de almacenamiento de datos","name_en":"Design data storage solutions","weight":"20-25%"},{"id":3,"name_es":"Diseñar soluciones de continuidad del negocio","name_en":"Design business continuity solutions","weight":"15-20%"},{"id":4,"name_es":"Diseñar soluciones de infraestructura","name_en":"Design infrastructure solutions","weight":"30-35%"}],"eyebrow_es":"Microsoft Certified Expert","eyebrow_en":"Microsoft Certified Expert","icon":"cloud","level":"expert","questionCount":309,"newUntil":"2026-11-06","rev":34},{"id":"sc-500","code":"SC-500","title_es":"Microsoft Certified: Cloud and AI Security Engineer Associate","title_en":"Microsoft Certified: Cloud and AI Security Engineer Associate","desc_es":"Implementación de controles de seguridad de extremo a extremo para cargas de nube e IA: identidad y gobernanza, almacenamiento, bases de datos y redes, proceso e IA, y administración de la posición de seguridad con Defender for Cloud y Sentinel. Nivel asociado.","desc_en":"Implementing end-to-end security controls for cloud and AI workloads: identity and governance, storage, databases and networking, compute and AI, and security posture management with Defender for Cloud and Sentinel. Associate level.","logo":"SC","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Administrar identidad, acceso y gobernanza","name_en":"Manage identity, access, and governance","weight":"20-25%"},{"id":2,"name_es":"Proteger almacenamiento, bases de datos y redes","name_en":"Secure storage, databases, and networking","weight":"25-30%"},{"id":3,"name_es":"Proteger el proceso","name_en":"Secure compute","weight":"20-25%"},{"id":4,"name_es":"Administrar y supervisar la posición de seguridad","name_en":"Manage and monitor security posture","weight":"20-25%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"shield","level":"associate","questionCount":302,"newUntil":"2026-11-06","rev":34},{"id":"pl-300","code":"PL-300","title_es":"Microsoft Certified: Power BI Data Analyst Associate","title_en":"Microsoft Certified: Power BI Data Analyst Associate","desc_es":"Análisis de datos con Power BI: preparar los datos con Power Query, modelar con DAX, crear informes y análisis, y administrar y proteger el contenido en el servicio Power BI. Nivel asociado.","desc_en":"Data analysis with Power BI: preparing data with Power Query, modeling with DAX, building reports and analysis, and managing and securing content in the Power BI service. Associate level.","logo":"PL","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Preparar los datos","name_en":"Prepare the data","weight":"25-30%"},{"id":2,"name_es":"Modelar los datos","name_en":"Model the data","weight":"25-30%"},{"id":3,"name_es":"Visualizar y analizar los datos","name_en":"Visualize and analyze the data","weight":"25-30%"},{"id":4,"name_es":"Administrar y proteger Power BI","name_en":"Manage and secure Power BI","weight":"15-20%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chart","level":"associate","questionCount":302,"newUntil":"2026-11-06","rev":34},{"id":"dp-600","code":"DP-600","title_es":"Microsoft Certified: Fabric Analytics Engineer Associate","title_en":"Microsoft Certified: Fabric Analytics Engineer Associate","desc_es":"Soluciones de análisis con Microsoft Fabric: seguridad y ciclo de vida, preparación de datos con lakehouses, almacenes y KQL, y modelos semánticos con DAX y Direct Lake. Nivel asociado.","desc_en":"Analytics solutions with Microsoft Fabric: security and lifecycle, data preparation with lakehouses, warehouses and KQL, and semantic models with DAX and Direct Lake. Associate level.","logo":"DP","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Mantener una solución de análisis de datos","name_en":"Maintain a data analytics solution","weight":"25-30%"},{"id":2,"name_es":"Preparar los datos","name_en":"Prepare data","weight":"45-50%"},{"id":3,"name_es":"Implementar y administrar modelos semánticos","name_en":"Implement and manage semantic models","weight":"25-30%"}],"eyebrow_es":"Microsoft Certified Associate","eyebrow_en":"Microsoft Certified Associate","icon":"chart","level":"associate","questionCount":309,"newUntil":"2026-11-06","rev":34},{"id":"ai-901","code":"AI-901","title_es":"Microsoft Certified: Azure AI Fundamentals","title_en":"Microsoft Certified: Azure AI Fundamentals","desc_es":"Fundamentos de IA en Azure: IA responsable, modelos generativos, cargas de trabajo de IA, y soluciones con Microsoft Foundry para texto, voz, visión, agentes y extracción de información. Nivel fundamentos.","desc_en":"Azure AI fundamentals: responsible AI, generative models, AI workloads, and solutions with Microsoft Foundry for text, speech, vision, agents and information extraction. Fundamentals level.","logo":"AI","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Identificar conceptos y capacidades de IA","name_en":"Identify AI concepts and capabilities","weight":"40-45%"},{"id":2,"name_es":"Implementar soluciones de IA con Microsoft Foundry","name_en":"Implement AI solutions by using Microsoft Foundry","weight":"55-60%"}],"eyebrow_es":"Microsoft Certified Fundamentals","eyebrow_en":"Microsoft Certified Fundamentals","icon":"sparkles","level":"fundamentals","questionCount":302,"newUntil":"2026-11-06","rev":34},{"id":"ab-650","code":"AB-650","title_es":"Microsoft 365 Certified: Microsoft 365 and AI Services Administrator Associate","title_en":"Microsoft 365 Certified: Microsoft 365 and AI Services Administrator Associate","desc_es":"Administración de Microsoft 365 y servicios de IA: inquilino y cargas de trabajo, identidades y acceso con Entra, Defender para Office 365, Purview, Microsoft 365 Copilot, agentes y Agent 365. Nivel asociado (beta).","desc_en":"Microsoft 365 and AI services administration: tenant and workloads, identity and access with Entra, Defender for Office 365, Purview, Microsoft 365 Copilot, agents and Agent 365. Associate level (beta).","logo":"AB","examLen":50,"pass":70,"secsPerQ":90,"domains":[{"id":1,"name_es":"Configurar y administrar inquilinos y cargas de trabajo de Microsoft 365","name_en":"Configure and manage Microsoft 365 tenants and workloads","weight":"20-25%"},{"id":2,"name_es":"Gobernar y proteger inquilinos y cargas de trabajo de Microsoft 365","name_en":"Govern and secure Microsoft 365 tenants and workloads","weight":"40-45%"},{"id":3,"name_es":"Administrar y proteger servicios de IA en Microsoft 365","name_en":"Manage and secure AI services in Microsoft 365","weight":"35-40%"}],"eyebrow_es":"Microsoft 365 Certified Associate","eyebrow_en":"Microsoft 365 Certified Associate","icon":"sparkles","level":"associate","questionCount":303,"newUntil":"2026-12-07","rev":34}]</script>
 
 <script>
 "use strict";
@@ -1741,7 +1768,7 @@ const I18N = {
     progAchievements:"Logros", badgeUnlocked:"¡Logro desbloqueado!", badgeLocked:"Bloqueado",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
-    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad", catWip:"En construcción", catRetires:"Se retira 30/11/2026", catRetired:"Retirado", seoExamsTitle:"Exámenes de práctica",
+    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad", catWip:"En construcción", catRetires:"Se retira 30/11/2026", catRetired:"Retirado", orderHint:"Ordena los pasos arrastrándolos o con las flechas.", orderConfirm:"Confirmar este orden", orderUp:"Subir", orderDown:"Bajar", orderCorrect:"Orden correcto", caseTitle:"Caso de estudio", caseShow:"Ver el caso", learnMore:"Aprender más en Microsoft Learn", studyGuide:"Guía de estudio oficial", kbdHint:"Atajos: 1-4 o A-D responder · Intro siguiente · ←/→ navegar · F marcar · B favorito", seoExamsTitle:"Exámenes de práctica",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
     support:"Apóyame en Patreon",
@@ -1836,7 +1863,7 @@ const I18N = {
     progAchievements:"Achievements", badgeUnlocked:"Achievement unlocked!", badgeLocked:"Locked",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
-    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New", catWip:"Under construction", catRetires:"Retires Nov 30, 2026", catRetired:"Retired", seoExamsTitle:"Practice exams",
+    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New", catWip:"Under construction", catRetires:"Retires Nov 30, 2026", catRetired:"Retired", orderHint:"Put the steps in order by dragging them or using the arrows.", orderConfirm:"Confirm this order", orderUp:"Move up", orderDown:"Move down", orderCorrect:"Correct order", caseTitle:"Case study", caseShow:"Show the case", learnMore:"Learn more on Microsoft Learn", studyGuide:"Official study guide", kbdHint:"Shortcuts: 1-4 or A-D answer · Enter next · ←/→ navigate · F flag · B bookmark", seoExamsTitle:"Practice exams",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
     support:"Support me on Patreon",
@@ -2372,10 +2399,16 @@ function buildExamSet(){
     set=set.concat(shuffle(QUESTIONS.filter(q=>!used.has(q.id))).slice(0,examLen-set.length));
   }
   if(set.length>examLen) set=set.slice(0,examLen);
-  return shuffle(set);
+  set=shuffle(set);
+  const solo=set.filter(q=>!q.case_es), cases={};
+  set.filter(q=>q.case_es).forEach(q=>{ (cases[q.case_es]=cases[q.case_es]||[]).push(q); });
+  return solo.concat(...Object.values(cases).map(g=>g.sort((a,b)=>a.id-b.id)));
 }
 // shuffle options per question, keep mapping
 function qType(q){return q.type||'mc';}
+const isOrderQ=q=>qType(q)==='order';
+const seqEq=(a,b)=>a.length===b.length&&a.every((x,i)=>x===b[i]);
+function identityOrder(n){return Array.from({length:n},(_,i)=>i);}
 
 // Baraja el orden de presentación de las opciones de un tipo compuesto.
 function prepQuestion(q){
@@ -2385,6 +2418,11 @@ function prepQuestion(q){
   }
   if(tp==='sentence'){
     return {ref:q, order:shuffle(q.opts_es.map((_,i)=>i))};
+  }
+  if(tp==='order'){
+    const n=q.items_es.length; let o=identityOrder(n), guard=0;
+    while(seqEq(o,identityOrder(n))&&guard++<20)o=shuffle(identityOrder(n));
+    return {ref:q, order:o};
   }
   // dropdown / yesno: una orden por fila
   const rowOrders=q.rows.map(r=>{
@@ -2399,6 +2437,7 @@ function isAnswered(i){
   const sel=answers[i];
   if(!sel||!sel.length)return false;
   const tp=qType(exam[i].ref);
+  if(tp==='order')return sel.length>0;
   if(tp==='mc'||tp==='sentence')return sel.some(x=>x>=0);
   // dropdown/yesno: contar como respondida si hay al menos una fila elegida
   return sel.some(x=>x>=0);
@@ -2407,6 +2446,7 @@ function isAnswered(i){
 // ¿Está totalmente respondida? (todas las filas en dropdown/yesno)
 function isComplete(i){
   const item=exam[i], q=item.ref, sel=answers[i]||[], tp=qType(q);
+  if(tp==='order')return sel.length===q.items_es.length;
   if(tp==='mc'||tp==='sentence')return sel.some(x=>x>=0);
   if(sel.length<q.rows.length)return false;
   for(let r=0;r<q.rows.length;r++){ if(sel[r]===undefined||sel[r]<0)return false; }
@@ -2418,6 +2458,7 @@ function isCorrect(i){
   const item=exam[i], q=item.ref, sel=answers[i]||[], tp=qType(q);
   if(tp==='mc')return arrEq(sel,q.correct);
   if(tp==='sentence')return sel.length===1&&sel[0]===q.correct;
+  if(tp==='order')return sel.length===q.items_es.length&&seqEq(sel,identityOrder(q.items_es.length));
   // dropdown/yesno: cada fila debe coincidir
   if(sel.length!==q.rows.length)return false;
   for(let r=0;r<q.rows.length;r++){
@@ -2494,11 +2535,13 @@ function render(){
 
   // pista "selecciona todas" solo aplica a opción múltiple multi-respuesta
   const multi=(tp==='mc')&&q.correct.length>1;
-  $('#qHint').classList.toggle('hidden',!multi);
+  $('#qHint').classList.toggle('hidden',!multi&&tp!=='order');
+  $('#qHint').querySelector('span').textContent=tp==='order'?t('orderHint'):t('multiHint');
+  renderCase(q);
 
   // En multi-respuesta NO se corrige al marcar: hay que pulsar "Comprobar".
   // En respuesta única e interactivas se mantiene el feedback al completar.
-  const showAns = multi
+  const showAns = (multi||tp==='order')
     ? (instantFeedback() && !!revealed[cur])
     : (instantFeedback() && isComplete(cur));
 
@@ -2516,6 +2559,8 @@ function render(){
     }
   }else if(tp==='sentence'){
     renderSentence(item,q,box,showAns);
+  }else if(tp==='order'){
+    renderOrder(item,q,box,showAns);
   }else{
     renderRows(item,q,box,showAns,tp);
   }
@@ -2531,6 +2576,7 @@ function render(){
       showStatFromCache(q.id);
     }
     $('#qExpText').textContent=L(q,'exp');
+    renderLearn(q);
     expEl.classList.remove('hidden');
     announce((isCorrect(cur)?t('aOk'):t('aWrong')));
   }else{ expEl.classList.add('hidden'); $('#qStat').classList.add('hidden'); }
@@ -2552,6 +2598,95 @@ function render(){
   if(examActive&&!graded)saveExamState();
   if(discOpen){ discOpen=false; $('#discPanel').classList.add('hidden'); const db=$('#discBtn'); if(db){db.classList.remove('on');db.setAttribute('aria-pressed','false');} }
   updateDiscBadge();
+}
+
+// --- Caso de estudio: panel con el escenario compartido ---
+function renderCase(q){
+  const box=$('#qCase'); if(!box)return;
+  const secs=L(q,'scenario');
+  if(!secs||!secs.length){ box.classList.add('hidden'); return; }
+  box.classList.remove('hidden');
+  const name=L(q,'case')||'';
+  if(box.dataset.case!==name){ box.open=true; box.dataset.case=name; }
+  $('#qCaseName').textContent=name;
+  $('#qCaseBody').innerHTML=secs.map(sec=>{
+    const lines=String(sec[1]).split('\n');
+    let html='', list=false;
+    lines.forEach(l=>{
+      if(/^\s*- /.test(l)){ if(!list){html+='<ul>';list=true;} html+='<li>'+esc(l.replace(/^\s*- /,''))+'</li>'; }
+      else{ if(list){html+='</ul>';list=false;} if(l.trim())html+='<p>'+esc(l)+'</p>'; }
+    });
+    if(list)html+='</ul>';
+    return '<h6>'+esc(sec[0])+'</h6>'+html;
+  }).join('');
+}
+
+// --- Enlace a Microsoft Learn con los términos clave de la respuesta ---
+function learnTerms(q){
+  const tp=qType(q); let txt='';
+  if(tp==='mc')txt=q.opts_en[q.correct[0]];
+  else if(tp==='sentence')txt=q.opts_en[q.correct];
+  else if(tp==='order')txt=q.q_en;
+  else txt=q.q_en||'';
+  return String(txt).replace(/\([^)]*\)/g,' ').replace(/[^\w\s\-./]/g,' ').split(/\s+/).filter(w=>w.length>2).slice(0,9).join(' ');
+}
+function renderLearn(q){
+  const el=$('#qExpLearn'); if(!el)return;
+  const loc=lang==='es'?'es-es':'en-us';
+  const ex=EXAMS.find(e=>e.id===q.exam);
+  const terms=learnTerms(q);
+  const search='https://learn.microsoft.com/'+loc+'/search/?terms='+encodeURIComponent(terms);
+  const guide='https://learn.microsoft.com/'+loc+'/credentials/certifications/resources/study-guides/'+(q.exam||'');
+  el.innerHTML='<a href="'+search+'" target="_blank" rel="noopener">'+esc(t('learnMore'))+' ↗</a>'+(ex?' · <a href="'+guide+'" target="_blank" rel="noopener">'+esc(t('studyGuide'))+' '+esc(ex.code)+' ↗</a>':'');
+}
+
+// --- Ordenar pasos ---
+function moveOrder(from,to){
+  const item=exam[cur]; const cur_=(answers[cur]&&answers[cur].length)?answers[cur].slice():item.order.slice();
+  if(to<0||to>=cur_.length)return;
+  const [x]=cur_.splice(from,1); cur_.splice(to,0,x);
+  answers[cur]=cur_; render();
+  const btn=document.querySelector('#opts .ord-item[data-pos="'+to+'"] .ord-up, #opts .ord-item[data-pos="'+to+'"] .ord-down');
+  if(btn)btn.focus();
+}
+function renderOrder(item,q,box,showAns){
+  const items=L(q,'items');
+  const seq=(answers[cur]&&answers[cur].length)?answers[cur]:item.order;
+  const list=document.createElement('ol'); list.className='ord-list';
+  list.setAttribute('aria-label',t('orderHint'));
+  seq.forEach((orig,pos)=>{
+    const li=document.createElement('li'); li.className='ord-item'; li.dataset.pos=pos;
+    let state='';
+    if(showAns){ state=orig===pos?' correct':' wrong'; li.classList.add('locked'); }
+    li.className+=state;
+    li.innerHTML='<span class="ord-n">'+(pos+1)+'</span><span class="ord-t">'+esc(items[orig])+'</span>'+
+      (showAns?(orig===pos?'<span class="ord-mark">'+CHECK+'</span>':'<span class="ord-should">→ '+(orig+1)+'</span>'):
+      '<span class="ord-btns"><button type="button" class="ord-up" aria-label="'+esc(t('orderUp'))+'"'+(pos===0?' disabled':'')+'>▲</button><button type="button" class="ord-down" aria-label="'+esc(t('orderDown'))+'"'+(pos===seq.length-1?' disabled':'')+'>▼</button></span>');
+    if(!showAns){
+      li.draggable=true;
+      li.querySelector('.ord-up').onclick=()=>moveOrder(pos,pos-1);
+      li.querySelector('.ord-down').onclick=()=>moveOrder(pos,pos+1);
+      li.addEventListener('dragstart',e=>{ e.dataTransfer.setData('text/plain',String(pos)); li.classList.add('dragging'); });
+      li.addEventListener('dragend',()=>li.classList.remove('dragging'));
+      li.addEventListener('dragover',e=>{ e.preventDefault(); li.classList.add('over'); });
+      li.addEventListener('dragleave',()=>li.classList.remove('over'));
+      li.addEventListener('drop',e=>{ e.preventDefault(); li.classList.remove('over'); const from=parseInt(e.dataTransfer.getData('text/plain'),10); if(!isNaN(from)&&from!==pos)moveOrder(from,pos); });
+    }
+    list.appendChild(li);
+  });
+  box.appendChild(list);
+  if(showAns&&!isCorrect(cur)){
+    const c=document.createElement('div'); c.className='ord-solution';
+    c.innerHTML='<b>'+esc(t('orderCorrect'))+':</b><ol>'+items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>';
+    box.appendChild(c);
+  }
+  if(!showAns){
+    const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary check-btn';
+    b.textContent=instantFeedback()?t('checkAns'):t('orderConfirm');
+    b.onclick=()=>{ answers[cur]=seq.slice(); if(instantFeedback())revealed[cur]=true; render(); };
+    if(!instantFeedback()&&isComplete(cur)){ b.disabled=true; }
+    box.appendChild(b);
+  }
 }
 
 // --- Opción múltiple (comportamiento original) ---
@@ -2876,6 +3011,15 @@ function reviewBody(item,i,tp){
     });
     return '<div class="opts">'+h+'</div>';
   }
+  if(tp==='order'){
+    const items=L(q,'items'); const seq=sel.length?sel:null;
+    let h='<ol class="ord-list rv">';
+    (seq||[]).forEach((orig,pos)=>{ h+='<li class="ord-item locked '+(orig===pos?'correct':'wrong')+'"><span class="ord-n">'+(pos+1)+'</span><span class="ord-t">'+esc(items[orig])+'</span></li>'; });
+    if(!seq)h+='<li class="ord-item locked wrong"><span class="ord-t">'+t('noAnswer')+'</span></li>';
+    h+='</ol>';
+    if(!seq||!seqEq(seq,identityOrder(items.length)))h+='<div class="ord-solution"><b>'+esc(t('orderCorrect'))+':</b><ol>'+items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol></div>';
+    return h;
+  }
   if(tp==='sentence'){
     const opts=L(q,'opts');
     const pre=L(q,'pre'), post=L(q,'post');
@@ -3062,7 +3206,7 @@ function closeExplore(){
   if(currentExam)saveView({screen:'home',examId:currentExam.id});
   window.scrollTo(0,0);
 }
-function exQuestionText(q){ return (L(q,'q'))||''; }
+function exQuestionText(q){ return (L(q,'case')?'['+L(q,'case')+'] ':'')+((L(q,'q'))||''); }
 const EXPLORE_PAGE_SIZE = 25;
 let _exploreMatches = [];
 
@@ -3122,6 +3266,8 @@ function exploreAnswer(q,tp){
   }else if(tp==='sentence'){
     const opts=L(q,'opts');
     opts.forEach((o,i)=>{ h+='<div class="ex-opt'+(i===q.correct?' correct':'')+'">'+esc(o)+'</div>'; });
+  }else if(tp==='order'){
+    L(q,'items').forEach((o,i)=>{ h+='<div class="ex-opt correct">'+(i+1)+'. '+esc(o)+'</div>'; });
   }else{ // yesno / dropdown
     q.rows.forEach(r=>{
       let ans;
@@ -3845,6 +3991,16 @@ document.addEventListener('keydown',(e)=>{
   const tag=(e.target&&e.target.tagName)||'';
   if(tag==='INPUT'||tag==='SELECT'||tag==='TEXTAREA'||e.ctrlKey||e.metaKey||e.altKey) return;
   const item=exam[cur]; if(!item) return; const q=item.ref;
+  // letras A-D como alias de 1-4
+  if(/^[a-dA-D]$/.test(e.key)&&!(e.key==='b'||e.key==='B')){
+    const tp=qType(q);
+    if((tp==='mc'||tp==='sentence') && !graded){
+      const pos='abcd'.indexOf(e.key.toLowerCase());
+      if(pos<item.order.length){ e.preventDefault(); const origIdx=item.order[pos]; if(tp==='sentence'){ answers[cur]=[origIdx]; render(); } else { selectOpt(origIdx, q.correct.length>1); } }
+    }
+    return;
+  }
+  if(e.key==='Enter'&&e.target===document.body){ if(cur<exam.length-1){ e.preventDefault(); cur++; render(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
   // dígitos 1-9: elegir/alternar opción (mc y completar frase)
   if(/^[1-9]$/.test(e.key)){
     const tp=qType(q);

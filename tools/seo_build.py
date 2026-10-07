@@ -94,7 +94,7 @@ def fix_counts(text, n):
 # ---------------------------------------------------------------- sample questions
 def pick_samples(e, k=5):
     qs = json.load(open(os.path.join(ROOT, 'questions', e['id'] + '.json'), encoding='utf-8'))
-    ok = [q for q in qs if q['type'] == 'mc' and len(q['correct']) == 1 and len(q['opts_en']) == 4
+    ok = [q for q in qs if q['type'] == 'mc' and not q.get('case_es') and len(q['correct']) == 1 and len(q['opts_en']) == 4
           and len(q['q_en']) < 230 and max(len(o) for o in q['opts_en']) < 120 and q.get('exp_en')]
     ok.sort(key=lambda q: hashlib.md5(f"{e['id']}-{q['id']}".encode()).hexdigest())
     out, used_dom = [], set()
