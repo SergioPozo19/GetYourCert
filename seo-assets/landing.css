@@ -120,3 +120,28 @@ footer .other-exams a:hover{border-color:var(--accent);color:var(--accent);text-
 @media(prefers-reduced-motion:reduce){.dom-row,.why-item,.sticky-cta{transition:none}}
 html[data-lang="en"] .hero .eyebrow[lang="es"],html[data-lang="es"] .hero .eyebrow[lang="en"]{display:none}
 html[data-theme="dark"] .toggle button.on,html[data-theme="dark"] .btn-primary{color:#04121F}
+/* language links (separate ES/EN URLs) */
+.toggle a{padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink-3);font-family:var(--mono);text-decoration:none}
+.toggle a.on{background:var(--accent);color:#fff}
+.toggle a:hover:not(.on){color:var(--accent)}
+/* sample questions */
+.samples .sq-intro{color:var(--ink-2);font-size:14.5px;margin:-4px 0 14px}
+.sq{border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel);padding:16px 18px;margin-bottom:12px}
+.sq-q{font-weight:600;font-size:15px;line-height:1.5;margin-bottom:10px}
+.sq-n{font-family:var(--mono);color:var(--accent);margin-right:2px}
+.sq-opts{margin:0 0 10px 22px;padding:0;color:var(--ink-2);font-size:14.5px}
+.sq-opts li{margin:4px 0;padding-left:4px}
+.sq-ans summary{cursor:pointer;font-weight:600;color:var(--accent);font-size:14px;list-style:revert}
+.sq-ans p{margin-top:8px;color:var(--ink-2);font-size:14.5px;background:var(--ok-soft);border-radius:8px;padding:10px 12px}
+.sq-ans p strong{color:var(--ok)}
+.sq-cta{text-align:center;margin-top:16px}
+/* English hub */
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.hub-card{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel);text-decoration:none;color:var(--ink);transition:.15s}
+.hub-card:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-1px)}
+.hub-code{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:13px}
+.hub-title{font-weight:700;font-size:15.5px;line-height:1.3}
+.hub-desc{color:var(--ink-2);font-size:13.5px;line-height:1.45}
+.hub-meta{margin-top:auto;font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.hub-ret{color:#c2410c}
+[data-theme="dark"] .sq-ans p{background:rgba(16,124,65,.15)}

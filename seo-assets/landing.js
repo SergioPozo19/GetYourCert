@@ -1,5 +1,7 @@
 (function(){
   function getLang(){
+    var fixed=document.documentElement.getAttribute('data-fixed-lang');
+    if(fixed)return fixed;
     try{
       var v=localStorage.getItem('gyc:lang');
       if(v)return JSON.parse(v);
@@ -83,5 +85,11 @@
     document.querySelectorAll('#langToggle button').forEach(function(b){
       b.addEventListener('click',function(){ setLang(b.dataset.lang); });
     });
+    // separate ES/EN URLs: remember the choice so the app opens in the same language
+    document.querySelectorAll('#langToggle a[hreflang]').forEach(function(a){
+      a.addEventListener('click',function(){ try{localStorage.setItem('gyc:lang',JSON.stringify(a.getAttribute('hreflang')));}catch(e){} });
+    });
+    var fx=document.documentElement.getAttribute('data-fixed-lang');
+    if(fx){ try{localStorage.setItem('gyc:lang',JSON.stringify(fx));}catch(e){} }
   });
 })();
