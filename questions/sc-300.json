@@ -8708,5 +8708,481 @@
   ],
   "exp_en": "PIM for Groups provides just-in-time membership or ownership of groups: users are eligible and activate membership for a limited time, optionally with approval, MFA and justification.",
   "exp_es": "PIM para grupos ofrece pertenencia o propiedad de grupos justo a tiempo: los usuarios son elegibles y activan la pertenencia durante un tiempo limitado, opcionalmente con aprobación, MFA y justificación."
+ },
+ {
+  "id": 307,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué debe configurar para que los investigadores de Fabrikam inicien sesión con sus propias credenciales?",
+  "q_en": "What should you configure so Fabrikam researchers sign in with their own credentials?",
+  "opts_es": [
+   "Crear cuentas de miembro para cada investigador en el inquilino de Litware",
+   "Sincronizar el directorio de Fabrikam con Entra Connect Sync",
+   "Invitarlos como invitados B2B y configurar el acceso entre inquilinos",
+   "Habilitar el inicio de sesión único para el dominio de Fabrikam"
+  ],
+  "opts_en": [
+   "Create member accounts for each researcher in Litware's tenant",
+   "Synchronize Fabrikam's directory with Entra Connect Sync",
+   "Invite them as B2B guests and configure cross-tenant access settings",
+   "Enable seamless single sign-on for the Fabrikam domain"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La colaboración B2B de Entra permite autenticarse con la identidad de su organización mientras Litware controla el acceso a sus recursos; la configuración entre inquilinos ajusta la confianza.",
+  "exp_en": "Entra B2B collaboration lets external users authenticate with their home organization's identity while Litware controls access to its resources; cross-tenant access settings fine-tune the trust.",
+  "case_en": "Litware Pharma",
+  "case_es": "Litware Pharma",
+  "scenario_en": [
+   [
+    "Overview",
+    "Litware Pharma has 6,000 employees and a Microsoft Entra tenant synchronized from on-premises Active Directory with Microsoft Entra Connect Sync. The company collaborates with research partners and contractors."
+   ],
+   [
+    "Requirements",
+    "- Partner researchers from Fabrikam must access a research SharePoint site using their own Fabrikam credentials, without Litware creating accounts.\n- Access for external users must be reviewed every 90 days and removed automatically if the reviewer does not respond.\n- Administrators must activate privileged roles only when needed and must use MFA to do so.\n- Employees in finance must be blocked from accessing the finance app from unmanaged devices."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Litware Pharma tiene 6.000 empleados y un inquilino de Microsoft Entra sincronizado desde Active Directory local con Microsoft Entra Connect Sync. La empresa colabora con socios de investigación y contratistas."
+   ],
+   [
+    "Requisitos",
+    "- Los investigadores de Fabrikam deben acceder a un sitio de SharePoint de investigación con sus propias credenciales de Fabrikam, sin que Litware cree cuentas.\n- El acceso de usuarios externos debe revisarse cada 90 días y quitarse automáticamente si el revisor no responde.\n- Los administradores deben activar roles con privilegios solo cuando lo necesiten y con MFA.\n- Los empleados de finanzas no deben acceder a la app financiera desde dispositivos no administrados."
+   ]
+  ]
+ },
+ {
+  "id": 308,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué función cumple el requisito de revisión cada 90 días para usuarios externos?",
+  "q_en": "Which feature meets the 90-day review requirement for external users?",
+  "opts_es": [
+   "Una revisión de acceso con aplicación automática que quite el acceso si no hay respuesta",
+   "Un atributo de seguridad personalizado con la fecha de revisión",
+   "Una directiva de acceso condicional que bloquee invitados a los 90 días",
+   "Una directiva de expiración de 90 días para el grupo de SharePoint"
+  ],
+  "opts_en": [
+   "An access review with auto-apply set to remove access if reviewers don't respond",
+   "A custom security attribute that stores the review date",
+   "A Conditional Access policy that blocks guests after 90 days",
+   "A group expiration policy of 90 days for the SharePoint group"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las revisiones de acceso pueden ser periódicas, dirigirse a invitados y usar 'Si los revisores no responden: Quitar acceso' con aplicación automática.",
+  "exp_en": "Access reviews can be recurring, target guests, and use 'If reviewers don't respond: Remove access' with auto-apply results.",
+  "case_en": "Litware Pharma",
+  "case_es": "Litware Pharma",
+  "scenario_en": [
+   [
+    "Overview",
+    "Litware Pharma has 6,000 employees and a Microsoft Entra tenant synchronized from on-premises Active Directory with Microsoft Entra Connect Sync. The company collaborates with research partners and contractors."
+   ],
+   [
+    "Requirements",
+    "- Partner researchers from Fabrikam must access a research SharePoint site using their own Fabrikam credentials, without Litware creating accounts.\n- Access for external users must be reviewed every 90 days and removed automatically if the reviewer does not respond.\n- Administrators must activate privileged roles only when needed and must use MFA to do so.\n- Employees in finance must be blocked from accessing the finance app from unmanaged devices."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Litware Pharma tiene 6.000 empleados y un inquilino de Microsoft Entra sincronizado desde Active Directory local con Microsoft Entra Connect Sync. La empresa colabora con socios de investigación y contratistas."
+   ],
+   [
+    "Requisitos",
+    "- Los investigadores de Fabrikam deben acceder a un sitio de SharePoint de investigación con sus propias credenciales de Fabrikam, sin que Litware cree cuentas.\n- El acceso de usuarios externos debe revisarse cada 90 días y quitarse automáticamente si el revisor no responde.\n- Los administradores deben activar roles con privilegios solo cuando lo necesiten y con MFA.\n- Los empleados de finanzas no deben acceder a la app financiera desde dispositivos no administrados."
+   ]
+  ]
+ },
+ {
+  "id": 309,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Cómo deben obtener los administradores los roles con privilegios para cumplir el requisito?",
+  "q_en": "How should administrators obtain privileged roles to meet the requirement?",
+  "opts_es": [
+   "Asignar roles como elegibles en PIM y exigir MFA al activarlos",
+   "Crear un grupo dinámico que agregue administradores en la semana laboral",
+   "Asignar roles permanentes y supervisar los inicios con un libro",
+   "Usar unidades administrativas con el rol Administrador global"
+  ],
+  "opts_en": [
+   "Assign roles as eligible in PIM and require MFA on activation",
+   "Create a dynamic group that adds admins during the work week",
+   "Assign permanent roles and monitor sign-ins with a workbook",
+   "Use administrative units with the Global Administrator role"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las asignaciones elegibles de PIM requieren activación; la configuración puede exigir MFA, justificación y aprobación, y fijar una duración máxima.",
+  "exp_en": "PIM eligible assignments require activation; activation settings can require MFA, justification and approval, and set a maximum duration.",
+  "case_en": "Litware Pharma",
+  "case_es": "Litware Pharma",
+  "scenario_en": [
+   [
+    "Overview",
+    "Litware Pharma has 6,000 employees and a Microsoft Entra tenant synchronized from on-premises Active Directory with Microsoft Entra Connect Sync. The company collaborates with research partners and contractors."
+   ],
+   [
+    "Requirements",
+    "- Partner researchers from Fabrikam must access a research SharePoint site using their own Fabrikam credentials, without Litware creating accounts.\n- Access for external users must be reviewed every 90 days and removed automatically if the reviewer does not respond.\n- Administrators must activate privileged roles only when needed and must use MFA to do so.\n- Employees in finance must be blocked from accessing the finance app from unmanaged devices."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Litware Pharma tiene 6.000 empleados y un inquilino de Microsoft Entra sincronizado desde Active Directory local con Microsoft Entra Connect Sync. La empresa colabora con socios de investigación y contratistas."
+   ],
+   [
+    "Requisitos",
+    "- Los investigadores de Fabrikam deben acceder a un sitio de SharePoint de investigación con sus propias credenciales de Fabrikam, sin que Litware cree cuentas.\n- El acceso de usuarios externos debe revisarse cada 90 días y quitarse automáticamente si el revisor no responde.\n- Los administradores deben activar roles con privilegios solo cuando lo necesiten y con MFA.\n- Los empleados de finanzas no deben acceder a la app financiera desde dispositivos no administrados."
+   ]
+  ]
+ },
+ {
+  "id": 310,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué configuración de acceso condicional bloquea la app financiera en dispositivos no administrados?",
+  "q_en": "Which Conditional Access configuration blocks the finance app on unmanaged devices?",
+  "opts_es": [
+   "Dirigirse al grupo de finanzas y fijar la frecuencia de inicio en 1 minuto",
+   "Dirigirse a todas las apps y exigir cambiar la contraseña a diario",
+   "Dirigirse a la app financiera y exigir un dispositivo conforme o unido híbrido",
+   "Dirigirse solo a invitados y exigir aceptar términos de uso"
+  ],
+  "opts_en": [
+   "Target the finance group and set sign-in frequency to 1 minute",
+   "Target all apps and require a password change every day",
+   "Target the finance app and require a compliant or hybrid-joined device",
+   "Target guests only and require terms of use acceptance"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Una directiva dirigida a la app y al grupo de finanzas con el control 'Requerir que el dispositivo esté marcado como conforme' (o unido híbrido) bloquea dispositivos no administrados.",
+  "exp_en": "A policy scoped to the finance app and group with the 'Require device to be marked as compliant' (or hybrid joined) grant control blocks unmanaged devices.",
+  "case_en": "Litware Pharma",
+  "case_es": "Litware Pharma",
+  "scenario_en": [
+   [
+    "Overview",
+    "Litware Pharma has 6,000 employees and a Microsoft Entra tenant synchronized from on-premises Active Directory with Microsoft Entra Connect Sync. The company collaborates with research partners and contractors."
+   ],
+   [
+    "Requirements",
+    "- Partner researchers from Fabrikam must access a research SharePoint site using their own Fabrikam credentials, without Litware creating accounts.\n- Access for external users must be reviewed every 90 days and removed automatically if the reviewer does not respond.\n- Administrators must activate privileged roles only when needed and must use MFA to do so.\n- Employees in finance must be blocked from accessing the finance app from unmanaged devices."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Litware Pharma tiene 6.000 empleados y un inquilino de Microsoft Entra sincronizado desde Active Directory local con Microsoft Entra Connect Sync. La empresa colabora con socios de investigación y contratistas."
+   ],
+   [
+    "Requisitos",
+    "- Los investigadores de Fabrikam deben acceder a un sitio de SharePoint de investigación con sus propias credenciales de Fabrikam, sin que Litware cree cuentas.\n- El acceso de usuarios externos debe revisarse cada 90 días y quitarse automáticamente si el revisor no responde.\n- Los administradores deben activar roles con privilegios solo cuando lo necesiten y con MFA.\n- Los empleados de finanzas no deben acceder a la app financiera desde dispositivos no administrados."
+   ]
+  ]
+ },
+ {
+  "id": 311,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué identidad debe usar la aplicación web para acceder a Key Vault y Azure SQL?",
+  "q_en": "Which identity should the web app use to access Key Vault and Azure SQL?",
+  "opts_es": [
+   "Una cuenta de usuario creada para la aplicación",
+   "Una cuenta de invitado del inquilino del desarrollador",
+   "Una entidad de servicio con un secreto de cliente en la configuración",
+   "Una identidad administrada asignada por el sistema"
+  ],
+  "opts_en": [
+   "A user account created for the application",
+   "A guest account invited from the developer's tenant",
+   "A service principal with a client secret in app settings",
+   "A system-assigned managed identity"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las identidades administradas dan acceso sin credenciales a los recursos que admiten autenticación de Entra.",
+  "exp_en": "Managed identities provide credentials-free access to resources that support Entra authentication.",
+  "case_en": "Contoso Apps",
+  "case_es": "Contoso Apps",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso is integrating internal and SaaS apps with Microsoft Entra ID. A developer team is building an API and a web app that calls it."
+   ],
+   [
+    "Requirements",
+    "- The web app, running as an Azure App Service, must call Azure Key Vault and Azure SQL without secrets in configuration.\n- The web app must call the internal API as itself (no user signed in) from a scheduled job.\n- Users must not be able to consent to new third-party apps that request access to their mailbox; an admin must review requests.\n- An on-premises intranet site must be published externally with pre-authentication through Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso está integrando aplicaciones internas y SaaS con Microsoft Entra ID. Un equipo de desarrollo crea una API y una aplicación web que la llama."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación web, en Azure App Service, debe llamar a Azure Key Vault y Azure SQL sin secretos en la configuración.\n- La aplicación web debe llamar a la API interna con identidad propia (sin usuario) desde un trabajo programado.\n- Los usuarios no deben poder consentir apps de terceros que pidan acceso a su buzón; un administrador debe revisar las solicitudes.\n- Un sitio de intranet local debe publicarse externamente con autenticación previa mediante Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 312,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué tipo de permiso debe usar la app para llamar a la API sin un usuario conectado?",
+  "q_en": "Which permission type should the app use to call the API without a signed-in user?",
+  "opts_es": [
+   "Concesión implícita con un token de ID del navegador",
+   "Permisos delegados solo con consentimiento del usuario",
+   "Permisos de aplicación con consentimiento de administrador y roles de aplicación",
+   "Credenciales de contraseña del propietario con una cuenta de servicio"
+  ],
+  "opts_en": [
+   "Implicit grant with an ID token from the browser",
+   "Delegated permissions with user consent only",
+   "Application permissions with admin consent and app roles",
+   "Resource owner password credentials with a service account"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los escenarios de demonio usan el flujo de credenciales de cliente con permisos de aplicación (roles de aplicación) que requieren consentimiento de administrador.",
+  "exp_en": "Daemon scenarios use the client credentials flow with application permissions (app roles) that require admin consent.",
+  "case_en": "Contoso Apps",
+  "case_es": "Contoso Apps",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso is integrating internal and SaaS apps with Microsoft Entra ID. A developer team is building an API and a web app that calls it."
+   ],
+   [
+    "Requirements",
+    "- The web app, running as an Azure App Service, must call Azure Key Vault and Azure SQL without secrets in configuration.\n- The web app must call the internal API as itself (no user signed in) from a scheduled job.\n- Users must not be able to consent to new third-party apps that request access to their mailbox; an admin must review requests.\n- An on-premises intranet site must be published externally with pre-authentication through Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso está integrando aplicaciones internas y SaaS con Microsoft Entra ID. Un equipo de desarrollo crea una API y una aplicación web que la llama."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación web, en Azure App Service, debe llamar a Azure Key Vault y Azure SQL sin secretos en la configuración.\n- La aplicación web debe llamar a la API interna con identidad propia (sin usuario) desde un trabajo programado.\n- Los usuarios no deben poder consentir apps de terceros que pidan acceso a su buzón; un administrador debe revisar las solicitudes.\n- Un sitio de intranet local debe publicarse externamente con autenticación previa mediante Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 313,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué debe configurar para cumplir el requisito de consentimiento de terceros?",
+  "q_en": "What should you configure to meet the third-party consent requirement?",
+  "opts_es": [
+   "Habilitar la sincronización de hash de contraseña del inquilino",
+   "Deshabilitar el consentimiento del usuario y habilitar el flujo de consentimiento de administrador",
+   "Agregar cada app de terceros a una lista de permitidos en Exchange",
+   "Bloquear todos los registros de aplicaciones de usuarios no administradores"
+  ],
+  "opts_en": [
+   "Enable password hash synchronization for the tenant",
+   "Disable user consent and enable the admin consent workflow",
+   "Add every third-party app to an allow list in Exchange",
+   "Block all app registrations by non-admin users"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Con el consentimiento de usuarios deshabilitado, el flujo de consentimiento permite solicitar aprobación y los revisores designados aprueban o deniegan.",
+  "exp_en": "With user consent disabled, the admin consent workflow lets users request approval and designated reviewers approve or deny.",
+  "case_en": "Contoso Apps",
+  "case_es": "Contoso Apps",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso is integrating internal and SaaS apps with Microsoft Entra ID. A developer team is building an API and a web app that calls it."
+   ],
+   [
+    "Requirements",
+    "- The web app, running as an Azure App Service, must call Azure Key Vault and Azure SQL without secrets in configuration.\n- The web app must call the internal API as itself (no user signed in) from a scheduled job.\n- Users must not be able to consent to new third-party apps that request access to their mailbox; an admin must review requests.\n- An on-premises intranet site must be published externally with pre-authentication through Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso está integrando aplicaciones internas y SaaS con Microsoft Entra ID. Un equipo de desarrollo crea una API y una aplicación web que la llama."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación web, en Azure App Service, debe llamar a Azure Key Vault y Azure SQL sin secretos en la configuración.\n- La aplicación web debe llamar a la API interna con identidad propia (sin usuario) desde un trabajo programado.\n- Los usuarios no deben poder consentir apps de terceros que pidan acceso a su buzón; un administrador debe revisar las solicitudes.\n- Un sitio de intranet local debe publicarse externamente con autenticación previa mediante Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 314,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué función publica externamente el sitio de intranet local con autenticación previa?",
+  "q_en": "Which feature publishes the on-premises intranet site externally with pre-authentication?",
+  "opts_es": [
+   "Proxy de aplicación de Microsoft Entra con un conector",
+   "Una dirección IP pública en el servidor de intranet",
+   "Una puerta de enlace VPN con conexiones punto a sitio",
+   "Microsoft Entra Connect Health en el servidor de intranet"
+  ],
+  "opts_en": [
+   "Microsoft Entra Application Proxy with a connector",
+   "A public IP address on the intranet server",
+   "A VPN gateway with point-to-site connections",
+   "Microsoft Entra Connect Health on the intranet server"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Application Proxy usa un conector solo saliente y admite autenticación previa de Entra y acceso condicional para apps web locales.",
+  "exp_en": "Application Proxy uses an outbound-only connector and supports Entra pre-authentication and Conditional Access for on-premises web apps.",
+  "case_en": "Contoso Apps",
+  "case_es": "Contoso Apps",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso is integrating internal and SaaS apps with Microsoft Entra ID. A developer team is building an API and a web app that calls it."
+   ],
+   [
+    "Requirements",
+    "- The web app, running as an Azure App Service, must call Azure Key Vault and Azure SQL without secrets in configuration.\n- The web app must call the internal API as itself (no user signed in) from a scheduled job.\n- Users must not be able to consent to new third-party apps that request access to their mailbox; an admin must review requests.\n- An on-premises intranet site must be published externally with pre-authentication through Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso está integrando aplicaciones internas y SaaS con Microsoft Entra ID. Un equipo de desarrollo crea una API y una aplicación web que la llama."
+   ],
+   [
+    "Requisitos",
+    "- La aplicación web, en Azure App Service, debe llamar a Azure Key Vault y Azure SQL sin secretos en la configuración.\n- La aplicación web debe llamar a la API interna con identidad propia (sin usuario) desde un trabajo programado.\n- Los usuarios no deben poder consentir apps de terceros que pidan acceso a su buzón; un administrador debe revisar las solicitudes.\n- Un sitio de intranet local debe publicarse externamente con autenticación previa mediante Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 315,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para configurar la administración de derechos de un proyecto con socios.",
+  "q_en": "Put the steps to set up entitlement management for a partner project in order.",
+  "items_es": [
+   "Crear un catálogo y agregar los recursos",
+   "Crear un paquete de acceso con directivas",
+   "Agregar la organización asociada como organización conectada",
+   "Los usuarios solicitan acceso y los aprobadores deciden"
+  ],
+  "items_en": [
+   "Create a catalog and add the resources",
+   "Create an access package with policies",
+   "Add the partner organization as a connected organization",
+   "Users request access and approvers decide"
+  ],
+  "exp_es": "Primero van los recursos a un catálogo; los paquetes de acceso definen quién puede solicitar, aprobaciones y caducidad.",
+  "exp_en": "Resources go into a catalog first; access packages define who can request, approvals and expiration."
+ },
+ {
+  "id": 316,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para desplegar claves de acceso a los administradores.",
+  "q_en": "Put the steps to roll out passkeys for administrators in order.",
+  "items_es": [
+   "Habilitar el método Clave de acceso (FIDO2) para el grupo de administradores",
+   "Emitir un Pase de acceso temporal para el registro",
+   "Los usuarios registran una clave en Mi información de seguridad",
+   "Exigir intensidad de autenticación resistente al phishing con acceso condicional"
+  ],
+  "items_en": [
+   "Enable the Passkey (FIDO2) authentication method for the admin group",
+   "Issue a Temporary Access Pass for registration",
+   "Users register a passkey at My Security Info",
+   "Require phishing-resistant authentication strength with Conditional Access"
+  ],
+  "exp_es": "Habilitar el método, dejar que se registren y exigirlo solo después para evitar bloqueos.",
+  "exp_en": "Enable the method, let users register, and enforce only after registration to avoid lockouts."
+ },
+ {
+  "id": 317,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "order",
+  "q_es": "Ordena los pasos para migrar de AD FS a autenticación en la nube con sincronización de hash.",
+  "q_en": "Put the steps to migrate from AD FS to cloud authentication with password hash sync in order.",
+  "items_es": [
+   "Habilitar la sincronización de hash de contraseña en Entra Connect",
+   "Probar el inicio con implementación por fases en un grupo piloto",
+   "Cambiar el dominio de federado a administrado",
+   "Retirar la granja de AD FS"
+  ],
+  "items_en": [
+   "Enable password hash synchronization in Entra Connect",
+   "Test sign-in with staged rollout for a pilot group",
+   "Switch the domain from federated to managed",
+   "Decommission the AD FS farm"
+  ],
+  "exp_es": "La implementación por fases valida la autenticación en la nube antes de convertir todo el dominio; AD FS se retira al final.",
+  "exp_en": "Staged rollout validates cloud authentication before converting the whole domain; AD FS is removed last."
+ },
+ {
+  "id": 318,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para ejecutar una revisión de acceso periódica de un grupo de Microsoft 365.",
+  "q_en": "Put the steps to run a recurring access review of a Microsoft 365 group in order.",
+  "items_es": [
+   "Elegir el grupo y los revisores",
+   "Definir la periodicidad y la acción ante falta de respuesta",
+   "Los revisores aprueban o deniegan a cada usuario",
+   "Se aplican los resultados y se revisa el registro de auditoría"
+  ],
+  "items_en": [
+   "Choose the group and reviewers",
+   "Set recurrence and the action for non-responses",
+   "Reviewers approve or deny each user",
+   "Results are applied and the audit log is reviewed"
+  ],
+  "exp_es": "Primero se configura el ámbito y los ajustes; el ciclo recoge decisiones y aplica resultados.",
+  "exp_en": "Configure scope and settings first; the review cycle then collects decisions and applies results."
  }
 ]

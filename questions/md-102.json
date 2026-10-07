@@ -21150,5 +21150,481 @@
   ],
   "exp_en": "Tenant status covers service health and message center. Diagnostic settings send Intune logs to Log Analytics for Azure Monitor alerts. Conflicts appear in configuration status reports, and noncompliance actions can email users.",
   "exp_es": "El estado del inquilino incluye el estado del servicio y el centro de mensajes. La configuración de diagnóstico envía registros de Intune a Log Analytics para alertas de Azure Monitor. Los conflictos aparecen en los informes de estado de configuración, y las acciones por incumplimiento pueden enviar correos."
+ },
+ {
+  "id": 743,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué método de implementación cumple el requisito de los portátiles?",
+  "q_en": "Which deployment method meets the laptop requirement?",
+  "opts_es": [
+   "Un paquete de aprovisionamiento copiado a una unidad USB en la oficina",
+   "Windows Autopilot en modo controlado por el usuario con una página de estado de inscripción",
+   "Una imagen personalizada implementada con Configuration Manager",
+   "Inscripción manual desde Configuración tras el primer inicio"
+  ],
+  "opts_en": [
+   "A provisioning package copied to a USB drive at the office",
+   "Windows Autopilot user-driven mode with an Enrollment Status Page",
+   "A custom image deployed by Configuration Manager",
+   "Manual enrollment from Settings after the first sign-in"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El modo controlado por el usuario de Autopilot configura el equipo en el primer inicio; la página de estado bloquea el uso hasta instalar apps y directivas obligatorias.",
+  "exp_en": "Autopilot user-driven mode configures devices at first sign-in; the Enrollment Status Page blocks use until required apps and policies are installed.",
+  "case_en": "Wingtip Toys",
+  "case_es": "Wingtip Toys",
+  "scenario_en": [
+   [
+    "Overview",
+    "Wingtip Toys has 2,500 Windows 11 laptops, 600 iPhones and 300 Android devices. It uses Microsoft Intune and Microsoft Entra ID. New laptops are shipped directly from the vendor to employees' homes."
+   ],
+   [
+    "Requirements",
+    "- New laptops must be configured automatically when the user first signs in, with required apps installed before the desktop appears.\n- Personal phones must keep personal data untouched while corporate email data is protected and can be wiped separately.\n- Windows updates must be tested on a pilot group before rolling out to everyone.\n- BitLocker recovery keys must be stored in Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Wingtip Toys tiene 2.500 portátiles Windows 11, 600 iPhone y 300 dispositivos Android. Usa Microsoft Intune y Microsoft Entra ID. Los portátiles nuevos se envían directamente del proveedor a casa de los empleados."
+   ],
+   [
+    "Requisitos",
+    "- Los portátiles nuevos deben configurarse solos al primer inicio, con las apps necesarias instaladas antes de ver el escritorio.\n- En los teléfonos personales no se debe tocar lo personal, pero sí proteger los datos del correo corporativo y poder borrarlos por separado.\n- Las actualizaciones de Windows deben probarse en un grupo piloto antes de aplicarse a todos.\n- Las claves de recuperación de BitLocker deben guardarse en Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 744,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué debe usar para proteger los datos de correo corporativo en los teléfonos personales?",
+  "q_en": "What should you use to protect corporate email data on personal phones?",
+  "opts_es": [
+   "Directivas de protección de aplicaciones sin inscribir el dispositivo",
+   "Un perfil VPN para todas las aplicaciones del teléfono",
+   "Directivas de cumplimiento con acción de borrado completo",
+   "Restricciones de dispositivo que deshabiliten la cámara"
+  ],
+  "opts_en": [
+   "App protection policies without device enrollment",
+   "A VPN profile for all applications on the phone",
+   "Compliance policies with a full device wipe action",
+   "Device restrictions that disable the camera"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las directivas de protección de apps (MAM) protegen los datos corporativos dentro de las apps administradas y permiten un borrado selectivo solo de esos datos, sin tocar lo personal.",
+  "exp_en": "App protection policies (MAM) protect corporate data inside managed apps and allow selective wipe of only that data, leaving personal data untouched.",
+  "case_en": "Wingtip Toys",
+  "case_es": "Wingtip Toys",
+  "scenario_en": [
+   [
+    "Overview",
+    "Wingtip Toys has 2,500 Windows 11 laptops, 600 iPhones and 300 Android devices. It uses Microsoft Intune and Microsoft Entra ID. New laptops are shipped directly from the vendor to employees' homes."
+   ],
+   [
+    "Requirements",
+    "- New laptops must be configured automatically when the user first signs in, with required apps installed before the desktop appears.\n- Personal phones must keep personal data untouched while corporate email data is protected and can be wiped separately.\n- Windows updates must be tested on a pilot group before rolling out to everyone.\n- BitLocker recovery keys must be stored in Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Wingtip Toys tiene 2.500 portátiles Windows 11, 600 iPhone y 300 dispositivos Android. Usa Microsoft Intune y Microsoft Entra ID. Los portátiles nuevos se envían directamente del proveedor a casa de los empleados."
+   ],
+   [
+    "Requisitos",
+    "- Los portátiles nuevos deben configurarse solos al primer inicio, con las apps necesarias instaladas antes de ver el escritorio.\n- En los teléfonos personales no se debe tocar lo personal, pero sí proteger los datos del correo corporativo y poder borrarlos por separado.\n- Las actualizaciones de Windows deben probarse en un grupo piloto antes de aplicarse a todos.\n- Las claves de recuperación de BitLocker deben guardarse en Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 745,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Cómo debe probar primero las actualizaciones de Windows en un grupo piloto?",
+  "q_en": "How should you test Windows updates on a pilot group first?",
+  "opts_es": [
+   "Deshabilitar las actualizaciones hasta que el proveedor confirme la estabilidad",
+   "Implementar las actualizaciones con un paquete de app Win32",
+   "Crear un solo anillo y filtrar por fabricante",
+   "Crear anillos de actualización con distintos aplazamientos asignados a grupos"
+  ],
+  "opts_en": [
+   "Disable updates until the vendor confirms stability",
+   "Deploy the updates with a Win32 app package",
+   "Create one ring and filter devices by manufacturer",
+   "Create update rings with different deferrals assigned to groups"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los anillos de Windows Update (o de Windows Autopatch) aplican distintos aplazamientos por grupo, así el anillo piloto recibe antes las actualizaciones.",
+  "exp_en": "Windows Update rings (or Windows Autopatch rings) apply different deferral periods per group, so a pilot ring gets updates first.",
+  "case_en": "Wingtip Toys",
+  "case_es": "Wingtip Toys",
+  "scenario_en": [
+   [
+    "Overview",
+    "Wingtip Toys has 2,500 Windows 11 laptops, 600 iPhones and 300 Android devices. It uses Microsoft Intune and Microsoft Entra ID. New laptops are shipped directly from the vendor to employees' homes."
+   ],
+   [
+    "Requirements",
+    "- New laptops must be configured automatically when the user first signs in, with required apps installed before the desktop appears.\n- Personal phones must keep personal data untouched while corporate email data is protected and can be wiped separately.\n- Windows updates must be tested on a pilot group before rolling out to everyone.\n- BitLocker recovery keys must be stored in Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Wingtip Toys tiene 2.500 portátiles Windows 11, 600 iPhone y 300 dispositivos Android. Usa Microsoft Intune y Microsoft Entra ID. Los portátiles nuevos se envían directamente del proveedor a casa de los empleados."
+   ],
+   [
+    "Requisitos",
+    "- Los portátiles nuevos deben configurarse solos al primer inicio, con las apps necesarias instaladas antes de ver el escritorio.\n- En los teléfonos personales no se debe tocar lo personal, pero sí proteger los datos del correo corporativo y poder borrarlos por separado.\n- Las actualizaciones de Windows deben probarse en un grupo piloto antes de aplicarse a todos.\n- Las claves de recuperación de BitLocker deben guardarse en Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 746,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Qué directiva de Intune guarda las claves de recuperación de BitLocker en Entra ID?",
+  "q_en": "Which Intune policy stores BitLocker recovery keys in Entra ID?",
+  "opts_es": [
+   "Una directiva de configuración de apps del Portal de empresa",
+   "Una directiva de cumplimiento que compruebe el antivirus",
+   "Una directiva de Windows Hello para empresas",
+   "Una directiva de cifrado de disco de seguridad de puntos de conexión para BitLocker"
+  ],
+  "opts_en": [
+   "An app configuration policy for the Company Portal",
+   "A compliance policy that checks for antivirus",
+   "A Windows Hello for Business policy",
+   "An endpoint security disk encryption policy for BitLocker"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La directiva de BitLocker en Seguridad de puntos de conexión > Cifrado de disco guarda las claves en Microsoft Entra ID y puede aplicar la configuración de cifrado.",
+  "exp_en": "The BitLocker policy in Endpoint security > Disk encryption escrows recovery keys to Microsoft Entra ID and can enforce encryption settings.",
+  "case_en": "Wingtip Toys",
+  "case_es": "Wingtip Toys",
+  "scenario_en": [
+   [
+    "Overview",
+    "Wingtip Toys has 2,500 Windows 11 laptops, 600 iPhones and 300 Android devices. It uses Microsoft Intune and Microsoft Entra ID. New laptops are shipped directly from the vendor to employees' homes."
+   ],
+   [
+    "Requirements",
+    "- New laptops must be configured automatically when the user first signs in, with required apps installed before the desktop appears.\n- Personal phones must keep personal data untouched while corporate email data is protected and can be wiped separately.\n- Windows updates must be tested on a pilot group before rolling out to everyone.\n- BitLocker recovery keys must be stored in Entra ID."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Wingtip Toys tiene 2.500 portátiles Windows 11, 600 iPhone y 300 dispositivos Android. Usa Microsoft Intune y Microsoft Entra ID. Los portátiles nuevos se envían directamente del proveedor a casa de los empleados."
+   ],
+   [
+    "Requisitos",
+    "- Los portátiles nuevos deben configurarse solos al primer inicio, con las apps necesarias instaladas antes de ver el escritorio.\n- En los teléfonos personales no se debe tocar lo personal, pero sí proteger los datos del correo corporativo y poder borrarlos por separado.\n- Las actualizaciones de Windows deben probarse en un grupo piloto antes de aplicarse a todos.\n- Las claves de recuperación de BitLocker deben guardarse en Entra ID."
+   ]
+  ]
+ },
+ {
+  "id": 747,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué tipo de inscripción de Android Enterprise cumple el primer requisito?",
+  "q_en": "Which Android Enterprise enrollment type meets the first requirement?",
+  "opts_es": [
+   "Administrador de dispositivos Android",
+   "Propiedad corporativa con perfil de trabajo",
+   "Dispositivos dedicados (modo quiosco)",
+   "Perfil de trabajo en dispositivos personales"
+  ],
+  "opts_en": [
+   "Android device administrator",
+   "Corporate-owned with a work profile",
+   "Dedicated devices (kiosk mode)",
+   "Personally-owned work profile"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los dispositivos dedicados funcionan en modo quiosco o multiapp, limitando el dispositivo a apps aprobadas de uso compartido.",
+  "exp_en": "Dedicated devices run in kiosk or multi-app mode, locking the device to approved apps for shared use.",
+  "case_en": "Adventure Works field team",
+  "case_es": "Equipo de campo de Adventure Works",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adventure Works field technicians use shared rugged Android tablets enrolled in Intune. Each tablet is used by several technicians per day."
+   ],
+   [
+    "Requirements",
+    "- Tablets must run only two approved apps and show no other launcher items.\n- Tablets must not be usable if they fall out of compliance, and users must be emailed when that happens.\n- Support staff must see the device screen remotely to help technicians in the field.\n- Admins want an Intune report listing apps and versions installed on all tablets."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Los técnicos de campo de Adventure Works usan tabletas Android robustas compartidas inscritas en Intune. Cada tableta la usan varios técnicos al día."
+   ],
+   [
+    "Requisitos",
+    "- Las tabletas solo deben ejecutar dos apps aprobadas y no mostrar nada más en el lanzador.\n- Las tabletas no deben poder usarse si dejan de cumplir y debe avisarse a los usuarios por correo.\n- El soporte debe ver la pantalla del dispositivo de forma remota para ayudar a los técnicos.\n- Los administradores quieren un informe de Intune con las apps y versiones instaladas en todas las tabletas."
+   ]
+  ]
+ },
+ {
+  "id": 748,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué combinación cumple el requisito de cumplimiento?",
+  "q_en": "What combination meets the compliance requirement?",
+  "opts_es": [
+   "Un perfil de restricciones que deshabilite el Wi-Fi tras incumplir",
+   "Una directiva de cumplimiento con notificación y una de acceso condicional que exija cumplimiento",
+   "Una directiva de protección de apps con 24 horas de gracia sin conexión",
+   "Una etiqueta de ámbito que oculte las tabletas no conformes"
+  ],
+  "opts_en": [
+   "A device restriction profile that disables Wi-Fi after noncompliance",
+   "A compliance policy with notification and a Conditional Access policy requiring compliance",
+   "An app protection policy with a 24-hour offline grace period",
+   "A scope tag that hides noncompliant tablets from admins"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las acciones por incumplimiento pueden enviar correo a los usuarios, y el acceso condicional puede bloquear recursos hasta que el dispositivo cumpla.",
+  "exp_en": "Actions for noncompliance can email users, and Conditional Access can block access to resources until the device is compliant.",
+  "case_en": "Adventure Works field team",
+  "case_es": "Equipo de campo de Adventure Works",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adventure Works field technicians use shared rugged Android tablets enrolled in Intune. Each tablet is used by several technicians per day."
+   ],
+   [
+    "Requirements",
+    "- Tablets must run only two approved apps and show no other launcher items.\n- Tablets must not be usable if they fall out of compliance, and users must be emailed when that happens.\n- Support staff must see the device screen remotely to help technicians in the field.\n- Admins want an Intune report listing apps and versions installed on all tablets."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Los técnicos de campo de Adventure Works usan tabletas Android robustas compartidas inscritas en Intune. Cada tableta la usan varios técnicos al día."
+   ],
+   [
+    "Requisitos",
+    "- Las tabletas solo deben ejecutar dos apps aprobadas y no mostrar nada más en el lanzador.\n- Las tabletas no deben poder usarse si dejan de cumplir y debe avisarse a los usuarios por correo.\n- El soporte debe ver la pantalla del dispositivo de forma remota para ayudar a los técnicos.\n- Los administradores quieren un informe de Intune con las apps y versiones instaladas en todas las tabletas."
+   ]
+  ]
+ },
+ {
+  "id": 749,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Intune permite al soporte ver la pantalla remotamente?",
+  "q_en": "Which Intune capability lets support staff see the device screen remotely?",
+  "opts_es": [
+   "Una consulta de dispositivo con KQL",
+   "Remote Help de Intune Suite",
+   "Rendimiento de inicio de Endpoint analytics",
+   "La acción remota Sincronizar"
+  ],
+  "opts_en": [
+   "A device query using KQL",
+   "Remote Help from the Intune Suite",
+   "Endpoint analytics startup performance",
+   "The Sync remote action"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Remote Help (complemento de Intune Suite) ofrece asistencia remota con pantalla compartida en las plataformas compatibles.",
+  "exp_en": "Remote Help (Intune Suite add-on) provides remote assistance with screen sharing on supported platforms.",
+  "case_en": "Adventure Works field team",
+  "case_es": "Equipo de campo de Adventure Works",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adventure Works field technicians use shared rugged Android tablets enrolled in Intune. Each tablet is used by several technicians per day."
+   ],
+   [
+    "Requirements",
+    "- Tablets must run only two approved apps and show no other launcher items.\n- Tablets must not be usable if they fall out of compliance, and users must be emailed when that happens.\n- Support staff must see the device screen remotely to help technicians in the field.\n- Admins want an Intune report listing apps and versions installed on all tablets."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Los técnicos de campo de Adventure Works usan tabletas Android robustas compartidas inscritas en Intune. Cada tableta la usan varios técnicos al día."
+   ],
+   [
+    "Requisitos",
+    "- Las tabletas solo deben ejecutar dos apps aprobadas y no mostrar nada más en el lanzador.\n- Las tabletas no deben poder usarse si dejan de cumplir y debe avisarse a los usuarios por correo.\n- El soporte debe ver la pantalla del dispositivo de forma remota para ayudar a los técnicos.\n- Los administradores quieren un informe de Intune con las apps y versiones instaladas en todas las tabletas."
+   ]
+  ]
+ },
+ {
+  "id": 750,
+  "exam": "md-102",
+  "dom": 5,
+  "obj": "5.1",
+  "type": "mc",
+  "q_es": "¿Dónde encuentra el inventario de apps y versiones de todas las tabletas?",
+  "q_en": "Where do you find the app and version inventory across all tablets?",
+  "opts_es": [
+   "Aplicaciones > Supervisar > Aplicaciones detectadas",
+   "Seguridad de puntos de conexión > Líneas base",
+   "Administración de inquilinos > Conectores y tokens",
+   "Dispositivos > Inscripción > Restricciones de plataforma"
+  ],
+  "opts_en": [
+   "Apps > Monitor > Discovered apps",
+   "Endpoint security > Security baselines",
+   "Tenant administration > Connectors and tokens",
+   "Devices > Enrollment > Device platform restrictions"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El informe de aplicaciones detectadas muestra las apps y versiones detectadas en dispositivos administrados.",
+  "exp_en": "The Discovered apps report lists detected apps and versions for managed devices.",
+  "case_en": "Adventure Works field team",
+  "case_es": "Equipo de campo de Adventure Works",
+  "scenario_en": [
+   [
+    "Overview",
+    "Adventure Works field technicians use shared rugged Android tablets enrolled in Intune. Each tablet is used by several technicians per day."
+   ],
+   [
+    "Requirements",
+    "- Tablets must run only two approved apps and show no other launcher items.\n- Tablets must not be usable if they fall out of compliance, and users must be emailed when that happens.\n- Support staff must see the device screen remotely to help technicians in the field.\n- Admins want an Intune report listing apps and versions installed on all tablets."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Los técnicos de campo de Adventure Works usan tabletas Android robustas compartidas inscritas en Intune. Cada tableta la usan varios técnicos al día."
+   ],
+   [
+    "Requisitos",
+    "- Las tabletas solo deben ejecutar dos apps aprobadas y no mostrar nada más en el lanzador.\n- Las tabletas no deben poder usarse si dejan de cumplir y debe avisarse a los usuarios por correo.\n- El soporte debe ver la pantalla del dispositivo de forma remota para ayudar a los técnicos.\n- Los administradores quieren un informe de Intune con las apps y versiones instaladas en todas las tabletas."
+   ]
+  ]
+ },
+ {
+  "id": 751,
+  "exam": "md-102",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para registrar e implementar un dispositivo con Windows Autopilot.",
+  "q_en": "Put the steps to register and deploy a Windows Autopilot device in order.",
+  "items_es": [
+   "Obtener el hash de hardware y subirlo a Autopilot",
+   "Asignar una etiqueta de grupo y crear un perfil de implementación",
+   "Asignar el perfil a un grupo dinámico de dispositivos",
+   "El usuario inicia sesión y el dispositivo se configura solo"
+  ],
+  "items_en": [
+   "Collect the hardware hash and upload it to Autopilot",
+   "Assign a group tag and create a deployment profile",
+   "Assign the profile to a dynamic device group",
+   "The user signs in and the device configures itself"
+  ],
+  "exp_es": "Primero va el registro; el perfil se aplica a dispositivos registrados mediante la pertenencia a un grupo.",
+  "exp_en": "Registration comes first; the profile applies to registered devices through group membership."
+ },
+ {
+  "id": 752,
+  "exam": "md-102",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para inscribir iPhone automáticamente con Apple Business Manager.",
+  "q_en": "Put the steps to enroll iPhones automatically with Apple Business Manager in order.",
+  "items_es": [
+   "Crear el certificado push de MDM de Apple en Intune",
+   "Agregar el token ADE de Apple Business Manager",
+   "Crear y asignar un perfil de inscripción",
+   "Los dispositivos se inscriben durante el asistente de configuración"
+  ],
+  "items_en": [
+   "Create the Apple MDM push certificate in Intune",
+   "Add the ADE token from Apple Business Manager",
+   "Create and assign an enrollment profile",
+   "Devices enroll during setup assistant"
+  ],
+  "exp_es": "El certificado push y el token conectan Intune con Apple antes de poder asignar perfiles.",
+  "exp_en": "The push certificate and token connect Intune to Apple before profiles can be assigned."
+ },
+ {
+  "id": 753,
+  "exam": "md-102",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para implementar una app Win32 con Intune.",
+  "q_en": "Put the steps to deploy a Win32 app with Intune in order.",
+  "items_es": [
+   "Empaquetar el instalador como archivo .intunewin",
+   "Agregar la app con comandos de instalación y reglas de detección",
+   "Asignar la app como requerida a un grupo",
+   "Supervisar el estado de instalación"
+  ],
+  "items_en": [
+   "Package the installer as an .intunewin file",
+   "Add the app with install commands and detection rules",
+   "Assign the app as required to a group",
+   "Monitor installation status"
+  ],
+  "exp_es": "Primero va la herramienta de empaquetado; las reglas de detección indican si la app ya está instalada.",
+  "exp_en": "The packaging tool comes first; detection rules tell Intune whether the app is already installed."
+ },
+ {
+  "id": 754,
+  "exam": "md-102",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para desplegar una actualización de características de forma controlada.",
+  "q_en": "Put the steps to roll out a feature update in a controlled way in order.",
+  "items_es": [
+   "Crear una directiva de actualización de características para la versión de destino",
+   "Asignarla primero a un grupo piloto",
+   "Revisar el informe de actualizaciones en busca de errores",
+   "Asignarla al resto de grupos"
+  ],
+  "items_en": [
+   "Create a feature update policy for the target version",
+   "Assign it to a pilot group first",
+   "Review the update report for failures",
+   "Assign it to the remaining groups"
+  ],
+  "exp_es": "Primero piloto, luego revisar resultados y después ampliar el despliegue.",
+  "exp_en": "Pilot first, review results, then broaden the deployment."
  }
 ]
