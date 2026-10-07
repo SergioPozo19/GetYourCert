@@ -16233,5 +16233,109 @@
   ],
   "exp_es": "La gobernanza controla la creación, el uso y el acceso a datos de los agentes; dar acceso total a todos es lo contrario de una buena práctica.",
   "exp_en": "Governance controls agent creation, use, and data access; giving everyone full access is the opposite of a best practice."
+ },
+ {
+  "id": 679,
+  "exam": "ab-900",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_en": "Only members of the Sales group should be able to sign in to a SaaS app registered as an enterprise application. What should you configure?",
+  "q_es": "Solo los miembros del grupo Ventas deben poder iniciar sesión en una app SaaS registrada como aplicación empresarial. ¿Qué configura?",
+  "opts_en": [
+   "Set 'Assignment required' to Yes and assign the Sales group",
+   "Add the Sales group as an owner of the app registration",
+   "Create a distribution list for Sales and share the app link",
+   "Apply a sensitivity label for Sales to the application"
+  ],
+  "opts_es": [
+   "Activar 'Asignación requerida' y asignar el grupo Ventas",
+   "Agregar el grupo Ventas como propietario del registro de la app",
+   "Crear una lista de distribución de Ventas y compartir el enlace",
+   "Aplicar una etiqueta de confidencialidad de Ventas a la aplicación"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "In the enterprise application's properties, 'Assignment required' limits sign-in to the users and groups assigned under Users and groups.",
+  "exp_es": "En las propiedades de la aplicación empresarial, 'Asignación requerida' limita el inicio de sesión a los usuarios y grupos asignados en Usuarios y grupos."
+ },
+ {
+  "id": 680,
+  "exam": "ab-900",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_en": "A new third-party app requests permissions to read all users' mail. Where can an admin review and grant tenant-wide consent?",
+  "q_es": "Una nueva app de terceros solicita permisos para leer el correo de todos los usuarios. ¿Dónde puede un administrador revisar y conceder el consentimiento para todo el inquilino?",
+  "opts_en": [
+   "In the Exchange admin center, under mail flow rules",
+   "In the enterprise application's Permissions page (admin consent)",
+   "In the Microsoft 365 admin center, under Billing",
+   "In the Teams admin center, under app setup policies"
+  ],
+  "opts_es": [
+   "En el centro de administración de Exchange, en reglas de flujo",
+   "En la página Permisos de la aplicación empresarial (consentimiento)",
+   "En el centro de administración de Microsoft 365, en Facturación",
+   "En el centro de administración de Teams, en directivas de configuración"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "Admin consent for an app's API permissions is reviewed and granted from the enterprise application's Permissions page in Microsoft Entra.",
+  "exp_es": "El consentimiento del administrador para los permisos de API de una app se revisa y concede en la página Permisos de la aplicación empresarial en Microsoft Entra."
+ },
+ {
+  "id": 681,
+  "exam": "ab-900",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_en": "When a multi-tenant app is used in your tenant for the first time, which object is created locally to represent it?",
+  "q_es": "Cuando una app multiinquilino se usa por primera vez en su inquilino, ¿qué objeto se crea localmente para representarla?",
+  "opts_en": [
+   "A new app registration owned by your tenant",
+   "A guest user account for the app's publisher",
+   "A service principal, shown as an enterprise app",
+   "A shared mailbox for the app's notifications"
+  ],
+  "opts_es": [
+   "Un nuevo registro de aplicación propiedad de su inquilino",
+   "Una cuenta de invitado para el editor de la aplicación",
+   "Una entidad de servicio, mostrada como app empresarial",
+   "Un buzón compartido para las notificaciones de la app"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "The app registration lives in the publisher's tenant; each tenant that uses the app gets a service principal, which appears under Enterprise applications.",
+  "exp_es": "El registro de la aplicación está en el inquilino del editor; cada inquilino que usa la app obtiene una entidad de servicio, que aparece en Aplicaciones empresariales."
+ },
+ {
+  "id": 682,
+  "exam": "ab-900",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_en": "Users report they can still see an app tile in My Apps that should be hidden. Which enterprise application property controls this?",
+  "q_es": "Los usuarios indican que aún ven en Mis aplicaciones el icono de una app que debería estar oculto. ¿Qué propiedad de la aplicación empresarial lo controla?",
+  "opts_en": [
+   "The app registration's redirect URI list",
+   "The token lifetime set in Conditional Access",
+   "The client secret expiry date of the app",
+   "'Visible to users?' set to No"
+  ],
+  "opts_es": [
+   "La lista de URI de redirección del registro de la app",
+   "La duración del token definida en el acceso condicional",
+   "La fecha de caducidad del secreto de cliente de la app",
+   "'¿Visible para los usuarios?' en No"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_en": "The 'Visible to users?' property of an enterprise application controls whether assigned users see the app in My Apps and the Microsoft 365 app launcher.",
+  "exp_es": "La propiedad '¿Visible para los usuarios?' de una aplicación empresarial controla si los usuarios asignados ven la app en Mis aplicaciones y en el iniciador de Microsoft 365."
  }
 ]
