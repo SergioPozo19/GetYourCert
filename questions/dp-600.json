@@ -35,14 +35,14 @@
   "q_en": "A data engineer must create and run notebooks and write data to a lakehouse, but must not manage workspace access. Which role is the least privileged that fits?",
   "opts_es": [
    "Administrador",
-   "Miembro",
-   "Lector",
+   "Miembro con permiso de compartir",
+   "Lector con Compilar",
    "Colaborador"
   ],
   "opts_en": [
    "Admin",
-   "Member",
-   "Viewer",
+   "Member with reshare",
+   "Viewer with Build",
    "Contributor"
   ],
   "correct": [
@@ -86,15 +86,15 @@
   "q_es": "Quieres que un usuario consulte un almacén solo con T-SQL, sin acceso a sus archivos de OneLake y sin rol de área de trabajo. ¿Qué debes hacer?",
   "q_en": "You want a user to query a warehouse with T-SQL only, without access to its OneLake files and without a workspace role. What should you do?",
   "opts_es": [
-   "Conceder ReadAll en el almacén",
-   "Compartir todo el área de trabajo como lector",
-   "Compartir el almacén y conceder el permiso de lectura de datos (ReadData)",
+   "Conceder ReadAll en el almacén para que Spark lea sus archivos",
+   "Compartir toda el área de trabajo como Lector sin permisos de elemento",
+   "Compartir el almacén y conceder el permiso ReadData",
    "Hacer al usuario administrador del área de trabajo"
   ],
   "opts_en": [
-   "Grant ReadAll on the warehouse",
-   "Share the entire workspace as Viewer",
-   "Share the warehouse and grant the Read data (ReadData) permission",
+   "Grant ReadAll on the warehouse so Spark can read its files",
+   "Share the entire workspace as Viewer with no item permissions",
+   "Share the warehouse and grant the ReadData permission",
    "Make the user a workspace Admin"
   ],
   "correct": [
@@ -138,15 +138,15 @@
   "q_es": "¿Cómo se implementa la seguridad de nivel de fila en un almacén de Fabric?",
   "q_en": "How do you implement row-level security in a Fabric warehouse?",
   "opts_es": [
-   "Crear una función con valores de tabla insertada como predicado y una directiva de seguridad",
-   "Aplicar una etiqueta de confidencialidad a la tabla",
-   "Ocultar filas con un rol de área de trabajo de solo vista",
+   "Una función insertada con valores de tabla como predicado y una directiva de seguridad",
+   "Aplicar una etiqueta de confidencialidad a la tabla para ocultar filas restringidas",
+   "Ocultar filas con un rol de solo lectura asignado a cada grupo de usuarios",
    "Crear una regla de implementación"
   ],
   "opts_en": [
-   "Create an inline table-valued function as a predicate and a security policy",
-   "Apply a sensitivity label to the table",
-   "Hide rows with a view-only workspace role",
+   "An inline table-valued function as predicate plus a security policy",
+   "Apply a sensitivity label to the table so restricted rows are hidden",
+   "Hide rows with a view-only workspace role assigned to each user group",
    "Create a deployment rule"
   ],
   "correct": [
@@ -164,16 +164,16 @@
   "q_es": "Una tabla del almacén tiene una columna Salary que solo RR. HH. debe leer. ¿Qué característica de T-SQL restringe el acceso a columnas concretas?",
   "q_en": "A warehouse table has a Salary column that only HR should read. Which T-SQL feature restricts access to specific columns?",
   "opts_es": [
-   "Enmascaramiento dinámico de datos en la columna",
-   "Un rol de acceso a datos de OneLake",
+   "Enmascaramiento dinámico en la columna con una excepción UNMASK",
+   "Un rol de acceso a datos de OneLake en la carpeta Tables del almacén",
    "Una directiva de seguridad en filas",
-   "Seguridad de nivel de columna con GRANT SELECT en las columnas permitidas"
+   "Seguridad de nivel de columna con GRANT SELECT en columnas"
   ],
   "opts_en": [
-   "Dynamic data masking on the column",
-   "A OneLake data access role",
+   "Dynamic data masking on the column with an UNMASK exception",
+   "A OneLake data access role on the warehouse Tables folder",
    "A security policy on rows",
-   "Column-level security with GRANT SELECT on allowed columns"
+   "Column-level security with GRANT SELECT on columns"
   ],
   "correct": [
    3
@@ -294,15 +294,15 @@
   "q_es": "¿Qué afirmación sobre la seguridad de nivel de fila en un modelo semántico es correcta?",
   "q_en": "Which statement about row-level security in a semantic model is correct?",
   "opts_es": [
-   "Los roles se definen con expresiones de filtro DAX y los miembros se asignan en el servicio",
-   "RLS se aplica a todos los administradores del área de trabajo de forma predeterminada",
-   "RLS solo se puede definir en el servicio Power BI",
+   "Los roles usan expresiones de filtro DAX; los miembros se asignan en el servicio",
+   "RLS se aplica por defecto a cada Administrador del área, incluso en el servicio",
+   "RLS solo se puede definir en el servicio Power BI, nunca en Power BI Desktop",
    "RLS requiere una etiqueta de confidencialidad"
   ],
   "opts_en": [
-   "Roles are defined with DAX filter expressions and members are assigned in the service",
-   "RLS applies to every workspace Admin by default",
-   "RLS can only be defined in the Power BI service",
+   "Roles use DAX filter expressions; members are assigned in the service",
+   "RLS applies to every workspace Admin by default, even in the Power BI service",
+   "RLS can only be defined in the Power BI service, never in Power BI Desktop",
    "RLS requires a sensitivity label"
   ],
   "correct": [
@@ -606,16 +606,16 @@
   "q_es": "Compartes un lakehouse con un usuario sin seleccionar ningún permiso adicional. ¿Qué puede hacer el usuario?",
   "q_en": "You share a lakehouse with a user without selecting any additional permission. What can the user do?",
   "opts_es": [
-   "Conectarse al elemento y verlo, pero no leer datos hasta que se concedan más permisos",
-   "Administrar los miembros del área de trabajo",
+   "Ver el elemento y conectarse, pero no leer datos sin más permisos",
+   "Administrar los miembros del área de trabajo y asignar roles a otros",
    "Eliminar el lakehouse",
-   "Leer todos los archivos de OneLake del elemento"
+   "Leer todos los archivos de OneLake del elemento y consultar todas sus tablas"
   ],
   "opts_en": [
-   "Connect to the item and see it, but not read data until further permissions are granted",
-   "Manage the workspace members",
+   "See and connect to the item, but not read data without more rights",
+   "Manage the workspace members and assign roles to other users",
    "Delete the lakehouse",
-   "Read every file in OneLake for the item"
+   "Read every file in OneLake for the item and query all of its tables"
   ],
   "correct": [
    0
@@ -1269,15 +1269,15 @@
   "q_es": "¿Qué es un proyecto de Power BI Desktop (.pbip)?",
   "q_en": "What is a Power BI Desktop project (.pbip)?",
   "opts_es": [
-   "Un formato basado en carpetas que guarda el informe y el modelo semántico como definiciones de texto independientes",
-   "Una fase de canalización de implementación",
-   "Un único archivo binario con solo datos importados",
+   "Un formato de carpeta que guarda el informe y el modelo como definiciones de texto",
+   "Una fase de la canalización de implementación para probar informes antes de Producción",
+   "Un único archivo binario solo con datos importados y sin metadatos del modelo",
    "Una SKU de capacidad de Fabric"
   ],
   "opts_en": [
-   "A folder-based format that saves the report and semantic model as separate text-based definitions",
-   "A deployment pipeline stage",
-   "A single binary file with imported data only",
+   "A folder format saving the report and model as text definitions",
+   "A deployment pipeline stage used to test reports before Production",
+   "A single binary file with imported data only and no model metadata",
    "A Fabric capacity SKU"
   ],
   "correct": [
@@ -1295,16 +1295,16 @@
   "q_es": "¿Qué formato de texto se usa para definir un modelo semántico en un proyecto de Power BI Desktop?",
   "q_en": "Which text-based format is used to define a semantic model in a Power BI Desktop project?",
   "opts_es": [
-   "Tablas CSV",
-   "Documentos PDF",
+   "Tablas CSV con un encabezado JSON",
+   "Documentos PDF con DAX incrustado",
    "TMDL (Tabular Model Definition Language)",
-   "Libros XLSX"
+   "Libros XLSX que contienen modelos de datos de Power Pivot"
   ],
   "opts_en": [
-   "CSV tables",
-   "PDF documents",
+   "CSV tables with a JSON header",
+   "PDF documents with embedded DAX",
    "TMDL (Tabular Model Definition Language)",
-   "XLSX workbooks"
+   "XLSX workbooks containing Power Pivot data models"
   ],
   "correct": [
    2
@@ -1321,16 +1321,16 @@
   "q_es": "¿Cuántas fases tiene una canalización de implementación de forma predeterminada?",
   "q_en": "How many stages does a deployment pipeline have by default?",
   "opts_es": [
-   "Una",
-   "Dos",
-   "Siete",
+   "Una, con áreas de trabajo adicionales opcionales",
+   "Dos: Desarrollo y Producción",
+   "Siete, una por tipo de entorno",
    "Tres: Desarrollo, Prueba y Producción"
   ],
   "opts_en": [
-   "One",
-   "Two",
-   "Seven",
-   "Three: Development, Test and Production"
+   "One, with optional extra workspaces",
+   "Two: Development and Production",
+   "Seven, one for each environment type",
+   "Three: Dev, Test and Production"
   ],
   "correct": [
    3
@@ -1400,15 +1400,15 @@
   "q_en": "Before changing a lakehouse, you want to see which semantic models, reports and dashboards depend on it. Which feature helps?",
   "opts_es": [
    "Análisis de impacto en la vista de linaje",
-   "Seguridad de nivel de fila",
+   "Vista de prueba de roles de seguridad de nivel de fila",
    "Una actualización de flujo de datos",
-   "Solo métricas de capacidad"
+   "Historial de elementos de la app de métricas de capacidad"
   ],
   "opts_en": [
    "Impact analysis in the lineage view",
-   "Row-level security",
+   "Row-level security role testing view",
    "A dataflow refresh",
-   "Capacity metrics only"
+   "Capacity metrics app item history"
   ],
   "correct": [
    0
@@ -1503,16 +1503,16 @@
   "q_es": "¿Qué contiene un archivo de origen de datos de Power BI (.pbids)?",
   "q_en": "What does a Power BI data source file (.pbids) contain?",
   "opts_es": [
-   "Una copia completa de los datos",
-   "Información de conexión de un origen de datos, no los datos",
+   "Una copia completa de los datos comprimida en un único archivo portátil",
+   "Información de conexión a un origen, no los datos en sí",
    "Un tema de informe",
-   "Una definición de canalización de implementación"
+   "Una definición de canalización de implementación con reglas por fase"
   ],
   "opts_en": [
-   "A full copy of the data",
-   "Connection information for a data source, not the data itself",
+   "A full copy of the data compressed in a single portable file",
+   "Connection information for a source, not the data itself",
    "A report theme",
-   "A deployment pipeline definition"
+   "A deployment pipeline definition with rules for each stage"
   ],
   "correct": [
    1
@@ -1581,16 +1581,16 @@
   "q_es": "¿Qué permiso se necesita para configurar las fases y reglas de una canalización de implementación?",
   "q_en": "Which role is needed to configure a deployment pipeline's stages and rules?",
   "opts_es": [
-   "Lector del área de trabajo en cada fase",
-   "Solo derechos de pausa de capacidad",
+   "Lector del área de trabajo en cada fase de la canalización",
+   "Solo derechos de pausar y reanudar la capacidad de Fabric",
    "Cualquier usuario con sesión iniciada en el inquilino",
-   "Administrador de la canalización más acceso adecuado a las áreas de trabajo"
+   "Administrador de canalización y acceso a las áreas"
   ],
   "opts_en": [
-   "Workspace Viewer on every stage",
-   "Capacity pause rights only",
+   "Workspace Viewer on every stage of the deployment pipeline",
+   "Capacity pause and resume rights only on the Fabric capacity",
    "Any signed-in user in the tenant",
-   "Pipeline admin plus appropriate access to the workspaces"
+   "Pipeline admin plus access to the workspaces"
   ],
   "correct": [
    3
@@ -1607,16 +1607,16 @@
   "q_es": "¿Qué secuencia refleja mejor un buen flujo de CI/CD para una solución de Fabric?",
   "q_en": "Which sequence best reflects a good CI/CD flow for a Fabric solution?",
   "opts_es": [
-   "Desarrollar en una rama de característica, combinar en main y promover con una canalización de implementación",
+   "Desarrollar en una rama, combinar en main y promover con una canalización",
    "Eliminar la fase de Prueba",
-   "Editar directamente en Producción y confirmar después",
-   "Implementar solo enviando archivos por correo"
+   "Editar directamente en Producción y confirmar los cambios en Git más tarde",
+   "Implementar solo enviando por correo los archivos exportados al responsable"
   ],
   "opts_en": [
-   "Develop on a feature branch, merge to main, then promote with a deployment pipeline",
+   "Develop on a feature branch, merge to main, promote with a pipeline",
    "Delete the Test stage",
-   "Edit directly in Production and commit later",
-   "Deploy only by e-mailing files"
+   "Edit directly in Production and commit the changes to Git later on",
+   "Deploy only by e-mailing the exported files to the Production owner"
   ],
   "correct": [
    0
@@ -1633,16 +1633,16 @@
   "q_es": "Al abrir un archivo .pbit, Power BI solicita valores de parámetros. ¿Para qué escenario es útil?",
   "q_en": "When you open a .pbit file, Power BI asks for parameter values. Which scenario is this useful for?",
   "opts_es": [
-   "Aplicar enmascaramiento dinámico de datos a un modelo",
+   "Aplicar enmascaramiento dinámico a un modelo antes de publicarlo en el servicio",
    "Cifrar los datos de un lakehouse",
-   "Distribuir un diseño de informe estándar que cada equipo apunta a sus propios datos",
-   "Crear un acceso directo al almacenamiento externo"
+   "Compartir un diseño de informe estándar que cada equipo apunta a sus datos",
+   "Crear un acceso directo a almacenamiento externo en el lakehouse de cada equipo"
   ],
   "opts_en": [
-   "Applying dynamic data masking to a model",
+   "Applying dynamic data masking to a model before publishing it to the service",
    "Encrypting the data of a lakehouse",
-   "Distributing a standard report layout that each team points to its own data",
-   "Creating a shortcut to external storage"
+   "Sharing a standard report layout that each team points to its data",
+   "Creating a shortcut to external storage in each team's lakehouse workspace"
   ],
   "correct": [
    2
@@ -1685,16 +1685,16 @@
   "q_es": "¿Qué herramienta puede comparar dos versiones de un modelo semántico e implementar solo las diferencias?",
   "q_en": "Which tool can compare two versions of a semantic model and deploy only the differences?",
   "opts_es": [
-   "Aplicación móvil de Power BI",
+   "Vista de comparación de la app móvil de Power BI",
    "Bloc de notas de Windows",
-   "ALM Toolkit (mediante el punto de conexión XMLA)",
-   "Azure Monitor"
+   "ALM Toolkit (punto de conexión XMLA)",
+   "Registros de cambios del modelo en Azure Monitor"
   ],
   "opts_en": [
-   "Power BI mobile app",
+   "Power BI mobile app compare view",
    "Windows Notepad",
-   "ALM Toolkit (via the XMLA endpoint)",
-   "Azure Monitor"
+   "ALM Toolkit (XMLA endpoint)",
+   "Azure Monitor model change logs"
   ],
   "correct": [
    2
@@ -2176,15 +2176,15 @@
   "q_en": "You need to access files stored in Amazon S3 from a Fabric lakehouse without copying them. What should you create?",
   "opts_es": [
    "Un acceso directo de OneLake al bucket de S3",
-   "Un grupo de cálculo",
+   "Un grupo de cálculo sobre una consulta S3",
    "Una aprobación",
-   "Una canalización de implementación"
+   "Una canalización de implementación de S3 a OneLake"
   ],
   "opts_en": [
    "A OneLake shortcut to the S3 bucket",
-   "A calculation group",
+   "A calculation group over an S3 query",
    "An endorsement",
-   "A deployment pipeline"
+   "A deployment pipeline from S3 to OneLake"
   ],
   "correct": [
    0
@@ -2227,15 +2227,15 @@
   "q_es": "¿A qué orígenes puede apuntar un acceso directo de OneLake?",
   "q_en": "Which sources can a OneLake shortcut point to?",
   "opts_es": [
-   "Solo archivos CSV locales a través de una puerta de enlace",
-   "Otras ubicaciones de OneLake, Azure Data Lake Storage Gen2, Amazon S3 y Google Cloud Storage",
-   "Solo bases de datos de SQL Server con inicios de sesión SQL",
+   "Solo archivos CSV locales expuestos mediante un recurso de puerta de enlace local",
+   "Otras ubicaciones de OneLake, ADLS Gen2, Amazon S3 y Google Cloud Storage",
+   "Solo bases de datos SQL Server que usan inicios de sesión SQL y un puerto fijo",
    "Solo informes y paneles de Power BI"
   ],
   "opts_en": [
-   "Only local CSV files on a gateway",
-   "Other OneLake locations, Azure Data Lake Storage Gen2, Amazon S3 and Google Cloud Storage",
-   "Only SQL Server databases with SQL logins",
+   "Only local CSV files exposed through an on-premises data gateway share",
+   "Other OneLake locations, ADLS Gen2, Amazon S3 and Google Cloud Storage",
+   "Only SQL Server databases that use SQL logins and a fixed port number",
    "Only Power BI reports and dashboards"
   ],
   "correct": [
@@ -2331,16 +2331,16 @@
   "q_es": "¿Qué se necesita para conectar Fabric a un origen de datos dentro de una red corporativa sin punto de conexión público?",
   "q_en": "What is required to connect Fabric to a data source inside a corporate network that has no public endpoint?",
   "opts_es": [
-   "Una etiqueta de confidencialidad en el origen",
-   "Una puerta de enlace de datos local o una puerta de enlace de datos de red virtual",
+   "Una etiqueta de confidencialidad en el origen aplicada desde Purview",
+   "Una puerta de enlace de datos local o de red virtual",
    "Una regla de implementación en la canalización",
-   "Un acceso directo a un informe de Power BI"
+   "Un acceso directo a un informe de Power BI que ya usa el origen"
   ],
   "opts_en": [
-   "A sensitivity label on the source",
-   "An on-premises data gateway or a virtual network data gateway",
+   "A sensitivity label on the source applied from Microsoft Purview",
+   "An on-premises or virtual network data gateway",
    "A deployment rule on the pipeline",
-   "A shortcut to a Power BI report"
+   "A shortcut to a Power BI report that already uses the source"
   ],
   "correct": [
    1
@@ -2643,16 +2643,16 @@
   "q_es": "¿Cuál es el propósito de la integración de OneLake para modelos semánticos?",
   "q_en": "What is the purpose of OneLake integration for semantic models?",
   "opts_es": [
-   "Cifrar el modelo semántico con una clave del cliente",
-   "Escribir en OneLake los datos de las tablas en modo de importación como tablas Delta para reutilizarlos con otros motores",
+   "Cifrar el modelo semántico con una clave administrada por el cliente en OneLake",
+   "Escribir tablas en modo importación en OneLake como Delta para otros motores",
    "Reemplazar la seguridad de nivel de fila del modelo",
-   "Mover automáticamente las definiciones de informes a Git"
+   "Mover las definiciones de informes a Git automáticamente tras cada actualización"
   ],
   "opts_en": [
-   "Encrypt the semantic model with a customer key",
-   "Write import-mode table data to OneLake as Delta tables for reuse by other engines",
+   "Encrypt the semantic model with a customer-managed key stored in OneLake",
+   "Write import-mode tables to OneLake as Delta for other engines",
    "Replace row-level security in the model",
-   "Move report definitions to Git automatically"
+   "Move report definitions to Git automatically after each model refresh"
   ],
   "correct": [
    1
@@ -3549,15 +3549,15 @@
   "q_es": "Quieres añadir a una tabla una columna con el margen de beneficio (beneficio dividido entre ingresos) en cada fila, sin cambiar el origen. ¿Cuál es el mejor lugar?",
   "q_en": "You want to add a column to a table that shows the profit margin (profit divided by revenue) for every row, without changing the source. Where is the best place?",
   "opts_es": [
-   "Una asignación de rol del área de trabajo",
+   "Una asignación de rol del área de trabajo que concede permisos de cálculo",
    "Una vista o una columna personalizada en la capa de transformación",
-   "Una regla de canalización de implementación",
+   "Una regla de la canalización de implementación que agrega la columna en Producción",
    "Una aprobación en la tabla"
   ],
   "opts_en": [
-   "A workspace role assignment",
+   "A workspace role assignment that grants calculation rights",
    "A view or a custom column in the transformation layer",
-   "A deployment pipeline rule",
+   "A deployment pipeline rule that adds the column in Production",
    "An endorsement on the table"
   ],
   "correct": [
@@ -3653,15 +3653,15 @@
   "q_es": "¿Cuál es el propósito principal de una clave sustituta en una tabla de dimensión?",
   "q_en": "What is the main purpose of a surrogate key in a dimension table?",
   "opts_es": [
-   "Para enmascarar valores confidenciales",
-   "Para cifrar los datos de la dimensión",
-   "Proporcionar una clave estable y única independiente de las claves del sistema de origen",
+   "Enmascarar los valores confidenciales de la clave de negocio a los usuarios",
+   "Cifrar los datos de la dimensión en reposo con una clave administrada por el cliente",
+   "Una clave estable y única independiente de las claves de origen",
    "Para aplicar una etiqueta de confidencialidad"
   ],
   "opts_en": [
-   "To mask sensitive values",
-   "To encrypt the dimension data",
-   "To provide a stable, unique key independent of source system keys",
+   "To mask sensitive values in the business key from report users",
+   "To encrypt the dimension data at rest with a customer-managed key",
+   "A stable, unique key independent of source system keys",
    "To apply a sensitivity label"
   ],
   "correct": [
@@ -3680,15 +3680,15 @@
   "q_en": "What does denormalizing data usually mean in an analytics model?",
   "opts_es": [
    "Cifrar columnas",
-   "Dividir cada tabla en muchas más pequeñas",
-   "Combinar tablas relacionadas para almacenar atributos juntos y reducir combinaciones",
-   "Solo eliminar filas duplicadas"
+   "Dividir cada tabla en muchas más pequeñas para eliminar toda redundancia",
+   "Combinar tablas relacionadas para que los atributos estén juntos, con menos combinaciones",
+   "Eliminar solo filas duplicadas, manteniendo el diseño original de las tablas"
   ],
   "opts_en": [
    "Encrypting columns",
-   "Splitting every table into many smaller ones",
-   "Combining related tables so attributes are stored together to reduce joins",
-   "Deleting duplicate rows only"
+   "Splitting every table into many smaller ones to remove all redundancy",
+   "Combining related tables so attributes sit together, with fewer joins",
+   "Deleting duplicate rows only, while keeping the original table design"
   ],
   "correct": [
    2
@@ -3705,16 +3705,16 @@
   "q_es": "¿Qué cláusula de T-SQL calcula totales, como las ventas por mes?",
   "q_en": "Which T-SQL clause computes totals such as sales per month?",
   "opts_es": [
-   "Solo TOP",
+   "TOP con una cláusula ORDER BY",
    "Solo USE",
-   "GROUP BY con funciones de agregado",
-   "Solo ORDER BY"
+   "GROUP BY con agregados",
+   "ORDER BY con un marco de ventana"
   ],
   "opts_en": [
-   "TOP only",
+   "TOP with an ORDER BY clause",
    "USE only",
-   "GROUP BY with aggregate functions",
-   "ORDER BY only"
+   "GROUP BY with aggregates",
+   "ORDER BY with a window frame"
   ],
   "correct": [
    2
@@ -3757,16 +3757,16 @@
   "q_es": "Debes conservar solo la fila más reciente por cliente de una tabla con duplicados. ¿Qué patrón de T-SQL es adecuado?",
   "q_en": "You must keep only the most recent row per customer from a table with duplicates. Which T-SQL pattern is appropriate?",
   "opts_es": [
-   "TRUNCATE TABLE en el origen",
+   "TRUNCATE TABLE en el origen y recargar solo las filas del último día",
    "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
-   "GRANT SELECT en la tabla",
-   "SELECT * INTO una tabla de respaldo"
+   "SELECT DISTINCT CustomerId, ModifiedDate FROM la tabla ORDER BY ModifiedDate",
+   "SELECT TOP 1 * FROM la tabla ORDER BY ModifiedDate DESC, CustomerId ASC"
   ],
   "opts_en": [
-   "TRUNCATE TABLE on the source",
+   "TRUNCATE TABLE on the source and reload only the rows from the last day",
    "ROW_NUMBER() OVER (PARTITION BY CustomerId ORDER BY ModifiedDate DESC) = 1",
-   "GRANT SELECT on the table",
-   "SELECT * INTO a backup table"
+   "SELECT DISTINCT CustomerId, ModifiedDate FROM the table ORDER BY ModifiedDate",
+   "SELECT TOP 1 * FROM the table ORDER BY ModifiedDate DESC, CustomerId ASC"
   ],
   "correct": [
    1
@@ -3809,15 +3809,15 @@
   "q_es": "En Power Query, ¿qué paso elimina las filas duplicadas exactas según las columnas seleccionadas?",
   "q_en": "In Power Query, which step removes rows that are exact duplicates based on selected columns?",
   "opts_es": [
-   "Rellenar hacia abajo",
+   "Rellenar hacia abajo en la columna clave",
    "Transponer",
-   "Anular dinamización",
+   "Anular dinamización de las columnas seleccionadas",
    "Quitar duplicados"
   ],
   "opts_en": [
-   "Fill down",
+   "Fill down on the key column",
    "Transpose",
-   "Unpivot",
+   "Unpivot the selected columns",
    "Remove duplicates"
   ],
   "correct": [
@@ -4147,16 +4147,16 @@
   "q_es": "¿Qué API de Spark es la mejor para transformaciones de datos reutilizables y con control de versiones que escalan a tablas Delta grandes?",
   "q_en": "Which Spark API is best for reusable, version-controlled data transformations that scale to large Delta tables?",
   "opts_es": [
-   "Un marcador",
+   "Un marcador en una página de informe",
    "Un cuaderno de PySpark o Spark SQL",
-   "Una página de informe",
-   "Un archivo de tema"
+   "Una página de informe con un objeto visual Python",
+   "Un archivo de tema guardado en Git"
   ],
   "opts_en": [
-   "A bookmark",
+   "A bookmark on a report page",
    "A PySpark or Spark SQL notebook",
-   "A report page",
-   "A theme file"
+   "A report page with a Python visual",
+   "A theme file stored in Git"
   ],
   "correct": [
    1
@@ -4849,15 +4849,15 @@
   "q_es": "¿Qué operaciones están disponibles en el editor de consultas visual?",
   "q_en": "Which operations are available in the visual query editor?",
   "opts_es": [
-   "Elegir columnas, filtrar filas, agrupar, combinar y anexar",
-   "Solo crear áreas de trabajo nuevas",
-   "Solo configurar la integración de Git",
+   "Elegir columnas, filtrar, agrupar, combinar y anexar",
+   "Solo crear áreas de trabajo nuevas y asignarlas a una capacidad",
+   "Solo configurar la integración de Git y reglas de canalización",
    "Solo aplicar etiquetas de confidencialidad"
   ],
   "opts_en": [
-   "Choose columns, filter rows, group by, merge and append",
-   "Only creating new workspaces",
-   "Only configuring Git integration",
+   "Choose columns, filter, group by, merge and append",
+   "Only creating new workspaces and assigning them to a capacity",
+   "Only configuring Git integration and deployment pipeline rules",
    "Only applying sensitivity labels"
   ],
   "correct": [
@@ -4927,16 +4927,16 @@
   "q_es": "¿Qué característica de T-SQL permite calcular un total acumulado de ventas ordenado por fecha sin colapsar filas?",
   "q_en": "Which T-SQL feature lets you compute a running total of sales ordered by date without collapsing rows?",
   "opts_es": [
-   "UNION",
+   "UNION ALL de cada día con todos los días anteriores",
    "SELECT DISTINCT",
-   "GROUP BY",
-   "Una función de ventana con SUM() OVER (ORDER BY ...)"
+   "GROUP BY por fecha con una subconsulta correlacionada",
+   "Una función de ventana: SUM() OVER (ORDER BY ...)"
   ],
   "opts_en": [
-   "UNION",
+   "UNION ALL of each day with all previous days",
    "SELECT DISTINCT",
-   "GROUP BY",
-   "A window function with SUM() OVER (ORDER BY ...)"
+   "GROUP BY the date with a correlated subquery",
+   "A window function: SUM() OVER (ORDER BY ...)"
   ],
   "correct": [
    3
@@ -4954,14 +4954,14 @@
   "q_en": "Which T-SQL construct defines a named temporary result set that you can reference within a single query?",
   "opts_es": [
    "Etiqueta de confidencialidad",
-   "Acceso directo",
-   "Directiva de seguridad",
+   "Acceso directo a una vista SQL",
+   "Directiva de seguridad con un predicado",
    "Expresión de tabla común (WITH)"
   ],
   "opts_en": [
    "Sensitivity label",
-   "Shortcut",
-   "Security policy",
+   "Shortcut to a SQL view",
+   "Security policy with a predicate",
    "Common table expression (WITH)"
   ],
   "correct": [
@@ -5109,15 +5109,15 @@
   "q_es": "¿Qué consulta KQL cuenta eventos por hora durante el último día?",
   "q_en": "Which KQL query counts events per hour over the last day?",
   "opts_es": [
-   "Events | extend ago(1d)",
-   "Events | project count()",
-   "Events | take 1h",
+   "Events | where Timestamp > ago(1h) | extend Hour = ago(1d) | summarize count() by Hour",
+   "Events | where Timestamp > ago(1h) | project count(), Timestamp",
+   "Events | take 24 | summarize count() by bin(Timestamp, 1d)",
    "Events | where Timestamp > ago(1d) | summarize count() by bin(Timestamp, 1h)"
   ],
   "opts_en": [
-   "Events | extend ago(1d)",
-   "Events | project count()",
-   "Events | take 1h",
+   "Events | where Timestamp > ago(1h) | extend Hour = ago(1d) | summarize count() by Hour",
+   "Events | where Timestamp > ago(1h) | project count(), Timestamp",
+   "Events | take 24 | summarize count() by bin(Timestamp, 1d)",
    "Events | where Timestamp > ago(1d) | summarize count() by bin(Timestamp, 1h)"
   ],
   "correct": [
@@ -5291,14 +5291,14 @@
   "q_es": "¿Qué función DAX agrupa por columnas y añade valores agregados en el resultado de una consulta?",
   "q_en": "Which DAX function groups by columns and adds aggregated values in a query result?",
   "opts_es": [
-   "ISBLANK",
-   "PATH",
+   "ADDCOLUMNS con ISBLANK",
+   "PATH con claves GROUPBY",
    "USERNAME",
    "SUMMARIZECOLUMNS"
   ],
   "opts_en": [
-   "ISBLANK",
-   "PATH",
+   "ADDCOLUMNS with ISBLANK",
+   "PATH with GROUPBY keys",
    "USERNAME",
    "SUMMARIZECOLUMNS"
   ],
@@ -6371,15 +6371,15 @@
   "q_es": "¿Qué grupo de funciones DAX puede calcular valores relativos a la fila actual, como las ventas del periodo anterior dentro de una partición ordenada?",
   "q_en": "Which group of DAX functions can compute values relative to the current row, such as the previous period's sales within an ordered partition?",
   "opts_es": [
-   "Solo funciones padre-hijo",
-   "Funciones de texto",
+   "Funciones primario-secundario como PATH y PATHITEM",
+   "Funciones de texto como CONCATENATEX y FORMAT",
    "Funciones de ventana como OFFSET y WINDOW",
    "Solo funciones de seguridad"
   ],
   "opts_en": [
-   "Parent-child functions only",
-   "Text functions",
-   "Windowing functions such as OFFSET and WINDOW",
+   "Parent-child functions such as PATH and PATHITEM",
+   "Text functions such as CONCATENATEX and FORMAT",
+   "Window functions such as OFFSET and WINDOW",
    "Security functions only"
   ],
   "correct": [
@@ -6554,15 +6554,15 @@
   "q_en": "Which feature should you enable when a semantic model might grow beyond the default size limit and needs efficient large-model handling?",
   "opts_es": [
    "Formato de almacenamiento de modelo semántico grande",
-   "Aplicaciones de plantilla",
+   "Aplicaciones de plantilla con actualización incremental",
    "Enmascaramiento dinámico de datos",
-   "Etiquetas de confidencialidad"
+   "Etiquetas de confidencialidad en tablas grandes"
   ],
   "opts_en": [
    "Large semantic model storage format",
-   "Template apps",
+   "Template apps with incremental refresh",
    "Dynamic data masking",
-   "Sensitivity labels"
+   "Sensitivity labels on large tables"
   ],
   "correct": [
    0
@@ -6579,16 +6579,16 @@
   "q_es": "¿Qué es un modelo compuesto?",
   "q_en": "What is a composite model?",
   "opts_es": [
-   "Un modelo almacenado como PDF",
+   "Un modelo guardado como archivo PDF para distribución sin conexión",
    "Un modelo con una sola tabla",
-   "Un modelo que no puede usar relaciones",
-   "Un modelo que combina tablas con distintos modos de almacenamiento o varios orígenes de datos"
+   "Un modelo que no puede usar relaciones entre sus tablas",
+   "Un modelo que mezcla modos de almacenamiento u orígenes"
   ],
   "opts_en": [
-   "A model stored as a PDF",
+   "A model stored as a PDF file for offline distribution",
    "A model with only one table",
-   "A model that cannot use relationships",
-   "A model that combines tables with different storage modes or multiple data sources"
+   "A model that cannot use relationships between its tables",
+   "A model mixing storage modes or multiple data sources"
   ],
   "correct": [
    3
@@ -7394,14 +7394,14 @@
   "q_en": "Which tool can scan a model against a set of best-practice rules and flag issues such as unused columns?",
   "opts_es": [
    "Best Practice Analyzer de Tabular Editor",
-   "Eventstream",
-   "Catálogo de OneLake",
+   "Eventstream con una regla de validación de esquema",
+   "Comprobaciones de aprobación del catálogo de OneLake",
    "Real-Time hub"
   ],
   "opts_en": [
-   "Best Practice Analyzer in Tabular Editor",
-   "Eventstream",
-   "OneLake catalog",
+   "Tabular Editor's Best Practice Analyzer",
+   "Eventstream with a schema validation rule",
+   "OneLake catalog endorsement checks",
    "Real-Time hub"
   ],
   "correct": [
@@ -7445,15 +7445,15 @@
   "q_es": "Una columna DateTime con precisión de segundos tiene una cardinalidad muy alta. ¿Qué optimización es buena?",
   "q_en": "A DateTime column with seconds precision has very high cardinality. What is a good optimization?",
   "opts_es": [
-   "Duplicarla en todas las tablas",
-   "Convertirla a texto",
-   "Dividirla en columnas de fecha y hora o quitar la precisión innecesaria",
+   "Duplicarla en cada tabla para que cada relación use su propia copia",
+   "Convertirla en texto para que el motor la comprima como cadena",
+   "Dividirla en columnas de fecha y hora o quitar precisión sobrante",
    "Usarla como clave de varios a varios"
   ],
   "opts_en": [
-   "Duplicate it in every table",
-   "Convert it to text",
-   "Split it into separate date and time columns or remove unneeded precision",
+   "Duplicate it in every table so each relationship uses its own copy",
+   "Convert it to text so the engine compresses it as a string column",
+   "Split it into date and time columns or drop extra precision",
    "Use it as a many-to-many key"
   ],
   "correct": [
@@ -7498,15 +7498,15 @@
   "q_en": "How can you speed up report pages that contain many visuals?",
   "opts_es": [
    "Deshabilitar todos los filtros",
-   "Aumentar el número de tarjetas",
-   "Reducir el número de objetos visuales y evitar campos de cardinalidad alta en ellos",
-   "Agregar más segmentaciones con todos los valores"
+   "Aumentar el número de tarjetas para que cada una ejecute una consulta menor",
+   "Usar menos objetos visuales y evitar campos de alta cardinalidad",
+   "Agregar más segmentaciones con todos los valores para filtrar más rápido"
   ],
   "opts_en": [
    "Disable all filters",
-   "Increase the number of cards",
-   "Reduce the number of visuals and avoid high-cardinality fields in them",
-   "Add more slicers with all values"
+   "Increase the number of cards so each one runs a smaller query",
+   "Use fewer visuals and avoid high-cardinality fields in them",
+   "Add more slicers that list all values so users filter faster"
   ],
   "correct": [
    2
@@ -7627,16 +7627,16 @@
   "q_es": "¿Cuál es el comportamiento de reserva predeterminado de un modelo semántico Direct Lake cuando no puede atender una consulta desde datos Delta?",
   "q_en": "What is the default fallback behavior of a Direct Lake semantic model when it cannot serve a query from Delta data?",
   "opts_es": [
-   "Automático: puede recurrir a DirectQuery mediante el punto de conexión de análisis SQL",
-   "Siempre falla la consulta",
+   "Automático: puede volver a DirectQuery en el punto de conexión SQL",
+   "Siempre produce un error en la consulta y lo muestra en cada objeto visual",
    "Elimina el modelo y lo vuelve a crear",
-   "Cambia al modo de importación en silencio"
+   "Cambia al modo de importación en silencio y copia todos los datos"
   ],
   "opts_en": [
-   "Automatic: it can fall back to DirectQuery through the SQL analytics endpoint",
-   "It always fails the query",
+   "Automatic: it can fall back to DirectQuery on the SQL endpoint",
+   "It always fails the query and shows an error in every visual",
    "It deletes the model and recreates it",
-   "It switches to Import mode silently"
+   "It switches to Import mode silently and copies all of the data"
   ],
   "correct": [
    0
@@ -7705,16 +7705,16 @@
   "q_es": "¿Qué hace actualizar un modelo semántico Direct Lake (framing)?",
   "q_en": "What does refreshing a Direct Lake semantic model (framing) do?",
   "opts_es": [
-   "Solo elimina visuales en caché",
-   "Importa una copia completa de todos los datos",
+   "Solo elimina los objetos visuales en caché y deja intactos los metadatos",
+   "Importa una copia completa de todos los datos al almacenamiento en memoria",
    "Cambia la etiqueta de confidencialidad",
-   "Actualiza los metadatos para apuntar a las últimas versiones de las tablas Delta, sin copiar todos los datos"
+   "Apunta los metadatos a las últimas versiones Delta sin copiar datos"
   ],
   "opts_en": [
-   "It deletes cached visuals only",
-   "It imports a full copy of all data",
+   "It deletes cached visuals only and leaves the model metadata unchanged",
+   "It imports a full copy of all data into the model's in-memory storage",
    "It changes the sensitivity label",
-   "It updates the metadata to point to the latest Delta table versions, without copying all data"
+   "It points metadata to the latest Delta versions without copying data"
   ],
   "correct": [
    3
@@ -7835,16 +7835,16 @@
   "q_es": "¿Cuándo sigues eligiendo Direct Lake en el punto de conexión de análisis SQL?",
   "q_en": "When do you still choose Direct Lake on the SQL analytics endpoint?",
   "opts_es": [
-   "Cuando no tienes lakehouse",
-   "Cuando dependes de vistas del punto de conexión SQL o de seguridad basada en SQL y aceptas la posible reserva a DirectQuery",
+   "Cuando no tienes lakehouse y los datos solo están en libros de Excel",
+   "Cuando necesitas vistas o seguridad SQL y aceptas el retorno a DirectQuery",
    "Nunca",
-   "Cuando quieres importar todos los datos"
+   "Cuando quieres importar todos los datos al modelo con una programación de actualización fija"
   ],
   "opts_en": [
-   "When you have no lakehouse",
-   "When you rely on SQL endpoint views or SQL-based security and accept possible DirectQuery fallback",
+   "When you have no lakehouse and the data lives only in Excel workbooks",
+   "When you need SQL views or SQL security and accept DirectQuery fallback",
    "Never",
-   "When you want to import all data"
+   "When you want to import all data into the model on a fixed refresh schedule"
   ],
   "correct": [
    1
@@ -7965,15 +7965,15 @@
   "q_es": "¿Qué añade la opción «Obtener los datos más recientes en tiempo real con DirectQuery» a una directiva de actualización incremental?",
   "q_en": "What does the option \"Get the latest data in real time with DirectQuery\" add to an incremental refresh policy?",
   "opts_es": [
-   "Un área de trabajo nueva para los datos más recientes",
-   "Un rol de seguridad de nivel de fila para datos recientes",
-   "Una partición DirectQuery para el periodo más reciente, formando una tabla híbrida",
+   "Un área de trabajo nueva que almacena solo los datos más recientes",
+   "Un rol de seguridad de nivel de fila que filtra el modelo a datos recientes",
+   "Una partición DirectQuery para el periodo más reciente (tabla híbrida)",
    "Un grupo de cálculo para el periodo reciente"
   ],
   "opts_en": [
-   "A new workspace for the latest data",
-   "A row-level security role for recent data",
-   "A DirectQuery partition for the most recent period, forming a hybrid table",
+   "A new workspace that stores only the latest data in real time",
+   "A row-level security role that filters the model to recent data",
+   "A DirectQuery partition for the latest period (hybrid table)",
    "A calculation group for the recent period"
   ],
   "correct": [
@@ -7991,16 +7991,16 @@
   "q_es": "¿Por qué es importante el plegado de consultas para la actualización incremental?",
   "q_en": "Why is query folding important for incremental refresh?",
   "opts_es": [
-   "Los filtros de fecha se envían al origen y solo se leen los datos de la partición necesaria",
-   "Cifra todas las particiones",
+   "Los filtros de fecha se envían al origen y solo se leen los datos necesarios",
+   "Cifra cada partición con una clave distinta durante cada actualización",
    "Crea etiquetas de confidencialidad",
-   "Elimina las relaciones entre tablas"
+   "Quita las relaciones entre tablas para que las particiones carguen en paralelo"
   ],
   "opts_en": [
-   "The date filters are pushed to the source so only the needed partition data is read",
-   "It encrypts every partition",
+   "Date filters are pushed to the source so only needed data is read",
+   "It encrypts every partition with a separate key during each refresh",
    "It creates sensitivity labels",
-   "It removes relationships between tables"
+   "It removes relationships between tables so partitions load in parallel"
   ],
   "correct": [
    0
@@ -8069,16 +8069,16 @@
   "q_es": "¿Qué configuración de Power BI Desktop reduce el número de consultas enviadas cuando los usuarios cambian varias segmentaciones a la vez?",
   "q_en": "Which setting in Power BI Desktop reduces the number of queries sent when users change several slicers at once?",
   "opts_es": [
-   "Aprobación del modelo semántico",
+   "Aprobación del modelo semántico como certificado para todos",
    "Seguridad de nivel de fila en el modelo",
-   "Tablas de fecha/hora automáticas",
-   "Opciones de reducción de consultas (botones Aplicar para segmentaciones y filtros)"
+   "Tablas de fecha/hora automáticas para cada columna de fecha del modelo",
+   "Opciones de reducción de consultas (botones Aplicar)"
   ],
   "opts_en": [
-   "Endorsement of the semantic model",
+   "Endorsement of the semantic model as certified for all users",
    "Row-level security on the model",
-   "Auto date/time tables",
-   "Query reduction options (Apply buttons for slicers and filters)"
+   "Auto date/time tables enabled for every date column in the model",
+   "Query reduction options (Apply buttons for slicers)"
   ],
   "correct": [
    3
@@ -8914,16 +8914,16 @@
   "q_es": "¿Qué enfoque enriquece mejor una tabla de hechos de ventas con la categoría de producto sin duplicar el texto de la categoría en cada fila de hechos?",
   "q_en": "Which approach best enriches a sales fact with product category without duplicating category text on every fact row?",
   "opts_es": [
-   "Copiar el texto de la categoría en cada fila de hechos",
-   "Crear una vista por categoría",
+   "Copiar el texto de la categoría en cada fila de hechos al cargar",
+   "Crear una vista independiente por categoría y unirlas después",
    "Guardarlo en un título de informe",
-   "Añadir el atributo a la dimensión Producto y relacionarla con los hechos"
+   "Agregarlo a la dimensión Producto relacionada con el hecho"
   ],
   "opts_en": [
-   "Copy category text into every fact row",
-   "Create a view per category",
+   "Copy the category text into every fact row during load",
+   "Create a separate view per category and union them later",
    "Store it in a report title",
-   "Add the attribute to the Product dimension and relate it to the fact"
+   "Add it to the Product dimension related to the fact"
   ],
   "correct": [
    3
