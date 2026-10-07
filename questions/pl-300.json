@@ -8799,5 +8799,919 @@
   "correct": 1,
   "exp_es": "La vista de linaje muestra las dependencias entre elementos.",
   "exp_en": "Lineage view maps item dependencies."
+ },
+ {
+  "id": 303,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de DAX Studio o Desktop muestra cuántas filas y el tamaño de cada columna del modelo?",
+  "q_en": "Which DAX Studio or Desktop feature shows how many rows and the size of each column in the model?",
+  "opts_es": [
+   "Indicadores de plegado de consultas",
+   "Panel de marcadores",
+   "Vista previa de seguridad de nivel de fila",
+   "Métricas de VertiPaq Analyzer"
+  ],
+  "opts_en": [
+   "Query folding indicators",
+   "Bookmarks pane",
+   "Row-level security preview",
+   "VertiPaq Analyzer metrics"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "VertiPaq Analyzer informa de tamaños, cardinalidad y codificación de tablas y columnas para ver qué infla el modelo.",
+  "exp_en": "VertiPaq Analyzer reports table and column sizes, cardinality and encoding to find what bloats the model."
+ },
+ {
+  "id": 304,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una tabla de hechos tiene una columna datetime de alta cardinalidad con segundos. ¿Qué reduce más el tamaño del modelo?",
+  "q_en": "A fact table has a high-cardinality datetime column with seconds. What reduces model size most?",
+  "opts_es": [
+   "Marcarla como columna clave",
+   "Cambiar la columna a texto",
+   "Ordenarla de forma descendente en Power Query",
+   "Dividirla en columnas de fecha y hora"
+  ],
+  "opts_en": [
+   "Mark it as a key column",
+   "Change the column to text",
+   "Sort it descending in Power Query",
+   "Split it into separate date and time columns"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Separar fecha y hora reduce los valores distintos y mejora la compresión.",
+  "exp_en": "Separating date and time lowers distinct values, improving compression."
+ },
+ {
+  "id": 305,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de Power BI Desktop permite deshabilitar las tablas de fechas creadas automáticamente?",
+  "q_en": "Which Power BI Desktop feature lets you disable the automatically created date tables?",
+  "opts_es": [
+   "Opción Fecha/hora automática en la configuración de carga de datos",
+   "Grupos de cálculo",
+   "Roles de seguridad de nivel de fila",
+   "Cuadro de agregaciones"
+  ],
+  "opts_en": [
+   "Auto date/time option in Data load settings",
+   "Calculation groups",
+   "Row-level security roles",
+   "Aggregations dialog"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Desactivar Fecha/hora automática y usar una tabla de fechas propia mantiene el modelo más pequeño y coherente.",
+  "exp_en": "Turning off Auto date/time and using a custom date table keeps the model smaller and consistent."
+ },
+ {
+  "id": 306,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué técnica permite que un modelo DirectQuery responda consultas habituales desde una tabla de resumen importada?",
+  "q_en": "Which technique lets a DirectQuery model answer common queries from an imported summary table?",
+  "opts_es": [
+   "Páginas de obtención de detalles",
+   "Parámetros de campo",
+   "Agregaciones",
+   "Marcadores"
+  ],
+  "opts_en": [
+   "Drillthrough pages",
+   "Field parameters",
+   "Aggregations",
+   "Bookmarks"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las tablas de agregación guardan datos resumidos en modo Importar y las consultas de detalle recurren a DirectQuery.",
+  "exp_en": "Aggregation tables cache summarized data in Import mode, while detail queries fall back to DirectQuery."
+ },
+ {
+  "id": 307,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de actualización procesa solo las particiones nuevas o modificadas de una tabla grande?",
+  "q_en": "Which refresh capability processes only new or changed partitions of a large table?",
+  "opts_es": [
+   "Actualización completa programada",
+   "Actualización incremental con RangeStart y RangeEnd",
+   "Caché de consultas",
+   "Actualización automática de página"
+  ],
+  "opts_en": [
+   "Full refresh on a schedule",
+   "Incremental refresh with RangeStart and RangeEnd",
+   "Query caching",
+   "Automatic page refresh"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La actualización incremental usa los parámetros RangeStart/RangeEnd para actualizar solo particiones recientes.",
+  "exp_en": "Incremental refresh uses the RangeStart/RangeEnd parameters to refresh recent partitions only."
+ },
+ {
+  "id": 308,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué enfoque DAX suele ser más eficiente que iterar por filas una tabla grande?",
+  "q_en": "Which DAX approach is usually more efficient than iterating over a large table row by row?",
+  "opts_es": [
+   "Anidar varias funciones FILTER",
+   "Usar agregadores por conjuntos y variables",
+   "Usar columnas calculadas para cada métrica",
+   "Convertir primero las medidas a texto"
+  ],
+  "opts_en": [
+   "Nest several FILTER functions",
+   "Use set-based aggregators and variables",
+   "Use calculated columns for every metric",
+   "Convert measures to text first"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las variables evitan recalcular expresiones y los agregadores aprovechan el motor de almacenamiento.",
+  "exp_en": "Variables avoid recomputing expressions and aggregators leverage the storage engine."
+ },
+ {
+  "id": 309,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué paso de Power Query reemplaza errores de una columna por un valor predeterminado?",
+  "q_en": "Which Power Query step replaces errors in a column with a default value?",
+  "opts_es": [
+   "Reemplazar errores",
+   "Transponer",
+   "Quitar duplicados",
+   "Rellenar hacia abajo"
+  ],
+  "opts_en": [
+   "Replace Errors",
+   "Transpose",
+   "Remove Duplicates",
+   "Fill Down"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Reemplazar errores sustituye celdas con error por un valor elegido, como null o 0.",
+  "exp_en": "Replace Errors substitutes error cells with a value you choose, such as null or 0."
+ },
+ {
+  "id": 311,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué función permite reutilizar una transformación en varias consultas como función?",
+  "q_en": "Which feature lets you reuse a transformation across several queries as a function?",
+  "opts_es": [
+   "Crear función desde una consulta con parámetros",
+   "Duplicar la consulta muchas veces",
+   "Hacer referencia a la consulta sin cambios",
+   "Deshabilitar la carga de la consulta"
+  ],
+  "opts_en": [
+   "Create function from a query with parameters",
+   "Duplicate the query many times",
+   "Reference the query without changes",
+   "Disable load for the query"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las funciones personalizadas encapsulan pasos para invocarlos por fila o reutilizarlos.",
+  "exp_en": "Custom functions encapsulate steps so they can be invoked per row or reused."
+ },
+ {
+  "id": 312,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cuándo debe usar Anexar consultas en lugar de Combinar consultas?",
+  "q_en": "When should you use Append Queries instead of Merge Queries?",
+  "opts_es": [
+   "Para quitar filas duplicadas",
+   "Para cambiar tipos de datos",
+   "Para agregar columnas de una tabla relacionada",
+   "Para apilar filas de tablas con las mismas columnas"
+  ],
+  "opts_en": [
+   "To remove duplicate rows",
+   "To change data types",
+   "To add columns from a related table",
+   "To stack rows from tables with the same columns"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Anexar combina filas; combinar hace uniones para agregar columnas.",
+  "exp_en": "Append combines rows; merge performs joins to add columns."
+ },
+ {
+  "id": 313,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué ajuste guarda un nombre de servidor o ruta de archivo para cambiarlo por entorno?",
+  "q_en": "Which setting stores a server name or file path so it can be changed per environment?",
+  "opts_es": [
+   "Parámetros de Power Query",
+   "Marcadores",
+   "Temas de informe",
+   "Parámetros de campo"
+  ],
+  "opts_en": [
+   "Power Query parameters",
+   "Bookmarks",
+   "Report themes",
+   "Field parameters"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los parámetros permiten cambiar orígenes entre desarrollo, pruebas y producción y se pueden definir en el servicio.",
+  "exp_en": "Query parameters let you switch sources between dev, test and prod and can be set in the service."
+ },
+ {
+  "id": 314,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué objeto visual permite escribir una pregunta en lenguaje natural y ver un gráfico de respuesta?",
+  "q_en": "Which visual lets users type a natural-language question and see an answer chart?",
+  "opts_es": [
+   "Árbol de descomposición",
+   "Influyentes clave",
+   "Objeto visual de preguntas y respuestas",
+   "Narrativa inteligente"
+  ],
+  "opts_en": [
+   "Decomposition tree",
+   "Key influencers",
+   "Q&A visual",
+   "Smart narrative"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El objeto visual de P y R responde preguntas en lenguaje natural según el modelo, mejorado con sinónimos y esquema lingüístico.",
+  "exp_en": "The Q&A visual answers natural-language questions based on the semantic model, improved by synonyms and linguistic schema."
+ },
+ {
+  "id": 315,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué objeto visual escribe automáticamente texto que resume hallazgos clave y se actualiza con los filtros?",
+  "q_en": "Which visual automatically writes text that summarizes key findings and updates with filters?",
+  "opts_es": [
+   "Gráfico de dispersión",
+   "Objeto visual de P y R",
+   "Narrativa inteligente",
+   "Detección de anomalías"
+  ],
+  "opts_en": [
+   "Scatter chart",
+   "Q&A visual",
+   "Smart narrative",
+   "Anomaly detection"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La narrativa inteligente genera texto dinámico y puede personalizarse con valores dinámicos.",
+  "exp_en": "Smart narrative generates dynamic text and can be customized with dynamic values."
+ },
+ {
+  "id": 316,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué característica de un gráfico de líneas señala automáticamente picos inusuales?",
+  "q_en": "Which line chart feature automatically flags unusual spikes?",
+  "opts_es": [
+   "Línea de tendencia",
+   "Previsión",
+   "Línea de referencia",
+   "Detección de anomalías en el panel Análisis"
+  ],
+  "opts_en": [
+   "Trend line",
+   "Forecast",
+   "Reference line",
+   "Anomaly detection in the Analytics pane"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La detección de anomalías marca valores atípicos en series temporales y puede explicar factores.",
+  "exp_en": "Anomaly detection marks outliers in time series and can explain contributing factors."
+ },
+ {
+  "id": 317,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Copilot ayuda a crear una página de informe desde un modelo semántico describiéndola en texto?",
+  "q_en": "Which Copilot capability helps you create a report page from a semantic model by describing it in text?",
+  "opts_es": [
+   "Seguridad de nivel de fila",
+   "Canalizaciones de implementación",
+   "Creación de informes con Copilot",
+   "Actualización de flujos de datos"
+  ],
+  "opts_en": [
+   "Row-level security",
+   "Deployment pipelines",
+   "Copilot report creation",
+   "Dataflow refresh"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Copilot en Power BI sugiere páginas y objetos visuales a partir de instrucciones en lenguaje natural.",
+  "exp_en": "Copilot in Power BI suggests pages and visuals from natural-language prompts."
+ },
+ {
+  "id": 319,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Cómo puede compartir un informe con compañeros que no son miembros del área sin incluirlos en ella?",
+  "q_en": "How can you share a report with colleagues who are not workspace members and keep them out of the workspace?",
+  "opts_es": [
+   "Publicar una aplicación del área y asignar audiencias",
+   "Compartir el archivo .pbix por correo",
+   "Exportar a PDF cada semana",
+   "Agregar a todos como Administrador"
+  ],
+  "opts_en": [
+   "Publish a workspace app and assign audiences",
+   "Share the .pbix file by email",
+   "Export to PDF every week",
+   "Add everyone as Admin"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las aplicaciones empaquetan contenido para consumidores con acceso específico por audiencia.",
+  "exp_en": "Apps package content for consumers with audience-specific access."
+ },
+ {
+  "id": 320,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué ajuste permite a un usuario crear informes nuevos sobre un modelo semántico sin editarlo?",
+  "q_en": "Which setting lets a user build new reports on a semantic model without editing it?",
+  "opts_es": [
+   "Solo el rol de Lector",
+   "Permiso de volver a compartir",
+   "Rol de seguridad de nivel de fila",
+   "Permiso de compilación"
+  ],
+  "opts_en": [
+   "Workspace Viewer role only",
+   "Reshare permission",
+   "Row-level security role",
+   "Build permission"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El permiso de compilación permite conectarse al modelo para crear contenido nuevo como informes o tablas dinámicas de Excel.",
+  "exp_en": "Build permission allows connecting to the model to create new content such as reports or Excel PivotTables."
+ },
+ {
+  "id": 321,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué hace certificar un modelo semántico?",
+  "q_en": "What does certifying a semantic model do?",
+  "opts_es": [
+   "Elimina la necesidad de seguridad de nivel de fila",
+   "Indica que es una fuente autorizada y revisada",
+   "Cifra los datos en reposo con una clave del cliente",
+   "Hace que el modelo se actualice cada minuto"
+  ],
+  "opts_en": [
+   "Removes the need for row-level security",
+   "Signals it is an authoritative, reviewed source",
+   "Encrypts data at rest with a customer key",
+   "Makes the model refresh every minute"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La aprobación (promovido o certificado) ayuda a encontrar contenido fiable; la certificación la concede quien está autorizado.",
+  "exp_en": "Endorsement (promoted or certified) helps users find trustworthy content; certification is granted by authorized reviewers."
+ },
+ {
+  "id": 322,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué tabla debe contener atributos como categoría y color de producto en un esquema de estrella?",
+  "q_en": "Which table should hold attributes like product category and color in a star schema?",
+  "opts_es": [
+   "Una tabla de almacenamiento temporal",
+   "Una tabla de dimensión",
+   "Una tabla puente",
+   "La tabla de hechos"
+  ],
+  "opts_en": [
+   "A staging table",
+   "A dimension table",
+   "A bridge table",
+   "The fact table"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las dimensiones contienen atributos descriptivos que filtran y agrupan los hechos.",
+  "exp_en": "Dimensions hold descriptive attributes used to filter and group facts."
+ },
+ {
+  "id": 323,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cuál es la mejor forma de modelar una relación de muchos a muchos entre dos dimensiones?",
+  "q_en": "What is the best way to model a many-to-many relationship between two dimensions?",
+  "opts_es": [
+   "Combinar ambas dimensiones en una tabla ancha",
+   "Usar una tabla puente con dos relaciones de uno a muchos",
+   "Deshabilitar todas las relaciones",
+   "Duplicar los datos en la tabla de hechos"
+  ],
+  "opts_en": [
+   "Merge both dimensions into one wide table",
+   "Use a bridge table with two one-to-many relationships",
+   "Disable all relationships",
+   "Duplicate the data in the fact table"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Una tabla puente mantiene los filtros predecibles; las relaciones nativas de muchos a muchos deben usarse con cuidado.",
+  "exp_en": "A bridge table keeps filters predictable; native many-to-many relationships should be used with care."
+ },
+ {
+  "id": 324,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué permite marcar una tabla como tabla de fechas?",
+  "q_en": "What does marking a table as a date table enable?",
+  "opts_es": [
+   "Ocultar la tabla de la vista del informe",
+   "El comportamiento correcto de las funciones de inteligencia de tiempo",
+   "Seguridad de nivel de fila automática",
+   "Actualización más rápida de todas las tablas"
+  ],
+  "opts_en": [
+   "Hiding the table from the report view",
+   "Correct behavior of time intelligence functions",
+   "Automatic row-level security",
+   "Faster refresh of all tables"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Una tabla de fechas marcada con fechas continuas permite que funciones como TOTALYTD y SAMEPERIODLASTYEAR funcionen de forma fiable.",
+  "exp_en": "A marked date table with continuous dates lets functions such as TOTALYTD and SAMEPERIODLASTYEAR work reliably."
+ },
+ {
+  "id": 325,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el rendimiento de los modelos de Power BI, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Power BI model performance, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Quitar columnas sin uso reduce el tamaño del modelo.",
+    "en": "Removing unused columns reduces model size.",
+    "ans": true
+   },
+   {
+    "es": "Las columnas de menor cardinalidad suelen comprimir mejor en VertiPaq.",
+    "en": "Lower cardinality columns generally compress better in VertiPaq.",
+    "ans": true
+   },
+   {
+    "es": "Las columnas calculadas son siempre más rápidas que las medidas en tiempo de consulta.",
+    "en": "Calculated columns are always faster than measures at query time.",
+    "ans": false
+   },
+   {
+    "es": "El Analizador de rendimiento muestra cuánto tarda en renderizarse cada objeto visual.",
+    "en": "Performance Analyzer shows how long each visual takes to render.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las columnas calculadas consumen memoria y se calculan al actualizar; las medidas se calculan al consultar y suelen ser preferibles para agregados.",
+  "exp_en": "Calculated columns consume memory and are computed at refresh; measures are computed at query time and are usually preferable for aggregates."
+ },
+ {
+  "id": 326,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las transformaciones de Power Query, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Power Query transformations, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El plegado de consultas envía pasos de vuelta al origen cuando es posible.",
+    "en": "Query folding pushes steps back to the source when possible.",
+    "ans": true
+   },
+   {
+    "es": "Combinar consultas realiza uniones como externa izquierda e interna.",
+    "en": "Merge Queries performs joins such as left outer and inner.",
+    "ans": true
+   },
+   {
+    "es": "Los pasos aplicados se ejecutan en orden aleatorio en cada actualización.",
+    "en": "Applied steps run in a random order each refresh.",
+    "ans": false
+   },
+   {
+    "es": "Promover encabezados convierte la primera fila en nombres de columna.",
+    "en": "Promote Headers turns the first row into column names.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los pasos aplicados se ejecutan en secuencia, de arriba abajo.",
+  "exp_en": "Applied steps run in sequence from top to bottom."
+ },
+ {
+  "id": 327,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los roles del área de trabajo de Power BI, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Power BI workspace roles, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los lectores ven el contenido pero no pueden editarlo.",
+    "en": "Viewers can see content but cannot edit it.",
+    "ans": true
+   },
+   {
+    "es": "Los colaboradores pueden publicar y editar contenido sobre el que tienen derechos.",
+    "en": "Contributors can publish and edit content they have rights to.",
+    "ans": true
+   },
+   {
+    "es": "Solo los administradores pueden ver informes en un área de trabajo.",
+    "en": "Only Admins can ever view reports in a workspace.",
+    "ans": false
+   },
+   {
+    "es": "Las aplicaciones permiten dar acceso de lectura a consumidores sin pertenencia al área.",
+    "en": "Apps let you give consumers read access without workspace membership.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Todos los roles pueden ver contenido; difieren en lo que pueden crear, editar o administrar.",
+  "exp_en": "All roles can view content; the roles differ in what they can create, edit or manage."
+ },
+ {
+  "id": 328,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la operación de Power Query para cada requisito.",
+  "q_en": "Select the Power Query operation for each requirement.",
+  "rows": [
+   {
+    "es": "Convertir columnas de mes en filas de mes y valor",
+    "en": "Turn month columns into month and value rows",
+    "opts_es": [
+     "Combinar consultas",
+     "Agrupar por",
+     "Anexar consultas",
+     "Anular dinamización de columnas"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Group by",
+     "Append queries",
+     "Unpivot columns"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Traer una columna de categoría de otra tabla",
+    "en": "Bring a product category column from another table",
+    "opts_es": [
+     "Combinar consultas",
+     "Agrupar por",
+     "Anexar consultas",
+     "Anular dinamización de columnas"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Group by",
+     "Append queries",
+     "Unpivot columns"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Apilar doce archivos mensuales en una tabla",
+    "en": "Stack twelve monthly files into one table",
+    "opts_es": [
+     "Combinar consultas",
+     "Agrupar por",
+     "Anexar consultas",
+     "Anular dinamización de columnas"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Group by",
+     "Append queries",
+     "Unpivot columns"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Calcular las ventas totales por cliente",
+    "en": "Calculate total sales per customer",
+    "opts_es": [
+     "Combinar consultas",
+     "Agrupar por",
+     "Anexar consultas",
+     "Anular dinamización de columnas"
+    ],
+    "opts_en": [
+     "Merge queries",
+     "Group by",
+     "Append queries",
+     "Unpivot columns"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Anular dinamización remodela, combinar une, anexar apila filas y agrupar agrega.",
+  "exp_en": "Unpivot reshapes, merge joins, append stacks rows and group by aggregates."
+ },
+ {
+  "id": 329,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "dropdown",
+  "q_es": "Seleccione el objeto visual para cada necesidad analítica.",
+  "q_en": "Select the visual for each analytical need.",
+  "rows": [
+   {
+    "es": "Encontrar qué factores impulsan una tasa de abandono alta",
+    "en": "Find which factors drive a high churn rate",
+    "opts_es": [
+     "Árbol de descomposición",
+     "Influyentes clave",
+     "Objeto visual de P y R",
+     "Narrativa inteligente"
+    ],
+    "opts_en": [
+     "Decomposition tree",
+     "Key influencers",
+     "Q&A visual",
+     "Smart narrative"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Profundizar en ventas por cualquier orden de dimensiones",
+    "en": "Drill into sales by any dimension order",
+    "opts_es": [
+     "Árbol de descomposición",
+     "Influyentes clave",
+     "Objeto visual de P y R",
+     "Narrativa inteligente"
+    ],
+    "opts_en": [
+     "Decomposition tree",
+     "Key influencers",
+     "Q&A visual",
+     "Smart narrative"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Dejar que los usuarios hagan preguntas escritas a los datos",
+    "en": "Let users ask typed questions of the data",
+    "opts_es": [
+     "Árbol de descomposición",
+     "Influyentes clave",
+     "Objeto visual de P y R",
+     "Narrativa inteligente"
+    ],
+    "opts_en": [
+     "Decomposition tree",
+     "Key influencers",
+     "Q&A visual",
+     "Smart narrative"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Agregar texto automático que resuma la página",
+    "en": "Add automatic text summarizing the page",
+    "opts_es": [
+     "Árbol de descomposición",
+     "Influyentes clave",
+     "Objeto visual de P y R",
+     "Narrativa inteligente"
+    ],
+    "opts_en": [
+     "Decomposition tree",
+     "Key influencers",
+     "Q&A visual",
+     "Smart narrative"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "Cada objeto visual de IA se orienta a un escenario de análisis.",
+  "exp_en": "Each AI visual targets a specific analysis scenario."
+ },
+ {
+  "id": 330,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "dropdown",
+  "q_es": "Seleccione el rol o permiso de Power BI para cada tarea.",
+  "q_en": "Select the Power BI role or permission for each task.",
+  "rows": [
+   {
+    "es": "Eliminar el área de trabajo",
+    "en": "Delete the workspace",
+    "opts_es": [
+     "Lector",
+     "Miembro",
+     "Administrador",
+     "Colaborador"
+    ],
+    "opts_en": [
+     "Viewer",
+     "Member",
+     "Admin",
+     "Contributor"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Publicar contenido y agregar colaboradores",
+    "en": "Publish content and add Contributors",
+    "opts_es": [
+     "Lector",
+     "Miembro",
+     "Administrador",
+     "Colaborador"
+    ],
+    "opts_en": [
+     "Viewer",
+     "Member",
+     "Admin",
+     "Contributor"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Editar y publicar informes propios sin administrar el acceso",
+    "en": "Edit and publish own reports without managing access",
+    "opts_es": [
+     "Lector",
+     "Miembro",
+     "Administrador",
+     "Colaborador"
+    ],
+    "opts_en": [
+     "Viewer",
+     "Member",
+     "Admin",
+     "Contributor"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Solo ver paneles e informes",
+    "en": "Only view dashboards and reports",
+    "opts_es": [
+     "Lector",
+     "Miembro",
+     "Administrador",
+     "Colaborador"
+    ],
+    "opts_en": [
+     "Viewer",
+     "Member",
+     "Admin",
+     "Contributor"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Los roles aumentan sus capacidades de Lector a Administrador.",
+  "exp_en": "Roles grow in capability from Viewer to Admin."
+ },
+ {
+  "id": 331,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Para actualizar solo las particiones más recientes de una gran tabla de hechos, configure ",
+  "pre_en": "To refresh only the most recent partitions of a large fact table, configure ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "la caché de consultas",
+   "la actualización incremental",
+   "la actualización automática de página",
+   "la seguridad de nivel de fila"
+  ],
+  "opts_en": [
+   "query caching",
+   "incremental refresh",
+   "automatic page refresh",
+   "row-level security"
+  ],
+  "correct": 1,
+  "exp_es": "La actualización incremental particiona los datos y actualiza solo el intervalo reciente.",
+  "exp_en": "Incremental refresh partitions data and refreshes only the recent range."
+ },
+ {
+  "id": 333,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "Para que los usuarios creen informes desde un modelo que no poseen, concédales ",
+  "pre_en": "To let users create reports from a model they do not own, grant them ",
+  "post_es": " en el modelo semántico.",
+  "post_en": " permission on the semantic model.",
+  "opts_es": [
+   "administración",
+   "eliminación",
+   "volver a compartir",
+   "compilación"
+  ],
+  "opts_en": [
+   "Admin",
+   "Delete",
+   "Reshare",
+   "Build"
+  ],
+  "correct": 3,
+  "exp_es": "El permiso de compilación permite crear contenido basado en el modelo.",
+  "exp_en": "Build permission lets users create content based on the model."
  }
 ]
