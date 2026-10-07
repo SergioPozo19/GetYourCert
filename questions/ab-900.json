@@ -2864,16 +2864,16 @@
   "q_es": "¿Qué describe correctamente la relación entre los permisos del usuario y las respuestas de Copilot?",
   "q_en": "Which correctly describes the relationship between user permissions and Copilot responses?",
   "opts_es": [
-   "Copilot requiere que el usuario tenga permisos de administrador global del inquilino actual",
+   "Copilot requiere permisos de Administrador global para cada usuario que lo usa",
    "Copilot eleva de forma automática los permisos del usuario para poder responder mejor",
-   "Copilot ignora los permisos del contenido cuando se trata de datos marcados como públicos",
-   "Copilot solo puede razonar sobre contenido al que el usuario ya tiene permiso de acceso"
+   "Copilot ignora los permisos de los datos públicos y de los chats compartidos",
+   "Copilot solo razona sobre contenido al que el usuario ya puede acceder"
   ],
   "opts_en": [
-   "Copilot requires Global Administrator permissions",
+   "Copilot requires Global Administrator permissions for every user who uses it",
    "Copilot elevates the user's permissions to respond better",
-   "Copilot ignores permissions for public data",
-   "Copilot can only reason over content the user already has permission to"
+   "Copilot ignores permissions for public data and for any shared Teams chats",
+   "Copilot only reasons over content the user can already access"
   ],
   "correct": [
    3
@@ -5611,13 +5611,13 @@
   "q_en": "What key information does the Agent Registry provide to admins?",
   "opts_es": [
    "Las directivas de retención del inquilino aplicadas a los prompts y respuestas de los agentes",
-   "Un inventario de los agentes desplegados con detalles como sus riesgos e instancias",
-   "Las licencias de Copilot asignadas a cada usuario junto a la fecha de su última activación",
+   "Un inventario de agentes implementados con detalles como riesgos e instancias",
+   "Las licencias de Copilot asignadas a cada usuario y la fecha de su última activación",
    "Las reglas de flujo de correo de Exchange que afectan a los buzones de los propietarios"
   ],
   "opts_en": [
    "The tenant's retention policies applied to the agents' prompts and responses",
-   "An inventory of deployed agents with details such as risks (high-severity alerts) and instances",
+   "An inventory of deployed agents with details such as risks and instances",
    "The Copilot licenses assigned to each user and the date of their last activation",
    "The Exchange mail flow rules that affect the owners' mailboxes"
   ],
@@ -5766,16 +5766,16 @@
   "q_es": "Un agente aprobado debe estar disponible solo para el departamento de Finanzas. ¿Cómo se logra?",
   "q_en": "An approved agent should be available only to the Finance department. How is this achieved?",
   "opts_es": [
-   "Aplicando una etiqueta de confidencialidad de Finanzas al contenido que usa el agente",
+   "Aplicando una etiqueta de confidencialidad Finance a todo el contenido que usa el agente",
    "Creando una directiva de retención específica para los prompts del departamento de Finanzas",
-   "Configurando el acceso del agente para el grupo de Finanzas en el centro de administración de Microsoft 365",
-   "Mediante una regla de flujo de correo de Exchange dirigida a los buzones de Finanzas"
+   "Configurando el acceso del agente para el grupo Finance en el centro de administración",
+   "Mediante una regla de flujo de correo de Exchange dirigida a los buzones de Finance"
   ],
   "opts_en": [
-   "By applying a Finance sensitivity label to the content the agent uses",
+   "By applying a Finance sensitivity label to all the content that the agent uses",
    "By creating a retention policy specific to the Finance department's prompts",
-   "By configuring the agent's access for the Finance group in the Microsoft 365 admin center",
-   "Via an Exchange mail flow rule targeting the Finance mailboxes"
+   "By setting the agent's access to the Finance group in the M365 admin center",
+   "Via an Exchange mail flow rule targeting the mailboxes of the Finance department"
   ],
   "correct": [
    2
@@ -6360,14 +6360,14 @@
   "q_en": "Which statement correctly describes how a license type affects a user's access to Microsoft 365 services?",
   "opts_es": [
    "La licencia solo afecta al espacio de almacenamiento del usuario y no a los servicios que puede usar",
-   "Todas las licencias conceden acceso idéntico a la totalidad de los servicios disponibles en el inquilino",
-   "El tipo de licencia (por ejemplo, E3, E5 o F3) determina los servicios y características a los que accede el usuario",
+   "Todas las licencias conceden el mismo acceso a la totalidad de servicios del inquilino",
+   "El tipo de licencia (como E3, E5 o F3) determina los servicios a los que accede el usuario",
    "El acceso a los servicios depende únicamente del rol de administrador asignado y no del tipo de licencia"
   ],
   "opts_en": [
    "The license only affects the user's storage space and not the services they can use",
    "All licenses grant identical access to the totality of services available in the tenant",
-   "The license type (for example, E3, E5, or F3) determines the services and features the user can access",
+   "The license type (such as E3, E5 or F3) sets the services the user can access",
    "Service access depends solely on the assigned admin role and not on the license type"
   ],
   "correct": [
@@ -6464,15 +6464,15 @@
   "q_en": "Which Microsoft solution provides extended detection and response (XDR) by correlating signals across identities, endpoints, email, and cloud apps?",
   "opts_es": [
    "Microsoft Defender XDR",
-   "Microsoft Purview",
+   "Auditoría de Microsoft Purview",
    "Microsoft Entra ID",
-   "Microsoft Intune"
+   "Cumplimiento de Microsoft Intune"
   ],
   "opts_en": [
    "Microsoft Defender XDR",
-   "Microsoft Purview",
+   "Microsoft Purview Audit",
    "Microsoft Entra ID",
-   "Microsoft Intune"
+   "Microsoft Intune compliance"
   ],
   "correct": [
    0
@@ -6515,13 +6515,13 @@
   "q_es": "¿Qué describe mejor el concepto de inteligencia frente a amenazas (threat intelligence) en Microsoft Defender?",
   "q_en": "What best describes the concept of threat intelligence in Microsoft Defender?",
   "opts_es": [
-   "Información sobre amenazas conocidas y actores maliciosos que ayuda a detectar y responder a ataques",
-   "Un nivel de permisos de SharePoint que controla quién puede ver los informes de seguridad",
+   "Información sobre amenazas y actores conocidos que ayuda a detectar ataques",
+   "Un nivel de permisos de SharePoint que controla quién ve los informes de seguridad",
    "Una directiva de retención de datos que conserva los registros de seguridad un periodo fijo",
    "Un método de autenticación multifactor que refuerza el inicio de sesión de los usuarios"
   ],
   "opts_en": [
-   "Information about known threats and malicious actors that helps detect and respond to attacks",
+   "Information about known threats and actors that helps detect attacks",
    "A SharePoint permission level that controls who can view the security reports",
    "A data retention policy that keeps security logs for a fixed period",
    "A multifactor authentication method that strengthens users' sign-in"
@@ -8014,15 +8014,15 @@
   "q_en": "You need protection that persists on a Word file even after it is downloaded to a personal device. What should you use?",
   "opts_es": [
    "Un buzón de sala del calendario",
-   "Una directiva de retención de contenido",
+   "Una directiva de retención en el sitio de OneDrive",
    "Una etiqueta de confidencialidad con cifrado",
-   "Una lista de distribución de correo"
+   "Una lista de distribución con uso compartido externo desactivado"
   ],
   "opts_en": [
    "A room mailbox",
-   "A retention policy",
+   "A retention policy on the OneDrive site",
    "A sensitivity label with encryption",
-   "A distribution list"
+   "A distribution list with external sharing off"
   ],
   "correct": [
    2
@@ -8456,14 +8456,14 @@
   "q_es": "Una empresa necesita un único punto de contacto de correo para su equipo de soporte, compartido por varios agentes sin coste de licencia adicional. ¿Qué objeto crea?",
   "q_en": "A company needs a single mail contact point for its support team, shared by several agents without an extra license cost. Which object do you create?",
   "opts_es": [
-   "Un grupo de seguridad sin correo habilitado",
-   "Un buzón compartido del centro de Exchange",
+   "Un grupo de seguridad sin correo con todos los agentes agregados",
+   "Un buzón compartido en el Centro de administración de Exchange",
    "Un buzón de sala vinculado a un calendario",
    "Una etiqueta de confidencialidad con cifrado"
   ],
   "opts_en": [
-   "A non-mail-enabled security group",
-   "A shared mailbox from the Exchange admin center",
+   "A non-mail-enabled security group with all the agents added",
+   "A shared mailbox in the Exchange admin center",
    "A room mailbox linked to a calendar",
    "A sensitivity label with encryption"
   ],
@@ -8872,16 +8872,16 @@
   "q_es": "Una organización quiere reforzar el inicio de sesión exigiendo un segundo factor además de la contraseña. ¿Qué método debe aplicar?",
   "q_en": "An organization wants to strengthen sign-in by requiring a second factor in addition to the password. Which method should it apply?",
   "opts_es": [
-   "La autenticación básica heredada",
+   "Autenticación básica heredada con contraseñas de aplicación",
    "La retención de datos del buzón",
    "La autenticación multifactor (MFA)",
-   "El inicio de sesión único (SSO)"
+   "Inicio de sesión único (SSO) con credenciales guardadas"
   ],
   "opts_en": [
-   "Legacy basic authentication",
+   "Legacy basic authentication with app passwords",
    "Mailbox data retention",
    "Multifactor authentication (MFA)",
-   "Single sign-on (SSO)"
+   "Single sign-on (SSO) with saved credentials"
   ],
   "correct": [
    2
@@ -9054,16 +9054,16 @@
   "q_es": "¿Qué herramienta de Microsoft Entra ofrece recomendaciones priorizadas para mejorar la seguridad de las identidades?",
   "q_en": "Which Microsoft Entra tool offers prioritized recommendations to improve identity security?",
   "opts_es": [
-   "El Identity Secure Score y sus acciones de mejora",
+   "Identity Secure Score y sus acciones de mejora",
    "Las directivas de acceso condicional de Entra",
-   "Los registros de inicio de sesión del inquilino",
-   "Los registros de aplicaciones del inquilino actual"
+   "Los registros de inicio de sesión filtrados por usuarios de riesgo",
+   "Los registros de aplicaciones del inquilino y sus propietarios"
   ],
   "opts_en": [
-   "The Identity Secure Score and its improvement actions",
+   "Identity Secure Score and its improvement actions",
    "The Entra Conditional Access policies",
-   "The tenant's sign-in logs",
-   "The current tenant's app registrations"
+   "The tenant's sign-in logs filtered by risky users",
+   "The current tenant's app registrations and their owners"
   ],
   "correct": [
    0
@@ -9470,15 +9470,15 @@
   "q_es": "¿Qué describe correctamente la función de los registros de aplicaciones (App registrations) en Microsoft Entra?",
   "q_en": "What correctly describes the function of app registrations in Microsoft Entra?",
   "opts_es": [
-   "Conservan el historial de actividad del inquilino actual",
+   "Conservan el historial de actividad del inquilino para cada aplicación",
    "Reenvían el correo de servicio a varios destinatarios",
-   "Conceden acceso a recursos a un grupo de usuarios",
+   "Conceden acceso a recursos a un grupo de usuarios con una contraseña compartida",
    "Definen la identidad y la configuración de una aplicación"
   ],
   "opts_en": [
-   "They keep the current tenant's activity history",
+   "They keep the current tenant's activity history for each signed-in app",
    "They forward service mail to several recipients",
-   "They grant resource access to a group of users",
+   "They grant resource access to a group of users through a shared password",
    "They define an application's identity and configuration"
   ],
   "correct": [
@@ -9496,16 +9496,16 @@
   "q_es": "Una organización quiere que los administradores soliciten aprobación antes de usar sus permisos elevados. ¿Qué característica configura?",
   "q_en": "An organization wants administrators to request approval before using their elevated permissions. Which feature does it configure?",
   "opts_es": [
-   "El umbral de alertas del Identity Secure Score",
+   "El umbral de alertas de Identity Secure Score para cada rol de administrador",
    "La directiva de retención del buzón de cada admin",
    "La aprobación de activación en Privileged Identity Management",
-   "El filtro de los registros de inicio de sesión"
+   "El filtro de los registros de inicio de sesión para cuentas de administrador"
   ],
   "opts_en": [
-   "The alert threshold in the Identity Secure Score",
+   "The alert threshold in the Identity Secure Score for each admin role",
    "The retention policy of each admin's mailbox",
-   "The activation approval in Privileged Identity Management",
-   "The filter of the sign-in logs"
+   "Activation approval in Privileged Identity Management",
+   "The filter of the sign-in logs for privileged administrator accounts"
   ],
   "correct": [
    2
@@ -9834,16 +9834,16 @@
   "q_es": "¿Qué describe correctamente el alcance de eDiscovery respecto a las cargas de trabajo de Microsoft 365?",
   "q_en": "What correctly describes eDiscovery's scope regarding Microsoft 365 workloads?",
   "opts_es": [
-   "Busca y preserva contenido en Exchange, SharePoint, OneDrive y Teams",
-   "Solo clasifica datos por categoría sin permitir buscar contenido",
+   "Busca y conserva contenido en Exchange, SharePoint, OneDrive y Teams",
+   "Solo clasifica datos por categoría sin permitir ninguna búsqueda de contenido",
    "Solo busca en los dispositivos locales que están gestionados",
-   "Solo funciona en buzones de Exchange y no en sitios ni archivos"
+   "Solo funciona en buzones de Exchange y nunca en sitios de SharePoint o archivos"
   ],
   "opts_en": [
-   "It searches and preserves content across Exchange, SharePoint, OneDrive, and Teams",
-   "It only classifies data by category without allowing content search",
+   "It searches and preserves content in Exchange, SharePoint, OneDrive and Teams",
+   "It only classifies data by category without allowing any content search at all",
    "It only searches the local devices that are managed",
-   "It only works on Exchange mailboxes and not on sites or files"
+   "It only works on Exchange mailboxes and never on SharePoint sites or files"
   ],
   "correct": [
    0
@@ -10484,15 +10484,15 @@
   "q_es": "¿Qué describe correctamente las capacidades de gestión de prompts de la organización desde la galería de prompts?",
   "q_en": "What correctly describes the organization's prompt management capabilities from the prompt gallery?",
   "opts_es": [
-   "Asignar y revocar las licencias de Copilot por usuario",
+   "Asignar y revocar licencias de Copilot por usuario desde la galería de prompts",
    "Guardar, compartir, programar y eliminar prompts para la organización",
-   "Cifrar los prompts de los usuarios antes de procesarlos",
+   "Cifrar los prompts de los usuarios con una clave del cliente antes de procesarlos",
    "Crear directivas de acceso condicional para proteger Copilot"
   ],
   "opts_en": [
-   "Assign and revoke Copilot licenses per user",
-   "Save, share, schedule, and delete prompts for the organization",
-   "Encrypt the users' prompts before processing them",
+   "Assign and revoke Copilot licenses per user from the prompt gallery page",
+   "Save, share, schedule and delete prompts for the organization",
+   "Encrypt the users' prompts with a customer key before processing them",
    "Create Conditional Access policies to protect Copilot"
   ],
   "correct": [
@@ -10744,16 +10744,16 @@
   "q_es": "¿Cuáles son los componentes principales que definen un agente en Agent Builder?",
   "q_en": "What are the main components that define an agent in Agent Builder?",
   "opts_es": [
-   "La etiqueta de confidencialidad, la retención y la DLP",
+   "La etiqueta de confidencialidad, la directiva de retención y las reglas DLP",
    "El sitio de SharePoint, la biblioteca y la carpeta",
-   "Las instrucciones, el conocimiento y las acciones o capacidades",
-   "El buzón de correo, el dominio aceptado y la licencia"
+   "Las instrucciones, el conocimiento y las acciones",
+   "El buzón, el dominio aceptado y la licencia asignada"
   ],
   "opts_en": [
-   "The sensitivity label, the retention, and the DLP",
+   "The sensitivity label, the retention policy, and the DLP rules",
    "The SharePoint site, the library, and the folder",
-   "The instructions, the knowledge, and the actions or capabilities",
-   "The mailbox, the accepted domain, and the license"
+   "The instructions, the knowledge, and the actions",
+   "The mailbox, the accepted domain, and the assigned license"
   ],
   "correct": [
    2
@@ -10770,15 +10770,15 @@
   "q_es": "¿Qué herramientas combina la monitorización completa de los agentes en la organización?",
   "q_en": "Which tools does comprehensive agent monitoring in the organization combine?",
   "opts_es": [
-   "El Identity Secure Score y los registros de inicio de sesión",
-   "El centro de administración de Exchange y sus reglas de correo",
-   "El centro de administración de M365 con el de Power Platform",
+   "Identity Secure Score y los registros de inicio de sesión de los propietarios",
+   "El Centro de administración de Exchange y sus reglas de flujo para buzones de agentes",
+   "El centro de administración de M365 y el de Power Platform",
    "Las directivas de reuniones y de mensajería de Teams"
   ],
   "opts_en": [
-   "The Identity Secure Score and the sign-in logs",
-   "The Exchange admin center and its mail flow rules",
-   "The M365 admin center with the Power Platform admin center",
+   "The Identity Secure Score and the sign-in logs of all agent owners",
+   "The Exchange admin center and its mail flow rules for agent mailboxes",
+   "The M365 admin center and the Power Platform admin center",
    "The Teams meeting and messaging policies"
   ],
   "correct": [
@@ -11082,15 +11082,15 @@
   "q_es": "¿Qué describe correctamente el propósito de un tipo de información sensible (SIT) en Microsoft Purview?",
   "q_en": "What correctly describes the purpose of a sensitive information type (SIT) in Microsoft Purview?",
   "opts_es": [
-   "Cifrar el contenido y añadir marcas de agua a los archivos",
-   "Identificar datos sensibles, como tarjetas o pasaportes, por patrones",
-   "Conservar el contenido un periodo y eliminarlo al expirar",
+   "Cifrar el contenido y agregar marcas de agua a los archivos compartidos",
+   "Identificar datos confidenciales, como tarjetas o pasaportes, por patrón",
+   "Conservar el contenido durante un periodo y eliminarlo automáticamente al vencer",
    "Mostrar la adopción de Copilot por cada departamento"
   ],
   "opts_en": [
-   "Encrypt content and add watermarks to the files",
-   "Identify sensitive data, such as cards or passports, by patterns",
-   "Keep content for a period and delete it upon expiry",
+   "Encrypt content and add watermarks to the files that users share",
+   "Identify sensitive data, such as cards or passports, by pattern",
+   "Keep content for a set period and delete it automatically upon expiry",
    "Show Copilot adoption by each department"
   ],
   "correct": [
@@ -13363,14 +13363,14 @@
   "q_es": "¿Qué describe mejor a Microsoft 365 como producto?",
   "q_en": "Which best describes Microsoft 365 as a product?",
   "opts_es": [
-   "Un único programa local para editar hojas de cálculo",
-   "Un sistema operativo pensado para servidores físicos",
-   "Un paquete de productividad en la nube con apps y servicios",
+   "Un único programa local para editar hojas de cálculo e imprimir documentos",
+   "Un sistema operativo diseñado para servidores físicos en centros de datos locales",
+   "Un conjunto de productividad en la nube de aplicaciones y servicios integrados",
    "Una consola de videojuegos que se conecta a la nube"
   ],
   "opts_en": [
-   "A single local program for editing spreadsheets",
-   "An operating system designed for physical servers",
+   "A single local program for editing spreadsheets and printing documents",
+   "An operating system designed for physical servers in on-premises datacenters",
    "A cloud productivity suite of integrated apps and services",
    "A video game console that connects to the cloud"
   ],
