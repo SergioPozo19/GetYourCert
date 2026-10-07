@@ -19,6 +19,7 @@ const CT={
   stCertified:'Certificado', stReady:'Listo', stProgress:'Practicando', stNew:'Sin empezar', next:'Siguiente', startNow:'Empezar', continueNow:'Continuar',
   pathSecurity:'Seguridad e identidad', pathAzure:'Arquitectura y administración de Azure', pathM365:'Microsoft 365 y endpoints', pathTeams:'Teams y comunicaciones', pathData:'Datos e IA',
   newsTitle:'Novedades', newsAll:'Ver todas', newsNone:'Sin novedades.', newsClose:'Cerrar', newsPractice:'Practicar paquete', newsProOnly:'Solo Pro',
+  newsToday:'Hoy', newsYesterday:'Ayer', newsDaysAgo:'Hace {n} días', newsOpenExam:'Ver examen', newsRead:'Leer más', newsUnread:'Sin leer', newsSub:'Exámenes nuevos, cambios de temario y paquetes de preguntas',
   tNew:'Nuevo', tSyllabus:'Temario', tRetire:'Retirada', tPack:'Paquete',
   alertTitle:'Renovación pendiente', alertBody:'{code} caduca en {n} días. Haz un repaso antes de renovar.', alertExpired:'{code} ha caducado. Renuévala cuando puedas.', alertCta:'Ver mis certificaciones',
   hubTitle:'Tu carrera', packSub:'Paquete de novedades',
@@ -44,6 +45,7 @@ const CT={
   stCertified:'Certified', stReady:'Ready', stProgress:'Practicing', stNew:'Not started', next:'Next', startNow:'Start', continueNow:'Continue',
   pathSecurity:'Security and identity', pathAzure:'Azure architecture and administration', pathM365:'Microsoft 365 and endpoints', pathTeams:'Teams and communications', pathData:'Data and AI',
   newsTitle:'What\'s new', newsAll:'See all', newsNone:'No news.', newsClose:'Close', newsPractice:'Practice pack', newsProOnly:'Pro only',
+  newsToday:'Today', newsYesterday:'Yesterday', newsDaysAgo:'{n} days ago', newsOpenExam:'Open exam', newsRead:'Read more', newsUnread:'Unread', newsSub:'New exams, outline changes and question packs',
   tNew:'New', tSyllabus:'Outline', tRetire:'Retirement', tPack:'Pack',
   alertTitle:'Renewal due', alertBody:'{code} expires in {n} days. Do a review before renewing.', alertExpired:'{code} has expired. Renew it when you can.', alertCta:'See my certifications',
   hubTitle:'Your career', packSub:'Updates pack',
@@ -146,6 +148,7 @@ const ICO={
  gauge:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M3.3 17a10 10 0 1 1 17.4 0"/></svg>',
  cert:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>',
  path:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><path d="M7 19h6a4 4 0 0 0 0-8h-2a4 4 0 0 1 0-8h6"/></svg>',
+ spark:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>',
  bell:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>'
 };
 
@@ -300,14 +303,30 @@ async function loadNews(){
 }
 const unreadCount=()=>{const seen=Store.get('newsSeen','');return (NEWS||[]).filter(n=>n.date>seen).length;};
 const typeLbl=ty=>ct(ty==='new-exam'?'tNew':ty==='syllabus'?'tSyllabus':ty==='retirement'?'tRetire':'tPack');
+function relDate(iso){
+  const d=Math.round((Date.now()-new Date(iso+'T12:00:00Z').getTime())/day);
+  if(d<=0)return ct('newsToday'); if(d===1)return ct('newsYesterday'); if(d<15)return fmt(ct('newsDaysAgo'),{n:d});
+  return fmtDate(iso);
+}
+const newsCodes=n=>(n.exams||[]).map(id=>exById(id)).filter(Boolean);
+function newsChips(n,max){
+  const ex=newsCodes(n); const more=ex.length>max?'<span class="cr-chip more">+'+(ex.length-max)+'</span>':'';
+  return ex.slice(0,max).map(e=>'<span class="cr-chip">'+esc(e.code)+'</span>').join('')+more;
+}
 function newsItemHtml(n){
-  const ex=(n.exams||[]).map(id=>{const e=exById(id);return e?e.code:null;}).filter(Boolean).slice(0,6).join(' · ');
-  return '<div class="cr-news-item"><div class="cr-news-meta"><span class="cr-tag t-'+esc(n.type)+'">'+esc(typeLbl(n.type))+'</span><span>'+esc(fmtDate(n.date))+'</span>'+(ex?'<span>'+esc(ex)+'</span>':'')+'</div>'+
-    '<h4>'+esc(L(n,'title'))+'</h4><p>'+esc(L(n,'body'))+'</p></div>';
+  const seen=Store.get('newsSeenPrev','');
+  return '<div class="cr-news-item t-'+esc(n.type)+'"><div class="cr-news-meta"><span class="cr-tag t-'+esc(n.type)+'">'+esc(typeLbl(n.type))+'</span><span>'+esc(relDate(n.date))+'</span>'+(n.date>seen?'<span class="cr-unread">'+esc(ct('newsUnread'))+'</span>':'')+'</div>'+
+    '<h4>'+esc(L(n,'title'))+'</h4><p>'+esc(L(n,'body'))+'</p><div class="cr-chips">'+newsChips(n,8)+'</div></div>';
+}
+function newsAction(n){
+  if(n.pack){ if(!isPro()){ openProModal('manual'); return; } launch(n.pack.examId,'pack',n.pack.id); return; }
+  if(n.type==='new-exam'&&n.exams&&n.exams.length&&exById(n.exams[0])&&typeof selectExam==='function'){ if(window.track)track('news_card_exam'); selectExam(n.exams[0]); return; }
+  openNews(n.id);
 }
 function closeNews(){ const m=$('#crNewsModal'); if(m)m.remove(); }
-async function openNews(){
+async function openNews(focusId){
   if(window.track)track('news_open');
+  Store.set('newsSeenPrev',Store.get('newsSeen',''));
   await loadNews(); closeNews();
   const m=document.createElement('div'); m.id='crNewsModal'; m.className='cr-modal';
   m.innerHTML='<div class="cr-modal-box" role="dialog" aria-modal="true" aria-label="'+esc(ct('newsTitle'))+'"><div class="cr-modal-head"><h3>'+esc(ct('newsTitle'))+'</h3><button type="button" class="btn btn-ghost btn-sm" id="crNewsX">'+esc(ct('newsClose'))+'</button></div><div class="cr-modal-body"></div></div>';
@@ -315,7 +334,7 @@ async function openNews(){
   if(!NEWS.length)bodyEl.innerHTML='<div class="cr-empty">'+esc(ct('newsNone'))+'</div>';
   NEWS.forEach(n=>{
     const holder=document.createElement('div'); holder.innerHTML=newsItemHtml(n);
-    const item=holder.firstChild;
+    const item=holder.firstChild; if(n.id===focusId)item.classList.add('focus');
     if(n.pack){
       const b=document.createElement('button'); b.type='button'; b.className='btn btn-primary btn-sm';
       b.textContent=ct('newsPractice')+(isPro()?'':' · '+ct('newsProOnly'));
@@ -327,6 +346,7 @@ async function openNews(){
   m.addEventListener('click',e=>{ if(e.target===m)closeNews(); });
   m.querySelector('#crNewsX').onclick=closeNews;
   document.body.appendChild(m);
+  const f=m.querySelector('.cr-news-item.focus'); if(f)setTimeout(()=>f.scrollIntoView({block:'center'}),60);
   if(NEWS.length)Store.set('newsSeen',NEWS[0].date);
   careerRenderCatalog();
 }
@@ -365,12 +385,21 @@ async function careerRenderCatalog(){
   }
   // news strip
   if(NEWS&&NEWS.length){
-    const un=unreadCount();
-    const strip=document.createElement('div'); strip.className='cr-newsbar';
-    strip.innerHTML='<div class="cr-newsbar-t"><b>'+esc(ct('newsTitle'))+'</b>'+(un?'<span class="cr-dot">'+un+'</span>':'')+'</div>'+
-      '<div class="cr-newsbar-l">'+NEWS.slice(0,2).map(n=>'<span><span class="cr-tag t-'+esc(n.type)+'">'+esc(typeLbl(n.type))+'</span> '+esc(L(n,'title'))+'</span>').join('')+'</div>';
-    const b=document.createElement('button'); b.type='button'; b.className='btn btn-ghost btn-sm'; b.textContent=ct('newsAll'); b.onclick=openNews;
-    strip.appendChild(b); host.appendChild(strip);
+    const un=unreadCount(), seen=Store.get('newsSeen','');
+    const sec=document.createElement('section'); sec.className='cr-news'; sec.setAttribute('aria-label',ct('newsTitle'));
+    sec.innerHTML='<div class="cr-news-head"><div class="cr-news-ht"><span class="cr-news-ico">'+ICO.spark+'</span><div><h3>'+esc(ct('newsTitle'))+(un?' <span class="cr-dot">'+un+'</span>':'')+'</h3><p>'+esc(ct('newsSub'))+'</p></div></div><button type="button" class="cr-news-all">'+esc(ct('newsAll'))+' →</button></div><div class="cr-news-grid"></div>';
+    sec.querySelector('.cr-news-all').onclick=()=>openNews();
+    const grid=sec.querySelector('.cr-news-grid');
+    NEWS.slice(0,3).forEach(n=>{
+      const c=document.createElement('button'); c.type='button'; c.className='cr-ncard t-'+n.type+(n.date>seen?' unread':'');
+      const act=n.pack?(ct('newsPractice')+(isPro()?'':' · '+ct('newsProOnly'))):(n.type==='new-exam'&&n.exams&&exById(n.exams[0]))?ct('newsOpenExam'):ct('newsRead');
+      c.innerHTML='<span class="cr-ncard-top"><span class="cr-tag t-'+esc(n.type)+'">'+esc(typeLbl(n.type))+'</span><span class="cr-ncard-date">'+esc(relDate(n.date))+'</span></span>'+
+        '<span class="cr-ncard-title">'+esc(L(n,'title'))+'</span><span class="cr-ncard-body">'+esc(L(n,'body'))+'</span>'+
+        '<span class="cr-ncard-foot"><span class="cr-chips">'+newsChips(n,4)+'</span><span class="cr-ncard-act">'+esc(act)+' →</span></span>';
+      c.onclick=()=>newsAction(n);
+      grid.appendChild(c);
+    });
+    host.appendChild(sec);
   }
 }
 window.careerRenderCatalog=careerRenderCatalog;
@@ -504,14 +533,37 @@ css.textContent=[
 '.cr-step.st-stReady span{color:var(--ok)}.cr-step.st-stProgress span{color:var(--warn)}',
 '.cr-step.next{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}',
 '.cr-step:hover{border-color:var(--accent)}',
-'#careerCatalog{max-width:960px;margin:0 auto}',
+'#careerCatalog{margin:0 auto}',
 '.cr-alert{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-radius:var(--radius-s);padding:10px 14px;margin:0 0 12px;font-size:13.5px;border:1px solid var(--line)}',
 '.cr-alert>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap}',
 '.cr-alert.warn{background:var(--warn-soft);border-color:var(--warn);color:var(--ink)}',
 '.cr-alert.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--ink)}',
-'.cr-newsbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-s);padding:10px 14px;margin:0 0 14px;font-size:13px;box-shadow:var(--shadow)}',
-'.cr-newsbar-t{display:flex;align-items:center;gap:8px}',
-'.cr-newsbar-l{flex:1;min-width:200px;display:flex;flex-direction:column;gap:4px;color:var(--ink-2)}',
+'.cr-news{margin:0 0 22px}',
+'.cr-news-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}',
+'.cr-news-ht{display:flex;align-items:center;gap:12px}',
+'.cr-news-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}',
+'.cr-news-head h3{margin:0;font-size:17px;display:flex;align-items:center;gap:8px}',
+'.cr-news-head p{margin:2px 0 0;font-size:12.5px;color:var(--ink-3)}',
+'.cr-news-all{background:none;border:none;color:var(--accent);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer;padding:6px 2px;white-space:nowrap}',
+'.cr-news-all:hover{text-decoration:underline}',
+'.cr-news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}',
+'.cr-ncard{--nc:var(--accent);position:relative;text-align:left;font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--nc);border-radius:var(--radius-s);padding:14px 16px;display:flex;flex-direction:column;gap:8px;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s,box-shadow .2s,border-color .2s}',
+'.cr-ncard:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(16,24,40,.12);border-color:var(--nc)}',
+'.cr-ncard.t-retirement{--nc:var(--bad)}.cr-ncard.t-pack{--nc:var(--ok)}.cr-ncard.t-syllabus{--nc:var(--warn)}',
+'.cr-ncard.unread:after{content:"";position:absolute;top:12px;right:12px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}',
+'.cr-ncard-top{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}',
+'.cr-ncard-title{font-weight:700;font-size:14.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}',
+'.cr-ncard-body{font-size:13px;color:var(--ink-2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}',
+'.cr-ncard-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px}',
+'.cr-ncard-act{font-size:12.5px;font-weight:600;color:var(--nc);white-space:nowrap}',
+'.cr-chips{display:flex;flex-wrap:wrap;gap:4px}',
+'.cr-chip{font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 6px;border-radius:5px;background:var(--panel-2,var(--bg));border:1px solid var(--line);color:var(--ink-2)}',
+'.cr-chip.more{color:var(--ink-3)}',
+'.cr-unread{font-size:11px;font-weight:700;color:var(--accent)}',
+'.cr-news-item.t-retirement{--nc:var(--bad)}.cr-news-item.t-pack{--nc:var(--ok)}.cr-news-item.t-syllabus{--nc:var(--warn)}',
+'.cr-news-item.focus{background:var(--accent-soft);margin:0 -18px;padding-left:18px;padding-right:18px;border-radius:8px}',
+'@media(max-width:860px){.cr-news-grid{grid-template-columns:1fr 1fr}.cr-news-grid .cr-ncard:nth-child(3){display:none}}',
+'@media(max-width:560px){.cr-news-grid{grid-template-columns:1fr}.cr-news-grid .cr-ncard:nth-child(3){display:flex}.cr-news-head p{display:none}}',
 '.cr-dot{background:var(--accent);color:#fff;border-radius:99px;font-size:11px;font-weight:700;padding:1px 7px}',
 '.cr-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}',
 '.cr-tag.t-retirement{background:var(--bad-soft);color:var(--bad)}.cr-tag.t-pack{background:var(--ok-soft);color:var(--ok)}.cr-tag.t-syllabus{background:var(--warn-soft);color:var(--warn)}',
@@ -520,7 +572,7 @@ css.textContent=[
 '.cr-modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}',
 '.cr-modal-head h3{margin:0;font-size:17px}',
 '.cr-modal-body{overflow:auto;padding:6px 20px 18px}',
-'.cr-news-item{padding:14px 0;border-bottom:1px solid var(--line-2);display:flex;flex-direction:column;gap:6px;align-items:flex-start}',
+'.cr-news-item{--nc:var(--accent);padding:14px 0 14px 14px;border-bottom:1px solid var(--line-2);border-left:3px solid var(--nc);display:flex;flex-direction:column;gap:6px;align-items:flex-start}',
 '.cr-news-item h4{margin:0;font-size:15px}.cr-news-item p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}',
 '.cr-news-meta{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--ink-3);flex-wrap:wrap}'
 ].join('\n');
