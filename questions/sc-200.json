@@ -35,15 +35,15 @@
   "q_en": "A noisy alert keeps triggering for a known-good admin tool. What can you create so the alert no longer appears for that specific scenario?",
   "opts_es": [
    "Una nueva regla de detección personalizada para la misma herramienta",
-   "Una exclusión adicional de acceso condicional",
-   "Una lista de seguimiento de Sentinel que solo contiene el nombre de la herramienta",
-   "Una regla de supresión de alertas (ajuste) limitada a los dispositivos y condiciones afectados"
+   "Una exclusión adicional de acceso condicional para la herramienta",
+   "Una lista de seguimiento de Sentinel solo con el nombre de la herramienta",
+   "Una regla de supresión de alertas acotada a dispositivos y condiciones"
   ],
   "opts_en": [
-   "A new custom detection rule for the same tool",
-   "An extra Conditional Access exclusion",
-   "A Sentinel watchlist containing only the tool's name",
-   "An alert suppression (tuning) rule scoped to the affected devices and conditions"
+   "A new custom detection rule for the same admin tool",
+   "An extra Conditional Access exclusion for the admin tool",
+   "A Sentinel watchlist containing only the name of the tool",
+   "An alert suppression rule scoped to the devices and conditions"
   ],
   "correct": [
    3
@@ -86,16 +86,16 @@
   "q_es": "¿Dónde se habilitan características como la respuesta en vivo, la protección contra alteraciones y EDR en modo de bloqueo para Defender for Endpoint?",
   "q_en": "Where do you enable features such as live response, tamper protection and EDR in block mode for Defender for Endpoint?",
   "opts_es": [
-   "Configuración del centro de administración de Microsoft Teams",
-   "Recomendaciones de Azure Advisor",
-   "Configuración de cumplimiento de dispositivos de Microsoft Intune",
-   "Características avanzadas en la configuración de Endpoints del portal de Defender"
+   "Configuración del centro de Teams para dispositivos",
+   "Recomendaciones de Azure Advisor para máquinas virtuales",
+   "Directivas de configuración de cumplimiento de Intune",
+   "Funciones avanzadas en Configuración de puntos de conexión de Defender"
   ],
   "opts_en": [
-   "Microsoft Teams admin center settings",
-   "Azure Advisor recommendations",
-   "Microsoft Intune device compliance settings",
-   "Advanced features under Endpoints settings in the Defender portal"
+   "Microsoft Teams admin center settings for devices",
+   "Azure Advisor recommendations for virtual machines",
+   "Microsoft Intune device compliance settings policies",
+   "Advanced features under Endpoints settings in Defender"
   ],
   "correct": [
    3
@@ -242,15 +242,15 @@
   "q_es": "Una regla de automatización debe ejecutar un cuaderno de estrategias. ¿Qué permiso necesita Sentinel para ejecutarlo?",
   "q_en": "An automation rule must run a playbook. What permission is required for Sentinel to run it?",
   "opts_es": [
-   "Administrador global para cada analista",
-   "El cuaderno de estrategias se ejecuta sin conceder ningún permiso",
-   "Sentinel debe tener permiso sobre el grupo de recursos que contiene el cuaderno de estrategias",
+   "Derechos de Administrador global para cada analista implicado",
+   "No hace falta permiso; los playbooks siempre se ejecutan igual",
+   "Sentinel necesita permiso en el grupo de recursos del playbook",
    "Una cuenta de invitado agregada al flujo de Logic Apps"
   ],
   "opts_en": [
-   "Global Administrator for every analyst",
-   "The playbook runs without any permission being granted",
-   "Sentinel must be granted permission on the resource group that contains the playbook",
+   "Global Administrator rights for every analyst involved",
+   "No permission is needed; playbooks always run as is",
+   "Sentinel needs permission on the resource group of the playbook",
    "A guest account added to the Logic Apps workflow"
   ],
   "correct": [
@@ -1501,16 +1501,16 @@
   "q_es": "¿Qué acción debes realizar con un usuario que Microsoft Entra ID Protection ha confirmado como comprometido?",
   "q_en": "Which action should you take for a user that Microsoft Entra ID Protection has confirmed as compromised?",
   "opts_es": [
-   "Revocar las sesiones, exigir un restablecimiento de contraseña seguro y revisar la actividad reciente",
-   "Descartar el riesgo porque el usuario superó la MFA una vez",
-   "Deshabilitar el registro de auditoría del usuario",
-   "Agregar al usuario a administradores globales"
+   "Revocar sesiones, forzar un cambio seguro de contraseña y revisar actividad",
+   "Descartar el riesgo porque el usuario pasó la MFA una vez",
+   "Deshabilitar el registro de auditoría de la actividad del usuario",
+   "Agregar al usuario al rol Administrador global"
   ],
   "opts_en": [
-   "Revoke sessions, require a secure password reset and review recent activity",
+   "Revoke sessions, force a secure password reset and review activity",
    "Dismiss the risk because the user passed MFA once",
-   "Disable audit logging for the user",
-   "Add the user to Global Administrators"
+   "Disable audit logging for the user's activity",
+   "Add the user to the Global Administrators role"
   ],
   "correct": [
    0
@@ -2194,16 +2194,16 @@
   "q_es": "¿Qué herramienta puede buscar contenido en buzones y sitios y luego purgar correos maliciosos tras un incidente?",
   "q_en": "Which tool can search content across mailboxes and sites and then purge malicious emails after an incident?",
   "opts_es": [
-   "Seguimiento de mensajes en el centro de administración de Exchange",
-   "La búsqueda de contenido de Microsoft Purview eDiscovery con una acción de purga",
-   "Directivas de archivos de Defender for Cloud Apps",
-   "Entrega dinámica de Safe Attachments"
+   "Seguimiento de mensajes en el portal del centro de Exchange",
+   "Búsqueda de contenido en Purview con acción de purga",
+   "Directivas de archivos de Defender for Cloud Apps para sitios",
+   "Entrega dinámica de Datos adjuntos seguros para mensajes nuevos"
   ],
   "opts_en": [
-   "Message trace in the Exchange admin center",
-   "Content search in Microsoft Purview eDiscovery with a purge action",
-   "Defender for Cloud Apps file policies",
-   "Safe Attachments dynamic delivery"
+   "Message trace in the Exchange admin center portal",
+   "Content search in Purview with a purge action",
+   "Defender for Cloud Apps file policies for sites",
+   "Safe Attachments dynamic delivery for new messages"
   ],
   "correct": [
    1
@@ -2885,16 +2885,16 @@
   "q_es": "¿Qué habilita el servidor MCP de Microsoft Sentinel?",
   "q_en": "What does the Microsoft Sentinel MCP server enable?",
   "opts_es": [
-   "Replicación de los datos de Sentinel en otra región",
-   "Que los asistentes y agentes de IA consulten y razonen sobre los datos de Sentinel de forma segura",
-   "Actualizaciones automáticas de Windows para los servidores supervisados",
-   "Resolución DNS dentro del área de trabajo"
+   "Replicación de datos de Sentinel a otra región de Azure",
+   "Asistentes y agentes de IA consultan datos de Sentinel de forma segura",
+   "Actualizaciones automáticas de Windows de los servidores",
+   "Resolución DNS de nombres dentro del área de trabajo"
   ],
   "opts_en": [
-   "Replication of Sentinel data to another region",
-   "AI assistants and agents to securely query and reason over Sentinel data",
-   "Automatic Windows updates for monitored servers",
-   "DNS resolution inside the workspace"
+   "Replication of Sentinel data to another Azure region",
+   "AI assistants and agents can securely query Sentinel data",
+   "Automatic Windows updates for the monitored servers",
+   "DNS resolution for names inside the workspace"
   ],
   "correct": [
    1
@@ -3943,16 +3943,16 @@
   "q_es": "¿Qué significa que la opción «Investigación automatizada» de Defender for Endpoint esté deshabilitada para un grupo de dispositivos?",
   "q_en": "What does the Defender for Endpoint 'Automated investigation' setting being disabled mean for a device group?",
   "opts_es": [
-   "Se bloquea la entrega de correo en los dispositivos",
-   "Los dispositivos se dan de baja de Defender for Endpoint",
-   "Las alertas no desencadenarán investigaciones y correcciones automatizadas en esos dispositivos",
-   "Se eliminan todos los datos recopilados del dispositivo"
+   "Se bloquea la entrega de correo para esos dispositivos",
+   "Los dispositivos se retiran de Defender for Endpoint",
+   "Las alertas no activarán investigación ni corrección automáticas",
+   "Se elimina toda la telemetría recopilada de los dispositivos"
   ],
   "opts_en": [
-   "Email delivery is blocked for the devices",
+   "Email delivery is blocked for the same devices",
    "The devices are offboarded from Defender for Endpoint",
-   "Alerts will not trigger automated investigations and remediation for those devices",
-   "All collected device data is deleted"
+   "Alerts won't trigger automated investigation or remediation",
+   "All the telemetry collected from the devices is deleted"
   ],
   "correct": [
    2
@@ -5540,16 +5540,16 @@
   "q_es": "¿Qué alerta de Defender for Identity indica que un atacante solicita vales de servicio de cuentas con SPN para descifrar contraseñas sin conexión?",
   "q_en": "Which Defender for Identity alert indicates an attacker requesting service tickets for accounts with SPNs to crack passwords offline?",
   "opts_es": [
-   "Sospecha de ataque DCSync",
-   "Sospecha de ataque pass-the-hash",
-   "Kerberoasting (sospecha de exposición de SPN de Kerberos)",
-   "Actividad de cuenta honeytoken"
+   "Sospecha de ataque DCSync contra un controlador de dominio",
+   "Sospecha de ataque pass-the-hash desde una estación",
+   "Kerberoasting (sospecha de exposición de SPN)",
+   "Actividad de cuenta honeytoken desde un host interno"
   ],
   "opts_en": [
-   "Suspected DCSync attack",
-   "Suspected pass-the-hash attack",
-   "Kerberoasting (suspected Kerberos SPN exposure)",
-   "Honeytoken account activity"
+   "Suspected DCSync attack against a domain controller",
+   "Suspected pass-the-hash attack from a workstation",
+   "Kerberoasting (suspected SPN exposure)",
+   "Honeytoken account activity from an internal host"
   ],
   "correct": [
    2
@@ -5696,16 +5696,16 @@
   "q_es": "¿Qué puede usar un analista en un incidente de Sentinel para registrar las evidencias encontradas mediante la búsqueda, como un evento interesante?",
   "q_en": "What can an analyst use in a Sentinel incident to record evidence found through hunting, such as an interesting event?",
   "opts_es": [
-   "Marcadores agregados al incidente",
-   "Un registro DNS",
-   "Una asignación de licencia",
-   "Una directiva de grupo"
+   "Marcadores que se agregan al incidente",
+   "Un registro DNS creado para el host afectado",
+   "Una asignación de licencia para el analista",
+   "Una directiva de grupo aplicada a los dispositivos afectados"
   ],
   "opts_en": [
-   "Bookmarks added to the incident",
-   "A DNS record",
-   "A license assignment",
-   "A group policy"
+   "Bookmarks that are added to the incident",
+   "A DNS record created for the affected host",
+   "A license assignment for the investigating analyst",
+   "A group policy applied to the affected devices"
   ],
   "correct": [
    0
@@ -5997,16 +5997,16 @@
   "q_es": "¿Qué página de Defender for Endpoint muestra el árbol de procesos y la historia de la alerta de una alerta en un dispositivo?",
   "q_en": "Which Defender for Endpoint page shows the process tree and alert story for an alert on a device?",
   "opts_es": [
-   "La página de la alerta / historia de la alerta",
-   "La página de licencias",
-   "El informe de facturación",
-   "La página de dominio"
+   "La página de la alerta y su historia",
+   "La página de licencias de los planes de Defender for Endpoint",
+   "El informe de facturación de la suscripción de Azure",
+   "La página de dominios del inquilino de la organización"
   ],
   "opts_en": [
-   "The alert page / alert story",
-   "The license page",
-   "The billing report",
-   "The domain page"
+   "The alert page and its alert story",
+   "The license page for Defender for Endpoint plans",
+   "The billing report of the Azure subscription",
+   "The domain page of the organization's tenant"
   ],
   "correct": [
    0
@@ -6254,16 +6254,16 @@
   "q_es": "¿Qué permiso se requiere en Purview para ejecutar una acción de purga desde la búsqueda de contenido?",
   "q_en": "Which permission is required in Purview to run a purge action from Content search?",
   "opts_es": [
-   "Solo el rol Mailbox Import Export",
-   "Un rol que incluya el permiso Buscar y purgar",
-   "El rol eDiscovery Reviewer",
-   "El rol Message Center Reader"
+   "Solo el rol Mailbox Import Export de Exchange",
+   "Un rol que incluya el permiso Search And Purge",
+   "El rol Revisor de eDiscovery del portal de Purview",
+   "El rol Lector del Centro de mensajes del centro de administración"
   ],
   "opts_en": [
-   "Only the Mailbox Import Export role",
-   "A role that includes the Search And Purge permission",
-   "The eDiscovery Reviewer role",
-   "The Message Center Reader role"
+   "Only the Mailbox Import Export role in Exchange",
+   "A role that includes Search And Purge permission",
+   "The eDiscovery Reviewer role in the Purview portal",
+   "The Message Center Reader role in the admin center"
   ],
   "correct": [
    1
@@ -7285,16 +7285,16 @@
   "q_es": "¿Qué característica de Defender XDR reconstruye la cadena de eventos entre correo, endpoint e identidad en un ataque de varias fases?",
   "q_en": "Which Defender XDR feature reconstructs the chain of events across email, endpoint and identity for a multi-stage attack?",
   "opts_es": [
-   "El panel de facturación",
-   "La página de licencias",
-   "El registrador de dominios",
-   "La historia / gráfico del ataque del incidente"
+   "El panel de facturación de la suscripción",
+   "La página de licencias del centro de administración",
+   "La página de DNS del registrador de dominios",
+   "La historia del ataque y el grafo del incidente"
   ],
   "opts_en": [
-   "The billing dashboard",
-   "The license page",
-   "The domain registrar",
-   "The incident attack story / graph"
+   "The billing dashboard of the subscription",
+   "The license page of the admin center",
+   "The domain registrar's DNS settings page",
+   "The incident attack story and graph"
   ],
   "correct": [
    3
@@ -9061,16 +9061,16 @@
   "q_es": "¿De qué tabla y filtro debe partir la consulta?",
   "q_en": "Which table and filter should the query start from?",
   "opts_es": [
-   "AlertInfo | where Severity == \"Informational\"",
-   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\"",
-   "DeviceProcessEvents | where FileName =~ \"certutil.exe\" and ProcessCommandLine has \"urlcache\"",
-   "EmailEvents | where DeliveryAction == \"Delivered\""
+   "AlertInfo | where Severity == \"Informational\" and Title has \"certutil\"",
+   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\" and IPv4Dhcp != \"\"",
+   "DeviceProcessEvents | where FileName =~ \"certutil.exe\"",
+   "EmailEvents | where DeliveryAction == \"Delivered\" and Subject has \"certutil\""
   ],
   "opts_en": [
-   "AlertInfo | where Severity == \"Informational\"",
-   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\"",
-   "DeviceProcessEvents | where FileName =~ \"certutil.exe\" and ProcessCommandLine has \"urlcache\"",
-   "EmailEvents | where DeliveryAction == \"Delivered\""
+   "AlertInfo | where Severity == \"Informational\" and Title has \"certutil\"",
+   "DeviceNetworkInfo | where NetworkAdapterType == \"Ethernet\" and IPv4Dhcp != \"\"",
+   "DeviceProcessEvents | where FileName =~ \"certutil.exe\"",
+   "EmailEvents | where DeliveryAction == \"Delivered\" and Subject has \"certutil\""
   ],
   "correct": [
    2
@@ -9287,5 +9287,1023 @@
   ],
   "exp_es": "Las DCR definen destinos y transformaciones; deben asociarse a las máquinas.",
   "exp_en": "DCRs define destinations and transformations; they must be associated with the machines."
+ },
+ {
+  "id": 314,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué función de Sentinel guarda una lista de usuarios VIP para enriquecer reglas de análisis y reducir falsos positivos?",
+  "q_en": "Which Sentinel feature stores a list of VIP user names to enrich analytics rules and reduce false positives?",
+  "opts_es": [
+   "Libros",
+   "Conectores de datos",
+   "Listas de seguimiento",
+   "Plantillas de playbook"
+  ],
+  "opts_en": [
+   "Workbooks",
+   "Data connectors",
+   "Watchlists",
+   "Playbook templates"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las listas de seguimiento importan datos de referencia (CSV) y se consultan en KQL con _GetWatchlist().",
+  "exp_en": "Watchlists import reference data (CSV) and are queried in KQL with _GetWatchlist()."
+ },
+ {
+  "id": 315,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cómo reduce el coste de ingesta de Sentinel de registros de gran volumen y poco valor que consulta rara vez?",
+  "q_en": "How do you reduce Sentinel ingestion cost for high-volume, low-value logs that you rarely query?",
+  "opts_es": [
+   "Aumentar la retención de todo el área",
+   "Enviarlos al plan de registros Básico o Auxiliar",
+   "Deshabilitar todas las reglas de análisis de la tabla",
+   "Duplicarlos en un segundo área"
+  ],
+  "opts_en": [
+   "Raise the retention of the whole workspace",
+   "Send them to the Basic or Auxiliary logs plan",
+   "Disable all analytics rules for the table",
+   "Duplicate them into a second workspace"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los planes Básico y Auxiliar cuestan menos de ingerir con consultas limitadas, adecuados para registros detallados.",
+  "exp_en": "Basic and Auxiliary plans cost less to ingest with limited query capabilities, suited to verbose logs."
+ },
+ {
+  "id": 317,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito del centro de contenido de Microsoft Sentinel?",
+  "q_en": "What is the purpose of the Microsoft Sentinel content hub?",
+  "opts_es": [
+   "Guardar registros sin procesar siete años a bajo coste",
+   "Instalar soluciones empaquetadas con reglas y playbooks",
+   "Administrar asignaciones de roles RBAC de los analistas",
+   "Sustituir el portal de Defender para todos los analistas"
+  ],
+  "opts_en": [
+   "Store raw logs for seven years at low cost",
+   "Install packaged solutions with rules and playbooks",
+   "Manage Azure RBAC role assignments for analysts",
+   "Replace the Defender portal for all analysts"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El centro de contenido ofrece soluciones listas y de la comunidad que se instalan y luego se configuran.",
+  "exp_en": "The content hub offers out-of-the-box and community solutions that you install and then configure."
+ },
+ {
+  "id": 318,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué función de Sentinel ayuda a aplicar RBAC por tabla para que un equipo solo vea ciertos registros?",
+  "q_en": "Which Sentinel feature helps you apply the same table-level RBAC so one team only sees specific logs?",
+  "opts_es": [
+   "RBAC por tabla en el área de trabajo",
+   "Marcadores de búsqueda compartidos con el otro equipo",
+   "Etiquetas de incidente asignadas a cada grupo de analistas",
+   "Gravedad de reglas de análisis por equipo"
+  ],
+  "opts_en": [
+   "Table-level RBAC on the workspace",
+   "Hunting bookmarks shared with the other team",
+   "Incident tags assigned to each analyst group",
+   "Analytics rule severity set per team"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El RBAC por tabla y por contexto de recurso limita el acceso a datos concretos.",
+  "exp_en": "Table-level RBAC and resource-context RBAC limit access to specific data."
+ },
+ {
+  "id": 319,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Dónde se configura que los incidentes de Defender XDR se sincronicen con Microsoft Sentinel?",
+  "q_en": "Where do you configure that Defender XDR incidents are synchronized with Microsoft Sentinel?",
+  "opts_es": [
+   "Un libro con un icono de incidentes",
+   "Una lista de seguimiento que replica nombres de alertas",
+   "El conector de datos de Microsoft Defender XDR con sincronización de incidentes",
+   "Una Logic App que consulta Graph cada hora"
+  ],
+  "opts_en": [
+   "A workbook with an incidents tile",
+   "A watchlist that mirrors alert names",
+   "The Microsoft Defender XDR data connector with incident sync",
+   "A Logic App that polls the Graph API every hour"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El conector sincroniza incidentes y alertas en ambas direcciones y los cambios de estado fluyen en los dos sentidos.",
+  "exp_en": "The connector syncs incidents and alerts bi-directionally, so status changes flow both ways."
+ },
+ {
+  "id": 320,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué solución de Purview ayuda a identificar qué mensajes leyó un atacante tras comprometer un buzón?",
+  "q_en": "Which Purview solution helps you identify which messages an attacker read after compromising a mailbox?",
+  "opts_es": [
+   "Directivas de Communication Compliance",
+   "Directivas de retención de Exchange",
+   "Análisis de etiquetas de confidencialidad",
+   "Eventos MailItemsAccessed de Audit (Premium)"
+  ],
+  "opts_en": [
+   "Communication Compliance policies",
+   "Retention policies for Exchange",
+   "Sensitivity label analytics",
+   "Audit (Premium) MailItemsAccessed events"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "MailItemsAccessed registra el acceso al correo por sesión y ayuda a delimitar qué se expuso.",
+  "exp_en": "MailItemsAccessed records mail access by sessions, helping scope what was exposed."
+ },
+ {
+  "id": 321,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función permite buscar, retener y exportar contenido de buzones y Teams para una investigación?",
+  "q_en": "Which feature lets you search, hold and export content from mailboxes and Teams for an investigation?",
+  "opts_es": [
+   "Informes de prevención de pérdida de datos",
+   "eDiscovery en Microsoft Purview",
+   "Entrenamiento de simulación de ataques",
+   "Endpoint analytics"
+  ],
+  "opts_en": [
+   "Data Loss Prevention reports",
+   "eDiscovery in Microsoft Purview",
+   "Attack simulation training",
+   "Endpoint analytics"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los casos de eDiscovery admiten búsquedas, retenciones y exportaciones de contenido de las cargas de Microsoft 365.",
+  "exp_en": "eDiscovery cases support searches, holds and exports of content across Microsoft 365 workloads."
+ },
+ {
+  "id": 322,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de Defender for Cloud Apps permite detectar descargas masivas o viaje imposible de usuarios?",
+  "q_en": "Which Defender for Cloud Apps feature lets you detect mass downloads or impossible travel by users?",
+  "opts_es": [
+   "Instantánea de Cloud Discovery",
+   "Secure Score de dispositivos",
+   "Iniciativas de administración de exposición",
+   "Directivas de detección de anomalías"
+  ],
+  "opts_en": [
+   "Cloud discovery snapshot",
+   "Secure Score for devices",
+   "Exposure management initiatives",
+   "Anomaly detection policies"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las directivas integradas de detección de anomalías generan alertas por actividad como descarga masiva y viaje imposible.",
+  "exp_en": "Built-in anomaly detection policies raise alerts for activity such as mass download and impossible travel."
+ },
+ {
+  "id": 323,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué sensor de Defender for Identity detecta rutas de movimiento lateral en Active Directory local?",
+  "q_en": "Which Defender for Identity sensor detects lateral movement paths in on-premises Active Directory?",
+  "opts_es": [
+   "El agente de Azure Arc en servidores de archivos",
+   "El cliente de Teams",
+   "La extensión de administración de Intune",
+   "El sensor instalado en controladores de dominio"
+  ],
+  "opts_en": [
+   "The Azure Arc agent on file servers",
+   "The Teams client",
+   "The Intune Management Extension",
+   "The sensor installed on domain controllers"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Defender for Identity supervisa el tráfico de los controladores de dominio y genera alertas, incluidas rutas de movimiento lateral.",
+  "exp_en": "Defender for Identity monitors domain controller traffic and raises alerts, including lateral movement paths."
+ },
+ {
+  "id": 324,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué función de Defender for Endpoint investiga alertas y corrige amenazas automáticamente?",
+  "q_en": "Which Defender for Endpoint feature automatically investigates alerts and remediates threats?",
+  "opts_es": [
+   "Filtrado de contenido web por categoría para dispositivos",
+   "La puntuación de exposición de la página del dispositivo",
+   "Investigación y respuesta automatizadas (AIR)",
+   "Grupos de dispositivos con RBAC asignado a analistas"
+  ],
+  "opts_en": [
+   "Web content filtering by category for devices",
+   "The exposure score shown on the device page",
+   "Automated investigation and response (AIR)",
+   "Device groups with RBAC assigned to analysts"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "AIR examina artefactos y puede corregir automáticamente según el nivel de automatización del grupo de dispositivos.",
+  "exp_en": "AIR examines artifacts and can remediate automatically depending on the device group's automation level."
+ },
+ {
+  "id": 325,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué acción recopila un paquete de investigación de un dispositivo?",
+  "q_en": "Which action collects an investigation package from a device?",
+  "opts_es": [
+   "Restringir la ejecución de aplicaciones en el dispositivo",
+   "Retirar el dispositivo del servicio",
+   "Recopilar paquete de investigación en la página del dispositivo",
+   "Ejecutar un examen antivirus completo del dispositivo"
+  ],
+  "opts_en": [
+   "Restrict app execution on the device",
+   "Offboard the device from the service",
+   "Collect investigation package on the device page",
+   "Run a full antivirus scan on the device"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El paquete contiene datos forenses como procesos, conexiones y ejecuciones automáticas para análisis.",
+  "exp_en": "The package contains forensic data such as processes, connections and autoruns for analysis."
+ },
+ {
+  "id": 326,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué función bloquea un hash de archivo en todos los dispositivos tras confirmar que es malicioso?",
+  "q_en": "Which feature blocks a file hash across all devices after confirming it is malicious?",
+  "opts_es": [
+   "Una categoría de filtrado web para descargas de riesgo",
+   "Un indicador de archivo personalizado en Bloquear y corregir",
+   "Una etiqueta de dispositivo aplicada a cada equipo afectado",
+   "Una regla de supresión acotada al valor del hash"
+  ],
+  "opts_en": [
+   "A web content filter category for risky downloads",
+   "A custom file indicator set to Block and remediate",
+   "A device tag applied to every affected computer",
+   "A suppression rule scoped to the file's hash value"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los indicadores de compromiso (hashes, IP, URL, certificados) pueden permitir, alertar o bloquear y corregir.",
+  "exp_en": "Indicators of compromise (file hashes, IPs, URLs, certificates) can allow, alert or block and remediate."
+ },
+ {
+  "id": 327,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué requiere 'Live response' en el dispositivo de destino?",
+  "q_en": "What does 'Live response' require on the target device?",
+  "opts_es": [
+   "Incorporación a Defender for Endpoint y live response activado",
+   "Inscripción en Intune con BitLocker activado en el dispositivo",
+   "Una contraseña de administrador local compartida con el SOC",
+   "Un puerto RDP abierto accesible desde la red del SOC"
+  ],
+  "opts_en": [
+   "Onboarding to Defender for Endpoint and live response on",
+   "Intune enrollment with BitLocker turned on at the device",
+   "A local administrator password shared with the SOC team",
+   "An open RDP port reachable from the SOC network"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Live response debe activarse en las funciones avanzadas y el usuario necesita el rol adecuado.",
+  "exp_en": "Live response must be turned on in advanced features and the user needs the proper role."
+ },
+ {
+  "id": 328,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué operador KQL une alertas de incidentes con los dispositivos implicados?",
+  "q_en": "Which KQL operator joins incident alerts to the devices involved?",
+  "opts_es": [
+   "render",
+   "mv-expand",
+   "join",
+   "parse"
+  ],
+  "opts_en": [
+   "render",
+   "mv-expand",
+   "join",
+   "parse"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "join correlaciona tablas como AlertEvidence y DeviceInfo por claves compartidas.",
+  "exp_en": "join correlates tables such as AlertEvidence and DeviceInfo on shared keys."
+ },
+ {
+  "id": 329,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué operador KQL divide una columna de matriz dinámica en una fila por elemento?",
+  "q_en": "Which KQL operator splits a dynamic array column into one row per element?",
+  "opts_es": [
+   "top",
+   "mv-expand",
+   "distinct",
+   "summarize"
+  ],
+  "opts_en": [
+   "top",
+   "mv-expand",
+   "distinct",
+   "summarize"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "mv-expand expande matrices o conjuntos de propiedades en filas independientes.",
+  "exp_en": "mv-expand expands multivalue arrays or property bags into separate rows."
+ },
+ {
+  "id": 330,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué función KQL convierte una columna en un intervalo de tiempo para agregar por horas?",
+  "q_en": "Which KQL function converts a column to a time bucket for hourly aggregation?",
+  "opts_es": [
+   "datetime()",
+   "bin()",
+   "now()",
+   "ago()"
+  ],
+  "opts_en": [
+   "datetime()",
+   "bin()",
+   "now()",
+   "ago()"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "summarize count() by bin(Timestamp, 1h) agrupa eventos por hora.",
+  "exp_en": "summarize count() by bin(Timestamp, 1h) groups events per hour."
+ },
+ {
+  "id": 331,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué función permite buscar en datos a largo plazo del data lake de Sentinel con cuadernos Jupyter?",
+  "q_en": "Which feature lets you hunt through long-term data in the Sentinel data lake with Jupyter notebooks?",
+  "opts_es": [
+   "Reglas de Fusion que se ejecutan en las tablas del data lake",
+   "Cuadernos en el data lake de Sentinel",
+   "Libros exportados a hojas de cálculo de Excel",
+   "Alias de listas de seguimiento consultados cada minuto"
+  ],
+  "opts_en": [
+   "Fusion rules that run on the data lake tables",
+   "Notebooks on the Sentinel data lake",
+   "Workbooks exported to Excel spreadsheets",
+   "Watchlist aliases queried every minute"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los cuadernos ejecutan análisis Python/KQL sobre tablas del data lake para búsquedas profundas y ML.",
+  "exp_en": "Notebooks run Python/KQL analytics over data lake tables for deeper hunting and ML."
+ },
+ {
+  "id": 332,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Cómo puede compartir una consulta de búsqueda eficaz para que sus compañeros la reutilicen?",
+  "q_en": "How can you share a successful hunting query so teammates can reuse it?",
+  "opts_es": [
+   "Enviar los resultados por correo en CSV",
+   "Imprimirla para la wiki del SOC",
+   "Anclarla a favoritos del navegador",
+   "Guardarla como consulta o función compartida"
+  ],
+  "opts_en": [
+   "Email the results as CSV",
+   "Print it for the SOC wiki",
+   "Pin it to your browser favorites",
+   "Save it as a shared query or function"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las consultas compartidas (y las funciones) están disponibles para otros analistas en el portal.",
+  "exp_en": "Shared queries (and functions) are available to other analysts in the portal."
+ },
+ {
+  "id": 333,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "mc",
+  "q_es": "¿Qué tipo de regla de análisis de Sentinel correlaciona varias señales de baja fidelidad en un incidente de alta confianza con aprendizaje automático?",
+  "q_en": "Which Sentinel analytics rule type correlates multiple low-fidelity signals into one high-confidence incident by using machine learning?",
+  "opts_es": [
+   "NRT",
+   "Fusion",
+   "De seguridad de Microsoft (creación de incidentes)",
+   "Programada"
+  ],
+  "opts_en": [
+   "NRT",
+   "Fusion",
+   "Microsoft security (incident creation)",
+   "Scheduled"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Fusion detecta ataques de varias fases combinando señales de varios productos.",
+  "exp_en": "Fusion detects multistage attacks by combining signals from multiple products."
+ },
+ {
+  "id": 334,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "mc",
+  "q_es": "¿Cómo evita que una regla programada cree un incidente por cada alerta del mismo usuario?",
+  "q_en": "How can you stop a scheduled analytics rule from creating a new incident for every alert from the same user?",
+  "opts_es": [
+   "Subir la gravedad de la regla a Alta",
+   "Eliminar la asignación de entidades",
+   "Configurar la agrupación de alertas por entidad",
+   "Deshabilitar incidentes y usar correo"
+  ],
+  "opts_en": [
+   "Raise the rule severity to High",
+   "Delete the entity mapping",
+   "Configure alert grouping by entity",
+   "Disable incident creation and use email"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La agrupación combina alertas relacionadas en un incidente según entidades coincidentes.",
+  "exp_en": "Alert grouping combines related alerts into one incident based on matching entities."
+ },
+ {
+  "id": 335,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué función de Defender XDR reduce el ruido de alertas fusionándolas automáticamente en incidentes?",
+  "q_en": "Which Defender XDR feature reduces alert noise by automatically merging alerts into incidents?",
+  "opts_es": [
+   "Análisis de amenazas",
+   "Detección de dispositivos",
+   "Reglas de reducción de superficie de ataque",
+   "Correlación de incidentes"
+  ],
+  "opts_en": [
+   "Threat analytics",
+   "Device discovery",
+   "Attack surface reduction rules",
+   "Incident correlation"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La correlación agrupa alertas relacionadas de los productos de Defender para dar la historia completa del ataque.",
+  "exp_en": "Correlation groups related alerts across Defender products to give analysts the full attack story."
+ },
+ {
+  "id": 336,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Dónde lee el análisis de Microsoft de una campaña nueva, con mitigaciones y dispositivos afectados?",
+  "q_en": "Where do you read Microsoft's analysis of a new campaign, including mitigations and affected devices?",
+  "opts_es": [
+   "Análisis de amenazas en el portal de Defender",
+   "Registros de auditoría de Entra de la aplicación",
+   "Informes del centro de Teams sobre la calidad de llamadas",
+   "Informes de cumplimiento de Intune por plataforma"
+  ],
+  "opts_en": [
+   "Threat analytics in the Defender portal",
+   "Entra audit logs for the application",
+   "Teams admin center reports on call quality",
+   "Intune device compliance reports per platform"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Threat analytics ofrece informes sobre amenazas emergentes con exposición, impacto y acciones recomendadas.",
+  "exp_en": "Threat analytics provides reports on emerging threats with exposure, impact and recommended actions."
+ },
+ {
+  "id": 337,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué rol del RBAC unificado de Defender XDR concede acceso de solo lectura a datos de seguridad?",
+  "q_en": "Which role in Defender XDR unified RBAC grants view-only access to security data?",
+  "opts_es": [
+   "Operador de seguridad",
+   "Administrador global",
+   "Administrador de seguridad",
+   "Lector de seguridad"
+  ],
+  "opts_en": [
+   "Security Operator",
+   "Global Administrator",
+   "Security Administrator",
+   "Security Reader"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Lector de seguridad es solo lectura; Operador de seguridad puede administrar incidentes y alertas.",
+  "exp_en": "Security Reader is read-only; Security Operator can manage incidents and alerts."
+ },
+ {
+  "id": 338,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las acciones de respuesta de Defender for Endpoint, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Defender for Endpoint response actions, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Aislar un dispositivo mantiene su conexión con el servicio Defender.",
+    "en": "Isolating a device keeps its connection to the Defender service.",
+    "ans": true
+   },
+   {
+    "es": "Restringir la ejecución de apps permite ejecutar solo procesos firmados por Microsoft.",
+    "en": "Restricting app execution allows only Microsoft-signed processes to run.",
+    "ans": true
+   },
+   {
+    "es": "Live response solo puede usarse en Windows Server 2008.",
+    "en": "Live response can only be used on Windows Server 2008.",
+    "ans": false
+   },
+   {
+    "es": "Poner un archivo en cuarentena lo quita de su ubicación original.",
+    "en": "Quarantining a file removes it from its original location.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Live response admite dispositivos modernos de Windows, Linux y macOS.",
+  "exp_en": "Live response supports modern Windows, Linux and macOS devices."
+ },
+ {
+  "id": 339,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las reglas de análisis de Sentinel, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Sentinel analytics rules, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las reglas programadas ejecutan una consulta KQL a intervalos definidos.",
+    "en": "Scheduled rules run a KQL query at defined intervals.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas NRT se ejecutan aproximadamente una vez por minuto.",
+    "en": "NRT rules run about once per minute.",
+    "ans": true
+   },
+   {
+    "es": "La asignación de entidades es opcional y no afecta a las investigaciones.",
+    "en": "Entity mapping is optional and has no effect on investigations.",
+    "ans": false
+   },
+   {
+    "es": "Las plantillas de reglas pueden crearse desde el centro de contenido.",
+    "en": "Rule templates can be created from the content hub.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La asignación de entidades alimenta el grafo de investigación y la agrupación de alertas.",
+  "exp_en": "Entity mapping powers the investigation graph and alert grouping."
+ },
+ {
+  "id": 340,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las tablas de búsqueda avanzada, indica si es verdadera o falsa.",
+  "q_en": "For each statement about advanced hunting tables, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "DeviceProcessEvents registra la creación de procesos en dispositivos incorporados.",
+    "en": "DeviceProcessEvents records process creation on onboarded devices.",
+    "ans": true
+   },
+   {
+    "es": "EmailEvents incluye la acción de entrega y los tipos de amenaza de mensajes.",
+    "en": "EmailEvents includes delivery action and threat types for messages.",
+    "ans": true
+   },
+   {
+    "es": "IdentityLogonEvents guarda solo registros del kernel de Linux.",
+    "en": "IdentityLogonEvents stores only Linux kernel logs.",
+    "ans": false
+   },
+   {
+    "es": "AlertEvidence vincula alertas con entidades como usuarios y dispositivos.",
+    "en": "AlertEvidence links alerts to entities such as users and devices.",
+    "ans": true
+   }
+  ],
+  "exp_es": "IdentityLogonEvents registra eventos de autenticación de Entra y AD local.",
+  "exp_en": "IdentityLogonEvents records authentication events from Entra and on-premises AD."
+ },
+ {
+  "id": 341,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la acción de Defender for Endpoint para cada necesidad.",
+  "q_en": "Select the Defender for Endpoint action for each need.",
+  "rows": [
+   {
+    "es": "Cortar la red de un dispositivo manteniéndolo administrable",
+    "en": "Cut a device off from the network but keep it manageable",
+    "opts_es": [
+     "Restringir la ejecución de apps",
+     "Recopilar paquete de investigación",
+     "Ejecutar examen antivirus",
+     "Aislar dispositivo"
+    ],
+    "opts_en": [
+     "Restrict app execution",
+     "Collect investigation package",
+     "Run antivirus scan",
+     "Isolate device"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Reunir datos forenses para analizar",
+    "en": "Gather forensic data for analysis",
+    "opts_es": [
+     "Restringir la ejecución de apps",
+     "Recopilar paquete de investigación",
+     "Ejecutar examen antivirus",
+     "Aislar dispositivo"
+    ],
+    "opts_en": [
+     "Restrict app execution",
+     "Collect investigation package",
+     "Run antivirus scan",
+     "Isolate device"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Comprobar un dispositivo en busca de malware conocido",
+    "en": "Check a device for known malware",
+    "opts_es": [
+     "Restringir la ejecución de apps",
+     "Recopilar paquete de investigación",
+     "Ejecutar examen antivirus",
+     "Aislar dispositivo"
+    ],
+    "opts_en": [
+     "Restrict app execution",
+     "Collect investigation package",
+     "Run antivirus scan",
+     "Isolate device"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Permitir solo apps firmadas por Microsoft",
+    "en": "Allow only Microsoft-signed apps to run",
+    "opts_es": [
+     "Restringir la ejecución de apps",
+     "Recopilar paquete de investigación",
+     "Ejecutar examen antivirus",
+     "Aislar dispositivo"
+    ],
+    "opts_en": [
+     "Restrict app execution",
+     "Collect investigation package",
+     "Run antivirus scan",
+     "Isolate device"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Cada acción de respuesta sirve a un fin distinto de contención o investigación.",
+  "exp_en": "Each response action serves a different containment or investigation purpose."
+ },
+ {
+  "id": 342,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "dropdown",
+  "q_es": "Seleccione el componente de recopilación de datos de Sentinel para cada necesidad.",
+  "q_en": "Select the Sentinel data collection component for each need.",
+  "rows": [
+   {
+    "es": "Recopilar registros de una máquina virtual",
+    "en": "Collect logs from a virtual machine",
+    "opts_es": [
+     "Área de Log Analytics",
+     "Regla de recopilación de datos",
+     "Conector de datos",
+     "Azure Monitor Agent"
+    ],
+    "opts_en": [
+     "Log Analytics workspace",
+     "Data collection rule",
+     "Data connector",
+     "Azure Monitor Agent"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Definir qué eventos recopilar y el destino",
+    "en": "Define which events to collect and the destination",
+    "opts_es": [
+     "Área de Log Analytics",
+     "Regla de recopilación de datos",
+     "Conector de datos",
+     "Azure Monitor Agent"
+    ],
+    "opts_en": [
+     "Log Analytics workspace",
+     "Data collection rule",
+     "Data connector",
+     "Azure Monitor Agent"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Habilitar la ingesta de un producto como Defender XDR",
+    "en": "Enable ingestion from a product such as Defender XDR",
+    "opts_es": [
+     "Área de Log Analytics",
+     "Regla de recopilación de datos",
+     "Conector de datos",
+     "Azure Monitor Agent"
+    ],
+    "opts_en": [
+     "Log Analytics workspace",
+     "Data collection rule",
+     "Data connector",
+     "Azure Monitor Agent"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Almacenar y consultar los datos ingeridos",
+    "en": "Store and query the ingested data",
+    "opts_es": [
+     "Área de Log Analytics",
+     "Regla de recopilación de datos",
+     "Conector de datos",
+     "Azure Monitor Agent"
+    ],
+    "opts_en": [
+     "Log Analytics workspace",
+     "Data collection rule",
+     "Data connector",
+     "Azure Monitor Agent"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "El agente recopila, la DCR configura, el conector habilita la ingesta y el área guarda los datos.",
+  "exp_en": "The agent collects, the DCR configures, the connector enables ingestion and the workspace stores data."
+ },
+ {
+  "id": 343,
+  "exam": "sc-200",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Seleccione la tabla que guarda cada tipo de datos.",
+  "q_en": "Select the table that stores each type of data.",
+  "rows": [
+   {
+    "es": "Conexiones salientes de puntos de conexión",
+    "en": "Outbound connections from endpoints",
+    "opts_es": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "opts_en": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Creación y modificación de archivos en dispositivos",
+    "en": "File creation and modification on devices",
+    "opts_es": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "opts_en": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Mensajes entregados a buzones",
+    "en": "Messages delivered to mailboxes",
+    "opts_es": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "opts_en": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Actividades en apps en la nube como SharePoint",
+    "en": "Activities in cloud apps like SharePoint",
+    "opts_es": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "opts_en": [
+     "EmailEvents",
+     "CloudAppEvents",
+     "DeviceNetworkEvents",
+     "DeviceFileEvents"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las tablas de búsqueda avanzada corresponden a orígenes de telemetría.",
+  "exp_en": "Advanced hunting tables map to telemetry sources."
+ },
+ {
+  "id": 344,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para enriquecer reglas de análisis con una lista de nombres de directivos, cree ",
+  "pre_en": "To enrich analytics rules with a list of executive user names, create ",
+  "post_es": " en Microsoft Sentinel.",
+  "post_en": " in Microsoft Sentinel.",
+  "opts_es": [
+   "un tema de libro",
+   "una directiva de retención",
+   "una lista de seguimiento",
+   "un conector de datos"
+  ],
+  "opts_en": [
+   "a workbook theme",
+   "a retention policy",
+   "a watchlist",
+   "a data connector"
+  ],
+  "correct": 2,
+  "exp_es": "Las listas de seguimiento dan datos de referencia usables en KQL y reglas de análisis.",
+  "exp_en": "Watchlists provide reference data usable in KQL and analytics rules."
+ },
+ {
+  "id": 345,
+  "exam": "sc-200",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para desconectar de la red un dispositivo comprometido manteniendo la conexión con Defender, use ",
+  "pre_en": "To disconnect a compromised device from the network while keeping Defender connectivity, use ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "una regla de supresión",
+   "un indicador personalizado",
+   "la retirada del dispositivo",
+   "el aislamiento de dispositivo"
+  ],
+  "opts_en": [
+   "a suppression rule",
+   "a custom indicator",
+   "device offboarding",
+   "device isolation"
+  ],
+  "correct": 3,
+  "exp_es": "El aislamiento bloquea el tráfico de red salvo hacia el servicio Defender y puede revertirse.",
+  "exp_en": "Isolation blocks network traffic except to the Defender service, and can be reversed."
+ },
+ {
+  "id": 346,
+  "exam": "sc-200",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "sentence",
+  "pre_es": "Para combinar varias señales débiles de distintos productos en un incidente de varias fases, use una ",
+  "pre_en": "To combine multiple weak signals from different products into one multistage incident, use a ",
+  "post_es": ".",
+  "post_en": " rule.",
+  "opts_es": [
+   "NRT",
+   "lista de seguimiento",
+   "programada",
+   "Fusion"
+  ],
+  "opts_en": [
+   "NRT",
+   "watchlist",
+   "scheduled",
+   "Fusion"
+  ],
+  "correct": 3,
+  "exp_es": "Fusion usa ML para correlacionar señales en incidentes de alta fidelidad.",
+  "exp_en": "Fusion uses ML to correlate signals into high-fidelity incidents."
  }
 ]
