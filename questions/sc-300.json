@@ -86,16 +86,16 @@
   "q_es": "Tu empresa agrega al inquilino un dominio personalizado, contoso.com. ¿Qué debes hacer antes de poder usarlo en los nombres de inicio de sesión?",
   "q_en": "Your company adds a custom domain, contoso.com, to the tenant. What must you do before you can use it for user sign-in names?",
   "opts_es": [
-   "Comprobar la propiedad del dominio agregando un registro DNS en el registrador",
-   "Habilitar SSPR",
-   "Implementar Microsoft Entra Connect Health",
-   "Crear una directiva de acceso condicional"
+   "Verificar la propiedad con un registro DNS en el registrador",
+   "Habilitar el restablecimiento de contraseña para todos los usuarios",
+   "Implementar Entra Connect Health en los controladores de dominio",
+   "Crear una directiva de acceso condicional para el nuevo dominio"
   ],
   "opts_en": [
-   "Verify domain ownership by adding a DNS record at the registrar",
-   "Enable SSPR",
-   "Deploy Microsoft Entra Connect Health",
-   "Create a Conditional Access policy"
+   "Verify ownership with a DNS record at the registrar",
+   "Enable self-service password reset for all the users",
+   "Deploy Entra Connect Health on the domain controllers",
+   "Create a Conditional Access policy for the new domain"
   ],
   "correct": [
    0
@@ -449,16 +449,16 @@
   "q_es": "Quieres restringir con qué organizaciones externas pueden colaborar tus usuarios. ¿Qué característica de Microsoft Entra debes configurar?",
   "q_en": "You want to restrict which external organizations your users can collaborate with. Which Microsoft Entra feature should you configure?",
   "opts_es": [
-   "Directivas de cumplimiento de dispositivos",
-   "Protección con contraseña",
-   "Configuración de acceso entre inquilinos y de colaboración externa",
-   "Paquetes de acceso solo para usuarios internos"
+   "Directivas de cumplimiento de dispositivos para portátiles",
+   "Protección de contraseñas con lista personalizada",
+   "Acceso entre inquilinos y colaboración externa",
+   "Paquetes de acceso limitados solo a usuarios internos"
   ],
   "opts_en": [
-   "Device compliance policies",
-   "Password protection",
-   "Cross-tenant access settings and external collaboration settings",
-   "Access packages for internal users only"
+   "Device compliance policies for all managed laptops",
+   "Password protection with a custom banned password list",
+   "Cross-tenant access and external collaboration settings",
+   "Access packages that are limited to internal users only"
   ],
   "correct": [
    2
@@ -994,16 +994,16 @@
   "q_es": "Necesitas impedir que los usuarios elijan contraseñas que contengan palabras propias de la empresa, como su nombre. ¿Qué debes configurar?",
   "q_en": "You need to block users from choosing passwords that contain company-specific words such as the company name. What should you configure?",
   "opts_es": [
-   "Protección con contraseña de Microsoft Entra con una lista personalizada de contraseñas prohibidas",
-   "Paquetes de acceso de administración de derechos",
-   "Licencias basadas en grupos",
-   "Ubicaciones con nombre de acceso condicional"
+   "Protección de contraseñas de Entra con lista personalizada",
+   "Paquetes de acceso en la administración de derechos con aprobación",
+   "Licencias basadas en grupos para toda la organización",
+   "Ubicaciones con nombre de acceso condicional para oficinas"
   ],
   "opts_en": [
-   "Microsoft Entra Password Protection with a custom banned password list",
-   "Access packages in entitlement management",
-   "Group-based licensing",
-   "Conditional Access named locations"
+   "Entra Password Protection with a custom banned list",
+   "Access packages in entitlement management with approval",
+   "Group-based licensing for the whole organization",
+   "Conditional Access named locations for trusted offices"
   ],
   "correct": [
    0
@@ -1246,16 +1246,16 @@
   "q_es": "Para evitar bloquear el acceso a todos al configurar el acceso condicional, ¿qué debes crear?",
   "q_en": "To avoid locking everyone out when configuring Conditional Access, what should you create?",
   "opts_es": [
-   "Un grupo dinámico con todos los usuarios",
+   "Un grupo dinámico que contenga a todos los usuarios",
    "Más usuarios invitados con roles de administrador",
-   "Cuentas de acceso de emergencia (break-glass) excluidas de las directivas",
-   "Un segundo inquilino para probar directivas"
+   "Cuentas de acceso de emergencia excluidas de las directivas",
+   "Un segundo inquilino usado solo para probar las directivas"
   ],
   "opts_en": [
-   "A dynamic group that contains all users",
-   "More guest users with admin roles",
-   "Emergency access (break-glass) accounts excluded from policies",
-   "A second tenant for testing policies"
+   "A dynamic group that contains every user in the tenant",
+   "More guest users who hold administrator roles",
+   "Emergency access accounts excluded from policies",
+   "A second tenant used only for testing the policies"
   ],
   "correct": [
    2
@@ -1324,16 +1324,16 @@
   "q_es": "Necesitas impedir que los usuarios descarguen archivos de SharePoint Online desde dispositivos no administrados pero permitir el acceso solo web. ¿Qué control debes usar?",
   "q_en": "You need to prevent users from downloading files in SharePoint Online from unmanaged devices but still allow web-only access. Which control should you use?",
   "opts_es": [
-   "Bloquear el acceso a todos los dispositivos",
-   "Asignar el rol de lector global",
-   "Control de sesión de acceso condicional: Usar restricciones aplicadas por la aplicación",
-   "Exigir un cambio de contraseña en el siguiente inicio de sesión"
+   "Bloquear el acceso a todos los dispositivos sin excepciones",
+   "Asignar el rol Lector global a los usuarios afectados",
+   "Control de sesión: usar restricciones aplicadas por la aplicación",
+   "Exigir cambio de contraseña en el próximo inicio de sesión"
   ],
   "opts_en": [
-   "Block access for all devices",
-   "Assign the Global Reader role",
-   "Conditional Access session control: Use app enforced restrictions",
-   "Require a password change at next sign-in"
+   "Block access for all devices without exceptions",
+   "Assign the Global Reader role to the affected users",
+   "Session control: use app enforced restrictions",
+   "Require a password change at the next sign-in for users"
   ],
   "correct": [
    2
@@ -2206,16 +2206,16 @@
   "q_es": "Un desarrollador registra una nueva API web en Microsoft Entra ID y quiere que otras aplicaciones la llamen con distintos niveles de permisos. ¿Qué debe definir el desarrollador?",
   "q_en": "A developer registers a new web API in Microsoft Entra ID and wants other applications to call it with different permission levels. What should the developer define?",
   "opts_es": [
-   "Un grupo dinámico",
-   "Una nueva unidad administrativa",
-   "Exponer una API con ámbitos y, para acceso solo de aplicación, roles de aplicación",
-   "Una ubicación con nombre de acceso condicional"
+   "Un grupo dinámico que contenga las apps cliente",
+   "Una nueva unidad administrativa para los desarrolladores",
+   "Exponer ámbitos y roles de aplicación para acceso solo de app",
+   "Una ubicación con nombre de acceso condicional para la API"
   ],
   "opts_en": [
-   "A dynamic group",
-   "A new administrative unit",
-   "Expose an API with scopes and, for app-only access, app roles",
-   "A Conditional Access named location"
+   "A dynamic group that contains the client apps",
+   "A new administrative unit for the developers of the API",
+   "Expose scopes, and app roles for app-only access",
+   "A Conditional Access named location for the API"
   ],
   "correct": [
    2
@@ -2463,16 +2463,16 @@
   "q_es": "Quieres supervisar y controlar en tiempo real las sesiones de usuario de una aplicación web, por ejemplo para bloquear descargas de archivos confidenciales. ¿Qué debes configurar?",
   "q_en": "You want to monitor and control user sessions in real time for a web app, for example to block downloads of sensitive files. What should you configure?",
   "opts_es": [
-   "Catálogos de administración de derechos",
-   "Control de aplicaciones de acceso condicional con una directiva de sesión",
-   "Identidades administradas",
-   "Sincronización de hash de contraseña"
+   "Catálogos de administración de derechos para usuarios de la app",
+   "Control de aplicaciones de acceso condicional con directiva de sesión",
+   "Identidades administradas asignadas a los servidores de la app",
+   "Sincronización de hash de contraseña para las cuentas de la app"
   ],
   "opts_en": [
-   "Entitlement management catalogs",
-   "Conditional Access App Control with a session policy",
-   "Managed identities",
-   "Password hash synchronization"
+   "Entitlement management catalogs for the web app users",
+   "Conditional Access app control with a session policy",
+   "Managed identities assigned to the servers of the web app",
+   "Password hash synchronization for the accounts of the app"
   ],
   "correct": [
    1
@@ -2489,16 +2489,16 @@
   "q_es": "¿Qué capacidad de Defender for Cloud Apps ayuda a administrar aplicaciones OAuth de riesgo que tienen acceso a datos de la empresa?",
   "q_en": "Which Defender for Cloud Apps capability helps you manage risky OAuth apps that have access to company data?",
   "opts_es": [
-   "Gobernanza de aplicaciones y directivas de aplicaciones OAuth",
-   "Directivas de BitLocker",
-   "Directivas de reuniones de Teams",
-   "Azure Bastion"
+   "Gobernanza de apps y directivas de apps OAuth",
+   "Directivas de BitLocker para los puntos de conexión administrados",
+   "Directivas de reuniones de Teams para asistentes externos",
+   "Hosts de Azure Bastion en la red virtual"
   ],
   "opts_en": [
    "App governance and OAuth app policies",
-   "BitLocker policies",
-   "Teams meeting policies",
-   "Azure Bastion"
+   "BitLocker policies for the managed endpoints",
+   "Teams meeting policies for external attendees",
+   "Azure Bastion hosts in the virtual network"
   ],
   "correct": [
    0
@@ -3776,16 +3776,16 @@
   "q_es": "Una asignación de licencia basada en grupos muestra un error porque dos productos asignados contienen planes de servicio en conflicto. ¿Qué debes hacer?",
   "q_en": "A group-based license assignment shows an error because two assigned products contain conflicting service plans. What should you do?",
   "opts_es": [
-   "Deshabilitar la MFA de los usuarios afectados",
+   "Deshabilitar MFA temporalmente para los usuarios afectados",
    "Quitar a todos los usuarios del grupo y volver a agregarlos",
-   "Deshabilitar el plan de servicio en conflicto en una de las licencias y volver a procesar",
-   "Asignar una tercera licencia para resolver el conflicto"
+   "Deshabilitar el plan de servicio en conflicto y reprocesar",
+   "Asignar una tercera licencia que incluya ambos productos"
   ],
   "opts_en": [
-   "Disable MFA for the affected users",
-   "Remove all users from the group and re-add them",
-   "Disable the conflicting service plan in one of the licenses and reprocess",
-   "Assign a third license to resolve the conflict"
+   "Disable MFA for the affected users temporarily",
+   "Remove all users from the group and add them again",
+   "Disable the conflicting service plan and reprocess",
+   "Assign a third license that includes both products"
   ],
   "correct": [
    2
@@ -4373,16 +4373,16 @@
   "q_es": "¿Cómo mantiene la autenticación transferida la alta disponibilidad?",
   "q_en": "How does pass-through authentication keep high availability?",
   "opts_es": [
-   "Almacenando las contraseñas en Azure Key Vault",
-   "Instalando varios agentes de autenticación en servidores diferentes",
-   "Deshabilitando el inicio de sesión",
-   "Usando un solo agente"
+   "Guardar las contraseñas en Azure Key Vault para conmutar",
+   "Instalar varios agentes de autenticación en servidores distintos",
+   "Deshabilitar el inicio mientras se reinicia el único agente",
+   "Usar un único agente instalado en un controlador de dominio"
   ],
   "opts_en": [
-   "By storing passwords in Azure Key Vault",
-   "By installing multiple authentication agents on different servers",
-   "By disabling sign-in",
-   "By using only one agent"
+   "Store the passwords in Azure Key Vault for failover",
+   "Install several authentication agents on separate servers",
+   "Disable sign-in while the single agent is restarted",
+   "Use only one agent installed on a domain controller"
   ],
   "correct": [
    1
@@ -5159,16 +5159,16 @@
   "q_es": "¿Cómo puede una directiva de acceso condicional dirigirse solo a dispositivos que no son compatibles con Intune, como los portátiles personales no administrados?",
   "q_en": "How can a Conditional Access policy target only devices that are not Intune compliant, such as unmanaged personal laptops?",
   "opts_es": [
-   "Usar una directiva de nomenclatura de grupos",
-   "Usar un filtro de dispositivos o la condición de estado del dispositivo",
-   "Usar un conector del proxy de aplicaciones",
-   "Usar revisiones de acceso"
+   "Una directiva de nomenclatura de grupos para los dispositivos",
+   "Un filtro de dispositivos o la condición de estado del dispositivo",
+   "Un conector de Application Proxy cerca de los dispositivos",
+   "Revisiones de acceso para los propietarios cada trimestre"
   ],
   "opts_en": [
-   "Use a group naming policy",
-   "Use a filter for devices or the device state condition",
-   "Use an application proxy connector",
-   "Use access reviews"
+   "A group naming policy for the managed devices",
+   "A device filter or the device state condition",
+   "An application proxy connector near the devices",
+   "Access reviews for the device owners every quarter"
   ],
   "correct": [
    1
@@ -5748,16 +5748,16 @@
   "q_es": "¿Qué característica de Global Secure Access permite bloquear el acceso a categorías de sitios web como los juegos de azar mediante filtrado de contenido web?",
   "q_en": "Which Global Secure Access feature lets you block access to categories of websites such as gambling by using web content filtering?",
   "opts_es": [
-   "Proxy de aplicaciones de Microsoft Entra",
-   "Filtrado de contenido web en Microsoft Entra Internet Access",
-   "Controles de sesión de acceso condicional",
-   "Restricciones universales de inquilino"
+   "Application Proxy de Microsoft Entra con autenticación previa",
+   "Filtrado de contenido web en directivas de Entra Internet Access",
+   "Controles de sesión de acceso condicional para apps en la nube",
+   "Restricciones universales de inquilino para inquilinos externos"
   ],
   "opts_en": [
-   "Microsoft Entra application proxy",
-   "Web content filtering in Microsoft Entra Internet Access",
-   "Conditional Access session controls",
-   "Universal tenant restrictions"
+   "Microsoft Entra application proxy with pre-authentication",
+   "Web content filtering in Entra Internet Access policies",
+   "Conditional Access session controls for cloud apps",
+   "Universal tenant restrictions for external tenants"
   ],
   "correct": [
    1
@@ -7012,16 +7012,16 @@
   "q_es": "¿De qué dos formas se pueden aplicar los términos de uso?",
   "q_en": "Terms of use can be enforced in which two ways?",
   "opts_es": [
-   "Solo mediante scripts de PowerShell",
-   "Mediante acceso condicional o como requisito de un paquete de acceso",
-   "Solo mediante niveles de autenticación",
-   "Solo mediante directivas de cumplimiento de Intune"
+   "Solo mediante scripts de PowerShell ejecutados por un administrador",
+   "Acceso condicional o un requisito de paquete de acceso",
+   "Solo mediante intensidades de autenticación asignadas a usuarios",
+   "Solo mediante directivas de cumplimiento de Intune en dispositivos"
   ],
   "opts_en": [
-   "Only through PowerShell scripts",
-   "Through Conditional Access or as a requirement of an access package",
-   "Only through authentication strengths",
-   "Only through Intune compliance policies"
+   "Only through PowerShell scripts run by an administrator",
+   "Conditional Access or an access package requirement",
+   "Only through authentication strengths assigned to users",
+   "Only through Intune compliance policies on devices"
   ],
   "correct": [
    1
@@ -7386,16 +7386,16 @@
   "q_es": "¿Quién recibe la solicitud de aprobación cuando PIM exige aprobación para activar un rol?",
   "q_en": "Who receives the approval request when PIM requires approval to activate a role?",
   "opts_es": [
-   "Soporte de Microsoft",
-   "El usuario que solicita la activación",
-   "Todos los usuarios invitados del inquilino",
-   "Los aprobadores designados configurados en la configuración del rol"
+   "Soporte de Microsoft mediante una solicitud de servicio",
+   "El propio usuario que solicita la activación",
+   "Todos los usuarios invitados que pertenecen al inquilino",
+   "Los aprobadores definidos en la configuración del rol"
   ],
   "opts_en": [
-   "Microsoft support",
-   "The user who requests activation",
-   "All guest users in the tenant",
-   "The designated approvers configured in the role settings"
+   "Microsoft support through a service request",
+   "The user who requests the activation themselves",
+   "All guest users that belong to the tenant",
+   "The approvers set in the role settings"
   ],
   "correct": [
    3
@@ -7412,16 +7412,16 @@
   "q_es": "¿Qué informe de PIM ayuda a ver quién activó qué roles y cuándo?",
   "q_en": "Which PIM report helps you see who activated which roles and when?",
   "opts_es": [
-   "Cumplimiento de dispositivos",
-   "Auditoría de recursos / historial de auditoría",
-   "Catálogo de aplicaciones en la nube",
-   "Puntuación segura"
+   "Informe de cumplimiento de dispositivos por plataforma",
+   "Historial de auditoría",
+   "Puntuaciones de riesgo del catálogo de apps",
+   "Acciones de mejora de Secure Score"
   ],
   "opts_en": [
-   "Device compliance",
-   "Resource audit / audit history",
-   "Cloud app catalog",
-   "Secure Score"
+   "Device compliance report by platform",
+   "Audit history",
+   "Cloud app catalog risk scores",
+   "Secure Score improvement actions"
   ],
   "correct": [
    1
@@ -8588,16 +8588,16 @@
   "q_es": "¿Qué afirmación describe por qué PIM exige una justificación al activar un rol?",
   "q_en": "Which statement describes why PIM requires a justification when activating a role?",
   "opts_es": [
-   "Crea un rastro de auditoría que explica por qué se necesitó el acceso con privilegios",
-   "Deshabilita la MFA para la activación",
+   "Registra por qué se necesitó el acceso con privilegios para auditorías",
+   "Deshabilita la MFA en la activación para ahorrar tiempo",
    "Aumenta el tamaño del buzón del administrador",
-   "Elimina el rol tras su uso"
+   "Elimina la asignación del rol en cuanto se usa"
   ],
   "opts_en": [
-   "It creates an audit trail explaining why privileged access was needed",
-   "It disables MFA for the activation",
-   "It increases the mailbox size of the admin",
-   "It deletes the role after use"
+   "It records why privileged access was needed for audits",
+   "It disables MFA for the activation to save time",
+   "It increases the mailbox size of the administrator",
+   "It deletes the role assignment as soon as it is used"
   ],
   "correct": [
    0
@@ -9184,5 +9184,1137 @@
   ],
   "exp_es": "Primero se configura el ámbito y los ajustes; el ciclo recoge decisiones y aplica resultados.",
   "exp_en": "Configure scope and settings first; the review cycle then collects decisions and applies results."
+ },
+ {
+  "id": 322,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Para qué sirve la restauración de la IP de origen en Global Secure Access?",
+  "q_en": "What is the purpose of source IP restoration in Global Secure Access?",
+  "opts_es": [
+   "Bloquea el tráfico de IP fuera de la región del inquilino",
+   "Asigna IP estáticas a cada dispositivo inscrito",
+   "El acceso condicional y los registros ven la IP original del usuario y no la del servicio",
+   "Oculta la IP del usuario a los servicios de Microsoft 365"
+  ],
+  "opts_en": [
+   "It blocks traffic from IP addresses outside the tenant's region",
+   "It assigns static IP addresses to every enrolled device",
+   "Conditional Access and logs see the user's original IP rather than the service's",
+   "It hides the user's IP address from Microsoft 365 services"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Sin ella, las apps de Microsoft 365 ven la IP de salida del servicio, lo que rompe el acceso condicional por IP y las señales de riesgo.",
+  "exp_en": "Without it, Microsoft 365 apps see the Global Secure Access egress IP, which breaks IP-based Conditional Access and sign-in risk signals."
+ },
+ {
+  "id": 323,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué control de acceso condicional usa la comprobación de red conforme de Global Secure Access?",
+  "q_en": "Which Conditional Access control uses the compliant network check from Global Secure Access?",
+  "opts_es": [
+   "Un control de concesión que exija términos de uso",
+   "Una condición de plataforma de dispositivo solo para Windows",
+   "Un control de sesión de frecuencia de inicio de una hora",
+   "Una condición de red con 'Todas las ubicaciones de red conformes'"
+  ],
+  "opts_en": [
+   "A grant control that requires terms of use",
+   "A device platform condition for Windows only",
+   "A sign-in frequency session control of one hour",
+   "A Network condition with 'All compliant network locations'"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La ubicación de red conforme permite exigir que el tráfico pase por Global Secure Access.",
+  "exp_en": "The compliant network location lets policies require that traffic comes through Global Secure Access, including from other tenants' perspective with universal tenant restrictions."
+ },
+ {
+  "id": 324,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Un inicio de sesión se marca como 'dirección IP anónima'. ¿Qué tipo de detección de riesgo es?",
+  "q_en": "A sign-in is flagged as 'anonymous IP address'. Which type of risk detection is this?",
+  "opts_es": [
+   "Riesgo de cumplimiento del dispositivo",
+   "Detección de riesgo de inicio en tiempo real",
+   "Solo riesgo de usuario por credenciales filtradas",
+   "Riesgo de identidad de carga de trabajo"
+  ],
+  "opts_en": [
+   "Device compliance risk",
+   "Real-time sign-in risk detection",
+   "User risk from leaked credentials only",
+   "Workload identity risk"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La IP anónima es una detección de riesgo de inicio (como Tor o VPN de anonimización).",
+  "exp_en": "Anonymous IP address is a sign-in risk detection (such as Tor or anonymizing VPN)."
+ },
+ {
+  "id": 325,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué detección de riesgo indica que se encontraron credenciales de un usuario en un volcado público?",
+  "q_en": "Which risk detection indicates that a user's credentials were found in a public dump?",
+  "opts_es": [
+   "Viaje imposible",
+   "Propiedades de inicio desconocidas",
+   "Difusión de contraseñas",
+   "Credenciales filtradas"
+  ],
+  "opts_en": [
+   "Impossible travel",
+   "Unfamiliar sign-in properties",
+   "Password spray",
+   "Leaked credentials"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Credenciales filtradas es una detección de riesgo de usuario, que se corrige con un cambio seguro de contraseña.",
+  "exp_en": "Leaked credentials is a user risk detection that raises user risk, remediated by a secure password change."
+ },
+ {
+  "id": 326,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Dónde investiga las identidades de carga de trabajo de riesgo, como una entidad de servicio con actividad sospechosa?",
+  "q_en": "Where do you investigate risky workload identities, such as a service principal with suspicious activity?",
+  "opts_es": [
+   "El registro de actividad de Azure",
+   "La pestaña de propietarios de registros de aplicaciones",
+   "El informe de identidades de carga de trabajo de riesgo en ID Protection",
+   "La página de consentimiento de aplicaciones empresariales"
+  ],
+  "opts_en": [
+   "The Azure Activity log",
+   "The App registrations owners tab",
+   "The Risky workload identities report in ID Protection",
+   "The Enterprise applications consent page"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las detecciones de riesgo de cargas requieren Workload ID Premium y aparecen en ID Protection; el acceso condicional puede bloquear entidades de servicio de riesgo.",
+  "exp_en": "Workload identity risk detections require Workload ID Premium and appear in ID Protection; Conditional Access can block risky service principals."
+ },
+ {
+  "id": 327,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una directiva de riesgo de usuario exige cambio de contraseña a usuarios de riesgo alto. ¿Qué debe poder hacer el usuario?",
+  "q_en": "A user risk policy requires a password change for high-risk users. What must the user be able to do?",
+  "opts_es": [
+   "Iniciar sesión solo desde un dispositivo conforme",
+   "Esperar 24 horas a que el riesgo caduque",
+   "Completar MFA y tener disponible el restablecimiento de contraseña",
+   "Contactar con soporte para recibir una nueva contraseña"
+  ],
+  "opts_en": [
+   "Sign in from a compliant device only",
+   "Wait 24 hours for the risk to expire automatically",
+   "Complete MFA and have self-service password reset available",
+   "Contact the help desk to receive a new password"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Un cambio seguro requiere MFA y SSPR (con escritura diferida en usuarios híbridos) para que el usuario restablezca por sí mismo.",
+  "exp_en": "A secure password change requires MFA first and SSPR (with writeback for hybrid users) so the user can reset on their own."
+ },
+ {
+  "id": 328,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de Microsoft Entra ayuda a tratar inicios de riesgo enviando datos a Microsoft Defender XDR?",
+  "q_en": "Which Microsoft Entra feature helps decide how to handle risky sign-ins by sending data to Microsoft Defender XDR?",
+  "opts_es": [
+   "El agente de Entra Connect Health en cada servidor de sincronización",
+   "Configuración de invitado de Azure Policy en máquinas virtuales",
+   "Señales de Entra ID Protection compartidas con Defender XDR",
+   "Catálogos de administración de derechos con reglas de caducidad"
+  ],
+  "opts_en": [
+   "The Entra Connect Health agent on each sync server",
+   "Azure Policy guest configuration on virtual machines",
+   "Entra ID Protection signals shared with Defender XDR",
+   "Entitlement management catalogs with expiration rules"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las señales de ID Protection se comparten con Defender XDR para correlacionar el riesgo de identidad con señales de puntos de conexión y correo.",
+  "exp_en": "ID Protection risk signals are shared with Defender XDR so incidents correlate identity risk with endpoint and email signals."
+ },
+ {
+  "id": 329,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué opción controla si los invitados pueden ver miembros de grupos y otros usuarios?",
+  "q_en": "Which setting controls whether guest users can see members of groups and other users?",
+  "opts_es": [
+   "Directivas de métodos de autenticación para invitados y miembros",
+   "Propiedades de personalización de la página de inicio",
+   "Restricciones de acceso de invitados en colaboración externa",
+   "Asignaciones de sincronización entre inquilinos para atributos"
+  ],
+  "opts_en": [
+   "Authentication methods policies for guests and members",
+   "Company branding properties of the sign-in page",
+   "Guest user access restrictions in external collaboration",
+   "Cross-tenant synchronization mappings for attributes"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El acceso de invitados puede limitarse a sus propios objetos (lo más restrictivo) o a un acceso limitado.",
+  "exp_en": "Guest access can be limited to their own objects (most restrictive) or limited access to directory objects."
+ },
+ {
+  "id": 330,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Dos organizaciones de su grupo tienen cada una su inquilino de Entra. Quiere que los usuarios aparezcan automáticamente como miembros en el otro inquilino. ¿Qué debe usar?",
+  "q_en": "Two organizations in your company group each run their own Entra tenant. You want users to appear automatically as members in the other tenant. What should you use?",
+  "opts_es": [
+   "Autenticación transferida",
+   "Sincronización entre inquilinos",
+   "Solo conexión directa B2B",
+   "Sincronización de hash de contraseña"
+  ],
+  "opts_en": [
+   "Pass-through authentication",
+   "Cross-tenant synchronization",
+   "B2B direct connect only",
+   "Password hash synchronization"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La sincronización entre inquilinos automatiza crear, actualizar y eliminar usuarios miembro B2B en un inquilino de destino.",
+  "exp_en": "Cross-tenant synchronization automates creating, updating and deleting B2B member users in a target tenant."
+ },
+ {
+  "id": 331,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de restricciones de inquilino v2 ayuda a impedir que usuarios inicien sesión en inquilinos externos no aprobados en dispositivos corporativos?",
+  "q_en": "Which tenant restrictions v2 capability helps prevent users from signing in to unapproved external tenants on corporate devices?",
+  "opts_es": [
+   "Registro de restablecimiento de contraseña",
+   "Configuración de acceso entre inquilinos con directiva de restricciones de inquilino",
+   "Modo de solo informe de acceso condicional",
+   "Implementación por fases de Entra Connect"
+  ],
+  "opts_en": [
+   "Self-service password reset registration",
+   "Cross-tenant access settings with tenant restrictions policy",
+   "Conditional Access report-only mode",
+   "Entra Connect staged rollout"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las directivas v2 definen a qué inquilinos y apps externos pueden acceder los usuarios; se aplican con Global Secure Access o un proxy corporativo.",
+  "exp_en": "Tenant restrictions v2 policies define which external tenants and apps users can access; enforcement can use Global Secure Access or a corporate proxy."
+ },
+ {
+  "id": 332,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Cómo puede permitir que los usuarios inicien sesión con una cuenta de Google para acceder a su app como invitados?",
+  "q_en": "How can you let users sign in with a Google account to access your app as a guest?",
+  "opts_es": [
+   "Crear cuentas de miembro con direcciones de Gmail",
+   "Habilitar el inicio de sesión único para Google",
+   "Configurar Google como proveedor de identidad en External Identities",
+   "Agregar un dominio personalizado llamado google.com"
+  ],
+  "opts_en": [
+   "Create member accounts using Gmail addresses",
+   "Enable seamless single sign-on for Google",
+   "Configure Google as an identity provider in External Identities",
+   "Add a custom domain named google.com"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La federación con Google permite usar credenciales de Google; la federación SAML/WS-Fed cubre otros proveedores.",
+  "exp_en": "Google federation lets guests use Google credentials; SAML/WS-Fed federation handles other identity providers."
+ },
+ {
+  "id": 334,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Una carga de trabajo en AKS debe acceder a Azure Storage sin secretos. ¿Qué función debe usar?",
+  "q_en": "A Kubernetes workload in AKS must access Azure Storage without secrets. Which feature should you use?",
+  "opts_es": [
+   "Federación de identidad de carga de trabajo con una credencial federada",
+   "Una firma de acceso compartido que nunca caduca",
+   "Una clave de cuenta en un ConfigMap",
+   "Un secreto de cliente guardado en un secreto de Kubernetes"
+  ],
+  "opts_en": [
+   "Workload identity federation with a federated credential",
+   "A shared access signature that never expires",
+   "A storage account key in a ConfigMap",
+   "A client secret stored in a Kubernetes secret"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La federación permite a los pods cambiar el token de su cuenta de servicio de Kubernetes por un token de Entra sin secretos.",
+  "exp_en": "Workload identity federation lets pods exchange their Kubernetes service account token for an Entra token with no stored secrets."
+ },
+ {
+  "id": 335,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Un flujo de GitHub Actions debe implementar en Azure sin guardar credenciales. ¿Qué debe configurar?",
+  "q_en": "A GitHub Actions workflow must deploy to Azure without storing credentials. What should you configure?",
+  "opts_es": [
+   "Una credencial de identidad federada en un registro de aplicación",
+   "Un secreto de cliente guardado como secreto de GitHub",
+   "Un token personal de un administrador global",
+   "Un buzón compartido con contraseña guardada"
+  ],
+  "opts_en": [
+   "A federated identity credential on an app registration",
+   "A client secret saved as a GitHub secret",
+   "A personal access token of a global administrator",
+   "A shared mailbox with a stored password"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las credenciales federadas confían en tokens emitidos por GitHub para un repositorio, rama o entorno, sin guardar secretos.",
+  "exp_en": "Federated credentials trust tokens issued by GitHub for a specific repo, branch or environment, so no secret is stored."
+ },
+ {
+  "id": 336,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué propiedad de la entidad de servicio permite exigir asignación antes de que los usuarios accedan a una aplicación empresarial?",
+  "q_en": "Which service principal property lets you require assignment before users can access an enterprise application?",
+  "opts_es": [
+   "Asignación requerida en Sí",
+   "Habilitado para que los usuarios inicien sesión en No",
+   "Lista de URL de respuesta restringida",
+   "Visible para los usuarios en No"
+  ],
+  "opts_en": [
+   "Assignment required set to Yes",
+   "Enabled for users to sign in set to No",
+   "Reply URL list restricted",
+   "Visible to users set to No"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Con Asignación requerida solo pueden iniciar sesión los usuarios y grupos asignados.",
+  "exp_en": "With Assignment required, only assigned users and groups can sign in; others are denied."
+ },
+ {
+  "id": 337,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué tipo de directiva de Defender for Cloud Apps puede bloquear apps OAuth de riesgo según los permisos que piden?",
+  "q_en": "Which Defender for Cloud Apps policy type can block risky OAuth apps based on permissions they request?",
+  "opts_es": [
+   "Una directiva de archivos",
+   "Una directiva de aplicaciones OAuth",
+   "Una directiva de actividad de inicios de sesión",
+   "Una directiva de sesión para descargas"
+  ],
+  "opts_en": [
+   "A file policy",
+   "An OAuth app policy",
+   "An activity policy for logons",
+   "A session policy for downloads"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las directivas de apps OAuth detectan apps por nivel de permisos, uso en la comunidad y editor verificado, y pueden revocar el consentimiento.",
+  "exp_en": "OAuth app policies detect apps by permission level, community usage and publisher verification, and can revoke consent automatically."
+ },
+ {
+  "id": 339,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "¿Qué origen de datos alimenta Cloud Discovery con el uso de apps no autorizadas?",
+  "q_en": "Which data source feeds Cloud Discovery with unsanctioned app usage?",
+  "opts_es": [
+   "Registros de firewall y proxy o Defender for Endpoint",
+   "Solo registros de auditoría de Entra sobre consentimiento",
+   "Seguimiento de mensajes de Exchange Online de remitentes externos",
+   "Informes de uso de sitios de SharePoint por departamento"
+  ],
+  "opts_en": [
+   "Firewall and proxy logs or Defender for Endpoint",
+   "Entra audit logs about application consent only",
+   "Exchange Online message trace for external senders",
+   "SharePoint site usage reports by department"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Cloud Discovery analiza registros de tráfico de firewalls y proxies, y señales de punto de conexión con Defender for Endpoint.",
+  "exp_en": "Cloud Discovery analyzes traffic logs uploaded or streamed from firewalls and proxies, and endpoint signals via Defender for Endpoint integration."
+ },
+ {
+  "id": 340,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "En la administración de derechos, ¿qué agrupa recursos relacionados que pueden agregarse a paquetes de acceso?",
+  "q_en": "In entitlement management, what groups related resources that can be added to access packages?",
+  "opts_es": [
+   "Una organización conectada",
+   "Una plantilla de directiva",
+   "Una unidad administrativa",
+   "Un catálogo"
+  ],
+  "opts_en": [
+   "A connected organization",
+   "A policy template",
+   "An administrative unit",
+   "A catalog"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los catálogos contienen recursos (grupos, apps, sitios) y paquetes de acceso; los propietarios del catálogo los administran.",
+  "exp_en": "Catalogs contain resources (groups, apps, sites) and access packages; catalog owners manage them."
+ },
+ {
+  "id": 341,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "La asignación de un paquete de acceso de un usuario externo caduca. ¿Qué puede ocurrirle a la cuenta de invitado al quitarse la última asignación?",
+  "q_en": "An external user's access package assignment expires. What can happen to the guest account after the last assignment is removed?",
+  "opts_es": [
+   "Puede bloquearse el inicio de sesión y eliminarse después automáticamente",
+   "Se convierte en cuenta de miembro",
+   "Pasa de inmediato a Usuarios eliminados",
+   "Conserva el acceso para siempre hasta que un administrador lo quite"
+  ],
+  "opts_en": [
+   "It can be blocked from sign-in and later deleted automatically",
+   "It is promoted to a member account",
+   "It is moved to the Deleted users container immediately",
+   "It keeps access forever until an admin removes it"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La configuración permite bloquear el inicio y eliminar a invitados sin asignaciones tras unos días.",
+  "exp_en": "Entitlement management settings can block sign-in and remove guests who no longer have any assignments after a number of days."
+ },
+ {
+  "id": 342,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Qué requisito puede incluir una directiva de paquete de acceso para que los usuarios acepten términos legales antes del acceso?",
+  "q_en": "Which requirement can an access package policy include to ensure users acknowledge legal terms before access?",
+  "opts_es": [
+   "Una etiqueta de retención",
+   "Un permiso de buzón",
+   "Aceptación de términos de uso",
+   "Un ajuste de expiración de contraseña"
+  ],
+  "opts_en": [
+   "A retention label",
+   "A mailbox permission",
+   "Terms of use acceptance",
+   "A password expiration setting"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los términos de uso pueden exigirse al solicitar o iniciar sesión, y la aceptación se registra.",
+  "exp_en": "Terms of use can be required at request time or sign-in, and acceptance is logged."
+ },
+ {
+  "id": 344,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Cómo puede reducir la fatiga de los revisores en las revisiones de acceso?",
+  "q_en": "How can you reduce reviewer fatigue in access reviews?",
+  "opts_es": [
+   "Habilitar recomendaciones basadas en la última actividad de inicio",
+   "Deshabilitar las notificaciones por correo a los revisores",
+   "Ejecutar las revisiones a diario sin fecha límite",
+   "Revisar todos los grupos del inquilino en una sola revisión"
+  ],
+  "opts_en": [
+   "Enable recommendations based on last sign-in activity",
+   "Disable email notifications to reviewers",
+   "Run the reviews daily with no deadline",
+   "Review all groups in the tenant in one review"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las recomendaciones sugieren aprobar a usuarios activos y denegar a inactivos; las revisiones en varias fases también ayudan.",
+  "exp_en": "Recommendations suggest approving active users and denying inactive ones; multi-stage reviews also help."
+ },
+ {
+  "id": 345,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Cuál es el propósito de una cuenta de acceso de emergencia (break-glass) en Entra ID?",
+  "q_en": "What is the purpose of an emergency access (break-glass) account in Entra ID?",
+  "opts_es": [
+   "Recuperar el acceso al inquilino si falla el acceso normal de administración",
+   "Probar con seguridad las directivas de acceso condicional",
+   "Ejecutar scripts administrativos diarios",
+   "Dar acceso de invitado a socios"
+  ],
+  "opts_en": [
+   "Regain access to the tenant if normal admin access fails",
+   "Test Conditional Access policies safely",
+   "Run daily administrative scripts",
+   "Provide guest access to partners"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las cuentas de emergencia son solo en la nube, con privilegios altos, excluidas del acceso condicional cuando haga falta, muy protegidas y supervisadas ante cualquier inicio.",
+  "exp_en": "Emergency accounts are cloud-only, highly privileged, excluded from Conditional Access where needed, strongly protected and monitored for any sign-in."
+ },
+ {
+  "id": 346,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Qué función de PIM permite hacer elegible y temporal la pertenencia a un grupo de seguridad?",
+  "q_en": "Which PIM feature lets you make a security group's membership eligible and time-bound?",
+  "opts_es": [
+   "Solo paquetes de acceso",
+   "PIM para grupos",
+   "Reglas de pertenencia dinámica",
+   "Unidades administrativas"
+  ],
+  "opts_en": [
+   "Access packages only",
+   "PIM for Groups",
+   "Dynamic membership rules",
+   "Administrative units"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "PIM para grupos gestiona la pertenencia y propiedad justo a tiempo de grupos de seguridad y asignables a roles.",
+  "exp_en": "PIM for Groups manages just-in-time membership and ownership of role-assignable and security groups."
+ },
+ {
+  "id": 347,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Dónde se ve quién activó un rol con privilegios y por qué?",
+  "q_en": "Where can you see who activated a privileged role and why?",
+  "opts_es": [
+   "Análisis de llamadas de Teams",
+   "Registros de inicio, pestaña de usuarios de riesgo",
+   "Seguimiento de mensajes de Exchange",
+   "Historial de auditoría de recursos de PIM"
+  ],
+  "opts_en": [
+   "Teams call analytics",
+   "Sign-in logs, risky users tab",
+   "Exchange message trace",
+   "PIM resource audit history"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El historial de auditoría de PIM lista activaciones con justificación, información de ticket y aprobadores.",
+  "exp_en": "PIM audit history lists activations with justification, ticket info and approvers."
+ },
+ {
+  "id": 349,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué operador KQL cuenta los inicios fallidos por usuario?",
+  "q_en": "Which KQL operator counts failed sign-ins per user?",
+  "opts_es": [
+   "summarize count() by UserPrincipalName",
+   "project-away UserPrincipalName",
+   "extend UserPrincipalName",
+   "sort by TimeGenerated asc"
+  ],
+  "opts_en": [
+   "summarize count() by UserPrincipalName",
+   "project-away UserPrincipalName",
+   "extend UserPrincipalName",
+   "sort by TimeGenerated asc"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "summarize agrega filas; antes se filtran los fallos con where ResultType != 0.",
+  "exp_en": "summarize aggregates rows; filter failures with where ResultType != 0 first."
+ },
+ {
+  "id": 350,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "¿Qué libro ayuda a revisar el impacto de una directiva de acceso condicional antes de habilitarla?",
+  "q_en": "Which workbook helps you review Conditional Access policy impact before enabling a policy?",
+  "opts_es": [
+   "Uso e información de aplicaciones",
+   "Información e informes de acceso condicional",
+   "Registros de aprovisionamiento",
+   "Solo Identity Secure Score"
+  ],
+  "opts_en": [
+   "Usage and insights for applications",
+   "Conditional Access insights and reporting",
+   "Provisioning logs",
+   "Identity Secure Score only"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El libro de información de acceso condicional (con modo solo informe) muestra cómo afectarían las directivas a los inicios.",
+  "exp_en": "The Conditional Access insights workbook (with report-only mode) shows how policies would affect sign-ins."
+ },
+ {
+  "id": 351,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las opciones de identidad híbrida, indica si es verdadera o falsa.",
+  "q_en": "For each statement about hybrid identity options, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Cloud Sync usa agentes ligeros que pueden conectar varios bosques desconectados.",
+    "en": "Cloud Sync uses lightweight agents that can connect multiple disconnected forests.",
+    "ans": true
+   },
+   {
+    "es": "La autenticación transferida requiere que el agente local valide las contraseñas.",
+    "en": "Pass-through authentication requires the on-premises agent to validate passwords.",
+    "ans": true
+   },
+   {
+    "es": "La sincronización de hash de contraseña envía contraseñas en texto sin cifrar a la nube.",
+    "en": "Password hash synchronization sends plaintext passwords to the cloud.",
+    "ans": false
+   },
+   {
+    "es": "El SSO de conexión directa puede iniciar sesión en dispositivos unidos al dominio sin avisos adicionales.",
+    "en": "Seamless SSO can sign in domain-joined devices without extra prompts.",
+    "ans": true
+   }
+  ],
+  "exp_es": "PHS envía un hash de un hash, no texto sin cifrar. Cloud Sync gestiona varios bosques, PTA valida en local y el SSO de conexión directa inicia sesión en dispositivos del dominio.",
+  "exp_en": "PHS sends a hash of a hash, not plaintext. Cloud Sync handles multiple forests, PTA validates on-premises and seamless SSO signs in domain-joined devices."
+ },
+ {
+  "id": 352,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las directivas de acceso condicional, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Conditional Access policies, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las directivas se evalúan después de la autenticación de primer factor.",
+    "en": "Policies are evaluated after first-factor authentication.",
+    "ans": true
+   },
+   {
+    "es": "Un control Bloquear prevalece sobre los controles de concesión de otras directivas.",
+    "en": "A Block control overrides Grant controls from other policies.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas solo de informe bloquean a quienes no cumplen el control.",
+    "en": "Report-only policies block users who fail the grant control.",
+    "ans": false
+   },
+   {
+    "es": "Las cuentas de acceso de emergencia suelen excluirse de las directivas.",
+    "en": "Emergency access accounts are usually excluded from policies.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El modo solo informe registra el resultado sin aplicarlo. Las demás afirmaciones son comportamiento habitual.",
+  "exp_en": "Report-only mode logs the result without enforcement. The other statements are standard Conditional Access behavior."
+ },
+ {
+  "id": 353,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las aplicaciones empresariales y el consentimiento, indica si es verdadera o falsa.",
+  "q_en": "For each statement about enterprise applications and consent, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El consentimiento del administrador puede conceder permisos en nombre de toda la organización.",
+    "en": "Admin consent can grant permissions on behalf of the whole organization.",
+    "ans": true
+   },
+   {
+    "es": "El consentimiento de usuarios puede limitarse a apps de editores verificados y permisos de bajo riesgo.",
+    "en": "User consent can be limited to apps from verified publishers and low-risk permissions.",
+    "ans": true
+   },
+   {
+    "es": "Un registro de aplicación se crea en cada inquilino que usa la app.",
+    "en": "An app registration is created in every tenant that uses the app.",
+    "ans": false
+   },
+   {
+    "es": "El flujo de consentimiento de administrador permite a los usuarios solicitar aprobación.",
+    "en": "The admin consent workflow lets users request approval.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El registro vive en su inquilino de origen; los demás reciben una entidad de servicio (app empresarial).",
+  "exp_en": "The app registration lives in its home tenant; other tenants get a service principal (enterprise app)."
+ },
+ {
+  "id": 354,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la supervisión de Microsoft Entra, indica si es verdadera o falsa.",
+  "q_en": "For each statement about monitoring Microsoft Entra, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La configuración de diagnóstico puede enviar registros a Log Analytics, cuentas de almacenamiento y Event Hubs.",
+    "en": "Diagnostic settings can send logs to Log Analytics, storage accounts and Event Hubs.",
+    "ans": true
+   },
+   {
+    "es": "Los registros de inicio se conservan para siempre en el centro de Entra por defecto.",
+    "en": "Sign-in logs are kept forever in the Entra admin center by default.",
+    "ans": false
+   },
+   {
+    "es": "Identity Secure Score da recomendaciones para mejorar la postura de seguridad.",
+    "en": "Identity Secure Score gives recommendations to improve security posture.",
+    "ans": true
+   },
+   {
+    "es": "Los libros pueden visualizar el uso de métodos de autenticación.",
+    "en": "Workbooks can visualize authentication method usage.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La retención en Entra es limitada (7 o 30 días según la licencia), así que se exporta a Log Analytics para conservar más.",
+  "exp_en": "Retention in Entra is limited (7 or 30 days depending on license), so export to Log Analytics for longer retention."
+ },
+ {
+  "id": 355,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Seleccione el control de acceso condicional para cada requisito.",
+  "q_en": "Select the Conditional Access control for each requirement.",
+  "rows": [
+   {
+    "es": "Exigir claves de acceso a los administradores",
+    "en": "Require passkeys for administrators",
+    "opts_es": [
+     "Intensidad de autenticación",
+     "Términos de uso",
+     "Cumplimiento de dispositivo",
+     "Frecuencia de inicio de sesión"
+    ],
+    "opts_en": [
+     "Authentication strength",
+     "Terms of use",
+     "Device compliance",
+     "Sign-in frequency"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Forzar la reautenticación cada 8 horas",
+    "en": "Force reauthentication every 8 hours",
+    "opts_es": [
+     "Intensidad de autenticación",
+     "Términos de uso",
+     "Cumplimiento de dispositivo",
+     "Frecuencia de inicio de sesión"
+    ],
+    "opts_en": [
+     "Authentication strength",
+     "Terms of use",
+     "Device compliance",
+     "Sign-in frequency"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Mostrar texto legal antes del primer acceso",
+    "en": "Show legal text before first access",
+    "opts_es": [
+     "Intensidad de autenticación",
+     "Términos de uso",
+     "Cumplimiento de dispositivo",
+     "Frecuencia de inicio de sesión"
+    ],
+    "opts_en": [
+     "Authentication strength",
+     "Terms of use",
+     "Device compliance",
+     "Sign-in frequency"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Permitir solo dispositivos administrados con Intune",
+    "en": "Allow only Intune-managed devices",
+    "opts_es": [
+     "Intensidad de autenticación",
+     "Términos de uso",
+     "Cumplimiento de dispositivo",
+     "Frecuencia de inicio de sesión"
+    ],
+    "opts_en": [
+     "Authentication strength",
+     "Terms of use",
+     "Device compliance",
+     "Sign-in frequency"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Cada requisito corresponde a un control concreto de concesión o de sesión.",
+  "exp_en": "Each requirement maps to a specific grant or session control."
+ },
+ {
+  "id": 356,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el rol de Entra para cada tarea.",
+  "q_en": "Select the Entra role for each task.",
+  "rows": [
+   {
+    "es": "Crear usuarios y administrar grupos",
+    "en": "Create users and manage groups",
+    "opts_es": [
+     "Administrador de usuarios",
+     "Administrador de acceso condicional",
+     "Administrador de aplicaciones",
+     "Administrador de autenticación"
+    ],
+    "opts_en": [
+     "User Administrator",
+     "Conditional Access Administrator",
+     "Application Administrator",
+     "Authentication Administrator"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Restablecer métodos MFA de usuarios no administradores",
+    "en": "Reset MFA methods for non-admin users",
+    "opts_es": [
+     "Administrador de usuarios",
+     "Administrador de acceso condicional",
+     "Administrador de aplicaciones",
+     "Administrador de autenticación"
+    ],
+    "opts_en": [
+     "User Administrator",
+     "Conditional Access Administrator",
+     "Application Administrator",
+     "Authentication Administrator"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Administrar directivas de acceso condicional",
+    "en": "Manage Conditional Access policies",
+    "opts_es": [
+     "Administrador de usuarios",
+     "Administrador de acceso condicional",
+     "Administrador de aplicaciones",
+     "Administrador de autenticación"
+    ],
+    "opts_en": [
+     "User Administrator",
+     "Conditional Access Administrator",
+     "Application Administrator",
+     "Authentication Administrator"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Configurar el SSO de aplicaciones empresariales",
+    "en": "Configure enterprise app SSO settings",
+    "opts_es": [
+     "Administrador de usuarios",
+     "Administrador de acceso condicional",
+     "Administrador de aplicaciones",
+     "Administrador de autenticación"
+    ],
+    "opts_en": [
+     "User Administrator",
+     "Conditional Access Administrator",
+     "Application Administrator",
+     "Authentication Administrator"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Use el rol con menos privilegios que cubra la tarea.",
+  "exp_en": "Use the least-privileged role that covers the task."
+ },
+ {
+  "id": 357,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el objeto de administración de derechos para cada necesidad.",
+  "q_en": "Select the entitlement management object for each need.",
+  "rows": [
+   {
+    "es": "Contener recursos que los propietarios de proyectos pueden agrupar",
+    "en": "Hold resources that project owners can bundle",
+    "opts_es": [
+     "Organización conectada",
+     "Catálogo",
+     "Paquete de acceso"
+    ],
+    "opts_en": [
+     "Connected organization",
+     "Catalog",
+     "Access package"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Agrupar recursos con aprobación y caducidad",
+    "en": "Bundle resources with approval and expiration",
+    "opts_es": [
+     "Organización conectada",
+     "Catálogo",
+     "Paquete de acceso"
+    ],
+    "opts_en": [
+     "Connected organization",
+     "Catalog",
+     "Access package"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Permitir que usuarios de un inquilino socio soliciten acceso",
+    "en": "Let users from a partner tenant request access",
+    "opts_es": [
+     "Organización conectada",
+     "Catálogo",
+     "Paquete de acceso"
+    ],
+    "opts_en": [
+     "Connected organization",
+     "Catalog",
+     "Access package"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Los catálogos guardan recursos, los paquetes los entregan y las organizaciones conectadas acotan quién puede solicitar.",
+  "exp_en": "Catalogs hold resources, access packages deliver them, and connected organizations scope who can request."
+ },
+ {
+  "id": 358,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "dropdown",
+  "q_es": "Seleccione el tipo de permiso para cada escenario.",
+  "q_en": "Select the permission type for each scenario.",
+  "rows": [
+   {
+    "es": "Una app web lee el perfil del usuario conectado",
+    "en": "A web app reads the signed-in user's profile",
+    "opts_es": [
+     "Permiso de aplicación",
+     "Permiso delegado"
+    ],
+    "opts_en": [
+     "Application permission",
+     "Delegated permission"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Un servicio en segundo plano lee todos los usuarios sin inicio de sesión",
+    "en": "A background service reads all users without sign-in",
+    "opts_es": [
+     "Permiso de aplicación",
+     "Permiso delegado"
+    ],
+    "opts_en": [
+     "Application permission",
+     "Delegated permission"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Una app de página única envía correo como el usuario",
+    "en": "A single-page app sends mail as the user",
+    "opts_es": [
+     "Permiso de aplicación",
+     "Permiso delegado"
+    ],
+    "opts_en": [
+     "Application permission",
+     "Delegated permission"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los permisos delegados actúan en nombre de un usuario; los de aplicación actúan como la propia app.",
+  "exp_en": "Delegated permissions act on behalf of a signed-in user; application permissions act as the app itself."
+ },
+ {
+  "id": 359,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para proteger todos los inicios desde ubicaciones y clientes de riesgo, use ",
+  "pre_en": "To protect all sign-ins from risky locations and clients, use ",
+  "post_es": " en acceso condicional.",
+  "post_en": " in Conditional Access.",
+  "opts_es": [
+   "ubicaciones con nombre y condiciones",
+   "catálogos de paquetes de acceso",
+   "personalización de marca",
+   "unidades administrativas"
+  ],
+  "opts_en": [
+   "named locations and conditions",
+   "access package catalogs",
+   "company branding",
+   "administrative units"
+  ],
+  "correct": 0,
+  "exp_es": "Las ubicaciones con nombre definen países e intervalos IP de confianza o bloqueados que se usan como condiciones.",
+  "exp_en": "Named locations define trusted or blocked countries and IP ranges used as policy conditions."
+ },
+ {
+  "id": 360,
+  "exam": "sc-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "Para que una app web local use la autenticación previa de Entra sin abrir puertos de entrada, implemente ",
+  "pre_en": "To let an on-premises web app use Entra pre-authentication without opening inbound ports, deploy ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "un host de Bastion",
+   "un conector de Application Proxy",
+   "un grupo de conmutación de SQL",
+   "un controlador de dominio de solo lectura"
+  ],
+  "opts_en": [
+   "a Bastion host",
+   "an Application Proxy connector",
+   "a SQL failover group",
+   "a read-only domain controller"
+  ],
+  "correct": 1,
+  "exp_es": "Los conectores de Application Proxy solo hacen conexiones salientes al servicio.",
+  "exp_en": "Application Proxy connectors make only outbound connections to the service."
+ },
+ {
+  "id": 361,
+  "exam": "sc-300",
+  "dom": 1,
+  "obj": "1.4",
+  "type": "sentence",
+  "pre_es": "Para sincronizar usuarios de varios bosques de AD desconectados con agentes ligeros, use ",
+  "pre_en": "To synchronize users from several disconnected AD forests with lightweight agents, use ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Azure Site Recovery",
+   "Copia de seguridad de Windows Server",
+   "Microsoft Entra Cloud Sync",
+   "Servicios de federación de Active Directory"
+  ],
+  "opts_en": [
+   "Azure Site Recovery",
+   "Windows Server Backup",
+   "Microsoft Entra Cloud Sync",
+   "Active Directory Federation Services"
+  ],
+  "correct": 2,
+  "exp_es": "Cloud Sync usa agentes de aprovisionamiento y admite sincronización de varios bosques.",
+  "exp_en": "Cloud Sync uses provisioning agents and supports multi-forest synchronization."
  }
 ]
