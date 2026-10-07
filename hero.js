@@ -7,7 +7,7 @@ const HT={
  es:{
   eyebrow:'{n} exámenes nuevos · {month}',
   eyebrowNone:'Practica con preguntas como las del examen',
-  title:'Practica como en el examen real y certifícate con confianza',
+  title:'Exámenes de práctica de Microsoft como el examen real',
   sub:'Simulacros cronometrados, repaso inteligente y explicaciones en español e inglés, basados en las guías oficiales de Microsoft.',
   ctaNew:'Ver exámenes nuevos', ctaAll:'Ver todos los exámenes', ctaPro:'Hazte Pro', ctaCareer:'Mi carrera',
   newLabel:'Nuevos', q:'preguntas',
@@ -17,7 +17,7 @@ const HT={
  en:{
   eyebrow:'{n} new exams · {month}',
   eyebrowNone:'Practice with exam-style questions',
-  title:'Practice like the real exam and get certified with confidence',
+  title:'Microsoft practice exams that feel like the real test',
   sub:'Timed mock exams, smart review and explanations in English and Spanish, based on Microsoft\'s official study guides.',
   ctaNew:'See new exams', ctaAll:'See all exams', ctaPro:'Go Pro', ctaCareer:'My career',
   newLabel:'New', q:'questions',

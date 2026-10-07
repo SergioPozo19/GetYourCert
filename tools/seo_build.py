@@ -9,12 +9,14 @@ Regenerates, from index.html examsdata + questions/*.json + the Spanish landing 
   - sitemap.xml        every ES/EN URL with xhtml:link alternates
 Idempotent: safe to run on every ship.
 """
-import json, re, os, html, hashlib, datetime
+import json, re, os, html, hashlib, datetime, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from seo_content import CATS, HOME_ES, HOME_EN
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
 TODAY = datetime.date.today().isoformat()
-CSS_V = '3'
+CSS_V = '4'
 
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8', newline='').read()
@@ -161,6 +163,10 @@ def other_exams_html(self_id):
         nm = esc(short_name(e))
         rows.append(f'      <a href="/{e["id"]}.html"><span lang="es">{e["code"]}: {nm}</span><span lang="en">{e["code"]}: {nm}</span></a>')
     rows.append('    </div>')
+    rows.append('    <div class="other-exams cat-links">')
+    for c in CATS:
+        rows.append(f'      <a href="/{c["es"]}.html"><span lang="es">{esc(c["h1_es"])}</span></a><a href="/en/{c["en"]}.html"><span lang="en">{esc(c["h1_en"])}</span></a>')
+    rows.append('    </div>')
     return '\n'.join(rows)
 
 
@@ -247,7 +253,7 @@ def build_exam(e):
     body = body.replace('  <section class="block">\n    <h2 lang="es">Preguntas frecuentes</h2>',
                         samples_html(e, samples) + '\n\n  <section class="block">\n    <h2 lang="es">Preguntas frecuentes</h2>', 1)
     # footer exam list
-    body = re.sub(r'    <div class="other-exams">.*?\n    </div>', lambda _: other_exams_html(eid), body, count=1, flags=re.S)
+    body = re.sub(r'    <div class="other-exams">.*?\n    </div>(?:\n    <div class="other-exams cat-links">.*?\n    </div>)?', lambda _: other_exams_html(eid), body, count=1, flags=re.S)
     # absolute asset paths
     body = body.replace('src="icon.svg"', 'src="/icon.svg"')
     body = re.sub(r'<script src="/?seo-assets/landing\.js[^"]*"></script>', f'<script src="/seo-assets/landing.js?v={CSS_V}"></script>', body)
@@ -289,10 +295,12 @@ def build_exam(e):
         b = body
         if lg == 'es':
             b = strip_lang(b, 'en')
+            b = re.sub(r'<a href="/[^"]*"></a>', '', b)
             b = b.replace(f'href="/?exam={eid}"', f'href="/?exam={eid}&amp;lang=es"')
             b = re.sub(r'data-href-es="[^"]*" data-href-en="[^"]*"', '', b)
         else:
             b = strip_lang(b, 'es')
+            b = re.sub(r'<a href="/[^"]*"></a>', '', b)
             b = re.sub(r'href="/([a-z]{2}-\d{3})\.html"', r'href="/en/\1.html"', b)
             b = b.replace('href="/"', 'href="/en/"')
             b = b.replace(f'href="/?exam={eid}"', f'href="/?exam={eid}&amp;lang=en"')
@@ -376,6 +384,13 @@ def build_en_hub():
   </div>
 
   <section class="block">
+    <h2>Browse by area</h2>
+    <div class="hub-cats">
+{chr(10).join(f'      <a class="hub-cat" href="/en/{c["en"]}.html">{esc(c["h1_en"])}</a>' for c in CATS)}
+    </div>
+  </section>
+
+  <section class="block">
     <h2>Choose your exam</h2>
     <div class="hub-grid">
 {chr(10).join(cards)}
@@ -399,6 +414,100 @@ def build_en_hub():
 '''
     wr('en/index.html', page)
 
+
+# ---------------------------------------------------------------- category pages
+def build_categories():
+    by = {e['id']: e for e in EXAMS}
+    for c in CATS:
+        es_url, en_url = f'{SITE}/{c["es"]}.html', f'{SITE}/en/{c["en"]}.html'
+        exs = [by[i] for i in c['exams'] if i in by]
+        total = sum(e['n'] for e in exs)
+        for lg in ('es', 'en'):
+            url = es_url if lg == 'es' else en_url
+            home = '/' if lg == 'es' else '/en/'
+            pre = '' if lg == 'es' else '/en'
+            if lg == 'es':
+                T = dict(crumb='Todos los exámenes', exams='Exámenes de esta área', start='Por dónde empezar',
+                         faqh='Preguntas frecuentes', cta='Empezar a practicar gratis →', more='Otras áreas',
+                         stats=('Exámenes', 'Preguntas', 'Aprobado', 'Para empezar'), app='/?lang=es',
+                         legal='Volver al catálogo', privacy='Privacidad', q='preguntas')
+            else:
+                T = dict(crumb='All exams', exams='Exams in this area', start='Where to start',
+                         faqh='Frequently asked questions', cta='Start practicing for free →', more='Other areas',
+                         stats=('Exams', 'Questions', 'Pass mark', 'To start'), app='/?lang=en',
+                         legal='Back to the catalog', privacy='Privacy', q='questions')
+            lvl_i = 0 if lg == 'es' else 1
+            card_list = []
+            for e in exs:
+                lv = LEVEL_NAME.get(e.get('level'), ('', ''))[lvl_i]
+                card_list.append(
+                    f'      <a class="hub-card" href="{pre}/{e["id"]}.html">\n'
+                    f'        <span class="hub-code">{e["code"]}</span>\n'
+                    f'        <span class="hub-title">{esc(short_name(e))}</span>\n'
+                    f'        <span class="hub-desc">{esc(e["desc_" + lg])}</span>\n'
+                    f'        <span class="hub-meta">{lv} · {e["n"]} {T["q"]}</span>\n'
+                    f'      </a>')
+            cards = '\n'.join(card_list)
+            faq = c['faq_' + lg]
+            faq_html = '\n'.join(f'    <div class="faq-item">\n      <h3>{esc(q)}</h3>\n      <p>{esc(a)}</p>\n    </div>' for q, a in faq)
+            other_links = ' · '.join(f'<a href="{pre}/{o[lg]}.html">{esc(o["h1_" + lg])}</a>' for o in CATS if o is not c)
+            paras = '\n'.join(f'    <p>{esc(p)}</p>' for p in c['intro_' + lg])
+            ld = {"@context": "https://schema.org", "@graph": [
+                org(),
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "EarnYourCert", "item": SITE + home},
+                    {"@type": "ListItem", "position": 2, "name": c['h1_' + lg], "item": url}]},
+                {"@type": "CollectionPage", "name": c['h1_' + lg], "url": url, "inLanguage": lg,
+                 "description": c['desc_' + lg],
+                 "mainEntity": {"@type": "ItemList", "itemListElement": [
+                     {"@type": "ListItem", "position": i, "url": f"{SITE}{pre}/{e['id']}.html",
+                      "name": f"{e['code']} — {short_name(e)}"} for i, e in enumerate(exs, 1)]}},
+                {"@type": "FAQPage", "mainEntity": [
+                    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]}
+            head = head_html(lg, c['title_' + lg], c['desc_' + lg], c['h1_' + lg] + ' · EarnYourCert',
+                             url, es_url, en_url, SITE + '/seo-assets/og/home.jpg', ld)
+            on_es = 'on' if lg == 'es' else ''
+            on_en = 'on' if lg == 'en' else ''
+            cur_es = 'page' if lg == 'es' else 'false'
+            cur_en = 'page' if lg == 'en' else 'false'
+            page = (
+                f'<!DOCTYPE html>\n<html lang="{lg}" data-lang="{lg}" data-fixed-lang="{lg}">\n{head}\n<body>\n'
+                f'<div class="wrap">\n'
+                f'  <div class="topbar">\n'
+                f'    <a class="brand" href="{home}">\n'
+                f'      <span class="logo"><img src="/icon.svg" alt="" width="44" height="44"></span>\n'
+                f'      <span class="name">EarnYourCert</span>\n'
+                f'    </a>\n'
+                f'    <div class="toggle" id="langToggle" role="group" aria-label="Idioma / Language">\n'
+                f'      <a href="/{c["es"]}.html" hreflang="es" class="{on_es}" aria-current="{cur_es}">ES</a>\n'
+                f'      <a href="/en/{c["en"]}.html" hreflang="en" class="{on_en}" aria-current="{cur_en}">EN</a>\n'
+                f'    </div>\n'
+                f'  </div>\n'
+                f'  <div class="crumb"><a href="{home}">{T["crumb"]}</a> › {esc(c["h1_" + lg])}</div>\n\n'
+                f'  <div class="hero">\n'
+                f'    <div class="eyebrow">Microsoft · {len(exs)} {T["stats"][0].lower()}</div>\n'
+                f'    <h1>{esc(c["h1_" + lg])}</h1>\n'
+                f'    <p>{esc(c["desc_" + lg])}</p>\n'
+                f'    <div class="cta"><a class="btn btn-primary" href="{T["app"]}">{T["cta"]}</a></div>\n'
+                f'    <div class="stats">\n'
+                f'      <div class="stat"><div class="n">{len(exs)}</div><div class="l">{T["stats"][0]}</div></div>\n'
+                f'      <div class="stat"><div class="n">{num(total, lg)}</div><div class="l">{T["stats"][1]}</div></div>\n'
+                f'      <div class="stat"><div class="n">70%</div><div class="l">{T["stats"][2]}</div></div>\n'
+                f'      <div class="stat"><div class="n">0 €</div><div class="l">{T["stats"][3]}</div></div>\n'
+                f'    </div>\n'
+                f'  </div>\n\n'
+                f'  <section class="block prose">\n{paras}\n  </section>\n\n'
+                f'  <section class="block">\n    <h2>{T["exams"]}</h2>\n    <div class="hub-grid">\n{cards}\n    </div>\n  </section>\n\n'
+                f'  <section class="block prose">\n    <h2>{T["start"]}</h2>\n    <p>{esc(c["path_" + lg])}</p>\n  </section>\n\n'
+                f'  <section class="block">\n    <h2>{T["faqh"]}</h2>\n{faq_html}\n  </section>\n\n'
+                f'  <footer>\n'
+                f'    <div class="other-exams"><span>{T["more"]}:</span> {other_links}</div>\n'
+                f'    <div class="legal"><a href="{home}">{T["legal"]}</a> · <a href="/privacy.html">{T["privacy"]}</a></div>\n'
+                f'  </footer>\n'
+                f'</div>\n'
+                f'<script src="/seo-assets/landing.js?v={CSS_V}"></script>\n'
+                f'</body>\n</html>\n')
+            wr(f'{c["es"]}.html' if lg == 'es' else f'en/{c["en"]}.html', page)
 
 # ---------------------------------------------------------------- home (index.html)
 def build_home():
@@ -442,7 +551,8 @@ def build_home():
                 "@type": ["Quiz", "LearningResource"], "name": f"{e['code']}: {short_name(e)} — Examen de práctica gratuito",
                 "url": f"{SITE}/{e['id']}.html", "educationalLevel": EDU.get(e.get('level'), 'intermediate'),
                 "isAccessibleForFree": True, "numberOfItems": e['n']}}
-            for i, e in enumerate(ORDERED, 1)]}]}
+            for i, e in enumerate(ORDERED, 1)]},
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HOME_ES['faq']]}]}
     s = re.sub(r'<script type="application/ld\+json">.*?</script>',
                lambda _: '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + '\n</script>', s, count=1, flags=re.S)
     # static, crawlable exam links block in the footer
@@ -451,6 +561,18 @@ def build_home():
              f'    <p class="seo-exams-title"><span data-i="seoExamsTitle">Exámenes de práctica</span> · <a href="/en/" hreflang="en">English version</a></p>\n'
              f'  <div class="seo-exams-list">\n{links}\n  </div>\n  </nav>\n<!--/seo-exams-->')
     s = re.sub(r'<!--seo-exams-->.*?<!--/seo-exams-->\n', '', s, flags=re.S)
+    # intro + FAQ block at the end of the catalog section
+    def intro(lgd, lg):
+        paras = ''.join(f'<p lang="{lg}">{esc(p)}</p>' for p in lgd['paras'])
+        faqs = ''.join(f'<div class="seo-faq" lang="{lg}"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for q, a in lgd['faq'])
+        return f'<h2 lang="{lg}">{esc(lgd["h2"])}</h2>{paras}{faqs}'
+    cats = ' · '.join(f'<a href="/{c["es"]}.html" lang="es">{esc(c["h1_es"])}</a><a href="/en/{c["en"]}.html" lang="en">{esc(c["h1_en"])}</a>' for c in CATS)
+    intro_block = (f'<!--seo-intro-->\n    <div class="seo-intro">{intro(HOME_ES, "es")}{intro(HOME_EN, "en")}'
+                   f'<p class="seo-cats">{cats}</p></div>\n<!--/seo-intro-->\n')
+    s = re.sub(r'<!--seo-intro-->.*?<!--/seo-intro-->\n', '', s, flags=re.S)
+    i = s.index('id="examGrid"')
+    j = s.index('\n  </section>', i)
+    s = s[:j + 1] + intro_block + s[j + 1:]
     s = s.replace('<footer class="site-footer">\n', '<footer class="site-footer">\n' + block + '\n', 1)
     if crlf:
         s = s.replace('\n', '\r\n')
@@ -475,6 +597,8 @@ def build_sitemap():
     rows = url(SITE + '/', SITE + '/en/', '1.0', 'weekly')
     for e in ORDERED:
         rows += url(f'{SITE}/{e["id"]}.html', f'{SITE}/en/{e["id"]}.html', '0.9', 'weekly')
+    for c in CATS:
+        rows += url(f'{SITE}/{c["es"]}.html', f'{SITE}/en/{c["en"]}.html', '0.8', 'weekly')
     rows.append(f'''  <url>
     <loc>{SITE}/pro.html</loc>
     <lastmod>{TODAY}</lastmod>
@@ -491,6 +615,7 @@ if __name__ == '__main__':
     for e in EXAMS:
         build_exam(e)
     build_en_hub()
+    build_categories()
     build_home()
     build_sitemap()
     print(f'SEO build: {len(EXAMS)} exams x2 langs, en hub, home, sitemap ({TOTAL} questions)')
