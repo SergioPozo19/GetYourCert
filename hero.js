@@ -41,7 +41,7 @@ function heroRender(){
   if(!hero){ hero=document.createElement('div'); hero.id='heroBanner'; hero.className='mkt'; cat.insertBefore(hero,cat.firstChild); }
   const fresh=EXAMS.filter(isNew);
   const total=EXAMS.reduce((s,e)=>s+(e.soon?0:(e.questionCount||0)),0);
-  const real=EXAMS.filter(e=>!e.soon).length;
+  const real=EXAMS.filter(e=>!e.soon&&!(window.isRetired&&isRetired(e))).length;
   const month=new Date().toLocaleDateString(t('locale'),{month:'long',year:'numeric'});
   const eyebrow=fresh.length?ht('eyebrow').replace('{n}',fresh.length).replace('{month}',month):ht('eyebrowNone');
   const pro=typeof isPro==='function'&&isPro(), logged=typeof isLoggedIn==='function'&&isLoggedIn();

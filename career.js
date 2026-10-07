@@ -69,6 +69,7 @@ const PATHS=[
 
 /* ---------- helpers ---------- */
 const exById=id=>(typeof EXAMS!=='undefined'&&EXAMS||[]).find(e=>e.id===id);
+const exActive=id=>{const e=exById(id); return !!e&&!(window.isRetired&&isRetired(e));};
 const mid=w=>{const n=((w||'').match(/\d+/g)||[]).map(Number);return n.length?n.reduce((a,b)=>a+b,0)/n.length:0;};
 const passOf=ex=>(ex&&ex.pass)||70;
 const isoToday=()=>new Date().toISOString().slice(0,10);
@@ -256,7 +257,7 @@ function renderPaths(body,hist){
   const certs=getCerts();
   const grid=document.createElement('div'); grid.className='cr-grid';
   PATHS.forEach(p=>{
-    const steps=p.steps.filter(exById);
+    const steps=p.steps.filter(id=>exActive(id)||(exById(id)&&certs.some(c=>c.examId===id)));
     if(!steps.length)return;
     const sts=steps.map(id=>stepStatus(id,hist,certs));
     const nextI=sts.findIndex(s=>s!=='stCertified');
@@ -421,7 +422,7 @@ window.careerAfterResults=function(ctx){
       const certs=getCerts(); let nextId=null;
       for(const pth of PATHS){
         const i=pth.steps.indexOf(ex.id); if(i<0)continue;
-        const n=pth.steps.slice(i+1).find(id=>exById(id)&&!certs.some(c=>c.examId===id)); if(n){nextId=n;break;}
+        const n=pth.steps.slice(i+1).find(id=>exActive(id)&&!certs.some(c=>c.examId===id)); if(n){nextId=n;break;}
       }
       if(nextId){
         const nx=exById(nextId);
