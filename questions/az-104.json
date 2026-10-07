@@ -15742,5 +15742,760 @@
   ],
   "exp_es": "Azure Backup protege VMs, servidores físicos, SQL Server, SAP HANA y Azure Files mediante almacenes de Recovery Services. Azure Site Recovery replica VMs continuamente a una región secundaria para DR. Ambos servicios comparten el mismo tipo de almacén (Recovery Services Vault), no son independientes.",
   "exp_en": "Azure Backup protects VMs, physical servers, SQL Server, SAP HANA, and Azure Files via Recovery Services vaults. Azure Site Recovery continuously replicates VMs to a secondary region for DR. Both services share the same vault type (Recovery Services Vault), they are not independent."
+ },
+ {
+  "id": 574,
+  "exam": "az-104",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué solución cumple el requisito de acceso de los administradores a las VM?",
+  "q_en": "Which solution meets the requirement for administrator access to the VMs?",
+  "opts_es": [
+   "Azure Bastion implementado en una AzureBastionSubnet",
+   "Una puerta de enlace NAT asociada a la subred web",
+   "Una regla NSG que permita RDP desde internet",
+   "Un equilibrador Básico con una regla NAT de entrada"
+  ],
+  "opts_en": [
+   "Azure Bastion deployed in an AzureBastionSubnet",
+   "A NAT gateway associated with the web subnet",
+   "An NSG rule allowing RDP from the internet",
+   "A Basic load balancer with an inbound NAT rule"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Azure Bastion ofrece RDP y SSH desde el portal mediante TLS sin IP públicas en las VM. Necesita una subred dedicada llamada AzureBastionSubnet.",
+  "exp_en": "Azure Bastion provides RDP and SSH from the portal over TLS without public IPs on the VMs. It needs a dedicated subnet named AzureBastionSubnet.",
+  "case_en": "Fabrikam Logistics",
+  "case_es": "Fabrikam Logistics",
+  "scenario_en": [
+   [
+    "Overview",
+    "Fabrikam Logistics is moving its order-management platform from an on-premises datacenter to Azure. The company uses the West Europe region and has a single subscription named Prod."
+   ],
+   [
+    "Existing environment",
+    "- The web tier runs on four Windows Server VMs.\n- Administrators currently connect to the VMs over RDP using public IP addresses.\n- Shipping documents are stored on an on-premises SMB file server joined to Active Directory Domain Services."
+   ],
+   [
+    "Requirements",
+    "- The web tier must remain available if a single datacenter in the region fails.\n- No VM may have a public IP address; administrators must still be able to use RDP from the Azure portal.\n- Daily VM backups must be kept for 30 days, and administrators must be able to restore individual files.\n- The file share must keep using the existing AD DS identities and NTFS permissions."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Fabrikam Logistics está trasladando su plataforma de gestión de pedidos de un centro de datos local a Azure. La empresa usa la región Oeste de Europa y tiene una única suscripción llamada Prod."
+   ],
+   [
+    "Entorno actual",
+    "- El nivel web se ejecuta en cuatro VM con Windows Server.\n- Los administradores se conectan actualmente por RDP usando direcciones IP públicas.\n- Los documentos de envío se guardan en un servidor de archivos SMB local unido a Active Directory Domain Services."
+   ],
+   [
+    "Requisitos",
+    "- El nivel web debe seguir disponible si falla un único centro de datos de la región.\n- Ninguna VM puede tener IP pública; los administradores deben poder seguir usando RDP desde el portal de Azure.\n- Las copias diarias de las VM deben conservarse 30 días y debe poder restaurarse archivos individuales.\n- El recurso compartido debe seguir usando las identidades de AD DS y los permisos NTFS existentes."
+   ]
+  ]
+ },
+ {
+  "id": 575,
+  "exam": "az-104",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Cómo debe implementar las VM del nivel web para cumplir el requisito de disponibilidad?",
+  "q_en": "How should you deploy the web tier VMs to meet the availability requirement?",
+  "opts_es": [
+   "En un conjunto de disponibilidad con dos dominios de error",
+   "En zonas de disponibilidad tras un Load Balancer Estándar",
+   "En una sola zona con discos administrados SSD Premium",
+   "En un grupo de selección de ubicación de proximidad"
+  ],
+  "opts_en": [
+   "In one availability set with two fault domains",
+   "Across availability zones behind a Standard Load Balancer",
+   "In a single zone with Premium SSD managed disks",
+   "In a proximity placement group in the region"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las zonas de disponibilidad son centros de datos físicamente separados, así que repartir las VM entre zonas protege frente al fallo de un centro de datos. Los conjuntos de disponibilidad solo protegen frente a fallos de bastidor y actualizaciones dentro de un centro.",
+  "exp_en": "Availability zones are physically separate datacenters, so spreading VMs across zones protects against a datacenter failure. Availability sets only protect against rack and update failures within one datacenter.",
+  "case_en": "Fabrikam Logistics",
+  "case_es": "Fabrikam Logistics",
+  "scenario_en": [
+   [
+    "Overview",
+    "Fabrikam Logistics is moving its order-management platform from an on-premises datacenter to Azure. The company uses the West Europe region and has a single subscription named Prod."
+   ],
+   [
+    "Existing environment",
+    "- The web tier runs on four Windows Server VMs.\n- Administrators currently connect to the VMs over RDP using public IP addresses.\n- Shipping documents are stored on an on-premises SMB file server joined to Active Directory Domain Services."
+   ],
+   [
+    "Requirements",
+    "- The web tier must remain available if a single datacenter in the region fails.\n- No VM may have a public IP address; administrators must still be able to use RDP from the Azure portal.\n- Daily VM backups must be kept for 30 days, and administrators must be able to restore individual files.\n- The file share must keep using the existing AD DS identities and NTFS permissions."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Fabrikam Logistics está trasladando su plataforma de gestión de pedidos de un centro de datos local a Azure. La empresa usa la región Oeste de Europa y tiene una única suscripción llamada Prod."
+   ],
+   [
+    "Entorno actual",
+    "- El nivel web se ejecuta en cuatro VM con Windows Server.\n- Los administradores se conectan actualmente por RDP usando direcciones IP públicas.\n- Los documentos de envío se guardan en un servidor de archivos SMB local unido a Active Directory Domain Services."
+   ],
+   [
+    "Requisitos",
+    "- El nivel web debe seguir disponible si falla un único centro de datos de la región.\n- Ninguna VM puede tener IP pública; los administradores deben poder seguir usando RDP desde el portal de Azure.\n- Las copias diarias de las VM deben conservarse 30 días y debe poder restaurarse archivos individuales.\n- El recurso compartido debe seguir usando las identidades de AD DS y los permisos NTFS existentes."
+   ]
+  ]
+ },
+ {
+  "id": 576,
+  "exam": "az-104",
+  "dom": 5,
+  "obj": "5.2",
+  "type": "mc",
+  "q_es": "¿Qué debe configurar para cumplir el requisito de copias de seguridad?",
+  "q_en": "What should you configure to meet the backup requirement?",
+  "opts_es": [
+   "Azure Site Recovery con una directiva de puntos de 30 días",
+   "Instantáneas de discos tomadas por una Logic App diaria",
+   "Una directiva de Azure Backup en un almacén de Recovery Services",
+   "Una regla de ciclo de vida que conserve 30 días"
+  ],
+  "opts_en": [
+   "Azure Site Recovery with a 30-day recovery point policy",
+   "Managed disk snapshots taken by a daily Logic App",
+   "An Azure Backup policy in a Recovery Services vault",
+   "A storage account lifecycle rule that keeps 30 days"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las directivas de Azure Backup en un almacén de Recovery Services programan copias diarias con la retención elegida y permiten recuperar archivos de un punto de restauración. Site Recovery es para replicación ante desastres, no para copias.",
+  "exp_en": "Azure Backup policies in a Recovery Services vault schedule daily VM backups with the retention you choose and support file-level recovery from a restore point. Site Recovery is for disaster recovery replication, not long-term backups.",
+  "case_en": "Fabrikam Logistics",
+  "case_es": "Fabrikam Logistics",
+  "scenario_en": [
+   [
+    "Overview",
+    "Fabrikam Logistics is moving its order-management platform from an on-premises datacenter to Azure. The company uses the West Europe region and has a single subscription named Prod."
+   ],
+   [
+    "Existing environment",
+    "- The web tier runs on four Windows Server VMs.\n- Administrators currently connect to the VMs over RDP using public IP addresses.\n- Shipping documents are stored on an on-premises SMB file server joined to Active Directory Domain Services."
+   ],
+   [
+    "Requirements",
+    "- The web tier must remain available if a single datacenter in the region fails.\n- No VM may have a public IP address; administrators must still be able to use RDP from the Azure portal.\n- Daily VM backups must be kept for 30 days, and administrators must be able to restore individual files.\n- The file share must keep using the existing AD DS identities and NTFS permissions."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Fabrikam Logistics está trasladando su plataforma de gestión de pedidos de un centro de datos local a Azure. La empresa usa la región Oeste de Europa y tiene una única suscripción llamada Prod."
+   ],
+   [
+    "Entorno actual",
+    "- El nivel web se ejecuta en cuatro VM con Windows Server.\n- Los administradores se conectan actualmente por RDP usando direcciones IP públicas.\n- Los documentos de envío se guardan en un servidor de archivos SMB local unido a Active Directory Domain Services."
+   ],
+   [
+    "Requisitos",
+    "- El nivel web debe seguir disponible si falla un único centro de datos de la región.\n- Ninguna VM puede tener IP pública; los administradores deben poder seguir usando RDP desde el portal de Azure.\n- Las copias diarias de las VM deben conservarse 30 días y debe poder restaurarse archivos individuales.\n- El recurso compartido debe seguir usando las identidades de AD DS y los permisos NTFS existentes."
+   ]
+  ]
+ },
+ {
+  "id": 577,
+  "exam": "az-104",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño del recurso compartido de Fabrikam, indica si es verdadera o falsa.",
+  "q_en": "For each statement about the file share design for Fabrikam, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los recursos SMB de Azure Files pueden usar identidades de AD DS locales para autenticarse.",
+    "en": "Azure Files SMB shares can use on-premises AD DS identities for authentication.",
+    "ans": true
+   },
+   {
+    "es": "Los permisos NTFS existentes pueden conservarse en archivos y carpetas tras la migración.",
+    "en": "Existing NTFS permissions can be kept on the files and folders after migration.",
+    "ans": true
+   },
+   {
+    "es": "La autenticación basada en identidad exige que el recurso use el protocolo NFS.",
+    "en": "Identity-based authentication requires the share to use the NFS protocol.",
+    "ans": false
+   },
+   {
+    "es": "Las instantáneas del recurso pueden usarse para restaurar versiones anteriores.",
+    "en": "Share snapshots can be used to restore previous versions of files.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Azure Files admite autenticación con AD DS (o Entra Kerberos/Entra Domain Services) sobre SMB, con RBAC del recurso y ACL NTFS, además de instantáneas. La autenticación por identidad se aplica a SMB, no a NFS.",
+  "exp_en": "Azure Files supports AD DS (or Entra Kerberos/Entra Domain Services) authentication over SMB with share-level RBAC and NTFS ACLs, plus share snapshots. Identity-based authentication applies to SMB, not NFS.",
+  "case_en": "Fabrikam Logistics",
+  "case_es": "Fabrikam Logistics",
+  "scenario_en": [
+   [
+    "Overview",
+    "Fabrikam Logistics is moving its order-management platform from an on-premises datacenter to Azure. The company uses the West Europe region and has a single subscription named Prod."
+   ],
+   [
+    "Existing environment",
+    "- The web tier runs on four Windows Server VMs.\n- Administrators currently connect to the VMs over RDP using public IP addresses.\n- Shipping documents are stored on an on-premises SMB file server joined to Active Directory Domain Services."
+   ],
+   [
+    "Requirements",
+    "- The web tier must remain available if a single datacenter in the region fails.\n- No VM may have a public IP address; administrators must still be able to use RDP from the Azure portal.\n- Daily VM backups must be kept for 30 days, and administrators must be able to restore individual files.\n- The file share must keep using the existing AD DS identities and NTFS permissions."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Fabrikam Logistics está trasladando su plataforma de gestión de pedidos de un centro de datos local a Azure. La empresa usa la región Oeste de Europa y tiene una única suscripción llamada Prod."
+   ],
+   [
+    "Entorno actual",
+    "- El nivel web se ejecuta en cuatro VM con Windows Server.\n- Los administradores se conectan actualmente por RDP usando direcciones IP públicas.\n- Los documentos de envío se guardan en un servidor de archivos SMB local unido a Active Directory Domain Services."
+   ],
+   [
+    "Requisitos",
+    "- El nivel web debe seguir disponible si falla un único centro de datos de la región.\n- Ninguna VM puede tener IP pública; los administradores deben poder seguir usando RDP desde el portal de Azure.\n- Las copias diarias de las VM deben conservarse 30 días y debe poder restaurarse archivos individuales.\n- El recurso compartido debe seguir usando las identidades de AD DS y los permisos NTFS existentes."
+   ]
+  ]
+ },
+ {
+  "id": 578,
+  "exam": "az-104",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Cómo debe aplicar el requisito de regiones?",
+  "q_en": "How should you enforce the region requirement?",
+  "opts_es": [
+   "Asignar la directiva Ubicaciones permitidas en Contoso-Root",
+   "Crear un presupuesto por región en cada suscripción",
+   "Aplicar un bloqueo de solo lectura a cada suscripción",
+   "Asignar el rol Lector a todos en Contoso-Root"
+  ],
+  "opts_en": [
+   "Assign the Allowed locations policy at Contoso-Root",
+   "Create a budget for each subscription by region",
+   "Apply a read-only lock to each subscription",
+   "Assign the Reader role to all users at Contoso-Root"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Asignar la directiva Ubicaciones permitidas en el grupo de administración la aplica a todas las suscripciones actuales y futuras que contiene.",
+  "exp_en": "Assigning the Allowed locations policy at the management group applies it to all current and future subscriptions under it.",
+  "case_en": "Contoso Retail",
+  "case_es": "Contoso Retail",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso Retail has 12 Azure subscriptions grouped under a management group named Contoso-Root. Each business unit has its own subscription."
+   ],
+   [
+    "Requirements",
+    "- Resources may only be deployed to West Europe and North Europe in every subscription, including future ones.\n- Help desk staff must be able to restart VMs but must not be able to delete or resize them.\n- Every resource must carry the CostCenter tag of its resource group, even if the creator forgets it.\n- The production networking resource group must not be deleted by mistake."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso Retail tiene 12 suscripciones de Azure agrupadas bajo un grupo de administración llamado Contoso-Root. Cada unidad de negocio tiene su propia suscripción."
+   ],
+   [
+    "Requisitos",
+    "- Solo pueden implementarse recursos en Oeste de Europa y Norte de Europa en todas las suscripciones, incluidas las futuras.\n- El soporte debe poder reiniciar VM, pero no eliminarlas ni cambiar su tamaño.\n- Todo recurso debe llevar la etiqueta CostCenter de su grupo de recursos, aunque quien lo cree la olvide.\n- El grupo de recursos de red de producción no debe eliminarse por error."
+   ]
+  ]
+ },
+ {
+  "id": 579,
+  "exam": "az-104",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué enfoque cumple el requisito del soporte con el mínimo privilegio?",
+  "q_en": "Which approach meets the help desk requirement with least privilege?",
+  "opts_es": [
+   "Asignar el rol integrado Colaborador de máquina virtual",
+   "Asignar el rol Colaborador en cada grupo de recursos",
+   "Crear un rol personalizado con acciones de lectura y reinicio",
+   "Agregar el grupo de soporte al rol Propietario"
+  ],
+  "opts_en": [
+   "Assign the built-in Virtual Machine Contributor role",
+   "Assign the Contributor role on each resource group",
+   "Create a custom role with read and restart actions",
+   "Add the help desk group to the Owner role"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Colaborador de máquina virtual también puede eliminar y redimensionar VM. Un rol personalizado con Microsoft.Compute/virtualMachines/read y .../restart/action concede solo lo necesario.",
+  "exp_en": "Virtual Machine Contributor can also delete and resize VMs. A custom role with Microsoft.Compute/virtualMachines/read and .../restart/action grants only what is needed.",
+  "case_en": "Contoso Retail",
+  "case_es": "Contoso Retail",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso Retail has 12 Azure subscriptions grouped under a management group named Contoso-Root. Each business unit has its own subscription."
+   ],
+   [
+    "Requirements",
+    "- Resources may only be deployed to West Europe and North Europe in every subscription, including future ones.\n- Help desk staff must be able to restart VMs but must not be able to delete or resize them.\n- Every resource must carry the CostCenter tag of its resource group, even if the creator forgets it.\n- The production networking resource group must not be deleted by mistake."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso Retail tiene 12 suscripciones de Azure agrupadas bajo un grupo de administración llamado Contoso-Root. Cada unidad de negocio tiene su propia suscripción."
+   ],
+   [
+    "Requisitos",
+    "- Solo pueden implementarse recursos en Oeste de Europa y Norte de Europa en todas las suscripciones, incluidas las futuras.\n- El soporte debe poder reiniciar VM, pero no eliminarlas ni cambiar su tamaño.\n- Todo recurso debe llevar la etiqueta CostCenter de su grupo de recursos, aunque quien lo cree la olvide.\n- El grupo de recursos de red de producción no debe eliminarse por error."
+   ]
+  ]
+ },
+ {
+  "id": 580,
+  "exam": "az-104",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué debe usar para cumplir el requisito de la etiqueta CostCenter?",
+  "q_en": "What should you use to meet the CostCenter tag requirement?",
+  "opts_es": [
+   "Una directiva que deniegue recursos sin ninguna etiqueta",
+   "Una directiva con efecto Modify que herede la etiqueta",
+   "Un grupo de administración con el nombre de cada centro",
+   "Una alerta de costes que avise a quien creó el recurso"
+  ],
+  "opts_en": [
+   "A policy that denies resources without any tags at all",
+   "A policy with the Modify effect that inherits the tag",
+   "A management group named after each cost center",
+   "A cost alert that emails the creator of the resource"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La directiva integrada 'Heredar una etiqueta del grupo de recursos si falta' usa el efecto Modify para agregar la etiqueta automáticamente; una tarea de corrección arregla los recursos existentes.",
+  "exp_en": "The built-in 'Inherit a tag from the resource group if missing' policy uses the Modify effect to add the tag automatically; a remediation task fixes existing resources.",
+  "case_en": "Contoso Retail",
+  "case_es": "Contoso Retail",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso Retail has 12 Azure subscriptions grouped under a management group named Contoso-Root. Each business unit has its own subscription."
+   ],
+   [
+    "Requirements",
+    "- Resources may only be deployed to West Europe and North Europe in every subscription, including future ones.\n- Help desk staff must be able to restart VMs but must not be able to delete or resize them.\n- Every resource must carry the CostCenter tag of its resource group, even if the creator forgets it.\n- The production networking resource group must not be deleted by mistake."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso Retail tiene 12 suscripciones de Azure agrupadas bajo un grupo de administración llamado Contoso-Root. Cada unidad de negocio tiene su propia suscripción."
+   ],
+   [
+    "Requisitos",
+    "- Solo pueden implementarse recursos en Oeste de Europa y Norte de Europa en todas las suscripciones, incluidas las futuras.\n- El soporte debe poder reiniciar VM, pero no eliminarlas ni cambiar su tamaño.\n- Todo recurso debe llevar la etiqueta CostCenter de su grupo de recursos, aunque quien lo cree la olvide.\n- El grupo de recursos de red de producción no debe eliminarse por error."
+   ]
+  ]
+ },
+ {
+  "id": 581,
+  "exam": "az-104",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Cómo puede cumplir el requisito del grupo de recursos de red de producción?",
+  "q_en": "How can you meet the requirement for the production networking resource group?",
+  "opts_es": [
+   "Aplicar un bloqueo CanNotDelete al grupo de recursos",
+   "Mover el grupo de recursos a otra suscripción",
+   "Quitar todas las asignaciones de Propietario",
+   "Habilitar la eliminación temporal en las redes virtuales"
+  ],
+  "opts_en": [
+   "Apply a CanNotDelete lock to the resource group",
+   "Move the resource group to a new subscription",
+   "Remove all Owner role assignments from the group",
+   "Enable soft delete on the virtual networks"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Un bloqueo CanNotDelete (Eliminar) permite leer y modificar recursos, pero impide eliminarlos hasta quitar el bloqueo.",
+  "exp_en": "A CanNotDelete (Delete) lock lets authorized users read and modify resources but blocks deletion until the lock is removed.",
+  "case_en": "Contoso Retail",
+  "case_es": "Contoso Retail",
+  "scenario_en": [
+   [
+    "Overview",
+    "Contoso Retail has 12 Azure subscriptions grouped under a management group named Contoso-Root. Each business unit has its own subscription."
+   ],
+   [
+    "Requirements",
+    "- Resources may only be deployed to West Europe and North Europe in every subscription, including future ones.\n- Help desk staff must be able to restart VMs but must not be able to delete or resize them.\n- Every resource must carry the CostCenter tag of its resource group, even if the creator forgets it.\n- The production networking resource group must not be deleted by mistake."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Contoso Retail tiene 12 suscripciones de Azure agrupadas bajo un grupo de administración llamado Contoso-Root. Cada unidad de negocio tiene su propia suscripción."
+   ],
+   [
+    "Requisitos",
+    "- Solo pueden implementarse recursos en Oeste de Europa y Norte de Europa en todas las suscripciones, incluidas las futuras.\n- El soporte debe poder reiniciar VM, pero no eliminarlas ni cambiar su tamaño.\n- Todo recurso debe llevar la etiqueta CostCenter de su grupo de recursos, aunque quien lo cree la olvide.\n- El grupo de recursos de red de producción no debe eliminarse por error."
+   ]
+  ]
+ },
+ {
+  "id": 582,
+  "exam": "az-104",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Cómo debe configurar el emparejamiento de VNet para cumplir el requisito de conectividad?",
+  "q_en": "How should you configure VNet peering to meet the connectivity requirement?",
+  "opts_es": [
+   "Permitir tránsito de puerta de enlace en la central; usar puertas remotas en radiales",
+   "Usar puertas remotas en la central; permitir tránsito en las radiales",
+   "Habilitar solo el tráfico reenviado en ambos lados de cada emparejamiento",
+   "Emparejar las radiales entre sí y deshabilitar el emparejamiento central"
+  ],
+  "opts_en": [
+   "Allow gateway transit on the hub; use remote gateways on spokes",
+   "Use remote gateways on the hub; allow gateway transit on spokes",
+   "Enable forwarded traffic only, on both sides of each peering",
+   "Peer the spokes to each other and disable the hub peering"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El tránsito de puerta de enlace se habilita en el lado central (Permitir tránsito) y se consume en el radial (Usar puertas de enlace remotas), de modo que las radiales comparten la puerta VPN central.",
+  "exp_en": "Gateway transit is enabled on the hub side (Allow gateway transit) and consumed on the spoke side (Use remote gateways), so spokes share the hub VPN gateway.",
+  "case_en": "Northwind Health",
+  "case_es": "Northwind Health",
+  "scenario_en": [
+   [
+    "Overview",
+    "Northwind Health uses a hub-and-spoke network in Azure. The hub VNet contains a VPN gateway connected to the head office. Three spoke VNets host clinical applications."
+   ],
+   [
+    "Requirements",
+    "- VMs in the spokes must reach the head office through the hub VPN gateway; no extra gateways may be deployed.\n- Patient files are stored in a storage account that must not be reachable from the internet.\n- VMs must resolve the storage account name to its private IP address.\n- The operations team must be emailed when a VM's average CPU stays above 85% for 15 minutes."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Northwind Health usa una red en estrella en Azure. La VNet central contiene una puerta de enlace VPN conectada a la sede. Tres VNet radiales alojan aplicaciones clínicas."
+   ],
+   [
+    "Requisitos",
+    "- Las VM radiales deben llegar a la sede a través de la puerta de enlace VPN central; no pueden implementarse más puertas de enlace.\n- Los archivos de pacientes están en una cuenta de almacenamiento que no debe ser accesible desde internet.\n- Las VM deben resolver el nombre de la cuenta de almacenamiento a su IP privada.\n- Operaciones debe recibir un correo cuando la CPU media de una VM supere el 85% durante 15 minutos."
+   ]
+  ]
+ },
+ {
+  "id": 583,
+  "exam": "az-104",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Qué debe implementar para la cuenta de almacenamiento?",
+  "q_en": "What should you implement for the storage account?",
+  "opts_es": [
+   "Un punto de conexión de servicio y una regla IP de la sede",
+   "Un punto de conexión privado y el acceso público deshabilitado",
+   "Una firma de acceso compartido que caduque cada día",
+   "Una puerta de enlace NAT delante de la cuenta"
+  ],
+  "opts_en": [
+   "A service endpoint and an IP rule for the head office",
+   "A private endpoint and disabled public network access",
+   "A shared access signature that expires every day",
+   "A NAT gateway in front of the storage account"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Un punto de conexión privado da a la cuenta una IP privada en la VNet; deshabilitar el acceso público bloquea internet. Los puntos de conexión de servicio mantienen el punto público.",
+  "exp_en": "A private endpoint gives the storage account a private IP in the VNet; disabling public network access blocks all internet access. Service endpoints keep the public endpoint.",
+  "case_en": "Northwind Health",
+  "case_es": "Northwind Health",
+  "scenario_en": [
+   [
+    "Overview",
+    "Northwind Health uses a hub-and-spoke network in Azure. The hub VNet contains a VPN gateway connected to the head office. Three spoke VNets host clinical applications."
+   ],
+   [
+    "Requirements",
+    "- VMs in the spokes must reach the head office through the hub VPN gateway; no extra gateways may be deployed.\n- Patient files are stored in a storage account that must not be reachable from the internet.\n- VMs must resolve the storage account name to its private IP address.\n- The operations team must be emailed when a VM's average CPU stays above 85% for 15 minutes."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Northwind Health usa una red en estrella en Azure. La VNet central contiene una puerta de enlace VPN conectada a la sede. Tres VNet radiales alojan aplicaciones clínicas."
+   ],
+   [
+    "Requisitos",
+    "- Las VM radiales deben llegar a la sede a través de la puerta de enlace VPN central; no pueden implementarse más puertas de enlace.\n- Los archivos de pacientes están en una cuenta de almacenamiento que no debe ser accesible desde internet.\n- Las VM deben resolver el nombre de la cuenta de almacenamiento a su IP privada.\n- Operaciones debe recibir un correo cuando la CPU media de una VM supere el 85% durante 15 minutos."
+   ]
+  ]
+ },
+ {
+  "id": 584,
+  "exam": "az-104",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Cómo debe cumplir el requisito de resolución de nombres?",
+  "q_en": "How should you meet the name resolution requirement?",
+  "opts_es": [
+   "Editar el archivo hosts de cada VM con la IP privada",
+   "Crear una zona DNS pública para la cuenta",
+   "Vincular una zona DNS privada privatelink.blob.core.windows.net a las VNet",
+   "Configurar un dominio personalizado en la cuenta"
+  ],
+  "opts_en": [
+   "Edit the hosts file on every VM with the private IP",
+   "Create a public DNS zone for the storage account",
+   "Link a privatelink.blob.core.windows.net private DNS zone to the VNets",
+   "Configure a custom domain on the storage account"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los puntos de conexión privados dependen de la zona DNS privada privatelink vinculada a las VNet, de modo que el nombre público se resuelve a la IP privada.",
+  "exp_en": "Private endpoints rely on the privatelink private DNS zone linked to the VNets, so the public name resolves to the private IP.",
+  "case_en": "Northwind Health",
+  "case_es": "Northwind Health",
+  "scenario_en": [
+   [
+    "Overview",
+    "Northwind Health uses a hub-and-spoke network in Azure. The hub VNet contains a VPN gateway connected to the head office. Three spoke VNets host clinical applications."
+   ],
+   [
+    "Requirements",
+    "- VMs in the spokes must reach the head office through the hub VPN gateway; no extra gateways may be deployed.\n- Patient files are stored in a storage account that must not be reachable from the internet.\n- VMs must resolve the storage account name to its private IP address.\n- The operations team must be emailed when a VM's average CPU stays above 85% for 15 minutes."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Northwind Health usa una red en estrella en Azure. La VNet central contiene una puerta de enlace VPN conectada a la sede. Tres VNet radiales alojan aplicaciones clínicas."
+   ],
+   [
+    "Requisitos",
+    "- Las VM radiales deben llegar a la sede a través de la puerta de enlace VPN central; no pueden implementarse más puertas de enlace.\n- Los archivos de pacientes están en una cuenta de almacenamiento que no debe ser accesible desde internet.\n- Las VM deben resolver el nombre de la cuenta de almacenamiento a su IP privada.\n- Operaciones debe recibir un correo cuando la CPU media de una VM supere el 85% durante 15 minutos."
+   ]
+  ]
+ },
+ {
+  "id": 585,
+  "exam": "az-104",
+  "dom": 5,
+  "obj": "5.1",
+  "type": "mc",
+  "q_es": "¿Qué debe crear para el requisito de CPU?",
+  "q_en": "What should you create for the CPU requirement?",
+  "opts_es": [
+   "Una alerta de búsqueda en el registro de actividad",
+   "Una alerta de Service Health para máquinas virtuales",
+   "Una alerta de presupuesto con umbral del 85%",
+   "Una regla de alerta de métricas con un grupo de acciones"
+  ],
+  "opts_en": [
+   "A log search alert on the Activity log",
+   "A Service Health alert for virtual machines",
+   "A budget alert with an 85% threshold",
+   "A metric alert rule with an action group"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Una alerta de métricas sobre Porcentaje de CPU (media, ventana de 15 minutos, umbral 85) con un grupo de acciones que envíe correo cumple el requisito.",
+  "exp_en": "A metric alert on Percentage CPU (average, 15-minute window, threshold 85) with an action group that sends email meets the requirement.",
+  "case_en": "Northwind Health",
+  "case_es": "Northwind Health",
+  "scenario_en": [
+   [
+    "Overview",
+    "Northwind Health uses a hub-and-spoke network in Azure. The hub VNet contains a VPN gateway connected to the head office. Three spoke VNets host clinical applications."
+   ],
+   [
+    "Requirements",
+    "- VMs in the spokes must reach the head office through the hub VPN gateway; no extra gateways may be deployed.\n- Patient files are stored in a storage account that must not be reachable from the internet.\n- VMs must resolve the storage account name to its private IP address.\n- The operations team must be emailed when a VM's average CPU stays above 85% for 15 minutes."
+   ]
+  ],
+  "scenario_es": [
+   [
+    "Información general",
+    "Northwind Health usa una red en estrella en Azure. La VNet central contiene una puerta de enlace VPN conectada a la sede. Tres VNet radiales alojan aplicaciones clínicas."
+   ],
+   [
+    "Requisitos",
+    "- Las VM radiales deben llegar a la sede a través de la puerta de enlace VPN central; no pueden implementarse más puertas de enlace.\n- Los archivos de pacientes están en una cuenta de almacenamiento que no debe ser accesible desde internet.\n- Las VM deben resolver el nombre de la cuenta de almacenamiento a su IP privada.\n- Operaciones debe recibir un correo cuando la CPU media de una VM supere el 85% durante 15 minutos."
+   ]
+  ]
+ },
+ {
+  "id": 586,
+  "exam": "az-104",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "order",
+  "q_es": "Las VNet radiales deben usar la puerta VPN central. Ordena los pasos de configuración.",
+  "q_en": "Spoke VNets must use the hub VPN gateway. Put the configuration steps in order.",
+  "items_es": [
+   "Implementar la puerta de enlace VPN en la VNet central",
+   "Crear el emparejamiento central-radial con Permitir tránsito",
+   "Crear el emparejamiento radial-central con Usar puertas remotas",
+   "Comprobar las rutas efectivas en la NIC de una VM radial"
+  ],
+  "items_en": [
+   "Deploy the VPN gateway in the hub VNet",
+   "Create the hub-to-spoke peering with Allow gateway transit",
+   "Create the spoke-to-hub peering with Use remote gateways",
+   "Check the effective routes on a spoke VM's NIC"
+  ],
+  "exp_es": "La puerta debe existir antes de ofrecer tránsito; la radial solo puede usar puertas remotas cuando la central lo permite. Las rutas efectivas confirman los prefijos locales.",
+  "exp_en": "The gateway must exist before peerings can offer gateway transit; the spoke can only use remote gateways once the hub allows transit. Effective routes confirm the on-premises prefixes."
+ },
+ {
+  "id": 587,
+  "exam": "az-104",
+  "dom": 5,
+  "obj": "5.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para restaurar un archivo eliminado desde la copia de una VM de Azure.",
+  "q_en": "Put the steps to restore a deleted file from an Azure VM backup in order.",
+  "items_es": [
+   "Abrir el almacén de Recovery Services y elegir el elemento de la VM",
+   "Elegir Recuperación de archivos y seleccionar un punto de restauración",
+   "Descargar y ejecutar el script que monta los volúmenes",
+   "Copiar el archivo y desmontar los discos desde el portal"
+  ],
+  "items_en": [
+   "Open the Recovery Services vault and select the VM backup item",
+   "Choose File Recovery and select a restore point",
+   "Download and run the script to mount the recovery volumes",
+   "Copy the file and then unmount the disks from the portal"
+  ],
+  "exp_es": "La recuperación de archivos monta el punto de restauración como volúmenes mediante un script; tras copiar los archivos se desmontan.",
+  "exp_en": "File-level recovery mounts the restore point as volumes through a script; after copying the files, you unmount them to clean up."
+ },
+ {
+  "id": 588,
+  "exam": "az-104",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para dar a un grupo un rol RBAC personalizado.",
+  "q_en": "Put the steps to give a group a custom RBAC role in order.",
+  "items_es": [
+   "Definir el JSON del rol con las acciones necesarias",
+   "Establecer los ámbitos asignables en la definición",
+   "Crear la definición del rol en Azure",
+   "Asignar el rol al grupo en el ámbito de destino"
+  ],
+  "items_en": [
+   "Define the role JSON with the required actions",
+   "Set the assignable scopes in the definition",
+   "Create the role definition in Azure",
+   "Assign the role to the group at the target scope"
+  ],
+  "exp_es": "Un rol personalizado se define (acciones y ámbitos asignables), se crea con el portal, PowerShell o CLI y después se asigna a una entidad en un ámbito incluido.",
+  "exp_en": "A custom role is defined (actions and assignable scopes), created with the portal, PowerShell or CLI, and then assigned to a principal at a scope within its assignable scopes."
+ },
+ {
+  "id": 589,
+  "exam": "az-104",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "order",
+  "q_es": "Ordena los pasos para cifrar los discos de una VM con una clave administrada por el cliente.",
+  "q_en": "Put the steps to encrypt VM disks with a customer-managed key in order.",
+  "items_es": [
+   "Crear un almacén de claves con protección de purga",
+   "Crear una clave en el almacén de claves",
+   "Crear un conjunto de cifrado de disco que use la clave",
+   "Conceder al conjunto de cifrado acceso al almacén",
+   "Asociar los discos administrados de la VM al conjunto"
+  ],
+  "items_en": [
+   "Create a key vault with purge protection enabled",
+   "Create a key in the key vault",
+   "Create a disk encryption set that references the key",
+   "Grant the disk encryption set access to the key vault",
+   "Associate the VM's managed disks with the encryption set"
+  ],
+  "exp_es": "El cifrado del lado del servidor con CMK usa un conjunto de cifrado de disco vinculado a una clave de Key Vault; su identidad necesita acceso a la clave antes de que los discos puedan usarlo.",
+  "exp_en": "Server-side encryption with CMK uses a disk encryption set tied to a Key Vault key; the set's identity needs access to the key before disks can use it."
+ },
+ {
+  "id": 590,
+  "exam": "az-104",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "order",
+  "q_es": "Ordena los pasos para implementar un archivo Bicep en un grupo de recursos nuevo.",
+  "q_en": "Put the steps to deploy a Bicep file to a new resource group in order.",
+  "items_es": [
+   "Escribir el archivo Bicep con parámetros y recursos",
+   "Crear el grupo de recursos de destino",
+   "Previsualizar cambios con az deployment group what-if",
+   "Ejecutar az deployment group create con el archivo"
+  ],
+  "items_en": [
+   "Write the Bicep file with parameters and resources",
+   "Create the target resource group",
+   "Preview changes with az deployment group what-if",
+   "Run az deployment group create with the file"
+  ],
+  "exp_es": "Una implementación en un grupo de recursos necesita que el grupo exista; what-if previsualiza los cambios antes de la implementación real.",
+  "exp_en": "A resource-group deployment needs an existing group; what-if previews the changes before the actual deployment."
+ },
+ {
+  "id": 591,
+  "exam": "az-104",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "order",
+  "q_es": "Ordena los pasos para montar un recurso compartido de Azure Files en un servidor Windows.",
+  "q_en": "Put the steps to mount an Azure file share on a Windows server in order.",
+  "items_es": [
+   "Crear una cuenta de almacenamiento",
+   "Crear el recurso compartido en la cuenta",
+   "Comprobar que el puerto TCP 445 saliente está permitido",
+   "Ejecutar el script de conexión para asignar la unidad"
+  ],
+  "items_en": [
+   "Create a storage account",
+   "Create the file share in the account",
+   "Make sure outbound TCP port 445 is allowed",
+   "Run the connect script to map the drive"
+  ],
+  "exp_es": "Los montajes SMB necesitan el puerto 445 saliente; el script Conectar del portal asigna el recurso como unidad con las credenciales o la identidad.",
+  "exp_en": "SMB mounts need outbound port 445; the portal's Connect script maps the share as a drive using the storage account credentials or identity."
  }
 ]
