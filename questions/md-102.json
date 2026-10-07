@@ -943,13 +943,13 @@
   "q_en": "You want to use a provisioning package instead of Windows Autopilot to configure Windows devices. When is using provisioning packages most appropriate?",
   "opts_es": [
    "Cuando los dispositivos tienen conectividad a Internet y cuentas de Microsoft Entra ID disponibles para la inscripción",
-   "Cuando los dispositivos no tienen conectividad a Internet o necesitan configuración sin conexión, o para entornos sin Microsoft Entra ID",
+   "Cuando los dispositivos no tienen conexión o requieren configuración sin conexión, o no hay Entra ID",
    "Cuando se necesita inscribir simultáneamente más de 1000 dispositivos con configuraciones idénticas de dominio",
    "Cuando se requiere el modo de implementación automática de Autopilot con TPM 2.0 y atestación del dispositivo"
   ],
   "opts_en": [
    "When devices have Internet connectivity and Microsoft Entra ID accounts available for enrollment",
-   "When devices have no Internet connectivity or need offline configuration, or for environments without Microsoft Entra ID",
+   "When devices are offline or need offline setup, or there is no Entra ID",
    "When more than 1000 devices need to be enrolled simultaneously with identical domain configurations",
    "When Autopilot Self-Deploying mode is required with TPM 2.0 and device attestation support"
   ],
@@ -4167,13 +4167,13 @@
   "q_en": "Which Windows Endpoint Protection profile setting in Intune controls Windows Defender SmartScreen behavior to protect users from malicious apps and websites?",
   "opts_es": [
    "Configuración del Firewall de Windows Defender con reglas de entrada y salida para aplicaciones",
-   "Configuración de Microsoft Defender SmartScreen en el perfil de Endpoint Protection o en las Plantillas administrativas",
+   "Configuración de Microsoft Defender SmartScreen (Endpoint Protection o ADMX)",
    "Configuración de reglas de reducción de superficie de ataque (ASR) para bloquear comportamientos maliciosos",
    "Configuración de acceso controlado a carpetas para proteger contra ransomware en dispositivos Windows"
   ],
   "opts_en": [
    "Windows Defender Firewall settings with inbound and outbound rules for applications",
-   "Microsoft Defender SmartScreen settings in the Endpoint Protection profile or Administrative Templates",
+   "Microsoft Defender SmartScreen settings (Endpoint Protection or ADMX)",
    "Attack Surface Reduction (ASR) settings to block malicious behaviors",
    "Controlled folder access settings to protect against ransomware on Windows devices"
   ],
@@ -4889,13 +4889,13 @@
   "q_en": "An administrator wants to ensure only Intune-managed (enrolled) iOS devices can access corporate email. Which combined approach should they use?",
   "opts_es": [
    "Solo una directiva de acceso condicional que requiera dispositivo conforme con la directiva de cumplimiento de Intune",
-   "Una directiva de cumplimiento de iOS + una directiva de acceso condicional que requiera dispositivo conforme + la app de correo aprobada (Outlook)",
+   "Una directiva de cumplimiento de iOS, una de AC que exija dispositivo conforme, y Outlook",
    "Solo el bloqueo de clientes de correo nativos de iOS mediante una regla de acceso de cliente en Exchange Online Protection",
    "Una directiva de protección de aplicaciones (APP) sin inscripción MDM asignada a usuarios con dispositivos BYOD"
   ],
   "opts_en": [
    "Only a conditional access policy requiring a compliant device per the Intune compliance policy",
-   "An iOS compliance policy + a conditional access policy requiring a compliant device + the approved mail app (Outlook)",
+   "An iOS compliance policy, a CA policy requiring a compliant device, and Outlook",
    "Only blocking native iOS mail clients through a client access rule in Exchange Online Protection",
    "An app protection policy (APP) without MDM enrollment assigned to users with BYOD devices"
   ],
@@ -5045,13 +5045,13 @@
   "q_en": "What must an administrator configure in Intune to ensure BitLocker certificates are stored in Microsoft Entra ID and can be retrieved by administrators?",
   "opts_es": [
    "Una directiva de cumplimiento de Intune que incluya el requisito de cifrado BitLocker activo verificado en la sección de seguridad del sistema de los ajustes de cumplimiento",
-   "Una directiva de cifrado de disco en Seguridad de puntos de conexión con la opción 'Requerir recuperación de claves en Active Directory/Azure Active Directory antes de habilitar BitLocker' o similar configurada",
+   "Una directiva de cifrado de disco de Endpoint Security que exija copia de la clave en Entra ID antes de habilitar BitLocker",
    "Un script de PowerShell personalizado que ejecute el cmdlet BackupToAAD-BitLockerKeyProtector con el identificador de volumen de BitLocker del dispositivo",
    "Una línea base de seguridad de Windows de Intune con la configuración completa de BitLocker habilitada y la opción de copia de seguridad de clave activa configurada"
   ],
   "opts_en": [
    "An Intune compliance policy that includes the active BitLocker encryption requirement verified in the system security section of compliance settings",
-   "A disk encryption policy in Endpoint Security with the option 'Require recovery key backup to Active Directory/Azure Active Directory before enabling BitLocker' or similar configured",
+   "An Endpoint Security disk encryption policy requiring recovery key backup to Entra ID before enabling BitLocker",
    "A custom PowerShell script that runs the BackupToAAD-BitLockerKeyProtector cmdlet with the device's BitLocker volume identifier",
    "A Windows Intune security baseline with the full BitLocker configuration enabled and the active key backup option configured"
   ],
@@ -5569,13 +5569,13 @@
   "q_en": "What is Azure Virtual Desktop (AVD) and how does it differ from Windows 365?",
   "opts_es": [
    "Azure Virtual Desktop (AVD) es una plataforma de virtualización diseñada y disponible exclusivamente para macOS; Windows 365 está diseñada exclusivamente para dispositivos Windows",
-   "AVD es una plataforma de virtualización gestionada por el cliente en Azure con más control y personalización, compatible con escritorios compartidos multi-sesión; Windows 365 es un Cloud PC dedicado y personal gestionado por Microsoft",
+   "AVD lo administra el cliente en Azure y admite multisesión; Windows 365 es un Cloud PC personal administrado por Microsoft",
    "Azure Virtual Desktop no se integra de ningún modo con Microsoft Intune para la gestión de dispositivos ni directivas; Windows 365 Cloud PC sí lo hace de forma completamente nativa",
    "Azure Virtual Desktop requiere obligatoriamente licencias de Windows Server Datacenter para todos los hosts de sesión; Windows 365 opera con licencias estándar de Windows 10/11 Enterprise"
   ],
   "opts_en": [
    "Azure Virtual Desktop (AVD) is a virtualization platform designed and available exclusively for macOS; Windows 365 is designed exclusively for Windows devices",
-   "AVD is a customer-managed virtualization platform on Azure with more control and customization, supporting shared multi-session desktops; Windows 365 is a dedicated personal Cloud PC managed by Microsoft",
+   "AVD is customer-managed on Azure with multi-session support; Windows 365 is a personal Cloud PC managed by Microsoft",
    "Azure Virtual Desktop does not integrate in any way with Microsoft Intune for device or policy management; Windows 365 Cloud PC does so completely natively",
    "Azure Virtual Desktop mandatorily requires Windows Server Datacenter licenses for all session hosts; Windows 365 operates with standard Windows 10/11 Enterprise licenses"
   ],
@@ -5647,13 +5647,13 @@
   "q_en": "What does Microsoft Intune Advanced Analytics allow that is impossible with standard Intune reports?",
   "opts_es": [
    "Ver la lista completa de todos los dispositivos inscritos en Intune con su estado de inscripción actual y la fecha y hora de la última sincronización",
-   "Predecir qué dispositivos van a tener fallos de hardware próximamente basándose en el análisis de tendencias de datos de telemetría del dispositivo, y consultar datos en tiempo real con KQL",
+   "Predecir posibles fallos de hardware con tendencias de telemetría y ejecutar consultas KQL en tiempo real",
    "Crear informes de rendimiento de dispositivos completamente personalizados con Microsoft Power BI usando los datos de Intune como fuente de datos principal",
    "Ver el estado de cumplimiento detallado de todos los dispositivos con las directivas de seguridad activas y sus niveles de riesgo en Microsoft Intune"
   ],
   "opts_en": [
    "View the complete list of all devices enrolled in Intune with their current enrollment status and last sync date and time",
-   "Predict which devices are likely to have hardware failures soon based on trend analysis of device telemetry data, and query real-time data with KQL",
+   "Predict likely hardware failures from telemetry trends and run real-time KQL queries on devices",
    "Create fully customized device performance reports with Microsoft Power BI using Intune data as the primary data source",
    "View detailed compliance status of all devices with active security policies and their risk levels in Microsoft Intune"
   ],
@@ -5895,13 +5895,13 @@
   "q_en": "What are 'detection rules' in Intune Win32 apps and why are they important?",
   "opts_es": [
    "Reglas de firewall de Defender configuradas para detectar y bloquear amenazas específicas dentro de la aplicación Win32",
-   "Condiciones que Intune usa para determinar si la aplicación ya está instalada correctamente en el dispositivo, evitando reinstalaciones innecesarias",
+   "Condiciones que usa Intune para comprobar si la app ya está instalada y evitar reinstalaciones",
    "Reglas de directiva que detectan automáticamente si la versión de la aplicación está desactualizada y necesita actualización",
    "Firmas digitales criptográficas que el agente de Intune usa para verificar la autenticidad del instalador antes de ejecutarlo"
   ],
   "opts_en": [
    "Defender firewall rules configured to detect and block specific threats within the Win32 application",
-   "Conditions Intune uses to determine whether the application is already correctly installed on the device, avoiding unnecessary reinstallations",
+   "Conditions Intune uses to check whether the app is already installed, avoiding reinstalls",
    "Policy rules that automatically detect if the application version is outdated and needs updating",
    "Cryptographic digital signatures that the Intune agent uses to verify the installer authenticity before executing it"
   ],
@@ -5973,13 +5973,13 @@
   "q_en": "What is the Private store in the Microsoft Store for Business and what is its current equivalent in Intune?",
   "opts_es": [
    "Una extensión privada de SharePoint Online personalizada para distribuir, catalogar y gestionar de forma centralizada las aplicaciones internas a todos los empleados de la organización",
-   "Un catálogo privado dentro de la Microsoft Store donde la organización puede publicar aplicaciones para sus usuarios. Su equivalente actual en Intune es el Portal de empresa (Company Portal) que muestra apps asignadas como disponibles",
+   "Un catálogo privado donde la organización publicaba apps para sus usuarios; hoy el equivalente es el Portal de empresa",
    "Una sección especial de la Microsoft Store para Empresas que ofrece precios con descuento exclusivos para la adquisición de licencias de software por volumen por parte de la organización",
    "Un repositorio privado y seguro de código fuente de aplicaciones internas gestionado mediante Azure DevOps exclusivamente para los equipos de desarrolladores de software de la organización"
   ],
   "opts_en": [
    "A customized private SharePoint Online extension for centrally distributing, cataloging, and managing internal applications to all employees of the organization",
-   "A private catalog within the Microsoft Store where the organization can publish applications for its users. Its current Intune equivalent is the Company Portal which shows apps assigned as available",
+   "A private catalog where the organization published apps for its users; today's equivalent is the Company Portal",
    "A special Microsoft Store for Business section that offers exclusive discounted prices for volume software license acquisition by the organization",
    "A private and secure internal application source code repository managed through Azure DevOps exclusively for the organization's software developer teams"
   ],
@@ -6079,13 +6079,13 @@
   "q_en": "What does the 'Block Office apps from creating executable content' ASR rule in Microsoft Defender do?",
   "opts_es": [
    "Bloquea todos los archivos ejecutables adjuntos en mensajes de correo electrónico antes de que el usuario pueda abrirlos o descargarlos en el dispositivo",
-   "Bloquea que las aplicaciones de Office (Word, Excel, PowerPoint) creen archivos ejecutables, lo que impide que macros maliciosas descarguen y ejecuten malware",
+   "Impide que las apps de Office creen ejecutables, para que las macros no descarguen y ejecuten malware",
    "Cifra automáticamente todos los archivos ejecutables descargados mediante Microsoft Outlook para evitar su ejecución no autorizada por el usuario",
    "Bloquea y elimina los mensajes de correo electrónico de phishing antes de que lleguen a la bandeja de entrada del usuario final en Microsoft 365"
   ],
   "opts_en": [
    "Blocks all executable files attached in email messages before the user can open or download them on the device",
-   "Blocks Office applications (Word, Excel, PowerPoint) from creating executable files, preventing malicious macros from downloading and executing malware",
+   "Stops Office apps from creating executable files, so macros can't drop and run malware",
    "Automatically encrypts all executable files downloaded via Microsoft Outlook to prevent unauthorized execution by the user",
    "Blocks and deletes phishing email messages before they reach the end user's inbox in Microsoft 365"
   ],
@@ -6237,13 +6237,13 @@
   "q_en": "Which vulnerability analysis tool is integrated into Microsoft Defender for Endpoint and can help identify which devices have vulnerable applications or operating systems?",
   "opts_es": [
    "Microsoft Secure Score para dispositivos en el portal de Microsoft Defender XDR (security.microsoft.com)",
-   "Gestión de vulnerabilidades de Microsoft Defender (Defender Vulnerability Management / TVM - Threat and Vulnerability Management)",
+   "Microsoft Defender Vulnerability Management (antes TVM)",
    "Azure Security Center Advisor (Microsoft Defender for Cloud) con recomendaciones de seguridad de endpoints",
    "Intune Endpoint Analytics con el módulo de análisis de configuración de seguridad y puntuación de riesgo"
   ],
   "opts_en": [
    "Microsoft Secure Score for devices in the Microsoft Defender XDR portal (security.microsoft.com)",
-   "Microsoft Defender Vulnerability Management (Defender Vulnerability Management / TVM - Threat and Vulnerability Management)",
+   "Microsoft Defender Vulnerability Management (formerly TVM)",
    "Azure Security Center Advisor (Microsoft Defender for Cloud) with endpoint security recommendations",
    "Intune Endpoint Analytics with the security configuration analysis module and risk scoring"
   ],
@@ -6629,13 +6629,13 @@
   "q_en": "What happens when an administrator deletes an ADE enrollment profile assigned to already enrolled iOS devices?",
   "opts_es": [
    "Los dispositivos iOS ya inscritos mediante el perfil eliminado se borran automáticamente y pierden completamente la inscripción en Intune",
-   "Los dispositivos iOS ya inscritos mantienen su inscripción y gestión de Intune; el perfil eliminado solo afecta a los dispositivos que aún no se han inscrito",
+   "Los dispositivos inscritos siguen administrados; la eliminación solo afecta a los aún no inscritos",
    "Los dispositivos iOS ya inscritos pierden la conexión con Intune pero conservan los datos y aplicaciones corporativas en el dispositivo",
    "El perfil de inscripción de Intune no puede eliminarse si existen dispositivos iOS actualmente inscritos con ese perfil"
   ],
   "opts_en": [
    "iOS devices already enrolled through the deleted profile are automatically wiped and completely lose Intune enrollment",
-   "iOS devices already enrolled maintain their Intune enrollment and management; the deleted profile only affects devices that have not yet enrolled",
+   "Enrolled devices stay managed; the deletion only affects devices not yet enrolled",
    "iOS devices already enrolled lose connection with Intune but retain corporate data and applications on the device",
    "An Intune enrollment profile cannot be deleted if there are iOS devices currently enrolled with that profile"
   ],
@@ -6787,13 +6787,13 @@
   "q_en": "Which of the following statements best describes the Autopilot 'Pre-provisioning' (White Glove) scenario?",
   "opts_es": [
    "TI instala una imagen limpia de Windows desde cero en el dispositivo en las instalaciones antes de entregarlo al usuario, incluyendo todos los controladores, aplicaciones corporativas y configuraciones de seguridad necesarias",
-   "TI completa la fase técnica de Autopilot (instalar apps y aplicar directivas del dispositivo) antes de la entrega; cuando el usuario recibe el dispositivo, solo tiene que completar la fase de usuario (configurar su cuenta), reduciendo el tiempo de espera",
+   "TI completa la fase de dispositivo (apps y directivas) antes de la entrega y el usuario solo hace la fase de usuario",
    "El dispositivo se envía directamente desde la fábrica del OEM al usuario final sin ningún tipo de intervención del departamento de TI ni configuración adicional requerida en la organización",
    "El modo solo aplica a dispositivos en modo de quiosco de aplicación única donde no hay usuarios asignados al dispositivo ni necesidad de autenticación personal de Microsoft 365 durante el uso"
   ],
   "opts_en": [
    "IT installs a clean Windows image from scratch on the device on-premises before delivering it to the user, including all drivers, corporate applications, and necessary security configurations",
-   "IT completes the Autopilot technical phase (installing apps and applying device policies) before delivery; when the user receives the device, they only need to complete the user phase (configure their account), reducing wait time",
+   "IT completes the device phase (apps and device policies) before delivery, so the user only does the user phase",
    "The device is shipped directly from the OEM factory to the end user without any IT department intervention or additional configuration required in the organization",
    "The mode only applies to devices in single-app kiosk mode where no users are assigned to the device nor personal Microsoft 365 authentication required during use"
   ],
@@ -7469,13 +7469,13 @@
   "q_en": "What is 'Factory Reset Protection' (FRP) in Android devices and why is it important for enterprise management with Intune?",
   "opts_es": [
    "Una función de seguridad del sistema operativo Android que cifra automáticamente todos los datos almacenados en el dispositivo durante el proceso completo de restablecimiento de fábrica para protegerlos antes de su eliminación definitiva",
-   "Una función de seguridad de Google que requiere las credenciales de la cuenta de Google previamente vinculada al dispositivo después de un restablecimiento de fábrica; en entornos empresariales, si un dispositivo corporativo se restablece, puede quedar bloqueado con las credenciales de un ex-empleado",
+   "Una característica de Google que pide la cuenta anterior tras un restablecimiento, lo que puede bloquear un equipo corporativo con un exempleado",
    "Un mecanismo de copia de seguridad automática y completa de todos los datos de usuario y configuraciones del dispositivo Android que se activa automáticamente justo antes del restablecimiento de fábrica para permitir la restauración posterior del usuario",
    "Una opción avanzada de directiva de Intune para Android Enterprise que protege los dispositivos corporativos de restablecimientos de fábrica no autorizados mediante el bloqueo del acceso físico y remoto al menú de recuperación del sistema operativo"
   ],
   "opts_en": [
    "An Android OS security feature that automatically encrypts all data stored on the device during the complete factory reset process to protect it before its definitive deletion",
-   "A Google security feature that requires the previously linked Google account credentials after a factory reset; in enterprise environments, if a corporate device is reset, it may become locked with a former employee's credentials",
+   "A Google feature that asks for the previous Google account after a reset, which can lock a corporate device to a former employee",
    "An automatic and complete backup mechanism for all user data and settings on the Android device that activates automatically just before factory reset to allow subsequent user restoration",
    "An advanced Intune policy option for Android Enterprise that protects corporate devices from unauthorized factory resets by blocking physical and remote access to the OS recovery menu"
   ],
@@ -7993,13 +7993,13 @@
   "q_en": "What is the license prerequisite for using Windows Autopilot?",
   "opts_es": [
    "Se necesita una licencia de Windows Autopilot separada y adicional comprada a través del portal de Microsoft 365 además de la licencia de Intune del tenant",
-   "Se requiere una licencia que incluya Microsoft Intune, como Microsoft 365 E3/E5/Business Premium, o una licencia de Intune independiente con Windows 10/11 Pro o Enterprise en el dispositivo",
+   "Una licencia que incluya Intune (p. ej., Microsoft 365 E3/E5/Business Premium) y Windows Pro o Enterprise",
    "Solo se necesita una licencia de Windows 11 Pro o Enterprise en el dispositivo; Autopilot está disponible sin coste adicional con cualquier licencia de Windows",
    "No se necesitan licencias adicionales; Autopilot está incluido gratuitamente en todas las versiones de Windows 10 y Windows 11 de forma predeterminada"
   ],
   "opts_en": [
    "A separate additional Windows Autopilot license purchased through the Microsoft 365 portal is required in addition to the tenant Intune license",
-   "A license including Microsoft Intune is required, such as Microsoft 365 E3/E5/Business Premium, or a standalone Intune license with Windows 10/11 Pro or Enterprise on the device",
+   "A license that includes Intune (e.g. Microsoft 365 E3/E5/Business Premium) plus Windows Pro or Enterprise",
    "Only a Windows 11 Pro or Enterprise license on the device is needed; Autopilot is available at no additional cost with any Windows license",
    "No additional licenses are needed; Autopilot is included for free in all versions of Windows 10 and Windows 11 by default"
   ],
@@ -8359,13 +8359,13 @@
   "q_en": "What happens in Intune App Protection Policies (APP) when the 'Minimum app version' requirement is not met?",
   "opts_es": [
    "La aplicación se actualiza automáticamente a la versión mínima requerida descargando la actualización desde la App Store sin intervención del usuario",
-   "Según la configuración de la directiva: puede mostrar una advertencia permitiendo acceso temporal, o puede bloquear el acceso a los datos corporativos hasta que la app se actualice a la versión mínima",
+   "Según la directiva, avisa y permite acceso temporal o bloquea los datos corporativos hasta actualizar",
    "La directiva de protección de aplicaciones no se aplica hasta que la app se actualice a la versión compatible, permitiendo el acceso sin restricciones mientras tanto",
    "La aplicación se desinstala automáticamente y se reinstala con la versión correcta desde la distribución de Intune sin notificar al usuario del proceso"
   ],
   "opts_en": [
    "The app is automatically updated to the minimum required version by downloading the update from the App Store without user intervention",
-   "Depending on the policy configuration: it can show a warning allowing temporary access, or it can block access to corporate data until the app is updated to the minimum version",
+   "Depending on the policy, it warns and allows temporary access or blocks corporate data until updated",
    "The app protection policy does not apply until the app is updated to the compatible version, allowing unrestricted access in the meantime",
    "The app is automatically uninstalled and reinstalled with the correct version from Intune distribution without notifying the user of the process"
   ],
@@ -8657,13 +8657,13 @@
   "q_en": "What is HVCI (Hypervisor-Protected Code Integrity) and how does it contribute to the security of Intune-managed Windows endpoints?",
   "opts_es": [
    "Una característica de seguridad que cifra el código fuente de las aplicaciones durante la compilación para proteger la propiedad intelectual corporativa",
-   "Una característica de VBS que verifica la integridad del código del kernel y los controladores de Windows usando el hipervisor, impidiendo que malware cargue código sin firmar o modificado en modo kernel",
+   "Una característica de VBS que usa el hipervisor para verificar el código del kernel y los controladores, bloqueando código no firmado o modificado",
    "Un sistema de autenticación de código para aplicaciones publicadas en la Microsoft Store que verifica la firma digital del desarrollador antes de la instalación",
    "Una herramienta de diagnóstico integrada en Windows que verifica la integridad del sistema operativo comparando los archivos del sistema con el catálogo de Microsoft"
   ],
   "opts_en": [
    "A security feature that encrypts application source code during compilation to protect corporate intellectual property",
-   "A VBS feature that verifies the integrity of Windows kernel code and drivers using the hypervisor, preventing malware from loading unsigned or modified code in kernel mode",
+   "A VBS feature that uses the hypervisor to verify kernel code and drivers, blocking unsigned or modified kernel code",
    "A code authentication system for apps published in the Microsoft Store that verifies the developer's digital signature before installation",
    "A diagnostic tool integrated in Windows that verifies OS integrity by comparing system files against the Microsoft catalog"
   ],
@@ -9081,13 +9081,13 @@
   "q_en": "What is the 'grace period' in Intune compliance policies and what happens during that period?",
   "opts_es": [
    "El tiempo máximo que tiene Intune para sincronizar la directiva de cumplimiento al dispositivo antes de que las restricciones de acceso condicional entren en vigor automáticamente",
-   "Un período configurable durante el cual un dispositivo no conforme puede seguir accediendo a los recursos corporativos mientras tiene tiempo para cumplir los requisitos, antes de que el acceso condicional lo bloquee",
+   "Un periodo en el que un dispositivo no conforme mantiene el acceso mientras se corrige, antes de que lo bloquee el AC",
    "El tiempo de espera antes de que Intune aplique el borrado remoto automático a un dispositivo que persiste en estado no conforme durante demasiado tiempo sin corrección",
    "El período durante el cual el administrador puede modificar una directiva de cumplimiento sin que los cambios se propaguen ni se apliquen a los dispositivos asignados"
   ],
   "opts_en": [
    "The maximum time Intune has to sync the compliance policy to the device before conditional access restrictions automatically take effect",
-   "A configurable period during which a non-compliant device can continue accessing corporate resources while having time to meet requirements, before conditional access blocks it",
+   "A set period in which a noncompliant device keeps access while it is fixed, before CA blocks it",
    "The waiting time before Intune applies automatic remote wipe to a device that persists in a non-compliant state for too long without correction",
    "The period during which the administrator can modify a compliance policy without the changes propagating or being applied to assigned devices"
   ],
@@ -9107,13 +9107,13 @@
   "q_en": "What is the difference between registering a device in Microsoft Entra ID and enrolling it in Intune MDM?",
   "opts_es": [
    "Son el mismo proceso con distintos nombres; Microsoft renombró el proceso de inscripción en Intune como 'registro en Entra ID' para unificar la terminología de identidad en la plataforma de Microsoft 365",
-   "El registro en Entra ID establece la identidad del dispositivo en el directorio de Microsoft; la inscripción en Intune MDM establece un canal de gestión que permite aplicar directivas de configuración, compliance, y acciones remotas al dispositivo",
+   "El registro en Entra da identidad al dispositivo en el directorio; la inscripción en Intune añade un canal de administración para directivas y acciones remotas",
    "El registro en Entra ID es exclusivamente para dispositivos corporativos de propiedad de la empresa gestionados con unión a dominio; la inscripción en Intune MDM es para dispositivos BYOD personales de usuarios",
    "El registro en Entra ID permite al dispositivo acceder a las aplicaciones de Microsoft 365 mediante SSO; la inscripción en Intune concede acceso al cliente VPN corporativo y a recursos de red internos"
   ],
   "opts_en": [
    "They are the same process with different names; Microsoft renamed the Intune enrollment process as 'Entra ID registration' to unify identity terminology across the Microsoft 365 platform",
-   "Entra ID registration establishes the device's identity in the Microsoft directory; Intune MDM enrollment establishes a management channel that allows applying configuration policies, compliance, and remote actions to the device",
+   "Entra registration gives the device an identity in the directory; Intune enrollment adds a management channel for policies and remote actions",
    "Entra ID registration is exclusively for corporate company-owned devices managed with domain join; Intune MDM enrollment is for personal BYOD devices belonging to users",
    "Entra ID registration allows the device to access Microsoft 365 applications via SSO; Intune enrollment grants access to the corporate VPN client and internal network resources"
   ],
@@ -9655,13 +9655,13 @@
   "q_en": "What are 'Scope tags' in Intune and what are they used for?",
   "opts_es": [
    "Etiquetas de clasificación que Intune aplica automáticamente a los dispositivos para identificarlos en los informes de cumplimiento según su sistema operativo, versión de firmware y estado de actualización",
-   "Una característica de RBAC de Intune que permite a los administradores delimitar qué objetos de Intune (perfiles, directivas, apps, dispositivos) puede ver y gestionar un rol específico de Intune, permitiendo administración delegada por departamento, región o equipo",
+   "Una característica de RBAC que limita qué objetos de Intune puede ver y administrar un rol, para delegar por equipo o región",
    "Metadatos de clasificación de confidencialidad de datos aplicados a las aplicaciones de Intune para indicar el nivel de sensibilidad de la información según las directivas de Microsoft Purview Information Protection",
    "Etiquetas de segmentación de red que Intune asigna automáticamente para identificar el segmento de red corporativa al que pertenece cada dispositivo gestionado según la política de acceso a recursos de la organización"
   ],
   "opts_en": [
    "Classification tags that Intune automatically applies to devices to identify them in compliance reports based on their operating system, firmware version, and update status",
-   "An Intune RBAC feature that allows administrators to define which Intune objects (profiles, policies, apps, devices) a specific Intune role can view and manage, enabling delegated administration by department, region, or team",
+   "An RBAC feature that limits which Intune objects a role can see and manage, enabling delegated admin by team or region",
    "Data sensitivity classification metadata applied to Intune applications to indicate the sensitivity level of the information according to Microsoft Purview Information Protection policies",
    "Network segmentation tags that Intune automatically assigns to identify the corporate network segment each managed device belongs to based on the organization's resource access policy"
   ],
@@ -9707,13 +9707,13 @@
   "q_en": "What tool does Microsoft Intune include to manage Chromebooks and other Chrome OS devices in enterprise environments?",
   "opts_es": [
    "Intune no soporta la gestión de dispositivos Chrome OS; los Chromebook deben gestionarse exclusivamente mediante Google Admin Console sin ninguna integración posible con el portal de Intune",
-   "Hay una integración entre Intune y Google Admin Console llamada 'Chrome Enterprise connector' que permite a los administradores de Intune ver el estado de los dispositivos Chromebook y aplicar algunas directivas de acceso condicional",
+   "Un conector de Chrome Enterprise con la Consola de administración de Google que muestra el estado de los Chromebook y admite algo de AC",
    "Intune gestiona Chrome OS con los mismos agentes de gestión ligeros que usa para dispositivos macOS, aprovechando la compatibilidad con el protocolo MDM estándar de la industria",
    "Los dispositivos Chrome OS pueden inscribirse completamente en Intune de la misma forma que los dispositivos Android Enterprise, usando el perfil de trabajo gestionado de Chrome Enterprise"
   ],
   "opts_en": [
    "Intune does not support managing Chrome OS devices; Chromebooks must be managed exclusively through Google Admin Console with no possible integration with the Intune portal",
-   "There is an integration between Intune and Google Admin Console called 'Chrome Enterprise connector' that allows Intune administrators to view Chromebook device status and apply some conditional access policies",
+   "A Chrome Enterprise connector with Google Admin Console that shows Chromebook status and supports some CA scenarios",
    "Intune manages Chrome OS with the same lightweight management agents it uses for macOS devices, leveraging compatibility with the industry-standard MDM protocol",
    "Chrome OS devices can be fully enrolled in Intune in the same way as Android Enterprise devices, using the Chrome Enterprise managed work profile"
   ],
@@ -9759,13 +9759,13 @@
   "q_en": "What must an admin configure in Intune to use the 'Remote Activation Lock' action on supervised iOS devices?",
   "opts_es": [
    "No se requiere ninguna configuración previa; la acción de bypass del Bloqueo de activación está disponible por defecto en todos los dispositivos iOS gestionados en Intune sin requisito adicional de supervisión",
-   "El administrador debe habilitar el bypass del Bloqueo de activación en el perfil de restricciones del dispositivo iOS supervisado, o usar la acción 'Desactivar bloqueo de activación' que requiere que el dispositivo sea supervisado y esté inscrito via ADE",
+   "El dispositivo debe estar supervisado e inscrito mediante ADE, con la omisión del bloqueo de activación permitida en el perfil de restricciones",
    "Es necesaria una licencia especial de Intune Suite para acciones remotas avanzadas en dispositivos iOS antes de poder ejecutar el bypass del Bloqueo de activación desde el portal de administración",
    "Registrar el dispositivo específico en el portal de Apple Business Manager con su número de serie para que Apple autorice el bypass del Bloqueo de activación al administrador de Intune"
   ],
   "opts_en": [
    "No prior configuration is required; the Activation Lock bypass action is available by default for all iOS devices managed in Intune without any additional supervision requirement",
-   "The administrator must enable the Activation Lock bypass in the supervised iOS device restrictions profile, or use the 'Disable activation lock' action which requires the device to be supervised and enrolled via ADE",
+   "The device must be supervised and enrolled via ADE, with Activation Lock bypass allowed in the restrictions profile",
    "A special Intune Suite license for advanced remote actions on iOS devices is required before the Activation Lock bypass can be executed from the administration portal",
    "Register the specific device in the Apple Business Manager portal with its serial number so Apple authorizes the Activation Lock bypass to the Intune administrator"
   ],
@@ -9993,13 +9993,13 @@
   "q_en": "What is the difference between App Protection Policies (APP) and App Configuration Policies (ACP) in Intune?",
   "opts_es": [
    "Son exactamente lo mismo con diferentes nombres; las directivas de protección de aplicaciones y las directivas de configuración de aplicaciones son términos completamente intercambiables en el portal de administración de Intune sin distinción técnica",
-   "Las APP protegen los datos corporativos en las aplicaciones mediante restricciones (copiar/pegar, capturas, PIN) y pueden borrar datos corporativos; las ACP preconfiguran ajustes de la aplicación (como la URL del servidor de la app, las cuentas preconfiguradas) sin añadir restricciones de protección de datos",
+   "Las APP protegen los datos de las apps con restricciones (copiar/pegar, PIN) y pueden borrarlos; las ACP preconfiguran opciones como la URL del servidor",
    "Las directivas de protección de aplicaciones (APP) de Intune se aplican exclusivamente a los dispositivos corporativos gestionados con inscripción MDM completa; las directivas de configuración de aplicaciones (ACP) aplican solo a BYOD",
    "Las directivas de protección de aplicaciones (APP) de Intune están diseñadas exclusivamente para aplicaciones en iOS y iPadOS; las directivas de configuración de aplicaciones (ACP) están diseñadas exclusivamente para dispositivos Android Enterprise"
   ],
   "opts_en": [
    "They are exactly the same with different names; App Protection Policies and App Configuration Policies are completely interchangeable terms in the Intune administration portal without technical distinction",
-   "APPs protect corporate data in applications through restrictions (copy/paste, screenshots, PIN) and can wipe corporate data; ACPs preconfigure app settings (like the app server URL, preconfigured accounts) without adding data protection restrictions",
+   "APPs protect app data with restrictions (copy/paste, PIN) and can wipe it; ACPs preconfigure app settings like server URLs",
    "Intune App Protection Policies (APPs) apply exclusively to corporate devices managed with full MDM enrollment; App Configuration Policies (ACPs) apply only to BYOD",
    "Intune App Protection Policies (APPs) are designed exclusively for applications on iOS and iPadOS; App Configuration Policies (ACPs) are designed exclusively for Android Enterprise devices"
   ],
@@ -10071,13 +10071,13 @@
   "q_en": "What are 'Dependencies' in an Intune Win32 application?",
   "opts_es": [
    "Las licencias de software de terceros que deben estar activas y vigentes en el dispositivo antes de que la aplicación Win32 principal pueda instalarse y ejecutarse correctamente",
-   "Otras aplicaciones Win32 que deben estar instaladas en el dispositivo antes de que Intune instale la aplicación principal. Intune puede instalar automáticamente las dependencias antes de instalar la app principal",
+   "Otras apps Win32 que deben instalarse antes; Intune puede instalarlas automáticamente",
    "Los usuarios o grupos de usuarios corporativos que dependen de la aplicación Win32 para realizar su trabajo diario y que deben estar asignados como propietarios de la app en Intune",
    "Los certificados de firma de código de los que depende la aplicación Win32 para ejecutarse correctamente sin generar alertas de seguridad en el sistema operativo Windows"
   ],
   "opts_en": [
    "The third-party software licenses that must be active and current on the device before the main Win32 application can install and run correctly",
-   "Other Win32 applications that must be installed on the device before Intune installs the main application. Intune can automatically install dependencies before installing the main app",
+   "Other Win32 apps that must be installed first; Intune can install them automatically",
    "The corporate users or user groups that depend on the Win32 application for their daily work and must be assigned as app owners in Intune",
    "The code signing certificates that the Win32 application depends on to run correctly without generating security alerts in the Windows operating system"
   ],
@@ -10123,13 +10123,13 @@
   "q_en": "How does Intune manage updates for Microsoft Store (new Microsoft Store) apps on Windows devices?",
   "opts_es": [
    "Intune no puede gestionar ni controlar las actualizaciones de las aplicaciones de la Microsoft Store; estas se actualizan automáticamente mediante el cliente de la Store sin ninguna intervención posible del administrador",
-   "Las apps de la nueva Microsoft Store distribuidas mediante Intune usan la infraestructura de Windows Package Manager (winget) y se actualizan automáticamente a la última versión disponible en la Store, sin que el administrador necesite re-publicar la app en Intune para cada actualización",
+   "Usan winget y se actualizan automáticamente desde la Store, sin volver a publicar la app en Intune",
    "El administrador de Intune debe subir manualmente cada nueva versión de la aplicación de la Microsoft Store cuando el desarrollador la publica y actualiza, exactamente igual que con las aplicaciones de línea de negocio LOB internas",
    "Las aplicaciones de la Microsoft Store no se pueden distribuir ni gestionar mediante Intune; únicamente pueden desplegarse mediante directiva de grupo de Active Directory o mediante scripts de PowerShell con el gestor winget"
   ],
   "opts_en": [
    "Intune cannot manage or control Microsoft Store app updates; these update automatically via the Store client without any possible administrator intervention",
-   "New Microsoft Store apps distributed via Intune use the Windows Package Manager (winget) infrastructure and automatically update to the latest version available in the Store, without the administrator needing to re-publish the app in Intune for each update",
+   "They use winget and update automatically from the Store, with no need to republish the app in Intune",
    "The Intune administrator must manually upload each new version of the Microsoft Store application when the developer publishes and updates it, exactly the same as with internal LOB line-of-business applications",
    "Microsoft Store applications cannot be distributed or managed via Intune; they can only be deployed via Active Directory Group Policy or via PowerShell scripts with the winget package manager"
   ],
@@ -10357,13 +10357,13 @@
   "q_en": "What is the function of the 'Microsoft Defender Firewall' configured via Intune in Endpoint Security profiles?",
   "opts_es": [
    "Reemplazar el Firewall de Windows nativo del sistema operativo por el Firewall de Microsoft Defender, que es una solución de firewall independiente más avanzada con capacidades de filtrado de aplicaciones",
-   "Configurar el Firewall de Windows integrado en el sistema operativo (que es el Firewall de Microsoft Defender) mediante directivas de Intune que controlan las redes habilitadas (dominio, privada, pública), las reglas de entrada/salida y las notificaciones de bloqueo",
+   "Configurar el Firewall de Windows integrado: perfiles de red, reglas de entrada y salida y notificaciones",
    "Instalar un servicio de firewall perimetral basado en la nube de Microsoft que filtra todo el tráfico de red entrante y saliente antes de que llegue al dispositivo final del usuario corporativo en la organización",
    "Desplegar una solución de firewall de próxima generación (NGFW) de un tercero certificado, gestionada desde el portal de Intune e instalada de forma adicional al Firewall de Windows nativo del sistema"
   ],
   "opts_en": [
    "Replace the native Windows Firewall of the operating system with the Microsoft Defender Firewall, which is a more advanced independent firewall solution with application filtering capabilities",
-   "Configure the Windows Firewall built into the operating system (which is the Microsoft Defender Firewall) via Intune policies that control enabled networks (domain, private, public), inbound/outbound rules, and block notifications",
+   "Configure the built-in Windows Firewall: network profiles, inbound/outbound rules and notifications",
    "Install a Microsoft cloud-based perimeter firewall service that filters all incoming and outgoing network traffic before it reaches the corporate end-user device in the organization",
    "Deploy a third-party certified next-generation firewall (NGFW) solution, managed from the Intune portal and installed in addition to the native Windows Firewall of the system"
   ],
@@ -11143,13 +11143,13 @@
   "q_en": "Which Windows Autopilot option allows technicians to pre-configure a Windows device in the warehouse (before delivering it to the end user) so that when the user turns it on, the full configuration is already applied?",
   "opts_es": [
    "Autopilot Self-Deploying mode, que no requiere intervención del técnico ni del usuario final durante ninguna fase del proceso de aprovisionamiento y está diseñado principalmente para dispositivos de quiosco, sala de reuniones o pantallas informativas sin usuario asignado",
-   "Windows Autopilot Pre-Provisioning (antiguamente White Glove), donde el técnico completa la fase de aprovisionamiento del dispositivo (instalación de apps y directivas en el contexto del dispositivo) en el almacén, y el usuario solo realiza la fase de aprovisionamiento del usuario (autenticación y apps de usuario) cuando recibe el dispositivo",
+   "Preaprovisionamiento de Autopilot (antes White Glove): el técnico completa la fase de dispositivo y el usuario solo la fase de usuario",
    "Autopilot Reset, que restablece el dispositivo Windows al estado de aprovisionamiento inicial para la siguiente persona asignada, eliminando los datos del usuario anterior y las aplicaciones instaladas a nivel de usuario, sin necesidad de reimaginar el equipo ni reinstalar el sistema operativo",
    "Intune Remote Actions, que aplica las directivas de configuración y las aplicaciones corporativas de forma remota antes de la entrega física del dispositivo al usuario, sin que el técnico tenga que manipular o configurar el hardware manualmente en ningún momento del proceso"
   ],
   "opts_en": [
    "Autopilot Self-Deploying mode, which requires no technician or end-user intervention during any phase of the provisioning process and is designed primarily for kiosk, meeting room, or informational display devices without an assigned user",
-   "Windows Autopilot Pre-Provisioning (formerly White Glove), where the technician completes the device provisioning phase (app and policy installation in device context) in the warehouse, and the user only performs the user provisioning phase (authentication and user apps) when they receive the device",
+   "Autopilot pre-provisioning (formerly White Glove): the technician completes the device phase and the user only does the user phase",
    "Autopilot Reset, which resets the Windows device to its initial provisioning state for the next assigned person, removing the previous user's data and user-level installed apps, without needing to reimage the machine or reinstall the operating system",
    "Intune Remote Actions, which applies configuration policies and corporate applications remotely before physical delivery of the device to the user, without the technician having to manually handle or configure the hardware at any point in the process"
   ],
@@ -11351,13 +11351,13 @@
   "q_en": "What is Microsoft LAPS (Local Administrator Password Solution) and how does Intune manage it?",
   "opts_es": [
    "LAPS es un servicio de gestión de contraseñas corporativas exclusivamente para cuentas de Active Directory Domain Services en servidores on-premises; Intune no puede configurarlo ya que la herramienta solo es compatible con Microsoft Endpoint Configuration Manager",
-   "LAPS es una solución que gestiona automáticamente las contraseñas de la cuenta de administrador local de los dispositivos Windows, rotándolas periódicamente y almacenándolas de forma segura en Microsoft Entra ID. Intune puede configurar LAPS para dispositivos Windows mediante la sección Endpoint Security > LAPS de cuenta",
+   "LAPS rota automáticamente la contraseña del administrador local en Windows y la guarda en Entra ID; Intune lo configura en Endpoint Security > Protección de cuentas",
    "LAPS es una herramienta de bloqueo de acceso de usuario que Intune utiliza para restringir temporalmente el acceso de las cuentas de administrador locales cuando se detecta actividad sospechosa o no autorizada en los dispositivos gestionados de la organización",
    "LAPS gestiona las contraseñas de las cuentas de Microsoft Entra ID de los administradores de Intune, incluyendo la rotación periódica de las credenciales de acceso al portal de Intune, pero no gestiona las cuentas de administrador locales de los dispositivos Windows"
   ],
   "opts_en": [
    "LAPS is a corporate password management service exclusively for Active Directory Domain Services accounts on on-premises servers; Intune cannot configure it as the tool is only compatible with Microsoft Endpoint Configuration Manager",
-   "LAPS is a solution that automatically manages the passwords of the local administrator account on Windows devices, rotating them periodically and securely storing them in Microsoft Entra ID. Intune can configure LAPS for Windows devices via the Endpoint Security > Account LAPS section",
+   "LAPS automatically rotates the local admin password on Windows devices and stores it in Entra ID; Intune configures it in Endpoint Security > Account protection",
    "LAPS is a user access locking tool that Intune uses to temporarily restrict local administrator account access when suspicious or unauthorized activity is detected on the organization's managed devices",
    "LAPS manages the Microsoft Entra ID account passwords of Intune administrators, including periodic rotation of Intune portal access credentials, but does not manage local administrator accounts on Windows devices"
   ],
@@ -11763,13 +11763,13 @@
   "q_en": "What is 'Microsoft Entra Application Protection' and how does it differ from Intune App Protection Policies (APP)?",
   "opts_es": [
    "Son exactamente la misma característica con nombres distintos según el equipo de producto de Microsoft que la documenta, ya que tanto las APP de Intune como las directivas de acceso condicional de Entra ID comparten el mismo motor de evaluación y las mismas condiciones de cumplimiento",
-   "El acceso condicional de Entra ID puede requerir directivas de protección de aplicaciones como control de concesión ('Requerir directiva de protección de aplicaciones'), lo que significa que solo se permite el acceso desde apps que tengan APP de Intune aplicada. Las APP de Intune son las directivas en sí; el acceso condicional las puede exigir como requisito de acceso",
+   "El acceso condicional puede exigir una directiva de protección de apps como control de concesión; las APP de Intune son las directivas que aplica",
    "La protección de aplicaciones de Entra ID se aplica exclusivamente al plano de control de las aplicaciones, gestionando quién puede acceder a los servicios; las APP de Intune se aplican al plano de datos de las aplicaciones, controlando qué pueden hacer los usuarios con los datos corporativos dentro de la app",
    "Las directivas de protección de aplicaciones (APP) de Entra ID protegen exclusivamente las aplicaciones de Microsoft 365 como Outlook, Teams y SharePoint; las APP de Intune protegen las aplicaciones de terceros como Salesforce, Box o aplicaciones móviles empresariales desarrolladas internamente"
   ],
   "opts_en": [
    "They are exactly the same feature with different names depending on which Microsoft product team documents it, since both Intune APP and Entra ID Conditional Access policies share the same evaluation engine and the same compliance conditions",
-   "Entra ID Conditional Access can require app protection policies as a grant control ('Require app protection policy'), meaning access is only allowed from apps that have Intune APP applied. Intune APP are the policies themselves; Conditional Access can enforce them as an access requirement",
+   "Conditional Access can require an app protection policy as a grant control; Intune APP are the policies it enforces",
    "Entra ID application protection applies exclusively to the application control plane, managing who can access services; Intune APP applies to the application data plane, controlling what users can do with corporate data within the app",
    "Entra ID App Protection Policies (APP) exclusively protect Microsoft 365 applications like Outlook, Teams, and SharePoint; Intune APP protects third-party applications like Salesforce, Box, or internally developed enterprise mobile apps"
   ],
@@ -11841,13 +11841,13 @@
   "q_en": "What network options does Windows 365 Enterprise provide to admins to connect Cloud PCs to on-premises corporate resources?",
   "opts_es": [
    "Windows 365 solo puede conectarse a recursos en la nube de Microsoft 365 y Azure sin ninguna excepción; no existe ninguna opción de conectividad con recursos on-premises porque los Cloud PCs son entornos completamente aislados de la infraestructura de red corporativa interna de la organización",
-   "Windows 365 Enterprise ofrece la opción de 'Azure Network Connection' (ANC), que conecta los Cloud PCs a la red virtual de Azure y desde allí a la red corporativa on-premises mediante ExpressRoute o VPN de sitio a sitio. Alternativamente, se puede usar Microsoft-hosted network con acceso solo a Microsoft 365 y sin conectividad on-premises directa",
+   "Una Azure Network Connection (ANC) a una VNet de Azure y de ahí a local por ExpressRoute o VPN, o una red hospedada por Microsoft",
    "Windows 365 requiere que la organización configure previamente DirectAccess en todos sus servidores on-premises y que los controladores de dominio estén accesibles desde Internet antes de poder establecer cualquier conectividad entre los Cloud PCs y los recursos de la red corporativa interna",
    "Todos los Cloud PCs del tenant de Windows 365 Enterprise comparten obligatoriamente la misma configuración de red única definida por Microsoft, sin ninguna posibilidad de personalizar la topología de red, las subredes de Azure ni la conectividad on-premises por parte del administrador de IT de la organización"
   ],
   "opts_en": [
    "Windows 365 can only connect to Microsoft 365 and Azure cloud resources without any exceptions; there is no connectivity option with on-premises resources because Cloud PCs are completely isolated environments from the organization's internal corporate network infrastructure",
-   "Windows 365 Enterprise offers the 'Azure Network Connection' (ANC) option, connecting Cloud PCs to Azure virtual network and from there to the on-premises corporate network via ExpressRoute or site-to-site VPN. Alternatively, Microsoft-hosted network can be used with access only to Microsoft 365 without direct on-premises connectivity",
+   "An Azure Network Connection (ANC) to an Azure VNet and on to on-premises via ExpressRoute or VPN, or a Microsoft-hosted network",
    "Windows 365 requires the organization to previously configure DirectAccess on all its on-premises servers and that domain controllers are accessible from the Internet before being able to establish any connectivity between Cloud PCs and internal corporate network resources",
    "All Cloud PCs in the Windows 365 Enterprise tenant must share the same single network configuration defined by Microsoft without any possibility of customizing network topology, Azure subnets, or on-premises connectivity by the organization's IT administrator"
   ],
@@ -12023,13 +12023,13 @@
   "q_en": "What is the difference between 'Microsoft Defender Antivirus' and 'Microsoft Defender for Endpoint' (MDE)?",
   "opts_es": [
    "Son exactamente el mismo producto con nombres distintos según el equipo de marketing de Microsoft; tanto Microsoft Defender Antivirus como Microsoft Defender para punto de conexión comparten el mismo motor de detección, la misma consola de administración y las mismas capacidades de respuesta a amenazas, sin ninguna diferencia técnica ni de licencia entre ambas soluciones",
-   "Microsoft Defender Antivirus es el motor antimalware integrado en Windows que detecta y elimina malware mediante firmas y análisis de comportamiento; Microsoft Defender para punto de conexión (MDE) es una plataforma completa de seguridad EDR/XDR en la nube que incluye el antivirus y agrega detección avanzada de amenazas, investigación automatizada, respuesta a incidentes, gestión de vulnerabilidades y más, requiriendo licencia adicional",
+   "Defender Antivirus es el motor antimalware integrado en Windows; Defender for Endpoint es una plataforma EDR/XDR en la nube que lo incluye y añade detección, investigación y respuesta",
    "MDE es la versión diseñada exclusivamente para implementaciones on-premises del Antivirus de Microsoft Defender que se gestiona desde servidores de seguridad locales sin necesidad de conectividad a servicios en la nube de Microsoft; el Antivirus de Defender es la versión en la nube que requiere conexión continua a los servicios de Microsoft para actualizar firmas y funcionar correctamente",
    "El Antivirus de Microsoft Defender está diseñado y licenciado exclusivamente para proteger servidores de Windows Server frente a amenazas de malware, ransomware y ataques de red; Microsoft Defender para punto de conexión está diseñado específicamente para proteger los dispositivos de los usuarios finales, incluyendo equipos de escritorio, portátiles y dispositivos móviles empresariales"
   ],
   "opts_en": [
    "They are exactly the same product with different names based on Microsoft's marketing team; both Microsoft Defender Antivirus and Microsoft Defender for Endpoint share the same detection engine, the same management console, and the same threat response capabilities, with no technical or licensing difference between both solutions",
-   "Microsoft Defender Antivirus is the antimalware engine built into Windows that detects and removes malware via signatures and behavior analysis; Microsoft Defender for Endpoint (MDE) is a complete cloud EDR/XDR security platform that includes the antivirus and adds advanced threat detection, automated investigation, incident response, vulnerability management, and more, requiring additional licensing",
+   "Defender Antivirus is Windows' built-in antimalware engine; Defender for Endpoint is a full cloud EDR/XDR platform that includes it and adds detection, investigation and response",
    "MDE is the version designed exclusively for on-premises deployments of Microsoft Defender Antivirus managed from local security servers without needing connectivity to Microsoft cloud services; Defender Antivirus is the cloud version that requires continuous connection to Microsoft services to update signatures and function properly",
    "Microsoft Defender Antivirus is designed and licensed exclusively to protect Windows Server servers against malware, ransomware, and network attack threats; Microsoft Defender for Endpoint is designed specifically to protect end-user devices, including desktops, laptops, and enterprise mobile devices"
   ],
@@ -12205,13 +12205,13 @@
   "q_en": "Which Intune tool provides information about which versions of an app are installed on managed devices?",
   "opts_es": [
    "El informe de inventario de hardware de Intune que muestra las especificaciones del dispositivo (CPU, RAM, almacenamiento, modelo) pero no incluye el inventario de aplicaciones de software instaladas en los dispositivos gestionados",
-   "El informe de aplicaciones detectadas de Intune (Aplicaciones > Monitor > Aplicaciones detectadas), que muestra qué aplicaciones y versiones están instaladas en cada dispositivo gestionado, útil para planificar actualizaciones y verificar el cumplimiento de versiones",
+   "El informe de aplicaciones detectadas (Aplicaciones > Supervisar), con las apps y versiones de cada dispositivo",
    "Los registros del Visor de eventos de Windows en cada dispositivo individual, a los que el administrador debe acceder de forma remota o recopilar manualmente para identificar qué versiones de aplicaciones están instaladas",
    "El Microsoft 365 Admin Center que muestra únicamente las aplicaciones del paquete de Microsoft 365 instaladas en los dispositivos, pero no las aplicaciones de terceros ni las aplicaciones Win32 gestionadas por Intune"
   ],
   "opts_en": [
    "The Intune hardware inventory report showing device specs (CPU, RAM, storage, model) but not including the software application inventory installed on managed devices",
-   "The Intune discovered apps report (Apps > Monitor > Discovered apps), which shows which apps and versions are installed on each managed device, useful for planning upgrades and verifying version compliance",
+   "The Discovered apps report (Apps > Monitor), showing the apps and versions on each managed device",
    "Windows Event Viewer logs on each individual device, which the admin must access remotely or collect manually to identify what application versions are installed",
    "Microsoft 365 Admin Center showing only Microsoft 365 suite applications installed on devices, but not third-party apps or Win32 apps managed by Intune"
   ],
@@ -12395,13 +12395,13 @@
   "q_en": "What is the function of the 'Cloud Device Administrator' Microsoft Entra ID role?",
   "opts_es": [
    "Gestionar todos los servicios de infraestructura en la nube de Azure del tenant, incluyendo la creación y eliminación de máquinas virtuales, cuentas de almacenamiento y redes virtuales, sin necesidad de tener el rol de Administrador Global",
-   "Un rol de Entra ID que permite administrar dispositivos registrados o unidos a Microsoft Entra ID: habilitar/deshabilitar dispositivos, eliminar dispositivos del directorio y leer claves de recuperación de BitLocker almacenadas en Entra ID, sin tener acceso completo de Administrador Global",
+   "Un rol para habilitar, deshabilitar y eliminar dispositivos de Entra y leer claves de BitLocker, sin derechos de Administrador global",
    "Un rol de Entra ID que permite al titular crear, modificar y eliminar directivas de acceso condicional en Microsoft Entra ID, incluyendo la gestión de ubicaciones con nombre, controles de sesión y requisitos de cumplimiento de dispositivos",
    "Un rol de Intune que otorga acceso de administrador completo a todos los dispositivos inscritos en MDM, con capacidad para crear directivas, ejecutar acciones remotas y ver todos los informes de cumplimiento e inventario"
   ],
   "opts_en": [
    "Manage all Azure cloud infrastructure services in the tenant, including creating and deleting virtual machines, storage accounts, and virtual networks, without needing the Global Administrator role",
-   "An Entra ID role that allows managing devices registered or joined to Microsoft Entra ID: enabling/disabling devices, deleting devices from the directory, and reading BitLocker recovery keys stored in Entra ID, without having full Global Administrator access",
+   "A role to enable, disable and delete Entra devices and read BitLocker recovery keys, without Global Admin rights",
    "An Entra ID role that allows the holder to create, modify, and delete Conditional Access policies in Microsoft Entra ID, including managing named locations, session controls, and device compliance requirements",
    "An Intune role that grants full administrator access to all MDM-enrolled devices, with the ability to create policies, execute remote actions, and view all compliance and inventory reports"
   ],
@@ -12655,13 +12655,13 @@
   "q_en": "What is the 'Microsoft Entra ID device password policy' and how does it relate to Intune compliance policies?",
   "opts_es": [
    "Es la política de contraseñas de cuentas de usuario de Microsoft 365 que Entra ID sincroniza automáticamente a todos los dispositivos Windows gestionados por Intune, aplicando los requisitos de longitud y complejidad definidos en el Centro de administración de Microsoft 365",
-   "Microsoft Entra ID no tiene una política de contraseñas de dispositivos; las políticas de contraseñas para dispositivos se configuran en Intune mediante perfiles de restricciones de dispositivo (que aplican la política al dispositivo) y directivas de cumplimiento (que verifican si el dispositivo cumple la política de contraseña requerida)",
+   "Entra ID no tiene directiva de contraseñas de dispositivo; Intune la define con perfiles de restricción y la comprueba con directivas de cumplimiento",
    "Una política de Microsoft Entra ID que sincroniza automáticamente los requisitos de contraseña definidos en Active Directory on-premises a todos los dispositivos Windows gestionados por Intune, usando Azure AD Connect para transferir las políticas de contraseña",
    "La política de contraseña predeterminada de Microsoft Entra ID que se aplica automáticamente a todos los dispositivos del tenant sin necesidad de ninguna configuración adicional, aplicando los requisitos mínimos de seguridad de Microsoft a todas las cuentas"
   ],
   "opts_en": [
    "It is the Microsoft 365 user account password policy that Entra ID automatically syncs to all Windows devices managed by Intune, applying the length and complexity requirements defined in the Microsoft 365 admin center",
-   "Microsoft Entra ID does not have a device password policy; device password policies are configured in Intune via device restriction profiles (which apply the policy to the device) and compliance policies (which verify if the device meets the required password policy)",
+   "Entra ID has no device password policy; Intune sets it with device restriction profiles and checks it with compliance policies",
    "A Microsoft Entra ID policy that automatically syncs password requirements defined in on-premises Active Directory to all Windows devices managed by Intune, using Azure AD Connect to transfer password policies",
    "The Microsoft Entra ID default password policy that automatically applies to all tenant devices without any additional configuration, applying Microsoft's minimum security requirements to all accounts"
   ],
@@ -13087,13 +13087,13 @@
   "q_en": "Which Intune setting controls whether users can add or remove Microsoft accounts on managed Windows devices?",
   "opts_es": [
    "Una directiva de cumplimiento de dispositivos Windows en Intune que requiere la ausencia de cuentas de Microsoft personales en el dispositivo como condición para marcarlo como conforme y permitirle el acceso a los recursos corporativos",
-   "Un perfil de restricciones de dispositivo Windows en Intune que incluye opciones para bloquear las cuentas de Microsoft (cuenta personal de Microsoft) en el dispositivo, impidiendo que los usuarios añadan cuentas de MSA personales junto a la cuenta corporativa de Entra ID",
+   "Una opción del perfil de restricciones de Windows que bloquea agregar cuentas Microsoft personales (MSA)",
    "Una regla de acceso condicional de Microsoft Entra ID que bloquea el acceso a los recursos corporativos desde sesiones de navegador o apps que estén usando una cuenta de Microsoft personal en lugar de la cuenta corporativa de Entra ID",
    "Un script de PowerShell desplegado mediante Intune que detecta y elimina automáticamente las cuentas de Microsoft personales (MSA) que los usuarios han añadido a sus dispositivos Windows corporativos gestionados"
   ],
   "opts_en": [
    "A Windows device compliance policy in Intune that requires the absence of personal Microsoft accounts on the device as a condition to mark it compliant and allow access to corporate resources",
-   "A Windows device restriction profile in Intune that includes options to block Microsoft accounts (personal Microsoft accounts) on the device, preventing users from adding personal MSA accounts alongside the corporate Entra ID account",
+   "A Windows device restriction profile option that blocks adding personal Microsoft accounts (MSA)",
    "A Microsoft Entra ID Conditional Access rule that blocks access to corporate resources from browser sessions or apps using a personal Microsoft account instead of the corporate Entra ID account",
    "A PowerShell script deployed via Intune that automatically detects and removes personal Microsoft accounts (MSA) that users have added to their managed corporate Windows devices"
   ],
@@ -18002,7 +18002,7 @@
    "Actions for noncompliance in the compliance policy",
    "Enrollment restrictions with user notifications",
    "A scope tag",
-   "Device cleanup rules with a custom email template"
+   "Device cleanup rules with a custom email template set"
   ],
   "correct": [
    0
