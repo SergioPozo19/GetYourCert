@@ -1539,16 +1539,16 @@
   "q_es": "Quieres restringir quién puede crear equipos (y, por tanto, grupos de Microsoft 365) a un grupo de seguridad concreto. ¿Qué configuras?",
   "q_en": "You want to restrict who can create teams (and therefore Microsoft 365 groups) to a specific security group. What do you configure?",
   "opts_es": [
-   "Una directiva de nomenclatura que añada prefijos a los nombres",
+   "Una directiva de nomenclatura que agrega prefijos y bloquea palabras",
    "Una plantilla de equipo que predefina canales y aplicaciones",
-   "La configuración de creación de grupos de Microsoft 365 limitada a un grupo",
-   "Una directiva de expiración que elimine los grupos inactivos"
+   "Creación de grupos de Microsoft 365 limitada a un grupo de seguridad",
+   "Una directiva de expiración que elimina grupos inactivos tras 180 días"
   ],
   "opts_en": [
-   "A naming policy that adds prefixes to group names",
+   "A naming policy that adds prefixes and blocks words in group names",
    "A team template that predefines channels and apps",
-   "Microsoft 365 group creation settings limited to a security group",
-   "An expiration policy that deletes inactive groups"
+   "Microsoft 365 group creation limited to a security group",
+   "An expiration policy that deletes inactive groups after 180 days"
   ],
   "correct": [
    2
@@ -2930,15 +2930,15 @@
   "q_es": "Necesitas exigir un dispositivo conforme y MFA para acceder a Teams, pero solo desde fuera de la red corporativa. ¿Qué combinación usas?",
   "q_en": "You must require a compliant device and MFA for Teams access, but only from outside the corporate network. Which combination do you use?",
   "opts_es": [
-   "Acceso condicional con condición de ubicación y controles de concesión",
-   "Una etiqueta de confidencialidad publicada para los equipos y sitios",
-   "Una directiva de actualización que fije el canal de versiones del cliente",
+   "Acceso condicional con una condición de ubicación y controles de concesión",
+   "Una etiqueta de confidencialidad publicada para equipos y sitios fuera de la oficina",
+   "Una directiva de actualización que fija el canal del cliente para usuarios remotos",
    "Una directiva de retención dirigida a los chats y canales de Teams"
   ],
   "opts_en": [
    "Conditional Access with a location condition and grant controls",
-   "A sensitivity label published for the teams and sites",
-   "An update policy that pins the client's release channel",
+   "A sensitivity label published for the teams and sites outside the office",
+   "An update policy that pins the client's release channel for remote users",
    "A retention policy targeting Teams chats and channels"
   ],
   "correct": [
@@ -3064,14 +3064,14 @@
   "opts_es": [
    "Convertir el equipo en un canal compartido con otra organización",
    "Aplicar una directiva de nomenclatura al nombre del equipo",
-   "Archivar el equipo para dejarlo en solo lectura conservando el contenido",
-   "Eliminar el equipo para liberar las licencias de sus miembros"
+   "Archivar el equipo para que sea de solo lectura y conserve su contenido",
+   "Eliminar el equipo para liberar las licencias y guardar una copia"
   ],
   "opts_en": [
-   "Convert the team into a shared channel with another org",
+   "Convert the team into a shared channel with another organization",
    "Apply a naming policy to the team's name",
-   "Archive the team to make it read-only while keeping its content",
-   "Delete the team to free up its members' licenses"
+   "Archive the team so it is read-only and keeps its content",
+   "Delete the team to free up its members' licenses and keep a backup"
   ],
   "correct": [
    2
@@ -3146,16 +3146,16 @@
   "q_es": "Tienes que aplicar una directiva de mensajería concreta a 4.000 usuarios de atención al cliente de forma eficiente. ¿Qué método de asignación usas?",
   "q_en": "You must apply a specific messaging policy to 4,000 customer-service users efficiently. Which assignment method do you use?",
   "opts_es": [
-   "Una plantilla de equipo con la directiva incrustada",
+   "Una plantilla de equipo con la directiva de mensajería incrustada",
    "Una directiva de expiración aplicada al grupo de usuarios",
-   "Asignación de directivas a un grupo que contiene a esos usuarios",
-   "Asignación manual de la directiva usuario por usuario"
+   "Asignación de directivas por grupo a un grupo con esos usuarios",
+   "Asignación manual de la directiva por usuario, de uno en uno"
   ],
   "opts_en": [
-   "A team template with the policy embedded in it",
+   "A team template with the messaging policy embedded in it",
    "An expiration policy applied to the user group",
-   "Group policy assignment to a group containing those users",
-   "Manual per-user assignment of the policy one by one"
+   "Group policy assignment to a group with those users",
+   "Manual per-user assignment of the policy, one user at a time"
   ],
   "correct": [
    2
@@ -3532,16 +3532,16 @@
   "q_es": "Recursos Humanos quiere que los equipos de incorporación se creen siempre con los mismos canales ('Bienvenida', 'Formación', 'Dudas') y apps. ¿Qué creas?",
   "q_en": "HR wants onboarding teams always created with the same channels ('Welcome', 'Training', 'Questions') and apps. What do you create?",
   "opts_es": [
-   "Una directiva de nomenclatura con un prefijo de departamento",
+   "Una directiva de nomenclatura con prefijo de departamento y reglas de sufijo",
    "Un paquete de directivas con varias directivas de usuario",
-   "Una etiqueta de confidencialidad publicada para los equipos",
-   "Una plantilla de equipo que predefina esos canales y aplicaciones"
+   "Una etiqueta de confidencialidad publicada solo para los equipos de incorporación",
+   "Una plantilla de equipo que predefine los canales y aplicaciones"
   ],
   "opts_en": [
-   "A naming policy with a department prefix",
+   "A naming policy with a department prefix and suffix rules",
    "A policy package bundling several user policies",
-   "A sensitivity label published for the teams",
-   "A team template that predefines those channels and apps"
+   "A sensitivity label published for the onboarding teams only",
+   "A team template that predefines the channels and apps"
   ],
   "correct": [
    3
@@ -3613,15 +3613,15 @@
   "q_en": "You want to allow guests only from two specific partner domains and block invitations from any other domain. Where do you configure this?",
   "opts_es": [
    "En una directiva de retención aplicada a los equipos con invitados",
-   "En el Panel de calidad de llamadas, filtrando por dominio externo",
-   "En la configuración de colaboración externa de Microsoft Entra (lista de dominios)",
-   "En las directivas de mensajería del Centro de administración de Teams"
+   "En el Call Quality Dashboard, filtrando llamadas por nombre de dominio externo",
+   "En la configuración de colaboración externa de Entra (lista de dominios permitidos)",
+   "En las directivas de mensajería del centro de Teams para cada invitado"
   ],
   "opts_en": [
    "In a retention policy applied to teams that contain guests",
-   "In the Call Quality Dashboard, filtering by external domain",
-   "In Microsoft Entra external collaboration settings (domain allowlist)",
-   "In the messaging policies of the Teams admin center"
+   "In the Call Quality Dashboard, filtering calls by external domain name",
+   "In Entra external collaboration settings (domain allowlist)",
+   "In the messaging policies of the Teams admin center for each guest user"
   ],
   "correct": [
    2
@@ -4508,15 +4508,15 @@
   "q_es": "Durante la transición a Teams, quieres que un grupo piloto use solo Teams mientras el resto sigue con Skype Empresarial. ¿Qué configuras?",
   "q_en": "During the transition to Teams, you want a pilot group to use Teams only while everyone else stays on Skype for Business. What do you configure?",
   "opts_es": [
-   "Una directiva de retención aplicada a las conversaciones del piloto",
-   "Una directiva de coexistencia/actualización en modo 'Solo Teams' para el grupo piloto",
-   "Una etiqueta de confidencialidad publicada para los usuarios piloto",
+   "Una directiva de retención aplicada a los chats y conversaciones del grupo piloto",
+   "Una directiva de coexistencia/actualización en 'Solo Teams' para el piloto",
+   "Una etiqueta de confidencialidad publicada solo a los clientes de Teams y Skype del piloto",
    "Una directiva de nomenclatura para los equipos del grupo piloto"
   ],
   "opts_en": [
-   "A retention policy applied to the pilot's conversations",
-   "A coexistence/upgrade policy set to 'Teams only' for the pilot group",
-   "A sensitivity label published for the pilot users",
+   "A retention policy applied to the pilot group's chats and channel conversations",
+   "A coexistence/upgrade policy set to 'Teams only' for the pilot",
+   "A sensitivity label published only to the pilot users' Teams and Skype clients",
    "A naming policy for the pilot group's teams"
   ],
   "correct": [
@@ -4612,15 +4612,15 @@
   "q_es": "El uso compartido externo de archivos de un equipo es demasiado permisivo. ¿Dónde ajustas el nivel de uso compartido externo que afecta a Teams?",
   "q_en": "A team's external file sharing is too permissive. Where do you adjust the external sharing level that affects Teams?",
   "opts_es": [
-   "En las directivas de llamada que controlan el reenvío de llamadas",
+   "En las directivas de llamadas que controlan el desvío a usuarios externos",
    "En la configuración de uso compartido externo de SharePoint Online y OneDrive",
-   "En las directivas de mensajería del Centro de administración de Teams",
+   "En las directivas de mensajería del centro de administración para invitados",
    "En las directivas de reunión que controlan el uso compartido de pantalla"
   ],
   "opts_en": [
-   "In the calling policies that control call forwarding",
-   "In the external sharing settings of SharePoint Online and OneDrive",
-   "In the messaging policies of the Teams admin center",
+   "In the calling policies that control call forwarding to external users",
+   "In the SharePoint Online and OneDrive external sharing settings",
+   "In the messaging policies of the Teams admin center for guest users",
    "In the meeting policies that control screen sharing"
   ],
   "correct": [
@@ -5228,15 +5228,15 @@
   "q_es": "Quieres compartir un canal con un equipo de otro inquilino para que sus miembros colaboren sin convertirse en invitados. ¿Qué tipo de canal y requisito aplica?",
   "q_en": "You want to share a channel with a team in another tenant so its members collaborate without becoming guests. Which channel type and requirement apply?",
   "opts_es": [
-   "Un canal compartido con la conexión directa B2B habilitada en Entra",
-   "Un canal estándar con el uso compartido externo de archivos abierto",
-   "Un canal privado con invitados añadidos uno a uno al equipo",
+   "Un canal compartido con B2B direct connect en Entra",
+   "Un canal estándar con uso compartido externo abierto para todos",
+   "Un canal privado con invitados del socio agregados uno a uno",
    "Un chat de grupo entre los miembros de ambos inquilinos"
   ],
   "opts_en": [
-   "A shared channel with B2B direct connect enabled in Entra",
-   "A standard channel with open external file sharing",
-   "A private channel with guests added one by one",
+   "A shared channel with B2B direct connect in Entra",
+   "A standard channel with open external file sharing for all",
+   "A private channel with guests from the partner added one by one",
    "A group chat between members of both tenants"
   ],
   "correct": [
@@ -5851,15 +5851,15 @@
   "q_es": "Quieres que una etiqueta de confidencialidad aplicada a un equipo también controle el nivel de uso compartido externo de su sitio de SharePoint. ¿Qué tipo de configuración de la etiqueta usas?",
   "q_en": "You want a sensitivity label applied to a team to also control its SharePoint site's external sharing level. Which label setting do you use?",
   "opts_es": [
-   "Una directiva de retención dirigida al sitio de SharePoint del equipo",
-   "La configuración de la etiqueta para grupos y sitios (privacidad y uso compartido)",
-   "Una cuenta de recurso vinculada al operador automático del equipo",
+   "Una directiva de retención dirigida al sitio y la biblioteca del equipo",
+   "La configuración de grupos y sitios de la etiqueta (privacidad y uso compartido)",
+   "Una cuenta de recursos vinculada al operador automático y al sitio",
    "Una directiva de nomenclatura aplicada al nombre del grupo del equipo"
   ],
   "opts_en": [
-   "A retention policy targeting the team's SharePoint site",
-   "The label's settings for groups and sites (privacy and sharing)",
-   "A resource account linked to the team's auto attendant",
+   "A retention policy targeting the team's SharePoint site and library",
+   "The label's groups and sites settings (privacy and sharing)",
+   "A resource account linked to the team's auto attendant and site",
    "A naming policy applied to the team's group name"
   ],
   "correct": [
@@ -6147,15 +6147,15 @@
   "q_es": "Quieres exigir que los dispositivos móviles cumplan una directiva de cumplimiento antes de acceder a Teams. ¿Qué combinación usas?",
   "q_en": "You want to require mobile devices to meet a compliance policy before accessing Teams. Which combination do you use?",
   "opts_es": [
-   "Una directiva de retención aplicada a los chats móviles del usuario",
-   "Intune para el cumplimiento del dispositivo y acceso condicional que lo exija",
-   "Una etiqueta de confidencialidad publicada para los dispositivos móviles",
+   "Una directiva de retención aplicada a los chats móviles y publicaciones del usuario",
+   "Cumplimiento de dispositivos de Intune y acceso condicional que lo exige",
+   "Una etiqueta de confidencialidad publicada para los móviles de cada usuario",
    "Una directiva de nomenclatura para los equipos de usuarios móviles"
   ],
   "opts_en": [
-   "A retention policy applied to the user's mobile chats",
-   "Intune for device compliance plus Conditional Access that requires it",
-   "A sensitivity label published for the mobile devices",
+   "A retention policy applied to the user's mobile chats and channel posts",
+   "Intune device compliance plus Conditional Access requiring it",
+   "A sensitivity label published for the mobile devices of every Teams user",
    "A naming policy for the mobile users' teams"
   ],
   "correct": [
@@ -6199,16 +6199,16 @@
   "q_es": "Necesitas que la pertenencia de un equipo refleje siempre a los empleados de un país concreto, sin mantenerla a mano. ¿Qué tipo de grupo respalda al equipo?",
   "q_en": "You need a team's membership to always reflect employees in a specific country, without manual upkeep. Which group type backs the team?",
   "opts_es": [
-   "Una lista de contactos externos del directorio del inquilino",
+   "Una lista de contactos externos del directorio filtrada por país",
    "Un grupo de Microsoft 365 con pertenencia dinámica por atributo",
    "Un grupo de distribución usado solo para correo masivo",
-   "Un grupo de seguridad con miembros asignados manualmente"
+   "Un grupo de seguridad con miembros asignados a mano por RR. HH. cada mes"
   ],
   "opts_en": [
-   "A list of external contacts in the tenant directory",
-   "A Microsoft 365 group with attribute-based dynamic membership",
+   "A list of external contacts in the tenant directory filtered by country",
+   "A Microsoft 365 group with dynamic membership by attribute",
    "A distribution group used only for bulk email",
-   "A security group with members assigned manually"
+   "A security group with members assigned manually by HR every month"
   ],
   "correct": [
    1
@@ -7025,15 +7025,15 @@
   "q_es": "Necesitas que en un canal solo los moderadores puedan responder a las publicaciones y controlar las reacciones. ¿Qué configuras?",
   "q_en": "You need a channel where only moderators can reply to posts and control reactions. What do you configure?",
   "opts_es": [
-   "Una directiva de mensajería que desactive todas las reacciones",
-   "La moderación del canal, designando moderadores y sus permisos",
-   "Una etiqueta de confidencialidad aplicada al canal moderado",
+   "Una directiva de mensajería que deshabilita reacciones y respuestas",
+   "Moderación de canal, con moderadores y permisos",
+   "Una etiqueta de confidencialidad aplicada a las publicaciones del canal",
    "Una directiva de nomenclatura aplicada al nombre del canal"
   ],
   "opts_en": [
-   "A messaging policy that disables all reactions",
-   "Channel moderation, naming moderators and their permissions",
-   "A sensitivity label applied to the moderated channel",
+   "A messaging policy that disables all reactions and replies",
+   "Channel moderation, naming moderators and permissions",
+   "A sensitivity label applied to the moderated channel's posts",
    "A naming policy applied to the channel's name"
   ],
   "correct": [
@@ -7280,15 +7280,15 @@
   "q_en": "You need a calling consumption report that separates Calling Plans usage from Direct Routing usage. Where do you find it?",
   "opts_es": [
    "En una etiqueta de confidencialidad publicada para las llamadas",
-   "En las directivas de acceso condicional de Microsoft Entra",
-   "En el informe de uso de PSTN del Centro de administración (con sus pestañas)",
-   "En el Network Planner del Centro de administración de Teams"
+   "En las directivas de acceso condicional de Microsoft Entra para llamadas",
+   "En el informe de uso de PSTN del centro de administración (con sus pestañas)",
+   "En el Planificador de red del centro de Teams, por sitio y plan"
   ],
   "opts_en": [
    "In a sensitivity label published for the calls",
-   "In the Conditional Access policies of Microsoft Entra",
-   "In the PSTN usage report of the admin center (with its tabs)",
-   "In the Network Planner of the Teams admin center"
+   "In the Conditional Access policies of Microsoft Entra for calling",
+   "In the admin center's PSTN usage report (with its tabs)",
+   "In the Network Planner of the Teams admin center, by site and plan"
   ],
   "correct": [
    2
@@ -8263,16 +8263,16 @@
   "q_es": "El equipo legal requiere que los mensajes de chat de Teams se conserven 7 años y luego se eliminen permanentemente. Los mensajes de canal del equipo de RRHH deben conservarse 10 años. Ningún otro contenido debe verse afectado. ¿Cuál es la configuración más precisa?",
   "q_en": "Your legal team requires Teams chat messages to be retained for 7 years and then permanently deleted. Channel messages in the HR team must be retained for 10 years. No other content should be affected. What is the most precise configuration?",
   "opts_es": [
-   "Una única directiva de retención de 10 años aplicada a todo el contenido de Teams sin ninguna acción de eliminación configurada",
-   "Una directiva de retención de 7 años para chats de Teams y otra independiente de 10 años para los mensajes del canal de RRHH",
+   "Una única directiva de 10 años aplicada a todo el contenido de Teams sin acción de eliminación",
+   "Una directiva de 7 años para chats y otra de 10 años para los mensajes del canal de RR. HH.",
    "Una directiva DLP con una regla de preservación de 7 años aplicada a todos los mensajes de Teams en el tenant",
-   "Una retención por litigio en los buzones de todos los miembros de RRHH con una duración de retención de 10 años configurada"
+   "Una retención por litigio en los buzones de los miembros de RR. HH. con duración de 10 años"
   ],
   "opts_en": [
-   "A single 10-year retention policy applied to all Teams content with no deletion action configured",
-   "A 7-year retention policy scoped to Teams chats, and a separate 10-year policy scoped to the HR team's channel messages",
+   "A single 10-year retention policy applied to all Teams content with no deletion action set",
+   "A 7-year policy for Teams chats and a separate 10-year policy for HR channel messages",
    "A DLP policy with a 7-year preservation rule applied to all Teams messages across the tenant",
-   "A litigation hold placed on all HR team members' mailboxes with a 10-year hold duration setting"
+   "A litigation hold placed on all HR team members' mailboxes with a 10-year hold duration set"
   ],
   "correct": [
    1
@@ -8422,15 +8422,15 @@
   "q_en": "You are configuring network topology in Teams Admin Center. What is the purpose of defining trusted IP addresses in the network topology settings?",
   "opts_es": [
    "Restringir el acceso a Teams solo desde direcciones IP aprobadas por el departamento de seguridad",
-   "Identificar las IPs públicas externas corporativas para que Teams determine si el usuario está en la red interna",
-   "Configurar el enrutamiento de medios directo para que los SBCs usen esas IPs como destino primario",
-   "Definir los rangos de IP donde se aplican las directivas de reunión específicas por ubicación geográfica"
+   "Identificar las IP públicas corporativas para que Teams sepa si el usuario está en la red interna",
+   "Configurar el enrutamiento directo de medios para que los SBC usen esas IP como destino principal",
+   "Definir los rangos de IP donde se aplican geográficamente directivas de reunión por ubicación"
   ],
   "opts_en": [
    "Restrict Teams access to only IP addresses approved by the security department",
-   "Identify the corporate external public IPs so Teams can determine if the user is on the internal network",
-   "Configure direct media routing so SBCs use those IPs as the primary media destination",
-   "Define the IP ranges where location-specific meeting policies are applied geographically"
+   "Identify corporate public IPs so Teams knows whether the user is on the internal network",
+   "Configure direct media routing so that SBCs use those IPs as the primary media destination",
+   "Define the IP ranges where location-specific meeting policies are applied on a geographic basis"
   ],
   "correct": [
    1
@@ -8473,16 +8473,16 @@
   "q_es": "Tu organización tiene salas de reuniones con dispositivos Microsoft Teams Rooms. ¿Qué diferencia principal existe entre la licencia Teams Rooms Basic y Teams Rooms Pro?",
   "q_en": "Your organization has meeting rooms with Microsoft Teams Rooms devices. What is the main difference between Teams Rooms Basic and Teams Rooms Pro licenses?",
   "opts_es": [
-   "Teams Rooms Pro funciona en dispositivos Android y Windows; Basic solo es compatible con dispositivos Windows",
+   "Teams Rooms Pro funciona en Android y Windows; Basic solo es compatible con Windows",
    "Teams Rooms Pro incluye licencias de Teams Phone; Basic requiere una licencia adicional para llamadas RTC",
-   "Teams Rooms Pro permite hasta 300 participantes en reuniones; Basic limita las reuniones a 100 participantes",
-   "Teams Rooms Pro incluye gestión remota, análisis de salas e IA de reuniones; Basic solo ofrece funcionalidad básica de reuniones"
+   "Teams Rooms Pro admite hasta 300 participantes; Basic limita las reuniones a 100",
+   "Pro agrega administración remota, análisis de salas e IA; Basic solo tiene reuniones básicas"
   ],
   "opts_en": [
-   "Teams Rooms Pro works on Android and Windows devices; Basic is only compatible with Windows devices",
+   "Teams Rooms Pro works on Android and Windows devices; Basic is only compatible with Windows",
    "Teams Rooms Pro includes Teams Phone licenses; Basic requires a separate license for PSTN calls",
-   "Teams Rooms Pro supports up to 300 meeting participants; Basic limits meetings to 100 participants",
-   "Teams Rooms Pro includes remote management, room analytics, and meeting AI; Basic only provides core meeting functionality"
+   "Teams Rooms Pro supports up to 300 participants; Basic limits meetings to 100 participants",
+   "Pro adds remote management, room analytics and meeting AI; Basic has core meetings"
   ],
   "correct": [
    3
@@ -9007,15 +9007,15 @@
   "q_es": "Tu empresa quiere crear un equipo de Teams que incluya automáticamente a todos los empleados de la organización. ¿Cuál es la limitación principal que debes tener en cuenta?",
   "q_en": "Your company wants to create a Teams team that automatically includes every employee in the organization. What is the main limitation you must consider?",
   "opts_es": [
-   "Los equipos de toda la organización tienen un máximo de 10 000 miembros y solo pueden crearse por administradores globales",
-   "Los equipos de toda la organización requieren licencias de Teams Premium para todos los miembros incluidos",
-   "Los equipos de toda la organización tienen un límite de 100 propietarios y no permiten moderación de canales",
+   "Los equipos de toda la organización admiten hasta 10 000 miembros y solo los crean administradores globales",
+   "Los equipos de toda la organización requieren licencias Teams Premium para cada miembro incluido",
+   "Los equipos de toda la organización tienen un límite de 100 propietarios y no permiten moderación",
    "Los equipos de toda la organización no admiten canales privados ni canales compartidos con externos"
   ],
   "opts_en": [
-   "Org-wide teams have a maximum of 10,000 members and can only be created by global administrators",
-   "Org-wide teams require Teams Premium licenses for all included members",
-   "Org-wide teams have a limit of 100 owners and do not allow channel moderation",
+   "Org-wide teams allow up to 10,000 members and only global admins can create them",
+   "Org-wide teams require Teams Premium licenses for every one of the included members",
+   "Org-wide teams have a limit of 100 owners and do not allow any channel moderation",
    "Org-wide teams do not support private channels or shared channels with external users"
   ],
   "correct": [
@@ -9241,16 +9241,16 @@
   "q_es": "Un equipo de Teams fue eliminado por error hace 15 días. El propietario solicita su recuperación. ¿Qué herramienta y plazo son correctos?",
   "q_en": "A Teams team was accidentally deleted 15 days ago. The owner requests recovery. What tool and time frame are correct?",
   "opts_es": [
-   "Abrir un ticket de soporte a Microsoft para recuperar el equipo eliminado, ya que solo Microsoft puede hacerlo",
-   "Restaurar el grupo de Microsoft 365 eliminado desde el centro de administración de Microsoft 365 o PowerShell, dentro del plazo de 30 días",
+   "Abrir una incidencia con Microsoft para recuperar el equipo, ya que solo Microsoft puede hacerlo",
+   "Restaurar el grupo de Microsoft 365 eliminado desde el centro de administración o PowerShell en 30 días",
    "Recuperar el equipo desde la directiva de retención de Microsoft Purview, que conserva todos los datos eliminados",
-   "Restaurar el equipo desde la papelera de reciclaje de SharePoint, que retiene los equipos eliminados durante 93 días"
+   "Restaurar el equipo desde la papelera de SharePoint, que conserva los equipos eliminados hasta 93 días"
   ],
   "opts_en": [
    "Open a support ticket with Microsoft to recover the deleted team, as only Microsoft can do this",
-   "Restore the deleted Microsoft 365 group from the Microsoft 365 admin center or PowerShell within the 30-day window",
+   "Restore the deleted Microsoft 365 group from the admin center or PowerShell within 30 days",
    "Recover the team from the Microsoft Purview retention policy, which preserves all deleted data",
-   "Restore the team from the SharePoint recycle bin, which retains deleted teams for 93 days"
+   "Restore the team from the SharePoint recycle bin, which retains deleted teams for up to 93 days"
   ],
   "correct": [
    1
@@ -9293,16 +9293,16 @@
   "q_es": "Tu organización quiere que las transcripciones automáticas estén disponibles en todas las reuniones de Teams para usuarios de habla inglesa, pero que los usuarios no puedan desactivarlas. ¿Qué configuración aplicas?",
   "q_en": "Your organization wants automatic transcription available in all Teams meetings for English-speaking users, but users must not be able to disable them. What configuration do you apply?",
   "opts_es": [
-   "Habilitar la transcripción en la configuración de audioconferencia del puente de conferencia del tenant",
-   "Habilitar 'Transcripción en la nube' y deshabilitar 'Los asistentes pueden desactivar la transcripción' en la directiva de reunión global",
+   "Habilitar la transcripción en la configuración de audioconferencia del puente de conferencias",
+   "Habilitar 'Transcripción en la nube' y desactivar 'Los asistentes pueden desactivar la transcripción'",
    "Activar la transcripción en tiempo real en la configuración del tenant de Teams para todos los idiomas disponibles",
-   "Crear una directiva de cumplimiento de grabación que incluya transcripción obligatoria para todas las reuniones"
+   "Crear una directiva de grabación de cumplimiento que incluya transcripción obligatoria en cada reunión"
   ],
   "opts_en": [
-   "Enable transcription in the audio conferencing settings of the tenant conference bridge",
-   "Enable 'Cloud transcription' and disable 'Attendees can turn off transcription' in the global meeting policy",
+   "Enable transcription in the audio conferencing settings of the tenant's conference bridge number",
+   "Enable 'Cloud transcription' and turn off 'Attendees can turn off transcription' globally",
    "Enable real-time transcription in the Teams tenant settings for all available languages",
-   "Create a recording compliance policy that includes mandatory transcription for all meetings"
+   "Create a recording compliance policy that includes mandatory transcription for every meeting"
   ],
   "correct": [
    1
@@ -9609,15 +9609,15 @@
   "q_es": "Varios usuarios reportan eco en sus llamadas de Teams. Otros participantes escuchan su propia voz repetida. ¿Cuál es la causa más probable y la solución recomendada?",
   "q_en": "Several users report echo on their Teams calls. Other participants hear their own voice repeated. What is the most likely cause and recommended solution?",
   "opts_es": [
-   "El usuario afectado usa altavoces y micrófono externos no certificados; la solución es usar auriculares certificados para Teams",
-   "La tarjeta de sonido del equipo del usuario tiene un controlador desactualizado; la solución es actualizar el driver de audio",
-   "La red del usuario tiene jitter elevado que causa duplicación de paquetes de audio; la solución es activar QoS DSCP",
+   "El usuario tiene altavoces y micrófono no certificados; usar unos auriculares certificados para Teams",
+   "La tarjeta de sonido del equipo tiene un controlador antiguo; la solución es actualizar el controlador",
+   "La red del usuario tiene alta fluctuación que duplica paquetes de audio; la solución es habilitar QoS DSCP",
    "El servidor de medios de Microsoft tiene un fallo de cancelación de eco; la solución es cambiar la región del servidor"
   ],
   "opts_en": [
-   "The affected user is using non-certified external speakers and microphone; solution is to use Teams-certified headset",
-   "The user's computer sound card has an outdated driver; solution is to update the audio driver",
-   "The user's network has high jitter causing audio packet duplication; solution is to enable DSCP QoS",
+   "The user has non-certified external speakers and mic; use a Teams-certified headset",
+   "The user's computer sound card has an outdated driver; the solution is to update the audio driver",
+   "The user's network has high jitter causing audio packet duplication; the solution is to enable DSCP QoS",
    "Microsoft's media server has an echo cancellation bug; solution is to change the server region"
   ],
   "correct": [
@@ -10477,15 +10477,15 @@
   "q_es": "Un usuario de Teams Rooms reporta que la sala no aparece en el buscador de salas de Outlook al programar reuniones. Otros compañeros pueden encontrar otras salas. ¿Cuál es la causa más probable?",
   "q_en": "A Teams Rooms user reports the room doesn't appear in Outlook's room finder when scheduling meetings. Other colleagues can find other rooms. What is the most likely cause?",
   "opts_es": [
-   "La licencia de Teams Rooms del dispositivo no está activa o ha expirado en el Centro de administración de Microsoft 365",
-   "La directiva de reunión de la sala tiene deshabilitada la función de sala disponible para búsqueda de recursos",
-   "El buzón de la sala no está configurado como sala de recursos en Exchange o no tiene habilitado el procesamiento automático",
+   "La licencia del dispositivo Teams Rooms está inactiva o ha caducado en el centro de administración",
+   "La directiva de reunión de la sala tiene deshabilitada la búsqueda de recursos para todos",
+   "El buzón de sala no está configurado como sala de recursos o no tiene procesamiento automático",
    "El dispositivo de Teams Rooms no está conectado a la red en el momento en que el usuario busca la sala"
   ],
   "opts_en": [
-   "The Teams Rooms device license is inactive or expired in the Microsoft 365 admin center",
-   "The room's meeting policy has the room resource search feature disabled",
-   "The room mailbox is not configured as a resource room in Exchange or doesn't have automatic processing enabled",
+   "The Teams Rooms device license is inactive or has expired in the Microsoft 365 admin center",
+   "The room's meeting policy has the room resource search feature disabled for all organizers",
+   "The room mailbox isn't set up as a resource room or lacks automatic processing",
    "The Teams Rooms device is not connected to the network when the user searches for the room"
   ],
   "correct": [
@@ -10685,16 +10685,16 @@
   "q_es": "Un usuario indica que puede realizar llamadas de salida desde Teams Phone pero no puede recibir llamadas entrantes. Su número está correctamente asignado en el Centro de administración de Teams. ¿Qué debes verificar?",
   "q_en": "A user reports they can make outbound calls from Teams Phone but cannot receive inbound calls. Their number is correctly assigned in Teams Admin Center. What should you verify?",
   "opts_es": [
-   "Si el número de teléfono asignado al usuario está en el formato E.164 correcto en el directorio de Teams",
+   "Si el número asignado al usuario tiene el formato E.164 correcto en el directorio de Teams",
    "Si el SBC tiene configuradas las rutas de entrada correctas para el número de teléfono del usuario",
-   "Si el usuario tiene habilitada la recepción de llamadas en su directiva de llamadas y si su estado de Teams no es 'No molestar'",
-   "Si la licencia de Teams Phone del usuario está activa y correctamente asignada en el Centro de administración de Microsoft 365"
+   "Si las llamadas entrantes están habilitadas en su directiva y su estado no es No molestar",
+   "Si la licencia de Teams Phone del usuario está activa y bien asignada en el centro de administración"
   ],
   "opts_en": [
    "Whether the phone number assigned to the user is in the correct E.164 format in the Teams directory",
    "Whether the SBC has the correct inbound routes configured for the user's phone number",
-   "Whether the user has inbound call reception enabled in their calling policy and whether their Teams status isn't 'Do Not Disturb'",
-   "Whether the user's Teams Phone license is active and correctly assigned in Microsoft 365 admin center"
+   "Whether inbound calls are enabled in their calling policy and status isn't Do Not Disturb",
+   "Whether the user's Teams Phone license is active and correctly assigned in the Microsoft 365 admin center"
   ],
   "correct": [
    2
@@ -10815,15 +10815,15 @@
   "q_es": "Un usuario reporta que el estado de Teams siempre aparece como 'Ausente' aunque esté activamente usando el equipo. ¿Cuál es la causa más probable?",
   "q_en": "A user reports their Teams status always shows as 'Away' even when actively using the computer. What is the most likely cause?",
   "opts_es": [
-   "La directiva de reunión del usuario tiene habilitada la opción de estado automático como ausente durante reuniones",
-   "La licencia del usuario no incluye la función de presencia en tiempo real de Teams y muestra estado por defecto",
-   "El cliente de Teams no detecta actividad del teclado/ratón porque el equipo tiene una directiva de pantalla que lo impide",
+   "La directiva de reunión del usuario tiene habilitada la opción de estado ausente automático",
+   "La licencia del usuario no incluye presencia en tiempo real de Teams y muestra un estado predeterminado",
+   "El cliente no detecta actividad de teclado o ratón por una directiva de pantalla del equipo",
    "El administrador ha fijado el estado del usuario en 'Ausente' mediante una directiva de presencia del tenant"
   ],
   "opts_en": [
    "The user's meeting policy has the automatic away status during meetings option enabled",
    "The user's license doesn't include Teams real-time presence and shows a default status",
-   "The Teams client doesn't detect keyboard/mouse activity because the computer has a screen policy preventing it",
+   "The client can't detect keyboard or mouse activity due to a screen policy on the PC",
    "The administrator has set the user's status to 'Away' via a tenant presence policy"
   ],
   "correct": [
@@ -10893,16 +10893,16 @@
   "q_es": "Un administrador necesita recopilar logs detallados del cliente de Teams de un usuario que experimenta fallos intermitentes para enviarlos a soporte de Microsoft. ¿Cómo puede el usuario generar estos logs en el cliente de escritorio de Teams?",
   "q_en": "An administrator needs to collect detailed Teams client logs from a user experiencing intermittent failures to send to Microsoft support. How can the user generate these logs in the Teams desktop client?",
   "opts_es": [
-   "Pulsando Ctrl+Alt+Shift+1 en Windows o Cmd+Opt+Shift+1 en Mac para generar los logs de diagnóstico en el escritorio",
-   "Desde el Centro de administración de Teams, solicitando logs del dispositivo del usuario en la sección de dispositivos",
+   "Pulsar Ctrl+Alt+Shift+1 (Windows) o Cmd+Opt+Shift+1 (Mac) para crear registros de diagnóstico",
+   "Desde el centro de administración de Teams, solicitar registros del dispositivo del usuario en remoto",
    "Accediendo a Configuración de Teams > Acerca de > Generar logs de diagnóstico y compartir con soporte",
-   "Ejecutando Get-CsTeamsLogs desde PowerShell del usuario para exportar los logs del cliente a una carpeta local"
+   "Ejecutar Get-CsTeamsLogs en la sesión de PowerShell del usuario para exportar registros a una carpeta"
   ],
   "opts_en": [
-   "Pressing Ctrl+Alt+Shift+1 on Windows or Cmd+Opt+Shift+1 on Mac to generate diagnostic logs on the desktop",
-   "From Teams Admin Center, requesting device logs for the user in the devices section",
+   "Press Ctrl+Alt+Shift+1 (Windows) or Cmd+Opt+Shift+1 (Mac) to create diagnostic logs",
+   "From Teams Admin Center, request device logs for the user in the devices section remotely",
    "Going to Teams Settings > About > Generate diagnostic logs and share with support",
-   "Running Get-CsTeamsLogs from the user's PowerShell to export client logs to a local folder"
+   "Run Get-CsTeamsLogs from the user's PowerShell session to export client logs to a local folder"
   ],
   "correct": [
    0
@@ -10971,15 +10971,15 @@
   "q_es": "¿Qué métricas del Panel de calidad de llamadas (CQD) indican específicamente problemas de red del lado del cliente, como conexión WiFi inestable o baja señal?",
   "q_en": "Which Call Quality Dashboard (CQD) metrics specifically indicate client-side network issues such as unstable WiFi or weak signal?",
   "opts_es": [
-   "Alta tasa de error en el servidor de medios de Microsoft combinada con latencia elevada de señalización SIP",
-   "Baja velocidad de bits de vídeo combinada con alta utilización de CPU en el servidor de Teams de Microsoft",
-   "Jitter recibido elevado combinado con alta tasa de pérdida de paquetes desde la perspectiva del extremo receptor",
+   "Alta tasa de errores del servidor de medios de Microsoft junto con latencia elevada de señalización SIP",
+   "Baja velocidad de vídeo junto con alto uso de CPU en el lado del servidor de Microsoft Teams",
+   "Alta fluctuación recibida y alta pérdida de paquetes desde el punto de conexión receptor",
    "Tiempo de configuración de llamada elevado combinado con alta tasa de fallos de establecimiento de sesión"
   ],
   "opts_en": [
-   "High Microsoft media server error rate combined with elevated SIP signaling latency",
-   "Low video bitrate combined with high CPU utilization on the Microsoft Teams server",
-   "High received jitter combined with high packet loss rate from the receiving endpoint perspective",
+   "High Microsoft media server error rate combined with elevated SIP signaling latency values",
+   "Low video bitrate combined with high CPU utilization on the Microsoft Teams server side",
+   "High received jitter plus high packet loss from the receiving endpoint",
    "High call setup time combined with high session establishment failure rate"
   ],
   "correct": [
@@ -10997,16 +10997,16 @@
   "q_es": "Tu organización quiere garantizar que los mensajes de Teams entre usuarios del departamento Legal no puedan ser leídos por administradores de Teams, y que estos mensajes solo puedan ser accedidos mediante eDiscovery con aprobación judicial. ¿Qué función proporciona esta garantía?",
   "q_en": "Your organization wants to ensure Teams messages between Legal department users cannot be read by Teams administrators, and can only be accessed via eDiscovery with judicial approval. Which feature provides this guarantee?",
   "opts_es": [
-   "Las etiquetas de confidencialidad de Microsoft Purview que cifran los mensajes del canal Legal con claves del cliente",
-   "El cifrado de extremo a extremo (E2EE) para chats de Teams, que impide que Microsoft y los administradores accedan al contenido",
+   "Etiquetas de confidencialidad de Purview que cifran los mensajes del canal Legal con claves del cliente",
+   "Cifrado de extremo a extremo (E2EE) en Teams, que impide a Microsoft y administradores ver el contenido",
    "Las barreras de información que aíslan al departamento Legal del resto de la organización en Teams",
-   "Los privilegios de acceso justificado de Microsoft 365 que requieren aprobación para acceder a datos de usuarios"
+   "Caja de seguridad del cliente de Microsoft 365, que exige aprobación antes de acceder a los datos"
   ],
   "opts_en": [
-   "Microsoft Purview sensitivity labels encrypting Legal channel messages with customer keys",
-   "End-to-end encryption (E2EE) for Teams chats, which prevents Microsoft and administrators from accessing content",
+   "Microsoft Purview sensitivity labels encrypting the Legal channel messages with customer keys",
+   "End-to-end encryption (E2EE) for Teams, which keeps Microsoft and admins from the content",
    "Information barriers isolating the Legal department from the rest of the organization in Teams",
-   "Microsoft 365 Lockbox that requires approval to access user data"
+   "Microsoft 365 Customer Lockbox, which requires approval before anyone accesses user data"
   ],
   "correct": [
    1
@@ -11023,15 +11023,15 @@
   "q_es": "Tu organización quiere celebrar un evento de comunicación en Teams para 5.000 empleados donde solo los presentadores hablen y el público solo pueda hacer preguntas por escrito. ¿Qué tipo de evento de Teams corresponde a este escenario?",
   "q_en": "Your organization wants to hold a Teams communication event for 5,000 employees where only presenters speak and the audience can only ask questions in writing. Which type of Teams event fits this scenario?",
   "opts_es": [
-   "Un Seminario Web (Webinar) de Teams, que permite hasta 1.000 asistentes con inscripción y control de sala de espera",
-   "Un evento en directo de Teams (Live Event), disponible para hasta 10.000 asistentes con codificador externo",
-   "Un Ayuntamiento (Town Hall) de Teams, que soporta hasta 20.000 asistentes con Q&A estructurado y solo presentadores con audio",
+   "Un seminario web de Teams, con hasta 1000 asistentes, registro y control de sala de espera",
+   "Un evento en directo de Teams, para hasta 10 000 asistentes con un codificador externo",
+   "Un Town Hall de Teams, con hasta 20 000 asistentes y preguntas y respuestas estructuradas",
    "Una reunión de canal de Teams con sala de espera y con todos los asistentes silenciados excepto los presentadores"
   ],
   "opts_en": [
    "A Teams Webinar, allowing up to 1,000 attendees with registration and lobby control",
-   "A Teams Live Event, available for up to 10,000 attendees with external encoder",
-   "A Teams Town Hall, supporting up to 20,000 attendees with structured Q&A and presenter-only audio",
+   "A Teams Live Event, available for up to 10,000 attendees with an external encoder",
+   "A Teams Town Hall, supporting up to 20,000 attendees with structured Q&A",
    "A Teams channel meeting with lobby and all attendees muted except presenters"
   ],
   "correct": [
@@ -11050,15 +11050,15 @@
   "q_en": "A Teams Webinar organizer wants registered attendees to automatically receive a confirmation email upon registration. Which webinar control manages confirmation emails?",
   "opts_es": [
    "La directiva de reunión del organizador, sección de comunicaciones del seminario web salientes",
-   "Una regla de flujo de correo de Exchange que envía confirmaciones cuando se detecta la inscripción al evento",
-   "Un flujo de Power Automate que escucha las inscripciones y envía correos personalizados a los asistentes",
-   "La configuración de registro del seminario web en Teams, que incluye correos de confirmación automáticos para los inscritos"
+   "Una regla de flujo de correo de Exchange que envía confirmaciones al detectar un registro",
+   "Un flujo de Power Automate que escucha registros y envía correos personalizados a asistentes",
+   "La configuración de registro del seminario web, que incluye correos de confirmación automáticos"
   ],
   "opts_en": [
    "The organizer's meeting policy, outbound webinar communications section",
-   "An Exchange mail flow rule that sends confirmations when event registration is detected",
+   "An Exchange mail flow rule that sends confirmations when an event registration is detected",
    "A Power Automate flow that listens for registrations and sends custom emails to attendees",
-   "The webinar registration settings in Teams, which include automatic confirmation emails for registrants"
+   "The webinar registration settings, which include automatic confirmation emails"
   ],
   "correct": [
    3
@@ -11413,16 +11413,16 @@
   "q_es": "Un usuario de Direct Routing reporta que sus llamadas salientes fallan con el mensaje 'No hay rutas disponibles'. Su directiva de enrutamiento de voz y los usos de RTC parecen correctos. ¿Qué verificas a continuación?",
   "q_en": "A Direct Routing user reports outbound calls failing with 'No routes available'. Their voice routing policy and PSTN usages appear correct. What do you check next?",
   "opts_es": [
-   "Si las rutas de voz asociadas a los usos de RTC tienen patrones numéricos que coincidan con el número marcado por el usuario",
-   "Si la directiva de llamadas del usuario tiene habilitadas las llamadas salientes a números RTC",
+   "Si las rutas de sus usos de PSTN tienen patrones que coinciden con el número marcado",
+   "Si la directiva de llamadas del usuario tiene habilitadas las llamadas PSTN salientes para Direct Routing",
    "Si el número de teléfono asignado al usuario está en formato E.164 correcto en el Centro de administración de Teams",
-   "Si el SBC tiene capacidad suficiente de sesiones simultáneas para aceptar la llamada del usuario"
+   "Si el SBC tiene capacidad suficiente de sesiones simultáneas para aceptar la llamada saliente"
   ],
   "opts_en": [
-   "Whether the voice routes associated with the PSTN usages have number patterns matching the number dialed by the user",
-   "Whether the user's calling policy has outbound PSTN calls enabled",
+   "Whether the routes of their PSTN usages have patterns matching the dialed number",
+   "Whether the user's calling policy has outbound PSTN calls enabled for Direct Routing users",
    "Whether the phone number assigned to the user is in correct E.164 format in Teams Admin Center",
-   "Whether the SBC has sufficient simultaneous session capacity to accept the user's call"
+   "Whether the SBC has sufficient simultaneous session capacity to accept the user's outbound call"
   ],
   "correct": [
    0
@@ -11621,15 +11621,15 @@
   "q_es": "Tu organización quiere habilitar los recibos de lectura en los chats de Teams para que los usuarios sepan cuándo sus mensajes han sido vistos. Sin embargo, algunos ejecutivos quieren que sus recibos de lectura estén deshabilitados por privacidad. ¿Cómo configuras esto?",
   "q_en": "Your organization wants to enable read receipts in Teams chats so users know when their messages have been seen. However, some executives want their read receipts disabled for privacy. How do you configure this?",
   "opts_es": [
-   "Usar la configuración del tenant de Teams para habilitar recibos de lectura sin posibilidad de excepciones por usuario",
-   "Habilitar los recibos de lectura en la directiva de mensajería global y crear una directiva personalizada sin recibos de lectura para los ejecutivos",
-   "Deshabilitar los recibos de lectura globalmente y crear una excepción solo para los departamentos que los necesiten",
+   "Usar la configuración del inquilino para habilitar confirmaciones para todos, sin excepciones por usuario",
+   "Habilitar confirmaciones de lectura en la directiva global y asignar a directivos una personalizada sin ellas",
+   "Deshabilitar las confirmaciones globalmente y crear una excepción solo para los departamentos que las necesitan",
    "Configurar los recibos de lectura en la configuración personal de cada usuario, ya que es siempre un control individual"
   ],
   "opts_en": [
-   "Use Teams tenant settings to enable read receipts with no option for per-user exceptions",
-   "Enable read receipts in the global messaging policy and create a custom policy without read receipts for executives",
-   "Disable read receipts globally and create an exception only for departments that need them",
+   "Use Teams tenant settings to enable read receipts for everyone, with no option for per-user exceptions",
+   "Enable read receipts in the global messaging policy and assign executives a custom policy without them",
+   "Disable read receipts globally and create an exception only for the departments that need them most",
    "Configure read receipts in each user's personal settings, as it is always an individual control"
   ],
   "correct": [
@@ -11673,13 +11673,13 @@
   "q_es": "Tras una actualización de Teams, varios usuarios reportan que el cliente de Teams se cierra inesperadamente durante reuniones de vídeo. ¿Cuál es el primer paso de diagnóstico para confirmar si es un problema generalizado?",
   "q_en": "After a Teams update, several users report the Teams client crashes unexpectedly during video meetings. What is the first diagnostic step to confirm if it is a widespread issue?",
   "opts_es": [
-   "Verificar el panel de estado del servicio de Microsoft 365 para comprobar si hay incidentes activos relacionados con el cliente de Teams",
-   "Instalar la versión anterior del cliente de Teams en todos los usuarios afectados para descartar la actualización",
-   "Crear un ticket de soporte con Microsoft proporcionando los logs de los usuarios afectados para diagnóstico remoto",
+   "Revisar el panel de estado del servicio de Microsoft 365 por incidentes activos del cliente",
+   "Revertir el cliente de Teams a la versión anterior en los usuarios afectados para descartar la actualización",
+   "Crear una incidencia con Microsoft aportando registros de los usuarios afectados para diagnóstico remoto",
    "Revisar los logs del cliente de Teams de un usuario afectado para identificar el mensaje de error específico del crash"
   ],
   "opts_en": [
-   "Check the Microsoft 365 service health dashboard to see if there are active incidents related to the Teams client",
+   "Check the Microsoft 365 service health dashboard for active Teams client incidents",
    "Roll back the Teams client to the previous version on all affected users to rule out the update",
    "Create a support ticket with Microsoft providing logs from affected users for remote diagnosis",
    "Review the Teams client logs from an affected user to identify the specific crash error message"
@@ -11780,15 +11780,15 @@
   "q_en": "Your organization needs Teams administrators to only manage their own department without accessing data from other departments. Which Teams Admin Center feature limits administrative scope?",
   "opts_es": [
    "Directivas de información de Teams que segmentan el acceso de los administradores por departamento",
-   "Roles de administrador personalizados en el Centro de administración de Teams que restringen el acceso a equipos específicos",
-   "Grupos de administración de Microsoft 365 que limitan el acceso de los administradores a usuarios de su departamento",
-   "Unidades administrativas de Azure AD asignadas a los administradores de Teams para limitar el alcance de los objetos que pueden gestionar"
+   "Roles de administrador personalizados en el centro de Teams que restringen el acceso a ciertos equipos",
+   "Grupos de administración de Microsoft 365 que limitan el acceso del administrador a usuarios de su departamento",
+   "Unidades administrativas asignadas a administradores de Teams para limitar los objetos que gestionan"
   ],
   "opts_en": [
    "Teams information policies that segment administrator access by department",
-   "Custom administrator roles in Teams Admin Center that restrict access to specific teams",
-   "Microsoft 365 management groups that limit administrator access to users in their department",
-   "Azure AD administrative units assigned to Teams administrators to limit the scope of objects they can manage"
+   "Custom administrator roles in Teams Admin Center that restrict access to specific teams only",
+   "Microsoft 365 management groups that limit administrator access to the users in their department",
+   "Administrative units assigned to Teams admins to scope the objects they can manage"
   ],
   "correct": [
    3
@@ -11805,16 +11805,16 @@
   "q_es": "Tu organización quiere que los organizadores de reuniones puedan habilitar el modo 'Solo vista' para asistentes que superen un límite, convirtiendo las reuniones grandes en transmisiones. ¿Qué tipo de reunión tiene esta capacidad automática?",
   "q_en": "Your organization wants meeting organizers to enable 'View-only' mode for attendees exceeding a limit, turning large meetings into broadcasts. Which meeting type has this automatic capability?",
   "opts_es": [
-   "Los seminarios web de Teams Premium, que tienen modo de transmisión para asistentes que exceden el cupo de participantes activos",
+   "Seminarios web de Teams Premium, con modo difusión para asistentes que superan la cuota de participantes",
    "Los Ayuntamientos de Teams, que siempre son de solo vista para todos los asistentes independientemente del número",
-   "Las reuniones de Teams con desbordamiento de vista, que convierten automáticamente a los asistentes que exceden 1.000 en espectadores de solo vista",
-   "Los eventos en directo de Teams que pueden incluir hasta 20.000 asistentes en modo transmisión con codificador externo"
+   "Reuniones con desbordamiento de solo visualización, que pasa a solo ver a los asistentes por encima de 1000",
+   "Eventos en directo de Teams, que pueden incluir hasta 20 000 asistentes en modo difusión con codificador externo"
   ],
   "opts_en": [
    "Teams Premium webinars, which have broadcast mode for attendees exceeding the active participant quota",
    "Teams Town Halls, which are always view-only for all attendees regardless of number",
-   "Teams meetings with view-only overflow, which automatically converts attendees exceeding 1,000 to view-only spectators",
-   "Teams Live Events which can include up to 20,000 attendees in broadcast mode with an external encoder"
+   "Meetings with view-only overflow, which makes attendees beyond 1,000 view-only",
+   "Teams Live Events, which can include up to 20,000 attendees in broadcast mode with an external encoder"
   ],
   "correct": [
    2
@@ -11857,14 +11857,14 @@
   "q_es": "Tu organización quiere implementar un período de gracia donde los usuarios que intenten cambiar a Teams Only desde el modo Skype for Business Only reciban un mensaje de advertencia antes de que el cambio sea permanente. ¿Existe este período de gracia nativo en Teams?",
   "q_en": "Your organization wants to implement a grace period where users trying to switch to Teams Only from Skype for Business Only mode receive a warning before the change is permanent. Does this native grace period exist in Teams?",
   "opts_es": [
-   "No, el cambio de modo de coexistencia es inmediato una vez aplicado por el administrador; no hay período de gracia nativo",
-   "No, pero se puede usar PowerShell para programar el cambio de modo en una fecha futura específica",
-   "Sí, la notificación de cambio de modo se envía con 7 días de antelación a todos los usuarios afectados automáticamente",
+   "No, el cambio de modo de coexistencia se aplica de inmediato; no hay periodo de gracia nativo",
+   "No, pero se puede usar PowerShell para programar el cambio de modo en una fecha y hora futuras",
+   "Sí, la notificación del cambio se envía automáticamente 7 días antes a todos los usuarios afectados",
    "Sí, hay un período de gracia de 30 días configurado en el Centro de administración de Teams para cambios de modo críticos"
   ],
   "opts_en": [
-   "No, the coexistence mode change is immediate once applied by the administrator; there is no native grace period",
-   "No, but PowerShell can be used to schedule the mode change at a specific future date",
+   "No, the coexistence mode change applies immediately; there is no native grace period",
+   "No, but PowerShell can be used to schedule the mode change for a specific future date and time",
    "Yes, the mode change notification is sent 7 days in advance to all affected users automatically",
    "Yes, there is a 30-day grace period configured in Teams Admin Center for critical mode changes"
   ],
@@ -11883,13 +11883,13 @@
   "q_es": "Necesitas configurar alertas que notifiquen automáticamente al equipo de soporte cuando la calidad de las llamadas de Teams en una región específica caiga por debajo de los umbrales aceptables. ¿Dónde configuras estas alertas?",
   "q_en": "You need to configure alerts that automatically notify the support team when Teams call quality in a specific region drops below acceptable thresholds. Where do you configure these alerts?",
   "opts_es": [
-   "En la sección de Supervisión y alertas del Centro de administración de Teams, donde se pueden crear reglas de alerta de calidad de llamadas",
-   "En Azure Monitor, creando alertas basadas en los logs de diagnóstico de Teams exportados a Log Analytics",
-   "En el Panel de calidad de llamadas (CQD), configurando alertas de umbral en los informes personalizados de Power BI",
+   "En Supervisión y alertas del centro de Teams, donde se crean reglas de alerta de calidad",
+   "En Azure Monitor, creando alertas basadas en registros de diagnóstico de Teams en Log Analytics",
+   "En el Call Quality Dashboard (CQD), configurando alertas de umbral en informes de Power BI",
    "En el Centro de administración de Microsoft 365, sección de alertas de estado del servicio con umbrales de calidad"
   ],
   "opts_en": [
-   "In the Monitoring and alerts section of Teams Admin Center, where call quality alert rules can be created",
+   "In Teams Admin Center Monitoring and alerts, where call quality alert rules are created",
    "In Azure Monitor, creating alerts based on Teams diagnostic logs exported to Log Analytics",
    "In the Call Quality Dashboard (CQD), configuring threshold alerts in custom Power BI reports",
    "In the Microsoft 365 admin center, service health alerts section with quality thresholds"
@@ -11987,15 +11987,15 @@
   "q_es": "Varios usuarios reportan que cuando comparten pantalla en reuniones de Teams, los demás participantes ven un retraso de varios segundos en la pantalla compartida. El audio es fluido sin retraso. ¿Cuál es la causa más probable?",
   "q_en": "Several users report that when they share their screen in Teams meetings, other participants see a several-second delay on the shared screen. Audio is smooth without delay. What is the most likely cause?",
   "opts_es": [
-   "La directiva de reunión del organizador tiene la resolución de pantalla compartida limitada causando buffering en los receptores",
-   "El ancho de banda de subida del equipo que comparte pantalla es insuficiente para la transmisión de vídeo del escritorio en alta resolución",
-   "La resolución de la pantalla del usuario que comparte es demasiado alta y Teams no puede comprimirla en tiempo real",
+   "La directiva del organizador limita la resolución de pantalla compartida, lo que provoca búfer en los receptores",
+   "El ancho de banda de subida del equipo que comparte es insuficiente para vídeo de escritorio en alta resolución",
+   "La resolución de pantalla del usuario es demasiado alta y Teams no puede comprimirla en tiempo real",
    "El servidor de medios de Microsoft 365 tiene alta latencia en el procesamiento de las transmisiones de escritorio compartido"
   ],
   "opts_en": [
-   "The organizer's meeting policy has shared screen resolution limited causing buffering on receivers",
-   "The upload bandwidth of the screen-sharing computer is insufficient for high-resolution desktop video transmission",
-   "The sharing user's screen resolution is too high and Teams cannot compress it in real time",
+   "The organizer's meeting policy has the shared screen resolution limited, causing buffering on receivers",
+   "The sharing computer's upload bandwidth is too low for high-resolution desktop video",
+   "The sharing user's screen resolution is too high and Teams cannot compress it in real time at all",
    "The Microsoft 365 media server has high latency processing shared desktop streams"
   ],
   "correct": [
@@ -12091,14 +12091,14 @@
   "q_es": "Un administrador indica que en el análisis de llamadas de un usuario específico, todas las llamadas muestran el valor de 'Porcentaje de pérdida de paquetes de audio' superior al 10%. Las llamadas de otros usuarios del mismo tenant no muestran este problema. ¿Qué pasos tomas?",
   "q_en": "An administrator notes that in call analytics for a specific user, all calls show 'Audio packet loss percentage' above 10%. Other users on the same tenant don't show this issue. What steps do you take?",
   "opts_es": [
-   "Revisar el análisis de llamadas para identificar el tipo de red del usuario (WiFi/cable) y la ubicación de la llamada para aislar el problema de red local",
-   "Verificar el estado del servicio de Teams para confirmar si hay un incidente que afecte a los servidores de medios de ese tenant",
+   "Usar el análisis de llamadas para ver el tipo de red y la ubicación del usuario y aislar el problema",
+   "Revisar el estado del servicio de Teams para confirmar si un incidente afecta a los servidores de medios",
    "Revisar la directiva de reunión del usuario para verificar que la calidad de audio no está limitada por la directiva",
    "Actualizar el cliente de Teams del usuario y reiniciar el equipo para descartar problemas de software del cliente"
   ],
   "opts_en": [
-   "Review call analytics to identify the user's network type (WiFi/wired) and call location to isolate the local network issue",
-   "Check Teams service status to confirm if there is an incident affecting media servers for that tenant",
+   "Use call analytics to find the user's network type and location and isolate the issue",
+   "Check the Teams service status to confirm whether an incident affects media servers for that tenant",
    "Review the user's meeting policy to verify that audio quality is not limited by policy",
    "Update the user's Teams client and restart the computer to rule out client software issues"
   ],
@@ -12143,16 +12143,16 @@
   "q_es": "Tu organización tiene usuarios externos de un tenant socio que necesitan acceder a canales compartidos en Teams. La conexión debe ser sin fricciones, sin invitación de invitado. ¿Qué tecnología permite esta colaboración?",
   "q_en": "Your organization has external users from a partner tenant who need access to shared channels in Teams. The connection should be frictionless, without a guest invitation. Which technology enables this collaboration?",
   "opts_es": [
-   "Confianza de organización externa en el Centro de administración de Teams que permite acceso sin invitación a equipos compartidos",
+   "Confianza de organización externa en el centro de Teams que permite acceso sin invitación a equipos",
    "Acceso de invitados de Teams con acceso condicional de Azure AD para autenticación sin fricción desde tenants socios",
    "Federación directa de Skype for Business con el tenant socio para intercambio de mensajes de Teams sin invitación",
-   "Conexión directa B2B a través de acceso entre tenants, que permite que usuarios externos accedan a canales compartidos sin ser invitados del tenant"
+   "B2B Direct Connect mediante acceso entre inquilinos, con acceso a canales compartidos sin invitados"
   ],
   "opts_en": [
-   "External organization trust in Teams Admin Center allowing invitation-free access to shared teams",
+   "External organization trust in Teams Admin Center allowing invitation-free access to all shared teams",
    "Teams guest access with Azure AD Conditional Access for frictionless authentication from partner tenants",
    "Direct Skype for Business federation with the partner tenant for Teams message exchange without invitation",
-   "B2B Direct Connect through cross-tenant access, which allows external users to access shared channels without being tenant guests"
+   "B2B Direct Connect via cross-tenant access, giving shared channel access without guest accounts"
   ],
   "correct": [
    3
@@ -12195,15 +12195,15 @@
   "q_es": "Tu organización quiere que todos los usuarios de una región específica vean solo los fondos virtuales aprobados por la empresa y no puedan cargar fondos personalizados. ¿Qué directiva de Teams controla los fondos disponibles en reuniones?",
   "q_en": "Your organization wants all users in a specific region to only see company-approved virtual backgrounds and not be able to upload custom backgrounds. Which Teams policy controls available meeting backgrounds?",
   "opts_es": [
-   "La directiva de configuración de aplicaciones de Teams, que controla qué aplicaciones de fondo virtual están disponibles",
+   "La directiva de configuración de aplicaciones, que controla qué aplicaciones de fondo virtual están disponibles",
    "La directiva de mensajería de Teams, que incluye controles para los elementos visuales de las videollamadas",
-   "La directiva de reunión de Teams, que incluye la opción de deshabilitar los fondos personalizados y limitar los disponibles a los aprobados",
+   "La directiva de reunión de Teams, que puede deshabilitar fondos personalizados y permitir solo los aprobados",
    "La configuración del dispositivo de Teams, que limita los fondos disponibles según el dispositivo del usuario"
   ],
   "opts_en": [
    "The Teams app setup policy, which controls which virtual background applications are available",
-   "The Teams messaging policy, which includes controls for visual elements of video calls",
-   "The Teams meeting policy, which includes the option to disable custom backgrounds and limit available ones to approved ones",
+   "The Teams messaging policy, which includes controls for the visual elements of video calls",
+   "The Teams meeting policy, which can disable custom backgrounds and allow only approved ones",
    "Teams device settings, which limit available backgrounds based on the user's device"
   ],
   "correct": [
@@ -12273,15 +12273,15 @@
   "q_es": "Tras implementar Direct Routing, varios usuarios reportan que sus llamadas salientes a números internacionales suenan una vez y se desconectan antes de que el destinatario conteste. Las llamadas domésticas funcionan perfectamente. ¿Cuál es la causa más probable?",
   "q_en": "After implementing Direct Routing, several users report their outbound calls to international numbers ring once and disconnect before the recipient answers. Domestic calls work perfectly. What is the most likely cause?",
   "opts_es": [
-   "La expresión regular de la ruta de voz internacional coincide con números domésticos pero no con internacionales",
-   "La directiva de llamadas de los usuarios no tiene habilitadas las llamadas internacionales para el modo Direct Routing",
-   "La ruta de voz para llamadas internacionales apunta a un SBC sin la troncal configurada para llamadas internacionales con el operador",
+   "La expresión regular de la ruta internacional coincide con números nacionales pero nunca internacionales",
+   "La directiva de llamadas de los usuarios no tiene habilitadas las llamadas internacionales para Direct Routing",
+   "La ruta internacional apunta a un SBC sin troncal configurada para llamadas internacionales",
    "Los créditos de comunicaciones están agotados y Teams rechaza las llamadas internacionales antes de establecerlas"
   ],
   "opts_en": [
-   "The international voice route regex matches domestic numbers but not international numbers",
+   "The international voice route regex matches domestic numbers but never international numbers",
    "The users' calling policy doesn't have international calls enabled for Direct Routing mode",
-   "The voice route for international calls points to an SBC without the trunk configured for international calls with the carrier",
+   "The international route points to an SBC without a trunk set up for international calls",
    "Communication Credits are exhausted and Teams rejects international calls before establishing them"
   ],
   "correct": [
@@ -12398,16 +12398,16 @@
   "q_es": "Un SBC de Direct Routing tiene múltiples troncales configuradas para distintos proveedores PSTN. Quieres que las llamadas de ciertos usuarios siempre usen la troncal del proveedor A en lugar de la troncal por defecto. ¿Cómo configuras el enrutamiento preferencial por proveedor?",
   "q_en": "A Direct Routing SBC has multiple trunks configured for different PSTN providers. You want calls from certain users to always use Provider A's trunk instead of the default trunk. How do you configure preferred routing by provider?",
   "opts_es": [
-   "Usar el cmdlet Set-CsOnlinePstnGateway para establecer la prioridad de troncal específica por usuario en el SBC",
-   "Crear una directiva de llamadas personalizada que especifique el FQDN del SBC preferido para los usuarios seleccionados",
+   "Usar Set-CsOnlinePstnGateway para fijar una prioridad de troncal por usuario en el SBC",
+   "Crear una directiva de llamadas personalizada con el FQDN del SBC preferido para ciertos usuarios",
    "Configurar la prioridad del SBC en la directiva de enrutamiento de voz global para que los usuarios específicos usen el SBC A primero",
-   "Crear una ruta de voz que apunte específicamente al FQDN del SBC con la troncal del proveedor A y asignarla al uso de RTC de esos usuarios"
+   "Una ruta de voz al FQDN del SBC del proveedor A, asignada mediante el uso de PSTN de esos usuarios"
   ],
   "opts_en": [
-   "Use Set-CsOnlinePstnGateway to set trunk-specific priority per user on the SBC",
-   "Create a custom calling policy specifying the preferred SBC FQDN for selected users",
+   "Use Set-CsOnlinePstnGateway to set a trunk-specific priority for each user on the SBC",
+   "Create a custom calling policy that specifies the preferred SBC FQDN for selected users",
    "Configure SBC priority in the global voice routing policy so specific users use SBC A first",
-   "Create a voice route pointing specifically to the SBC FQDN with Provider A's trunk and assign it to those users' PSTN usage"
+   "A voice route to Provider A's SBC FQDN, assigned via those users' PSTN usage"
   ],
   "correct": [
    3
@@ -12424,15 +12424,15 @@
   "q_es": "Tu organización necesita garantizar que los mensajes de Teams de alto directivo se conserven durante 10 años incluso si el usuario elimina su cuenta. ¿Qué función garantiza la conservación aunque se elimine la cuenta?",
   "q_en": "Your organization needs to ensure executive Teams messages are retained for 10 years even if the user deletes their account. Which feature guarantees retention even if the account is deleted?",
   "opts_es": [
-   "El archivo local de Teams habilitado en el cliente del usuario que conserva los mensajes en el dispositivo local",
-   "La habilitación del buzón de archivado de Exchange Online del usuario para conservar los mensajes de Teams indefinidamente",
-   "Una directiva de retención de Microsoft Purview aplicada a Teams, que conserva el contenido en buzones de preservación aunque se elimine el usuario",
+   "Archivado local de Teams habilitado en el cliente del usuario que conserva los mensajes en el dispositivo",
+   "Habilitar el buzón de archivo de Exchange Online del usuario para conservar los mensajes de Teams indefinidamente",
+   "Una directiva de retención de Purview para Teams, que conserva el contenido aunque se elimine el usuario",
    "La exportación periódica de mensajes de Teams mediante la API de exportación de Microsoft Graph a almacenamiento externo"
   ],
   "opts_en": [
    "Local Teams archiving enabled on the user's client that retains messages on the local device",
-   "Enabling the user's Exchange Online archive mailbox to retain Teams messages indefinitely",
-   "A Microsoft Purview retention policy applied to Teams, which retains content in preservation mailboxes even if the user is deleted",
+   "Enabling the user's Exchange Online archive mailbox to retain all Teams messages indefinitely",
+   "A Purview retention policy for Teams, which keeps content even if the user is deleted",
    "Periodic Teams message export via the Microsoft Graph export API to external storage"
   ],
   "correct": [
@@ -12606,16 +12606,16 @@
   "q_es": "El organizador de una reunión de Teams quiere controlar si los participantes pueden desactivar el desenfoque de fondo o usar fondos virtuales durante la reunión. ¿Puede el organizador controlar el uso de fondos y efectos de vídeo de los asistentes?",
   "q_en": "A Teams meeting organizer wants to control whether participants can disable background blur or use virtual backgrounds during the meeting. Can the organizer control attendees' use of backgrounds and video effects?",
   "opts_es": [
-   "Sí, en las opciones de la reunión el organizador puede deshabilitar los fondos virtuales para todos los participantes",
+   "Sí, en las opciones de reunión el organizador puede deshabilitar fondos virtuales para todos",
    "Solo con Teams Premium puede el organizador controlar los efectos de vídeo de los participantes desde el panel de control",
    "Sí, el organizador puede forzar el uso de un fondo corporativo específico para todos los asistentes en la reunión",
-   "No, el uso de fondos virtuales y efectos de vídeo es un control individual de cada participante que el organizador no puede gestionar"
+   "No, el fondo y los efectos de vídeo son decisión de cada participante"
   ],
   "opts_en": [
    "Yes, in meeting options the organizer can disable virtual backgrounds for all participants",
    "Only with Teams Premium can the organizer control participants' video effects from the control panel",
    "Yes, the organizer can force the use of a specific corporate background for all attendees in the meeting",
-   "No, virtual background and video effects use is an individual control per participant that the organizer cannot manage"
+   "No, background and video effects are each participant's own choice"
   ],
   "correct": [
    3
@@ -12710,16 +12710,16 @@
   "q_es": "Un agente de cola de llamadas está recibiendo llamadas de Teams pero quiere que las llamadas de la cola suenen en su teléfono de escritorio SIP además de en el cliente de Teams. ¿Qué función permite que las llamadas de la cola lleguen al teléfono SIP del agente?",
   "q_en": "A call queue agent is receiving Teams calls but wants queue calls to also ring on their SIP desk phone in addition to the Teams client. Which feature allows queue calls to reach the agent's SIP phone?",
   "opts_es": [
-   "Configurar el timbre simultáneo en la configuración de llamadas del usuario para que su número de extensión SIP también reciba las llamadas de la cola",
-   "Habilitar la redirección de llamadas de la cola al número de extensión SIP en la configuración de la cola de llamadas",
+   "Configurar el timbre simultáneo en la configuración de llamadas para que suene la extensión SIP",
+   "Habilitar la redirección de la cola a la extensión SIP en la página de configuración de la cola",
    "Usar Operator Connect para vincular el teléfono SIP del agente directamente a su cuenta de usuario de Teams",
-   "Añadir el teléfono SIP como dispositivo adicional del usuario en el Centro de administración de Teams bajo perfil de dispositivos"
+   "Agregar el teléfono SIP como dispositivo adicional del usuario en el centro de Teams en perfiles"
   ],
   "opts_en": [
-   "Configure simultaneous ring in the user's call settings so their SIP extension number also receives queue calls",
-   "Enable call queue redirection to the SIP extension number in the call queue configuration",
+   "Set up simultaneous ring in the user's call settings so the SIP extension also rings",
+   "Enable call queue redirection to the SIP extension number in the call queue configuration page",
    "Use Operator Connect to link the agent's SIP phone directly to their Teams user account",
-   "Add the SIP phone as an additional device for the user in Teams Admin Center under device profile"
+   "Add the SIP phone as an additional device for the user in Teams Admin Center under device profiles"
   ],
   "correct": [
    0
@@ -12736,15 +12736,15 @@
   "q_es": "El Centro de administración de Teams muestra que el porcentaje de llamadas deficientes (poor call rate) de tu tenant es del 12%, superior al umbral recomendado del 3%. ¿Cuál es el primer paso para identificar la causa raíz?",
   "q_en": "Teams Admin Center shows your tenant's poor call rate is 12%, above the recommended 3% threshold. What is the first step to identify the root cause?",
   "opts_es": [
-   "Actualizar los drivers de audio y los clientes de Teams de todos los usuarios del tenant para descartar problemas de software",
-   "Usar el Panel de calidad de llamadas para filtrar por edificio, subred o tipo de endpoint y determinar si el problema está concentrado en una ubicación o tipo de red",
-   "Verificar el estado del servicio de Microsoft 365 para confirmar si hay un incidente activo que esté afectando la calidad globalmente",
+   "Actualizar controladores de audio y clientes de Teams de todos los usuarios para descartar software",
+   "Filtrar el Call Quality Dashboard por edificio, subred o punto de conexión para ver dónde se concentra",
+   "Revisar el estado del servicio de Microsoft 365 para confirmar si un incidente activo afecta globalmente",
    "Revisar todos los análisis de llamadas individuales de los usuarios con llamadas deficientes para identificar patrones comunes de error"
   ],
   "opts_en": [
-   "Update audio drivers and Teams clients for all tenant users to rule out software issues",
-   "Use the Call Quality Dashboard to filter by building, subnet, or endpoint type to determine if the issue is concentrated at a location or network type",
-   "Check Microsoft 365 service health to confirm if there's an active incident affecting quality globally",
+   "Update audio drivers and Teams clients for all tenant users to rule out software issues first",
+   "Filter the Call Quality Dashboard by building, subnet or endpoint to find where it concentrates",
+   "Check Microsoft 365 service health to confirm whether an active incident affects quality globally",
    "Review all individual call analytics for users with poor calls to identify common error patterns"
   ],
   "correct": [
@@ -13028,16 +13028,16 @@
   "q_es": "Un usuario de Teams Phone quiere que cuando llamen a su número de Teams, las llamadas suenen en todos sus dispositivos (equipo de sobremesa, portátil y móvil) y pueda contestar en cualquiera de ellos. ¿Cómo está configurado esto por defecto en Teams?",
   "q_en": "A Teams Phone user wants calls to their Teams number to ring on all their devices (desktop, laptop, and mobile) so they can answer on any of them. How is this configured by default in Teams?",
   "opts_es": [
-   "El usuario debe instalar y activar el modo de multi-dispositivo en la configuración avanzada de Teams en cada dispositivo",
+   "El usuario debe instalar y activar el modo multidispositivo en la configuración avanzada de cada dispositivo",
    "El administrador debe crear una directiva de múltiples dispositivos en el Centro de administración de Teams por usuario",
    "El usuario debe configurar el timbre simultáneo con su número de Teams para cada dispositivo adicional manualmente",
-   "Por defecto, Teams envía las llamadas entrantes a todos los dispositivos del usuario donde Teams esté activo e iniciado con la misma cuenta"
+   "Por defecto, Teams hace sonar todos los dispositivos donde el usuario ha iniciado sesión con su cuenta"
   ],
   "opts_en": [
    "The user must install and activate multi-device mode in Teams advanced settings on each device",
    "The administrator must create a multi-device policy in Teams Admin Center per user",
    "The user must configure simultaneous ring with their Teams number for each additional device manually",
-   "By default, Teams sends incoming calls to all the user's devices where Teams is active and signed in with the same account"
+   "By default, Teams rings all devices where the user is signed in with the same account"
   ],
   "correct": [
    3
@@ -13106,15 +13106,15 @@
   "q_es": "Tu organización quiere restringir que ciertos usuarios del tenant puedan chatear con usuarios de tenants externos específicos de Microsoft 365, pero permitir el chat con todos los demás tenants externos. ¿Cómo configuras esta restricción por tenant externo?",
   "q_en": "Your organization wants to restrict certain tenant users from chatting with users from specific external Microsoft 365 tenants, but allow chat with all other external tenants. How do you configure this restriction per external tenant?",
   "opts_es": [
-   "Creando barreras de información que segmenten los usuarios internos de los usuarios de los tenants externos específicos",
-   "Usando directivas de acceso condicional de Azure AD que bloqueen la federación con los tenants externos designados",
-   "Usando la configuración de acceso entre tenants de Azure AD para bloquear usuarios de tenants externos específicos con directivas de entrada/salida",
+   "Crear barreras de información que separen a usuarios internos de los usuarios de esos inquilinos externos",
+   "Usar directivas de acceso condicional de Azure AD que bloqueen la federación con esos inquilinos externos",
+   "Configuración de acceso entre inquilinos con directivas de entrada y salida que bloquean esos inquilinos",
    "Añadiendo los dominios de los tenants externos a la lista de dominios bloqueados en el acceso externo del Centro de administración de Teams"
   ],
   "opts_en": [
-   "Creating information barriers that segment internal users from users of the specific external tenants",
-   "Using Azure AD Conditional Access policies that block federation with designated external tenants",
-   "Using Azure AD cross-tenant access settings to block users from specific external tenants with inbound/outbound policies",
+   "Creating information barriers that segment internal users from users of those specific external tenants",
+   "Using Azure AD Conditional Access policies that block federation with the designated external tenants",
+   "Cross-tenant access settings with inbound/outbound policies blocking those tenants",
    "Adding external tenant domains to the blocked domains list in external access in Teams Admin Center"
   ],
   "correct": [
@@ -13262,15 +13262,15 @@
   "q_es": "Tu organización tiene Teams Rooms con sistema Windows en múltiples salas. Quieres gestionar la configuración de todos los dispositivos desde un lugar central sin tener que acceder físicamente a cada sala. ¿Qué herramienta permite la gestión centralizada de configuración para dispositivos Teams Rooms con Windows?",
   "q_en": "Your organization has Windows-based Teams Rooms in multiple meeting rooms. You want to manage device configuration from a central location without physically accessing each room. Which tool enables centralized configuration management for Windows Teams Rooms devices?",
   "opts_es": [
-   "El Registro de Windows gestionado remotamente mediante WinRM para modificar la configuración de Teams Rooms",
-   "El Centro de administración de Microsoft Endpoint Configuration Manager (SCCM) para despliegue de configuración en dispositivos Windows",
-   "El Centro de administración de Teams con perfiles XML de configuración de Teams Rooms desplegados remotamente, o Microsoft Intune para gestión MDM",
+   "Registro de Windows administrado de forma remota por WinRM para modificar la configuración",
+   "Microsoft Endpoint Configuration Manager (SCCM) para implementar la configuración en Windows",
+   "Centro de administración de Teams con perfiles de configuración XML, o Intune para MDM",
    "La directiva de grupo de Active Directory (GPO) aplicada a los dispositivos Teams Rooms para configuración centralizada"
   ],
   "opts_en": [
-   "Windows Registry managed remotely via WinRM to modify Teams Rooms configuration",
-   "Microsoft Endpoint Configuration Manager (SCCM) for configuration deployment on Windows devices",
-   "Teams Admin Center with remote-deployed Teams Rooms XML configuration profiles, or Microsoft Intune for MDM management",
+   "Windows Registry managed remotely via WinRM to modify the Teams Rooms configuration files",
+   "Microsoft Endpoint Configuration Manager (SCCM) for configuration deployment on Windows",
+   "Teams Admin Center with XML configuration profiles, or Intune for MDM management",
    "Active Directory Group Policy (GPO) applied to Teams Rooms devices for centralized configuration"
   ],
   "correct": [
@@ -13340,15 +13340,15 @@
   "q_es": "Tras un fallo de una actualización de directiva de Teams, varios usuarios no pueden acceder a ciertas funciones de Teams que antes tenían. El administrador que realizó el cambio ya no está disponible. ¿Qué herramienta permite ver el historial de cambios de directivas recientes?",
   "q_en": "After a Teams policy update failure, several users cannot access certain Teams features they previously had. The administrator who made the change is unavailable. Which tool allows viewing recent policy change history?",
   "opts_es": [
-   "Los registros de eventos del tenant de Teams en Azure Monitor, que captura todos los cambios de directiva con rollback disponible",
-   "El historial de versiones de directivas en el Centro de administración de Teams, que muestra los últimos 30 cambios por directiva",
-   "El registro de auditoría de Microsoft Purview, que registra los cambios de configuración de Teams con detalles del administrador que realizó cada cambio",
+   "Registros de eventos del inquilino de Teams en Azure Monitor, con todos los cambios y reversión",
+   "Historial de versiones de directivas en el Centro de administración de Teams, con los últimos 30 cambios",
+   "El registro de auditoría de Microsoft Purview, que registra los cambios de configuración y su autor",
    "El informe de cambios del Centro de administración de Microsoft 365, sección de cambios recientes del administrador activo"
   ],
   "opts_en": [
-   "Teams tenant event logs in Azure Monitor, capturing all policy changes with rollback available",
+   "Teams tenant event logs in Azure Monitor, capturing all policy changes with rollback",
    "Policy version history in Teams Admin Center, showing the last 30 changes per policy",
-   "Microsoft Purview audit log, which records Teams configuration changes with details of the administrator who made each change",
+   "The Microsoft Purview audit log, which records config changes and who made them",
    "Microsoft 365 admin center change report, recent changes section of the active administrator"
   ],
   "correct": [
@@ -13444,15 +13444,15 @@
   "q_es": "El Panel de calidad de llamadas muestra que el porcentaje de llamadas deficientes es 0,01% pero hay una sede con 85% de llamadas deficientes. ¿Qué explica esta discrepancia y cómo la investigas?",
   "q_en": "The Call Quality Dashboard shows the poor call rate is 0.01% but one branch has 85% poor calls. What explains this discrepancy and how do you investigate it?",
   "opts_es": [
-   "La sede con mal porcentaje tiene pocos usuarios, lo que no eleva el promedio global; filtrar el CQD por ubicación del edificio para ver el problema aislado",
-   "El filtro de fecha del CQD está desalineado con la fecha del incidente; ajustar el rango de fechas para ver los datos correctos",
-   "Los datos del CQD del edificio específico aún no se han cargado en el panel; esperar 24 horas para que se actualicen",
+   "La sucursal afectada tiene pocos usuarios y apenas mueve la tasa global; filtrar CQD por edificio",
+   "El filtro de fecha de CQD no coincide con el incidente; ajustar el intervalo de fechas para ver datos correctos",
+   "Los datos de CQD de ese edificio aún no se han cargado; esperar 24 horas a que se actualicen",
    "El umbral del 85% indica problemas de hardware en los endpoints de esa sede, visibles solo en el análisis de llamadas individual"
   ],
   "opts_en": [
-   "The branch with bad percentage has few users, which doesn't raise the global average; filter CQD by building location to see the isolated problem",
+   "The bad branch has few users, so it barely moves the global rate; filter CQD by building",
    "The CQD date filter is misaligned with the incident date; adjust the date range to see correct data",
-   "The CQD data for the specific building hasn't been loaded into the dashboard yet; wait 24 hours for it to update",
+   "The CQD data for that building hasn't loaded into the dashboard yet; wait 24 hours for it to update",
    "The 85% threshold indicates hardware problems at that branch's endpoints, only visible in individual call analytics"
   ],
   "correct": [
@@ -13574,15 +13574,15 @@
   "q_es": "Tu organización necesita revisar retrospectivamente los mensajes de Teams de un empleado específico que fue despedido recientemente por sospecha de fuga de información. ¿Qué solución de Microsoft 365 permite buscar y exportar los mensajes de ese empleado?",
   "q_en": "Your organization needs to retrospectively review Teams messages from a specific employee recently dismissed for suspected information leakage. Which Microsoft 365 solution allows searching and exporting that employee's messages?",
   "opts_es": [
-   "El registro de auditoría de Microsoft Purview, que registra las actividades del usuario pero no el contenido de los mensajes",
-   "eDiscovery en Microsoft Purview, que permite crear un caso, buscar mensajes de Teams del usuario específico y exportarlos para revisión legal",
-   "La gestión de riesgos internos de Microsoft Purview, que analiza el comportamiento pero no permite exportar el contenido de mensajes",
+   "El registro de auditoría de Purview, que registra actividades del usuario pero no el contenido",
+   "eDiscovery en Purview: crear un caso, buscar los mensajes de Teams del usuario y exportarlos",
+   "Insider Risk Management de Purview, que analiza el comportamiento pero no exporta contenido",
    "El cumplimiento de comunicaciones, que solo revisa mensajes que coinciden con directivas activas, no mensajes históricos arbitrarios"
   ],
   "opts_en": [
-   "The Microsoft Purview audit log, which records user activities but not message content",
-   "eDiscovery in Microsoft Purview, which allows creating a case, searching Teams messages from the specific user and exporting them for legal review",
-   "Microsoft Purview Insider Risk Management, which analyzes behavior but doesn't allow exporting message content",
+   "The Microsoft Purview audit log, which records user activities but not the message content",
+   "eDiscovery in Purview: create a case, search the user's Teams messages and export them",
+   "Purview Insider Risk Management, which analyzes behavior but doesn't export message content",
    "Communication compliance, which only reviews messages matching active policies, not arbitrary historical messages"
   ],
   "correct": [
@@ -13652,15 +13652,15 @@
   "q_es": "Quieres recibir una notificación cuando un mensaje de Teams se marque como contenido malicioso o cuando los usuarios sean bloqueados repetidamente por una directiva. ¿Qué característica debes configurar?",
   "q_en": "You want to be notified when a Teams message is flagged as containing malicious content or when users are repeatedly blocked by policy. Which feature should you configure?",
   "opts_es": [
-   "Directivas de alerta en los portales de Microsoft Defender o Microsoft Purview",
-   "Directivas de reuniones de Teams",
-   "Directivas de configuración de aplicaciones",
+   "Directivas de alerta en los portales de Defender o Purview",
+   "Directivas de reunión de Teams con notificaciones habilitadas",
+   "Directivas de configuración de aplicaciones que anclan Actividad",
    "Directivas de llamadas"
   ],
   "opts_en": [
-   "Alert policies in the Microsoft Defender or Microsoft Purview portals",
-   "Teams meeting policies",
-   "App setup policies",
+   "Alert policies in the Defender or Purview portals",
+   "Teams meeting policies with notifications enabled",
+   "App setup policies that pin the Activity feed app",
    "Calling policies"
   ],
   "correct": [
@@ -13678,16 +13678,16 @@
   "q_es": "¿Qué capacidad de Defender for Office 365 analiza en busca de malware los archivos compartidos en SharePoint, OneDrive y Teams?",
   "q_en": "Which Defender for Office 365 capability scans files shared in SharePoint, OneDrive and Teams for malware?",
   "opts_es": [
-   "Datos adjuntos seguros para SharePoint, OneDrive y Microsoft Teams",
-   "Grabación de reuniones de Teams",
+   "Datos adjuntos seguros para SharePoint, OneDrive y Teams",
+   "Directivas de grabación de reuniones con examen de archivos",
    "Colas de llamadas",
-   "Turnos"
+   "Barreras de información aplicadas al uso compartido en Teams"
   ],
   "opts_en": [
-   "Safe Attachments for SharePoint, OneDrive and Microsoft Teams",
-   "Teams meeting recording",
+   "Safe Attachments for SharePoint, OneDrive and Teams",
+   "Teams meeting recording policies with file scanning",
    "Call queues",
-   "Shifts"
+   "Information barriers applied to file sharing in Teams"
   ],
   "correct": [
    0
@@ -13705,14 +13705,14 @@
   "q_en": "Which Defender for Office 365 capability protects users from malicious URLs in Teams messages at the time of click?",
   "opts_es": [
    "Vínculos seguros para Microsoft Teams",
-   "Barreras de información",
-   "Etiquetas de retención",
+   "Barreras de información en vínculos de chat",
+   "Etiquetas de retención en mensajes compartidos",
    "Estacionamiento de llamadas"
   ],
   "opts_en": [
    "Safe Links for Microsoft Teams",
-   "Information barriers",
-   "Retention labels",
+   "Information barriers on chat links",
+   "Retention labels on shared messages",
    "Call park"
   ],
   "correct": [
@@ -13730,15 +13730,15 @@
   "q_es": "¿Qué consideración de licencias se aplica a las protecciones de Defender for Office 365 en Teams?",
   "q_en": "Which licensing consideration applies to Defender for Office 365 protections in Teams?",
   "opts_es": [
-   "Se requiere un plan de Defender for Office 365 (Plan 1 o Plan 2) para el usuario",
-   "Nunca se necesita licencia",
-   "Solo una licencia de Teams Rooms",
+   "Una licencia de Defender para Office 365 Plan 1 o Plan 2 por usuario",
+   "Nunca se necesita licencia, porque Teams incluye todas las protecciones",
+   "Solo una licencia de Teams Rooms Pro, asignada a cada sala de reuniones",
    "Una licencia de Azure Bastion"
   ],
   "opts_en": [
-   "A Defender for Office 365 plan (Plan 1 or Plan 2) is required for the user",
-   "No license is ever needed",
-   "A Teams Rooms license only",
+   "A Defender for Office 365 Plan 1 or Plan 2 license per user",
+   "No license is ever needed, as Teams includes all protections",
+   "A Teams Rooms Pro license only, assigned to each meeting room",
    "An Azure Bastion license"
   ],
   "correct": [
@@ -13858,15 +13858,15 @@
   "q_en": "Which Teams capability offloads audio and video processing to the user's local device when Teams runs in a virtualized desktop?",
   "opts_es": [
    "Optimización de medios para Teams en VDI",
-   "Marca de agua de Teams Premium",
+   "Marca de agua de Teams Premium para VDI",
    "Estacionamiento de llamadas",
-   "Paquetes de directivas"
+   "Paquetes de directivas para escritorios virtuales"
   ],
   "opts_en": [
    "Media optimization for Teams on VDI",
-   "Teams Premium watermarking",
+   "Teams Premium watermarking for VDI",
    "Call park",
-   "Policy packages"
+   "Policy packages for virtual desktops"
   ],
   "correct": [
    0
@@ -13883,15 +13883,15 @@
   "q_es": "Una empresa usa Azure Virtual Desktop y Windows 365 para el personal que se une a reuniones de Teams. ¿Qué debe planificar el administrador?",
   "q_en": "A company uses Azure Virtual Desktop and Windows 365 for staff who join Teams meetings. What should the administrator plan for?",
   "opts_es": [
-   "Teams optimizado para entornos virtualizados para que el audio y el vídeo se procesen en el cliente",
-   "Deshabilitar el vídeo por completo",
-   "Usar solo dispositivos móviles",
+   "Optimización de Teams para VDI para procesar audio y vídeo en el cliente",
+   "Deshabilitar el vídeo por completo y enrutar el audio por el host de sesión",
+   "Usar solo dispositivos móviles para reuniones y bloquear los escritorios virtuales",
    "Reemplazar Teams por el correo"
   ],
   "opts_en": [
-   "Teams optimized for virtualized environments so audio and video are processed on the client",
-   "Disabling video entirely",
-   "Using only mobile devices",
+   "Teams VDI optimization so audio and video are processed on the client",
+   "Disabling video entirely and routing audio through the session host",
+   "Using only mobile devices for meetings and blocking the virtual desktops",
    "Replacing Teams with email"
   ],
   "correct": [
@@ -13909,15 +13909,15 @@
   "q_es": "¿Cómo puede un administrador aprovisionar un nuevo teléfono de Teams de forma remota sin estar físicamente junto al dispositivo?",
   "q_en": "How can an administrator provision a new Teams phone remotely without being physically at the device?",
   "opts_es": [
-   "Agregar el dispositivo por dirección MAC en el centro de administración de Teams e introducir el código de verificación que se muestra en el dispositivo",
-   "Instalar Microsoft Entra Connect en el teléfono",
-   "Enviar una llave USB por correo postal",
+   "Agregar el dispositivo por dirección MAC en el centro de administración e introducir su código",
+   "Instalar Microsoft Entra Connect en el teléfono y sincronizarlo con el inquilino",
+   "Enviar por correo postal una llave USB con un archivo de aprovisionamiento firmado",
    "Usar Azure Bastion"
   ],
   "opts_en": [
-   "Add the device by MAC address in the Teams admin center and enter the verification code shown on the device",
-   "Install Microsoft Entra Connect on the phone",
-   "Send a USB key by post",
+   "Add the device by MAC address in the admin center and enter its code",
+   "Install Microsoft Entra Connect on the phone and sync it to the tenant",
+   "Send a USB key by post with a provisioning file signed by the tenant",
    "Use Azure Bastion"
   ],
   "correct": [
@@ -13936,14 +13936,14 @@
   "q_en": "Which Teams admin center area lets you apply settings such as a configuration profile to a group of devices?",
   "opts_es": [
    "Dispositivos de Teams > Perfiles de configuración",
-   "Usuarios > Acceso de invitados",
-   "Reuniones > Plantillas de reunión",
+   "Usuarios > Configuración de dispositivos de acceso de invitado",
+   "Reuniones > Plantillas de reunión para salas",
    "Análisis > Uso de Teams"
   ],
   "opts_en": [
    "Teams devices > Configuration profiles",
-   "Users > Guest access",
-   "Meetings > Meeting templates",
+   "Users > Guest access device settings",
+   "Meetings > Meeting templates for rooms",
    "Analytics > Teams usage"
   ],
   "correct": [
@@ -14140,16 +14140,16 @@
   "q_es": "¿Qué herramienta prueba la conectividad, la latencia y la pérdida de paquetes desde una sede hacia Microsoft 365 y Teams para evaluar la preparación de la red?",
   "q_en": "Which tool tests connectivity, latency and packet loss from a site to Microsoft 365 and Teams to assess network readiness?",
   "opts_es": [
-   "La herramienta de evaluación de red de Teams y la prueba de conectividad de red de Microsoft 365",
-   "Compliance Manager",
-   "Revisiones de acceso",
-   "Simulación de ataques"
+   "Herramienta de evaluación de red de Teams y la prueba de conectividad de M365",
+   "Evaluaciones de Compliance Manager para controles de red",
+   "Revisiones de acceso del grupo de administradores de red",
+   "Entrenamiento de simulación de ataques con informes de latencia y pérdida"
   ],
   "opts_en": [
-   "Teams Network Assessment Tool and the Microsoft 365 network connectivity test",
-   "Compliance Manager",
-   "Access reviews",
-   "Attack simulation"
+   "Teams Network Assessment Tool and the M365 connectivity test",
+   "Compliance Manager assessments for network controls",
+   "Access reviews of the network administrators group",
+   "Attack simulation training with network latency and loss reports"
   ],
   "correct": [
    0
@@ -14166,15 +14166,15 @@
   "q_es": "¿Qué configuración de firewall se requiere para que fluya el tráfico de medios de Teams?",
   "q_en": "Which firewall configuration is required so Teams media traffic can flow?",
   "opts_es": [
-   "Permitir las URL, los intervalos de IP y los puertos UDP/TCP de Microsoft 365 documentados que usa Teams",
-   "Bloquear todo el tráfico UDP",
-   "Permitir solo el puerto 25",
+   "Permitir las URL, IP y puertos UDP/TCP documentados de Microsoft 365 y Teams",
+   "Bloquear todo el tráfico UDP para forzar los medios solo por TCP 443",
+   "Permitir solo el puerto 25 saliente y enrutar todos los medios por el relé de correo",
    "Deshabilitar el firewall de forma permanente"
   ],
   "opts_en": [
-   "Allow the documented Microsoft 365 URLs, IP ranges and UDP/TCP ports used by Teams",
-   "Block all UDP traffic",
-   "Allow only port 25",
+   "Allow the documented Microsoft 365 URLs, IPs and Teams UDP/TCP ports",
+   "Block all UDP traffic so media is forced over TCP port 443 only",
+   "Allow only port 25 outbound and route all media through the mail relay",
    "Disable the firewall permanently"
   ],
   "correct": [
@@ -14220,15 +14220,15 @@
   "q_es": "Debes evitar que se acumulen equipos de Teams sin usar. ¿Qué característica de gobernanza solicita automáticamente a los propietarios que renueven o deja que los grupos caduquen?",
   "q_en": "You must keep group-based Teams from accumulating unused teams. Which governance feature automatically prompts owners to renew or lets groups expire?",
   "opts_es": [
-   "Una directiva de caducidad de grupos de Microsoft 365",
-   "Una directiva de configuración de aplicaciones",
-   "Una directiva de llamadas",
+   "Una directiva de expiración de grupos de Microsoft 365",
+   "Una directiva de configuración que oculta equipos inactivos",
+   "Una directiva de llamadas con retención de grupos",
    "Una directiva de enrutamiento de voz"
   ],
   "opts_en": [
    "A Microsoft 365 group expiration policy",
-   "An app setup policy",
-   "A calling policy",
+   "An app setup policy that hides inactive teams",
+   "A calling policy with a group retention setting",
    "A voice routing policy"
   ],
   "correct": [
@@ -14247,15 +14247,15 @@
   "q_en": "A deleted Microsoft 365 group needs to be recovered. Within what period can it normally be restored?",
   "opts_es": [
    "En los 30 días posteriores a la eliminación",
-   "Nunca",
-   "Solo en las 24 horas siguientes",
-   "En 10 años"
+   "Nunca, la eliminación es permanente",
+   "Solo en 24 horas",
+   "En 10 años con una retención"
   ],
   "opts_en": [
    "Within 30 days of deletion",
-   "Never",
+   "Never, deletion is permanent",
    "Within 24 hours only",
-   "Within 10 years"
+   "Within 10 years with a hold"
   ],
   "correct": [
    0
@@ -14298,15 +14298,15 @@
   "q_es": "¿Qué herramientas pueden usar los administradores para automatizar operaciones masivas de Teams, como crear equipos o actualizar directivas?",
   "q_en": "Which tools can administrators use to automate bulk Teams operations such as creating teams or updating policies?",
   "opts_es": [
-   "El módulo de PowerShell de Teams y Microsoft Graph",
-   "Solo la aplicación móvil de Teams",
-   "Solo macros de Excel",
+   "Módulo de PowerShell de Teams y Microsoft Graph",
+   "Solo la app móvil de Teams con selección masiva",
+   "Macros de Excel que llaman a las páginas del centro",
    "Solo directiva de grupo"
   ],
   "opts_en": [
-   "The Teams PowerShell module and Microsoft Graph",
-   "Only the Teams mobile app",
-   "Excel macros only",
+   "Teams PowerShell module and Microsoft Graph",
+   "Only the Teams mobile app with bulk selection",
+   "Excel macros that call the admin center pages",
    "Group Policy only"
   ],
   "correct": [
@@ -14426,15 +14426,15 @@
   "q_en": "Two company tenants need their employees to see each other as colleagues in Teams with a shared experience. Which feature should be configured?",
   "opts_es": [
    "Organización multiinquilino (MTO)",
-   "Vínculos seguros",
+   "Vínculos seguros en ambos inquilinos",
    "Colas de llamadas",
-   "Plantillas de reunión"
+   "Plantillas de reunión compartidas por inquilino"
   ],
   "opts_en": [
    "Multitenant organization (MTO)",
-   "Safe Links",
+   "Safe Links across both tenants",
    "Call queues",
-   "Meeting templates"
+   "Shared meeting templates per tenant"
   ],
   "correct": [
    0
@@ -14451,16 +14451,16 @@
   "q_es": "Un propietario de equipo quiere colaborar con un socio en un canal compartido sin agregar invitados del socio al equipo. ¿Qué capacidad de Microsoft Entra lo admite?",
   "q_en": "A team owner wants to collaborate with a partner in a shared channel without adding partner guests to the team. Which Microsoft Entra capability supports this?",
   "opts_es": [
-   "Configuración de acceso entre inquilinos de conexión directa B2B",
-   "SSO de conexión directa",
-   "Escritura diferida de contraseñas",
-   "Datos adjuntos seguros"
+   "B2B direct connect en el acceso entre inquilinos",
+   "SSO de conexión directa con acceso de invitado habilitado",
+   "Escritura diferida de contraseñas para las cuentas del socio",
+   "Datos adjuntos seguros para canales compartidos"
   ],
   "opts_en": [
-   "B2B direct connect cross-tenant access settings",
-   "Seamless SSO",
-   "Password writeback",
-   "Safe Attachments"
+   "B2B direct connect in cross-tenant access",
+   "Seamless SSO with guest access enabled",
+   "Password writeback for the partner's accounts",
+   "Safe Attachments for shared channels"
   ],
   "correct": [
    0
