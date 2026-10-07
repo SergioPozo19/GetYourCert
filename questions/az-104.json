@@ -9844,9 +9844,9 @@
     "ans": true
    },
    {
-    "es": "Con el nivel de acceso 'Blob', los usuarios anónimos pueden leer blobs individuales pero no pueden listar el contenido del contenedor.",
-    "en": "With the 'Blob' access level, anonymous users can read individual blobs but cannot list the container contents.",
-    "ans": true
+    "es": "Con el nivel de acceso 'Blob', los usuarios anónimos pueden enumerar el contenido del contenedor y leer todos los blobs.",
+    "en": "With the 'Blob' access level, anonymous users can list the container contents and read every blob.",
+    "ans": false
    },
    {
     "es": "Con el nivel de acceso 'Contenedor', los usuarios anónimos pueden listar todos los blobs y leer cualquier blob del contenedor.",
@@ -9854,8 +9854,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los tres niveles de acceso de un contenedor definen el acceso anónimo: 'Privado' no permite acceso anónimo de ningún tipo; 'Blob' permite leer blobs individuales si se conoce la URL pero no enumerar el contenedor; 'Contenedor' permite tanto listar como leer todos los blobs. El acceso anónimo se puede deshabilitar a nivel de cuenta de almacenamiento independientemente de la configuración del contenedor.",
-  "exp_en": "The three container access levels define anonymous access: 'Private' allows no anonymous access of any kind; 'Blob' allows reading individual blobs if the URL is known but not listing the container; 'Container' allows both listing and reading all blobs. Anonymous access can be disabled at the storage account level regardless of container configuration."
+  "exp_es": "'Privado' no permite acceso anónimo (verdadero). 'Blob' permite leer blobs individuales por URL pero no enumerar el contenedor (falso). 'Contenedor' permite enumerar y leer todos los blobs (verdadero). El acceso anónimo también puede deshabilitarse para toda la cuenta de almacenamiento.",
+  "exp_en": "'Private' allows no anonymous access (true). 'Blob' allows reading individual blobs by URL but not listing the container (false). 'Container' allows listing and reading all blobs (true). Anonymous access can also be disabled for the whole storage account."
  },
  {
   "id": 363,

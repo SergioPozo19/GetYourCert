@@ -8604,5 +8604,109 @@
   ],
   "exp_es": "La justificación favorece la responsabilidad y la revisión del uso de privilegios.",
   "exp_en": "Justification supports accountability and review of privileged use."
+ },
+ {
+  "id": 303,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_en": "Users must sign in with device-bound passkeys stored in Microsoft Authenticator. What should you configure?",
+  "q_es": "Los usuarios deben iniciar sesión con claves de acceso vinculadas al dispositivo guardadas en Microsoft Authenticator. ¿Qué configura?",
+  "opts_en": [
+   "Enable Passkey (FIDO2) and allow the Authenticator AAGUIDs",
+   "Enable SMS sign-in and require number matching for all users",
+   "Enable Temporary Access Pass with a one-time use setting",
+   "Enable certificate-based authentication with user affinity"
+  ],
+  "opts_es": [
+   "Habilitar Clave de acceso (FIDO2) y permitir los AAGUID de Authenticator",
+   "Habilitar inicio de sesión por SMS y exigir coincidencia de números",
+   "Habilitar Temporary Access Pass con la opción de un solo uso",
+   "Habilitar la autenticación basada en certificados con afinidad"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Passkeys in Authenticator are managed through the Passkey (FIDO2) authentication method policy; if key restrictions are enforced, you must allow the Microsoft Authenticator AAGUIDs.",
+  "exp_es": "Las claves de acceso en Authenticator se administran con la directiva del método Clave de acceso (FIDO2); si se aplican restricciones de claves, hay que permitir los AAGUID de Microsoft Authenticator."
+ },
+ {
+  "id": 304,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_en": "You want Exchange Online, SharePoint Online and Teams traffic from Global Secure Access clients to go through Microsoft's security edge. Which traffic forwarding profile should you enable?",
+  "q_es": "Quiere que el tráfico de Exchange Online, SharePoint Online y Teams de los clientes de Global Secure Access pase por el perímetro de seguridad de Microsoft. ¿Qué perfil de reenvío habilita?",
+  "opts_en": [
+   "The Private Access profile with app segments",
+   "The Internet Access profile with web filtering",
+   "The Microsoft traffic profile",
+   "A Conditional Access named location"
+  ],
+  "opts_es": [
+   "El perfil Private Access con segmentos de app",
+   "El perfil Internet Access con filtrado web",
+   "El perfil de tráfico de Microsoft",
+   "Una ubicación con nombre de acceso condicional"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "The Microsoft traffic profile forwards Microsoft 365 traffic (Exchange Online, SharePoint Online, Teams and more) through Global Secure Access, enabling features such as source IP restoration and universal tenant restrictions.",
+  "exp_es": "El perfil de tráfico de Microsoft reenvía el tráfico de Microsoft 365 (Exchange Online, SharePoint Online, Teams y más) por Global Secure Access, lo que habilita funciones como la restauración de IP de origen y las restricciones universales de inquilino."
+ },
+ {
+  "id": 305,
+  "exam": "sc-300",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_en": "Security wants to block gambling websites for all users who have the Global Secure Access client. What should you create?",
+  "q_es": "Seguridad quiere bloquear los sitios de apuestas para todos los usuarios con el cliente de Global Secure Access. ¿Qué debe crear?",
+  "opts_en": [
+   "A Private Access app segment for each gambling domain",
+   "A named location that marks gambling IPs as untrusted",
+   "A Defender for Cloud Apps session policy for each site",
+   "A web content filtering policy in a security profile"
+  ],
+  "opts_es": [
+   "Un segmento de app de Private Access por dominio de apuestas",
+   "Una ubicación con nombre que marque las IP como no confiables",
+   "Una directiva de sesión de Defender for Cloud Apps por sitio",
+   "Una directiva de filtrado web en un perfil de seguridad"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_en": "Microsoft Entra Internet Access uses web content filtering policies (by category or FQDN) grouped in security profiles, which are applied to users through Conditional Access or the baseline profile.",
+  "exp_es": "Microsoft Entra Internet Access usa directivas de filtrado de contenido web (por categoría o FQDN) agrupadas en perfiles de seguridad, que se aplican a los usuarios mediante acceso condicional o el perfil de línea base."
+ },
+ {
+  "id": 306,
+  "exam": "sc-300",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_en": "Admins should be members of the SQL-Admins security group only when they need it, with approval and a time limit. What should you use?",
+  "q_es": "Los administradores solo deben ser miembros del grupo de seguridad SQL-Admins cuando lo necesiten, con aprobación y límite de tiempo. ¿Qué debe usar?",
+  "opts_en": [
+   "An access review on the group every quarter",
+   "PIM for Groups with eligible membership",
+   "A dynamic group rule based on job title",
+   "An access package with no expiration date"
+  ],
+  "opts_es": [
+   "Una revisión de acceso del grupo cada trimestre",
+   "PIM para grupos con pertenencia elegible",
+   "Una regla de grupo dinámico por puesto",
+   "Un paquete de acceso sin fecha de caducidad"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "PIM for Groups provides just-in-time membership or ownership of groups: users are eligible and activate membership for a limited time, optionally with approval, MFA and justification.",
+  "exp_es": "PIM para grupos ofrece pertenencia o propiedad de grupos justo a tiempo: los usuarios son elegibles y activan la pertenencia durante un tiempo limitado, opcionalmente con aprobación, MFA y justificación."
  }
 ]

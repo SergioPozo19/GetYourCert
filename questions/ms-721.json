@@ -267,13 +267,13 @@
     "ans": true
    },
    {
-    "es": "Teams Phone Mobile permite a los usuarios usar su número de móvil como número de Teams Phone.",
-    "en": "Teams Phone Mobile allows users to use their mobile number as their Teams Phone number.",
-    "ans": true
+    "es": "Teams Phone Mobile requiere que la organización implemente su propio SBC de Direct Routing.",
+    "en": "Teams Phone Mobile requires the organization to deploy its own Direct Routing SBC.",
+    "ans": false
    }
   ],
-  "exp_es": "Las cuatro afirmaciones son correctas. Los planes de llamadas son gestionados por Microsoft; Operator Connect usa el portal de Teams con el operador; Direct Routing requiere SBC certificado; Teams Phone Mobile une el número móvil del operador con Teams.",
-  "exp_en": "All four statements are correct. Calling Plans are managed by Microsoft; Operator Connect uses the Teams portal with the operator; Direct Routing requires a certified SBC; Teams Phone Mobile unifies the operator's mobile number with Teams."
+  "exp_es": "Los Calling Plans los administra Microsoft (verdadero). Operator Connect permite elegir un operador participante en el centro de Teams (verdadero). Direct Routing requiere un SBC certificado para Teams (verdadero). Teams Phone Mobile lo presta un operador móvil participante, así que no hace falta un SBC propio (falso).",
+  "exp_en": "Calling Plans are managed by Microsoft (true). Operator Connect lets you pick a participating operator from the Teams admin center (true). Direct Routing requires a Teams-certified SBC (true). Teams Phone Mobile is delivered by a participating mobile operator, so no SBC of your own is needed (false)."
  },
  {
   "id": 1159,
@@ -1055,9 +1055,9 @@
     "ans": true
    },
    {
-    "es": "Las directivas de identificación de llamadas (caller ID) pueden suprimir o reemplazar el identificador de llamadas salientes mostrado al destinatario.",
-    "en": "Caller ID policies can suppress or replace the outbound caller ID displayed to the called party.",
-    "ans": true
+    "es": "Las directivas de identificador de llamada controlan qué usuarios pueden aparcar llamadas y recuperarlas desde otro dispositivo.",
+    "en": "Caller ID policies control which users can park calls and retrieve them from another device.",
+    "ans": false
    },
    {
     "es": "Una directiva de correo de voz controla si los usuarios pueden acceder y configurar su correo de voz en la nube.",
@@ -1065,8 +1065,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Las cuatro afirmaciones son correctas. Las directivas de Teams Phone cubren llamadas, estacionamiento, identificación de llamadas y correo de voz, cada una con su propio ámbito de configuración.",
-  "exp_en": "All four statements are correct. Teams Phone policies cover calling, call park, caller ID, and voicemail, each with its own configuration scope."
+  "exp_es": "Las directivas de llamadas controlan llamadas privadas, desvío y buzón de voz (verdadero). Las de aparcamiento permiten aparcar y recuperar llamadas con un código (verdadero). Aparcar llamadas lo controlan las directivas de aparcamiento; las de identificador solo cambian u ocultan el número saliente mostrado (falso). Las de buzón de voz controlan Cloud Voicemail (verdadero).",
+  "exp_en": "Calling policies control private calls, forwarding and voicemail (true). Call park policies let users park and retrieve calls with a code (true). Parking calls is controlled by call park policies; caller ID policies only change or suppress the displayed outbound number (false). Voicemail policies control Cloud Voicemail (true)."
  },
  {
   "id": 1188,
@@ -1296,13 +1296,13 @@
     "ans": true
    },
    {
-    "es": "Una dirección de emergencia debe ser validada antes de poder asignarse a una ubicación de red.",
-    "en": "An emergency address must be validated before it can be assigned to a network location.",
-    "ans": true
+    "es": "Las direcciones de emergencia pueden asignarse a ubicaciones de red sin validarlas antes.",
+    "en": "Emergency addresses can be assigned to network locations without being validated first.",
+    "ans": false
    }
   ],
-  "exp_es": "Las cuatro afirmaciones son correctas. Las directivas de notificación de emergencia, el LIS con sus asignaciones de red, las directivas de enrutamiento (solo para Direct Routing) y la validación de direcciones son todos requisitos del sistema de llamadas de emergencia de Teams Phone.",
-  "exp_en": "All four statements are correct. Emergency notification policies, LIS with network mappings, routing policies (only for Direct Routing), and address validation are all requirements of the Teams Phone emergency calling system."
+  "exp_es": "Las directivas de llamadas de emergencia definen a quién se notifica (verdadero). LIS asigna subredes, puntos de acceso Wi-Fi y puertos de conmutador a ubicaciones (verdadero). Las directivas de enrutamiento de emergencia solo se necesitan con Direct Routing (verdadero). Las direcciones de emergencia deben validarse antes de usarse (falso).",
+  "exp_en": "Emergency calling policies define who is notified (true). LIS maps subnets, Wi-Fi access points and switch ports to locations (true). Emergency call routing policies are only needed for Direct Routing (true). Emergency addresses must be validated before they can be used (false)."
  },
  {
   "id": 1197,
@@ -1466,13 +1466,13 @@
     "ans": true
    },
    {
-    "es": "Las líneas privadas en Teams Phone permiten a un usuario tener un número secundario en el que solo ellos pueden recibir llamadas.",
-    "en": "Private lines in Teams Phone allow a user to have a secondary number that only they can receive calls on.",
-    "ans": true
+    "es": "Los números de línea privada aparecen en el directorio de la organización para que cualquier usuario pueda llamarlos.",
+    "en": "Private line numbers are listed in the organization's directory so any user can call them.",
+    "ans": false
    }
   ],
-  "exp_es": "Las cuatro afirmaciones son correctas. Teams Phone ofrece reenvío de llamadas, captura de llamadas de grupo, delegación de llamadas y líneas privadas como funciones de llamadas para usuarios individuales.",
-  "exp_en": "All four statements are correct. Teams Phone offers call forwarding, group call pickup, call delegation, and private lines as calling features for individual users."
+  "exp_es": "El desvío de llamadas, la captura de llamadas de grupo y la delegación funcionan como se describe (verdadero). Una línea privada es un número secundario que no aparece en el directorio ni en el identificador; solo pueden llamarlo quienes lo conocen (falso).",
+  "exp_en": "Call forwarding, group call pickup and call delegation work as described (true). A private line is a secondary number that is not shown in the directory or caller ID; only people given the number can call it (false)."
  },
  {
   "id": 1203,
@@ -1572,9 +1572,9 @@
     "ans": true
    },
    {
-    "es": "Las reglas de traducción de tronco modifican el número llamado o llamante antes de enviarlo al SBC.",
-    "en": "Trunk translation rules modify the called or calling number before it is sent to the SBC.",
-    "ans": true
+    "es": "Las reglas de traducción de troncal se configuran en la directiva de llamadas de cada usuario.",
+    "en": "Trunk translation rules are configured in each user's calling policy.",
+    "ans": false
    },
    {
     "es": "Los SBCs de Enrutamiento directo deben estar certificados por Microsoft para usarse con Teams Phone.",
@@ -1582,8 +1582,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Las cuatro afirmaciones son correctas. Los registros de uso PSTN, las rutas de voz, las reglas de traducción de tronco y la certificación de SBCs son todos componentes esenciales del Enrutamiento directo en Teams Phone.",
-  "exp_en": "All four statements are correct. PSTN usage records, voice routes, trunk translation rules, and SBC certification are all essential components of Direct Routing in Teams Phone."
+  "exp_es": "Los registros de uso de PSTN vinculan directivas de enrutamiento de voz con rutas de voz (verdadero). Las rutas de voz eligen un SBC según patrones de número (verdadero). Las reglas de traducción de troncal se definen en la configuración de la puerta de enlace PSTN (SBC), no en las directivas de llamadas (falso). Los SBC deben estar certificados para Teams (verdadero).",
+  "exp_en": "PSTN usage records link voice routing policies to voice routes (true). Voice routes pick an SBC based on number patterns (true). Trunk translation rules are set on the PSTN gateway (SBC) configuration, not in calling policies (false). SBCs must be certified for Teams (true)."
  },
  {
   "id": 1207,
@@ -11191,9 +11191,9 @@
     "ans": true
    },
    {
-    "es": "Los registros de auditoría de Teams están disponibles de forma predeterminada y se retienen durante 90 días en Microsoft Purview.",
-    "en": "Teams audit logs are available by default and are retained for 90 days in Microsoft Purview.",
-    "ans": true
+    "es": "Los registros de auditoría de Teams se conservan solo 90 días por defecto en Microsoft Purview Audit (Estándar).",
+    "en": "Teams audit logs are retained for only 90 days by default in Microsoft Purview Audit (Standard).",
+    "ans": false
    },
    {
     "es": "La gestión de riesgos internos (Insider Risk Management) puede usar señales de actividad de Teams como indicadores de comportamiento arriesgado.",
@@ -11201,8 +11201,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los audit logs de Teams van al registro unificado de Purview. Communication Compliance cubre chats privados. La retención predeterminada de auditoría es 90 días (Purview Audit Standard); Audit Premium extiende a 1 año o más. IRM usa señales de Teams entre otros indicadores.",
-  "exp_en": "Teams audit logs go to the Purview unified audit log. Communication Compliance covers private chats. Default audit retention is 90 days (Purview Audit Standard); Audit Premium extends to 1 year or more. IRM uses Teams signals among other indicators."
+  "exp_es": "Los eventos de Teams están en el registro de auditoría unificado de Purview (verdadero). Communication Compliance puede cubrir chats privados (verdadero). Audit (Estándar) conserva ahora los registros 180 días por defecto, y Audit (Premium) amplía la retención a 1 año o más (falso). Insider Risk Management puede usar señales de Teams (verdadero).",
+  "exp_en": "Teams events are in the Purview unified audit log (true). Communication Compliance can cover private chats (true). Audit (Standard) now retains records for 180 days by default, and Audit (Premium) extends retention to 1 year or more (false). Insider Risk Management can use Teams signals (true)."
  },
  {
   "id": 1561,
@@ -12909,5 +12909,83 @@
   ],
   "exp_es": "La entrada HDMI gestiona contenido por cable; una cámara de contenido captura pizarras.",
   "exp_en": "HDMI ingest handles cabled content; a content camera captures whiteboards."
+ },
+ {
+  "id": 1625,
+  "exam": "ms-721",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_en": "A bank wants customers to book video consultations with advisors, receive SMS reminders and wait in a branded lobby. What should you recommend?",
+  "q_es": "Un banco quiere que los clientes reserven videoconsultas con asesores, reciban recordatorios por SMS y esperen en una sala de espera con su marca. ¿Qué recomienda?",
+  "opts_en": [
+   "Appointments with Teams Premium virtual appointment features",
+   "A Teams town hall with Q&A and a registration page turned on",
+   "A Teams webinar with a public registration form per advisor",
+   "A channel meeting scheduled in each advisor's private team"
+  ],
+  "opts_es": [
+   "Citas con funciones de citas virtuales de Teams Premium",
+   "Un Town Hall de Teams con preguntas y respuestas y página de registro",
+   "Un seminario web de Teams con registro público por asesor",
+   "Una reunión de canal programada en el equipo de cada asesor"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_en": "Appointments with Microsoft Teams (Bookings) handle scheduled customer consultations; Teams Premium adds advanced virtual appointments such as SMS reminders, a branded lobby and analytics.",
+  "exp_es": "Las citas con Microsoft Teams (Bookings) gestionan consultas programadas con clientes; Teams Premium añade citas virtuales avanzadas como recordatorios por SMS, sala de espera con marca y análisis."
+ },
+ {
+  "id": 1626,
+  "exam": "ms-721",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_en": "A user is in two groups with different calling policies assigned through group policy assignment, and also has a calling policy assigned directly. Which policy applies?",
+  "q_es": "Un usuario pertenece a dos grupos con distintas directivas de llamadas asignadas por grupo y además tiene una directiva de llamadas asignada directamente. ¿Qué directiva se aplica?",
+  "opts_en": [
+   "The group policy with the highest rank number",
+   "The directly assigned calling policy",
+   "The global (org-wide default) calling policy",
+   "The policy of the group joined most recently"
+  ],
+  "opts_es": [
+   "La directiva de grupo con el número de rango más alto",
+   "La directiva de llamadas asignada directamente",
+   "La directiva de llamadas global (predeterminada)",
+   "La directiva del grupo al que se unió más tarde"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_en": "A direct assignment takes precedence over group assignments. Among groups, the assignment with the best rank (lowest number) wins; the global policy applies only when nothing else is assigned.",
+  "exp_es": "Una asignación directa tiene prioridad sobre las asignaciones por grupo. Entre grupos gana la de mejor rango (número más bajo); la directiva global solo se aplica si no hay otra asignada."
+ },
+ {
+  "id": 1627,
+  "exam": "ms-721",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_en": "You must assign Calling Plan numbers to 400 users listed in a CSV file. Which approach is most efficient?",
+  "q_es": "Debe asignar números de Calling Plan a 400 usuarios que figuran en un archivo CSV. ¿Qué enfoque es más eficiente?",
+  "opts_en": [
+   "Assign each number manually in the Teams admin center",
+   "Create a voice routing policy for each user in the file",
+   "Loop through the CSV with Set-CsPhoneNumberAssignment",
+   "Upload the CSV to the Call Quality Dashboard tenant data"
+  ],
+  "opts_es": [
+   "Asignar cada número a mano en el centro de Teams",
+   "Crear una directiva de enrutamiento de voz por usuario",
+   "Recorrer el CSV con Set-CsPhoneNumberAssignment",
+   "Subir el CSV a los datos de inquilino del Call Quality Dashboard"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_en": "Set-CsPhoneNumberAssignment (Teams PowerShell) assigns a phone number and number type to a user; running it in a loop over a CSV is the standard way to assign numbers in bulk.",
+  "exp_es": "Set-CsPhoneNumberAssignment (PowerShell de Teams) asigna un número y su tipo a un usuario; ejecutarlo en bucle sobre un CSV es la forma habitual de asignar números de forma masiva."
  }
 ]
