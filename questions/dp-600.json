@@ -9111,5 +9111,926 @@
   "correct": 0,
   "exp_es": "Los desencadenadores de eventos inician canalizaciones al llegar un archivo.",
   "exp_en": "Event triggers start pipelines on file arrival."
+ },
+ {
+  "id": 310,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Fabric permite restringir el acceso a carpetas concretas de un lakehouse con la seguridad de OneLake?",
+  "q_en": "Which Fabric capability lets you restrict access to specific folders in a lakehouse with OneLake security?",
+  "opts_es": [
+   "Roles de acceso a datos de OneLake",
+   "Rol de administrador de capacidad",
+   "Rol de Lector del área de trabajo",
+   "Colaboradores de dominio"
+  ],
+  "opts_en": [
+   "OneLake data access roles",
+   "Capacity admin role",
+   "Workspace Viewer role",
+   "Domain contributors"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los roles de acceso a datos definen permisos sobre tablas y carpetas dentro de un elemento y se aplican entre motores.",
+  "exp_en": "Data access roles define permissions on tables and folders within an item and apply across engines."
+ },
+ {
+  "id": 311,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué función de Fabric agrupa áreas de trabajo por área de negocio para delegar la gobernanza?",
+  "q_en": "Which Fabric feature groups workspaces by business area so you can delegate governance?",
+  "opts_es": [
+   "Canalizaciones de implementación",
+   "Dominios",
+   "Grupos de capacidad",
+   "Eventstreams"
+  ],
+  "opts_en": [
+   "Deployment pipelines",
+   "Domains",
+   "Capacity pools",
+   "Eventstreams"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los dominios organizan los datos por área de negocio y permiten a sus administradores gestionar ajustes y aprobación.",
+  "exp_en": "Domains organize data by business area and allow domain admins to manage settings and endorsement."
+ },
+ {
+  "id": 312,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué ajuste debe habilitar un administrador para que los elementos usen etiquetas de confidencialidad de Microsoft Purview?",
+  "q_en": "Which setting must an admin enable so items can use sensitivity labels from Microsoft Purview?",
+  "opts_es": [
+   "Habilitar grupos de Spark para todos los usuarios",
+   "Permitir a los usuarios aplicar etiquetas de confidencialidad al contenido de Fabric",
+   "Permitir el uso compartido externo de conjuntos de datos",
+   "Activar la supervisión del área de trabajo"
+  ],
+  "opts_en": [
+   "Enable Spark pools for all users",
+   "Allow users to apply sensitivity labels for Fabric content",
+   "Allow external sharing of datasets",
+   "Turn on workspace monitoring"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Un ajuste del inquilino habilita el etiquetado; las etiquetas pueden fluir después por el linaje.",
+  "exp_en": "A tenant setting enables labeling; labels can then flow downstream through lineage."
+ },
+ {
+  "id": 313,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento de Fabric permite capturar registros del área de trabajo y consultarlos con KQL?",
+  "q_en": "Which Fabric item lets you capture workspace logs and query them with KQL?",
+  "opts_es": [
+   "Una programación de actualización de modelo semántico",
+   "Un acceso directo de lakehouse",
+   "Supervisión del área de trabajo (Eventhouse)",
+   "Una regla de implementación"
+  ],
+  "opts_en": [
+   "A semantic model refresh schedule",
+   "A lakehouse shortcut",
+   "Workspace monitoring (Eventhouse)",
+   "A deployment rule"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La supervisión del área de trabajo guarda registros en una base Eventhouse consultable con KQL.",
+  "exp_en": "Workspace monitoring stores logs in an Eventhouse database queryable with KQL."
+ },
+ {
+  "id": 314,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué rol se necesita para asignar un área de trabajo a una capacidad de Fabric?",
+  "q_en": "Which role is required to assign a workspace to a Fabric capacity?",
+  "opts_es": [
+   "Colaborador de informes",
+   "Lector de dominio",
+   "Administrador del área con permiso de asignación de capacidad",
+   "Lector del área"
+  ],
+  "opts_en": [
+   "Report Contributor",
+   "Domain Viewer",
+   "Workspace Admin with capacity assignment permission",
+   "Workspace Viewer"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los administradores del área que también son colaboradores o administradores de la capacidad pueden asignar áreas a capacidades.",
+  "exp_en": "Workspace admins who are also capacity contributors or admins can assign workspaces to capacities."
+ },
+ {
+  "id": 315,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué permiten cambiar entre fases las reglas de una canalización de implementación?",
+  "q_en": "What do deployment pipeline rules let you change between stages?",
+  "opts_es": [
+   "El nombre de la capacidad",
+   "La etiqueta de confidencialidad del inquilino",
+   "La lista de administradores del área",
+   "Origen de datos y valores de parámetros por fase"
+  ],
+  "opts_en": [
+   "The name of the capacity",
+   "The sensitivity label of the tenant",
+   "The workspace admin list",
+   "Data source and parameter values per stage"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las reglas adaptan los elementos a cada entorno, por ejemplo apuntando a un origen de pruebas o de producción.",
+  "exp_en": "Deployment rules adapt items to each environment, such as pointing to a test or production source."
+ },
+ {
+  "id": 316,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué formato de archivo usa la integración con Git para modelos semánticos en Fabric?",
+  "q_en": "Which file format does Git integration use for semantic models in Fabric?",
+  "opts_es": [
+   "Solo PBIX comprimido",
+   "Archivos de definición TMDL o TMSL",
+   "Exportaciones CSV de las tablas",
+   "Libros XLSX"
+  ],
+  "opts_en": [
+   "Compressed PBIX only",
+   "TMDL or TMSL definition files",
+   "CSV exports of the tables",
+   "XLSX workbooks"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Fabric guarda las definiciones de los elementos como archivos de texto para comparar y combinar cambios.",
+  "exp_en": "Fabric stores item definitions as text files so changes can be diffed and merged."
+ },
+ {
+  "id": 318,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cómo puede ver el impacto descendente de un cambio antes de aplicarlo en un área de Fabric?",
+  "q_en": "How can you share a Fabric workspace's items with the lineage to see downstream impact before a change?",
+  "opts_es": [
+   "Enviar correo a los propietarios de cada informe",
+   "Usar el análisis de impacto en la vista de linaje",
+   "Eliminar el elemento y comprobar errores",
+   "Exportar el área a un archivo PBIX"
+  ],
+  "opts_en": [
+   "Email the owners of every report",
+   "Use impact analysis in the lineage view",
+   "Delete the item and check for errors",
+   "Export the workspace to a PBIX file"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El análisis de impacto lista los elementos y usuarios descendentes que dependen de un elemento.",
+  "exp_en": "Impact analysis lists downstream items and users that depend on an item."
+ },
+ {
+  "id": 319,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué operación de Git lleva sus cambios de un área de rama de característica a main?",
+  "q_en": "Which Git operation moves your changes from a feature branch workspace into main?",
+  "opts_es": [
+   "Exportar el elemento como plantilla",
+   "Crear una solicitud de extracción y combinar",
+   "Eliminar el área de la rama",
+   "Sincronizar el área con la capacidad"
+  ],
+  "opts_en": [
+   "Export the item as a template",
+   "Create a pull request and merge",
+   "Delete the branch workspace",
+   "Sync the workspace to the capacity"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El desarrollo por ramas usa solicitudes de extracción y combinaciones en el proveedor de Git y luego se actualiza el área.",
+  "exp_en": "Branch-based development uses pull requests and merges in the Git provider, then workspace update."
+ },
+ {
+  "id": 320,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué modo de almacenamiento permite que un modelo combine tablas Importar con tablas DirectQuery?",
+  "q_en": "Which storage mode lets one model combine Import tables with DirectQuery tables?",
+  "opts_es": [
+   "Modelo compuesto",
+   "Solo Direct Lake",
+   "Conexión dinámica",
+   "Solo importación"
+  ],
+  "opts_en": [
+   "Composite model",
+   "Direct Lake only",
+   "Live connection",
+   "Import only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los modelos compuestos mezclan modos de almacenamiento y pueden incluir varios orígenes.",
+  "exp_en": "Composite models mix storage modes and can include multiple sources."
+ },
+ {
+  "id": 321,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué función permite crear cálculos reutilizables de inteligencia de tiempo como YTD y año anterior para muchas medidas?",
+  "q_en": "Which feature lets you create reusable time-intelligence calculations such as YTD and prior year for many measures?",
+  "opts_es": [
+   "Marcadores",
+   "Parámetros de campo",
+   "Grupos de cálculo",
+   "Perspectivas"
+  ],
+  "opts_en": [
+   "Bookmarks",
+   "Field parameters",
+   "Calculation groups",
+   "Perspectives"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los grupos de cálculo aplican elementos de cálculo a cualquier medida y reducen DAX duplicado.",
+  "exp_en": "Calculation groups apply calculation items to any measure, reducing duplicated DAX."
+ },
+ {
+  "id": 322,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué función del modelo permite a los autores elegir qué medida o columna mostrar con una segmentación?",
+  "q_en": "Which model feature lets report authors choose which measure or column to show with a slicer?",
+  "opts_es": [
+   "Parámetros de campo",
+   "Roles",
+   "Jerarquías",
+   "Grupos de cálculo"
+  ],
+  "opts_en": [
+   "Field parameters",
+   "Roles",
+   "Hierarchies",
+   "Calculation groups"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los parámetros de campo cambian dinámicamente los campos de un objeto visual.",
+  "exp_en": "Field parameters switch fields in visuals dynamically."
+ },
+ {
+  "id": 323,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Cómo puede un modelo semántico restringir datos por usuario para que cada responsable vea solo su región?",
+  "q_en": "How can a semantic model restrict data by user so each manager sees only their region?",
+  "opts_es": [
+   "Un filtro de nivel de informe oculto a los usuarios",
+   "Áreas de trabajo separadas para cada responsable",
+   "Seguridad de nivel de fila con un filtro DAX que use USERPRINCIPALNAME()",
+   "Etiquetas de confidencialidad en cada objeto visual"
+  ],
+  "opts_en": [
+   "A report-level filter hidden from users",
+   "Separate workspaces for each manager",
+   "Row-level security with a DAX filter using USERPRINCIPALNAME()",
+   "Sensitivity labels on each visual"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "RLS dinámico asigna al usuario conectado a las filas con una tabla de seguridad o una función de identidad.",
+  "exp_en": "Dynamic RLS maps the signed-in user to rows using a security table or identity function."
+ },
+ {
+  "id": 324,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué función guarda en caché resultados de consultas de un modelo semántico para mejorar el rendimiento repetido?",
+  "q_en": "Which feature caches query results of a semantic model to improve repeated query performance?",
+  "opts_es": [
+   "Accesos directos",
+   "Almacenamiento en etapas de flujos de datos",
+   "Actualización automática de página",
+   "Caché de consultas"
+  ],
+  "opts_en": [
+   "Shortcuts",
+   "Dataflow staging",
+   "Automatic page refresh",
+   "Query caching"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La caché de consultas reutiliza resultados para la misma consulta y contexto de usuario.",
+  "exp_en": "Query caching reuses results for the same query and user context."
+ },
+ {
+  "id": 325,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué técnica acelera un modelo Direct Lake grande evitando el retorno a DirectQuery?",
+  "q_en": "Which technique makes a large Direct Lake model faster by avoiding DirectQuery fallback?",
+  "opts_es": [
+   "Convertir cada tabla en una vista",
+   "Usar tablas Delta con V-Order y evitar funciones no admitidas",
+   "Agregar más columnas calculadas",
+   "Deshabilitar las estadísticas de columnas"
+  ],
+  "opts_en": [
+   "Convert every table to a view",
+   "Use Delta tables with V-Order and avoid unsupported features",
+   "Add more calculated columns",
+   "Disable column statistics"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "V-Order y archivos de tamaño adecuado ayudan a Direct Lake; las vistas SQL o RLS del punto de conexión pueden provocar el retorno.",
+  "exp_en": "V-Order and well-sized files help Direct Lake; SQL views or RLS on the endpoint may trigger fallback."
+ },
+ {
+  "id": 326,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué acción reduce el coste de una medida DAX lenta con iteradores anidados?",
+  "q_en": "Which action reduces the cost of a slow DAX measure that uses nested iterators?",
+  "opts_es": [
+   "Agregar una segmentación a la página",
+   "Desactivar la fecha/hora automática",
+   "Aumentar el número de tablas calculadas",
+   "Reescribir con variables y funciones basadas en conjuntos"
+  ],
+  "opts_en": [
+   "Add a slicer to the page",
+   "Turn off auto date/time",
+   "Increase the number of calculated tables",
+   "Rewrite with variables and set-based functions"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Evitar expresiones repetidas e iteración fila a fila reduce el trabajo del motor de fórmulas.",
+  "exp_en": "Avoiding repeated expressions and row-by-row iteration reduces formula engine work."
+ },
+ {
+  "id": 327,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué tipo de elemento de Fabric admite mejor la transformación a gran escala con cuadernos PySpark?",
+  "q_en": "Which Fabric item type best supports large-scale data transformation with PySpark notebooks?",
+  "opts_es": [
+   "Lakehouse con cuadernos",
+   "Reflex de Data Activator",
+   "Panel en tiempo real",
+   "Informe paginado"
+  ],
+  "opts_en": [
+   "Lakehouse with notebooks",
+   "Data Activator reflex",
+   "Real-Time dashboard",
+   "Paginated report"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los cuadernos ejecutan código Spark sobre tablas Delta del lakehouse.",
+  "exp_en": "Notebooks run Spark code against lakehouse Delta tables."
+ },
+ {
+  "id": 328,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué elemento de Fabric permite ingerir datos de un origen sin escribir código y transformarlos con Power Query?",
+  "q_en": "Which Fabric item lets you ingest data from a source without writing code and optionally transform it with Power Query?",
+  "opts_es": [
+   "Dataflow Gen2",
+   "Cuaderno",
+   "Eventstream",
+   "Conjunto de consultas KQL"
+  ],
+  "opts_en": [
+   "Dataflow Gen2",
+   "Notebook",
+   "Eventstream",
+   "KQL queryset"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Dataflow Gen2 ofrece transformaciones de poco código con muchos conectores y destinos.",
+  "exp_en": "Dataflow Gen2 provides low-code transformations with many connectors and destinations."
+ },
+ {
+  "id": 329,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué actividad copia grandes conjuntos de datos entre orígenes a escala en una canalización de Fabric?",
+  "q_en": "Which activity copies large datasets between sources at scale in a Fabric pipeline?",
+  "opts_es": [
+   "Actividad Establecer variable",
+   "Actividad de cuaderno",
+   "Actividad de espera",
+   "Actividad de copia"
+  ],
+  "opts_en": [
+   "Set variable activity",
+   "Notebook activity",
+   "Wait activity",
+   "Copy activity"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La actividad de copia está optimizada para mover datos con alto rendimiento.",
+  "exp_en": "The Copy activity is optimized for high-throughput data movement."
+ },
+ {
+  "id": 330,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la gobernanza de áreas de trabajo de Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Fabric workspace governance, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los dominios permiten agrupar áreas de trabajo por área de negocio.",
+    "en": "Domains let you group workspaces by business area.",
+    "ans": true
+   },
+   {
+    "es": "Los lectores del área pueden editar elementos y publicar contenido nuevo.",
+    "en": "Workspace Viewers can edit items and publish new content.",
+    "ans": false
+   },
+   {
+    "es": "Los roles de acceso a datos de OneLake pueden limitar el acceso a carpetas concretas.",
+    "en": "OneLake data access roles can limit access to specific folders.",
+    "ans": true
+   },
+   {
+    "es": "Las etiquetas de confidencialidad pueden propagarse en sentido descendente por el linaje.",
+    "en": "Sensitivity labels can propagate downstream through lineage.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los lectores tienen solo lectura; no pueden editar ni publicar.",
+  "exp_en": "Viewers have read-only access; they cannot edit or publish."
+ },
+ {
+  "id": 331,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración del ciclo de vida de Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Fabric lifecycle management, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las canalizaciones de implementación promueven contenido entre las fases de Desarrollo, Prueba y Producción.",
+    "en": "Deployment pipelines promote content across Development, Test and Production stages.",
+    "ans": true
+   },
+   {
+    "es": "La integración con Git guarda las definiciones de los elementos como archivos en el repositorio.",
+    "en": "Git integration stores item definitions as files in the repository.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas de implementación solo pueden definirse a nivel de inquilino.",
+    "en": "Deployment rules can only be defined at the tenant level.",
+    "ans": false
+   },
+   {
+    "es": "El análisis de impacto muestra los elementos que dependen de uno modificado.",
+    "en": "Impact analysis shows items that depend on a changed item.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las reglas se definen por elemento y fase en una canalización.",
+  "exp_en": "Deployment rules are set per item and stage in a pipeline."
+ },
+ {
+  "id": 332,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de modelos semánticos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about semantic model design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los grupos de cálculo reducen medidas de inteligencia de tiempo duplicadas.",
+    "en": "Calculation groups reduce duplicated time-intelligence measures.",
+    "ans": true
+   },
+   {
+    "es": "Los modelos compuestos pueden combinar tablas Importar y DirectQuery.",
+    "en": "Composite models can combine Import and DirectQuery tables.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas de seguridad de nivel de fila se definen en los informes, no en el modelo.",
+    "en": "Row-level security rules are defined in Power BI reports, not in the model.",
+    "ans": false
+   },
+   {
+    "es": "Las perspectivas muestran a los usuarios subconjuntos de los objetos de un modelo.",
+    "en": "Perspectives show subsets of a model's objects to users.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los roles de RLS se definen en el modelo semántico y se aplican a los miembros.",
+  "exp_en": "RLS roles are defined on the semantic model and applied to members."
+ },
+ {
+  "id": 333,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el rendimiento de modelos semánticos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about semantic model performance, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Reducir la cardinalidad de columnas suele mejorar la compresión.",
+    "en": "Reducing column cardinality generally improves compression.",
+    "ans": true
+   },
+   {
+    "es": "DAX Studio puede mostrar tiempos del servidor y planes de consulta.",
+    "en": "DAX Studio can show server timings and query plans.",
+    "ans": true
+   },
+   {
+    "es": "Direct Lake siempre recurre a DirectQuery en cualquier escenario.",
+    "en": "Direct Lake always falls back to DirectQuery in every scenario.",
+    "ans": false
+   },
+   {
+    "es": "Las tablas de agregación pueden acelerar consultas sobre tablas de hechos enormes.",
+    "en": "Aggregation tables can speed up queries on huge fact tables.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El retorno solo ocurre al topar con funciones o límites no admitidos.",
+  "exp_en": "Fallback happens only when unsupported features or limits are hit."
+ },
+ {
+  "id": 334,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el rol del área de trabajo de Fabric para cada tarea.",
+  "q_en": "Select the Fabric workspace role for each task.",
+  "rows": [
+   {
+    "es": "Eliminar el área de trabajo",
+    "en": "Delete the workspace",
+    "opts_es": [
+     "Miembro",
+     "Lector",
+     "Colaborador",
+     "Administrador"
+    ],
+    "opts_en": [
+     "Member",
+     "Viewer",
+     "Contributor",
+     "Admin"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Agregar otros miembros y compartir elementos",
+    "en": "Add other members and share items",
+    "opts_es": [
+     "Miembro",
+     "Lector",
+     "Colaborador",
+     "Administrador"
+    ],
+    "opts_en": [
+     "Member",
+     "Viewer",
+     "Contributor",
+     "Admin"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Crear y editar elementos sin administrar el acceso",
+    "en": "Create and edit items without managing access",
+    "opts_es": [
+     "Miembro",
+     "Lector",
+     "Colaborador",
+     "Administrador"
+    ],
+    "opts_en": [
+     "Member",
+     "Viewer",
+     "Contributor",
+     "Admin"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Solo ver elementos",
+    "en": "View items only",
+    "opts_es": [
+     "Miembro",
+     "Lector",
+     "Colaborador",
+     "Administrador"
+    ],
+    "opts_en": [
+     "Member",
+     "Viewer",
+     "Contributor",
+     "Admin"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los roles aumentan sus permisos de Lector a Administrador.",
+  "exp_en": "Roles increase in permissions from Viewer to Admin."
+ },
+ {
+  "id": 335,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Seleccione la función del modelo para cada requisito.",
+  "q_en": "Select the model feature for each requirement.",
+  "rows": [
+   {
+    "es": "Mostrar a cada responsable solo su región",
+    "en": "Show each manager only their region",
+    "opts_es": [
+     "Tabla de agregación",
+     "Grupo de cálculo",
+     "Parámetro de campo",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Aggregation table",
+     "Calculation group",
+     "Field parameter",
+     "Row-level security"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Aplicar YTD a muchas medidas",
+    "en": "Apply YTD to many measures",
+    "opts_es": [
+     "Tabla de agregación",
+     "Grupo de cálculo",
+     "Parámetro de campo",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Aggregation table",
+     "Calculation group",
+     "Field parameter",
+     "Row-level security"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Dejar que los usuarios cambien la medida de un objeto visual",
+    "en": "Let users switch the measure in a visual",
+    "opts_es": [
+     "Tabla de agregación",
+     "Grupo de cálculo",
+     "Parámetro de campo",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Aggregation table",
+     "Calculation group",
+     "Field parameter",
+     "Row-level security"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Responder consultas comunes con datos resumidos",
+    "en": "Answer common queries from summarized data",
+    "opts_es": [
+     "Tabla de agregación",
+     "Grupo de cálculo",
+     "Parámetro de campo",
+     "Seguridad de nivel de fila"
+    ],
+    "opts_en": [
+     "Aggregation table",
+     "Calculation group",
+     "Field parameter",
+     "Row-level security"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Cada función aborda una necesidad de modelado distinta.",
+  "exp_en": "Each feature addresses a different modeling need."
+ },
+ {
+  "id": 336,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el elemento de Fabric para cada tarea de datos.",
+  "q_en": "Select the Fabric item for each data task.",
+  "rows": [
+   {
+    "es": "Transformación de poco código con Power Query",
+    "en": "Low-code transformation with Power Query",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Orquestar y programar varias actividades",
+    "en": "Orchestrate and schedule multiple activities",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Transformaciones personalizadas con PySpark",
+    "en": "Custom PySpark transformations",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Procesar eventos de streaming en tiempo real",
+    "en": "Process streaming events in real time",
+    "opts_es": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Canalización de datos",
+     "Cuaderno"
+    ],
+    "opts_en": [
+     "Dataflow Gen2",
+     "Eventstream",
+     "Data pipeline",
+     "Notebook"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Elija el elemento que encaje con el estilo de procesamiento.",
+  "exp_en": "Pick the item that matches the processing style."
+ },
+ {
+  "id": 337,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para cambiar automáticamente un origen de datos entre las fases de Prueba y Producción, defina ",
+  "pre_en": "To change a data source between Test and Production stages automatically, define ",
+  "post_es": " en la canalización de implementación.",
+  "post_en": " in the deployment pipeline.",
+  "opts_es": [
+   "reglas de implementación",
+   "ajustes de capacidad",
+   "dominios del inquilino",
+   "roles del área de trabajo"
+  ],
+  "opts_en": [
+   "deployment rules",
+   "capacity settings",
+   "tenant domains",
+   "workspace roles"
+  ],
+  "correct": 0,
+  "exp_es": "Las reglas de implementación sustituyen parámetros y orígenes de datos por fase.",
+  "exp_en": "Deployment rules override parameters and data sources per stage."
+ },
+ {
+  "id": 338,
+  "exam": "dp-600",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Para aplicar la misma lógica YTD a todas las medidas de un modelo, cree un ",
+  "pre_en": "To apply the same YTD logic to every measure in a model, create a ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "marcador",
+   "perspectiva",
+   "parámetro de campo",
+   "grupo de cálculo"
+  ],
+  "opts_en": [
+   "bookmark",
+   "perspective",
+   "field parameter",
+   "calculation group"
+  ],
+  "correct": 3,
+  "exp_es": "Un grupo de cálculo usa SELECTEDMEASURE() en sus elementos de cálculo.",
+  "exp_en": "A calculation group uses SELECTEDMEASURE() in calculation items."
  }
 ]
