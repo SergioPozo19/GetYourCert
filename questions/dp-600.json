@@ -10032,5 +10032,1562 @@
   "correct": 3,
   "exp_es": "Un grupo de cálculo usa SELECTEDMEASURE() en sus elementos de cálculo.",
   "exp_en": "A calculation group uses SELECTEDMEASURE() in calculation items."
+ },
+ {
+  "id": 339,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Una canalización de Fabric debe leer de una cuenta de Azure Data Lake Storage con el firewall habilitado, sin puerta de enlace. ¿Qué debe usar?",
+  "q_en": "A Fabric pipeline must read from an Azure Data Lake Storage account that has its firewall enabled, without a gateway. What should you use?",
+  "opts_es": [
+   "Una puerta de enlace personal",
+   "Una regla de implementación",
+   "Acceso anónimo a la cuenta de almacenamiento desde todas las redes",
+   "Identidad del área de trabajo con acceso de áreas de trabajo de confianza"
+  ],
+  "opts_en": [
+   "A personal gateway",
+   "A deployment rule",
+   "Anonymous access to the storage account from all networks",
+   "Workspace identity with trusted workspace access"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El acceso de áreas de trabajo de confianza usa una regla de instancia de recurso para que la identidad del área llegue al almacenamiento protegido por firewall.",
+  "exp_en": "Trusted workspace access uses a resource instance rule so the workspace identity can reach firewall-protected storage."
+ },
+ {
+  "id": 340,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué herramienta muestra el consumo de CU por elemento y operación para que los administradores encuentren qué sobrecarga una capacidad de Fabric?",
+  "q_en": "Which tool shows CU consumption by item and operation so admins can find what is overloading a Fabric capacity?",
+  "opts_es": [
+   "Catálogo de OneLake",
+   "Vista de linaje",
+   "Comparación de las fases de Prueba y Producción de una canalización",
+   "Aplicación Métricas de capacidad de Microsoft Fabric"
+  ],
+  "opts_en": [
+   "OneLake catalog",
+   "Lineage view",
+   "Deployment pipeline comparison of the Test and Production stages",
+   "Microsoft Fabric Capacity Metrics app"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La aplicación Métricas de capacidad informa del uso, la limitación y los elementos que más consumen.",
+  "exp_en": "The Capacity Metrics app reports utilization, throttling and the top consuming items."
+ },
+ {
+  "id": 341,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los cuadernos de Spark deben llegar a una Azure SQL Database que solo permite conexiones privadas. ¿Qué debe crear en el área de trabajo?",
+  "q_en": "Spark notebooks must reach an Azure SQL Database that only allows private connections. What should you create in the workspace?",
+  "opts_es": [
+   "Un acceso directo de OneLake",
+   "Un punto de conexión privado administrado",
+   "Un dominio",
+   "Un clúster de puerta de enlace de datos local con dos nodos"
+  ],
+  "opts_en": [
+   "A OneLake shortcut",
+   "A managed private endpoint",
+   "A domain",
+   "An on-premises data gateway cluster with two nodes"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los puntos de conexión privados administrados permiten a las cargas de Spark de Fabric conectarse de forma privada a orígenes de Azure.",
+  "exp_en": "Managed private endpoints let Fabric Spark workloads connect privately to Azure data sources."
+ },
+ {
+  "id": 342,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Dónde pueden ver los administradores de Fabric la cobertura de etiquetas de confidencialidad y la aprobación de los elementos con información de Microsoft Purview?",
+  "q_en": "Where can Fabric admins see sensitivity label coverage and endorsement across Fabric items using Microsoft Purview insights?",
+  "opts_es": [
+   "La lista del centro de supervisión de aplicaciones Spark y ejecuciones de canalizaciones",
+   "Configuración de la capacidad",
+   "Configuración del área > Integración con Git",
+   "Centro de Microsoft Purview en Fabric"
+  ],
+  "opts_en": [
+   "The Monitoring hub list of Spark applications and pipeline runs",
+   "Capacity settings",
+   "Workspace settings > Git integration",
+   "Microsoft Purview hub in Fabric"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El centro de Purview muestra informes de elementos etiquetados y aprobados y enlaza a soluciones de Purview.",
+  "exp_en": "The Purview hub shows reports on labeled and endorsed items and links to Purview solutions."
+ },
+ {
+  "id": 343,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los modelos semánticos que contengan números de tarjeta deben generar una alerta y una sugerencia de directiva para el propietario. ¿Qué debe configurar?",
+  "q_en": "Semantic models that contain credit card numbers must raise an alert and a policy tip for the owner. What should you configure?",
+  "opts_es": [
+   "Una regla de implementación",
+   "Una directiva DLP de Purview para Fabric y Power BI",
+   "Un Eventhouse de supervisión del área con una regla de alerta KQL",
+   "Seguridad de nivel de objeto"
+  ],
+  "opts_en": [
+   "A deployment rule",
+   "A Purview DLP policy for Fabric and Power BI",
+   "A workspace monitoring Eventhouse with a KQL alert rule",
+   "Object-level security"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "DLP para Fabric analiza los modelos semánticos en busca de tipos de información confidencial y muestra sugerencias y alertas.",
+  "exp_en": "DLP for Fabric scans semantic models for sensitive info types and shows policy tips and alerts."
+ },
+ {
+  "id": 344,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad y la administración de Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Fabric security and administration, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La identidad del área puede acceder a almacenamiento con firewall mediante acceso de confianza.",
+    "en": "Workspace identity can access firewall-enabled storage through trusted access.",
+    "ans": true
+   },
+   {
+    "es": "Spark usa puntos de conexión privados administrados para llegar a orígenes privados.",
+    "en": "Managed private endpoints are used by Spark to reach private data sources.",
+    "ans": true
+   },
+   {
+    "es": "La aplicación Métricas de capacidad cambia automáticamente el tamaño de la capacidad.",
+    "en": "The Capacity Metrics app changes the capacity size automatically.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La aplicación de métricas sirve para supervisar; el escalado lo hace el administrador de la capacidad o la configuración de escalado.",
+  "exp_en": "The Metrics app is for monitoring; scaling is done by the capacity admin or autoscale settings."
+ },
+ {
+  "id": 345,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Seleccione la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Encontrar qué elemento provocó ayer la limitación de la capacidad",
+    "en": "Find which item caused capacity throttling yesterday",
+    "opts_es": [
+     "Directiva DLP de Purview",
+     "Identidad del área de trabajo",
+     "Punto de conexión privado administrado",
+     "Aplicación Métricas de capacidad"
+    ],
+    "opts_en": [
+     "Purview DLP policy",
+     "Workspace identity",
+     "Managed private endpoint",
+     "Capacity Metrics app"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Avisar a los propietarios cuando un modelo semántico contenga números de pasaporte",
+    "en": "Warn owners when a semantic model contains passport numbers",
+    "opts_es": [
+     "Directiva DLP de Purview",
+     "Identidad del área de trabajo",
+     "Punto de conexión privado administrado",
+     "Aplicación Métricas de capacidad"
+    ],
+    "opts_en": [
+     "Purview DLP policy",
+     "Workspace identity",
+     "Managed private endpoint",
+     "Capacity Metrics app"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "La aplicación de métricas muestra el consumo; DLP detecta datos confidenciales en los modelos.",
+  "exp_en": "The Metrics app shows consumption; DLP detects sensitive data in models."
+ },
+ {
+  "id": 346,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Las cadenas de conexión y los identificadores de lakehouse deben cambiar por fase sin editar los elementos. ¿Qué elemento de Fabric guarda estos valores?",
+  "q_en": "Connection strings and lakehouse IDs must change per stage without editing items. Which Fabric item stores these values?",
+  "opts_es": [
+   "Entorno",
+   "Definición de trabajo de Spark con argumentos de línea de comandos",
+   "Biblioteca de variables",
+   "Eventstream"
+  ],
+  "opts_en": [
+   "Environment",
+   "Spark job definition with command-line arguments",
+   "Variable library",
+   "Eventstream"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las bibliotecas de variables contienen conjuntos de valores por fase que pueden usar canalizaciones, cuadernos y otros elementos.",
+  "exp_en": "Variable libraries hold value sets per stage that pipelines, notebooks and other items can reference."
+ },
+ {
+  "id": 347,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Implementa un informe y su modelo semántico juntos de Desarrollo a Prueba. ¿Qué modelo semántico usa el informe en Prueba?",
+  "q_en": "You deploy a report and its semantic model together from Dev to Test. Which semantic model does the report use in Test?",
+  "opts_es": [
+   "El modelo de Producción",
+   "Un nuevo modelo vacío creado durante la implementación sin datos",
+   "El modelo de Desarrollo",
+   "La copia del modelo en la fase de Prueba (enlace automático)"
+  ],
+  "opts_en": [
+   "The model in Production",
+   "A new empty model created during deployment with no data",
+   "The model in Dev",
+   "The copy of the model in the Test stage (autobinding)"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El enlace automático vuelve a conectar los elementos implementados con sus dependencias emparejadas en la fase de destino.",
+  "exp_en": "Autobinding reconnects deployed items to their paired dependencies in the target stage."
+ },
+ {
+  "id": 348,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Las implementaciones de elementos de Fabric deben ejecutarse desde canalizaciones de Azure DevOps con código. ¿Qué opción encaja?",
+  "q_en": "Deployments of Fabric items must run from Azure DevOps pipelines with code. Which option fits?",
+  "opts_es": [
+   "Exportación manual a PBIX",
+   "Las API REST de Fabric o la biblioteca de Python fabric-cicd",
+   "Una actualización programada de flujo de datos que copie elementos entre áreas",
+   "Vista de linaje"
+  ],
+  "opts_en": [
+   "Manual export to PBIX",
+   "Fabric REST APIs or the fabric-cicd Python library",
+   "A scheduled dataflow refresh that copies items between workspaces",
+   "Lineage view"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las API y fabric-cicd automatizan la sincronización con Git y las implementaciones desde herramientas CI/CD.",
+  "exp_en": "APIs and fabric-cicd automate Git sync and deployments from CI/CD tools."
+ },
+ {
+  "id": 349,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué formato de informe de un proyecto de Power BI guarda cada página y objeto visual como archivos JSON separados más fáciles de comparar?",
+  "q_en": "Which report format in a Power BI project saves each page and visual as separate JSON files that are easier to diff?",
+  "opts_es": [
+   "PBIDS",
+   "PBIT con parámetros para cada origen de datos",
+   "PBIX",
+   "PBIR"
+  ],
+  "opts_en": [
+   "PBIDS",
+   "PBIT with parameters for each data source",
+   "PBIX",
+   "PBIR"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "PBIR (formato de informe mejorado) divide la definición del informe en muchos archivos, lo que mejora el control de código fuente.",
+  "exp_en": "PBIR (enhanced report format) splits the report definition into many files, improving source control."
+ },
+ {
+  "id": 350,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Dos desarrolladores cambiaron el mismo cuaderno en el área y en la rama de Git. ¿Qué ocurre al actualizar el área de trabajo?",
+  "q_en": "Two developers changed the same notebook in the workspace and in the Git branch. What happens when you try to update the workspace?",
+  "opts_es": [
+   "Ambas versiones se combinan automáticamente línea a línea",
+   "El área se elimina y se vuelve a crear desde el repositorio",
+   "Se informa de un conflicto que debe resolverse antes de actualizar",
+   "Git siempre gana sin avisar"
+  ],
+  "opts_en": [
+   "Both versions are merged automatically line by line",
+   "The workspace is deleted and recreated from the repository",
+   "A conflict is reported and must be resolved before updating",
+   "Git always wins silently"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Fabric señala los conflictos; elige qué versión conservar o los resuelve en Git y luego sincroniza.",
+  "exp_en": "Fabric flags conflicts; you choose which version to keep or resolve in Git and then sync."
+ },
+ {
+  "id": 351,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración del ciclo de vida de Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Fabric lifecycle management, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las bibliotecas de variables pueden contener valores distintos para cada fase.",
+    "en": "Variable libraries can hold different values for each stage.",
+    "ans": true
+   },
+   {
+    "es": "El enlace automático conecta un informe implementado con el modelo de la misma fase de destino.",
+    "en": "Autobinding connects a deployed report to the model in the same target stage.",
+    "ans": true
+   },
+   {
+    "es": "Fabric siempre resuelve automáticamente los conflictos de Git.",
+    "en": "Git conflicts are always resolved automatically by Fabric.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los conflictos requieren una decisión del desarrollador.",
+  "exp_en": "Conflicts require a decision from the developer."
+ },
+ {
+  "id": 352,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la opción para cada requisito.",
+  "q_en": "Select the option for each requirement.",
+  "rows": [
+   {
+    "es": "Revisar cambios en una sola página de un informe en una solicitud de extracción",
+    "en": "Review changes to a single report page in a pull request",
+    "opts_es": [
+     "Biblioteca de variables",
+     "fabric-cicd",
+     "Formato PBIR",
+     "Enlace automático"
+    ],
+    "opts_en": [
+     "Variable library",
+     "fabric-cicd",
+     "PBIR format",
+     "Autobinding"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Implementar elementos desde una canalización de versión de Azure DevOps",
+    "en": "Deploy items from an Azure DevOps release pipeline",
+    "opts_es": [
+     "Biblioteca de variables",
+     "fabric-cicd",
+     "Formato PBIR",
+     "Enlace automático"
+    ],
+    "opts_en": [
+     "Variable library",
+     "fabric-cicd",
+     "PBIR format",
+     "Autobinding"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "PBIR divide las páginas en archivos; fabric-cicd automatiza las implementaciones desde código.",
+  "exp_en": "PBIR splits pages into files; fabric-cicd automates deployments from code."
+ },
+ {
+  "id": 353,
+  "exam": "dp-600",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Los valores específicos de cada fase, como el identificador de un lakehouse, se pueden guardar en una ",
+  "pre_en": "Stage-specific values such as a lakehouse ID can be stored in a Fabric ",
+  "post_es": " de Fabric.",
+  "post_en": " library.",
+  "opts_es": [
+   "biblioteca de accesos directos",
+   "biblioteca de Python",
+   "biblioteca de variables",
+   "biblioteca de informes"
+  ],
+  "opts_en": [
+   "shortcut",
+   "Python",
+   "variable",
+   "report"
+  ],
+  "correct": 2,
+  "exp_es": "Los elementos usan las bibliotecas de variables, que cambian con el conjunto de valores activo.",
+  "exp_en": "Variable libraries are referenced by items and switch with the active value set."
+ },
+ {
+  "id": 354,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Necesita una forma sencilla, sin canalización, de copiar tablas de Azure SQL a un lakehouse con copia incremental integrada. ¿Qué elemento de Fabric encaja?",
+  "q_en": "You need a simple, no-pipeline way to copy tables from Azure SQL into a lakehouse with built-in incremental copy. Which Fabric item fits?",
+  "opts_es": [
+   "Conjunto de consultas KQL",
+   "Definición de trabajo de Spark que ejecute un JAR personalizado",
+   "Trabajo de copia",
+   "Eventstream"
+  ],
+  "opts_en": [
+   "KQL queryset",
+   "Spark job definition running a custom JAR file",
+   "Copy job",
+   "Eventstream"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El trabajo de copia ofrece copia completa e incremental guiada sin crear una canalización.",
+  "exp_en": "Copy job offers guided full and incremental copy without building a pipeline."
+ },
+ {
+  "id": 355,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Antes de un bucle ForEach, una canalización debe leer una lista de nombres de tabla de una tabla de control. ¿Qué actividad encaja?",
+  "q_en": "Before a ForEach loop, a pipeline must read a list of table names from a control table. Which activity fits?",
+  "opts_es": [
+   "Cuaderno sin parámetros ni valor de retorno",
+   "Copiar datos",
+   "Búsqueda",
+   "Esperar"
+  ],
+  "opts_en": [
+   "Notebook with no parameters and no return value",
+   "Copy data",
+   "Lookup",
+   "Wait"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Búsqueda devuelve filas que actividades posteriores como ForEach pueden recorrer.",
+  "exp_en": "Lookup returns rows that later activities such as ForEach can iterate."
+ },
+ {
+  "id": 356,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una consulta de Dataflow Gen2 debe escribir en una tabla de lakehouse conservando las filas existentes y agregando las nuevas en cada ejecución. ¿Qué método de actualización debe elegir?",
+  "q_en": "A Dataflow Gen2 query must write to a lakehouse table and keep existing rows, adding the new ones each run. Which update method should you choose?",
+  "opts_es": [
+   "Reemplazar",
+   "Anexar",
+   "Sobrescribir esquema",
+   "Combinar por una columna clave con eliminaciones temporales"
+  ],
+  "opts_en": [
+   "Replace",
+   "Append",
+   "Overwrite schema",
+   "Merge on a key column with soft deletes enabled"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Anexar agrega filas al destino; Reemplazar sobrescribe la tabla en cada actualización.",
+  "exp_en": "Append adds rows to the destination; Replace overwrites the table on each refresh."
+ },
+ {
+  "id": 357,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Varios cuadernos necesitan las mismas bibliotecas de Python personalizadas y la misma configuración de Spark. ¿Qué debe crear?",
+  "q_en": "Several notebooks need the same custom Python libraries and Spark settings. What should you create?",
+  "opts_es": [
+   "Un área de trabajo distinta para cada cuaderno con su propia capacidad",
+   "Un acceso directo",
+   "Una biblioteca de variables",
+   "Un elemento de entorno asociado a los cuadernos"
+  ],
+  "opts_en": [
+   "A separate workspace for each notebook with its own capacity",
+   "A shortcut",
+   "A variable library",
+   "An environment item attached to the notebooks"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los entornos agrupan bibliotecas, propiedades de Spark y configuración de proceso para reutilizarlas.",
+  "exp_en": "Environments package libraries, Spark properties and compute settings for reuse."
+ },
+ {
+  "id": 358,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Los cuadernos interactivos tardan demasiado en iniciar una sesión de Spark. ¿Qué opción de Fabric ofrece un inicio de sesión casi inmediato con la configuración predeterminada?",
+  "q_en": "Interactive notebooks take too long to start a Spark session. Which Fabric option gives near-instant session start with default settings?",
+  "opts_es": [
+   "Direct Lake",
+   "Una canalización que precaliente el clúster cada hora con un trabajo ficticio",
+   "Grupos personalizados con nodos grandes",
+   "Grupos de inicio"
+  ],
+  "opts_en": [
+   "Direct Lake",
+   "A pipeline that warms up the cluster every hour with a dummy job",
+   "Custom pools with large nodes",
+   "Starter pools"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los grupos de inicio son clústeres precalentados; las bibliotecas o grupos personalizados agregan tiempo de inicio.",
+  "exp_en": "Starter pools are pre-warmed clusters; custom libraries or pools add startup time."
+ },
+ {
+  "id": 359,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Varios usuarios quieren compartir una sesión de Spark entre cuadernos para ahorrar capacidad y tiempo de inicio. ¿Qué característica encaja?",
+  "q_en": "Several users want to share one Spark session across notebooks to save capacity and startup time. Which feature fits?",
+  "opts_es": [
+   "Una definición de trabajo de Spark programada cada cinco minutos",
+   "Modo de alta simultaneidad",
+   "Solo grupos de inicio",
+   "Creación de reflejo"
+  ],
+  "opts_en": [
+   "A Spark job definition scheduled to run every five minutes",
+   "High concurrency mode",
+   "Starter pools only",
+   "Mirroring"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El modo de alta simultaneidad permite que varios cuadernos compartan una sesión manteniendo el aislamiento.",
+  "exp_en": "High concurrency mode lets multiple notebooks share a session while keeping isolation."
+ },
+ {
+  "id": 360,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un lakehouse debe organizar las tablas en grupos como sales y hr, como esquemas de base de datos. ¿Qué debe habilitar al crearlo?",
+  "q_en": "A lakehouse must organize tables into groups such as sales and hr, like database schemas. What should you enable when creating it?",
+  "opts_es": [
+   "Disponibilidad en OneLake para la base de datos KQL del área",
+   "Esquemas de lakehouse",
+   "Creación de reflejo",
+   "V-Order"
+  ],
+  "opts_en": [
+   "OneLake availability for the KQL database of the workspace",
+   "Lakehouse schemas",
+   "Mirroring",
+   "V-Order"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los lakehouses con esquemas admiten varios esquemas en la sección Tables.",
+  "exp_en": "Schema-enabled lakehouses support multiple schemas in the Tables section."
+ },
+ {
+  "id": 361,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la ingesta de datos en Fabric, indica si es verdadera o falsa.",
+  "q_en": "For each statement about ingesting data in Fabric, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Una actividad Búsqueda puede alimentar un bucle ForEach.",
+    "en": "A Lookup activity can feed a ForEach loop.",
+    "ans": true
+   },
+   {
+    "es": "Los grupos de inicio suelen arrancar más rápido que los personalizados.",
+    "en": "Starter pools usually start faster than custom pools.",
+    "ans": true
+   },
+   {
+    "es": "El trabajo de copia siempre exige crear antes una canalización.",
+    "en": "Copy job always requires building a data pipeline first.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El trabajo de copia es un elemento independiente.",
+  "exp_en": "Copy job is a standalone item."
+ },
+ {
+  "id": 362,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los entornos y sesiones de Spark, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Spark environments and sessions, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los entornos pueden contener bibliotecas personalizadas para cuadernos.",
+    "en": "Environments can hold custom libraries for notebooks.",
+    "ans": true
+   },
+   {
+    "es": "El modo de alta simultaneidad comparte una sesión entre cuadernos.",
+    "en": "High concurrency mode shares one session across notebooks.",
+    "ans": true
+   },
+   {
+    "es": "Los esquemas de lakehouse se pueden agregar a cualquier lakehouse tras crearlo.",
+    "en": "Lakehouse schemas can be added to any lakehouse after creation.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los esquemas se eligen al crear el lakehouse.",
+  "exp_en": "Schemas are chosen when the lakehouse is created."
+ },
+ {
+  "id": 363,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el elemento o ajuste para cada requisito.",
+  "q_en": "Select the item or setting for each requirement.",
+  "rows": [
+   {
+    "es": "Instalar el mismo paquete wheel para diez cuadernos",
+    "en": "Install the same wheel package for ten notebooks",
+    "opts_es": [
+     "Entorno",
+     "Actividad Búsqueda",
+     "Trabajo de copia",
+     "Grupo de inicio"
+    ],
+    "opts_en": [
+     "Environment",
+     "Lookup activity",
+     "Copy job",
+     "Starter pool"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Copiar tablas SQL a un lakehouse de forma incremental sin canalización",
+    "en": "Incrementally copy SQL tables to a lakehouse without a pipeline",
+    "opts_es": [
+     "Entorno",
+     "Actividad Búsqueda",
+     "Trabajo de copia",
+     "Grupo de inicio"
+    ],
+    "opts_en": [
+     "Environment",
+     "Lookup activity",
+     "Copy job",
+     "Starter pool"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Los entornos comparten bibliotecas; el trabajo de copia gestiona la copia incremental guiada.",
+  "exp_en": "Environments share libraries; Copy job handles guided incremental copy."
+ },
+ {
+  "id": 364,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el método de actualización de Dataflow Gen2 para cada requisito.",
+  "q_en": "Select the Dataflow Gen2 update method for each requirement.",
+  "rows": [
+   {
+    "es": "Recargar por completo cada día una lista pequeña de productos",
+    "en": "Reload a small product list completely each day",
+    "opts_es": [
+     "Reemplazar",
+     "Anexar"
+    ],
+    "opts_en": [
+     "Replace",
+     "Append"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Agregar al historial las nuevas filas de registro de cada día",
+    "en": "Add each day's new log rows to history",
+    "opts_es": [
+     "Reemplazar",
+     "Anexar"
+    ],
+    "opts_en": [
+     "Replace",
+     "Append"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Reemplazar sobrescribe; Anexar acumula.",
+  "exp_en": "Replace overwrites; Append accumulates."
+ },
+ {
+  "id": 365,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "En los cuadernos, las utilidades de sistema de archivos y credenciales como fs.ls las proporciona ",
+  "pre_en": "In notebooks, file system and credential helpers such as fs.ls are provided by ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "pyodbc",
+   "KQL",
+   "notebookutils",
+   "sempy.fabric"
+  ],
+  "opts_en": [
+   "pyodbc",
+   "KQL",
+   "notebookutils",
+   "sempy.fabric"
+  ],
+  "correct": 2,
+  "exp_es": "notebookutils (antes mssparkutils) ofrece utilidades de archivos, cuadernos y credenciales.",
+  "exp_en": "notebookutils (formerly mssparkutils) offers file, notebook and credential utilities."
+ },
+ {
+  "id": 366,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Para comprobar el tamaño de un archivo antes de copiarlo en una canalización, use la actividad Get ",
+  "pre_en": "To check a file's size before copying it in a pipeline, use the Get ",
+  "post_es": ".",
+  "post_en": " activity.",
+  "opts_es": [
+   "Schema",
+   "Notebook",
+   "Metadata",
+   "Variable"
+  ],
+  "opts_en": [
+   "Schema",
+   "Notebook",
+   "Metadata",
+   "Variable"
+  ],
+  "correct": 2,
+  "exp_es": "Get Metadata devuelve propiedades como el tamaño, la última modificación y los elementos secundarios.",
+  "exp_en": "Get Metadata returns properties such as size, last modified and child items."
+ },
+ {
+  "id": 367,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una carga errónea sobrescribió una tabla Delta. ¿Cómo puede consultar la tabla como estaba antes de la carga?",
+  "q_en": "A bad load overwrote a Delta table. How can you query the table as it was before the load?",
+  "opts_es": [
+   "Recrear la tabla solo con los metadatos del punto de conexión de análisis SQL",
+   "Viaje en el tiempo con VERSION AS OF o TIMESTAMP AS OF",
+   "Ejecutar VACUUM en la tabla",
+   "Ejecutar OPTIMIZE en la tabla"
+  ],
+  "opts_en": [
+   "Recreate the table from the SQL analytics endpoint metadata only",
+   "Time travel with VERSION AS OF or TIMESTAMP AS OF",
+   "VACUUM the table",
+   "OPTIMIZE the table"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Delta mantiene un registro de transacciones para leer o restaurar versiones anteriores, hasta que VACUUM elimina los archivos antiguos.",
+  "exp_en": "Delta keeps a transaction log so earlier versions can be read or restored, until VACUUM removes old files."
+ },
+ {
+  "id": 368,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los nuevos archivos de origen tienen una columna más y la anexión de Spark a una tabla Delta falla por discrepancia de esquema. ¿Qué opción permite agregar la columna?",
+  "q_en": "New source files contain an extra column, and the Spark append to a Delta table fails with a schema mismatch. What option allows the column to be added?",
+  "opts_es": [
+   "Deshabilitar V-Order en la tabla de destino antes de escribir",
+   "overwriteSchema con modo de anexión",
+   "VACUUM",
+   "mergeSchema establecido en true"
+  ],
+  "opts_en": [
+   "Disable V-Order for the target table before the write",
+   "overwriteSchema with append mode",
+   "VACUUM",
+   "mergeSchema set to true"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "mergeSchema habilita la evolución del esquema para que se agreguen columnas nuevas al escribir.",
+  "exp_en": "mergeSchema enables schema evolution so new columns are added during the write."
+ },
+ {
+  "id": 369,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una tabla Delta grande casi siempre se filtra por año. ¿Cómo debe escribirla para reducir los datos leídos?",
+  "q_en": "A large Delta table is almost always filtered by year. How should you write it to reduce the data read?",
+  "opts_es": [
+   "Particionar por año con partitionBy",
+   "Particionar por el identificador único de transacción para repartir los datos",
+   "Escribirla como CSV",
+   "Deshabilitar las estadísticas"
+  ],
+  "opts_en": [
+   "Partition by year with partitionBy",
+   "Partition by the unique transaction ID to spread the data",
+   "Write it as CSV",
+   "Disable statistics"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Particionar por una columna de filtro de baja cardinalidad permite la eliminación de particiones; las de alta cardinalidad crean demasiados archivos pequeños.",
+  "exp_en": "Partitioning on a low-cardinality filter column enables partition pruning; high-cardinality partitions create too many small files."
+ },
+ {
+  "id": 370,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué instrucción crea y rellena una tabla nueva del almacén a partir de una consulta en un solo paso?",
+  "q_en": "Which statement creates and fills a new warehouse table from a query in one step?",
+  "opts_es": [
+   "TRUNCATE TABLE",
+   "ALTER TABLE ... ADD COLUMN con un valor predeterminado",
+   "INSERT INTO ... VALUES",
+   "CREATE TABLE AS SELECT (CTAS)"
+  ],
+  "opts_en": [
+   "TRUNCATE TABLE",
+   "ALTER TABLE ... ADD COLUMN with a default value",
+   "INSERT INTO ... VALUES",
+   "CREATE TABLE AS SELECT (CTAS)"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "CTAS define la tabla a partir del resultado de la consulta y la carga en paralelo.",
+  "exp_en": "CTAS defines the table from the query result and loads it in parallel."
+ },
+ {
+  "id": 371,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una columna JSON contiene una matriz de líneas por pedido. ¿Qué función de PySpark convierte cada elemento de la matriz en una fila?",
+  "q_en": "A JSON column contains an array of order lines per order. Which PySpark function turns each array element into its own row?",
+  "opts_es": [
+   "explode",
+   "coalesce",
+   "dropDuplicates",
+   "withColumnRenamed para cada elemento de la matriz"
+  ],
+  "opts_en": [
+   "explode",
+   "coalesce",
+   "dropDuplicates",
+   "withColumnRenamed for each element of the array"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "explode crea una fila de salida por cada elemento de la matriz.",
+  "exp_en": "explode creates one output row per array element."
+ },
+ {
+  "id": 372,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En Spark se combina un DataFrame de hechos grande con uno de dimensión pequeño. ¿Qué técnica evita reorganizar la tabla grande?",
+  "q_en": "A large fact DataFrame is joined to a small dimension DataFrame in Spark. Which technique avoids shuffling the large table?",
+  "opts_es": [
+   "Reparticionar primero la tabla de hechos en una sola partición",
+   "Combinación cruzada",
+   "Combinación de difusión de la tabla pequeña",
+   "Combinación por ordenación y mezcla"
+  ],
+  "opts_en": [
+   "Repartitioning the fact table into a single partition first",
+   "Cross join",
+   "Broadcast join of the small table",
+   "Sort-merge join"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La difusión envía la tabla pequeña a cada ejecutor para que la grande no se mueva.",
+  "exp_en": "Broadcasting sends the small table to every executor so the large table stays in place."
+ },
+ {
+  "id": 373,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En PySpark, ¿cómo conserva solo la fila más reciente por cliente según una columna ModifiedDate?",
+  "q_en": "In PySpark, how do you keep only the latest row per customer based on a ModifiedDate column?",
+  "opts_es": [
+   "row_number() sobre una ventana particionada por cliente y ordenada por fecha desc, y filtrar = 1",
+   "distinct()",
+   "fillna()",
+   "groupBy(customer).count() seguido de una combinación con el DataFrame original"
+  ],
+  "opts_en": [
+   "row_number() over a Window partitioned by customer and ordered by date desc, then filter = 1",
+   "distinct()",
+   "fillna()",
+   "groupBy(customer).count() followed by a join to the original DataFrame"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una función de ventana clasifica las filas de cada cliente para conservar solo la más reciente.",
+  "exp_en": "A window function ranks rows within each customer so only the newest is kept."
+ },
+ {
+  "id": 374,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Un analista que no escribe código quiere limpiar un DataFrame de pandas y obtener el código Python generado. ¿Qué herramienta de cuaderno encaja?",
+  "q_en": "An analyst who doesn't write code wants to clean a pandas DataFrame and get the generated Python code. Which notebook tool fits?",
+  "opts_es": [
+   "Interfaz de Spark",
+   "Data Wrangler",
+   "Conjunto de consultas KQL",
+   "El editor de consultas del punto de conexión SQL con consultas visuales"
+  ],
+  "opts_en": [
+   "Spark UI",
+   "Data Wrangler",
+   "KQL queryset",
+   "The SQL analytics endpoint query editor with visual queries"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Data Wrangler ofrece una cuadrícula con operaciones que generan código pandas o PySpark.",
+  "exp_en": "Data Wrangler provides a grid UI with operations that generate pandas or PySpark code."
+ },
+ {
+  "id": 375,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué escritura de PySpark guarda un DataFrame como tabla Delta administrada en el lakehouse, reemplazando su contenido?",
+  "q_en": "Which PySpark write saves a DataFrame as a managed Delta table in the lakehouse, replacing its contents?",
+  "opts_es": [
+   "df.write.mode('append').csv('Files/sales')",
+   "df.createOrReplaceTempView('sales') seguido de almacenar la vista en caché",
+   "df.show()",
+   "df.write.mode('overwrite').format('delta').saveAsTable('sales')"
+  ],
+  "opts_en": [
+   "df.write.mode('append').csv('Files/sales')",
+   "df.createOrReplaceTempView('sales') followed by a cache of the view",
+   "df.show()",
+   "df.write.mode('overwrite').format('delta').saveAsTable('sales')"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "saveAsTable con Delta crea una tabla administrada; una vista temporal solo existe en la sesión.",
+  "exp_en": "saveAsTable with Delta creates a managed table; a temp view only lives in the session."
+ },
+ {
+  "id": 376,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las tablas Delta, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Delta tables, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El viaje en el tiempo puede leer una versión anterior de una tabla.",
+    "en": "Time travel can read an earlier version of a table.",
+    "ans": true
+   },
+   {
+    "es": "mergeSchema permite que una escritura agregue columnas nuevas.",
+    "en": "mergeSchema lets a write add new columns.",
+    "ans": true
+   },
+   {
+    "es": "Particionar por un identificador único es buena práctica en tablas grandes.",
+    "en": "Partitioning by a unique ID is a good practice for large tables.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las claves de partición de alta cardinalidad crean demasiados archivos pequeños.",
+  "exp_en": "High-cardinality partition keys create too many small files."
+ },
+ {
+  "id": 377,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las transformaciones de Spark, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Spark transformations, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "explode convierte elementos de una matriz en filas.",
+    "en": "explode turns array elements into rows.",
+    "ans": true
+   },
+   {
+    "es": "Una combinación de difusión envía la tabla grande a cada ejecutor.",
+    "en": "A broadcast join sends the large table to every executor.",
+    "ans": false
+   },
+   {
+    "es": "Data Wrangler puede generar código pandas.",
+    "en": "Data Wrangler can generate pandas code.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las combinaciones de difusión envían la tabla pequeña.",
+  "exp_en": "Broadcast joins send the small table."
+ },
+ {
+  "id": 378,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la técnica para cada requisito.",
+  "q_en": "Select the technique for each requirement.",
+  "rows": [
+   {
+    "es": "Recuperar la versión de ayer de una tabla Delta",
+    "en": "Recover yesterday's version of a Delta table",
+    "opts_es": [
+     "mergeSchema",
+     "Combinación de difusión",
+     "CTAS",
+     "Viaje en el tiempo"
+    ],
+    "opts_en": [
+     "mergeSchema",
+     "Broadcast join",
+     "CTAS",
+     "Time travel"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Crear una tabla resumen del almacén a partir de un SELECT",
+    "en": "Create a warehouse summary table from a SELECT",
+    "opts_es": [
+     "mergeSchema",
+     "Combinación de difusión",
+     "CTAS",
+     "Viaje en el tiempo"
+    ],
+    "opts_en": [
+     "mergeSchema",
+     "Broadcast join",
+     "CTAS",
+     "Time travel"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "El viaje en el tiempo lee versiones anteriores; CTAS crea una tabla a partir de una consulta.",
+  "exp_en": "Time travel reads earlier versions; CTAS builds a table from a query."
+ },
+ {
+  "id": 379,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la función de PySpark para cada requisito.",
+  "q_en": "Select the PySpark function for each requirement.",
+  "rows": [
+   {
+    "es": "Conservar el registro más reciente por producto",
+    "en": "Keep the newest record per product",
+    "opts_es": [
+     "fillna",
+     "cast",
+     "explode",
+     "row_number sobre una ventana"
+    ],
+    "opts_en": [
+     "fillna",
+     "cast",
+     "explode",
+     "row_number over a Window"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Convertir una lista de etiquetas en una fila por etiqueta",
+    "en": "Turn a list of tags into one row per tag",
+    "opts_es": [
+     "fillna",
+     "cast",
+     "explode",
+     "row_number sobre una ventana"
+    ],
+    "opts_en": [
+     "fillna",
+     "cast",
+     "explode",
+     "row_number over a Window"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "La clasificación con ventana conserva la fila más reciente; explode aplana matrices.",
+  "exp_en": "Window ranking keeps the latest row; explode flattens arrays."
+ },
+ {
+  "id": 380,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para leer una tabla Delta tal como estaba en un momento anterior, use ",
+  "pre_en": "To read a Delta table as it was at an earlier point, use ",
+  "post_es": " AS OF.",
+  "post_en": " AS OF.",
+  "opts_es": [
+   "PARTITION",
+   "CLUSTER",
+   "SCHEMA",
+   "TIMESTAMP"
+  ],
+  "opts_en": [
+   "PARTITION",
+   "CLUSTER",
+   "SCHEMA",
+   "TIMESTAMP"
+  ],
+  "correct": 3,
+  "exp_es": "TIMESTAMP AS OF y VERSION AS OF consultan instantáneas históricas.",
+  "exp_en": "TIMESTAMP AS OF and VERSION AS OF query historical snapshots."
+ },
+ {
+  "id": 381,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "En Dataflow Gen2, los datos se cargan primero en un lakehouse de ",
+  "pre_en": "In Dataflow Gen2, data is first loaded into a ",
+  "post_es": " para escalar las transformaciones antes del destino.",
+  "post_en": " lakehouse to scale transformations before the destination.",
+  "opts_es": [
+   "acceso directo",
+   "reflejo",
+   "almacenamiento provisional",
+   "archivo"
+  ],
+  "opts_en": [
+   "shortcut",
+   "mirrored",
+   "staging",
+   "archive"
+  ],
+  "correct": 2,
+  "exp_es": "El almacenamiento provisional usa el proceso de Fabric para transformaciones pesadas; se puede desactivar en consultas pequeñas.",
+  "exp_en": "Staging uses Fabric compute for heavy transformations; it can be disabled for small queries."
+ },
+ {
+  "id": 382,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué operador KQL crea una serie de valores por intervalo de tiempo, rellenando los intervalos vacíos, para el análisis de series temporales?",
+  "q_en": "Which KQL operator creates a series of values per time bin, filling missing bins, for time series analysis?",
+  "opts_es": [
+   "project-away de la columna de marca de tiempo",
+   "summarize count()",
+   "take",
+   "make-series"
+  ],
+  "opts_en": [
+   "project-away of the timestamp column",
+   "summarize count()",
+   "take",
+   "make-series"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "make-series devuelve matrices por intervalo con un valor predeterminado para los vacíos, listas para funciones de series.",
+  "exp_en": "make-series returns arrays per bin with a default for empty bins, ready for series functions."
+ },
+ {
+  "id": 383,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué instrucción KQL define una variable o subconsulta reutilizable dentro de una consulta?",
+  "q_en": "Which KQL statement defines a reusable variable or sub-query within a query?",
+  "opts_es": [
+   "let",
+   "render con una consulta con nombre como argumento",
+   "where",
+   "extend"
+  ],
+  "opts_en": [
+   "let",
+   "render with a named query as argument",
+   "where",
+   "extend"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "let asocia un nombre a un escalar, una expresión de tabla o una función para usarlo después en la consulta.",
+  "exp_en": "let binds a name to a scalar, table expression or function for later use in the query."
+ },
+ {
+  "id": 384,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una consulta de panel agrega miles de millones de eventos por hora y es lenta. ¿Qué característica de Eventhouse mantiene la agregación actualizada en segundo plano?",
+  "q_en": "A dashboard query aggregates billions of events per hour and is slow. Which Eventhouse feature keeps the aggregation up to date in the background?",
+  "opts_es": [
+   "Vista materializada",
+   "Acceso directo de OneLake a una tabla de lakehouse con los mismos datos",
+   "Función almacenada",
+   "Solo la caché de resultados de consultas"
+  ],
+  "opts_en": [
+   "Materialized view",
+   "OneLake shortcut to a lakehouse table with the same data",
+   "Stored function",
+   "Query result cache only"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las vistas materializadas precalculan agregaciones de forma incremental al llegar los datos.",
+  "exp_en": "Materialized views precompute aggregations incrementally as data arrives."
+ },
+ {
+  "id": 385,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los eventos JSON sin procesar llegan a una tabla KQL y deben analizarse automáticamente en una tabla limpia al ingerirse. ¿Qué debe configurar?",
+  "q_en": "Raw JSON events land in a KQL table and must be parsed automatically into a clean table on ingestion. What should you configure?",
+  "opts_es": [
+   "Un acceso directo",
+   "Una directiva de actualización",
+   "Una directiva de retención",
+   "Una canalización programada que copie la tabla cada hora"
+  ],
+  "opts_en": [
+   "A shortcut",
+   "An update policy",
+   "A retention policy",
+   "A scheduled pipeline that copies the table every hour"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las directivas de actualización ejecutan una función sobre los datos recién ingeridos y escriben el resultado en una tabla de destino.",
+  "exp_en": "Update policies run a function on newly ingested data and write the result to a target table."
+ },
+ {
+  "id": 386,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué característica del almacén muestra la duración histórica de las consultas y las consultas más frecuentes para optimizar el rendimiento?",
+  "q_en": "Which warehouse feature shows historical query durations and frequently run queries for performance tuning?",
+  "opts_es": [
+   "Catálogo de OneLake",
+   "Aplicación de métricas de capacidad filtrada a una tabla del almacén",
+   "Vistas de información de consultas",
+   "Vista de linaje"
+  ],
+  "opts_en": [
+   "OneLake catalog",
+   "Capacity Metrics app filtered to one warehouse table",
+   "Query insights views",
+   "Lineage view"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El esquema queryinsights expone el historial de solicitudes y las consultas largas y frecuentes.",
+  "exp_en": "The queryinsights schema exposes request history, long-running and frequently run queries."
+ },
+ {
+  "id": 387,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Un científico de datos quiere evaluar medidas DAX de un modelo semántico dentro de un cuaderno de Fabric. ¿Qué biblioteca encaja?",
+  "q_en": "A data scientist wants to evaluate DAX measures from a semantic model inside a Fabric notebook. Which library fits?",
+  "opts_es": [
+   "pyodbc",
+   "Vínculo semántico (sempy)",
+   "El complemento Python de KQL que se ejecuta en Eventhouse",
+   "Matplotlib"
+  ],
+  "opts_en": [
+   "pyodbc",
+   "Semantic link (sempy)",
+   "The KQL Python plugin running in the Eventhouse",
+   "Matplotlib"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El vínculo semántico lee tablas y evalúa medidas de modelos semánticos desde cuadernos.",
+  "exp_en": "Semantic link reads tables and evaluates measures of semantic models from notebooks."
+ },
+ {
+  "id": 388,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "El personal de operaciones necesita iconos que se actualicen solos sobre datos KQL con parámetros, creados sin Power BI. ¿Qué elemento de Fabric encaja?",
+  "q_en": "Operations staff need auto-refreshing tiles over KQL data with parameters, built without Power BI. Which Fabric item fits?",
+  "opts_es": [
+   "Panel en tiempo real",
+   "Cuaderno",
+   "Informe paginado",
+   "Dataflow Gen2 que escriba en un Excel de OneLake cada minuto"
+  ],
+  "opts_en": [
+   "Real-Time Dashboard",
+   "Notebook",
+   "Paginated report",
+   "Dataflow Gen2 writing to an Excel file in OneLake every minute"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los paneles en tiempo real ejecutan consultas KQL por icono con parámetros y actualización automática.",
+  "exp_en": "Real-Time Dashboards run KQL queries per tile with parameters and auto refresh."
+ },
+ {
+  "id": 389,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las consultas con KQL y SQL, indica si es verdadera o falsa.",
+  "q_en": "For each statement about querying with KQL and SQL, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "make-series rellena con un valor predeterminado los intervalos vacíos.",
+    "en": "make-series fills empty time bins with a default value.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de actualización transforman los datos al ingerirlos.",
+    "en": "Update policies transform data at ingestion time.",
+    "ans": true
+   },
+   {
+    "es": "La información de consultas solo está disponible para bases KQL.",
+    "en": "Query insights is only available for KQL databases.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La información de consultas es una característica del almacén de Fabric y del punto de conexión SQL.",
+  "exp_en": "Query insights is a feature of the Fabric warehouse and SQL analytics endpoint."
+ },
+ {
+  "id": 390,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Seleccione la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Analizar eventos sin procesar en una tabla limpia según llegan",
+    "en": "Parse raw events into a clean table as they arrive",
+    "opts_es": [
+     "Directiva de actualización",
+     "Vínculo semántico",
+     "Panel en tiempo real",
+     "Vista materializada"
+    ],
+    "opts_en": [
+     "Update policy",
+     "Semantic link",
+     "Real-Time Dashboard",
+     "Materialized view"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Usar medidas del modelo en un DataFrame de pandas",
+    "en": "Use model measures in a pandas DataFrame",
+    "opts_es": [
+     "Directiva de actualización",
+     "Vínculo semántico",
+     "Panel en tiempo real",
+     "Vista materializada"
+    ],
+    "opts_en": [
+     "Update policy",
+     "Semantic link",
+     "Real-Time Dashboard",
+     "Materialized view"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las directivas de actualización transforman al ingerir; el vínculo semántico expone los modelos a Python.",
+  "exp_en": "Update policies transform on ingestion; semantic link exposes models to Python."
+ },
+ {
+  "id": 391,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "En KQL, asigna un nombre a una subconsulta para reutilizarla con la instrucción ",
+  "pre_en": "In KQL, assign a name to a sub-query for reuse with the ",
+  "post_es": ".",
+  "post_en": " statement.",
+  "opts_es": [
+   "project",
+   "let",
+   "render",
+   "take"
+  ],
+  "opts_en": [
+   "project",
+   "let",
+   "render",
+   "take"
+  ],
+  "correct": 1,
+  "exp_es": "Las instrucciones let deben terminar en punto y coma antes de la consulta principal.",
+  "exp_en": "let statements must end with a semicolon before the main query."
+ },
+ {
+  "id": 392,
+  "exam": "dp-600",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Las consultas del almacén frecuentes y de larga duración se encuentran en el esquema ",
+  "pre_en": "Frequently run and long-running warehouse queries can be found in the ",
+  "post_es": ".",
+  "post_en": " schema.",
+  "opts_es": [
+   "INFORMATION_SCHEMA",
+   "sys",
+   "queryinsights",
+   "dbo"
+  ],
+  "opts_en": [
+   "INFORMATION_SCHEMA",
+   "sys",
+   "queryinsights",
+   "dbo"
+  ],
+  "correct": 2,
+  "exp_es": "Las vistas de queryinsights como exec_requests_history ayudan a optimizar.",
+  "exp_en": "queryinsights views such as exec_requests_history support tuning."
  }
 ]
