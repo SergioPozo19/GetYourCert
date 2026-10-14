@@ -9636,14 +9636,14 @@
   "q_en": "You want to estimate Cowork costs before enabling it for 500 users. What should you use?",
   "opts_es": [
    "El estimador de costes de Cowork",
-   "El informe de preparación de Copilot",
    "La prueba de conectividad de red",
+   "El informe de preparación de Copilot",
    "El panel de Estado del servicio"
   ],
   "opts_en": [
    "The Cowork cost estimator",
-   "The Copilot readiness report",
    "The network connectivity test",
+   "The Copilot readiness report",
    "The Service health dashboard"
   ],
   "correct": [
@@ -9651,5 +9651,2070 @@
   ],
   "exp_es": "Microsoft ofrece un estimador de costes de Cowork para modelar el consumo antes del despliegue; después el uso real se sigue en la administración de costes y los informes.",
   "exp_en": "Microsoft provides a Cowork cost estimator to model consumption before rollout; actual usage is then tracked in cost management and usage reports."
+ },
+ {
+  "id": 306,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Debe quitar el dominio personalizado fabrikam.com del inquilino, pero la eliminación falla. ¿Cuál es la causa más probable?",
+  "q_en": "You need to remove the custom domain fabrikam.com from the tenant, but the removal fails. What is the most likely cause?",
+  "opts_es": [
+   "Usuarios, grupos o aplicaciones aún usan el dominio en sus direcciones",
+   "El tiempo de espera de sesión inactiva está activado",
+   "El inquilino tiene menos de 25 usuarios con Microsoft 365 E3",
+   "El dominio tiene un registro MX"
+  ],
+  "opts_en": [
+   "Users, groups or apps still use the domain in their addresses",
+   "Idle session timeout is on",
+   "The tenant has fewer than 25 users assigned to Microsoft 365 E3",
+   "The domain has an MX record"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Antes de quitar un dominio, mueva a otro dominio todos los UPN, direcciones y alias que lo usan.",
+  "exp_en": "Before removing a domain, move every UPN, email address and alias that uses it to another domain."
+ },
+ {
+  "id": 307,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué registro DNS permite a los clientes de Outlook encontrar automáticamente la configuración de Exchange Online para un dominio personalizado?",
+  "q_en": "Which DNS record lets Outlook clients find the Exchange Online settings for a custom domain automatically?",
+  "opts_es": [
+   "CNAME para autodiscover",
+   "MX que apunta al servidor de correo local de la empresa",
+   "SRV para SIP",
+   "TXT para SPF"
+  ],
+  "opts_en": [
+   "CNAME for autodiscover",
+   "MX that points to the on-premises mail server of the company",
+   "SRV for SIP",
+   "TXT for SPF"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El CNAME autodiscover apunta a autodiscover.outlook.com para que los clientes se configuren solos.",
+  "exp_en": "The autodiscover CNAME points to autodiscover.outlook.com so clients configure themselves."
+ },
+ {
+  "id": 308,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un empleado de finanzas debe administrar suscripciones y facturas, pero no usuarios ni configuraciones. ¿Qué rol sigue el mínimo privilegio?",
+  "q_en": "A finance employee must manage subscriptions and invoices but not users or settings. Which role follows least privilege?",
+  "opts_es": [
+   "Administrador global",
+   "Administrador de usuarios con acceso a las páginas de facturación",
+   "Administrador de licencias",
+   "Administrador de facturación"
+  ],
+  "opts_en": [
+   "Global Administrator",
+   "User Administrator with access to the billing pages",
+   "License Administrator",
+   "Billing Administrator"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El administrador de facturación gestiona compras, suscripciones y facturas; el administrador de licencias solo asigna licencias.",
+  "exp_en": "Billing Administrator handles purchases, subscriptions and invoices; License Administrator only assigns licenses."
+ },
+ {
+  "id": 309,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un empleado debe asignar y quitar licencias de usuarios sin poder crear usuarios ni restablecer contraseñas. ¿Qué rol debe asignar?",
+  "q_en": "An employee must assign and remove licenses for users without being able to create users or reset passwords. Which role should you assign?",
+  "opts_es": [
+   "Administrador de licencias",
+   "Lector global",
+   "Administrador del departamento de soporte con permisos de licencias",
+   "Administrador de facturación"
+  ],
+  "opts_en": [
+   "License Administrator",
+   "Global Reader",
+   "Helpdesk Administrator with license permissions",
+   "Billing Administrator"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El administrador de licencias puede asignar, quitar y actualizar licencias y la ubicación de uso.",
+  "exp_en": "License Administrator can assign, remove and update license assignments and usage location."
+ },
+ {
+  "id": 310,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "La asignación de una licencia falla con el error de que falta la ubicación de uso. ¿Qué debe hacer?",
+  "q_en": "A license assignment fails with the error that the usage location is missing. What should you do?",
+  "opts_es": [
+   "Agregar un dominio personalizado",
+   "Activar la versión dirigida para el usuario y todos los miembros del grupo",
+   "Establecer la ubicación de uso del usuario y luego asignar la licencia",
+   "Restablecer la contraseña del usuario"
+  ],
+  "opts_en": [
+   "Add a custom domain",
+   "Turn on targeted release for the user and every member of the group",
+   "Set the user's usage location, then assign the license",
+   "Reset the user's password"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La ubicación de uso es obligatoria porque la disponibilidad de los servicios varía por país.",
+  "exp_en": "Usage location is required because service availability varies by country."
+ },
+ {
+  "id": 311,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Las publicaciones del Centro de mensajes deben llegar al equipo que administra SharePoint sin que todos revisen el centro de administración. ¿Qué debe configurar?",
+  "q_en": "Message center posts should reach the team that manages SharePoint without everyone checking the admin center. What should you configure?",
+  "opts_es": [
+   "Preferencias de correo del Centro de mensajes o sincronización con Planner",
+   "Una regla de flujo de correo que copie todos los correos de administración a SharePoint",
+   "Tiempo de espera de sesión inactiva",
+   "Una directiva DLP"
+  ],
+  "opts_en": [
+   "Message center email preferences or a Planner sync",
+   "A mail flow rule that copies all admin emails to SharePoint",
+   "Idle session timeout",
+   "A DLP policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El Centro de mensajes puede enviar resúmenes filtrados por servicio y sincronizar publicaciones con tareas de Planner.",
+  "exp_en": "Message center can send digests filtered by service and sync posts to Planner tasks."
+ },
+ {
+  "id": 312,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Con Microsoft 365 Backup, ¿cómo puede restaurar un solo correo eliminado sin revertir todo el buzón?",
+  "q_en": "With Microsoft 365 Backup, how can you restore a single deleted email without rolling back the whole mailbox?",
+  "opts_es": [
+   "Recrear el buzón desde una exportación PST del mes anterior",
+   "Usar la restauración granular por elemento de Exchange",
+   "Usar la papelera de SharePoint",
+   "Restaurar todo el inquilino"
+  ],
+  "opts_en": [
+   "Recreate the mailbox from a PST export of the previous month",
+   "Use granular item-level restore for Exchange",
+   "Use the SharePoint recycle bin",
+   "Restore the full tenant"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las restauraciones de Exchange en Microsoft 365 Backup admiten granularidad por elemento, mientras que SharePoint y OneDrive restauran a un momento dado.",
+  "exp_en": "Exchange restores in Microsoft 365 Backup support item-level granularity, while SharePoint and OneDrive restore to a point in time."
+ },
+ {
+  "id": 313,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración del inquilino de Microsoft 365, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft 365 tenant administration, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "No se puede quitar un dominio mientras los usuarios lo usan.",
+    "en": "A domain can't be removed while users still use it.",
+    "ans": true
+   },
+   {
+    "es": "Los administradores de licencias pueden crear cuentas de usuario.",
+    "en": "License Administrators can create new user accounts.",
+    "ans": false
+   },
+   {
+    "es": "Las licencias requieren una ubicación de uso en el usuario.",
+    "en": "Licenses require a usage location on the user.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los administradores de licencias solo administran asignaciones de licencias y la ubicación de uso.",
+  "exp_en": "License Administrators only manage license assignments and usage location."
+ },
+ {
+  "id": 314,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Seleccione el rol con menos privilegios para cada tarea.",
+  "q_en": "Select the least-privileged role for each task.",
+  "rows": [
+   {
+    "es": "Abrir una solicitud de soporte con Microsoft y consultar el estado del servicio",
+    "en": "Open a support request with Microsoft and read service health",
+    "opts_es": [
+     "Administrador de facturación",
+     "Administrador de licencias",
+     "Administrador global",
+     "Administrador de soporte técnico del servicio"
+    ],
+    "opts_en": [
+     "Billing Administrator",
+     "License Administrator",
+     "Global Administrator",
+     "Service Support Administrator"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Descargar facturas y comprar más suscripciones",
+    "en": "Download invoices and buy more subscriptions",
+    "opts_es": [
+     "Administrador de facturación",
+     "Administrador de licencias",
+     "Administrador global",
+     "Administrador de soporte técnico del servicio"
+    ],
+    "opts_en": [
+     "Billing Administrator",
+     "License Administrator",
+     "Global Administrator",
+     "Service Support Administrator"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "El administrador de soporte técnico del servicio gestiona incidencias de soporte y el estado del servicio; la facturación corresponde al administrador de facturación.",
+  "exp_en": "Service Support Administrator handles support tickets and service health; billing tasks belong to Billing Administrator."
+ },
+ {
+  "id": 315,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Los correos a destinatarios externos con la palabra 'Confidencial' en el asunto deben copiarse al buzón de cumplimiento. ¿Qué debe crear?",
+  "q_en": "Emails to external recipients that contain the word 'Confidential' in the subject must be copied to the compliance mailbox. What should you create?",
+  "opts_es": [
+   "Un buzón compartido",
+   "Una etiqueta de retención",
+   "Una directiva antispam de entrada que ponga en cuarentena el correo externo",
+   "Una regla de flujo de correo (transporte)"
+  ],
+  "opts_en": [
+   "A shared mailbox",
+   "A retention label",
+   "An anti-spam inbound policy that quarantines external email",
+   "A mail flow (transport) rule"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las reglas de flujo de correo inspeccionan los mensajes en tránsito y pueden agregar destinatarios, redirigirlos o bloquearlos.",
+  "exp_en": "Mail flow rules inspect messages in transit and can add recipients, redirect or block them."
+ },
+ {
+  "id": 316,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Los usuarios no deben reenviar automáticamente su correo a direcciones externas. ¿Dónde se controla mejor?",
+  "q_en": "Users must not automatically forward their email to external addresses. Where is this best controlled?",
+  "opts_es": [
+   "Directiva de mensajería de Teams",
+   "El ajuste de reenvío automático de la directiva de filtro de spam saliente",
+   "El permiso Enviar en nombre de del buzón de cada usuario",
+   "Tiempo de espera de sesión inactiva"
+  ],
+  "opts_en": [
+   "Teams messaging policy",
+   "The outbound spam filter policy's automatic forwarding setting",
+   "The mailbox's Send on behalf permission for each user",
+   "Idle session timeout"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La directiva de spam saliente puede desactivar el reenvío externo automático para toda la organización o usuarios concretos.",
+  "exp_en": "The outbound spam policy can turn off automatic external forwarding for the whole organization or specific users."
+ },
+ {
+  "id": 317,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Un equipo solo debe poder instalar aplicaciones de Teams aprobadas por TI, mientras los demás mantienen el catálogo completo. ¿Qué debe configurar?",
+  "q_en": "A team should only be able to install Teams apps approved by IT, while other users keep the full app catalog. What should you configure?",
+  "opts_es": [
+   "Una directiva de reuniones",
+   "Una directiva de configuración de aplicaciones",
+   "Una directiva de permisos de aplicaciones o disponibilidad por aplicación asignada a esos usuarios",
+   "Ajustes de aplicaciones de toda la organización que bloqueen todas las de terceros"
+  ],
+  "opts_en": [
+   "A meeting policy",
+   "An app setup policy",
+   "An app permission policy or app-centric availability assigned to those users",
+   "Org-wide app settings that block all third-party apps"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las directivas de permisos (o la administración por aplicación) controlan qué aplicaciones pueden usar; las de configuración controlan el anclaje y la instalación.",
+  "exp_en": "Permission policies (or app-centric management) control which apps users can use; setup policies control pinning and installation."
+ },
+ {
+  "id": 318,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "La aplicación Planner aprobada debe anclarse en la barra izquierda de Teams para todos los trabajadores de primera línea. ¿Qué directiva debe usar?",
+  "q_en": "The approved Planner app must be pinned to the left rail of Teams for all frontline workers. Which policy should you use?",
+  "opts_es": [
+   "Directiva de permisos de aplicaciones",
+   "Directiva de mensajería con anclaje de aplicaciones en chats y canales",
+   "Directiva de actualización de Teams",
+   "Directiva de configuración de aplicaciones"
+  ],
+  "opts_en": [
+   "App permission policy",
+   "Messaging policy with app pinning for chats and channels",
+   "Teams update policy",
+   "App setup policy"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las directivas de configuración de aplicaciones anclan e instalan aplicaciones para los usuarios asignados.",
+  "exp_en": "App setup policies pin and install apps for assigned users."
+ },
+ {
+  "id": 319,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Cuando un usuario se va y se elimina su cuenta, ¿cuánto tiempo se conserva su OneDrive de forma predeterminada antes de eliminarlo?",
+  "q_en": "When a user leaves and their account is deleted, how long is their OneDrive kept by default before deletion?",
+  "opts_es": [
+   "Se elimina de inmediato con la cuenta y todos los vínculos compartidos",
+   "30 días, configurable hasta 10 años",
+   "7 días",
+   "Para siempre"
+  ],
+  "opts_en": [
+   "It is deleted immediately with the account and all shared links",
+   "30 days, configurable up to 10 years",
+   "7 days",
+   "Forever"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La retención de OneDrive para usuarios eliminados es de 30 días y se puede elevar a 3650 días en el centro de administración de SharePoint.",
+  "exp_en": "The OneDrive retention for deleted users defaults to 30 days and can be raised to 3,650 days in the SharePoint admin center."
+ },
+ {
+  "id": 320,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Varios sitios de departamento deben compartir navegación, imagen de marca y un ámbito de búsqueda común. ¿Qué debe crear?",
+  "q_en": "Several department sites must share navigation, branding and a common search scope. What should you create?",
+  "opts_es": [
+   "Una directiva de retención",
+   "Un sitio central y asociarle los sitios",
+   "Un grupo de Microsoft 365 con los miembros de todos los departamentos",
+   "Un único sitio con subcarpetas"
+  ],
+  "opts_en": [
+   "A retention policy",
+   "A hub site and associate the sites to it",
+   "A Microsoft 365 group that contains every department's members",
+   "A single site with subfolders"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los sitios centrales conectan sitios relacionados con navegación, tema y búsqueda compartidos.",
+  "exp_en": "Hub sites connect related sites with shared navigation, theme and search."
+ },
+ {
+  "id": 321,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración de Exchange Online y Teams, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Exchange Online and Teams administration, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las reglas de flujo de correo pueden agregar un destinatario a los mensajes coincidentes.",
+    "en": "Mail flow rules can add a recipient to matching messages.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de configuración de aplicaciones deciden qué aplicaciones se anclan.",
+    "en": "App setup policies decide which apps are pinned for users.",
+    "ans": true
+   },
+   {
+    "es": "El reenvío externo automático solo se puede bloquear buzón a buzón.",
+    "en": "Automatic external forwarding can only be blocked per mailbox.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las directivas de spam saliente bloquean el reenvío externo automático a gran escala.",
+  "exp_en": "Outbound spam policies block automatic external forwarding at scale."
+ },
+ {
+  "id": 322,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Seleccione la directiva de Teams para cada requisito.",
+  "q_en": "Select the Teams policy for each requirement.",
+  "rows": [
+   {
+    "es": "Impedir que los usuarios eliminen mensajes de chat enviados",
+    "en": "Prevent users from deleting sent chat messages",
+    "opts_es": [
+     "Directiva de permisos de aplicaciones",
+     "Directiva de reuniones",
+     "Directiva de configuración de aplicaciones",
+     "Directiva de mensajería"
+    ],
+    "opts_en": [
+     "App permission policy",
+     "Meeting policy",
+     "App setup policy",
+     "Messaging policy"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Anclar la aplicación Aprobaciones para todos los responsables",
+    "en": "Pin the Approvals app for all managers",
+    "opts_es": [
+     "Directiva de permisos de aplicaciones",
+     "Directiva de reuniones",
+     "Directiva de configuración de aplicaciones",
+     "Directiva de mensajería"
+    ],
+    "opts_en": [
+     "App permission policy",
+     "Meeting policy",
+     "App setup policy",
+     "Messaging policy"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las directivas de mensajería controlan funciones del chat; las de configuración anclan aplicaciones.",
+  "exp_en": "Messaging policies control chat features; setup policies pin apps."
+ },
+ {
+  "id": 323,
+  "exam": "ab-650",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para copiar a un buzón de cumplimiento los correos externos que cumplen una condición, cree una ",
+  "pre_en": "To copy external emails that match a condition to a compliance mailbox, create a ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "sitio central",
+   "regla de flujo de correo",
+   "directiva de reuniones",
+   "etiqueta de retención"
+  ],
+  "opts_en": [
+   "hub site",
+   "mail flow rule",
+   "meeting policy",
+   "retention label"
+  ],
+  "correct": 1,
+  "exp_es": "Las reglas de flujo de correo actúan sobre los mensajes en tránsito.",
+  "exp_en": "Mail flow rules act on messages in transit."
+ },
+ {
+  "id": 324,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Los nombres de grupos de Microsoft 365 deben empezar por 'GRP-' y no contener palabras bloqueadas. ¿Qué debe configurar?",
+  "q_en": "Microsoft 365 group names must start with 'GRP-' and must not contain blocked words. What should you configure?",
+  "opts_es": [
+   "Una regla de pertenencia dinámica basada en el nombre para mostrar",
+   "Una directiva de nomenclatura de grupos",
+   "Una unidad administrativa",
+   "Una directiva de expiración de grupos"
+  ],
+  "opts_en": [
+   "A dynamic membership rule based on the display name",
+   "A group naming policy",
+   "An administrative unit",
+   "A group expiration policy"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las directivas de nomenclatura agregan prefijos o sufijos y aplican una lista personalizada de palabras bloqueadas.",
+  "exp_en": "Naming policies add prefixes or suffixes and enforce a custom blocked words list."
+ },
+ {
+  "id": 325,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un responsable debe crear y administrar grupos de Microsoft 365 y su configuración, pero ningún otro objeto del directorio. ¿Qué rol encaja?",
+  "q_en": "A team owner must create and manage Microsoft 365 groups and their settings but no other directory objects. Which role fits?",
+  "opts_es": [
+   "Administrador de grupos",
+   "Administrador de usuarios",
+   "Administrador de Exchange con derechos de grupos de distribución",
+   "Lector global"
+  ],
+  "opts_en": [
+   "Groups Administrator",
+   "User Administrator",
+   "Exchange Administrator with distribution group rights",
+   "Global Reader"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El administrador de grupos administra grupos y su configuración, como nomenclatura y expiración.",
+  "exp_en": "Groups Administrator manages groups and group settings such as naming and expiration."
+ },
+ {
+  "id": 326,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Los usuarios de un inquilino asociado deben acceder a un canal compartido de Teams sin ser invitados, y solo se permite a ese asociado. ¿Dónde se configura?",
+  "q_en": "Users from a partner tenant must access a shared Teams channel without being guests, and only that partner is allowed. Where do you configure this?",
+  "opts_es": [
+   "Directiva de reuniones de Teams para usuarios anónimos",
+   "Configuración de colaboración externa para invitaciones de invitados",
+   "Directiva de expiración de grupos",
+   "Configuración de acceso entre inquilinos para conexión directa B2B"
+  ],
+  "opts_en": [
+   "Teams meeting policy for anonymous users",
+   "External collaboration settings for guest invitations",
+   "Group expiration policy",
+   "Cross-tenant access settings for B2B direct connect"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los canales compartidos con otras organizaciones usan la conexión directa B2B, que debe habilitarse de entrada y salida por asociado.",
+  "exp_en": "Shared channels with other organizations use B2B direct connect, which must be enabled inbound and outbound per partner."
+ },
+ {
+  "id": 327,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Los invitados deben obtener acceso al sitio de SharePoint, al equipo de Teams y a la aplicación de un proyecto con una solicitud que caduque a los 90 días. ¿Qué debe usar?",
+  "q_en": "Guests should get access to a project's SharePoint site, Teams team and app through one request that expires after 90 days. What should you use?",
+  "opts_es": [
+   "Un contacto de correo para cada invitado en la lista global de direcciones",
+   "Una directiva de nomenclatura",
+   "Un grupo dinámico",
+   "Un paquete de acceso de administración de derechos"
+  ],
+  "opts_en": [
+   "A mail contact for each guest in the global address list",
+   "A naming policy",
+   "A dynamic group",
+   "An entitlement management access package"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los paquetes de acceso agrupan recursos con aprobación, expiración y revisiones, y pueden solicitarlos usuarios externos.",
+  "exp_en": "Access packages bundle resources with approval, expiration and reviews, and can be requested by external users."
+ },
+ {
+  "id": 328,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué cmdlet de Microsoft Graph PowerShell agrega un usuario a un grupo?",
+  "q_en": "Which Microsoft Graph PowerShell cmdlet adds a user to a group?",
+  "opts_es": [
+   "Add-MsolGroupMember",
+   "Set-MgUserLicense con el identificador del grupo como parámetro",
+   "New-MgGroupMember",
+   "Get-MgGroup"
+  ],
+  "opts_en": [
+   "Add-MsolGroupMember",
+   "Set-MgUserLicense with the group ID as parameter",
+   "New-MgGroupMember",
+   "Get-MgGroup"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "New-MgGroupMember agrega un objeto de directorio a un grupo; los cmdlets de MSOnline están retirados.",
+  "exp_en": "New-MgGroupMember adds a directory object to a group; MSOnline cmdlets are retired."
+ },
+ {
+  "id": 329,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Los propietarios de los equipos deben confirmar cada trimestre el acceso de los invitados a Teams y quitar a los que se denieguen. ¿Qué debe configurar?",
+  "q_en": "Guest access to Teams should be confirmed every quarter by team owners, and denied guests removed. What should you configure?",
+  "opts_es": [
+   "Una directiva de nomenclatura de grupos",
+   "Tiempo de espera de sesión inactiva",
+   "Revisiones de acceso periódicas para invitados",
+   "PIM para grupos con asignaciones de invitados aptas"
+  ],
+  "opts_en": [
+   "A group naming policy",
+   "Idle session timeout",
+   "Recurring access reviews for guests",
+   "PIM for groups with eligible guest assignments"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las revisiones de acceso pueden centrarse en los invitados de grupos de Microsoft 365 y aplicar los resultados automáticamente.",
+  "exp_en": "Access reviews can target guests in Microsoft 365 groups and auto-apply results."
+ },
+ {
+  "id": 330,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las identidades y los roles, indica si es verdadera o falsa.",
+  "q_en": "For each statement about identities and roles, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los administradores de autenticación pueden restablecer métodos MFA de otros administradores.",
+    "en": "Authentication Administrators can reset MFA methods for other administrators.",
+    "ans": false
+   },
+   {
+    "es": "La conexión directa B2B se usa para canales compartidos de Teams entre organizaciones.",
+    "en": "B2B direct connect is used for Teams shared channels across organizations.",
+    "ans": true
+   },
+   {
+    "es": "Los usuarios de organizaciones conectadas pueden solicitar paquetes de acceso.",
+    "en": "Access packages can be requested by users from connected organizations.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Restablecer métodos de administradores requiere el administrador de autenticación con privilegios.",
+  "exp_en": "Resetting methods for admins requires Privileged Authentication Administrator."
+ },
+ {
+  "id": 331,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Seleccione la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Agregar el prefijo 'GRP-' a los nuevos grupos de Microsoft 365",
+    "en": "Add the prefix 'GRP-' to new Microsoft 365 groups",
+    "opts_es": [
+     "Revisión de acceso",
+     "Configuración de acceso entre inquilinos",
+     "Directiva de nomenclatura de grupos",
+     "Paquete de acceso"
+    ],
+    "opts_en": [
+     "Access review",
+     "Cross-tenant access settings",
+     "Group naming policy",
+     "Access package"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Permitir la conexión directa B2B solo con una organización asociada",
+    "en": "Allow B2B direct connect with one partner organization only",
+    "opts_es": [
+     "Revisión de acceso",
+     "Configuración de acceso entre inquilinos",
+     "Directiva de nomenclatura de grupos",
+     "Paquete de acceso"
+    ],
+    "opts_en": [
+     "Access review",
+     "Cross-tenant access settings",
+     "Group naming policy",
+     "Access package"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las directivas de nomenclatura dan forma a los nombres de grupo; la configuración entre inquilinos controla la colaboración con organizaciones concretas.",
+  "exp_en": "Naming policies shape group names; cross-tenant settings control collaboration with specific organizations."
+ },
+ {
+  "id": 332,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Para que el soporte restablezca métodos MFA solo de usuarios no administradores, asigne el rol ",
+  "pre_en": "To let a help desk reset MFA methods for non-admin users only, assign the ",
+  "post_es": ".",
+  "post_en": " role.",
+  "opts_es": [
+   "Administrador de autenticación con privilegios",
+   "Administrador de facturación",
+   "Administrador de autenticación",
+   "Lector global"
+  ],
+  "opts_en": [
+   "Privileged Authentication Administrator",
+   "Billing Administrator",
+   "Authentication Administrator",
+   "Global Reader"
+  ],
+  "correct": 2,
+  "exp_es": "El mínimo privilegio para restablecer métodos de no administradores es el administrador de autenticación.",
+  "exp_en": "Least privilege for non-admin method resets is Authentication Administrator."
+ },
+ {
+  "id": 333,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Un registro de inicio de sesión muestra el error 53003. ¿Qué indica?",
+  "q_en": "A sign-in log shows error 53003. What does it indicate?",
+  "opts_es": [
+   "Una directiva de acceso condicional bloqueó el acceso",
+   "La cuenta está bloqueada tras demasiados intentos fallidos por el bloqueo inteligente",
+   "Falta la licencia",
+   "La contraseña era incorrecta"
+  ],
+  "opts_en": [
+   "Access was blocked by a Conditional Access policy",
+   "The account is locked after too many failed attempts by smart lockout",
+   "The license is missing",
+   "The password was wrong"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "53003 significa que el acceso condicional bloqueó el inicio de sesión; revise la pestaña de acceso condicional del evento.",
+  "exp_en": "53003 means Conditional Access blocked the sign-in; check the Conditional Access tab of the sign-in event."
+ },
+ {
+  "id": 334,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los contratistas deben aceptar la directiva de uso aceptable antes de acceder a las aplicaciones de Microsoft 365. ¿Qué control de concesión del acceso condicional encaja?",
+  "q_en": "Contractors must accept the company's acceptable use policy before accessing Microsoft 365 apps. Which Conditional Access grant control fits?",
+  "opts_es": [
+   "Exigir cambio de contraseña",
+   "Frecuencia de inicio de sesión",
+   "Exigir una aplicación cliente aprobada en todo tipo de dispositivo",
+   "Términos de uso"
+  ],
+  "opts_en": [
+   "Require password change",
+   "Sign-in frequency",
+   "Require an approved client app on every device type",
+   "Terms of use"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los términos de uso muestran un documento que los usuarios deben aceptar, y la aceptación queda registrada para auditoría.",
+  "exp_en": "Terms of use present a document that users must accept, with acceptance recorded for auditing."
+ },
+ {
+  "id": 335,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Deben bloquearse los inicios de sesión desde países donde la empresa no opera. ¿Qué necesita primero?",
+  "q_en": "Sign-ins from countries where the company has no business must be blocked. What do you need first?",
+  "opts_es": [
+   "Una directiva de reuniones de Teams para la unión anónima desde esos países",
+   "Valores predeterminados de seguridad",
+   "Una ubicación con nombre de países usada en una directiva de bloqueo",
+   "Un grupo dinámico"
+  ],
+  "opts_en": [
+   "A Teams meeting policy for anonymous join from those countries",
+   "Security defaults",
+   "A countries named location used in a block policy",
+   "A dynamic group"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las ubicaciones con nombre pueden definirse por país o región o por intervalos IP y usarse como condiciones.",
+  "exp_en": "Named locations can be defined by country/region or IP ranges and used as conditions."
+ },
+ {
+  "id": 336,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los usuarios de teléfonos móviles solo deben acceder a Outlook y Teams mediante aplicaciones protegidas por directivas de protección de aplicaciones de Intune. ¿Qué control de concesión debe usar?",
+  "q_en": "Users on mobile phones must access Outlook and Teams only through apps protected by Intune app protection policies. Which grant control should you use?",
+  "opts_es": [
+   "Exigir términos de uso para cada plataforma móvil",
+   "Bloquear el acceso",
+   "Exigir dispositivo unido a Microsoft Entra híbrido",
+   "Exigir directiva de protección de aplicaciones"
+  ],
+  "opts_en": [
+   "Require terms of use for every mobile platform",
+   "Block access",
+   "Require Microsoft Entra hybrid joined device",
+   "Require app protection policy"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Exigir una directiva de protección de aplicaciones funciona en dispositivos personales (BYOD) no inscritos.",
+  "exp_en": "Requiring an app protection policy works for personal (BYOD) devices that are not enrolled."
+ },
+ {
+  "id": 337,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los usuarios en exploradores no administrados no deben seguir con la sesión iniciada tras cerrar el explorador. ¿Qué control de sesión debe configurar?",
+  "q_en": "Users on unmanaged browsers must not stay signed in after closing the browser. Which session control should you configure?",
+  "opts_es": [
+   "Riesgo de inicio de sesión",
+   "Exigir dispositivo conforme para cada explorador y cliente de escritorio",
+   "Ubicación con nombre",
+   "Sesión de explorador persistente establecida en nunca persistente"
+  ],
+  "opts_en": [
+   "Sign-in risk",
+   "Require compliant device for every browser and desktop client",
+   "Named location",
+   "Persistent browser session set to never persistent"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La sesión de explorador persistente controla si los usuarios siguen conectados tras cerrar y volver a abrir el explorador.",
+  "exp_en": "Persistent browser session controls whether users stay signed in after closing and reopening the browser."
+ },
+ {
+  "id": 338,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el acceso condicional, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Conditional Access, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El error 53003 significa que una directiva de acceso condicional bloqueó el inicio de sesión.",
+    "en": "Error 53003 means a Conditional Access policy blocked the sign-in.",
+    "ans": true
+   },
+   {
+    "es": "La aceptación de términos de uso se puede exigir como control de concesión.",
+    "en": "Terms of use acceptance can be required as a grant control.",
+    "ans": true
+   },
+   {
+    "es": "Las ubicaciones con nombre solo se pueden definir por dirección IP.",
+    "en": "Named locations can only be defined by IP address.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las ubicaciones con nombre pueden usar intervalos IP o países y regiones.",
+  "exp_en": "Named locations can use IP ranges or countries/regions."
+ },
+ {
+  "id": 339,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Seleccione el control de acceso condicional para cada requisito.",
+  "q_en": "Select the Conditional Access control for each requirement.",
+  "rows": [
+   {
+    "es": "Los teléfonos personales solo pueden usar Outlook si la aplicación está protegida por Intune",
+    "en": "Personal phones may use Outlook only if the app is protected by Intune",
+    "opts_es": [
+     "Exigir directiva de protección de aplicaciones",
+     "Términos de uso",
+     "Bloquear el acceso",
+     "Sesión de explorador persistente"
+    ],
+    "opts_en": [
+     "Require app protection policy",
+     "Terms of use",
+     "Block access",
+     "Persistent browser session"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Detener los inicios de sesión desde países donde la empresa no opera",
+    "en": "Stop sign-ins from countries the company doesn't operate in",
+    "opts_es": [
+     "Exigir directiva de protección de aplicaciones",
+     "Términos de uso",
+     "Bloquear el acceso",
+     "Sesión de explorador persistente"
+    ],
+    "opts_en": [
+     "Require app protection policy",
+     "Terms of use",
+     "Block access",
+     "Persistent browser session"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "La protección de aplicaciones encaja con BYOD; bloquear el acceso con una ubicación de países detiene regiones no deseadas.",
+  "exp_en": "App protection suits BYOD; block access with a country named location stops unwanted regions."
+ },
+ {
+  "id": 340,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "El código de error de inicio de sesión ",
+  "pre_en": "Sign-in error code ",
+  "post_es": " significa que una directiva de acceso condicional bloqueó la solicitud.",
+  "post_en": " means a Conditional Access policy blocked the request.",
+  "opts_es": [
+   "50074",
+   "53003",
+   "50053",
+   "50126"
+  ],
+  "opts_en": [
+   "50074",
+   "53003",
+   "50053",
+   "50126"
+  ],
+  "correct": 1,
+  "exp_es": "50126 son credenciales no válidas, 50053 una cuenta bloqueada y 50074 que se requiere autenticación sólida.",
+  "exp_en": "50126 is invalid credentials, 50053 a locked account and 50074 strong authentication required."
+ },
+ {
+  "id": 341,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los servidores de destino rechazan su correo porque no supera DMARC. ¿Qué dos registros deben estar bien configurados para que su dominio lo supere?",
+  "q_en": "Receiving servers reject your mail because it fails DMARC. Which two records must be correctly configured for your domain to pass?",
+  "opts_es": [
+   "SPF y DKIM alineados con el dominio del remitente",
+   "Registros SRV y CNAME para los servicios de Teams y Skype",
+   "PTR y AAAA",
+   "MX y autodiscover"
+  ],
+  "opts_en": [
+   "SPF and DKIM aligned with the From domain",
+   "SRV and CNAME records for the Teams and Skype services",
+   "PTR and AAAA",
+   "MX and autodiscover"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "DMARC se supera cuando SPF o DKIM se superan y se alinean con el dominio del remitente; configure ambos para mayor fiabilidad.",
+  "exp_en": "DMARC passes when SPF or DKIM passes and aligns with the From domain; configure both for reliability."
+ },
+ {
+  "id": 342,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Dónde se habilita la firma DKIM para un dominio personalizado en Microsoft 365?",
+  "q_en": "Where do you enable DKIM signing for a custom domain in Microsoft 365?",
+  "opts_es": [
+   "El centro de administración de SharePoint",
+   "Configuración de autenticación de correo del portal de Defender, tras publicar dos registros CNAME",
+   "Centro de administración de Teams",
+   "Solo en el registrador del dominio"
+  ],
+  "opts_en": [
+   "The SharePoint admin center",
+   "Email authentication settings in the Defender portal, after publishing two CNAME records",
+   "Teams admin center",
+   "In the domain registrar only"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Se publican dos registros CNAME de selector en DNS y luego se habilita DKIM para el dominio en el portal de Defender.",
+  "exp_en": "You publish two selector CNAME records in DNS and then enable DKIM for the domain in the Defender portal."
+ },
+ {
+  "id": 343,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los atacantes envían correo que parece venir del nombre de su director financiero desde una dirección gratuita. ¿Qué ajuste antiphishing lo detecta?",
+  "q_en": "Attackers send email that appears to come from your CFO's name using a free email address. Which anti-phishing setting detects this?",
+  "opts_es": [
+   "Protección contra la suplantación de usuario para el director financiero",
+   "Protección contra la suplantación de dominio solo para sus dominios aceptados",
+   "Inteligencia contra la suplantación",
+   "Purga automática de hora cero"
+  ],
+  "opts_en": [
+   "User impersonation protection for the CFO",
+   "Domain impersonation protection for your accepted domains only",
+   "Spoof intelligence",
+   "Zero-hour auto purge"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La protección contra la suplantación de usuario compara nombres para mostrar y direcciones con los usuarios protegidos en Defender para Office 365.",
+  "exp_en": "User impersonation protection compares display names and addresses with protected users in Defender for Office 365."
+ },
+ {
+  "id": 344,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Cuál es la diferencia entre las directivas de seguridad predefinidas Estándar y Estricta?",
+  "q_en": "What is the difference between the Standard and Strict preset security policies?",
+  "opts_es": [
+   "Estricta usa umbrales y acciones más agresivos para usuarios de alto valor",
+   "Estándar no se puede combinar con Vínculos seguros ni Datos adjuntos seguros",
+   "No hay diferencia",
+   "Estricta solo se aplica a Teams"
+  ],
+  "opts_en": [
+   "Strict uses more aggressive thresholds and actions for high-value users",
+   "Standard can't be combined with Safe Links or Safe Attachments",
+   "There is no difference",
+   "Strict only applies to Teams"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Ambas las mantiene Microsoft; Estricta pone en cuarentena de forma más agresiva y encaja con cuentas prioritarias.",
+  "exp_en": "Both are Microsoft-maintained; Strict quarantines more aggressively and suits priority accounts."
+ },
+ {
+  "id": 345,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los usuarios deben poder ver y solicitar la liberación de su spam en cuarentena, pero no liberar malware. ¿Qué lo controla?",
+  "q_en": "Users must be able to see and request release of their quarantined spam, but not release malware. What controls this?",
+  "opts_es": [
+   "Directiva de spam saliente con notificación al responsable del usuario",
+   "Reglas de flujo de correo",
+   "Etiquetas de retención",
+   "Directivas de cuarentena asignadas en las directivas de protección"
+  ],
+  "opts_en": [
+   "Outbound spam policy with a notification to the user's manager",
+   "Mail flow rules",
+   "Retention labels",
+   "Quarantine policies assigned in the protection policies"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las directivas de cuarentena definen qué pueden hacer los usuarios con los mensajes en cuarentena según cada veredicto.",
+  "exp_en": "Quarantine policies define what users can do with messages quarantined by each verdict."
+ },
+ {
+  "id": 346,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué característica de Microsoft 365 da protección adicional a los directivos y permite filtrar alertas e informes para ellos?",
+  "q_en": "Which Microsoft 365 feature gives executives extra protection and lets you filter alerts and reports for them?",
+  "opts_es": [
+   "Protección de cuentas prioritarias",
+   "Versión dirigida",
+   "Centro de mensajes",
+   "Unidades administrativas con administración restringida para directivos"
+  ],
+  "opts_en": [
+   "Priority account protection",
+   "Targeted release",
+   "Message center",
+   "Administrative units with restricted management for executives"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las cuentas prioritarias reciben protección diferenciada y se etiquetan en alertas, Explorador e informes de Defender.",
+  "exp_en": "Priority accounts get differentiated protection and are tagged in Defender alerts, Explorer and reports."
+ },
+ {
+  "id": 347,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Su organización tiene Defender para Office 365 Plan 1. ¿Qué herramienta puede usar para investigar correos malintencionados entregados?",
+  "q_en": "Your organization has Defender for Office 365 Plan 1. Which tool can you use to investigate delivered malicious emails?",
+  "opts_es": [
+   "Entrenamiento de simulación de ataques",
+   "Explorador de amenazas",
+   "Investigación y respuesta automatizadas con acciones de corrección",
+   "Detecciones en tiempo real"
+  ],
+  "opts_en": [
+   "Attack simulation training",
+   "Threat Explorer",
+   "Automated investigation and response with remediation actions",
+   "Real-time detections"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El Plan 1 incluye detecciones en tiempo real; el Explorador de amenazas, AIR y el entrenamiento de simulación requieren el Plan 2.",
+  "exp_en": "Plan 1 includes real-time detections; Threat Explorer, AIR and attack simulation training require Plan 2."
+ },
+ {
+  "id": 348,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los usuarios deben recibir un aviso cuando reciben correo de un remitente del que nunca han recibido mensajes. ¿Qué debe habilitar?",
+  "q_en": "Users should be warned when they receive email from a sender they have never received mail from before. What should you enable?",
+  "opts_es": [
+   "Purga automática de hora cero",
+   "Sugerencia de seguridad de primer contacto",
+   "Caja de seguridad del cliente",
+   "Firma DKIM para todos los dominios aceptados del inquilino"
+  ],
+  "opts_en": [
+   "Zero-hour auto purge",
+   "First contact safety tip",
+   "Customer Lockbox",
+   "DKIM signing for all accepted domains of the tenant"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La sugerencia de primer contacto es un ajuste antiphishing que señala a remitentes desconocidos.",
+  "exp_en": "The first contact safety tip is an anti-phishing setting that flags unfamiliar senders."
+ },
+ {
+  "id": 349,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la protección del correo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about email protection, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "DMARC se basa en los resultados de SPF y DKIM.",
+    "en": "DMARC relies on SPF and DKIM results.",
+    "ans": true
+   },
+   {
+    "es": "El Explorador de amenazas está incluido en Defender para Office 365 Plan 1.",
+    "en": "Threat Explorer is included in Defender for Office 365 Plan 1.",
+    "ans": false
+   },
+   {
+    "es": "Las directivas de cuarentena controlan lo que los usuarios pueden hacer con los mensajes en cuarentena.",
+    "en": "Quarantine policies control what users can do with quarantined messages.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El Plan 1 tiene detecciones en tiempo real; el Explorador de amenazas es del Plan 2.",
+  "exp_en": "Plan 1 has real-time detections; Threat Explorer is a Plan 2 feature."
+ },
+ {
+  "id": 350,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los ajustes antiphishing, indica si es verdadera o falsa.",
+  "q_en": "For each statement about anti-phishing settings, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La protección contra la suplantación de usuario puede proteger a directivos concretos.",
+    "en": "User impersonation protection can protect named executives.",
+    "ans": true
+   },
+   {
+    "es": "La directiva predefinida Estricta es menos agresiva que la Estándar.",
+    "en": "The Strict preset policy is less aggressive than Standard.",
+    "ans": false
+   },
+   {
+    "es": "La sugerencia de primer contacto avisa de remitentes desconocidos.",
+    "en": "The first contact safety tip warns about unfamiliar senders.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Estricta es la directiva predefinida más agresiva.",
+  "exp_en": "Strict is the more aggressive preset."
+ },
+ {
+  "id": 351,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Seleccione la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Firmar digitalmente el correo saliente de contoso.com",
+    "en": "Digitally sign outgoing mail from contoso.com",
+    "opts_es": [
+     "Directiva de cuarentena",
+     "Protección de cuentas prioritarias",
+     "Protección contra la suplantación de usuario",
+     "DKIM"
+    ],
+    "opts_en": [
+     "Quarantine policy",
+     "Priority account protection",
+     "User impersonation protection",
+     "DKIM"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Permitir a los usuarios solicitar la liberación del spam en cuarentena",
+    "en": "Let users request release of quarantined spam",
+    "opts_es": [
+     "Directiva de cuarentena",
+     "Protección de cuentas prioritarias",
+     "Protección contra la suplantación de usuario",
+     "DKIM"
+    ],
+    "opts_en": [
+     "Quarantine policy",
+     "Priority account protection",
+     "User impersonation protection",
+     "DKIM"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "DKIM firma el correo saliente; las directivas de cuarentena fijan los permisos de los usuarios sobre la cuarentena.",
+  "exp_en": "DKIM signs outbound mail; quarantine policies set user permissions on quarantine."
+ },
+ {
+  "id": 352,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Para habilitar DKIM en un dominio personalizado, primero publique dos registros ",
+  "pre_en": "To enable DKIM for a custom domain, first publish two ",
+  "post_es": " en DNS.",
+  "post_en": " records in DNS.",
+  "opts_es": [
+   "CNAME",
+   "PTR",
+   "MX",
+   "SRV"
+  ],
+  "opts_en": [
+   "CNAME",
+   "PTR",
+   "MX",
+   "SRV"
+  ],
+  "correct": 0,
+  "exp_es": "Los dos CNAME de selector apuntan a claves alojadas por Microsoft 365.",
+  "exp_en": "The two selector CNAMEs point to keys hosted by Microsoft 365."
+ },
+ {
+  "id": 353,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué plantilla de directiva de Insider Risk Management ayuda a detectar usuarios que pegan datos confidenciales en sitios de IA generativa o hacen mal uso de Copilot?",
+  "q_en": "Which Insider Risk Management policy template helps detect users who paste sensitive data into generative AI sites or misuse Copilot?",
+  "opts_es": [
+   "Infracciones de directivas de seguridad por usuarios prioritarios en dispositivos",
+   "Uso de IA arriesgado",
+   "Uso indebido de datos de pacientes",
+   "Robo de datos por usuarios que se van"
+  ],
+  "opts_en": [
+   "Security policy violations by priority users on devices",
+   "Risky AI usage",
+   "Patient data misuse",
+   "Data theft by departing users"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La plantilla de uso de IA arriesgado detecta prompts y respuestas de riesgo en Copilot y otras aplicaciones de IA.",
+  "exp_en": "The Risky AI usage template detects risky prompts and responses across Copilot and other AI apps."
+ },
+ {
+  "id": 354,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "El departamento legal debe encontrar lo que un usuario preguntó a Microsoft 365 Copilot durante un litigio y exportarlo. ¿Qué solución de Purview debe usar?",
+  "q_en": "Legal must find what a user asked Microsoft 365 Copilot during a dispute and export it. Which Purview solution should you use?",
+  "opts_es": [
+   "Explorador de contenido filtrado por etiqueta de confidencialidad",
+   "Barreras de información",
+   "eDiscovery",
+   "Compliance Manager"
+  ],
+  "opts_en": [
+   "Content explorer filtered by sensitivity label",
+   "Information barriers",
+   "eDiscovery",
+   "Compliance Manager"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los prompts y respuestas de Copilot se guardan en el buzón del usuario y se pueden buscar, retener y exportar con eDiscovery.",
+  "exp_en": "Copilot prompts and responses are stored in the user's mailbox and can be searched, held and exported with eDiscovery."
+ },
+ {
+  "id": 355,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "Los auditores quieren saber a qué archivos accedió Copilot al responder un prompt de un usuario. ¿Dónde puede encontrarlo?",
+  "q_en": "Auditors want to know which files Copilot accessed when answering a user's prompt. Where can you find this?",
+  "opts_es": [
+   "Centro de mensajes",
+   "Informes de uso de Microsoft 365 de usuarios activos de Copilot",
+   "Estado del servicio",
+   "Registros de auditoría de interacciones de Copilot"
+  ],
+  "opts_en": [
+   "Message center",
+   "Microsoft 365 usage reports for Copilot active users",
+   "Service health",
+   "Audit log records for Copilot interactions"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los registros de auditoría de interacciones de Copilot incluyen la aplicación, la hora y referencias a los recursos a los que se accedió.",
+  "exp_en": "Copilot interaction audit records include the app, the time and references to resources accessed."
+ },
+ {
+  "id": 356,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "Antes de eliminar elementos etiquetados como registros al final de su retención, un administrador de registros debe aprobarlo. ¿Qué debe configurar?",
+  "q_en": "Before items labeled as records are deleted at the end of their retention period, a records manager must approve. What should you configure?",
+  "opts_es": [
+   "Una retención de eDiscovery en todos los buzones y sitios con registros",
+   "Protección adaptable",
+   "Revisión para eliminación en la etiqueta de retención",
+   "Una sugerencia de directiva DLP"
+  ],
+  "opts_en": [
+   "An eDiscovery hold on all mailboxes and sites with records",
+   "Adaptive protection",
+   "Disposition review in the retention label",
+   "A DLP policy tip"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La revisión para eliminación avisa a los revisores, que aprueban, reetiquetan o amplían la retención antes de eliminar.",
+  "exp_en": "Disposition review notifies reviewers who approve, relabel or extend retention before deletion."
+ },
+ {
+  "id": 357,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "Existen dos subetiquetas de Confidencial. Los usuarios que bajan de 'Altamente confidencial' a 'General' deben explicar el motivo. ¿Qué debe habilitar?",
+  "q_en": "Two Confidential sub-labels exist. Users downgrading from 'Highly Confidential' to 'General' must explain why. What should you enable?",
+  "opts_es": [
+   "Exigir justificación para quitar o bajar una etiqueta en la directiva",
+   "Marcado de contenido con marca de agua en cada archivo etiquetado",
+   "Una etiqueta de retención",
+   "Etiquetado automático"
+  ],
+  "opts_en": [
+   "Require justification to remove or lower a label in the label policy",
+   "Content marking with a watermark on every labeled file",
+   "A retention label",
+   "Auto-labeling"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El ajuste de la directiva exige justificar las bajadas de nivel, y la justificación se audita.",
+  "exp_en": "The label policy setting requires users to justify downgrades, and the justification is audited."
+ },
+ {
+  "id": 358,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Defender for Cloud Apps ayuda a encontrar aplicaciones de IA generativa no autorizadas en la organización y bloquearlas?",
+  "q_en": "Which Defender for Cloud Apps capability helps you find unsanctioned generative AI apps used in the organization and block them?",
+  "opts_es": [
+   "Etiquetado automático de archivos en OneDrive",
+   "Vínculos seguros",
+   "Detección de aplicaciones en la nube con la categoría de IA generativa",
+   "Directivas de retención"
+  ],
+  "opts_en": [
+   "Sensitivity label auto-labeling for files in OneDrive",
+   "Safe Links",
+   "Cloud app discovery with the generative AI category",
+   "Retention policies"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La detección en la nube cataloga aplicaciones de IA con puntuaciones de riesgo; puede marcarlas como no autorizadas para bloquearlas con Defender para punto de conexión.",
+  "exp_en": "Cloud discovery catalogs AI apps with risk scores; you can mark them unsanctioned to block them through Defender for Endpoint."
+ },
+ {
+  "id": 359,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el cumplimiento para Copilot, indica si es verdadera o falsa.",
+  "q_en": "For each statement about compliance for Copilot, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los prompts y respuestas de Copilot se pueden buscar con eDiscovery.",
+    "en": "Copilot prompts and responses can be searched with eDiscovery.",
+    "ans": true
+   },
+   {
+    "es": "Las interacciones de Copilot nunca se escriben en el registro de auditoría.",
+    "en": "Copilot interactions are never written to the audit log.",
+    "ans": false
+   },
+   {
+    "es": "Insider Risk Management tiene una plantilla para el uso de IA arriesgado.",
+    "en": "Insider Risk Management has a template for risky AI usage.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las interacciones de Copilot generan registros de auditoría y se pueden descubrir.",
+  "exp_en": "Copilot interactions generate audit records and are discoverable."
+ },
+ {
+  "id": 360,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los registros y las etiquetas, indica si es verdadera o falsa.",
+  "q_en": "For each statement about records and labels, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La revisión para eliminación permite a los revisores aprobar la eliminación de registros.",
+    "en": "Disposition review lets reviewers approve deletion of records.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de etiquetas pueden exigir justificación para bajar una etiqueta.",
+    "en": "Label policies can require a justification to lower a label.",
+    "ans": true
+   },
+   {
+    "es": "El marcado de contenido cifra el archivo.",
+    "en": "Content marking encrypts the file.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El marcado de contenido es solo visual; el cifrado es otro ajuste de la etiqueta.",
+  "exp_en": "Content marking is visual only; encryption is a separate label setting."
+ },
+ {
+  "id": 361,
+  "exam": "ab-650",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "dropdown",
+  "q_es": "Seleccione la solución de Purview para cada requisito.",
+  "q_en": "Select the Purview solution for each requirement.",
+  "rows": [
+   {
+    "es": "Exportar los prompts de Copilot de un usuario para un litigio",
+    "en": "Export a user's Copilot prompts for a lawsuit",
+    "opts_es": [
+     "Auditoría",
+     "Insider Risk Management",
+     "Administración de registros",
+     "eDiscovery"
+    ],
+    "opts_en": [
+     "Audit",
+     "Insider Risk Management",
+     "Records management",
+     "eDiscovery"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Ver cuándo una interacción de Copilot de un usuario accedió a un archivo",
+    "en": "See when a user's Copilot interaction accessed a file",
+    "opts_es": [
+     "Auditoría",
+     "Insider Risk Management",
+     "Administración de registros",
+     "eDiscovery"
+    ],
+    "opts_en": [
+     "Audit",
+     "Insider Risk Management",
+     "Records management",
+     "eDiscovery"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "eDiscovery recopila y exporta contenido; la auditoría registra los detalles de la actividad.",
+  "exp_en": "eDiscovery collects and exports content; Audit records activity details."
+ },
+ {
+  "id": 362,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué afirmación sobre cómo maneja Microsoft 365 Copilot los datos de la organización es correcta?",
+  "q_en": "Which statement about how Microsoft 365 Copilot handles your organization's data is correct?",
+  "opts_es": [
+   "Copilot puede leer cualquier archivo del inquilino sin importar los permisos del usuario",
+   "Los prompts y respuestas no se usan para entrenar los modelos fundacionales",
+   "Los datos salen del límite del servicio de Microsoft 365 para entrenamiento",
+   "Todos los datos se envían a la búsqueda web pública"
+  ],
+  "opts_en": [
+   "Copilot can read any file in the tenant regardless of the user's permissions",
+   "Prompts and responses aren't used to train the foundation models",
+   "Data leaves the Microsoft 365 service boundary for training",
+   "All data is sent to public web search"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Copilot funciona dentro del límite del servicio de Microsoft 365, respeta los permisos y no usa los datos del inquilino para entrenar modelos fundacionales.",
+  "exp_en": "Copilot operates within the Microsoft 365 service boundary, respects permissions and doesn't use tenant data to train foundation models."
+ },
+ {
+  "id": 363,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué usa Microsoft 365 Copilot para fundamentar las respuestas en el contenido de trabajo del usuario, como correos, chats y documentos?",
+  "q_en": "What does Microsoft 365 Copilot use to ground answers in the user's work content, such as emails, chats and documents?",
+  "opts_es": [
+   "Microsoft Graph y el índice semántico",
+   "Solo la búsqueda web pública",
+   "Directivas de reuniones de Teams",
+   "Una copia de cada buzón guardada en una suscripción de Azure aparte"
+  ],
+  "opts_en": [
+   "Microsoft Graph and the semantic index",
+   "Only public web search",
+   "Teams meeting policies",
+   "A copy of every mailbox stored in a separate Azure subscription"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Copilot recupera el contenido al que el usuario tiene acceso mediante Microsoft Graph, con ayuda del índice semántico.",
+  "exp_en": "Copilot retrieves content the user can access through Microsoft Graph, helped by the semantic index."
+ },
+ {
+  "id": 364,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Los clientes europeos exigen que los datos de Copilot se almacenen y procesen en la UE. ¿Qué compromiso se aplica?",
+  "q_en": "European customers require that Copilot data is stored and processed in the EU. Which commitment applies?",
+  "opts_es": [
+   "Versión dirigida para todos los usuarios europeos del inquilino",
+   "Caja de seguridad del cliente",
+   "El Límite de datos de la UE",
+   "Búsqueda restringida de SharePoint"
+  ],
+  "opts_en": [
+   "Targeted release for all European users of the tenant",
+   "Customer Lockbox",
+   "The EU Data Boundary",
+   "Restricted SharePoint Search"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Microsoft 365 Copilot está cubierto por el Límite de datos de la UE para los clientes de la UE.",
+  "exp_en": "Microsoft 365 Copilot is covered by the EU Data Boundary for EU customers."
+ },
+ {
+  "id": 365,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Un usuario no obtiene respuestas de Copilot sobre un archivo que un compañero acaba de compartirle, pero otros archivos funcionan. ¿Cuál es una explicación probable?",
+  "q_en": "A user can't get Copilot answers from a file a colleague just shared with them, but other files work. What is a likely explanation?",
+  "opts_es": [
+   "El usuario necesita el rol de administrador global",
+   "El nuevo contenido aún no se ha indexado",
+   "El inquilino no tiene registro MX",
+   "Copilot solo funciona con archivos de OneDrive de más de un año"
+  ],
+  "opts_en": [
+   "The user needs the Global Administrator role",
+   "The new content hasn't been indexed yet",
+   "The tenant has no MX record",
+   "Copilot only works with files older than one year in OneDrive"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El contenido recién creado o compartido puede tardar en indexarse para Copilot y la búsqueda.",
+  "exp_en": "Newly created or shared content may take some time to be indexed for Copilot and search."
+ },
+ {
+  "id": 366,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el tratamiento de datos de Copilot, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Copilot data handling, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Copilot respeta los permisos existentes del usuario.",
+    "en": "Copilot respects the user's existing permissions.",
+    "ans": true
+   },
+   {
+    "es": "Los datos del inquilino se usan para entrenar los modelos fundacionales.",
+    "en": "Tenant data is used to train the foundation models.",
+    "ans": false
+   },
+   {
+    "es": "Copilot usa Microsoft Graph para encontrar contenido de trabajo.",
+    "en": "Copilot uses Microsoft Graph to find work content.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Copilot funciona dentro de los permisos y no entrena modelos fundacionales con datos de clientes.",
+  "exp_en": "Copilot works within permissions and doesn't train foundation models on customer data."
+ },
+ {
+  "id": 367,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "sentence",
+  "pre_es": "Copilot fundamenta las respuestas en el contenido de trabajo al que el usuario accede mediante Microsoft ",
+  "pre_en": "Copilot grounds answers in work content that the user can access through Microsoft ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Intune",
+   "Defender",
+   "Bing",
+   "Graph"
+  ],
+  "opts_en": [
+   "Intune",
+   "Defender",
+   "Bing",
+   "Graph"
+  ],
+  "correct": 3,
+  "exp_es": "Microsoft Graph da acceso a correo, archivos, chats y calendario con los permisos del usuario.",
+  "exp_en": "Microsoft Graph provides access to mail, files, chats and calendar under the user's permissions."
+ },
+ {
+  "id": 368,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué diferencia a un agente declarativo de un agente de motor personalizado para Microsoft 365 Copilot?",
+  "q_en": "What distinguishes a declarative agent from a custom engine agent for Microsoft 365 Copilot?",
+  "opts_es": [
+   "No hay diferencia",
+   "Los de motor personalizado solo funcionan en Outlook y nunca aparecen en Teams",
+   "Los declarativos no pueden usar instrucciones",
+   "Los declarativos usan el orquestador y los modelos de Copilot; los de motor personalizado aportan los suyos"
+  ],
+  "opts_en": [
+   "There is no difference",
+   "Custom engine agents only work in Outlook and never appear in Teams",
+   "Declarative agents can't use instructions",
+   "Declarative agents use Copilot's orchestrator and models; custom engine agents bring their own"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los agentes declarativos configuran instrucciones, conocimiento y acciones sobre Copilot; los de motor personalizado usan su propia orquestación y modelos.",
+  "exp_en": "Declarative agents configure instructions, knowledge and actions on top of Copilot; custom engine agents use their own orchestration and models."
+ },
+ {
+  "id": 369,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Los creadores de Copilot Studio no deben usar conectores que envíen datos a redes sociales. ¿Dónde se aplica esto?",
+  "q_en": "Copilot Studio makers must not use connectors that send data to social media services. Where do you enforce this?",
+  "opts_es": [
+   "Directivas de datos (DLP) en el centro de administración de Power Platform",
+   "Directivas de permisos de aplicaciones de Teams para aplicaciones de terceros",
+   "Directivas de retención de Microsoft Purview",
+   "Reglas de flujo de correo de Exchange"
+  ],
+  "opts_en": [
+   "Data policies (DLP) in the Power Platform admin center",
+   "Teams app permission policies for third-party apps",
+   "Microsoft Purview retention policies",
+   "Exchange mail flow rules"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las directivas de datos de Power Platform clasifican los conectores como empresariales, no empresariales o bloqueados para agentes y flujos.",
+  "exp_en": "Power Platform data policies classify connectors as business, non-business or blocked for agents and flows."
+ },
+ {
+  "id": 370,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Los nuevos agentes de Copilot Studio que creen los usuarios deben ir a un entorno de desarrollo dedicado en lugar del predeterminado. ¿Qué debe configurar?",
+  "q_en": "New Copilot Studio agents created by makers should go to a dedicated development environment instead of the default environment. What should you configure?",
+  "opts_es": [
+   "Enrutamiento de entornos",
+   "Expiración de grupos",
+   "Tiempo de espera de sesión inactiva",
+   "Una directiva de configuración de aplicaciones de Teams que ancle Copilot Studio"
+  ],
+  "opts_en": [
+   "Environment routing",
+   "Group expiration",
+   "Idle session timeout",
+   "A Teams app setup policy that pins Copilot Studio"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El enrutamiento de entornos envía a los creadores a entornos de desarrollo personales y mantiene limpio el entorno predeterminado.",
+  "exp_en": "Environment routing sends makers to personal developer environments, keeping the default environment clean."
+ },
+ {
+  "id": 371,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los agentes y la gobernanza de Copilot Studio, indica si es verdadera o falsa.",
+  "q_en": "For each statement about agents and Copilot Studio governance, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los agentes declarativos se ejecutan en el orquestador de Copilot.",
+    "en": "Declarative agents run on Copilot's orchestrator.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de datos de Power Platform pueden bloquear conectores para agentes.",
+    "en": "Power Platform data policies can block connectors for agents.",
+    "ans": true
+   },
+   {
+    "es": "El enrutamiento de entornos envía todos los agentes al entorno predeterminado.",
+    "en": "Environment routing sends all agents to the default environment.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El enrutamiento de entornos aleja a los creadores del entorno predeterminado.",
+  "exp_en": "Environment routing moves makers away from the default environment."
+ },
+ {
+  "id": 372,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "dropdown",
+  "q_es": "Seleccione dónde se configura cada control.",
+  "q_en": "Select where each control is configured.",
+  "rows": [
+   {
+    "es": "Bloquear un conector para agentes de Copilot Studio",
+    "en": "Block a connector for Copilot Studio agents",
+    "opts_es": [
+     "Centro de administración de Power Platform",
+     "Portal de Microsoft Purview",
+     "Centro de administración de Microsoft 365"
+    ],
+    "opts_en": [
+     "Power Platform admin center",
+     "Microsoft Purview portal",
+     "Microsoft 365 admin center"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Conservar las conversaciones de los agentes durante tres años",
+    "en": "Retain agent conversations for three years",
+    "opts_es": [
+     "Centro de administración de Power Platform",
+     "Portal de Microsoft Purview",
+     "Centro de administración de Microsoft 365"
+    ],
+    "opts_en": [
+     "Power Platform admin center",
+     "Microsoft Purview portal",
+     "Microsoft 365 admin center"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las directivas de datos de conectores están en Power Platform; la retención está en Purview.",
+  "exp_en": "Connector data policies live in Power Platform; retention lives in Purview."
+ },
+ {
+  "id": 373,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Un agente no debe devolver en sus respuestas contenido de archivos etiquetados 'Altamente confidencial'. ¿Qué control se aplica?",
+  "q_en": "An agent must not return content from files labeled 'Highly Confidential' in its answers. Which control applies?",
+  "opts_es": [
+   "Directiva de nomenclatura de grupos",
+   "Una regla de flujo de correo que quite los adjuntos con la etiqueta",
+   "Una directiva DLP de Purview para la ubicación de Copilot y agentes",
+   "Una directiva de reuniones de Teams"
+  ],
+  "opts_en": [
+   "Group naming policy",
+   "A mail flow rule that strips attachments with the label",
+   "A Purview DLP policy for the Copilot and agents location",
+   "A Teams meeting policy"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "DLP para Microsoft 365 Copilot puede excluir contenido etiquetado del procesamiento de Copilot y los agentes.",
+  "exp_en": "DLP for Microsoft 365 Copilot can exclude labeled content from processing by Copilot and agents."
+ },
+ {
+  "id": 374,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Seguridad debe recibir alertas cuando un agente accede a un número inusual de archivos confidenciales. ¿Qué solución puede ayudar?",
+  "q_en": "Security must alert when an agent accesses an unusually large number of sensitive files. Which solution can help?",
+  "opts_es": [
+   "Puntos de restauración de Microsoft 365 Backup para cada sitio de agente",
+   "Centro de mensajes",
+   "DSPM para IA de Microsoft Purview e Insider Risk Management",
+   "Versión dirigida"
+  ],
+  "opts_en": [
+   "Microsoft 365 Backup restore points for every agent site",
+   "Message center",
+   "Microsoft Purview DSPM for AI and Insider Risk Management",
+   "Targeted release"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "DSPM para IA e Insider Risk Management analizan la actividad de IA y de agentes con datos confidenciales.",
+  "exp_en": "DSPM for AI and Insider Risk Management analyze AI and agent activity with sensitive data."
+ },
+ {
+  "id": 375,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la protección de los datos que usan los agentes, indica si es verdadera o falsa.",
+  "q_en": "For each statement about protecting data used by agents, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "DLP puede impedir que Copilot y los agentes procesen contenido etiquetado.",
+    "en": "DLP can stop Copilot and agents from processing labeled content.",
+    "ans": true
+   },
+   {
+    "es": "La actividad de los agentes no se puede auditar.",
+    "en": "Agent activity can't be audited.",
+    "ans": false
+   },
+   {
+    "es": "DSPM para IA puede resaltar interacciones de riesgo con datos confidenciales.",
+    "en": "DSPM for AI can highlight risky interactions with sensitive data.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las interacciones de agentes y Copilot se auditan y las cubren los controles de Purview.",
+  "exp_en": "Agent and Copilot interactions are audited and covered by Purview controls."
+ },
+ {
+  "id": 376,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "sentence",
+  "pre_es": "Para impedir que los agentes usen en sus respuestas archivos con una etiqueta concreta, cree una directiva de ",
+  "pre_en": "To stop agents from using files with a specific sensitivity label in responses, create a Purview ",
+  "post_es": " de Purview.",
+  "post_en": " policy.",
+  "opts_es": [
+   "retención",
+   "cuarentena",
+   "DLP",
+   "nomenclatura"
+  ],
+  "opts_en": [
+   "retention",
+   "quarantine",
+   "DLP",
+   "naming"
+  ],
+  "correct": 2,
+  "exp_es": "Las directivas DLP para Copilot pueden excluir elementos etiquetados.",
+  "exp_en": "DLP policies for Copilot can exclude labeled items."
+ },
+ {
+  "id": 377,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "mc",
+  "q_es": "Los agentes de Copilot Studio en producción se quedan sin capacidad de forma inesperada. ¿Dónde puede supervisar el consumo y configurar alertas?",
+  "q_en": "Copilot Studio agents in production run out of capacity unexpectedly. Where can you monitor consumption and set alerts?",
+  "opts_es": [
+   "El panel de flujo de correo del centro de administración de Exchange",
+   "Informes de capacidad del centro de administración de Power Platform",
+   "Estado del servicio",
+   "Panel de calidad de llamadas de Teams"
+  ],
+  "opts_en": [
+   "The Exchange admin center mail flow dashboard",
+   "Capacity reports in the Power Platform admin center",
+   "Service health",
+   "Teams call quality dashboard"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La capacidad de Copilot Studio y el consumo de créditos de Copilot se informan en el centro de administración de Power Platform.",
+  "exp_en": "Copilot Studio capacity and Copilot Credits consumption are reported in the Power Platform admin center."
+ },
+ {
+  "id": 378,
+  "exam": "ab-650",
+  "dom": 3,
+  "obj": "3.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la supervisión del consumo de IA, indica si es verdadera o falsa.",
+  "q_en": "For each statement about monitoring AI consumption, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La capacidad de Copilot Studio se puede supervisar en el centro de administración de Power Platform.",
+    "en": "Copilot Studio capacity can be monitored in the Power Platform admin center.",
+    "ans": true
+   },
+   {
+    "es": "La facturación de pago por uso requiere una suscripción de Azure.",
+    "en": "Pay-as-you-go billing requires an Azure subscription.",
+    "ans": true
+   },
+   {
+    "es": "El estado del servicio muestra el saldo de créditos de Copilot de cada usuario.",
+    "en": "Service health shows each user's Copilot Credits balance.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El estado del servicio muestra incidentes y avisos, no el consumo.",
+  "exp_en": "Service health shows incidents and advisories, not consumption."
  }
 ]
