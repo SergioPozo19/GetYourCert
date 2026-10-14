@@ -7006,7 +7006,7 @@
   "opts_es": [
    "Las responsabilidades del cliente y del proveedor son exactamente idénticas e intercambiables en todos los tipos de servicio de nube",
    "El cliente asume siempre el cien por cien de las responsabilidades de seguridad, independientemente del modelo de servicio que contrate",
-   "Cuanto más gestionado es el servicio (por ejemplo, de IaaS hacia SaaS), mayor es la proporción de responsabilidades que asume el proveedor",
+   "Cuánto más gestionado es el servicio (por ejemplo, de IaaS hacia SaaS), mayor es la proporción de responsabilidades que asume el proveedor",
    "El proveedor nunca asume ninguna responsabilidad de seguridad, sea cual sea el modelo de servicio que el cliente haya elegido contratar"
   ],
   "opts_en": [
@@ -9924,7 +9924,7 @@
   "opts_es": [
    "Las cuentas Standard exigen redundancia GRS obligatoria por defecto, mientras que las cuentas Premium solo admiten LRS en todas las regiones de Azure disponibles actualmente",
    "Las cuentas Standard tienen un coste por gigabyte siempre superior al de las cuentas Premium para discos gestionados de tipo P30 o superior en cualquier región de Azure",
-   "Las cuentas Premium están limitadas exclusivamente a recursos compartidos de Azure Files con protocolo NFS y no pueden utilizarse para discos de maquinas virtuales en Azure",
+   "Las cuentas Premium están limitadas exclusivamente a recursos compartidos de Azure Files con protocolo NFS y no pueden utilizarse para discos de máquinas virtuales en Azure",
    "Las cuentas Premium utilizan discos de estado sólido (SSD) que ofrecen mayor rendimiento y menor latencia que las cuentas Standard, que suelen usar discos duros (HDD) o SSD de menor rendimiento"
   ],
   "opts_en": [
@@ -10781,9 +10781,9 @@
   "q_en": "A company configures a network security group (NSG) with several inbound rules, including a rule with priority 100 that allows traffic from a specific IP and another with priority 200 that denies all traffic from that same broader IP range. If traffic arrives from that specific IP, which rule applies?",
   "opts_es": [
    "Ninguna de las dos reglas se aplica porque los NSG de Azure no procesan solicitudes con rangos de IP solapados en la misma tabla de reglas de seguridad de red",
-   "Ambas reglas se aplican de forma simultanea y el trafico se filtra parcialmente segun el numero de puerto de destino de cada paquete analizado por el NSG",
-   "La regla con prioridad 200, porque en los NSG de Azure las reglas de tipo Deny siempre anulan automaticamente a las de tipo Allow sin importar el numero de prioridad asignado",
-   "La regla con prioridad 100 (numero mas bajo), que permite el trafico, ya que las reglas de NSG se evaluan en orden de prioridad numerica ascendente y se detiene la evaluacion en la primera coincidencia"
+   "Ambas reglas se aplican de forma simultánea y el trafico se filtra parcialmente según el numero de puerto de destino de cada paquete analizado por el NSG",
+   "La regla con prioridad 200, porque en los NSG de Azure las reglas de tipo Deny siempre anulan automáticamente a las de tipo Allow sin importar el numero de prioridad asignado",
+   "La regla con prioridad 100 (numero mas bajo), que permite el trafico, ya que las reglas de NSG se evalúan en orden de prioridad numérica ascendente y se detiene la evaluación en la primera coincidencia"
   ],
   "opts_en": [
    "Neither rule applies because Azure NSGs do not process requests with overlapping IP ranges in the same network security rule table",
@@ -11950,8 +11950,8 @@
   "q_es": "Un consultor recomienda a una empresa que utilice el Azure Security Benchmark como punto de partida para definir sus controles de seguridad en Azure. ¿Qué describe mejor este recurso?",
   "q_en": "A consultant recommends that a company use the Azure Security Benchmark as a starting point for defining its security controls in Azure. What best describes this resource?",
   "opts_es": [
-   "Un tipo de bloqueo de recursos ReadOnly en Azure que protege automaticamente contra eliminaciones y cambios accidentales en recursos criticos del tenant",
-   "Una calculadora integrada en Microsoft Cost Management para estimar el coste economico de implementar controles de seguridad especificos del entorno empresarial",
+   "Un tipo de bloqueo de recursos ReadOnly en Azure que protege automáticamente contra eliminaciones y cambios accidentales en recursos críticos del tenant",
+   "Una calculadora integrada en Microsoft Cost Management para estimar el coste económico de implementar controles de seguridad específicos del entorno empresarial",
    "Un conjunto de recomendaciones de seguridad y mejores practicas especificas de Azure, organizadas por areas de control, que sirve de base para evaluaciones de cumplimiento",
    "Un certificado de auditoria emitido por un organismo regulador externo independiente que acredita formalmente el cumplimiento de ISO 27001 en Azure"
   ],
@@ -12549,9 +12549,9 @@
   "q_en": "An architect compares Azure CLI and Azure PowerShell to decide which tool to recommend to their team. Which of the following statements correctly describes a real difference between the two?",
   "opts_es": [
    "Azure CLI usa una sintaxis de comandos con subcomandos similar a otras herramientas multiplataforma, mientras que Azure PowerShell se basa en cmdlets con verbos y sustantivos que devuelven objetos .NET",
-   "Azure PowerShell no puede gestionar recursos de Azure mediante el modulo Az; solo administra Active Directory local con modulos AD de DirectoryServices instalados en el servidor",
-   "Azure CLI solo puede ejecutarse en sistemas operativos Windows de Microsoft; Azure PowerShell es la unica herramienta de linea de comandos multiplataforma compatible con Linux y macOS",
-   "Azure CLI requiere la adquisicion de una licencia de pago adicional para poder usarse en entornos de produccion, a diferencia de Azure PowerShell que es completamente gratuito"
+   "Azure PowerShell no puede gestionar recursos de Azure mediante el módulo Az; solo administra Active Directory local con módulos AD de DirectoryServices instalados en el servidor",
+   "Azure CLI solo puede ejecutarse en sistemas operativos Windows de Microsoft; Azure PowerShell es la única herramienta de línea de comandos multiplataforma compatible con Linux y macOS",
+   "Azure CLI requiere la adquisición de una licencia de pago adicional para poder usarse en entornos de producción, a diferencia de Azure PowerShell que es completamente gratuito"
   ],
   "opts_en": [
    "Azure CLI uses a command syntax with subcommands similar to other cross-platform tools, while Azure PowerShell is based on cmdlets with verbs and nouns that return .NET objects",
@@ -12626,10 +12626,10 @@
   "q_es": "Un administrador necesita realizar una operación administrativa avanzada que no está disponible directamente como un botón en el portal de Azure, pero sí está documentada como un parámetro de un comando de Azure CLI. ¿Qué relación general existe entre el portal de Azure, Azure CLI/PowerShell y Azure Resource Manager?",
   "q_en": "An administrator needs to perform an advanced administrative operation that isn't directly available as a button in the Azure portal, but is documented as a parameter of an Azure CLI command. What general relationship exists between the Azure portal, Azure CLI/PowerShell, and Azure Resource Manager?",
   "opts_es": [
-   "La CLI y PowerShell se comunican directamente con el hardware fisico de los centros de datos de Azure, sin pasar en ningun momento por la capa de Azure Resource Manager",
-   "El portal, la CLI y PowerShell son interfaces distintas que, en ultima instancia, envian solicitudes a Azure Resource Manager, por lo que algunas operaciones avanzadas pueden estar disponibles en unas interfaces y no en otras",
-   "Azure Resource Manager es una interfaz grafica visual alternativa al portal web de Azure, completamente independiente de la CLI y de los modulos de PowerShell disponibles actualmente",
-   "El portal de Azure es el unico punto de entrada valido y oficial a Resource Manager; la CLI y PowerShell solo pueden consultar datos en modo estricto de solo lectura sin modificar ningun recurso"
+   "La CLI y PowerShell se comunican directamente con el hardware físico de los centros de datos de Azure, sin pasar en ningún momento por la capa de Azure Resource Manager",
+   "El portal, la CLI y PowerShell son interfaces distintas que, en última instancia, envían solicitudes a Azure Resource Manager, por lo que algunas operaciones avanzadas pueden estar disponibles en unas interfaces y no en otras",
+   "Azure Resource Manager es una interfaz gráfica visual alternativa al portal web de Azure, completamente independiente de la CLI y de los módulos de PowerShell disponibles actualmente",
+   "El portal de Azure es el único punto de entrada valido y oficial a Resource Manager; la CLI y PowerShell solo pueden consultar datos en modo estricto de solo lectura sin modificar ningún recurso"
   ],
   "opts_en": [
    "The CLI and PowerShell communicate directly with the physical hardware of Azure data centers, without going through the Azure Resource Manager layer at any point",
@@ -12678,10 +12678,10 @@
   "q_es": "Un equipo necesita decidir entre escribir un script de Azure CLI o una plantilla de Bicep para desplegar un nuevo entorno de tres VM con su red asociada. El entorno se desplegará una sola vez y no se necesita reutilizarlo ni versionarlo. ¿Qué consideración es más relevante para esta decisión, según las características de cada enfoque?",
   "q_en": "A team needs to decide between writing an Azure CLI script or a Bicep template to deploy a new environment of three VMs with associated networking. The environment will be deployed only once and doesn't need to be reused or versioned. What consideration is most relevant to this decision, based on the characteristics of each approach?",
   "opts_es": [
-   "Ambos enfoques son completamente identicos en todos los aspectos tecnicos y practicos; no existe ninguna diferencia real ni significativa entre usar un script de CLI o una plantilla Bicep para desplegar recursos en Azure",
-   "Un script de CLI es imperativo (ejecuta pasos en orden) mientras que Bicep es declarativo (describe el estado final deseado); para un despliegue unico y sencillo, un script de CLI puede ser mas rapido de escribir, aunque Bicep ofrece mejor idempotencia y reutilizacion a largo plazo",
-   "Un script de Azure CLI no puede crear maquinas virtuales de Azure bajo ninguna circunstancia posible; solo puede consultarlas de forma pasiva mediante comandos de lectura como az vm list disponibles en el modulo instalado",
-   "Bicep solo puede desplegar un unico recurso por plantilla de forma estrictamente obligatoria e inamovible, por lo que no puede utilizarse en entornos empresariales reales con multiples recursos interdependientes desplegados juntos"
+   "Ambos enfoques son completamente idénticos en todos los aspectos técnicos y practicos; no existe ninguna diferencia real ni significativa entre usar un script de CLI o una plantilla Bicep para desplegar recursos en Azure",
+   "Un script de CLI es imperativo (ejecuta pasos en orden) mientras que Bicep es declarativo (describe el estado final deseado); para un despliegue único y sencillo, un script de CLI puede ser más rápido de escribir, aunque Bicep ofrece mejor idempotencia y reutilización a largo plazo",
+   "Un script de Azure CLI no puede crear máquinas virtuales de Azure bajo ninguna circunstancia posible; solo puede consultarlas de forma pasiva mediante comandos de lectura como az vm list disponibles en el módulo instalado",
+   "Bicep solo puede desplegar un único recurso por plantilla de forma estrictamente obligatoria e inamovible, por lo que no puede utilizarse en entornos empresariales reales con múltiples recursos interdependientes desplegados juntos"
   ],
   "opts_en": [
    "Both approaches are completely identical in all technical and practical aspects; there is no real or significant difference between using a CLI script or a Bicep template to deploy resources in Azure",

@@ -1440,9 +1440,9 @@
   "q_en": "Which kind of tags CANNOT be applied to a resource in Azure?",
   "opts_es": [
    "Etiquetas aplicadas mediante plantillas ARM/Bicep durante el aprovisionamiento inicial, ya que no pueden modificarse posteriormente desde el portal de Azure ni mediante PowerShell",
-   "Etiquetas aplicadas mediante Azure Policy con efecto Modify, que se propagan automaticamente solo a recursos nuevos y no a los recursos ya existentes en la suscripcion",
-   "Etiquetas en recursos heredados (classic) que no admiten el espacio de nombres de etiquetas de Azure Resource Manager, como ciertos recursos de Azure DNS o Traffic Manager con limites distintos",
-   "Pares clave-valor que superan los 128 caracteres en la clave o los 256 caracteres en el valor, ya que Azure limita el tamano maximo de las etiquetas permitidas por recurso"
+   "Etiquetas aplicadas mediante Azure Policy con efecto Modify, que se propagan automáticamente solo a recursos nuevos y no a los recursos ya existentes en la suscripción",
+   "Etiquetas en recursos heredados (classic) que no admiten el espacio de nombres de etiquetas de Azure Resource Manager, como ciertos recursos de Azure DNS o Traffic Manager con límites distintos",
+   "Pares clave-valor que superan los 128 caracteres en la clave o los 256 caracteres en el valor, ya que Azure limita el tamaño máximo de las etiquetas permitidas por recurso"
   ],
   "opts_en": [
    "Tags applied via ARM/Bicep templates during initial provisioning, as they cannot be subsequently modified from the Azure portal or via PowerShell",
@@ -3443,10 +3443,10 @@
   "q_es": "¿Qué es un conjunto de disponibilidad (availability set) en Azure?",
   "q_en": "What is an availability set in Azure?",
   "opts_es": [
-   "Una directiva de Azure Policy con efecto DeployIfNotExists que impide el inicio de VMs que incumplan las reglas de etiquetado o de SKU permitido en la suscripcion",
-   "Un grupo de zonas de disponibilidad de distintas regiones de Azure agrupadas automaticamente por Azure Resource Manager para mejorar la resiliencia geografica del entorno",
-   "Un tipo de disco administrado de la serie Ultra SSD optimizado para alta disponibilidad y latencia inferior a 1 ms en cargas de trabajo de bases de datos criticas",
-   "Una agrupacion logica de VMs que Azure distribuye entre distintos dominios de error y de actualizacion dentro de un mismo centro de datos, para reducir el impacto de fallos de hardware o mantenimiento"
+   "Una directiva de Azure Policy con efecto DeployIfNotExists que impide el inicio de VMs que incumplan las reglas de etiquetado o de SKU permitido en la suscripción",
+   "Un grupo de zonas de disponibilidad de distintas regiones de Azure agrupadas automáticamente por Azure Resource Manager para mejorar la resiliencia geográfica del entorno",
+   "Un tipo de disco administrado de la serie Ultra SSD optimizado para alta disponibilidad y latencia inferior a 1 ms en cargas de trabajo de bases de datos críticas",
+   "Una agrupación lógica de VMs que Azure distribuye entre distintos dominios de error y de actualización dentro de un mismo centro de datos, para reducir el impacto de fallos de hardware o mantenimiento"
   ],
   "opts_en": [
    "An Azure Policy with DeployIfNotExists effect that prevents VMs from starting if they violate tagging or allowed SKU rules in the subscription",
@@ -3984,9 +3984,9 @@
   "q_es": "¿Cuál de los siguientes NO es un nivel de servicio (SKU) válido de Azure Container Registry?",
   "q_en": "Which of the following is NOT a valid Azure Container Registry service tier (SKU)?",
   "opts_es": [
-   "Enterprise, el SKU mas alto que incluye todas las capacidades de Application Gateway",
-   "Standard, el SKU de proposito general sin firewall de aplicaciones web WAF integrado disponible",
-   "Premium, un SKU avanzado con capacidades de inspeccion de trafico cifrado TLS adicionales",
+   "Enterprise, el SKU más alto que incluye todas las capacidades de Application Gateway",
+   "Standard, el SKU de propósito general sin firewall de aplicaciones web WAF integrado disponible",
+   "Premium, un SKU avanzado con capacidades de inspección de trafico cifrado TLS adicionales",
    "Basic, el SKU de entrada con funcionalidades limitadas y menor capacidad de autoescalado configurado"
   ],
   "opts_en": [
@@ -5488,10 +5488,10 @@
   "q_es": "¿Qué afirmación sobre los puntos de conexión de servicio (Service Endpoints) frente a los puntos de conexión privados (Private Endpoints) es correcta?",
   "q_en": "Which statement about Service Endpoints versus Private Endpoints is correct?",
   "opts_es": [
-   "Los puntos de conexion de servicio asignan una IP privada del espacio 10.0.0.0/8 dentro de la VNet al servicio PaaS, sustituyendo completamente su direccion IP publica original asignada por Microsoft Azure",
-   "Ambos mecanismos son funcionalmente identicos en todos los aspectos tecnicos: usan el mismo modelo de direccionamiento IP y ofrecen el mismo nivel de aislamiento y coste de configuracion en Azure",
-   "Los puntos de conexion de servicio extienden la identidad de la VNet al trafico hacia el servicio pero mantienen la direccion IP publica del servicio como destino, mientras que los puntos de conexion privados asignan una IP privada de la VNet al servicio",
-   "Los puntos de conexion privados solo son compatibles con Azure SQL Database y no pueden usarse con Azure Storage, Azure Key Vault ni ningun otro servicio PaaS de Microsoft Azure disponible"
+   "Los puntos de conexión de servicio asignan una IP privada del espacio 10.0.0.0/8 dentro de la VNet al servicio PaaS, sustituyendo completamente su dirección IP publica original asignada por Microsoft Azure",
+   "Ambos mecanismos son funcionalmente idénticos en todos los aspectos técnicos: usan el mismo modelo de direccionamiento IP y ofrecen el mismo nivel de aislamiento y coste de configuración en Azure",
+   "Los puntos de conexión de servicio extienden la identidad de la VNet al trafico hacia el servicio pero mantienen la dirección IP publica del servicio como destino, mientras que los puntos de conexión privados asignan una IP privada de la VNet al servicio",
+   "Los puntos de conexión privados solo son compatibles con Azure SQL Database y no pueden usarse con Azure Storage, Azure Key Vault ni ningún otro servicio PaaS de Microsoft Azure disponible"
   ],
   "opts_en": [
    "Service endpoints assign a private IP from the 10.0.0.0/8 space within the VNet to the PaaS service, completely replacing its original public IP address assigned by Microsoft Azure",
@@ -5568,10 +5568,10 @@
   "q_es": "¿Qué describe correctamente Azure Firewall en comparación con una NSG?",
   "q_en": "What correctly describes Azure Firewall compared to an NSG?",
   "opts_es": [
-   "Azure Firewall es un servicio administrado con estado (stateful), con una direccion IP estatica, que permite filtrado basado en FQDN y reglas centralizadas para toda una red, mientras que las NSG son listas de control de acceso ligeras a nivel de subred/NIC",
-   "Azure Firewall y las NSG son funcionalmente identicos en la practica: ambos son servicios PaaS sin estado con IP dinamica y filtrado por FQDN integrado de fabrica sin coste adicional para el cliente",
-   "Azure Firewall solo puede desplegarse dentro de una unica subred /26 del hub y no puede aplicar reglas centralizadas a multiples redes virtuales ni a distintas suscripciones de Azure configuradas",
-   "Las NSG ofrecen filtrado por nombre de dominio completamente calificado (FQDN) en capa 7 a nivel de subred y NIC, mientras que Azure Firewall solo es capaz de filtrar por direccion IP y numero de puerto"
+   "Azure Firewall es un servicio administrado con estado (stateful), con una dirección IP estática, que permite filtrado basado en FQDN y reglas centralizadas para toda una red, mientras que las NSG son listas de control de acceso ligeras a nivel de subred/NIC",
+   "Azure Firewall y las NSG son funcionalmente idénticos en la practica: ambos son servicios PaaS sin estado con IP dinámica y filtrado por FQDN integrado de fabrica sin coste adicional para el cliente",
+   "Azure Firewall solo puede desplegarse dentro de una única subred /26 del hub y no puede aplicar reglas centralizadas a múltiples redes virtuales ni a distintas suscripciones de Azure configuradas",
+   "Las NSG ofrecen filtrado por nombre de dominio completamente calificado (FQDN) en capa 7 a nivel de subred y NIC, mientras que Azure Firewall solo es capaz de filtrar por dirección IP y numero de puerto"
   ],
   "opts_en": [
    "Azure Firewall is a stateful managed service with a static IP address that enables FQDN-based filtering and centralized rules for an entire network, while NSGs are lightweight access control lists at the subnet/NIC level",
@@ -6735,10 +6735,10 @@
   "q_es": "¿Qué describe correctamente una 'instantánea' (snapshot) de un disco administrado de Azure en relación con las copias de seguridad?",
   "q_en": "What correctly describes a 'snapshot' of an Azure managed disk in relation to backups?",
   "opts_es": [
-   "Una instantanea cifra automaticamente el disco original con una nueva clave gestionada por el cliente en Azure Key Vault, reemplazando la configuracion de cifrado previa del disco existente",
-   "Una instantanea elimina permanentemente el disco administrado original al crearse de forma automatica, dejando solo la copia de solo lectura disponible en el grupo de recursos del tenant",
-   "Las instantaneas creadas se sincronizan automaticamente con Azure Site Recovery y se replican en la region secundaria de la directiva de replicacion configurada para esa VM concreta",
-   "Es una copia de solo lectura de un disco en un momento determinado, que puede usarse para crear nuevos discos o como base para recuperacion, pero no incluye por si sola una directiva de retencion automatizada como Azure Backup"
+   "Una instantánea cifra automáticamente el disco original con una nueva clave gestionada por el cliente en Azure Key Vault, reemplazando la configuración de cifrado previa del disco existente",
+   "Una instantánea elimina permanentemente el disco administrado original al crearse de forma automática, dejando solo la copia de solo lectura disponible en el grupo de recursos del tenant",
+   "Las instantáneas creadas se sincronizan automáticamente con Azure Site Recovery y se replican en la region secundaria de la directiva de replicación configurada para esa VM concreta",
+   "Es una copia de solo lectura de un disco en un momento determinado, que puede usarse para crear nuevos discos o como base para recuperación, pero no incluye por si sola una directiva de retención automatizada como Azure Backup"
   ],
   "opts_en": [
    "A snapshot automatically encrypts the original disk with a new customer-managed key in Azure Key Vault, replacing the previous encryption configuration of the existing disk",
@@ -6815,10 +6815,10 @@
   "q_es": "¿Qué describe correctamente la diferencia entre las métricas 'estándar' (a nivel de plataforma) y las métricas personalizadas en Azure Monitor?",
   "q_en": "What correctly describes the difference between 'standard' (platform-level) metrics and custom metrics in Azure Monitor?",
   "opts_es": [
-   "Las metricas de la plataforma se recopilan automaticamente desde los recursos de Azure sin configuracion adicional; las metricas personalizadas las emite explicitamente la aplicacion o el agente (por ejemplo, mediante Application Insights o el agente de Azure Monitor)",
-   "No existe ninguna diferencia tecnica entre metricas de plataforma y metricas personalizadas: ambas se recopilan exactamente de la misma manera y requieren el mismo nivel de configuracion por parte del administrador del tenant",
-   "Las metricas personalizadas son las unicas que pueden utilizarse en reglas de alertas configuradas de Azure Monitor; las metricas de plataforma no admiten ningun tipo de condicion de alerta personalizada configurada",
-   "Las metricas de plataforma de Azure requieren instalar y configurar manualmente el agente de Azure Monitor (AMA) en cada maquina virtual antes de que comiencen a recopilarse en el area de trabajo de logs"
+   "Las métricas de la plataforma se recopilan automáticamente desde los recursos de Azure sin configuración adicional; las métricas personalizadas las emite explícitamente la aplicación o el agente (por ejemplo, mediante Application Insights o el agente de Azure Monitor)",
+   "No existe ninguna diferencia técnica entre métricas de plataforma y métricas personalizadas: ambas se recopilan exactamente de la misma manera y requieren el mismo nivel de configuración por parte del administrador del tenant",
+   "Las métricas personalizadas son las únicas que pueden utilizarse en reglas de alertas configuradas de Azure Monitor; las métricas de plataforma no admiten ningún tipo de condición de alerta personalizada configurada",
+   "Las métricas de plataforma de Azure requieren instalar y configurar manualmente el agente de Azure Monitor (AMA) en cada máquina virtual antes de que comiencen a recopilarse en el area de trabajo de logs"
   ],
   "opts_en": [
    "Platform metrics are automatically collected from Azure resources without additional configuration; custom metrics are explicitly emitted by the application or agent (e.g., via Application Insights or the Azure Monitor agent)",
@@ -6919,10 +6919,10 @@
   "q_es": "¿Qué afirmación describe correctamente el 'modo de mantenimiento de Conexión de Network Watcher' (Connection Monitor) frente a una prueba puntual de 'Connection troubleshoot'?",
   "q_en": "Which statement correctly describes Network Watcher's 'Connection Monitor' compared to a one-time 'Connection troubleshoot' test?",
   "opts_es": [
-   "Ambas herramientas son funcionalmente identicas en coste, alcance y funcionalidad; solo cambia el nombre que aparece en el menu del portal de Azure para el administrador",
-   "Connection troubleshoot supervisa la conectividad de red de forma continua durante dias o semanas, mientras que Connection Monitor solo realiza una unica comprobacion puntual bajo demanda",
+   "Ambas herramientas son funcionalmente idénticas en coste, alcance y funcionalidad; solo cambia el nombre que aparece en el menu del portal de Azure para el administrador",
+   "Connection troubleshoot supervisa la conectividad de red de forma continua durante días o semanas, mientras que Connection Monitor solo realiza una única comprobación puntual bajo demanda",
    "Connection Monitor solo funciona para recursos locales (on-premises) y no admite endpoints dentro de redes virtuales de Azure ni en recursos de Internet publico",
-   "Connection Monitor supervisa la conectividad de red de forma continua a lo largo del tiempo entre multiples origenes y destinos, mientras que Connection troubleshoot realiza una comprobacion puntual unica"
+   "Connection Monitor supervisa la conectividad de red de forma continua a lo largo del tiempo entre múltiples orígenes y destinos, mientras que Connection troubleshoot realiza una comprobación puntual única"
   ],
   "opts_en": [
    "Both tools are functionally identical in cost, scope, and functionality; only the name shown in the Azure portal menu changes for the administrator",
@@ -7515,10 +7515,10 @@
   "q_es": "¿Cuál es la diferencia entre los controles de concesión (grant controls) y los controles de sesión (session controls) en el acceso condicional de Azure AD?",
   "q_en": "What is the difference between grant controls and session controls in Azure AD Conditional Access?",
   "opts_es": [
-   "Los controles de concesion determinan si se permite o bloquea el acceso (posiblemente con requisitos como MFA); los controles de sesion limitan lo que el usuario puede hacer dentro de la aplicacion una vez que ha accedido",
-   "Los controles de sesion determinan si se permite o bloquea el acceso al tenant de Azure AD; los controles de concesion limitan las acciones disponibles dentro de cada aplicacion registrada",
-   "Los controles de concesion solo se aplican a aplicaciones de Microsoft como Teams, SharePoint y Exchange; los controles de sesion se aplican a todas las aplicaciones registradas en el tenant",
-   "Los controles de concesion y los controles de sesion son sinonimos en el acceso condicional de Entra ID; ambos controlan exactamente las mismas condiciones de acceso sin diferencia funcional"
+   "Los controles de concesión determinan si se permite o bloquea el acceso (posiblemente con requisitos como MFA); los controles de sesión limitan lo que el usuario puede hacer dentro de la aplicación una vez que ha accedido",
+   "Los controles de sesión determinan si se permite o bloquea el acceso al tenant de Azure AD; los controles de concesión limitan las acciones disponibles dentro de cada aplicación registrada",
+   "Los controles de concesión solo se aplican a aplicaciones de Microsoft como Teams, SharePoint y Exchange; los controles de sesión se aplican a todas las aplicaciones registradas en el tenant",
+   "Los controles de concesión y los controles de sesión son sinónimos en el acceso condicional de Entra ID; ambos controlan exactamente las mismas condiciones de acceso sin diferencia funcional"
   ],
   "opts_en": [
    "Grant controls determine whether access is allowed or blocked (possibly with requirements such as MFA); session controls limit what the user can do within the application once they have accessed it",
@@ -7857,10 +7857,10 @@
   "q_es": "¿Qué es una asignación de denegación (deny assignment) en Azure RBAC y quién puede crearla directamente?",
   "q_en": "What is a deny assignment in Azure RBAC and who can create one directly?",
   "opts_es": [
-   "Una asignacion de denegacion bloquea el acceso de usuarios a acciones especificas incluso si tienen una asignacion de rol que lo permite; solo Azure (no los administradores) las crea, principalmente a traves de Blueprints o recursos gestionados",
-   "Una asignacion de denegacion es una asignacion de rol con permisos negativos que cualquier usuario con el rol Propietario puede crear desde el portal de Azure o con el cmdlet New-AzDenyAssignment disponible",
-   "Una asignacion de denegacion elimina de forma permanente e inmediata todos los roles RBAC asignados previamente a un usuario o grupo en el ambito indicado de la suscripcion de Azure",
-   "Las asignaciones de denegacion son simplemente otro nombre alternativo para las exclusiones de ambito (notScopes) configuradas en las asignaciones de directivas de Azure Policy en la suscripcion"
+   "Una asignación de denegación bloquea el acceso de usuarios a acciones especificas incluso si tienen una asignación de rol que lo permite; solo Azure (no los administradores) las crea, principalmente a través de Blueprints o recursos gestionados",
+   "Una asignación de denegación es una asignación de rol con permisos negativos que cualquier usuario con el rol Propietario puede crear desde el portal de Azure o con el cmdlet New-AzDenyAssignment disponible",
+   "Una asignación de denegación elimina de forma permanente e inmediata todos los roles RBAC asignados previamente a un usuario o grupo en el ámbito indicado de la suscripción de Azure",
+   "Las asignaciones de denegación son simplemente otro nombre alternativo para las exclusiones de ámbito (notScopes) configuradas en las asignaciones de directivas de Azure Policy en la suscripción"
   ],
   "opts_en": [
    "A deny assignment blocks user access to specific actions even if they have a role assignment that permits it; only Azure (not administrators) creates them, primarily through Blueprints or managed resources",
@@ -7984,9 +7984,9 @@
   "q_es": "¿Cuál es la diferencia principal entre las instancias reservadas (reserved instances) y los planes de ahorro (savings plans) en Azure Cost Management?",
   "q_en": "What is the main difference between reserved instances and savings plans in Azure Cost Management?",
   "opts_es": [
-   "Las instancias reservadas ofrecen descuentos para un tipo de VM y region especificos; los planes de ahorro ofrecen descuentos mas flexibles aplicables a multiples servicios y regiones a cambio de comprometerse con un gasto horario",
-   "Los planes de ahorro de Azure son siempre mas baratos que las instancias reservadas para el mismo tipo de VM, region y plazo de compromiso de 1 o 3 anos sin ninguna excepcion posible",
-   "Las instancias reservadas de Azure pueden cancelarse en cualquier momento sin ninguna penalizacion economica adicional; los planes de ahorro son completamente irrevocables durante todo el periodo contratado",
+   "Las instancias reservadas ofrecen descuentos para un tipo de VM y region específicos; los planes de ahorro ofrecen descuentos más flexibles aplicables a múltiples servicios y regiones a cambio de comprometerse con un gasto horario",
+   "Los planes de ahorro de Azure son siempre más baratos que las instancias reservadas para el mismo tipo de VM, region y plazo de compromiso de 1 o 3 años sin ninguna excepción posible",
+   "Las instancias reservadas de Azure pueden cancelarse en cualquier momento sin ninguna penalizacion económica adicional; los planes de ahorro son completamente irrevocables durante todo el periodo contratado",
    "Solo las instancias reservadas estan disponibles para suscripciones de pago por uso de Azure; los planes de ahorro son exclusivos de los contratos Enterprise Agreement (EA) firmados con Microsoft"
   ],
   "opts_en": [
@@ -8373,10 +8373,10 @@
   "q_es": "¿Cuál es la diferencia entre 'Azure Service Health' y 'Azure Resource Health'?",
   "q_en": "What is the difference between 'Azure Service Health' and 'Azure Resource Health'?",
   "opts_es": [
-   "Service Health muestra el estado de los servicios de Azure a nivel de plataforma; Resource Health muestra el estado de salud de recursos individuales especificos (como una VM concreta)",
-   "Resource Health muestra el estado global de todos los servicios de Azure en todas las regiones; Service Health muestra el estado de recursos individuales de la suscripcion activa",
-   "Son exactamente la misma herramienta con dos nombres distintos segun desde que seccion del portal de Azure se acceda a ellas por el administrador",
-   "Service Health es gratuito para todas las suscripciones de Azure; Resource Health requiere un plan de soporte tecnico de pago de nivel Developer o superior contratado"
+   "Service Health muestra el estado de los servicios de Azure a nivel de plataforma; Resource Health muestra el estado de salud de recursos individuales específicos (como una VM concreta)",
+   "Resource Health muestra el estado global de todos los servicios de Azure en todas las regiones; Service Health muestra el estado de recursos individuales de la suscripción activa",
+   "Son exactamente la misma herramienta con dos nombres distintos según desde que sección del portal de Azure se acceda a ellas por el administrador",
+   "Service Health es gratuito para todas las suscripciones de Azure; Resource Health requiere un plan de soporte técnico de pago de nivel Developer o superior contratado"
   ],
   "opts_en": [
    "Service Health shows the status of Azure services at the platform level; Resource Health shows the health status of specific individual resources (such as a specific VM)",
@@ -10516,10 +10516,10 @@
   "q_es": "¿Qué política de expulsión de Azure Spot VMs hace que la VM se detenga y desasigne cuando Azure necesita recuperar la capacidad, en lugar de eliminarla?",
   "q_en": "Which Azure Spot VM eviction policy causes the VM to stop and deallocate when Azure needs to reclaim capacity, rather than deleting it?",
   "opts_es": [
-   "Deallocate, la accion que libera los recursos de computo asignados a la VM y detiene la facturacion del computo mientras conserva el disco y la configuracion",
-   "Delete, la accion que elimina permanentemente la VM y todos sus recursos asociados incluyendo discos y configuracion de red del grupo",
-   "Evict, la accion especifica para VMs Spot que las elimina cuando Azure necesita recuperar la capacidad del datacenter sin periodo de gracia",
-   "Hibernate, la accion que guarda el estado de memoria en disco y suspende la VM reduciendo costes mientras preserva el estado completo de la sesion"
+   "Deallocate, la acción que libera los recursos de cómputo asignados a la VM y detiene la facturación del cómputo mientras conserva el disco y la configuración",
+   "Delete, la acción que elimina permanentemente la VM y todos sus recursos asociados incluyendo discos y configuración de red del grupo",
+   "Evict, la acción especifica para VMs Spot que las elimina cuando Azure necesita recuperar la capacidad del datacenter sin periodo de gracia",
+   "Hibernate, la acción que guarda el estado de memoria en disco y suspende la VM reduciendo costes mientras preserva el estado completo de la sesión"
   ],
   "opts_en": [
    "Deallocate, the action that releases the compute resources assigned to the VM and stops compute billing while preserving the disk and configuration",
@@ -10883,8 +10883,8 @@
   "opts_es": [
    "Con kubenet los pods reciben IPs de un espacio de direcciones separado que no es enrutable en la VNet, mientras que con Azure CNI los pods obtienen IPs directamente de la subred de la VNet.",
    "kubenet asigna IPs de rango IPv6 ::1/128 a los pods, mientras que Azure CNI usa exclusivamente rangos IPv4 RFC 1918 de la subred de la VNet asignada al cluster.",
-   "Azure CNI limita el cluster a 100 nodos y 250 pods por nodo como maximo; kubenet no tiene limite de nodos pero requiere subredes /8 dedicadas para el cluster.",
-   "Con kubenet se crea automaticamente una VNet dedicada por cluster de AKS; con Azure CNI el cluster comparte la VNet existente del cliente sin necesidad de rutas adicionales."
+   "Azure CNI limita el cluster a 100 nodos y 250 pods por nodo como máximo; kubenet no tiene limite de nodos pero requiere subredes /8 dedicadas para el cluster.",
+   "Con kubenet se crea automáticamente una VNet dedicada por cluster de AKS; con Azure CNI el cluster comparte la VNet existente del cliente sin necesidad de rutas adicionales."
   ],
   "opts_en": [
    "With kubenet pods receive IPs from a separate address space not routable in the VNet, while with Azure CNI pods get IPs directly from the VNet subnet.",
@@ -12238,10 +12238,10 @@
   "q_es": "En una regla NSG, la etiqueta de servicio 'VirtualNetwork' incluye ¿cuáles espacios de direcciones?",
   "q_en": "In an NSG rule, the 'VirtualNetwork' service tag includes which address spaces?",
   "opts_es": [
-   "Unicamente el espacio de direcciones CIDR de la VNet local donde esta aplicado el NSG, sin incluir VNets en peering ni rangos aprendidos de forma dinamica por BGP",
+   "Únicamente el espacio de direcciones CIDR de la VNet local donde esta aplicado el NSG, sin incluir VNets en peering ni rangos aprendidos de forma dinámica por BGP",
    "El espacio de direcciones de la VNet local, los espacios de VNets conectadas mediante peering, los rangos aprendidos de redes locales via VPN/ExpressRoute y las IPs virtuales del host de Azure",
-   "Solo los rangos de IPs privadas RFC 1918 estandar (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) independientemente de los rangos configurados en la VNet de Azure",
-   "Unicamente las IPs asignadas a los recursos dentro de la misma subred donde esta asociado el NSG, sin incluir ninguna otra subred de la misma VNet de Azure"
+   "Solo los rangos de IPs privadas RFC 1918 estándar (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) independientemente de los rangos configurados en la VNet de Azure",
+   "Únicamente las IPs asignadas a los recursos dentro de la misma subred donde esta asociado el NSG, sin incluir ninguna otra subred de la misma VNet de Azure"
   ],
   "opts_en": [
    "Only the CIDR address space of the local VNet where the NSG is applied, not including peered VNets or ranges dynamically learned via BGP",
@@ -12682,9 +12682,9 @@
   "q_en": "What feature differentiates Azure Bastion Standard tier from Basic tier regarding domain-less connection?",
   "opts_es": [
    "El nivel Standard permite conectarse a una VM especificando directamente su nombre DNS privado de la zona DNS interna de la VNet sin IP publica",
-   "El nivel Standard permite conexion basada en IP (IP-based connection), conectandose a una VM especificando directamente su IP privada sin que sea miembro de dominio ni este registrada en Azure",
-   "El nivel Standard habilita la autenticacion Kerberos AES-256 para VMs no unidas a dominio de Active Directory mediante el mecanismo de Azure AD Kerberos integrado",
-   "El nivel Basic ya permite la conexion basada en IP privada sin dominio; el Standard anade soporte para puertos RDP personalizados distintos del puerto 3389 estandar de Remote Desktop"
+   "El nivel Standard permite conexión basada en IP (IP-based connection), conectandose a una VM especificando directamente su IP privada sin que sea miembro de dominio ni este registrada en Azure",
+   "El nivel Standard habilita la autenticación Kerberos AES-256 para VMs no unidas a dominio de Active Directory mediante el mecanismo de Azure AD Kerberos integrado",
+   "El nivel Basic ya permite la conexión basada en IP privada sin dominio; el Standard añade soporte para puertos RDP personalizados distintos del puerto 3389 estándar de Remote Desktop"
   ],
   "opts_en": [
    "The Standard tier allows connecting to a VM by specifying its private DNS name from the VNet's internal DNS zone without a public IP",
@@ -12708,9 +12708,9 @@
   "q_en": "What is the difference between an internal Azure Load Balancer (ILB) and a public Load Balancer?",
   "opts_es": [
    "El ILB solo puede usarse con VMs Windows en una red virtual; el Load Balancer publico admite cualquier sistema operativo con una IP publica asignada al recurso",
-   "El ILB tiene una IP de frontend privada de la subred de la VNet y balancea trafico interno o de redes hibridas; el publico tiene una IP publica y balancea trafico desde Internet",
+   "El ILB tiene una IP de frontend privada de la subred de la VNet y balancea trafico interno o de redes híbridas; el publico tiene una IP publica y balancea trafico desde Internet",
    "El ILB no admite health probes TCP ni HTTP/HTTPS para comprobar el estado de los backends; el Load Balancer publico si admite los tres protocolos de sondeo de estado disponibles",
-   "El ILB solo funciona con el SKU Basico de Load Balancer de Azure; el Load Balancer publico requiere obligatoriamente el SKU Estandar para entornos de produccion"
+   "El ILB solo funciona con el SKU Básico de Load Balancer de Azure; el Load Balancer publico requiere obligatoriamente el SKU Estándar para entornos de producción"
   ],
   "opts_en": [
    "The ILB can only be used with Windows VMs in a virtual network; the public Load Balancer supports any operating system with a public IP assigned to the resource",
@@ -13017,7 +13017,7 @@
   "q_en": "Why is Azure Traffic Manager described as a 'DNS-based' load balancing solution and not a proxy or gateway?",
   "opts_es": [
    "Porque Traffic Manager solo puede usarse con recursos que tengan registros DNS de tipo A; los recursos con registros CNAME no son compatibles con este servicio de balanceo",
-   "Porque Traffic Manager responde a las consultas DNS del cliente con la direccion IP del endpoint seleccionado; el trafico de aplicacion va directamente del cliente al endpoint, sin pasar por Traffic Manager",
+   "Porque Traffic Manager responde a las consultas DNS del cliente con la dirección IP del endpoint seleccionado; el trafico de aplicación va directamente del cliente al endpoint, sin pasar por Traffic Manager",
    "Porque Traffic Manager requiere que cada VNet de los endpoints tenga un servidor DNS personalizado apuntando a los resolvers de 168.63.129.16 de Azure para funcionar",
    "Porque Traffic Manager solo funciona con dominios apex registrados directamente en zonas de Azure DNS publico mediante registros alias de Azure Resource Manager"
   ],
@@ -13044,8 +13044,8 @@
   "opts_es": [
    "Una zona DNS privada almacena exclusivamente registros de tipo A para IPs publicas de Azure y se vincula a la VNet mediante una regla de NSG de entrada correctamente configurada en el portal de Azure",
    "Una zona DNS privada hospeda un dominio DNS personalizado (ej. internal.contoso.com) en Azure y se vincula a una VNet mediante un enlace de VNet (VNet link), permitiendo que las VMs resuelvan nombres de ese dominio sin usar servidores DNS externos",
-   "Una zona DNS privada solo puede usarse exclusivamente con Private Endpoints de servicios PaaS de Azure y no admite la creacion de registros DNS personalizados de tipo A o CNAME para maquinas virtuales del tenant",
-   "Azure crea y gestiona automaticamente una zona DNS privada para cada nueva VNet sin necesidad de ninguna configuracion adicional ni vinculacion manual por parte del administrador del tenant"
+   "Una zona DNS privada solo puede usarse exclusivamente con Private Endpoints de servicios PaaS de Azure y no admite la creación de registros DNS personalizados de tipo A o CNAME para máquinas virtuales del tenant",
+   "Azure crea y gestiona automáticamente una zona DNS privada para cada nueva VNet sin necesidad de ninguna configuración adicional ni vinculación manual por parte del administrador del tenant"
   ],
   "opts_en": [
    "A private DNS zone stores exclusively type A records for Azure public IPs and links to the VNet via a correctly configured inbound NSG rule in the Azure portal",
@@ -13094,10 +13094,10 @@
   "q_es": "¿Qué es un registro alias de Azure DNS y en qué se diferencia de un registro CNAME estándar?",
   "q_en": "What is an Azure DNS alias record and how does it differ from a standard CNAME record?",
   "opts_es": [
-   "Un registro alias de Azure DNS es identico a un CNAME estandar pero permite apuntar a recursos de proveedores externos como AWS Route 53 o GCP Cloud DNS sin restricciones",
-   "Un registro alias de Azure DNS apunta a recursos de Azure (Traffic Manager, CDN, IP publica) y puede usarse en el vertice del dominio (apex); un CNAME estandar no puede coexistir con otros registros en el apex del dominio",
-   "Un registro alias solo puede usarse en zonas DNS privadas de Azure internas; los registros CNAME estandar solo pueden crearse en zonas DNS publicas de Azure administradas",
-   "Los registros alias de Azure DNS no requieren un valor TTL porque se resuelven en tiempo real dinamicamente; los CNAME estandar requieren un TTL minimo de 60 segundos configurado en el portal"
+   "Un registro alias de Azure DNS es idéntico a un CNAME estándar pero permite apuntar a recursos de proveedores externos como AWS Route 53 o GCP Cloud DNS sin restricciones",
+   "Un registro alias de Azure DNS apunta a recursos de Azure (Traffic Manager, CDN, IP publica) y puede usarse en el vertice del dominio (apex); un CNAME estándar no puede coexistir con otros registros en el apex del dominio",
+   "Un registro alias solo puede usarse en zonas DNS privadas de Azure internas; los registros CNAME estándar solo pueden crearse en zonas DNS publicas de Azure administradas",
+   "Los registros alias de Azure DNS no requieren un valor TTL porque se resuelven en tiempo real dinámicamente; los CNAME estándar requieren un TTL mínimo de 60 segundos configurado en el portal"
   ],
   "opts_en": [
    "An Azure DNS alias record is identical to a standard CNAME but allows pointing to resources from external providers such as AWS Route 53 or GCP Cloud DNS without restrictions",
@@ -14338,7 +14338,7 @@
   "correct": [
    1
   ],
-  "exp_es": "Para VMs de Hyper-V replicadas con ASR, las frecuencias de replicación disponibles son 30 segundos, 5 minutos y 15 minutos. Cuanto menor sea la frecuencia de replicación, menor será el RPO potencial, pero mayor el uso de ancho de banda y el impacto en el rendimiento.",
+  "exp_es": "Para VMs de Hyper-V replicadas con ASR, las frecuencias de replicación disponibles son 30 segundos, 5 minutos y 15 minutos. Cuánto menor sea la frecuencia de replicación, menor será el RPO potencial, pero mayor el uso de ancho de banda y el impacto en el rendimiento.",
   "exp_en": "For Hyper-V VMs replicated with ASR, the available replication frequencies are 30 seconds, 5 minutes, and 15 minutes. A lower replication frequency results in a lower potential RPO but higher bandwidth usage and performance impact."
  },
  {
@@ -14635,9 +14635,9 @@
   "q_es": "¿Cuál es la diferencia entre un punto de recuperación coherente con el bloqueo (crash-consistent) y uno coherente con la aplicación (application-consistent) en Azure Site Recovery?",
   "q_en": "What is the difference between a crash-consistent and an application-consistent recovery point in Azure Site Recovery?",
   "opts_es": [
-   "Un punto crash-consistent captura todos los datos en memoria de las aplicaciones activas junto con el estado completo del disco en el momento exacto de la instantanea tomada por Azure Site Recovery",
-   "Un punto crash-consistent captura el estado del disco en el momento de la instantanea sin datos en memoria; uno application-consistent usa VSS (en Windows) o scripts pre/post (en Linux) para garantizar la integridad de las aplicaciones",
-   "No existe ninguna diferencia tecnica real entre ambos tipos de punto de recuperacion; los dos garantizan la coherencia transaccional completa de bases de datos SQL Server en la VM",
+   "Un punto crash-consistent captura todos los datos en memoria de las aplicaciones activas junto con el estado completo del disco en el momento exacto de la instantánea tomada por Azure Site Recovery",
+   "Un punto crash-consistent captura el estado del disco en el momento de la instantánea sin datos en memoria; uno application-consistent usa VSS (en Windows) o scripts pre/post (en Linux) para garantizar la integridad de las aplicaciones",
+   "No existe ninguna diferencia técnica real entre ambos tipos de punto de recuperación; los dos garantizan la coherencia transaccional completa de bases de datos SQL Server en la VM",
    "Los puntos application-consistent solo son relevantes para cargas de trabajo SQL Server en VM Windows; para el resto de aplicaciones Windows y Linux se usa siempre crash-consistent"
   ],
   "opts_en": [
