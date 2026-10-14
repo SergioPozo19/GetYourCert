@@ -9622,18 +9622,18 @@
   "post_es": ".",
   "post_en": ".",
   "opts_es": [
-   "lista de seguimiento",
    "directiva de retención",
+   "promptbook",
    "conector de datos",
-   "promptbook"
+   "lista de seguimiento"
   ],
   "opts_en": [
-   "watchlist",
    "retention policy",
+   "promptbook",
    "data connector",
-   "promptbook"
+   "watchlist"
   ],
-  "correct": 3,
+  "correct": 1,
   "exp_es": "Los promptbooks guardan una serie de instrucciones para volver a ejecutarlas con entradas nuevas.",
   "exp_en": "Promptbooks save a series of prompts to run again with new inputs."
  },
@@ -9648,18 +9648,18 @@
   "post_es": ".",
   "post_en": ".",
   "opts_es": [
-   "solo un bloqueo de recurso",
    "el acceso de red público",
    "la protección contra purga",
+   "solo un bloqueo de recurso",
    "el acceso con clave compartida"
   ],
   "opts_en": [
-   "a resource lock only",
    "public network access",
    "purge protection",
+   "a resource lock only",
    "shared key access"
   ],
-  "correct": 2,
+  "correct": 1,
   "exp_es": "La protección contra purga impide purgar objetos con eliminación temporal hasta que acabe la retención.",
   "exp_en": "Purge protection prevents purging soft-deleted vault objects until retention expires."
  },
@@ -9674,18 +9674,18 @@
   "post_es": ".",
   "post_en": ".",
   "opts_es": [
-   "Network Watcher",
-   "Azure Site Recovery",
+   "Defender for Storage",
    "Azure Backup",
-   "Defender for Storage"
+   "Azure Site Recovery",
+   "Network Watcher"
   ],
   "opts_en": [
-   "Network Watcher",
-   "Azure Site Recovery",
+   "Defender for Storage",
    "Azure Backup",
-   "Defender for Storage"
+   "Azure Site Recovery",
+   "Network Watcher"
   ],
-  "correct": 3,
+  "correct": 0,
   "exp_es": "Defender for Storage examina los blobs al subirse y alerta de malware.",
   "exp_en": "Defender for Storage scans blobs on upload and alerts on malware."
  },
@@ -9701,18 +9701,1781 @@
   "post_en": " in Defender CSPM.",
   "opts_es": [
    "el análisis de rutas de ataque",
-   "la supervisión de integridad de archivos",
+   "el acceso justo a tiempo",
    "la protección de red adaptable",
-   "el acceso justo a tiempo"
+   "la supervisión de integridad de archivos"
   ],
   "opts_en": [
    "attack path analysis",
-   "file integrity monitoring",
+   "just-in-time access",
    "adaptive network hardening",
-   "just-in-time access"
+   "file integrity monitoring"
   ],
   "correct": 0,
   "exp_es": "Las rutas de ataque muestran caminos desde puntos expuestos a activos críticos.",
   "exp_en": "Attack paths show routes from exposure points to critical assets."
+ },
+ {
+  "id": 334,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un flujo de GitHub Actions debe implementar en Azure sin guardar ningún secreto en GitHub. ¿Qué debes configurar en el registro de la aplicación?",
+  "q_en": "A GitHub Actions workflow must deploy to Azure without storing any secret in GitHub. What should you configure on the app registration?",
+  "opts_es": [
+   "Un certificado cargado en el repositorio como variable protegida",
+   "Un secreto de cliente válido durante dos años",
+   "Una contraseña asignada por el usuario",
+   "Una credencial de identidad federada"
+  ],
+  "opts_en": [
+   "A certificate uploaded to the repository as a protected variable",
+   "A client secret valid for two years",
+   "A user-assigned password",
+   "A federated identity credential"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La federación de identidades de carga de trabajo confía en los tokens OIDC de GitHub, así que no se guarda ningún secreto.",
+  "exp_en": "Workload identity federation trusts GitHub's OIDC tokens, so no secret is stored."
+ },
+ {
+  "id": 335,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Las entidades de servicio deben bloquearse cuando inician sesión fuera de intervalos IP conocidos. ¿Qué necesitas?",
+  "q_en": "Service principals must be blocked when they sign in from outside known IP ranges. What do you need?",
+  "opts_es": [
+   "Un bloqueo de recursos",
+   "Una revisión de acceso de todos los propietarios de aplicaciones cada trimestre",
+   "Una asignación apta de PIM",
+   "Acceso condicional para identidades de carga de trabajo"
+  ],
+  "opts_en": [
+   "A resource lock",
+   "An access review of all app owners every quarter",
+   "A PIM eligible assignment",
+   "Conditional Access for workload identities"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El acceso condicional puede aplicarse a entidades de servicio de un solo inquilino usando ubicación y riesgo (Workload ID Premium).",
+  "exp_en": "Conditional Access can target single-tenant service principals using location and risk (Workload ID Premium)."
+ },
+ {
+  "id": 336,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Varios administradores necesitan pertenencia justo a tiempo a un grupo que concede roles de Azure. ¿Qué característica encaja?",
+  "q_en": "Several admins need just-in-time membership in a group that grants Azure roles. Which feature fits?",
+  "opts_es": [
+   "PIM para grupos",
+   "Unidades administrativas con administración restringida habilitada",
+   "Reglas de pertenencia dinámica",
+   "Directiva de nomenclatura de grupos"
+  ],
+  "opts_en": [
+   "PIM for groups",
+   "Administrative units with restricted management enabled",
+   "Dynamic membership rules",
+   "Group naming policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "PIM para grupos hace que la pertenencia o la propiedad sean aptas y temporales, con aprobación y MFA.",
+  "exp_en": "PIM for groups makes membership or ownership eligible and time-bound, with approval and MFA."
+ },
+ {
+  "id": 337,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de las identidades de carga de trabajo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about workload identity security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las credenciales federadas eliminan la necesidad de secretos de cliente.",
+    "en": "Federated credentials remove the need for client secrets.",
+    "ans": true
+   },
+   {
+    "es": "El acceso condicional no se puede aplicar a entidades de servicio.",
+    "en": "Conditional Access can't apply to service principals.",
+    "ans": false
+   },
+   {
+    "es": "Las cuentas de acceso de emergencia deben excluirse de la mayoría de las directivas de acceso condicional.",
+    "en": "Emergency access accounts should be excluded from most Conditional Access policies.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las identidades de carga de trabajo pueden cubrirse con acceso condicional con Workload ID Premium.",
+  "exp_en": "Workload identities can be covered by Conditional Access with Workload ID Premium."
+ },
+ {
+  "id": 338,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Una aplicación de App Service debe leer una contraseña de base de datos de Key Vault mediante la configuración de la aplicación, sin cambiar el código. ¿Qué debes usar?",
+  "q_en": "An App Service app must read a database password from Key Vault through app settings, without code changes. What should you use?",
+  "opts_es": [
+   "Referencias de Key Vault con una identidad administrada",
+   "Azure Policy",
+   "Una cadena de conexión guardada en texto sin cifrar",
+   "Una firma de acceso compartido generada para el almacén cada hora"
+  ],
+  "opts_en": [
+   "Key Vault references with a managed identity",
+   "Azure Policy",
+   "A connection string stored in plain text",
+   "A shared access signature generated for the vault every hour"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los ajustes con la forma @Microsoft.KeyVault(...) resuelven secretos en tiempo de ejecución con la identidad administrada de la aplicación.",
+  "exp_en": "App settings of the form @Microsoft.KeyVault(...) resolve secrets at runtime using the app's managed identity."
+ },
+ {
+  "id": 339,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Todos los secretos de Key Vault deben tener fecha de expiración. ¿Cómo puedes aplicarlo en todas las suscripciones?",
+  "q_en": "Every secret in Key Vault must have an expiration date. How can you enforce this across subscriptions?",
+  "opts_es": [
+   "Usar el nivel Premium de Key Vault en todas las suscripciones",
+   "Agregar un bloqueo de recursos",
+   "Asignar la directiva integrada de Azure Policy para la expiración de secretos",
+   "Habilitar la eliminación temporal"
+  ],
+  "opts_en": [
+   "Use the Premium tier of Key Vault in every subscription",
+   "Add a resource lock",
+   "Assign the built-in Azure Policy for secret expiration",
+   "Enable soft delete"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Azure Policy tiene definiciones integradas para auditar o denegar secretos, claves y certificados sin expiración.",
+  "exp_en": "Azure Policy has built-in definitions to audit or deny secrets, keys and certificates without expiration."
+ },
+ {
+  "id": 340,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Una empresa debe importar a Azure su propia clave generada en un HSM local sin exponerla en texto sin cifrar. ¿Cómo se llama?",
+  "q_en": "A company must import its own on-premises HSM-generated key into Azure without exposing it in clear text. What is this called?",
+  "opts_es": [
+   "Claves administradas por la plataforma",
+   "Traiga su propia clave (BYOK)",
+   "Cifrado doble con claves de infraestructura de Microsoft",
+   "Eliminación temporal"
+  ],
+  "opts_en": [
+   "Platform-managed keys",
+   "Bring your own key (BYOK)",
+   "Double encryption with infrastructure keys from Microsoft",
+   "Soft delete"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "BYOK transfiere claves de un HSM local a un HSM de Key Vault de forma segura.",
+  "exp_en": "BYOK transfers keys from an on-premises HSM to a Key Vault HSM securely."
+ },
+ {
+  "id": 341,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la opción de Key Vault para cada requisito.",
+  "q_en": "Select the Key Vault option for each requirement.",
+  "rows": [
+   {
+    "es": "Grupo de HSM de un solo inquilino con control total del dominio de seguridad",
+    "en": "Single-tenant HSM pool with full control of the security domain",
+    "opts_es": [
+     "HSM administrado",
+     "Protección contra purga",
+     "Punto de conexión privado",
+     "Referencia de Key Vault"
+    ],
+    "opts_en": [
+     "Managed HSM",
+     "Purge protection",
+     "Private endpoint",
+     "Key Vault reference"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Impedir que alguien elimine permanentemente una clave antes de que termine la retención",
+    "en": "Prevent anyone from permanently deleting a key before retention ends",
+    "opts_es": [
+     "HSM administrado",
+     "Protección contra purga",
+     "Punto de conexión privado",
+     "Referencia de Key Vault"
+    ],
+    "opts_en": [
+     "Managed HSM",
+     "Purge protection",
+     "Private endpoint",
+     "Key Vault reference"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "HSM administrado es de un solo inquilino; la protección contra purga bloquea la eliminación permanente durante la retención.",
+  "exp_en": "Managed HSM is single-tenant; purge protection blocks permanent deletion during retention."
+ },
+ {
+  "id": 342,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un grupo de recursos concreto debe excluirse de una asignación de directiva durante seis meses mientras termina una migración. ¿Qué debes crear?",
+  "q_en": "A specific resource group must be excluded from a policy assignment for six months while a migration finishes. What should you create?",
+  "opts_es": [
+   "Un nuevo grupo de administración",
+   "Un rol personalizado con permiso para ignorar Azure Policy",
+   "Una exención de directiva con fecha de expiración",
+   "Un bloqueo de eliminación"
+  ],
+  "opts_en": [
+   "A new management group",
+   "A custom role that has permission to ignore Azure Policy",
+   "A policy exemption with an expiration date",
+   "A delete lock"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las exenciones (renuncia o mitigada) excluyen ámbitos de la evaluación y pueden caducar automáticamente.",
+  "exp_en": "Exemptions (waiver or mitigated) exclude scopes from evaluation and can expire automatically."
+ },
+ {
+  "id": 343,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué efecto de Azure Policy bloquea las operaciones de eliminación, por ejemplo para impedir que se eliminen bases de datos SQL de producción?",
+  "q_en": "Which Azure Policy effect blocks delete operations on resources, such as preventing the deletion of production SQL databases?",
+  "opts_es": [
+   "AuditIfNotExists con una tarea de corrección",
+   "Audit",
+   "Append",
+   "DenyAction"
+  ],
+  "opts_en": [
+   "AuditIfNotExists with a remediation task",
+   "Audit",
+   "Append",
+   "DenyAction"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "DenyAction bloquea acciones concretas, actualmente la eliminación, en los recursos coincidentes a escala.",
+  "exp_en": "DenyAction blocks specific actions, currently the delete action, on matching resources at scale."
+ },
+ {
+  "id": 344,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un rol personalizado debe permitir reiniciar VM pero nunca leer contenido de blobs. ¿Qué parte de la definición del rol controla el acceso a datos de blobs?",
+  "q_en": "A custom role must let operators restart VMs but never read storage blob contents. Which part of the role definition controls blob data access?",
+  "opts_es": [
+   "DataActions",
+   "Actions",
+   "Description",
+   "AssignableScopes con todas las cuentas de almacenamiento"
+  ],
+  "opts_en": [
+   "DataActions",
+   "Actions",
+   "Description",
+   "AssignableScopes listing every storage account"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Actions cubre el plano de control; DataActions cubre operaciones del plano de datos como leer blobs.",
+  "exp_en": "Actions cover the control plane; DataActions cover data-plane operations such as reading blobs."
+ },
+ {
+  "id": 345,
+  "exam": "sc-500",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los controles de gobernanza de Azure, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Azure governance controls, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las exenciones de directivas pueden tener fecha de expiración.",
+    "en": "Policy exemptions can have an expiration date.",
+    "ans": true
+   },
+   {
+    "es": "DenyAction puede bloquear operaciones de eliminación.",
+    "en": "DenyAction can block delete operations.",
+    "ans": true
+   },
+   {
+    "es": "Las Actions de una definición de rol controlan el acceso al contenido de los blobs.",
+    "en": "Actions in a role definition control access to blob contents.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El acceso al contenido de los blobs lo rigen las DataActions.",
+  "exp_en": "Blob content access is governed by DataActions."
+ },
+ {
+  "id": 346,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una cuenta de almacenamiento debe rechazar cualquier solicitud autorizada con las claves de acceso de la cuenta. ¿Qué ajuste debes cambiar?",
+  "q_en": "A storage account must reject any request authorized with the account access keys. Which setting should you change?",
+  "opts_es": [
+   "Habilitar el control de versiones de blobs",
+   "Exigir transferencia segura",
+   "Habilitar el espacio de nombres jerárquico de la cuenta",
+   "No permitir la autorización con clave compartida"
+  ],
+  "opts_en": [
+   "Enable blob versioning",
+   "Require secure transfer",
+   "Enable hierarchical namespace for the account",
+   "Disallow Shared Key authorization"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Deshabilitar la clave compartida obliga a usar autorización de Microsoft Entra e invalida los SAS basados en la clave de la cuenta.",
+  "exp_en": "Disabling Shared Key forces Microsoft Entra authorization and invalidates account-key SAS tokens."
+ },
+ {
+  "id": 347,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "El cumplimiento exige una segunda capa de cifrado para los datos en reposo de una cuenta de almacenamiento. ¿Qué debes habilitar al crearla?",
+  "q_en": "Compliance requires a second layer of encryption for data at rest in a storage account. What should you enable at creation?",
+  "opts_es": [
+   "Transferencia segura obligatoria",
+   "Claves administradas por el cliente rotadas cada semana por una cuenta de automatización",
+   "Eliminación temporal",
+   "Cifrado de infraestructura"
+  ],
+  "opts_en": [
+   "Secure transfer required",
+   "Customer-managed keys rotated every week by an automation account",
+   "Soft delete",
+   "Infrastructure encryption"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El cifrado de infraestructura agrega una segunda capa AES-256 en la infraestructura y debe configurarse al crear la cuenta.",
+  "exp_en": "Infrastructure encryption adds a second AES-256 layer at the infrastructure level and must be set at creation."
+ },
+ {
+  "id": 348,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Distintos contenedores de una cuenta de almacenamiento deben cifrarse con claves distintas administradas por el cliente. ¿Qué debes usar?",
+  "q_en": "Different containers in one storage account must be encrypted with different customer-managed keys. What should you use?",
+  "opts_es": [
+   "Administración del ciclo de vida",
+   "Ámbitos de cifrado",
+   "Tokens SAS separados firmados con distintas claves de cuenta",
+   "Directivas de almacenamiento inmutable"
+  ],
+  "opts_en": [
+   "Lifecycle management",
+   "Encryption scopes",
+   "Separate SAS tokens signed with different account keys",
+   "Immutable storage policies"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los ámbitos de cifrado permiten asignar claves a nivel de contenedor o de blob.",
+  "exp_en": "Encryption scopes let you assign keys at container or blob level."
+ },
+ {
+  "id": 349,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un blob debe mantenerse sin cambios hasta que termine un caso judicial, sin fecha de fin fija. ¿Qué opción de inmutabilidad encaja?",
+  "q_en": "A blob must be kept unchanged until a court case ends, with no fixed end date. Which immutability option fits?",
+  "opts_es": [
+   "Retención legal",
+   "Eliminación temporal con un período de retención de 365 días",
+   "Nivel de archivo",
+   "Directiva de retención basada en tiempo"
+  ],
+  "opts_en": [
+   "Legal hold",
+   "Soft delete with a 365-day retention period",
+   "Archive tier",
+   "Time-based retention policy"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las retenciones legales se mantienen hasta que se quitan; las basadas en tiempo caducan tras un intervalo.",
+  "exp_en": "Legal holds stay until removed; time-based policies expire after a set interval."
+ },
+ {
+  "id": 350,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la protección de datos de almacenamiento, indica si es verdadera o falsa.",
+  "q_en": "For each statement about storage data protection, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Deshabilitar la clave compartida también bloquea los SAS de cuenta.",
+    "en": "Disabling Shared Key also blocks account SAS tokens.",
+    "ans": true
+   },
+   {
+    "es": "El cifrado de infraestructura se puede habilitar en cualquier momento tras la creación.",
+    "en": "Infrastructure encryption can be enabled at any time after creation.",
+    "ans": false
+   },
+   {
+    "es": "Una retención legal no tiene una expiración fija.",
+    "en": "A legal hold has no fixed expiration.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El cifrado de infraestructura debe elegirse al crear la cuenta.",
+  "exp_en": "Infrastructure encryption must be chosen when the account is created."
+ },
+ {
+  "id": 351,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los auditores necesitan una prueba criptográfica de que las filas de una tabla financiera nunca se manipularon. ¿Qué característica de Azure SQL encaja?",
+  "q_en": "Auditors need cryptographic proof that rows in a financial table were never tampered with. Which Azure SQL feature fits?",
+  "opts_es": [
+   "Retención de copias de seguridad a largo plazo",
+   "Enmascaramiento dinámico de datos",
+   "Tablas de libro de contabilidad",
+   "Seguridad de nivel de fila basada en el contexto de sesión del usuario"
+  ],
+  "opts_en": [
+   "Long-term backup retention",
+   "Dynamic data masking",
+   "Ledger tables",
+   "Row-level security based on the session context of the user"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El libro de contabilidad guarda hashes de los cambios en una estructura tipo cadena de bloques verificable.",
+  "exp_en": "Ledger stores hashes of changes in a blockchain-like structure that can be verified."
+ },
+ {
+  "id": 352,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Azure SQL Database no debe ser accesible desde ninguna IP pública, solo mediante puntos de conexión privados. ¿Qué ajuste lo aplica?",
+  "q_en": "Azure SQL Database must not be reachable from any public IP, only through private endpoints. Which setting enforces this?",
+  "opts_es": [
+   "Permitir que los servicios de Azure accedan al servidor",
+   "Denegar el acceso a la red pública",
+   "Regla de firewall de servidor de 0.0.0.0 a 255.255.255.255",
+   "Directiva de conexión Redirect"
+  ],
+  "opts_en": [
+   "Allow Azure services to access the server",
+   "Deny public network access",
+   "Server-level firewall rule for 0.0.0.0 to 255.255.255.255",
+   "Connection policy Redirect"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Con el acceso público denegado, solo se aceptan conexiones por punto de conexión privado.",
+  "exp_en": "With public network access denied, only private endpoint connections are accepted."
+ },
+ {
+  "id": 353,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Debe impedirse que Azure SQL envíe datos a puntos de conexión externos arbitrarios, por ejemplo mediante exportaciones. ¿Qué debes configurar?",
+  "q_en": "Azure SQL must be prevented from sending data to arbitrary external endpoints, for example through linked servers or exports. What should you configure?",
+  "opts_es": [
+   "Cifrado de datos transparente",
+   "Replicación geográfica",
+   "Restricciones de red de salida con FQDN permitidos",
+   "Enmascaramiento dinámico para cada columna con datos personales"
+  ],
+  "opts_en": [
+   "Transparent data encryption",
+   "Geo-replication",
+   "Outbound networking restrictions with allowed FQDNs",
+   "Dynamic data masking for every column with personal data"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Restringir la red de salida limita la exfiltración a una lista de destinos aprobados.",
+  "exp_en": "Restricting outbound networking limits exfiltration to a list of approved destinations."
+ },
+ {
+  "id": 354,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué opción de Always Encrypted permite consultas avanzadas, como coincidencia de patrones, sobre columnas cifradas dentro de un área de memoria protegida?",
+  "q_en": "Which Always Encrypted option lets the database run rich queries, such as pattern matching, on encrypted columns inside a protected memory area?",
+  "opts_es": [
+   "Cifrado de datos transparente con clave administrada por el cliente",
+   "Enmascaramiento dinámico de datos",
+   "Solo cifrado determinista",
+   "Always Encrypted con enclaves seguros"
+  ],
+  "opts_en": [
+   "Transparent data encryption with a customer-managed key",
+   "Dynamic data masking",
+   "Deterministic encryption only",
+   "Always Encrypted with secure enclaves"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los enclaves seguros permiten operar sobre texto sin cifrar dentro de un entorno de ejecución de confianza.",
+  "exp_en": "Secure enclaves allow computations on plaintext inside a trusted execution environment."
+ },
+ {
+  "id": 355,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de Azure SQL, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Azure SQL security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las tablas de libro de contabilidad proporcionan evidencia de manipulación.",
+    "en": "Ledger tables provide tamper evidence.",
+    "ans": true
+   },
+   {
+    "es": "Denegar el acceso a la red pública sigue permitiendo conexiones por punto de conexión privado.",
+    "en": "Denying public network access still allows private endpoint connections.",
+    "ans": true
+   },
+   {
+    "es": "El enmascaramiento dinámico cifra los datos en reposo.",
+    "en": "Dynamic data masking encrypts data at rest.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El enmascaramiento solo oculta valores en los resultados; TDE cifra en reposo.",
+  "exp_en": "Masking only hides values in query results; TDE encrypts at rest."
+ },
+ {
+  "id": 356,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de Azure SQL para cada requisito.",
+  "q_en": "Select the Azure SQL feature for each requirement.",
+  "rows": [
+   {
+    "es": "Demostrar que las filas históricas no se alteraron",
+    "en": "Prove that historical rows were not altered",
+    "opts_es": [
+     "Enmascaramiento dinámico de datos",
+     "Always Encrypted",
+     "Libro de contabilidad",
+     "Restricciones de red de salida"
+    ],
+    "opts_en": [
+     "Dynamic data masking",
+     "Always Encrypted",
+     "Ledger",
+     "Outbound networking restrictions"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Mantener cifrados los números de tarjeta incluso para los DBA",
+    "en": "Keep card numbers encrypted even from DBAs",
+    "opts_es": [
+     "Enmascaramiento dinámico de datos",
+     "Always Encrypted",
+     "Libro de contabilidad",
+     "Restricciones de red de salida"
+    ],
+    "opts_en": [
+     "Dynamic data masking",
+     "Always Encrypted",
+     "Ledger",
+     "Outbound networking restrictions"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "El libro de contabilidad aporta evidencia de manipulación; Always Encrypted mantiene las claves en el cliente.",
+  "exp_en": "Ledger gives tamper evidence; Always Encrypted keeps keys on the client."
+ },
+ {
+  "id": 357,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para aceptar conexiones a Azure SQL solo mediante puntos de conexión privados, establece el acceso a la red pública en ",
+  "pre_en": "To accept connections to Azure SQL only through private endpoints, set public network access to ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Auditar",
+   "Permitir",
+   "Redirigir",
+   "Denegar"
+  ],
+  "opts_en": [
+   "Audit",
+   "Allow",
+   "Redirect",
+   "Deny"
+  ],
+  "correct": 3,
+  "exp_es": "Denegar el acceso público cierra el punto de conexión público.",
+  "exp_en": "Denying public access closes the public endpoint."
+ },
+ {
+  "id": 358,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los registros de flujo de NSG se están retirando. ¿Qué característica de Network Watcher debes usar para registrar el tráfico a nivel de red virtual?",
+  "q_en": "NSG flow logs are being retired. Which Network Watcher feature should you use instead to log traffic at the virtual network level?",
+  "opts_es": [
+   "Registros de flujo de red virtual",
+   "Comprobación del flujo de IP",
+   "Monitor de conexión",
+   "Captura de paquetes en cada VM de la red virtual"
+  ],
+  "opts_en": [
+   "Virtual network flow logs",
+   "IP flow verify",
+   "Connection monitor",
+   "Packet capture on every VM in the virtual network"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los registros de flujo de red virtual registran el tráfico de toda la red, incluido el que no regulan los NSG.",
+  "exp_en": "VNet flow logs record traffic for the whole virtual network, including traffic not governed by NSGs."
+ },
+ {
+  "id": 359,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Todo el tráfico hacia internet de una subred radial debe pasar por Azure Firewall en el concentrador. ¿Qué debes configurar?",
+  "q_en": "All internet-bound traffic from a spoke subnet must pass through Azure Firewall in the hub. What should you configure?",
+  "opts_es": [
+   "Una tabla de rutas con 0.0.0.0/0 apuntando a la IP privada del firewall",
+   "Un punto de conexión de servicio de Microsoft.Storage en la subred",
+   "Un NSG que permita todo el tráfico saliente",
+   "Una zona DNS privada"
+  ],
+  "opts_en": [
+   "A route table with 0.0.0.0/0 pointing to the firewall's private IP",
+   "A service endpoint for Microsoft.Storage on the subnet",
+   "An NSG that allows all outbound traffic",
+   "A private DNS zone"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Una ruta definida por el usuario envía la ruta predeterminada al firewall como siguiente salto (aplicación virtual).",
+  "exp_en": "A user-defined route sends the default route to the firewall as next hop (virtual appliance)."
+ },
+ {
+  "id": 360,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Las reglas de red de Azure Firewall deben filtrar por FQDN. ¿Qué característica debe habilitarse para que el firewall resuelva nombres igual que los clientes?",
+  "q_en": "Azure Firewall network rules must filter by FQDN. Which feature must be enabled so the firewall resolves names consistently with clients?",
+  "opts_es": [
+   "Proxy DNS",
+   "Inteligencia sobre amenazas",
+   "IDPS",
+   "Tunelización forzada con subred de administración en el concentrador"
+  ],
+  "opts_en": [
+   "DNS proxy",
+   "Threat intelligence",
+   "IDPS",
+   "Forced tunneling with a management subnet in the hub"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Con el proxy DNS, los clientes usan el firewall como servidor DNS y el filtrado por FQDN de las reglas de red coincide.",
+  "exp_en": "With DNS proxy, clients use the firewall as DNS server, so FQDN filtering in network rules matches."
+ },
+ {
+  "id": 361,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una aplicación web detrás de Application Gateway WAF debe bloquear solicitudes de países concretos. ¿Qué debes crear?",
+  "q_en": "A web app on Application Gateway WAF must block requests from specific countries. What should you create?",
+  "opts_es": [
+   "Una regla de NSG con etiquetas de servicio",
+   "Un plan de protección DDoS para la IP pública de la puerta de enlace",
+   "Una regla personalizada de WAF con condición de coincidencia geográfica",
+   "Un punto de conexión privado"
+  ],
+  "opts_en": [
+   "An NSG rule with service tags",
+   "A DDoS protection plan for the gateway's public IP",
+   "A WAF custom rule with a geo-match condition",
+   "A private endpoint"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las reglas personalizadas admiten coincidencia geográfica, límites de frecuencia y coincidencia de IP.",
+  "exp_en": "Custom rules support geo-match conditions as well as rate limits and IP matches."
+ },
+ {
+  "id": 362,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué característica define un límite lógico alrededor de recursos PaaS, como almacenamiento y Key Vault, para que solo se comuniquen entre sí y con llamadores aprobados?",
+  "q_en": "Which feature defines a logical boundary around PaaS resources, such as storage and Key Vault, so they can only talk to each other and approved callers?",
+  "opts_es": [
+   "Azure Bastion",
+   "Etiquetas de servicio en una regla de grupo de seguridad de red",
+   "Grupo de seguridad de aplicaciones",
+   "Perímetro de seguridad de red"
+  ],
+  "opts_en": [
+   "Azure Bastion",
+   "Service tags in a network security group rule",
+   "Application security group",
+   "Network security perimeter"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Un perímetro de seguridad de red agrupa recursos PaaS y controla de forma central el acceso público de entrada y salida.",
+  "exp_en": "A network security perimeter groups PaaS resources and controls public inbound and outbound access centrally."
+ },
+ {
+  "id": 363,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el control del tráfico de red, indica si es verdadera o falsa.",
+  "q_en": "For each statement about network traffic control, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los registros de flujo de red virtual sustituyen a los de NSG.",
+    "en": "VNet flow logs replace NSG flow logs.",
+    "ans": true
+   },
+   {
+    "es": "Una ruta 0.0.0.0/0 hacia el firewall fuerza el tráfico de internet a pasar por él.",
+    "en": "A route of 0.0.0.0/0 to the firewall forces internet traffic through it.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas personalizadas de WAF no pueden filtrar por país.",
+    "en": "WAF custom rules can't match by country.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las reglas personalizadas de WAF admiten coincidencia geográfica.",
+  "exp_en": "WAF custom rules support geo-match conditions."
+ },
+ {
+  "id": 364,
+  "exam": "sc-500",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Limitar la frecuencia de solicitudes por IP de cliente a una aplicación web",
+    "en": "Rate-limit requests per client IP to a web app",
+    "opts_es": [
+     "Proxy DNS",
+     "Ruta definida por el usuario",
+     "Perímetro de seguridad de red",
+     "Regla personalizada de WAF"
+    ],
+    "opts_en": [
+     "DNS proxy",
+     "User-defined route",
+     "Network security perimeter",
+     "WAF custom rule"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Enviar el tráfico a internet de una subred por Azure Firewall",
+    "en": "Send a subnet's internet traffic through Azure Firewall",
+    "opts_es": [
+     "Proxy DNS",
+     "Ruta definida por el usuario",
+     "Perímetro de seguridad de red",
+     "Regla personalizada de WAF"
+    ],
+    "opts_en": [
+     "DNS proxy",
+     "User-defined route",
+     "Network security perimeter",
+     "WAF custom rule"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Las reglas personalizadas de WAF admiten límites de frecuencia; las UDR controlan el siguiente salto.",
+  "exp_en": "WAF custom rules support rate limiting; UDRs control the next hop."
+ },
+ {
+  "id": 365,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Un recurso de Azure OpenAI en Foundry solo debe aceptar tokens de Microsoft Entra ID, no claves de API. ¿Qué debes configurar?",
+  "q_en": "An Azure OpenAI resource in Foundry must only accept Microsoft Entra ID tokens, not API keys. What should you configure?",
+  "opts_es": [
+   "Habilitar los filtros de contenido",
+   "Rotar ambas claves cada día con un runbook de automatización",
+   "Deshabilitar la autenticación local (con claves)",
+   "Usar un punto de conexión público"
+  ],
+  "opts_en": [
+   "Enable content filters",
+   "Rotate both keys every day with an automation runbook",
+   "Disable local (key-based) authentication",
+   "Use a public endpoint"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Establecer disableLocalAuth obliga a usar autenticación de Entra ID y RBAC en cada llamada.",
+  "exp_en": "Setting disableLocalAuth forces Entra ID authentication and RBAC for every call."
+ },
+ {
+  "id": 366,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Un proyecto de Foundry no debe permitir que agentes o cuadernos envíen datos a destinos arbitrarios de internet. ¿Qué debes configurar?",
+  "q_en": "A Foundry project must not let agents or notebooks send data to arbitrary internet destinations. What should you configure?",
+  "opts_es": [
+   "Red administrada con salida limitada a destinos aprobados",
+   "Filtros de contenido configurados con el umbral de gravedad más alto",
+   "Un bloqueo de recursos",
+   "Una cuota de modelo mayor"
+  ],
+  "opts_en": [
+   "Managed network with outbound limited to approved destinations",
+   "Content filters configured at the highest severity threshold",
+   "A resource lock",
+   "A higher model quota"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El aislamiento de red administrada con 'permitir solo salida aprobada' evita la exfiltración de datos.",
+  "exp_en": "Managed network isolation with 'allow only approved outbound' prevents data exfiltration."
+ },
+ {
+  "id": 367,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué característica de Azure AI Content Safety detecta intentos de anular el mensaje del sistema de un modelo, incluidas instrucciones ocultas en documentos?",
+  "q_en": "Which Azure AI Content Safety feature detects attempts to override a model's system message, including instructions hidden in documents?",
+  "opts_es": [
+   "Detección de fundamentación",
+   "Prompt Shields",
+   "Categorías personalizadas",
+   "Detección de material protegido para código y texto"
+  ],
+  "opts_en": [
+   "Groundedness detection",
+   "Prompt Shields",
+   "Custom categories",
+   "Protected material detection for code and text"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Prompt Shields detecta jailbreaks directos e inyección indirecta de prompts.",
+  "exp_en": "Prompt Shields detect direct jailbreaks and indirect prompt injection."
+ },
+ {
+  "id": 368,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la protección de cargas de trabajo de IA, indica si es verdadera o falsa.",
+  "q_en": "For each statement about securing AI workloads, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Deshabilitar la autenticación local obliga a usar Entra ID en recursos de IA.",
+    "en": "Disabling local auth forces Entra ID for AI resources.",
+    "ans": true
+   },
+   {
+    "es": "Prompt Shields puede detectar inyección indirecta de prompts.",
+    "en": "Prompt Shields can detect indirect prompt injection.",
+    "ans": true
+   },
+   {
+    "es": "Una red administrada no puede restringir el tráfico saliente.",
+    "en": "A managed network can't restrict outbound traffic.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las redes administradas admiten el modo 'permitir solo salida aprobada'.",
+  "exp_en": "Managed networks support 'allow only approved outbound' mode."
+ },
+ {
+  "id": 369,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Una carga de trabajo debe mantener los datos cifrados incluso mientras se usan en memoria, protegiéndolos del operador del host. ¿Qué tipo de VM encaja?",
+  "q_en": "A workload must keep data encrypted even while in use in memory, protecting it from the host operator. Which VM type fits?",
+  "opts_es": [
+   "VM de inicio seguro",
+   "VM con cifrado en el host y claves administradas por el cliente",
+   "VM de acceso puntual",
+   "VM confidencial"
+  ],
+  "opts_en": [
+   "Trusted launch VM",
+   "VM with encryption at host and customer-managed keys",
+   "Spot VM",
+   "Confidential VM"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las VM confidenciales usan entornos de ejecución de confianza basados en hardware como AMD SEV-SNP o Intel TDX.",
+  "exp_en": "Confidential VMs use hardware-based trusted execution environments such as AMD SEV-SNP or Intel TDX."
+ },
+ {
+  "id": 370,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué servicio evalúa las actualizaciones del SO que faltan en servidores de Azure y habilitados para Arc y programa la aplicación de revisiones?",
+  "q_en": "Which service assesses missing OS updates on Azure and Arc-enabled servers and schedules patching?",
+  "opts_es": [
+   "Azure Bastion",
+   "Supervisión de la integridad de archivos de Defender for Servers",
+   "Azure Update Manager",
+   "Azure Advisor"
+  ],
+  "opts_en": [
+   "Azure Bastion",
+   "Defender for Servers file integrity monitoring",
+   "Azure Update Manager",
+   "Azure Advisor"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Update Manager ofrece evaluación y configuraciones de mantenimiento para máquinas Windows y Linux.",
+  "exp_en": "Update Manager provides assessment and maintenance configurations for Windows and Linux machines."
+ },
+ {
+  "id": 371,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "¿Qué SKU de Azure Bastion puede grabar sesiones RDP y SSH para revisarlas después?",
+  "q_en": "Which Azure Bastion SKU can record RDP and SSH sessions for later review?",
+  "opts_es": [
+   "Basic con compatibilidad con cliente nativo habilitada",
+   "Premium",
+   "Developer",
+   "Standard"
+  ],
+  "opts_en": [
+   "Basic with native client support enabled",
+   "Premium",
+   "Developer",
+   "Standard"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La grabación de sesiones y la implementación solo privada son funciones de Premium.",
+  "exp_en": "Session recording and private-only deployment are Premium features."
+ },
+ {
+  "id": 372,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el control de proceso para cada requisito.",
+  "q_en": "Select the compute control for each requirement.",
+  "rows": [
+   {
+    "es": "Grabar las sesiones RDP de los administradores para auditoría",
+    "en": "Record admin RDP sessions for audit",
+    "opts_es": [
+     "Inicio seguro",
+     "VM confidencial",
+     "Bastion Premium",
+     "Azure Update Manager"
+    ],
+    "opts_en": [
+     "Trusted launch",
+     "Confidential VM",
+     "Bastion Premium",
+     "Azure Update Manager"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Proteger los datos en uso frente al host",
+    "en": "Protect data in use from the host",
+    "opts_es": [
+     "Inicio seguro",
+     "VM confidencial",
+     "Bastion Premium",
+     "Azure Update Manager"
+    ],
+    "opts_en": [
+     "Trusted launch",
+     "Confidential VM",
+     "Bastion Premium",
+     "Azure Update Manager"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Bastion Premium graba sesiones; las VM confidenciales protegen los datos en uso.",
+  "exp_en": "Bastion Premium records sessions; confidential VMs protect data in use."
+ },
+ {
+  "id": 373,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "Para proteger los datos en memoria frente al operador del host en la nube, implementa una VM ",
+  "pre_en": "To protect data in memory from the cloud host operator, deploy a ",
+  "post_es": ".",
+  "post_en": " VM.",
+  "opts_es": [
+   "ampliable",
+   "puntual",
+   "de generación 1",
+   "confidencial"
+  ],
+  "opts_en": [
+   "burstable",
+   "spot",
+   "generation 1",
+   "confidential"
+  ],
+  "correct": 3,
+  "exp_es": "La computación confidencial protege los datos en uso.",
+  "exp_en": "Confidential computing protects data in use."
+ },
+ {
+  "id": 374,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "El acceso al clúster de AKS solo debe ser posible con identidades de Microsoft Entra, nunca con el certificado estático de cluster-admin. ¿Qué debes hacer?",
+  "q_en": "AKS cluster access must only be possible with Microsoft Entra identities, never with the static cluster-admin certificate. What should you do?",
+  "opts_es": [
+   "Habilitar un clúster privado",
+   "Habilitar el escalador automático",
+   "Usar directivas de red de Kubernetes entre todos los espacios de nombres",
+   "Deshabilitar las cuentas locales del clúster"
+  ],
+  "opts_en": [
+   "Enable a private cluster",
+   "Enable the cluster autoscaler",
+   "Use Kubernetes network policies between all namespaces",
+   "Disable local accounts on the cluster"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Deshabilitar las cuentas locales elimina la credencial estática para que todo el acceso pase por Entra ID.",
+  "exp_en": "Disabling local accounts removes the static admin credential so all access goes through Entra ID."
+ },
+ {
+  "id": 375,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Un servidor de API de AKS público solo debe aceptar conexiones de los intervalos IP de las oficinas. ¿Qué debes configurar?",
+  "q_en": "A public AKS API server must only accept connections from the company's office IP ranges. What should you configure?",
+  "opts_es": [
+   "Intervalos IP autorizados del servidor de API",
+   "Directivas de red de pods",
+   "Protección en tiempo de ejecución de Defender for Containers en cada nodo",
+   "Identidad de carga de trabajo"
+  ],
+  "opts_en": [
+   "API server authorized IP ranges",
+   "Pod network policies",
+   "Defender for Containers runtime protection on every node",
+   "Workload identity"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los intervalos IP autorizados limitan quién llega a un servidor de API público; un clúster privado elimina el punto de conexión público.",
+  "exp_en": "Authorized IP ranges restrict who can reach a public API server; a private cluster removes the public endpoint entirely."
+ },
+ {
+  "id": 376,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Las aplicaciones de App Service aún permiten implementaciones FTP con credenciales de publicación. ¿Qué debes hacer para reducir el riesgo?",
+  "q_en": "App Service apps still allow FTP deployments with publishing credentials. What should you do to reduce risk?",
+  "opts_es": [
+   "Habilitar el escalado automático",
+   "Deshabilitar la autenticación básica para FTP y SCM",
+   "Mover la aplicación a un plan de App Service superior con más instancias",
+   "Agregar un dominio personalizado"
+  ],
+  "opts_en": [
+   "Enable autoscale",
+   "Disable basic authentication for FTP and SCM",
+   "Move the app to a higher App Service plan with more instances",
+   "Add a custom domain"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Deshabilitar la autenticación básica obliga a implementar con métodos basados en Microsoft Entra.",
+  "exp_en": "Disabling basic auth forces deployments to use Microsoft Entra-backed methods."
+ },
+ {
+  "id": 377,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Solo deben implementarse en AKS las imágenes de contenedor firmadas por tu canalización de compilación. ¿Qué debes usar?",
+  "q_en": "Only container images signed by your build pipeline should be deployed to AKS. What should you use?",
+  "opts_es": [
+   "Un grupo de nodos mayor con identidad administrada asignada por el sistema",
+   "Firma de imágenes con Notation y una directiva de admisión que verifique firmas",
+   "Usuario administrador de ACR",
+   "Panel de Kubernetes"
+  ],
+  "opts_en": [
+   "A larger node pool with system-assigned managed identity",
+   "Image signing with Notation and an admission policy that verifies signatures",
+   "ACR admin user",
+   "Kubernetes Dashboard"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Notation firma las imágenes; un motor como Ratify con Azure Policy verifica las firmas en la admisión.",
+  "exp_en": "Notation signs images; a policy engine such as Ratify with Azure Policy verifies signatures at admission."
+ },
+ {
+  "id": 378,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de contenedores y plataformas de aplicaciones, indica si es verdadera o falsa.",
+  "q_en": "For each statement about container and app platform security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Deshabilitar las cuentas locales de AKS elimina la credencial estática de administrador.",
+    "en": "Disabling AKS local accounts removes the static admin credential.",
+    "ans": true
+   },
+   {
+    "es": "Los intervalos IP autorizados solo se aplican a clústeres privados.",
+    "en": "Authorized IP ranges apply to private clusters only.",
+    "ans": false
+   },
+   {
+    "es": "La autenticación básica para FTP se puede deshabilitar en App Service.",
+    "en": "Basic authentication for FTP can be disabled in App Service.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los intervalos IP autorizados restringen servidores de API públicos; los clústeres privados no tienen punto de conexión público.",
+  "exp_en": "Authorized IP ranges restrict public API servers; private clusters have no public endpoint."
+ },
+ {
+  "id": 379,
+  "exam": "sc-500",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "sentence",
+  "pre_es": "Para forzar todo el acceso a AKS mediante Microsoft Entra ID, deshabilita las cuentas ",
+  "pre_en": "To force all AKS access through Microsoft Entra ID, disable ",
+  "post_es": ".",
+  "post_en": " accounts.",
+  "opts_es": [
+   "de invitado",
+   "locales",
+   "de servicio",
+   "administradas"
+  ],
+  "opts_en": [
+   "guest",
+   "local",
+   "service",
+   "managed"
+  ],
+  "correct": 1,
+  "exp_es": "Las cuentas locales ofrecen credenciales estáticas que eluden Entra ID.",
+  "exp_en": "Local accounts provide static credentials that bypass Entra ID."
+ },
+ {
+  "id": 380,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Las recomendaciones deben asignarse a los propietarios de los recursos con fechas límite y recordatorios. ¿Qué característica de Defender for Cloud encaja?",
+  "q_en": "Recommendations must be assigned to resource owners with due dates and reminders. Which Defender for Cloud feature fits?",
+  "opts_es": [
+   "Exportación continua a un área de trabajo de Log Analytics",
+   "Puntuación segura",
+   "Reglas de gobernanza",
+   "Automatización de flujos de trabajo"
+  ],
+  "opts_en": [
+   "Continuous export to a Log Analytics workspace",
+   "Secure score",
+   "Governance rules",
+   "Workflow automation"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las reglas de gobernanza asignan propietarios y fechas límite automáticamente y siguen el progreso.",
+  "exp_en": "Governance rules assign owners and due dates automatically and track progress."
+ },
+ {
+  "id": 381,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Las alertas y recomendaciones de Defender for Cloud deben enviarse a un SIEM mediante Event Hubs. ¿Qué debes configurar?",
+  "q_en": "Defender for Cloud alerts and recommendations must be sent to a SIEM through Event Hubs. What should you configure?",
+  "opts_es": [
+   "Normas de cumplimiento normativo para cada suscripción",
+   "Reglas de gobernanza",
+   "Análisis de rutas de ataque",
+   "Exportación continua"
+  ],
+  "opts_en": [
+   "Regulatory compliance standards for each subscription",
+   "Governance rules",
+   "Attack path analysis",
+   "Continuous export"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La exportación continua envía alertas, recomendaciones y puntuación segura a Event Hubs o Log Analytics.",
+  "exp_en": "Continuous export streams alerts, recommendations and secure score to Event Hubs or Log Analytics."
+ },
+ {
+  "id": 382,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Una aplicación lógica debe abrir una incidencia cada vez que Defender for Cloud genere una alerta de gravedad alta. ¿Qué debes configurar?",
+  "q_en": "A Logic App must open a ticket every time Defender for Cloud raises a high-severity alert. What should you configure?",
+  "opts_es": [
+   "Una exención de directiva para las suscripciones con alertas",
+   "Automatización de flujos de trabajo",
+   "Explorador de seguridad en la nube",
+   "Exportación continua"
+  ],
+  "opts_en": [
+   "A policy exemption for the subscriptions with alerts",
+   "Workflow automation",
+   "Cloud security explorer",
+   "Continuous export"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La automatización de flujos de trabajo desencadena aplicaciones lógicas ante alertas, recomendaciones o cambios de cumplimiento.",
+  "exp_en": "Workflow automation triggers Logic Apps on alerts, recommendations or compliance changes."
+ },
+ {
+  "id": 383,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Qué solución de Microsoft unifica los datos de exposición de los productos Defender en iniciativas y una puntuación de exposición en dispositivos, identidades y nube?",
+  "q_en": "Which Microsoft solution unifies exposure data from Defender products into initiatives and an exposure score across devices, identities and cloud?",
+  "opts_es": [
+   "Compliance Manager con plantillas de evaluación premium",
+   "Azure Advisor",
+   "Microsoft Security Exposure Management",
+   "Azure Monitor"
+  ],
+  "opts_en": [
+   "Compliance Manager with premium assessment templates",
+   "Azure Advisor",
+   "Microsoft Security Exposure Management",
+   "Azure Monitor"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Exposure Management consolida datos de posición, mapa de superficie de ataque y rutas de ataque en el portal de Defender.",
+  "exp_en": "Exposure Management consolidates posture data, attack surface map and attack paths in the Defender portal."
+ },
+ {
+  "id": 384,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las operaciones de Defender for Cloud, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Defender for Cloud operations, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las reglas de gobernanza pueden fijar fechas límite para las recomendaciones.",
+    "en": "Governance rules can set due dates for recommendations.",
+    "ans": true
+   },
+   {
+    "es": "La exportación continua puede enviar alertas a Event Hubs.",
+    "en": "Continuous export can stream alerts to Event Hubs.",
+    "ans": true
+   },
+   {
+    "es": "La automatización de flujos de trabajo solo puede enviar correos.",
+    "en": "Workflow automation can only send emails.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La automatización de flujos de trabajo ejecuta aplicaciones lógicas, que pueden llamar a cualquier conector.",
+  "exp_en": "Workflow automation runs Logic Apps, which can call any connector."
+ },
+ {
+  "id": 385,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de Defender for Cloud para cada requisito.",
+  "q_en": "Select the Defender for Cloud feature for each requirement.",
+  "rows": [
+   {
+    "es": "Enviar recomendaciones a un SIEM de terceros",
+    "en": "Stream recommendations to a third-party SIEM",
+    "opts_es": [
+     "Automatización de flujos de trabajo",
+     "Explorador de seguridad en la nube",
+     "Exportación continua",
+     "Reglas de gobernanza"
+    ],
+    "opts_en": [
+     "Workflow automation",
+     "Cloud security explorer",
+     "Continuous export",
+     "Governance rules"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Encontrar VM expuestas a internet con vulnerabilidades graves",
+    "en": "Find VMs exposed to the internet with high-severity vulnerabilities",
+    "opts_es": [
+     "Automatización de flujos de trabajo",
+     "Explorador de seguridad en la nube",
+     "Exportación continua",
+     "Reglas de gobernanza"
+    ],
+    "opts_en": [
+     "Workflow automation",
+     "Cloud security explorer",
+     "Continuous export",
+     "Governance rules"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "La exportación continua envía datos fuera; el explorador de seguridad en la nube ejecuta consultas de grafo.",
+  "exp_en": "Continuous export streams data out; cloud security explorer runs graph queries."
+ },
+ {
+  "id": 386,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "sentence",
+  "pre_es": "Para asignar automáticamente propietarios y fechas límite a las recomendaciones, configura reglas de ",
+  "pre_en": "To assign owners and due dates to recommendations automatically, configure ",
+  "post_es": ".",
+  "post_en": " rules.",
+  "opts_es": [
+   "gobernanza",
+   "automatización",
+   "supresión",
+   "análisis"
+  ],
+  "opts_en": [
+   "governance",
+   "automation",
+   "suppression",
+   "analytics"
+  ],
+  "correct": 0,
+  "exp_es": "Las reglas de gobernanza impulsan la responsabilidad de la corrección.",
+  "exp_en": "Governance rules drive remediation accountability."
+ },
+ {
+  "id": 387,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Una detección debe activarse aproximadamente un minuto después del evento, con un retraso mínimo. ¿Qué tipo de regla de análisis de Sentinel encaja?",
+  "q_en": "A detection must trigger within about a minute of the event, with minimal delay. Which Sentinel analytics rule type fits?",
+  "opts_es": [
+   "Regla de anomalías entrenada con 21 días de datos históricos",
+   "Libro",
+   "Regla casi en tiempo real (NRT)",
+   "Regla programada cada 24 horas"
+  ],
+  "opts_en": [
+   "Anomaly rule trained on 21 days of historical data",
+   "Workbook",
+   "Near-real-time (NRT) rule",
+   "Scheduled rule running every 24 hours"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las reglas NRT se ejecutan cada minuto sobre datos recientes; las programadas tienen un intervalo mínimo de cinco minutos.",
+  "exp_en": "NRT rules run every minute on recent data; scheduled rules have a minimum interval of five minutes."
+ },
+ {
+  "id": 388,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Las reglas de análisis deben funcionar con registros de firewall de distintos fabricantes sin reescribir las consultas para cada uno. ¿Qué debes usar?",
+  "q_en": "Analytics rules must work across firewall logs from different vendors without rewriting queries for each one. What should you use?",
+  "opts_es": [
+   "Cuadernos de estrategias",
+   "Analizadores de normalización ASIM",
+   "Listas de seguimiento",
+   "Un área de trabajo de Log Analytics distinta para cada fabricante de firewall"
+  ],
+  "opts_en": [
+   "Playbooks",
+   "ASIM normalization parsers",
+   "Watchlists",
+   "A separate Log Analytics workspace for each firewall vendor"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El modelo avanzado de información de seguridad asigna los datos de cada fabricante a esquemas comunes como NetworkSession.",
+  "exp_en": "The Advanced Security Information Model maps vendor data to common schemas such as NetworkSession."
+ },
+ {
+  "id": 389,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Los incidentes de una regla de análisis deben mostrar la cuenta y el host afectados como entidades para investigar. ¿Qué debes configurar en la regla?",
+  "q_en": "Incidents from an analytics rule must show the affected account and host as entities for investigation. What should you configure in the rule?",
+  "opts_es": [
+   "Asignación de entidades",
+   "Mayor frecuencia de consulta y un período retrospectivo más largo",
+   "Solo la agrupación de alertas",
+   "Retención de datos"
+  ],
+  "opts_en": [
+   "Entity mapping",
+   "A higher query frequency and a longer lookback period",
+   "Alert grouping only",
+   "Data retention"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La asignación de entidades convierte columnas de la consulta en entidades usadas por los gráficos de investigación y UEBA.",
+  "exp_en": "Entity mapping turns query columns into entities used by investigation graphs and UEBA."
+ },
+ {
+  "id": 390,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Los indicadores de compromiso del servidor TAXII de un socio deben importarse a Sentinel. ¿Qué conector encaja?",
+  "q_en": "Indicators of compromise from a partner's TAXII server must be imported into Sentinel. Which connector fits?",
+  "opts_es": [
+   "Syslog mediante Azure Monitor Agent en un reenviador",
+   "Actividad de Azure",
+   "Inteligencia sobre amenazas - TAXII",
+   "Microsoft Entra ID"
+  ],
+  "opts_en": [
+   "Syslog via Azure Monitor Agent on a forwarder",
+   "Azure Activity",
+   "Threat Intelligence - TAXII",
+   "Microsoft Entra ID"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El conector TAXII consulta fuentes STIX/TAXII y guarda indicadores para las reglas de coincidencia.",
+  "exp_en": "The TAXII connector polls STIX/TAXII feeds and stores indicators for matching rules."
+ },
+ {
+  "id": 391,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las detecciones de Microsoft Sentinel, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Sentinel detections, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las reglas NRT se ejecutan aproximadamente cada minuto.",
+    "en": "NRT rules run about every minute.",
+    "ans": true
+   },
+   {
+    "es": "Los analizadores ASIM normalizan datos de distintos orígenes.",
+    "en": "ASIM parsers normalize data from different sources.",
+    "ans": true
+   },
+   {
+    "es": "La asignación de entidades solo se configura en libros.",
+    "en": "Entity mapping is configured in workbooks only.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La asignación de entidades se configura en las reglas de análisis.",
+  "exp_en": "Entity mapping is configured in analytics rules."
+ },
+ {
+  "id": 392,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "Para que una consulta de detección funcione con firewalls de distintos fabricantes, usa los analizadores ",
+  "pre_en": "To make one detection query work across firewall vendors, use ",
+  "post_es": ".",
+  "post_en": " parsers.",
+  "opts_es": [
+   "ASIM",
+   "CEF",
+   "Syslog",
+   "Fusion"
+  ],
+  "opts_en": [
+   "ASIM",
+   "CEF",
+   "Syslog",
+   "Fusion"
+  ],
+  "correct": 0,
+  "exp_es": "ASIM proporciona esquemas y analizadores independientes del origen.",
+  "exp_en": "ASIM provides source-agnostic schemas and parsers."
+ },
+ {
+  "id": 393,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "sentence",
+  "pre_es": "Para detecciones que deben activarse un minuto después de un evento, crea una regla ",
+  "pre_en": "For detections that must fire about one minute after an event, create a ",
+  "post_es": ".",
+  "post_en": " rule.",
+  "opts_es": [
+   "casi en tiempo real",
+   "de anomalías",
+   "de lista",
+   "Fusion"
+  ],
+  "opts_en": [
+   "near-real-time",
+   "anomaly",
+   "watchlist",
+   "Fusion"
+  ],
+  "correct": 0,
+  "exp_es": "Las reglas NRT minimizan el retraso de detección.",
+  "exp_en": "NRT rules minimize detection delay."
+ },
+ {
+  "id": 394,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "¿Cuál es la diferencia entre las experiencias independiente e integrada de Security Copilot?",
+  "q_en": "What is the difference between the standalone and embedded experiences of Security Copilot?",
+  "opts_es": [
+   "La integrada no usa SCU",
+   "La independiente solo funciona con complementos de terceros y sin datos de Microsoft",
+   "La independiente es un portal propio; la integrada aparece dentro de productos como Defender e Intune",
+   "No hay diferencia"
+  ],
+  "opts_en": [
+   "Embedded doesn't use SCUs",
+   "Standalone only works with third-party plugins and no Microsoft data",
+   "Standalone is a dedicated portal; embedded appears inside products such as Defender and Intune",
+   "There is no difference"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Ambas usan la misma capacidad; las integradas muestran Copilot en el contexto de cada producto.",
+  "exp_en": "Both draw on the same capacity; embedded experiences surface Copilot in the context of each product."
+ },
+ {
+  "id": 395,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "Los picos de carga pueden superar las SCU aprovisionadas. ¿Cómo puede Security Copilot seguir funcionando sin cambios manuales?",
+  "q_en": "Workload spikes may exceed the provisioned SCUs. How can Security Copilot keep running without manual changes?",
+  "opts_es": [
+   "Cambiar la región del área de trabajo",
+   "Desactivar todos los complementos excepto el de Microsoft Defender XDR",
+   "Eliminar sesiones antiguas",
+   "Permitir unidades de exceso facturadas por uso"
+  ],
+  "opts_en": [
+   "Change the workspace region",
+   "Turn off all plugins except the Microsoft Defender XDR plugin",
+   "Delete old sessions",
+   "Allow overage units billed by usage"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "El exceso permite superar las SCU aprovisionadas hasta un límite fijado, facturado por uso.",
+  "exp_en": "Overage lets usage go beyond provisioned SCUs up to a limit you set, billed per use."
+ },
+ {
+  "id": 396,
+  "exam": "sc-500",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la administración de Security Copilot, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Security Copilot administration, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las experiencias integradas aparecen dentro de productos como Intune.",
+    "en": "Embedded experiences appear inside products such as Intune.",
+    "ans": true
+   },
+   {
+    "es": "Las unidades de exceso pueden absorber el uso por encima de las SCU aprovisionadas.",
+    "en": "Overage units can absorb usage above provisioned SCUs.",
+    "ans": true
+   },
+   {
+    "es": "Security Copilot ignora los permisos del rol del usuario.",
+    "en": "Security Copilot ignores the user's role permissions.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Security Copilot actúa en nombre del usuario con sus permisos existentes.",
+  "exp_en": "Security Copilot acts on behalf of the user with their existing permissions."
  }
 ]
