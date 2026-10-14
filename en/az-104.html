@@ -159,29 +159,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Manage Azure identities and governance",
+     "comment": {
+      "@type": "Comment",
+      "text": "Manage Azure identities and governance"
+     },
      "name": "What is the maximum number of levels of depth (not counting the root management group) supported by the Azure ",
      "text": "What is the maximum number of levels of depth (not counting the root management group) supported by the Azure management group hierarchy?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "There is no limit"
+       "text": "There is no limit",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "10 levels"
+       "text": "10 levels",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "2 levels"
+       "text": "2 levels",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "6 levels",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. Azure supports up to 6 levels of depth in the management group hierarchy, not counting the root level or the level of individual subscriptions."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "Azure supports up to 6 levels of depth in the management group hierarchy, not counting the root level or the level of individual subscriptions."
@@ -192,29 +219,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Implement and manage storage",
+     "comment": {
+      "@type": "Comment",
+      "text": "Implement and manage storage"
+     },
      "name": "What is a 'snapshot' of a blob in Azure Storage?",
      "text": "What is a 'snapshot' of a blob in Azure Storage?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "A lifecycle management policy that moves the blob to a cheaper tier after a period without access"
+       "text": "A lifecycle management policy that moves the blob to a cheaper tier after a period without access",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "An automatic hourly backup performed without user intervention or any configuration option"
+       "text": "An automatic hourly backup performed without user intervention or any configuration option",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "A type of storage account optimized for frequent access to small blobs"
+       "text": "A type of storage account optimized for frequent access to small blobs",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "A read-only copy of the blob's state at a given point in time, explicitly created by the user",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. A blob snapshot is a read-only copy of the blob as it was at the time the snapshot was created; it is explicitly created (for example, via AzCopy, PowerShell, or the portal) and can be used to restore earlier versions."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "A blob snapshot is a read-only copy of the blob as it was at the time the snapshot was created; it is explicitly created (for example, via AzCopy, PowerShell, or the portal) and can be used to restore earlier versions."
@@ -225,29 +279,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Deploy and manage Azure compute resources",
+     "comment": {
+      "@type": "Comment",
+      "text": "Deploy and manage Azure compute resources"
+     },
      "name": "Which authentication method is recommended for an Azure Container Instance to pull images from Azure Container",
      "text": "Which authentication method is recommended for an Azure Container Instance to pull images from Azure Container Registry more securely, avoiding the use of admin user credentials?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "Use only anonymous public access to the registry, with no authentication at all"
+       "text": "Use only anonymous public access to the registry, with no authentication at all",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Enable the admin user and share its password with the team"
+       "text": "Enable the admin user and share its password with the team",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Share the subscription key with developers for use in the pipeline"
+       "text": "Share the subscription key with developers for use in the pipeline",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "A managed identity with an RBAC role such as AcrPull assigned on the registry",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. It is recommended to use a managed identity with the 'AcrPull' RBAC role assigned on the registry, allowing ACI to authenticate securely without handling static admin user credentials."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "It is recommended to use a managed identity with the 'AcrPull' RBAC role assigned on the registry, allowing ACI to authenticate securely without handling static admin user credentials."
@@ -258,29 +339,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Implement and manage virtual networking",
+     "comment": {
+      "@type": "Comment",
+      "text": "Implement and manage virtual networking"
+     },
      "name": "What happens to inbound traffic toward a VM behind an Azure Standard Load Balancer if no NSG rule is configure",
      "text": "What happens to inbound traffic toward a VM behind an Azure Standard Load Balancer if no NSG rule is configured on the network interface or subnet?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "Traffic is allowed, as Standard Load Balancer inherits permissive rules from the Basic balancer"
+       "text": "Traffic is allowed, as Standard Load Balancer inherits permissive rules from the Basic balancer",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Traffic is only blocked if the balancer has the 'Secure by default' option enabled"
+       "text": "Traffic is only blocked if the balancer has the 'Secure by default' option enabled",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Standard Load Balancer automatically allows traffic on ports configured in load balancing rules"
+       "text": "Standard Load Balancer automatically allows traffic on ports configured in load balancing rules",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "Traffic is blocked, as Standard Load Balancer is secure by default and requires NSGs to explicitly allow traffic",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. Azure Standard Load Balancer is secure by default: all Internet traffic to the backend is blocked unless an NSG rule explicitly allows it. Basic Load Balancer, in contrast, allows traffic by default. This difference is important for the AZ-104 exam."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "Azure Standard Load Balancer is secure by default: all Internet traffic to the backend is blocked unless an NSG rule explicitly allows it. Basic Load Balancer, in contrast, allows traffic by default. This difference is important for the AZ-104 exam."
@@ -291,29 +399,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Monitor and maintain Azure resources",
+     "comment": {
+      "@type": "Comment",
+      "text": "Monitor and maintain Azure resources"
+     },
      "name": "An administrator configures an Azure Monitor metric alert for a VM. The rule has two conditions: CPU > 90% AND",
      "text": "An administrator configures an Azure Monitor metric alert for a VM. The rule has two conditions: CPU > 90% AND Available Memory < 1 GB. When will the alert fire?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "When either condition is met (OR logic)"
+       "text": "When either condition is met (OR logic)",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "When CPU exceeds 90% for more than 5 minutes, regardless of memory"
+       "text": "When CPU exceeds 90% for more than 5 minutes, regardless of memory",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "It is not possible to combine two conditions in the same metric alert rule"
+       "text": "It is not possible to combine two conditions in the same metric alert rule",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "When both conditions are met simultaneously (AND logic)",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. When multiple conditions are configured on an Azure Monitor metric alert rule, AND logic is used: the alert only fires when all conditions are simultaneously met. This allows creating more precise alerts that only trigger when a specific combination of conditions occurs."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "When multiple conditions are configured on an Azure Monitor metric alert rule, AND logic is used: the alert only fires when all conditions are simultaneously met. This allows creating more precise alerts that only trigger when a specific combination of conditions occurs."

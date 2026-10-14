@@ -159,29 +159,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Preparar la infraestructura para dispositivos",
+     "comment": {
+      "@type": "Comment",
+      "text": "Preparar la infraestructura para dispositivos"
+     },
      "name": "Quieres crear un grupo de dispositivos en Microsoft Entra ID que incluya automáticamente todos los dispositivo",
      "text": "Quieres crear un grupo de dispositivos en Microsoft Entra ID que incluya automáticamente todos los dispositivos de propiedad corporativa. ¿Qué atributo de regla de membresía dinámica debes usar?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "device.operatingSystem -eq 'Windows'"
+       "text": "device.operatingSystem -eq 'Windows'",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "device.isCompliant -eq true"
+       "text": "device.isCompliant -eq true",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "device.managementType -eq 'MDM'"
+       "text": "device.managementType -eq 'MDM'",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "device.deviceOwnership -eq 'Company'",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Respuesta correcta. El atributo device.deviceOwnership con valor 'Company' identifica dispositivos de propiedad corporativa, en contraste con 'Personal' para dispositivos BYOD."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "El atributo device.deviceOwnership con valor 'Company' identifica dispositivos de propiedad corporativa, en contraste con 'Personal' para dispositivos BYOD."
@@ -192,29 +219,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Administrar y mantener dispositivos",
+     "comment": {
+      "@type": "Comment",
+      "text": "Administrar y mantener dispositivos"
+     },
      "name": "Un administrador quiere configurar el acceso VPN siempre activo (Always On VPN) en dispositivos Windows gestio",
      "text": "Un administrador quiere configurar el acceso VPN siempre activo (Always On VPN) en dispositivos Windows gestionados por Intune para que los usuarios estén siempre conectados a la VPN corporativa sin tener que conectarse manualmente. ¿Qué tipo de perfil de Intune debe crear?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "Perfil de restricciones de dispositivos > Sección de red con opciones de VPN siempre activa"
+       "text": "Perfil de restricciones de dispositivos > Sección de red con opciones de VPN siempre activa",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Perfil de Endpoint Protection > Sección de VPN con configuración de túnel dividido"
+       "text": "Perfil de Endpoint Protection > Sección de VPN con configuración de túnel dividido",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Directiva de acceso condicional con requisito de VPN corporativa para acceso a recursos"
+       "text": "Directiva de acceso condicional con requisito de VPN corporativa para acceso a recursos",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "Perfil de configuración de dispositivos Windows de tipo VPN con la opción Always On habilitada",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Respuesta correcta. Los perfiles de VPN para Windows en Intune permiten configurar Always On VPN, que mantiene la conexión VPN activa en todo momento. Soporta diferentes clientes VPN (Microsoft VPN, IKEv2, etc.)."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "Los perfiles de VPN para Windows en Intune permiten configurar Always On VPN, que mantiene la conexión VPN activa en todo momento. Soporta diferentes clientes VPN (Microsoft VPN, IKEv2, etc.)."
@@ -225,29 +279,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Administrar y proteger aplicaciones",
+     "comment": {
+      "@type": "Comment",
+      "text": "Administrar y proteger aplicaciones"
+     },
      "name": "¿Qué canal de actualización de Microsoft 365 Apps proporciona las actualizaciones más rápidas con las últimas ",
      "text": "¿Qué canal de actualización de Microsoft 365 Apps proporciona las actualizaciones más rápidas con las últimas características, pero con menos pruebas previas al lanzamiento?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "Canal mensual empresarial (Monthly Enterprise Channel)"
+       "text": "Canal mensual empresarial (Monthly Enterprise Channel)",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Canal semestral empresarial (Semi-Annual Enterprise Channel)"
+       "text": "Canal semestral empresarial (Semi-Annual Enterprise Channel)",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Canal beta"
+       "text": "Canal beta",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "Canal actual (Current Channel)",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Respuesta correcta. El Canal actual (Current Channel) recibe nuevas características en cuanto están listas, normalmente varias veces al mes. Es el más rápido pero con menos pruebas empresariales previas al lanzamiento."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "El Canal actual (Current Channel) recibe nuevas características en cuanto están listas, normalmente varias veces al mes. Es el más rápido pero con menos pruebas empresariales previas al lanzamiento."
@@ -258,29 +339,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Proteger dispositivos",
+     "comment": {
+      "@type": "Comment",
+      "text": "Proteger dispositivos"
+     },
      "name": "Habilita App Control for Business, pero quiere que las apps implementadas con Intune sigan funcionando sin agr",
      "text": "Habilita App Control for Business, pero quiere que las apps implementadas con Intune sigan funcionando sin agregarlas una a una a la directiva. ¿Qué configura?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "Una regla de reducción de la superficie de ataque que bloquea macros"
+       "text": "Una regla de reducción de la superficie de ataque que bloquea macros",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 1,
-       "text": "Una regla del Firewall de Windows Defender para cada app instalada"
+       "text": "Una regla del Firewall de Windows Defender para cada app instalada",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Una línea de base de seguridad que deshabilite SmartScreen para ellas"
+       "text": "Una línea de base de seguridad que deshabilite SmartScreen para ellas",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 2,
       "text": "La Extensión de administración de Intune como instalador administrado",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Respuesta correcta. En Seguridad de puntos de conexión > App Control for Business se puede definir la Extensión de administración de Intune como instalador administrado, de modo que las apps que implementa se consideran de confianza automáticamente."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "En Seguridad de puntos de conexión > App Control for Business se puede definir la Extensión de administración de Intune como instalador administrado, de modo que las apps que implementa se consideran de confianza automáticamente."
@@ -291,29 +399,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Optimizar las operaciones de endpoints mediante automatización, supervisión e informes",
+     "comment": {
+      "@type": "Comment",
+      "text": "Optimizar las operaciones de endpoints mediante automatización, supervisión e informes"
+     },
      "name": "¿Qué versión del endpoint de Microsoft Graph debe usar normalmente la automatización de producción para Intune",
      "text": "¿Qué versión del endpoint de Microsoft Graph debe usar normalmente la automatización de producción para Intune?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "beta, porque siempre es más estable"
+       "text": "beta, porque siempre es más estable",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Cualquiera; Microsoft garantiza ambas por igual"
+       "text": "Cualquiera; Microsoft garantiza ambas por igual",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "El endpoint heredado de Azure AD Graph"
+       "text": "El endpoint heredado de Azure AD Graph",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Respuesta incorrecta."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "v1.0, porque las API beta pueden cambiar sin previo aviso",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Respuesta correcta. El endpoint v1.0 es el soportado para producción; beta puede cambiar con modificaciones incompatibles. Azure AD Graph está retirado."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "El endpoint v1.0 es el soportado para producción; beta puede cambiar con modificaciones incompatibles. Azure AD Graph está retirado."

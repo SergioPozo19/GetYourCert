@@ -159,29 +159,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Prepare infrastructure for devices",
+     "comment": {
+      "@type": "Comment",
+      "text": "Prepare infrastructure for devices"
+     },
      "name": "You want to create a device group in Microsoft Entra ID that automatically includes all corporate-owned device",
      "text": "You want to create a device group in Microsoft Entra ID that automatically includes all corporate-owned devices. Which dynamic membership rule attribute should you use?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "device.operatingSystem -eq 'Windows'"
+       "text": "device.operatingSystem -eq 'Windows'",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "device.isCompliant -eq true"
+       "text": "device.isCompliant -eq true",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "device.managementType -eq 'MDM'"
+       "text": "device.managementType -eq 'MDM'",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "device.deviceOwnership -eq 'Company'",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. The device.deviceOwnership attribute with value 'Company' identifies corporate-owned devices, as opposed to 'Personal' for BYOD devices."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "The device.deviceOwnership attribute with value 'Company' identifies corporate-owned devices, as opposed to 'Personal' for BYOD devices."
@@ -192,29 +219,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Manage and maintain devices",
+     "comment": {
+      "@type": "Comment",
+      "text": "Manage and maintain devices"
+     },
      "name": "An administrator wants to configure Always On VPN on Windows devices managed by Intune so users are always con",
      "text": "An administrator wants to configure Always On VPN on Windows devices managed by Intune so users are always connected to the corporate VPN without manually connecting. Which Intune profile type should they create?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "Device restrictions profile > Network section with Always On VPN options"
+       "text": "Device restrictions profile > Network section with Always On VPN options",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Endpoint Protection profile > VPN section with split tunnel configuration"
+       "text": "Endpoint Protection profile > VPN section with split tunnel configuration",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Conditional Access policy with corporate VPN requirement for resource access"
+       "text": "Conditional Access policy with corporate VPN requirement for resource access",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 1,
       "text": "Windows device configuration profile of type VPN with Always On option enabled",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. VPN profiles for Windows in Intune allow configuring Always On VPN, which keeps the VPN connection active at all times. It supports different VPN clients (Microsoft VPN, IKEv2, etc.)."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "VPN profiles for Windows in Intune allow configuring Always On VPN, which keeps the VPN connection active at all times. It supports different VPN clients (Microsoft VPN, IKEv2, etc.)."
@@ -225,29 +279,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Manage and secure applications",
+     "comment": {
+      "@type": "Comment",
+      "text": "Manage and secure applications"
+     },
      "name": "Which Microsoft 365 Apps update channel provides the fastest updates with the latest features but with less pr",
      "text": "Which Microsoft 365 Apps update channel provides the fastest updates with the latest features but with less pre-release testing?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "Monthly Enterprise Channel"
+       "text": "Monthly Enterprise Channel",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Semi-Annual Enterprise Channel"
+       "text": "Semi-Annual Enterprise Channel",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "Beta Channel"
+       "text": "Beta Channel",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "Current Channel",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. Current Channel receives new features as soon as they are ready, typically several times per month. It is the fastest but with less enterprise pre-release testing."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "Current Channel receives new features as soon as they are ready, typically several times per month. It is the fastest but with less enterprise pre-release testing."
@@ -258,29 +339,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Protect devices",
+     "comment": {
+      "@type": "Comment",
+      "text": "Protect devices"
+     },
      "name": "You enable App Control for Business but want apps deployed through Intune to keep running without adding each ",
      "text": "You enable App Control for Business but want apps deployed through Intune to keep running without adding each one to the policy. What should you configure?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 0,
-       "text": "An attack surface reduction rule that blocks Office macros"
+       "text": "An attack surface reduction rule that blocks Office macros",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 1,
-       "text": "A Windows Defender Firewall rule for each installed application"
+       "text": "A Windows Defender Firewall rule for each installed application",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "A security baseline that disables SmartScreen for those apps"
+       "text": "A security baseline that disables SmartScreen for those apps",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 2,
       "text": "The Intune Management Extension as a managed installer",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. In Endpoint security > App Control for Business, you can set the Intune Management Extension as a managed installer so apps it deploys are trusted automatically by App Control policies."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "In Endpoint security > App Control for Business, you can set the Intune Management Extension as a managed installer so apps it deploys are trusted automatically by App Control policies."
@@ -291,29 +399,56 @@
      "@type": "Question",
      "eduQuestionType": "Multiple choice",
      "learningResourceType": "Practice problem",
+     "encodingFormat": "text/html",
+     "typicalAgeRange": "18-",
+     "assesses": "Optimize endpoint operations by using automation, monitoring, and reporting",
+     "comment": {
+      "@type": "Comment",
+      "text": "Optimize endpoint operations by using automation, monitoring, and reporting"
+     },
      "name": "Which Microsoft Graph endpoint version should production automation for Intune generally use?",
      "text": "Which Microsoft Graph endpoint version should production automation for Intune generally use?",
      "suggestedAnswer": [
       {
        "@type": "Answer",
        "position": 1,
-       "text": "beta, because it is always more stable"
+       "text": "beta, because it is always more stable",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 2,
-       "text": "Either one; Microsoft guarantees both equally"
+       "text": "Either one; Microsoft guarantees both equally",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       },
       {
        "@type": "Answer",
        "position": 3,
-       "text": "The legacy Azure AD Graph endpoint"
+       "text": "The legacy Azure AD Graph endpoint",
+       "encodingFormat": "text/html",
+       "comment": {
+        "@type": "Comment",
+        "text": "Incorrect answer."
+       }
       }
      ],
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 0,
       "text": "v1.0, because beta APIs can change without notice",
+      "encodingFormat": "text/html",
+      "comment": {
+       "@type": "Comment",
+       "text": "Correct answer. The v1.0 endpoint is supported for production; beta is subject to breaking changes. Azure AD Graph is retired."
+      },
       "answerExplanation": {
        "@type": "Comment",
        "text": "The v1.0 endpoint is supported for production; beta is subject to breaking changes. Azure AD Graph is retired."

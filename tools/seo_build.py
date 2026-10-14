@@ -139,18 +139,27 @@ def samples_html(e, samples):
     return '\n'.join(parts)
 
 
-def practice_jsonld(samples, lang):
-    L = 'ABCD'
+def practice_jsonld(samples, lang, e):
+    doms = {d['id']: d['name_' + lang] for d in e['domains']}
+    wrong = 'Respuesta incorrecta.' if lang == 'es' else 'Incorrect answer.'
+    right = 'Respuesta correcta.' if lang == 'es' else 'Correct answer.'
     items = []
     for q in samples:
         c = q['correct'][0]
         opts = q['opts_' + lang]
+        dom = doms.get(q.get('dom'), e['code'])
+        exp = q['exp_' + lang]
         items.append({
             "@type": "Question", "eduQuestionType": "Multiple choice", "learningResourceType": "Practice problem",
+            "encodingFormat": "text/html", "typicalAgeRange": "18-",
+            "assesses": dom, "comment": {"@type": "Comment", "text": dom},
             "name": q['q_' + lang][:110], "text": q['q_' + lang],
-            "suggestedAnswer": [{"@type": "Answer", "position": i, "text": o} for i, o in enumerate(opts) if i != c],
-            "acceptedAnswer": {"@type": "Answer", "position": c, "text": opts[c],
-                               "answerExplanation": {"@type": "Comment", "text": q['exp_' + lang]}},
+            "suggestedAnswer": [{"@type": "Answer", "position": i, "text": o, "encodingFormat": "text/html",
+                                 "comment": {"@type": "Comment", "text": wrong}}
+                                for i, o in enumerate(opts) if i != c],
+            "acceptedAnswer": {"@type": "Answer", "position": c, "text": opts[c], "encodingFormat": "text/html",
+                               "comment": {"@type": "Comment", "text": right + ' ' + exp},
+                               "answerExplanation": {"@type": "Comment", "text": exp}},
         })
     return items
 
@@ -279,7 +288,7 @@ def build_exam(e):
                 "educationalAlignment": {"@type": "AlignmentObject", "alignmentType": "assesses",
                                          "targetName": f"Microsoft exam {code}"},
                 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
-                "hasPart": practice_jsonld(samples, lg)}
+                "hasPart": practice_jsonld(samples, lg, e)}
 
     for lg in ('es', 'en'):
         url = es_url if lg == 'es' else en_url
