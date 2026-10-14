@@ -234,7 +234,7 @@ const css=document.createElement('style');
 css.textContent=[
 '.m-back,.m-login,#uiNav .m-more-tab{display:none}',
 'html.m-app #uiNav .m-more-tab{display:inline-flex}',
-'@media(min-width:761px) and (max-width:900px){.brand .sub{display:none}.brand .brand-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{min-width:0;flex:1 1 auto}}',
+'@media(min-width:761px) and (max-width:900px){.brand .sub{display:none}.brand .brand-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{min-width:0;flex:1 1 auto}.brand>div{min-width:0}.ui-nav{flex:none}}',
 /* native touch basics */
 'html.m-app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}',
 'html.m-app,html.m-app body{height:auto;min-height:100%}',
