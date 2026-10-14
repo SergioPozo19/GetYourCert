@@ -18,7 +18,7 @@ const MT={
 };
 const mt=k=>(MT[lang]&&MT[lang][k])||MT.es[k];
 const $=s=>document.querySelector(s);
-const mq=matchMedia('(max-width:760px)');
+const mq=matchMedia('(max-width:760px), (pointer:coarse) and (max-height:500px)');
 const on=()=>document.documentElement.classList.contains('m-app');
 
 const ICO={
@@ -235,10 +235,10 @@ css.textContent=[
 '.m-back,.m-login,#uiNav .m-more-tab{display:none}',
 'html.m-app #uiNav .m-more-tab{display:inline-flex}',
 '@media(min-width:761px) and (max-width:900px){.brand .sub{display:none}.brand .brand-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{min-width:0;flex:1 1 auto}}',
-'@media(max-width:760px){',
 /* native touch basics */
 'html.m-app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}',
-'html.m-app body{background:var(--bg);padding-bottom:calc(64px + env(safe-area-inset-bottom))}',
+'html.m-app,html.m-app body{height:auto;min-height:100%}',
+'html.m-app body{background:var(--bg);padding-bottom:calc(72px + env(safe-area-inset-bottom))}',
 'html.m-app button,html.m-app a,html.m-app .mode,html.m-app .exam-card{touch-action:manipulation;-webkit-user-select:none;user-select:none}',
 'html.m-app input,html.m-app select,html.m-app textarea{font-size:16px !important}',
 'html.m-app .wrap{padding:0 16px 24px}',
@@ -353,13 +353,37 @@ css.textContent=[
 'html.m-app #home .mode.sel{background:transparent;outline:0}',
 'html.m-app .dom-pick{margin-top:12px;border-radius:18px}',
 
+/* finger-sized targets */
+'html.m-app .ui-clear,html.m-app #quotaProLink{min-height:40px;display:inline-flex;align-items:center;padding:0 12px}',
+'html.m-app .exq-bm{min-width:40px;min-height:40px;display:inline-grid;place-items:center}',
+'html.m-app #obSkipBtn{min-height:40px;padding:0 12px}',
+'html.m-app .ob-dot{position:relative}html.m-app .ob-dot::after{content:"";position:absolute;inset:-12px -6px}',
+/* question types */
+'html.m-app .row-q{padding:14px;gap:12px}',
+'html.m-app .row-label{min-width:0;flex:1 1 100%}',
+'html.m-app .row-q .yn-group{width:100%}',
+'html.m-app .row-q .yn-btn{flex:1;height:46px;font-size:15px}',
+'html.m-app .row-q .dd-wrap,html.m-app .row-q .dd-select{width:100%;margin:0}',
+'html.m-app .row-q .dd-select,html.m-app .sentence-q .dd-select{min-height:44px}',
+'html.m-app .ord-btns button{width:40px;height:40px}',
+'html.m-app .sentence-q .dd-wrap{display:flex;flex-wrap:wrap;width:100%;max-width:100%;margin:6px 0}',
+'html.m-app .dd-wrap{max-width:100%;min-width:0}',
+'html.m-app .dd-select{max-width:100%;min-width:0;text-overflow:ellipsis}',
+'html.m-app .sentence-q .dd-select{width:100%}',
+'html.m-app .dd-answer{white-space:normal;line-height:1.4}',
+/* renewal chip and other pills may wrap instead of overflowing */
+'html.m-app .cr-chip{white-space:normal}',
+/* onboarding keeps its own edge-to-edge layout inside the sheet */
+'html.m-app .modal-ov .onboard-modal{padding:22px 0 env(safe-area-inset-bottom)}',
+/* toasts move to the top while a sheet is open so they do not cover its buttons */
+'html.m-app body:has(.modal-ov.show) .toast-wrap,html.m-app body:has(.cr-modal) .toast-wrap,html.m-app body.m-sheet-open .toast-wrap,html.m-app body.m-grid-open .toast-wrap{bottom:auto;top:calc(12px + env(safe-area-inset-top))}',
 /* exam: full-screen focus mode */
-'html.m-app body.m-focus{padding-bottom:calc(84px + env(safe-area-inset-bottom))}',
+'html.m-app body.m-focus{padding-bottom:calc(88px + env(safe-area-inset-bottom))}',
 'html.m-app body.m-focus .topbar,html.m-app body.m-focus .ui-nav,html.m-app body.m-focus #patreonBanner{display:none !important}',
 'html.m-app #exam .exam-head{position:sticky;top:0;margin:0 -16px 12px;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}',
 'html.m-app #exam .exam-head .row1{gap:8px;align-items:center}',
 'html.m-app #exam .exam-head .pill.dom{max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
-'html.m-app #quitBtn{order:-1;font-size:0;width:36px;height:36px;padding:0;border-radius:12px;display:grid;place-items:center}',
+'html.m-app #quitBtn{margin:0;order:-1;font-size:0;width:36px;height:36px;padding:0;border-radius:12px;display:grid;place-items:center}',
 'html.m-app #quitBtn::before{content:"";width:16px;height:16px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'black\' stroke-width=\'2.6\' stroke-linecap=\'round\'%3E%3Cpath d=\'M6 6l12 12M18 6L6 18\'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'black\' stroke-width=\'2.6\' stroke-linecap=\'round\'%3E%3Cpath d=\'M6 6l12 12M18 6L6 18\'/%3E%3C/svg%3E") center/contain no-repeat}',
 'html.m-app #exam .exam-head .progress{margin-top:10px;height:5px}',
 'html.m-app .qcard{padding:18px 16px;border-radius:20px}',
@@ -438,8 +462,7 @@ css.textContent=[
 /* progress & explore */
 'html.m-app #progress .cat-head h2,html.m-app #explore .cat-head h2{font-size:24px}',
 'html.m-app .explore-controls{flex-direction:column;gap:8px}',
-'}',
-'@media(max-width:760px) and (prefers-reduced-motion:reduce){.m-sheet-box,html.m-app .modal-ov .modal,html.m-app #exam .gridnav{transition:none}html.m-app .qcard.m-swl,html.m-app .qcard.m-swr{animation:none}}'
+'@media(prefers-reduced-motion:reduce){.m-sheet-box,html.m-app .modal-ov .modal,html.m-app #exam .gridnav{transition:none}html.m-app .qcard.m-swl,html.m-app .qcard.m-swr{animation:none}}'
 ].join('\n');
 document.head.appendChild(css);
 
