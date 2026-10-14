@@ -9673,18 +9673,18 @@
   "post_es": ".",
   "post_en": ".",
   "opts_es": [
+   "la seguridad de nivel de fila",
    "la caché de consultas",
    "la actualización incremental",
-   "la actualización automática de página",
-   "la seguridad de nivel de fila"
+   "la actualización automática de página"
   ],
   "opts_en": [
+   "row-level security",
    "query caching",
    "incremental refresh",
-   "automatic page refresh",
-   "row-level security"
+   "automatic page refresh"
   ],
-  "correct": 1,
+  "correct": 2,
   "exp_es": "La actualización incremental particiona los datos y actualiza solo el intervalo reciente.",
   "exp_en": "Incremental refresh partitions data and refreshes only the recent range."
  },
@@ -9699,19 +9699,1956 @@
   "post_es": " en el modelo semántico.",
   "post_en": " permission on the semantic model.",
   "opts_es": [
-   "administración",
-   "eliminación",
+   "compilación",
    "volver a compartir",
-   "compilación"
+   "eliminación",
+   "administración"
   ],
   "opts_en": [
-   "Admin",
-   "Delete",
+   "Build",
    "Reshare",
-   "Build"
+   "Delete",
+   "Admin"
   ],
-  "correct": 3,
+  "correct": 0,
   "exp_es": "El permiso de compilación permite crear contenido basado en el modelo.",
   "exp_en": "Build permission lets users create content based on the model."
+ },
+ {
+  "id": 334,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Quieres ampliar un modelo semántico publicado con tu propia tabla de Excel sin copiar los datos originales. ¿Qué debes usar?",
+  "q_en": "You want to extend an existing published semantic model with your own Excel table without copying the original data. What should you use?",
+  "opts_es": [
+   "Un flujo de datos",
+   "DirectQuery para modelos semánticos de Power BI (modelo compuesto)",
+   "Importar el modelo semántico a un nuevo PBIX con todas las tablas",
+   "Solo una conexión dinámica"
+  ],
+  "opts_en": [
+   "A dataflow",
+   "DirectQuery for Power BI semantic models (composite model)",
+   "Import the semantic model into a new PBIX file with all tables",
+   "A live connection only"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Convertir una conexión dinámica en DirectQuery permite agregar tablas locales mientras se consulta el modelo remoto.",
+  "exp_en": "Converting a live connection to DirectQuery lets you add local tables while querying the remote model."
+ },
+ {
+  "id": 335,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un informe DirectQuery debe pasar el valor de una segmentación a la consulta del origen, por ejemplo al parámetro de una función SQL. ¿Qué característica encaja?",
+  "q_en": "A DirectQuery report must let a slicer value be passed into the source query, for example to a SQL function parameter. Which feature fits?",
+  "opts_es": [
+   "Parámetros de campo",
+   "Parámetros dinámicos de consulta M",
+   "Marcadores",
+   "Parámetros de hipótesis con una tabla de serie generada"
+  ],
+  "opts_en": [
+   "Field parameters",
+   "Dynamic M query parameters",
+   "Bookmarks",
+   "What-if parameters with a generated series table"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los parámetros dinámicos de M vinculan una columna del modelo a un parámetro M usado en la consulta del origen.",
+  "exp_en": "Dynamic M parameters bind a model column to an M parameter used in the source query."
+ },
+ {
+  "id": 336,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué afirmación sobre DirectQuery es correcta?",
+  "q_en": "Which statement about DirectQuery is correct?",
+  "opts_es": [
+   "Requiere una actualización diaria programada",
+   "Las consultas visuales se ejecutan en el origen, así que el rendimiento depende de él",
+   "Admite todas las transformaciones de Power Query aunque no se plieguen",
+   "Todos los datos se guardan en memoria"
+  ],
+  "opts_en": [
+   "It requires a daily scheduled refresh",
+   "Visual queries run against the source, so performance depends on it",
+   "It supports every Power Query transformation regardless of folding",
+   "All data is cached in memory"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "DirectQuery envía consultas al origen al visualizar; las transformaciones deben plegarse.",
+  "exp_en": "DirectQuery sends queries to the source at view time; transformations must fold."
+ },
+ {
+  "id": 337,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Dónde puedes encontrar en Power BI Desktop los lakehouses, almacenes y modelos semánticos de Fabric a los que tienes acceso?",
+  "q_en": "Where in Power BI Desktop can you find Fabric lakehouses, warehouses and semantic models that you have access to?",
+  "opts_es": [
+   "Panel Selección",
+   "Catálogo de OneLake",
+   "Analizador de rendimiento",
+   "El cuadro Administrar roles de la cinta Modelado"
+  ],
+  "opts_en": [
+   "Selection pane",
+   "OneLake catalog",
+   "Performance Analyzer",
+   "The Manage roles dialog of the Modeling ribbon"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El catálogo de OneLake enumera los elementos de Fabric y Power BI a los que te puedes conectar.",
+  "exp_en": "The OneLake catalog lists Fabric and Power BI items you can connect to."
+ },
+ {
+  "id": 338,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las conexiones a orígenes de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about data source connections, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un modelo compuesto puede combinar un modelo semántico remoto con tablas locales.",
+    "en": "A composite model can combine a remote semantic model with local tables.",
+    "ans": true
+   },
+   {
+    "es": "DirectQuery guarda una copia completa de los datos en el archivo PBIX.",
+    "en": "DirectQuery stores a full copy of the data in the PBIX file.",
+    "ans": false
+   },
+   {
+    "es": "Los parámetros dinámicos de M pueden pasar selecciones de segmentación al origen.",
+    "en": "Dynamic M parameters can pass slicer selections to the source.",
+    "ans": true
+   }
+  ],
+  "exp_es": "DirectQuery mantiene los datos en el origen; solo se guardan metadatos.",
+  "exp_en": "DirectQuery keeps data at the source; only metadata is stored."
+ },
+ {
+  "id": 339,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Para pasar la selección de una segmentación a la consulta de un origen DirectQuery, vincula una columna a un parámetro dinámico de ",
+  "pre_en": "To pass a slicer selection into a DirectQuery source query, bind a column to a dynamic ",
+  "post_es": ".",
+  "post_en": " parameter.",
+  "opts_es": [
+   "campo",
+   "consulta M",
+   "RLS",
+   "hipótesis"
+  ],
+  "opts_en": [
+   "field",
+   "M query",
+   "RLS",
+   "what-if"
+  ],
+  "correct": 1,
+  "exp_es": "Los parámetros dinámicos de consulta M se vinculan en las propiedades de columna de la vista Modelo.",
+  "exp_en": "Dynamic M query parameters are bound in the Model view's column properties."
+ },
+ {
+  "id": 340,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Las fechas de un CSV están escritas como 31/12/2025, pero Power Query las interpreta con formato de EE. UU. y aparecen errores. ¿Qué debes hacer?",
+  "q_en": "Dates in a CSV are written as 31/12/2025, but Power Query interprets them using US format and errors appear. What should you do?",
+  "opts_es": [
+   "Cambiar el tipo usando la configuración regional y elegir una cultura con día primero",
+   "Quitar los errores",
+   "Cambiar la columna a texto",
+   "Dividir la columna por delimitador y volver a combinarla en otro orden"
+  ],
+  "opts_en": [
+   "Change type using locale and choose a day-first culture",
+   "Remove the errors",
+   "Change the column to text",
+   "Split the column by delimiter and then merge it again in another order"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Cambiar el tipo con configuración regional convierte el texto con el formato regional correcto.",
+  "exp_en": "Change type with locale converts text with the correct regional format."
+ },
+ {
+  "id": 341,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Los valores de texto contienen caracteres no imprimibles, como saltos de línea, que impiden las coincidencias. ¿Qué transformación los quita?",
+  "q_en": "Text values contain non-printable characters such as line feeds that break matching. Which transformation removes them?",
+  "opts_es": [
+   "Reemplazar errores",
+   "Recortar",
+   "Poner en mayúsculas cada palabra de la columna",
+   "Limpiar"
+  ],
+  "opts_en": [
+   "Replace errors",
+   "Trim",
+   "Capitalize each word in the column",
+   "Clean"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Limpiar quita caracteres no imprimibles; Recortar quita espacios iniciales y finales.",
+  "exp_en": "Clean removes non-printable characters; Trim removes leading and trailing spaces."
+ },
+ {
+  "id": 342,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Quieres ver solo las filas que fallaron en una conversión de tipo para entender el problema. ¿Qué opción debes usar?",
+  "q_en": "You want to see only the rows that failed a type conversion to understand the problem. Which option should you use?",
+  "opts_es": [
+   "Quitar errores",
+   "Reemplazar valores por null en todas las columnas de la tabla",
+   "Quitar duplicados",
+   "Conservar errores"
+  ],
+  "opts_en": [
+   "Remove errors",
+   "Replace values with null in every column of the table",
+   "Remove duplicates",
+   "Keep errors"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Conservar errores filtra la tabla a las filas con errores para examinar sus causas.",
+  "exp_en": "Keep errors filters the table to rows with errors so you can inspect their causes."
+ },
+ {
+  "id": 343,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Los nombres de clientes de dos tablas difieren ligeramente, como 'Contoso Ltd' y 'Contoso Ltd.'. ¿Cómo puede una combinación hacerlos coincidir?",
+  "q_en": "Customer names in two tables differ slightly, such as 'Contoso Ltd' and 'Contoso Ltd.'. How can a merge still match them?",
+  "opts_es": [
+   "Usar una combinación interna",
+   "Cambiar el tipo de datos a número",
+   "Anexar las dos tablas y quitar duplicados por nombre",
+   "Usar coincidencia aproximada con un umbral de similitud"
+  ],
+  "opts_en": [
+   "Use an inner join",
+   "Change the data type to number",
+   "Append the two tables and then remove duplicates by name",
+   "Use fuzzy matching with a similarity threshold"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La combinación aproximada compara la similitud del texto y puede usar una tabla de transformación para variantes conocidas.",
+  "exp_en": "Fuzzy merge compares text similarity and can use a transformation table for known variants."
+ },
+ {
+  "id": 344,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la limpieza de datos en Power Query, indica si es verdadera o falsa.",
+  "q_en": "For each statement about cleaning data in Power Query, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Limpiar quita caracteres no imprimibles.",
+    "en": "Clean removes non-printable characters.",
+    "ans": true
+   },
+   {
+    "es": "Conservar errores elimina las filas con errores.",
+    "en": "Keep errors deletes the rows that have errors.",
+    "ans": false
+   },
+   {
+    "es": "Cambiar el tipo con configuración regional puede corregir fechas con el día primero.",
+    "en": "Change type using locale can fix day-first dates.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Conservar errores deja solo las filas con errores para examinarlas; Quitar errores las elimina.",
+  "exp_en": "Keep errors keeps only the error rows for inspection; Remove errors deletes them."
+ },
+ {
+  "id": 345,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la transformación para cada problema.",
+  "q_en": "Select the transformation for each problem.",
+  "rows": [
+   {
+    "es": "' Madrid' y 'Madrid ' deben coincidir",
+    "en": "' Madrid' and 'Madrid ' must match",
+    "opts_es": [
+     "Limpiar",
+     "Combinación aproximada",
+     "Conservar errores",
+     "Recortar"
+    ],
+    "opts_en": [
+     "Clean",
+     "Fuzzy merge",
+     "Keep errors",
+     "Trim"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Examinar filas en las que falló una conversión a número",
+    "en": "Inspect rows where a number conversion failed",
+    "opts_es": [
+     "Limpiar",
+     "Combinación aproximada",
+     "Conservar errores",
+     "Recortar"
+    ],
+    "opts_en": [
+     "Clean",
+     "Fuzzy merge",
+     "Keep errors",
+     "Trim"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Recortar quita espacios externos; Conservar errores aísla las filas con fallos.",
+  "exp_en": "Trim removes outer spaces; Keep errors isolates failed rows."
+ },
+ {
+  "id": 346,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para hacer coincidir nombres de clientes que difieren en la puntuación al combinar tablas, usa ",
+  "pre_en": "To match customer names that differ by punctuation when combining tables, use ",
+  "post_es": ".",
+  "post_en": " matching.",
+  "opts_es": [
+   "la anexión",
+   "la coincidencia aproximada",
+   "la coincidencia exacta",
+   "la dinamización"
+  ],
+  "opts_en": [
+   "append",
+   "fuzzy",
+   "exact",
+   "pivot"
+  ],
+  "correct": 1,
+  "exp_es": "La coincidencia aproximada usa una puntuación de similitud entre 0 y 1.",
+  "exp_en": "Fuzzy matching uses a similarity score between 0 and 1."
+ },
+ {
+  "id": 347,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Debes convertir todas las columnas de meses en filas, pero en el futuro se agregarán nuevas columnas de meses. ¿Qué transformación es más robusta?",
+  "q_en": "You must turn all month columns into rows, but new month columns will be added in the future. Which transformation is most robust?",
+  "opts_es": [
+   "Transponer la tabla",
+   "Seleccionar las columnas de meses y usar Anular dinamización solo de columnas seleccionadas",
+   "Seleccionar las columnas de identificador y usar Anular dinamización de otras columnas",
+   "Dinamizar las columnas de meses"
+  ],
+  "opts_en": [
+   "Transpose the table",
+   "Select the month columns and use Unpivot only selected columns",
+   "Select the ID columns and use Unpivot other columns",
+   "Pivot the month columns"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Anular dinamización de otras columnas sigue funcionando cuando aparecen columnas nuevas, porque solo enumera las columnas de identificador fijas.",
+  "exp_en": "Unpivot other columns keeps working when new columns appear, because it lists only the fixed ID columns."
+ },
+ {
+  "id": 348,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Necesitas una columna con las ventas totales y otra con el número de pedidos por cliente en un solo paso de Power Query. ¿Qué opción debes usar?",
+  "q_en": "You need a column with the total sales and the number of orders per customer in one Power Query step. Which option should you use?",
+  "opts_es": [
+   "Agrupar por con la opción Avanzado y dos agregaciones",
+   "Agregar una columna condicional para cada cliente de la lista",
+   "Combinar consultas",
+   "Dinamizar columna"
+  ],
+  "opts_en": [
+   "Group By with the Advanced option and two aggregations",
+   "Add a conditional column for each customer in the list",
+   "Merge Queries",
+   "Pivot column"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Agrupar por avanzado permite varias columnas de agrupación y agregaciones a la vez.",
+  "exp_en": "Advanced Group By allows several grouping columns and aggregations at once."
+ },
+ {
+  "id": 349,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Quieres que Power Query cree una columna aprendiendo de unos pocos ejemplos que escribes, como extraer la ciudad de una dirección. ¿Qué característica encaja?",
+  "q_en": "You want Power Query to create a new column by learning from a few examples you type, such as extracting a city from an address. Which feature fits?",
+  "opts_es": [
+   "Columna a partir de ejemplos",
+   "Columna condicional",
+   "Invocar función personalizada",
+   "Columna de índice que empieza en uno con incremento de uno"
+  ],
+  "opts_en": [
+   "Column from examples",
+   "Conditional column",
+   "Invoke custom function",
+   "Index column starting at one with an increment of one"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Columna a partir de ejemplos deduce la transformación M a partir de los resultados de muestra que proporcionas.",
+  "exp_en": "Column from examples infers the M transformation from sample outputs you provide."
+ },
+ {
+  "id": 350,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué tipo de datos debes usar para importes monetarios para evitar problemas de redondeo de coma flotante y mejorar la compresión?",
+  "q_en": "Which data type should you use for currency amounts to avoid floating-point rounding issues and improve compression?",
+  "opts_es": [
+   "Número decimal",
+   "Número entero",
+   "Número decimal fijo",
+   "Texto con un símbolo de moneda al principio de cada valor"
+  ],
+  "opts_en": [
+   "Decimal number",
+   "Whole number",
+   "Fixed decimal number",
+   "Text with a currency symbol at the start of each value"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El decimal fijo almacena cuatro decimales como un entero escalado, lo que es preciso para dinero.",
+  "exp_en": "Fixed decimal stores four decimal places as a scaled integer, which is precise for money."
+ },
+ {
+  "id": 351,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Al combinar archivos de una carpeta, ¿qué consulta generada debes editar para cambiar cómo se transforma cada archivo?",
+  "q_en": "When you combine files from a folder, which generated query should you edit to change how every file is transformed?",
+  "opts_es": [
+   "Solo la consulta combinada final",
+   "El paso Origen de la carpeta",
+   "Transformar archivo de ejemplo",
+   "La consulta de parámetro que contiene la ruta del archivo de ejemplo"
+  ],
+  "opts_en": [
+   "The final combined query only",
+   "The Source step of the folder",
+   "Transform Sample File",
+   "The Parameter query that holds the path of the sample file"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los pasos de Transformar archivo de ejemplo se aplican a cada archivo mediante la función generada.",
+  "exp_en": "Steps in Transform Sample File are applied to each file through the generated function."
+ },
+ {
+  "id": 352,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la transformación de datos en Power Query, indica si es verdadera o falsa.",
+  "q_en": "For each statement about shaping data in Power Query, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Anular dinamización de otras columnas gestiona columnas nuevas agregadas después.",
+    "en": "Unpivot other columns handles new columns added later.",
+    "ans": true
+   },
+   {
+    "es": "Agrupar por puede devolver varias agregaciones en un paso.",
+    "en": "Group By can return several aggregations in one step.",
+    "ans": true
+   },
+   {
+    "es": "Editar la consulta combinada final cambia cómo se transforma cada archivo.",
+    "en": "Editing the final combined query changes how each file is transformed.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La lógica por archivo pertenece a Transformar archivo de ejemplo.",
+  "exp_en": "Per-file logic belongs in Transform Sample File."
+ },
+ {
+  "id": 353,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de Power Query para cada requisito.",
+  "q_en": "Select the Power Query feature for each requirement.",
+  "rows": [
+   {
+    "es": "Extraer un código postal escribiendo dos resultados de ejemplo",
+    "en": "Extract a postal code by typing two sample results",
+    "opts_es": [
+     "Columna a partir de ejemplos",
+     "Transformar archivo de ejemplo",
+     "Agrupar por (Avanzado)",
+     "Anular dinamización de otras columnas"
+    ],
+    "opts_en": [
+     "Column from examples",
+     "Transform Sample File",
+     "Group By (Advanced)",
+     "Unpivot other columns"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Quitar las filas de encabezado de cada archivo de una carpeta",
+    "en": "Remove the header rows from every file in a folder",
+    "opts_es": [
+     "Columna a partir de ejemplos",
+     "Transformar archivo de ejemplo",
+     "Agrupar por (Avanzado)",
+     "Anular dinamización de otras columnas"
+    ],
+    "opts_en": [
+     "Column from examples",
+     "Transform Sample File",
+     "Group By (Advanced)",
+     "Unpivot other columns"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los ejemplos deducen M; los pasos por archivo van en la consulta del archivo de ejemplo.",
+  "exp_en": "Examples infer M; per-file steps go in the sample file query."
+ },
+ {
+  "id": 354,
+  "exam": "pl-300",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "sentence",
+  "pre_es": "Para guardar importes con precisión con cuatro decimales, usa el tipo ",
+  "pre_en": "To store money values precisely with four decimal places, use the ",
+  "post_es": ".",
+  "post_en": " type.",
+  "opts_es": [
+   "texto",
+   "número decimal fijo",
+   "número entero",
+   "número decimal"
+  ],
+  "opts_en": [
+   "text",
+   "fixed decimal number",
+   "whole number",
+   "decimal number"
+  ],
+  "correct": 1,
+  "exp_es": "El número decimal fijo también se llama tipo moneda.",
+  "exp_en": "Fixed decimal number is also called currency type."
+ },
+ {
+  "id": 355,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un modelo DirectQuery combina tablas por claves que nunca son nulas y siempre coinciden. ¿Qué ajuste de relación puede mejorar el rendimiento?",
+  "q_en": "A DirectQuery model joins tables on keys that are never null and always match. Which relationship setting can improve performance?",
+  "opts_es": [
+   "Hacer inactiva la relación y usarla solo desde DAX",
+   "Dirección de filtro cruzado Ambas",
+   "Asumir integridad referencial",
+   "Cardinalidad de varios a varios"
+  ],
+  "opts_en": [
+   "Make this relationship inactive and use it only from DAX",
+   "Cross-filter direction Both",
+   "Assume referential integrity",
+   "Cardinality many-to-many"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Al asumir integridad referencial, Power BI usa combinaciones internas, más rápidas que las externas.",
+  "exp_en": "With referential integrity assumed, Power BI uses inner joins, which are faster than outer joins."
+ },
+ {
+  "id": 356,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Se necesita una relación bidireccional para que la RLS de la dimensión filtre también una tabla relacionada mediante un puente. ¿Qué opción debe habilitarse?",
+  "q_en": "A bidirectional relationship is needed so that RLS on the dimension also filters a related table through a bridge. Which option must be enabled?",
+  "opts_es": [
+   "Marcar como tabla de fechas en la tabla puente",
+   "Ocultar en la vista de informe",
+   "Aplicar filtro de seguridad en ambas direcciones",
+   "Asumir integridad referencial"
+  ],
+  "opts_en": [
+   "Mark as date table on the bridge table",
+   "Hide in report view",
+   "Apply security filter in both directions",
+   "Assume referential integrity"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "De forma predeterminada los filtros RLS se propagan en un sentido; este ajuste les permite cruzar relaciones bidireccionales.",
+  "exp_en": "By default RLS filters propagate one way; this setting lets them cross bidirectional relationships."
+ },
+ {
+  "id": 357,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una columna Año se suma en los objetos visuales de forma predeterminada y produce totales sin sentido. ¿Qué debes configurar?",
+  "q_en": "A Year column is summed in visuals by default, producing meaningless totals. What should you set?",
+  "opts_es": [
+   "Ordenar por columna con una clave numérica de año aparte",
+   "Resumir por: No resumir",
+   "Categoría de datos: Año",
+   "Formato: Número general"
+  ],
+  "opts_en": [
+   "Sort by column using a separate numeric year key",
+   "Summarize by: Don't summarize",
+   "Data category: Year",
+   "Format: General number"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Establecer el resumen predeterminado en ninguno detiene la agregación automática de columnas de atributos.",
+  "exp_en": "Setting the default summarization to none stops automatic aggregation of attribute columns."
+ },
+ {
+  "id": 358,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Muchas medidas de un modelo grande deben organizarse en grupos como 'Ventas' y 'Margen' en el panel Campos. ¿Qué debes usar?",
+  "q_en": "Many measures in a large model must be organized into groups like 'Sales' and 'Margin' in the Fields pane. What should you use?",
+  "opts_es": [
+   "Una tabla calculada aparte para cada grupo de medidas",
+   "Jerarquías",
+   "Perspectivas",
+   "Carpetas para mostrar"
+  ],
+  "opts_en": [
+   "A separate calculated table for every group of measures",
+   "Hierarchies",
+   "Perspectives",
+   "Display folders"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las carpetas para mostrar agrupan campos y medidas visualmente sin cambiar el modelo.",
+  "exp_en": "Display folders group fields and measures visually without changing the model."
+ },
+ {
+  "id": 359,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las propiedades del modelo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about model properties, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Asumir integridad referencial permite a DirectQuery usar combinaciones internas.",
+    "en": "Assume referential integrity lets DirectQuery use inner joins.",
+    "ans": true
+   },
+   {
+    "es": "Las carpetas para mostrar cambian cómo se almacenan los datos.",
+    "en": "Display folders change how data is stored.",
+    "ans": false
+   },
+   {
+    "es": "No resumir impide que una columna se sume automáticamente.",
+    "en": "Don't summarize prevents a column from being summed automatically.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las carpetas para mostrar solo afectan al panel Campos.",
+  "exp_en": "Display folders only affect the Fields pane."
+ },
+ {
+  "id": 360,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el ajuste del modelo para cada requisito.",
+  "q_en": "Select the model setting for each requirement.",
+  "rows": [
+   {
+    "es": "Evitar que CustomerID se agregue en los objetos visuales de forma predeterminada",
+    "en": "Stop CustomerID from being counted in visuals by default",
+    "opts_es": [
+     "Carpetas para mostrar",
+     "Asumir integridad referencial",
+     "Resumir por: No resumir",
+     "Aplicar filtro de seguridad en ambas direcciones"
+    ],
+    "opts_en": [
+     "Display folders",
+     "Assume referential integrity",
+     "Summarize by: Don't summarize",
+     "Apply security filter in both directions"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Acelerar combinaciones DirectQuery con claves que siempre coinciden",
+    "en": "Speed up DirectQuery joins on guaranteed matching keys",
+    "opts_es": [
+     "Carpetas para mostrar",
+     "Asumir integridad referencial",
+     "Resumir por: No resumir",
+     "Aplicar filtro de seguridad en ambas direcciones"
+    ],
+    "opts_en": [
+     "Display folders",
+     "Assume referential integrity",
+     "Summarize by: Don't summarize",
+     "Apply security filter in both directions"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "El resumen predeterminado controla la agregación; la integridad referencial habilita combinaciones internas.",
+  "exp_en": "Default summarization controls aggregation; referential integrity enables inner joins."
+ },
+ {
+  "id": 361,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué expresión DAX devuelve las ventas de los últimos tres meses respecto a la fecha más reciente del contexto?",
+  "q_en": "Which DAX expression returns sales for the last three months relative to the latest date in context?",
+  "opts_es": [
+   "CALCULATE([Sales], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -3, MONTH))",
+   "TOTALYTD([Sales], 'Date'[Date])",
+   "CALCULATE([Sales], SAMEPERIODLASTYEAR('Date'[Date]))",
+   "SUMX(Sales, Sales[Amount])"
+  ],
+  "opts_en": [
+   "CALCULATE([Sales], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -3, MONTH))",
+   "TOTALYTD([Sales], 'Date'[Date])",
+   "CALCULATE([Sales], SAMEPERIODLASTYEAR('Date'[Date]))",
+   "SUMX(Sales, Sales[Amount])"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "DATESINPERIOD devuelve una ventana móvil de fechas que termina en la fecha indicada.",
+  "exp_en": "DATESINPERIOD returns a moving window of dates ending at the given date."
+ },
+ {
+  "id": 362,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una medida muestra la proporción de cada producto sobre el total solo de los productos seleccionados en una segmentación. ¿Qué función debe usar el denominador?",
+  "q_en": "A measure shows each product's share of the total for only the products the user selected in a slicer. Which function should the denominator use?",
+  "opts_es": [
+   "REMOVEFILTERS sobre toda la tabla Sales y cada dimensión relacionada",
+   "VALUES",
+   "ALLSELECTED",
+   "ALL"
+  ],
+  "opts_en": [
+   "REMOVEFILTERS on the whole Sales table and every related dimension",
+   "VALUES",
+   "ALLSELECTED",
+   "ALL"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "ALLSELECTED quita los filtros internos del objeto visual pero mantiene las selecciones de las segmentaciones externas.",
+  "exp_en": "ALLSELECTED removes filters from inside the visual but keeps outer slicer selections."
+ },
+ {
+  "id": 363,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "En una matriz, una medida debe devolver un cálculo distinto en el subtotal que en el nivel de producto. ¿Qué función detecta el nivel?",
+  "q_en": "In a matrix, a measure must return a different calculation at the subtotal level than at the product level. Which function detects the level?",
+  "opts_es": [
+   "ISINSCOPE",
+   "USERELATIONSHIP combinada con una relación inactiva",
+   "SELECTEDMEASURE",
+   "HASONEFILTER"
+  ],
+  "opts_en": [
+   "ISINSCOPE",
+   "USERELATIONSHIP combined with an inactive relationship",
+   "SELECTEDMEASURE",
+   "HASONEFILTER"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ISINSCOPE devuelve TRUE cuando una columna es un nivel de agrupación en la posición actual del objeto visual.",
+  "exp_en": "ISINSCOPE returns TRUE when a column is a grouping level at the current position of the visual."
+ },
+ {
+  "id": 364,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una medida debe mostrar en una tarjeta los nombres de todos los productos seleccionados separados por comas. ¿Qué función encaja?",
+  "q_en": "A measure must list all selected product names separated by commas in a card. Which function fits?",
+  "opts_es": [
+   "CONCATENATEX",
+   "FORMAT",
+   "SELECTEDVALUE con el resultado alternativo 'Varios'",
+   "CONCATENATE"
+  ],
+  "opts_en": [
+   "CONCATENATEX",
+   "FORMAT",
+   "SELECTEDVALUE with an alternate result of 'Multiple'",
+   "CONCATENATE"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "CONCATENATEX recorre una tabla y une una expresión con un delimitador.",
+  "exp_en": "CONCATENATEX iterates a table and joins an expression with a delimiter."
+ },
+ {
+  "id": 365,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una medida debe devolver 0 en lugar de blanco cuando no hay ventas. ¿Qué función es la más concisa?",
+  "q_en": "A measure must return 0 instead of blank when there are no sales. Which function is the most concise?",
+  "opts_es": [
+   "DIVIDE([Sales], 1, 0) usada como envoltorio de la medida",
+   "COALESCE([Sales], 0)",
+   "BLANK()",
+   "IFERROR([Sales], 0)"
+  ],
+  "opts_en": [
+   "DIVIDE([Sales], 1, 0) used as a wrapper around the measure",
+   "COALESCE([Sales], 0)",
+   "BLANK()",
+   "IFERROR([Sales], 0)"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "COALESCE devuelve el primer argumento que no está en blanco.",
+  "exp_en": "COALESCE returns the first non-blank argument."
+ },
+ {
+  "id": 366,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una medida debe comparar cada mes con el mes anterior del objeto visual sin un cálculo sobre la tabla de fechas. ¿Qué función de ventana de DAX puede hacerlo?",
+  "q_en": "A measure must compare each month with the previous month in the visual without a date table calculation. Which DAX window function can do this?",
+  "opts_es": [
+   "OFFSET",
+   "PATH con el mes primario como argumento",
+   "LOOKUPVALUE",
+   "EARLIER"
+  ],
+  "opts_en": [
+   "OFFSET",
+   "PATH with the parent month as argument",
+   "LOOKUPVALUE",
+   "EARLIER"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "OFFSET devuelve una fila en una posición relativa, como -1 para el mes anterior, dentro de un orden definido.",
+  "exp_en": "OFFSET returns a row at a relative position, such as -1 for the previous month, within a defined ordering."
+ },
+ {
+  "id": 367,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué función agrega un filtro dentro de CALCULATE sin reemplazar el filtro existente sobre la misma columna?",
+  "q_en": "Which function adds a filter inside CALCULATE without overriding the existing filter on the same column?",
+  "opts_es": [
+   "KEEPFILTERS",
+   "REMOVEFILTERS",
+   "ALLEXCEPT con la columna filtrada como argumento",
+   "CROSSFILTER"
+  ],
+  "opts_en": [
+   "KEEPFILTERS",
+   "REMOVEFILTERS",
+   "ALLEXCEPT with the filtered column as argument",
+   "CROSSFILTER"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "KEEPFILTERS cruza el nuevo filtro con el existente en lugar de reemplazarlo.",
+  "exp_en": "KEEPFILTERS intersects the new filter with the existing one instead of replacing it."
+ },
+ {
+  "id": 368,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las funciones DAX, indica si es verdadera o falsa.",
+  "q_en": "For each statement about DAX functions, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "ALLSELECTED mantiene los filtros que vienen de fuera del objeto visual.",
+    "en": "ALLSELECTED keeps filters coming from outside the visual.",
+    "ans": true
+   },
+   {
+    "es": "ISINSCOPE ayuda a detectar niveles de subtotal en una matriz.",
+    "en": "ISINSCOPE helps detect subtotal levels in a matrix.",
+    "ans": true
+   },
+   {
+    "es": "KEEPFILTERS reemplaza el filtro existente sobre la columna.",
+    "en": "KEEPFILTERS replaces the existing filter on the column.",
+    "ans": false
+   }
+  ],
+  "exp_es": "KEEPFILTERS cruza los filtros; los filtros normales de CALCULATE los reemplazan.",
+  "exp_en": "KEEPFILTERS intersects filters; plain CALCULATE filters replace them."
+ },
+ {
+  "id": 369,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la función DAX para cada requisito.",
+  "q_en": "Select the DAX function for each requirement.",
+  "rows": [
+   {
+    "es": "Ventas móviles de 12 meses",
+    "en": "Rolling 12-month sales",
+    "opts_es": [
+     "CONCATENATEX",
+     "DATESINPERIOD",
+     "COALESCE",
+     "OFFSET"
+    ],
+    "opts_en": [
+     "CONCATENATEX",
+     "DATESINPERIOD",
+     "COALESCE",
+     "OFFSET"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Mostrar 0 en lugar de blanco",
+    "en": "Show 0 instead of blank",
+    "opts_es": [
+     "CONCATENATEX",
+     "DATESINPERIOD",
+     "COALESCE",
+     "OFFSET"
+    ],
+    "opts_en": [
+     "CONCATENATEX",
+     "DATESINPERIOD",
+     "COALESCE",
+     "OFFSET"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "DATESINPERIOD crea ventanas móviles; COALESCE reemplaza los blancos.",
+  "exp_en": "DATESINPERIOD builds moving windows; COALESCE replaces blanks."
+ },
+ {
+  "id": 370,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la función DAX para cada requisito.",
+  "q_en": "Select the DAX function for each requirement.",
+  "rows": [
+   {
+    "es": "Mostrar las regiones seleccionadas en el título de una tarjeta",
+    "en": "List the selected regions in a card title",
+    "opts_es": [
+     "ALLSELECTED",
+     "KEEPFILTERS",
+     "CONCATENATEX",
+     "ISINSCOPE"
+    ],
+    "opts_en": [
+     "ALLSELECTED",
+     "KEEPFILTERS",
+     "CONCATENATEX",
+     "ISINSCOPE"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Porcentaje del total visible tras las selecciones de segmentación",
+    "en": "Percentage of the total visible after slicer selections",
+    "opts_es": [
+     "ALLSELECTED",
+     "KEEPFILTERS",
+     "CONCATENATEX",
+     "ISINSCOPE"
+    ],
+    "opts_en": [
+     "ALLSELECTED",
+     "KEEPFILTERS",
+     "CONCATENATEX",
+     "ISINSCOPE"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "CONCATENATEX une valores; ALLSELECTED respeta las selecciones externas.",
+  "exp_en": "CONCATENATEX joins values; ALLSELECTED respects outer selections."
+ },
+ {
+  "id": 371,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para obtener el valor de la fila anterior según el orden de un objeto visual, usa la función de ventana ",
+  "pre_en": "To get the value of the previous row in a visual's sort order, use the window function ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "RELATED",
+   "EARLIER",
+   "VALUES",
+   "OFFSET"
+  ],
+  "opts_en": [
+   "RELATED",
+   "EARLIER",
+   "VALUES",
+   "OFFSET"
+  ],
+  "correct": 3,
+  "exp_es": "OFFSET, INDEX y WINDOW recorren filas respecto a la posición actual.",
+  "exp_en": "OFFSET, INDEX and WINDOW navigate rows relative to the current position."
+ },
+ {
+  "id": 372,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Un informe con muchas segmentaciones envía una consulta en cada clic a un origen DirectQuery lento. ¿Qué ajuste reduce el número de consultas?",
+  "q_en": "A report with many slicers sends a query on every click to a slow DirectQuery source. Which setting reduces the number of queries?",
+  "opts_es": [
+   "Reducción de consultas: agregar un botón Aplicar a segmentaciones y filtros",
+   "Habilitar filtros bidireccionales",
+   "Activar fecha y hora automáticas",
+   "Aumentar el número de objetos visuales de la página para agrupar consultas"
+  ],
+  "opts_en": [
+   "Query reduction: add an Apply button to slicers and filters",
+   "Enable bidirectional filters",
+   "Turn on auto date/time",
+   "Increase the number of visuals on the page so queries are batched"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las opciones de reducción de consultas permiten varias selecciones antes de ejecutar consultas.",
+  "exp_en": "Query reduction options let users make several selections before queries run."
+ },
+ {
+  "id": 373,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una tabla grande de importación con actualización incremental también debe mostrar las transacciones de hoy en tiempo real. ¿Qué debes habilitar?",
+  "q_en": "A large Import table with incremental refresh must also show today's transactions in real time. What should you enable?",
+  "opts_es": [
+   "Actualización automática de página en un modelo solo de importación",
+   "Obtener los datos más recientes en tiempo real con DirectQuery (tabla híbrida)",
+   "Deshabilitar la actualización incremental y actualizar toda la tabla cada 30 minutos",
+   "Fecha y hora automáticas"
+  ],
+  "opts_en": [
+   "Automatic page refresh on an Import-only model",
+   "Get the latest data in real time with DirectQuery (hybrid table)",
+   "Disable incremental refresh and refresh the full table every 30 minutes",
+   "Auto date/time"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las tablas híbridas mantienen importadas las particiones históricas y agregan una partición DirectQuery con los datos más recientes.",
+  "exp_en": "Hybrid tables keep historical partitions imported and add a DirectQuery partition for the latest data."
+ },
+ {
+  "id": 374,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué tipo de clave suele dar el modelo más pequeño y las relaciones más rápidas?",
+  "q_en": "Which key type usually gives the smallest model and the fastest relationships?",
+  "opts_es": [
+   "Claves de texto largo",
+   "Claves suplentes de tipo entero",
+   "Cadenas GUID",
+   "Claves compuestas de varias columnas de texto concatenadas"
+  ],
+  "opts_en": [
+   "Long text keys",
+   "Integer surrogate keys",
+   "GUID strings",
+   "Composite keys made of several concatenated text columns"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los enteros se comprimen bien con codificación por valor y se combinan rápido.",
+  "exp_en": "Integers compress well with value encoding and join quickly."
+ },
+ {
+  "id": 375,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el rendimiento del modelo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about model performance, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las claves enteras suelen comprimirse mejor que las de texto.",
+    "en": "Integer keys usually compress better than text keys.",
+    "ans": true
+   },
+   {
+    "es": "Las tablas híbridas combinan particiones importadas y DirectQuery.",
+    "en": "Hybrid tables combine imported and DirectQuery partitions.",
+    "ans": true
+   },
+   {
+    "es": "La reducción de consultas envía más consultas al origen.",
+    "en": "Query reduction sends more queries to the source.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La reducción de consultas agrupa selecciones para que se ejecuten menos consultas.",
+  "exp_en": "Query reduction batches selections so fewer queries run."
+ },
+ {
+  "id": 376,
+  "exam": "pl-300",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "sentence",
+  "pre_es": "Para que los usuarios seleccionen varios valores de segmentación antes de consultar el origen, habilita la ",
+  "pre_en": "To let users select several slicer values before the report queries the source, enable query ",
+  "post_es": " de consultas.",
+  "post_en": " options.",
+  "opts_es": [
+   "diagnóstico",
+   "caché",
+   "reducción",
+   "plegado"
+  ],
+  "opts_en": [
+   "diagnostics",
+   "caching",
+   "reduction",
+   "folding"
+  ],
+  "correct": 2,
+  "exp_es": "La reducción de consultas agrega botones Aplicar a segmentaciones y filtros.",
+  "exp_en": "Query reduction adds Apply buttons to slicers and filters."
+ },
+ {
+  "id": 377,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "¿Qué objeto visual muestra cómo cambia la clasificación de las categorías con el tiempo, con la más alta arriba en cada período?",
+  "q_en": "Which visual shows how the ranking of categories changes over time, with the highest at the top of each period?",
+  "opts_es": [
+   "Tarjeta",
+   "Gráfico de cintas",
+   "Gráfico de cascada con desglose por categoría",
+   "Gráfico circular"
+  ],
+  "opts_en": [
+   "Card",
+   "Ribbon chart",
+   "Waterfall chart with a breakdown by category",
+   "Pie chart"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los gráficos de cintas ordenan las categorías por valor en cada período y las unen con cintas.",
+  "exp_en": "Ribbon charts sort categories by value in each period and connect them with ribbons."
+ },
+ {
+  "id": 378,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Un KPI debe mostrarse como un dial con valor mínimo, máximo y objetivo. ¿Qué objeto visual encaja?",
+  "q_en": "A KPI must be shown as a dial with a minimum, maximum and target value. Which visual fits?",
+  "opts_es": [
+   "Gráfico de áreas apiladas con una línea constante",
+   "Gráfico de rectángulos",
+   "Segmentación",
+   "Medidor"
+  ],
+  "opts_en": [
+   "Stacked area chart with a constant line",
+   "Treemap",
+   "Slicer",
+   "Gauge"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los medidores muestran el progreso hacia un objetivo en un arco circular.",
+  "exp_en": "Gauges show progress toward a target on a circular arc."
+ },
+ {
+  "id": 379,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Una tarjeta debe mostrar varios KPI como Ventas, Margen y Pedidos juntos en un solo objeto visual. ¿Qué objeto visual encaja?",
+  "q_en": "One card must show several KPIs such as Sales, Margin and Orders side by side with a single visual. Which visual fits?",
+  "opts_es": [
+   "Gráfico circular",
+   "El nuevo objeto visual de tarjeta con varios valores",
+   "Una matriz con cada KPI en una columna y subtotales de fila",
+   "Gráfico de dispersión"
+  ],
+  "opts_en": [
+   "Pie chart",
+   "The new card visual with multiple values",
+   "A matrix with each KPI in a separate column and row subtotals",
+   "Scatter chart"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El nuevo objeto visual de tarjeta admite varios valores destacados con formato compartido.",
+  "exp_en": "The new card visual supports several callout values with shared formatting."
+ },
+ {
+  "id": 380,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la elección de objetos visuales, indica si es verdadera o falsa.",
+  "q_en": "For each statement about choosing visuals, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un gráfico de cintas resalta los cambios de clasificación con el tiempo.",
+    "en": "A ribbon chart highlights rank changes over time.",
+    "ans": true
+   },
+   {
+    "es": "Un medidor es lo mejor para comparar 20 categorías.",
+    "en": "A gauge is best for comparing 20 categories.",
+    "ans": false
+   },
+   {
+    "es": "Un objeto visual de tabla enumera filas y columnas detalladas.",
+    "en": "A table visual lists detailed rows and columns.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los medidores muestran un único valor frente a un objetivo.",
+  "exp_en": "Gauges show a single value against a target."
+ },
+ {
+  "id": 381,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Selecciona el objeto visual para cada requisito.",
+  "q_en": "Select the visual for each requirement.",
+  "rows": [
+   {
+    "es": "Mostrar las ventas frente a un objetivo trimestral en un dial",
+    "en": "Show sales against a quarterly target on a dial",
+    "opts_es": [
+     "Gráfico de dispersión",
+     "Gráfico de cintas",
+     "Embudo",
+     "Medidor"
+    ],
+    "opts_en": [
+     "Scatter chart",
+     "Ribbon chart",
+     "Funnel",
+     "Gauge"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Mostrar qué marca lideró cada mes",
+    "en": "Show which brand led each month",
+    "opts_es": [
+     "Gráfico de dispersión",
+     "Gráfico de cintas",
+     "Embudo",
+     "Medidor"
+    ],
+    "opts_en": [
+     "Scatter chart",
+     "Ribbon chart",
+     "Funnel",
+     "Gauge"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los medidores comparan con un objetivo; las cintas muestran el liderazgo con el tiempo.",
+  "exp_en": "Gauges compare with a target; ribbons show leadership over time."
+ },
+ {
+  "id": 382,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Los usuarios deben saltar de un informe resumen a una página de detalle de otro informe manteniendo el cliente seleccionado como filtro. ¿Qué debes configurar?",
+  "q_en": "Users must jump from a summary report to a detail page in a different report, keeping the selected customer as a filter. What should you configure?",
+  "opts_es": [
+   "Un marcador que guarde la selección del primer informe",
+   "Sincronizar segmentaciones",
+   "Obtención de detalles entre informes",
+   "Navegador de páginas"
+  ],
+  "opts_en": [
+   "A bookmark that stores the selection in the first report",
+   "Sync slicers",
+   "Cross-report drillthrough",
+   "Page navigator"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La obtención de detalles entre informes pasa filtros a una página de destino de otro informe del mismo área o aplicación.",
+  "exp_en": "Cross-report drillthrough passes filters to a target page in another report of the same workspace or app."
+ },
+ {
+  "id": 383,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Los usuarios de teclado se mueven entre objetos visuales en un orden ilógico. ¿Qué debes configurar?",
+  "q_en": "Keyboard users move between visuals in an illogical order. What should you set?",
+  "opts_es": [
+   "El orden de tabulación en el panel Selección",
+   "Diseño móvil con los objetos visuales apilados en orden de lectura",
+   "Tema del informe",
+   "Filtros de nivel de objeto visual"
+  ],
+  "opts_en": [
+   "Tab order in the Selection pane",
+   "Mobile layout with the visuals stacked in reading order",
+   "Report theme",
+   "Visual-level filters"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El panel Selección tiene una vista de orden de tabulación para controlar la navegación con teclado.",
+  "exp_en": "The Selection pane has a tab order view to control keyboard navigation."
+ },
+ {
+  "id": 384,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Una fila de botones debe enumerar automáticamente todas las páginas del informe y actualizarse cuando se agreguen páginas. ¿Qué debes usar?",
+  "q_en": "A row of buttons should automatically list every page of the report and update when pages are added. What should you use?",
+  "opts_es": [
+   "Obtención de detalles",
+   "Botones individuales con acciones de navegación a cada página",
+   "Navegador de páginas",
+   "Navegador de marcadores"
+  ],
+  "opts_en": [
+   "Drillthrough",
+   "Individual buttons with page navigation actions for each page",
+   "Page navigator",
+   "Bookmark navigator"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El navegador de páginas crea un botón por cada página visible automáticamente.",
+  "exp_en": "The page navigator creates one button per visible page automatically."
+ },
+ {
+  "id": 385,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la navegación y accesibilidad de los informes, indica si es verdadera o falsa.",
+  "q_en": "For each statement about report navigation and accessibility, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La obtención de detalles entre informes puede pasar filtros a otro informe.",
+    "en": "Cross-report drillthrough can pass filters to another report.",
+    "ans": true
+   },
+   {
+    "es": "El orden de tabulación se puede cambiar en el panel Selección.",
+    "en": "Tab order can be changed in the Selection pane.",
+    "ans": true
+   },
+   {
+    "es": "El navegador de páginas debe actualizarse a mano cuando se agregan páginas.",
+    "en": "A page navigator must be updated by hand when pages are added.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El navegador de páginas se actualiza automáticamente.",
+  "exp_en": "The page navigator updates automatically."
+ },
+ {
+  "id": 386,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "¿Qué característica de un gráfico de dispersión agrupa automáticamente los puntos de datos parecidos en segmentos?",
+  "q_en": "Which feature of a scatter chart automatically groups similar data points into segments?",
+  "opts_es": [
+   "Obtención de detalles",
+   "Línea de tendencia del panel Análisis",
+   "Buscar clústeres",
+   "Previsión"
+  ],
+  "opts_en": [
+   "Drillthrough",
+   "Trend line from the Analytics pane",
+   "Find clusters",
+   "Forecast"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La agrupación en clústeres crea un campo nuevo que asigna cada punto a un clúster.",
+  "exp_en": "Clustering creates a new field that assigns each point to a cluster."
+ },
+ {
+  "id": 387,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "mc",
+  "q_es": "Preguntas y respuestas no entiende que los usuarios dicen 'ingresos' para la medida Ventas. ¿Qué debes configurar?",
+  "q_en": "Q&A doesn't understand that users say 'revenue' for the Sales measure. What should you configure?",
+  "opts_es": [
+   "Sinónimos en la configuración de Preguntas y respuestas (esquema lingüístico)",
+   "Una medida nueva que duplique Ventas con el nombre Ingresos",
+   "Un marcador",
+   "Un grupo de cálculo"
+  ],
+  "opts_en": [
+   "Synonyms in the Q&A setup (linguistic schema)",
+   "A new measure that duplicates Sales under the name Revenue",
+   "A bookmark",
+   "A calculation group"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La configuración de Preguntas y respuestas permite agregar sinónimos y enseñar preguntas para asignar términos a campos.",
+  "exp_en": "Q&A setup lets you add synonyms and teach questions so terms map to model fields."
+ },
+ {
+  "id": 388,
+  "exam": "pl-300",
+  "dom": 3,
+  "obj": "3.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las características de análisis, indica si es verdadera o falsa.",
+  "q_en": "For each statement about analytics features, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los gráficos de dispersión pueden buscar clústeres automáticamente.",
+    "en": "Scatter charts can find clusters automatically.",
+    "ans": true
+   },
+   {
+    "es": "Los sinónimos de Preguntas y respuestas ayudan a asignar términos a campos.",
+    "en": "Q&A synonyms help map user terms to fields.",
+    "ans": true
+   },
+   {
+    "es": "La previsión está disponible en gráficos circulares.",
+    "en": "Forecasting is available on pie charts.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las líneas de previsión son para gráficos de líneas con eje de fecha continuo.",
+  "exp_en": "Forecast lines are for line charts with a continuous date axis."
+ },
+ {
+  "id": 389,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Una aplicación debe mostrar informes distintos al equipo de ventas y a los directivos sin crear dos aplicaciones. ¿Qué debes configurar?",
+  "q_en": "An app must show different reports to the sales team and to executives without creating two apps. What should you configure?",
+  "opts_es": [
+   "Audiencias de la aplicación",
+   "Roles del área de trabajo",
+   "Suscripciones",
+   "Dos copias de cada informe con distintos roles RLS"
+  ],
+  "opts_en": [
+   "App audiences",
+   "Workspace roles",
+   "Subscriptions",
+   "Two copies of every report with different RLS roles"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las audiencias permiten que una aplicación muestre u oculte contenido a distintos grupos.",
+  "exp_en": "Audiences let one app show or hide content for different groups."
+ },
+ {
+  "id": 390,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "La actualización programada de un modelo semántico usa las credenciales de un compañero que se fue. ¿Cómo te conviertes en propietario para actualizar las credenciales?",
+  "q_en": "A semantic model's scheduled refresh uses the credentials of a colleague who left. How do you become the owner so you can update credentials?",
+  "opts_es": [
+   "Cambiar el modo de licencia del área a Premium por usuario",
+   "Eliminar y volver a publicar el informe",
+   "Usar Tomar el control en la configuración del modelo semántico",
+   "Crear un panel"
+  ],
+  "opts_en": [
+   "Change the workspace license mode to Premium per user",
+   "Delete and republish the report",
+   "Use Take over in the semantic model settings",
+   "Create a dashboard"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Tomar el control te convierte en propietario y después puedes configurar las credenciales del origen.",
+  "exp_en": "Take over makes you the owner, after which you can configure data source credentials."
+ },
+ {
+  "id": 391,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Cuántas actualizaciones programadas al día puede tener un modelo semántico en un área de trabajo compartida (Pro)?",
+  "q_en": "How many scheduled refreshes per day can a semantic model have in a shared (Pro) workspace?",
+  "opts_es": [
+   "Ilimitadas, siempre que cada actualización termine en dos horas",
+   "1",
+   "48",
+   "8"
+  ],
+  "opts_en": [
+   "Unlimited, as long as each refresh finishes within two hours",
+   "1",
+   "48",
+   "8"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Pro permite ocho actualizaciones programadas al día; las capacidades Premium y Fabric permiten 48.",
+  "exp_en": "Pro allows eight scheduled refreshes per day; Premium and Fabric capacities allow 48."
+ },
+ {
+  "id": 392,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Los usuarios de negocio quieren explorar un modelo semántico con tablas dinámicas manteniéndose conectados al modelo publicado. ¿Qué deben usar?",
+  "q_en": "Business users want to explore a semantic model with PivotTables while staying connected to the published model. What should they use?",
+  "opts_es": [
+   "Analizar en Excel",
+   "Publicar en la web e insertar el informe en un libro",
+   "Exportar datos a CSV",
+   "Informes paginados"
+  ],
+  "opts_en": [
+   "Analyze in Excel",
+   "Publish to web and embed the report in a workbook",
+   "Export data to CSV",
+   "Paginated reports"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Analizar en Excel crea una conexión dinámica, así que la RLS y la lógica del modelo siguen aplicándose.",
+  "exp_en": "Analyze in Excel creates a live connection, so RLS and model logic still apply."
+ },
+ {
+  "id": 393,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "¿Por qué es arriesgado 'Publicar en la web' para informes internos?",
+  "q_en": "Why is 'Publish to web' risky for internal reports?",
+  "opts_es": [
+   "Elimina el informe original tras crear el código público para insertar",
+   "Deshabilita la RLS solo para los administradores del área",
+   "Requiere capacidad Premium",
+   "Cualquiera con el vínculo puede ver los datos sin iniciar sesión"
+  ],
+  "opts_en": [
+   "It deletes the original report after creating the public embed code",
+   "It disables RLS for workspace admins only",
+   "It requires Premium capacity",
+   "Anyone with the link can view the data without signing in"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Publicar en la web crea un vínculo público sin autenticación; usa la inserción segura para compartir internamente.",
+  "exp_en": "Publish to web creates a public, unauthenticated link; use secure embed for internal sharing."
+ },
+ {
+  "id": 394,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Los responsables quieren seguir objetivos como las metas de ventas mensuales con comprobaciones y estado dentro de Power BI. ¿Qué característica encaja?",
+  "q_en": "Team leads want to track goals such as monthly sales targets with check-ins and status inside Power BI. Which feature fits?",
+  "opts_es": [
+   "Vista de linaje",
+   "Flujos de datos",
+   "Métricas (cuadros de mandos)",
+   "Suscripciones a informes paginados con parámetros por equipo"
+  ],
+  "opts_en": [
+   "Lineage view",
+   "Dataflows",
+   "Metrics (scorecards)",
+   "Paginated report subscriptions with parameters per team"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las métricas de los cuadros de mandos vinculan objetivos a datos de informes y admiten comprobaciones y estados.",
+  "exp_en": "Metrics in scorecards connect goals to report data and support check-ins and statuses."
+ },
+ {
+  "id": 395,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el uso compartido y la actualización, indica si es verdadera o falsa.",
+  "q_en": "For each statement about sharing and refresh, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las audiencias de la aplicación pueden mostrar contenido distinto a distintos grupos.",
+    "en": "App audiences can show different content to different groups.",
+    "ans": true
+   },
+   {
+    "es": "Publicar en la web exige que los espectadores inicien sesión.",
+    "en": "Publish to web requires viewers to sign in.",
+    "ans": false
+   },
+   {
+    "es": "Analizar en Excel mantiene una conexión dinámica con el modelo semántico.",
+    "en": "Analyze in Excel keeps a live connection to the semantic model.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Publicar en la web es público y anónimo.",
+  "exp_en": "Publish to web is public and anonymous."
+ },
+ {
+  "id": 396,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Corregir una actualización que usa las credenciales de un propietario que se fue",
+    "en": "Fix a refresh that uses a departed owner's credentials",
+    "opts_es": [
+     "Analizar en Excel",
+     "Métricas",
+     "Tomar el control",
+     "Audiencias de la aplicación"
+    ],
+    "opts_en": [
+     "Analyze in Excel",
+     "Metrics",
+     "Take over",
+     "App audiences"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Crear tablas dinámicas sobre el modelo publicado",
+    "en": "Build PivotTables on the published model",
+    "opts_es": [
+     "Analizar en Excel",
+     "Métricas",
+     "Tomar el control",
+     "Audiencias de la aplicación"
+    ],
+    "opts_en": [
+     "Analyze in Excel",
+     "Metrics",
+     "Take over",
+     "App audiences"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Tomar el control cambia la propiedad; Analizar en Excel conecta tablas dinámicas en directo.",
+  "exp_en": "Take over changes ownership; Analyze in Excel connects PivotTables live."
+ },
+ {
+  "id": 397,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "sentence",
+  "pre_es": "En un área de trabajo compartida con licencias Pro, un modelo semántico puede actualizarse de forma programada hasta ",
+  "pre_en": "In a shared workspace with Pro licenses, a semantic model can be refreshed on a schedule up to ",
+  "post_es": " veces al día.",
+  "post_en": " times a day.",
+  "opts_es": [
+   "24",
+   "8",
+   "48",
+   "96"
+  ],
+  "opts_en": [
+   "24",
+   "8",
+   "48",
+   "96"
+  ],
+  "correct": 1,
+  "exp_es": "La capacidad Premium o Fabric eleva el límite a 48.",
+  "exp_en": "Premium or Fabric capacity raises the limit to 48."
+ },
+ {
+  "id": 398,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "La RLS está definida, pero un miembro del área de trabajo sigue viendo todas las filas. ¿Por qué?",
+  "q_en": "RLS is defined, but a workspace Member still sees all rows. Why?",
+  "opts_es": [
+   "El usuario tiene licencia Pro",
+   "La RLS solo funciona en Power BI Desktop",
+   "El modelo usa importación y la RLS requiere DirectQuery en todas las tablas",
+   "La RLS solo se aplica a usuarios con rol Lector o con acceso compartido"
+  ],
+  "opts_en": [
+   "The user has a Pro license",
+   "RLS works only in Power BI Desktop",
+   "The model uses Import mode and RLS requires DirectQuery for every table",
+   "RLS only applies to users with the Viewer role or with shared access"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los administradores, miembros y colaboradores tienen derechos de edición sobre el modelo, así que la RLS no los restringe.",
+  "exp_en": "Admins, Members and Contributors have edit rights on the model, so RLS doesn't restrict them."
+ },
+ {
+  "id": 399,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "¿Cómo puedes probar en Power BI Desktop lo que vería un responsable del rol Ventas?",
+  "q_en": "How can you test in Power BI Desktop what a manager in the Sales role would see?",
+  "opts_es": [
+   "Duplicar el PBIX y quitar las filas que no debería ver",
+   "Usar el Analizador de rendimiento",
+   "Publicar el informe y preguntar al responsable",
+   "Modelado > Ver como y seleccionar el rol"
+  ],
+  "opts_en": [
+   "Duplicate the PBIX and remove all rows that the manager shouldn't see",
+   "Use Performance Analyzer",
+   "Publish the report and ask the manager",
+   "Modeling > View as and select the role"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Ver como aplica un rol (y opcionalmente otro usuario) al informe en Desktop.",
+  "exp_en": "View as applies a role (and optionally another user) to the report in Desktop."
+ },
+ {
+  "id": 400,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Los usuarios no deben exportar datos subyacentes de los informes a Excel, pero deben seguir viéndolos. ¿Dónde pueden controlarlo los administradores?",
+  "q_en": "Users must not export underlying data from reports to Excel, but must still view reports. Where can admins control this?",
+  "opts_es": [
+   "El panel Selección",
+   "La configuración de exportación del portal de administración o del informe",
+   "Diseño móvil",
+   "Un parámetro de campo que oculte columnas del cuadro de exportación"
+  ],
+  "opts_en": [
+   "The Selection pane",
+   "Export settings in the admin portal or the report settings",
+   "Mobile layout",
+   "A field parameter that hides columns from the export dialog"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La configuración de exportación del inquilino y la de cada informe controlan qué opciones de exportación hay.",
+  "exp_en": "Tenant export settings and per-report settings control which export options are available."
+ },
+ {
+  "id": 401,
+  "exam": "pl-300",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad de Power BI, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Power BI security, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La RLS restringe a los usuarios con rol Lector.",
+    "en": "RLS restricts users with the Viewer role.",
+    "ans": true
+   },
+   {
+    "es": "Los colaboradores del área de trabajo están restringidos por la RLS.",
+    "en": "Workspace Contributors are restricted by RLS.",
+    "ans": false
+   },
+   {
+    "es": "Ver como permite probar roles en Power BI Desktop.",
+    "en": "View as lets you test roles in Power BI Desktop.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los colaboradores y roles superiores pueden editar el modelo, así que la RLS no se les aplica.",
+  "exp_en": "Contributors and above can edit the model, so RLS doesn't apply to them."
  }
 ]
