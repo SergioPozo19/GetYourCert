@@ -421,6 +421,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .guest-banner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin-bottom:16px}
 .guest-banner p{margin:0;font-size:13.5px;color:var(--ink-2)}
 .guest-banner.hidden{display:none}
+.retire-banner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;background:var(--warn-soft);border:1px solid var(--warn);border-radius:var(--radius);margin-bottom:16px}
+.retire-banner p{margin:0;font-size:13.5px;color:var(--ink);flex:1 1 260px}
+.retire-banner.hidden{display:none}
 .save-progress-card{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 20px;background:var(--accent-soft);border:1px solid rgba(15,108,189,.2);border-radius:var(--radius);margin:0 0 20px}
 .save-progress-card.hidden{display:none}
 .save-progress-card p{margin:0;font-size:14px;color:var(--ink-2)}
@@ -1180,6 +1183,10 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
       <p data-i="guestBannerText">Practicando como invitado · máximo 5 preguntas al día.</p>
       <button class="btn btn-primary" style="font-size:13px;padding:6px 14px" onclick="openLoginModal()" data-i="guestBannerCta">Registrarse gratis →</button>
     </div>
+    <div class="retire-banner hidden" id="retireBanner">
+      <p id="retireBannerText"></p>
+      <button class="btn btn-primary" style="font-size:13px;padding:6px 14px" id="retireBannerCta"></button>
+    </div>
     <div class="modes" id="modes">
       <div class="mode sel" data-mode="exam">
         <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
@@ -1791,7 +1798,7 @@ const I18N = {
     progAchievements:"Logros", badgeUnlocked:"¡Logro desbloqueado!", badgeLocked:"Bloqueado",
     exportReport:"Exportar informe (PDF)", exportReportPro:"Informe detallado · función Pro", reportIssue:"Enviar comentario sobre esta pregunta",
     fbTitle:"Comentarios sobre esta pregunta", fbCatError:"Hay un error en la pregunta o la respuesta", fbCatRepeat:"Esta pregunta aparece con demasiada frecuencia", fbCatEasy:"Es demasiado fácil o poco útil", fbCatOther:"Otro comentario o sugerencia", fbCommentPh:"Cuéntanos más (opcional)…", fbCatLabel:"Tipo de comentario", fbSend:"Enviar", fbSent:"¡Gracias por tu comentario!",
-    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad", catWip:"En construcción", catRetires:"Se retira 30/11/2026", catRetired:"Retirado", cardBtn:"Descargar imagen", cardHint:"Imagen descargada: adjúntala a tu publicación de LinkedIn.", cardPassed:"Simulacro aprobado", cardScore:"Simulacro de práctica", orderHint:"Ordena los pasos arrastrándolos o con las flechas.", orderConfirm:"Confirmar este orden", orderUp:"Subir", orderDown:"Bajar", orderCorrect:"Orden correcto", caseTitle:"Caso de estudio", caseShow:"Ver el caso", learnMore:"Aprender más en Microsoft Learn", studyGuide:"Guía de estudio oficial", kbdHint:"Atajos: 1-4 o A-D responder · Intro siguiente · ←/→ navegar · F marcar · B favorito", seoExamsTitle:"Exámenes de práctica",
+    catReady:"Disponible", catStart:"Empezar", catSoon:"Próximamente", catSoonGo:"Disponible pronto", catNew:"Novedad", catWip:"En construcción", catRetires:"Se retira 30/11/2026", retireSoon:"Microsoft retira {code} el {date}. Si ya tienes cita, sigue practicando aquí. Si no, prepara su sustituto, {succ}.", retiredNow:"Microsoft retiró {code} el {date}. Ya no se puede programar; su sustituto es {succ}.", retireCta:"Ver {succ} →", catRetired:"Retirado", cardBtn:"Descargar imagen", cardHint:"Imagen descargada: adjúntala a tu publicación de LinkedIn.", cardPassed:"Simulacro aprobado", cardScore:"Simulacro de práctica", orderHint:"Ordena los pasos arrastrándolos o con las flechas.", orderConfirm:"Confirmar este orden", orderUp:"Subir", orderDown:"Bajar", orderCorrect:"Orden correcto", caseTitle:"Caso de estudio", caseShow:"Ver el caso", learnMore:"Aprender más en Microsoft Learn", studyGuide:"Guía de estudio oficial", kbdHint:"Atajos: 1-4 o A-D responder · Intro siguiente · ←/→ navegar · F marcar · B favorito", seoExamsTitle:"Exámenes de práctica",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Asociado", lvlExpert:"Experto", lvlSpecialty:"Especialidad",
     backCatalog:"Todos los exámenes", examWord:"Examen de práctica", platformTitle:"EarnYourCert", brandDesc:"Tu plataforma de práctica para aprobar certificaciones de Microsoft.",
     support:"Apóyame en Patreon",
@@ -1886,7 +1893,7 @@ const I18N = {
     progAchievements:"Achievements", badgeUnlocked:"Achievement unlocked!", badgeLocked:"Locked",
     exportReport:"Export report (PDF)", exportReportPro:"Detailed report · Pro feature", reportIssue:"Send feedback about this question",
     fbTitle:"Feedback about this question", fbCatError:"There's an error in the question or answer", fbCatRepeat:"This question shows up too often", fbCatEasy:"It's too easy or not very useful", fbCatOther:"Other comment or suggestion", fbCommentPh:"Tell us more (optional)…", fbCatLabel:"Feedback type", fbSend:"Send", fbSent:"Thanks for your feedback!",
-    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New", catWip:"Under construction", catRetires:"Retires Nov 30, 2026", catRetired:"Retired", cardBtn:"Download image", cardHint:"Image downloaded: attach it to your LinkedIn post.", cardPassed:"Practice exam passed", cardScore:"Practice exam", orderHint:"Put the steps in order by dragging them or using the arrows.", orderConfirm:"Confirm this order", orderUp:"Move up", orderDown:"Move down", orderCorrect:"Correct order", caseTitle:"Case study", caseShow:"Show the case", learnMore:"Learn more on Microsoft Learn", studyGuide:"Official study guide", kbdHint:"Shortcuts: 1-4 or A-D answer · Enter next · ←/→ navigate · F flag · B bookmark", seoExamsTitle:"Practice exams",
+    catReady:"Available", catStart:"Start", catSoon:"Coming soon", catSoonGo:"Available soon", catNew:"New", catWip:"Under construction", catRetires:"Retires Nov 30, 2026", retireSoon:"Microsoft retires {code} on {date}. If you already have a booking, keep practicing here. If not, prepare its replacement, {succ}.", retiredNow:"Microsoft retired {code} on {date}. It can no longer be booked; its replacement is {succ}.", retireCta:"See {succ} →", catRetired:"Retired", cardBtn:"Download image", cardHint:"Image downloaded: attach it to your LinkedIn post.", cardPassed:"Practice exam passed", cardScore:"Practice exam", orderHint:"Put the steps in order by dragging them or using the arrows.", orderConfirm:"Confirm this order", orderUp:"Move up", orderDown:"Move down", orderCorrect:"Correct order", caseTitle:"Case study", caseShow:"Show the case", learnMore:"Learn more on Microsoft Learn", studyGuide:"Official study guide", kbdHint:"Shortcuts: 1-4 or A-D answer · Enter next · ←/→ navigate · F flag · B bookmark", seoExamsTitle:"Practice exams",
     lvlFundamentals:"Fundamentals", lvlAssociate:"Associate", lvlExpert:"Expert", lvlSpecialty:"Specialty",
     backCatalog:"All exams", examWord:"Practice exam", platformTitle:"EarnYourCert", brandDesc:"Your practice platform to pass Microsoft certifications.",
     support:"Support me on Patreon",
@@ -3649,11 +3656,27 @@ async function selectExam(id){
   $('#results').classList.add('hidden');
   $('#home').classList.remove('hidden');
   const _gb=$('#guestBanner');if(_gb)_gb.classList.toggle('hidden',isLoggedIn());
+  renderRetireBanner(currentExam);
   $('#domPick').classList.add('hidden');
   $$('#modes .mode').forEach((m,i)=>m.classList.toggle('sel',i===0));
   mode='exam';
   saveView({screen:'home',examId:id});
   window.scrollTo(0,0);
+}
+
+// Aviso de retirada (p. ej. MS-102 -> AB-650) en la pantalla del examen
+function renderRetireBanner(ex){
+  const box=$('#retireBanner'); if(!box)return;
+  const succ=ex.successor&&EXAMS.find(e=>e.code===ex.successor);
+  if(!ex.retiresOn||!succ){box.classList.add('hidden');return;}
+  // último día para examinarse = el día anterior a retiresOn (30/11 23:59 CST)
+  const last=new Date(new Date(ex.retiresOn).getTime()-864e5);
+  const date=last.toLocaleDateString(lang==='en'?'en-US':'es-ES',{day:'numeric',month:'long',year:'numeric'});
+  const fill=s=>s.replace('{code}',ex.code).replace('{date}',date).replace(/\{succ\}/g,succ.code);
+  $('#retireBannerText').textContent=fill(t(isRetired(ex)?'retiredNow':'retireSoon'));
+  const b=$('#retireBannerCta'); b.textContent=fill(t('retireCta'));
+  b.onclick=()=>{ track('retire_to_successor'); selectExam(succ.id); };
+  box.classList.remove('hidden');
 }
 
 async function resumeExam(){
@@ -3782,6 +3805,7 @@ $('#langToggle').addEventListener('click',e=>{
     $('#brandSub').textContent=L(currentExam,'title');
     updateHero();
     updateModeBadges();
+    renderRetireBanner(currentExam);
     if(!$('#explore').classList.contains('hidden')) openExplore();
   }else{
     $('#brandTitle').textContent=t('platformTitle');
