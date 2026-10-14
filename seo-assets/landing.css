@@ -153,3 +153,18 @@ html[data-theme="dark"] .toggle button.on,html[data-theme="dark"] .btn-primary{c
 .hub-cat:hover{border-color:var(--accent);box-shadow:var(--shadow)}
 footer .cat-links{margin-top:-4px}
 footer .other-exams span{color:var(--ink-3);font-weight:600}
+
+/* Study guide (AZ-900, AB-900) */
+.guide-intro{color:var(--ink-2);font-size:15px;margin:0 0 16px}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:22px}
+.guide-card{border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel);padding:16px 18px}
+.guide-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--accent)}
+.guide-card ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:14px;line-height:1.55}
+.guide-card li+li{margin-top:5px}
+.guide-sub{font-size:17px;font-weight:700;margin:22px 0 10px}
+.plan{display:flex;flex-direction:column;gap:8px}
+.plan-step{display:flex;gap:14px;align-items:baseline;padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel);font-size:14.5px;color:var(--ink-2)}
+.plan-step .ps-d{flex:none;min-width:96px;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent)}
+.plan-step .ps-d::before{content:"Días ";}
+[data-lang="en"] .plan-step .ps-d::before{content:"Days ";}
+.faq-item.trap{border-left:3px solid var(--warn)}

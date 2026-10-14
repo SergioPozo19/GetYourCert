@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en" data-fixed-lang="en"
-  data-title-es="AZ-900: Examen de práctica gratis (468 preguntas) | EarnYourCert"
+  data-title-es="AZ-900 en español: examen de práctica gratis (468 preguntas) | EarnYourCert"
   data-title-en="AZ-900 Practice Exam – Free, 468 Questions | EarnYourCert"
   data-desc-es="Examen de práctica gratuito para AZ-900 (Microsoft Azure Fundamentals): 468 preguntas originales con explicaciones, repaso inteligente y seguimiento de progreso. No afiliado a Microsoft."
   data-desc-en="Free AZ-900 (Microsoft Azure Fundamentals) practice exam: 468 original questions with explanations, smart review and progress tracking. Not affiliated with Microsoft."
@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/seo-assets/landing.css?v=4">
+<link rel="stylesheet" href="/seo-assets/landing.css?v=5">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -113,6 +113,22 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "No. These are original questions written based on Microsoft's official \"Skills measured\" guide for AZ-900, not extracts from the real exam or \"exam dumps\"."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does it take to prepare for AZ-900?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "With one or two hours a day, one to three weeks depending on your prior cloud experience. The 2-week plan on this page is a good starting point."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the AZ-900 certification expire?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Microsoft Fundamentals certifications do not expire and need no renewal."
      }
     }
    ]
@@ -552,6 +568,95 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">AZ-900 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">AZ-900 is the entry-level Azure exam: it needs no hands-on experience, but you must tell similar concepts apart. These are the topics that come up most in each domain of the official outline.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Cloud concepts (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Shared responsibility model across IaaS, PaaS and SaaS</li>
+          
+          <li lang="en">Public, private and hybrid cloud</li>
+          
+          <li lang="en">Capital (CapEx) vs operational (OpEx) expenditure and consumption-based pricing</li>
+          
+          <li lang="en">High availability, scalability, elasticity and reliability</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Architecture and services (35-40%)</h3>
+        <ul>
+          
+          <li lang="en">Regions, region pairs and availability zones</li>
+          
+          <li lang="en">Management groups, subscriptions and resource groups</li>
+          
+          <li lang="en">Compute: virtual machines, scale sets, App Service, containers and Functions</li>
+          
+          <li lang="en">Networking: VNets, peering, VPN Gateway and ExpressRoute</li>
+          
+          <li lang="en">Storage: access tiers and redundancy (LRS, ZRS, GRS, GZRS)</li>
+          
+          <li lang="en">Identity: Microsoft Entra ID, MFA, Conditional Access and Zero Trust</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Management and governance (30-35%)</h3>
+        <ul>
+          
+          <li lang="en">Cost factors, pricing calculator and Cost Management</li>
+          
+          <li lang="en">Tags, Azure Policy and resource locks</li>
+          
+          <li lang="en">Microsoft Purview for data governance</li>
+          
+          <li lang="en">Portal, Cloud Shell, CLI, PowerShell, Azure Arc and ARM or Bicep templates</li>
+          
+          <li lang="en">Azure Advisor, Service Health and Azure Monitor</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">2-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1-3</span><span lang="en">Cloud concepts. Use domain practice for domain 1 until you score above 80%.</span></div>
+      <div class="plan-step"><span class="ps-d">4-9</span><span lang="en">Architecture and services, the heaviest domain. Review your mistakes daily with smart review.</span></div>
+      <div class="plan-step"><span class="ps-d">10-12</span><span lang="en">Management and governance: costs, Policy, locks and monitoring tools.</span></div>
+      <div class="plan-step"><span class="ps-d">13-14</span><span lang="en">Two or three full timed mock exams. Book the exam once you consistently score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Availability zones vs availability sets vs region pairs</h3>
+      
+      <p lang="en">Zones are separate datacenters within one region; availability sets spread VMs across racks in one datacenter; region pairs protect against losing an entire region.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">RBAC vs Azure Policy vs resource locks</h3>
+      
+      <p lang="en">RBAC decides who can do what; Azure Policy decides which configurations are allowed; a lock prevents deleting or changing a resource even if you have permission.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Scalability vs elasticity</h3>
+      
+      <p lang="en">Scalability is being able to add or remove resources; elasticity is doing it automatically as demand changes.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     
@@ -673,6 +778,18 @@
       
       <p lang="en">No. These are original questions written based on Microsoft's official "Skills measured" guide for AZ-900, not extracts from the real exam or "exam dumps".</p>
     </div>
+    <div class="faq-item">
+      
+      <h3 lang="en">How long does it take to prepare for AZ-900?</h3>
+      
+      <p lang="en">With one or two hours a day, one to three weeks depending on your prior cloud experience. The 2-week plan on this page is a good starting point.</p>
+    </div>
+    <div class="faq-item">
+      
+      <h3 lang="en">Does the AZ-900 certification expire?</h3>
+      
+      <p lang="en">No. Microsoft Fundamentals certifications do not expire and need no renewal.</p>
+    </div>
   </section>
 
   <footer>
@@ -705,5 +822,5 @@
     </div>
   </footer>
 </div>
-<script src="/seo-assets/landing.js?v=4"></script></body>
+<script src="/seo-assets/landing.js?v=5"></script></body>
 </html>
