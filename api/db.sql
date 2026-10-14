@@ -105,3 +105,31 @@ CREATE TABLE events (
   cnt INT NOT NULL DEFAULT 0,
   PRIMARY KEY (day, name, lang, logged, pro)
 );
+
+-- ===== Recordatorios de renovación por email (api/cron/renewal-reminders.php) =====
+ALTER TABLE users ADD COLUMN email_opt_out TINYINT(1) NOT NULL DEFAULT 0;
+
+CREATE TABLE cert_reminders (
+  user_id INT NOT NULL,
+  exam_id VARCHAR(32) NOT NULL,
+  expires DATE NOT NULL,
+  kind VARCHAR(8) NOT NULL,
+  sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_id, exam_id, expires, kind),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- ===== Encuesta de baja de Pro (api/survey.php, enviada desde patreon-webhook.php) =====
+ALTER TABLE patreon_pledges ADD COLUMN survey_sent_at DATETIME NULL;
+
+CREATE TABLE cancel_surveys (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  reason VARCHAR(20) NOT NULL,
+  comment TEXT NULL,
+  lang CHAR(2) NOT NULL DEFAULT 'es',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Resumen de motivos de baja:
+-- SELECT reason, COUNT(*) n FROM cancel_surveys GROUP BY reason ORDER BY n DESC;
