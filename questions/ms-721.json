@@ -1398,7 +1398,7 @@
   "q_es": "Un administrador necesita asignar una directiva de Teams Phone a todos los miembros del grupo de seguridad 'Ventas' en Azure AD, en lugar de asignar la directiva a cada usuario individualmente. ¿Qué método debe usar?",
   "q_en": "An administrator needs to assign a Teams Phone policy to all members of the 'Sales' security group in Azure AD, rather than assigning the policy to each user individually. Which method should be used?",
   "opts_es": [
-   "Aplicar una directiva de itinerancia de red (network roaming policy) dirigida a los miembros del grupo Ventas",
+   "Aplicar una directiva de itinerancia de red (network roaming policy) dirigida a las subredes de los miembros del grupo Ventas",
    "Usar la asignación de directivas de grupo en el centro de administración de Teams para asignar la directiva al grupo",
    "Crear una etiqueta de confidencialidad en Microsoft Purview que aplique automáticamente la directiva de Teams Phone",
    "Usar una directiva de permisos de aplicaciones de Teams con ámbito dirigido exclusivamente al grupo Ventas"
@@ -1877,7 +1877,7 @@
   "opts_es": [
    "Aplicar un objeto de directiva de grupo (GPO) de Windows al equipo de Teams Rooms en el dominio corporativo",
    "Editar el archivo de configuración XML (SkypeSettings.xml) y colocarlo en la carpeta de configuración de Teams Rooms",
-   "Usar el centro de administración de Teams — Dispositivos — Perfiles de configuración de dispositivos para Android",
+   "Usar el centro de administración de Teams — Dispositivos — Perfiles de configuración de dispositivos para Teams Rooms en Android",
    "Modificar la configuración avanzada de la aplicación Teams Rooms mediante la comunicación remota de PowerShell"
   ],
   "opts_en": [
@@ -2211,7 +2211,7 @@
    "Que el tenant tenga habilitada la grabación de reuniones",
    "Que los usuarios tengan asignada una licencia de Microsoft 365 Copilot",
    "Que la directiva de mensajería permita el uso de Copilot en chats",
-   "Que la directiva de correo de voz tenga la transcripción habilitada"
+   "Que la directiva de correo de voz tenga habilitada la transcripción de los mensajes"
   ],
   "opts_en": [
    "That the tenant has meeting recording enabled",
@@ -2605,7 +2605,7 @@
   "q_es": "Un administrador quiere configurar Teams Rooms en Windows para que se una automáticamente a una reunión de Teams a la hora programada, sin que nadie tenga que pulsar 'Unirse'. ¿Qué configuración habilita esto?",
   "q_en": "An administrator wants to configure Teams Rooms on Windows to automatically join a Teams meeting at the scheduled time without anyone having to press 'Join'. Which setting enables this?",
   "opts_es": [
-   "La directiva de aceptación automática de reuniones creada en el centro de administración de Teams y asignada a la cuenta de recurso",
+   "La directiva de aceptación automática de reuniones creada en el centro de administración de Teams y asignada a la cuenta de recurso de la sala",
    "La opción 'Aceptar automáticamente las solicitudes de reunión' en SkypeSettings.xml o en la configuración de la aplicación Teams Rooms",
    "Un flujo de Power Automate configurado para escuchar invitaciones de calendario y activar la unión a la reunión de Teams",
    "La directiva de captura de llamadas de grupo asignada a la cuenta de la sala para activar la unión automática"
@@ -2820,7 +2820,7 @@
   "q_es": "Un administrador necesita crear una directiva de llamadas en Teams Phone que permita a los usuarios de un grupo específico usar la función de delegación de llamadas, pero impida a los usuarios generales hacerlo. ¿Cómo debe asignarse la directiva de forma eficiente?",
   "q_en": "An administrator needs to create a calling policy in Teams Phone that allows users in a specific group to use call delegation, but prevents general users from using it. How should the policy be efficiently assigned?",
   "opts_es": [
-   "Asignar la directiva a cada usuario del grupo uno por uno en el centro de administración de Teams",
+   "Asignar la directiva a cada usuario del grupo uno por uno desde la página de usuarios del centro de administración de Teams",
    "Asignar la directiva al grupo de seguridad de Azure AD usando la asignación de directivas de grupo",
    "Configurar una directiva de itinerancia de red que aplique la directiva en la subred del grupo",
    "Crear una etiqueta de confidencialidad que aplique la directiva de llamadas al grupo"
@@ -3089,7 +3089,7 @@
   "opts_es": [
    "La carga de datos del tenant en el CQD para correlacionar la calidad con la ubicación de los dispositivos",
    "El centro de administración de Teams — Dispositivos — cada tipo de dispositivo — columna de estado de salud",
-   "El Explorador de actividades de Microsoft Purview para auditar eventos de configuración de dispositivos",
+   "El Explorador de actividades de Microsoft Purview para auditar los eventos de configuración de los dispositivos",
    "Microsoft Defender for Cloud Apps — Cloud discovery para detectar dispositivos no gestionados en la red"
   ],
   "opts_en": [
@@ -3493,7 +3493,7 @@
   "q_es": "Una organización tiene 200 usuarios que necesitan PSTN en Teams, pero solo 20 de ellos hacen llamadas PSTN con frecuencia. Los otros 180 necesitan acceso PSTN ocasional. ¿Qué configuración minimiza el coste de licencias?",
   "q_en": "An organization has 200 users who need PSTN in Teams, but only 20 make PSTN calls frequently. The other 180 need occasional PSTN access. Which configuration minimizes licensing cost?",
   "opts_es": [
-   "Asignar planes de llamadas individuales de Microsoft a los 200 usuarios con PSTN para máxima flexibilidad",
+   "Asignar planes de llamadas individuales de Microsoft a los 200 usuarios con PSTN para tener la máxima flexibilidad",
    "Usar Shared Calling para los 180 usuarios ocasionales y planes individuales para los 20 usuarios frecuentes",
    "Asignar una licencia de Teams Rooms Pro a los usuarios ocasionales para reducir el coste por usuario",
    "Usar solo Operator Connect sin planes individuales asignando números compartidos a todos los usuarios"
@@ -4923,7 +4923,7 @@
   "q_es": "Un administrador quiere bloquear que los usuarios de Teams puedan hacer llamadas privadas (peer-to-peer) a números externos de Teams que no sean PSTN. ¿Qué configuración de directiva controla las llamadas privadas de Teams?",
   "q_en": "An administrator wants to block Teams users from making private calls (peer-to-peer) to external Teams numbers that are not PSTN. Which policy setting controls Teams private calls?",
   "opts_es": [
-   "Directiva de acceso externo — desactivar comunicaciones externas",
+   "Directiva de acceso externo — desactivar las comunicaciones externas",
    "Directiva de llamadas — deshabilitar 'Realizar llamadas privadas'",
    "Directiva de mensajería — bloquear mensajes de Teams federados",
    "Directiva de reunión — deshabilitar reuniones con externos"
@@ -5298,7 +5298,7 @@
   "q_es": "Un administrador quiere verificar qué usuarios de Teams Phone tienen una dirección de emergencia válida asignada y cuáles no. ¿Qué herramienta proporciona este informe?",
   "q_en": "An administrator wants to verify which Teams Phone users have a valid emergency address assigned and which do not. Which tool provides this report?",
   "opts_es": [
-   "Panel de calidad de llamadas (CQD) con filtro de llamadas de emergencia para ver métricas de calidad",
+   "Panel de calidad de llamadas (CQD) con un filtro de llamadas de emergencia para ver sus métricas de calidad",
    "Centro de administración de Teams — Voz — Números de teléfono (con columna de dirección de emergencia)",
    "Microsoft Purview — sección de Informes de cumplimiento para auditar llamadas de emergencia",
    "Centro de administración de Entra — Usuarios — propiedades de teléfono asignadas a cada usuario"
@@ -5704,7 +5704,7 @@
   "q_es": "Un usuario necesita que sus llamadas PSTN entrantes se presenten también a su asistente, quien puede responderlas en nombre del usuario cuando este no esté disponible. ¿Qué función de Teams Phone permite esto?",
   "q_en": "A user needs their incoming PSTN calls to also be presented to their assistant, who can answer them on the user's behalf when unavailable. Which Teams Phone feature allows this?",
   "opts_es": [
-   "Captura de llamadas de grupo con el asistente como miembro",
+   "Captura de llamadas de grupo con el asistente como único miembro",
    "Tono simultáneo con el número de extensión del asistente",
    "Delegación de llamadas designando al asistente como delegado",
    "Reenvío de llamadas al número del asistente"
@@ -6082,7 +6082,7 @@
    "Grupos de seguridad de Azure AD vinculados a dispositivos de Teams",
    "Etiquetas de dispositivos (device tags) en el centro de administración de Teams",
    "Directivas de configuración de dispositivos por región",
-   "Unidades organizativas de Active Directory para dispositivos de Teams Rooms"
+   "Unidades organizativas de Active Directory para los dispositivos de Teams Rooms"
   ],
   "opts_en": [
    "Azure AD security groups linked to Teams devices",
@@ -7519,7 +7519,7 @@
    "Usar PowerShell remoto con el cmdlet Restart-Computer apuntando al nombre del dispositivo Teams Rooms",
    "Desde el centro de administración de Teams — Dispositivos — Teams Rooms — seleccionar el dispositivo — Reiniciar",
    "Eliminar y volver a crear la cuenta de recurso de Teams Rooms para forzar el reinicio del registro",
-   "Desde el portal de Azure — sección de Máquinas virtuales — opción Reiniciar (si el dispositivo está en Azure)"
+   "Desde el portal de Azure — sección de Máquinas virtuales — opción Reiniciar (si el dispositivo está hospedado en Azure)"
   ],
   "opts_en": [
    "Use remote PowerShell with the Restart-Computer cmdlet targeting the Teams Rooms device name",
@@ -7969,7 +7969,7 @@
   "q_es": "Un administrador configura Enrutamiento basado en ubicación (LBR) en Teams. ¿Qué ocurre cuando un usuario habilitado para LBR intenta hacer una llamada PSTN desde una ubicación de red no habilitada para LBR?",
   "q_en": "An administrator configures Location-Based Routing (LBR) in Teams. What happens when an LBR-enabled user tries to make a PSTN call from a network location not enabled for LBR?",
   "opts_es": [
-   "La llamada se redirige automáticamente al SBC más cercano habilitado para LBR",
+   "La llamada se redirige automáticamente al SBC más cercano que esté habilitado para LBR",
    "La llamada PSTN queda bloqueada para evitar el bypass de tarifas de acceso local",
    "La llamada se completa normalmente a través de Internet",
    "La llamada se reencamina a través del plan de llamadas de Microsoft"
@@ -8308,7 +8308,7 @@
   "q_en": "What DSCP value does Microsoft recommend for marking Teams audio traffic when implementing QoS?",
   "opts_es": [
    "DSCP 46 (Expedited Forwarding, EF)",
-   "DSCP 34 (Assured Forwarding AF41)",
+   "DSCP 34 (Assured Forwarding, AF41)",
    "DSCP 18 (Assured Forwarding AF21)",
    "DSCP 0 (Best Effort)"
   ],
@@ -9218,7 +9218,7 @@
   "opts_es": [
    "Llamadas de emergencia dinámicas (dynamic emergency calling)",
    "ELIN (Emergency Location Identification Number) estático",
-   "Enrutamiento de emergencia basado en directiva de llamadas",
+   "Enrutamiento de emergencia basado en la directiva de llamadas",
    "Numeración E.164 con código de zona geográfica fijo"
   ],
   "opts_en": [
@@ -11268,7 +11268,7 @@
    "Archivos seguros (Safe Attachments) para SharePoint, OneDrive y Teams",
    "Vínculos seguros (Safe Links) para mensajes de Teams",
    "Microsoft Defender for Endpoint con integración de Teams",
-   "Búsqueda de contenido de Microsoft Purview con análisis de malware"
+   "Búsqueda de contenido de Microsoft Purview con análisis de malware en los archivos"
   ],
   "opts_en": [
    "Safe Attachments for SharePoint, OneDrive, and Teams",
@@ -11319,7 +11319,7 @@
   "opts_es": [
    "Plan de llamadas de pago por uso (Pay-as-you-go Calling Plan)",
    "Plan de llamadas doméstico (Domestic Calling Plan)",
-   "Plan de llamadas internacional (International Calling Plan)",
+   "Plan de llamadas internacional de Microsoft (International Calling Plan)",
    "Plan de llamadas de zona 1 (Zone 1 Calling Plan)"
   ],
   "opts_en": [

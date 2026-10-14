@@ -2957,7 +2957,7 @@
   "q_en": "A legal investigation requires locating and preserving all of a user's Teams messages, including deleted ones. Which solution do you use?",
   "opts_es": [
    "Una directiva DLP que bloquee el envío de datos sensibles",
-   "Communication Compliance para revisar el lenguaje de los mensajes",
+   "Communication Compliance para revisar el lenguaje de todos los mensajes",
    "Una barrera de información que aísle al usuario investigado",
    "eDiscovery de Microsoft Purview con una retención asociada al caso"
   ],
@@ -4614,7 +4614,7 @@
   "opts_es": [
    "En las directivas de llamadas que controlan el desvío a usuarios externos",
    "En la configuración de uso compartido externo de SharePoint Online y OneDrive",
-   "En las directivas de mensajería del centro de administración para invitados",
+   "En las directivas de mensajería del centro de administración aplicadas a los invitados",
    "En las directivas de reunión que controlan el uso compartido de pantalla"
   ],
   "opts_en": [
@@ -5076,7 +5076,7 @@
   "q_en": "You want to allow Teams access from unmanaged devices, but only through the browser and without downloading files. What do you use?",
   "opts_es": [
    "Una directiva de retención aplicada a todos los archivos de los equipos",
-   "Una barrera de información entre dispositivos administrados y no administrados",
+   "Una barrera de información definida entre los dispositivos administrados y los no administrados",
    "Una directiva de mensajería que desactive por completo el envío de archivos",
    "Acceso condicional con sesión restringida para los dispositivos no administrados"
   ],
@@ -5639,7 +5639,7 @@
   "q_es": "Usas Direct Routing y quieres que el tráfico multimedia entre el usuario y el SBC fluya directamente sin pasar por el servicio de Teams en la nube. ¿Qué habilitas?",
   "q_en": "You use Direct Routing and want media between the user and the SBC to flow directly, bypassing the Teams cloud service. What do you enable?",
   "opts_es": [
-   "Una directiva de retención aplicada a las llamadas de voz",
+   "Una directiva de retención aplicada a las llamadas de voz RTC",
    "El media bypass en la configuración de enrutamiento de voz",
    "Una cola de llamadas asociada a una cuenta de recurso",
    "Una etiqueta de confidencialidad aplicada a las reuniones"
@@ -6921,7 +6921,7 @@
   "opts_es": [
    "En el Network Planner del Centro de administración de Teams",
    "En una directiva de mensajería que desactive el chat externo",
-   "En una etiqueta de confidencialidad publicada para los chats externos",
+   "En una etiqueta de confidencialidad publicada y aplicada a los chats externos",
    "En el acceso externo de Teams: bloquear consumidor y permitir dominios"
   ],
   "opts_en": [
@@ -7409,7 +7409,7 @@
    "Location-Based Routing, que enruta las llamadas RTC según el sitio de red donde está conectado el usuario",
    "Local Media Optimization, que enruta los medios a través de un SBC proxy más cercano al sitio del usuario",
    "Media bypass, que permite a los clientes enviar medios directamente al SBC sin pasar por los procesadores de Microsoft",
-   "Directiva de itinerancia de red, que aplica distintos límites de ancho de banda según la ubicación actual del usuario"
+   "Directiva de itinerancia de red, que aplica distintos límites de ancho de banda de vídeo según la ubicación actual del usuario"
   ],
   "opts_en": [
    "Location-Based Routing, which routes PSTN calls based on the network site where the user is connected",
@@ -7484,7 +7484,7 @@
   "q_es": "Los usuarios de Finanzas no deben acceder a ninguna aplicación de terceros en Teams. Los demás departamentos conservan su acceso actual. No debes modificar la directiva global de permisos de aplicaciones. ¿Cuál es el enfoque correcto?",
   "q_en": "Finance users must not access any third-party Teams apps. Other departments must keep their current access. You must not change the global app permission policy. What is the correct approach?",
   "opts_es": [
-   "Modificar la directiva global de permisos de aplicaciones para bloquear apps de terceros en toda la organización",
+   "Modificar la directiva global de permisos de aplicaciones para bloquear las apps de terceros en toda la organización",
    "Crear una directiva de permisos de aplicaciones que bloquee apps de terceros y asignarla a los usuarios de Finanzas",
    "Crear una directiva de configuración de aplicaciones que elimine los iconos de terceros de la barra de Finanzas",
    "Usar la página Gestionar aplicaciones para bloquear todas las apps de terceros en el catálogo global del tenant"
@@ -7541,7 +7541,7 @@
    "Directivas de barreras de información en Microsoft Purview, que bloquean la comunicación entre segmentos de usuarios definidos",
    "Etiquetas de confidencialidad en Teams que restringen la pertenencia y bloquean conversaciones entre departamentos",
    "Directivas de reunión que impiden a usuarios de distintos departamentos invitarse mutuamente a reuniones",
-   "Restricciones de acceso externo en el Centro de administración de Teams, que limitan la comunicación con dominios externos"
+   "Restricciones de acceso externo en el Centro de administración de Teams, que limitan la comunicación con dominios externos concretos"
   ],
   "opts_en": [
    "Information barrier policies in Microsoft Purview, which block communication between defined user segments",
@@ -7565,7 +7565,7 @@
   "q_en": "Your compliance team requires that messages containing credit card numbers sent in Teams chats and channels be blocked before delivery and the sender notified. What should you configure?",
   "opts_es": [
    "Una etiqueta de confidencialidad aplicada a todos los chats de Teams que cifra los mensajes con datos financieros",
-   "Una conservación de eDiscovery que preserva los mensajes de Teams con datos financieros para auditoría de cumplimiento",
+   "Una conservación de eDiscovery que preserva los mensajes de Teams con datos financieros para la auditoría de cumplimiento posterior",
    "Una directiva de cumplimiento de comunicaciones que revisa los mensajes de Teams y marca infracciones para su revisión",
    "Una directiva DLP en Microsoft Purview con ámbito en Teams, acción de bloqueo y sugerencia de directiva para el remitente"
   ],
@@ -7754,7 +7754,7 @@
   "q_es": "Todos los usuarios deben tener la aplicación Aprobaciones anclada en la barra de navegación de Teams. Los usuarios no deben poder desanclarla ni reorganizar sus aplicaciones ancladas. ¿Qué debes configurar?",
   "q_en": "All users must have the Approvals app pinned in their Teams navigation bar. Users must not be able to unpin it or rearrange pinned apps. What should you configure?",
   "opts_es": [
-   "Una directiva de permisos de aplicaciones que conceda acceso a Aprobaciones a todos los usuarios y la marque como obligatoria",
+   "Una directiva de permisos de aplicaciones que conceda acceso a Aprobaciones a todos los usuarios y la marque como obligatoria en el cliente",
    "Una directiva de configuración de aplicaciones que ancle Aprobaciones con anclaje de usuario deshabilitado, asignada globalmente",
    "Una directiva de acceso condicional que aplique la visibilidad de Aprobaciones en cada sesión del cliente de Teams",
    "Una directiva de gobernanza de Teams que bloquee el diseño de la barra de navegación para aplicaciones de cumplimiento"
@@ -8369,7 +8369,7 @@
   "opts_es": [
    "UDP 3478-3481, que Teams utiliza para el tráfico de audio, vídeo y uso compartido de pantalla",
    "UDP 443 y 80, que se usan para señalización HTTPS y actualizaciones del cliente de Teams",
-   "UDP 1024-65535, que Teams requiere para establecer cualquier sesión de medios con relés TURN",
+   "UDP 1024-65535, que Teams requiere para establecer cualquier sesión de medios a través de relés TURN",
    "TCP 5060 y 5061, que son los puertos estándar de señalización SIP para sistemas de telefonía"
   ],
   "opts_en": [
@@ -8526,7 +8526,7 @@
   "q_en": "Your organization is migrating from Skype for Business to Teams. During the transition, SfB users must be able to chat with Teams users. Which coexistence mode allows both systems to receive messages and calls simultaneously?",
   "opts_es": [
    "Modo Islas, en el que Teams y Skype for Business funcionan en paralelo y el usuario recibe en ambos clientes",
-   "Modo SfB con colaboración de Teams, en el que las reuniones se crean en Teams pero las llamadas van a SfB",
+   "Modo SfB con colaboración de Teams, en el que los equipos y canales están en Teams pero las llamadas y chats van a SfB",
    "Modo Solo Teams, en el que toda la comunicación se enruta a Teams y SfB queda deshabilitado",
    "Modo SfB con colaboración y reuniones, en el que reuniones y chats de Teams coexisten con llamadas de SfB"
   ],
@@ -9218,7 +9218,7 @@
    "En la directiva de reunión de Teams, en la sección de idioma y transcripción en tiempo real",
    "En la directiva de mensajería de Teams, habilitando la opción de traducción de mensajes para los usuarios",
    "En la configuración de idioma de cada usuario individualmente en el cliente de Teams",
-   "En el Centro de administración de Microsoft 365, en la configuración de servicios de idioma para Teams"
+   "En el Centro de administración de Microsoft 365, dentro de la configuración de los servicios de idioma para Teams"
   ],
   "opts_en": [
    "In the Teams meeting policy, in the language and real-time transcription section",
@@ -9534,7 +9534,7 @@
    "La directiva de enrutamiento de voz asignada al usuario no contiene usos RTC para llamadas entrantes",
    "El usuario no tiene habilitado el enrutamiento de voz o su número de teléfono no está asignado correctamente en Teams",
    "Los registros DNS del FQDN del SBC no resuelven correctamente desde la red del tenant de Microsoft 365",
-   "El SBC no tiene el certificado TLS correcto instalado para la comunicación con el proxy de señalización de Microsoft"
+   "El SBC no tiene instalado el certificado TLS correcto para la comunicación con el proxy de señalización SIP de Microsoft"
   ],
   "opts_en": [
    "The voice routing policy assigned to the user doesn't contain PSTN usages for inbound calls",
@@ -9769,7 +9769,7 @@
   "opts_es": [
    "Cumplimiento de comunicaciones en Microsoft Purview, que detecta infracciones de directivas y enruta los mensajes a revisores",
    "Gestión de riesgos internos en Microsoft Purview, que detecta comportamientos de fuga de datos por usuarios internos",
-   "Barreras de información en Microsoft Purview, que bloquean automáticamente las comunicaciones entre segmentos de usuarios",
+   "Barreras de información en Microsoft Purview, que bloquean automáticamente las comunicaciones entre segmentos de usuarios definidos",
    "Búsqueda de contenido en Microsoft Purview, que permite buscar palabras clave en mensajes de Teams ya enviados"
   ],
   "opts_en": [
@@ -9900,7 +9900,7 @@
    "Hasta 10 coorganizadores por reunión, que tienen casi los mismos permisos que el organizador original",
    "Hasta 25 coorganizadores, disponibles exclusivamente en reuniones de canal con Teams Premium",
    "Hasta 5 coorganizadores por reunión, limitados a gestionar participantes pero sin poder grabar",
-   "Solo 1 coorganizador por reunión, que comparte los permisos de grabación y gestión del organizador"
+   "Solo 1 coorganizador por reunión, que comparte con el organizador los permisos de grabación y de gestión de la reunión"
   ],
   "opts_en": [
    "Up to 10 co-organizers per meeting, who have nearly the same permissions as the original organizer",
@@ -10185,7 +10185,7 @@
   "opts_es": [
    "Deshabilitar el acceso de invitados en Teams para evitar que usuarios externos se unan a equipos del tenant",
    "Crear barreras de información que impidan la comunicación entre todos los segmentos del tenant y dominios externos",
-   "Configurar directivas de acceso condicional que bloqueen las conexiones federadas desde tenants externos de Azure AD",
+   "Configurar directivas de acceso condicional que bloqueen las conexiones federadas procedentes de tenants externos de Azure AD",
    "Deshabilitar el acceso externo en el Centro de administración de Teams bloqueando todos los dominios externos de Teams"
   ],
   "opts_en": [
@@ -10635,7 +10635,7 @@
   "opts_es": [
    "La aprobación de la aplicación en el Centro de administración de Teams bajo Gestionar aplicaciones del tenant",
    "El consentimiento del administrador en Azure AD para los permisos de Microsoft Graph que requiere la aplicación",
-   "La configuración de un conector de entrada de Teams que permita a la aplicación recibir mensajes del canal",
+   "La configuración de un conector de entrada de Teams que permita a la aplicación recibir los mensajes de cada canal",
    "La asignación de una licencia de Teams Premium a la cuenta de servicio que usa la aplicación de análisis"
   ],
   "opts_en": [
@@ -11049,7 +11049,7 @@
   "q_es": "El organizador de un seminario web (Webinar) de Teams quiere que los asistentes registrados reciban un correo de confirmación automático al inscribirse. ¿Qué control del seminario web gestiona los correos de confirmación?",
   "q_en": "A Teams Webinar organizer wants registered attendees to automatically receive a confirmation email upon registration. Which webinar control manages confirmation emails?",
   "opts_es": [
-   "La directiva de reunión del organizador, sección de comunicaciones del seminario web salientes",
+   "La directiva de reunión del organizador, en la sección de comunicaciones salientes del seminario web",
    "Una regla de flujo de correo de Exchange que envía confirmaciones al detectar un registro",
    "Un flujo de Power Automate que escucha registros y envía correos personalizados a asistentes",
    "La configuración de registro del seminario web, que incluye correos de confirmación automáticos"
@@ -11258,7 +11258,7 @@
   "q_en": "Your organization wants to configure a Teams call queue that distributes calls to agents who have gone the longest without receiving any call. Which routing method should you select?",
   "opts_es": [
    "Enrutamiento por turno rotativo, que distribuye las llamadas de forma equitativa entre todos los agentes disponibles",
-   "Enrutamiento simultáneo, que hace sonar los teléfonos de todos los agentes disponibles al mismo tiempo para la misma llamada",
+   "Enrutamiento simultáneo, que hace sonar a la vez los teléfonos de todos los agentes disponibles para una misma llamada entrante",
    "Enrutamiento en cadena, que prueba a cada agente en orden fijo comenzando siempre por el primero de la lista",
    "Enrutamiento por el tiempo de inactividad más largo, que asigna la llamada al agente con mayor tiempo sin recibir una llamada"
   ],
@@ -11311,7 +11311,7 @@
   "opts_es": [
    "Licencia de usuario virtual de Teams, que soporta dispositivos de área común sin número de teléfono asignado",
    "Licencia de Teléfono de Área Común de Microsoft Teams, diseñada para dispositivos compartidos sin usuario propietario",
-   "Licencia de Teams Phone Standard, que incluye la funcionalidad completa para dispositivos de recepción compartidos",
+   "Licencia de Teams Phone Standard, que incluye toda la funcionalidad de telefonía para los dispositivos de recepción compartidos",
    "Licencia de Teams Rooms Basic, que se adapta a los dispositivos de área común con funcionalidad reducida"
   ],
   "opts_en": [
@@ -11569,7 +11569,7 @@
   "q_es": "Necesitas generar un informe semanal que muestre las tendencias de adopción de Teams en tu organización: número de usuarios activos, canales creados y mensajes enviados. ¿Qué informes del Centro de administración de Microsoft 365 proporcionan estos datos?",
   "q_en": "You need to generate a weekly report showing Teams adoption trends in your organization: active users, channels created, and messages sent. Which Microsoft 365 Admin Center reports provide this data?",
   "opts_es": [
-   "El Panel de calidad de llamadas (CQD), que incluye métricas de adopción de usuarios además de métricas de calidad",
+   "El Panel de calidad de llamadas (CQD), que incluye métricas de adopción de los usuarios además de las métricas de calidad",
    "Los informes de actividad de Azure AD, que incluyen métricas de acceso a aplicaciones de Teams por usuario",
    "Los informes de uso de Microsoft Teams en el Centro de administración de Microsoft 365, sección de informes de uso",
    "El asesor de Teams en el Centro de administración de Teams, que muestra el progreso de adopción por escenario"
@@ -11598,7 +11598,7 @@
    "Excluir el tráfico de medios de Teams del proxy y permitirle salida directa a Internet para minimizar la latencia",
    "Implementar un proxy inverso para el tráfico de medios de Teams en lugar del proxy de reenvío existente",
    "Usar el proxy solo para la señalización SIP de Teams y enrutar los medios por ExpressRoute sin proxy",
-   "Configurar el proxy para que proporcione una ruta de alta prioridad para el tráfico de medios de Teams con QoS"
+   "Configurar el proxy para que proporcione una ruta de alta prioridad con QoS para el tráfico de medios de Teams del tenant"
   ],
   "opts_en": [
    "Exclude Teams media traffic from the proxy and allow it direct internet egress to minimize latency",
@@ -11648,7 +11648,7 @@
   "q_en": "You need to configure your tenant dial plan to normalize 4-digit internal numbers to full E.164 format (+34 followed by the full number) for internal calls. Which dial plan element performs this transformation?",
   "opts_es": [
    "Una regla de normalización con un patrón de expresión regular que detecta 4 dígitos y los traduce al formato E.164 completo",
-   "Un prefijo de marcación de tenant que antepone automáticamente el código de país a todos los números de menos de 7 dígitos",
+   "Un prefijo de marcación de tenant que antepone automáticamente el código de país a todos los números marcados de menos de 7 dígitos",
    "Una tabla de traducción de Direct Routing que convierte los números de 4 dígitos en números E.164 en el SBC",
    "Una ruta de voz configurada con transformación de número para los internos de 4 dígitos del tenant"
   ],
@@ -12041,7 +12041,7 @@
   "opts_es": [
    "Una directiva de cumplimiento de comunicaciones que revise de forma reactiva los mensajes con números de tarjeta de crédito y los bloquee o marque después del envío inicial",
    "Una directiva de prevención de pérdida de datos (DLP) de Microsoft Purview aplicada a Teams que detecte tipos de información de tarjetas de crédito y bloquee los mensajes que los contengan",
-   "Una etiqueta de confidencialidad que el usuario debe aplicar manualmente a los mensajes que contienen datos de tarjetas de crédito para restringir el reenvío a destinatarios externos",
+   "Una etiqueta de confidencialidad que el usuario debe aplicar manualmente a los mensajes que contienen datos de tarjetas de crédito para así restringir su reenvío posterior a destinatarios externos",
    "Barreras de información configuradas para impedir que los usuarios con acceso a datos financieros sensibles se comuniquen con usuarios externos al tenant"
   ],
   "opts_en": [
@@ -12450,7 +12450,7 @@
   "q_es": "Tu organización quiere controlar las aplicaciones de Teams que usan conectores para publicar mensajes en canales. Un conector específico de terceros está enviando demasiados mensajes. ¿Cómo deshabilitas un conector específico en un canal?",
   "q_en": "Your organization wants to control Teams applications using connectors to post messages to channels. A specific third-party connector is sending too many messages. How do you disable a specific connector in a channel?",
   "opts_es": [
-   "Desde la directiva de permisos de aplicaciones del tenant, bloqueando la aplicación que usa el conector a nivel global",
+   "Desde la directiva de permisos de aplicaciones del tenant, bloqueando a nivel global la aplicación que usa ese conector concreto",
    "Desde la configuración del canal, el propietario del equipo puede eliminar conectores específicos instalados en ese canal",
    "Desde la directiva global de configuración de aplicaciones del tenant deshabilitando todos los conectores de terceros",
    "Desde el Centro de administración de Teams en la sección de aplicaciones, deshabilitando los conectores de ese tipo"
@@ -12556,7 +12556,7 @@
   "opts_es": [
    "443 TCP y 80 TCP para señalización, más 3478-3481 UDP para medios de Teams",
    "3478-3481 UDP para medios de Teams al servicio de transporte y 443 TCP para señalización STUN/TURN",
-   "3478, 3479, 3480 y 3481 para medios UDP de Teams al servicio de transporte de medios de Microsoft",
+   "3478, 3479, 3480 y 3481 para los medios UDP de Teams hacia el servicio de transporte de medios de Microsoft",
    "50000-59999 para todos los tipos de medios de Teams en entornos corporativos y de consumo"
   ],
   "opts_en": [
@@ -12892,7 +12892,7 @@
   "q_es": "Un equipo de Teams tiene un canal con 500 miembros y los propietarios observan que el rendimiento del canal está degradado. ¿Cuál es el número máximo de miembros recomendado por Microsoft para un canal de Teams?",
   "q_en": "A Teams team has a channel with 500 members and owners observe degraded channel performance. What is the maximum number of members Microsoft recommends for a Teams channel?",
   "opts_es": [
-   "Un equipo de Teams puede tener hasta 25.000 miembros totales; no hay un límite específico por canal salvo el límite del equipo",
+   "Un equipo de Teams puede tener hasta 25.000 miembros en total; no hay un límite específico por canal salvo el propio límite del equipo",
    "Los canales privados de Teams tienen un límite de 250 miembros, mientras que los canales estándar no tienen límite",
    "Los canales de Teams tienen un límite recomendado de 200 miembros por canal para rendimiento óptimo",
    "Los canales estándar no tienen límite de miembros propio; todos los miembros del equipo forman parte de todos los canales estándar"

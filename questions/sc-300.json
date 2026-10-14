@@ -112,7 +112,7 @@
   "q_es": "¿Qué configuración de Microsoft Entra permite mostrar el logotipo y la imagen de fondo de tu organización en la página de inicio de sesión?",
   "q_en": "Which Microsoft Entra setting lets you display your organization's logo and background image on the sign-in page?",
   "opts_es": [
-   "Atributos de seguridad personalizados",
+   "Atributos de seguridad personalizados del usuario",
    "Personalización de marca de la empresa",
    "Nombres de dominio personalizados",
    "Términos de uso"
@@ -584,7 +584,7 @@
    "Microsoft Intune",
    "Microsoft Entra Connect Sync",
    "Azure Bastion",
-   "Microsoft Entra Verified ID"
+   "Microsoft Entra Verified ID (credenciales)"
   ],
   "opts_en": [
    "Microsoft Intune",
@@ -1249,7 +1249,7 @@
    "Un grupo dinámico que contenga a todos los usuarios",
    "Más usuarios invitados con roles de administrador",
    "Cuentas de acceso de emergencia excluidas de las directivas",
-   "Un segundo inquilino usado solo para probar las directivas"
+   "Un segundo inquilino que se usa solo para probar las directivas"
   ],
   "opts_en": [
    "A dynamic group that contains every user in the tenant",
@@ -1510,7 +1510,7 @@
   "opts_es": [
    "Acceso condicional basado en riesgo con riesgo de inicio de sesión y de usuario",
    "Una directiva de expiración de contraseñas de 30 días para todos",
-   "Usar solo ubicaciones con nombre y bloquear los inicios de sesión extranjeros",
+   "Usar solo ubicaciones con nombre y bloquear todos los inicios de sesión extranjeros",
    "Deshabilitar ID Protection y confiar solo en el registro de MFA"
   ],
   "opts_en": [
@@ -1695,7 +1695,7 @@
    "PIM",
    "Microsoft Entra Internet Access",
    "Microsoft Entra Connect Sync",
-   "Microsoft Entra Private Access"
+   "Microsoft Entra Private Access (ZTNA)"
   ],
   "opts_en": [
    "PIM",
@@ -1823,7 +1823,7 @@
   "q_en": "An on-premises service running on Windows Server needs a non-human identity to access Azure resources. Which option is appropriate if managed identities are not available?",
   "opts_es": [
    "Una entidad de servicio con una credencial de certificado",
-   "Una cuenta de usuario invitado con una contraseña larga",
+   "Una cuenta de usuario invitado con una contraseña larga y compleja",
    "Un punto de conexión sin autenticar",
    "Una cuenta de administrador global dedicada al servicio"
   ],
@@ -2082,7 +2082,7 @@
    "Colecciones de aplicaciones",
    "Unidades administrativas",
    "Paquetes de acceso",
-   "Contextos de autenticación"
+   "Contextos de autenticación de AC"
   ],
   "opts_en": [
    "Application collections",
@@ -2207,7 +2207,7 @@
   "q_en": "A developer registers a new web API in Microsoft Entra ID and wants other applications to call it with different permission levels. What should the developer define?",
   "opts_es": [
    "Un grupo dinámico que contenga las apps cliente",
-   "Una nueva unidad administrativa para los desarrolladores",
+   "Una nueva unidad administrativa que agrupe a los desarrolladores",
    "Exponer ámbitos y roles de aplicación para acceso solo de app",
    "Una ubicación con nombre de acceso condicional para la API"
   ],
@@ -2821,7 +2821,7 @@
   "q_es": "Los revisores no responden a una revisión de acceso. ¿Qué acción puedes configurar para que el acceso sin revisar se elimine automáticamente?",
   "q_en": "Reviewers do not respond to an access review. What action can you configure so that unreviewed access is removed automatically?",
   "opts_es": [
-   "Deshabilitar la revisión tras la fecha límite e iniciar otra manualmente cada trimestre",
+   "Deshabilitar la revisión tras la fecha límite e iniciar otra manualmente al comienzo de cada trimestre",
    "Eliminar el grupo",
    "Establecer Quitar acceso para quienes no respondan y aplicar los resultados automáticamente",
    "Cambiar el tipo de grupo a seguridad para que el propietario revise el acceso"
@@ -3828,7 +3828,7 @@
   "q_es": "Los usuarios no deben poder unir dispositivos a Microsoft Entra ID salvo que sean miembros de un grupo concreto. ¿Dónde se configura esto?",
   "q_en": "Users must not be able to join devices to Microsoft Entra ID unless they are members of a specific group. Where do you configure this?",
   "opts_es": [
-   "Número máximo de dispositivos por usuario en 1 en la configuración de dispositivos",
+   "Número máximo de dispositivos por usuario fijado en 1 en la configuración de dispositivos",
    "Configuración de acceso entre inquilinos con bloqueo de entrada de dispositivos",
    "Configuración de dispositivos: los usuarios pueden unir dispositivos, en Seleccionados",
    "Restricciones de inscripción de dispositivos en Intune"
@@ -4039,7 +4039,7 @@
   "q_en": "In cross-tenant access settings, which option lets you trust MFA claims already satisfied in a partner's home tenant?",
   "opts_es": [
    "Configuración de acceso de salida: permitir MFA para usuarios externos",
-   "Configuración de sincronización en la nube de salida del inquilino asociado",
+   "Configuración de sincronización en la nube de salida hacia el inquilino asociado",
    "Configuración de escritura diferida de contraseñas",
    "Configuración de confianza de entrada: confiar en la MFA de inquilinos de Entra"
   ],
@@ -5266,7 +5266,7 @@
    "Deshabilita la MFA en aplicaciones confidenciales compatibles con CAE",
    "Bloquea el acceso cuando un recurso no puede aplicar la ubicación de CAE",
    "Elimina los tokens de acceso cada día",
-   "Permite sesiones largas sin ninguna revalidación del token"
+   "Permite sesiones largas sin ninguna revalidación posterior del token de acceso"
   ],
   "opts_en": [
    "Disables MFA for sensitive apps that support continuous evaluation",
@@ -5595,7 +5595,7 @@
   "q_es": "Un administrador investiga un inicio de sesión de riesgo y concluye que la actividad era legítima. ¿Qué acción debe realizar?",
   "q_en": "An administrator investigates a risky sign-in and concludes the activity was legitimate. Which action should they take?",
   "opts_es": [
-   "Confirmar que el usuario está comprometido",
+   "Confirmar que el usuario está comprometido (riesgo alto)",
    "Deshabilitar el inquilino",
    "Confirmar que el inicio de sesión es seguro",
    "Eliminar al usuario"
@@ -5751,7 +5751,7 @@
    "Application Proxy de Microsoft Entra con autenticación previa",
    "Filtrado de contenido web en directivas de Entra Internet Access",
    "Controles de sesión de acceso condicional para apps en la nube",
-   "Restricciones universales de inquilino para inquilinos externos"
+   "Restricciones universales de inquilino para los inquilinos externos"
   ],
   "opts_en": [
    "Microsoft Entra application proxy with pre-authentication",
@@ -6315,7 +6315,7 @@
   "q_en": "Which Microsoft Entra roles can grant consent to permissions on behalf of the organization for apps?",
   "opts_es": [
    "Administrador de aplicaciones en la nube y Administrador de roles con privilegios",
-   "Invitador de invitados y Administrador de usuarios del directorio del inquilino",
+   "Invitador de invitados y Administrador de usuarios del directorio de todo el inquilino",
    "Lectores de directorio y Lector de informes con ámbito de toda la organización",
    "Lector de informes"
   ],
@@ -6909,7 +6909,7 @@
   "q_en": "Who can request an access package when the policy allows 'users in my directory'?",
   "opts_es": [
    "Solo administradores globales",
-   "Cualquier persona en internet que tenga el vínculo del paquete",
+   "Cualquier persona en internet que tenga el vínculo del paquete de acceso",
    "Solo dispositivos inscritos en Intune y conformes",
    "Usuarios internos del inquilino dentro del ámbito de la directiva"
   ],
@@ -7335,7 +7335,7 @@
   "q_en": "You want a user to be able to request the Exchange Administrator role only for 2 hours, with MFA and a justification. Which PIM setting provides the time limit?",
   "opts_es": [
    "Duración máxima de activación en la configuración del rol",
-   "Configuración de notificaciones de asignaciones de rol",
+   "Configuración de las notificaciones de asignaciones de rol",
    "Exigir justificación al activar",
    "La expiración de la asignación apta"
   ],
@@ -7947,7 +7947,7 @@
   "q_es": "Un administrador debe investigar qué aplicaciones empresariales tienen permisos amplios concedidos por usuarios. ¿Dónde puede revisar los consentimientos y permisos?",
   "q_en": "An administrator must investigate which enterprise apps have broad permissions granted by users. Where can they review consents and permissions?",
   "opts_es": [
-   "La página de configuración de dispositivos y los límites de registro por usuario",
+   "La página de configuración de dispositivos y los límites de registro de dispositivos por usuario",
    "La directiva de nomenclatura de grupos y la lista de palabras bloqueadas",
    "La personalización de marca",
    "La página Permisos de la aplicación empresarial y la configuración de consentimiento"
@@ -8862,7 +8862,7 @@
   "q_es": "¿Qué configuración de acceso condicional bloquea la app financiera en dispositivos no administrados?",
   "q_en": "Which Conditional Access configuration blocks the finance app on unmanaged devices?",
   "opts_es": [
-   "Dirigirse al grupo de finanzas y fijar la frecuencia de inicio en 1 minuto",
+   "Dirigirse al grupo de finanzas y fijar la frecuencia de inicio de sesión en 1 minuto",
    "Dirigirse a todas las apps y exigir cambiar la contraseña a diario",
    "Dirigirse a la app financiera y exigir un dispositivo conforme o unido híbrido",
    "Dirigirse solo a invitados y exigir aceptar términos de uso"
@@ -10382,7 +10382,7 @@
   "opts_es": [
    "Agregar al ingeniero como invitado",
    "Asignar Administrador de aplicaciones con ámbito en esa aplicación",
-   "Asignar Administrador de aplicaciones en el ámbito del inquilino",
+   "Asignar Administrador de aplicaciones con ámbito en todo el inquilino",
    "Hacer al ingeniero administrador global solo en horario laboral"
   ],
   "opts_en": [
@@ -10686,7 +10686,7 @@
    "SSO de conexión directa",
    "Implementación por fases",
    "Sincronización de atributos de extensión del directorio",
-   "Escritura diferida de grupos de Microsoft 365 en local"
+   "Escritura diferida de los grupos de Microsoft 365 al AD local"
   ],
   "opts_en": [
    "Seamless SSO",
@@ -11572,7 +11572,7 @@
   "opts_es": [
    "Roles de aplicación",
    "Un nuevo URI de redirección",
-   "Un secreto de cliente adicional con una caducidad más corta",
+   "Un secreto de cliente adicional con una fecha de caducidad más corta",
    "Notificaciones opcionales (o una asignación de notificaciones)"
   ],
   "opts_en": [
