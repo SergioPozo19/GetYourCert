@@ -10607,5 +10607,1687 @@
   "correct": 0,
   "exp_es": "Resource Guard exige un segundo aprobador en un límite de seguridad independiente.",
   "exp_en": "Resource Guard requires a second approver in a separate security boundary."
+ },
+ {
+  "id": 357,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los registros de depuración detallados deben ingerirse de forma barata y conservarse 30 días, con consultas sencillas ocasionales. ¿Qué plan de tabla debes recomendar?",
+  "q_en": "Verbose debug logs must be ingested cheaply and kept for 30 days, with only occasional simple queries. Which table plan should you recommend?",
+  "opts_es": [
+   "Registros básicos",
+   "Registros de análisis con retención interactiva de dos años",
+   "Solo archivo",
+   "Registros de análisis"
+  ],
+  "opts_en": [
+   "Basic logs",
+   "Analytics logs with a two-year interactive retention period",
+   "Archive only",
+   "Analytics logs"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los registros básicos tienen un precio de ingesta menor y consultas limitadas, adecuados para datos de diagnóstico de gran volumen.",
+  "exp_en": "Basic logs have a lower ingestion price and limited query features, suitable for high-volume troubleshooting data."
+ },
+ {
+  "id": 358,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los datos personales deben eliminarse de los registros antes de guardarlos en el área de Log Analytics. ¿Qué debes diseñar?",
+  "q_en": "Personal data must be removed from logs before they are stored in the Log Analytics workspace. What should you design?",
+  "opts_es": [
+   "Un grupo de acciones",
+   "Una transformación en tiempo de ingesta en una regla de recopilación de datos",
+   "Una regla de alerta de registro que elimine las filas coincidentes cada hora",
+   "Un libro"
+  ],
+  "opts_en": [
+   "An action group",
+   "An ingestion-time transformation in a data collection rule",
+   "A log alert rule that deletes matching rows every hour",
+   "A workbook"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las transformaciones de las DCR ejecutan KQL sobre los datos entrantes para filtrar o enmascarar columnas antes de guardarlos.",
+  "exp_en": "DCR transformations run KQL on incoming data to filter or mask columns before storage."
+ },
+ {
+  "id": 359,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Operaciones debe encontrar qué cambios de configuración se hicieron en los recursos de varias suscripciones en los últimos 14 días. ¿Qué herramienta encaja?",
+  "q_en": "Operations must find which configuration changes were made to resources across subscriptions in the last 14 days. Which tool fits?",
+  "opts_es": [
+   "Métricas en directo de Application Insights para cada aplicación",
+   "Cambios de recursos de Azure Resource Graph",
+   "Azure Advisor",
+   "Service Health"
+  ],
+  "opts_en": [
+   "Application Insights live metrics for every application",
+   "Azure Resource Graph resource changes",
+   "Azure Advisor",
+   "Service Health"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Resource Graph conserva un historial de cambios de propiedades que se puede consultar con KQL (resourcechanges).",
+  "exp_en": "Resource Graph keeps a history of property changes queryable with KQL (resourcechanges)."
+ },
+ {
+  "id": 360,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Los equipos de red deben comprobar continuamente la latencia y la accesibilidad entre VM de Azure y puntos de conexión locales. ¿Qué característica de Network Watcher debes recomendar?",
+  "q_en": "Network teams must continuously test latency and reachability between Azure VMs and on-premises endpoints. Which Network Watcher feature should you recommend?",
+  "opts_es": [
+   "Comprobación del flujo de IP",
+   "Reglas de seguridad efectivas",
+   "Monitor de conexión",
+   "Captura de paquetes iniciada manualmente en cada prueba"
+  ],
+  "opts_en": [
+   "IP flow verify",
+   "Effective security rules",
+   "Connection monitor",
+   "Packet capture triggered manually for each test"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El monitor de conexión ejecuta pruebas periódicas e informa de pérdidas, latencia y problemas de topología.",
+  "exp_en": "Connection monitor runs periodic tests and reports loss, latency and topology issues."
+ },
+ {
+  "id": 361,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de la supervisión, indica si es verdadera o falsa.",
+  "q_en": "For each statement about monitoring design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los registros básicos reducen el coste de ingesta de datos de gran volumen.",
+    "en": "Basic logs reduce ingestion cost for high-volume data.",
+    "ans": true
+   },
+   {
+    "es": "Las transformaciones de las DCR pueden eliminar columnas antes de guardar los datos.",
+    "en": "DCR transformations can drop columns before data is stored.",
+    "ans": true
+   },
+   {
+    "es": "El monitor de conexión solo puede probar la conectividad una vez.",
+    "en": "Connection monitor can only test connectivity once.",
+    "ans": false
+   }
+  ],
+  "exp_es": "El monitor de conexión ejecuta pruebas continuas.",
+  "exp_en": "Connection monitor runs continuous tests."
+ },
+ {
+  "id": 362,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la solución de supervisión para cada requisito.",
+  "q_en": "Select the monitoring solution for each requirement.",
+  "rows": [
+   {
+    "es": "Enmascarar direcciones de correo antes de guardar los registros",
+    "en": "Mask email addresses before logs are stored",
+    "opts_es": [
+     "Cambios de Resource Graph",
+     "Monitor de conexión",
+     "Registros básicos",
+     "Transformación de DCR"
+    ],
+    "opts_en": [
+     "Resource Graph changes",
+     "Connection monitor",
+     "Basic logs",
+     "DCR transformation"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Ver quién cambió el tamaño de una VM la semana pasada en varias suscripciones",
+    "en": "See who changed a VM size last week across subscriptions",
+    "opts_es": [
+     "Cambios de Resource Graph",
+     "Monitor de conexión",
+     "Registros básicos",
+     "Transformación de DCR"
+    ],
+    "opts_en": [
+     "Resource Graph changes",
+     "Connection monitor",
+     "Basic logs",
+     "DCR transformation"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Las transformaciones actúan en la ingesta; Resource Graph rastrea los cambios de recursos.",
+  "exp_en": "Transformations act at ingestion; Resource Graph tracks resource changes."
+ },
+ {
+  "id": 363,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Unos pocos bosques de AD locales sin servidor de sincronización deben sincronizar usuarios con Microsoft Entra ID mediante agentes ligeros. ¿Qué herramienta debes recomendar?",
+  "q_en": "A small number of on-premises AD forests with no sync server must synchronize users to Microsoft Entra ID with lightweight agents. Which tool should you recommend?",
+  "opts_es": [
+   "Microsoft Entra Domain Services con confianza de bosque a cada bosque local",
+   "Azure AD B2C",
+   "Microsoft Entra Connect Sync en un solo servidor",
+   "Microsoft Entra Cloud Sync"
+  ],
+  "opts_en": [
+   "Microsoft Entra Domain Services with a forest trust to each on-premises forest",
+   "Azure AD B2C",
+   "Microsoft Entra Connect Sync on a single server",
+   "Microsoft Entra Cloud Sync"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Cloud Sync usa agentes de aprovisionamiento administrados desde la nube y admite varios bosques desconectados.",
+  "exp_en": "Cloud Sync uses provisioning agents managed from the cloud and supports multiple disconnected forests."
+ },
+ {
+  "id": 364,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Una aplicación debe verificar el título universitario de un candidato como credencial firmada digitalmente emitida por la universidad. ¿Qué servicio encaja?",
+  "q_en": "An app must verify a job candidate's university degree as a digitally signed credential issued by the university. Which service fits?",
+  "opts_es": [
+   "Microsoft Entra Verified ID",
+   "Microsoft Entra B2B",
+   "Privileged Identity Management",
+   "Certificados de Azure Key Vault emitidos por una entidad de certificación pública"
+  ],
+  "opts_en": [
+   "Microsoft Entra Verified ID",
+   "Microsoft Entra B2B",
+   "Privileged Identity Management",
+   "Azure Key Vault certificates issued by a public certificate authority"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Verified ID emite y verifica credenciales verificables descentralizadas.",
+  "exp_en": "Verified ID issues and verifies decentralized verifiable credentials."
+ },
+ {
+  "id": 365,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Key Vault solo debe ser accesible desde la red virtual de la aplicación, sin punto de conexión público. ¿Qué debes diseñar?",
+  "q_en": "Key Vault must only be reachable from the application's virtual network, with no public endpoint. What should you design?",
+  "opts_es": [
+   "Un bloqueo de recursos",
+   "Eliminación temporal",
+   "Un punto de conexión privado con el acceso público deshabilitado",
+   "Una directiva de acceso de Key Vault que solo permita la identidad administrada de la aplicación"
+  ],
+  "opts_en": [
+   "A resource lock",
+   "Soft delete",
+   "A private endpoint with public network access disabled",
+   "A Key Vault access policy that only allows the app's managed identity"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los puntos de conexión privados dan al almacén una IP privada; los controles de identidad siguen siendo necesarios, pero no quitan el punto de conexión público.",
+  "exp_en": "Private endpoints give the vault a private IP; identity controls are still needed but don't remove the public endpoint."
+ },
+ {
+  "id": 366,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de identidades y secretos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about identity and secrets design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Cloud Sync admite varios bosques de AD desconectados.",
+    "en": "Cloud Sync supports multiple disconnected AD forests.",
+    "ans": true
+   },
+   {
+    "es": "Verified ID emite credenciales verificables.",
+    "en": "Verified ID issues verifiable credentials.",
+    "ans": true
+   },
+   {
+    "es": "Las directivas de acceso por sí solas eliminan el punto de conexión público de Key Vault.",
+    "en": "Access policies alone remove the public endpoint of Key Vault.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Eliminar la exposición pública requiere puntos de conexión privados y deshabilitar el acceso público.",
+  "exp_en": "Removing public exposure needs private endpoints and disabling public access."
+ },
+ {
+  "id": 367,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "Para emitir y verificar credenciales digitales como acreditaciones de empleado o títulos, usa Microsoft Entra ",
+  "pre_en": "To issue and verify digital credentials such as employee badges or degrees, use Microsoft Entra ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "Connect Health",
+   "Verified ID",
+   "Domain Services",
+   "Cloud Sync"
+  ],
+  "opts_en": [
+   "Connect Health",
+   "Verified ID",
+   "Domain Services",
+   "Cloud Sync"
+  ],
+  "correct": 1,
+  "exp_es": "Verified ID se basa en estándares abiertos de credenciales verificables.",
+  "exp_en": "Verified ID is based on open standards for verifiable credentials."
+ },
+ {
+  "id": 368,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un conjunto de recursos implementados juntos debe protegerse frente a eliminaciones y cambios fuera de la implementación. ¿Qué característica debes recomendar?",
+  "q_en": "A set of resources deployed together must be protected from deletion and changes outside the deployment. Which feature should you recommend?",
+  "opts_es": [
+   "Etiquetas heredadas del grupo de recursos en cada recurso",
+   "Presupuestos de Cost Management",
+   "Pilas de implementación con configuración de denegación",
+   "Azure Blueprints"
+  ],
+  "opts_en": [
+   "Tags inherited from the resource group on every resource",
+   "Cost Management budgets",
+   "Deployment stacks with deny settings",
+   "Azure Blueprints"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las pilas de implementación administran los recursos como una unidad y pueden denegar eliminaciones o escrituras; Blueprints está en desuso.",
+  "exp_en": "Deployment stacks manage resources as one unit and can deny delete or write actions; Blueprints are being deprecated."
+ },
+ {
+  "id": 369,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Los costes de red compartidos de una suscripción concentradora deben repartirse entre unidades de negocio. ¿Qué debes usar?",
+  "q_en": "Shared networking costs in a hub subscription must be split among business units for chargeback. What should you use?",
+  "opts_es": [
+   "Circuitos ExpressRoute separados para cada unidad de negocio",
+   "Azure Advisor",
+   "Reglas de asignación de costes en Cost Management",
+   "Bloqueos de recursos"
+  ],
+  "opts_en": [
+   "Separate ExpressRoute circuits for each business unit",
+   "Azure Advisor",
+   "Cost allocation rules in Cost Management",
+   "Resource locks"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las reglas de asignación de costes redistribuyen los costes compartidos a otras suscripciones, grupos de recursos o etiquetas.",
+  "exp_en": "Cost allocation rules redistribute shared costs to other subscriptions, resource groups or tags."
+ },
+ {
+  "id": 370,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Los nuevos equipos de aplicaciones deben recibir una suscripción preconfigurada con red, directivas y RBAC aplicados automáticamente. ¿Cómo se llama este enfoque?",
+  "q_en": "New application teams must receive a pre-configured subscription with networking, policies and RBAC applied automatically. What is this approach called?",
+  "opts_es": [
+   "Azure Advisor",
+   "Aprovisionamiento automatizado de suscripciones (subscription vending)",
+   "Etiquetado de recursos",
+   "Incorporación manual por el equipo central de TI en cada solicitud"
+  ],
+  "opts_en": [
+   "Azure Advisor",
+   "Subscription vending",
+   "Resource tagging",
+   "Manual onboarding by the central IT team for every request"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El aprovisionamiento automatizado de suscripciones crea zonas de aterrizaje con infraestructura como código.",
+  "exp_en": "Subscription vending automates landing zone creation with infrastructure as code."
+ },
+ {
+  "id": 371,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de la gobernanza, indica si es verdadera o falsa.",
+  "q_en": "For each statement about governance design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las pilas de implementación pueden denegar la eliminación de los recursos administrados.",
+    "en": "Deployment stacks can deny deletion of managed resources.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas de asignación de costes pueden repartir los costes compartidos.",
+    "en": "Cost allocation rules can split shared costs.",
+    "ans": true
+   },
+   {
+    "es": "Azure Blueprints es el nuevo enfoque recomendado para zonas de aterrizaje.",
+    "en": "Azure Blueprints is the recommended new approach for landing zones.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las especificaciones de plantilla y las pilas de implementación sustituyen a Blueprints.",
+  "exp_en": "Template specs and deployment stacks replace Blueprints."
+ },
+ {
+  "id": 372,
+  "exam": "az-305",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la característica de gobernanza para cada requisito.",
+  "q_en": "Select the governance feature for each requirement.",
+  "rows": [
+   {
+    "es": "Cargar el coste del firewall compartido a tres departamentos",
+    "en": "Charge the shared firewall cost to three departments",
+    "opts_es": [
+     "Aprovisionamiento automatizado de suscripciones",
+     "Reglas de asignación de costes",
+     "Grupos de administración",
+     "Pilas de implementación"
+    ],
+    "opts_en": [
+     "Subscription vending",
+     "Cost allocation rules",
+     "Management groups",
+     "Deployment stacks"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Dar automáticamente a cada equipo nuevo una zona de aterrizaje lista",
+    "en": "Give each new team a ready landing zone automatically",
+    "opts_es": [
+     "Aprovisionamiento automatizado de suscripciones",
+     "Reglas de asignación de costes",
+     "Grupos de administración",
+     "Pilas de implementación"
+    ],
+    "opts_en": [
+     "Subscription vending",
+     "Cost allocation rules",
+     "Management groups",
+     "Deployment stacks"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Las reglas de asignación reparten costes; el aprovisionamiento automatiza suscripciones.",
+  "exp_en": "Allocation rules split costs; vending automates subscriptions."
+ },
+ {
+  "id": 373,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Una base de datos Hyperscale debe descargar los informes en réplicas con su propio tamaño de proceso y carga aislada. ¿Qué característica encaja?",
+  "q_en": "A Hyperscale database must offload reporting to replicas with their own compute size and isolated workload. Which feature fits?",
+  "opts_es": [
+   "Restauración geográfica desde copias automáticas en un segundo servidor",
+   "Proceso sin servidor",
+   "Réplicas con nombre",
+   "Grupos elásticos"
+  ],
+  "opts_en": [
+   "Geo-restore from automated backups into a second server",
+   "Serverless compute",
+   "Named replicas",
+   "Elastic pools"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las réplicas con nombre de Hyperscale pueden tener distinto tamaño de proceso y se acceden de forma independiente.",
+  "exp_en": "Hyperscale named replicas can have different compute sizes and are accessed independently."
+ },
+ {
+  "id": 374,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un SQL Server 2022 local debe usar Azure SQL Managed Instance como réplica de recuperación casi en tiempo real. ¿Qué debes recomendar?",
+  "q_en": "An on-premises SQL Server 2022 must use Azure SQL Managed Instance as a near-real-time DR replica. What should you recommend?",
+  "opts_es": [
+   "Trasvase de registros a Blob Storage",
+   "Trabajos elásticos",
+   "Vínculo de Managed Instance",
+   "Una exportación BACPAC nocturna importada en la instancia administrada"
+  ],
+  "opts_en": [
+   "Log shipping to Blob storage",
+   "Elastic jobs",
+   "Managed Instance link",
+   "A nightly BACPAC export imported into the managed instance"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El vínculo usa grupos de disponibilidad distribuidos para replicar a Managed Instance y admite conmutación por error.",
+  "exp_en": "The link uses distributed availability groups to replicate to Managed Instance and supports failover."
+ },
+ {
+  "id": 375,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un servidor flexible de PostgreSQL debe escalar consultas de informes de lectura sin afectar al principal. ¿Qué debes diseñar?",
+  "q_en": "A PostgreSQL Flexible Server must scale read-heavy reporting queries without affecting the primary. What should you design?",
+  "opts_es": [
+   "Copia de seguridad con redundancia geográfica",
+   "Alta disponibilidad con redundancia de zona",
+   "Réplicas de lectura",
+   "Un nivel de proceso ampliable mayor para el servidor principal"
+  ],
+  "opts_en": [
+   "Geo-redundant backup",
+   "Zone-redundant high availability",
+   "Read replicas",
+   "A larger burstable compute tier for the primary server"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las réplicas de lectura atienden el tráfico de lectura de forma asíncrona; el servidor en espera de HA no admite lecturas.",
+  "exp_en": "Read replicas serve read traffic asynchronously; HA standby isn't readable."
+ },
+ {
+  "id": 376,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de datos relacionales, indica si es verdadera o falsa.",
+  "q_en": "For each statement about relational data design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las réplicas con nombre de Hyperscale pueden tener su propio tamaño de proceso.",
+    "en": "Hyperscale named replicas can have their own compute size.",
+    "ans": true
+   },
+   {
+    "es": "El vínculo de Managed Instance puede replicar desde SQL Server 2022.",
+    "en": "Managed Instance link can replicate from SQL Server 2022.",
+    "ans": true
+   },
+   {
+    "es": "El servidor en espera de HA de PostgreSQL flexible atiende consultas de lectura.",
+    "en": "The HA standby of PostgreSQL Flexible Server serves read queries.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Usa réplicas de lectura para escalar lecturas.",
+  "exp_en": "Use read replicas for read scale."
+ },
+ {
+  "id": 377,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los datos se consultan una vez al trimestre, deben seguir en línea y mantenerse al menos 90 días por cambio de nivel, con menor coste que Esporádico. ¿Qué nivel de blob encaja?",
+  "q_en": "Data is accessed about once a quarter, must stay online and be kept at least 90 days per tier change, at lower cost than Cool. Which blob tier fits?",
+  "opts_es": [
+   "Frío",
+   "Archivo, con rehidratación cuando se necesiten los datos",
+   "Premium",
+   "Frecuente"
+  ],
+  "opts_en": [
+   "Cold",
+   "Archive, with rehydration when the data is needed",
+   "Premium",
+   "Hot"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El nivel Frío está en línea con un mínimo de 90 días; Archivo está sin conexión y requiere rehidratación.",
+  "exp_en": "The Cold tier is online with a 90-day minimum; Archive is offline and needs rehydration."
+ },
+ {
+  "id": 378,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Los blobs deben pasar a Esporádico solo si nadie los ha leído en 60 días, no según la fecha de creación. ¿Qué debe usar la directiva de ciclo de vida?",
+  "q_en": "Blobs should move to Cool only if nobody has read them for 60 days, not based on creation date. What should the lifecycle policy use?",
+  "opts_es": [
+   "Eliminación temporal",
+   "Seguimiento de la hora del último acceso",
+   "Etiquetas de índice de blobs",
+   "Almacenamiento inmutable con retención de 60 días"
+  ],
+  "opts_en": [
+   "Soft delete",
+   "Last access time tracking",
+   "Blob index tags",
+   "Immutable storage with a 60-day time-based retention policy"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Con el seguimiento de acceso habilitado, las reglas pueden usar daysAfterLastAccessTimeGreaterThan.",
+  "exp_en": "With access tracking enabled, rules can use daysAfterLastAccessTimeGreaterThan."
+ },
+ {
+  "id": 379,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Un contenedor multiinquilino de Cosmos DB superaría el límite de partición lógica de 20 GB para inquilinos grandes particionados por TenantId. ¿Qué debes diseñar?",
+  "q_en": "A multitenant Cosmos DB container would exceed the 20 GB logical partition limit for large tenants partitioned by TenantId. What should you design?",
+  "opts_es": [
+   "Una cuenta de Cosmos DB por usuario",
+   "Un único valor de clave de partición para todos los datos",
+   "Claves de partición jerárquicas como TenantId y luego UserId",
+   "Rendimiento manual elevado al máximo para el contenedor"
+  ],
+  "opts_en": [
+   "A separate Cosmos DB account per user",
+   "A single partition key value for all data",
+   "Hierarchical partition keys such as TenantId then UserId",
+   "Manual throughput raised to the maximum for the container"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las claves jerárquicas subdividen los datos para que los inquilinos grandes superen 20 GB manteniendo las consultas dirigidas.",
+  "exp_en": "Hierarchical partition keys subpartition data so large tenants can exceed 20 GB while queries stay targeted."
+ },
+ {
+  "id": 380,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "AKS y las VM necesitan almacenamiento en bloque compartido a escala, administrado como grupo y conectado por iSCSI. ¿Qué servicio encaja?",
+  "q_en": "AKS and VMs need shared block storage at scale that is managed as a pool and attached over iSCSI. Which service fits?",
+  "opts_es": [
+   "Azure Elastic SAN",
+   "Azure Files estándar",
+   "Blob Storage con espacio de nombres jerárquico y NFS 3.0",
+   "Table Storage"
+  ],
+  "opts_en": [
+   "Azure Elastic SAN",
+   "Azure Files Standard",
+   "Blob storage with hierarchical namespace and NFS 3.0",
+   "Table storage"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Elastic SAN ofrece volúmenes en bloque tipo SAN por iSCSI con rendimiento agrupado.",
+  "exp_en": "Elastic SAN provides SAN-like block volumes over iSCSI with pooled performance."
+ },
+ {
+  "id": 381,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una simulación HPC necesita un sistema de archivos paralelo de rendimiento muy alto para miles de nodos. ¿Qué servicio debes recomendar?",
+  "q_en": "An HPC simulation needs a parallel file system with very high throughput for thousands of compute nodes. Which service should you recommend?",
+  "opts_es": [
+   "Azure Table Storage con una partición por nodo",
+   "Azure Managed Lustre",
+   "Azure Queue Storage",
+   "Azure Files estándar"
+  ],
+  "opts_en": [
+   "Azure Table storage with a partition per node",
+   "Azure Managed Lustre",
+   "Azure Queue storage",
+   "Azure Files Standard"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Managed Lustre es un sistema de archivos paralelo totalmente administrado para HPC y entrenamiento de IA.",
+  "exp_en": "Managed Lustre is a fully managed parallel file system for HPC and AI training."
+ },
+ {
+  "id": 382,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño del almacenamiento, indica si es verdadera o falsa.",
+  "q_en": "For each statement about storage design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El nivel Frío mantiene los datos en línea.",
+    "en": "The Cold tier keeps data online.",
+    "ans": true
+   },
+   {
+    "es": "Las reglas de ciclo de vida pueden usar la hora del último acceso de un blob.",
+    "en": "Lifecycle rules can use the last access time of a blob.",
+    "ans": true
+   },
+   {
+    "es": "Una partición lógica de Cosmos DB no tiene límite de tamaño.",
+    "en": "A Cosmos DB logical partition has no size limit.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Las particiones lógicas están limitadas a 20 GB; las claves jerárquicas ayudan.",
+  "exp_en": "Logical partitions are limited to 20 GB; hierarchical keys help."
+ },
+ {
+  "id": 383,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el servicio de almacenamiento para cada requisito.",
+  "q_en": "Select the storage service for each requirement.",
+  "rows": [
+   {
+    "es": "Sistema de archivos paralelo para un clúster de entrenamiento de IA",
+    "en": "Parallel file system for an AI training cluster",
+    "opts_es": [
+     "Nivel de blob Frío",
+     "Azure Elastic SAN",
+     "Azure NetApp Files",
+     "Azure Managed Lustre"
+    ],
+    "opts_en": [
+     "Cold blob tier",
+     "Azure Elastic SAN",
+     "Azure NetApp Files",
+     "Azure Managed Lustre"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Nivel en línea más barato para copias consultadas cada trimestre",
+    "en": "Cheapest online tier for quarterly-accessed backups",
+    "opts_es": [
+     "Nivel de blob Frío",
+     "Azure Elastic SAN",
+     "Azure NetApp Files",
+     "Azure Managed Lustre"
+    ],
+    "opts_en": [
+     "Cold blob tier",
+     "Azure Elastic SAN",
+     "Azure NetApp Files",
+     "Azure Managed Lustre"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "Lustre encaja con E/S paralela de HPC; Frío es el nivel en línea más barato.",
+  "exp_en": "Lustre suits parallel HPC I/O; Cold is the lowest-cost online tier."
+ },
+ {
+  "id": 384,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Los eventos de streaming de Event Hubs también deben guardarse automáticamente como archivos en Data Lake Storage para procesarlos por lotes. ¿Qué característica encaja?",
+  "q_en": "Streaming events in Event Hubs must also be stored automatically as files in Data Lake Storage for batch processing. Which feature fits?",
+  "opts_es": [
+   "Sesiones de Service Bus",
+   "Un grupo de consumidores que escriba cada evento en una cola",
+   "Suscripciones de Event Grid",
+   "Event Hubs Capture"
+  ],
+  "opts_en": [
+   "Service Bus sessions",
+   "A consumer group that writes each event to a queue",
+   "Event Grid subscriptions",
+   "Event Hubs Capture"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Capture escribe los eventos en Blob o ADLS en Avro o Parquet según una ventana de tiempo o tamaño.",
+  "exp_en": "Capture writes events to Blob or ADLS in Avro or Parquet on a time or size window."
+ },
+ {
+  "id": 385,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "La empresa debe catalogar recursos de datos de Azure, locales y otras nubes y mostrar el linaje para la gobernanza. ¿Qué servicio debes recomendar?",
+  "q_en": "The company must catalog data assets across Azure, on-premises and other clouds and show lineage for governance. Which service should you recommend?",
+  "opts_es": [
+   "Azure Resource Graph con etiquetas personalizadas para cada conjunto de datos",
+   "Azure Monitor",
+   "Microsoft Purview (Mapa de datos y Catálogo unificado)",
+   "Azure Backup"
+  ],
+  "opts_en": [
+   "Azure Resource Graph with custom tags for each dataset",
+   "Azure Monitor",
+   "Microsoft Purview (Data Map and Unified Catalog)",
+   "Azure Backup"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Purview examina orígenes, clasifica datos y captura el linaje de herramientas como Data Factory.",
+  "exp_en": "Purview scans sources, classifies data and captures lineage from tools such as Data Factory."
+ },
+ {
+  "id": 386,
+  "exam": "az-305",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de la integración de datos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about data integration design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Event Hubs Capture puede escribir eventos en Data Lake Storage.",
+    "en": "Event Hubs Capture can write events to Data Lake Storage.",
+    "ans": true
+   },
+   {
+    "es": "Microsoft Purview puede mostrar el linaje de los datos.",
+    "en": "Microsoft Purview can show data lineage.",
+    "ans": true
+   },
+   {
+    "es": "Event Hubs Capture requiere escribir una aplicación consumidora personalizada.",
+    "en": "Event Hubs Capture requires writing a custom consumer application.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Capture es una característica integrada que no requiere código.",
+  "exp_en": "Capture is a built-in, no-code feature."
+ },
+ {
+  "id": 387,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Los volúmenes persistentes y los recursos de Kubernetes de un clúster AKS deben protegerse y restaurarse con directivas. ¿Qué debes recomendar?",
+  "q_en": "An AKS cluster's persistent volumes and Kubernetes resources must be backed up and restored with policies. What should you recommend?",
+  "opts_es": [
+   "Azure Backup para AKS",
+   "Almacenamiento con redundancia geográfica solo para el registro de contenedores del clúster",
+   "Azure Site Recovery",
+   "Instantáneas de las VM de los nodos"
+  ],
+  "opts_en": [
+   "Azure Backup for AKS",
+   "Geo-redundant storage for the cluster's container registry only",
+   "Azure Site Recovery",
+   "Snapshots of the node VMs"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Azure Backup para AKS usa una extensión de copia para proteger el estado del clúster y los volúmenes persistentes.",
+  "exp_en": "Azure Backup for AKS uses a backup extension to protect cluster state and persistent volumes."
+ },
+ {
+  "id": 388,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Una VM crítica necesita varias copias al día con un RPO de 4 horas. ¿Qué opción de Azure Backup encaja?",
+  "q_en": "A critical VM needs several backups per day with an RPO of 4 hours. Which Azure Backup option fits?",
+  "opts_es": [
+   "Directiva de copia mejorada con frecuencia por horas",
+   "Nivel de archivo para todos los puntos de recuperación de más de una hora",
+   "Eliminación temporal",
+   "Directiva estándar con una copia diaria"
+  ],
+  "opts_en": [
+   "Enhanced backup policy with hourly frequency",
+   "Archive tier for all recovery points older than one hour",
+   "Soft delete",
+   "Standard policy with one daily backup"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las directivas mejoradas admiten varias copias al día (cada 4, 6, 8 o 12 horas).",
+  "exp_en": "Enhanced policies support multiple backups per day (every 4, 6, 8 or 12 hours)."
+ },
+ {
+  "id": 389,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "Una cuenta de Cosmos DB debe poder restaurarse a cualquier segundo de los últimos 30 días tras una eliminación accidental. ¿Qué debes configurar?",
+  "q_en": "A Cosmos DB account must be restorable to any second within the last 30 days after an accidental delete. What should you configure?",
+  "opts_es": [
+   "Modo de copia de seguridad continua",
+   "Copia periódica con intervalo de cuatro horas",
+   "Escrituras en varias regiones con conmutación automática a una segunda región",
+   "Almacén analítico"
+  ],
+  "opts_en": [
+   "Continuous backup mode",
+   "Periodic backup with a four-hour interval",
+   "Multi-region writes with automatic failover to a second region",
+   "Analytical store"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La copia continua habilita la restauración a un momento dado (7 o 30 días); la replicación no protege frente a eliminaciones.",
+  "exp_en": "Continuous backup enables point-in-time restore (7 or 30 days); replication doesn't protect against deletes."
+ },
+ {
+  "id": 390,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "mc",
+  "q_es": "La región principal de una cuenta de almacenamiento GRS no está disponible y la aplicación no puede esperar a Microsoft. ¿Qué puedes hacer?",
+  "q_en": "The primary region of a GRS storage account is unavailable and the app can't wait for Microsoft. What can you do?",
+  "opts_es": [
+   "Crear una cuenta nueva en la misma región",
+   "Habilitar la eliminación temporal",
+   "Iniciar una conmutación por error de la cuenta administrada por el cliente",
+   "Cambiar la redundancia a LRS en la región principal"
+  ],
+  "opts_en": [
+   "Create a new account in the same region",
+   "Enable soft delete",
+   "Initiate a customer-managed account failover",
+   "Change the redundancy to LRS in the primary region"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La conmutación administrada por el cliente convierte la secundaria en principal; pueden perderse escrituras recientes.",
+  "exp_en": "Customer-managed failover makes the secondary the new primary; some recent writes may be lost."
+ },
+ {
+  "id": 391,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de copias de seguridad y recuperación, indica si es verdadera o falsa.",
+  "q_en": "For each statement about backup and recovery design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las directivas mejoradas de VM permiten varias copias al día.",
+    "en": "Enhanced VM backup policies allow several backups per day.",
+    "ans": true
+   },
+   {
+    "es": "La replicación multirregión de Cosmos DB protege frente a eliminaciones accidentales.",
+    "en": "Cosmos DB multi-region replication protects against accidental deletes.",
+    "ans": false
+   },
+   {
+    "es": "Los clientes pueden iniciar una conmutación por error de la cuenta de almacenamiento.",
+    "en": "Customers can initiate a storage account failover.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Las eliminaciones también se replican; hace falta la restauración a un momento dado.",
+  "exp_en": "Deletes replicate too; point-in-time restore is needed."
+ },
+ {
+  "id": 392,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la opción de protección para cada requisito.",
+  "q_en": "Select the protection option for each requirement.",
+  "rows": [
+   {
+    "es": "Restaurar un contenedor de Cosmos DB eliminado hace dos horas",
+    "en": "Restore a Cosmos DB container deleted two hours ago",
+    "opts_es": [
+     "Copia de seguridad continua",
+     "Azure Backup para AKS",
+     "Directiva de copia mejorada",
+     "Conmutación administrada por el cliente"
+    ],
+    "opts_en": [
+     "Continuous backup",
+     "Azure Backup for AKS",
+     "Enhanced backup policy",
+     "Customer-managed failover"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Hacer copia de una VM cada cuatro horas",
+    "en": "Back up a VM every four hours",
+    "opts_es": [
+     "Copia de seguridad continua",
+     "Azure Backup para AKS",
+     "Directiva de copia mejorada",
+     "Conmutación administrada por el cliente"
+    ],
+    "opts_en": [
+     "Continuous backup",
+     "Azure Backup for AKS",
+     "Enhanced backup policy",
+     "Customer-managed failover"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "La copia continua da PITR; las directivas mejoradas dan programaciones por horas.",
+  "exp_en": "Continuous backup gives PITR; enhanced policies give hourly schedules."
+ },
+ {
+  "id": 393,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Un arquitecto debe validar que la solución sobrevive a la caída de una zona inyectando errores de forma controlada. ¿Qué servicio debe usarse?",
+  "q_en": "An architect must validate that the solution survives a zone outage by injecting faults in a controlled way. Which service should be used?",
+  "opts_es": [
+   "Recomendaciones de fiabilidad de Azure Advisor para la suscripción",
+   "Azure Chaos Studio",
+   "Service Health",
+   "Azure Load Testing"
+  ],
+  "opts_en": [
+   "Azure Advisor reliability recommendations for the subscription",
+   "Azure Chaos Studio",
+   "Service Health",
+   "Azure Load Testing"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Chaos Studio ejecuta experimentos como el apagado de VM o la caída de una zona para probar la resiliencia.",
+  "exp_en": "Chaos Studio runs experiments such as VM shutdown or zone-down to test resilience."
+ },
+ {
+  "id": 394,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Una configuración de equilibradores públicos regionales debe obtener una IP anycast global única con conmutación entre regiones en la capa 4. ¿Qué servicio encaja?",
+  "q_en": "A regional public load balancer setup must get a single global anycast IP with failover across regions at layer 4. Which service fits?",
+  "opts_es": [
+   "Load Balancer entre regiones (global)",
+   "Traffic Manager con un TTL de cero segundos",
+   "NAT Gateway",
+   "Application Gateway"
+  ],
+  "opts_en": [
+   "Cross-region (global) Load Balancer",
+   "Traffic Manager with a TTL of zero seconds",
+   "NAT Gateway",
+   "Application Gateway"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El nivel global de Azure Load Balancer se sitúa delante de los equilibradores regionales con una IP anycast estática.",
+  "exp_en": "The global tier of Azure Load Balancer fronts regional load balancers with one static anycast IP."
+ },
+ {
+  "id": 395,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Los errores transitorios de la base de datos provocan fallos de solicitudes. ¿Qué patrón debe implementar la aplicación?",
+  "q_en": "Transient database errors cause request failures. Which pattern should the application implement?",
+  "opts_es": [
+   "Migración strangler fig de la capa de base de datos",
+   "Solo cache-aside",
+   "Particionamiento",
+   "Reintento con espera exponencial y un disyuntor"
+  ],
+  "opts_en": [
+   "Strangler fig migration of the database layer",
+   "Cache-aside only",
+   "Sharding",
+   "Retry with exponential backoff and a circuit breaker"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los reintentos gestionan fallos breves; un disyuntor deja de llamar a una dependencia que falla para que se recupere.",
+  "exp_en": "Retries handle short glitches; a circuit breaker stops calls to a failing dependency to let it recover."
+ },
+ {
+  "id": 396,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "mc",
+  "q_es": "Una plataforma SaaS debe escalar a muchos clientes y limitar el impacto de los fallos implementando unidades idénticas e independientes. ¿Qué patrón encaja?",
+  "q_en": "A SaaS platform must scale to many customers and limit the blast radius of failures by deploying identical independent units. Which pattern fits?",
+  "opts_es": [
+   "Sellos de implementación",
+   "Una única base de datos global compartida por todos los clientes",
+   "Sidecar",
+   "Agregación de puerta de enlace"
+  ],
+  "opts_en": [
+   "Deployment stamps",
+   "A single global database shared by every customer",
+   "Sidecar",
+   "Gateway aggregation"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Cada sello aloja un subconjunto de inquilinos, así que un fallo solo afecta a ese sello.",
+  "exp_en": "Each stamp hosts a subset of tenants, so a failure affects only that stamp."
+ },
+ {
+  "id": 397,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de alta disponibilidad, indica si es verdadera o falsa.",
+  "q_en": "For each statement about high availability design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Chaos Studio puede simular errores para probar la resiliencia.",
+    "en": "Chaos Studio can simulate faults to test resilience.",
+    "ans": true
+   },
+   {
+    "es": "El Load Balancer global ofrece una IP anycast única entre regiones.",
+    "en": "The global Load Balancer provides a single anycast IP across regions.",
+    "ans": true
+   },
+   {
+    "es": "Un disyuntor sigue reintentando un servicio que falla lo más rápido posible.",
+    "en": "A circuit breaker keeps retrying a failing service as fast as possible.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Un disyuntor detiene las llamadas un tiempo cuando los fallos superan un umbral.",
+  "exp_en": "A circuit breaker stops calls for a while when failures exceed a threshold."
+ },
+ {
+  "id": 398,
+  "exam": "az-305",
+  "dom": 3,
+  "obj": "3.2",
+  "type": "sentence",
+  "pre_es": "Las copias independientes de toda la pila de la aplicación, cada una con un subconjunto de inquilinos, siguen el patrón de ",
+  "pre_en": "Independent copies of the full application stack, each serving a subset of tenants, follow the deployment ",
+  "post_es": " de implementación.",
+  "post_en": " pattern.",
+  "opts_es": [
+   "reglas",
+   "ranuras",
+   "anillos",
+   "sellos"
+  ],
+  "opts_en": [
+   "rules",
+   "slots",
+   "rings",
+   "stamps"
+  ],
+  "correct": 3,
+  "exp_es": "Los sellos también ayudan con la residencia de datos por región.",
+  "exp_en": "Stamps also help with data residency by region."
+ },
+ {
+  "id": 399,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Debe reducirse el gasto de proceso con un compromiso que pueda cambiar entre familias de VM y regiones durante tres años. ¿Qué opción encaja mejor?",
+  "q_en": "Compute spend must be lowered for a commitment that can shift between VM families and regions over three years. Which option fits best?",
+  "opts_es": [
+   "Plan de ahorro de Azure para proceso",
+   "Instancias reservadas de VM de un tamaño",
+   "Precios de desarrollo y pruebas",
+   "VM de acceso puntual para cargas de producción que no se pueden interrumpir"
+  ],
+  "opts_en": [
+   "Azure savings plan for compute",
+   "Reserved VM instances for one size",
+   "Dev/Test pricing",
+   "Spot VMs for the production workloads that can't be interrupted"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los planes de ahorro comprometen un gasto por hora y se aplican a servicios, tamaños y regiones; las reservas son más específicas.",
+  "exp_en": "Savings plans commit to an hourly spend and apply across services, sizes and regions; reservations are more specific."
+ },
+ {
+  "id": 400,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Una empresa debe trasladar cargas de VMware a Azure rápidamente manteniendo las herramientas y procesos de vSphere. ¿Qué servicio debes recomendar?",
+  "q_en": "A company must move VMware workloads to Azure quickly while keeping vSphere tools and processes. Which service should you recommend?",
+  "opts_es": [
+   "Azure VMware Solution",
+   "Azure Kubernetes Service con grupos de nodos Windows",
+   "Azure Virtual Desktop",
+   "Azure Batch"
+  ],
+  "opts_en": [
+   "Azure VMware Solution",
+   "Azure Kubernetes Service with Windows node pools",
+   "Azure Virtual Desktop",
+   "Azure Batch"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Azure VMware Solution ejecuta nubes privadas de VMware en hosts dedicados de Azure.",
+  "exp_en": "Azure VMware Solution runs VMware private clouds on dedicated Azure hosts."
+ },
+ {
+  "id": 401,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Una aplicación web necesita hospedaje de App Service totalmente aislado y de un solo inquilino dentro de una red virtual con gran escala. ¿Qué opción debes recomendar?",
+  "q_en": "A web app needs fully isolated, single-tenant App Service hosting inside a VNet with high scale. Which option should you recommend?",
+  "opts_es": [
+   "App Service Environment v3",
+   "Premium v3 con integración de red virtual solo para el tráfico saliente",
+   "Static Web Apps",
+   "Nivel gratuito"
+  ],
+  "opts_en": [
+   "App Service Environment v3",
+   "Premium v3 with VNet integration for outbound traffic only",
+   "Static Web Apps",
+   "Free tier"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "ASE v3 implementa App Service en tu subred sobre infraestructura dedicada.",
+  "exp_en": "ASE v3 deploys App Service into your subnet on dedicated infrastructure."
+ },
+ {
+  "id": 402,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "mc",
+  "q_es": "Las funciones deben escalar rápido desde cero, integrarse con una red virtual y permitir elegir el tamaño de memoria. ¿Qué plan de hospedaje encaja?",
+  "q_en": "Functions must scale fast from zero, integrate with a VNet and let you set instance memory size. Which hosting plan fits?",
+  "opts_es": [
+   "Container Instances",
+   "Plan dedicado de App Service con escalado automático desactivado",
+   "Consumo flexible",
+   "Consumo (clásico)"
+  ],
+  "opts_en": [
+   "Container Instances",
+   "Dedicated App Service plan with autoscale disabled",
+   "Flex Consumption",
+   "Consumption (classic)"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Consumo flexible agrega integración de red virtual, memoria configurable e instancias siempre listas a la facturación sin servidor.",
+  "exp_en": "Flex Consumption adds VNet integration, configurable memory and always-ready instances to serverless billing."
+ },
+ {
+  "id": 403,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño del proceso, indica si es verdadera o falsa.",
+  "q_en": "For each statement about compute design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los planes de ahorro se pueden aplicar entre familias de VM y regiones.",
+    "en": "Savings plans can apply across VM families and regions.",
+    "ans": true
+   },
+   {
+    "es": "Azure VMware Solution se ejecuta en hosts compartidos multiinquilino.",
+    "en": "Azure VMware Solution runs on shared multi-tenant hosts.",
+    "ans": false
+   },
+   {
+    "es": "App Service Environment v3 es de un solo inquilino.",
+    "en": "App Service Environment v3 is single-tenant.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Azure VMware Solution usa hosts dedicados sin sistema operativo.",
+  "exp_en": "Azure VMware Solution uses dedicated bare-metal hosts."
+ },
+ {
+  "id": 404,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la opción de proceso para cada requisito.",
+  "q_en": "Select the compute option for each requirement.",
+  "rows": [
+   {
+    "es": "Mantener vCenter y HCX al migrar a Azure",
+    "en": "Keep vCenter and HCX while migrating to Azure",
+    "opts_es": [
+     "Plan de ahorro",
+     "App Service Environment v3",
+     "Azure VMware Solution",
+     "Consumo flexible"
+    ],
+    "opts_en": [
+     "Savings plan",
+     "App Service Environment v3",
+     "Azure VMware Solution",
+     "Flex Consumption"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Funciones sin servidor con integración de red virtual y escala a cero",
+    "en": "Serverless functions with VNet integration and scale to zero",
+    "opts_es": [
+     "Plan de ahorro",
+     "App Service Environment v3",
+     "Azure VMware Solution",
+     "Consumo flexible"
+    ],
+    "opts_en": [
+     "Savings plan",
+     "App Service Environment v3",
+     "Azure VMware Solution",
+     "Flex Consumption"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "AVS conserva las herramientas de VMware; Consumo flexible combina integración de red con escala sin servidor.",
+  "exp_en": "AVS preserves VMware tooling; Flex Consumption combines VNet integration with serverless scale."
+ },
+ {
+  "id": 405,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Un flujo de aprobación de larga duración en código debe llamar a varias funciones, esperar una respuesta humana y sobrevivir a reinicios. ¿Qué debes recomendar?",
+  "q_en": "A long-running approval workflow in code must call several functions, wait for human input and survive restarts. What should you recommend?",
+  "opts_es": [
+   "Event Grid",
+   "Una única función desencadenada por HTTP",
+   "Azure Queue Storage con una función de temporizador que sondee cada segundo",
+   "Orquestaciones de Durable Functions"
+  ],
+  "opts_en": [
+   "Event Grid",
+   "A single HTTP-triggered function",
+   "Azure Queue storage with a timer function polling every second",
+   "Durable Functions orchestrations"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Durable Functions guarda puntos de control del estado y admite patrones de interacción humana y esperas largas.",
+  "exp_en": "Durable Functions checkpoints state, supports human interaction patterns and long waits."
+ },
+ {
+  "id": 406,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Una aplicación de chat debe enviar mensajes en tiempo real a miles de exploradores conectados por WebSockets sin administrar servidores. ¿Qué servicio encaja?",
+  "q_en": "A chat app must push real-time messages to thousands of connected browsers over WebSockets without managing servers. Which service fits?",
+  "opts_es": [
+   "Event Hubs con un grupo de consumidores por sesión de explorador",
+   "Azure Batch",
+   "Azure Web PubSub o Azure SignalR Service",
+   "Azure Queue Storage"
+  ],
+  "opts_en": [
+   "Event Hubs with a consumer group per browser session",
+   "Azure Batch",
+   "Azure Web PubSub or Azure SignalR Service",
+   "Azure Queue storage"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Estos servicios administran conexiones persistentes de clientes y difunden mensajes a escala.",
+  "exp_en": "These services manage persistent client connections and broadcast messages at scale."
+ },
+ {
+  "id": 407,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "mc",
+  "q_es": "Un front-end estático de React con una API sin servidor debe hospedarse con distribución global y autenticación integrada. ¿Qué servicio encaja?",
+  "q_en": "A static React front end with a serverless API must be hosted with global distribution and built-in authentication. Which service fits?",
+  "opts_es": [
+   "Azure Batch",
+   "Azure Static Web Apps",
+   "App Service Environment v3 con una subred dedicada",
+   "Azure Virtual Machines"
+  ],
+  "opts_en": [
+   "Azure Batch",
+   "Azure Static Web Apps",
+   "App Service Environment v3 with a dedicated subnet",
+   "Azure Virtual Machines"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Static Web Apps hospeda contenido estático globalmente e integra API basadas en Functions y proveedores de autenticación.",
+  "exp_en": "Static Web Apps hosts static content globally and integrates Functions-based APIs and auth providers."
+ },
+ {
+  "id": 408,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la arquitectura de aplicaciones, indica si es verdadera o falsa.",
+  "q_en": "For each statement about application architecture, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Durable Functions puede esperar eventos externos como aprobaciones.",
+    "en": "Durable Functions can wait for external events such as approvals.",
+    "ans": true
+   },
+   {
+    "es": "Azure Web PubSub administra conexiones WebSocket a escala.",
+    "en": "Azure Web PubSub manages WebSocket connections at scale.",
+    "ans": true
+   },
+   {
+    "es": "Static Web Apps requiere administrar máquinas virtuales.",
+    "en": "Static Web Apps requires managing virtual machines.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Static Web Apps está totalmente administrado.",
+  "exp_en": "Static Web Apps is fully managed."
+ },
+ {
+  "id": 409,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "La dirección quiere comparar el coste de los servidores locales actuales con Azure, incluido el ahorro a lo largo del tiempo, antes de migrar. ¿Qué característica de Azure Migrate encaja?",
+  "q_en": "Leadership wants a cost comparison of running current on-premises servers versus Azure, including savings over time, before migrating. Which Azure Migrate feature fits?",
+  "opts_es": [
+   "Visualización de dependencias de cada grupo de servidores del proyecto",
+   "Pedido de Data Box",
+   "Caso de negocio",
+   "Replicación de servidores"
+  ],
+  "opts_en": [
+   "Dependency visualization for every server group in the project",
+   "Data Box ordering",
+   "Business case",
+   "Server replication"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El caso de negocio compara el TCO local y en Azure y proyecta el ahorro.",
+  "exp_en": "The business case compares on-premises and Azure TCO and projects savings."
+ },
+ {
+  "id": 410,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "mc",
+  "q_es": "Los servidores que se comunican entre sí deben migrarse en la misma oleada. ¿Qué capacidad de Azure Migrate los identifica sin instalar agentes?",
+  "q_en": "Servers that talk to each other must be migrated in the same wave. Which Azure Migrate capability identifies them without installing agents?",
+  "opts_es": [
+   "Análisis de dependencias sin agentes",
+   "Conmutación de prueba de Azure Site Recovery a una red aislada",
+   "Caso de negocio",
+   "Cost Management"
+  ],
+  "opts_en": [
+   "Agentless dependency analysis",
+   "Azure Site Recovery test failover to an isolated network",
+   "Business case",
+   "Cost Management"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El análisis de dependencias sin agentes recopila datos de conexiones TCP mediante el dispositivo.",
+  "exp_en": "Agentless dependency analysis collects TCP connection data through the appliance."
+ },
+ {
+  "id": 411,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la herramienta de migración para cada requisito.",
+  "q_en": "Select the migration tool for each requirement.",
+  "rows": [
+   {
+    "es": "Agrupar servidores en oleadas según sus conexiones de red",
+    "en": "Group servers into waves based on network connections",
+    "opts_es": [
+     "Análisis de dependencias sin agentes",
+     "Azure Storage Mover",
+     "Caso de negocio",
+     "Data Box"
+    ],
+    "opts_en": [
+     "Agentless dependency analysis",
+     "Azure Storage Mover",
+     "Business case",
+     "Data Box"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Mostrar el ahorro previsto de pasar a Azure",
+    "en": "Show projected savings of moving to Azure",
+    "opts_es": [
+     "Análisis de dependencias sin agentes",
+     "Azure Storage Mover",
+     "Caso de negocio",
+     "Data Box"
+    ],
+    "opts_en": [
+     "Agentless dependency analysis",
+     "Azure Storage Mover",
+     "Business case",
+     "Data Box"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las dependencias guían las oleadas; el caso de negocio estima el ahorro.",
+  "exp_en": "Dependencies guide waves; the business case estimates savings."
+ },
+ {
+  "id": 412,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "Los DNS locales deben resolver nombres de puntos de conexión privados de Azure y las VM de Azure nombres locales, sin VM de DNS. ¿Qué debes recomendar?",
+  "q_en": "On-premises DNS servers must resolve Azure private endpoint names, and Azure VMs must resolve on-premises names, without DNS VMs. What should you recommend?",
+  "opts_es": [
+   "Azure DNS Private Resolver con puntos de conexión de entrada y salida",
+   "NAT Gateway",
+   "Zonas DNS públicas con reenvío condicional a internet",
+   "Azure Traffic Manager"
+  ],
+  "opts_en": [
+   "Azure DNS Private Resolver with inbound and outbound endpoints",
+   "NAT Gateway",
+   "Public DNS zones with conditional forwarding to the internet",
+   "Azure Traffic Manager"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El punto de entrada de Private Resolver recibe consultas locales; los conjuntos de reglas de salida reenvían a los DNS locales.",
+  "exp_en": "Private Resolver's inbound endpoint receives on-premises queries; outbound forwarding rulesets send queries to on-premises DNS."
+ },
+ {
+  "id": 413,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "Una aplicación virtual de red debe intercambiar rutas de forma dinámica con las redes virtuales de Azure mediante BGP. ¿Qué servicio lo permite?",
+  "q_en": "A network virtual appliance must exchange routes dynamically with Azure virtual networks using BGP. Which service enables this?",
+  "opts_es": [
+   "Azure Firewall Manager con una directiva de firewall",
+   "Azure Route Server",
+   "Solo rutas definidas por el usuario",
+   "Private Link"
+  ],
+  "opts_en": [
+   "Azure Firewall Manager with a firewall policy",
+   "Azure Route Server",
+   "User-defined routes only",
+   "Private Link"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Route Server establece emparejamiento BGP con las NVA y programa en la red virtual las rutas aprendidas.",
+  "exp_en": "Route Server peers with NVAs over BGP and programs learned routes into the VNet."
+ },
+ {
+  "id": 414,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "mc",
+  "q_es": "Las reglas de conectividad y de administración de seguridad deben aplicarse de forma central a cientos de redes virtuales de varias suscripciones. ¿Qué servicio debes recomendar?",
+  "q_en": "Connectivity and security admin rules must be applied centrally to hundreds of virtual networks across subscriptions. Which service should you recommend?",
+  "opts_es": [
+   "Network Watcher",
+   "Un grupo de seguridad de red asociado manualmente a cada subred",
+   "Azure Virtual Network Manager",
+   "Azure Bastion"
+  ],
+  "opts_en": [
+   "Network Watcher",
+   "A network security group attached to each subnet manually",
+   "Azure Virtual Network Manager",
+   "Azure Bastion"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Virtual Network Manager agrupa redes virtuales e implementa topologías y reglas de administración de seguridad a escala.",
+  "exp_en": "Virtual Network Manager groups VNets and deploys topologies and security admin rules at scale."
+ },
+ {
+  "id": 415,
+  "exam": "az-305",
+  "dom": 4,
+  "obj": "4.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre el diseño de red, indica si es verdadera o falsa.",
+  "q_en": "For each statement about network design, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "DNS Private Resolver puede reenviar consultas a DNS locales.",
+    "en": "DNS Private Resolver can forward queries to on-premises DNS.",
+    "ans": true
+   },
+   {
+    "es": "Route Server intercambia rutas con NVA mediante BGP.",
+    "en": "Route Server exchanges routes with NVAs using BGP.",
+    "ans": true
+   },
+   {
+    "es": "Virtual Network Manager solo puede administrar una red virtual.",
+    "en": "Virtual Network Manager can only manage one virtual network.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Virtual Network Manager está pensado para muchas redes virtuales de varias suscripciones.",
+  "exp_en": "Virtual Network Manager is built for many VNets across subscriptions."
  }
 ]
