@@ -8983,5 +8983,2655 @@
   ],
   "exp_es": "Los nombres son cadenas; las listas de artículos son matrices.",
   "exp_en": "Names are strings; item lists are arrays."
+ },
+ {
+  "id": 303,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "El enfoque de Microsoft para una IA generativa responsable sigue cuatro fases. ¿Cuál va primero?",
+  "q_en": "Microsoft's approach to responsible generative AI follows four stages. Which stage comes first?",
+  "opts_es": [
+   "Operar la solución con un plan de respuesta",
+   "Medir los daños con evaluaciones",
+   "Mitigar los daños con filtros y fundamentación",
+   "Identificar (mapear) los posibles daños"
+  ],
+  "opts_en": [
+   "Operate the solution with a response plan",
+   "Measure harms with evaluations",
+   "Mitigate harms with filters and grounding",
+   "Identify (map) potential harms"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las fases son identificar (mapear), medir, mitigar y operar (administrar): no puedes medir ni mitigar daños que no has identificado.",
+  "exp_en": "The stages are identify (map), measure, mitigate and operate (manage): you cannot measure or mitigate harms you have not identified."
+ },
+ {
+  "id": 304,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué capa de seguridad de contenido agrega reglas al mensaje del sistema, como 'responde solo con las fuentes proporcionadas'?",
+  "q_en": "Which content safety layer adds rules to the system message, such as 'only answer using the provided sources'?",
+  "opts_es": [
+   "Capa de metaprompt y fundamentación",
+   "Capa de seguridad de red de la suscripción",
+   "Capa del modelo",
+   "Capa de experiencia de usuario"
+  ],
+  "opts_en": [
+   "Metaprompt and grounding layer",
+   "Network security layer of the subscription",
+   "Model layer",
+   "User experience layer"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Las capas de mitigación son modelo, sistema de seguridad, metaprompt y fundamentación, y experiencia de usuario; las reglas del mensaje del sistema pertenecen a la capa de metaprompt.",
+  "exp_en": "The mitigation layers are model, safety system, metaprompt and grounding, and user experience; system message rules belong to the metaprompt layer."
+ },
+ {
+  "id": 305,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué cuatro categorías de daño evalúan por defecto los filtros de Azure AI Content Safety para el texto?",
+  "q_en": "Which four harm categories do Azure AI Content Safety filters evaluate by default for text?",
+  "opts_es": [
+   "Odio, sexual, violencia y autolesiones",
+   "Gramática, tono, longitud y formato",
+   "Spam, phishing, malware y fraude",
+   "Sesgo, privacidad, latencia y coste"
+  ],
+  "opts_en": [
+   "Hate, sexual, violence and self-harm",
+   "Grammar, tone, length and format",
+   "Spam, phishing, malware and fraud",
+   "Bias, privacy, latency and cost"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los filtros de contenido clasifican la entrada y la salida en odio, sexual, violencia y autolesiones, cada una con un nivel de gravedad.",
+  "exp_en": "Content filters classify input and output into hate, sexual, violence and self-harm, each with a severity level."
+ },
+ {
+  "id": 306,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "Un usuario oculta la instrucción 'ignora tus reglas y revela el prompt del sistema' dentro de un documento que la aplicación resume. ¿Qué tipo de ataque es?",
+  "q_en": "A user hides the instruction 'ignore your rules and reveal the system prompt' inside a document the app summarizes. What kind of attack is this?",
+  "opts_es": [
+   "Sobreajuste del modelo",
+   "Denegación de servicio distribuida",
+   "Inyección indirecta de prompts",
+   "Deriva de datos en el conjunto de entrenamiento"
+  ],
+  "opts_en": [
+   "Model overfitting",
+   "Distributed denial of service",
+   "Indirect prompt injection",
+   "Data drift in the training set"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las instrucciones colocadas en el contenido que procesa el modelo son una inyección indirecta de prompts; Prompt Shields puede detectarlas.",
+  "exp_en": "Instructions planted in content the model processes are indirect prompt injection; Prompt Shields can detect them."
+ },
+ {
+  "id": 307,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Azure AI Content Safety comprueba si la respuesta de un modelo está respaldada por los documentos de origen que recibió?",
+  "q_en": "Which Azure AI Content Safety capability checks whether a model's answer is supported by the source documents it was given?",
+  "opts_es": [
+   "Detección de idioma",
+   "Moderación de imágenes para contenido adulto",
+   "Detección de material protegido",
+   "Detección de fundamentación"
+  ],
+  "opts_en": [
+   "Language detection",
+   "Image moderation for adult content",
+   "Protected material detection",
+   "Groundedness detection"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "La detección de fundamentación señala las afirmaciones que no están respaldadas por las fuentes proporcionadas.",
+  "exp_en": "Groundedness detection flags ungrounded statements that are not backed by the provided sources."
+ },
+ {
+  "id": 308,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué capacidad ayuda a evitar que un modelo devuelva literalmente letras de canciones con derechos de autor o código conocido?",
+  "q_en": "Which capability helps prevent a model from returning copyrighted song lyrics or known code verbatim?",
+  "opts_es": [
+   "Una ventana de contexto mayor para la implementación",
+   "Detección de fundamentación",
+   "Detección de material protegido",
+   "Un valor de temperatura más alto"
+  ],
+  "opts_en": [
+   "A larger context window for the deployment",
+   "Groundedness detection",
+   "Protected material detection",
+   "A higher temperature setting"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La detección de material protegido identifica texto y código conocidos en la salida del modelo para bloquearlos o citarlos.",
+  "exp_en": "Protected material detection identifies known text and code in model output so it can be blocked or cited."
+ },
+ {
+  "id": 309,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué práctica ayuda a reconocer que una imagen se creó con IA?",
+  "q_en": "Which practice helps people recognize that an image was created by AI?",
+  "opts_es": [
+   "Comprimir la imagen como JPEG antes de compartirla",
+   "Credenciales de contenido con metadatos de procedencia",
+   "Menor resolución de imagen",
+   "Un nombre de archivo aleatorio"
+  ],
+  "opts_en": [
+   "Compressing the image as JPEG before sharing it",
+   "Content credentials with provenance metadata",
+   "Lower image resolution",
+   "A random file name"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las credenciales de contenido (C2PA) adjuntan información de procedencia firmada que indica que la imagen se generó con IA.",
+  "exp_en": "Content credentials (C2PA) attach signed provenance information that shows the image was AI-generated."
+ },
+ {
+  "id": 310,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "mc",
+  "q_es": "¿Qué documento de Microsoft explica cómo funciona un servicio de IA, sus usos previstos, sus limitaciones y cómo usarlo de forma responsable?",
+  "q_en": "Which document from Microsoft explains how an AI service works, its intended uses, its limitations and how to use it responsibly?",
+  "opts_es": [
+   "Un registro de cambios de versión",
+   "Un acuerdo de nivel de servicio",
+   "Una estimación de la calculadora de precios para la región",
+   "Una nota de transparencia"
+  ],
+  "opts_en": [
+   "A release changelog",
+   "A service level agreement",
+   "A pricing calculator estimate for the region",
+   "A transparency note"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las notas de transparencia apoyan el principio de transparencia al documentar capacidades y limitaciones.",
+  "exp_en": "Transparency notes support the transparency principle by documenting capabilities and limitations."
+ },
+ {
+  "id": 311,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la seguridad del contenido en Foundry, indica si es verdadera o falsa.",
+  "q_en": "For each statement about content safety in Foundry, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los filtros de contenido pueden evaluar tanto el prompt como la respuesta.",
+    "en": "Content filters can evaluate both the prompt and the completion.",
+    "ans": true
+   },
+   {
+    "es": "Cada categoría de daño se puntúa con un nivel de gravedad.",
+    "en": "Each harm category is scored with a severity level.",
+    "ans": true
+   },
+   {
+    "es": "Prompt Shields solo comprueba la salida del modelo, nunca la entrada del usuario.",
+    "en": "Prompt Shields only check the model's output, never the user input.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los filtros se ejecutan sobre la entrada y la salida con niveles de gravedad; Prompt Shields analiza prompts y documentos en busca de ataques.",
+  "exp_en": "Filters run on input and output with severity levels; Prompt Shields analyze user prompts and documents for attacks."
+ },
+ {
+  "id": 312,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la planificación de una solución de IA generativa responsable, indica si es verdadera o falsa.",
+  "q_en": "For each statement about planning a responsible generative AI solution, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los daños deben identificarse y priorizarse antes del lanzamiento.",
+    "en": "Harms should be identified and prioritized before release.",
+    "ans": true
+   },
+   {
+    "es": "Una vez implementadas las mitigaciones, ya no hace falta supervisar.",
+    "en": "Once mitigations are deployed, monitoring is no longer needed.",
+    "ans": false
+   },
+   {
+    "es": "Un lanzamiento por fases a un grupo limitado de usuarios puede reducir el riesgo.",
+    "en": "A phased rollout to a limited group of users can reduce risk.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La IA responsable es continua: identificar, medir, mitigar y operar con supervisión y lanzamiento gradual.",
+  "exp_en": "Responsible AI is continuous: identify, measure, mitigate, then operate with monitoring and incremental release."
+ },
+ {
+  "id": 313,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la capa de mitigación para cada acción.",
+  "q_en": "Select the mitigation layer for each action.",
+  "rows": [
+   {
+    "es": "Activar filtros de contenido en una implementación",
+    "en": "Turn on content filters for a deployment",
+    "opts_es": [
+     "Metaprompt y fundamentación",
+     "Modelo",
+     "Experiencia de usuario",
+     "Sistema de seguridad"
+    ],
+    "opts_en": [
+     "Metaprompt and grounding",
+     "Model",
+     "User experience",
+     "Safety system"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Mostrar un aviso de que las respuestas pueden ser inexactas",
+    "en": "Show a notice that answers may be inaccurate",
+    "opts_es": [
+     "Metaprompt y fundamentación",
+     "Modelo",
+     "Experiencia de usuario",
+     "Sistema de seguridad"
+    ],
+    "opts_en": [
+     "Metaprompt and grounding",
+     "Model",
+     "User experience",
+     "Safety system"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Los filtros de contenido forman parte del sistema de seguridad; los avisos en la interfaz pertenecen a la capa de experiencia de usuario.",
+  "exp_en": "Content filters are part of the safety system; UI notices and disclaimers belong to the user experience layer."
+ },
+ {
+  "id": 314,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.1",
+  "type": "sentence",
+  "pre_es": "Detectar intentos de que un modelo ignore su mensaje del sistema es tarea de ",
+  "pre_en": "Detecting attempts to make a model ignore its system message is the job of ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "la detección de idioma",
+   "la diarización de hablantes",
+   "la detección de fundamentación",
+   "Prompt Shields"
+  ],
+  "opts_en": [
+   "language detection",
+   "speaker diarization",
+   "groundedness detection",
+   "Prompt Shields"
+  ],
+  "correct": 3,
+  "exp_es": "Prompt Shields detecta ataques de jailbreak (directos) y de inyección indirecta de prompts.",
+  "exp_en": "Prompt Shields detect jailbreak (direct) and indirect prompt injection attacks."
+ },
+ {
+  "id": 315,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué es un modelo fundacional?",
+  "q_en": "What is a foundation model?",
+  "opts_es": [
+   "Un modelo pequeño basado en reglas para una tarea",
+   "Un modelo entrenado solo con los documentos de una empresa",
+   "Un modelo grande preentrenado con datos amplios que se adapta a muchas tareas",
+   "Una base de datos de respuestas"
+  ],
+  "opts_en": [
+   "A small rule-based model for one task",
+   "A model trained only on one company's documents",
+   "A large model pretrained on broad data that can be adapted to many tasks",
+   "A database of answers"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los modelos fundacionales, como los GPT, se preentrenan con enormes conjuntos de datos y se usan con prompts, RAG o ajuste fino.",
+  "exp_en": "Foundation models such as GPT models are pretrained on huge datasets and then used through prompting, RAG or fine-tuning."
+ },
+ {
+  "id": 316,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué mecanismo de la arquitectura transformer permite a un modelo ponderar la relevancia de cada token respecto a los demás de una secuencia?",
+  "q_en": "Which mechanism in the transformer architecture lets a model weigh how relevant each token is to the others in a sequence?",
+  "opts_es": [
+   "Atención",
+   "Tokenización",
+   "Retropropagación por el conjunto de entrenamiento",
+   "Cuantización"
+  ],
+  "opts_en": [
+   "Attention",
+   "Tokenization",
+   "Backpropagation through the training set",
+   "Quantization"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La autoatención calcula cuánto debe atender cada token a los demás y así captura el contexto.",
+  "exp_en": "Self-attention computes how much each token should attend to every other token, capturing context."
+ },
+ {
+  "id": 317,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Aproximadamente cuánto texto en inglés representa un token de media?",
+  "q_en": "Roughly how much English text does one token represent on average?",
+  "opts_es": [
+   "Un byte de un archivo comprimido",
+   "Un párrafo completo",
+   "Exactamente una frase",
+   "Unos cuatro caracteres o tres cuartos de palabra"
+  ],
+  "opts_en": [
+   "One byte of a compressed file",
+   "One full paragraph",
+   "Exactly one sentence",
+   "About four characters or three-quarters of a word"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Una regla práctica habitual es unos 4 caracteres o 0,75 palabras por token en inglés.",
+  "exp_en": "A common rule of thumb is about 4 characters or 0.75 words per token in English."
+ },
+ {
+  "id": 318,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Por qué un modelo puede dar respuestas desactualizadas sobre hechos muy recientes?",
+  "q_en": "Why can a model give outdated answers about very recent events?",
+  "opts_es": [
+   "Los embeddings caducan tras una semana",
+   "La implementación usa demasiados tokens por minuto",
+   "La temperatura es demasiado baja",
+   "Su conocimiento se detiene en la fecha de corte de sus datos"
+  ],
+  "opts_en": [
+   "Embeddings expire after a week",
+   "The deployment uses too many tokens per minute",
+   "The temperature is too low",
+   "Its knowledge stops at its training data cutoff"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los modelos solo saben lo que había en sus datos de entrenamiento; fundamentar con búsqueda o RAG añade información actual.",
+  "exp_en": "Models only know what was in their training data; grounding with search or RAG adds current information."
+ },
+ {
+  "id": 319,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Cómo se suele medir la similitud entre dos embeddings?",
+  "q_en": "How is the similarity between two embeddings commonly measured?",
+  "opts_es": [
+   "Temperatura",
+   "Similitud del coseno",
+   "Comparar tamaños de archivo",
+   "Contar los caracteres coincidentes en ambos textos"
+  ],
+  "opts_en": [
+   "Temperature",
+   "Cosine similarity",
+   "Comparing file sizes",
+   "Counting matching characters in both texts"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los embeddings son vectores; la similitud del coseno mide lo cerca que están sus direcciones, así que los significados parecidos puntúan más alto.",
+  "exp_en": "Embeddings are vectors; cosine similarity measures how close their directions are, so similar meanings score higher."
+ },
+ {
+  "id": 320,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué tipo de implementación de Foundry procesa grandes volúmenes de solicitudes de forma asíncrona y a menor coste, devolviendo los resultados más tarde?",
+  "q_en": "Which Foundry deployment type processes large volumes of requests asynchronously at a lower cost, with results returned later?",
+  "opts_es": [
+   "Proceso administrado con GPU",
+   "Implementación estándar con streaming activado",
+   "Rendimiento aprovisionado",
+   "Implementación por lotes"
+  ],
+  "opts_en": [
+   "Managed compute with GPUs",
+   "Standard deployment with streaming enabled",
+   "Provisioned throughput",
+   "Batch deployment"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las implementaciones por lotes cambian latencia por coste: los trabajos terminan en una ventana objetivo (normalmente 24 horas) con descuento.",
+  "exp_en": "Batch deployments trade latency for cost: jobs complete within a target window (typically 24 hours) at a discount."
+ },
+ {
+  "id": 321,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué opción de Foundry elige automáticamente el modelo de chat más adecuado para cada prompt para equilibrar coste y calidad?",
+  "q_en": "Which Foundry option automatically chooses the most suitable underlying chat model for each prompt to balance cost and quality?",
+  "opts_es": [
+   "Enrutador de modelos",
+   "Implementación por lotes",
+   "Filtro de contenido",
+   "Un valor de max tokens mayor en cada solicitud"
+  ],
+  "opts_en": [
+   "Model router",
+   "Batch deployment",
+   "Content filter",
+   "A larger max tokens value on every request"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "El enrutador de modelos se implementa como un modelo y envía cada solicitud a un modelo acorde con su complejidad.",
+  "exp_en": "Model router is deployed like a model and routes each request to a model that fits its complexity."
+ },
+ {
+  "id": 322,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué afirmación sobre el coste de una implementación estándar (pago por uso) es correcta?",
+  "q_en": "Which statement about the cost of using a standard (pay-as-you-go) model deployment is correct?",
+  "opts_es": [
+   "Solo se factura el número de solicitudes",
+   "Es gratis por debajo de 1000 solicitudes al día",
+   "Solo se factura el tamaño del modelo",
+   "Se facturan los tokens de entrada y salida, que pueden tener precios distintos"
+  ],
+  "opts_en": [
+   "Only the number of requests is billed",
+   "It is free below 1,000 requests per day",
+   "Only the size of the model is billed",
+   "Input and output tokens are billed and can have different prices"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las implementaciones estándar cobran por token; los tokens de salida suelen ser más caros que los de entrada.",
+  "exp_en": "Standard deployments charge per token; output tokens are usually more expensive than input tokens."
+ },
+ {
+  "id": 323,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "Un modelo debe aprender un estilo de salida muy concreto a partir de cientos de ejemplos etiquetados que no caben en un prompt. ¿Qué enfoque encaja mejor?",
+  "q_en": "A model needs to learn a very specific output style from hundreds of labeled examples that do not fit in a prompt. Which approach fits best?",
+  "opts_es": [
+   "Subir la temperatura",
+   "Prompts few-shot pegando todos los ejemplos",
+   "Ajuste fino",
+   "Agregar una secuencia de parada"
+  ],
+  "opts_en": [
+   "Raising the temperature",
+   "Few-shot prompting with every example pasted in",
+   "Fine-tuning",
+   "Adding a stop sequence"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El ajuste fino entrena con muchos ejemplos para que el comportamiento se aprenda en lugar de repetirse en cada prompt.",
+  "exp_en": "Fine-tuning trains on many examples so the behavior is learned instead of repeated in every prompt."
+ },
+ {
+  "id": 324,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "mc",
+  "q_es": "¿Qué son los modelos de pesos abiertos del catálogo de modelos de Foundry?",
+  "q_en": "What are open-weight models in the Foundry model catalog?",
+  "opts_es": [
+   "Modelos sin ningún término de licencia",
+   "Modelos cuyos pesos entrenados se publican para que otros los ejecuten y adapten",
+   "Modelos que no necesitan proceso",
+   "Modelos que solo se pueden usar en el área de juegos para probar"
+  ],
+  "opts_en": [
+   "Models without any license terms",
+   "Models whose trained weights are published for others to run and adapt",
+   "Models that require no compute",
+   "Models that can only be used in the playground for testing"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los modelos de pesos abiertos (por ejemplo Llama, Mistral o Phi) publican sus pesos, pero siguen teniendo licencias y necesitan proceso.",
+  "exp_en": "Open-weight models (for example Llama, Mistral or Phi) publish their weights, but they still have licenses and need compute."
+ },
+ {
+  "id": 325,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los tokens y el contexto, indica si es verdadera o falsa.",
+  "q_en": "For each statement about tokens and context, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "El prompt y la respuesta cuentan para la ventana de contexto.",
+    "en": "The prompt and the response both count toward the context window.",
+    "ans": true
+   },
+   {
+    "es": "Cada palabra es siempre exactamente un token.",
+    "en": "Every word is always exactly one token.",
+    "ans": false
+   },
+   {
+    "es": "Los historiales de conversación largos aumentan los tokens enviados por solicitud.",
+    "en": "Long conversation histories increase the tokens sent per request.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los tokens son unidades de subpalabra; toda la conversación más la respuesta deben caber en la ventana de contexto.",
+  "exp_en": "Tokens are subword units; the whole conversation plus the answer must fit in the context window."
+ },
+ {
+  "id": 326,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los embeddings, indica si es verdadera o falsa.",
+  "q_en": "For each statement about embeddings, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Los textos con significado parecido generan vectores cercanos.",
+    "en": "Texts with similar meaning produce vectors that are close together.",
+    "ans": true
+   },
+   {
+    "es": "Los embeddings los genera un modelo de embeddings específico.",
+    "en": "Embeddings are generated by a dedicated embedding model.",
+    "ans": true
+   },
+   {
+    "es": "Un embedding guarda el texto original para poder leerlo después.",
+    "en": "An embedding stores the original text so it can be read back.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los embeddings son vectores numéricos que capturan el significado; no contienen el texto original, por eso se guarda junto a ellos.",
+  "exp_en": "Embeddings are numeric vectors capturing meaning; they do not contain the original text, so you store it alongside them."
+ },
+ {
+  "id": 327,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el tipo de implementación para cada requisito.",
+  "q_en": "Select the deployment type for each requirement.",
+  "rows": [
+   {
+    "es": "Puntuar un millón de documentos durante la noche al menor coste",
+    "en": "Score a million documents overnight at the lowest cost",
+    "opts_es": [
+     "Proceso administrado",
+     "Estándar (pago por token)",
+     "Rendimiento aprovisionado",
+     "Por lotes"
+    ],
+    "opts_en": [
+     "Managed compute",
+     "Standard (pay per token)",
+     "Provisioned throughput",
+     "Batch"
+    ],
+    "correct": 3
+   },
+   {
+    "es": "Crear un prototipo con tráfico bajo e impredecible",
+    "en": "Prototype an app with unpredictable, low traffic",
+    "opts_es": [
+     "Proceso administrado",
+     "Estándar (pago por token)",
+     "Rendimiento aprovisionado",
+     "Por lotes"
+    ],
+    "opts_en": [
+     "Managed compute",
+     "Standard (pay per token)",
+     "Provisioned throughput",
+     "Batch"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Por lotes encaja con grandes trabajos sin conexión; el estándar de pago por token encaja con tráfico bajo y variable.",
+  "exp_en": "Batch suits large offline jobs; standard pay-per-token suits variable, low traffic."
+ },
+ {
+  "id": 328,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "dropdown",
+  "q_es": "Selecciona el término para cada descripción.",
+  "q_en": "Select the term for each description.",
+  "rows": [
+   {
+    "es": "Usar un modelo implementado para generar una respuesta a un prompt",
+    "en": "Using a deployed model to generate a response to a prompt",
+    "opts_es": [
+     "Ajuste fino",
+     "Inferencia",
+     "Preentrenamiento",
+     "Fundamentación"
+    ],
+    "opts_en": [
+     "Fine-tuning",
+     "Inference",
+     "Pretraining",
+     "Grounding"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Entrenar un modelo con enormes datos generales antes de personalizarlo",
+    "en": "Training a model on huge general datasets before any customization",
+    "opts_es": [
+     "Ajuste fino",
+     "Inferencia",
+     "Preentrenamiento",
+     "Fundamentación"
+    ],
+    "opts_en": [
+     "Fine-tuning",
+     "Inference",
+     "Pretraining",
+     "Grounding"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "La inferencia es ejecutar el modelo; el preentrenamiento crea el modelo base antes del ajuste fino o la fundamentación.",
+  "exp_en": "Inference is running the model; pretraining builds the base model before fine-tuning or grounding."
+ },
+ {
+  "id": 329,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.2",
+  "type": "sentence",
+  "pre_es": "El texto con un significado muy parecido tiene embeddings con una alta ",
+  "pre_en": "Text that is very similar in meaning has embeddings with a high ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "similitud del coseno",
+   "temperatura",
+   "cantidad de tokens",
+   "latencia"
+  ],
+  "opts_en": [
+   "cosine similarity",
+   "temperature",
+   "token count",
+   "latency"
+  ],
+  "correct": 0,
+  "exp_es": "La búsqueda semántica ordena los resultados por similitud vectorial, normalmente la del coseno.",
+  "exp_en": "Semantic search ranks results by vector similarity, commonly cosine similarity."
+ },
+ {
+  "id": 330,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué tarea de visión asigna una clase a cada píxel, por ejemplo para delimitar exactamente dónde está una carretera en una imagen?",
+  "q_en": "Which computer vision task assigns a class to every pixel, for example to outline exactly where a road is in an image?",
+  "opts_es": [
+   "Reconocimiento óptico de caracteres",
+   "Segmentación semántica",
+   "Descripción de imágenes",
+   "Clasificación de la imagen completa"
+  ],
+  "opts_en": [
+   "Optical character recognition",
+   "Semantic segmentation",
+   "Image captioning",
+   "Image classification of the whole picture"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La segmentación trabaja a nivel de píxel, mientras que la detección de objetos solo devuelve cuadros delimitadores.",
+  "exp_en": "Segmentation works at pixel level, while object detection only returns bounding boxes."
+ },
+ {
+  "id": 331,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un hotel quiere saber qué aspectos de su servicio, como 'desayuno' o 'personal', gustaron o no a los huéspedes. ¿Qué técnica encaja?",
+  "q_en": "A hotel wants to know which aspects of its service, such as 'breakfast' or 'staff', guests liked or disliked. Which technique fits?",
+  "opts_es": [
+   "Minería de opiniones (sentimiento por aspectos)",
+   "Síntesis de voz",
+   "Solo el sentimiento global del documento",
+   "Detección de idioma"
+  ],
+  "opts_en": [
+   "Opinion mining (aspect-based sentiment)",
+   "Speech synthesis",
+   "Overall document sentiment only",
+   "Language detection"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La minería de opiniones vincula el sentimiento a objetivos concretos (aspectos) mencionados en el texto.",
+  "exp_en": "Opinion mining links sentiment to specific targets (aspects) mentioned in the text."
+ },
+ {
+  "id": 332,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un portal de empleados debe responder preguntas con las políticas de RR. HH. y citar los documentos de origen. ¿Qué combinación de cargas de trabajo encaja?",
+  "q_en": "An employee portal must answer questions using the company's HR policies and cite the source documents. Which workload combination fits?",
+  "opts_es": [
+   "Minería de conocimiento con búsqueda e IA generativa (RAG)",
+   "Clasificación de imágenes",
+   "Detección de anomalías en los registros de la base de datos de RR. HH.",
+   "Traducción de voz"
+  ],
+  "opts_en": [
+   "Knowledge mining with search plus generative AI (RAG)",
+   "Image classification",
+   "Anomaly detection on the HR database logs",
+   "Speech translation"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Indexar documentos y recuperar fragmentos relevantes para un modelo generativo produce respuestas fundamentadas y citables.",
+  "exp_en": "Indexing documents and retrieving relevant passages for a generative model produces grounded, citable answers."
+ },
+ {
+  "id": 333,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué carga de trabajo sugiere productos que un cliente probablemente comprará según su comportamiento pasado?",
+  "q_en": "Which workload suggests products a customer is likely to buy based on past behavior?",
+  "opts_es": [
+   "Reconocimiento de voz",
+   "Reconocimiento óptico de caracteres",
+   "Vinculación de entidades a una enciclopedia",
+   "Recomendación"
+  ],
+  "opts_en": [
+   "Speech recognition",
+   "Optical character recognition",
+   "Entity linking to an encyclopedia",
+   "Recommendation"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los sistemas de recomendación usan patrones de comportamiento y similitud entre artículos para ordenar sugerencias.",
+  "exp_en": "Recommendation systems use patterns in user behavior and item similarity to rank suggestions."
+ },
+ {
+  "id": 334,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Un sistema coordina varios agentes especializados, uno para investigar y otro para redactar, para completar un informe. ¿Cómo se llama?",
+  "q_en": "A system coordinates several specialized agents, such as one for research and one for writing, to complete a report. What is this called?",
+  "opts_es": [
+   "Un flujo de OCR",
+   "Una solución multiagente",
+   "Un único modelo de clasificación",
+   "Una canalización de texto a voz con voces neuronales"
+  ],
+  "opts_en": [
+   "An OCR workflow",
+   "A multi-agent solution",
+   "A single classification model",
+   "A text-to-speech pipeline with neural voices"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las soluciones multiagente reparten el trabajo entre agentes con instrucciones y herramientas específicas, coordinados por un orquestador.",
+  "exp_en": "Multi-agent solutions split work across agents with focused instructions and tools, coordinated by an orchestrator."
+ },
+ {
+  "id": 335,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué carga de trabajo detecta y bloquea lenguaje ofensivo en las publicaciones de usuarios de un sitio web comunitario?",
+  "q_en": "Which workload detects and blocks offensive language in user posts on a community website?",
+  "opts_es": [
+   "Generación de imágenes",
+   "Previsión de volúmenes futuros de publicaciones",
+   "Moderación de contenido",
+   "Extracción de frases clave"
+  ],
+  "opts_en": [
+   "Image generation",
+   "Forecasting future post volumes",
+   "Content moderation",
+   "Key phrase extraction"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La moderación de contenido, por ejemplo con Azure AI Content Safety, clasifica texto e imágenes dañinos.",
+  "exp_en": "Content moderation, for example with Azure AI Content Safety, classifies harmful text and images."
+ },
+ {
+  "id": 336,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "¿Qué carga de trabajo responde preguntas de usuarios a partir de una lista seleccionada de pares de preguntas y respuestas, como unas preguntas frecuentes?",
+  "q_en": "Which workload answers user questions from a curated list of question-and-answer pairs, such as an FAQ?",
+  "opts_es": [
+   "Agrupación del registro de preguntas",
+   "Segmentación de imágenes",
+   "Respuesta a preguntas",
+   "Diarización de hablantes"
+  ],
+  "opts_en": [
+   "Clustering of the question log",
+   "Image segmentation",
+   "Question answering",
+   "Speaker diarization"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La respuesta a preguntas asocia la pregunta del usuario con la mejor respuesta de una base de conocimiento creada con preguntas frecuentes o documentos.",
+  "exp_en": "Question answering matches a user question to the best answer in a knowledge base built from FAQs or documents."
+ },
+ {
+  "id": 337,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "mc",
+  "q_es": "Una aplicación lee tiques y debe devolver el comercio y el total como campos estructurados. ¿Qué enfoque encaja mejor que el OCR simple?",
+  "q_en": "An app reads receipts and must return the merchant name and the total as structured fields. Which approach fits better than plain OCR?",
+  "opts_es": [
+   "Descripción de imágenes",
+   "Clasificación de imágenes",
+   "Extracción de campos con un analizador de documentos",
+   "Ejecutar análisis de sentimiento sobre el texto del OCR"
+  ],
+  "opts_en": [
+   "Image captioning",
+   "Image classification",
+   "Field extraction with a document analyzer",
+   "Running sentiment analysis on the OCR text"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El OCR devuelve texto sin estructura; el análisis de documentos lo asigna a campos con nombre como comercio y total.",
+  "exp_en": "OCR returns raw text; document analysis maps that text to named fields such as merchant and total."
+ },
+ {
+  "id": 338,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las cargas de trabajo de IA, indica si es verdadera o falsa.",
+  "q_en": "For each statement about AI workloads, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La detección de objetos devuelve contornos a nivel de píxel de cada objeto.",
+    "en": "Object detection returns pixel-level outlines of each object.",
+    "ans": false
+   },
+   {
+    "es": "La minería de opiniones puede vincular el sentimiento a aspectos concretos de un producto.",
+    "en": "Opinion mining can link sentiment to specific aspects of a product.",
+    "ans": true
+   },
+   {
+    "es": "Los sistemas de recomendación aprenden del comportamiento de los usuarios.",
+    "en": "Recommendation systems learn from user behavior.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Los contornos a nivel de píxel provienen de la segmentación; la detección devuelve cuadros delimitadores.",
+  "exp_en": "Pixel-level outlines come from segmentation; detection returns bounding boxes."
+ },
+ {
+  "id": 339,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la IA agéntica, indica si es verdadera o falsa.",
+  "q_en": "For each statement about agentic AI, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Un agente puede llamar a herramientas para actuar, no solo responder.",
+    "en": "An agent can call tools to take actions, not just answer.",
+    "ans": true
+   },
+   {
+    "es": "Varios agentes pueden colaborar en una tarea.",
+    "en": "Several agents can collaborate on one task.",
+    "ans": true
+   },
+   {
+    "es": "Los agentes nunca necesitan supervisión humana.",
+    "en": "Agents never need human oversight.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los agentes razonan, usan herramientas y pueden colaborar, pero las acciones con impacto real siguen necesitando supervisión.",
+  "exp_en": "Agents reason, use tools and can collaborate, but actions with real impact still need oversight."
+ },
+ {
+  "id": 340,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la carga de trabajo para cada escenario.",
+  "q_en": "Select the workload for each scenario.",
+  "rows": [
+   {
+    "es": "Sugerir películas que pueden gustar a un espectador",
+    "en": "Suggest movies a viewer may enjoy",
+    "opts_es": [
+     "Moderación de contenido",
+     "Recomendación",
+     "Respuesta a preguntas",
+     "Segmentación semántica"
+    ],
+    "opts_en": [
+     "Content moderation",
+     "Recommendation",
+     "Question answering",
+     "Semantic segmentation"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Marcar el área exacta de un tumor en una exploración",
+    "en": "Mark the exact area of a tumor in a scan",
+    "opts_es": [
+     "Moderación de contenido",
+     "Recomendación",
+     "Respuesta a preguntas",
+     "Segmentación semántica"
+    ],
+    "opts_en": [
+     "Content moderation",
+     "Recommendation",
+     "Question answering",
+     "Semantic segmentation"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "La recomendación ordena artículos para un usuario; la segmentación etiqueta píxeles para delimitar regiones.",
+  "exp_en": "Recommendation ranks items for a user; segmentation labels pixels to outline regions."
+ },
+ {
+  "id": 341,
+  "exam": "ai-901",
+  "dom": 1,
+  "obj": "1.3",
+  "type": "sentence",
+  "pre_es": "Encontrar qué características de un producto elogian o critican los clientes en sus reseñas se llama ",
+  "pre_en": "Finding which product features customers praise or criticize in reviews is called ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "detección de objetos",
+   "detección de idioma",
+   "síntesis de voz",
+   "minería de opiniones"
+  ],
+  "opts_en": [
+   "object detection",
+   "language detection",
+   "speech synthesis",
+   "opinion mining"
+  ],
+  "correct": 3,
+  "exp_es": "La minería de opiniones es el análisis de sentimiento por aspectos.",
+  "exp_en": "Opinion mining is aspect-based sentiment analysis."
+ },
+ {
+  "id": 342,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "En Microsoft Foundry, ¿qué elemento agrupa los agentes, implementaciones, archivos y evaluaciones de una solución?",
+  "q_en": "In Microsoft Foundry, which item groups your agents, deployments, files and evaluations for one solution?",
+  "opts_es": [
+   "Una cola de almacenamiento",
+   "Un proyecto de Foundry",
+   "Un grupo de administración con varias suscripciones",
+   "Una etiqueta de recurso"
+  ],
+  "opts_en": [
+   "A storage queue",
+   "A Foundry project",
+   "A management group with several subscriptions",
+   "A resource tag"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los proyectos son el espacio de trabajo para crear y administrar aplicaciones y agentes de IA dentro de un recurso de Foundry.",
+  "exp_en": "Projects are the workspace for building and managing AI apps and agents inside a Foundry resource."
+ },
+ {
+  "id": 343,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué rol de Azure permite a un desarrollador crear y usar agentes en un proyecto de Foundry sin administrar el recurso?",
+  "q_en": "Which Azure role-based access role lets a developer build and use agents in a Foundry project without managing the resource?",
+  "opts_es": [
+   "Lector de facturación de toda la suscripción",
+   "Colaborador de red",
+   "Propietario",
+   "Usuario de Azure AI"
+  ],
+  "opts_en": [
+   "Billing Reader for the whole subscription",
+   "Network Contributor",
+   "Owner",
+   "Azure AI User"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Usuario de Azure AI concede acceso al plano de datos para trabajar con el proyecto; Propietario es mucho más amplio de lo necesario (mínimo privilegio).",
+  "exp_en": "Azure AI User grants data-plane access to build with the project; Owner is far broader than needed (least privilege)."
+ },
+ {
+  "id": 344,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué herramienta de agente le permite conectarse a herramientas y datos externos expuestos mediante un servidor de protocolo estándar?",
+  "q_en": "Which agent tool lets an agent connect to external tools and data exposed through a standard protocol server?",
+  "opts_es": [
+   "Una secuencia de parada configurada en la implementación del modelo",
+   "Intérprete de código",
+   "Filtro de contenido",
+   "Herramienta Model Context Protocol (MCP)"
+  ],
+  "opts_en": [
+   "A stop sequence configured on the model deployment",
+   "Code interpreter",
+   "Content filter",
+   "Model Context Protocol (MCP) tool"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los servidores MCP exponen herramientas de forma estándar; el agente las descubre y las llama.",
+  "exp_en": "MCP servers expose tools in a standard way; the agent discovers and calls them."
+ },
+ {
+  "id": 345,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué herramienta de agente fundamenta las respuestas en un índice empresarial existente de tus documentos?",
+  "q_en": "Which agent tool grounds answers in an existing enterprise index of your documents?",
+  "opts_es": [
+   "Herramienta Azure AI Search",
+   "Intérprete de código",
+   "Texto a voz",
+   "Herramienta de generación de imágenes con un tamaño personalizado"
+  ],
+  "opts_en": [
+   "Azure AI Search tool",
+   "Code interpreter",
+   "Text-to-speech",
+   "Image generation tool with a custom size"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La herramienta Azure AI Search consulta un índice de búsqueda existente para fundamentar las respuestas en tu contenido.",
+  "exp_en": "The Azure AI Search tool queries an existing search index so answers are grounded in your content."
+ },
+ {
+  "id": 346,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Cuando un agente decide llamar a tu herramienta de función, ¿qué debe hacer la aplicación cliente?",
+  "q_en": "When an agent decides to call your function tool, what must your client app do?",
+  "opts_es": [
+   "Ejecutar la función y devolver su resultado al agente",
+   "Nada, el servicio ejecuta tu código automáticamente",
+   "Volver a implementar el modelo",
+   "Eliminar el hilo"
+  ],
+  "opts_en": [
+   "Run the function and return its output to the agent",
+   "Nothing, the service runs your code automatically",
+   "Redeploy the model",
+   "Delete the thread"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Con la llamada a funciones el modelo solo devuelve el nombre y los argumentos; tu código la ejecuta y envía el resultado.",
+  "exp_en": "With function calling the model only returns the function name and arguments; your code executes it and submits the result."
+ },
+ {
+  "id": 347,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Foundry permite inspeccionar cada paso de una ejecución de agente, incluidas las llamadas al modelo y a herramientas, para depurar problemas?",
+  "q_en": "Which Foundry capability lets you inspect each step of an agent run, including model calls and tool calls, to debug problems?",
+  "opts_es": [
+   "Cambiar la implementación a rendimiento aprovisionado",
+   "Seguimiento (tracing)",
+   "Ajuste fino",
+   "Implementación por lotes"
+  ],
+  "opts_en": [
+   "Changing the deployment to provisioned throughput",
+   "Tracing",
+   "Fine-tuning",
+   "Batch deployment"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "El seguimiento registra la secuencia de operaciones, entradas y salidas para ver dónde falló un agente.",
+  "exp_en": "Tracing records the sequence of operations, inputs and outputs so you can see where an agent went wrong."
+ },
+ {
+  "id": 348,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Cómo puedes medir si un nuevo mensaje del sistema mejora la calidad de las respuestas antes de publicarlo?",
+  "q_en": "How can you measure whether a new system message improves answer quality before releasing it?",
+  "opts_es": [
+   "Subir la cuota",
+   "Cambiar a streaming",
+   "Preguntar a un compañero si las respuestas parecen correctas",
+   "Ejecutar evaluaciones con un conjunto de prueba y comparar métricas"
+  ],
+  "opts_en": [
+   "Raise the quota",
+   "Switch to streaming",
+   "Ask one colleague whether the answers look fine",
+   "Run evaluations on a test dataset and compare metrics"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Las evaluaciones de Foundry puntúan las salidas en métricas como fundamentación, relevancia y coherencia sobre un conjunto de datos.",
+  "exp_en": "Foundry evaluations score outputs for metrics such as groundedness, relevance and coherence across a dataset."
+ },
+ {
+  "id": 349,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué métrica de evaluación comprueba si una respuesta solo contiene información respaldada por el contexto recuperado?",
+  "q_en": "Which evaluation metric checks whether an answer only contains information supported by the retrieved context?",
+  "opts_es": [
+   "Latencia",
+   "Tokens por minuto consumidos por la implementación",
+   "Fundamentación",
+   "Fluidez"
+  ],
+  "opts_en": [
+   "Latency",
+   "Tokens per minute consumed by the deployment",
+   "Groundedness",
+   "Fluency"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La fundamentación mide la alineación con el contexto de origen; la fluidez solo mide lo natural que es el lenguaje.",
+  "exp_en": "Groundedness measures alignment with the source context; fluency only measures how natural the language is."
+ },
+ {
+  "id": 350,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "Un agente debe buscar en varios manuales PDF cargados. ¿Dónde se guardan los archivos procesados para la herramienta de búsqueda de archivos?",
+  "q_en": "An agent needs to search several uploaded PDF manuals. Where are the processed files stored for the file search tool?",
+  "opts_es": [
+   "En el mensaje del sistema",
+   "En un almacén de vectores",
+   "En los pesos del modelo tras un ajuste fino automático",
+   "En un filtro de contenido"
+  ],
+  "opts_en": [
+   "In the system message",
+   "In a vector store",
+   "In the model weights after automatic fine-tuning",
+   "In a content filter"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La búsqueda de archivos divide e incrusta los archivos en un almacén de vectores que el agente consulta al ejecutarse.",
+  "exp_en": "File search chunks and embeds files into a vector store that the agent queries at run time."
+ },
+ {
+  "id": 351,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "mc",
+  "q_es": "¿Qué diseño de agentes permite que un agente principal delegue tareas especializadas en otros agentes?",
+  "q_en": "Which agent design lets a main agent delegate specialized tasks to other agents?",
+  "opts_es": [
+   "Rendimiento aprovisionado",
+   "Agentes conectados (multiagente)",
+   "Un top_p más alto",
+   "Un agente con un mensaje del sistema muy largo que lo cubra todo"
+  ],
+  "opts_en": [
+   "Provisioned throughput",
+   "Connected agents (multi-agent)",
+   "A higher top_p",
+   "One agent with a very long system message covering everything"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los agentes conectados permiten que un agente orquestador llame a otros agentes como herramientas, manteniendo cada uno centrado.",
+  "exp_en": "Connected agents let an orchestrating agent call other agents as tools, keeping each one focused."
+ },
+ {
+  "id": 352,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las herramientas de agentes en Foundry, indica si es verdadera o falsa.",
+  "q_en": "For each statement about agent tools in Foundry, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las herramientas de función permiten a un agente pedir que se ejecute tu código.",
+    "en": "Function tools let an agent request that your code runs.",
+    "ans": true
+   },
+   {
+    "es": "El intérprete de código ejecuta Python en un entorno aislado.",
+    "en": "Code interpreter runs Python in a sandbox.",
+    "ans": true
+   },
+   {
+    "es": "La búsqueda de archivos exige ajustar primero el modelo.",
+    "en": "File search requires you to fine-tune the model first.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La búsqueda de archivos usa un almacén de vectores, no ajuste fino; las herramientas de función y de código amplían lo que puede hacer el agente.",
+  "exp_en": "File search uses a vector store, not fine-tuning; function and code tools extend what the agent can do."
+ },
+ {
+  "id": 353,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la evaluación y supervisión de aplicaciones de IA, indica si es verdadera o falsa.",
+  "q_en": "For each statement about evaluating and monitoring AI apps, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las evaluaciones pueden usar un modelo de IA como juez para puntuar respuestas.",
+    "en": "Evaluations can use an AI model as a judge to score answers.",
+    "ans": true
+   },
+   {
+    "es": "El seguimiento ayuda a encontrar qué llamada a herramienta falló en una ejecución.",
+    "en": "Tracing helps find which tool call failed in an agent run.",
+    "ans": true
+   },
+   {
+    "es": "La evaluación solo hace falta una vez, antes del primer lanzamiento.",
+    "en": "Evaluation is only needed once, before the first release.",
+    "ans": false
+   }
+  ],
+  "exp_es": "Los evaluadores asistidos por IA puntúan calidad y seguridad; la evaluación y el seguimiento continúan tras el lanzamiento al cambiar prompts y modelos.",
+  "exp_en": "AI-assisted evaluators score quality and safety; evaluation and tracing continue after release as prompts and models change."
+ },
+ {
+  "id": 354,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la protección del acceso a Foundry, indica si es verdadera o falsa.",
+  "q_en": "For each statement about securing access to Foundry, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La autenticación con Microsoft Entra ID evita guardar claves en el código.",
+    "en": "Microsoft Entra ID authentication avoids storing keys in code.",
+    "ans": true
+   },
+   {
+    "es": "Los desarrolladores deben recibir el rol Propietario para crear agentes.",
+    "en": "Developers should get the Owner role to build agents.",
+    "ans": false
+   },
+   {
+    "es": "Si se usan claves de API, deben guardarse en un almacén de secretos como Key Vault.",
+    "en": "API keys should be kept in a secret store such as Key Vault if used.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Usa Entra ID con roles de mínimo privilegio; si hacen falta claves, mantenlas fuera del código.",
+  "exp_en": "Prefer Entra ID with least-privilege roles; if keys are needed, keep them out of code."
+ },
+ {
+  "id": 355,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad de Foundry para cada necesidad.",
+  "q_en": "Select the Foundry capability for each need.",
+  "rows": [
+   {
+    "es": "Puntuar 200 respuestas de prueba por relevancia y fundamentación",
+    "en": "Score 200 test answers for relevance and groundedness",
+    "opts_es": [
+     "Seguimiento",
+     "Filtros de contenido",
+     "Evaluación",
+     "Catálogo de modelos"
+    ],
+    "opts_en": [
+     "Tracing",
+     "Content filters",
+     "Evaluation",
+     "Model catalog"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Ver la secuencia de llamadas a herramientas de una ejecución fallida",
+    "en": "See the sequence of tool calls in a failed run",
+    "opts_es": [
+     "Seguimiento",
+     "Filtros de contenido",
+     "Evaluación",
+     "Catálogo de modelos"
+    ],
+    "opts_en": [
+     "Tracing",
+     "Content filters",
+     "Evaluation",
+     "Model catalog"
+    ],
+    "correct": 0
+   }
+  ],
+  "exp_es": "La evaluación mide la calidad sobre un conjunto de datos; el seguimiento muestra los pasos de cada ejecución.",
+  "exp_en": "Evaluation measures quality over a dataset; tracing shows the steps of individual runs."
+ },
+ {
+  "id": 356,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "dropdown",
+  "q_es": "Selecciona la herramienta de agente para cada requisito.",
+  "q_en": "Select the agent tool for each requirement.",
+  "rows": [
+   {
+    "es": "Usar herramientas expuestas por un servidor MCP de terceros",
+    "en": "Use tools exposed by a third-party MCP server",
+    "opts_es": [
+     "Llamada a funciones",
+     "Intérprete de código",
+     "Model Context Protocol",
+     "Azure AI Search"
+    ],
+    "opts_en": [
+     "Function calling",
+     "Code interpreter",
+     "Model Context Protocol",
+     "Azure AI Search"
+    ],
+    "correct": 2
+   },
+   {
+    "es": "Fundamentar respuestas en un índice de búsqueda empresarial existente",
+    "en": "Ground answers in an existing enterprise search index",
+    "opts_es": [
+     "Llamada a funciones",
+     "Intérprete de código",
+     "Model Context Protocol",
+     "Azure AI Search"
+    ],
+    "opts_en": [
+     "Function calling",
+     "Code interpreter",
+     "Model Context Protocol",
+     "Azure AI Search"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "MCP conecta servidores de herramientas estándar; Azure AI Search consulta índices existentes.",
+  "exp_en": "MCP connects standard tool servers; Azure AI Search queries existing indexes."
+ },
+ {
+  "id": 357,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.1",
+  "type": "sentence",
+  "pre_es": "Cuando un agente solicita una llamada a función, el cliente debe ejecutar la función y ",
+  "pre_en": "When an agent requests a function call, the client must run the function and ",
+  "post_es": " al agente.",
+  "post_en": " to the agent.",
+  "opts_es": [
+   "eliminar el hilo",
+   "volver a implementar el modelo",
+   "enviar su resultado",
+   "subir la temperatura"
+  ],
+  "opts_en": [
+   "delete the thread",
+   "redeploy the model",
+   "submit its output",
+   "raise the temperature"
+  ],
+  "correct": 2,
+  "exp_es": "El agente continúa la ejecución en cuanto recibe el resultado de la función.",
+  "exp_en": "The agent continues the run once it receives the function output."
+ },
+ {
+  "id": 358,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué devuelve la detección de idioma para un texto?",
+  "q_en": "What does language detection return for a piece of text?",
+  "opts_es": [
+   "El nombre del idioma, su código ISO y una puntuación de confianza",
+   "Una traducción al inglés",
+   "Audio del texto",
+   "El sentimiento de cada frase"
+  ],
+  "opts_en": [
+   "The language name, ISO code and a confidence score",
+   "A translation into English",
+   "Audio of the text",
+   "The sentiment of each sentence"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La detección de idioma identifica el idioma predominante con un código ISO 639-1 y una puntuación de confianza.",
+  "exp_en": "Language detection identifies the dominant language with an ISO 639-1 code and a confidence score."
+ },
+ {
+  "id": 359,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Cuál es la diferencia entre el resumen extractivo y el abstractivo?",
+  "q_en": "What is the difference between extractive and abstractive summarization?",
+  "opts_es": [
+   "El extractivo selecciona frases clave; el abstractivo redacta frases nuevas",
+   "El abstractivo solo traduce el texto a otro idioma",
+   "No hay diferencia",
+   "El extractivo solo funciona con audio"
+  ],
+  "opts_en": [
+   "Extractive selects key sentences; abstractive writes new sentences",
+   "Abstractive only translates the text into another language",
+   "There is no difference",
+   "Extractive works only on audio"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los resúmenes extractivos reutilizan frases originales; los abstractivos generan una nueva redacción.",
+  "exp_en": "Extractive summaries reuse original sentences; abstractive summaries generate new wording."
+ },
+ {
+  "id": 360,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Una empresa debe traducir archivos Word y PDF completos manteniendo su formato. ¿Qué función de Azure Translator encaja?",
+  "q_en": "A company must translate whole Word and PDF files while keeping their formatting. Which Azure Translator feature fits?",
+  "opts_es": [
+   "Transliteración",
+   "Detección de idioma para cada párrafo del archivo",
+   "Traducción de documentos",
+   "Texto a voz"
+  ],
+  "opts_en": [
+   "Transliteration",
+   "Language detection for each paragraph of the file",
+   "Document translation",
+   "Text-to-speech"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La traducción de documentos traduce archivos completos de forma asíncrona y conserva la estructura y el formato.",
+  "exp_en": "Document translation translates complete files asynchronously and preserves structure and formatting."
+ },
+ {
+  "id": 361,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Translator convierte texto de un alfabeto a otro, como caracteres japoneses a letras latinas, sin traducirlo?",
+  "q_en": "Which Translator capability converts text from one script to another, such as Japanese characters to Latin letters, without translating it?",
+  "opts_es": [
+   "Transliteración",
+   "Resumen del texto convertido",
+   "Diarización",
+   "Traducción de documentos"
+  ],
+  "opts_en": [
+   "Transliteration",
+   "Summarization of the converted text",
+   "Diarization",
+   "Document translation"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La transliteración cambia el alfabeto pero mantiene el idioma.",
+  "exp_en": "Transliteration changes the script but keeps the language."
+ },
+ {
+  "id": 362,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué capacidad permite a una aplicación reconocer intenciones personalizadas como 'ConsultarSaldo' y entidades como 'TipoCuenta' en los enunciados del usuario?",
+  "q_en": "Which capability lets an app recognize custom intents such as 'CheckBalance' and entities such as 'AccountType' from user utterances?",
+  "opts_es": [
+   "Comprensión del lenguaje conversacional",
+   "Extracción de frases clave",
+   "Detección de idioma",
+   "Texto a voz con una voz neuronal personalizada"
+  ],
+  "opts_en": [
+   "Conversational language understanding",
+   "Key phrase extraction",
+   "Language detection",
+   "Text-to-speech with a custom neural voice"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La comprensión del lenguaje conversacional (CLU) se entrena con enunciados etiquetados para predecir intenciones y entidades.",
+  "exp_en": "Conversational language understanding (CLU) is trained with labeled utterances to predict intents and entities."
+ },
+ {
+  "id": 363,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué método del SDK de Voz debe usar una aplicación para transcribir una reunión larga desde un micrófono sin detenerse tras la primera pausa?",
+  "q_en": "Which Speech SDK method should an app use to transcribe a long meeting from a microphone without stopping after the first pause?",
+  "opts_es": [
+   "Reconocimiento continuo",
+   "Detectar el idioma una vez",
+   "Pronunciar texto de forma asíncrona con la voz predeterminada",
+   "Reconocer una vez"
+  ],
+  "opts_en": [
+   "Continuous recognition",
+   "Detect language once",
+   "Speak text asynchronously with the default voice",
+   "Recognize once"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Reconocer una vez se detiene tras un solo enunciado; el reconocimiento continuo sigue escuchando y genera eventos.",
+  "exp_en": "Recognize once stops after a single utterance; continuous recognition keeps listening and raises events."
+ },
+ {
+  "id": 364,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué ajuste elige la voz usada en texto a voz, como es-ES-ElviraNeural?",
+  "q_en": "Which setting chooses the voice used for text-to-speech, such as en-US-JennyNeural?",
+  "opts_es": [
+   "La región del punto de conexión",
+   "El nombre de voz de síntesis",
+   "El dispositivo de entrada de audio del cliente",
+   "El idioma de reconocimiento de voz"
+  ],
+  "opts_en": [
+   "The endpoint region",
+   "The speech synthesis voice name",
+   "The audio input device of the client",
+   "The speech recognition language"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "En la configuración de voz se establece el nombre de voz de síntesis; el idioma de reconocimiento solo afecta a voz a texto.",
+  "exp_en": "In the speech config you set the synthesis voice name; the recognition language only affects speech-to-text."
+ },
+ {
+  "id": 365,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué capacidad de Azure Speech puntúa la precisión y fluidez con que un estudiante de idiomas pronuncia una frase?",
+  "q_en": "Which Azure Speech capability scores how accurately and fluently a language learner pronounces a sentence?",
+  "opts_es": [
+   "Evaluación de pronunciación",
+   "Detección de palabras clave",
+   "Texto a voz neuronal con etiquetas de prosodia",
+   "Diarización de hablantes"
+  ],
+  "opts_en": [
+   "Pronunciation assessment",
+   "Keyword spotting",
+   "Neural text-to-speech with prosody tags",
+   "Speaker diarization"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La evaluación de pronunciación devuelve puntuaciones de precisión, fluidez, integridad y prosodia.",
+  "exp_en": "Pronunciation assessment returns accuracy, fluency, completeness and prosody scores."
+ },
+ {
+  "id": 366,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "Un altavoz inteligente solo debe empezar a escuchar tras oír 'Hola Contoso'. ¿Qué capacidad encaja?",
+  "q_en": "A smart speaker should only start listening after hearing 'Hey Contoso'. Which capability fits?",
+  "opts_es": [
+   "Traducción al inglés de cada frase que oye",
+   "Análisis de sentimiento",
+   "Reconocimiento de palabras clave",
+   "Transcripción por lotes"
+  ],
+  "opts_en": [
+   "Translation of every sentence it hears into English",
+   "Sentiment analysis",
+   "Keyword recognition",
+   "Batch transcription"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "El reconocimiento de palabras clave detecta una palabra de activación, a menudo en el dispositivo, antes de iniciar el reconocimiento completo.",
+  "exp_en": "Keyword recognition detects a wake word, often on the device, before full recognition starts."
+ },
+ {
+  "id": 367,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "mc",
+  "q_es": "¿Qué opción de Azure Speech crea agentes de voz de baja latencia que combinan reconocimiento de voz, un modelo generativo y salida de voz en una sola API?",
+  "q_en": "Which Azure Speech option builds low-latency voice agents that combine speech recognition, a generative model and speech output in one API?",
+  "opts_es": [
+   "Traducción de documentos con un archivo de glosario",
+   "API de Voice Live",
+   "Transcripción por lotes",
+   "Respuesta a preguntas personalizada"
+  ],
+  "opts_en": [
+   "Document translation with a glossary file",
+   "Voice Live API",
+   "Batch transcription",
+   "Custom question answering"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Voice Live gestiona todo el ciclo de voz de entrada y salida, con funciones como supresión de ruido y gestión de interrupciones.",
+  "exp_en": "Voice Live handles the full speech-in, speech-out loop with features such as noise suppression and interruption handling."
+ },
+ {
+  "id": 368,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los servicios de lenguaje, indica si es verdadera o falsa.",
+  "q_en": "For each statement about language services, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "La transliteración cambia el idioma del texto.",
+    "en": "Transliteration changes the language of the text.",
+    "ans": false
+   },
+   {
+    "es": "La traducción de documentos puede conservar el formato de un archivo.",
+    "en": "Document translation can keep a file's formatting.",
+    "ans": true
+   },
+   {
+    "es": "La comprensión del lenguaje conversacional predice intenciones y entidades.",
+    "en": "Conversational language understanding predicts intents and entities.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La transliteración solo cambia el alfabeto; la traducción cambia el idioma.",
+  "exp_en": "Transliteration only changes the script; translation changes the language."
+ },
+ {
+  "id": 369,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la creación de una aplicación de voz, indica si es verdadera o falsa.",
+  "q_en": "For each statement about building a speech app, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Reconocer una vez es adecuado para transcribir reuniones largas.",
+    "en": "Recognize once is suited to transcribing long meetings.",
+    "ans": false
+   },
+   {
+    "es": "Se puede seleccionar una voz neuronal por su nombre para la síntesis.",
+    "en": "A neural voice can be selected by name for synthesis.",
+    "ans": true
+   },
+   {
+    "es": "La evaluación de pronunciación puede apoyar aplicaciones de aprendizaje de idiomas.",
+    "en": "Pronunciation assessment can support language learning apps.",
+    "ans": true
+   }
+  ],
+  "exp_es": "El audio largo necesita reconocimiento continuo; las voces se eligen por nombre; la evaluación de pronunciación puntúa al hablante.",
+  "exp_en": "Long audio needs continuous recognition; voices are chosen by name; pronunciation assessment scores speakers."
+ },
+ {
+  "id": 370,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "dropdown",
+  "q_es": "Selecciona la capacidad para cada requisito.",
+  "q_en": "Select the capability for each requirement.",
+  "rows": [
+   {
+    "es": "Empezar a escuchar solo tras una palabra de activación",
+    "en": "Start listening only after a wake word",
+    "opts_es": [
+     "Reconocimiento de palabras clave",
+     "Evaluación de pronunciación",
+     "Transliteración",
+     "Reconocimiento continuo"
+    ],
+    "opts_en": [
+     "Keyword recognition",
+     "Pronunciation assessment",
+     "Transliteration",
+     "Continuous recognition"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Mostrar nombres en cirílico con letras latinas",
+    "en": "Show Cyrillic names in Latin letters",
+    "opts_es": [
+     "Reconocimiento de palabras clave",
+     "Evaluación de pronunciación",
+     "Transliteración",
+     "Reconocimiento continuo"
+    ],
+    "opts_en": [
+     "Keyword recognition",
+     "Pronunciation assessment",
+     "Transliteration",
+     "Continuous recognition"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Las palabras de activación usan reconocimiento de palabras clave; cambiar de alfabeto sin traducir es transliteración.",
+  "exp_en": "Wake words use keyword recognition; changing script without translating is transliteration."
+ },
+ {
+  "id": 371,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.2",
+  "type": "sentence",
+  "pre_es": "Para transcribir una reunión de dos horas desde un micrófono en directo, usa el ",
+  "pre_en": "To transcribe a two-hour meeting from a live microphone, use ",
+  "post_es": ".",
+  "post_en": ".",
+  "opts_es": [
+   "reconocimiento continuo",
+   "reconocer una vez",
+   "transliteración",
+   "detección de idioma"
+  ],
+  "opts_en": [
+   "continuous recognition",
+   "recognize once",
+   "transliteration",
+   "language detection"
+  ],
+  "correct": 0,
+  "exp_es": "El reconocimiento continuo sigue procesando audio hasta que lo detienes.",
+  "exp_en": "Continuous recognition keeps processing audio until you stop it."
+ },
+ {
+  "id": 372,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Cómo puede una aplicación cliente enviar un archivo de imagen local a un modelo de chat con visión sin alojarlo en una URL?",
+  "q_en": "How can a client app send a local image file to a vision-capable chat model without hosting it on a URL?",
+  "opts_es": [
+   "Adjuntándola a la configuración del filtro de contenido de la implementación",
+   "Como URL de datos codificada en base64 en el mensaje",
+   "Como un mensaje del sistema aparte",
+   "No es posible"
+  ],
+  "opts_en": [
+   "By attaching it to the deployment's content filter configuration",
+   "As a base64-encoded data URL in the message",
+   "As a separate system message",
+   "It is not possible"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Las partes de contenido de imagen aceptan una URL pública o una URL de datos en base64.",
+  "exp_en": "Image content parts accept either a public URL or a base64 data URL."
+ },
+ {
+  "id": 373,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de análisis de imágenes de Azure Vision devuelve descripciones de varias regiones de una imagen, no solo una para toda la imagen?",
+  "q_en": "Which Azure Vision image analysis feature returns captions for several regions of an image, not just one for the whole image?",
+  "opts_es": [
+   "Lectura (OCR)",
+   "Etiquetas con puntuación de confianza de toda la imagen",
+   "Descripciones densas",
+   "Recortes inteligentes"
+  ],
+  "opts_en": [
+   "Read (OCR)",
+   "Tags with confidence scores for the full image",
+   "Dense captions",
+   "Smart crops"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Las descripciones densas generan una descripción con cuadro delimitador para varias regiones de interés.",
+  "exp_en": "Dense captions generate a caption with a bounding box for up to several regions of interest."
+ },
+ {
+  "id": 374,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué función de análisis de imágenes localiza personas en una imagen y devuelve un cuadro delimitador para cada una?",
+  "q_en": "Which image analysis feature locates people in an image and returns a bounding box for each?",
+  "opts_es": [
+   "Detección de personas",
+   "Eliminación del fondo",
+   "Descripción de la imagen completa",
+   "Identificación facial"
+  ],
+  "opts_en": [
+   "People detection",
+   "Background removal",
+   "Image captioning for the whole picture",
+   "Facial identification"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "La detección de personas encuentra dónde hay personas sin identificar quiénes son.",
+  "exp_en": "People detection finds where people are without identifying who they are."
+ },
+ {
+  "id": 375,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué capacidad del servicio Face comprueba que hay una persona real, y no una foto o una máscara, delante de la cámara?",
+  "q_en": "Which Face service capability checks that a real person, not a photo or mask, is in front of the camera?",
+  "opts_es": [
+   "Agrupación de caras",
+   "Recorte inteligente",
+   "Detección de presencia (liveness)",
+   "Reconocimiento de emociones por las expresiones faciales"
+  ],
+  "opts_en": [
+   "Face grouping",
+   "Smart cropping",
+   "Liveness detection",
+   "Emotion recognition from facial expressions"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "La detección de presencia ayuda a evitar suplantaciones en la verificación facial; el reconocimiento de emociones se retiró.",
+  "exp_en": "Liveness detection helps prevent spoofing during face verification; emotion recognition has been retired."
+ },
+ {
+  "id": 376,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué tipo de modelo generativo de Foundry crea vídeos cortos a partir de un prompt de texto?",
+  "q_en": "Which generative model type in Foundry creates short video clips from a text prompt?",
+  "opts_es": [
+   "Un modelo de OCR",
+   "Un modelo de voz a texto",
+   "Un modelo de embeddings que convierte fotogramas en vectores",
+   "Un modelo de generación de vídeo como Sora"
+  ],
+  "opts_en": [
+   "An OCR model",
+   "A speech-to-text model",
+   "An embedding model that converts frames into vectors",
+   "A video generation model such as Sora"
+  ],
+  "correct": [
+   3
+  ],
+  "exp_es": "Los modelos de generación de vídeo convierten texto (y a veces imágenes) en clips de vídeo.",
+  "exp_en": "Video generation models turn text (and sometimes images) into video clips."
+ },
+ {
+  "id": 377,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Qué ajuste de generación de imágenes suele cambiar tiempo y coste por más detalle?",
+  "q_en": "Which image generation setting usually trades generation time and cost for more detail?",
+  "opts_es": [
+   "Secuencia de parada",
+   "Calidad",
+   "El número de mensajes anteriores guardados en la conversación",
+   "Temperatura"
+  ],
+  "opts_en": [
+   "Stop sequence",
+   "Quality",
+   "The number of past messages kept in the conversation",
+   "Temperature"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los ajustes de mayor calidad producen imágenes más detalladas, pero tardan más y cuestan más.",
+  "exp_en": "Higher quality settings produce more detailed images but take longer and cost more."
+ },
+ {
+  "id": 378,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "Una aplicación debe extraer texto impreso y manuscrito de fotos de pizarras. ¿Qué función debe llamar?",
+  "q_en": "An app must extract printed and handwritten text from photos of whiteboards. Which feature should it call?",
+  "opts_es": [
+   "Etiquetado de imágenes",
+   "Lectura (OCR)",
+   "Detección de personas con cuadros delimitadores para cada persona",
+   "Descripciones densas"
+  ],
+  "opts_en": [
+   "Image tagging",
+   "Read (OCR)",
+   "People detection with bounding boxes for each person",
+   "Dense captions"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La función de lectura devuelve líneas y palabras de texto impreso o manuscrito con sus posiciones.",
+  "exp_en": "The Read feature returns lines and words of printed or handwritten text with their positions."
+ },
+ {
+  "id": 379,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "mc",
+  "q_es": "¿Por qué las aplicaciones deben comprobar la respuesta antes de mostrar una imagen generada?",
+  "q_en": "Why should apps check the response before showing a generated image to users?",
+  "opts_es": [
+   "Las imágenes siempre se devuelven como texto",
+   "La solicitud puede bloquearse o filtrarse por la seguridad del contenido",
+   "El modelo devuelve varias páginas de texto OCR en lugar de una imagen",
+   "Las imágenes generadas nunca tienen URL"
+  ],
+  "opts_en": [
+   "Images are always returned as text",
+   "The request may be blocked or filtered by content safety",
+   "The model returns several pages of OCR text instead of an image",
+   "Generated images never have a URL"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Los prompts o salidas que infringen las políticas pueden rechazarse, así que las aplicaciones deben gestionar esos errores.",
+  "exp_en": "Prompts or outputs that violate policies can be rejected, so apps should handle filter errors gracefully."
+ },
+ {
+  "id": 380,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las funciones de análisis de imágenes, indica si es verdadera o falsa.",
+  "q_en": "For each statement about image analysis features, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Las descripciones densas describen varias regiones de una imagen.",
+    "en": "Dense captions describe several regions of one image.",
+    "ans": true
+   },
+   {
+    "es": "La detección de personas te dice el nombre de cada persona.",
+    "en": "People detection tells you the name of each person.",
+    "ans": false
+   },
+   {
+    "es": "La función de lectura puede extraer texto manuscrito.",
+    "en": "The Read feature can extract handwritten text.",
+    "ans": true
+   }
+  ],
+  "exp_es": "La detección de personas solo las localiza; la identificación es una capacidad de Face de acceso limitado.",
+  "exp_en": "People detection only locates people; identification is a separate, limited-access Face capability."
+ },
+ {
+  "id": 381,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre la generación de imágenes y vídeo, indica si es verdadera o falsa.",
+  "q_en": "For each statement about generating images and video, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Se puede usar un prompt de texto para generar un vídeo corto.",
+    "en": "A text prompt can be used to generate a short video.",
+    "ans": true
+   },
+   {
+    "es": "Los ajustes de mayor calidad suelen costar menos.",
+    "en": "Higher quality settings generally cost less.",
+    "ans": false
+   },
+   {
+    "es": "Las solicitudes de generación de imágenes pueden bloquearse por los filtros de contenido.",
+    "en": "Image generation requests can be blocked by content filters.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Más calidad cuesta más; los filtros de contenido también se aplican a la generación de imágenes.",
+  "exp_en": "Higher quality costs more; content filters apply to image generation too."
+ },
+ {
+  "id": 382,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.3",
+  "type": "dropdown",
+  "q_es": "Selecciona la función para cada requisito.",
+  "q_en": "Select the feature for each requirement.",
+  "rows": [
+   {
+    "es": "Contar cuántas personas hay en un fotograma de la cámara de una tienda",
+    "en": "Count how many people are in a store camera frame",
+    "opts_es": [
+     "Descripciones densas",
+     "Detección de personas",
+     "Lectura (OCR)",
+     "Detección de presencia"
+    ],
+    "opts_en": [
+     "Dense captions",
+     "People detection",
+     "Read (OCR)",
+     "Liveness detection"
+    ],
+    "correct": 1
+   },
+   {
+    "es": "Evitar que una foto impresa supere la verificación facial",
+    "en": "Prevent a printed photo from passing face verification",
+    "opts_es": [
+     "Descripciones densas",
+     "Detección de personas",
+     "Lectura (OCR)",
+     "Detección de presencia"
+    ],
+    "opts_en": [
+     "Dense captions",
+     "People detection",
+     "Read (OCR)",
+     "Liveness detection"
+    ],
+    "correct": 3
+   }
+  ],
+  "exp_es": "La detección de personas las localiza; la detección de presencia bloquea intentos de suplantación.",
+  "exp_en": "People detection locates people; liveness detection blocks spoofing attempts."
+ },
+ {
+  "id": 383,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "En un esquema de campos de Content Understanding, ¿qué método permite inferir un campo a partir del contenido, como un resumen de una línea de un contrato?",
+  "q_en": "In a Content Understanding field schema, which method lets a field be inferred from the content, such as a one-line summary of a contract?",
+  "opts_es": [
+   "Generar",
+   "Copiar el valor del nombre del archivo",
+   "Eliminar",
+   "Extraer"
+  ],
+  "opts_en": [
+   "Generate",
+   "Copy the value from the file name",
+   "Delete",
+   "Extract"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Extraer devuelve valores que aparecen en el contenido; generar crea valores como resúmenes; clasificar elige de un conjunto.",
+  "exp_en": "Extract returns values that appear in the content; generate creates values such as summaries; classify picks from a set."
+ },
+ {
+  "id": 384,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "Un campo debe contener una urgencia 'Baja', 'Media' o 'Alta' para cada correo. ¿Qué método de campo encaja?",
+  "q_en": "A field must contain one of 'Low', 'Medium' or 'High' urgency for each email. Which field method fits?",
+  "opts_es": [
+   "Extraer",
+   "Generar un párrafo de texto libre",
+   "Clasificar",
+   "Traducir"
+  ],
+  "opts_en": [
+   "Extract",
+   "Generate a free-text paragraph",
+   "Classify",
+   "Translate"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Clasificar restringe la salida a un conjunto definido de valores.",
+  "exp_en": "Classify restricts the output to a defined set of values."
+ },
+ {
+  "id": 385,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿En qué formato puede devolver Content Understanding el contenido de un documento para usarlo fácilmente en la generación aumentada por recuperación?",
+  "q_en": "In which format can Content Understanding return document content so it is easy to use for retrieval-augmented generation?",
+  "opts_es": [
+   "Audio binario",
+   "Markdown",
+   "Una macro de Excel",
+   "Un ZIP comprimido de imágenes de página"
+  ],
+  "opts_en": [
+   "Binary audio",
+   "Markdown",
+   "An Excel macro",
+   "A compressed ZIP of page images"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "Markdown conserva títulos, tablas y estructura en forma de texto, lo que se divide bien para índices de búsqueda.",
+  "exp_en": "Markdown keeps headings, tables and structure in text form, which chunks well for search indexes."
+ },
+ {
+  "id": 386,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "Un único PDF escaneado contiene una factura, un tique y un contrato. ¿Cómo puede Content Understanding procesar cada parte correctamente?",
+  "q_en": "A single scanned PDF contains an invoice, a receipt and a contract. How can Content Understanding process each part correctly?",
+  "opts_es": [
+   "Bajar el umbral de confianza",
+   "Clasificar y dividir el archivo y enviar cada parte a un analizador",
+   "Ejecutar voz a texto sobre el PDF",
+   "Usar un analizador de facturas para todas las páginas"
+  ],
+  "opts_en": [
+   "Lower the confidence threshold",
+   "Classify and split the file, then route each part to an analyzer",
+   "Run speech-to-text on the PDF",
+   "Use one invoice analyzer for all pages"
+  ],
+  "correct": [
+   1
+  ],
+  "exp_es": "La clasificación y segmentación identifican tipos de documento dentro de un archivo para analizar cada parte con el esquema correcto.",
+  "exp_en": "Classification and segmentation identify document types within a file so each part is analyzed with the right schema."
+ },
+ {
+  "id": 387,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué servicio de Azure ofrece modelos precompilados para facturas, tiques y documentos de identidad, además de modelos de extracción personalizados?",
+  "q_en": "Which Azure service offers prebuilt models for invoices, receipts and ID documents and also custom extraction models?",
+  "opts_es": [
+   "Transcripción por lotes de Azure Speech",
+   "Azure AI Content Safety",
+   "Azure Document Intelligence",
+   "Azure Translator"
+  ],
+  "opts_en": [
+   "Azure Speech batch transcription",
+   "Azure AI Content Safety",
+   "Azure Document Intelligence",
+   "Azure Translator"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Document Intelligence ofrece modelos de documentos precompilados y personalizados; Content Understanding amplía la extracción a audio, imagen y vídeo.",
+  "exp_en": "Document Intelligence provides prebuilt and custom document models; Content Understanding extends extraction to audio, image and video."
+ },
+ {
+  "id": 388,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Qué campo agregarías a un analizador de audio de llamadas grabadas para indicar si el cliente quedó satisfecho?",
+  "q_en": "Which field would you add to an audio analyzer for call recordings to flag whether the customer was satisfied?",
+  "opts_es": [
+   "Un campo de clasificación con valores como Satisfecho o Insatisfecho",
+   "No se pueden definir campos para audio",
+   "Un campo de fecha",
+   "Un campo numérico con la duración del archivo de grabación"
+  ],
+  "opts_en": [
+   "A classify field with values such as Satisfied or Unsatisfied",
+   "No field is possible for audio",
+   "A date field",
+   "A number field that stores the length of the recording file"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los analizadores de audio admiten campos personalizados, incluida la clasificación del resultado de la conversación.",
+  "exp_en": "Analyzers for audio support custom fields, including classification of the conversation outcome."
+ },
+ {
+  "id": 389,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Cuál es la principal ventaja de extraer datos a un esquema estructurado en lugar de guardar texto OCR sin procesar?",
+  "q_en": "What is the main benefit of extracting data into a structured schema instead of storing raw OCR text?",
+  "opts_es": [
+   "Elimina la necesidad de revisar las puntuaciones de confianza de los campos",
+   "Traduce el documento",
+   "Los valores pueden ir directamente a bases de datos y flujos",
+   "Los archivos se convierten en imágenes más pequeñas"
+  ],
+  "opts_en": [
+   "It removes the need to check confidence scores of the fields",
+   "It translates the document",
+   "Values can go directly into databases and workflows",
+   "The files become smaller images"
+  ],
+  "correct": [
+   2
+  ],
+  "exp_es": "Los campos estructurados con tipos están listos para la automatización; la confianza todavía debe revisarse.",
+  "exp_en": "Structured fields with types are ready for automation; confidence still needs checking."
+ },
+ {
+  "id": 390,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "mc",
+  "q_es": "¿Cómo se suele facturar el uso de Content Understanding?",
+  "q_en": "How is Content Understanding usage typically billed?",
+  "opts_es": [
+   "Por la cantidad de contenido procesado, como páginas o minutos",
+   "Siempre es gratis",
+   "Por el número de usuarios que iniciaron sesión en el portal de Foundry",
+   "Una tarifa fija por analizador creado"
+  ],
+  "opts_en": [
+   "By the amount of content processed, such as pages or minutes",
+   "It is always free",
+   "By the number of users who signed in to the Foundry portal",
+   "A flat fee per analyzer created"
+  ],
+  "correct": [
+   0
+  ],
+  "exp_es": "Los costes dependen del contenido procesado (páginas, minutos de audio o vídeo) y del procesamiento generativo usado.",
+  "exp_en": "Costs scale with processed content (pages, audio or video minutes) and any generative processing used."
+ },
+ {
+  "id": 391,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre los métodos de campo de Content Understanding, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Content Understanding field methods, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Extraer devuelve valores que aparecen en el contenido.",
+    "en": "Extract returns values that appear in the content.",
+    "ans": true
+   },
+   {
+    "es": "Clasificar puede devolver cualquier texto libre que elija el modelo.",
+    "en": "Classify can return any free text the model chooses.",
+    "ans": false
+   },
+   {
+    "es": "Generar puede producir un resumen que no está escrito en el documento.",
+    "en": "Generate can produce a summary that is not written in the document.",
+    "ans": true
+   }
+  ],
+  "exp_es": "Clasificar se limita a los valores definidos; generar crea contenido nuevo; extraer copia lo que hay.",
+  "exp_en": "Classify is limited to the values you define; generate creates new content; extract copies what is there."
+ },
+ {
+  "id": 392,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "yesno",
+  "q_es": "Para cada afirmación sobre las opciones de procesamiento de documentos, indica si es verdadera o falsa.",
+  "q_en": "For each statement about document processing options, indicate whether it is true or false.",
+  "rows": [
+   {
+    "es": "Document Intelligence tiene modelos precompilados para tiques y facturas.",
+    "en": "Document Intelligence has prebuilt models for receipts and invoices.",
+    "ans": true
+   },
+   {
+    "es": "La salida en Markdown es útil para crear índices de búsqueda para RAG.",
+    "en": "Markdown output is useful for building search indexes for RAG.",
+    "ans": true
+   },
+   {
+    "es": "Un PDF mixto siempre debe dividirse a mano antes del análisis.",
+    "en": "A mixed PDF must always be split by hand before analysis.",
+    "ans": false
+   }
+  ],
+  "exp_es": "La clasificación y la división pueden separar tipos de documentos automáticamente.",
+  "exp_en": "Classification and splitting can separate document types automatically."
+ },
+ {
+  "id": 393,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "dropdown",
+  "q_es": "Selecciona el método de campo para cada campo.",
+  "q_en": "Select the field method for each field.",
+  "rows": [
+   {
+    "es": "Número de factura impreso en la página",
+    "en": "Invoice number printed on the page",
+    "opts_es": [
+     "Extraer",
+     "Clasificar",
+     "Generar"
+    ],
+    "opts_en": [
+     "Extract",
+     "Classify",
+     "Generate"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "Nivel de riesgo del contrato: Bajo, Medio o Alto",
+    "en": "Contract risk level: Low, Medium or High",
+    "opts_es": [
+     "Extraer",
+     "Clasificar",
+     "Generar"
+    ],
+    "opts_en": [
+     "Extract",
+     "Classify",
+     "Generate"
+    ],
+    "correct": 1
+   }
+  ],
+  "exp_es": "Los valores impresos se extraen; los valores de una lista fija se clasifican.",
+  "exp_en": "Printed values are extracted; values from a fixed list are classified."
+ },
+ {
+  "id": 394,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "dropdown",
+  "q_es": "Selecciona el método para cada campo de un analizador de llamadas.",
+  "q_en": "Select the method for each field of a call analyzer.",
+  "rows": [
+   {
+    "es": "Un resumen de la llamada en dos frases",
+    "en": "A two-sentence summary of the call",
+    "opts_es": [
+     "Generar",
+     "Clasificar",
+     "Extraer"
+    ],
+    "opts_en": [
+     "Generate",
+     "Classify",
+     "Extract"
+    ],
+    "correct": 0
+   },
+   {
+    "es": "El número de pedido que dice el cliente",
+    "en": "The order number the customer reads out",
+    "opts_es": [
+     "Generar",
+     "Clasificar",
+     "Extraer"
+    ],
+    "opts_en": [
+     "Generate",
+     "Classify",
+     "Extract"
+    ],
+    "correct": 2
+   }
+  ],
+  "exp_es": "Los resúmenes se generan; los valores dichos en la llamada se extraen.",
+  "exp_en": "Summaries are generated; values spoken in the call are extracted."
+ },
+ {
+  "id": 395,
+  "exam": "ai-901",
+  "dom": 2,
+  "obj": "2.4",
+  "type": "sentence",
+  "pre_es": "Un campo cuyo valor debe ser una de un conjunto fijo de etiquetas usa el método ",
+  "pre_en": "A field whose value must be one of a fixed set of labels uses the ",
+  "post_es": ".",
+  "post_en": " method.",
+  "opts_es": [
+   "extraer",
+   "traducir",
+   "clasificar",
+   "generar"
+  ],
+  "opts_en": [
+   "extract",
+   "translate",
+   "classify",
+   "generate"
+  ],
+  "correct": 2,
+  "exp_es": "Los campos de clasificación eligen entre valores enumerados.",
+  "exp_en": "Classify fields choose among enumerated values."
  }
 ]
