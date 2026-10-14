@@ -390,7 +390,10 @@ async function careerRenderCatalog(){
     sec.innerHTML='<div class="cr-news-head"><div class="cr-news-ht"><span class="cr-news-ico">'+ICO.spark+'</span><div><h3>'+esc(ct('newsTitle'))+(un?' <span class="cr-dot">'+un+'</span>':'')+'</h3><p>'+esc(ct('newsSub'))+'</p></div></div><button type="button" class="cr-news-all">'+esc(ct('newsAll'))+' →</button></div><div class="cr-news-grid"></div>';
     sec.querySelector('.cr-news-all').onclick=()=>openNews();
     const grid=sec.querySelector('.cr-news-grid');
-    NEWS.slice(0,3).forEach(n=>{
+    // put news about the user's own exams first, so a batch of packs for other exams doesn't hide them
+    const mine=new Set(Store.get('history',[]).map(h=>h.examId).concat(getCerts().map(c=>c.examId)));
+    const rel=n=>(n.exams||[]).some(id=>mine.has(id))?0:1;
+    NEWS.map((n,i)=>({n:n,i:i})).sort((a,b)=>rel(a.n)-rel(b.n)||a.i-b.i).slice(0,3).map(x=>x.n).forEach(n=>{
       const c=document.createElement('button'); c.type='button'; c.className='cr-ncard t-'+n.type+(n.date>seen?' unread':'');
       const act=n.pack?(ct('newsPractice')+(isPro()?'':' · '+ct('newsProOnly'))):(n.type==='new-exam'&&n.exams&&exById(n.exams[0]))?ct('newsOpenExam'):ct('newsRead');
       c.innerHTML='<span class="cr-ncard-top"><span class="cr-tag t-'+esc(n.type)+'">'+esc(typeLbl(n.type))+'</span><span class="cr-ncard-date">'+esc(relDate(n.date))+'</span></span>'+
