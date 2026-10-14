@@ -47,6 +47,7 @@ try {
      ON DUPLICATE KEY UPDATE email = VALUES(email), name = VALUES(name), avatar_url = VALUES(avatar_url)'
   );
   $stmt->execute([$sub, $email, $name, $avatar]);
+  $isNew = $stmt->rowCount() === 1; // ON DUPLICATE KEY: 1 = fila nueva, 2/0 = ya existía
 
   $stmt = $pdo->prepare('SELECT * FROM users WHERE google_sub = ?');
   $stmt->execute([$sub]);
@@ -82,6 +83,7 @@ try {
       'name' => $user['name'],
       'avatar_url' => $user['avatar_url'],
       'is_pro' => (bool)$user['is_pro'],
+      'is_new' => $isNew,
     ],
     'data' => $user['data'] ? json_decode($user['data']) : null,
   ]);

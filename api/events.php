@@ -20,6 +20,8 @@ const EVENT_NAMES = [
     'landing_cta', 'landing_sticky',
     'exam_start', 'exam_pass', 'exam_fail',
     'paywall_limit', 'paywall_manual',
+    'news_card_exam', 'share_card', 'retire_to_successor',
+    'deep_link', 'exam_open', 'first_answer', 'login_modal', 'guest_limit', 'login_ok', 'signup_ok',
 ];
 
 $raw = file_get_contents('php://input');

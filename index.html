@@ -1816,7 +1816,7 @@ const I18N = {
     footerSupportPre:"¿Dudas, problemas o sugerencias? Escríbenos a",
     proLink:"Hazte Pro",
     loginGoogle:"Iniciar sesión con Google", logout:"Cerrar sesión", loginOk:"¡Sesión iniciada! Tu progreso se sincronizará.", syncError:"No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.",
-    loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Necesitas iniciar sesión con Google para acceder a los exámenes y guardar tu progreso.",
+    loginRequiredTitle:"Inicia sesión para continuar", loginRequiredSub:"Inicia sesión con Google para guardar tu progreso y sincronizarlo entre dispositivos.", guestLimitTitle:"Has usado tus 5 preguntas de prueba", guestLimitSub:"Crea tu cuenta gratis con Google y sigue practicando: 20 preguntas al día, progreso guardado y repaso inteligente de tus fallos.",
     rvSectionTitle:"Lo que dicen nuestros usuarios", rvWriteBtn:"Escribe una reseña", rvEditBtn:"Editar tu reseña",
     rvModalTitle:"Escribe una reseña", rvModalSub:"Comparte tu experiencia con EarnYourCert",
     rvSubmit:"Publicar reseña", rvCancel:"Cancelar", rvPlaceholder:"Cuéntanos tu experiencia preparando el examen… (opcional)",
@@ -1911,7 +1911,7 @@ const I18N = {
     footerSupportPre:"Questions, issues or suggestions? Email us at",
     proLink:"Get Pro",
     loginGoogle:"Sign in with Google", logout:"Sign out", loginOk:"Signed in! Your progress will sync.", syncError:"Couldn't connect to the server. Please try again later.",
-    loginRequiredTitle:"Sign in to continue", loginRequiredSub:"You need to sign in with Google to access exams and save your progress.",
+    loginRequiredTitle:"Sign in to continue", loginRequiredSub:"Sign in with Google to save your progress and sync it across devices.", guestLimitTitle:"You have used your 5 trial questions", guestLimitSub:"Create your free account with Google and keep practicing: 20 questions a day, saved progress and smart review of your mistakes.",
     rvSectionTitle:"What our users say", rvWriteBtn:"Write a review", rvEditBtn:"Edit your review",
     rvModalTitle:"Write a review", rvModalSub:"Share your experience with EarnYourCert",
     rvSubmit:"Post review", rvCancel:"Cancel", rvPlaceholder:"Tell us about your experience preparing for the exam… (optional)",
@@ -2155,8 +2155,10 @@ async function handleGoogleCredential(response){
       updateAccountUI();
       syncMergeAndPush(data);
       showToast(t('loginOk'),'ok');
+      track(data.user&&data.user.is_new?'signup_ok':'login_ok');
+      const a=pendingAction; pendingAction=null; // closeLoginModal() borra pendingAction: guardarla antes
       closeLoginModal();
-      if(pendingAction){ const a=pendingAction; pendingAction=null; a(); }
+      if(a)a();
     }else{
       showToast(t('syncError'),'warn');
     }
@@ -2172,7 +2174,13 @@ function requireLogin(action){
   pendingAction=action;
   openLoginModal();
 }
-function openLoginModal(){ $('#loginModal').classList.add('show'); }
+function openLoginModal(reason){
+  track(reason==='limit'?'guest_limit':'login_modal');
+  const lim=reason==='limit';
+  $('#loginModalTitle').textContent=t(lim?'guestLimitTitle':'loginRequiredTitle');
+  $('#loginModal .len-modal-sub').textContent=t(lim?'guestLimitSub':'loginRequiredSub');
+  $('#loginModal').classList.add('show');
+}
 function closeLoginModal(){ $('#loginModal').classList.remove('show'); pendingAction=null; }
 
 function restoreSession(){
@@ -2498,6 +2506,11 @@ function isCorrect(i){
   return true;
 }
 
+let answeredTracked=false;
+document.addEventListener('click',e=>{
+  if(answeredTracked||!e.target.closest||!e.target.closest('#opts'))return;
+  answeredTracked=true; track('first_answer');
+});
 function startExam(){
   track('exam_start');
   retryFromWrong=false;
@@ -3638,6 +3651,7 @@ function updateHero(){
 async function selectExam(id){
   currentExam=EXAMS.find(e=>e.id===id);
   if(!currentExam)return;
+  track('exam_open');
   QUESTIONS=await loadQuestions(id);
   // header dinámico
   $('#brandTitle').textContent=currentExam.code+' · '+t('examWord');
@@ -3881,6 +3895,8 @@ $('#lenCustomInput').addEventListener('change',applyCustomLen);
 
 // ===== Modal Pro: paywall de límite diario / info de suscripción =====
 function openProModal(reason){
+  // invitado sin cuenta que agota sus preguntas: primero la cuenta gratuita, no Patreon
+  if(reason!=='manual'&&typeof isLoggedIn==='function'&&!isLoggedIn()){ openLoginModal('limit'); return; }
   track(reason==='manual'?'paywall_manual':'paywall_limit');
   if(reason==='manual'){
     $('#proModalTitle').textContent=t('proManualTitle');
@@ -4124,7 +4140,7 @@ $('#catLevel').addEventListener('change',renderCatalog);
 // Botones de persistencia
 $('#progressBtn').addEventListener('click',openProgress);
 $('#backProg').addEventListener('click',closeProgress);
-$('#rzResume').addEventListener('click',()=>{ requireLogin(()=>resumeExam().catch(e=>showToast(t('loading'),'bad'))); });
+$('#rzResume').addEventListener('click',()=>{ resumeExam().catch(e=>showToast(t('loading'),'bad')); });
 $('#rzDiscard').addEventListener('click',()=>{ openConfirm(t('confirmDiscard'),()=>{ clearExamState(); renderResumeBar(); },t('discardBtn')); });
 
 // Aviso al salir con un examen en curso
@@ -4167,7 +4183,9 @@ restoreSession();
   const wanted=new URLSearchParams(location.search).get('exam');
   if(wanted && EXAMS.some(e=>e.id===wanted)){
     history.replaceState(null,'',location.pathname+location.hash);
-    requireLogin(()=>selectExam(wanted));
+    // los visitantes entran directo: practican sus preguntas gratis y el registro se pide al llegar al límite
+    track('deep_link');
+    selectExam(wanted);
     return;
   }
   restoreView();
@@ -4177,12 +4195,12 @@ restoreSession();
 // Restaura la pantalla en la que estaba el usuario antes de recargar
 function restoreView(){
   const view=getView();
-  if(view&&view.screen==='exam'&&getResumable()){ requireLogin(()=>resumeExam().catch(()=>{})); return; }
+  if(view&&view.screen==='exam'&&getResumable()){ resumeExam().catch(()=>{}); return; }
   if(!view)return;
   if(view.screen==='home'&&EXAMS.some(e=>e.id===view.examId)){
-    requireLogin(()=>selectExam(view.examId));
+    selectExam(view.examId);
   }else if(view.screen==='explore'&&EXAMS.some(e=>e.id===view.examId)){
-    requireLogin(()=>selectExam(view.examId).then(openExplore));
+    selectExam(view.examId).then(openExplore);
   }else if(view.screen==='progress'){
     openProgress();
   }else{
