@@ -12,7 +12,12 @@ const HT={
   ctaNew:'Ver exámenes nuevos', ctaAll:'Ver todos los exámenes', ctaPro:'Hazte Pro', ctaCareer:'Mi carrera',
   newLabel:'Nuevos', q:'preguntas',
   sExams:'exámenes', sQuestions:'preguntas', sLangs:'idiomas', sFree:'preguntas gratis al día',
-  filterOn:'Mostrando solo las novedades', filterOff:'Quitar filtro'
+  filterOn:'Mostrando solo las novedades', filterOff:'Quitar filtro',
+  vChip:'AZ-104 · Pregunta 18 de 50',
+  vQ:'Una VM solo debe aceptar tráfico RDP desde la red corporativa. ¿Qué configuras?',
+  vO:['Un grupo de seguridad de red (NSG) con una regla de entrada','Una ruta definida por el usuario (UDR)','Un punto de conexión privado','Azure Front Door con WAF'],
+  vExp:'Correcto: un NSG filtra el tráfico entrante por IP de origen y puerto.',
+  vReady:'Preparación estimada', vDom:'Redes virtuales'
  },
  en:{
   eyebrow:'{n} new exams · {month}',
@@ -22,7 +27,12 @@ const HT={
   ctaNew:'See new exams', ctaAll:'See all exams', ctaPro:'Go Pro', ctaCareer:'My career',
   newLabel:'New', q:'questions',
   sExams:'exams', sQuestions:'questions', sLangs:'languages', sFree:'free questions per day',
-  filterOn:'Showing new exams only', filterOff:'Clear filter'
+  filterOn:'Showing new exams only', filterOff:'Clear filter',
+  vChip:'AZ-104 · Question 18 of 50',
+  vQ:'A VM must only accept RDP traffic from the corporate network. What do you configure?',
+  vO:['A network security group (NSG) with an inbound rule','A user-defined route (UDR)','A private endpoint','Azure Front Door with WAF'],
+  vExp:'Correct: an NSG filters inbound traffic by source IP and port.',
+  vReady:'Estimated readiness', vDom:'Virtual networking'
  }
 };
 const ht=k=>(HT[lang]&&HT[lang][k])||HT.es[k]||k;
@@ -32,6 +42,24 @@ let newOnly=false;
 window.heroFilter=ex=>!newOnly||isNew(ex);
 window.heroIsNew=isNew;
 
+// Vista previa de producto (decorativa) para la columna derecha del hero
+function visual(){
+  const o=ht('vO');
+  return '<div class="mkt-visual" aria-hidden="true">'+
+    '<div class="mv-card">'+
+      '<div class="mv-top"><span class="mv-chip">'+esc(ht('vChip'))+'</span><span class="mv-timer">⏱ 42:10</span></div>'+
+      '<div class="mv-bar"><i style="width:36%"></i></div>'+
+      '<p class="mv-q">'+esc(ht('vQ'))+'</p>'+
+      o.map((x,i)=>'<div class="mv-opt'+(i===0?' ok':'')+'"><span>'+'ABCD'[i]+'</span>'+esc(x)+(i===0?'<b>✓</b>':'')+'</div>').join('')+
+      '<div class="mv-exp">'+esc(ht('vExp'))+'</div>'+
+    '</div>'+
+    '<div class="mv-float">'+
+      '<span>'+esc(ht('vReady'))+'</span><b>82%</b>'+
+      '<div class="mv-ring"><i style="width:82%"></i></div>'+
+      '<small>'+esc(ht('vDom'))+' · 9/10</small>'+
+    '</div>'+
+  '</div>';
+}
 function stat(v,l){return '<div class="mkt-stat"><b>'+esc(v)+'</b><span>'+esc(l)+'</span></div>';}
 
 function heroRender(){
@@ -58,13 +86,13 @@ function heroRender(){
       '<div class="mkt-cta">'+
         '<button type="button" class="mkt-btn primary" id="heroNew">'+esc(fresh.length?ht('ctaNew'):ht('ctaAll'))+'</button>'+second+
       '</div>'+
-    '</div>'+
     '<div class="mkt-stats">'+
       stat(String(real),ht('sExams'))+
       stat((Math.floor(total/100)*100).toLocaleString(t('locale'))+'+',ht('sQuestions'))+
       stat('ES · EN',ht('sLangs'))+
       (pro?'':stat(String(typeof DAILY_LIMIT!=='undefined'?DAILY_LIMIT:20),ht('sFree')))+
-    '</div>';
+    '</div>'+
+    '</div>'+visual();
   const showNew=()=>{
     if(window.track)track('hero_new');
     newOnly=fresh.length>0; renderCatalog();
@@ -81,7 +109,7 @@ function renderFilterBar(){
   if(!newOnly){ if(bar)bar.remove(); return; }
   if(!bar){
     bar=document.createElement('div'); bar.id='heroFilterBar'; bar.className='mkt-filter';
-    const grid=document.getElementById('examGrid'); cat.insertBefore(bar,grid);
+    const grid=document.getElementById('examGrid'); grid.parentNode.insertBefore(bar,grid);
   }
   bar.innerHTML='<span>'+esc(ht('filterOn'))+'</span><button type="button" class="btn btn-ghost btn-sm">'+esc(ht('filterOff'))+'</button>';
   bar.querySelector('button').onclick=()=>{ newOnly=false; renderCatalog(); };
@@ -97,6 +125,33 @@ css.textContent=[
 '.mkt::before{content:"";position:absolute;right:-90px;top:-110px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 68%);pointer-events:none}',
 '.mkt::after{content:"";position:absolute;left:-60px;bottom:-130px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%);pointer-events:none}',
 '.mkt-main{position:relative;z-index:1;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}',
+'.mkt{display:grid !important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px !important;align-items:center !important;padding:52px 56px !important;border-radius:24px !important}',
+'.mkt .mkt-stats{margin-top:14px;align-self:stretch}',
+'.mkt-visual{position:relative;z-index:1;justify-self:end;width:100%;max-width:470px;padding:8px 18px 34px 0}',
+'.mv-card{background:#fff;color:#0D1520;border-radius:18px;padding:20px 20px 16px;box-shadow:0 30px 60px rgba(4,25,60,.35),0 2px 6px rgba(4,25,60,.2);transform:rotate(-1.2deg);display:flex;flex-direction:column;gap:9px;font-size:13px}',
+'html[data-theme="dark"] .mv-card{background:#141B26;color:#E6EDF5}',
+'.mv-top{display:flex;justify-content:space-between;align-items:center;gap:8px}',
+'.mv-chip{font-family:var(--mono);font-size:11px;font-weight:600;color:#0F6CBD;background:#EAF3FB;padding:3px 9px;border-radius:99px}',
+'html[data-theme="dark"] .mv-chip{background:#12304F;color:#7FB8EE}',
+'.mv-timer{font-family:var(--mono);font-size:11.5px;font-weight:600;opacity:.7}',
+'.mv-bar{height:4px;border-radius:9px;background:rgba(15,108,189,.12);overflow:hidden}.mv-bar i{display:block;height:100%;background:#0F6CBD;border-radius:9px}',
+'.mv-q{margin:4px 0 2px !important;font-size:14px !important;font-weight:600;line-height:1.45 !important;color:inherit !important;opacity:1 !important}',
+'.mv-opt{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid rgba(13,21,32,.12);border-radius:10px;font-size:12.5px;line-height:1.35}',
+'html[data-theme="dark"] .mv-opt{border-color:rgba(255,255,255,.12)}',
+'.mv-opt span{flex:none;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:700;background:rgba(13,21,32,.06)}',
+'html[data-theme="dark"] .mv-opt span{background:rgba(255,255,255,.08)}',
+'.mv-opt.ok{border-color:#107C41;background:#E4F2EA}.mv-opt.ok span{background:#107C41;color:#fff}.mv-opt b{margin-left:auto;color:#107C41}',
+'html[data-theme="dark"] .mv-opt.ok{background:#13301F;border-color:#4FC07E}html[data-theme="dark"] .mv-opt.ok b{color:#4FC07E}',
+'.mv-exp{font-size:12px;line-height:1.45;padding:8px 10px;border-radius:9px;background:#F3F6FA;color:#3A4452;border-left:3px solid #107C41}',
+'html[data-theme="dark"] .mv-exp{background:#1B2431;color:#B8C2CF}',
+'.mv-float{position:absolute;left:-34px;bottom:0;background:#fff;color:#0D1520;border-radius:14px;padding:12px 14px;box-shadow:0 18px 40px rgba(4,25,60,.3);display:grid;grid-template-columns:auto auto;align-items:baseline;gap:2px 12px;min-width:190px}',
+'html[data-theme="dark"] .mv-float{background:#1B2431;color:#E6EDF5}',
+'.mv-float span{font-size:11.5px;opacity:.7}.mv-float b{font-size:20px;color:#107C41;text-align:right}',
+'html[data-theme="dark"] .mv-float b{color:#4FC07E}',
+'.mv-ring{grid-column:1/-1;height:6px;border-radius:9px;background:rgba(16,124,65,.15);overflow:hidden}.mv-ring i{display:block;height:100%;background:linear-gradient(90deg,#1E9E6A,#107C41)}',
+'.mv-float small{grid-column:1/-1;font-size:11px;opacity:.65}',
+'@media(max-width:1020px){.mkt{grid-template-columns:1fr !important;padding:34px 30px !important}.mkt-visual{display:none}}',
+'@media(max-width:600px){.mkt{padding:26px 20px !important;gap:22px !important;border-radius:18px !important}}',
 '.mkt-eyebrow{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:5px 12px;border-radius:99px;backdrop-filter:blur(4px)}',
 'button.mkt-eyebrow{cursor:pointer;transition:background .15s}button.mkt-eyebrow:hover{background:rgba(255,255,255,.26)}button.mkt-eyebrow::after{content:"→";opacity:.8}',
 '.mkt-eyebrow i{width:8px;height:8px;border-radius:50%;background:#7CF0A8;box-shadow:0 0 0 0 rgba(124,240,168,.7);animation:heroPulse 2s infinite}',

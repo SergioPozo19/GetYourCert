@@ -1531,8 +1531,8 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
         </div>
         <div class="ob-content">
           <div class="ob-tag" data-i="ob1tag">Paso 1 de 3</div>
-          <h3 class="ob-h" id="obTitle0" data-i="ob1t">Preguntas reales, condiciones reales</h3>
-          <p class="ob-p" data-i="ob1d">Más de 2.500 preguntas para certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.</p>
+          <h3 class="ob-h" id="obTitle0" data-i="ob1t">Preguntas tipo examen, condiciones reales</h3>
+          <p class="ob-p" data-i="ob1d">Más de 7.000 preguntas originales para certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.</p>
         </div>
       </div>
 
@@ -1834,7 +1834,7 @@ const I18N = {
     saveProgressCta:"Ver plan Pro →",
     onboardTitle:"Bienvenido a EarnYourCert",
     onboardSub:"La forma más efectiva de preparar tu certificación Microsoft",
-    ob1tag:"Paso 1 de 3", ob1t:"Preguntas reales, condiciones reales", ob1d:"Casi 4.000 preguntas originales para certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.",
+    ob1tag:"Paso 1 de 3", ob1t:"Preguntas tipo examen, condiciones reales", ob1d:"Más de 7.000 preguntas originales para certificaciones Microsoft. Cada simulacro pondera los dominios igual que el examen oficial.",
     ob2tag:"Paso 2 de 3", ob2t:"Aprende de cada respuesta", ob2d:"Explicación detallada en cada pregunta. El sistema SRS detecta tus puntos débiles y los repite hasta que los dominas.",
     ob3tag:"Paso 3 de 3", ob3t:"Controla tu evolución", ob3d:"Rastrea tu precisión por dominio a lo largo del tiempo. Identifica dónde reforzar antes del examen real.",
     onboardNext:"Siguiente →", onboardSkip:"Saltar", onboardCta:"Empezar gratis →",
@@ -1929,7 +1929,7 @@ const I18N = {
     saveProgressCta:"See Pro plan →",
     onboardTitle:"Welcome to EarnYourCert",
     onboardSub:"The most effective way to prepare for your Microsoft certification",
-    ob1tag:"Step 1 of 3", ob1t:"Real questions, real conditions", ob1d:"Nearly 4,000 original questions for Microsoft certifications. Each mock exam weights domains exactly like the official test.",
+    ob1tag:"Step 1 of 3", ob1t:"Exam-style questions, real conditions", ob1d:"More than 7,000 original questions for Microsoft certifications. Each mock exam weights domains exactly like the official test.",
     ob2tag:"Step 2 of 3", ob2t:"Learn from every answer", ob2d:"Detailed explanation on every question. The SRS system spots your weak points and repeats them until you master them.",
     ob3tag:"Step 3 of 3", ob3t:"Track your progress", ob3d:"Monitor your accuracy per domain over time. Know exactly where to focus before the real exam.",
     onboardNext:"Next →", onboardSkip:"Skip", onboardCta:"Start for free →",
@@ -3122,6 +3122,7 @@ function filteredExams(){
   const level=$('#catLevel')?.value||'';
   return EXAMS.filter(ex=>{
     if(window.heroFilter && !heroFilter(ex))return false;
+    if(window.uiAreaFilter && !uiAreaFilter(ex))return false;
     if(level && ex.level!==level)return false;
     if(term){
       const haystack=[ex.code,ex.title_es,ex.title_en].join(' ').toLowerCase();
@@ -5017,7 +5018,8 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
-<script src="career.js?v=7"></script>
-<script src="hero.js?v=6"></script>
+<script src="career.js?v=8"></script>
+<script src="hero.js?v=7"></script>
+<script src="ui.js?v=1"></script>
 </body>
 </html>

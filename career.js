@@ -406,6 +406,7 @@ async function careerRenderCatalog(){
   }
 }
 window.careerRenderCatalog=careerRenderCatalog;
+window.openNews=openNews;
 
 
 /* ---------- results screen: next step ---------- */
