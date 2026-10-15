@@ -236,7 +236,9 @@ css.textContent=[
 'html.m-app #uiNav .m-more-tab{display:inline-flex}',
 '@media(min-width:761px) and (max-width:900px){.brand .sub{display:none}.brand .brand-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{min-width:0;flex:1 1 auto}.brand>div{min-width:0}.ui-nav{flex:none}}',
 /* native touch basics */
-'html.m-app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}',
+'html.m-app{-webkit-tap-highlight-color:transparent}',
+/* sheets scroll on their own without dragging the page behind; dvh = the visible area under Safari's toolbars */
+'html.m-app #exam .gridnav,html.m-app .modal-ov .modal,html.m-app .cr-modal-box,.m-sheet-box{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}',
 'html.m-app,html.m-app body{height:auto;min-height:100%}',
 'html.m-app body{background:var(--bg);padding-bottom:calc(72px + env(safe-area-inset-bottom))}',
 'html.m-app button,html.m-app a,html.m-app .mode,html.m-app .exam-card{touch-action:manipulation;-webkit-user-select:none;user-select:none}',
@@ -464,7 +466,8 @@ css.textContent=[
 /* progress & explore */
 'html.m-app #progress .cat-head h2,html.m-app #explore .cat-head h2{font-size:24px}',
 'html.m-app .explore-controls{flex-direction:column;gap:8px}',
-'@media(prefers-reduced-motion:reduce){.m-sheet-box,html.m-app .modal-ov .modal,html.m-app #exam .gridnav{transition:none}html.m-app .qcard.m-swl,html.m-app .qcard.m-swr{animation:none}}'
+'@media(prefers-reduced-motion:reduce){.m-sheet-box,html.m-app .modal-ov .modal,html.m-app #exam .gridnav{transition:none}html.m-app .qcard.m-swl,html.m-app .qcard.m-swr{animation:none}}',
+'html.m-app #exam .gridnav{max-height:72dvh}html.m-app .modal-ov .modal,html.m-app .cr-modal-box{max-height:90dvh}.m-sheet-box{max-height:88dvh}'
 ].join('\n');
 document.head.appendChild(css);
 
