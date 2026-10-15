@@ -176,15 +176,18 @@ css.textContent=[
 /* catalog polish */
 '#catalog .cat-head{margin:6px 0 18px}',
 '#catalog .cat-head h2{font-size:22px}',
-'.exam-card{overflow:hidden;--lv:var(--accent)}',
-'.exam-card[data-level="fundamentals"]{--lv:#1E9E6A}.exam-card[data-level="associate"]{--lv:#0F6CBD}.exam-card[data-level="expert"]{--lv:#7A4FD6}.exam-card[data-level="specialty"]{--lv:#D9822B}',
-'html[data-theme="dark"] .exam-card[data-level="fundamentals"]{--lv:#4FC07E}html[data-theme="dark"] .exam-card[data-level="associate"]{--lv:#4CA0E8}html[data-theme="dark"] .exam-card[data-level="expert"]{--lv:#A98BF0}html[data-theme="dark"] .exam-card[data-level="specialty"]{--lv:#F0A55C}',
-'.exam-card[data-level]:not(.coming-soon){border-top:3px solid var(--lv)}',
-'.exam-card[data-level]:not(.coming-soon):hover{border-top-color:var(--lv);border-color:var(--lv);box-shadow:0 18px 40px rgba(16,24,40,.14)}',
-'.exam-card[data-level] .ec-logo{background:linear-gradient(135deg,var(--lv),color-mix(in srgb,var(--lv) 68%,#fff))}',
-'.exam-card[data-level] .ec-code,.exam-card[data-level] .ec-go{color:var(--lv)}',
-'.ec-ribbon{position:absolute;top:16px;right:-38px;transform:rotate(40deg);background:linear-gradient(135deg,#1E9E6A,#16875A);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 44px;box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:none}',
-'.exam-card.is-new .ec-badge.new-b{display:none}',
+'.exam-card{overflow:hidden}',
+/* calm catalog: one accent for every card; the level is a neutral tag, not a colour */
+'.exam-card .ec-logo,.exam-card[data-level] .ec-logo{background:var(--accent-soft);color:var(--accent);box-shadow:none;border:1px solid color-mix(in srgb,var(--accent) 14%,transparent)}',
+'.exam-card .ec-logo svg{width:24px;height:24px}',
+'.exam-card .ec-code{color:var(--ink-3);font-weight:600}',
+'.exam-card:not(.coming-soon):hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:0 12px 30px rgba(16,24,40,.10)}',
+'.exam-card:not(.coming-soon):hover .ec-logo{transform:none}',
+'.exam-card::before{display:none}',
+'.ec-badge.level-b{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}',
+/* most exams are recent: a "New" tag on almost every card is noise (they still sort first) */
+'.exam-card .ec-badge.new-b{display:none}',
+'.ec-ribbon{display:none}',
 /* mobile fixes */
 '@media(max-width:700px){.mkt{padding:26px 22px 22px;border-radius:16px;gap:22px}.mkt-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.mkt-stat{padding:0;border-left:0;flex-direction:column;gap:0}.mkt-stat b{font-size:19px}}',
 '@media(max-width:600px){.cat-tools{flex-direction:column;align-items:stretch}.cat-filters{width:100%}.cat-filters .ex-search{max-width:none}.cat-filters .ex-dom{flex:0 0 140px}.cat-tools #progressBtn{margin-left:0;width:100%;justify-content:center}}',
