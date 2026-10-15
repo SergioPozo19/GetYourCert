@@ -1,4 +1,6 @@
 (function(){
+  // invite links (?ref=CODE) also work on landing pages: kept until the visitor signs up in the app
+  try{ var rf=new URLSearchParams(location.search).get('ref'); if(rf&&/^[A-Za-z0-9]{4,16}$/.test(rf))localStorage.setItem('gyc:refCode',JSON.stringify(rf.toUpperCase())); }catch(e){}
   function getLang(){
     var fixed=document.documentElement.getAttribute('data-fixed-lang');
     if(fixed)return fixed;

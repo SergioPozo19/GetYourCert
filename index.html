@@ -4214,6 +4214,9 @@ restoreSession();
 // Deep link from SEO landing pages: /?exam=az-900 opens that exam directly
 (function(){
   const qs=new URLSearchParams(location.search);
+  // enlace de invitación (?ref=CODIGO): se guarda hasta que el visitante cree su cuenta (invite.js lo canjea)
+  const ref=(qs.get('ref')||'').toUpperCase();
+  if(/^[A-Z0-9]{4,16}$/.test(ref)){ Store.set('refCode',ref); qs.delete('ref'); const rest=qs.toString(); history.replaceState(null,'',location.pathname+(rest?'?'+rest:'')+location.hash); track('ref_visit'); }
   const wanted=qs.get('exam'), wantedDom=parseInt(qs.get('dom'),10);
   if(wanted && EXAMS.some(e=>e.id===wanted)){
     history.replaceState(null,'',location.pathname+location.hash);
@@ -5062,6 +5065,7 @@ updateOnlineStatus();
 <script src="examhome.js?v=2"></script>
 <script src="engage.js?v=1"></script>
 <script src="daily.js?v=1"></script>
-<script src="mobile.js?v=6"></script>
+<script src="invite.js?v=1"></script>
+<script src="mobile.js?v=7"></script>
 </body>
 </html>

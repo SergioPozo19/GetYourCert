@@ -8,12 +8,12 @@ const MT={
  es:{more:'Más', back:'Atrás', signIn:'Entrar', guest:'Invitado', guestSub:'Inicia sesión gratis para guardar tu progreso',
   plan:'Plan', planPro:'Pro · ilimitado', planFree:'Gratis · 5 preguntas al día',
   language:'Idioma', theme:'Tema', light:'Claro', dark:'Oscuro', goPro:'Hazte Pro · 1,99 €/mes',
-  support:'Soporte', privacy:'Privacidad', logout:'Cerrar sesión', close:'Cerrar',
+  invite:'Invitar a un amigo', support:'Soporte', privacy:'Privacidad', logout:'Cerrar sesión', close:'Cerrar',
   questions:'Preguntas', finish:'Finalizar', readMore:'Leer más', readLess:'Leer menos', settings:'Ajustes'},
  en:{more:'More', back:'Back', signIn:'Sign in', guest:'Guest', guestSub:'Sign in for free to save your progress',
   plan:'Plan', planPro:'Pro · unlimited', planFree:'Free · 5 questions a day',
   language:'Language', theme:'Theme', light:'Light', dark:'Dark', goPro:'Go Pro · €1.99/month',
-  support:'Support', privacy:'Privacy', logout:'Sign out', close:'Close',
+  invite:'Invite a friend', support:'Support', privacy:'Privacy', logout:'Sign out', close:'Close',
   questions:'Questions', finish:'Finish', readMore:'Read more', readLess:'Read less', settings:'Settings'}
 };
 const mt=k=>(MT[lang]&&MT[lang][k])||MT.es[k];
@@ -28,6 +28,7 @@ const ICO={
   check:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
   chev:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>',
   star:'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>',
+  gift:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>',
   mail:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
   shield:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
   out:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>'
@@ -137,6 +138,7 @@ function openSheet(){
     '</div>'+
     '<div class="m-list">'+
       (pro?'':'<a class="m-row m-link m-gold" href="/pro.html">'+ICO.star+'<span>'+esc(mt('goPro'))+'</span>'+ICO.chev+'</a>')+
+      '<button type="button" class="m-row m-link" data-act="invite">'+ICO.gift+'<span>'+esc(mt('invite'))+'</span>'+ICO.chev+'</button>'+
       '<a class="m-row m-link" href="mailto:soporte@earnyourcert.com">'+ICO.mail+'<span>'+esc(mt('support'))+'</span>'+ICO.chev+'</a>'+
       '<a class="m-row m-link" href="/privacy.html">'+ICO.shield+'<span>'+esc(mt('privacy'))+'</span>'+ICO.chev+'</a>'+
       (logged?'<button type="button" class="m-row m-link m-danger" data-act="logout">'+ICO.out+'<span>'+esc(mt('logout'))+'</span></button>':'')+
@@ -150,6 +152,7 @@ function openSheet(){
     if(l){ const b=document.querySelector('#langToggle [data-lang="'+l.dataset.langSet+'"]'); if(b&&!b.classList.contains('on'))b.click(); setTimeout(openSheet,90); }
     else if(th){ const want=th.dataset.themeSet, cur=document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'; if(want!==cur)$('#themeBtn').click(); setTimeout(()=>{ openSheet(); syncThemeColor(); },60); }
     else if(act&&act.dataset.act==='login'){ closeSheet(); if(typeof openLoginModal==='function')openLoginModal(); }
+    else if(act&&act.dataset.act==='invite'){ closeSheet(true); if(window.openInvite)openInvite(); }
     else if(act&&act.dataset.act==='logout'){ closeSheet(); $('#logoutBtn').click(); }
   });
   requestAnimationFrame(()=>{ sh.classList.add('show'); document.body.classList.add('m-sheet-open'); syncTabs(); });

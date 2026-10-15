@@ -16,7 +16,7 @@ from seo_content import CATS, HOME_ES, HOME_EN
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
 TODAY = datetime.date.today().isoformat()
-CSS_V = '6'
+CSS_V = '7'
 
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8', newline='').read()

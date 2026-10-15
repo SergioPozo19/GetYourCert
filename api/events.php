@@ -17,6 +17,7 @@ const EVENT_NAMES = [
     'bonus_promo_click', 'review_posted', 'bonus_granted',
     'rv_nudge_show', 'rv_nudge_click', 'rv_nudge_later',
     'qotd_right', 'qotd_wrong', 'qotd_practice', 'pwa_prompt_show', 'pwa_install_click', 'pwa_later', 'pwa_installed',
+    'ref_visit', 'ref_claimed', 'ref_reward', 'invite_open', 'invite_copy', 'invite_share', 'badge_show', 'badge_share', 'badge_download',
     'results_pro_click', 'results_signup_click', 'cert_add', 'career_open',
     'patreon_hero', 'patreon_modal', 'patreon_footer', 'patreon_other', 'patreon_prohtml',
     'landing_cta', 'landing_sticky',
