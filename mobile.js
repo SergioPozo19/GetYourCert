@@ -126,7 +126,7 @@ function openSheet(){
   const dark=document.documentElement.getAttribute('data-theme')==='dark';
   const sh=document.createElement('div'); sh.id='mSheet'; sh.className='m-sheet';
   sh.innerHTML='<div class="m-sheet-box" role="dialog" aria-modal="true" aria-label="'+esc(mt('settings'))+'"><div class="m-grab"></div>'+
-    '<div class="m-acc">'+
+    '<div class="m-acc'+(logged&&pro?' pro':'')+'">'+
       (logged?'<img alt="" src="'+esc(src||'')+'">':'<span class="m-acc-ph">'+ICO.more+'</span>')+
       '<div><b>'+esc(logged?name:mt('guest'))+'</b><span>'+esc(logged?(pro?mt('planPro'):mt('planFree')):mt('guestSub'))+'</span></div>'+
       (logged?'':'<button type="button" class="btn btn-primary btn-sm" data-act="login">'+esc(mt('signIn'))+'</button>')+
@@ -448,6 +448,11 @@ css.textContent=[
 '.m-sheet.show .m-sheet-box{transform:none}',
 '.m-grab{position:absolute;top:9px;left:50%;width:38px;height:5px;margin-left:-19px;border-radius:99px;background:var(--line)}',
 '.m-acc{display:flex;align-items:center;gap:12px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:14px}',
+'.m-acc.pro{background:linear-gradient(150deg,#FFFBEA,#F6E6B4);border-color:#EBD38A;color:#3D2A00}',
+'html[data-theme="dark"] .m-acc.pro{background:linear-gradient(150deg,#2A2310,#1E180A);border-color:#5C4A16;color:#F3E2B0}',
+'.m-acc.pro img{box-shadow:0 0 0 2px #FFFBEA,0 0 0 4px #D4AF37}',
+'html[data-theme="dark"] .m-acc.pro img{box-shadow:0 0 0 2px #2A2310,0 0 0 4px #D4AF37}',
+'.m-acc.pro>div>span{display:inline-flex;width:fit-content;margin-top:4px;padding:2px 9px;border-radius:999px;background:linear-gradient(135deg,#F8E7A6,#E3BE4E 45%,#B98A16);color:#2A2000 !important;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}',
 '.m-acc img,.m-acc-ph{width:46px;height:46px;border-radius:50%;flex:none;object-fit:cover;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}',
 '.m-acc>div{flex:1;min-width:0}.m-acc b{display:block;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.m-acc>div>span{display:block;font-size:12.5px;color:var(--ink-3)}',
 '.m-acc .m-acc-ph svg{width:22px;height:22px}',

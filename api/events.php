@@ -15,6 +15,7 @@ const EVENT_NAMES = [
     'hero_new', 'hero_pro', 'hero_career', 'hero_chip',
     'news_open', 'pack_start',
     'bonus_promo_click', 'review_posted', 'bonus_granted',
+    'rv_nudge_show', 'rv_nudge_click', 'rv_nudge_later',
     'results_pro_click', 'results_signup_click', 'cert_add', 'career_open',
     'patreon_hero', 'patreon_modal', 'patreon_footer', 'patreon_other', 'patreon_prohtml',
     'landing_cta', 'landing_sticky',
