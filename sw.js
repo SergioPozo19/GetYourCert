@@ -1,4 +1,4 @@
-const CACHE_NAME = 'eyc-v116';
+const CACHE_NAME = 'eyc-v117';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const STATIC_ASSETS = [
   './mobile.js',
   './engage.js',
   './examhome.js',
+  './daily.js',
   './news.json',
   './manifest.json',
   './icon.svg',
