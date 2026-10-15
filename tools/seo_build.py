@@ -16,7 +16,7 @@ from seo_content import CATS, HOME_ES, HOME_EN
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
 TODAY = datetime.date.today().isoformat()
-CSS_V = '5'
+CSS_V = '6'
 
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8', newline='').read()
@@ -261,6 +261,15 @@ def build_exam(e):
     body = re.sub(r'\n?<!--samples-->.*?<!--/samples-->\n?', '\n', body, flags=re.S)
     body = body.replace('  <section class="block">\n    <h2 lang="es">Preguntas frecuentes</h2>',
                         samples_html(e, samples) + '\n\n  <section class="block">\n    <h2 lang="es">Preguntas frecuentes</h2>', 1)
+    # hero: exam icon (calm layout, see landing.css)
+    body = body.replace('<div class="hero">', '<div class="hero with-ico">\n    <div class="hero-ico">' + exam_icon(eid) + '</div>', 1)
+    # domain rows -> links to the domain pages
+    if eid in DOMAIN_EXAMS:
+        k = [0]
+        def _dl(mm):
+            k[0] += 1
+            return f'<a class="dom-row dom-link" href="/{eid}-dominio-{k[0]}.html">' + mm.group(1) + '<span class="dchev" aria-hidden="true">›</span></a>'
+        body = re.sub(r'<div class="dom-row">(.*?<div class="dw">.*?</div>)\s*</div>', _dl, body, flags=re.S)
     # footer exam list
     body = re.sub(r'    <div class="other-exams">.*?\n    </div>(?:\n    <div class="other-exams cat-links">.*?\n    </div>)?', lambda _: other_exams_html(eid), body, count=1, flags=re.S)
     # absolute asset paths
@@ -311,6 +320,7 @@ def build_exam(e):
             b = strip_lang(b, 'es')
             b = re.sub(r'<a href="/[^"]*"></a>', '', b)
             b = re.sub(r'href="/([a-z]{2}-\d{3})\.html"', r'href="/en/\1.html"', b)
+            b = re.sub(r'href="/([a-z]{2}-\d{3})-dominio-(\d+)\.html"', r'href="/en/\1-domain-\2.html"', b)
             b = b.replace('href="/"', 'href="/en/"')
             b = b.replace(f'href="/?exam={eid}"', f'href="/?exam={eid}&amp;lang=en"')
             b = re.sub(r'data-href-es="[^"]*" data-href-en="[^"]*"', '', b)
@@ -518,6 +528,206 @@ def build_categories():
                 f'</body>\n</html>\n')
             wr(f'{c["es"]}.html' if lg == 'es' else f'en/{c["en"]}.html', page)
 
+# ---------------------------------------------------------------- domain pages
+# One page per exam domain (ES + EN) for the exams people actually use: what the domain covers,
+# its weight, and 8 worked sample questions that appear on no other page. CTA opens domain practice.
+DOMAIN_EXAMS = ['az-900', 'ab-900', 'az-104', 'md-102']
+
+# Official "skills measured" objective names where the guide cards don't exist
+OBJECTIVES = {
+    'az-104': {
+        '1.1': ('Administrar usuarios y grupos de Microsoft Entra', 'Manage Microsoft Entra users and groups'),
+        '1.2': ('Administrar el acceso a los recursos de Azure', 'Manage access to Azure resources'),
+        '1.3': ('Administrar suscripciones y gobernanza de Azure', 'Manage Azure subscriptions and governance'),
+        '2.1': ('Configurar el acceso al almacenamiento', 'Configure access to storage'),
+        '2.2': ('Configurar y administrar cuentas de almacenamiento', 'Configure and manage storage accounts'),
+        '2.3': ('Configurar Azure Files y Azure Blob Storage', 'Configure Azure Files and Azure Blob Storage'),
+        '3.1': ('Automatizar implementaciones con plantillas ARM o Bicep', 'Automate deployment of resources by using ARM templates or Bicep files'),
+        '3.2': ('Crear y configurar máquinas virtuales', 'Create and configure virtual machines'),
+        '3.3': ('Aprovisionar y administrar contenedores', 'Provision and manage containers in the Azure portal'),
+        '3.4': ('Crear y configurar Azure App Service', 'Create and configure Azure App Service'),
+        '4.1': ('Configurar y administrar redes virtuales', 'Configure and manage virtual networks in Azure'),
+        '4.2': ('Configurar el acceso seguro a redes virtuales', 'Configure secure access to virtual networks'),
+        '4.3': ('Configurar la resolución de nombres y el equilibrio de carga', 'Configure name resolution and load balancing'),
+        '5.1': ('Supervisar recursos en Azure', 'Monitor resources in Azure'),
+        '5.2': ('Implementar copias de seguridad y recuperación', 'Implement backup and recovery'),
+    },
+}
+
+ICON_PATHS = dict(re.findall(r"^\s*'([a-z0-9-]+)':'(<[^']*)'", INDEX, re.M))
+
+
+def exam_icon(eid, size=30):
+    p = ICON_PATHS.get(eid)
+    if not p:
+        return ''
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{p}</svg>')
+
+
+def dom_url(eid, d, lg):
+    return f'/{eid}-dominio-{d}.html' if lg == 'es' else f'/en/{eid}-domain-{d}.html'
+
+
+def guide_topics(eid):
+    """Topic lists per domain from the study-guide cards of the landing source (cards follow domain order)."""
+    src = rd(f'tools/landing_src/{eid}.html')
+    out = {}
+    for i, card in enumerate(re.findall(r'<div class="guide-card">(.*?)</div>', src, re.S), 1):
+        out[i] = {lg: [html.unescape(re.sub('<[^>]+>', '', x)).strip() for x in re.findall(r'<li lang="%s">(.*?)</li>' % lg, card, re.S)]
+                  for lg in ('es', 'en')}
+    return out
+
+
+def weight_bounds(w):
+    nums = [int(x) for x in re.findall(r'\d+', w or '')]
+    return (nums[0], nums[-1]) if nums else (0, 0)
+
+
+def pick_domain_samples(e, d, exclude, k=8):
+    qs = json.load(open(os.path.join(ROOT, 'questions', e['id'] + '.json'), encoding='utf-8'))
+    ok = [q for q in qs if q['dom'] == d and q['type'] == 'mc' and not q.get('case_es') and len(q['correct']) == 1
+          and len(q['opts_en']) == 4 and len(q['q_en']) < 260 and max(len(o) for o in q['opts_en']) < 130
+          and q.get('exp_en') and q['id'] not in exclude]
+    ok.sort(key=lambda q: hashlib.md5(f"dom-{e['id']}-{q['id']}".encode()).hexdigest())
+    out, seen_obj = [], set()
+    for q in ok:  # spread across objectives first
+        if str(q.get('obj')) not in seen_obj:
+            out.append(q); seen_obj.add(str(q.get('obj')))
+        if len(out) == k: break
+    for q in ok:
+        if len(out) == k: break
+        if q not in out: out.append(q)
+    return sorted(out, key=lambda q: (str(q.get('obj')), q['id']))
+
+
+def domain_samples_html(samples, lg):
+    L = 'ABCD'
+    rows = []
+    for i, q in enumerate(samples, 1):
+        c = q['correct'][0]
+        opts = ''.join(f'<li>{esc(o)}</li>' for o in q['opts_' + lg])
+        lbl = ('Ver respuesta', 'Respuesta correcta') if lg == 'es' else ('Show answer', 'Correct answer')
+        rows.append(f'    <div class="sq">\n      <p class="sq-q"><span class="sq-n">{i}.</span> {esc(q["q_" + lg])}</p>\n'
+                    f'      <ol class="sq-opts" type="A">{opts}</ol>\n'
+                    f'      <details class="sq-ans"><summary>{lbl[0]}</summary><p><strong>{lbl[1]}: {L[c]}.</strong> {esc(q["exp_" + lg])}</p></details>\n'
+                    f'    </div>')
+    return '\n'.join(rows)
+
+
+def build_domains(e):
+    eid, code = e['id'], e['code']
+    qs = json.load(open(os.path.join(ROOT, 'questions', eid + '.json'), encoding='utf-8'))
+    used = {q['id'] for q in pick_samples(e)}  # questions already shown on the exam page
+    topics = guide_topics(eid)
+    doms = e['domains']
+    biggest = max(doms, key=lambda d: weight_bounds(d.get('weight'))[1])['id']
+    for d in doms:
+        n = d['id']
+        dq = [q for q in qs if q['dom'] == n]
+        cnt = len(dq)
+        types = {t: sum(1 for q in dq if q['type'] == t) for t in ('mc', 'yesno', 'dropdown', 'sentence', 'order')}
+        lo, hi = weight_bounds(d.get('weight'))
+        samples = pick_domain_samples(e, n, used)
+        used |= {q['id'] for q in samples}
+        es_url, en_url = SITE + dom_url(eid, n, 'es'), SITE + dom_url(eid, n, 'en')
+        objs = sorted({str(q.get('obj')) for q in dq})
+        for lg in ('es', 'en'):
+            name = d['name_' + lg]
+            url = es_url if lg == 'es' else en_url
+            home = '/' if lg == 'es' else '/en/'
+            pre = '' if lg == 'es' else '/en'
+            exam_page = f'{pre}/{eid}.html'
+            app = f'/?exam={eid}&amp;dom={n}&amp;lang={lg}'
+            if lg == 'es':
+                title = f'{code} dominio {n}: {name} – preguntas de práctica'
+                desc = (f'Practica el dominio {n} de {code} ({name}, {lo}-{hi}% del examen) con {cnt} preguntas originales '
+                        f'con explicación. Incluye {len(samples)} preguntas de ejemplo resueltas.')
+                intro = (f'El dominio {n} de {code} supone entre el {lo} y el {hi}% del examen'
+                         + (', el de más peso del temario' if n == biggest and len(doms) > 1 else '') + '. '
+                         f'En EarnYourCert tienes {cnt} preguntas originales de este dominio, todas con explicación: '
+                         f'{types["mc"]} de opción múltiple, {types["yesno"]} de sí o no y '
+                         f'{types["dropdown"] + types["sentence"] + types["order"]} de completar u ordenar, como en el examen real.')
+                T = dict(crumb='Exámenes', dom=f'Dominio {n} de {len(doms)}', ofexam='del examen', cta=f'Practicar el dominio {n} gratis →',
+                         ctasub='Sin registro. Elige cuántas preguntas quieres hacer.', topics='Qué entra en este dominio',
+                         sq=f'Preguntas de ejemplo del dominio {n}', sqi=f'{len(samples)} preguntas de nuestro banco de {cnt} para este dominio. Intenta responder antes de ver la solución.',
+                         others=f'Otros dominios de {code}', back=f'{code}: examen de práctica completo', qn='preguntas',
+                         full=f'Simulacro completo de {code} →', legal='Volver al catálogo', privacy='Privacidad', app_label='Abrir la app',
+                         stats=('Preguntas', 'Peso en el examen', 'Objetivos'))
+            else:
+                title = f'{code} domain {n}: {name} – practice questions'
+                desc = (f'Practice {code} domain {n} ({name}, {lo}-{hi}% of the exam) with {cnt} original questions '
+                        f'with explanations. Includes {len(samples)} worked sample questions.')
+                intro = (f'Domain {n} of {code} accounts for {lo}-{hi}% of the exam'
+                         + (', the heaviest part of the syllabus' if n == biggest and len(doms) > 1 else '') + '. '
+                         f'EarnYourCert has {cnt} original questions for this domain, all with explanations: '
+                         f'{types["mc"]} multiple choice, {types["yesno"]} yes/no and '
+                         f'{types["dropdown"] + types["sentence"] + types["order"]} completion or ordering items, like the real exam.')
+                T = dict(crumb='Exams', dom=f'Domain {n} of {len(doms)}', ofexam='of the exam', cta=f'Practice domain {n} for free →',
+                         ctasub='No sign-up. Choose how many questions you want.', topics='What this domain covers',
+                         sq=f'Domain {n} sample questions', sqi=f'{len(samples)} questions from our {cnt}-question bank for this domain. Try to answer before revealing the solution.',
+                         others=f'Other {code} domains', back=f'{code}: full practice exam', qn='questions',
+                         full=f'Full {code} mock exam →', legal='Back to the catalog', privacy='Privacy', app_label='Open the app',
+                         stats=('Questions', 'Exam weight', 'Objectives'))
+            # topics: study-guide cards, else official objective names with question counts
+            tlist = topics.get(n, {}).get(lg) or []
+            if tlist:
+                topics_html = '<ul class="dm-topics">' + ''.join(f'<li>{esc(x)}</li>' for x in tlist) + '</ul>'
+            elif eid in OBJECTIVES:
+                ob = OBJECTIVES[eid]
+                topics_html = '<ul class="dm-topics dm-objs">' + ''.join(
+                    f'<li><span class="dm-on">{o}</span>{esc(ob[o][0 if lg == "es" else 1])}<span class="dm-oc">{sum(1 for q in dq if str(q.get("obj")) == o)} {T["qn"]}</span></li>'
+                    for o in objs if o in ob) + '</ul>'
+            else:
+                topics_html = ''
+            others = '\n'.join(
+                f'      <a class="dm-other" href="{dom_url(eid, o["id"], lg)}"><span class="dm-on">{o["id"]}</span><span>{esc(o["name_" + lg])}</span><span class="dm-w">{esc(o.get("weight", ""))}</span></a>'
+                for o in doms if o['id'] != n)
+            ld = {"@context": "https://schema.org", "@graph": [
+                org(),
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "EarnYourCert", "item": SITE + home},
+                    {"@type": "ListItem", "position": 2, "name": code, "item": SITE + exam_page},
+                    {"@type": "ListItem", "position": 3, "name": f'{T["dom"]}: {name}', "item": url}]},
+                {"@type": ["Quiz", "LearningResource"], "@id": url + "#quiz", "name": title, "description": desc, "url": url,
+                 "inLanguage": lg, "educationalLevel": EDU.get(e.get('level'), 'intermediate'), "isAccessibleForFree": True,
+                 "numberOfItems": cnt, "provider": {"@id": SITE + "/#org"}, "teaches": [name] + tlist[:8],
+                 "isPartOf": {"@type": "Quiz", "url": SITE + exam_page, "name": f'{code} practice exam'},
+                 "educationalAlignment": {"@type": "AlignmentObject", "alignmentType": "assesses", "targetName": f"Microsoft exam {code}"},
+                 "hasPart": practice_jsonld(samples, lg, e)}]}
+            head = head_html(lg, title + ' | EarnYourCert', desc, title, url, es_url, en_url, f'{SITE}/seo-assets/og/{eid}.jpg', ld)
+            on = lambda x: ('on', 'page') if x == lg else ('', 'false')
+            page = (
+                f'<!DOCTYPE html>\n<html lang="{lg}" data-lang="{lg}" data-fixed-lang="{lg}">\n{head}\n<body>\n<div class="wrap">\n'
+                f'  <div class="topbar">\n'
+                f'    <a class="brand" href="{home}"><span class="logo"><img src="/icon.svg" alt="" width="44" height="44"></span><span class="name">EarnYourCert</span></a>\n'
+                f'    <div class="top-r"><a class="top-app" href="/?lang={lg}">{T["app_label"]}</a>\n'
+                f'    <div class="toggle" id="langToggle" role="group" aria-label="Idioma / Language">'
+                f'<a href="{dom_url(eid, n, "es")}" hreflang="es" class="{on("es")[0]}" aria-current="{on("es")[1]}">ES</a>'
+                f'<a href="{dom_url(eid, n, "en")}" hreflang="en" class="{on("en")[0]}" aria-current="{on("en")[1]}">EN</a></div></div>\n'
+                f'  </div>\n'
+                f'  <div class="crumb"><a href="{home}">{T["crumb"]}</a> › <a href="{exam_page}">{code}</a> › {T["dom"]}</div>\n\n'
+                f'  <div class="hero hero-calm">\n'
+                f'    <div class="hero-ico">{exam_icon(eid)}</div>\n'
+                f'    <div class="hero-txt">\n'
+                f'      <div class="eyebrow">{code} · {T["dom"]} · {esc(d.get("weight", ""))} {T["ofexam"]}</div>\n'
+                f'      <h1>{esc(name)}</h1>\n'
+                f'      <p>{esc(intro)}</p>\n'
+                f'      <div class="cta"><a class="btn btn-primary" href="{app}">{T["cta"]}</a><span class="cta-sub">{T["ctasub"]}</span></div>\n'
+                f'    </div>\n'
+                f'  </div>\n\n'
+                + (f'  <section class="block">\n    <h2>{T["topics"]}</h2>\n    <div class="card">{topics_html}</div>\n  </section>\n\n' if topics_html else '')
+                + f'  <section class="block samples">\n    <h2>{T["sq"]}</h2>\n    <p class="sq-intro">{T["sqi"]}</p>\n{domain_samples_html(samples, lg)}\n'
+                f'    <div class="cta sq-cta"><a class="btn btn-primary" href="{app}">{T["cta"]}</a></div>\n  </section>\n\n'
+                f'  <section class="block">\n    <h2>{T["others"]}</h2>\n    <div class="dm-others">\n{others}\n'
+                f'      <a class="dm-other dm-full" href="{exam_page}"><span class="dm-on">{exam_icon(eid, 16)}</span><span>{T["back"]}</span><span class="dm-w">→</span></a>\n'
+                f'    </div>\n  </section>\n\n'
+                f'  <footer>\n    <div class="legal"><a href="{home}">{T["legal"]}</a> · <a href="{exam_page}">{code}</a> · <a href="/privacy.html">{T["privacy"]}</a></div>\n  </footer>\n'
+                f'</div>\n'
+                f'<script src="/seo-assets/landing.js?v={CSS_V}"></script>\n</body>\n</html>\n')
+            wr(dom_url(eid, n, lg).lstrip('/'), page)
+
+
 # ---------------------------------------------------------------- home (index.html)
 def build_home():
     s = rd('index.html')
@@ -608,6 +818,10 @@ def build_sitemap():
         rows += url(f'{SITE}/{e["id"]}.html', f'{SITE}/en/{e["id"]}.html', '0.9', 'weekly')
     for c in CATS:
         rows += url(f'{SITE}/{c["es"]}.html', f'{SITE}/en/{c["en"]}.html', '0.8', 'weekly')
+    for e in ORDERED:
+        if e['id'] in DOMAIN_EXAMS:
+            for d in e['domains']:
+                rows += url(SITE + dom_url(e['id'], d['id'], 'es'), SITE + dom_url(e['id'], d['id'], 'en'), '0.7', 'weekly')
     rows.append(f'''  <url>
     <loc>{SITE}/pro.html</loc>
     <lastmod>{TODAY}</lastmod>
@@ -623,6 +837,8 @@ def build_sitemap():
 if __name__ == '__main__':
     for e in EXAMS:
         build_exam(e)
+        if e['id'] in DOMAIN_EXAMS:
+            build_domains(e)
     build_en_hub()
     build_categories()
     build_home()

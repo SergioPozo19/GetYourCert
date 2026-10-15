@@ -168,3 +168,51 @@ footer .other-exams span{color:var(--ink-3);font-weight:600}
 .plan-step .ps-d::before{content:"Días ";}
 [data-lang="en"] .plan-step .ps-d::before{content:"Days ";}
 .faq-item.trap{border-left:3px solid var(--warn)}
+/* ===== calm redesign (same look as the app: one accent, neutral surfaces, exam icon) ===== */
+.top-r{display:flex;align-items:center;gap:10px}
+.top-app{font-size:13.5px;font-weight:600;text-decoration:none;padding:8px 14px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink)}
+.top-app:hover{border-color:var(--accent);color:var(--accent)}
+.hero,html[data-theme="dark"] .hero{background:var(--panel);border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow);text-align:left;padding:30px 32px;border-radius:18px}
+.hero:before{display:none}
+.hero .eyebrow{display:block;background:none;border:0;padding:0;border-radius:0;color:var(--accent);font-size:12px;letter-spacing:.06em}
+.hero h1{color:var(--ink);font-size:28px;line-height:1.25;margin:8px 0 10px;max-width:none}
+.hero p{color:var(--ink-2);margin:0;max-width:64ch;font-size:15.5px}
+.hero .cta{margin-top:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hero .btn-primary{background:var(--accent);color:#fff;box-shadow:none;padding:13px 24px}
+.hero .btn-primary:hover{background:var(--accent-d);transform:none;box-shadow:var(--shadow)}
+.cta-sub{font-size:13px;color:var(--ink-3)}
+.hero .stats{justify-content:flex-start;gap:0;margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.hero .stat{background:none;border:0;border-radius:0;padding:0 22px;min-width:0;text-align:left}
+.hero .stat:first-child{padding-left:0}
+.hero .stat+.stat{border-left:1px solid var(--line)}
+.hero .stat .n{color:var(--ink);font-size:20px}.hero .stat .l{color:var(--ink-3)}
+.hero.with-ico,.hero.hero-calm{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:22px;align-items:start}
+.hero.with-ico>*{grid-column:2}
+.hero .hero-ico{grid-column:1;grid-row:1/span 6;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+html[data-theme="dark"] .hero .btn-primary{color:#04121F}
+/* neutral accents instead of coloured edges */
+.faq-item,.faq-item.trap{border-left:1px solid var(--line)}
+.faq-item.trap h3::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink-3);margin:0 9px 2px 0}
+.guide-card h3{color:var(--ink)}
+.dom-row .dw{color:var(--ink-2)}
+.dom-row .dbar i{background:var(--accent)}
+/* domain rows that link to the domain pages */
+a.dom-row{text-decoration:none;color:inherit;cursor:pointer}
+a.dom-row .dn{font-weight:600}
+.dchev{color:var(--ink-3);font-size:20px;line-height:1;margin-left:2px}
+a.dom-row:hover .dchev{color:var(--accent)}
+/* domain pages */
+.dm-topics{margin:0;padding-left:20px;color:var(--ink-2);font-size:15px;line-height:1.6}
+.dm-topics li+li{margin-top:6px}
+.dm-objs{list-style:none;padding:0}
+.dm-objs li{display:flex;align-items:baseline;gap:12px;padding:10px 0;border-top:1px solid var(--line);margin:0 !important}
+.dm-objs li:first-child{border-top:0;padding-top:0}
+.dm-on{flex:none;min-width:30px;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--ink-3)}
+.dm-oc{margin-left:auto;flex:none;font-size:12.5px;color:var(--ink-3)}
+.dm-others{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.dm-other{display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px}
+.dm-other+.dm-other{border-top:1px solid var(--line)}
+.dm-other:hover{background:var(--panel-2);color:var(--accent)}
+.dm-w{margin-left:auto;flex:none;font-family:var(--mono);font-size:12.5px;color:var(--ink-3);font-weight:500}
+.dm-full .dm-on{color:var(--accent);display:grid}
+@media(max-width:600px){.hero,html[data-theme="dark"] .hero{padding:22px 20px}.hero.with-ico,.hero.hero-calm{grid-template-columns:1fr}.hero .hero-ico{display:none}.hero h1{font-size:23px}.hero .stat{padding:0 14px}.top-app{display:none}.dm-objs li{flex-wrap:wrap;gap:4px 10px}.dm-oc{margin-left:40px}}

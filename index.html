@@ -4213,12 +4213,18 @@ restoreSession();
 
 // Deep link from SEO landing pages: /?exam=az-900 opens that exam directly
 (function(){
-  const wanted=new URLSearchParams(location.search).get('exam');
+  const qs=new URLSearchParams(location.search);
+  const wanted=qs.get('exam'), wantedDom=parseInt(qs.get('dom'),10);
   if(wanted && EXAMS.some(e=>e.id===wanted)){
     history.replaceState(null,'',location.pathname+location.hash);
     // los visitantes entran directo: practican sus preguntas gratis y el registro se pide al llegar al límite
     track('deep_link');
-    selectExam(wanted);
+    // /?exam=az-900&dom=2 (páginas de dominio): abre directamente la práctica de ese dominio
+    selectExam(wanted).then(()=>{
+      if(!wantedDom||domList().indexOf(wantedDom)<0)return;
+      if(!isPro()&&remainingQuota()<=0){ openProModal('limit'); return; }
+      mode='domain'; domainPick=wantedDom; buildDomOpts(); openLenModal();
+    });
     return;
   }
   restoreView();
