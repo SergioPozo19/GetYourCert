@@ -9284,25 +9284,25 @@
   "dom": 2,
   "obj": "2.2",
   "type": "mc",
-  "q_es": "¿Qué configuración de replicación NO es compatible con los recursos compartidos de archivos de gran tamaño (hasta 100 TiB) en Azure Files estándar?",
-  "q_en": "Which replication configuration is NOT compatible with large file shares (up to 100 TiB) in standard Azure Files?",
+  "q_es": "¿Qué opciones de redundancia admiten siempre los recursos compartidos de archivos de gran tamaño (hasta 100 TiB) en Azure Files estándar?",
+  "q_en": "Which redundancy options are always supported by large file shares (up to 100 TiB) in standard Azure Files?",
   "opts_es": [
-   "Almacenamiento con redundancia local (LRS)",
-   "Almacenamiento con redundancia de zona (ZRS)",
-   "Almacenamiento con redundancia geográfica (GRS)",
-   "Almacenamiento con redundancia de zona geográfica (GZRS)"
+   "Solo almacenamiento con redundancia local (LRS)",
+   "Almacenamiento con redundancia local (LRS) y de zona (ZRS)",
+   "Solo almacenamiento con redundancia geográfica (GRS y GZRS)",
+   "Cualquier opción de redundancia, sin restricciones"
   ],
   "opts_en": [
-   "Locally redundant storage (LRS)",
-   "Zone-redundant storage (ZRS)",
-   "Geo-redundant storage (GRS)",
-   "Geo-zone-redundant storage (GZRS)"
+   "Only locally redundant storage (LRS)",
+   "Locally redundant (LRS) and zone-redundant (ZRS) storage",
+   "Only geo-redundant storage (GRS and GZRS)",
+   "Any redundancy option, with no restrictions"
   ],
   "correct": [
-   2
+   1
   ],
-  "exp_es": "Los recursos compartidos de archivos grandes (hasta 100 TiB) en Azure Files estándar solo son compatibles con LRS y ZRS. No son compatibles con GRS ni GZRS. Esto se debe a limitaciones técnicas en cómo se implementa la replicación geográfica para recursos compartidos de gran tamaño. Las cuentas Premium File Share no tienen esta restricción de compatibilidad de replicación de la misma manera.",
-  "exp_en": "Large file shares (up to 100 TiB) in standard Azure Files are only compatible with LRS and ZRS. They are not compatible with GRS or GZRS. This is due to technical limitations in how geo-replication is implemented for large shares. Premium File Share accounts do not have this replication compatibility restriction in the same way."
+  "exp_es": "Los recursos compartidos de archivos grandes (hasta 100 TiB) en Azure Files estándar funcionan con LRS y ZRS. La redundancia geográfica (GRS y GZRS) no ha estado disponible de forma general para recursos compartidos grandes: es la limitación clásica que pregunta el examen. Si necesitas redundancia geográfica, tendrías que mantener los recursos compartidos por debajo de 5 TiB o comprobar la disponibilidad actual en la documentación de Azure Files.",
+  "exp_en": "Large file shares (up to 100 TiB) in standard Azure Files work with LRS and ZRS. Geo-redundancy (GRS and GZRS) has not been generally available for large file shares: this is the classic limitation the exam asks about. If you need geo-redundancy, keep shares under 5 TiB or check current availability in the Azure Files documentation."
  },
  {
   "id": 343,
@@ -9310,8 +9310,8 @@
   "dom": 2,
   "obj": "2.2",
   "type": "mc",
-  "q_es": "¿Qué versión mínima de TLS puede configurarse en una cuenta de almacenamiento de Azure para las conexiones entrantes?",
-  "q_en": "What is the minimum TLS version that can be configured on an Azure storage account for incoming connections?",
+  "q_es": "¿Cuál es la versión mínima de TLS que admite actualmente una cuenta de almacenamiento de Azure para las conexiones entrantes?",
+  "q_en": "What is the minimum TLS version an Azure storage account currently accepts for incoming connections?",
   "opts_es": [
    "TLS 1.0",
    "TLS 1.1",
@@ -9325,10 +9325,10 @@
    "TLS 1.3"
   ],
   "correct": [
-   0
+   2
   ],
-  "exp_es": "Azure Storage permite configurar la versión mínima de TLS para las conexiones como TLS 1.0, TLS 1.1 o TLS 1.2. Microsoft recomienda establecer TLS 1.2 como mínimo por razones de seguridad. TLS 1.0 y 1.1 son versiones más antiguas con vulnerabilidades conocidas. TLS 1.3 puede ser soportada pero no es la opción mínima configurable en la interfaz estándar.",
-  "exp_en": "Azure Storage allows configuring the minimum TLS version for connections as TLS 1.0, TLS 1.1, or TLS 1.2. Microsoft recommends setting TLS 1.2 as the minimum for security reasons. TLS 1.0 and 1.1 are older versions with known vulnerabilities. TLS 1.3 may be supported but is not the minimum configurable option in the standard interface."
+  "exp_es": "Azure Storage ya no admite TLS 1.0 ni TLS 1.1: Microsoft retiró su soporte y la versión mínima es TLS 1.2. Por eso, las aplicaciones cliente que todavía usen TLS 1.0 o 1.1 no podrán conectarse a la cuenta de almacenamiento. TLS 1.3 también es compatible, pero el mínimo que se exige es TLS 1.2.",
+  "exp_en": "Azure Storage no longer supports TLS 1.0 or TLS 1.1: Microsoft retired them and the minimum version is TLS 1.2. Client applications that still use TLS 1.0 or 1.1 cannot connect to the storage account. TLS 1.3 is also supported, but the enforced minimum is TLS 1.2."
  },
  {
   "id": 344,
