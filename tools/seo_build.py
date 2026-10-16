@@ -531,7 +531,8 @@ def build_categories():
 # ---------------------------------------------------------------- domain pages
 # One page per exam domain (ES + EN) for the exams people actually use: what the domain covers,
 # its weight, and 8 worked sample questions that appear on no other page. CTA opens domain practice.
-DOMAIN_EXAMS = ['az-900', 'ab-900', 'az-104', 'md-102']
+# every exam except the one being retired (MS-102 -> AB-650)
+DOMAIN_EXAMS = ['az-900', 'ab-900', 'az-104', 'md-102', 'sc-900', 'ai-901', 'ab-650', 'ms-700', 'ms-721', 'sc-300', 'sc-200', 'sc-500', 'pl-300', 'dp-600', 'az-305']
 
 # Official "skills measured" objective names where the guide cards don't exist
 OBJECTIVES = {
