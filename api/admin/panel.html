@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel · EarnYourCert</title>
+<style>
+:root{--bg:#F5F7FA;--panel:#fff;--panel-2:#F3F6FA;--ink:#1A1D21;--ink-2:#4A5057;--ink-3:#6B7480;--line:#E3E8EF;--accent:#0F6CBD;--accent-soft:#EAF3FB;--ok:#107C41;--bad:#C4314B;--gold:#B98A16;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:-apple-system,"Segoe UI",system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#0E1116;--panel:#171B22;--panel-2:#1C212A;--ink:#E8ECF1;--ink-2:#AEB6C0;--ink-3:#7C8593;--line:#262C36;--accent:#4CA0E8;--accent-soft:#16314B;--ok:#4FC07E;--bad:#F07A8C}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+h1{font-size:20px;margin:0}h2{font-size:15px;margin:0 0 12px}
+.ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input,select,button{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink)}
+button{background:var(--accent);color:#fff;border-color:transparent;cursor:pointer;font-weight:600}
+.muted{color:var(--ink-3)}.err{color:var(--bad);font-weight:600}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-bottom:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:24px;font-family:var(--mono)}.kpi span{font-size:12px;color:var(--ink-3)}.kpi small{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.two{grid-template-columns:1fr 1fr}@media(max-width:860px){.two{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:6px}.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.fun{display:flex;flex-direction:column;gap:7px}
+.fr{display:grid;grid-template-columns:180px 1fr 90px;gap:10px;align-items:center;font-size:13px}
+.fr .bar{height:18px;border-radius:5px;background:var(--panel-2);overflow:hidden}.fr .bar i{display:block;height:100%;background:var(--accent);border-radius:5px}
+.fr .v{text-align:right;font-family:var(--mono)}.fr .v small{color:var(--ink-3)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-top:1px solid var(--line)}th{color:var(--ink-3);font-weight:600;border-top:0}
+td.n,th.n{text-align:right;font-family:var(--mono)}
+.tag{display:inline-block;padding:1px 7px;border-radius:99px;font-size:11px;font-weight:700;background:var(--accent-soft);color:var(--accent)}.tag.pro{background:#FBF0CC;color:#7A5A00}
+.scroll{overflow-x:auto}
+.sec{margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>EarnYourCert · Panel</h1>
+    <form class="ctl" id="f">
+      <input type="password" id="secret" placeholder="admin_secret" autocomplete="current-password">
+      <select id="days"><option value="7">7 días</option><option value="30" selected>30 días</option><option value="90">90 días</option><option value="180">180 días</option></select>
+      <button type="submit">Ver</button>
+    </form>
+  </header>
+  <p id="msg" class="muted">Introduce el secreto de administración (se recuerda en este navegador).</p>
+  <div id="out" hidden>
+    <div class="grid kpis" id="kpis"></div>
+    <div class="grid two">
+      <div class="card"><h2>Tráfico diario</h2><div id="chTraffic"></div></div>
+      <div class="card"><h2>Usuarios con cuenta</h2><div id="chUsers"></div></div>
+    </div>
+    <div class="grid two sec">
+      <div class="card"><h2>Embudo del periodo</h2><div class="fun" id="funnel"></div></div>
+      <div class="card"><h2>Novedades: ¿se usan?</h2><div class="scroll" id="features"></div></div>
+    </div>
+    <div class="grid two sec">
+      <div class="card"><h2>Exámenes</h2><div class="scroll" id="exams"></div></div>
+      <div class="card"><h2>Emails, reseñas e invitaciones</h2><div id="mails"></div></div>
+    </div>
+    <div class="card sec"><h2>Últimos registros</h2><div class="scroll" id="recent"></div></div>
+    <div class="card sec"><h2>Todos los eventos</h2><div class="scroll" id="events"></div></div>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+try{ $('secret').value=localStorage.getItem('eyc_admin')||''; }catch(e){}
+$('f').addEventListener('submit',e=>{ e.preventDefault(); load(); });
+if($('secret').value)load();
+
+async function load(){
+  $('msg').textContent='Cargando…'; $('msg').className='muted';
+  try{
+    const r=await fetch('stats.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:$('secret').value,days:+$('days').value})});
+    const d=await r.json();
+    if(!d.ok){ $('msg').textContent=d.error==='forbidden'?'Secreto incorrecto.':'Error: '+d.error; $('msg').className='err'; $('out').hidden=true; return; }
+    try{ localStorage.setItem('eyc_admin',$('secret').value); }catch(e){}
+    $('msg').textContent='Desde el '+d.since+' ('+d.days+' días). Los eventos son contadores anónimos; la actividad de usuarios sale de su historial sincronizado.';
+    render(d); $('out').hidden=false;
+  }catch(e){ $('msg').textContent='No se pudo cargar: '+e.message; $('msg').className='err'; }
+}
+
+function dayList(since,days){ const out=[],d=new Date(since+'T12:00:00'); for(let i=0;i<=days;i++){ out.push(d.toISOString().slice(0,10)); d.setDate(d.getDate()+1); } return out; }
+function ev(d,names){ const set=[].concat(names); return d.events.filter(e=>set.includes(e.name)).reduce((s,e)=>s+(+e.total),0); }
+function evDay(d,day,names){ const o=d.eventsByDay[day]||{}; return [].concat(names).reduce((s,n)=>s+(o[n]||0),0); }
+
+function chart(days,series){
+  const W=560,H=190,P=28,max=Math.max(1,...series.flatMap(s=>s.data));
+  const x=i=>P+(W-P-8)*(days.length<2?0:i/(days.length-1)), y=v=>H-22-(H-34)*v/max;
+  let g='';
+  for(let k=0;k<=4;k++){ const v=Math.round(max*k/4), yy=y(v); g+='<line x1="'+P+'" x2="'+(W-8)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+css('--line')+'"/><text x="'+(P-6)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="'+css('--ink-3')+'">'+v+'</text>'; }
+  const step=Math.ceil(days.length/7);
+  days.forEach((dd,i)=>{ if(i%step===0)g+='<text x="'+x(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="10" fill="'+css('--ink-3')+'">'+dd.slice(5)+'</text>'; });
+  series.forEach(s=>{
+    if(s.bars){ const bw=Math.max(2,(W-P-8)/days.length*.6); s.data.forEach((v,i)=>{ if(v)g+='<rect x="'+(x(i)-bw/2)+'" y="'+y(v)+'" width="'+bw+'" height="'+(H-22-y(v))+'" rx="2" fill="'+s.color+'" opacity=".35"/>'; }); }
+    else g+='<polyline fill="none" stroke="'+s.color+'" stroke-width="2" stroke-linejoin="round" points="'+s.data.map((v,i)=>x(i)+','+y(v)).join(' ')+'"/>';
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'">'+g+'</svg><div class="legend">'+series.map(s=>'<span><i style="background:'+s.color+'"></i>'+esc(s.name)+' · '+s.data.reduce((a,b)=>a+b,0)+'</span>').join('')+'</div>';
+}
+
+function render(d){
+  const u=d.users, days=dayList(d.since,d.days);
+  const visits=ev(d,['visit_home','visit_landing']);
+  const k=(v,l,s)=>'<div class="kpi"><b>'+v+'</b><span>'+l+'</span>'+(s?'<small>'+s+'</small>':'')+'</div>';
+  $('kpis').innerHTML=
+    k(visits,'Visitas (portada + landings)', ev(d,'visit_landing')+' en landings')+
+    k(ev(d,'exam_start'),'Exámenes empezados', ev(d,['exam_pass','exam_fail'])+' terminados')+
+    k(u.total,'Cuentas', '+'+u.newPeriod+' en el periodo · +'+u.new7+' en 7 días')+
+    k(u.active7,'Activos 7 días', u.active30+' en 30 días')+
+    k(u.pro,'Pro', u.total?Math.round(u.pro/u.total*100)+'% de las cuentas':'')+
+    k(u.practiced,'Han practicado alguna vez', u.optOut+' sin emails');
+  const C=[css('--accent'),css('--ok'),css('--gold'),css('--bad')];
+  $('chTraffic').innerHTML=chart(days,[
+    {name:'Visitas',data:days.map(x=>evDay(d,x,['visit_home','visit_landing'])),color:C[0],bars:true},
+    {name:'Exámenes empezados',data:days.map(x=>evDay(d,x,'exam_start')),color:C[1]},
+    {name:'Primeras respuestas',data:days.map(x=>evDay(d,x,'first_answer')),color:C[2]}]);
+  $('chUsers').innerHTML=chart(days,[
+    {name:'Usuarios activos',data:days.map(x=>d.activeByDay[x]||0),color:C[0],bars:true},
+    {name:'Registros',data:days.map(x=>d.newByDay[x]||0),color:C[1]}]);
+  // funnel
+  const steps=[
+    ['Visitas',visits],['Abren un examen',ev(d,'exam_open')],['Responden la 1.ª pregunta',ev(d,'first_answer')],
+    ['Empiezan examen/práctica',ev(d,'exam_start')],['Lo terminan',ev(d,['exam_pass','exam_fail'])],
+    ['Llegan al límite gratis',ev(d,['guest_limit','paywall_limit'])],['Ven el login',ev(d,'login_modal')],
+    ['Se registran',ev(d,'signup_ok')],['Clic en Pro / Patreon',ev(d,['hero_pro','results_pro_click','patreon_hero','patreon_modal','patreon_footer','patreon_other','patreon_prohtml'])]];
+  const top=Math.max(1,steps[0][1]);
+  $('funnel').innerHTML=steps.map(([l,v])=>'<div class="fr"><span>'+esc(l)+'</span><span class="bar"><i style="width:'+Math.min(100,v/top*100)+'%"></i></span><span class="v">'+v+' <small>'+(Math.round(v/top*1000)/10)+'%</small></span></div>').join('');
+  // features
+  const F=[['Pregunta del día: aciertos / fallos',ev(d,'qotd_right')+' / '+ev(d,'qotd_wrong')],['Pregunta del día → practicar',ev(d,'qotd_practice')],
+    ['Aviso reseña: mostrado / clic / ahora no',ev(d,'rv_nudge_show')+' / '+ev(d,'rv_nudge_click')+' / '+ev(d,'rv_nudge_later')],['Reseñas publicadas',ev(d,'review_posted')],
+    ['Instalar app: mostrado / clic / instaladas',ev(d,'pwa_prompt_show')+' / '+ev(d,'pwa_install_click')+' / '+ev(d,'pwa_installed')],
+    ['Invitaciones: abiertas / copiadas / compartidas',ev(d,'invite_open')+' / '+ev(d,'invite_copy')+' / '+ev(d,'invite_share')],
+    ['Visitas con enlace de invitación / canjes',ev(d,'ref_visit')+' / '+ev(d,'ref_claimed')],
+    ['Insignia: mostrada / compartida / descargada',ev(d,'badge_show')+' / '+ev(d,'badge_share')+' / '+ev(d,'badge_download')],
+    ['Paquetes de novedades empezados',ev(d,'pack_start')],['Tarjeta compartida (resultado)',ev(d,'share_card')]];
+  $('features').innerHTML='<table><tbody>'+F.map(([a,b])=>'<tr><td>'+esc(a)+'</td><td class="n">'+b+'</td></tr>').join('')+'</tbody></table>';
+  // exams
+  const ans={}; (d.answers||[]).forEach(a=>ans[a.exam]=a);
+  const ids=[...new Set(Object.keys(d.examUsers).concat((d.answers||[]).map(a=>a.exam)))];
+  ids.sort((a,b)=>(d.examUsers[b]||0)-(d.examUsers[a]||0)||((ans[b]&&+ans[b].answers)||0)-((ans[a]&&+ans[a].answers)||0));
+  $('exams').innerHTML='<table><thead><tr><th>Examen</th><th class="n">Usuarios (periodo)</th><th class="n">Respuestas (total)</th><th class="n">Acierto</th></tr></thead><tbody>'+
+    ids.map(id=>{ const a=ans[id]; return '<tr><td>'+esc(id.toUpperCase())+'</td><td class="n">'+(d.examUsers[id]||0)+'</td><td class="n">'+(a?a.answers:0)+'</td><td class="n">'+(a&&+a.answers?Math.round(a.correct/a.answers*100)+'%':'–')+'</td></tr>'; }).join('')+'</tbody></table>';
+  // emails & community
+  const m=d.emails, rv=d.reviews||{}, rf=d.referrals||{};
+  $('mails').innerHTML='<table><tbody>'+
+    '<tr><td>Avisos de renovación enviados (periodo)</td><td class="n">'+m.renewal+'</td></tr>'+
+    '<tr><td>Emails de recuperación enviados (periodo)</td><td class="n">'+m.winback+'</td></tr>'+
+    '<tr><td>…de ellos volvieron a practicar</td><td class="n">'+m.winbackReturned+(m.winback?' ('+Math.round(m.winbackReturned/m.winback*100)+'%)':'')+'</td></tr>'+
+    '<tr><td>Reseñas (total) · nota media</td><td class="n">'+(rv.n||0)+' · '+(rv.avg||'–')+'</td></tr>'+
+    '<tr><td>Registros con invitación (total) · premiados</td><td class="n">'+(rf.n||0)+' · '+(rf.rewarded||0)+'</td></tr>'+
+    '</tbody></table>';
+  // recent signups
+  $('recent').innerHTML='<table><thead><tr><th>Nombre</th><th>Email</th><th>Alta</th><th>Última práctica</th><th class="n">Sesiones</th><th></th></tr></thead><tbody>'+
+    d.recent.map(r=>'<tr><td>'+esc(r.name)+'</td><td>'+esc(r.email)+'</td><td>'+esc(String(r.created).slice(0,16))+'</td><td>'+esc(r.last||'–')+'</td><td class="n">'+r.sessions+'</td><td>'+(r.pro?'<span class="tag pro">PRO</span>':'')+'</td></tr>').join('')+'</tbody></table>';
+  $('events').innerHTML='<table><thead><tr><th>Evento</th><th class="n">Total</th><th class="n">Invitados</th><th class="n">Gratis</th><th class="n">Pro</th></tr></thead><tbody>'+
+    d.events.map(e=>'<tr><td>'+esc(e.name)+'</td><td class="n">'+e.total+'</td><td class="n">'+e.guests+'</td><td class="n">'+e.free_users+'</td><td class="n">'+e.pro_users+'</td></tr>').join('')+'</tbody></table>';
+}
+</script>
+</body>
+</html>

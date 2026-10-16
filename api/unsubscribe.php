@@ -45,13 +45,13 @@ a{color:#0F6CBD}
   <p class="en">This unsubscribe link is not valid. Email <a href="mailto:soporte@earnyourcert.com">soporte@earnyourcert.com</a> and we'll unsubscribe you.</p>
 <?php elseif($done): ?>
   <h1>Listo, no te enviaremos más avisos</h1>
-  <p><?= $h($email) ?> ya no recibirá recordatorios de renovación. Tus certificaciones siguen guardadas y verás los avisos dentro de la app.</p>
-  <p class="en">Done. <?= $h($email) ?> will no longer receive renewal reminders. Your certifications stay saved and you'll still see the alerts in the app.</p>
+  <p><?= $h($email) ?> ya no recibirá correos de EarnYourCert (avisos de renovación ni recordatorios de práctica). Tu progreso y tus certificaciones siguen guardados y verás los avisos dentro de la app.</p>
+  <p class="en">Done. <?= $h($email) ?> will no longer receive EarnYourCert emails (renewal or practice reminders). Your progress and certifications stay saved and you'll still see the alerts in the app.</p>
   <p><a href="/">EarnYourCert</a></p>
 <?php else: ?>
-  <h1>¿Dejar de recibir avisos de renovación?</h1>
-  <p>Dejaremos de enviar recordatorios de renovación a <?= $h($email) ?>.</p>
-  <p class="en">Stop renewal reminders to <?= $h($email) ?>?</p>
+  <h1>¿Dejar de recibir correos de EarnYourCert?</h1>
+  <p>Dejaremos de enviar avisos de renovación y recordatorios de práctica a <?= $h($email) ?>.</p>
+  <p class="en">Stop renewal and practice reminders to <?= $h($email) ?>?</p>
   <form method="post" action="<?= $h($self) ?>"><button type="submit">Darme de baja · Unsubscribe</button></form>
 <?php endif; ?>
 </div>

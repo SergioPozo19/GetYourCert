@@ -172,3 +172,6 @@ foreach($users as $u){
 
 echo date('Y-m-d H:i:s') . ' renewal-reminders' . ($dryRun ? ' (dry run)' : '')
   . " users={$stats['users']} emails={$stats['emails']} failed={$stats['failed']}\n";
+
+// Emails de recuperación para quien deja de practicar (mismo cron diario).
+require __DIR__ . '/winback.php';
