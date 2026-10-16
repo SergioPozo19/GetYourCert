@@ -179,7 +179,7 @@
       {
        "@type": "Answer",
        "position": 0,
-       "text": "Un informe personalizado de Power BI que importa los datos de edificios desde Azure AD al panel del CQD",
+       "text": "Un informe personalizado de Power BI que importa los datos de edificios desde Microsoft Entra ID al panel del CQD",
        "encodingFormat": "text/html",
        "comment": {
         "@type": "Comment",
@@ -570,7 +570,7 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 2,
-      "text": "Una directiva de acceso condicional de Azure AD que bloquea el acceso a Teams desde dispositivos no administrados o no compatibles",
+      "text": "Una directiva de acceso condicional de Microsoft Entra ID que bloquea el acceso a Teams desde dispositivos no administrados o no compatibles",
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
@@ -617,7 +617,7 @@
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Quieres usar el Panel de calidad de llamadas (CQD) para identificar si los problemas de calidad afectan a usuarios de un edificio concreto. ¿Qué debes cargar en el CQD para habilitar el filtrado por edificio?</p>
-      <ol class="sq-opts" type="A"><li>Un informe personalizado de Power BI que importa los datos de edificios desde Azure AD al panel del CQD</li><li>Un archivo de datos de construcción (building data file) que mapea subredes IP a nombres de edificios y ubicaciones</li><li>Un archivo CSV de usuarios que asocia cada dirección de correo con su edificio y planta asignados</li><li>Un archivo de configuración de sitios de red que enlaza las subredes del Centro de administración de Teams con el CQD</li></ol>
+      <ol class="sq-opts" type="A"><li>Un informe personalizado de Power BI que importa los datos de edificios desde Microsoft Entra ID al panel del CQD</li><li>Un archivo de datos de construcción (building data file) que mapea subredes IP a nombres de edificios y ubicaciones</li><li>Un archivo CSV de usuarios que asocia cada dirección de correo con su edificio y planta asignados</li><li>Un archivo de configuración de sitios de red que enlaza las subredes del Centro de administración de Teams con el CQD</li></ol>
       <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> El archivo de datos de construcción del CQD es un CSV que mapea subredes IP a información de ubicación (edificio, ciudad, país). Una vez cargado, permite filtrar informes de calidad por ubicación física en lugar de solo por dirección IP.</p></details>
     </div>
     <div class="sq">
@@ -647,7 +647,7 @@
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Un usuario no puede iniciar sesión en Teams en su dispositivo móvil pero sí puede en su equipo de sobremesa. El error en el móvil es &#x27;No se puede iniciar sesión. Contacte con el administrador.&#x27; ¿Cuál es la causa más probable?</p>
-      <ol class="sq-opts" type="A"><li>La licencia de Teams del usuario no incluye acceso al cliente móvil de Teams para aplicaciones de iOS o Android</li><li>La directiva de Teams del usuario tiene deshabilitado el acceso desde dispositivos móviles en el Centro de administración</li><li>Una directiva de acceso condicional de Azure AD que bloquea el acceso a Teams desde dispositivos no administrados o no compatibles</li><li>El dispositivo móvil del usuario no cumple los requisitos mínimos de sistema operativo del cliente de Teams para móviles</li></ol>
+      <ol class="sq-opts" type="A"><li>La licencia de Teams del usuario no incluye acceso al cliente móvil de Teams para aplicaciones de iOS o Android</li><li>La directiva de Teams del usuario tiene deshabilitado el acceso desde dispositivos móviles en el Centro de administración</li><li>Una directiva de acceso condicional de Microsoft Entra ID que bloquea el acceso a Teams desde dispositivos no administrados o no compatibles</li><li>El dispositivo móvil del usuario no cumple los requisitos mínimos de sistema operativo del cliente de Teams para móviles</li></ol>
       <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> El error &#x27;No se puede iniciar sesión. Contacte con el administrador&#x27; en móvil generalmente indica un bloqueo de acceso condicional. Una directiva de CA puede requerir que el dispositivo sea administrado (inscrito en Intune) o compatible. El sobremesa corporativo puede cumplir la directiva pero el móvil personal no.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=ms-700&amp;dom=4&amp;lang=es">Practicar el dominio 4 gratis →</a></div>

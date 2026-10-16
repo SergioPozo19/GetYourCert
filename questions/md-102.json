@@ -1649,21 +1649,21 @@
   "q_en": "An administrator wants to deploy the Microsoft Store app 'Microsoft Remote Desktop' on Windows 11 devices via Intune. Which app type should they select in Intune?",
   "opts_es": [
    "Aplicación Win32 con empaquetado .intunewin para aplicaciones del Store sin publicación pública",
-   "Aplicación de Microsoft Store (nueva) con integración de Microsoft Store para Empresas",
+   "Aplicación de Microsoft Store (nueva), que usa el Administrador de paquetes de Windows (winget)",
    "Aplicación web con marcador de URL para acceso a escritorio remoto desde el dispositivo",
    "Aplicación de línea de negocio (LOB) con archivo .msix o .appx cargado manualmente"
   ],
   "opts_en": [
    "Win32 app with .intunewin packaging for Store apps without public publishing",
-   "Microsoft Store app (new) with Microsoft Store for Business integration",
+   "Microsoft Store app (new), which uses the Windows Package Manager (winget)",
    "Web app with URL bookmark for remote desktop access from the device",
    "Line-of-business (LOB) app with manually uploaded .msix or .appx file"
   ],
   "correct": [
    1
   ],
-  "exp_es": "El tipo 'Aplicación de Microsoft Store (nueva)' en Intune permite buscar y desplegar aplicaciones directamente desde la Microsoft Store pública, incluyendo aplicaciones gratuitas como Microsoft Remote Desktop.",
-  "exp_en": "The 'Microsoft Store app (new)' type in Intune allows searching and deploying apps directly from the public Microsoft Store, including free apps like Microsoft Remote Desktop."
+  "exp_es": "El tipo «Aplicación de Microsoft Store (nueva)» de Intune permite buscar y desplegar aplicaciones directamente desde la Microsoft Store pública, incluidas aplicaciones gratuitas como Microsoft Remote Desktop, y usa el Administrador de paquetes de Windows por debajo. Microsoft Store para Empresas, que se usaba antes para esto, está retirado.",
+  "exp_en": "Intune's \"Microsoft Store app (new)\" type lets you search for and deploy apps directly from the public Microsoft Store, including free apps such as Microsoft Remote Desktop, and uses the Windows Package Manager under the hood. Microsoft Store for Business, previously used for this, has been retired."
  },
  {
   "id": 65,
@@ -2715,13 +2715,13 @@
    "Una VNet de Azure y una conexión de red local si se necesita acceso a recursos locales",
    "Un clúster de Azure Kubernetes Service (AKS) para orquestar los contenedores de Cloud PC",
    "Una cuenta de Azure Blob Storage para almacenar y versionar cada imagen de Cloud PC de Windows 365",
-   "Un servidor de Azure AD Domain Services (AADDS) para la autenticación de dominio de Cloud PC"
+   "Un servidor de Microsoft Entra Domain Services (AADDS) para la autenticación de dominio de Cloud PC"
   ],
   "opts_en": [
    "An Azure VNet, plus an on-premises network connection if on-premises access is needed",
    "An Azure Kubernetes Service (AKS) cluster for orchestrating the Cloud PC containers",
    "An Azure Blob Storage account for storing and versioning every Windows 365 Cloud PC image",
-   "An Azure AD Domain Services (AADDS) server for Cloud PC domain authentication"
+   "An Microsoft Entra Domain Services (AADDS) server for Cloud PC domain authentication"
   ],
   "correct": [
    0
@@ -2899,13 +2899,13 @@
    "Microsoft 365 E3 con los complementos de seguridad y cumplimiento habilitados en el tenant",
    "Microsoft Intune Suite (complemento de pago a las licencias estándar de Intune)",
    "Microsoft 365 E5 Security con Defender para Endpoint Plan 2 incluido en la licencia",
-   "Azure AD Premium P2 con acceso condicional avanzado y protección de identidad"
+   "Microsoft Entra ID P2 con acceso condicional avanzado y protección de identidad"
   ],
   "opts_en": [
    "Microsoft 365 E3 with security and compliance add-ons enabled in the tenant",
    "Microsoft Intune Suite (paid add-on to standard Intune licenses)",
    "Microsoft 365 E5 Security with Defender for Endpoint Plan 2 included in the license",
-   "Azure AD Premium P2 with advanced Conditional Access and identity protection"
+   "Microsoft Entra ID P2 with advanced Conditional Access and identity protection"
   ],
   "correct": [
    1
@@ -3238,13 +3238,13 @@
   "q_es": "Un administrador ha integrado Intune con Microsoft Defender para punto de conexión. ¿Qué información adicional puede usar en las directivas de cumplimiento de Intune gracias a esta integración?",
   "q_en": "An administrator has integrated Intune with Microsoft Defender for Endpoint. What additional information can they use in Intune compliance policies thanks to this integration?",
   "opts_es": [
-   "El historial de inicios de sesión de Azure AD del usuario con fechas y ubicaciones de acceso",
+   "El historial de inicios de sesión de Microsoft Entra ID del usuario con fechas y ubicaciones de acceso",
    "El nivel de riesgo del dispositivo calculado por Microsoft Defender (ninguno, bajo, medio, alto)",
    "El número de aplicaciones instaladas en el dispositivo con versiones y estado de cumplimiento",
    "La puntuación de experiencia del usuario de Windows según las métricas de rendimiento y fiabilidad"
   ],
   "opts_en": [
-   "The user's Azure AD sign-in history with access dates and locations",
+   "The user's Microsoft Entra ID sign-in history with access dates and locations",
    "The device risk level calculated by Microsoft Defender (none, low, medium, high)",
    "The number of applications installed on the device with versions and compliance status",
    "The Windows user experience score based on performance and reliability metrics"
@@ -3763,21 +3763,21 @@
   "q_en": "What happens to on-premises resources (like file servers and internal apps) when a device is joined only to Microsoft Entra ID (cloud-only join), without hybrid join?",
   "opts_es": [
    "El dispositivo accede a todos los recursos locales de forma transparente usando Kerberos integrado con Microsoft Entra ID sin configuración adicional",
-   "El dispositivo puede acceder a recursos locales, pero solo mediante VPN o Proxy de aplicación de Azure AD, ya que no tiene tickets de Kerberos para el dominio local",
+   "El dispositivo puede acceder a recursos locales, pero solo mediante VPN o Proxy de aplicación de Microsoft Entra ID, ya que no tiene tickets de Kerberos para el dominio local",
    "El acceso a todos los recursos locales corporativos está completamente bloqueado en dispositivos unidos exclusivamente a la nube de Microsoft Entra ID",
    "El dispositivo usa automáticamente la autenticación NTLM para todos los recursos del dominio local sin ningún tipo de configuración adicional necesaria"
   ],
   "opts_en": [
    "The device accesses all on-premises resources transparently using Kerberos integrated with Microsoft Entra ID without additional configuration",
-   "The device can access on-premises resources, but only via VPN or Azure AD Application Proxy, as it has no Kerberos tickets for the local domain",
+   "The device can access on-premises resources, but only via VPN or Microsoft Entra ID Application Proxy, as it has no Kerberos tickets for the local domain",
    "Access to all corporate on-premises resources is completely blocked on devices joined exclusively to the Microsoft Entra ID cloud",
    "The device automatically uses NTLM authentication for all local domain resources without any additional configuration needed"
   ],
   "correct": [
    1
   ],
-  "exp_es": "Los dispositivos cloud-only (Azure AD join) no tienen tickets de Kerberos para el dominio AD local. Para acceder a recursos internos, los usuarios necesitan VPN o el acceso proxy de Microsoft Entra ID.",
-  "exp_en": "Cloud-only devices (Azure AD join) have no Kerberos tickets for the local AD domain. To access internal resources, users need VPN or Microsoft Entra ID Application Proxy."
+  "exp_es": "Los dispositivos cloud-only (Microsoft Entra join) no tienen tickets de Kerberos para el dominio AD local. Para acceder a recursos internos, los usuarios necesitan VPN o el acceso proxy de Microsoft Entra ID.",
+  "exp_en": "Cloud-only devices (Microsoft Entra join) have no Kerberos tickets for the local AD domain. To access internal resources, users need VPN or Microsoft Entra ID Application Proxy."
  },
  {
   "id": 143,
@@ -3867,21 +3867,21 @@
   "q_en": "You want to automatically enroll in Intune all Windows 11 devices that are already in Microsoft Entra hybrid join via Group Policy. Which Group Policy should you configure?",
   "opts_es": [
    "Un GPO personalizado que ejecuta un script de PowerShell de inscripción silenciosa en Intune configurado como tarea de inicio del sistema en Active Directory",
-   "El GPO 'Habilitar la inscripción automática de MDM con credenciales predeterminadas de Azure AD' en Configuración del equipo > Plantillas administrativas > Componentes de Windows > MDM",
+   "El GPO 'Habilitar la inscripción automática de MDM con credenciales predeterminadas de Microsoft Entra ID' en Configuración del equipo > Plantillas administrativas > Componentes de Windows > MDM",
    "Un GPO de inicio de sesión de usuario que lanza automáticamente el Portal de empresa de Intune para que el usuario complete la inscripción de forma interactiva",
    "No es técnicamente posible inscribirse en Microsoft Intune MDM mediante GPO de Active Directory; la inscripción solo puede realizarse a través del portal web de Intune"
   ],
   "opts_en": [
    "A custom GPO that runs a silent Intune enrollment PowerShell script configured as a system startup task in Active Directory",
-   "The GPO 'Enable automatic MDM enrollment using default Azure AD credentials' in Computer Configuration > Administrative Templates > Windows Components > MDM",
+   "The GPO 'Enable automatic MDM enrollment using default Microsoft Entra ID credentials' in Computer Configuration > Administrative Templates > Windows Components > MDM",
    "A user logon GPO that automatically launches the Intune Company Portal for the user to complete enrollment interactively",
    "It is technically not possible to enroll in Microsoft Intune MDM via Active Directory GPO; enrollment can only be done through the Intune web portal"
   ],
   "correct": [
    1
   ],
-  "exp_es": "La GPO 'Habilitar la inscripción automática de MDM mediante credenciales de Azure AD predeterminadas' en la ruta de MDM de Plantillas administrativas permite inscribir automáticamente en Intune dispositivos con unión híbrida.",
-  "exp_en": "The GPO 'Enable automatic MDM enrollment using default Azure AD credentials' in the MDM path of Administrative Templates allows automatically enrolling hybrid-joined devices in Intune."
+  "exp_es": "La GPO 'Habilitar la inscripción automática de MDM mediante credenciales de Microsoft Entra ID predeterminadas' en la ruta de MDM de Plantillas administrativas permite inscribir automáticamente en Intune dispositivos con unión híbrida.",
+  "exp_en": "The GPO 'Enable automatic MDM enrollment using default Microsoft Entra ID credentials' in the MDM path of Administrative Templates allows automatically enrolling hybrid-joined devices in Intune."
  },
  {
   "id": 147,
@@ -4655,13 +4655,13 @@
    "El portal de Microsoft Intune (endpoint.microsoft.com) en la sección de Seguridad de puntos de conexión",
    "El portal de Microsoft Defender (security.microsoft.com / Microsoft Defender XDR)",
    "El Centro de administración de Microsoft 365 (admin.microsoft.com) en la sección de seguridad y cumplimiento",
-   "Azure Security Center (Microsoft Defender for Cloud) en la sección de recomendaciones de seguridad de endpoints"
+   "Microsoft Defender for Cloud en la sección de recomendaciones de seguridad de endpoints"
   ],
   "opts_en": [
    "The Microsoft Intune portal (endpoint.microsoft.com) in the Endpoint Security section",
    "The Microsoft Defender portal (security.microsoft.com / Microsoft Defender XDR)",
    "The Microsoft 365 admin center (admin.microsoft.com) in the security and compliance section",
-   "Azure Security Center (Microsoft Defender for Cloud) in the endpoint security recommendations section"
+   "Microsoft Defender for Cloud in the endpoint security recommendations section"
   ],
   "correct": [
    1
@@ -4974,7 +4974,7 @@
   "opts_en": [
    "Conditional access policy with the grant control \"Require compliant device\" with Intune",
    "Conditional access policy with \"Require app protection policy\" and \"Require approved client app\"",
-   "Conditional access policy with the grant control \"Require Hybrid Azure AD join\" for corporate devices",
+   "Conditional access policy with the grant control \"Require Microsoft Entra hybrid join\" for corporate devices",
    "Conditional access policy with the web-only access session control to enable monitored browser session"
   ],
   "correct": [
@@ -6238,13 +6238,13 @@
   "opts_es": [
    "Microsoft Secure Score para dispositivos en el portal de Microsoft Defender XDR (security.microsoft.com)",
    "Microsoft Defender Vulnerability Management (antes TVM)",
-   "Azure Security Center Advisor (Microsoft Defender for Cloud) con recomendaciones de seguridad de endpoints",
+   "Microsoft Defender for Cloud recommendations con recomendaciones de seguridad de endpoints",
    "Intune Endpoint Analytics con el módulo de análisis de configuración de seguridad y puntuación de riesgo"
   ],
   "opts_en": [
    "Microsoft Secure Score for devices in the Microsoft Defender XDR portal (security.microsoft.com)",
    "Microsoft Defender Vulnerability Management (formerly TVM)",
-   "Azure Security Center Advisor (Microsoft Defender for Cloud) with endpoint security recommendations",
+   "Microsoft Defender for Cloud recommendations with endpoint security recommendations",
    "Intune Endpoint Analytics with the security configuration analysis module and risk scoring"
   ],
   "correct": [
@@ -6422,13 +6422,13 @@
   "opts_es": [
    "El portal de Microsoft Intune (endpoint.microsoft.com) en la sección de Seguridad de puntos de conexión > Amenazas activas",
    "Microsoft Defender XDR (Extended Detection and Response) en security.microsoft.com",
-   "Azure Security Center / Microsoft Defender for Cloud en la sección de alertas de seguridad de endpoints",
+   "Microsoft Defender for Cloud en la sección de alertas de seguridad de endpoints",
    "Microsoft Sentinel (SIEM en la nube) en el área de trabajo de Log Analytics con las reglas de detección de MDE"
   ],
   "opts_en": [
    "The Microsoft Intune portal (endpoint.microsoft.com) in the Endpoint Security > Active threats section",
    "Microsoft Defender XDR (Extended Detection and Response) at security.microsoft.com",
-   "Azure Security Center / Microsoft Defender for Cloud in the endpoint security alerts section",
+   "Microsoft Defender for Cloud in the endpoint security alerts section",
    "Microsoft Sentinel (cloud SIEM) in the Log Analytics workspace with MDE detection rules"
   ],
   "correct": [
@@ -7128,13 +7128,13 @@
   "opts_es": [
    "El portal Microsoft 365 Apps es exclusivamente para comprar y gestionar licencias adicionales de Microsoft 365 Apps para negocios y no incluye configuraciones técnicas avanzadas",
    "Permite ver el inventario de instalaciones de Office, gestionar canales de actualización, configurar directivas de Office en la nube (Cloud Policy), y acceder a informes de estado de mantenimiento de los servicios de Office",
-   "Es el portal para gestionar permisos de aplicaciones de Office 365 en Azure Active Directory y el consentimiento de aplicaciones OAuth para integraciones de terceros en la organización",
+   "Es el portal para gestionar permisos de aplicaciones de Office 365 en Microsoft Entra ID y el consentimiento de aplicaciones OAuth para integraciones de terceros en la organización",
    "Es exclusivamente un portal de administración para gestionar bibliotecas de documentos de SharePoint y entornos de colaboración de Office con Teams y OneDrive integrados"
   ],
   "opts_en": [
    "The Microsoft 365 Apps portal is exclusively for purchasing and managing additional Microsoft 365 Apps for business licenses and does not include advanced technical configurations",
    "Allows viewing the Office installation inventory, managing update channels, configuring Office cloud policies (Cloud Policy), and accessing Office service health status reports",
-   "Is the portal for managing Office 365 application permissions in Azure Active Directory and OAuth application consent for third-party integrations in the organization",
+   "Is the portal for managing Office 365 application permissions in Microsoft Entra ID and OAuth application consent for third-party integrations in the organization",
    "Is exclusively an administration portal for managing SharePoint document libraries and Office collaboration environments with integrated Teams and OneDrive"
   ],
   "correct": [
@@ -8171,16 +8171,16 @@
   "dom": 2,
   "obj": "2.1",
   "type": "mc",
-  "q_es": "¿Qué es el 'modo de dispositivo compartido' (Shared Device Mode) en el contexto de Azure AD y Microsoft apps, y cómo difiere de un quiosco de Autopilot?",
-  "q_en": "What is 'Shared Device Mode' in the context of Azure AD and Microsoft apps, and how does it differ from an Autopilot kiosk?",
+  "q_es": "¿Qué es el 'modo de dispositivo compartido' (Shared Device Mode) en el contexto de Microsoft Entra ID y Microsoft apps, y cómo difiere de un quiosco de Autopilot?",
+  "q_en": "What is 'Shared Device Mode' in the context of Microsoft Entra ID and Microsoft apps, and how does it differ from an Autopilot kiosk?",
   "opts_es": [
-   "Son exactamente lo mismo con nombres diferentes aplicados en distintas versiones de la documentación oficial de Intune y del portal de administración de Microsoft Endpoint Manager a lo largo del tiempo",
+   "Son exactamente lo mismo con nombres diferentes aplicados en distintas versiones de la documentación oficial de Intune y del centro de administración de Microsoft Intune a lo largo del tiempo",
    "El Modo de dispositivo compartido permite que múltiples empleados usen el mismo dispositivo iOS/Android con inicio/cierre de sesión global de todas las apps Microsoft con un solo gesto, ideal para trabajadores de primera línea; el quiosco de Autopilot es para Windows con una app fija para uso público",
    "El modo de dispositivo compartido de Intune está diseñado exclusivamente para dispositivos Windows administrados centralmente; el perfil de quiosco configurado mediante Autopilot está orientado a dispositivos iOS y Android en escenarios de uso público no supervisado",
    "El modo de dispositivo compartido de Microsoft Intune requiere que cada trabajador de primera línea tenga su propio perfil de usuario independiente en el dispositivo físico compartido, con su propia configuración de identidad de Entra ID, acceso de red corporativa y preferencias personales de usuario"
   ],
   "opts_en": [
-   "They are exactly the same with different names applied in different versions of the official Intune documentation and the Microsoft Endpoint Manager administration portal over time",
+   "They are exactly the same with different names applied in different versions of the official Intune documentation and the Microsoft Intune administration portal over time",
    "Shared Device Mode allows multiple employees to use the same iOS/Android device with global sign-in/sign-out of all Microsoft apps in one gesture, ideal for frontline workers; Autopilot kiosk is for Windows with a fixed app for public use",
    "Intune shared device mode is designed exclusively for centrally managed Windows devices; the kiosk profile configured via Autopilot is aimed at iOS and Android devices in unsupervised public use scenarios",
    "Microsoft Intune shared device mode requires each frontline worker to have their own independent user profile on the shared physical device, with their own Entra ID identity configuration, corporate network access, and personal user preferences"
@@ -8188,8 +8188,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Shared Device Mode (SDM) en Microsoft apps/Azure AD permite que dispositivos iOS/Android sean compartidos por múltiples trabajadores de primera línea. Una acción de cierre de sesión cierra sesión en todas las apps Microsoft simultáneamente. El quiosco de Windows Autopilot fija una app en pantalla completa.",
-  "exp_en": "Shared Device Mode (SDM) in Microsoft apps/Azure AD allows iOS/Android devices to be shared by multiple frontline workers. One sign-out action signs out of all Microsoft apps simultaneously. Windows Autopilot kiosk pins an app in fullscreen."
+  "exp_es": "Shared Device Mode (SDM) en Microsoft apps/Microsoft Entra ID permite que dispositivos iOS/Android sean compartidos por múltiples trabajadores de primera línea. Una acción de cierre de sesión cierra sesión en todas las apps Microsoft simultáneamente. El quiosco de Windows Autopilot fija una app en pantalla completa.",
+  "exp_en": "Shared Device Mode (SDM) in Microsoft apps/Microsoft Entra ID allows iOS/Android devices to be shared by multiple frontline workers. One sign-out action signs out of all Microsoft apps simultaneously. Windows Autopilot kiosk pins an app in fullscreen."
  },
  {
   "id": 312,
@@ -8842,13 +8842,13 @@
   "opts_es": [
    "Ejecutar el cmdlet Get-IntuneDevicePolicies en PowerShell desde el propio dispositivo para obtener un listado de todas las directivas aplicadas y su estado actual",
    "En el portal de Intune, seleccionar el dispositivo > Configuración del dispositivo (o Estado del dispositivo) muestra todas las directivas y su estado (Aplicado, Error, Conflicto, Pendiente)",
-   "Recopilar diagnósticos del dispositivo y filtrar por directivas de Intune desde la sección de diagnósticos avanzados del portal de administración de Microsoft Endpoint Manager",
+   "Recopilar diagnósticos del dispositivo y filtrar por directivas de Intune desde la sección de diagnósticos avanzados del centro de administración de Microsoft Intune",
    "Exportar el inventario de dispositivos de Intune a Excel y filtrar por el nombre del dispositivo para identificar las directivas asignadas y su estado de cumplimiento"
   ],
   "opts_en": [
    "Run the Get-IntuneDevicePolicies cmdlet in PowerShell from the device itself to get a list of all applied policies and their current status",
    "In the Intune portal, select the device > Device configuration (or Device status) shows all policies and their state (Applied, Error, Conflict, Pending)",
-   "Collect device diagnostics and filter by Intune policies from the advanced diagnostics section of the Microsoft Endpoint Manager admin portal",
+   "Collect device diagnostics and filter by Intune policies from the advanced diagnostics section of the Microsoft Intune admin portal",
    "Export the Intune device inventory to Excel and filter by device name to identify assigned policies and their compliance status"
   ],
   "correct": [
@@ -9035,7 +9035,7 @@
   ],
   "opts_en": [
    "'Require compliant device' which automatically also requires Entra ID join as a prerequisite for the device to be evaluated as compliant",
-   "'Require Hybrid Azure AD joined device' or 'Require Microsoft Entra ID joined device', which are access controls separate from 'Require compliant device'",
+   "'Require Microsoft Entra hybrid joined device' or 'Require Microsoft Entra ID joined device', which are access controls separate from 'Require compliant device'",
    "No such setting exists; conditional access can only require compliance or Entra ID join, but cannot evaluate both conditions independently",
    "The conditional access device filter with the condition 'deviceJoinType -eq Joined' applied as an advanced access control in conditional access policies"
   ],
@@ -11021,7 +11021,7 @@
    "They are perfectly interchangeable terms to describe the same hybrid management scenario, where a Windows device receives policies from both MECM and Intune simultaneously, without role distinction or possibility of conflicts between both platforms, as Microsoft automatically synchronizes configurations",
    "Co-management (MECM + Intune) is an explicit configuration where workload responsibility is divided between MECM and Intune (updates in MECM, compliance in Intune, etc.); MDM/GPO co-existence occurs when a device receives GPO policies (via AD) and MDM policies (via Intune) simultaneously, potentially generating conflicts if they configure the same parameter",
    "Co-management is exclusively available for devices with Windows 10/11 Enterprise editions and requires active and valid Microsoft Endpoint Configuration Manager licenses; MDM/GPO co-existence can occur on any Windows edition, including Home, Pro, and Education, without additional special licensing requirements",
-   "Only one of the two scenarios can exist simultaneously in any given corporate environment; when an admin enables co-management in the MECM console, the system automatically disables any existing MDM/GPO co-existence on all devices in the Microsoft Entra ID tenant"
+   "Only one of the two scenarios can exist simultaneously in any given corporate environment; when an admin enables co-management in the MECM console, the system automatically disables any existing MDM/GPO co-existence on all devices in the Microsoft Entra tenant"
   ],
   "correct": [
    1
@@ -12239,7 +12239,7 @@
    "Microsoft Entra ID security groups that don't have the security permission assigned in Intune and therefore cannot receive any type of Intune policy or be used as an assignment target for configuration profiles",
    "Microsoft Entra ID security groups don't require members to have Intune licenses to exist as groups. However, for group members to receive and apply Intune policies, each user/device must have a valid Intune license assigned",
    "User groups in Intune that don't have sufficient role-based access control (RBAC) permissions assigned to create, manage, or assign Intune security policies to devices or users in the admin portal",
-   "Groups automatically excluded by Intune from all security policy assignments for regulatory compliance reasons or for having been marked with special exclusion attributes in the organization's Microsoft Entra ID tenant directory"
+   "Groups automatically excluded by Intune from all security policy assignments for regulatory compliance reasons or for having been marked with special exclusion attributes in the organization's Microsoft Entra tenant directory"
   ],
   "correct": [
    1
@@ -12590,8 +12590,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Windows 365 Business: fácil configuración para SMBs, sin ANC, sin personalización de imagen personalizada, hasta 300 usuarios. Windows 365 Enterprise: para grandes organizaciones, ANC para conectividad on-premises, imágenes personalizadas, integración completa con Intune y Microsoft Endpoint Manager.",
-  "exp_en": "Windows 365 Business: easy setup for SMBs, no ANC, no custom image, up to 300 users. Windows 365 Enterprise: for large organizations, ANC for on-premises connectivity, custom images, full integration with Intune and Microsoft Endpoint Manager."
+  "exp_es": "Windows 365 Business: fácil configuración para SMBs, sin ANC, sin personalización de imagen personalizada, hasta 300 usuarios. Windows 365 Enterprise: para grandes organizaciones, ANC para conectividad on-premises, imágenes personalizadas, integración completa con Intune y Microsoft Intune.",
+  "exp_en": "Windows 365 Business: easy setup for SMBs, no ANC, no custom image, up to 300 users. Windows 365 Enterprise: for large organizations, ANC for on-premises connectivity, custom images, full integration with Intune and Microsoft Intune."
  },
  {
   "id": 478,
@@ -12656,13 +12656,13 @@
   "opts_es": [
    "Es la política de contraseñas de cuentas de usuario de Microsoft 365 que Entra ID sincroniza automáticamente a todos los dispositivos Windows gestionados por Intune, aplicando los requisitos de longitud y complejidad definidos en el Centro de administración de Microsoft 365",
    "Entra ID no tiene directiva de contraseñas de dispositivo; Intune la define con perfiles de restricción y la comprueba con directivas de cumplimiento",
-   "Una política de Microsoft Entra ID que sincroniza automáticamente los requisitos de contraseña definidos en Active Directory on-premises a todos los dispositivos Windows gestionados por Intune, usando Azure AD Connect para transferir las políticas de contraseña",
+   "Una política de Microsoft Entra ID que sincroniza automáticamente los requisitos de contraseña definidos en Active Directory on-premises a todos los dispositivos Windows gestionados por Intune, usando Microsoft Entra Connect para transferir las políticas de contraseña",
    "La política de contraseña predeterminada de Microsoft Entra ID que se aplica automáticamente a todos los dispositivos del tenant sin necesidad de ninguna configuración adicional, aplicando los requisitos mínimos de seguridad de Microsoft a todas las cuentas"
   ],
   "opts_en": [
    "It is the Microsoft 365 user account password policy that Entra ID automatically syncs to all Windows devices managed by Intune, applying the length and complexity requirements defined in the Microsoft 365 admin center",
    "Entra ID has no device password policy; Intune sets it with device restriction profiles and checks it with compliance policies",
-   "A Microsoft Entra ID policy that automatically syncs password requirements defined in on-premises Active Directory to all Windows devices managed by Intune, using Azure AD Connect to transfer password policies",
+   "A Microsoft Entra ID policy that automatically syncs password requirements defined in on-premises Active Directory to all Windows devices managed by Intune, using Microsoft Entra Connect to transfer password policies",
    "The Microsoft Entra ID default password policy that automatically applies to all tenant devices without any additional configuration, applying Microsoft's minimum security requirements to all accounts"
   ],
   "correct": [
@@ -13063,13 +13063,13 @@
    "Una función que permite a Intune gestionar directamente los servidores de infraestructura de Microsoft Endpoint Configuration Manager, incluyendo la capacidad de crear colecciones, desplegar paquetes y ejecutar informes sin que los administradores de Intune necesiten ningún acceso a la consola local de MECM del sitio",
    "Una característica que carga los datos de inventario de MECM (dispositivos, aplicaciones, colecciones) en el servicio de Intune, permitiendo a los administradores ver los dispositivos gestionados por MECM en el portal de Intune y ejecutar algunas acciones remotas sobre ellos sin necesitar la consola de MECM",
    "Una función que migra automáticamente todos los dispositivos registrados en MECM a la gestión completa de Intune sin requerir ninguna intervención manual del administrador ni reinstalación del agente en los dispositivos",
-   "Una sincronización unidireccional de datos de inventario de hardware y software de MECM a Azure Sentinel para su análisis de seguridad avanzado y la correlación de eventos de seguridad con otras fuentes de datos del tenant"
+   "Una sincronización unidireccional de datos de inventario de hardware y software de MECM a Microsoft Sentinel para su análisis de seguridad avanzado y la correlación de eventos de seguridad con otras fuentes de datos del tenant"
   ],
   "opts_en": [
    "A function allowing Intune to directly manage Microsoft Endpoint Configuration Manager infrastructure servers, including the ability to create collections, deploy packages, and run reports without Intune admins needing access to the MECM console",
    "A feature that uploads MECM inventory data (devices, applications, collections) to the Intune service, allowing admins to view MECM-managed devices in the Intune portal and execute some remote actions on them without needing the MECM console",
    "A function that automatically migrates all devices registered in MECM to full Intune management without requiring any manual admin intervention or agent reinstallation on the devices",
-   "A one-way synchronization of MECM hardware and software inventory data to Azure Sentinel for advanced security analysis and correlation of security events with other tenant data sources"
+   "A one-way synchronization of MECM hardware and software inventory data to Microsoft Sentinel for advanced security analysis and correlation of security events with other tenant data sources"
   ],
   "correct": [
    1
@@ -13245,8 +13245,8 @@
   "q_en": "For each statement about Microsoft Entra ID join types, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Un dispositivo Entra ID Joined puede obtener SSO para recursos locales si Azure AD Connect sincroniza los usuarios.",
-    "en": "An Entra ID Joined device can obtain SSO for on-premises resources if Azure AD Connect syncs the users.",
+    "es": "Un dispositivo Microsoft Entra joined puede obtener SSO para recursos locales si Microsoft Entra Connect sincroniza los usuarios.",
+    "en": "An Microsoft Entra joined device can obtain SSO for on-premises resources if Microsoft Entra Connect syncs the users.",
     "ans": true
    },
    {
@@ -13255,13 +13255,13 @@
     "ans": false
    },
    {
-    "es": "Hybrid Entra ID Join requiere visibilidad de red con un controlador de dominio durante el inicio de sesión.",
-    "en": "Hybrid Entra ID Join requires network visibility to a domain controller during sign-in.",
+    "es": "Microsoft Entra hybrid join requiere visibilidad de red con un controlador de dominio durante el inicio de sesión.",
+    "en": "Microsoft Entra hybrid join requires network visibility to a domain controller during sign-in.",
     "ans": true
    }
   ],
-  "exp_es": "Un dispositivo Entra ID Joined puede obtener SSO para recursos locales si Azure AD Connect sincroniza los usuarios (true). Un dispositivo Entra ID Registered NO requiere que el usuario sea administrador local (false). Hybrid Entra ID Join SÍ requiere visibilidad de red con un controlador de dominio durante el inicio de sesión (true).",
-  "exp_en": "An Entra ID Joined device can get SSO for on-premises resources if Azure AD Connect syncs users (true). An Entra ID Registered device does NOT require the user to be a local admin (false). Hybrid Entra ID Join DOES require network visibility to a domain controller during sign-in (true)."
+  "exp_es": "Un dispositivo Microsoft Entra joined puede obtener SSO para recursos locales si Microsoft Entra Connect sincroniza los usuarios (true). Un dispositivo Entra ID Registered NO requiere que el usuario sea administrador local (false). Microsoft Entra hybrid join SÍ requiere visibilidad de red con un controlador de dominio durante el inicio de sesión (true).",
+  "exp_en": "An Microsoft Entra joined device can get SSO for on-premises resources if Microsoft Entra Connect syncs users (true). An Entra ID Registered device does NOT require the user to be a local admin (false). Microsoft Entra hybrid join DOES require network visibility to a domain controller during sign-in (true)."
  },
  {
   "id": 502,
@@ -13273,8 +13273,8 @@
   "q_en": "For each statement about the Primary Refresh Token (PRT), indicate whether it is true or false.",
   "rows": [
    {
-    "es": "El PRT se emite a dispositivos Entra ID Joined y Hybrid Entra ID Joined, pero no a dispositivos Registered.",
-    "en": "The PRT is issued to Entra ID Joined and Hybrid Entra ID Joined devices, but not to Registered devices.",
+    "es": "El PRT se emite a dispositivos Microsoft Entra joined y Microsoft Entra hybrid joined, pero no a dispositivos Registered.",
+    "en": "The PRT is issued to Microsoft Entra joined and Microsoft Entra hybrid joined devices, but not to Registered devices.",
     "ans": false
    },
    {
@@ -13288,8 +13288,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El PRT se emite a Entra ID Joined, Hybrid Entra ID Joined Y Registered (por tanto, decir que no a Registered es falso). El PRT permite SSO transparente a aplicaciones con autenticación moderna (true). Un PRT expirado NO se renueva si el dispositivo no tiene conectividad con Entra ID (false); necesita conexión para renovarse.",
-  "exp_en": "The PRT is issued to Entra ID Joined, Hybrid Entra ID Joined, AND Registered devices (so saying it's not issued to Registered is false). The PRT enables transparent SSO to modern-auth applications (true). An expired PRT cannot be renewed without connectivity to Entra ID (false)."
+  "exp_es": "El PRT se emite a Microsoft Entra joined, Microsoft Entra hybrid joined Y Registered (por tanto, decir que no a Registered es falso). El PRT permite SSO transparente a aplicaciones con autenticación moderna (true). Un PRT expirado NO se renueva si el dispositivo no tiene conectividad con Entra ID (false); necesita conexión para renovarse.",
+  "exp_en": "The PRT is issued to Microsoft Entra joined, Microsoft Entra hybrid joined, AND Registered devices (so saying it's not issued to Registered is false). The PRT enables transparent SSO to modern-auth applications (true). An expired PRT cannot be renewed without connectivity to Entra ID (false)."
  },
  {
   "id": 503,
@@ -13304,13 +13304,13 @@
     "es": "Portátil personal de un empleado que solo accede a apps cloud de la empresa.",
     "en": "Employee's personal laptop that only accesses company cloud apps.",
     "opts_es": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "opts_en": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "correct": 2
@@ -13319,13 +13319,13 @@
     "es": "PC corporativo nuevo que solo necesita unión a Entra ID y Autopilot.",
     "en": "New corporate PC that only needs Entra ID join and Autopilot.",
     "opts_es": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "opts_en": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "correct": 0
@@ -13334,20 +13334,20 @@
     "es": "PC corporativo existente unido a AD local que también requiere acceso a recursos cloud.",
     "en": "Existing corporate PC joined to on-premises AD that also requires access to cloud resources.",
     "opts_es": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "opts_en": [
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Entra ID Registered"
     ],
     "correct": 1
    }
   ],
-  "exp_es": "Un portátil personal que solo accede a apps cloud → Entra ID Registered (Workplace Join). Un PC corporativo nuevo que solo necesita Entra ID y Autopilot → Entra ID Joined. Un PC corporativo existente unido a AD local que también requiere acceso a recursos locales → Hybrid Entra ID Joined.",
-  "exp_en": "A personal laptop that only accesses cloud apps → Entra ID Registered (Workplace Join). A new corporate PC that only needs Entra ID and Autopilot → Entra ID Joined. An existing corporate PC already joined to on-premises AD that also needs local resource access → Hybrid Entra ID Joined."
+  "exp_es": "Un portátil personal que solo accede a apps cloud → Entra ID Registered (Workplace Join). Un PC corporativo nuevo que solo necesita Entra ID y Autopilot → Microsoft Entra joined. Un PC corporativo existente unido a AD local que también requiere acceso a recursos locales → Microsoft Entra hybrid joined.",
+  "exp_en": "A personal laptop that only accesses cloud apps → Entra ID Registered (Workplace Join). A new corporate PC that only needs Entra ID and Autopilot → Microsoft Entra joined. An existing corporate PC already joined to on-premises AD that also needs local resource access → Microsoft Entra hybrid joined."
  },
  {
   "id": 504,
@@ -13363,14 +13363,14 @@
   "post_en": "in Microsoft Entra ID.",
   "opts_es": [
    "Entra ID Registered",
-   "Entra ID Joined",
-   "Hybrid Entra ID Joined",
+   "Microsoft Entra joined",
+   "Microsoft Entra hybrid joined",
    "Entra ID Provisioned"
   ],
   "opts_en": [
    "Entra ID Registered",
-   "Entra ID Joined",
-   "Hybrid Entra ID Joined",
+   "Microsoft Entra joined",
+   "Microsoft Entra hybrid joined",
    "Entra ID Provisioned"
   ],
   "correct": 0,
@@ -13383,27 +13383,27 @@
   "dom": 1,
   "obj": "1.1",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre Hybrid Entra ID Join, indica si es verdadera o falsa.",
-  "q_en": "For each statement about Hybrid Entra ID Join, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre Microsoft Entra hybrid join, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Entra hybrid join, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Hybrid Entra ID Join requiere Azure AD Connect o Azure AD Connect Cloud Sync para sincronizar objetos de equipo.",
-    "en": "Hybrid Entra ID Join requires Azure AD Connect or Azure AD Connect Cloud Sync to sync computer objects.",
+    "es": "Microsoft Entra hybrid join requiere Microsoft Entra Connect o Microsoft Entra Connect Cloud Sync para sincronizar objetos de equipo.",
+    "en": "Microsoft Entra hybrid join requires Microsoft Entra Connect or Microsoft Entra Connect Cloud Sync to sync computer objects.",
     "ans": true
    },
    {
-    "es": "Los dispositivos Hybrid Entra ID Joined no pueden recibir directivas de Intune.",
-    "en": "Hybrid Entra ID Joined devices cannot receive Intune policies.",
+    "es": "Los dispositivos Microsoft Entra hybrid joined no pueden recibir directivas de Intune.",
+    "en": "Microsoft Entra hybrid joined devices cannot receive Intune policies.",
     "ans": false
    },
    {
-    "es": "Hybrid Entra ID Join es el único tipo de unión compatible con la autenticación Kerberos en recursos locales.",
-    "en": "Hybrid Entra ID Join is the only join type compatible with Kerberos authentication for on-premises resources.",
+    "es": "Microsoft Entra hybrid join es el único tipo de unión compatible con la autenticación Kerberos en recursos locales.",
+    "en": "Microsoft Entra hybrid join is the only join type compatible with Kerberos authentication for on-premises resources.",
     "ans": false
    }
   ],
-  "exp_es": "Hybrid Entra ID Join requiere Azure AD Connect o Azure AD Connect Cloud Sync para sincronizar los objetos de dispositivo con Entra ID (true). Los dispositivos Hybrid Entra ID Joined SÍ pueden recibir directivas de Intune (false). Hybrid Entra ID Join NO es el único tipo compatible con Kerberos; Entra Kerberos (Cloud Kerberos Trust) también lo habilita desde Entra ID Joined (false).",
-  "exp_en": "Hybrid Entra ID Join requires Azure AD Connect or Cloud Sync to sync device objects to Entra ID (true). Hybrid Entra ID Joined devices CAN receive Intune policies (false). Hybrid is NOT the only type compatible with Kerberos — Cloud Kerberos Trust enables it from Entra ID Joined too (false)."
+  "exp_es": "Microsoft Entra hybrid join requiere Microsoft Entra Connect o Microsoft Entra Connect Cloud Sync para sincronizar los objetos de dispositivo con Entra ID (true). Los dispositivos Microsoft Entra hybrid joined SÍ pueden recibir directivas de Intune (false). Microsoft Entra hybrid join NO es el único tipo compatible con Kerberos; Entra Kerberos (Cloud Kerberos Trust) también lo habilita desde Microsoft Entra joined (false).",
+  "exp_en": "Microsoft Entra hybrid join requires Microsoft Entra Connect or Cloud Sync to sync device objects to Entra ID (true). Microsoft Entra hybrid joined devices CAN receive Intune policies (false). Hybrid is NOT the only type compatible with Kerberos — Cloud Kerberos Trust enables it from Microsoft Entra joined too (false)."
  },
  {
   "id": 506,
@@ -13413,25 +13413,25 @@
   "type": "sentence",
   "q_es": "Selecciona la respuesta que completa correctamente la frase.",
   "q_en": "Select the answer that correctly completes the sentence.",
-  "pre_es": "Para que un dispositivo Entra ID Joined acceda con SSO a recursos locales mediante Kerberos, es necesario configurar",
+  "pre_es": "Para que un dispositivo Microsoft Entra joined acceda con SSO a recursos locales mediante Kerberos, es necesario configurar",
   "post_es": "en el entorno.",
-  "pre_en": "For an Entra ID Joined device to access on-premises resources with SSO via Kerberos, it is necessary to configure",
+  "pre_en": "For an Microsoft Entra joined device to access on-premises resources with SSO via Kerberos, it is necessary to configure",
   "post_en": "in the environment.",
   "opts_es": [
    "Entra Kerberos (Cloud Kerberos Trust)",
-   "Azure AD Application Proxy",
+   "Microsoft Entra ID Application Proxy",
    "Entra ID Registered",
    "PRT multifactor"
   ],
   "opts_en": [
    "Entra Kerberos (Cloud Kerberos Trust)",
-   "Azure AD Application Proxy",
+   "Microsoft Entra ID Application Proxy",
    "Entra ID Registered",
    "PRT multifactor"
   ],
   "correct": 0,
-  "exp_es": "Para que un dispositivo Entra ID Joined acceda con SSO a recursos locales mediante Kerberos, se debe configurar Entra Kerberos (Cloud Kerberos Trust). Esta función emite tickets de Kerberos a través de la nube para que los dispositivos puramente Entra ID Joined accedan a recursos locales que usan Kerberos.",
-  "exp_en": "For an Entra ID Joined device to access on-premises resources via Kerberos SSO, Entra Kerberos (Cloud Kerberos Trust) must be configured. This feature issues Kerberos tickets through the cloud so purely Entra ID Joined devices can access on-premises Kerberos-based resources."
+  "exp_es": "Para que un dispositivo Microsoft Entra joined acceda con SSO a recursos locales mediante Kerberos, se debe configurar Entra Kerberos (Cloud Kerberos Trust). Esta función emite tickets de Kerberos a través de la nube para que los dispositivos puramente Microsoft Entra joined accedan a recursos locales que usan Kerberos.",
+  "exp_en": "For an Microsoft Entra joined device to access on-premises resources via Kerberos SSO, Entra Kerberos (Cloud Kerberos Trust) must be configured. This feature issues Kerberos tickets through the cloud so purely Microsoft Entra joined devices can access on-premises Kerberos-based resources."
  },
  {
   "id": 507,
@@ -13446,13 +13446,13 @@
     "es": "SSO automático a Microsoft 365 sin necesidad de introducir credenciales.",
     "en": "Automatic SSO to Microsoft 365 without entering credentials.",
     "opts_es": [
-     "Solo Entra ID Joined",
-     "Entra ID Joined y Hybrid Joined",
+     "Solo Microsoft Entra joined",
+     "Microsoft Entra joined y Hybrid Joined",
      "Los tres tipos"
     ],
     "opts_en": [
-     "Only Entra ID Joined",
-     "Entra ID Joined and Hybrid Joined",
+     "Only Microsoft Entra joined",
+     "Microsoft Entra joined and Hybrid Joined",
      "All three types"
     ],
     "correct": 2
@@ -13461,13 +13461,13 @@
     "es": "El dispositivo sigue siendo miembro del dominio AD local.",
     "en": "The device remains a member of the on-premises AD domain.",
     "opts_es": [
-     "Solo Hybrid Entra ID Joined",
-     "Entra ID Joined",
+     "Solo Microsoft Entra hybrid joined",
+     "Microsoft Entra joined",
      "Entra ID Registered"
     ],
     "opts_en": [
-     "Only Hybrid Entra ID Joined",
-     "Entra ID Joined",
+     "Only Microsoft Entra hybrid joined",
+     "Microsoft Entra joined",
      "Entra ID Registered"
     ],
     "correct": 0
@@ -13477,19 +13477,19 @@
     "en": "Compatible with users' personal iOS and Android devices.",
     "opts_es": [
      "Solo Entra ID Registered",
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined"
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined"
     ],
     "opts_en": [
      "Only Entra ID Registered",
-     "Entra ID Joined",
-     "Hybrid Entra ID Joined"
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined"
     ],
     "correct": 0
    }
   ],
-  "exp_es": "SSO automático a Microsoft 365 sin introducir credenciales → soportado por todos los tipos de unión que emiten un PRT (Registered, Joined, Hybrid). El dispositivo sigue siendo miembro del dominio AD local → Hybrid Entra ID Joined (y también Registered si es un dominio local, pero principalmente Hybrid). Compatible con iOS y Android personales → Entra ID Registered.",
-  "exp_en": "Automatic SSO to Microsoft 365 without entering credentials → supported by all join types that issue a PRT. The device remains a member of the on-premises AD domain → Hybrid Entra ID Joined. Compatible with personal iOS and Android devices → Entra ID Registered."
+  "exp_es": "SSO automático a Microsoft 365 sin introducir credenciales → soportado por todos los tipos de unión que emiten un PRT (Registered, Joined, Hybrid). El dispositivo sigue siendo miembro del dominio AD local → Microsoft Entra hybrid joined (y también Registered si es un dominio local, pero principalmente Hybrid). Compatible con iOS y Android personales → Entra ID Registered.",
+  "exp_en": "Automatic SSO to Microsoft 365 without entering credentials → supported by all join types that issue a PRT. The device remains a member of the on-premises AD domain → Microsoft Entra hybrid joined. Compatible with personal iOS and Android devices → Entra ID Registered."
  },
  {
   "id": 508,
@@ -13512,7 +13512,7 @@
    },
    {
     "es": "El PRT puede usarse en dispositivos que no estén unidos a Entra ID ni sean Registered.",
-    "en": "The PRT can be used on devices that are not Entra ID Joined or Registered.",
+    "en": "The PRT can be used on devices that are not Microsoft Entra joined or Registered.",
     "ans": false
    }
   ],
@@ -13544,8 +13544,8 @@
    "a local Kerberos token"
   ],
   "correct": 0,
-  "exp_es": "Un dispositivo unido únicamente al dominio AD local (sin Hybrid Entra ID Join) al intentar acceder a recursos en la nube como Microsoft 365 no tiene PRT de Entra ID. Por eso recibe una solicitud de credenciales de Entra ID al autenticarse. Para SSO transparente se necesita Hybrid Entra ID Join o Entra ID Joined.",
-  "exp_en": "A device joined only to an on-premises AD domain (without Hybrid Entra ID Join) has no Entra ID PRT. Therefore it receives an Entra ID credential prompt when authenticating to cloud resources like Microsoft 365. Transparent SSO requires Hybrid Entra ID Join or Entra ID Joined."
+  "exp_es": "Un dispositivo unido únicamente al dominio AD local (sin Microsoft Entra hybrid join) al intentar acceder a recursos en la nube como Microsoft 365 no tiene PRT de Entra ID. Por eso recibe una solicitud de credenciales de Entra ID al autenticarse. Para SSO transparente se necesita Microsoft Entra hybrid join o Microsoft Entra joined.",
+  "exp_en": "A device joined only to an on-premises AD domain (without Microsoft Entra hybrid join) has no Entra ID PRT. Therefore it receives an Entra ID credential prompt when authenticating to cloud resources like Microsoft 365. Transparent SSO requires Microsoft Entra hybrid join or Microsoft Entra joined."
  },
  {
   "id": 510,
@@ -13585,8 +13585,8 @@
   "q_en": "For each SSO scenario, select the correct outcome based on the join type.",
   "rows": [
    {
-    "es": "Usuario en PC Entra ID Joined accede a SharePoint Online.",
-    "en": "User on an Entra ID Joined PC accesses SharePoint Online.",
+    "es": "Usuario en PC Microsoft Entra joined accede a SharePoint Online.",
+    "en": "User on an Microsoft Entra joined PC accesses SharePoint Online.",
     "opts_es": [
      "SSO automático con PRT",
      "Se solicitan credenciales",
@@ -13615,8 +13615,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "Un usuario en un PC Entra ID Joined que accede a SharePoint Online obtiene SSO automático via PRT (sin solicitar credenciales). Un usuario en un PC Entra ID Registered que accede a una app SAML configurada en Entra ID obtiene SSO mediante el flujo SAML apoyado en el token de la sesión de Entra ID.",
-  "exp_en": "A user on an Entra ID Joined PC accessing SharePoint Online gets automatic SSO via PRT (no credential prompt). A user on an Entra ID Registered PC accessing a SAML app configured in Entra ID gets SSO through the SAML flow backed by the Entra ID session token."
+  "exp_es": "Un usuario en un PC Microsoft Entra joined que accede a SharePoint Online obtiene SSO automático via PRT (sin solicitar credenciales). Un usuario en un PC Entra ID Registered que accede a una app SAML configurada en Entra ID obtiene SSO mediante el flujo SAML apoyado en el token de la sesión de Entra ID.",
+  "exp_en": "A user on an Microsoft Entra joined PC accessing SharePoint Online gets automatic SSO via PRT (no credential prompt). A user on an Entra ID Registered PC accessing a SAML app configured in Entra ID gets SSO through the SAML flow backed by the Entra ID session token."
  },
  {
   "id": 512,
@@ -13753,8 +13753,8 @@
     "ans": true
    },
    {
-    "es": "Para habilitar la co-gestión, los dispositivos deben estar Hybrid Entra ID Joined o Entra ID Joined.",
-    "en": "To enable co-management, devices must be Hybrid Entra ID Joined or Entra ID Joined.",
+    "es": "Para habilitar la co-gestión, los dispositivos deben estar Microsoft Entra hybrid joined o Microsoft Entra joined.",
+    "en": "To enable co-management, devices must be Microsoft Entra hybrid joined or Microsoft Entra joined.",
     "ans": true
    },
    {
@@ -13763,8 +13763,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La co-gestión permite dividir las cargas de trabajo entre Intune y Configuration Manager (true). Para habilitarla, los dispositivos deben estar Hybrid Entra ID Joined (true). En co-gestión, la carga de trabajo de Endpoint Protection SÍ puede gestionarla Intune si así se configura; no está limitada solo a ConfigMgr (false).",
-  "exp_en": "Co-management allows splitting workloads between Intune and Configuration Manager (true). To enable it, devices must be Hybrid Entra ID Joined (true). In co-management, the Endpoint Protection workload CAN be managed by Intune if configured — it is not limited to ConfigMgr only (false)."
+  "exp_es": "La co-gestión permite dividir las cargas de trabajo entre Intune y Configuration Manager (true). Para habilitarla, los dispositivos deben estar Microsoft Entra hybrid joined (true). En co-gestión, la carga de trabajo de Endpoint Protection SÍ puede gestionarla Intune si así se configura; no está limitada solo a ConfigMgr (false).",
+  "exp_en": "Co-management allows splitting workloads between Intune and Configuration Manager (true). To enable it, devices must be Microsoft Entra hybrid joined (true). In co-management, the Endpoint Protection workload CAN be managed by Intune if configured — it is not limited to ConfigMgr only (false)."
  },
  {
   "id": 516,
@@ -14452,9 +14452,9 @@
   "type": "sentence",
   "q_es": "Selecciona la respuesta que completa correctamente la frase.",
   "q_en": "Select the answer that correctly completes the sentence.",
-  "pre_es": "Para usar Autopilot en modo User-Driven con Hybrid Entra ID Join, además del perfil de Autopilot se requiere un",
+  "pre_es": "Para usar Autopilot en modo User-Driven con Microsoft Entra hybrid join, además del perfil de Autopilot se requiere un",
   "post_es": "instalado en el dispositivo.",
-  "pre_en": "To use Autopilot in User-Driven mode with Hybrid Entra ID Join, in addition to the Autopilot profile, a",
+  "pre_en": "To use Autopilot in User-Driven mode with Microsoft Entra hybrid join, in addition to the Autopilot profile, a",
   "post_en": "installed on the device is required.",
   "opts_es": [
    "conector de Intune para Active Directory",
@@ -14469,8 +14469,8 @@
    "VPN gateway"
   ],
   "correct": 0,
-  "exp_es": "Para usar Autopilot en modo User-Driven con Hybrid Entra ID Join, se necesita el conector de Intune para Active Directory instalado en un servidor con línea de visión al controlador de dominio. Este conector permite que Intune cree la cuenta de equipo en el AD local durante la OOBE.",
-  "exp_en": "To use Autopilot in User-Driven mode with Hybrid Entra ID Join, the Intune Connector for Active Directory must be installed on a server with line-of-sight to the domain controller. This connector allows Intune to create the computer account in on-premises AD during OOBE."
+  "exp_es": "Para usar Autopilot en modo User-Driven con Microsoft Entra hybrid join, se necesita el conector de Intune para Active Directory instalado en un servidor con línea de visión al controlador de dominio. Este conector permite que Intune cree la cuenta de equipo en el AD local durante la OOBE.",
+  "exp_en": "To use Autopilot in User-Driven mode with Microsoft Entra hybrid join, the Intune Connector for Active Directory must be installed on a server with line-of-sight to the domain controller. This connector allows Intune to create the computer account in on-premises AD during OOBE."
  },
  {
   "id": 536,
@@ -16764,7 +16764,7 @@
    "v1.0, porque las API beta pueden cambiar sin previo aviso",
    "beta, porque siempre es más estable",
    "Cualquiera; Microsoft garantiza ambas por igual",
-   "El endpoint heredado de Azure AD Graph"
+   "El endpoint heredado de Microsoft Entra ID Graph"
   ],
   "opts_en": [
    "v1.0, because beta APIs can change without notice",
@@ -16775,8 +16775,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El endpoint v1.0 es el soportado para producción; beta puede cambiar con modificaciones incompatibles. Azure AD Graph está retirado.",
-  "exp_en": "The v1.0 endpoint is supported for production; beta is subject to breaking changes. Azure AD Graph is retired."
+  "exp_es": "El endpoint v1.0 es el soportado para producción; beta puede cambiar con modificaciones incompatibles. Microsoft Entra ID Graph está retirado.",
+  "exp_en": "The v1.0 endpoint is supported for production; beta is subject to breaking changes. Microsoft Entra ID Graph is retired."
  },
  {
   "id": 605,

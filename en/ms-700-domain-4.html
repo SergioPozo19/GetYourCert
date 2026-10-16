@@ -179,7 +179,7 @@
       {
        "@type": "Answer",
        "position": 0,
-       "text": "A custom Power BI report that imports building data from Azure AD into the CQD dashboard",
+       "text": "A custom Power BI report that imports building data from Microsoft Entra ID into the CQD dashboard",
        "encodingFormat": "text/html",
        "comment": {
         "@type": "Comment",
@@ -570,7 +570,7 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "position": 2,
-      "text": "An Azure AD Conditional Access policy blocking access to Teams from unmanaged or non-compliant devices",
+      "text": "An Microsoft Entra Conditional Access policy blocking access to Teams from unmanaged or non-compliant devices",
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
@@ -617,7 +617,7 @@
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> You want to use the Call Quality Dashboard (CQD) to identify if quality issues affect users in a specific building. What must you upload to CQD to enable filtering by building?</p>
-      <ol class="sq-opts" type="A"><li>A custom Power BI report that imports building data from Azure AD into the CQD dashboard</li><li>A building data file that maps IP subnets to building names and locations</li><li>A user CSV file associating each email address with their assigned building and floor</li><li>A network site configuration file linking Teams Admin Center subnets to CQD</li></ol>
+      <ol class="sq-opts" type="A"><li>A custom Power BI report that imports building data from Microsoft Entra ID into the CQD dashboard</li><li>A building data file that maps IP subnets to building names and locations</li><li>A user CSV file associating each email address with their assigned building and floor</li><li>A network site configuration file linking Teams Admin Center subnets to CQD</li></ol>
       <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> The CQD building data file is a CSV that maps IP subnets to location information (building, city, country). Once uploaded, it allows filtering quality reports by physical location rather than just by IP address.</p></details>
     </div>
     <div class="sq">
@@ -647,7 +647,7 @@
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> A user cannot sign into Teams on their mobile device but can on their desktop. The mobile error is &#x27;Cannot sign in. Contact your administrator.&#x27; What is the most likely cause?</p>
-      <ol class="sq-opts" type="A"><li>The user&#x27;s Teams license doesn&#x27;t include access to the Teams mobile client for iOS or Android apps</li><li>The user&#x27;s Teams policy has mobile device access disabled in Admin Center</li><li>An Azure AD Conditional Access policy blocking access to Teams from unmanaged or non-compliant devices</li><li>The user&#x27;s mobile device doesn&#x27;t meet the minimum OS requirements for the Teams mobile client</li></ol>
+      <ol class="sq-opts" type="A"><li>The user&#x27;s Teams license doesn&#x27;t include access to the Teams mobile client for iOS or Android apps</li><li>The user&#x27;s Teams policy has mobile device access disabled in Admin Center</li><li>An Microsoft Entra Conditional Access policy blocking access to Teams from unmanaged or non-compliant devices</li><li>The user&#x27;s mobile device doesn&#x27;t meet the minimum OS requirements for the Teams mobile client</li></ol>
       <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> The error &#x27;Cannot sign in. Contact your administrator&#x27; on mobile generally indicates a Conditional Access block. A CA policy may require the device to be managed (enrolled in Intune) or compliant. The corporate desktop may meet the policy but the personal mobile may not.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=ms-700&amp;dom=4&amp;lang=en">Practice domain 4 for free →</a></div>

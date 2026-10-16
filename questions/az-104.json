@@ -561,7 +561,7 @@
   ],
   "opts_en": [
    "Only at the individual resource level, since Azure RBAC does not support inheritance from higher scopes",
-   "Only at the Microsoft Entra ID tenant level, the same as directory administrator roles",
+   "Only at the Microsoft Entra tenant level, the same as directory administrator roles",
    "Management group, subscription, resource group, and individual resource",
    "Only at the subscription level; management groups use exclusively Azure Policy"
   ],
@@ -712,19 +712,19 @@
    "Sustituye a las asignaciones de roles Lector y Colaborador existentes en ese ámbito, eliminando por completo la necesidad de configurar RBAC una vez que se crea la asignación de denegación",
    "Es un rol personalizado que solo tiene permisos de lectura sobre los recursos del ámbito al que se aplica, y que cualquier propietario puede modificar o eliminar libremente en cualquier momento",
    "Es lo mismo que un bloqueo de recurso de tipo ReadOnly, salvo que se aplica automáticamente por Azure Blueprints a nivel de suscripción y puede eliminarse desde el blade de Bloqueos",
-   "Bloquea acciones específicas sobre un ámbito independientemente de las asignaciones de roles que conceden acceso, y normalmente se crea automáticamente al usar Azure Blueprints o recursos administrados"
+   "Bloquea acciones específicas sobre un ámbito independientemente de las asignaciones de roles que conceden acceso, y la crea Azure, por ejemplo, con aplicaciones administradas o pilas de implementación (deployment stacks)"
   ],
   "opts_en": [
    "It replaces existing Reader and Contributor role assignments on that scope, completely removing the need to configure RBAC once the deny assignment is created",
    "It is a custom role that only has read permissions on the resources of the scope it applies to, and that any owner can freely modify or delete at any time",
    "It is the same as a ReadOnly resource lock, except it is applied automatically by Azure Blueprints at the subscription level and can be removed from the Locks blade",
-   "It blocks specific actions on a scope regardless of role assignments that grant access, and is typically created automatically when using Azure Blueprints or managed resources"
+   "It blocks specific actions on a scope regardless of role assignments that grant access, and is created by Azure, for example by managed applications or deployment stacks"
   ],
   "correct": [
    3
   ],
-  "exp_es": "Las asignaciones de denegación tienen prioridad sobre las asignaciones de roles: bloquean acciones concretas a usuarios y servicios principales independientemente de los permisos que tengan, y se utilizan, por ejemplo, para proteger recursos desplegados mediante Azure Blueprints.",
-  "exp_en": "Deny assignments take precedence over role assignments: they block specific actions for users and service principals regardless of the permissions they have, and are used, for example, to protect resources deployed via Azure Blueprints."
+  "exp_es": "Las asignaciones de denegación tienen prioridad sobre las asignaciones de roles: bloquean acciones concretas a usuarios y entidades de servicio independientemente de los permisos que tengan. No las crean los administradores directamente: las crea Azure para proteger recursos, por ejemplo, de aplicaciones administradas o de pilas de implementación con configuración de denegación.",
+  "exp_en": "Deny assignments take precedence over role assignments: they block specific actions for users and service principals regardless of the permissions they have. Administrators do not create them directly: Azure creates them to protect resources, for example those of managed applications or of deployment stacks with deny settings."
  },
  {
   "id": 26,
@@ -4431,39 +4431,39 @@
     "es": "Se necesita asociar una dirección IP pública a un Azure Load Balancer que debe abarcar varias zonas de disponibilidad mediante una única IP frontend de zona redundante.",
     "en": "A public IP address must be associated with an Azure Load Balancer that needs to span multiple availability zones using a single zone-redundant frontend IP.",
     "opts_es": [
-     "IP pública Básica (Basic)",
      "IP pública Estándar (Standard)",
-     "IP privada Estándar",
-     "Prefijo de IP pública dinámico"
+     "Prefijo de IP pública",
+     "IP privada estática",
+     "IP pública Básica (Basic)"
     ],
     "opts_en": [
-     "Basic public IP",
      "Standard public IP",
-     "Standard private IP",
-     "Dynamic public IP prefix"
-    ],
-    "correct": 1
-   },
-   {
-    "es": "Se necesita una dirección IP pública sencilla, sin garantías de zona de disponibilidad ni SLA específico, para pruebas internas de bajo coste.",
-    "en": "A simple public IP address is needed, with no availability zone guarantees or specific SLA, for low-cost internal testing.",
-    "opts_es": [
-     "IP pública Básica (Basic)",
-     "IP pública Estándar (Standard)",
-     "IP privada Estándar",
-     "Prefijo de IP pública dinámico"
-    ],
-    "opts_en": [
-     "Basic public IP",
-     "Standard public IP",
-     "Standard private IP",
-     "Dynamic public IP prefix"
+     "Public IP prefix",
+     "Static private IP",
+     "Basic public IP"
     ],
     "correct": 0
+   },
+   {
+    "es": "Varias máquinas virtuales necesitan direcciones IP públicas estáticas consecutivas de un mismo rango, para que un socio pueda autorizar todo el rango en su firewall.",
+    "en": "Several virtual machines need consecutive static public IP addresses from the same range, so a partner can allow the whole range in their firewall.",
+    "opts_es": [
+     "IP pública Estándar (Standard)",
+     "Prefijo de IP pública",
+     "IP privada estática",
+     "IP pública Básica (Basic)"
+    ],
+    "opts_en": [
+     "Standard public IP",
+     "Public IP prefix",
+     "Static private IP",
+     "Basic public IP"
+    ],
+    "correct": 1
    }
   ],
-  "exp_es": "El SKU Estándar admite la zona redundante y es el requerido para asociarse a un Azure Load Balancer Standard que abarque varias zonas de disponibilidad. El SKU Básico es más sencillo y económico, adecuado para pruebas internas sin requisitos de SLA ni zonas.",
-  "exp_en": "The Standard SKU supports zone redundancy and is required to associate with an Azure Load Balancer Standard spanning multiple availability zones. The Basic SKU is simpler and cheaper, suitable for internal testing with no SLA or zone requirements."
+  "exp_es": "La IP pública Estándar admite redundancia de zona y es la que se asocia a un Load Balancer Estándar con frontend de zona redundante. Un prefijo de IP pública reserva un bloque contiguo de direcciones estáticas, ideal cuando un tercero debe autorizar un rango fijo. El SKU Basic de IP pública se retiró el 30 de septiembre de 2025.",
+  "exp_en": "A Standard public IP supports zone redundancy and is the one associated with a Standard Load Balancer using a zone-redundant frontend. A public IP prefix reserves a contiguous block of static addresses, ideal when a third party must allow a fixed range. The Basic public IP SKU was retired on 30 September 2025."
  },
  {
   "id": 163,
@@ -6994,8 +6994,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Cuál es la diferencia principal entre Azure AD B2B y Azure AD B2C?",
-  "q_en": "What is the main difference between Azure AD B2B and Azure AD B2C?",
+  "q_es": "¿Cuál es la diferencia principal entre Microsoft Entra B2B y Azure AD B2C?",
+  "q_en": "What is the main difference between Microsoft Entra B2B and Azure AD B2C?",
   "opts_es": [
    "B2B permite colaboración con usuarios externos de otras organizaciones; B2C gestiona identidades de consumidores para aplicaciones públicas",
    "B2B está diseñado para aplicaciones de consumidores que usan redes sociales; B2C es exclusivamente para colaboración entre empresas y partners",
@@ -7011,8 +7011,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Azure AD B2B (Business-to-Business) permite invitar a usuarios externos de otras organizaciones para que colaboren en recursos de tu directorio. Azure AD B2C (Business-to-Consumer) es un servicio separado diseñado para gestionar identidades de clientes o consumidores finales en aplicaciones públicas, admitiendo registros con cuentas sociales o locales.",
-  "exp_en": "Azure AD B2B (Business-to-Business) lets you invite external users from other organizations to collaborate on resources in your directory. Azure AD B2C (Business-to-Consumer) is a separate service designed to manage customer or end-consumer identities for public-facing applications, supporting sign-ups with social or local accounts."
+  "exp_es": "Microsoft Entra B2B (Business-to-Business) permite invitar a usuarios externos de otras organizaciones para que colaboren en recursos de tu directorio. Azure AD B2C (Business-to-Consumer) es un servicio separado diseñado para gestionar identidades de clientes o consumidores finales en aplicaciones públicas, admitiendo registros con cuentas sociales o locales.",
+  "exp_en": "Microsoft Entra B2B (Business-to-Business) lets you invite external users from other organizations to collaborate on resources in your directory. Azure AD B2C (Business-to-Consumer) is a separate service designed to manage customer or end-consumer identities for public-facing applications, supporting sign-ups with social or local accounts."
  },
  {
   "id": 260,
@@ -7020,8 +7020,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre licencias basadas en grupos en Azure AD, indica si es verdadera o falsa.",
-  "q_en": "For each statement about group-based licensing in Azure AD, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre licencias basadas en grupos en Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about group-based licensing in Microsoft Entra ID, indicate whether it is true or false.",
   "rows": [
    {
     "es": "Se pueden asignar licencias basadas en grupos a grupos de seguridad y a grupos de Microsoft 365.",
@@ -7039,8 +7039,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Las licencias basadas en grupos funcionan con grupos de seguridad y grupos de Microsoft 365. La propagación puede tardar hasta 24 horas. Si dos grupos tienen la misma licencia, Azure AD asigna solo una copia al usuario, sin duplicar el consumo.",
-  "exp_en": "Group-based licensing works with security groups and Microsoft 365 groups. Propagation can take up to 24 hours. If two groups have the same license, Azure AD assigns only one copy to the user, avoiding duplicate consumption."
+  "exp_es": "Las licencias basadas en grupos funcionan con grupos de seguridad y grupos de Microsoft 365. La propagación puede tardar hasta 24 horas. Si dos grupos tienen la misma licencia, Microsoft Entra ID asigna solo una copia al usuario, sin duplicar el consumo.",
+  "exp_en": "Group-based licensing works with security groups and Microsoft 365 groups. Propagation can take up to 24 hours. If two groups have the same license, Microsoft Entra ID assigns only one copy to the user, avoiding duplicate consumption."
  },
  {
   "id": 261,
@@ -7048,8 +7048,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "En Azure AD Entitlement Management, ¿qué es un 'catálogo' (catalog)?",
-  "q_en": "In Azure AD Entitlement Management, what is a 'catalog'?",
+  "q_es": "En Microsoft Entra entitlement management, ¿qué es un 'catálogo' (catalog)?",
+  "q_en": "In Microsoft Entra entitlement management, what is a 'catalog'?",
   "opts_es": [
    "Un contenedor de recursos y paquetes de acceso que puede ser gestionado por propietarios delegados",
    "Una lista consolidada de todos los usuarios invitados (B2B) activos que tienen acceso al directorio de Microsoft Entra ID",
@@ -7074,8 +7074,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Cuál es la finalidad de las revisiones de acceso (access reviews) en Azure AD Entitlement Management?",
-  "q_en": "What is the purpose of access reviews in Azure AD Entitlement Management?",
+  "q_es": "¿Cuál es la finalidad de las revisiones de acceso (access reviews) en Microsoft Entra entitlement management?",
+  "q_en": "What is the purpose of access reviews in Microsoft Entra entitlement management?",
   "opts_es": [
    "Permitir revisar periódicamente si los usuarios siguen necesitando acceso a recursos y revocar accesos innecesarios",
    "Auditar todos los inicios de sesión de riesgo alto o medio detectados por Microsoft Entra ID Identity Protection en el tenant",
@@ -7100,8 +7100,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "En Azure AD Privileged Identity Management (PIM), ¿qué diferencia hay entre una asignación 'elegible' y una asignación 'activa'?",
-  "q_en": "In Azure AD Privileged Identity Management (PIM), what is the difference between an 'eligible' assignment and an 'active' assignment?",
+  "q_es": "En Microsoft Entra Privileged Identity Management (PIM), ¿qué diferencia hay entre una asignación 'elegible' y una asignación 'activa'?",
+  "q_en": "In Microsoft Entra Privileged Identity Management (PIM), what is the difference between an 'eligible' assignment and an 'active' assignment?",
   "opts_es": [
    "Una asignación elegible requiere que el usuario active el rol manualmente (posiblemente con aprobación o MFA); una asignación activa otorga el rol de forma permanente",
    "Una asignación activa siempre requiere la aprobación de un revisor designado; una asignación elegible no requiere ninguna acción por parte del usuario",
@@ -7126,12 +7126,12 @@
   "dom": 1,
   "obj": "1.1",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre Privileged Identity Management (PIM) en Azure AD, indica si es verdadera o falsa.",
-  "q_en": "For each statement about Privileged Identity Management (PIM) in Azure AD, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre Privileged Identity Management (PIM) en Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Privileged Identity Management (PIM) in Microsoft Entra ID, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "PIM requiere una licencia Azure AD Premium P2.",
-    "en": "PIM requires an Azure AD Premium P2 license.",
+    "es": "PIM requiere una licencia Microsoft Entra ID P2.",
+    "en": "PIM requires an Microsoft Entra ID P2 license.",
     "ans": true
    },
    {
@@ -7145,8 +7145,8 @@
     "ans": false
    }
   ],
-  "exp_es": "PIM es una característica exclusiva de Azure AD P2. Permite configurar flujos de aprobación para la activación. Sin embargo, las activaciones tienen una duración máxima configurable (por ejemplo, 8 horas), tras la cual el rol expira automáticamente.",
-  "exp_en": "PIM is an exclusive Azure AD P2 feature. It supports approval workflows for activation. However, activations have a configurable maximum duration (e.g., 8 hours), after which the role expires automatically."
+  "exp_es": "PIM es una característica exclusiva de Microsoft Entra ID P2. Permite configurar flujos de aprobación para la activación. Sin embargo, las activaciones tienen una duración máxima configurable (por ejemplo, 8 horas), tras la cual el rol expira automáticamente.",
+  "exp_en": "PIM is an exclusive Microsoft Entra ID P2 feature. It supports approval workflows for activation. However, activations have a configurable maximum duration (e.g., 8 hours), after which the role expires automatically."
  },
  {
   "id": 265,
@@ -7154,8 +7154,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "Azure AD Identity Protection detecta que varios usuarios tienen un nivel de riesgo de usuario 'alto'. ¿Qué directiva debes configurar para exigir que estos usuarios cambien su contraseña?",
-  "q_en": "Azure AD Identity Protection detects that several users have a 'high' user risk level. Which policy should you configure to require these users to change their password?",
+  "q_es": "Microsoft Entra ID Protection detecta que varios usuarios tienen un nivel de riesgo de usuario 'alto'. ¿Qué directiva debes configurar para exigir que estos usuarios cambien su contraseña?",
+  "q_en": "Microsoft Entra ID Protection detects that several users have a 'high' user risk level. Which policy should you configure to require these users to change their password?",
   "opts_es": [
    "Una directiva de riesgo de usuario (user risk policy) que exija cambio de contraseña cuando el riesgo es alto",
    "Una directiva de riesgo de inicio de sesión (sign-in risk policy) con acción de bloqueo completo del acceso al tenant",
@@ -7180,8 +7180,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Cuál es la diferencia entre un 'registro de aplicación' (app registration) y una 'aplicación empresarial' (enterprise application) en Azure AD?",
-  "q_en": "What is the difference between an 'app registration' and an 'enterprise application' in Azure AD?",
+  "q_es": "¿Cuál es la diferencia entre un 'registro de aplicación' (app registration) y una 'aplicación empresarial' (enterprise application) en Microsoft Entra ID?",
+  "q_en": "What is the difference between an 'app registration' and an 'enterprise application' in Microsoft Entra ID?",
   "opts_es": [
    "El registro de aplicación define la aplicación (su identidad y permisos); la aplicación empresarial es el objeto de entidad de servicio que representa la instancia de esa app en el tenant",
    "Los registros de aplicación solo se usan para aplicaciones propias desarrolladas internamente; las aplicaciones empresariales son exclusivamente para apps del marketplace de terceros",
@@ -7197,8 +7197,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Un registro de aplicación (app registration) crea la definición de la aplicación con su configuración de permisos y secretos. Al registrar la app, Azure AD crea automáticamente un objeto de entidad de servicio (service principal) en el mismo tenant, que aparece en la sección de aplicaciones empresariales y es el que los administradores usan para gestionar el acceso.",
-  "exp_en": "An app registration creates the application definition with its permission configuration and secrets. When registering the app, Azure AD automatically creates a service principal object in the same tenant, which appears in the enterprise applications section and is what administrators use to manage access."
+  "exp_es": "Un registro de aplicación (app registration) crea la definición de la aplicación con su configuración de permisos y secretos. Al registrar la app, Microsoft Entra ID crea automáticamente un objeto de entidad de servicio (service principal) en el mismo tenant, que aparece en la sección de aplicaciones empresariales y es el que los administradores usan para gestionar el acceso.",
+  "exp_en": "An app registration creates the application definition with its permission configuration and secrets. When registering the app, Microsoft Entra ID automatically creates a service principal object in the same tenant, which appears in the enterprise applications section and is what administrators use to manage access."
  },
  {
   "id": 267,
@@ -7206,22 +7206,22 @@
   "dom": 1,
   "obj": "1.1",
   "type": "dropdown",
-  "q_es": "Selecciona el tipo de unión a Azure AD más adecuado para cada escenario.",
-  "q_en": "Select the most appropriate Azure AD join type for each scenario.",
+  "q_es": "Selecciona el tipo de unión a Microsoft Entra ID más adecuado para cada escenario.",
+  "q_en": "Select the most appropriate Microsoft Entra join type for each scenario.",
   "rows": [
    {
     "es": "Escenario 1: Un dispositivo Windows 10 corporativo gestionado únicamente en la nube por Microsoft Intune, sin infraestructura de Active Directory local.",
     "en": "Scenario 1: A corporate Windows 10 device managed solely in the cloud by Microsoft Intune, with no on-premises Active Directory infrastructure.",
     "opts_es": [
-     "Azure AD registrado",
-     "Azure AD unido (Azure AD Joined)",
-     "Unión híbrida a Azure AD (Hybrid Azure AD Joined)",
+     "Microsoft Entra ID registrado",
+     "Microsoft Entra ID unido (Microsoft Entra joined)",
+     "Unión híbrida a Microsoft Entra ID (Microsoft Entra hybrid joined)",
      "Unión a dominio local clásica"
     ],
     "opts_en": [
-     "Azure AD registered",
-     "Azure AD Joined",
-     "Hybrid Azure AD Joined",
+     "Microsoft Entra registered",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Classic on-premises domain join"
     ],
     "correct": 1
@@ -7230,22 +7230,22 @@
     "es": "Escenario 2: Un dispositivo Windows 10 personal que un empleado quiere registrar para acceder al correo corporativo sin que la empresa tenga control total del dispositivo.",
     "en": "Scenario 2: A personal Windows 10 device that an employee wants to register to access corporate email without the company having full control of the device.",
     "opts_es": [
-     "Azure AD registrado",
-     "Azure AD unido (Azure AD Joined)",
-     "Unión híbrida a Azure AD (Hybrid Azure AD Joined)",
+     "Microsoft Entra ID registrado",
+     "Microsoft Entra ID unido (Microsoft Entra joined)",
+     "Unión híbrida a Microsoft Entra ID (Microsoft Entra hybrid joined)",
      "Unión a dominio local clásica"
     ],
     "opts_en": [
-     "Azure AD registered",
-     "Azure AD Joined",
-     "Hybrid Azure AD Joined",
+     "Microsoft Entra registered",
+     "Microsoft Entra joined",
+     "Microsoft Entra hybrid joined",
      "Classic on-premises domain join"
     ],
     "correct": 0
    }
   ],
-  "exp_es": "Un dispositivo corporativo gestionado en la nube debe ser 'Azure AD Joined', lo que permite la gestión completa por Intune sin dominio local. Un dispositivo personal (BYOD) se registra como 'Azure AD Registered', lo que da acceso a recursos corporativos pero con control mínimo sobre el dispositivo.",
-  "exp_en": "A cloud-managed corporate device should be 'Azure AD Joined', enabling full Intune management without an on-premises domain. A personal (BYOD) device is registered as 'Azure AD Registered', granting access to corporate resources with minimal device control."
+  "exp_es": "Un dispositivo corporativo gestionado en la nube debe ser 'Microsoft Entra joined', lo que permite la gestión completa por Intune sin dominio local. Un dispositivo personal (BYOD) se registra como 'Microsoft Entra registered', lo que da acceso a recursos corporativos pero con control mínimo sobre el dispositivo.",
+  "exp_en": "A cloud-managed corporate device should be 'Microsoft Entra joined', enabling full Intune management without an on-premises domain. A personal (BYOD) device is registered as 'Microsoft Entra registered', granting access to corporate resources with minimal device control."
  },
  {
   "id": 268,
@@ -7253,16 +7253,16 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Qué es la 'Unión híbrida a Azure AD' (Hybrid Azure AD Join)?",
-  "q_en": "What is 'Hybrid Azure AD Join'?",
+  "q_es": "¿Qué es la 'Unión híbrida a Microsoft Entra ID' (Microsoft Entra hybrid join)?",
+  "q_en": "What is 'Microsoft Entra hybrid join'?",
   "opts_es": [
-   "Un dispositivo unido tanto al Active Directory local como a Azure AD, lo que permite el inicio de sesión único con credenciales corporativas tanto en la nube como en el entorno local",
+   "Un dispositivo unido tanto al Active Directory local como a Microsoft Entra ID, lo que permite el inicio de sesión único con credenciales corporativas tanto en la nube como en el entorno local",
    "Un dispositivo que usa credenciales de Microsoft Entra ID para iniciar sesión pero no está gestionado por ningún dominio local ni por Intune",
    "Una configuración donde los usuarios pueden usar cuentas de consumidor de Microsoft (cuenta personal) para unirse a un dominio de Active Directory corporativo",
    "Un tipo de licencia de Microsoft Entra ID que combina las funciones de la edición Gratuita con las de la edición P1 a un precio reducido"
   ],
   "opts_en": [
-   "A device joined to both on-premises Active Directory and Azure AD, enabling single sign-on with corporate credentials in both cloud and on-premises environments",
+   "A device joined to both on-premises Active Directory and Microsoft Entra ID, enabling single sign-on with corporate credentials in both cloud and on-premises environments",
    "A device that uses Microsoft Entra ID credentials to sign in but is not managed by any on-premises domain or by Intune",
    "A configuration where users can use personal Microsoft consumer accounts to join a corporate Active Directory domain",
    "A Microsoft Entra ID license type that combines the features of the Free edition with those of the P1 edition at a reduced price"
@@ -7270,8 +7270,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La unión híbrida a Azure AD significa que el dispositivo está registrado en el AD local (mediante directiva de grupo o SCCM/Configuration Manager) y también en Azure AD. Esto permite el SSO a recursos locales y en la nube, y es habitual en entornos mixtos que están migrando gradualmente a la nube.",
-  "exp_en": "Hybrid Azure AD Join means the device is registered in on-premises AD (via Group Policy or SCCM/Configuration Manager) and also in Azure AD. This enables SSO to both on-premises and cloud resources, and is common in mixed environments gradually migrating to the cloud."
+  "exp_es": "La unión híbrida a Microsoft Entra ID significa que el dispositivo está registrado en el AD local (mediante directiva de grupo o SCCM/Configuration Manager) y también en Microsoft Entra ID. Esto permite el SSO a recursos locales y en la nube, y es habitual en entornos mixtos que están migrando gradualmente a la nube.",
+  "exp_en": "Microsoft Entra hybrid join means the device is registered in on-premises AD (via Group Policy or SCCM/Configuration Manager) and also in Microsoft Entra ID. This enables SSO to both on-premises and cloud resources, and is common in mixed environments gradually migrating to the cloud."
  },
  {
   "id": 269,
@@ -7284,13 +7284,13 @@
   "opts_es": [
    "Requerir dispositivo compatible (Require compliant device)",
    "Requerir autenticación multifactor (Require MFA)",
-   "Requerir unión híbrida a Azure AD (Require Hybrid Azure AD Joined device)",
+   "Requerir unión híbrida a Microsoft Entra ID (Require Microsoft Entra hybrid joined device)",
    "Requerir una aplicación cliente aprobada (Require approved client app)"
   ],
   "opts_en": [
    "Require compliant device",
    "Require multi-factor authentication (MFA)",
-   "Require Hybrid Azure AD Joined device",
+   "Require Microsoft Entra hybrid joined device",
    "Require approved client app"
   ],
   "correct": [
@@ -7307,9 +7307,9 @@
   "type": "sentence",
   "q_es": "Selecciona la respuesta que completa correctamente la frase.",
   "q_en": "Select the answer that correctly completes the sentence.",
-  "pre_es": "Las ubicaciones con nombre (named locations) en el acceso condicional de Azure AD se usan principalmente para",
+  "pre_es": "Las ubicaciones con nombre (named locations) en el acceso condicional de Microsoft Entra ID se usan principalmente para",
   "post_es": "como condición en las directivas.",
-  "pre_en": "Named locations in Azure AD Conditional Access are primarily used to",
+  "pre_en": "Named locations in Microsoft Entra Conditional Access are primarily used to",
   "post_en": "as a condition in policies.",
   "opts_es": [
    "definir rangos de direcciones IP o países de confianza o de riesgo que se pueden usar",
@@ -7333,8 +7333,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Qué nivel de licencia de Microsoft Entra ID (Azure AD) se requiere para usar Privileged Identity Management (PIM) y las directivas de riesgo de Identity Protection?",
-  "q_en": "Which Microsoft Entra ID (Azure AD) license tier is required to use Privileged Identity Management (PIM) and Identity Protection risk policies?",
+  "q_es": "¿Qué nivel de licencia de Microsoft Entra ID se requiere para usar Privileged Identity Management (PIM) y las directivas de riesgo de Identity Protection?",
+  "q_en": "Which Microsoft Entra ID license tier is required to use Privileged Identity Management (PIM) and Identity Protection risk policies?",
   "opts_es": [
    "Microsoft Entra ID P2 (anteriormente Azure AD Premium P2)",
    "Microsoft Entra ID P1 (anteriormente Azure AD Premium P1)",
@@ -7359,25 +7359,25 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Qué característica de Azure AD Free NO está disponible en la edición gratuita y requiere al menos Azure AD P1?",
-  "q_en": "Which Azure AD feature is NOT available in the Free edition and requires at least Azure AD P1?",
+  "q_es": "¿Qué característica de Microsoft Entra ID Free NO está disponible en la edición gratuita y requiere al menos Microsoft Entra ID P1?",
+  "q_en": "Which Microsoft Entra ID feature is NOT available in the Free edition and requires at least Microsoft Entra ID P1?",
   "opts_es": [
    "Acceso condicional basado en grupo, ubicación y dispositivo",
    "Autenticación multifactor (MFA) básica para administradores",
    "Gestión de usuarios y grupos",
-   "Sincronización con Active Directory local mediante Azure AD Connect"
+   "Sincronización con Active Directory local mediante Microsoft Entra Connect"
   ],
   "opts_en": [
    "Conditional Access based on group, location, and device",
    "Basic multi-factor authentication (MFA) for administrators",
    "User and group management",
-   "Synchronization with on-premises Active Directory via Azure AD Connect"
+   "Synchronization with on-premises Active Directory via Microsoft Entra Connect"
   ],
   "correct": [
    0
   ],
-  "exp_es": "El acceso condicional completo (con condiciones de grupo, ubicación, dispositivo, aplicación y riesgo) requiere Azure AD Premium P1 o superior. Azure AD Free incluye MFA básico para administradores, gestión de usuarios y grupos, y sincronización con AD local.",
-  "exp_en": "Full Conditional Access (with group, location, device, application, and risk conditions) requires Azure AD Premium P1 or higher. Azure AD Free includes basic MFA for administrators, user and group management, and on-premises AD synchronization."
+  "exp_es": "El acceso condicional completo (con condiciones de grupo, ubicación, dispositivo, aplicación y riesgo) requiere Microsoft Entra ID P1 o superior. Microsoft Entra ID Free incluye MFA básico para administradores, gestión de usuarios y grupos, y sincronización con AD local.",
+  "exp_en": "Full Conditional Access (with group, location, device, application, and risk conditions) requires Microsoft Entra ID P1 or higher. Microsoft Entra ID Free includes basic MFA for administrators, user and group management, and on-premises AD synchronization."
  },
  {
   "id": 273,
@@ -7385,16 +7385,16 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "Un administrador quiere permitir que los usuarios creen y gestionen sus propios grupos de seguridad en Azure AD sin intervención del administrador. ¿Qué debe configurar?",
-  "q_en": "An administrator wants to allow users to create and manage their own security groups in Azure AD without administrator intervention. What should they configure?",
+  "q_es": "Un administrador quiere permitir que los usuarios creen y gestionen sus propios grupos de seguridad en Microsoft Entra ID sin intervención del administrador. ¿Qué debe configurar?",
+  "q_en": "An administrator wants to allow users to create and manage their own security groups in Microsoft Entra ID without administrator intervention. What should they configure?",
   "opts_es": [
-   "Habilitar la gestión de grupos de autoservicio (self-service group management) en la configuración de grupos de Azure AD",
+   "Habilitar la gestión de grupos de autoservicio (self-service group management) en la configuración de grupos de Microsoft Entra ID",
    "Asignar el rol de Administrador de grupos (Groups Administrator) a todos los usuarios del directorio de Microsoft Entra ID",
    "Crear una directiva de acceso condicional con efecto de concesión que permita la creación de grupos a usuarios no administradores",
    "Habilitar el registro de aplicaciones por parte de los usuarios no administradores en la configuración de usuario del tenant"
   ],
   "opts_en": [
-   "Enable self-service group management in the Azure AD group settings",
+   "Enable self-service group management in the Microsoft Entra ID group settings",
    "Assign the Groups Administrator role to all users in the Microsoft Entra ID directory",
    "Create a Conditional Access policy with a grant effect that allows non-administrator users to create groups",
    "Enable app registrations by non-administrator users in the tenant's user settings"
@@ -7402,8 +7402,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La gestión de grupos de autoservicio se habilita en la sección de configuración de grupos de Azure AD. Una vez habilitada, los usuarios pueden crear grupos de seguridad y de Microsoft 365 y gestionar su membresía sin necesidad de ser administradores, reduciendo la carga del equipo de TI.",
-  "exp_en": "Self-service group management is enabled in the Azure AD group settings section. Once enabled, users can create security and Microsoft 365 groups and manage their membership without needing admin rights, reducing the IT team's workload."
+  "exp_es": "La gestión de grupos de autoservicio se habilita en la sección de configuración de grupos de Microsoft Entra ID. Una vez habilitada, los usuarios pueden crear grupos de seguridad y de Microsoft 365 y gestionar su membresía sin necesidad de ser administradores, reduciendo la carga del equipo de TI.",
+  "exp_en": "Self-service group management is enabled in the Microsoft Entra ID group settings section. Once enabled, users can create security and Microsoft 365 groups and manage their membership without needing admin rights, reducing the IT team's workload."
  },
  {
   "id": 274,
@@ -7411,8 +7411,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Cuál de los siguientes controles de sesión en el acceso condicional de Azure AD permite limitar lo que los usuarios pueden hacer dentro de una aplicación, como impedir la descarga de archivos?",
-  "q_en": "Which of the following session controls in Azure AD Conditional Access lets you limit what users can do within an application, such as preventing file downloads?",
+  "q_es": "¿Cuál de los siguientes controles de sesión en el acceso condicional de Microsoft Entra ID permite limitar lo que los usuarios pueden hacer dentro de una aplicación, como impedir la descarga de archivos?",
+  "q_en": "Which of the following session controls in Microsoft Entra Conditional Access lets you limit what users can do within an application, such as preventing file downloads?",
   "opts_es": [
    "Control de aplicaciones de acceso condicional (Conditional Access App Control) mediante Microsoft Defender for Cloud Apps",
    "Frecuencia de inicio de sesión (sign-in frequency) que obliga al usuario a reautenticarse transcurrido el período configurado",
@@ -7437,8 +7437,8 @@
   "dom": 1,
   "obj": "1.1",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre Identity Protection de Azure AD, indica si es verdadera o falsa.",
-  "q_en": "For each statement about Azure AD Identity Protection, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre Identity Protection de Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about Microsoft Entra ID Protection, indicate whether it is true or false.",
   "rows": [
    {
     "es": "Identity Protection puede detectar inicios de sesión desde ubicaciones atípicas o direcciones IP anónimas como señales de riesgo.",
@@ -7451,8 +7451,8 @@
     "ans": false
    },
    {
-    "es": "Identity Protection requiere una licencia Azure AD Premium P2 para configurar directivas de riesgo automatizadas.",
-    "en": "Identity Protection requires an Azure AD Premium P2 license to configure automated risk policies.",
+    "es": "Identity Protection requiere una licencia Microsoft Entra ID P2 para configurar directivas de riesgo automatizadas.",
+    "en": "Identity Protection requires an Microsoft Entra ID P2 license to configure automated risk policies.",
     "ans": true
    }
   ],
@@ -7512,17 +7512,17 @@
   "dom": 1,
   "obj": "1.1",
   "type": "mc",
-  "q_es": "¿Cuál es la diferencia entre los controles de concesión (grant controls) y los controles de sesión (session controls) en el acceso condicional de Azure AD?",
-  "q_en": "What is the difference between grant controls and session controls in Azure AD Conditional Access?",
+  "q_es": "¿Cuál es la diferencia entre los controles de concesión (grant controls) y los controles de sesión (session controls) en el acceso condicional de Microsoft Entra ID?",
+  "q_en": "What is the difference between grant controls and session controls in Microsoft Entra Conditional Access?",
   "opts_es": [
    "Los controles de concesión determinan si se permite o bloquea el acceso (posiblemente con requisitos como MFA); los controles de sesión limitan lo que el usuario puede hacer dentro de la aplicación una vez que ha accedido",
-   "Los controles de sesión determinan si se permite o bloquea el acceso al tenant de Azure AD; los controles de concesión limitan las acciones disponibles dentro de cada aplicación registrada",
+   "Los controles de sesión determinan si se permite o bloquea el acceso al tenant de Microsoft Entra ID; los controles de concesión limitan las acciones disponibles dentro de cada aplicación registrada",
    "Los controles de concesión solo se aplican a aplicaciones de Microsoft como Teams, SharePoint y Exchange; los controles de sesión se aplican a todas las aplicaciones registradas en el tenant",
    "Los controles de concesión y los controles de sesión son sinónimos en el acceso condicional de Entra ID; ambos controlan exactamente las mismas condiciones de acceso sin diferencia funcional"
   ],
   "opts_en": [
    "Grant controls determine whether access is allowed or blocked (possibly with requirements such as MFA); session controls limit what the user can do within the application once they have accessed it",
-   "Session controls determine whether access to the Azure AD tenant is allowed or blocked; grant controls limit the actions available within each registered application",
+   "Session controls determine whether access to the Microsoft Entra tenant is allowed or blocked; grant controls limit the actions available within each registered application",
    "Grant controls only apply to Microsoft applications such as Teams, SharePoint, and Exchange; session controls apply to all registered applications in the tenant",
    "Grant controls and session controls are synonyms in Entra ID Conditional Access; both control exactly the same access conditions with no functional difference"
   ],
@@ -7549,7 +7549,7 @@
   "opts_en": [
    "Create a management group per department and apply Azure policies to the corresponding group",
    "Create resource tags on each subscription to identify the owning department and filter cost reports by tag",
-   "Create three independent Microsoft Entra ID tenants, one per department, with B2B federation between them",
+   "Create three independent Microsoft Entra tenants, one per department, with B2B federation between them",
    "Use separate resource groups within a single shared subscription, applying CanNotDelete locks per department"
   ],
   "correct": [
@@ -7751,13 +7751,13 @@
   "q_es": "¿Cuál de los siguientes recursos de Azure NO se puede mover a otra suscripción?",
   "q_en": "Which of the following Azure resources CANNOT be moved to a different subscription?",
   "opts_es": [
-   "Azure Active Directory (el propio tenant de Azure AD)",
+   "Microsoft Entra ID (el propio tenant de Microsoft Entra ID)",
    "Máquinas virtuales de Azure con discos administrados y extensiones de diagnóstico habilitadas",
    "Cuentas de almacenamiento de tipo StorageV2 con redundancia GRS y puntos de conexión privados",
    "Redes virtuales (VNet) con peering global y tablas de rutas definidas por el usuario"
   ],
   "opts_en": [
-   "Azure Active Directory (the Azure AD tenant itself)",
+   "The Microsoft Entra tenant itself",
    "Azure virtual machines with managed disks and diagnostic extensions enabled",
    "StorageV2 storage accounts with GRS redundancy and private endpoints",
    "Virtual Networks (VNet) with global peering and user-defined route tables"
@@ -7765,8 +7765,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El propio tenant de Azure AD no es un recurso que se pueda mover entre suscripciones. Las suscripciones se asocian a un tenant, pero el tenant en sí no se mueve como recurso. La mayoría de los recursos de Azure (VMs, cuentas de almacenamiento, redes virtuales, etc.) se pueden mover entre grupos de recursos y suscripciones, aunque con ciertas limitaciones.",
-  "exp_en": "The Azure AD tenant itself is not a resource that can be moved between subscriptions. Subscriptions are associated with a tenant, but the tenant itself does not move as a resource. Most Azure resources (VMs, storage accounts, virtual networks, etc.) can be moved between resource groups and subscriptions, though with certain limitations."
+  "exp_es": "El propio tenant de Microsoft Entra ID no es un recurso que se pueda mover entre suscripciones. Las suscripciones se asocian a un tenant, pero el tenant en sí no se mueve como recurso. La mayoría de los recursos de Azure (VMs, cuentas de almacenamiento, redes virtuales, etc.) se pueden mover entre grupos de recursos y suscripciones, aunque con ciertas limitaciones.",
+  "exp_en": "The Microsoft Entra tenant itself is not a resource that can be moved between subscriptions. Subscriptions are associated with a tenant, but the tenant itself does not move as a resource. Most Azure resources (VMs, storage accounts, virtual networks, etc.) can be moved between resource groups and subscriptions, though with certain limitations."
  },
  {
   "id": 288,
@@ -7778,8 +7778,8 @@
   "q_en": "For each statement about moving resources between resource groups or subscriptions in Azure, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Al mover un recurso a una suscripción diferente, el recurso cambia de tenant de Azure AD automáticamente.",
-    "en": "When moving a resource to a different subscription, the resource automatically changes its Azure AD tenant.",
+    "es": "Al mover un recurso a una suscripción diferente, el recurso cambia de tenant de Microsoft Entra ID automáticamente.",
+    "en": "When moving a resource to a different subscription, the resource automatically changes its Microsoft Entra tenant.",
     "ans": false
    },
    {
@@ -7788,13 +7788,13 @@
     "ans": true
    },
    {
-    "es": "Para mover recursos entre suscripciones, ambas suscripciones deben estar en el mismo tenant de Azure AD.",
-    "en": "To move resources between subscriptions, both subscriptions must be in the same Azure AD tenant.",
+    "es": "Para mover recursos entre suscripciones, ambas suscripciones deben estar en el mismo tenant de Microsoft Entra ID.",
+    "en": "To move resources between subscriptions, both subscriptions must be in the same Microsoft Entra tenant.",
     "ans": true
    }
   ],
-  "exp_es": "El movimiento de recursos no cambia el tenant de Azure AD del recurso; este solo cambia si se transfiere la suscripción a un tenant diferente. Las asignaciones de roles RBAC no se mueven con los recursos y deben recrearse. Para mover entre suscripciones, ambas deben pertenecer al mismo tenant de Azure AD.",
-  "exp_en": "Moving resources does not change the resource's Azure AD tenant; this only changes if the subscription is transferred to a different tenant. RBAC role assignments do not move with resources and must be recreated. To move between subscriptions, both must belong to the same Azure AD tenant."
+  "exp_es": "El movimiento de recursos no cambia el tenant de Microsoft Entra ID del recurso; este solo cambia si se transfiere la suscripción a un tenant diferente. Las asignaciones de roles RBAC no se mueven con los recursos y deben recrearse. Para mover entre suscripciones, ambas deben pertenecer al mismo tenant de Microsoft Entra ID.",
+  "exp_en": "Moving resources does not change the resource's Microsoft Entra tenant; this only changes if the subscription is transferred to a different tenant. RBAC role assignments do not move with resources and must be recreated. To move between subscriptions, both must belong to the same Microsoft Entra tenant."
  },
  {
   "id": 289,
@@ -7802,25 +7802,25 @@
   "dom": 1,
   "obj": "1.2",
   "type": "mc",
-  "q_es": "¿Qué es Azure Blueprints y cuál es su ventaja principal sobre el uso de plantillas ARM por sí solas?",
-  "q_en": "What is Azure Blueprints and what is its main advantage over using ARM templates alone?",
+  "q_es": "¿Qué es una especificación de plantilla (template spec) en Azure y cuál es su ventaja principal frente a guardar las plantillas ARM en un recurso compartido de archivos?",
+  "q_en": "What is a template spec in Azure and what is its main advantage over keeping ARM templates in a file share?",
   "opts_es": [
-   "Azure Blueprints empaqueta plantillas ARM, directivas de Azure y asignaciones de roles en un único artefacto desplegable con seguimiento de versiones y seguimiento de cumplimiento",
-   "Azure Blueprints es una herramienta de diagramación visual que genera automáticamente diagramas de arquitectura de referencia de Azure Well-Architected Framework",
-   "Azure Blueprints reemplaza completamente a ARM y Bicep como lenguaje de infraestructura como código, eliminando la necesidad de archivos JSON o .bicep",
-   "Azure Blueprints solo permite desplegar recursos de red como VNets y NSGs; no es compatible con máquinas virtuales ni con cuentas de almacenamiento"
+   "Es un recurso de Azure que almacena una plantilla ARM o Bicep con control de versiones, y su acceso se comparte mediante RBAC para que otros equipos la desplieguen",
+   "Es una herramienta de diagramación visual que genera automáticamente diagramas de arquitectura de referencia del Azure Well-Architected Framework",
+   "Sustituye por completo a ARM y Bicep como lenguaje de infraestructura como código, eliminando la necesidad de archivos JSON o .bicep",
+   "Solo permite desplegar recursos de red como VNets y NSGs; no es compatible con máquinas virtuales ni con cuentas de almacenamiento"
   ],
   "opts_en": [
-   "Azure Blueprints packages ARM templates, Azure policies, and role assignments into a single deployable artifact with version tracking and compliance monitoring",
-   "Azure Blueprints is a visual diagramming tool that automatically generates reference architecture diagrams from the Azure Well-Architected Framework",
-   "Azure Blueprints completely replaces ARM and Bicep as infrastructure-as-code language, eliminating the need for JSON or .bicep files",
-   "Azure Blueprints only deploys networking resources such as VNets and NSGs; it is not compatible with virtual machines or storage accounts"
+   "It is an Azure resource that stores an ARM or Bicep template with versioning, and access is shared through RBAC so other teams can deploy it",
+   "It is a visual diagramming tool that automatically generates reference architecture diagrams from the Azure Well-Architected Framework",
+   "It completely replaces ARM and Bicep as the infrastructure-as-code language, eliminating the need for JSON or .bicep files",
+   "It only deploys networking resources such as VNets and NSGs; it is not compatible with virtual machines or storage accounts"
   ],
   "correct": [
    0
   ],
-  "exp_es": "Azure Blueprints permite definir un conjunto repetible de recursos de Azure que implementa estándares, patrones y requisitos de una organización. A diferencia de las plantillas ARM solas, incluye asignaciones de roles, directivas y mantiene una relación de seguimiento con los recursos desplegados para verificar el cumplimiento.",
-  "exp_en": "Azure Blueprints lets you define a repeatable set of Azure resources that implements an organization's standards, patterns, and requirements. Unlike ARM templates alone, it includes role assignments, policies, and maintains a tracking relationship with deployed resources to verify compliance."
+  "exp_es": "Una especificación de plantilla guarda una plantilla ARM (o Bicep compilada) como recurso de Azure, con versiones. Como es un recurso, se controla quién puede verla y desplegarla con RBAC, sin tener que distribuir archivos ni dar acceso a cuentas de almacenamiento. No sustituye al lenguaje de plantillas: lo empaqueta para compartirlo. (Azure Blueprints, que cubría escenarios parecidos, está en desuso; Microsoft recomienda especificaciones de plantilla y pilas de implementación).",
+  "exp_en": "A template spec stores an ARM template (or compiled Bicep) as an Azure resource, with versions. Because it is a resource, RBAC controls who can view and deploy it, without distributing files or granting access to storage accounts. It does not replace the template language: it packages it for sharing. (Azure Blueprints, which covered similar scenarios, is deprecated; Microsoft recommends template specs and deployment stacks.)"
  },
  {
   "id": 290,
@@ -7857,13 +7857,13 @@
   "q_es": "¿Qué es una asignación de denegación (deny assignment) en Azure RBAC y quién puede crearla directamente?",
   "q_en": "What is a deny assignment in Azure RBAC and who can create one directly?",
   "opts_es": [
-   "Una asignación de denegación bloquea el acceso de usuarios a acciones especificas incluso si tienen una asignación de rol que lo permite; solo Azure (no los administradores) las crea, principalmente a través de Blueprints o recursos gestionados",
+   "Una asignación de denegación bloquea el acceso de usuarios a acciones específicas incluso si tienen una asignación de rol que lo permite; solo Azure (no los administradores) las crea, por ejemplo, con aplicaciones administradas o pilas de implementación",
    "Una asignación de denegación es una asignación de rol con permisos negativos que cualquier usuario con el rol Propietario puede crear desde el portal de Azure o con el cmdlet New-AzDenyAssignment disponible",
    "Una asignación de denegación elimina de forma permanente e inmediata todos los roles RBAC asignados previamente a un usuario o grupo en el ámbito indicado de la suscripción de Azure",
    "Las asignaciones de denegación son simplemente otro nombre alternativo para las exclusiones de ámbito (notScopes) configuradas en las asignaciones de directivas de Azure Policy en la suscripción"
   ],
   "opts_en": [
-   "A deny assignment blocks user access to specific actions even if they have a role assignment that permits it; only Azure (not administrators) creates them, primarily through Blueprints or managed resources",
+   "A deny assignment blocks user access to specific actions even if they have a role assignment that permits it; only Azure (not administrators) creates them, for example through managed applications or deployment stacks",
    "A deny assignment is a role assignment with negative permissions that any user with the Owner role can create from the Azure portal or with the available New-AzDenyAssignment cmdlet",
    "A deny assignment permanently and immediately removes all RBAC roles previously assigned to a user or group at the indicated scope of the Azure subscription",
    "Deny assignments are simply another alternative name for scope exclusions (notScopes) configured in Azure Policy policy assignments in the subscription"
@@ -7871,8 +7871,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las asignaciones de denegación tienen prioridad sobre las asignaciones de roles: si un usuario tiene una asignación de denegación para una acción, no puede realizarla aunque tenga roles que se lo permitan. Los administradores no pueden crearlas directamente; Azure las crea automáticamente, por ejemplo, al desplegar recursos gestionados o Azure Blueprints.",
-  "exp_en": "Deny assignments take priority over role assignments: if a user has a deny assignment for an action, they cannot perform it even if they have roles that allow it. Administrators cannot create them directly; Azure creates them automatically, for example, when deploying managed resources or Azure Blueprints."
+  "exp_es": "Las asignaciones de denegación tienen prioridad sobre las asignaciones de roles: si un usuario tiene una asignación de denegación para una acción, no puede realizarla aunque tenga roles que se lo permitan. Los administradores no pueden crearlas directamente; Azure las crea, por ejemplo, al desplegar aplicaciones administradas o pilas de implementación con configuración de denegación.",
+  "exp_en": "Deny assignments take precedence over role assignments: if a user has a deny assignment for an action, they cannot perform it even if they have roles that allow it. Administrators cannot create them directly; Azure creates them, for example when deploying managed applications or deployment stacks with deny settings."
  },
  {
   "id": 292,
@@ -8033,27 +8033,27 @@
   "dom": 1,
   "obj": "1.2",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre Azure Blueprints, indica si es verdadera o falsa.",
-  "q_en": "For each statement about Azure Blueprints, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre las especificaciones de plantilla (template specs), indica si es verdadera o falsa.",
+  "q_en": "For each statement about template specs, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "Una definición de blueprint puede incluir plantillas ARM, directivas de Azure, asignaciones de roles y grupos de recursos como artefactos.",
-    "en": "A blueprint definition can include ARM templates, Azure policies, role assignments, and resource groups as artifacts.",
+    "es": "Una especificación de plantilla almacena una plantilla ARM como recurso de Azure en un grupo de recursos.",
+    "en": "A template spec stores an ARM template as an Azure resource in a resource group.",
     "ans": true
    },
    {
-    "es": "Cuando se elimina una asignación de blueprint, todos los recursos desplegados por ese blueprint se eliminan automáticamente.",
-    "en": "When a blueprint assignment is deleted, all resources deployed by that blueprint are automatically deleted.",
+    "es": "Al eliminar una especificación de plantilla, se eliminan automáticamente todos los recursos desplegados con ella.",
+    "en": "Deleting a template spec automatically deletes all resources deployed from it.",
     "ans": false
    },
    {
-    "es": "Los blueprints admiten control de versiones, lo que permite mantener múltiples versiones publicadas de una definición.",
-    "en": "Blueprints support versioning, allowing multiple published versions of a definition to be maintained.",
+    "es": "Las especificaciones de plantilla admiten versiones, por lo que se pueden mantener varias versiones de una misma plantilla.",
+    "en": "Template specs support versions, so several versions of the same template can be kept.",
     "ans": true
    }
   ],
-  "exp_es": "Los blueprints pueden contener ARM templates, directivas, roles y RGs como artefactos. Sin embargo, eliminar una asignación de blueprint no borra los recursos desplegados; solo rompe el vínculo de seguimiento. Los blueprints admiten versiones publicadas, lo que facilita la gestión de cambios.",
-  "exp_en": "Blueprints can contain ARM templates, policies, roles, and RGs as artifacts. However, deleting a blueprint assignment does not delete the deployed resources; it only breaks the tracking link. Blueprints support published versions, making change management easier."
+  "exp_es": "Una especificación de plantilla es un recurso que guarda una plantilla ARM con versiones y se comparte mediante RBAC. Es solo la definición: eliminarla no afecta a los recursos que ya se desplegaron a partir de ella.",
+  "exp_en": "A template spec is a resource that stores an ARM template with versions and is shared through RBAC. It is only the definition: deleting it does not affect resources already deployed from it."
  },
  {
   "id": 298,
@@ -8204,7 +8204,7 @@
   "opts_en": [
    "Add the resource group as an exclusion in the 'Exclusions' field during the policy assignment",
    "Delete the resource group and recreate it in a different subscription that is not within the scope of the policy assignment",
-   "Create a policy exemption at the Microsoft Entra ID tenant level that covers all subscriptions in the tenant",
+   "Create a policy exemption at the Microsoft Entra tenant level that covers all subscriptions in the tenant",
    "Use the 'NotActions' property in the policy JSON definition to exclude the resource type of the resource group"
   ],
   "correct": [
@@ -8266,8 +8266,8 @@
     "correct": 2
    },
    {
-    "es": "Requisito 2: Desplegar automáticamente el agente de Log Analytics en cualquier máquina virtual de Azure que no lo tenga instalado.",
-    "en": "Requirement 2: Automatically deploy the Log Analytics agent to any Azure virtual machine that does not have it installed.",
+    "es": "Requisito 2: Desplegar automáticamente el Azure Monitor Agent en cualquier máquina virtual de Azure que no lo tenga instalado.",
+    "en": "Requirement 2: Automatically deploy the Azure Monitor Agent to any Azure virtual machine that does not have it installed.",
     "opts_es": [
      "Deny",
      "Audit",
@@ -8329,7 +8329,7 @@
   "opts_en": [
    "Users with the Owner or User Access Administrator role, who have the 'Microsoft.Authorization/locks/delete' permission",
    "Any user with the Contributor role assigned on the locked resource or its resource group",
-   "Only the Global Administrator of the Microsoft Entra ID tenant can delete resource locks",
+   "Only the Global Administrator of the Microsoft Entra tenant can delete resource locks",
    "Only the user who originally created the lock; no other user can delete it regardless of their Azure RBAC role"
   ],
   "correct": [
@@ -8450,8 +8450,8 @@
   "dom": 1,
   "obj": "1.3",
   "type": "mc",
-  "q_es": "¿Qué sucede con las asignaciones de roles RBAC cuando se transfiere una suscripción de Azure a un tenant de Azure AD diferente?",
-  "q_en": "What happens to RBAC role assignments when an Azure subscription is transferred to a different Azure AD tenant?",
+  "q_es": "¿Qué sucede con las asignaciones de roles RBAC cuando se transfiere una suscripción de Azure a un tenant de Microsoft Entra ID diferente?",
+  "q_en": "What happens to RBAC role assignments when an Azure subscription is transferred to a different Microsoft Entra tenant?",
   "opts_es": [
    "Todas las asignaciones de roles RBAC se eliminan; deben recrearse manualmente en el nuevo tenant",
    "Las asignaciones de roles RBAC se migran automáticamente al nuevo tenant",
@@ -8467,8 +8467,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Cuando se transfiere una suscripción a un tenant de Azure AD diferente, todas las asignaciones de roles RBAC se eliminan permanentemente, ya que los objetos de usuario y grupo del tenant anterior no existen en el nuevo. También se pierden las identidades administradas asignadas al sistema. Todos los roles deben recrearse manualmente.",
-  "exp_en": "When a subscription is transferred to a different Azure AD tenant, all RBAC role assignments are permanently deleted, since the user and group objects from the previous tenant do not exist in the new one. System-assigned managed identities are also lost. All roles must be manually recreated."
+  "exp_es": "Cuando se transfiere una suscripción a un tenant de Microsoft Entra ID diferente, todas las asignaciones de roles RBAC se eliminan permanentemente, ya que los objetos de usuario y grupo del tenant anterior no existen en el nuevo. También se pierden las identidades administradas asignadas al sistema. Todos los roles deben recrearse manualmente.",
+  "exp_en": "When a subscription is transferred to a different Microsoft Entra tenant, all RBAC role assignments are permanently deleted, since the user and group objects from the previous tenant do not exist in the new one. System-assigned managed identities are also lost. All roles must be manually recreated."
  },
  {
   "id": 314,
@@ -8530,8 +8530,8 @@
   "dom": 1,
   "obj": "1.3",
   "type": "mc",
-  "q_es": "¿Qué ocurre con las identidades administradas asignadas al sistema (system-assigned managed identities) de los recursos cuando se transfiere una suscripción a un tenant de Azure AD diferente?",
-  "q_en": "What happens to the system-assigned managed identities of resources when a subscription is transferred to a different Azure AD tenant?",
+  "q_es": "¿Qué ocurre con las identidades administradas asignadas al sistema (system-assigned managed identities) de los recursos cuando se transfiere una suscripción a un tenant de Microsoft Entra ID diferente?",
+  "q_en": "What happens to the system-assigned managed identities of resources when a subscription is transferred to a different Microsoft Entra tenant?",
   "opts_es": [
    "Se eliminan y deben volver a habilitarse en el nuevo tenant para crear nuevas identidades",
    "Se migran automáticamente al nuevo tenant con los mismos permisos",
@@ -8547,8 +8547,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las identidades administradas asignadas al sistema están vinculadas al tenant de Azure AD original. Al transferir la suscripción a un nuevo tenant, estas identidades se eliminan automáticamente. Después de la transferencia, debes volver a habilitar las identidades administradas en cada recurso para crear nuevas entidades de seguridad en el nuevo tenant.",
-  "exp_en": "System-assigned managed identities are tied to the original Azure AD tenant. When the subscription is transferred to a new tenant, these identities are automatically deleted. After the transfer, you must re-enable managed identities on each resource to create new service principals in the new tenant."
+  "exp_es": "Las identidades administradas asignadas al sistema están vinculadas al tenant de Microsoft Entra ID original. Al transferir la suscripción a un nuevo tenant, estas identidades se eliminan automáticamente. Después de la transferencia, debes volver a habilitar las identidades administradas en cada recurso para crear nuevas entidades de seguridad en el nuevo tenant.",
+  "exp_en": "System-assigned managed identities are tied to the original Microsoft Entra tenant. When the subscription is transferred to a new tenant, these identities are automatically deleted. After the transfer, you must re-enable managed identities on each resource to create new service principals in the new tenant."
  },
  {
   "id": 317,
@@ -8620,8 +8620,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Una SAS de delegación de usuario tiene un período máximo de validez de 7 días. Se firma con credenciales de Azure AD (no con la clave de cuenta), lo que la hace más segura que una SAS de cuenta o de servicio. Requiere que el principal tenga el rol 'Storage Blob Data Contributor' o superior en el ámbito correspondiente.",
-  "exp_en": "A user delegation SAS has a maximum validity period of 7 days. It is signed with Azure AD credentials (not with the account key), making it more secure than an account SAS or service SAS. It requires the principal to have the 'Storage Blob Data Contributor' role or higher on the appropriate scope."
+  "exp_es": "Una SAS de delegación de usuario tiene un período máximo de validez de 7 días. Se firma con credenciales de Microsoft Entra ID (no con la clave de cuenta), lo que la hace más segura que una SAS de cuenta o de servicio. Requiere que el principal tenga el rol 'Storage Blob Data Contributor' o superior en el ámbito correspondiente.",
+  "exp_en": "A user delegation SAS has a maximum validity period of 7 days. It is signed with Microsoft Entra ID credentials (not with the account key), making it more secure than an account SAS or service SAS. It requires the principal to have the 'Storage Blob Data Contributor' role or higher on the appropriate scope."
  },
  {
   "id": 319,
@@ -8659,13 +8659,13 @@
   "q_en": "For each statement about the authentication hierarchy in Azure Storage, indicate whether it is true or false.",
   "rows": [
    {
-    "es": "La autenticación con Azure AD es el método recomendado por Microsoft para acceder a Azure Blob Storage.",
-    "en": "Authentication with Azure AD is Microsoft's recommended method for accessing Azure Blob Storage.",
+    "es": "La autenticación con Microsoft Entra ID es el método recomendado por Microsoft para acceder a Azure Blob Storage.",
+    "en": "Authentication with Microsoft Entra ID is Microsoft's recommended method for accessing Azure Blob Storage.",
     "ans": true
    },
    {
-    "es": "Una solicitud autenticada con Clave Compartida tiene prioridad sobre una solicitud autenticada con Azure AD.",
-    "en": "A request authenticated with Shared Key takes priority over a request authenticated with Azure AD.",
+    "es": "Una solicitud autenticada con Clave Compartida tiene prioridad sobre una solicitud autenticada con Microsoft Entra ID.",
+    "en": "A request authenticated with Shared Key takes priority over a request authenticated with Microsoft Entra ID.",
     "ans": false
    },
    {
@@ -8674,8 +8674,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Microsoft recomienda Azure AD como el método de autenticación más seguro. En la jerarquía, Azure AD tiene precedencia sobre Clave Compartida, y la Clave Compartida tiene precedencia sobre SAS. No obstante, una SAS de delegación de usuario está firmada con Azure AD, por lo que su seguridad es comparable. El orden de recomendación es: Azure AD > SAS de delegación de usuario > Clave Compartida > SAS de cuenta.",
-  "exp_en": "Microsoft recommends Azure AD as the most secure authentication method. In the hierarchy, Azure AD takes precedence over Shared Key, and Shared Key takes precedence over SAS. However, a user delegation SAS is signed with Azure AD, so its security is comparable. The recommended order is: Azure AD > User delegation SAS > Shared Key > Account SAS."
+  "exp_es": "Microsoft recomienda Microsoft Entra ID como el método de autenticación más seguro. En la jerarquía, Microsoft Entra ID tiene precedencia sobre Clave Compartida, y la Clave Compartida tiene precedencia sobre SAS. No obstante, una SAS de delegación de usuario está firmada con Microsoft Entra ID, por lo que su seguridad es comparable. El orden de recomendación es: Microsoft Entra ID > SAS de delegación de usuario > Clave Compartida > SAS de cuenta.",
+  "exp_en": "Microsoft recommends Microsoft Entra ID as the most secure authentication method. In the hierarchy, Microsoft Entra ID takes precedence over Shared Key, and Shared Key takes precedence over SAS. However, a user delegation SAS is signed with Microsoft Entra ID, so its security is comparable. The recommended order is: Microsoft Entra ID > User delegation SAS > Shared Key > Account SAS."
  },
  {
   "id": 321,
@@ -8740,13 +8740,13 @@
   "opts_es": [
    "En la propia cuenta de almacenamiento, en un contenedor protegido",
    "En Azure Key Vault o en un HSM administrado de Azure",
-   "En Azure Active Directory, como secreto de aplicación",
+   "En Microsoft Entra ID, como secreto de aplicación",
    "En una cuenta de almacenamiento de tipo Premium Block Blob"
   ],
   "opts_en": [
    "In the storage account itself, in a protected container",
    "In Azure Key Vault or in an Azure managed HSM",
-   "In Azure Active Directory, as an application secret",
+   "In Microsoft Entra ID, as an application secret",
    "In a Premium Block Blob type storage account"
   ],
   "correct": [
@@ -8794,20 +8794,20 @@
   "opts_es": [
    "Solo Azure Backup, Azure Site Recovery y Azure Migrate, que deben configurarse manualmente en el firewall de la cuenta",
    "Servicios como Azure Backup, Azure Monitor, Azure Event Grid y Azure Data Factory, entre otros",
-   "Solo Azure Monitor, Azure Security Center y Microsoft Defender for Cloud, según la documentación de la SKU Standard",
+   "Solo Azure Monitor y Microsoft Defender for Cloud, según la documentación de la SKU Standard",
    "Todos los servicios de Azure de la misma suscripción, habilitados automáticamente al crear la cuenta de almacenamiento"
   ],
   "opts_en": [
    "Only Azure Backup, Azure Site Recovery and Azure Migrate, which must be manually configured in the storage account firewall",
    "Services such as Azure Backup, Azure Monitor, Azure Event Grid and Azure Data Factory, among others",
-   "Only Azure Monitor, Azure Security Center and Microsoft Defender for Cloud, per the Standard SKU documentation",
+   "Only Azure Monitor and Microsoft Defender for Cloud, per the Standard SKU documentation",
    "All Azure services in the same subscription, automatically enabled when the storage account is created"
   ],
   "correct": [
-   2
+   1
   ],
-  "exp_es": "La excepción de 'servicios de Microsoft de confianza' permite el acceso a un conjunto específico de servicios de primera parte de Microsoft, como Azure Backup, Azure Monitor, Azure Event Grid, Azure Data Factory, Azure Active Directory y otros. No todos los servicios de Azure se incluyen automáticamente; es una lista curada de servicios de confianza que Microsoft mantiene documentada.",
-  "exp_en": "The 'trusted Microsoft services' exception allows access to a specific set of Microsoft first-party services, such as Azure Backup, Azure Monitor, Azure Event Grid, Azure Data Factory, Azure Active Directory, and others. Not all Azure services are automatically included; it is a curated list of trusted services that Microsoft maintains as documented."
+  "exp_es": "La excepción de 'servicios de Microsoft de confianza' permite el acceso a un conjunto específico de servicios de primera parte de Microsoft, como Azure Backup, Azure Monitor, Azure Event Grid, Azure Data Factory, Microsoft Entra ID y otros. No todos los servicios de Azure se incluyen automáticamente; es una lista curada de servicios de confianza que Microsoft mantiene documentada.",
+  "exp_en": "The 'trusted Microsoft services' exception allows access to a specific set of Microsoft first-party services, such as Azure Backup, Azure Monitor, Azure Event Grid, Azure Data Factory, Microsoft Entra ID, and others. Not all Azure services are automatically included; it is a curated list of trusted services that Microsoft maintains as documented."
  },
  {
   "id": 326,
@@ -8868,19 +8868,19 @@
    "Una SAS de cuenta solo puede conceder acceso al servicio Blob, mientras que una SAS de servicio puede abarcar Blob, Queue, Table y File simultáneamente",
    "Una SAS de cuenta puede abarcar múltiples servicios de almacenamiento (Blob, Queue, Table, File), mientras que una SAS de servicio se limita a un único servicio",
    "Una SAS de servicio tiene un período de validez máximo de 7 días, mientras que una SAS de cuenta puede ser válida hasta 365 días",
-   "Una SAS de cuenta requiere autenticación con identidad administrada de Azure AD, mientras que una SAS de servicio se firma con la clave de cuenta de almacenamiento"
+   "Una SAS de cuenta requiere autenticación con identidad administrada de Microsoft Entra ID, mientras que una SAS de servicio se firma con la clave de cuenta de almacenamiento"
   ],
   "opts_en": [
    "An account SAS can only grant access to the Blob service, while a service SAS can span Blob, Queue, Table and File simultaneously",
    "An account SAS can span multiple storage services (Blob, Queue, Table, File), while a service SAS is limited to a single service",
    "A service SAS has a maximum validity period of 7 days, while an account SAS can be valid for up to 365 days",
-   "An account SAS requires authentication with an Azure AD managed identity, while a service SAS is signed with the storage account key"
+   "An account SAS requires authentication with an Microsoft Entra ID managed identity, while a service SAS is signed with the storage account key"
   ],
   "correct": [
    1
   ],
-  "exp_es": "Una SAS de cuenta puede otorgar acceso a múltiples servicios de almacenamiento (Blob, Queue, Table, Files) y a operaciones de nivel de servicio. Una SAS de servicio solo puede acceder a un único servicio de almacenamiento (p. ej., solo Blob o solo Queue). Ambas se firman con la clave de cuenta; ninguna requiere Azure AD.",
-  "exp_en": "An account SAS can grant access to multiple storage services (Blob, Queue, Table, Files) and service-level operations. A service SAS can only access a single storage service (e.g., Blob only or Queue only). Both are signed with the account key; neither requires Azure AD."
+  "exp_es": "Una SAS de cuenta puede otorgar acceso a múltiples servicios de almacenamiento (Blob, Queue, Table, Files) y a operaciones de nivel de servicio. Una SAS de servicio solo puede acceder a un único servicio de almacenamiento (p. ej., solo Blob o solo Queue). Ambas se firman con la clave de cuenta; ninguna requiere Microsoft Entra ID.",
+  "exp_en": "An account SAS can grant access to multiple storage services (Blob, Queue, Table, Files) and service-level operations. A service SAS can only access a single storage service (e.g., Blob only or Queue only). Both are signed with the account key; neither requires Microsoft Entra ID."
  },
  {
   "id": 328,
@@ -8948,19 +8948,19 @@
   "post_en": "instead of with the storage account key.",
   "opts_es": [
    "una clave simétrica de 256 bits generada aleatoriamente",
-   "credenciales de Azure Active Directory",
+   "credenciales de Microsoft Entra ID",
    "el certificado TLS de la cuenta de almacenamiento",
    "la contraseña del administrador de suscripción"
   ],
   "opts_en": [
    "a randomly generated 256-bit symmetric key",
-   "Azure Active Directory credentials",
+   "Microsoft Entra ID credentials",
    "the storage account's TLS certificate",
    "the subscription administrator's password"
   ],
   "correct": 1,
-  "exp_es": "La SAS de delegación de usuario se firma con credenciales de Azure AD, lo que la vincula a la identidad del principal de Azure AD que la creó. Esto significa que los permisos están limitados por los permisos RBAC del principal en Azure AD, y la SAS expira en un máximo de 7 días.",
-  "exp_en": "The user delegation SAS is signed with Azure AD credentials, tying it to the Azure AD principal identity that created it. This means that permissions are bounded by the RBAC permissions of the principal in Azure AD, and the SAS expires in a maximum of 7 days."
+  "exp_es": "La SAS de delegación de usuario se firma con credenciales de Microsoft Entra ID, lo que la vincula a la identidad del principal de Microsoft Entra ID que la creó. Esto significa que los permisos están limitados por los permisos RBAC del principal en Microsoft Entra ID, y la SAS expira en un máximo de 7 días.",
+  "exp_en": "The user delegation SAS is signed with Microsoft Entra ID credentials, tying it to the Microsoft Entra ID principal identity that created it. This means that permissions are bounded by the RBAC permissions of the principal in Microsoft Entra ID, and the SAS expires in a maximum of 7 days."
  },
  {
   "id": 331,
@@ -9074,8 +9074,8 @@
   "dom": 2,
   "obj": "2.2",
   "type": "mc",
-  "q_es": "Una empresa necesita una cuenta de almacenamiento que soporte blobs de páginas de alto rendimiento para discos de máquinas virtuales de Azure no administrados. ¿Qué tipo de cuenta de almacenamiento debe usar?",
-  "q_en": "A company needs a storage account that supports high-performance page blobs for unmanaged Azure virtual machine disks. What type of storage account should they use?",
+  "q_es": "Una aplicación escribe y lee datos aleatorios en blobs en páginas y necesita la menor latencia posible. ¿Qué tipo de cuenta de almacenamiento debe usar?",
+  "q_en": "An application performs random reads and writes on page blobs and needs the lowest possible latency. What type of storage account should it use?",
   "opts_es": [
    "General Purpose v2 (GPv2) con nivel estándar",
    "Premium Block Blob Storage",
@@ -9091,8 +9091,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las cuentas de tipo 'Premium Page Blob' están diseñadas específicamente para blobs de páginas de alto rendimiento, como los discos no administrados de máquinas virtuales. Las cuentas GPv2 también soportan blobs de páginas pero en nivel estándar. Las cuentas 'Premium Block Blob' y 'Premium File Share' están optimizadas para sus respectivos tipos de contenido y no soportan blobs de páginas de alto rendimiento.",
-  "exp_en": "Accounts of type 'Premium Page Blob' are designed specifically for high-performance page blobs, such as virtual machine unmanaged disks. GPv2 accounts also support page blobs but at the standard tier. 'Premium Block Blob' and 'Premium File Share' accounts are optimized for their respective content types and do not support high-performance page blobs."
+  "exp_es": "Las cuentas de tipo «Premium Page Blob» están diseñadas específicamente para blobs en páginas de alto rendimiento y baja latencia sobre SSD. Las cuentas GPv2 también admiten blobs en páginas, pero en el nivel estándar. Las cuentas «Premium Block Blob» y «Premium File Share» están optimizadas para blobs en bloques y para recursos compartidos de archivos, respectivamente. (Los discos de VM no administrados, que antes usaban estas cuentas, se retiraron en 2025: hoy los discos de VM son discos administrados).",
+  "exp_en": "\"Premium Page Blob\" accounts are designed specifically for high-performance, low-latency page blobs on SSD. GPv2 accounts also support page blobs, but at the standard tier. \"Premium Block Blob\" and \"Premium File Share\" accounts are optimized for block blobs and file shares respectively. (Unmanaged VM disks, which used to rely on these accounts, were retired in 2025: VM disks are now managed disks.)"
  },
  {
   "id": 336,
@@ -9809,25 +9809,25 @@
   "dom": 2,
   "obj": "2.3",
   "type": "mc",
-  "q_es": "¿Cuál es una limitación del protocolo NFS 4.1 para Azure Files Premium respecto al cifrado en tránsito?",
-  "q_en": "What is a limitation of NFS 4.1 for Azure Files Premium regarding in-transit encryption?",
+  "q_es": "¿Qué requisito de red se aplica a los recursos compartidos NFS de Azure Files?",
+  "q_en": "Which network requirement applies to NFS Azure file shares?",
   "opts_es": [
-   "NFS 4.1 solo soporta cifrado TLS 1.3; las versiones TLS 1.0 y 1.1 están deshabilitadas en todos los niveles de Azure Files Premium",
-   "NFS 4.1 para Azure Files no soporta cifrado en tránsito; la seguridad debe garantizarse mediante red virtual privada",
-   "NFS 4.1 cifra los datos en tránsito con Kerberos AES-256 pero no cifra los datos en reposo salvo que se habilite CMK en el portal",
-   "NFS 4.1 requiere que el cliente presente un certificado digital x.509 emitido por la CA raíz de Microsoft para autenticarse"
+   "Solo se puede acceder a ellos desde redes virtuales (con un punto de conexión de servicio o un punto de conexión privado), no desde Internet con la clave de la cuenta",
+   "Se puede acceder a ellos desde cualquier lugar de Internet usando la clave de la cuenta de almacenamiento, igual que a los recursos SMB",
+   "Requieren que el cliente presente un certificado x.509 emitido por la CA raíz de Microsoft para montar el recurso compartido",
+   "Solo funcionan en cuentas de almacenamiento estándar de uso general v1 con redundancia geográfica"
   ],
   "opts_en": [
-   "NFS 4.1 only supports TLS 1.3 encryption; TLS 1.0 and 1.1 are disabled at all Azure Files Premium tiers",
-   "NFS 4.1 for Azure Files does not support in-transit encryption; security must be ensured via a private virtual network",
-   "NFS 4.1 encrypts data in transit with Kerberos AES-256 but does not encrypt data at rest unless CMK is enabled in the portal",
-   "NFS 4.1 requires the client to present an x.509 digital certificate issued by the Microsoft root CA for authentication"
+   "They can only be accessed from virtual networks (through a service endpoint or a private endpoint), not from the internet with the account key",
+   "They can be accessed from anywhere on the internet using the storage account key, just like SMB shares",
+   "They require the client to present an x.509 certificate issued by the Microsoft root CA to mount the share",
+   "They only work on general-purpose v1 standard storage accounts with geo-redundancy"
   ],
   "correct": [
-   1
+   0
   ],
-  "exp_es": "NFS 4.1 para Azure Files Premium no soporta cifrado en tránsito a nivel de protocolo. Por esta razón, los recursos compartidos NFS 4.1 solo son accesibles desde redes virtuales de Azure (o redes conectadas mediante VPN/ExpressRoute), no desde Internet pública. Esto garantiza que el tráfico permanezca dentro de la red de Azure, que tiene controles de seguridad de red propios.",
-  "exp_en": "NFS 4.1 for Azure Files Premium does not support in-transit encryption at the protocol level. For this reason, NFS 4.1 shares are only accessible from Azure virtual networks (or networks connected via VPN/ExpressRoute), not from the public Internet. This ensures that traffic remains within the Azure network, which has its own network security controls."
+  "exp_es": "Los recursos compartidos NFS de Azure Files (nivel Premium) no usan la clave de la cuenta ni identidades para autenticar: la seguridad se basa en la red. Por eso solo son accesibles desde redes virtuales autorizadas (punto de conexión de servicio o privado), o desde redes locales conectadas por VPN o ExpressRoute.",
+  "exp_en": "NFS Azure file shares (premium tier) do not use the account key or identities for authentication: security is network-based. That is why they can only be reached from authorized virtual networks (service or private endpoint), or from on-premises networks connected through VPN or ExpressRoute."
  },
  {
   "id": 362,
@@ -10678,13 +10678,13 @@
     "ans": false
    },
    {
-    "es": "La extensión MMA (Microsoft Monitoring Agent) se usa para conectar una VM al área de trabajo de Log Analytics.",
-    "en": "The MMA (Microsoft Monitoring Agent) extension is used to connect a VM to a Log Analytics workspace.",
+    "es": "La extensión Azure Monitor Agent (AMA) envía datos de la VM a un área de trabajo de Log Analytics según las reglas de recopilación de datos (DCR).",
+    "en": "The Azure Monitor Agent (AMA) extension sends VM data to a Log Analytics workspace according to data collection rules (DCRs).",
     "ans": true
    }
   ],
-  "exp_es": "BGInfo muestra datos como IP, nombre del equipo y OS en el fondo de escritorio. Las extensiones requieren el Agente de VM, que viene preinstalado en imágenes de Azure Marketplace. MMA (ahora sustituido por AMA) conecta VMs a Log Analytics para recopilar registros y métricas.",
-  "exp_en": "BGInfo displays data such as IP address, machine name, and OS on the desktop background. Extensions require the VM Agent, which comes pre-installed in Azure Marketplace images. MMA (now superseded by AMA) connects VMs to Log Analytics to collect logs and metrics."
+  "exp_es": "BGInfo muestra datos como la IP, el nombre del equipo y el sistema operativo en el fondo de escritorio. Las extensiones requieren el Agente de VM, que viene preinstalado en las imágenes de Azure Marketplace. El Azure Monitor Agent, configurado con reglas de recopilación de datos, es el agente actual para enviar registros y métricas a Log Analytics (sustituye al agente MMA, retirado en 2024).",
+  "exp_en": "BGInfo shows data such as the IP address, machine name and OS on the desktop background. Extensions require the VM Agent, which comes preinstalled in Azure Marketplace images. The Azure Monitor Agent, configured with data collection rules, is the current agent for sending logs and metrics to Log Analytics (it replaces the MMA agent, retired in 2024)."
  },
  {
   "id": 392,
@@ -10930,8 +10930,8 @@
   "dom": 3,
   "obj": "3.3",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre AKS RBAC e integración con Azure AD, indica si es verdadera o falsa.",
-  "q_en": "For each statement about AKS RBAC and Azure AD integration, indicate whether it is true or false.",
+  "q_es": "Para cada afirmación sobre AKS RBAC e integración con Microsoft Entra ID, indica si es verdadera o falsa.",
+  "q_en": "For each statement about AKS RBAC and Microsoft Entra ID integration, indicate whether it is true or false.",
   "rows": [
    {
     "es": "ClusterRole y ClusterRoleBinding son objetos de Kubernetes RBAC que aplican permisos a todo el clúster.",
@@ -10939,8 +10939,8 @@
     "ans": true
    },
    {
-    "es": "Con la integración de Azure AD gestionada (Managed AAD), es necesario crear y mantener manualmente las aplicaciones de Azure AD del servidor y el cliente.",
-    "en": "With Managed AAD integration, you must manually create and maintain the Azure AD server and client applications.",
+    "es": "Con la integración de Microsoft Entra ID gestionada (Managed AAD), es necesario crear y mantener manualmente las aplicaciones de Microsoft Entra ID del servidor y el cliente.",
+    "en": "With Managed AAD integration, you must manually create and maintain the Microsoft Entra ID server and client applications.",
     "ans": false
    },
    {
@@ -10949,8 +10949,8 @@
     "ans": true
    }
   ],
-  "exp_es": "ClusterRole/ClusterRoleBinding aplican permisos globalmente. Con la integración AAD gestionada, Azure gestiona automáticamente las aplicaciones de AD. Azure RBAC para Kubernetes permite usar asignaciones de roles de Azure para autorizar el acceso al clúster, integrando Azure AD con el RBAC nativo de Kubernetes.",
-  "exp_en": "ClusterRole/ClusterRoleBinding apply permissions globally. With managed AAD integration, Azure automatically manages the AD applications. Azure RBAC for Kubernetes allows using Azure role assignments to authorize cluster access, integrating Azure AD with native Kubernetes RBAC."
+  "exp_es": "ClusterRole/ClusterRoleBinding aplican permisos globalmente. Con la integración AAD gestionada, Azure gestiona automáticamente las aplicaciones de AD. Azure RBAC para Kubernetes permite usar asignaciones de roles de Azure para autorizar el acceso al clúster, integrando Microsoft Entra ID con el RBAC nativo de Kubernetes.",
+  "exp_en": "ClusterRole/ClusterRoleBinding apply permissions globally. With managed AAD integration, Azure automatically manages the AD applications. Azure RBAC for Kubernetes allows using Azure role assignments to authorize cluster access, integrating Microsoft Entra ID with native Kubernetes RBAC."
  },
  {
   "id": 402,
@@ -11246,13 +11246,13 @@
   "q_es": "¿Qué es Easy Auth en Azure App Service?",
   "q_en": "What is Easy Auth in Azure App Service?",
   "opts_es": [
-   "Una función de autenticación integrada que permite añadir autenticación de proveedores de identidad (Azure AD, Google, Facebook, GitHub) sin modificar el código de la aplicación.",
+   "Una función de autenticación integrada que permite añadir autenticación de proveedores de identidad (Microsoft Entra ID, Google, Facebook, GitHub) sin modificar el código de la aplicación.",
    "Una herramienta del portal de Azure que genera automáticamente contraseñas complejas de publicación para las ranuras de implementación de App Service.",
    "Un servicio complementario de App Service que cifra automáticamente las cadenas de conexión almacenadas en la sección de configuración de la aplicación.",
    "Una extensión de App Service que implementa autenticación multifactor (MFA) de Microsoft Authenticator para todos los administradores del plan de App Service."
   ],
   "opts_en": [
-   "A built-in authentication feature that allows adding authentication from identity providers (Azure AD, Google, Facebook, GitHub) without modifying application code.",
+   "A built-in authentication feature that allows adding authentication from identity providers (Microsoft Entra ID, Google, Facebook, GitHub) without modifying application code.",
    "An Azure portal tool that automatically generates complex publishing passwords for App Service deployment slots.",
    "A complementary App Service service that automatically encrypts connection strings stored in the application configuration section.",
    "An App Service extension that implements Microsoft Authenticator multi-factor authentication (MFA) for all App Service plan administrators."
@@ -11260,8 +11260,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Easy Auth (autenticación/autorización de App Service) es un módulo integrado que maneja la autenticación antes de que las solicitudes lleguen al código de la aplicación. Admite múltiples proveedores de identidad (Azure AD, Google, Facebook, GitHub, Twitter) y gestiona el almacén de tokens automáticamente.",
-  "exp_en": "Easy Auth (App Service authentication/authorization) is a built-in module that handles authentication before requests reach application code. It supports multiple identity providers (Azure AD, Google, Facebook, GitHub, Twitter) and manages the token store automatically."
+  "exp_es": "Easy Auth (autenticación/autorización de App Service) es un módulo integrado que maneja la autenticación antes de que las solicitudes lleguen al código de la aplicación. Admite múltiples proveedores de identidad (Microsoft Entra ID, Google, Facebook, GitHub, Twitter) y gestiona el almacén de tokens automáticamente.",
+  "exp_en": "Easy Auth (App Service authentication/authorization) is a built-in module that handles authentication before requests reach application code. It supports multiple identity providers (Microsoft Entra ID, Google, Facebook, GitHub, Twitter) and manages the token store automatically."
  },
  {
   "id": 414,
@@ -12345,21 +12345,21 @@
   "q_en": "Which protocol is NOT available for authentication in an Azure point-to-site (P2S) VPN?",
   "opts_es": [
    "Certificados de cliente",
-   "Azure Active Directory (Entra ID)",
+   "Microsoft Entra ID",
    "RADIUS",
    "Kerberos"
   ],
   "opts_en": [
    "Client certificates",
-   "Azure Active Directory (Entra ID)",
+   "Microsoft Entra ID",
    "RADIUS",
    "Kerberos"
   ],
   "correct": [
    3
   ],
-  "exp_es": "La VPN de punto a sitio de Azure admite autenticación mediante certificados de cliente, Azure Active Directory (para el protocolo OpenVPN) y RADIUS (para integrarse con sistemas de autenticación locales como AD). Kerberos no es un método de autenticación soportado para P2S VPN de Azure.",
-  "exp_en": "Azure point-to-site VPN supports authentication via client certificates, Azure Active Directory (for the OpenVPN protocol), and RADIUS (to integrate with on-premises authentication systems like AD). Kerberos is not a supported authentication method for Azure P2S VPN."
+  "exp_es": "La VPN de punto a sitio de Azure admite autenticación mediante certificados de cliente, Microsoft Entra ID (para el protocolo OpenVPN) y RADIUS (para integrarse con sistemas de autenticación locales como AD). Kerberos no es un método de autenticación soportado para P2S VPN de Azure.",
+  "exp_en": "Azure point-to-site VPN supports authentication via client certificates, Microsoft Entra ID (for the OpenVPN protocol), and RADIUS (to integrate with on-premises authentication systems like AD). Kerberos is not a supported authentication method for Azure P2S VPN."
  },
  {
   "id": 456,
@@ -12561,8 +12561,8 @@
   "correct": [
    2
   ],
-  "exp_es": "OpenVPN es el protocolo de código abierto basado en TLS que funciona en todas las plataformas principales: Windows, macOS, Linux, iOS y Android. SSTP es exclusivo de Windows. IKEv2 funciona en Windows, macOS e iOS pero tiene soporte limitado en Linux y Android. OpenVPN también es el único que admite autenticación con Azure AD.",
-  "exp_en": "OpenVPN is the open-source TLS-based protocol that works across all major platforms: Windows, macOS, Linux, iOS, and Android. SSTP is Windows-exclusive. IKEv2 works on Windows, macOS, and iOS but has limited Linux and Android support. OpenVPN is also the only one that supports Azure AD authentication."
+  "exp_es": "OpenVPN es el protocolo de código abierto basado en TLS que funciona en todas las plataformas principales: Windows, macOS, Linux, iOS y Android. SSTP es exclusivo de Windows. IKEv2 funciona en Windows, macOS e iOS pero tiene soporte limitado en Linux y Android. OpenVPN también es el único que admite autenticación con Microsoft Entra ID.",
+  "exp_en": "OpenVPN is the open-source TLS-based protocol that works across all major platforms: Windows, macOS, Linux, iOS, and Android. SSTP is Windows-exclusive. IKEv2 works on Windows, macOS, and iOS but has limited Linux and Android support. OpenVPN is also the only one that supports Microsoft Entra ID authentication."
  },
  {
   "id": 463,
@@ -12683,13 +12683,13 @@
   "opts_es": [
    "El nivel Standard permite conectarse a una VM especificando directamente su nombre DNS privado de la zona DNS interna de la VNet sin IP publica",
    "El nivel Standard permite conexión basada en IP (IP-based connection), conectandose a una VM especificando directamente su IP privada sin que sea miembro de dominio ni este registrada en Azure",
-   "El nivel Standard habilita la autenticación Kerberos AES-256 para VMs no unidas a dominio de Active Directory mediante el mecanismo de Azure AD Kerberos integrado",
+   "El nivel Standard habilita la autenticación Kerberos AES-256 para VMs no unidas a dominio de Active Directory mediante el mecanismo de Microsoft Entra Kerberos integrado",
    "El nivel Basic ya permite la conexión basada en IP privada sin dominio; el Standard añade soporte para puertos RDP personalizados distintos del puerto 3389 estándar de Remote Desktop"
   ],
   "opts_en": [
    "The Standard tier allows connecting to a VM by specifying its private DNS name from the VNet's internal DNS zone without a public IP",
    "The Standard tier enables IP-based connection, connecting to a VM by directly specifying its private IP without it being a domain member or registered in Azure",
-   "The Standard tier enables AES-256 Kerberos authentication for VMs not domain-joined to Active Directory through the integrated Azure AD Kerberos mechanism",
+   "The Standard tier enables AES-256 Kerberos authentication for VMs not domain-joined to Active Directory through the integrated Microsoft Entra Kerberos mechanism",
    "The Basic tier already allows private IP-based connection without a domain; Standard adds support for custom RDP ports other than the standard Remote Desktop port 3389"
   ],
   "correct": [

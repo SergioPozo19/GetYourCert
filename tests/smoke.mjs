@@ -58,6 +58,31 @@ const PHONE = { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch:
 const FREE = { name: 'Test User', email: 'test@example.com', is_pro: false };
 const PRO = { name: 'Pro User', email: 'pro@example.com', is_pro: true };
 
+// ---------- question bank structure (what the app actually reads)
+import fs from 'fs';
+await check('data: question bank structure', async () => {
+  const dir = path.join(ROOT, 'questions'); const bad = [];
+  for (const f of fs.readdirSync(dir).filter(n => n.endsWith('.json'))) {
+    const qs = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); const ids = new Set();
+    for (const q of qs) {
+      const where = `${f}#${q.id}`;
+      if (ids.has(q.id)) bad.push(where + ' duplicate id'); ids.add(q.id);
+      for (const lg of ['es', 'en']) {
+        if (!String(q['q_' + lg] || q['pre_' + lg] || '').trim()) bad.push(`${where} no stem ${lg}`);
+        if (!String(q['exp_' + lg] || '').trim()) bad.push(`${where} no explanation ${lg}`);
+        for (const r of q.rows || []) if (!String(r[lg] || '').trim()) { bad.push(`${where} row without ${lg} text`); break; }
+      }
+      if (q.type === 'mc' || q.type === 'sentence') {
+        const n = (q.opts_es || []).length, c = [].concat(q.correct);
+        if (!n || n !== (q.opts_en || []).length) bad.push(where + ' options es/en mismatch');
+        if (c.some(i => !Number.isInteger(i) || i < 0 || i >= n)) bad.push(where + ' answer out of range');
+      }
+      if (q.type === 'dropdown') for (const r of q.rows || []) if (!(r.opts_es || []).length || r.correct < 0 || r.correct >= r.opts_es.length) { bad.push(where + ' bad dropdown row'); break; }
+    }
+  }
+  assert(!bad.length, `${bad.length} problems: ${bad.slice(0, 5).join(', ')}`);
+});
+
 const browser = await chromium.launch();
 try {
   for (const [dev, opts] of [['desktop', DESK], ['phone', PHONE]]) {

@@ -163,13 +163,13 @@
   "post_en": ".",
   "opts_es": [
    "versión preliminar dirigida (Targeted release) para usuarios o grupos específicos",
-   "directiva de actualización de software de Microsoft Endpoint Manager",
+   "directiva de actualización de software de Microsoft Intune",
    "configuración de Comunicaciones a clientes",
    "configuración de zona horaria predeterminada del inquilino"
   ],
   "opts_en": [
    "Targeted release for specific users or groups",
-   "a Microsoft Endpoint Manager software update policy",
+   "a Microsoft Intune software update policy",
    "the Customer communications setting",
    "the tenant's default time zone setting"
   ],
@@ -8806,7 +8806,7 @@
   "q_en": "The security team wants to create a Conditional Access policy that specifically requires users to authenticate with a phishing-resistant method (such as a FIDO2 security key or a certificate-based credential), instead of simply requiring 'MFA', which could be satisfied with an SMS code, considered less secure. What grant control should they use within the Conditional Access policy?",
   "opts_es": [
    "Exigir una fuerza de autenticación (authentication strength) personalizada que incluya solo métodos resistentes al phishing",
-   "Exigir la unión híbrida de Microsoft Entra (hybrid Azure AD join) como único requisito adicional del dispositivo del usuario",
+   "Exigir la unión híbrida de Microsoft Entra (hybrid Microsoft Entra join) como único requisito adicional del dispositivo del usuario",
    "Exigir el cumplimiento del dispositivo (device compliance) en Microsoft Intune como único control adicional de la directiva",
    "Exigir una contraseña de aplicación (app password) como método alternativo para aplicaciones que no admiten MFA moderno"
   ],
@@ -9661,7 +9661,7 @@
   "obj": "1.1",
   "type": "mc",
   "q_es": "Una organización colabora habitualmente con dos empresas asociadas de confianza y quiere que los usuarios invitados B2B solo puedan provenir de los inquilinos de Microsoft Entra ID de esas dos empresas específicas, bloqueando automáticamente cualquier intento de colaboración B2B procedente de cualquier otro inquilino externo, sin tener que gestionar una lista de usuarios individuales bloqueados. ¿Qué deberían configurar?",
-  "q_en": "An organization regularly collaborates with two trusted partner companies and wants B2B guest users to only be able to come from the Microsoft Entra ID tenants of those two specific companies, automatically blocking any B2B collaboration attempt from any other external tenant, without managing a list of individually blocked users. What should they configure?",
+  "q_en": "An organization regularly collaborates with two trusted partner companies and wants B2B guest users to only be able to come from the Microsoft Entra tenants of those two specific companies, automatically blocking any B2B collaboration attempt from any other external tenant, without managing a list of individually blocked users. What should they configure?",
   "opts_es": [
    "Una directiva de acceso condicional que bloquee a todos los usuarios invitados sin excepción",
    "Eliminar manualmente cualquier usuario invitado que no pertenezca a esas dos empresas cada semana",
@@ -9712,8 +9712,8 @@
   "dom": 1,
   "obj": "1.2",
   "type": "mc",
-  "q_es": "Un director quiere que su asistente ejecutivo pueda enviar correos electrónicos que aparezcan en la bandeja de entrada de los destinatarios como enviados directamente 'De: Director (en nombre de Asistente)', dejando claro para el destinatario que el mensaje fue redactado por el asistente pero en representación del director. La organización NO quiere que el mensaje aparezca como si lo hubiera enviado el propio director sin indicación alguna. ¿Qué permiso deben conceder al asistente sobre el buzón del director?",
-  "q_en": "A director wants their executive assistant to be able to send emails that appear in recipients' inboxes as sent directly 'From: Director (on behalf of Assistant)', making it clear to the recipient that the message was written by the assistant but on the director's behalf. The organization does NOT want the message to appear as if the director sent it themselves with no indication. What permission should they grant the assistant on the director's mailbox?",
+  "q_es": "Un director quiere que su asistente ejecutivo pueda enviar correos electrónicos que aparezcan en la bandeja de entrada de los destinatarios como enviados directamente 'De: Asistente en nombre de Director', dejando claro para el destinatario que el mensaje fue redactado por el asistente pero en representación del director. La organización NO quiere que el mensaje aparezca como si lo hubiera enviado el propio director sin indicación alguna. ¿Qué permiso deben conceder al asistente sobre el buzón del director?",
+  "q_en": "A director wants their executive assistant to be able to send emails that appear in recipients' inboxes as sent directly 'From: Assistant on behalf of Director', making it clear to the recipient that the message was written by the assistant but on the director's behalf. The organization does NOT want the message to appear as if the director sent it themselves with no indication. What permission should they grant the assistant on the director's mailbox?",
   "opts_es": [
    "Enviar en nombre de (Send on Behalf)",
    "Acceso completo al buzón (Full Access) únicamente",
@@ -9729,8 +9729,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El permiso 'Enviar en nombre de' permite a un delegado enviar correos desde el buzón de otro usuario, pero el destinatario ve claramente que el mensaje fue enviado por el delegado 'en nombre de' el propietario del buzón (por ejemplo, 'Director <a través de> Asistente'). El permiso 'Enviar como', en cambio, hace que el mensaje aparezca como si lo hubiera enviado directamente el propietario del buzón, sin ninguna indicación de que fue otra persona quien lo redactó.",
-  "exp_en": "The 'Send on Behalf' permission allows a delegate to send emails from another user's mailbox, but the recipient clearly sees that the message was sent by the delegate 'on behalf of' the mailbox owner (for example, 'Director <on behalf of> Assistant'). The 'Send As' permission, by contrast, makes the message appear as if the mailbox owner sent it directly, with no indication that someone else wrote it."
+  "exp_es": "El permiso 'Enviar en nombre de' permite a un delegado enviar correos desde el buzón de otro usuario, pero el destinatario ve claramente que el mensaje fue enviado por el delegado 'en nombre de' el propietario del buzón (por ejemplo, 'Asistente en nombre de Director'). El permiso 'Enviar como', en cambio, hace que el mensaje aparezca como si lo hubiera enviado directamente el propietario del buzón, sin ninguna indicación de que fue otra persona quien lo redactó.",
+  "exp_en": "The 'Send on Behalf' permission allows a delegate to send emails from another user's mailbox, but the recipient clearly sees that the message was sent by the delegate 'on behalf of' the mailbox owner (for example, 'Assistant on behalf of Director'). The 'Send As' permission, by contrast, makes the message appear as if the mailbox owner sent it directly, with no indication that someone else wrote it."
  },
  {
   "id": 325,
@@ -10692,7 +10692,7 @@
    0
   ],
   "exp_es": "En una migración entre inquilinos, un dominio personalizado solo puede estar verificado en un inquilino de Microsoft Entra ID a la vez. La migración cross-tenant requiere una secuenciación cuidadosa: el dominio permanece en el inquilino de origen mientras se migran los buzones (usando direcciones temporales o el plan de migración por lotes), y solo se retira del origen y se agrega/verifica en el destino una vez que la migración ha finalizado para todos los usuarios afectados, evitando que ambos inquilinos reclamen el mismo dominio simultáneamente.",
-  "exp_en": "In a cross-tenant migration, a custom domain can only be verified in one Microsoft Entra ID tenant at a time. Cross-tenant migration requires careful sequencing: the domain remains in the source tenant while mailboxes are migrated (using temporary addresses or the batch migration plan), and is only removed from the source and added/verified in the destination once migration has completed for all affected users, avoiding both tenants claiming the same domain simultaneously."
+  "exp_en": "In a cross-tenant migration, a custom domain can only be verified in one Microsoft Entra tenant at a time. Cross-tenant migration requires careful sequencing: the domain remains in the source tenant while mailboxes are migrated (using temporary addresses or the batch migration plan), and is only removed from the source and added/verified in the destination once migration has completed for all affected users, avoiding both tenants claiming the same domain simultaneously."
  },
  {
   "id": 362,
@@ -11845,7 +11845,7 @@
   "obj": "2.1",
   "type": "mc",
   "q_es": "Una organización resultante de una fusión tiene dos bosques de Active Directory locales separados, cada uno administrado por un equipo de TI diferente, y ambos necesitan sincronizarse hacia un único inquilino de Microsoft Entra ID. La organización quiere una solución de sincronización ligera, basada en agentes, que admita múltiples bosques de Active Directory sin requerir un único servidor de Microsoft Entra Connect Sync centralizado y con configuración compleja de reglas de sincronización personalizadas. ¿Qué solución es más adecuada?",
-  "q_en": "An organization resulting from a merger has two separate on-premises Active Directory forests, each managed by a different IT team, and both need to sync to a single Microsoft Entra ID tenant. The organization wants a lightweight, agent-based synchronization solution that supports multiple Active Directory forests without requiring a single centralized Microsoft Entra Connect Sync server with complex custom synchronization rule configuration. What solution is most suitable?",
+  "q_en": "An organization resulting from a merger has two separate on-premises Active Directory forests, each managed by a different IT team, and both need to sync to a single Microsoft Entra tenant. The organization wants a lightweight, agent-based synchronization solution that supports multiple Active Directory forests without requiring a single centralized Microsoft Entra Connect Sync server with complex custom synchronization rule configuration. What solution is most suitable?",
   "opts_es": [
    "Microsoft Entra Connect Sync con una sola regla de sincronización personalizada y compartida entre ambos bosques de AD locales sin agentes adicionales",
    "Microsoft Entra Connect cloud sync, que usa agentes de aprovisionamiento ligeros y admite mejor topologías de múltiples bosques",
@@ -12520,8 +12520,8 @@
   "dom": 3,
   "obj": "3.1",
   "type": "mc",
-  "q_es": "Una organización utiliza varios servicios dentro de Microsoft 365 Defender (protección de Office 365, Defender for Endpoint, Defender for Identity y Defender for Cloud Apps). Quieren crear un rol personalizado que permita a un grupo de analistas gestionar incidentes y alertas en todos estos servicios desde un único lugar, sin tener que asignar roles separados para cada producto individual. ¿Qué funcionalidad permite definir este tipo de roles unificados?",
-  "q_en": "An organization uses several services within Microsoft 365 Defender (Office 365 protection, Defender for Endpoint, Defender for Identity, and Defender for Cloud Apps). They want to create a custom role that allows a group of analysts to manage incidents and alerts across all these services from a single place, without having to assign separate roles for each individual product. What feature allows defining this kind of unified role?",
+  "q_es": "Una organización utiliza varios servicios dentro de Microsoft Defender XDR (protección de Office 365, Defender for Endpoint, Defender for Identity y Defender for Cloud Apps). Quieren crear un rol personalizado que permita a un grupo de analistas gestionar incidentes y alertas en todos estos servicios desde un único lugar, sin tener que asignar roles separados para cada producto individual. ¿Qué funcionalidad permite definir este tipo de roles unificados?",
+  "q_en": "An organization uses several services within Microsoft Defender XDR (Office 365 protection, Defender for Endpoint, Defender for Identity, and Defender for Cloud Apps). They want to create a custom role that allows a group of analysts to manage incidents and alerts across all these services from a single place, without having to assign separate roles for each individual product. What feature allows defining this kind of unified role?",
   "opts_es": [
    "Un grupo de seguridad de Microsoft Entra ID sin ninguna asignación de roles, ya que el acceso se hereda automáticamente del directorio completo",
    "El rol de Lector global, que es el único rol disponible y compartido para varios productos de Microsoft 365 sin opciones adicionales",
@@ -13370,7 +13370,7 @@
    2
   ],
   "exp_es": "Las unidades administrativas permiten agrupar usuarios, grupos o dispositivos (por ejemplo, por región) dentro de un mismo inquilino de Microsoft Entra ID, y posteriormente asignar roles administrativos (como Administrador de usuarios) con ámbito restringido a esa unidad administrativa. De esta forma, un administrador asignado a la unidad administrativa de Europa solo podrá gestionar a los usuarios incluidos en esa unidad, sin necesidad de crear inquilinos separados.",
-  "exp_en": "Administrative units allow grouping users, groups, or devices (for example, by region) within the same Microsoft Entra ID tenant, and then assigning administrative roles (such as User Administrator) scoped to that administrative unit. This way, an administrator assigned to the Europe administrative unit will only be able to manage users included in that unit, without needing to create separate tenants."
+  "exp_en": "Administrative units allow grouping users, groups, or devices (for example, by region) within the same Microsoft Entra tenant, and then assigning administrative roles (such as User Administrator) scoped to that administrative unit. This way, an administrator assigned to the Europe administrative unit will only be able to manage users included in that unit, without needing to create separate tenants."
  },
  {
   "id": 466,
@@ -14028,8 +14028,8 @@
   "dom": 3,
   "obj": "3.2",
   "type": "mc",
-  "q_es": "El equipo de seguridad de correo electrónico ha identificado un dominio externo legítimo desde el cual un socio comercial envía correos importantes, pero que ocasionalmente es marcado incorrectamente como spam por los filtros automáticos debido a su configuración de reputación. Al mismo tiempo, han identificado una URL específica utilizada en una campaña de phishing reciente que debe bloquearse en todos los correos entrantes, independientemente del resultado del resto de los filtros. ¿Qué herramienta de Microsoft 365 Defender permite gestionar ambas excepciones (permitir un remitente y bloquear una URL) de forma centralizada?",
-  "q_en": "The email security team has identified a legitimate external domain from which a business partner sends important emails, but which is occasionally incorrectly flagged as spam by automatic filters due to its reputation configuration. At the same time, they've identified a specific URL used in a recent phishing campaign that must be blocked in all incoming emails, regardless of the result of other filters. What Microsoft 365 Defender tool allows managing both exceptions (allowing a sender and blocking a URL) centrally?",
+  "q_es": "El equipo de seguridad de correo electrónico ha identificado un dominio externo legítimo desde el cual un socio comercial envía correos importantes, pero que ocasionalmente es marcado incorrectamente como spam por los filtros automáticos debido a su configuración de reputación. Al mismo tiempo, han identificado una URL específica utilizada en una campaña de phishing reciente que debe bloquearse en todos los correos entrantes, independientemente del resultado del resto de los filtros. ¿Qué herramienta de Microsoft Defender XDR permite gestionar ambas excepciones (permitir un remitente y bloquear una URL) de forma centralizada?",
+  "q_en": "The email security team has identified a legitimate external domain from which a business partner sends important emails, but which is occasionally incorrectly flagged as spam by automatic filters due to its reputation configuration. At the same time, they've identified a specific URL used in a recent phishing campaign that must be blocked in all incoming emails, regardless of the result of other filters. What Microsoft Defender XDR tool allows managing both exceptions (allowing a sender and blocking a URL) centrally?",
   "opts_es": [
    "El panel de Puntuación de seguridad, que no permite agregar entradas de permitir o bloquear para remitentes ni URLs específicas",
    "La lista de permitidos y bloqueados de inquilino, que permite agregar entradas para permitir remitentes de confianza y bloquear URL específicas",
@@ -14045,8 +14045,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List) en Microsoft 365 Defender permite a los administradores crear entradas centralizadas para permitir explícitamente remitentes o dominios de confianza (anulando detecciones incorrectas de spam) y, al mismo tiempo, bloquear explícitamente URL, archivos o remitentes específicos conocidos como maliciosos, independientemente del resultado de otros filtros automáticos, proporcionando control granular sobre casos específicos.",
-  "exp_en": "The Tenant Allow/Block List in Microsoft 365 Defender allows administrators to create centralized entries to explicitly allow trusted senders or domains (overriding incorrect spam detections) while also explicitly blocking specific URLs, files, or senders known to be malicious, regardless of the result of other automatic filters, providing granular control over specific cases."
+  "exp_es": "La lista de permitidos y bloqueados de inquilino (Tenant Allow/Block List) en Microsoft Defender XDR permite a los administradores crear entradas centralizadas para permitir explícitamente remitentes o dominios de confianza (anulando detecciones incorrectas de spam) y, al mismo tiempo, bloquear explícitamente URL, archivos o remitentes específicos conocidos como maliciosos, independientemente del resultado de otros filtros automáticos, proporcionando control granular sobre casos específicos.",
+  "exp_en": "The Tenant Allow/Block List in Microsoft Defender XDR allows administrators to create centralized entries to explicitly allow trusted senders or domains (overriding incorrect spam detections) while also explicitly blocking specific URLs, files, or senders known to be malicious, regardless of the result of other automatic filters, providing granular control over specific cases."
  },
  {
   "id": 496,
@@ -14419,7 +14419,7 @@
   "obj": "2.3",
   "type": "mc",
   "q_es": "Una organización colabora regularmente con usuarios de una empresa asociada que tiene su propio inquilino de Microsoft Entra ID. Quieren permitir que los usuarios de la empresa asociada accedan a ciertos recursos compartidos como invitados B2B, pero solo si esos usuarios externos cumplen con requisitos específicos, como tener habilitada la MFA en su propio inquilino. Al mismo tiempo, quieren confiar en las directivas de cumplimiento de dispositivos del inquilino asociado en lugar de requerir que esos dispositivos se inscriban en su propio Intune. ¿Qué configuración de Microsoft Entra ID permite estas confianzas entre inquilinos?",
-  "q_en": "An organization regularly collaborates with users from a partner company that has its own Microsoft Entra ID tenant. They want to allow the partner company's users to access certain shared resources as B2B guests, but only if those external users meet specific requirements, such as having MFA enabled in their own tenant. At the same time, they want to trust the partner tenant's device compliance policies instead of requiring those devices to enroll in their own Intune. What Microsoft Entra ID configuration enables these cross-tenant trusts?",
+  "q_en": "An organization regularly collaborates with users from a partner company that has its own Microsoft Entra tenant. They want to allow the partner company's users to access certain shared resources as B2B guests, but only if those external users meet specific requirements, such as having MFA enabled in their own tenant. At the same time, they want to trust the partner tenant's device compliance policies instead of requiring those devices to enroll in their own Intune. What Microsoft Entra ID configuration enables these cross-tenant trusts?",
   "opts_es": [
    "Una directiva de retención compartida entre los dos inquilinos, que sincroniza automáticamente todas las configuraciones de seguridad",
    "La configuración de acceso entre inquilinos (cross-tenant access settings), que permite establecer confianza con inquilinos externos en sus reclamaciones de MFA y cumplimiento de dispositivos",

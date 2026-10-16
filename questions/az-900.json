@@ -1264,8 +1264,8 @@
     "ans": true
    },
    {
-    "es": "Microsoft Purview reemplaza completamente a Azure Active Directory para la gestión de identidades",
-    "en": "Microsoft Purview completely replaces Azure Active Directory for identity management",
+    "es": "Microsoft Purview reemplaza completamente a Microsoft Entra ID para la gestión de identidades",
+    "en": "Microsoft Purview completely replaces Microsoft Entra ID for identity management",
     "ans": false
    },
    {
@@ -1274,8 +1274,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Microsoft Purview es una solución de gobernanza, cumplimiento y protección de datos que cubre entornos locales, multinube y SaaS. No es una herramienta de gestión de identidades y no reemplaza a Azure Active Directory.",
-  "exp_en": "Microsoft Purview is a data governance, compliance, and protection solution covering on-premises, multicloud, and SaaS environments. It is not an identity management tool and does not replace Azure Active Directory."
+  "exp_es": "Microsoft Purview es una solución de gobernanza, cumplimiento y protección de datos que cubre entornos locales, multinube y SaaS. No es una herramienta de gestión de identidades y no reemplaza a Microsoft Entra ID.",
+  "exp_en": "Microsoft Purview is a data governance, compliance, and protection solution covering on-premises, multicloud, and SaaS environments. It is not an identity management tool and does not replace Microsoft Entra ID."
  },
  {
   "dom": 3,
@@ -1908,7 +1908,7 @@
   "rows": [
    {
     "es": "Un inquilino (tenant) de Microsoft Entra ID puede estar asociado con varias suscripciones de Azure, mientras que cada suscripción está vinculada a un único tenant.",
-    "en": "A Microsoft Entra ID tenant can be associated with multiple Azure subscriptions, while each subscription is linked to a single tenant.",
+    "en": "A Microsoft Entra tenant can be associated with multiple Azure subscriptions, while each subscription is linked to a single tenant.",
     "opts_es": [
      "Relación uno-a-varios entre inquilino y suscripciones",
      "Relación uno-a-uno exclusiva entre inquilino y suscripción",
@@ -2657,27 +2657,27 @@
   "dom": 3,
   "obj": "3.2",
   "type": "yesno",
-  "q_es": "Para cada afirmación sobre Azure Blueprints, indica si es verdadera.",
-  "q_en": "For each statement about Azure Blueprints, indicate whether it is true.",
+  "q_es": "Para cada afirmación sobre Azure Policy, indica si es verdadera.",
+  "q_en": "For each statement about Azure Policy, indicate whether it is true.",
   "rows": [
    {
-    "es": "Azure Blueprints permite definir un conjunto repetible de recursos, directivas y asignaciones de roles para cumplir un estándar organizativo.",
-    "en": "Azure Blueprints allows defining a repeatable set of resources, policies, and role assignments to meet an organizational standard.",
+    "es": "Azure Policy puede impedir que se creen recursos que no cumplan las reglas definidas, por ejemplo, restringir las regiones permitidas.",
+    "en": "Azure Policy can prevent the creation of resources that do not meet defined rules, for example by restricting the allowed regions.",
     "ans": true
    },
    {
-    "es": "Azure Blueprints sustituye por completo a Azure Policy, por lo que no es necesario usar ambos servicios juntos.",
-    "en": "Azure Blueprints completely replaces Azure Policy, so there is no need to use both services together.",
+    "es": "Azure Policy se usa para conceder permisos a los usuarios sobre los recursos.",
+    "en": "Azure Policy is used to grant users permissions on resources.",
     "ans": false
    },
    {
-    "es": "Azure Blueprints puede usarse para desplegar de forma consistente entornos que cumplan los requisitos de gobernanza desde el principio.",
-    "en": "Azure Blueprints can be used to consistently deploy environments that meet governance requirements from the start.",
+    "es": "Varias definiciones de directiva se pueden agrupar en una iniciativa para evaluar el cumplimiento de un estándar.",
+    "en": "Several policy definitions can be grouped into an initiative to evaluate compliance with a standard.",
     "ans": true
    }
   ],
-  "exp_es": "Azure Blueprints permite empaquetar artefactos como plantillas de recursos, asignaciones de Azure Policy y asignaciones de roles, para desplegar entornos conformes desde el principio de forma repetible. Suele usarse junto con Azure Policy, no en su lugar.",
-  "exp_en": "Azure Blueprints allows packaging artifacts such as resource templates, Azure Policy assignments, and role assignments, to repeatedly deploy compliant environments from the start. It is typically used alongside Azure Policy, not instead of it.",
+  "exp_es": "Azure Policy evalúa y hace cumplir reglas sobre las propiedades de los recursos (regiones, SKU, etiquetas…) y puede denegar los que no las cumplen. Las iniciativas agrupan varias directivas para un mismo objetivo de cumplimiento. Los permisos sobre recursos se gestionan con RBAC, no con Azure Policy.",
+  "exp_en": "Azure Policy evaluates and enforces rules on resource properties (regions, SKUs, tags…) and can deny resources that break them. Initiatives group several policies for a single compliance goal. Permissions on resources are managed with RBAC, not Azure Policy.",
   "id": 96,
   "exam": "az-900"
  },
@@ -5227,13 +5227,13 @@
      "Microsoft Entra ID P1/P2",
      "Microsoft Entra ID Free",
      "Azure AD B2C",
-     "Azure AD B2B solamente"
+     "Microsoft Entra B2B solamente"
     ],
     "opts_en": [
      "Microsoft Entra ID P1/P2",
      "Microsoft Entra ID Free",
      "Azure AD B2C",
-     "Azure AD B2B only"
+     "Microsoft Entra B2B only"
     ],
     "correct": 0
    },
@@ -5272,13 +5272,13 @@
   "post_en": "before deploying them, which helps with budget planning.",
   "opts_es": [
    "estimar el coste mensual de los recursos seleccionados",
-   "administrar las identidades de los usuarios en Azure AD",
+   "administrar las identidades de los usuarios en Microsoft Entra ID",
    "definir directivas de cumplimiento normativo para la organización",
    "calcular el consumo eléctrico de los centros de datos de Microsoft"
   ],
   "opts_en": [
    "estimate the monthly cost of selected resources",
-   "manage user identities in Azure AD",
+   "manage user identities in Microsoft Entra ID",
    "define regulatory compliance policies for the organization",
    "calculate the electricity consumption of Microsoft datacenters"
   ],
@@ -6192,16 +6192,16 @@
   "q_en": "Select the appropriate tool for each governance and compliance task in Azure.",
   "rows": [
    {
-    "es": "Un equipo de TI quiere implementar un nuevo entorno con grupos de recursos, directivas y plantillas ARM como una sola unidad reutilizable",
-    "en": "An IT team wants to deploy a new environment with resource groups, policies, and ARM templates as a single reusable unit",
+    "es": "Un equipo de TI quiere impedir que nadie elimine por accidente un grupo de recursos crítico de producción",
+    "en": "An IT team wants to prevent anyone from accidentally deleting a critical production resource group",
     "opts_es": [
-     "Azure Blueprints",
+     "Bloqueos de recursos",
      "Azure Policy únicamente",
      "Azure Resource Manager",
      "Microsoft Purview"
     ],
     "opts_en": [
-     "Azure Blueprints",
+     "Resource locks",
      "Azure Policy only",
      "Azure Resource Manager",
      "Microsoft Purview"
@@ -6212,13 +6212,13 @@
     "es": "Una organización quiere catalogar y clasificar los datos sensibles dispersos en múltiples servicios de nube y locales",
     "en": "An organization wants to catalog and classify sensitive data spread across multiple cloud and on-premises services",
     "opts_es": [
-     "Azure Blueprints",
+     "Bloqueos de recursos",
      "Azure Policy únicamente",
      "Azure Resource Manager",
      "Microsoft Purview"
     ],
     "opts_en": [
-     "Azure Blueprints",
+     "Resource locks",
      "Azure Policy only",
      "Azure Resource Manager",
      "Microsoft Purview"
@@ -6226,8 +6226,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Azure Blueprints empaqueta grupos de recursos, directivas y plantillas ARM como una unidad reutilizable para implementar entornos completos. Microsoft Purview ofrece capacidades de catalogación y clasificación de datos en entornos híbridos y multinube.",
-  "exp_en": "Azure Blueprints packages resource groups, policies, and ARM templates as a reusable unit for deploying complete environments. Microsoft Purview provides data cataloging and classification across hybrid and multicloud environments."
+  "exp_es": "Un bloqueo de recursos de tipo CanNotDelete (No se puede eliminar) impide borrar el grupo de recursos aunque el usuario tenga permisos para hacerlo. Microsoft Purview ofrece catalogación y clasificación de datos en entornos híbridos y multinube.",
+  "exp_en": "A CanNotDelete resource lock prevents the resource group from being deleted even by users who have permission to delete it. Microsoft Purview provides data cataloging and classification across hybrid and multicloud environments."
  },
  {
   "id": 281,
@@ -8128,20 +8128,20 @@
   "opts_es": [
    "Azure ExpressRoute, ya que es el servicio principal para conectar aplicaciones web con pipelines de CI/CD",
    "Azure App Service, un servicio PaaS diseñado específicamente para alojar aplicaciones web con estas capacidades integradas",
-   "Azure Active Directory, ya que la gestión de identidades incluye automáticamente capacidades de despliegue de aplicaciones",
+   "Microsoft Entra ID, ya que la gestión de identidades incluye automáticamente capacidades de despliegue de aplicaciones",
    "Azure Virtual Machines, configurando manualmente cada una de estas funcionalidades sobre un sistema operativo Windows Server"
   ],
   "opts_en": [
    "Azure ExpressRoute, since it's the primary service for connecting web applications with CI/CD pipelines",
    "Azure App Service, a PaaS service specifically designed to host web applications with these built-in capabilities",
-   "Azure Active Directory, since identity management automatically includes application deployment capabilities",
+   "Microsoft Entra ID, since identity management automatically includes application deployment capabilities",
    "Azure Virtual Machines, manually configuring each of these features on top of a Windows Server operating system"
   ],
   "correct": [
    1
   ],
-  "exp_es": "Azure App Service es un servicio PaaS diseñado específicamente para alojar aplicaciones web, con capacidades integradas de autoescalado, espacios de ensayo para pruebas previas a producción, e integración nativa con Azure DevOps para CI/CD, sin que el cliente gestione servidores. Con Azure Virtual Machines, el cliente tendría que configurar manualmente cada una de estas funcionalidades sobre el sistema operativo, lo que implica mucho más esfuerzo de gestión. Azure Active Directory es un servicio de gestión de identidades y accesos, no está relacionado con el alojamiento ni despliegue de aplicaciones web. Y Azure ExpressRoute es un servicio de conectividad de red privada entre redes locales y Azure, no relacionado con CI/CD ni alojamiento de aplicaciones.",
-  "exp_en": "Azure App Service is a PaaS service specifically designed to host web applications, with built-in autoscaling, staging slots for pre-production testing, and native integration with Azure DevOps for CI/CD, without the customer managing servers. With Azure Virtual Machines, the customer would have to manually configure each of these capabilities on top of the operating system, involving much more management effort. Azure Active Directory is an identity and access management service, unrelated to hosting or deploying web applications. And Azure ExpressRoute is a private network connectivity service between on-premises networks and Azure, unrelated to CI/CD or application hosting.",
+  "exp_es": "Azure App Service es un servicio PaaS diseñado específicamente para alojar aplicaciones web, con capacidades integradas de autoescalado, espacios de ensayo para pruebas previas a producción, e integración nativa con Azure DevOps para CI/CD, sin que el cliente gestione servidores. Con Azure Virtual Machines, el cliente tendría que configurar manualmente cada una de estas funcionalidades sobre el sistema operativo, lo que implica mucho más esfuerzo de gestión. Microsoft Entra ID es un servicio de gestión de identidades y accesos, no está relacionado con el alojamiento ni despliegue de aplicaciones web. Y Azure ExpressRoute es un servicio de conectividad de red privada entre redes locales y Azure, no relacionado con CI/CD ni alojamiento de aplicaciones.",
+  "exp_en": "Azure App Service is a PaaS service specifically designed to host web applications, with built-in autoscaling, staging slots for pre-production testing, and native integration with Azure DevOps for CI/CD, without the customer managing servers. With Azure Virtual Machines, the customer would have to manually configure each of these capabilities on top of the operating system, involving much more management effort. Microsoft Entra ID is an identity and access management service, unrelated to hosting or deploying web applications. And Azure ExpressRoute is a private network connectivity service between on-premises networks and Azure, unrelated to CI/CD or application hosting.",
   "id": 356,
   "type": "mc",
   "exam": "az-900"
@@ -8470,7 +8470,7 @@
    "No es técnicamente posible que recursos ubicados en distintas suscripciones de Azure interactúen entre sí bajo ninguna circunstancia"
   ],
   "opts_en": [
-   "Each Azure subscription must belong to a different Microsoft Entra ID tenant in order to share network resources",
+   "Each Azure subscription must belong to a different Microsoft Entra tenant in order to share network resources",
    "Resources from different subscriptions can connect to each other, for example via cross-subscription virtual network peering",
    "The two Azure subscriptions must be mandatorily merged into a single subscription before any resources can be shared",
    "It is technically not possible for resources in different Azure subscriptions to interact with each other under any circumstances"
@@ -8603,7 +8603,7 @@
    "The storage redundancy type configured on Azure Blob Storage or Azure Data Lake Storage accounts",
    "The number of physical availability zones available within the chosen Azure region",
    "The geography, which groups regions within defined data sovereignty boundaries",
-   "The name of the root management group in the Microsoft Entra ID tenant hierarchy"
+   "The name of the root management group in the Microsoft Entra tenant hierarchy"
   ],
   "correct": [
    2
@@ -11635,25 +11635,25 @@
  {
   "dom": 3,
   "obj": "3.2",
-  "q_es": "Un equipo de plataforma quiere desplegar de forma repetible un entorno completo para nuevas suscripciones, que incluya plantillas de ARM para redes y recursos base, asignaciones de políticas de Azure Policy y asignaciones de roles RBAC, todo como un paquete versionado. ¿Qué servicio de Azure está diseñado específicamente para este propósito?",
-  "q_en": "A platform team wants to repeatably deploy a complete environment for new subscriptions, including ARM templates for networking and baseline resources, Azure Policy assignments, and RBAC role assignments, all as a versioned package. Which Azure service is specifically designed for this purpose?",
+  "q_es": "Un equipo de plataforma quiere desplegar de forma repetible y coherente la misma infraestructura (redes, máquinas virtuales y recursos base) en varias suscripciones, describiéndola en archivos que se guardan y versionan junto al código. ¿Qué enfoque de Azure está pensado para esto?",
+  "q_en": "A platform team wants to repeatedly and consistently deploy the same infrastructure (networking, virtual machines and baseline resources) across several subscriptions, describing it in files that are stored and versioned alongside their code. Which Azure approach is designed for this?",
   "opts_es": [
    "Microsoft Purview",
-   "Azure Blueprints",
+   "Plantillas de ARM (infraestructura como código)",
    "Azure Resource Graph",
    "El Service Trust Portal"
   ],
   "opts_en": [
    "Microsoft Purview",
-   "Azure Blueprints",
+   "ARM templates (infrastructure as code)",
    "Azure Resource Graph",
    "The Service Trust Portal"
   ],
   "correct": [
    1
   ],
-  "exp_es": "Azure Blueprints permite empaquetar artefactos como plantillas de ARM, asignaciones de Azure Policy y asignaciones de roles RBAC en una definición versionada que se puede asignar repetidamente a nuevas suscripciones, asegurando un punto de partida coherente y conforme con la gobernanza. Azure Resource Graph se usa para consultar el inventario de recursos, Microsoft Purview se centra en gobernanza de datos y cumplimiento, y el Service Trust Portal proporciona documentación de cumplimiento de Microsoft, no despliegue de entornos.",
-  "exp_en": "Azure Blueprints lets you package artifacts such as ARM templates, Azure Policy assignments, and RBAC role assignments into a versioned definition that can be repeatedly assigned to new subscriptions, ensuring a consistent, governance-compliant starting point. Azure Resource Graph is used to query the resource inventory, Microsoft Purview focuses on data governance and compliance, and the Service Trust Portal provides Microsoft compliance documentation, not environment deployment.",
+  "exp_es": "Las plantillas de Azure Resource Manager (ARM), o su equivalente en Bicep, describen la infraestructura de forma declarativa como código: se pueden versionar y desplegar las veces que haga falta con el mismo resultado. Azure Resource Graph consulta el inventario de recursos, Microsoft Purview se centra en la gobernanza de datos y el Service Trust Portal publica documentación de cumplimiento de Microsoft. Nota: Azure Blueprints, que se usaba antes para esto, está en desuso.",
+  "exp_en": "Azure Resource Manager (ARM) templates, or their Bicep equivalent, describe infrastructure declaratively as code: they can be versioned and deployed as many times as needed with the same result. Azure Resource Graph queries the resource inventory, Microsoft Purview focuses on data governance and the Service Trust Portal publishes Microsoft compliance documentation. Note: Azure Blueprints, formerly used for this, is deprecated.",
   "id": 495,
   "type": "mc",
   "exam": "az-900"
@@ -12181,8 +12181,8 @@
  {
   "dom": 3,
   "obj": "3.3",
-  "q_es": "Una empresa de gestión de servicios (MSP) administra los recursos de Azure de docenas de clientes, cada uno con su propio inquilino de Azure AD (Entra ID). El MSP quiere que sus técnicos puedan administrar los recursos de todos esos inquilinos desde su propio inquilino, sin necesidad de iniciar sesión por separado en cada uno. ¿Qué servicio de Azure está diseñado para esto?",
-  "q_en": "A managed service provider (MSP) manages the Azure resources of dozens of customers, each with its own Azure AD (Entra ID) tenant. The MSP wants its technicians to be able to manage resources across all those tenants from its own tenant, without needing to sign in separately to each one. Which Azure service is designed for this?",
+  "q_es": "Una empresa de gestión de servicios (MSP) administra los recursos de Azure de docenas de clientes, cada uno con su propio inquilino de Microsoft Entra ID. El MSP quiere que sus técnicos puedan administrar los recursos de todos esos inquilinos desde su propio inquilino, sin necesidad de iniciar sesión por separado en cada uno. ¿Qué servicio de Azure está diseñado para esto?",
+  "q_en": "A managed service provider (MSP) manages the Azure resources of dozens of customers, each with its own Microsoft Entra tenant. The MSP wants its technicians to be able to manage resources across all those tenants from its own tenant, without needing to sign in separately to each one. Which Azure service is designed for this?",
   "opts_es": [
    "Azure Resource Graph",
    "Azure Automation",
@@ -12444,13 +12444,13 @@
   "q_es": "Una empresa con cientos de dispositivos Windows 10 y 11 quiere supervisar de forma centralizada el estado de las actualizaciones, el cumplimiento de versiones de SO y posibles problemas de compatibilidad detectados tras instalar actualizaciones, integrando esta información con Azure Monitor. ¿Qué solución está diseñada específicamente para esto?",
   "q_en": "A company with hundreds of Windows 10 and 11 devices wants to centrally monitor update status, OS version compliance, and potential compatibility issues detected after installing updates, integrating this information with Azure Monitor. Which solution is specifically designed for this?",
   "opts_es": [
-   "Update Compliance",
+   "Los informes de Windows Update for Business",
    "Azure Blueprints",
    "Azure Automation Update Management exclusivamente",
    "Azure Resource Graph"
   ],
   "opts_en": [
-   "Update Compliance",
+   "Windows Update for Business reports",
    "Azure Blueprints",
    "Azure Automation Update Management exclusively",
    "Azure Resource Graph"
@@ -12458,8 +12458,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Update Compliance es una solución que se integra con Azure Monitor (Log Analytics) para ofrecer visibilidad sobre el estado de las actualizaciones, el cumplimiento de versiones de Windows y problemas de compatibilidad en dispositivos Windows de la organización. Update Management de Azure Automation se centra principalmente en servidores Windows y Linux, no en el seguimiento detallado de dispositivos cliente Windows; Azure Blueprints despliega configuraciones de gobernanza; y Azure Resource Graph consulta inventario de recursos de Azure, no telemetría de dispositivos Windows.",
-  "exp_en": "Update Compliance is a solution that integrates with Azure Monitor (Log Analytics) to provide visibility into update status, Windows version compliance, and compatibility issues across the organization's Windows devices. Azure Automation's Update Management focuses primarily on Windows and Linux servers, not detailed tracking of Windows client devices; Azure Blueprints deploys governance configurations; and Azure Resource Graph queries Azure resource inventory, not Windows device telemetry.",
+  "exp_es": "Los informes de Windows Update for Business (sucesores de Update Compliance, ya retirado) usan Azure Monitor y Log Analytics para mostrar el estado de las actualizaciones, el cumplimiento de versiones de Windows y los problemas detectados en los dispositivos Windows de la organización. Update Management de Azure Automation se centraba en servidores; Azure Blueprints despliega configuraciones de gobernanza; y Azure Resource Graph consulta el inventario de recursos de Azure, no la telemetría de dispositivos Windows.",
+  "exp_en": "Windows Update for Business reports (the successor of the retired Update Compliance) use Azure Monitor and Log Analytics to show update status, Windows version compliance and issues detected on the organization's Windows devices. Azure Automation Update Management focused on servers; Azure Blueprints deploys governance configurations; and Azure Resource Graph queries the Azure resource inventory, not Windows device telemetry.",
   "id": 526,
   "type": "mc",
   "exam": "az-900"
@@ -12754,7 +12754,7 @@
   "dom": 3,
   "obj": "3.4",
   "q_es": "Un administrador configura una alerta en Azure Monitor que se activa cuando una consulta de Log Analytics detecta más de 50 errores HTTP 500 en los últimos 5 minutos en los registros de una aplicación. ¿Qué tipo de alerta es esta?",
-  "q_en": "An administrator configures an Azure Monitor alert that fires when a Log Analytics query detects more than 50 HTTP 500 errors in the last 5 minutes in an application's logs.What type of alert is this?",
+  "q_en": "An administrator configures an Azure Monitor alert that fires when a Log Analytics query detects more than 50 HTTP 500 errors in the last 5 minutes in an application's logs. What type of alert is this?",
   "opts_es": [
    "Una recomendación de Azure Advisor",
    "Una alerta de Azure Service Health",
