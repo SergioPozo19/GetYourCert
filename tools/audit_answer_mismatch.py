@@ -1,7 +1,7 @@
 """Flag multiple-choice questions whose explanation seems to describe a different option than the marked answer.
    Heuristic with many false positives: review each hit by hand.  python tools/audit_answer_mismatch.py [exam ...]"""
 import json, glob, os, re, sys, collections
-ROOT = r'C:\Users\sergio\proyectos\GetYourCert'
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STOP = set('the a an of to in and or for is are be with on by as that this it its from at not no can only which what when your you their they them more most than into over under each all any also such using use used via per if then so do does was were has have had will would should could may might must one two both other others new same instead without within between'.split())
 
 def toks(s):

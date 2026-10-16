@@ -1,7 +1,7 @@
 """Flag questions that mention retired or renamed Microsoft products (review by hand: many are fine as wrong options).
    python tools/audit_outdated_terms.py [exam ...]"""
 import json, glob, re, os, collections, sys
-ROOT = r'C:\Users\sergio\proyectos\GetYourCert'
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TERMS = {
     r'\bAzure (AD|Active Directory)\b(?! Connect)': 'Azure AD -> Microsoft Entra ID',
     r'\bAzure AD Connect\b': 'Azure AD Connect -> Entra Connect',
