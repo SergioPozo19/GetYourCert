@@ -41,12 +41,12 @@ td.n,th.n{text-align:right;font-family:var(--mono)}
   <header>
     <h1>EarnYourCert · Panel</h1>
     <form class="ctl" id="f">
-      <input type="password" id="secret" placeholder="admin_secret" autocomplete="current-password">
+      <input type="password" id="secret" placeholder="admin_secret (opcional)" autocomplete="current-password" hidden>
       <select id="days"><option value="7">7 días</option><option value="30" selected>30 días</option><option value="90">90 días</option><option value="180">180 días</option></select>
       <button type="submit">Ver</button>
     </form>
   </header>
-  <p id="msg" class="muted">Introduce el secreto de administración (se recuerda en este navegador).</p>
+  <p id="msg" class="muted">Cargando…</p>
   <div id="out" hidden>
     <div class="grid kpis" id="kpis"></div>
     <div class="grid two">
@@ -69,17 +69,27 @@ td.n,th.n{text-align:right;font-family:var(--mono)}
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+// Acceso con la sesión de Google de la web (misma pestaña/navegador); el secreto queda como alternativa
+const session=(()=>{ try{ return JSON.parse(localStorage.getItem('gyc:session')||'null'); }catch(e){ return null; } })();
 try{ $('secret').value=localStorage.getItem('eyc_admin')||''; }catch(e){}
 $('f').addEventListener('submit',e=>{ e.preventDefault(); load(); });
-if($('secret').value)load();
+load();
+function needLogin(text){
+  $('msg').innerHTML=esc(text)+' <a href="/?lang=es">Iniciar sesión en EarnYourCert</a> y vuelve a esta página. '+
+    '<a href="#" id="useSecret">Usar el secreto de administración</a>';
+  $('msg').className='err'; $('out').hidden=true;
+  $('useSecret').onclick=e=>{ e.preventDefault(); $('secret').hidden=false; $('secret').focus(); };
+}
 
 async function load(){
   $('msg').textContent='Cargando…'; $('msg').className='muted';
   try{
-    const r=await fetch('stats.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:$('secret').value,days:+$('days').value})});
+    if(!session&&!$('secret').value){ needLogin('Inicia sesión con tu cuenta de Google en la web para ver el panel.'); return; }
+    const h={'Content-Type':'application/json'}; if(session)h.Authorization='Bearer '+session;
+    const r=await fetch('stats.php',{method:'POST',headers:h,body:JSON.stringify({secret:$('secret').value,days:+$('days').value})});
     const d=await r.json();
-    if(!d.ok){ $('msg').textContent=d.error==='forbidden'?'Secreto incorrecto.':'Error: '+d.error; $('msg').className='err'; $('out').hidden=true; return; }
-    try{ localStorage.setItem('eyc_admin',$('secret').value); }catch(e){}
+    if(!d.ok){ if(d.error==='forbidden')needLogin(session?'Esta cuenta no tiene acceso al panel.':'Secreto incorrecto.'); else { $('msg').textContent='Error: '+d.error; $('msg').className='err'; } return; }
+    try{ if($('secret').value)localStorage.setItem('eyc_admin',$('secret').value); }catch(e){}
     $('msg').textContent='Desde el '+d.since+' ('+d.days+' días). Los eventos son contadores anónimos; la actividad de usuarios sale de su historial sincronizado.';
     render(d); $('out').hidden=false;
   }catch(e){ $('msg').textContent='No se pudo cargar: '+e.message; $('msg').className='err'; }

@@ -1,15 +1,12 @@
 <?php
-// Métricas para el panel de administración (api/admin/panel.html). Protegido con admin_secret.
+// Métricas para el panel de administración (api/admin/panel.html). Acceso: sesión de Google de un administrador o admin_secret (ver _auth.php).
 // POST { secret, days } -> usuarios, actividad, embudo, eventos por día, contenido y emails.
 header('Content-Type: application/json');
-require __DIR__ . '/../_db.php';
+require __DIR__ . '/_auth.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['ok' => false, 'error' => 'method']); exit; }
-$config = app_config();
-$input = json_decode(file_get_contents('php://input'), true);
-if (empty($config['admin_secret']) || !hash_equals((string)$config['admin_secret'], (string)($input['secret'] ?? ''))) {
-  http_response_code(403); echo json_encode(['ok' => false, 'error' => 'forbidden']); exit;
-}
+$input = json_decode(file_get_contents('php://input'), true) ?: [];
+if (!admin_allowed(db(), $input)) { http_response_code(403); echo json_encode(['ok' => false, 'error' => 'forbidden']); exit; }
 $days = max(7, min(180, (int)($input['days'] ?? 30)));
 
 function q($pdo, $sql, $params = []) { $s = $pdo->prepare($sql); $s->execute($params); return $s; }
