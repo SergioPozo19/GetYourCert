@@ -728,6 +728,20 @@ def build_domains(e):
             wr(dom_url(eid, n, lg).lstrip('/'), page)
 
 
+# ---------------------------------------------------------------- question-of-the-day pools
+# Small per-exam files (31 multiple-choice questions) so the catalog's daily question does not
+# download a whole question bank. daily.js picks one per day from qotd/<id>.json.
+def build_qotd():
+    for e in EXAMS:
+        qs = json.load(open(os.path.join(ROOT, 'questions', e['id'] + '.json'), encoding='utf-8'))
+        ok = [q for q in qs if q['type'] == 'mc' and not q.get('case_es') and len(q.get('correct', [])) == 1
+              and q.get('opts_es') and len(q['opts_es']) >= 3 and q.get('exp_es') and q.get('exp_en')]
+        ok.sort(key=lambda q: hashlib.md5(f"qotd-{e['id']}-{q['id']}".encode()).hexdigest())
+        keep = ('id', 'q_es', 'q_en', 'opts_es', 'opts_en', 'correct', 'exp_es', 'exp_en')
+        pool = [{k: q[k] for k in keep if k in q} for q in ok[:31]]
+        wr(f"qotd/{e['id']}.json", json.dumps(pool, ensure_ascii=False, separators=(',', ':')))
+
+
 # ---------------------------------------------------------------- home (index.html)
 def build_home():
     s = rd('index.html')
@@ -839,6 +853,7 @@ if __name__ == '__main__':
         build_exam(e)
         if e['id'] in DOMAIN_EXAMS:
             build_domains(e)
+    build_qotd()
     build_en_hub()
     build_categories()
     build_home()

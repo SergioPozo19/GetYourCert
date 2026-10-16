@@ -480,4 +480,15 @@ css.textContent=[
 document.head.appendChild(css);
 
 apply();
+
+/* ---------- boot: show the page once it is laid out (see the 'booting' class in index.html <head>) ----------
+   This is the last module, so every layout script has run. On the catalog we also wait (briefly) for the
+   question of the day and the news strip, which arrive with their own small requests. */
+(function reveal(){
+  const d=document.documentElement; if(!d.classList.contains('booting'))return;
+  const t0=Date.now();
+  const ready=()=>{ const cat=document.getElementById('catalog'); if(!cat||cat.classList.contains('hidden'))return true;
+    return window.__qotdReady&&document.getElementById('careerCatalog'); };
+  (function wait(){ if(ready()||Date.now()-t0>1500){ requestAnimationFrame(()=>d.classList.remove('booting')); return; } setTimeout(wait,40); })();
+})();
 })();

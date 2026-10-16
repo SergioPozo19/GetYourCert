@@ -39,6 +39,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Boot: the page is shown once its modules have laid it out (no content jumping while scripts arrive); 4 s safety net -->
+<script>(function(){var d=document.documentElement;d.classList.add('booting');setTimeout(function(){d.classList.remove('booting')},4000);})();</script>
+<style>html.booting .wrap>*:not(.topbar){visibility:hidden}</style>
+<!--preload-modules-->
+<link rel="preload" as="script" href="career.js?v=10">
+<link rel="preload" as="script" href="hero.js?v=8">
+<link rel="preload" as="script" href="ui.js?v=2">
+<link rel="preload" as="script" href="examhome.js?v=2">
+<link rel="preload" as="script" href="engage.js?v=1">
+<link rel="preload" as="script" href="daily.js?v=2">
+<link rel="preload" as="script" href="invite.js?v=1">
+<link rel="preload" as="script" href="mobile.js?v=8">
+<link rel="preload" as="fetch" href="news.json?v=2" crossorigin="anonymous">
+<!--/preload-modules-->
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script type="application/ld+json">
 {
@@ -443,9 +457,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none;color:
 .ob-h{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
 .ob-p{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin:0}
 .ob-footer{display:flex;align-items:center;justify-content:space-between;padding:13px 28px 22px;border-top:1px solid var(--line)}
-.ob-dots-row{display:flex;gap:7px;align-items:center}
-.ob-dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:.25s}
-.ob-dot.ob-active{background:var(--accent);width:20px;border-radius:3.5px}
+.ob-dots-row{display:flex;gap:0;align-items:center}
+.ob-dot{position:relative;width:24px;height:24px;padding:0;background:none;border:none;cursor:pointer;transition:width .25s}.ob-dot::before{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--line);transform:translate(-50%,-50%);transition:.25s}
+.ob-dot.ob-active{width:34px}.ob-dot.ob-active::before{width:20px;border-radius:3.5px;background:var(--accent)}
 .ob-skip{background:none;border:none;font-size:13px;color:var(--ink-3);cursor:pointer;padding:4px 8px;font-family:var(--sans);transition:.15s}
 .ob-skip:hover{color:var(--ink)}
 /* step 3: domain bars */
@@ -1040,7 +1054,7 @@ html[lang="en"] .seo-intro [lang="es"],html[lang="es"] .seo-intro [lang="en"]{di
 }
 </style>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-787WSXCK5H"></script>
+<script>window.addEventListener('load',function(){setTimeout(function(){var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-787WSXCK5H';document.head.appendChild(g);},1500);});</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -5059,13 +5073,13 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 </script>
-<script src="career.js?v=9"></script>
+<script src="career.js?v=10"></script>
 <script src="hero.js?v=8"></script>
 <script src="ui.js?v=2"></script>
 <script src="examhome.js?v=2"></script>
 <script src="engage.js?v=1"></script>
-<script src="daily.js?v=1"></script>
+<script src="daily.js?v=2"></script>
 <script src="invite.js?v=1"></script>
-<script src="mobile.js?v=7"></script>
+<script src="mobile.js?v=8"></script>
 </body>
 </html>

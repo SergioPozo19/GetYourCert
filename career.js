@@ -387,7 +387,7 @@ async function careerRenderCatalog(){
   if(NEWS&&NEWS.length){
     const un=unreadCount(), seen=Store.get('newsSeen','');
     const sec=document.createElement('section'); sec.className='cr-news'; sec.setAttribute('aria-label',ct('newsTitle'));
-    sec.innerHTML='<div class="cr-news-head"><div class="cr-news-ht"><span class="cr-news-ico">'+ICO.spark+'</span><div><h3>'+esc(ct('newsTitle'))+(un?' <span class="cr-dot">'+un+'</span>':'')+'</h3><p>'+esc(ct('newsSub'))+'</p></div></div><button type="button" class="cr-news-all">'+esc(ct('newsAll'))+' →</button></div><div class="cr-news-grid"></div>';
+    sec.innerHTML='<div class="cr-news-head"><div class="cr-news-ht"><span class="cr-news-ico">'+ICO.spark+'</span><div><h2>'+esc(ct('newsTitle'))+(un?' <span class="cr-dot">'+un+'</span>':'')+'</h2><p>'+esc(ct('newsSub'))+'</p></div></div><button type="button" class="cr-news-all">'+esc(ct('newsAll'))+' →</button></div><div class="cr-news-grid"></div>';
     sec.querySelector('.cr-news-all').onclick=()=>openNews();
     const grid=sec.querySelector('.cr-news-grid');
     // put news about the user's own exams first, so a batch of packs for other exams doesn't hide them
@@ -546,7 +546,7 @@ css.textContent=[
 '.cr-news-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}',
 '.cr-news-ht{display:flex;align-items:center;gap:12px}',
 '.cr-news-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}',
-'.cr-news-head h3{margin:0;font-size:17px;display:flex;align-items:center;gap:8px}',
+'.cr-news-head h2{margin:0;font-size:17px;display:flex;align-items:center;gap:8px}',
 '.cr-news-head p{margin:2px 0 0;font-size:12.5px;color:var(--ink-3)}',
 '.cr-news-all{background:none;border:none;color:var(--accent);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer;padding:6px 2px;white-space:nowrap}',
 '.cr-news-all:hover{text-decoration:underline}',

@@ -67,6 +67,13 @@ try {
       await page.goto(BASE + '/index.html'); await page.waitForTimeout(1200); await closeModals(page);
       const n = await page.locator('#examGrid .exam-card:not(.coming-soon)').count();
       assert(n >= 16, `only ${n} exam cards`);
+      await page.waitForFunction(() => !document.documentElement.classList.contains('booting'), null, { timeout: 5000 });
+      const pre = await page.evaluate(() => {
+        const p = [...document.querySelectorAll('link[rel=preload][as=script]')].map(l => l.getAttribute('href')).sort();
+        const s = [...document.querySelectorAll('script[src]')].map(x => x.getAttribute('src')).filter(x => !/^https?:/.test(x)).sort();
+        return { p, s };
+      });
+      assert(JSON.stringify(pre.p) === JSON.stringify(pre.s), `preloads ${pre.p} != scripts ${pre.s}`);
       assert(await page.locator('#qotd .qd-opt').count() >= 3, 'question of the day missing');
       if (dev === 'phone') {
         assert(await page.evaluate(() => document.documentElement.classList.contains('m-app')), 'mobile shell not active');
