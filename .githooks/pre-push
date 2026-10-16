@@ -1,0 +1,5 @@
+#!/bin/sh
+# Smoke tests before every push (enable once per clone: git config core.hooksPath .githooks).
+# Skip in an emergency with: git push --no-verify
+echo "Running smoke tests..."
+node tests/smoke.mjs || { echo "Smoke tests failed: push cancelled."; exit 1; }
