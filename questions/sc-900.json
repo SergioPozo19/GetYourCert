@@ -255,8 +255,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Confianza cero elimina la confianza implícita basada en la ubicación de red.",
-  "exp_en": "Zero Trust removes implicit trust based on network location."
+  "exp_es": "Falso: Confianza cero parte de «nunca confíes, verifica siempre» y elimina la confianza implícita basada en estar dentro de la red corporativa. Verdadero: la defensa en profundidad superpone capas (física, identidad, perímetro, red, proceso, aplicación y datos) para que el fallo de una no exponga todo.",
+  "exp_en": "False: Zero Trust follows 'never trust, always verify' and removes implicit trust based on being inside the corporate network. True: defense in depth stacks layers (physical, identity, perimeter, network, compute, application and data) so that one failing layer does not expose everything."
  },
  {
   "id": 11,
@@ -512,8 +512,8 @@
    "authorization"
   ],
   "correct": 1,
-  "exp_es": "La autenticación confirma la identidad; la autorización decide el acceso.",
-  "exp_en": "Authentication confirms identity; authorization decides access."
+  "exp_es": "La autenticación comprueba que alguien es quien dice ser (identidad). La autorización decide a qué puede acceder una vez autenticado. El cifrado protege datos y la contabilidad (accounting) registra la actividad; ninguno verifica la identidad.",
+  "exp_en": "Authentication verifies that someone is who they claim to be (identity). Authorization decides what they can access once authenticated. Encryption protects data and accounting records activity; neither verifies identity."
  },
  {
   "id": 20,
@@ -564,8 +564,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las identidades de carga de trabajo incluyen entidades de servicio e identidades administradas.",
-  "exp_en": "Workload identities include service principals and managed identities."
+  "exp_es": "Una identidad de carga de trabajo (entidad de servicio o identidad administrada) permite que una aplicación o servicio acceda a recursos sin que inicie sesión una persona. Una identidad de dispositivo representa un equipo, un grupo de distribución solo sirve para correo y un invitado es una persona externa.",
+  "exp_en": "A workload identity (service principal or managed identity) lets an application or service access resources without a person signing in. A device identity represents a computer, a distribution group is only for email, and a guest is an external person."
  },
  {
   "id": 22,
@@ -945,8 +945,8 @@
     "ans": false
    }
   ],
-  "exp_es": "SSPR y MFA son capacidades independientes y se pueden combinar.",
-  "exp_en": "SSPR and MFA are independent capabilities and can be combined."
+  "exp_es": "Verdadero: SSPR exige registrar métodos de autenticación antes de poder restablecer la contraseña. Verdadero: la protección con contraseña permite una lista personalizada de términos prohibidos. Falso: SSPR no sustituye a MFA; son funciones independientes que se pueden combinar.",
+  "exp_en": "True: SSPR requires users to register authentication methods before they can reset a password. True: password protection supports a custom banned-word list. False: SSPR does not replace MFA; they are independent features that can be combined."
  },
  {
   "id": 36,
@@ -1018,8 +1018,8 @@
    "classification"
   ],
   "correct": 0,
-  "exp_es": "MFA requiere factores de al menos dos categorías de autenticación distintas.",
-  "exp_en": "MFA requires factors from at least two different authentication categories."
+  "exp_es": "Algo que sabes (contraseña), algo que tienes (teléfono o llave) y algo que eres (biometría) son las tres categorías de factores de autenticación. MFA exige factores de al menos dos categorías distintas; dos contraseñas serían la misma categoría. No tienen que ver con cumplimiento, cifrado ni clasificación.",
+  "exp_en": "Something you know (password), something you have (phone or key) and something you are (biometrics) are the three categories of authentication factors. MFA requires factors from at least two different categories; two passwords would be the same category. They have nothing to do with compliance, encryption or classification."
  },
  {
   "id": 38,
@@ -1176,8 +1176,8 @@
     "ans": true
    }
   ],
-  "exp_es": "El rol de Administrador global debe limitarse al menor número posible de personas.",
-  "exp_en": "Global Administrator should be limited to as few people as possible."
+  "exp_es": "Verdadero: una directiva de acceso condicional puede bloquear el acceso desde un país concreto mediante condiciones de ubicación. Falso: dar Administrador global a todo el personal de TI incumple el mínimo privilegio; hay que usar roles más específicos. Verdadero: los roles de Entra controlan lo que pueden hacer los administradores en Entra ID y Microsoft 365.",
+  "exp_en": "True: a Conditional Access policy can block access from a specific country using location conditions. False: giving Global Administrator to all IT staff violates least privilege; use more specific roles. True: Entra roles control what administrators can do in Entra ID and Microsoft 365."
  },
  {
   "id": 44,
@@ -1327,8 +1327,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las revisiones de acceso eliminan el acceso innecesario y ayudan a evitar la acumulación de permisos.",
-  "exp_en": "Access reviews remove unnecessary access and help prevent permission creep."
+  "exp_es": "Las revisiones de acceso de Entra ID Governance comprueban periódicamente si los usuarios siguen necesitando acceso a grupos, aplicaciones y roles, y retiran el que sobra (evita la acumulación de permisos). Detectar inicios de sesión de riesgo es ID Protection, crear cuentas desde RR. HH. es el aprovisionamiento y cifrar SharePoint corresponde a Purview.",
+  "exp_en": "Access reviews in Entra ID Governance periodically check whether users still need access to groups, apps and roles, and remove what is no longer needed (preventing permission creep). Detecting risky sign-ins is ID Protection, creating accounts from HR data is provisioning, and encrypting SharePoint is a Purview matter."
  },
  {
   "id": 49,
@@ -1376,8 +1376,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las revisiones de acceso son una característica de gobernanza de identidades, no una herramienta de red.",
-  "exp_en": "Access reviews are an identity governance feature, not a network tool."
+  "exp_es": "Verdadero: PIM puede exigir aprobación antes de activar un rol elegible (acceso justo a tiempo). Falso: las revisiones de acceso son una función de gobernanza de identidades para revalidar permisos, no una herramienta para inspeccionar tráfico de red.",
+  "exp_en": "True: PIM can require approval before an eligible role is activated (just-in-time access). False: access reviews are an identity governance feature to revalidate permissions, not a tool for inspecting network traffic."
  },
  {
   "id": 51,
@@ -1718,8 +1718,8 @@
     "ans": false
    }
   ],
-  "exp_es": "WAF solo protege cargas de trabajo web (HTTP/S).",
-  "exp_en": "WAF protects web (HTTP/S) workloads only."
+  "exp_es": "Verdadero: un NSG se asocia a una subred o a una interfaz de red. Verdadero: Azure Firewall usa inteligencia de amenazas para alertar o denegar tráfico desde IP maliciosas conocidas. Falso: WAF protege tráfico web (HTTP/HTTPS), no protocolos como SMTP.",
+  "exp_en": "True: an NSG can be associated with a subnet or a network interface. True: Azure Firewall uses threat intelligence to alert on or deny traffic from known malicious IPs. False: WAF protects web (HTTP/HTTPS) traffic only, not protocols such as SMTP."
  },
  {
   "id": 63,
@@ -1765,8 +1765,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "WAF gestiona vulnerabilidades web; Bastion elimina la necesidad de puertos de administración públicos.",
-  "exp_en": "WAF handles web exploits; Bastion removes the need for public management ports."
+  "exp_es": "Azure Web Application Firewall bloquea ataques web como la inyección SQL o XSS en aplicaciones públicas. Azure Bastion da RDP/SSH por TLS desde el portal sin exponer el puerto 3389 ni IP públicas en las VM. Azure Firewall filtra tráfico de red en general y Key Vault guarda secretos.",
+  "exp_en": "Azure Web Application Firewall blocks web attacks such as SQL injection or XSS against public applications. Azure Bastion provides RDP/SSH over TLS from the portal without exposing port 3389 or public IPs on the VMs. Azure Firewall filters network traffic in general and Key Vault stores secrets."
  },
  {
   "id": 64,
@@ -1838,8 +1838,8 @@
    "Monitor"
   ],
   "correct": 2,
-  "exp_es": "Bastion proporciona conectividad RDP y SSH segura desde el navegador.",
-  "exp_en": "Bastion provides secure browser-based RDP and SSH connectivity."
+  "exp_es": "Azure Bastion permite conectarse por RDP o SSH a las máquinas virtuales a través de TLS desde el portal, sin IP públicas en las VM. Policy aplica reglas de gobernanza, Advisor da recomendaciones y Monitor recopila telemetría; ninguno ofrece acceso remoto.",
+  "exp_en": "Azure Bastion lets you connect to VMs over RDP or SSH through TLS from the portal, with no public IPs on the VMs. Policy enforces governance rules, Advisor gives recommendations and Monitor collects telemetry; none of them provides remote access."
  },
  {
   "id": 66,
@@ -1864,8 +1864,8 @@
    "resource lock"
   ],
   "correct": 0,
-  "exp_es": "Las reglas de seguridad de un NSG permiten o deniegan el tráfico y se evalúan por prioridad.",
-  "exp_en": "NSG security rules allow or deny traffic and are evaluated by priority."
+  "exp_es": "Un grupo de seguridad de red (NSG) contiene reglas de seguridad que permiten o deniegan tráfico según origen, destino, puerto y protocolo, y se evalúan por prioridad. Las etiquetas organizan recursos, los grupos de administración agrupan suscripciones y los bloqueos impiden borrar o modificar.",
+  "exp_en": "A network security group (NSG) holds security rules that allow or deny traffic by source, destination, port and protocol, evaluated by priority. Tags organize resources, management groups group subscriptions and locks prevent deletion or modification."
  },
  {
   "id": 67,
@@ -1916,8 +1916,8 @@
   "correct": [
    1
   ],
-  "exp_es": "CSPM identifica puntos débiles, ofrece una puntuación de seguridad y recomienda soluciones.",
-  "exp_en": "CSPM identifies weaknesses, gives a secure score and recommends fixes."
+  "exp_es": "CSPM evalúa continuamente los recursos para encontrar errores de configuración y ofrece recomendaciones que mejoran la posición de seguridad. No sustituye al proveedor de identidades, no frena ataques DDoS (eso es Azure DDoS Protection) ni cifra el correo.",
+  "exp_en": "CSPM continuously assesses resources for misconfigurations and gives recommendations that strengthen security posture. It does not replace the identity provider, does not stop DDoS attacks (that is Azure DDoS Protection) and does not encrypt email."
  },
  {
   "id": 69,
@@ -1942,8 +1942,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Una puntuación de seguridad más alta significa que se han implementado más controles recomendados.",
-  "exp_en": "A higher secure score means more of the recommended controls are implemented."
+  "exp_es": "La puntuación de seguridad (secure score) de Defender for Cloud mide la posición de seguridad según las recomendaciones completadas: cuantas más se aplican, mayor es. No refleja costes, uso de MFA ni cuántas máquinas están encendidas.",
+  "exp_en": "The Defender for Cloud secure score measures security posture based on completed recommendations: the more you implement, the higher it gets. It does not reflect cost, MFA usage or how many VMs are running."
  },
  {
   "id": 70,
@@ -2022,8 +2022,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Defender for Cloud cubre entornos de Azure, multinube e híbridos.",
-  "exp_en": "Defender for Cloud covers Azure, multicloud and hybrid environments."
+  "exp_es": "Verdadero: Defender for Cloud evalúa recursos en Azure y en otras nubes como AWS y GCP. Verdadero: sus recomendaciones mejoran la puntuación de seguridad. Falso: no es solo para servidores locales; cubre Azure, multinube e híbrido.",
+  "exp_en": "True: Defender for Cloud assesses resources in Azure and in other clouds such as AWS and GCP. True: its recommendations help improve the secure score. False: it is not only for on-premises servers; it covers Azure, multicloud and hybrid."
  },
  {
   "id": 73,
@@ -2118,8 +2118,8 @@
    "secure"
   ],
   "correct": 3,
-  "exp_es": "Una puntuación de seguridad más alta indica una posición de seguridad más sólida.",
-  "exp_en": "A higher secure score indicates a stronger security posture."
+  "exp_es": "La puntuación segura (secure score) de Defender for Cloud indica en qué medida se han implementado los controles recomendados; más alta significa mejor posición de seguridad. Latencia y sentimiento no son métricas de seguridad, y la conformidad normativa se mide con otro panel.",
+  "exp_en": "The Defender for Cloud secure score shows how well the recommended security controls have been implemented; higher means a stronger posture. Latency and sentiment are not security metrics, and regulatory compliance is measured on a separate dashboard."
  },
  {
   "id": 76,
@@ -2144,8 +2144,8 @@
    "Protection"
   ],
   "correct": 2,
-  "exp_es": "CSPM = Cloud Security Posture Management.",
-  "exp_en": "CSPM = Cloud Security Posture Management."
+  "exp_es": "CSPM significa Cloud Security Posture Management (administración de la posición de seguridad en la nube): detecta errores de configuración y riesgos y propone cómo corregirlos. Defender for Cloud incluye CSPM básico y ampliado.",
+  "exp_en": "CSPM stands for Cloud Security Posture Management: it detects misconfigurations and risks and suggests how to fix them. Defender for Cloud includes foundational and enhanced CSPM."
  },
  {
   "id": 77,
@@ -2170,8 +2170,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Sentinel recopila datos a escala de nube, detecta amenazas y automatiza la respuesta.",
-  "exp_en": "Sentinel collects data at cloud scale, detects threats and automates response."
+  "exp_es": "Microsoft Sentinel es una solución nativa de la nube de SIEM (recopila y analiza datos de seguridad para detectar amenazas) y SOAR (automatiza la respuesta). No gestiona dispositivos (eso es Intune), no restablece contraseñas y no es un firewall.",
+  "exp_en": "Microsoft Sentinel is a cloud-native SIEM (collects and analyzes security data to detect threats) and SOAR (automates response) solution. It does not manage devices (that is Intune), does not reset passwords and is not a firewall."
  },
  {
   "id": 78,
@@ -2222,8 +2222,8 @@
   "correct": [
    0
   ],
-  "exp_es": "En Sentinel, los cuadernos de estrategias basados en Azure Logic Apps automatizan las acciones de respuesta.",
-  "exp_en": "In Sentinel, playbooks built on Azure Logic Apps automate response actions."
+  "exp_es": "SOAR (Security Orchestration, Automation and Response) permite automatizar la respuesta a alertas e incidentes; en Sentinel se hace con playbooks basados en Azure Logic Apps. Crear redes, cifrar datos entre regiones o gestionar licencias no es su función.",
+  "exp_en": "SOAR (Security Orchestration, Automation and Response) automates the response to alerts and incidents; in Sentinel this is done with playbooks built on Azure Logic Apps. Creating networks, encrypting data between regions or managing licenses is not its role."
  },
  {
   "id": 80,
@@ -2248,8 +2248,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La búsqueda proactiva usa consultas KQL para buscar actividad sospechosa antes de que se activen las alertas.",
-  "exp_en": "Hunting uses KQL queries to look for suspicious activity before alerts fire."
+  "exp_es": "Hunting (búsqueda) permite a los analistas buscar amenazas de forma proactiva con consultas KQL, incluso antes de que salten alertas. Las reglas de análisis generan alertas automáticas, los libros de trabajo visualizan datos y los conectores ingieren datos.",
+  "exp_en": "Hunting lets analysts proactively search for threats with KQL queries, even before alerts fire. Analytics rules generate automatic alerts, workbooks visualize data and data connectors ingest data."
  },
  {
   "id": 81,
@@ -2302,8 +2302,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Sentinel es una solución SIEM/SOAR, no una herramienta de administración de endpoints.",
-  "exp_en": "Sentinel is a SIEM/SOAR solution, not an endpoint management tool."
+  "exp_es": "Falso: Sentinel sí recopila datos de servicios de Microsoft, otras nubes y soluciones de terceros mediante conectores. Verdadero: los playbooks automatizan acciones de respuesta. Falso: Sentinel es SIEM/SOAR, no gestiona actualizaciones de Windows (eso es Intune o Windows Update).",
+  "exp_en": "False: Sentinel can collect data from Microsoft services, other clouds and third-party solutions through data connectors. True: playbooks automate response actions. False: Sentinel is a SIEM/SOAR, not an update management tool (that is Intune or Windows Update)."
  },
  {
   "id": 83,
@@ -2349,8 +2349,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "Los cuadernos de estrategias automatizan las respuestas; los conectores de datos incorporan datos.",
-  "exp_en": "Playbooks automate responses; data connectors ingest data."
+  "exp_es": "Un playbook automatiza la respuesta, por ejemplo bloquear a un usuario comprometido cuando se crea un incidente. Un conector de datos trae a Sentinel los registros de otros servicios. No confundas conectar datos (entrada) con responder (acción).",
+  "exp_en": "A playbook automates the response, for example blocking a compromised user when an incident is created. A data connector brings logs from other services into Sentinel. Do not confuse connecting data (input) with responding (action)."
  },
  {
   "id": 84,
@@ -2401,8 +2401,8 @@
    "snapshots"
   ],
   "correct": 0,
-  "exp_es": "Los cuadernos de estrategias son colecciones de acciones creadas con Azure Logic Apps.",
-  "exp_en": "Playbooks are collections of actions built with Azure Logic Apps."
+  "exp_es": "En Microsoft Sentinel, los flujos de respuesta automatizada se crean como playbooks, colecciones de acciones basadas en Azure Logic Apps. Blueprints, etiquetas e instantáneas no son mecanismos de automatización de respuesta.",
+  "exp_en": "In Microsoft Sentinel, automated response workflows are built as playbooks, collections of actions based on Azure Logic Apps. Blueprints, tags and snapshots are not response automation mechanisms."
  },
  {
   "id": 86,
@@ -2479,8 +2479,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Defender for Endpoint protege dispositivos Windows, macOS, Linux, iOS y Android.",
-  "exp_en": "Defender for Endpoint protects Windows, macOS, Linux, iOS and Android devices."
+  "exp_es": "Microsoft Defender for Endpoint ofrece detección y respuesta (EDR) y prevención para dispositivos Windows, macOS, Linux, iOS y Android. Azure Firewall y Bastion son servicios de red, y Defender for Cloud Apps es un CASB para aplicaciones en la nube.",
+  "exp_en": "Microsoft Defender for Endpoint provides endpoint detection and response (EDR) and prevention for Windows, macOS, Linux, iOS and Android devices. Azure Firewall and Bastion are network services, and Defender for Cloud Apps is a CASB for cloud apps."
  },
  {
   "id": 89,
@@ -2670,8 +2670,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Cloud Discovery en Defender for Cloud Apps revela la TI en la sombra.",
-  "exp_en": "Cloud Discovery in Defender for Cloud Apps reveals shadow IT."
+  "exp_es": "Verdadero: Safe Attachments analiza los archivos adjuntos en un entorno aislado (sandbox). Verdadero: Safe Links protege frente a URL maliciosas en correo y aplicaciones de Office. Falso: Defender for Cloud Apps sí descubre qué aplicaciones en la nube usan los empleados (Cloud Discovery, shadow IT).",
+  "exp_en": "True: Safe Attachments checks attachments in a sandbox environment. True: Safe Links protects against malicious URLs in email and Office apps. False: Defender for Cloud Apps can discover which cloud apps people use (Cloud Discovery, shadow IT)."
  },
  {
   "id": 96,
@@ -2816,8 +2816,8 @@
    "Office 365"
   ],
   "correct": 3,
-  "exp_es": "Vínculos seguros y Datos adjuntos seguros son características de Defender for Office 365.",
-  "exp_en": "Safe Links and Safe Attachments are Defender for Office 365 features."
+  "exp_es": "Safe Links y Safe Attachments son funciones de Microsoft Defender for Office 365, que protege correo y herramientas de colaboración. Defender for Identity, Endpoint y Cloud protegen otros ámbitos (identidades locales, dispositivos y cargas de nube).",
+  "exp_en": "Safe Links and Safe Attachments are Microsoft Defender for Office 365 features, which protect email and collaboration tools. Defender for Identity, Endpoint and Cloud protect other areas (on-premises identities, devices and cloud workloads)."
  },
  {
   "id": 100,
@@ -2948,8 +2948,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Microsoft declara que no usa los datos de los clientes con fines publicitarios.",
-  "exp_en": "Microsoft states it does not use customer data for advertising purposes."
+  "exp_es": "Verdadero: el Service Trust Portal ofrece informes de auditoría y documentos de cumplimiento de los servicios en la nube de Microsoft. Falso: Microsoft no usa el contenido de los clientes para publicidad. Verdadero: la transparencia es uno de sus principios de privacidad.",
+  "exp_en": "True: the Service Trust Portal provides audit reports and compliance documents about Microsoft cloud services. False: Microsoft does not use customer content for advertising. True: transparency is one of its privacy principles."
  },
  {
   "id": 105,
@@ -3049,8 +3049,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La puntuación mide el progreso en los controles; no es una garantía de cumplimiento.",
-  "exp_en": "The score measures progress on controls; it is not a guarantee of compliance."
+  "exp_es": "Falso: una puntuación de cumplimiento alta mide el avance en controles, pero no garantiza superar una auditoría. Verdadero: las acciones de mejora de Compliance Manager se pueden asignar a personas y seguir hasta completarlas.",
+  "exp_en": "False: a high compliance score measures progress on controls but does not guarantee passing an audit. True: Compliance Manager improvement actions can be assigned to people and tracked until completed."
  },
  {
   "id": 109,
@@ -3075,8 +3075,8 @@
    "billing"
   ],
   "correct": 0,
-  "exp_es": "La puntuación de cumplimiento ayuda a seguir el progreso hacia los requisitos normativos.",
-  "exp_en": "The compliance score helps track progress toward regulatory requirements."
+  "exp_es": "Purview Compliance Manager calcula una puntuación de cumplimiento según las acciones de mejora que se completan, y ayuda a seguir el avance hacia requisitos normativos. Licencias y facturación no forman parte de esta puntuación.",
+  "exp_en": "Purview Compliance Manager calculates a compliance score based on the improvement actions you complete, helping track progress toward regulatory requirements. Licensing and billing are not part of this score."
  },
  {
   "id": 110,
@@ -3127,8 +3127,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La configuración de retención ayuda a conservar lo que se necesita y eliminar lo que no.",
-  "exp_en": "Retention settings help keep what you need and delete what you do not."
+  "exp_es": "Las directivas y etiquetas de retención controlan cuánto tiempo se conserva el contenido y qué ocurre después, por ejemplo eliminarlo. No deciden qué dispositivos cumplen normas (Intune), qué puertos abre un firewall ni quién inicia sesión (Entra).",
+  "exp_en": "Retention policies and labels control how long content is kept and what happens afterward, such as deleting it. They do not decide which devices are compliant (Intune), which ports a firewall opens or who can sign in (Entra)."
  },
  {
   "id": 112,
@@ -3329,8 +3329,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Las etiquetas protegen el contenido; las directivas DLP evitan el uso compartido inapropiado.",
-  "exp_en": "Labels protect content; DLP policies prevent inappropriate sharing."
+  "exp_es": "Una etiqueta de confidencialidad puede cifrar documentos y añadir marcas de agua. Una directiva de prevención de pérdida de datos (DLP) avisa o bloquea cuando alguien intenta enviar fuera datos sensibles, como números de tarjeta. Las etiquetas protegen el contenido; DLP evita el uso compartido inadecuado.",
+  "exp_en": "A sensitivity label can encrypt documents and add watermarks. A data loss prevention (DLP) policy warns or blocks when someone tries to send sensitive data outside, such as credit card numbers. Labels protect content; DLP prevents inappropriate sharing."
  },
  {
   "id": 119,
@@ -3402,8 +3402,8 @@
    "sensitivity"
   ],
   "correct": 3,
-  "exp_es": "Las etiquetas de confidencialidad pueden aplicar cifrado y marcas de contenido.",
-  "exp_en": "Sensitivity labels can enforce encryption and content markings."
+  "exp_es": "Las etiquetas de confidencialidad de Purview pueden cifrar un documento y aplicar marcas visibles como marcas de agua o encabezados. Retención controla cuánto se conserva, auditoría registra actividad y enrutamiento no es una función de Purview.",
+  "exp_en": "Purview sensitivity labels can encrypt a document and apply visible markings such as watermarks or headers. Retention controls how long content is kept, audit records activity and routing is not a Purview feature."
  },
  {
   "id": 121,
@@ -3534,8 +3534,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Auditoría registra actividades; la protección DDoS es un servicio de red.",
-  "exp_en": "Audit records activities; DDoS protection is a network service."
+  "exp_es": "Falso: eDiscovery sí puede aplicar una retención legal (legal hold) para conservar contenido. Falso: Audit registra actividad de usuarios y administradores; los ataques DDoS se tratan con protección de red. Verdadero: Insider Risk Management usa indicadores de directiva para detectar actividad de riesgo.",
+  "exp_en": "False: eDiscovery can place a legal hold on content to preserve it. False: Audit records user and admin activity; DDoS attacks are handled by network protection. True: Insider Risk Management uses policy indicators to detect risky user activity."
  },
  {
   "id": 126,
@@ -3581,8 +3581,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "eDiscovery gestiona las retenciones legales y las exportaciones; Auditoría registra las actividades.",
-  "exp_en": "eDiscovery handles legal holds and exports; Audit records activities."
+  "exp_es": "eDiscovery sirve para localizar, conservar (legal hold) y exportar contenido, como el buzón de un usuario en un litigio. Audit registra quién hizo qué y cuándo, por ejemplo quién eliminó un archivo de SharePoint y en qué momento.",
+  "exp_en": "eDiscovery is used to find, preserve (legal hold) and export content, such as a user's mailbox in a lawsuit. Audit records who did what and when, for example who deleted a SharePoint file and at what time."
  },
  {
   "id": 127,
@@ -3607,8 +3607,8 @@
    "eDiscovery"
   ],
   "correct": 3,
-  "exp_es": "eDiscovery admite retención legal, búsqueda y exportación.",
-  "exp_en": "eDiscovery supports legal hold, search and export."
+  "exp_es": "Microsoft Purview eDiscovery permite a los equipos legales buscar, retener y exportar contenido para investigaciones. Key Vault guarda secretos, Compliance Manager mide cumplimiento y Defender XDR detecta amenazas.",
+  "exp_en": "Microsoft Purview eDiscovery lets legal teams search, hold and export content for investigations. Key Vault stores secrets, Compliance Manager measures compliance and Defender XDR detects threats."
  },
  {
   "id": 128,
@@ -3685,8 +3685,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La disponibilidad garantiza que los usuarios autorizados puedan acceder a sistemas y datos cuando lo necesitan.",
-  "exp_en": "Availability ensures authorized users can access systems and data when needed."
+  "exp_es": "Un ataque DDoS deja el servicio inaccesible, así que afecta a la disponibilidad de la tríada CIA. Confidencialidad sería una fuga de datos e integridad una modificación no autorizada; el no repudio no forma parte de la tríada.",
+  "exp_en": "A DDoS attack makes the service unreachable, so it affects availability in the CIA triad. Confidentiality would be a data leak and integrity an unauthorized change; non-repudiation is not part of the triad."
  },
  {
   "id": 131,
@@ -3737,8 +3737,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Diseñar como si los atacantes ya estuvieran dentro limita su movimiento lateral.",
-  "exp_en": "Designing as though attackers are already inside limits their lateral movement."
+  "exp_es": "«Asumir la brecha» significa diseñar como si el atacante ya estuviera dentro: se limita el radio de impacto con segmentación, cifrado y supervisión. Confiar en el tráfico interno, quitar registros o compartir cuentas de administrador va en contra de Confianza cero.",
+  "exp_en": "'Assume breach' means designing as if the attacker is already inside: limit the blast radius with segmentation, encryption and monitoring. Trusting internal traffic, removing logging or sharing admin accounts goes against Zero Trust."
  },
  {
   "id": 133,
@@ -3867,8 +3867,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La capa física es la primera línea de defensa de las instalaciones y el hardware.",
-  "exp_en": "The physical layer is the first line of defense for facilities and hardware."
+  "exp_es": "La capa de seguridad física (credenciales, cámaras, salas de servidores cerradas) protege instalaciones y hardware y es la primera capa de la defensa en profundidad. Identidad y acceso, aplicación y datos son capas lógicas.",
+  "exp_en": "The physical security layer (badges, cameras, locked server rooms) protects facilities and hardware and is the first layer of defense in depth. Identity and access, application and data are logical layers."
  },
  {
   "id": 138,
@@ -3900,8 +3900,8 @@
     "ans": false
    }
   ],
-  "exp_es": "DDoS amenaza la disponibilidad; el cifrado simétrico usa una única clave compartida.",
-  "exp_en": "DDoS threatens availability; symmetric encryption uses one shared key."
+  "exp_es": "Verdadero: un hash permite comprobar la integridad porque cualquier cambio en los datos altera el resultado. Falso: el cifrado simétrico usa una sola clave compartida; el par de claves pública y privada es asimétrico. Verdadero: TLS protege los datos en tránsito. Falso: DDoS amenaza la disponibilidad, no la confidencialidad.",
+  "exp_en": "True: a hash helps verify integrity because any change to the data alters the result. False: symmetric encryption uses a single shared key; a public/private key pair is asymmetric. True: TLS protects data in transit. False: DDoS threatens availability, not confidentiality."
  },
  {
   "id": 139,
@@ -3928,8 +3928,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La ubicación de red por sí sola ya no concede confianza.",
-  "exp_en": "Network location alone no longer grants trust."
+  "exp_es": "Verdadero: Confianza cero aplica el acceso con mínimo privilegio. Falso: no considera la red corporativa como confiable por defecto. Verdadero: exige verificar identidad, estado del dispositivo y contexto en cada solicitud.",
+  "exp_en": "True: Zero Trust applies least privilege access. False: it does not treat the corporate network as trusted by default. True: it requires verifying identity, device health and context on each request."
  },
  {
   "id": 140,
@@ -4001,8 +4001,8 @@
    "encryption"
   ],
   "correct": 3,
-  "exp_es": "El hash es unidireccional; el cifrado es reversible con la clave.",
-  "exp_en": "Hashing is one-way; encryption is reversible with the key."
+  "exp_es": "El cifrado convierte los datos en una forma ilegible que solo se revierte con una clave. El hash es unidireccional (no se puede revertir), la tokenización sustituye datos por valores sin significado y la federación comparte identidad entre organizaciones.",
+  "exp_en": "Encryption converts data into an unreadable form that can only be reversed with a key. Hashing is one-way (it cannot be reversed), tokenization replaces data with meaningless values and federation shares identity across organizations."
  },
  {
   "id": 142,
@@ -4027,8 +4027,8 @@
   "correct": [
    1
   ],
-  "exp_es": "SSO mejora la experiencia del usuario y la seguridad al centralizar la autenticación.",
-  "exp_en": "SSO improves user experience and security by centralizing authentication."
+  "exp_es": "El inicio de sesión único (SSO) permite iniciar sesión una vez y acceder a varias aplicaciones sin volver a autenticarse, lo que mejora la experiencia y centraliza la seguridad. No significa reutilizar la contraseña, compartir cuentas ni cifrar un archivo.",
+  "exp_en": "Single sign-on (SSO) lets you sign in once and access multiple apps without authenticating again, improving user experience and centralizing security. It does not mean reusing the same password, sharing accounts or encrypting a file."
  },
  {
   "id": 143,
@@ -4053,8 +4053,8 @@
   "correct": [
    2
   ],
-  "exp_es": "OAuth 2.0 proporciona autorización delegada mediante tokens de acceso.",
-  "exp_en": "OAuth 2.0 provides delegated authorization using access tokens."
+  "exp_es": "OAuth 2.0 es un marco de autorización delegada: una aplicación obtiene acceso a recursos en nombre del usuario mediante tokens de acceso, sin conocer su contraseña. SMTP, RADIUS y DHCP son protocolos de correo, acceso remoto y asignación de direcciones.",
+  "exp_en": "OAuth 2.0 is a delegated authorization framework: an app gets access to resources on behalf of the user through access tokens, without knowing their password. SMTP, RADIUS and DHCP are protocols for email, remote access and address assignment."
  },
  {
   "id": 144,
@@ -4079,8 +4079,8 @@
   "correct": [
    3
   ],
-  "exp_es": "OIDC usa tokens de identificador para transmitir los resultados de autenticación.",
-  "exp_en": "OIDC uses ID tokens to convey authentication results."
+  "exp_es": "OpenID Connect (OIDC) se construye sobre OAuth 2.0 y añade una capa de identidad: usa tokens de identidad (ID tokens) para que las aplicaciones comprueben quién es el usuario. OAuth solo autoriza; SAML es otro estándar basado en XML.",
+  "exp_en": "OpenID Connect (OIDC) is built on OAuth 2.0 and adds an identity layer: it uses ID tokens so apps can verify who the user is. OAuth only authorizes; SAML is a different XML-based standard."
  },
  {
   "id": 145,
@@ -4105,8 +4105,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las aserciones SAML permiten el inicio de sesión único federado.",
-  "exp_en": "SAML assertions enable federated single sign-on."
+  "exp_es": "SAML es el estándar basado en XML que intercambia datos de autenticación y autorización entre un proveedor de identidades y un proveedor de servicios; sus aserciones permiten el inicio de sesión único federado. HTML, ICMP y SSH no sirven para ello.",
+  "exp_en": "SAML is the XML-based standard that exchanges authentication and authorization data between an identity provider and a service provider; its assertions enable federated single sign-on. HTML, ICMP and SSH do not serve that purpose."
  },
  {
   "id": 146,
@@ -4157,8 +4157,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Active Directory y Microsoft Entra ID son ejemplos de servicios de directorio.",
-  "exp_en": "Active Directory and Microsoft Entra ID are examples of directory services."
+  "exp_es": "Un servicio de directorio almacena identidades como usuarios, grupos y dispositivos y es la base de la autenticación y la autorización. Active Directory y Microsoft Entra ID son ejemplos. No guarda solo correos, no cifra discos ni sustituye a un firewall.",
+  "exp_en": "A directory service stores identities such as users, groups and devices and is the basis for authentication and authorization. Active Directory and Microsoft Entra ID are examples. It does not store only emails, encrypt disks or replace a firewall."
  },
  {
   "id": 148,
@@ -4185,8 +4185,8 @@
     "ans": true
    }
   ],
-  "exp_es": "SAML intercambia datos de autenticación; no cifra discos.",
-  "exp_en": "SAML exchanges authentication data; it does not encrypt disks."
+  "exp_es": "Verdadero: OpenID Connect autentica (quién eres) y OAuth 2.0 autoriza (a qué accede una app). Falso: SAML intercambia datos de autenticación, no cifra discos. Verdadero: la federación permite que una organización confíe en el proveedor de identidades de otra.",
+  "exp_en": "True: OpenID Connect authenticates (who you are) and OAuth 2.0 authorizes (what an app can access). False: SAML exchanges authentication data; it does not encrypt disks. True: federation lets one organization trust another's identity provider."
  },
  {
   "id": 149,
@@ -4232,8 +4232,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "OIDC autentica; OAuth 2.0 autoriza.",
-  "exp_en": "OIDC authenticates; OAuth 2.0 authorizes."
+  "exp_es": "OpenID Connect añade una capa de identidad sobre OAuth 2.0 y devuelve un token de identidad (ID token), así que autentica. OAuth 2.0 ofrece autorización delegada mediante tokens de acceso. Regla útil: OIDC = quién eres; OAuth = qué puedes hacer.",
+  "exp_en": "OpenID Connect adds an identity layer on top of OAuth 2.0 and returns an ID token, so it authenticates. OAuth 2.0 provides delegated authorization using access tokens. Rule of thumb: OIDC = who you are; OAuth = what you can do."
  },
  {
   "id": 150,
@@ -4258,8 +4258,8 @@
    "subnet"
   ],
   "correct": 0,
-  "exp_es": "Las aplicaciones confían en la firma del token para aceptar las notificaciones.",
-  "exp_en": "Applications trust the signature of the token to accept the claims."
+  "exp_es": "Un token de seguridad es un conjunto de notificaciones (claims) firmado que emite el proveedor de identidades tras autenticar al usuario; las aplicaciones confían en la firma para aceptar esas notificaciones. Una regla de firewall, una copia de seguridad o una subred no son tokens.",
+  "exp_en": "A security token is a signed set of claims issued by the identity provider after authentication; applications trust the signature to accept those claims. A firewall rule, a backup job or a subnet is not a token."
  },
  {
   "id": 151,
@@ -4310,8 +4310,8 @@
   "correct": [
    1
   ],
-  "exp_es": "P2 incluye acceso condicional basado en riesgo y PIM.",
-  "exp_en": "P2 includes risk-based Conditional Access and PIM."
+  "exp_es": "Microsoft Entra ID Protection y Privileged Identity Management se incluyen en Entra ID P2. P1 aporta acceso condicional, grupos dinámicos y funciones híbridas, pero no estas dos; Free solo cubre lo básico. Una cuenta gratuita de Azure no es un nivel de licencia de Entra.",
+  "exp_en": "Microsoft Entra ID Protection and Privileged Identity Management are included in Entra ID P2. P1 adds Conditional Access, dynamic groups and hybrid features but not these two; Free covers only the basics. An Azure free account is not an Entra license tier."
  },
  {
   "id": 153,
@@ -4336,8 +4336,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Un inquilino contiene los usuarios, grupos y aplicaciones de una organización.",
-  "exp_en": "A tenant holds an organization's users, groups and apps."
+  "exp_es": "Un inquilino (tenant) de Microsoft Entra es una instancia dedicada y aislada de Entra ID que representa a una organización y contiene sus usuarios, grupos y aplicaciones. No es una máquina virtual, una cuenta de almacenamiento ni un centro de datos físico.",
+  "exp_en": "A Microsoft Entra tenant is a dedicated, isolated instance of Entra ID that represents an organization and holds its users, groups and apps. It is not a virtual machine, a storage account or a physical datacenter."
  },
  {
   "id": 154,
@@ -4362,8 +4362,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Verified ID usa identificadores descentralizados y credenciales verificables.",
-  "exp_en": "Verified ID uses decentralized identifiers and verifiable credentials."
+  "exp_es": "Microsoft Entra Verified ID emite y verifica credenciales digitales que respetan la privacidad, como una prueba de empleo, mediante identificadores descentralizados y credenciales verificables. Bastion, los NSG y Connect Health son servicios de otro tipo.",
+  "exp_en": "Microsoft Entra Verified ID issues and verifies privacy-respecting digital credentials, such as proof of employment, using decentralized identifiers and verifiable credentials. Bastion, NSGs and Connect Health are different kinds of services."
  },
  {
   "id": 155,
@@ -4414,8 +4414,8 @@
   "correct": [
    0
   ],
-  "exp_es": "External ID admite escenarios de colaboración B2B y de cara al cliente (CIAM).",
-  "exp_en": "External ID supports B2B collaboration and customer-facing (CIAM) scenarios."
+  "exp_es": "Microsoft Entra External ID cubre el acceso de clientes y consumidores con registro de autoservicio y experiencias con marca (CIAM), además de colaboración B2B. Las revisiones de acceso y PIM son gobernanza interna y Entra Connect sincroniza directorios.",
+  "exp_en": "Microsoft Entra External ID secures access for customers and consumers with self-service sign-up and branded experiences (CIAM), plus B2B collaboration. Access reviews and PIM are internal governance, and Entra Connect synchronizes directories."
  },
  {
   "id": 157,
@@ -4440,8 +4440,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las identidades de dispositivo habilitan el acceso condicional basado en dispositivos.",
-  "exp_en": "Device identities enable device-based Conditional Access."
+  "exp_es": "Una identidad de dispositivo representa un dispositivo físico o virtual registrado o unido a Entra ID y permite aplicar acceso condicional basado en el dispositivo. Una asignación de rol, una etiqueta y una cuenta de invitado no representan dispositivos.",
+  "exp_en": "A device identity represents a physical or virtual device registered or joined to Entra ID and enables device-based Conditional Access. A role assignment, a tag and a guest account do not represent devices."
  },
  {
   "id": 158,
@@ -4468,8 +4468,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El acceso condicional requiere al menos Microsoft Entra ID P1.",
-  "exp_en": "Conditional Access requires at least Microsoft Entra ID P1."
+  "exp_es": "Verdadero: Entra ID P2 incluye ID Protection y PIM. Verdadero: Verified ID emite y verifica credenciales digitales. Falso: Entra ID Free no incluye acceso condicional; requiere al menos P1 (o los valores predeterminados de seguridad como alternativa básica).",
+  "exp_en": "True: Entra ID P2 includes ID Protection and PIM. True: Verified ID issues and verifies digital credentials. False: Entra ID Free does not include Conditional Access; it needs at least P1 (security defaults are the basic alternative)."
  },
  {
   "id": 159,
@@ -4515,8 +4515,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Permissions Management es CIEM; External ID cubre la identidad de clientes.",
-  "exp_en": "Permissions Management is CIEM; External ID covers customer identity."
+  "exp_es": "Entra Permissions Management es una solución CIEM que reduce los permisos excesivos de identidades en AWS, Azure y Google Cloud. Entra External ID permite a los clientes registrarse e iniciar sesión en una aplicación orientada a consumidores.",
+  "exp_en": "Entra Permissions Management is a CIEM solution that reduces excessive permissions granted to identities in AWS, Azure and Google Cloud. Entra External ID lets customers sign up and sign in to a consumer-facing app."
  },
  {
   "id": 160,
@@ -4541,8 +4541,8 @@
    "Free"
   ],
   "correct": 1,
-  "exp_es": "P1 es el primer nivel de pago; P2 añade características basadas en riesgo y PIM.",
-  "exp_en": "P1 is the first paid tier; P2 adds risk-based features and PIM."
+  "exp_es": "El acceso condicional, los grupos dinámicos y las funciones híbridas requieren al menos Microsoft Entra ID P1, el primer nivel de pago. P2 añade funciones basadas en riesgo y PIM. «Basic» y «P3» no son niveles actuales y Free no incluye estas funciones.",
+  "exp_en": "Conditional Access, dynamic groups and hybrid features require at least Microsoft Entra ID P1, the first paid tier. P2 adds risk-based features and PIM. 'Basic' and 'P3' are not current tiers and Free does not include these features."
  },
  {
   "id": 161,
@@ -4567,8 +4567,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El usuario debe introducir el número mostrado en el inicio de sesión, lo que impide aprobaciones a ciegas.",
-  "exp_en": "The user must enter the number shown at sign-in, which blocks blind approvals."
+  "exp_es": "La coincidencia de números obliga a escribir el número que se muestra en el inicio de sesión para aprobar la notificación, lo que evita aprobaciones accidentales o por fatiga ante peticiones MFA fraudulentas. No protege de dispositivos perdidos, cortes de red ni contraseñas débiles.",
+  "exp_en": "Number matching requires the user to enter the number shown at sign-in to approve the prompt, which prevents accidental or fatigue-based approvals of fraudulent MFA requests. It does not protect against lost devices, network outages or weak passwords."
  },
  {
   "id": 162,
@@ -4593,8 +4593,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El bloqueo inteligente distingue las ubicaciones de inicio de sesión conocidas de las desconocidas.",
-  "exp_en": "Smart lockout distinguishes familiar from unfamiliar sign-in locations."
+  "exp_es": "El bloqueo inteligente (smart lockout) bloquea a quienes intentan adivinar contraseñas sin bloquear a los usuarios reales, porque distingue ubicaciones de inicio de sesión conocidas de las desconocidas. No es una regla de firewall, un borrado de usuarios inactivos ni un algoritmo de cifrado.",
+  "exp_en": "Smart lockout locks out password-guessing attackers without locking out real users, because it distinguishes familiar from unfamiliar sign-in locations. It is not a firewall rule, an inactive-user cleanup or an encryption algorithm."
  },
  {
   "id": 163,
@@ -4619,8 +4619,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los tokens OATH TOTP generan códigos de verificación rotativos.",
-  "exp_en": "OATH TOTP tokens produce rotating verification codes."
+  "exp_es": "OATH TOTP genera códigos de un solo uso basados en el tiempo, en una aplicación (software) o en un token físico (hardware), y el usuario los escribe al iniciar sesión. Las preguntas de seguridad no generan códigos y no son un método MFA recomendado.",
+  "exp_en": "OATH TOTP generates time-based one-time codes in an app (software) or a physical token (hardware), and the user types them in at sign-in. Security questions do not generate codes and are not a recommended MFA method."
  },
  {
   "id": 164,
@@ -4671,8 +4671,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las tres categorías son saber, tener y ser.",
-  "exp_en": "The three categories are know, have and are."
+  "exp_es": "Las categorías de factores de autenticación son algo que sabes, algo que tienes y algo que eres. «Algo que compras» no es una categoría. Recuerda las tres: conocimiento, posesión e inherencia.",
+  "exp_en": "The authentication factor categories are something you know, something you have and something you are. 'Something you buy' is not a category. Remember the three: knowledge, possession and inherence."
  },
  {
   "id": 166,
@@ -4697,8 +4697,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Una contraseña (sabes) más una solicitud en el dispositivo (tienes) son dos factores.",
-  "exp_en": "A password (know) plus a device prompt (have) are two factors."
+  "exp_es": "Una contraseña (algo que sabes) más la aprobación en el teléfono (algo que tienes) son dos factores de categorías distintas: autenticación multifactor (MFA). Un solo factor sería solo la contraseña; la autorización decide el acceso y la federación comparte identidad entre organizaciones.",
+  "exp_en": "A password (something you know) plus an approval on the phone (something you have) are two factors from different categories: multifactor authentication (MFA). Single-factor would be the password alone; authorization decides access and federation shares identity across organizations."
  },
  {
   "id": 167,
@@ -4723,8 +4723,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El acceso condicional hace que MFA sea adaptable según las señales.",
-  "exp_en": "Conditional Access makes MFA adaptive based on signals."
+  "exp_es": "Con acceso condicional, MFA se puede exigir solo cuando el riesgo o el contexto lo justifican (ubicación, dispositivo, riesgo), lo que mejora la experiencia sin perder seguridad. No bloquea a los invitados, no elimina las contraseñas ni desactiva los registros.",
+  "exp_en": "With Conditional Access, MFA can be required only when risk or context warrants it (location, device, risk), improving user experience without losing security. It does not block guests, remove passwords or disable logging."
  },
  {
   "id": 168,
@@ -4751,8 +4751,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las preguntas de seguridad son débiles y no son un método sin contraseña.",
-  "exp_en": "Security questions are weak and are not passwordless."
+  "exp_es": "Verdadero: la coincidencia de números reduce el riesgo de aprobar peticiones MFA fraudulentas. Verdadero: el bloqueo inteligente protege frente a ataques de adivinación de contraseñas. Falso: las preguntas de seguridad son débiles y no son un método sin contraseña recomendado.",
+  "exp_en": "True: number matching reduces the risk of approving fraudulent MFA prompts. True: smart lockout protects against password guessing attacks. False: security questions are weak and not a recommended passwordless method."
  },
  {
   "id": 169,
@@ -4798,8 +4798,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "La coincidencia de números contrarresta la fatiga de MFA; el bloqueo inteligente contrarresta la adivinación.",
-  "exp_en": "Number matching counters MFA fatigue; smart lockout counters guessing."
+  "exp_es": "Si un atacante envía muchas peticiones MFA esperando que el usuario toque «Aprobar» (fatiga MFA), la defensa es la coincidencia de números. Si prueba muchas contraseñas contra una cuenta (fuerza bruta o adivinación), la defensa es el bloqueo inteligente.",
+  "exp_en": "If an attacker floods the user with MFA prompts hoping they tap Approve (MFA fatigue), the defense is number matching. If the attacker tries many passwords against an account (guessing), the defense is smart lockout."
  },
  {
   "id": 170,
@@ -4824,8 +4824,8 @@
    "shifting"
   ],
   "correct": 0,
-  "exp_es": "La coincidencia de números defiende frente a ataques de fatiga de notificaciones push.",
-  "exp_en": "Number matching defends against push fatigue attacks."
+  "exp_es": "La coincidencia de números (number matching) de Microsoft Authenticator obliga a escribir el número mostrado en pantalla para aprobar el inicio de sesión, lo que defiende frente a ataques de fatiga de notificaciones. Las otras palabras no son funciones del producto.",
+  "exp_en": "Microsoft Authenticator number matching requires entering the number shown on screen to approve the sign-in, defending against push-fatigue attacks. The other words are not product features."
  },
  {
   "id": 171,
@@ -4850,8 +4850,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las señales habituales son usuario o grupo, ubicación, dispositivo, aplicación y riesgo.",
-  "exp_en": "Common signals include user/group, location, device, app and risk."
+  "exp_es": "El acceso condicional evalúa señales como usuario o grupo, ubicación, estado del dispositivo, aplicación y riesgo de inicio de sesión. El tamaño del buzón, la longitud del cargo o el número de archivos en OneDrive no son señales que use.",
+  "exp_en": "Conditional Access evaluates signals such as user or group, location, device state, application and sign-in risk. Mailbox size, job title length or number of OneDrive files are not signals it uses."
  },
  {
   "id": 172,
@@ -4876,8 +4876,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El cumplimiento lo determinan las directivas de Microsoft Intune.",
-  "exp_en": "Compliance is determined by Microsoft Intune policies."
+  "exp_es": "El control de concesión «Requerir que el dispositivo se marque como compatible» exige que el dispositivo esté inscrito y cumpla las directivas de Intune. Los términos de uso, el cambio de contraseña y el bloqueo de autenticación heredada son otros controles.",
+  "exp_en": "The grant control 'Require device to be marked as compliant' requires the device to be enrolled and meet Intune policies. Terms of use, password change and blocking legacy authentication are different controls."
  },
  {
   "id": 173,
@@ -4928,8 +4928,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Aplica el mínimo privilegio y usa roles más específicos siempre que sea posible.",
-  "exp_en": "Follow least privilege and use more specific roles where possible."
+  "exp_es": "El rol de Administrador global tiene acceso ilimitado, así que cuantas menos cuentas lo tengan, menor es el riesgo si una se compromete. Debe aplicarse el mínimo privilegio y usar roles más específicos. Puede usar MFA y el coste del rol no es el motivo.",
+  "exp_en": "The Global Administrator role has unrestricted access, so fewer accounts holding it means less risk if one is compromised. Apply least privilege and use more specific roles. It can use MFA, and cost is not the reason."
  },
  {
   "id": 175,
@@ -4954,8 +4954,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los controles de sesión aplican restricciones en tiempo real una vez concedido el acceso.",
-  "exp_en": "Session controls apply real-time restrictions after access is granted."
+  "exp_es": "Conditional Access App Control (junto con las restricciones aplicadas por la aplicación) son controles de sesión que limitan lo que el usuario puede hacer en la aplicación, por ejemplo impedir descargas, una vez concedido el acceso. Los paquetes de acceso y los términos de uso son otras funciones.",
+  "exp_en": "Conditional Access App Control (and app-enforced restrictions) are session controls that limit what users can do in an app, such as blocking downloads, after access is granted. Access packages and terms of use are different features."
  },
  {
   "id": 176,
@@ -4982,8 +4982,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los roles de Entra administran objetos del directorio; Azure RBAC administra recursos de Azure.",
-  "exp_en": "Entra roles manage directory objects; Azure RBAC manages Azure resources."
+  "exp_es": "Verdadero: el acceso condicional puede exigir un dispositivo compatible. Falso: los roles de Azure RBAC administran recursos de Azure; los objetos del directorio, como los usuarios, se administran con roles de Entra. Verdadero: se pueden crear roles personalizados para aplicar el mínimo privilegio.",
+  "exp_en": "True: Conditional Access can require a compliant device. False: Azure RBAC roles manage Azure resources; directory objects such as users are managed with Entra roles. True: custom roles can be created to follow least privilege."
  },
  {
   "id": 177,
@@ -5029,8 +5029,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Los roles de Entra administran el directorio; los roles de Azure administran recursos de Azure.",
-  "exp_en": "Entra roles manage the directory; Azure roles manage Azure resources."
+  "exp_es": "Crear usuarios y restablecer contraseñas son tareas del directorio, así que usan un rol de Microsoft Entra. Iniciar y detener máquinas virtuales en un grupo de recursos son tareas sobre recursos de Azure, así que usan un rol de Azure RBAC.",
+  "exp_en": "Creating users and resetting passwords are directory tasks, so they use a Microsoft Entra role. Starting and stopping VMs in a resource group are tasks on Azure resources, so they use an Azure RBAC role."
  },
  {
   "id": 178,
@@ -5055,8 +5055,8 @@
    "default"
   ],
   "correct": 1,
-  "exp_es": "El mínimo privilegio limita la exposición cuando las cuentas se ven comprometidas.",
-  "exp_en": "Least privilege limits exposure when accounts are compromised."
+  "exp_es": "El principio de mínimo privilegio (least privilege) consiste en conceder solo el acceso necesario para hacer el trabajo, lo que limita la exposición si una cuenta se ve comprometida. «Compartido», «máximo» o «predeterminado» no describen este principio.",
+  "exp_en": "The principle of least privilege means granting only the access needed to do a job, limiting exposure if an account is compromised. 'Shared', 'most' or 'default' do not describe this principle."
  },
  {
   "id": 179,
@@ -5081,8 +5081,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las detecciones alimentan los niveles de riesgo de usuario y de inicio de sesión.",
-  "exp_en": "Detections feed user risk and sign-in risk levels."
+  "exp_es": "Una detección de riesgo en Entra ID Protection es una señal de actividad sospechosa en un inicio de sesión o en un usuario, como credenciales filtradas. Estas detecciones alimentan los niveles de riesgo de usuario y de inicio de sesión. Un simple error de contraseña no es una detección.",
+  "exp_en": "A risk detection in Entra ID Protection is a signal of suspicious sign-in or user activity, such as leaked credentials. Detections feed the user risk and sign-in risk levels. A simple mistyped password is not a detection."
  },
  {
   "id": 180,
@@ -5107,8 +5107,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Revisar periódicamente el acceso de invitados reduce el acceso externo obsoleto.",
-  "exp_en": "Regular reviews of guest access reduce stale external access."
+  "exp_es": "Una revisión de acceso de los invitados de un grupo de Microsoft 365 sirve para confirmar qué invitados deben conservar el acceso y quitar al resto, lo que reduce el acceso externo obsoleto. No aumenta buzones, no busca secretos en archivos ni frena ataques DDoS.",
+  "exp_en": "An access review of a Microsoft 365 group's guests helps confirm which guests should keep access and remove the rest, reducing stale external access. It does not increase mailboxes, scan files for secrets or block DDoS attacks."
  },
  {
   "id": 181,
@@ -5133,8 +5133,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los flujos de trabajo de ciclo de vida gestionan los procesos de alta, traslado y baja.",
-  "exp_en": "Lifecycle workflows handle joiner, mover and leaver processes."
+  "exp_es": "Los flujos de trabajo de ciclo de vida (lifecycle workflows) de Entra ID Governance automatizan tareas de incorporación, cambio y salida de empleados (joiner, mover, leaver). Azure Policy, los NSG y los valores predeterminados de seguridad no gestionan el ciclo de vida de identidades.",
+  "exp_en": "Lifecycle workflows in Entra ID Governance automate onboarding, role-change and offboarding tasks (joiner, mover, leaver). Azure Policy, NSGs and security defaults do not manage the identity lifecycle."
  },
  {
   "id": 182,
@@ -5159,8 +5159,8 @@
   "correct": [
    2
   ],
-  "exp_es": "JIT reduce la ventana de tiempo para el abuso de roles con privilegios.",
-  "exp_en": "JIT reduces the time window for abuse of privileged roles."
+  "exp_es": "El acceso justo a tiempo (JIT) de PIM concede acceso con privilegios solo cuando hace falta y durante un tiempo limitado, reduciendo el margen para abusar de los roles privilegiados. No bloquea a los administradores, no desactiva MFA ni da roles permanentes.",
+  "exp_en": "Just-in-time (JIT) access in PIM grants privileged access only when needed and for a limited time, shrinking the window for abusing privileged roles. It does not block admins, disable MFA or give permanent roles."
  },
  {
   "id": 183,
@@ -5182,8 +5182,8 @@
     "ans": false
    }
   ],
-  "exp_es": "PIM está diseñado para eliminar los privilegios permanentes.",
-  "exp_en": "PIM is designed to remove standing privilege."
+  "exp_es": "Verdadero: los flujos de trabajo de ciclo de vida automatizan tareas de incorporación y salida. Falso: PIM no concede acceso de administrador permanente por defecto; está pensado para eliminar los privilegios permanentes mediante roles elegibles y activación temporal.",
+  "exp_en": "True: lifecycle workflows can automate onboarding and offboarding tasks. False: PIM does not grant permanent administrator access by default; it is designed to remove standing privilege through eligible roles and time-bound activation."
  },
  {
   "id": 184,
@@ -5281,8 +5281,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Firewall Manager ofrece administración centralizada de directivas y rutas.",
-  "exp_en": "Firewall Manager provides central policy and route management."
+  "exp_es": "Azure Firewall Manager administra de forma centralizada las directivas de firewall y el enrutamiento de varias instancias de Azure Firewall y redes virtuales. Key Vault guarda secretos, Monitor recopila telemetría y Advisor da recomendaciones.",
+  "exp_en": "Azure Firewall Manager centrally manages firewall policies and routing across multiple Azure Firewall instances and virtual networks. Key Vault stores secrets, Monitor collects telemetry and Advisor gives recommendations."
  },
  {
   "id": 187,
@@ -5307,8 +5307,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Un punto de conexión privado asigna a tu red virtual una dirección IP privada del servicio.",
-  "exp_en": "A private endpoint assigns a private IP address from your VNet to the service."
+  "exp_es": "Azure Private Link permite acceder a servicios PaaS de Azure a través de un punto de conexión privado con una IP privada de tu red virtual, sin pasar por internet público. No cifra correo, no publica sitios web ni sustituye a Azure Firewall.",
+  "exp_en": "Azure Private Link lets you reach Azure PaaS services through a private endpoint with a private IP from your virtual network, without crossing the public internet. It does not encrypt email, publish websites or replace Azure Firewall."
  },
  {
   "id": 188,
@@ -5385,8 +5385,8 @@
   "correct": [
    3
   ],
-  "exp_es": "WAF de Application Gateway protege las aplicaciones web situadas detrás de la puerta de enlace.",
-  "exp_en": "Application Gateway WAF protects web apps behind the gateway."
+  "exp_es": "Azure Application Gateway es un equilibrador de carga regional de capa 7 (HTTP/HTTPS) que puede incluir un firewall de aplicaciones web (WAF). Backup, Bastion y Key Vault no balancean carga.",
+  "exp_en": "Azure Application Gateway is a regional layer-7 (HTTP/HTTPS) load balancer that can include a web application firewall (WAF). Backup, Bastion and Key Vault do not balance load."
  },
  {
   "id": 191,
@@ -5411,8 +5411,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Key Vault usa el control de acceso de Entra ID y registra los accesos.",
-  "exp_en": "Key Vault uses Entra ID access control and logs access."
+  "exp_es": "Key Vault ofrece control centralizado, auditoría de accesos y rotación de certificados y claves sin volver a desplegar el código, usando el control de acceso de Entra ID. No elimina la autenticación, no hace públicos los secretos ni guarda solo contraseñas de usuarios.",
+  "exp_en": "Key Vault provides centralized control, access auditing and rotation of certificates and keys without redeploying code, using Entra ID access control. It does not remove authentication, make secrets public or store only user passwords."
  },
  {
   "id": 192,
@@ -5437,8 +5437,8 @@
   "correct": [
    3
   ],
-  "exp_es": "JIT mantiene cerrados puertos como RDP y SSH hasta que se solicita acceso.",
-  "exp_en": "JIT keeps ports like RDP and SSH closed until access is requested."
+  "exp_es": "El acceso a VM justo a tiempo (JIT) de Defender for Cloud mantiene cerrados puertos de administración como RDP y SSH y los abre solo para solicitudes aprobadas y por un tiempo limitado, reduciendo la superficie de ataque. Un bloqueo de recurso no controla puertos.",
+  "exp_en": "Defender for Cloud just-in-time (JIT) VM access keeps management ports such as RDP and SSH closed and opens them only for approved requests for a limited time, reducing the attack surface. A resource lock does not control ports."
  },
  {
   "id": 193,
@@ -5463,8 +5463,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los puntos de conexión privados ofrecen mayor aislamiento al eliminar la exposición pública.",
-  "exp_en": "Private endpoints provide stronger isolation by removing public exposure."
+  "exp_es": "Un punto de conexión privado da al servicio una IP privada dentro de tu red virtual (con Private Link), eliminando la exposición pública. Un punto de conexión de servicio mantiene la IP pública del servicio y solo restringe el acceso a tu subred. No son idénticos.",
+  "exp_en": "A private endpoint gives the service a private IP inside your virtual network (via Private Link), removing public exposure. A service endpoint keeps the service's public IP and only restricts access to your subnet. They are not identical."
  },
  {
   "id": 194,
@@ -5496,8 +5496,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los puntos de conexión privados eliminan la exposición pública en lugar de crearla.",
-  "exp_en": "Private endpoints remove public exposure rather than creating it."
+  "exp_es": "Verdadero: Azure Firewall Premium admite inspección TLS. Falso: un punto de conexión privado quita la exposición pública, no la crea. Verdadero: Application Gateway con WAF protege de exploits web comunes. Verdadero: Key Vault puede almacenar certificados, además de claves y secretos.",
+  "exp_en": "True: Azure Firewall Premium supports TLS inspection. False: a private endpoint removes public exposure rather than creating it. True: Application Gateway with WAF protects web apps from common exploits. True: Key Vault can store certificates, plus keys and secrets."
  },
  {
   "id": 195,
@@ -5569,8 +5569,8 @@
    "Firewall"
   ],
   "correct": 3,
-  "exp_es": "Firewall Manager centraliza las directivas de las implementaciones de Azure Firewall.",
-  "exp_en": "Firewall Manager centralizes policy for Azure Firewall deployments."
+  "exp_es": "Azure Firewall Manager ofrece administración central de las directivas de firewall y el enrutamiento entre redes virtuales. Backup, Advisor y Bastion tienen otras funciones: copias de seguridad, recomendaciones y acceso remoto seguro.",
+  "exp_en": "Azure Firewall Manager provides central management of firewall policies and routing across virtual networks. Backup, Advisor and Bastion have other roles: backups, recommendations and secure remote access."
  },
  {
   "id": 197,
@@ -5595,8 +5595,8 @@
    "private"
   ],
   "correct": 3,
-  "exp_es": "Los puntos de conexión privados usan Azure Private Link.",
-  "exp_en": "Private endpoints use Azure Private Link."
+  "exp_es": "Un punto de conexión privado (private endpoint) asigna a un servicio PaaS de Azure una dirección IP privada dentro de tu red virtual mediante Azure Private Link. Los puntos de conexión públicos, de correo o anónimos no cumplen ese papel.",
+  "exp_en": "A private endpoint assigns an Azure PaaS service a private IP address inside your virtual network using Azure Private Link. Public, mail or anonymous endpoints do not play that role."
  },
  {
   "id": 198,
@@ -5621,8 +5621,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El análisis de rutas de ataque prioriza los riesgos mostrando las rutas explotables.",
-  "exp_en": "Attack path analysis prioritizes risks by showing exploitable routes."
+  "exp_es": "El análisis de rutas de ataque de Defender CSPM identifica los caminos que un atacante podría seguir entre recursos para llegar a activos críticos y prioriza los riesgos explotables. Las revisiones de acceso, los términos de uso y SSPR son funciones de identidad.",
+  "exp_en": "Attack path analysis in Defender CSPM identifies the routes an attacker could take across resources to reach critical assets and prioritizes exploitable risks. Access reviews, terms of use and SSPR are identity features."
  },
  {
   "id": 199,
@@ -5673,8 +5673,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El panel asigna las recomendaciones a los controles de los estándares seleccionados.",
-  "exp_en": "The dashboard maps recommendations to the controls of selected standards."
+  "exp_es": "El panel de cumplimiento normativo de Defender for Cloud muestra el grado de cumplimiento de tus recursos con estándares como ISO 27001 o el Microsoft cloud security benchmark, asignando recomendaciones a los controles. Costes, registro de actividad y estado del servicio son otros paneles.",
+  "exp_en": "The Defender for Cloud regulatory compliance dashboard shows how your resources comply with standards such as ISO 27001 or the Microsoft cloud security benchmark, mapping recommendations to controls. Cost, activity log and service health are other dashboards."
  },
  {
   "id": 201,
@@ -5699,8 +5699,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Azure Arc proyecta máquinas que no son de Azure en Azure para poder protegerlas.",
-  "exp_en": "Azure Arc projects non-Azure machines into Azure so they can be protected."
+  "exp_es": "Defender for Cloud amplía la protección a servidores locales o de otras nubes con Azure Arc y conectores multinube: Arc proyecta las máquinas no Azure en Azure para poder protegerlas. Directiva de grupo, DNS y reenvío de correo no sirven para esto.",
+  "exp_en": "Defender for Cloud extends protection to on-premises or other-cloud servers using Azure Arc and multicloud connectors: Arc projects non-Azure machines into Azure so they can be protected. Group Policy, DNS and mail forwarding do not do this."
  },
  {
   "id": 202,
@@ -5725,8 +5725,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Ofrece orientación prescriptiva para varias nubes.",
-  "exp_en": "It provides prescriptive guidance across multiple clouds."
+  "exp_es": "El Microsoft cloud security benchmark es un conjunto de controles de seguridad con orientación prescriptiva para varias nubes, y es el estándar predeterminado que usa Defender for Cloud. No es una calculadora de costes, una prueba de hardware ni un servicio DNS.",
+  "exp_en": "The Microsoft cloud security benchmark is a set of security controls with prescriptive guidance across multiple clouds, and it is the default standard Defender for Cloud uses. It is not a cost calculator, a hardware test or a DNS service."
  },
  {
   "id": 203,
@@ -5774,8 +5774,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Defender for Cloud admite conectores de AWS y GCP y servidores habilitados para Arc.",
-  "exp_en": "Defender for Cloud supports AWS and GCP connectors and Arc-enabled servers."
+  "exp_es": "Verdadero: las capacidades básicas de CSPM están disponibles sin activar planes de Defender de pago. Falso: Defender for Cloud sí protege recursos fuera de Azure mediante conectores para AWS y GCP y servidores con Azure Arc.",
+  "exp_en": "True: foundational CSPM capabilities are available without enabling paid Defender plans. False: Defender for Cloud can protect resources outside Azure through AWS and GCP connectors and Arc-enabled servers."
  },
  {
   "id": 205,
@@ -5847,8 +5847,8 @@
    "Backup"
   ],
   "correct": 1,
-  "exp_es": "Azure Arc incorpora servidores locales y de otras nubes.",
-  "exp_en": "Azure Arc onboards on-premises and other-cloud servers."
+  "exp_es": "Defender for Cloud extiende la protección a servidores que no son de Azure mediante Azure Arc, que incorpora servidores locales y de otras nubes a la administración de Azure. Bastion, Batch y Backup son servicios distintos.",
+  "exp_en": "Defender for Cloud extends protection to non-Azure servers using Azure Arc, which onboards on-premises and other-cloud servers into Azure management. Bastion, Batch and Backup are different services."
  },
  {
   "id": 207,
@@ -5873,8 +5873,8 @@
    "backup"
   ],
   "correct": 1,
-  "exp_es": "El análisis de rutas de ataque destaca primero las exposiciones más arriesgadas.",
-  "exp_en": "Attack path analysis highlights the riskiest exposures first."
+  "exp_es": "Defender CSPM puede mostrar posibles rutas de ataque (attack paths) que un atacante usaría para llegar a recursos sensibles, resaltando primero las exposiciones más graves. Facturación, DNS o copias de seguridad no son rutas de ataque.",
+  "exp_en": "Defender CSPM can show potential attack paths an attacker could use to reach sensitive resources, highlighting the riskiest exposures first. Billing, DNS or backup are not attack paths."
  },
  {
   "id": 208,
@@ -5899,8 +5899,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Sentinel se crea sobre un área de trabajo de Log Analytics.",
-  "exp_en": "Sentinel is built on top of a Log Analytics workspace."
+  "exp_es": "Microsoft Sentinel se construye sobre un área de trabajo de Log Analytics, así que primero hay que crearla y habilitar Sentinel en ella. No hace falta una puerta de enlace VPN, una directiva de Intune ni una VM con agente.",
+  "exp_en": "Microsoft Sentinel is built on a Log Analytics workspace, so you first create one and enable Sentinel on it. You do not need a VPN gateway, an Intune policy or a VM with an agent."
  },
  {
   "id": 209,
@@ -5925,8 +5925,8 @@
   "correct": [
    0
   ],
-  "exp_es": "KQL se usa en la búsqueda proactiva, las reglas de análisis y los libros.",
-  "exp_en": "KQL is used for hunting, analytics rules and workbooks."
+  "exp_es": "Sentinel usa el lenguaje de consulta Kusto (KQL) para buscar y analizar datos de registro en búsquedas, reglas de análisis y libros de trabajo. T-SQL, Bicep y PowerShell no son el lenguaje de consulta de Sentinel.",
+  "exp_en": "Sentinel uses Kusto Query Language (KQL) to search and analyze log data in hunting, analytics rules and workbooks. T-SQL, Bicep and PowerShell are not Sentinel's query language."
  },
  {
   "id": 210,
@@ -5951,8 +5951,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los libros se basan en Azure Monitor y usan consultas KQL.",
-  "exp_en": "Workbooks build on Azure Monitor and use KQL queries."
+  "exp_es": "Los libros de trabajo (workbooks) ofrecen paneles interactivos que visualizan datos de las fuentes conectadas, basados en Azure Monitor y consultas KQL. Las reglas de automatización y los playbooks automatizan respuestas; las listas de seguimiento son datos de referencia.",
+  "exp_en": "Workbooks provide interactive dashboards that visualize data from connected sources, built on Azure Monitor and KQL queries. Automation rules and playbooks automate responses; watchlists are reference data."
  },
  {
   "id": 211,
@@ -5977,8 +5977,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las listas de seguimiento importan datos de referencia para enriquecer las detecciones e investigaciones.",
-  "exp_en": "Watchlists import reference data to enrich detections and investigations."
+  "exp_es": "Las listas de seguimiento (watchlists) importan datos de referencia, como usuarios VIP o activos importantes, para correlacionar eventos y enriquecer detecciones e investigaciones. Los libros de trabajo visualizan y las reglas de recopilación de datos controlan la ingesta.",
+  "exp_en": "Watchlists import reference data, such as VIP users or important assets, to correlate events and enrich detections and investigations. Workbooks visualize, and data collection rules control ingestion."
  },
  {
   "id": 212,
@@ -6003,8 +6003,8 @@
   "correct": [
    3
   ],
-  "exp_es": "UEBA usa aprendizaje automático para detectar desviaciones del comportamiento normal.",
-  "exp_en": "UEBA uses machine learning to detect deviations from normal behavior."
+  "exp_es": "UEBA (análisis del comportamiento de usuarios y entidades) crea líneas base de comportamiento normal con aprendizaje automático y señala anomalías. No aplica parches, no asigna licencias ni cifra registros.",
+  "exp_en": "UEBA (User and Entity Behavior Analytics) builds baselines of normal behavior with machine learning and flags anomalies. It does not patch servers, assign licenses or encrypt logs."
  },
  {
   "id": 213,
@@ -6029,8 +6029,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las reglas de automatización centralizan la automatización de incidentes y alertas.",
-  "exp_en": "Automation rules centralize automation for incidents and alerts."
+  "exp_es": "Las reglas de automatización centralizan la automatización de incidentes y alertas con tareas sencillas (triaje, asignación) y pueden lanzar playbooks. Los playbooks, basados en Logic Apps, ejecutan flujos de trabajo más complejos. No son lo mismo.",
+  "exp_en": "Automation rules centralize automation for incidents and alerts with simple tasks (triage, assignment) and can trigger playbooks. Playbooks, built on Logic Apps, run more complex workflows. They are not the same thing."
  },
  {
   "id": 214,
@@ -6055,8 +6055,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El centro de contenido ofrece soluciones listas para usar.",
-  "exp_en": "The content hub provides ready-to-use solutions."
+  "exp_es": "El centro de contenido (content hub) de Sentinel ofrece soluciones listas para usar con conectores, reglas de análisis y libros de trabajo ya empaquetados. Teams, Intune y la página de facturación de Marketplace no distribuyen contenido de seguridad para Sentinel.",
+  "exp_en": "The Sentinel content hub offers ready-to-use solutions with prepackaged connectors, analytics rules and workbooks. Teams, Intune and the Marketplace billing page do not distribute Sentinel security content."
  },
  {
   "id": 215,
@@ -6088,8 +6088,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los conectores de datos cubren orígenes de Microsoft, otras nubes y terceros.",
-  "exp_en": "Data connectors cover Microsoft, other clouds and third-party sources."
+  "exp_es": "Verdadero: Sentinel se basa en un área de trabajo de Log Analytics. Falso: las reglas de análisis sí generan incidentes a partir de alertas. Falso: Sentinel ingiere datos de Microsoft, otras nubes y terceros mediante conectores. Verdadero: UEBA señala comportamiento anómalo de usuarios.",
+  "exp_en": "True: Sentinel is built on a Log Analytics workspace. False: analytics rules can create incidents from alerts. False: Sentinel ingests data from Microsoft, other clouds and third parties through connectors. True: UEBA flags unusual user behavior."
  },
  {
   "id": 216,
@@ -6135,8 +6135,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "Los libros visualizan; las reglas de análisis detectan amenazas y crean incidentes.",
-  "exp_en": "Workbooks visualize; analytics rules detect threats and create incidents."
+  "exp_es": "Un libro de trabajo (workbook) visualiza tendencias, como la actividad de inicios de sesión, en un panel. Una regla de análisis ejecuta una consulta, detecta patrones como fallos repetidos de inicio de sesión y crea un incidente. Visualizar y detectar son funciones distintas.",
+  "exp_en": "A workbook visualizes trends, such as sign-in activity, on a dashboard. An analytics rule runs a query, detects patterns such as repeated failed sign-ins and creates an incident. Visualizing and detecting are different functions."
  },
  {
   "id": 217,
@@ -6161,8 +6161,8 @@
    "Key Vault"
   ],
   "correct": 2,
-  "exp_es": "Sentinel almacena y consulta los datos en un área de trabajo de Log Analytics.",
-  "exp_en": "Sentinel stores and queries data in a Log Analytics workspace."
+  "exp_es": "Microsoft Sentinel se construye sobre un área de trabajo de Log Analytics de Azure Monitor, donde se almacenan y consultan los datos. Bastion, Backup y Key Vault no almacenan los registros de Sentinel.",
+  "exp_en": "Microsoft Sentinel is built on an Azure Monitor Log Analytics workspace, where its data is stored and queried. Bastion, Backup and Key Vault do not store Sentinel's logs."
  },
  {
   "id": 218,
@@ -6187,8 +6187,8 @@
    "watchlists"
   ],
   "correct": 3,
-  "exp_es": "Las listas de seguimiento enriquecen las consultas con datos de referencia.",
-  "exp_en": "Watchlists enrich queries with reference data."
+  "exp_es": "Las listas de seguimiento (watchlists) cargan datos de referencia externos, como una lista de cuentas VIP, para usarlos en consultas y detecciones. Los playbooks automatizan respuestas, los incidentes agrupan alertas y los libros de trabajo visualizan datos.",
+  "exp_en": "Watchlists load external reference data, such as a list of VIP accounts, so queries and detections can use it. Playbooks automate responses, incidents group alerts and workbooks visualize data."
  },
  {
   "id": 219,
@@ -6239,8 +6239,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La búsqueda avanzada admite la búsqueda de amenazas entre productos.",
-  "exp_en": "Advanced hunting supports cross-product threat hunting."
+  "exp_es": "La búsqueda avanzada (advanced hunting) de Defender XDR permite consultar con KQL datos sin procesar de varios productos de Defender para buscar amenazas de forma proactiva. La puntuación de seguridad mide posición y las revisiones de acceso son de identidad.",
+  "exp_en": "Advanced hunting in Defender XDR lets you query raw data from several Defender products with KQL to hunt threats proactively. Secure score measures posture and access reviews are an identity feature."
  },
  {
   "id": 221,
@@ -6291,8 +6291,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Vínculos seguros ofrece la verificación en el momento del clic.",
-  "exp_en": "Safe Links provides time-of-click verification."
+  "exp_es": "Safe Links reescribe y comprueba las URL en el momento del clic para proteger de enlaces maliciosos. Safe Attachments analiza archivos adjuntos, el antispam filtra correo no deseado y Customer Lockbox controla el acceso de Microsoft a tus datos.",
+  "exp_en": "Safe Links rewrites and checks URLs at the time of click to protect from malicious links. Safe Attachments analyzes attachments, anti-spam filters unwanted mail and Customer Lockbox controls Microsoft's access to your data."
  },
  {
   "id": 223,
@@ -6343,8 +6343,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las reglas ASR bloquean comportamientos habituales del malware.",
-  "exp_en": "ASR rules block common malware behaviors."
+  "exp_es": "Las reglas de reducción de superficie de ataque (ASR) de Defender for Endpoint bloquean comportamientos típicos del malware, como que las aplicaciones de Office creen procesos secundarios. Los paquetes de acceso y los flujos de ciclo de vida son de gobernanza de identidades.",
+  "exp_en": "Attack surface reduction (ASR) rules in Defender for Endpoint block common malware behaviors, such as Office apps creating child processes. Access packages and lifecycle workflows belong to identity governance."
  },
  {
   "id": 225,
@@ -6369,8 +6369,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La respuesta en vivo abre una sesión de shell remota para investigar dispositivos.",
-  "exp_en": "Live response opens a remote shell session to investigate devices."
+  "exp_es": "Live response abre una sesión de shell remota en el dispositivo comprometido para ejecutar comandos, recopilar evidencias y remediar. Safe Links protege URL, la escritura diferida de contraseñas es de identidad híbrida y Cloud Discovery descubre aplicaciones en la nube.",
+  "exp_en": "Live response opens a remote shell session on the compromised device to run commands, collect evidence and remediate. Safe Links protects URLs, password writeback is hybrid identity and Cloud Discovery finds cloud apps."
  },
  {
   "id": 226,
@@ -6395,8 +6395,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los sensores analizan el tráfico de red y los eventos de los controladores de dominio.",
-  "exp_en": "Sensors analyze network traffic and events from domain controllers."
+  "exp_es": "Defender for Identity usa sensores instalados en los controladores de dominio para analizar tráfico de red y eventos relacionados con identidades. Un host Bastion, una directiva WAF o Key Vault no cumplen ese papel.",
+  "exp_en": "Defender for Identity uses sensors installed on domain controllers to analyze network traffic and identity-related events. A Bastion host, a WAF policy or Key Vault does not play that role."
  },
  {
   "id": 227,
@@ -6421,8 +6421,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La gobernanza de aplicaciones detecta aplicaciones OAuth arriesgadas o con privilegios excesivos.",
-  "exp_en": "App governance detects risky or overprivileged OAuth apps."
+  "exp_es": "La gobernanza de aplicaciones (app governance) de Defender for Cloud Apps supervisa y controla las aplicaciones OAuth conectadas a los datos de Microsoft 365 y detecta las de riesgo o con permisos excesivos. Las otras opciones son simulación de phishing, acceso JIT y respuesta en vivo.",
+  "exp_en": "App governance in Defender for Cloud Apps monitors and controls OAuth apps connected to Microsoft 365 data and detects risky or overprivileged ones. The other options are phishing simulation, JIT access and live response."
  },
  {
   "id": 228,
@@ -6447,8 +6447,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Una puntuación más alta indica que se han realizado más acciones recomendadas.",
-  "exp_en": "A higher score indicates more recommended actions have been taken."
+  "exp_es": "Microsoft Secure Score mide la posición de seguridad de la organización y propone acciones de mejora; cuantas más se aplican, mayor es la puntuación. No mide almacenamiento, velocidad de red ni usuarios con licencia.",
+  "exp_en": "Microsoft Secure Score measures an organization's security posture and suggests improvement actions; the more you apply, the higher the score. It does not measure storage, network speed or licensed users."
  },
  {
   "id": 229,
@@ -6473,8 +6473,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Ayuda a los equipos de seguridad y TI a priorizar y corregir las exposiciones.",
-  "exp_en": "It helps security and IT teams prioritize and fix exposures."
+  "exp_es": "Defender Vulnerability Management detecta continuamente vulnerabilidades en dispositivos y las prioriza según el riesgo para que los equipos de seguridad y TI corrijan primero lo más importante. No cifra correo, no filtra DNS ni gestiona invitados.",
+  "exp_en": "Defender Vulnerability Management continuously discovers vulnerabilities on devices and prioritizes them by risk so security and IT teams fix the most important first. It does not encrypt email, filter DNS or manage guests."
  },
  {
   "id": 230,
@@ -6654,8 +6654,8 @@
    "attack simulation"
   ],
   "correct": 3,
-  "exp_es": "La formación con simulación de ataques mide la susceptibilidad de los usuarios al phishing.",
-  "exp_en": "Attack simulation training measures user susceptibility to phishing."
+  "exp_es": "La formación de simulación de ataques (attack simulation training) de Defender for Office 365 ejecuta campañas de phishing simuladas para educar a los usuarios y medir su susceptibilidad. Copia de seguridad, ciclo de vida y retención son otras funciones.",
+  "exp_en": "Attack simulation training in Defender for Office 365 runs simulated phishing campaigns to educate users and measure their susceptibility. Backup, lifecycle and retention are other features."
  },
  {
   "id": 235,
@@ -6680,8 +6680,8 @@
    "simulation"
   ],
   "correct": 0,
-  "exp_es": "La interrupción de ataques actúa rápidamente para limitar la propagación de los ataques.",
-  "exp_en": "Attack disruption acts quickly to limit the spread of attacks."
+  "exp_es": "La interrupción automática de ataques (automatic attack disruption) de Defender XDR contiene ataques activos, como el ransomware, aislando dispositivos o cuentas afectados para limitar su propagación. Migración, enumeración y simulación no contienen ataques.",
+  "exp_en": "Automatic attack disruption in Defender XDR contains active attacks, such as ransomware, by isolating affected devices or accounts to limit their spread. Migration, enumeration and simulation do not contain attacks."
  },
  {
   "id": 236,
@@ -6706,8 +6706,8 @@
    "Storage"
   ],
   "correct": 2,
-  "exp_es": "Los sensores de Defender for Identity supervisan las señales de los controladores de dominio.",
-  "exp_en": "Defender for Identity sensors monitor domain controller signals."
+  "exp_es": "Microsoft Defender for Identity usa sensores instalados en los controladores de dominio para vigilar señales de identidad. Office 365, Cloud Apps y Storage protegen correo, aplicaciones en la nube y almacenamiento, no controladores de dominio.",
+  "exp_en": "Microsoft Defender for Identity uses sensors installed on domain controllers to monitor identity signals. Office 365, Cloud Apps and Storage protect email, cloud apps and storage, not domain controllers."
  },
  {
   "id": 237,
@@ -6758,8 +6758,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Uno de los seis principios es la ausencia de segmentación basada en el contenido.",
-  "exp_en": "One of the six principles is no content-based targeting."
+  "exp_es": "«Sin segmentación basada en contenido» (no content-based targeting) significa que Microsoft no usa el correo, los chats ni los archivos de los clientes para dirigir publicidad. Es uno de sus seis principios de privacidad, junto con control, transparencia, seguridad, protección legal y beneficios.",
+  "exp_en": "'No content-based targeting' means Microsoft does not use customers' email, chat or files to target advertising. It is one of its six privacy principles, alongside control, transparency, security, strong legal protections and benefits."
  },
  {
   "id": 239,
@@ -6784,8 +6784,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El Service Trust Portal aloja los informes de auditoría de los servicios de Microsoft.",
-  "exp_en": "The Service Trust Portal hosts audit reports for Microsoft services."
+  "exp_es": "El Service Trust Portal aloja los informes de auditoría de los servicios de Microsoft, como los informes SOC 2. Azure Monitor, el centro de administración de Entra y el portal de Defender sirven para operar y proteger, no para descargar informes de auditoría.",
+  "exp_en": "The Service Trust Portal hosts audit reports for Microsoft services, such as SOC 2 reports. Azure Monitor, the Entra admin center and the Defender portal are for operating and protecting, not for downloading audit reports."
  },
  {
   "id": 240,
@@ -6838,8 +6838,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Microsoft se compromete a no usar el contenido para segmentar publicidad.",
-  "exp_en": "Microsoft commits to no content-based advertising targeting."
+  "exp_es": "Verdadero: el Service Trust Portal ofrece documentación de cumplimiento y auditoría. Verdadero: los principios de privacidad incluyen seguridad y transparencia. Falso: Microsoft se compromete a no usar el contenido del cliente para publicidad dirigida.",
+  "exp_en": "True: the Service Trust Portal provides compliance and audit documentation. True: the privacy principles include security and transparency. False: Microsoft commits not to use customer content for targeted advertising."
  },
  {
   "id": 242,
@@ -6864,8 +6864,8 @@
    "Service Trust Portal"
   ],
   "correct": 3,
-  "exp_es": "Úsalo para informes de auditoría de terceros y guías de cumplimiento.",
-  "exp_en": "Use it for third-party audit reports and compliance guides."
+  "exp_es": "El Service Trust Portal es donde se descargan informes de cumplimiento, como auditorías ISO y SOC, y guías de cumplimiento de terceros. Entra, Advisor y Defender son portales de administración, recomendaciones y seguridad.",
+  "exp_en": "The Service Trust Portal is where you download compliance reports such as ISO and SOC audits, and third-party compliance guides. Entra, Advisor and Defender are administration, recommendation and security portals."
  },
  {
   "id": 243,
@@ -6890,8 +6890,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las evaluaciones se crean a partir de plantillas de normativas como el RGPD.",
-  "exp_en": "Assessments are created from templates for regulations such as GDPR."
+  "exp_es": "En Compliance Manager, una evaluación (assessment) agrupa controles asignados a una regulación (por ejemplo GDPR) y permite seguir tu progreso; se crea a partir de plantillas. No es una cuenta de usuario, una directiva de copia de seguridad ni una regla de red.",
+  "exp_en": "In Compliance Manager, an assessment groups controls mapped to a regulation (for example GDPR) and tracks your progress; it is created from templates. It is not a user account, a backup policy or a network rule."
  },
  {
   "id": 244,
@@ -6916,8 +6916,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las acciones de mejora pueden ser administradas por Microsoft o por el cliente.",
-  "exp_en": "Improvement actions can be Microsoft-managed or customer-managed."
+  "exp_es": "Las acciones de mejora son pasos recomendados con un valor en puntos que suben la puntuación de cumplimiento al completarse, y pueden ser administradas por Microsoft o por el cliente. No son elementos de facturación ni invitaciones y no arreglan todo automáticamente.",
+  "exp_en": "Improvement actions are recommended steps with point values that raise the compliance score when completed, and they can be Microsoft-managed or customer-managed. They are not billing items or invitations and do not fix everything automatically."
  },
  {
   "id": 245,
@@ -6942,8 +6942,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Microsoft implementa sus propios controles; los clientes implementan los suyos.",
-  "exp_en": "Microsoft implements its own controls; customers implement theirs."
+  "exp_es": "Las acciones administradas por el cliente las implementa la organización cliente; Microsoft implementa sus propios controles (modelo de responsabilidad compartida). El registrador de dominios y el auditor no implementan acciones de Compliance Manager.",
+  "exp_en": "Customer-managed actions are implemented by the customer organization; Microsoft implements its own controls (shared responsibility). The domain registrar and the auditor do not implement Compliance Manager actions."
  },
  {
   "id": 246,
@@ -6968,8 +6968,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El portal de Purview reúne las soluciones de seguridad de datos y cumplimiento.",
-  "exp_en": "The Purview portal brings data security and compliance solutions together."
+  "exp_es": "Las soluciones de Purview que se agrupan en seguridad de datos, gobernanza y riesgo y cumplimiento incluyen Information Protection, DLP, Insider Risk Management, eDiscovery y Audit. Teams Phone, Intune y Azure Firewall pertenecen a otros productos.",
+  "exp_en": "The Purview solutions grouped under data security, governance and risk and compliance include Information Protection, DLP, Insider Risk Management, eDiscovery and Audit. Teams Phone, Intune and Azure Firewall belong to other products."
  },
  {
   "id": 247,
@@ -6996,8 +6996,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los clientes siguen siendo responsables de implementar y probar sus controles.",
-  "exp_en": "Customers remain responsible for implementing and testing their controls."
+  "exp_es": "Verdadero: Compliance Manager ofrece plantillas para muchas regulaciones y estándares. Verdadero: completar acciones de mejora puede subir la puntuación. Falso: no implementa todos los controles por el cliente; este sigue siendo responsable de implementarlos y probarlos.",
+  "exp_en": "True: Compliance Manager provides templates for many regulations and standards. True: completing improvement actions can raise the compliance score. False: it does not implement all controls for the customer; the customer remains responsible for implementing and testing them."
  },
  {
   "id": 248,
@@ -7022,8 +7022,8 @@
    "playbook"
   ],
   "correct": 2,
-  "exp_es": "Las evaluaciones ayudan a seguir el progreso frente a un estándar.",
-  "exp_en": "Assessments help you track progress against a standard."
+  "exp_es": "En Compliance Manager, un conjunto de controles asignados a una regulación se llama evaluación (assessment) y sirve para seguir el progreso frente a un estándar. Un libro de trabajo visualiza datos, una etiqueta de retención conserva contenido y un playbook automatiza respuestas.",
+  "exp_en": "In Compliance Manager, a group of controls mapped to a regulation is called an assessment and tracks progress against a standard. A workbook visualizes data, a retention label keeps content and a playbook automates responses."
  },
  {
   "id": 249,
@@ -7048,8 +7048,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los SIT usan patrones, palabras clave y niveles de confianza.",
-  "exp_en": "SITs use patterns, keywords and confidence levels."
+  "exp_es": "Los tipos de información confidencial (SIT) son patrones, por ejemplo números de tarjeta de crédito, con palabras clave y niveles de confianza para detectar contenido sensible. No son carpetas, grupos de usuarios ni rutas de red.",
+  "exp_en": "Sensitive information types (SITs) are patterns, such as credit card numbers, with keywords and confidence levels used to detect sensitive content. They are not folders, user groups or network routes."
  },
  {
   "id": 250,
@@ -7074,8 +7074,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los clasificadores entrenables aprenden de documentos de ejemplo.",
-  "exp_en": "Trainable classifiers learn from sample documents."
+  "exp_es": "Un clasificador entrenable aprende de documentos de ejemplo para identificar contenido por categoría, como contratos, algo que un patrón fijo no puede hacer. No abre puertos, no asigna licencias ni rota claves.",
+  "exp_en": "A trainable classifier learns from sample documents to identify content by category, such as contracts, something a fixed pattern cannot do. It does not open ports, assign licenses or rotate keys."
  },
  {
   "id": 251,
@@ -7100,8 +7100,8 @@
   "correct": [
    3
   ],
-  "exp_es": "EDM reduce los falsos positivos al comparar valores de datos exactos.",
-  "exp_en": "EDM reduces false positives by matching exact data values."
+  "exp_es": "La coincidencia exacta de datos (EDM) detecta datos sensibles comparando valores exactos con una tabla de datos con hash, lo que reduce los falsos positivos. No cuenta usuarios, no envía recordatorios ni hace copias de seguridad.",
+  "exp_en": "Exact data match (EDM) detects sensitive data by matching exact values against a hashed data table, which reduces false positives. It does not count users, send reminders or create backups."
  },
  {
   "id": 252,
@@ -7152,8 +7152,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Primero se crean las etiquetas y después se publican mediante directivas de etiquetas.",
-  "exp_en": "Labels are created first and then published through label policies."
+  "exp_es": "Una directiva de etiquetas de confidencialidad publica las etiquetas para los usuarios y define valores como el etiquetado obligatorio. Primero se crean las etiquetas y luego se publican mediante directivas. No crea VM, no escanea puertos ni restablece contraseñas.",
+  "exp_en": "A sensitivity label policy publishes labels to users and sets defaults such as mandatory labeling. Labels are created first and then published through policies. It does not create VMs, scan ports or reset passwords."
  },
  {
   "id": 254,
@@ -7178,8 +7178,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El etiquetado automático puede ser del lado del cliente o del servicio.",
-  "exp_en": "Auto-labeling can be client-side or service-side."
+  "exp_es": "El etiquetado automático de Purview aplica una etiqueta de confidencialidad al contenido que cumple las condiciones definidas (puede ser en el cliente o en el servicio). No instala actualizaciones, no restablece MFA ni elimina archivos antiguos.",
+  "exp_en": "Auto-labeling in Purview automatically applies a sensitivity label to content that matches the defined conditions (client-side or service-side). It does not install updates, reset MFA or delete old files."
  },
  {
   "id": 255,
@@ -7204,8 +7204,8 @@
   "correct": [
    1
   ],
-  "exp_es": "DLP de endpoints supervisa y restringe actividades en los dispositivos.",
-  "exp_en": "Endpoint DLP monitors and restricts activities on devices."
+  "exp_es": "DLP de punto de conexión (Endpoint DLP) protege datos confidenciales en dispositivos Windows y macOS, por ejemplo bloqueando copiar a unidades USB, al supervisar y restringir actividades en el dispositivo. Safe Links y Azure Firewall no controlan acciones locales.",
+  "exp_en": "Endpoint DLP protects sensitive data on Windows and macOS devices, for example by blocking copy to USB drives, by monitoring and restricting activities on the device. Safe Links and Azure Firewall do not control local actions."
  },
  {
   "id": 256,
@@ -7230,8 +7230,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las sugerencias de directiva educan a los usuarios en el momento de riesgo.",
-  "exp_en": "Policy tips educate users at the moment of risk."
+  "exp_es": "Una sugerencia de directiva (policy tip) de DLP avisa al usuario de que una acción puede infringir la directiva y, opcionalmente, le deja anularla, educando en el momento de riesgo. No elimina buzones, bloquea dispositivos ni restablece contraseñas.",
+  "exp_en": "A DLP policy tip warns users that an action may violate policy and can optionally allow an override, educating at the moment of risk. It does not delete mailboxes, block devices or reset passwords."
  },
  {
   "id": 257,
@@ -7256,8 +7256,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las directivas funcionan a nivel de ubicación; las etiquetas, a nivel de elemento.",
-  "exp_en": "Policies work at location level; labels work at item level."
+  "exp_es": "Una directiva de retención se aplica de forma amplia a ubicaciones (buzones, sitios, equipos), mientras que una etiqueta de retención se aplica a elementos individuales. Ambas se pueden combinar, pero no son idénticas ni se limitan a usuarios o dispositivos.",
+  "exp_en": "A retention policy applies broadly to locations (mailboxes, sites, teams), while a retention label applies to individual items. They can be combined but are not identical or limited to users or devices."
  },
  {
   "id": 258,
@@ -7282,8 +7282,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La revisión de eliminación permite que los revisores aprueben la eliminación de registros.",
-  "exp_en": "Disposition review lets reviewers approve deletion of records."
+  "exp_es": "Al terminar el periodo de retención, el contenido puede eliminarse automáticamente o enviarse a revisión de disposición, donde un revisor aprueba la eliminación. No se borra la cuenta del autor, no se mueve a otro tenant ni se desactivan reglas de firewall.",
+  "exp_en": "At the end of the retention period, content can be deleted automatically or sent for disposition review, where a reviewer approves deletion. The author's account is not deleted, the content is not moved to another tenant and firewall rules are not disabled."
  },
  {
   "id": 259,
@@ -7308,8 +7308,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La administración de registros admite requisitos normativos y legales de inmutabilidad.",
-  "exp_en": "Records management supports regulatory and legal requirements for immutability."
+  "exp_es": "Declarar un elemento como registro con una etiqueta de retención restringe su edición y eliminación para que se conserve como registro, lo que apoya requisitos legales de inmutabilidad. No lo cifra, no lo borra ni lo hace público.",
+  "exp_en": "Declaring an item as a record with a retention label restricts editing and deletion so it is preserved as a record, supporting legal immutability requirements. It does not encrypt it, delete it or make it public."
  },
  {
   "id": 260,
@@ -7334,8 +7334,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El Explorador de contenido enumera los elementos clasificados por etiquetas y SIT.",
-  "exp_en": "Content explorer lists items classified by labels and SITs."
+  "exp_es": "El explorador de contenido (content explorer) muestra la cantidad y ubicación del contenido que tiene una etiqueta de confidencialidad o un SIT concretos. Las alertas de riesgo interno, la puntuación de cumplimiento y la retención de auditoría no listan elementos por etiqueta.",
+  "exp_en": "Content explorer shows the amount and location of content that has a specific sensitivity label or SIT. Insider risk alerts, compliance score and audit retention policies do not list items by label."
  },
  {
   "id": 261,
@@ -7360,8 +7360,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El Explorador de actividad muestra la actividad de etiquetas y DLP a lo largo del tiempo.",
-  "exp_en": "Activity explorer shows label and DLP activity over time."
+  "exp_es": "El explorador de actividad (activity explorer) muestra tendencias de las actividades con etiquetas, como etiquetas aplicadas, cambiadas o quitadas, y de DLP. El explorador de contenido lista elementos, no actividades. Recuerda: contenido = qué hay; actividad = qué se hizo.",
+  "exp_en": "Activity explorer shows trends of label activities, such as labels applied, changed or removed, and DLP activity. Content explorer lists items, not activities. Remember: content = what exists; activity = what was done."
  },
  {
   "id": 262,
@@ -7393,8 +7393,8 @@
     "ans": true
    }
   ],
-  "exp_es": "DLP cubre Exchange, SharePoint, OneDrive, Teams, endpoints y más.",
-  "exp_en": "DLP covers Exchange, SharePoint, OneDrive, Teams, endpoints and more."
+  "exp_es": "Verdadero: las etiquetas de confidencialidad se aplican manual o automáticamente. Falso: las etiquetas de retención sí pueden marcar elementos como registros. Falso: DLP cubre Exchange, SharePoint, OneDrive, Teams y dispositivos, no solo correo. Verdadero: EDM usa valores con hash.",
+  "exp_en": "True: sensitivity labels can be applied manually or automatically. False: retention labels can mark items as records. False: DLP covers Exchange, SharePoint, OneDrive, Teams and endpoints, not only email. True: EDM uses hashed values."
  },
  {
   "id": 263,
@@ -7421,8 +7421,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las organizaciones pueden crear SIT personalizados para ajustarse a sus propios patrones.",
-  "exp_en": "Organizations can create custom SITs to match their own patterns."
+  "exp_es": "Falso: los SIT integrados sí detectan elementos como números de tarjeta de crédito. Verdadero: los clasificadores entrenables reconocen categorías de contenido a partir de ejemplos. Falso: se pueden crear SIT personalizados con tus propios patrones.",
+  "exp_en": "False: built-in SITs can detect items such as credit card numbers. True: trainable classifiers recognize content categories from samples. False: custom SITs can be created to match your own patterns."
  },
  {
   "id": 264,
@@ -7515,8 +7515,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Las directivas de etiquetas publican etiquetas; el Explorador de actividad muestra tendencias de actividad de etiquetas.",
-  "exp_en": "Label policies publish labels; Activity explorer shows label activity trends."
+  "exp_es": "Una directiva de etiquetas de confidencialidad hace que las etiquetas estén disponibles para un grupo y exige etiquetar los documentos. El explorador de actividad muestra tendencias de actividad con etiquetas, como cuántas veces se rebajó una etiqueta en el último mes.",
+  "exp_en": "A sensitivity label policy makes labels available to a group and requires users to label documents. Activity explorer shows label activity trends, such as how many times labels were downgraded over the last month."
  },
  {
   "id": 266,
@@ -7541,8 +7541,8 @@
    "Alert"
   ],
   "correct": 1,
-  "exp_es": "Content explorer enumera elementos; Activity explorer enumera actividades.",
-  "exp_en": "Content explorer lists items; Activity explorer lists activities."
+  "exp_es": "El explorador de contenido (content explorer) de Purview muestra qué elementos tienen una etiqueta concreta en toda la organización. El explorador de actividad, en cambio, muestra las acciones realizadas con las etiquetas a lo largo del tiempo.",
+  "exp_en": "Purview content explorer shows which items carry a specific label across the organization. Activity explorer, by contrast, shows actions taken with labels over time."
  },
  {
   "id": 267,
@@ -7567,8 +7567,8 @@
    "sensitivity"
   ],
   "correct": 0,
-  "exp_es": "La revisión de eliminación permite que un revisor confirme la eliminación.",
-  "exp_en": "Disposition review lets a reviewer confirm deletion."
+  "exp_es": "Al final del periodo de retención, los elementos pueden eliminarse o enviarse a revisión de disposición, en la que un revisor confirma la eliminación. Identidad, enrutamiento y confidencialidad no describen ese tipo de revisión.",
+  "exp_en": "At the end of the retention period, items can be deleted or sent for disposition review, where a reviewer confirms deletion. Identity, routing and sensitivity do not describe that kind of review."
  },
  {
   "id": 268,
@@ -7593,8 +7593,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las plantillas de Insider Risk Management se centran en escenarios como el robo y las filtraciones de datos.",
-  "exp_en": "Insider Risk Management templates target scenarios like data theft and leaks."
+  "exp_es": "La plantilla «Robo de datos por usuarios que se marchan» ayuda a detectar a empleados que extraen datos poco antes de dejar la organización. Los errores de licencias, cortes de red y certificados caducados no son riesgos internos que cubra Insider Risk Management.",
+  "exp_en": "The 'Data theft by departing users' template helps detect employees exfiltrating data shortly before leaving the organization. Licensing errors, network outages and expired certificates are not insider risks covered by Insider Risk Management."
  },
  {
   "id": 269,
@@ -7619,8 +7619,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los controles de privacidad limitan quién puede ver los detalles identificativos.",
-  "exp_en": "Privacy controls limit who can see identifying details."
+  "exp_es": "Insider Risk Management protege la privacidad seudonimizando los nombres de usuario de forma predeterminada y limitando quién puede ver las alertas. No publica alertas a todos, no desactiva el registro de auditoría ni elimina datos de empleados.",
+  "exp_en": "Insider Risk Management protects privacy by pseudonymizing usernames by default and limiting who can see alerts. It does not publish alerts to everyone, disable audit logging or delete employee data."
  },
  {
   "id": 270,
@@ -7645,8 +7645,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los casos organizan el trabajo y los permisos de una investigación.",
-  "exp_en": "Cases organize the work and permissions of an investigation."
+  "exp_es": "Un caso de Purview eDiscovery es un contenedor que agrupa las búsquedas, retenciones y exportaciones de una investigación, y organiza el trabajo y los permisos. No es una cuenta de facturación, un segmento de red ni un dispositivo físico.",
+  "exp_en": "A Purview eDiscovery case is a container that groups an investigation's searches, holds and exports, and organizes the work and permissions. It is not a billing account, a network segment or a physical device."
  },
  {
   "id": 271,
@@ -7671,8 +7671,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Premium admite el flujo completo de eDiscovery, desde la identificación hasta la revisión.",
-  "exp_en": "Premium supports the full eDiscovery workflow from identification to review."
+  "exp_es": "eDiscovery (Premium) añade administración de custodios, conjuntos de revisión y análisis para casos complejos, cubriendo el flujo completo desde la identificación hasta la revisión. La búsqueda de contenido sola, Compliance Manager y Audit (Standard) no ofrecen esas capacidades.",
+  "exp_en": "eDiscovery (Premium) adds custodian management, review sets and analytics for complex cases, covering the full workflow from identification to review. Content search alone, Compliance Manager and Audit (Standard) do not offer those capabilities."
  },
  {
   "id": 272,
@@ -7697,8 +7697,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La búsqueda de auditoría consulta el registro de auditoría unificado.",
-  "exp_en": "Audit search queries the unified audit log."
+  "exp_es": "La búsqueda en el registro de auditoría consulta el registro de auditoría unificado para ver quién accedió a un archivo o cambió una configuración de buzón. La puntuación de cumplimiento y las etiquetas no sirven para buscar registros de actividad.",
+  "exp_en": "Audit log search queries the unified audit log to see who accessed a file or changed a mailbox setting. Compliance score and labels are not for searching activity records."
  },
  {
   "id": 273,
@@ -7723,8 +7723,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Auditoría (Premium) ofrece una retención más larga, como hasta un año, y más eventos.",
-  "exp_en": "Audit (Premium) offers longer retention, such as up to a year, and more events."
+  "exp_es": "Audit (Premium) ofrece una retención más larga de los registros (por ejemplo, hasta un año) y eventos adicionales de alto valor. Audit (Standard) tiene retención menor; la búsqueda de contenido y el seguimiento de mensajes no son niveles de auditoría.",
+  "exp_en": "Audit (Premium) provides longer log retention (for example up to a year) and additional high-value events. Audit (Standard) has shorter retention; content search and message trace are not audit tiers."
  },
  {
   "id": 274,
@@ -7749,8 +7749,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Communication Compliance supervisa las comunicaciones en busca de infracciones de directiva.",
-  "exp_en": "Communication Compliance monitors communications for policy violations."
+  "exp_es": "Communication Compliance supervisa comunicaciones como Teams y correo para detectar lenguaje inapropiado, acoso u otras infracciones de directivas. Key Vault guarda secretos y Customer Lockbox controla el acceso de Microsoft; ninguno analiza mensajes.",
+  "exp_en": "Communication Compliance monitors communications such as Teams and email to detect inappropriate language, harassment or other policy violations. Key Vault stores secrets and Customer Lockbox controls Microsoft access; neither analyzes messages."
  },
  {
   "id": 275,
@@ -7777,8 +7777,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El registro de auditoría unificado admite búsqueda y exportación.",
-  "exp_en": "The unified audit log supports search and export."
+  "exp_es": "Verdadero: las alertas de Insider Risk Management se pueden investigar y clasificar. Verdadero: los casos de eDiscovery pueden retener, buscar y exportar contenido. Falso: los registros de auditoría sí se pueden buscar y exportar en Purview.",
+  "exp_en": "True: Insider Risk Management alerts can be investigated and triaged. True: eDiscovery cases can hold, search and export content. False: audit logs can be searched and exported in Microsoft Purview."
  },
  {
   "id": 276,
@@ -7850,8 +7850,8 @@
    "Network"
   ],
   "correct": 0,
-  "exp_es": "Insider Risk Management forma parte de Microsoft Purview.",
-  "exp_en": "Insider Risk Management is part of Microsoft Purview."
+  "exp_es": "Microsoft Purview Insider Risk Management (riesgo interno) ayuda a detectar actividades de usuarios arriesgadas, como robo o filtración de datos. «Outsider», «Billing» o «Network» no son soluciones de Purview.",
+  "exp_en": "Microsoft Purview Insider Risk Management helps detect risky user activities such as data theft and leaks. 'Outsider', 'Billing' or 'Network' are not Purview solutions."
  },
  {
   "id": 278,
@@ -7876,8 +7876,8 @@
    "spam"
   ],
   "correct": 1,
-  "exp_es": "El registro de auditoría unificado respalda las investigaciones y el cumplimiento.",
-  "exp_en": "The unified audit log supports investigations and compliance."
+  "exp_es": "El registro de auditoría (audit log) de Purview registra las actividades de usuarios y administradores en los servicios de Microsoft 365 y sirve para investigaciones y cumplimiento. Facturación, DNS y spam no son registros de actividad de usuarios.",
+  "exp_en": "The Purview audit log records user and admin activities across Microsoft 365 services and supports investigations and compliance. Billing, DNS and spam are not user activity logs."
  },
  {
   "id": 279,
@@ -7980,8 +7980,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las passkeys vinculan las credenciales a la parte de confianza y resisten el phishing.",
-  "exp_en": "Passkeys bind credentials to the relying party and are phishing-resistant."
+  "exp_es": "Las passkeys usan criptografía de clave pública, así que no hay un secreto compartido que se pueda suplantar (phishing); además están vinculadas a la parte de confianza. No funcionan solo sin conexión, no guardan la contraseña ni equivalen a preguntas de seguridad.",
+  "exp_en": "Passkeys use public-key cryptography, so there is no shared secret that can be phished; they are also bound to the relying party. They do not work only offline, do not store the password and are not security questions."
  },
  {
   "id": 283,
@@ -8006,8 +8006,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las ubicaciones con nombre definen rangos de IP de confianza y países o regiones.",
-  "exp_en": "Named locations define trusted IP ranges and countries or regions."
+  "exp_es": "«Fuera del país» se expresa con una condición de ubicación que usa ubicaciones con nombre (named locations), basadas en rangos de IP o países y regiones. Un control de sesión, un filtro de dispositivo o un control de concesión no definen dónde está el usuario.",
+  "exp_en": "'Outside the country' is expressed with a location condition using named locations, based on IP ranges or countries and regions. A session control, a device filter or a grant control does not define where the user is."
  },
  {
   "id": 284,
@@ -8032,8 +8032,8 @@
   "correct": [
    0
   ],
-  "exp_es": "RBAC simplifica y estandariza la administración de permisos.",
-  "exp_en": "RBAC simplifies and standardizes permission management."
+  "exp_es": "RBAC agrupa permisos en roles que se asignan en un ámbito (scope), lo que simplifica y estandariza la administración de permisos. No asigna permisos solo a dispositivos, los roles sí se pueden modificar y no da todos los permisos a todos.",
+  "exp_en": "RBAC groups permissions into roles that are assigned at a scope, simplifying and standardizing permission management. It does not assign permissions only to devices, roles can be changed and not every user gets all permissions."
  },
  {
   "id": 285,
@@ -8058,8 +8058,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las revisiones de acceso pueden pedir a usuarios o responsables que recertifiquen el acceso.",
-  "exp_en": "Access reviews can ask users or managers to recertify access."
+  "exp_es": "Las revisiones de acceso piden a usuarios o responsables que confirmen periódicamente que siguen necesitando el acceso a una aplicación (recertificación). Safe Links, el bloqueo inteligente y los valores predeterminados de seguridad no hacen esa recertificación.",
+  "exp_en": "Access reviews ask users or managers to periodically confirm they still need access to an application (recertification). Safe Links, smart lockout and security defaults do not do that recertification."
  },
  {
   "id": 286,
@@ -8086,8 +8086,8 @@
     "ans": true
    }
   ],
-  "exp_es": "El modo de solo informe evalúa las directivas sin aplicarlas.",
-  "exp_en": "Report-only mode evaluates policies without enforcing them."
+  "exp_es": "Verdadero: las ubicaciones con nombre pueden basarse en rangos de IP o países. Falso: el modo solo informe (report-only) evalúa la directiva sin aplicar sus controles. Verdadero: las directivas pueden exigir MFA o bloquear el acceso.",
+  "exp_en": "True: named locations can be based on IP ranges or countries. False: report-only mode evaluates the policy without enforcing its controls. True: policies can require MFA or block access."
  },
  {
   "id": 287,
@@ -8133,8 +8133,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Las passkeys resisten el phishing; TAP facilita el registro inicial.",
-  "exp_en": "Passkeys are phishing-resistant; TAP bootstraps registration."
+  "exp_es": "Para ejecutivos que necesitan un inicio de sesión resistente al phishing en distintos dispositivos, usa una passkey (FIDO2). Para un empleado nuevo que debe registrar su primer método fuerte, usa un Pase de acceso temporal (TAP), que sirve para la incorporación y la recuperación.",
+  "exp_en": "For executives who need phishing-resistant sign-in across devices, use a passkey (FIDO2). For a new hire who must register their first strong method, use a Temporary Access Pass (TAP), which supports onboarding and recovery."
  },
  {
   "id": 288,
@@ -8159,8 +8159,8 @@
    "multifactor"
   ],
   "correct": 3,
-  "exp_es": "Una huella (eres) más una contraseña (sabes) son dos factores.",
-  "exp_en": "A fingerprint (are) plus a password (know) are two factors."
+  "exp_es": "Una huella digital (algo que eres) junto con una contraseña (algo que sabes) son dos factores de categorías distintas, es decir, autenticación multifactor. Un solo factor sería únicamente la contraseña; federada y anónima no describen este caso.",
+  "exp_en": "A fingerprint (something you are) with a password (something you know) are two factors from different categories, that is, multifactor authentication. Single-factor would be the password alone; federated and anonymous do not describe this case."
  },
  {
   "id": 289,
@@ -8185,8 +8185,8 @@
   "correct": [
    0
   ],
-  "exp_es": "VPN Gateway ofrece conectividad cifrada de sitio a sitio y de punto a sitio.",
-  "exp_en": "VPN Gateway provides site-to-site and point-to-site encrypted connectivity."
+  "exp_es": "Azure VPN Gateway conecta redes locales con Azure mediante un túnel cifrado a través de internet público (sitio a sitio y punto a sitio). Key Vault guarda secretos, Advisor da recomendaciones y Policy aplica reglas de gobernanza.",
+  "exp_en": "Azure VPN Gateway connects on-premises networks to Azure through an encrypted tunnel across the public internet (site-to-site and point-to-site). Key Vault stores secrets, Advisor gives recommendations and Policy enforces governance rules."
  },
  {
   "id": 290,
@@ -8211,8 +8211,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Front Door es un punto de entrada global; WAF filtra las solicitudes maliciosas.",
-  "exp_en": "Front Door is a global entry point; WAF filters malicious requests."
+  "exp_es": "Azure Front Door es un punto de entrada global que ofrece balanceo de carga global y, con WAF, protección en el borde frente a exploits web. No sustituye a Entra ID, no gestiona licencias ni guarda secretos.",
+  "exp_en": "Azure Front Door is a global entry point that provides global load balancing and, with WAF, edge protection against web exploits. It does not replace Entra ID, manage licenses or store secrets."
  },
  {
   "id": 291,
@@ -8237,8 +8237,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los planes de Defender generan alertas cuando se detecta actividad sospechosa.",
-  "exp_en": "Alerts are produced by Defender plans when suspicious activity is detected."
+  "exp_es": "Una alerta de seguridad de Defender for Cloud es una notificación de una amenaza detectada, con pasos recomendados, generada por los planes de Defender cuando hay actividad sospechosa. No es una actualización DNS, una invitación ni un aviso de facturación.",
+  "exp_en": "A Defender for Cloud security alert is a notification of a detected threat, with recommended steps, generated by Defender plans when suspicious activity occurs. It is not a DNS update, an invitation or a billing reminder."
  },
  {
   "id": 292,
@@ -8263,8 +8263,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las recomendaciones ayudan a aumentar la puntuación de seguridad cuando se corrigen.",
-  "exp_en": "Recommendations help raise the secure score when remediated."
+  "exp_es": "Una recomendación de Defender for Cloud describe un cambio de configuración que mejoraría la seguridad; al corregirla sube la puntuación de seguridad. No es un aviso legal, no borra recursos automáticamente ni es una clave de licencia.",
+  "exp_en": "A Defender for Cloud recommendation describes a configuration change that would improve security; remediating it raises the secure score. It is not a legal notice, does not delete resources automatically and is not a license key."
  },
  {
   "id": 293,
@@ -8289,8 +8289,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las reglas programadas ejecutan consultas a intervalos definidos para detectar amenazas.",
-  "exp_en": "Scheduled rules run queries at set intervals to detect threats."
+  "exp_es": "Una regla de consulta programada (scheduled query rule) de Sentinel se ejecuta a intervalos definidos y busca patrones en los registros con una consulta KQL para detectar amenazas. «Regla DNS», de facturación o de licencia no existen como tipos de regla de análisis.",
+  "exp_en": "A Sentinel scheduled query rule runs at set intervals and looks for patterns in the logs with a KQL query to detect threats. 'DNS', billing or license rules do not exist as analytics rule types."
  },
  {
   "id": 294,
@@ -8315,8 +8315,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los conectores llevan datos de seguridad al área de trabajo de Log Analytics.",
-  "exp_en": "Connectors bring security data into the Log Analytics workspace."
+  "exp_es": "Un conector de datos de Sentinel es el componente que ingiere datos de un origen y los lleva al área de trabajo de Log Analytics. No es una directiva de contraseñas, un rol de usuario ni un cable de red.",
+  "exp_en": "A Sentinel data connector is the component that ingests data from a source into the Log Analytics workspace. It is not a password policy, a user role or a network cable."
  },
  {
   "id": 295,
@@ -8341,8 +8341,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Defender for Office 365 cubre amenazas de correo y colaboración.",
-  "exp_en": "Defender for Office 365 covers email and collaboration threats."
+  "exp_es": "Microsoft Defender for Office 365 protege Exchange Online, SharePoint y Teams frente a phishing, malware y compromiso de correo empresarial. Defender for IoT protege dispositivos IoT, Entra Private Access es acceso a apps privadas y DDoS Protection protege redes.",
+  "exp_en": "Microsoft Defender for Office 365 protects Exchange Online, SharePoint and Teams from phishing, malware and business email compromise. Defender for IoT protects IoT devices, Entra Private Access is private app access and DDoS Protection protects networks."
  },
  {
   "id": 296,
@@ -8367,8 +8367,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La priorización basada en riesgo considera el contexto de amenazas y el valor de los activos.",
-  "exp_en": "Risk-based prioritization considers threat context and asset value."
+  "exp_es": "Defender Vulnerability Management prioriza las vulnerabilidades de software por explotabilidad e impacto en el negocio, considerando el contexto de amenazas y el valor del activo. Safe Attachments, las revisiones de acceso y Customer Lockbox no priorizan vulnerabilidades.",
+  "exp_en": "Defender Vulnerability Management prioritizes software vulnerabilities by exploitability and business impact, considering threat context and asset value. Safe Attachments, access reviews and Customer Lockbox do not prioritize vulnerabilities."
  },
  {
   "id": 297,
@@ -8393,8 +8393,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El explorador de amenazas muestra el correo entregado y permite corregirlo.",
-  "exp_en": "Threat Explorer shows delivered email and lets you remediate it."
+  "exp_es": "Threat Explorer permite a un administrador investigar dónde se entregó un mensaje sospechoso y remediarlo (por ejemplo, eliminarlo de los buzones). Compliance Manager, Cloud Discovery y PIM sirven para cumplimiento, descubrimiento de apps y roles privilegiados.",
+  "exp_en": "Threat Explorer lets an admin investigate where a suspicious message was delivered and remediate it (for example, remove it from mailboxes). Compliance Manager, Cloud Discovery and PIM are for compliance, app discovery and privileged roles."
  },
  {
   "id": 298,
@@ -8416,8 +8416,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Key Vault almacena secretos, claves y certificados; no enruta tráfico.",
-  "exp_en": "Key Vault stores secrets, keys and certificates; it does not route traffic."
+  "exp_es": "Verdadero: Azure Front Door con WAF filtra solicitudes web maliciosas en el borde. Falso: Key Vault almacena secretos, claves y certificados; no enruta tráfico de red (eso lo hacen Front Door, Application Gateway o los equilibradores).",
+  "exp_en": "True: Azure Front Door with WAF can filter malicious web requests at the edge. False: Key Vault stores secrets, keys and certificates; it does not route network traffic (Front Door, Application Gateway or load balancers do)."
  },
  {
   "id": 299,
@@ -8444,8 +8444,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las reglas de automatización y los cuadernos de estrategias ofrecen capacidades SOAR.",
-  "exp_en": "Automation rules and playbooks provide SOAR capabilities."
+  "exp_es": "Verdadero: una regla de análisis programada ejecuta una consulta KQL a intervalos. Verdadero: un conector de datos trae datos de un origen a Sentinel. Falso: Sentinel sí admite automatización, con reglas de automatización y playbooks (capacidades SOAR).",
+  "exp_en": "True: a scheduled analytics rule runs a KQL query at set intervals. True: a data connector brings data from a source into Sentinel. False: Sentinel supports automation, through automation rules and playbooks (SOAR capabilities)."
  },
  {
   "id": 300,
@@ -8472,8 +8472,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Completar las recomendaciones mejora la puntuación de seguridad.",
-  "exp_en": "Completing recommendations improves the secure score."
+  "exp_es": "Verdadero: las alertas describen amenazas detectadas y las recomendaciones, mejoras de configuración. Falso: las recomendaciones sí afectan a la puntuación de seguridad al corregirse. Falso: las alertas sí proceden de los planes de Defender habilitados.",
+  "exp_en": "True: alerts describe detected threats and recommendations describe configuration improvements. False: recommendations do affect the secure score when remediated. False: alerts do come from enabled Defender plans."
  },
  {
   "id": 301,
@@ -8566,8 +8566,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Las reglas programadas alertan según una programación; la búsqueda proactiva es una exploración dirigida por analistas.",
-  "exp_en": "Scheduled rules alert on schedule; hunting is analyst-driven exploration."
+  "exp_es": "Para ejecutar una consulta cada hora y generar una alerta por fallos repetidos de inicio de sesión, usa una regla de análisis programada. Para buscar de forma proactiva en registros pasados sin que haya alerta, usa Hunting (exploración dirigida por el analista).",
+  "exp_en": "To run a query every hour and raise an alert for repeated failed sign-ins, use a scheduled analytics rule. To proactively search past logs without an alert, use hunting (analyst-driven exploration)."
  },
  {
   "id": 303,
@@ -8618,8 +8618,8 @@
    "Threat Explorer"
   ],
   "correct": 3,
-  "exp_es": "El explorador de amenazas ofrece herramientas de detección y corrección en tiempo real.",
-  "exp_en": "Threat Explorer provides real-time detection and remediation tools."
+  "exp_es": "Threat Explorer de Defender for Office 365 permite investigar amenazas de correo ya entregado y remediarlas con detección en tiempo real. Las revisiones de acceso, la rotación de claves y Cloud Discovery no investigan correo.",
+  "exp_en": "Threat Explorer in Defender for Office 365 lets admins investigate already-delivered email threats and remediate them with real-time detection. Access reviews, key rotation and Cloud Discovery do not investigate email."
  },
  {
   "id": 305,
@@ -9035,8 +9035,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La federación usa confianza; los protocolos heredados no admiten MFA; los tokens llevan notificaciones.",
-  "exp_en": "Federation uses trust; legacy protocols cannot do MFA; tokens carry claims.",
+  "exp_es": "Verdadero: la federación se basa en una relación de confianza entre proveedores de identidades. Falso: los protocolos de autenticación heredados no admiten MFA, por eso conviene bloquearlos. Verdadero: un token puede contener notificaciones (claims) sobre el usuario.",
+  "exp_en": "True: federation relies on a trust relationship between identity providers. False: legacy authentication protocols do not support MFA, which is why they should be blocked. True: a token can contain claims about the user.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9062,8 +9062,8 @@
    "encryption key"
   ],
   "correct": 0,
-  "exp_es": "OpenID Connect devuelve un token de identificador que describe al usuario autenticado.",
-  "exp_en": "OpenID Connect returns an ID token describing the authenticated user.",
+  "exp_es": "Un inicio de sesión que demuestra quién es el usuario entrega a la aplicación un token de identidad (ID token), definido por OpenID Connect. El token de acceso autoriza el uso de recursos, el de actualización renueva tokens y una clave de cifrado no es un token de sesión.",
+  "exp_en": "A sign-in that proves who the user is gives the app an ID token, defined by OpenID Connect. The access token authorizes resource use, the refresh token renews tokens and an encryption key is not a sign-in token.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9309,8 +9309,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Private Access es para aplicaciones privadas; Internet Access filtra el tráfico web público.",
-  "exp_en": "Private Access is for private apps; Internet Access filters public web traffic.",
+  "exp_es": "Verdadero: los grupos dinámicos actualizan la pertenencia según atributos de usuario. Verdadero: las unidades administrativas limitan el ámbito de un rol de administrador. Falso: Private Access es para aplicaciones privadas; Internet Access filtra el tráfico a sitios web públicos.",
+  "exp_en": "True: dynamic groups update membership based on user attributes. True: administrative units can limit the scope of an admin role. False: Private Access is for private apps; Internet Access filters traffic to public websites.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9517,8 +9517,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los pases temporales caducan tras un tiempo configurado; los SMS pueden interceptarse o sufrir duplicado de SIM.",
-  "exp_en": "TAPs expire after a configured time; SMS can be intercepted or SIM-swapped.",
+  "exp_es": "Verdadero: las llaves de seguridad FIDO2 resisten el phishing. Falso: un Pase de acceso temporal caduca tras un tiempo configurado. Verdadero: los códigos SMS son más débiles que las passkeys porque se pueden interceptar o sufrir intercambio de SIM.",
+  "exp_en": "True: FIDO2 security keys are phishing resistant. False: a Temporary Access Pass expires after a configured time. True: SMS codes are weaker than passkeys because they can be intercepted or SIM-swapped.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9565,8 +9565,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "El pase temporal sirve para recuperación e incorporación; las llaves FIDO2 funcionan sin teléfono.",
-  "exp_en": "TAP supports recovery and onboarding; FIDO2 keys work without phones.",
+  "exp_es": "Si un usuario perdió el teléfono y debe configurar una nueva passkey, un Pase de acceso temporal (TAP) permite la recuperación. Para personal de laboratorio sin teléfonos que necesita un dispositivo USB resistente al phishing, la solución es una llave de seguridad FIDO2.",
+  "exp_en": "If a user lost their phone and must set up a new passkey, a Temporary Access Pass (TAP) supports recovery. For lab staff who cannot use phones and need a phishing-resistant USB device, the answer is a FIDO2 security key.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9592,8 +9592,8 @@
    "smart lockout"
   ],
   "correct": 1,
-  "exp_es": "La seguridad de autenticación es un control de concesión del acceso condicional.",
-  "exp_en": "Authentication strengths are a grant control in Conditional Access.",
+  "exp_es": "Las intensidades de autenticación (authentication strengths) son un control de concesión del acceso condicional que permite exigir métodos concretos, como MFA resistente al phishing, solo a los administradores. Los grupos dinámicos, las ubicaciones con nombre y el bloqueo inteligente no definen métodos.",
+  "exp_en": "Authentication strengths are a Conditional Access grant control that lets you require specific methods, such as phishing-resistant MFA, only for administrators. Dynamic groups, named locations and smart lockout do not define methods.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9783,8 +9783,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Solo informe únicamente registra el resultado; bloquear el acceso es un control de concesión válido.",
-  "exp_en": "Report-only only logs the outcome; block access is a valid grant control.",
+  "exp_es": "Falso: el modo solo informe no aplica la directiva; solo registra el resultado. Verdadero: el riesgo de inicio de sesión puede usarse como condición. Verdadero: una directiva puede bloquear el acceso por completo, que es un control de concesión válido.",
+  "exp_en": "False: report-only mode does not enforce the policy; it only logs the outcome. True: sign-in risk can be used as a condition. True: a policy can block access entirely, which is a valid grant control.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9827,8 +9827,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Las ubicaciones son condiciones; exigir un dispositivo conforme es un control de concesión.",
-  "exp_en": "Locations are conditions; requiring a compliant device is a grant control.",
+  "exp_es": "Exigir un dispositivo compatible es un control de concesión (grant control). Los inicios de sesión desde fuera de una ubicación con nombre son una asignación o condición. Las ubicaciones definen cuándo se aplica la directiva; los controles definen qué se exige.",
+  "exp_en": "Requiring a compliant device is a grant control. Sign-ins from outside a named location are an assignment or condition. Locations define when the policy applies; controls define what is required.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9854,8 +9854,8 @@
    "break-glass"
   ],
   "correct": 2,
-  "exp_es": "Los resultados de solo informe aparecen en los registros de inicio de sesión y en el libro de información.",
-  "exp_en": "Report-only results appear in sign-in logs and the insights workbook.",
+  "exp_es": "El modo solo informe (report-only) permite probar una directiva nueva de acceso condicional sin afectar a los usuarios; los resultados aparecen en los registros de inicio de sesión y en el libro de información. Enforced aplica la directiva y break-glass es una cuenta de emergencia.",
+  "exp_en": "Report-only mode lets you test a new Conditional Access policy without affecting users; results appear in the sign-in logs and the insights workbook. Enforced applies the policy and break-glass is an emergency account.",
   "pack": "sc900-oct26b"
  },
  {
@@ -9991,8 +9991,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El riesgo de inicio de sesión se evalúa en tiempo real y sin conexión en cada inicio de sesión.",
-  "exp_en": "Sign-in risk is evaluated in real time and offline for every sign-in.",
+  "exp_es": "Verdadero: las credenciales filtradas aumentan el riesgo de usuario. Verdadero: las activaciones de PIM pueden requerir aprobación. Falso: el riesgo de inicio de sesión se evalúa en tiempo real y sin conexión en cada inicio de sesión, no una vez al año.",
+  "exp_en": "True: leaked credentials increase user risk. True: PIM activations can require approval. False: sign-in risk is evaluated in real time and offline for every sign-in, not once a year.",
   "pack": "sc900-oct26b"
  },
  {
@@ -10031,8 +10031,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "Las credenciales filtradas son riesgo de usuario; las direcciones IP anónimas son riesgo de inicio de sesión.",
-  "exp_en": "Leaked credentials are user risk; anonymous IP addresses are sign-in risk.",
+  "exp_es": "Que la contraseña de un usuario aparezca en un volcado público de datos es riesgo de usuario (la cuenta puede estar comprometida). Un inicio de sesión desde un nodo de salida de Tor (IP anónima) es riesgo de inicio de sesión (ese intento puede no ser del usuario legítimo).",
+  "exp_en": "A user's password appearing in a public data dump is user risk (the account may be compromised). A sign-in from a Tor exit node (anonymous IP) is sign-in risk (that attempt may not be from the legitimate user).",
   "pack": "sc900-oct26b"
  },
  {
@@ -10112,8 +10112,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El filtrado por inteligencia sobre amenazas usa la fuente de Microsoft Threat Intelligence.",
-  "exp_en": "Threat intelligence filtering uses the Microsoft Threat Intelligence feed.",
+  "exp_es": "El filtrado basado en inteligencia de amenazas de Azure Firewall alerta o deniega tráfico hacia y desde IP y dominios maliciosos conocidos, usando el feed de Microsoft Threat Intelligence. JIT, los grupos de seguridad de aplicaciones y Private Link no hacen ese filtrado.",
+  "exp_en": "Azure Firewall threat intelligence-based filtering alerts on or denies traffic to and from known malicious IPs and domains, using the Microsoft Threat Intelligence feed. JIT, application security groups and Private Link do not do that filtering.",
   "pack": "sc900-oct26b"
  },
  {
@@ -10380,8 +10380,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Cloud Discovery revela la TI en la sombra y puntúa el riesgo de cada aplicación.",
-  "exp_en": "Cloud Discovery reveals shadow IT and scores each app's risk.",
+  "exp_es": "Cloud Discovery de Defender for Cloud Apps analiza registros de firewall y proxy para descubrir las aplicaciones en la nube usadas sin aprobación de TI (shadow IT) y puntúa el riesgo de cada una. Conditional Access App Control, Safe Links y la interrupción de ataques cumplen otras funciones.",
+  "exp_en": "Cloud Discovery in Defender for Cloud Apps analyzes firewall and proxy logs to discover cloud apps used without IT approval (shadow IT) and scores each app's risk. Conditional Access App Control, Safe Links and attack disruption serve other purposes.",
   "pack": "sc900-oct26b"
  },
  {
@@ -10565,8 +10565,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La ausencia de publicidad basada en el contenido es uno de los principios de privacidad de Microsoft.",
-  "exp_en": "No content-based targeting is one of Microsoft's privacy principles.",
+  "exp_es": "Verdadero: Customer Lockbox permite que el cliente apruebe el acceso de Microsoft a su contenido. Falso: Microsoft no usa el correo de los clientes para publicidad dirigida. Verdadero: Priva ayuda a atender solicitudes de acceso o eliminación de datos personales.",
+  "exp_en": "True: Customer Lockbox lets customers approve Microsoft access to their content. False: Microsoft does not use customer email to target advertising. True: Priva can help fulfill requests to access or delete personal data.",
   "pack": "sc900-oct26b"
  },
  {
@@ -10750,8 +10750,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los puntos dependen del riesgo y el tipo; DSPM para IA cubre el uso de IA.",
-  "exp_en": "Points depend on risk and type; DSPM for AI covers AI usage.",
+  "exp_es": "Falso: las acciones de mejora no suman los mismos puntos; dependen del riesgo y del tipo. Verdadero: las acciones administradas por Microsoft las implementa Microsoft. Verdadero: Purview (DSPM para IA) puede mostrar datos sensibles usados en consultas a la IA.",
+  "exp_en": "False: improvement actions do not add the same points; points depend on risk and type. True: Microsoft-managed actions are implemented by Microsoft. True: Purview (DSPM for AI) can show sensitive data used in AI prompts.",
   "pack": "sc900-oct26b"
  },
  {
@@ -11049,8 +11049,8 @@
     "ans": true
    }
   ],
-  "exp_es": "El etiquetado obligatorio solo exige elegir una etiqueta; nunca elimina contenido.",
-  "exp_en": "Mandatory labeling only requires a choice; it never deletes content.",
+  "exp_es": "Verdadero: las etiquetas pueden aplicar cifrado y marcas de contenido. Falso: el etiquetado obligatorio solo exige elegir una etiqueta; nunca elimina documentos. Verdadero: las etiquetas de contenedor pueden controlar el uso compartido externo de sitios.",
+  "exp_en": "True: labels can apply encryption and content marking. False: mandatory labeling only requires choosing a label; it never deletes documents. True: container labels can control external sharing for sites.",
   "pack": "sc900-oct26b"
  },
  {
@@ -11203,8 +11203,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Los ámbitos adaptables siguen atributos; los registros normativos quedan totalmente bloqueados.",
-  "exp_en": "Adaptive scopes follow attributes; regulatory records are fully locked.",
+  "exp_es": "Para aplicar retención a todos los usuarios del departamento Legal aunque el personal cambie, usa un ámbito adaptable (adaptive scope), que sigue atributos. Para bloquear el contenido de modo que nadie pueda cambiar o quitar su etiqueta, usa un registro reglamentario (regulatory record), que es el bloqueo más estricto.",
+  "exp_en": "To apply retention to all users in the Legal department as staff change, use an adaptive scope, which follows attributes. To lock content so nobody can change or remove its label, use a regulatory record, the strictest lock.",
   "pack": "sc900-oct26b"
  },
  {
@@ -11230,8 +11230,8 @@
    "encrypted"
   ],
   "correct": 0,
-  "exp_es": "La retención prevalece sobre la eliminación.",
-  "exp_en": "Retention wins over deletion.",
+  "exp_es": "Cuando una directiva de retención y una de eliminación entran en conflicto, la retención gana: el contenido se conserva hasta que acaba el periodo de retención. No se elimina de inmediato, no se mueve a un invitado ni se cifra.",
+  "exp_en": "When a retention policy and a deletion policy conflict, retention wins: the content is kept until the retention period ends. It is not deleted at once, moved to a guest or encrypted.",
   "pack": "sc900-oct26b"
  },
  {
@@ -11257,8 +11257,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las retenciones conservan el contenido en su ubicación mientras dure el caso.",
-  "exp_en": "Holds preserve content in place for the duration of a case.",
+  "exp_es": "Al poner contenido en una retención de eDiscovery, se conserva en su lugar durante el caso aunque los usuarios lo editen o lo eliminen. No se borra, no se comparte automáticamente con la parte contraria ni se cifra con otra clave.",
+  "exp_en": "Content placed on an eDiscovery hold is preserved in place for the duration of the case even if users edit or delete it. It is not deleted, automatically shared with opposing counsel or re-encrypted with a new key.",
   "pack": "sc900-oct26b"
  },
  {
@@ -11442,8 +11442,8 @@
    "hold"
   ],
   "correct": 3,
-  "exp_es": "Una retención de eDiscovery conserva el contenido en su ubicación.",
-  "exp_en": "An eDiscovery hold preserves content in place.",
+  "exp_es": "Para conservar el buzón de un custodio en un litigio aunque elimine elementos, se coloca en una retención (hold) de eDiscovery, que preserva el contenido en su lugar. Un conjunto de revisión, una búsqueda o una directiva de etiquetas no conservan nada por sí solos.",
+  "exp_en": "To preserve a custodian's mailbox for a lawsuit even if they delete items, place it on an eDiscovery hold, which preserves content in place. A review set, a search or a label policy does not preserve anything by itself.",
   "pack": "sc900-oct26b"
  }
 ]
