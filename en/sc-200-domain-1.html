@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Disruption acts at machine speed to stop attack progression."
+       "text": "Correct answer. Automatic attack disruption contains affected assets at machine speed, for example isolating devices or disabling accounts, when it detects a high-confidence attack such as ransomware. It doesn't wait for approval, just write a report or only send an email."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Disruption acts at machine speed to stop attack progression."
+       "text": "Automatic attack disruption contains affected assets at machine speed, for example isolating devices or disabling accounts, when it detects a high-confidence attack such as ransomware. It doesn't wait for approval, just write a report or only send an email."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Rules can also run playbooks for more complex actions."
+       "text": "Correct answer. Without a playbook, an automation rule can assign an owner, change status or severity, and add tags or tasks. Reimaging a device, isolating devices or rotating certificates need other tools or a playbook."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Rules can also run playbooks for more complex actions."
+       "text": "Without a playbook, an automation rule can assign an owner, change status or severity, and add tags or tasks. Reimaging a device, isolating devices or rotating certificates need other tools or a playbook."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Rules run in ascending order unless a rule stops processing."
+       "text": "Correct answer. Automation rules run in ascending order by the order number assigned to each one. The incident time, rule name or who created it don't matter."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Rules run in ascending order unless a rule stops processing."
+       "text": "Automation rules run in ascending order by the order number assigned to each one. The incident time, rule name or who created it don't matter."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Reader provides read-only access to Sentinel data."
+       "text": "Correct answer. Microsoft Sentinel Reader gives read-only access to all Sentinel data, exactly what a manager who must not change anything needs. Owner and User Access Administrator grant too much, and Contributor allows edits."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Reader provides read-only access to Sentinel data."
+       "text": "Microsoft Sentinel Reader gives read-only access to all Sentinel data, exactly what a manager who must not change anything needs. Owner and User Access Administrator grant too much, and Contributor allows edits."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. DCRs define sources, filters, transformations and destinations."
+       "text": "Correct answer. The data collection rule (DCR) defines which events and fields the Azure Monitor Agent collects, how it filters or transforms them, and where it sends them. Retention labels, Conditional Access and naming policies are unrelated."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "DCRs define sources, filters, transformations and destinations."
+       "text": "The data collection rule (DCR) defines which events and fields the Azure Monitor Agent collects, how it filters or transforms them, and where it sends them. Retention labels, Conditional Access and naming policies are unrelated."
       }
      }
     },
@@ -458,11 +458,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Expired indicators are not used for detections."
+       "text": "Correct answer. When an indicator's expiration date passes, it's no longer considered active and isn't used for matching. It isn't deleted immediately, its confidence doesn't change, and it doesn't become an incident."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Expired indicators are not used for detections."
+       "text": "When an indicator's expiration date passes, it's no longer considered active and isn't used for matching. It isn't deleted immediately, its confidence doesn't change, and it doesn't become an incident."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Entities power the investigation graph and incident grouping."
+       "text": "Correct answer. Entity mapping identifies users, hosts, IPs and other entities in the rule's results, to correlate alerts and feed the investigation graph. It doesn't bill queries, delete data or rename tables."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Entities power the investigation graph and incident grouping."
+       "text": "Entity mapping identifies users, hosts, IPs and other entities in the rule's results, to correlate alerts and feed the investigation graph. It doesn't bill queries, delete data or rename tables."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Other options include every 1, 3, 12 or 24 hours."
+       "text": "Correct answer. The minimum frequency for a Defender XDR custom detection rule is Continuous (NRT), which checks data as it arrives; the other options are every 1, 3, 12 or 24 hours. There are no yearly, 30-day or manual-only options for this."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Other options include every 1, 3, 12 or 24 hours."
+       "text": "The minimum frequency for a Defender XDR custom detection rule is Continuous (NRT), which checks data as it arrives; the other options are every 1, 3, 12 or 24 hours. There are no yearly, 30-day or manual-only options for this."
       }
      }
     }
@@ -622,42 +622,42 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> What does automatic attack disruption do when it detects a high-confidence ransomware attack?</p>
       <ol class="sq-opts" type="A"><li>Waits for an analyst to approve each containment action before acting</li><li>Only creates a report for the monthly review</li><li>Contains affected assets, for example by isolating devices</li><li>Sends an alert email to the SOC without taking any containment action</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Disruption acts at machine speed to stop attack progression.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Automatic attack disruption contains affected assets at machine speed, for example isolating devices or disabling accounts, when it detects a high-confidence attack such as ransomware. It doesn&#x27;t wait for approval, just write a report or only send an email.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Which actions can a Sentinel automation rule take without a playbook?</p>
       <ol class="sq-opts" type="A"><li>Assign an owner, change status or severity and add tags or tasks</li><li>Reimage a device remotely and restore it from the latest backup</li><li>Isolate a device from the network and collect an investigation package</li><li>Rotate a certificate</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Rules can also run playbooks for more complex actions.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Without a playbook, an automation rule can assign an owner, change status or severity, and add tags or tasks. Reimaging a device, isolating devices or rotating certificates need other tools or a playbook.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Multiple automation rules apply to the same incident. How is their execution order determined?</p>
       <ol class="sq-opts" type="A"><li>By the incident creation time</li><li>Alphabetically by rule name</li><li>By the analyst who created the rule</li><li>By the order number assigned to each rule</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Rules run in ascending order unless a rule stops processing.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Automation rules run in ascending order by the order number assigned to each one. The incident time, rule name or who created it don&#x27;t matter.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which role is appropriate for a SOC manager who needs to view all Sentinel data but must not change anything?</p>
       <ol class="sq-opts" type="A"><li>Owner</li><li>User Access Administrator</li><li>Microsoft Sentinel Reader</li><li>Microsoft Sentinel Contributor</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Reader provides read-only access to Sentinel data.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Microsoft Sentinel Reader gives read-only access to all Sentinel data, exactly what a manager who must not change anything needs. Owner and User Access Administrator grant too much, and Contributor allows edits.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> What controls which events and fields the Azure Monitor Agent collects and where it sends them?</p>
       <ol class="sq-opts" type="A"><li>A data collection rule (DCR)</li><li>A retention label</li><li>A Conditional Access policy</li><li>A naming policy</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> DCRs define sources, filters, transformations and destinations.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The data collection rule (DCR) defines which events and fields the Azure Monitor Agent collects, how it filters or transforms them, and where it sends them. Retention labels, Conditional Access and naming policies are unrelated.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> What happens to threat indicators in Sentinel when they have an expiration date that passes?</p>
       <ol class="sq-opts" type="A"><li>They are deleted from the workspace immediately</li><li>Their confidence score doubles</li><li>They are no longer considered active for matching</li><li>They are exported to the Defender portal as incidents</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Expired indicators are not used for detections.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> When an indicator&#x27;s expiration date passes, it&#x27;s no longer considered active and isn&#x27;t used for matching. It isn&#x27;t deleted immediately, its confidence doesn&#x27;t change, and it doesn&#x27;t become an incident.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> What is the purpose of entity mapping in a Sentinel analytics rule?</p>
       <ol class="sq-opts" type="A"><li>To bill each analyst for the query runtime used by the rule</li><li>To delete event data older than 90 days from the source tables</li><li>To rename the workspace tables</li><li>To identify users, hosts and IPs so alerts can be correlated</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Entities power the investigation graph and incident grouping.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Entity mapping identifies users, hosts, IPs and other entities in the rule&#x27;s results, to correlate alerts and feed the investigation graph. It doesn&#x27;t bill queries, delete data or rename tables.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> What is the minimum frequency option for a custom detection rule in Defender XDR that checks data continuously?</p>
       <ol class="sq-opts" type="A"><li>Continuous (NRT)</li><li>Every year</li><li>Manual only</li><li>Every 30 days</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Other options include every 1, 3, 12 or 24 hours.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The minimum frequency for a Defender XDR custom detection rule is Continuous (NRT), which checks data as it arrives; the other options are every 1, 3, 12 or 24 hours. There are no yearly, 30-day or manual-only options for this.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-200&amp;dom=1&amp;lang=en">Practice domain 1 for free →</a></div>
   </section>

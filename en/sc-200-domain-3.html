@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. DeviceProcessEvents records process creations and related command lines."
+       "text": "Correct answer. The DeviceProcessEvents table holds process creation events, with command lines, from devices onboarded to Defender for Endpoint. EmailEvents is for email, CloudAppEvents for cloud apps, and IdentityLogonEvents for sign-ins."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "DeviceProcessEvents records process creations and related command lines."
+       "text": "The DeviceProcessEvents table holds process creation events, with command lines, from devices onboarded to Defender for Endpoint. EmailEvents is for email, CloudAppEvents for cloud apps, and IdentityLogonEvents for sign-ins."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. EmailEvents holds email delivery information from Defender for Office 365."
+       "text": "Correct answer. EmailEvents holds Defender for Office 365 email delivery information: sender, subject and threat detections. DeviceRegistryEvents and DeviceNetworkEvents are device tables, and IdentityDirectoryEvents is for Active Directory."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "EmailEvents holds email delivery information from Defender for Office 365."
+       "text": "EmailEvents holds Defender for Office 365 email delivery information: sender, subject and threat detections. DeviceRegistryEvents and DeviceNetworkEvents are device tables, and IdentityDirectoryEvents is for Active Directory."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Threat analytics helps prioritize and mitigate current threats."
+       "text": "Correct answer. Defender XDR threat analytics publishes reports on emerging threats with your exposure and recommended mitigations, so you can prioritize. It isn't a licensing, cloud spend or backup report."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Threat analytics helps prioritize and mitigate current threats."
+       "text": "Defender XDR threat analytics publishes reports on emerging threats with your exposure and recommended mitigations, so you can prioritize. It isn't a licensing, cloud spend or backup report."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. CloudAppEvents records cloud application activities."
+       "text": "Correct answer. CloudAppEvents holds activity from apps connected to Defender for Cloud Apps, such as SaaS file downloads. SecurityEvent is for Windows, EmailEvents for email, and DeviceEvents for miscellaneous device events."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "CloudAppEvents records cloud application activities."
+       "text": "CloudAppEvents holds activity from apps connected to Defender for Cloud Apps, such as SaaS file downloads. SecurityEvent is for Windows, EmailEvents for email, and DeviceEvents for miscellaneous device events."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. let simplifies and reuses values such as a time range."
+       "text": "Correct answer. let defines a variable or reusable expression inside the query, such as a time range. It doesn't email results, delete rows, or create a saved function for all users."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "let simplifies and reuses values such as a time range."
+       "text": "let defines a variable or reusable expression inside the query, such as a time range. It doesn't email results, delete rows, or create a saved function for all users."
       }
      }
     },
@@ -458,11 +458,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. MCP is a protocol that connects AI tools to data sources."
+       "text": "Correct answer. The Sentinel MCP server lets AI assistants and agents securely query Sentinel data, since MCP is a protocol that connects AI tools to data sources. It doesn't replicate data across regions, update Windows or resolve DNS."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "MCP is a protocol that connects AI tools to data sources."
+       "text": "The Sentinel MCP server lets AI assistants and agents securely query Sentinel data, since MCP is a protocol that connects AI tools to data sources. It doesn't replicate data across regions, update Windows or resolve DNS."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. SecurityIncident stores incidents; SecurityAlert stores alerts."
+       "text": "Correct answer. SecurityAlert stores alerts from Sentinel and connected products; SecurityIncident stores incidents. Heartbeat records agent health, OfficeActivity Microsoft 365 activity, and Perf performance counters."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "SecurityIncident stores incidents; SecurityAlert stores alerts."
+       "text": "SecurityAlert stores alerts from Sentinel and connected products; SecurityIncident stores incidents. Heartbeat records agent health, OfficeActivity Microsoft 365 activity, and Perf performance counters."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. mv-expand expands multivalue arrays or property bags into separate rows."
+       "text": "Correct answer. mv-expand splits a dynamic array or property bag column into one row per element. top returns the first sorted rows, distinct removes duplicates, and summarize aggregates."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "mv-expand expands multivalue arrays or property bags into separate rows."
+       "text": "mv-expand splits a dynamic array or property bag column into one row per element. top returns the first sorted rows, distinct removes duplicates, and summarize aggregates."
       }
      }
     }
@@ -622,42 +622,42 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Which advanced hunting table contains process creation events from devices onboarded to Defender for Endpoint?</p>
       <ol class="sq-opts" type="A"><li>DeviceProcessEvents</li><li>EmailEvents</li><li>CloudAppEvents</li><li>IdentityLogonEvents</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> DeviceProcessEvents records process creations and related command lines.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The DeviceProcessEvents table holds process creation events, with command lines, from devices onboarded to Defender for Endpoint. EmailEvents is for email, CloudAppEvents for cloud apps, and IdentityLogonEvents for sign-ins.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Which table should you query to find emails delivered to users with their sender, subject and threat detection details?</p>
       <ol class="sq-opts" type="A"><li>DeviceRegistryEvents</li><li>DeviceNetworkEvents</li><li>EmailEvents</li><li>IdentityDirectoryEvents</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> EmailEvents holds email delivery information from Defender for Office 365.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> EmailEvents holds Defender for Office 365 email delivery information: sender, subject and threat detections. DeviceRegistryEvents and DeviceNetworkEvents are device tables, and IdentityDirectoryEvents is for Active Directory.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> What does threat analytics in Microsoft Defender XDR provide?</p>
       <ol class="sq-opts" type="A"><li>A report of licensed users per workload with renewal dates and costs</li><li>A summary of monthly cloud spend broken down by subscription and service</li><li>A schedule of device backups</li><li>Reports on emerging threats with exposure and recommended mitigations</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Threat analytics helps prioritize and mitigate current threats.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Defender XDR threat analytics publishes reports on emerging threats with your exposure and recommended mitigations, so you can prioritize. It isn&#x27;t a licensing, cloud spend or backup report.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which table contains activity from Defender for Cloud Apps connected apps, such as SaaS file downloads?</p>
       <ol class="sq-opts" type="A"><li>CloudAppEvents</li><li>SecurityEvent</li><li>EmailEvents</li><li>DeviceEvents</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> CloudAppEvents records cloud application activities.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> CloudAppEvents holds activity from apps connected to Defender for Cloud Apps, such as SaaS file downloads. SecurityEvent is for Windows, EmailEvents for email, and DeviceEvents for miscellaneous device events.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> What does the KQL let statement do?</p>
       <ol class="sq-opts" type="A"><li>Sends the query results by email</li><li>Deletes the matching rows</li><li>Defines a variable or reusable expression</li><li>Creates a saved function in the workspace for all users</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> let simplifies and reuses values such as a time range.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> let defines a variable or reusable expression inside the query, such as a time range. It doesn&#x27;t email results, delete rows, or create a saved function for all users.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> What does the Microsoft Sentinel MCP server enable?</p>
       <ol class="sq-opts" type="A"><li>Replication of Sentinel data to another Azure region</li><li>AI assistants and agents can securely query Sentinel data</li><li>Automatic Windows updates for the monitored servers</li><li>DNS resolution for names inside the workspace</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> MCP is a protocol that connects AI tools to data sources.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> The Sentinel MCP server lets AI assistants and agents securely query Sentinel data, since MCP is a protocol that connects AI tools to data sources. It doesn&#x27;t replicate data across regions, update Windows or resolve DNS.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which Sentinel table stores alerts generated by Sentinel and connected products?</p>
       <ol class="sq-opts" type="A"><li>Heartbeat</li><li>OfficeActivity</li><li>SecurityAlert</li><li>Perf</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> SecurityIncident stores incidents; SecurityAlert stores alerts.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> SecurityAlert stores alerts from Sentinel and connected products; SecurityIncident stores incidents. Heartbeat records agent health, OfficeActivity Microsoft 365 activity, and Perf performance counters.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which KQL operator splits a dynamic array column into one row per element?</p>
       <ol class="sq-opts" type="A"><li>top</li><li>mv-expand</li><li>distinct</li><li>summarize</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> mv-expand expands multivalue arrays or property bags into separate rows.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> mv-expand splits a dynamic array or property bag column into one row per element. top returns the first sorted rows, distinct removes duplicates, and summarize aggregates.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-200&amp;dom=3&amp;lang=en">Practice domain 3 for free →</a></div>
   </section>
