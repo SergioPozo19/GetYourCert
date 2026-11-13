@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las credenciales federadas confían en los tokens de proveedores de identidades externos."
+       "text": "Respuesta correcta. La federación de identidades de carga de trabajo con OpenID Connect hace que Entra confíe en los tokens que emite GitHub para ese flujo de trabajo, sin guardar ningún secreto. Un secreto de cliente en el repositorio o una contraseña compartida pueden filtrarse, y la verificación por SMS es para personas."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las credenciales federadas confían en los tokens de proveedores de identidades externos."
+       "text": "La federación de identidades de carga de trabajo con OpenID Connect hace que Entra confíe en los tokens que emite GitHub para ese flujo de trabajo, sin guardar ningún secreto. Un secreto de cliente en el repositorio o una contraseña compartida pueden filtrarse, y la verificación por SMS es para personas."
       }
      }
     },
@@ -334,11 +334,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las conexiones solo salientes reducen la superficie de ataque."
+       "text": "Respuesta correcta. El conector de Application Proxy solo necesita acceso saliente al servicio de Application Proxy; no requiere puertos de entrada, IP pública ni ExpressRoute, lo que reduce la superficie de ataque."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las conexiones solo salientes reducen la superficie de ataque."
+       "text": "El conector de Application Proxy solo necesita acceso saliente al servicio de Application Proxy; no requiere puertos de entrada, IP pública ni ExpressRoute, lo que reduce la superficie de ataque."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. La no autorización se puede aplicar con la integración de endpoints o de red."
+       "text": "Respuesta correcta. Tras marcar una app como no autorizada, se puede bloquear mediante la integración con Defender for Endpoint o exportando un script de bloqueo a un firewall o proxy. Restablecer contraseñas, borrar registros de apps o quitar la MFA no impiden su uso."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "La no autorización se puede aplicar con la integración de endpoints o de red."
+       "text": "Tras marcar una app como no autorizada, se puede bloquear mediante la integración con Defender for Endpoint o exportando un script de bloqueo a un firewall o proxy. Restablecer contraseñas, borrar registros de apps o quitar la MFA no impiden su uso."
       }
      }
     },
@@ -623,12 +623,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> ¿Qué enfoque de autenticación permite que un flujo de trabajo de GitHub Actions acceda a recursos de Azure sin almacenar un secreto?</p>
       <ol class="sq-opts" type="A"><li>Verificación por SMS</li><li>Un secreto de cliente de larga duración en el repositorio</li><li>Una contraseña de administrador compartida</li><li>Federación de identidades de carga de trabajo mediante OpenID Connect</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Las credenciales federadas confían en los tokens de proveedores de identidades externos.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> La federación de identidades de carga de trabajo con OpenID Connect hace que Entra confíe en los tokens que emite GitHub para ese flujo de trabajo, sin guardar ningún secreto. Un secreto de cliente en el repositorio o una contraseña compartida pueden filtrarse, y la verificación por SMS es para personas.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> ¿Qué requiere el conector de Microsoft Entra Application Proxy en cuanto a la conectividad de red?</p>
       <ol class="sq-opts" type="A"><li>Acceso saliente al servicio de Application Proxy; sin puertos de entrada</li><li>Una dirección IP pública en el servidor</li><li>Acceso entrante desde internet al servidor</li><li>Un ExpressRoute dedicado</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Las conexiones solo salientes reducen la superficie de ataque.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> El conector de Application Proxy solo necesita acceso saliente al servicio de Application Proxy; no requiere puertos de entrada, IP pública ni ExpressRoute, lo que reduce la superficie de ataque.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Un registro de aplicación está configurado para una aplicación de página única. ¿Qué configuración debe agregarse para que Entra ID pueda devolver tokens a la aplicación después del inicio de sesión?</p>
@@ -643,7 +643,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Marcas una aplicación en la nube como no autorizada en Defender for Cloud Apps. ¿Qué puedes hacer a continuación?</p>
       <ol class="sq-opts" type="A"><li>Restablecer todas las contraseñas de usuario de la aplicación</li><li>Bloquearla mediante Defender for Endpoint o un dispositivo de red</li><li>Eliminar el registro de la aplicación y todas sus entidades de servicio</li><li>Deshabilitar la MFA de los usuarios que accedieron a la aplicación el mes pasado</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> La no autorización se puede aplicar con la integración de endpoints o de red.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Tras marcar una app como no autorizada, se puede bloquear mediante la integración con Defender for Endpoint o exportando un script de bloqueo a un firewall o proxy. Restablecer contraseñas, borrar registros de apps o quitar la MFA no impiden su uso.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> ¿Qué capacidad de Defender for Cloud Apps ofrece información detallada del acceso a datos de aplicaciones OAuth y permite crear directivas ante comportamientos inusuales, como que una aplicación lea muchos correos de repente?</p>

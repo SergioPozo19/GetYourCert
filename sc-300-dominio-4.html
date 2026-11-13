@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los revisores de reserva gestionan los casos en los que un revisor no está disponible."
+       "text": "Respuesta correcta. Los revisores de reserva (fallback) se encargan de la revisión cuando el revisor principal no está disponible, por ejemplo si el grupo se queda sin propietario. Un dominio, un inquilino nuevo o un registro DNS no resuelven la falta de revisor."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los revisores de reserva gestionan los casos en los que un revisor no está disponible."
+       "text": "Los revisores de reserva (fallback) se encargan de la revisión cuando el revisor principal no está disponible, por ejemplo si el grupo se queda sin propietario. Un dominio, un inquilino nuevo o un registro DNS no resuelven la falta de revisor."
       }
      }
     },
@@ -334,11 +334,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. PIM proporciona alertas, historial de auditoría e informes para supervisar el acceso con privilegios."
+       "text": "Respuesta correcta. PIM incluye alertas (por ejemplo, roles asignados fuera de PIM o activaciones demasiado frecuentes) y un historial de auditoría e informes de todas las activaciones y asignaciones. Cost Management, los informes de cumplimiento de Intune y los de Teams no auditan roles privilegiados."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "PIM proporciona alertas, historial de auditoría e informes para supervisar el acceso con privilegios."
+       "text": "PIM incluye alertas (por ejemplo, roles asignados fuera de PIM o activaciones demasiado frecuentes) y un historial de auditoría e informes de todas las activaciones y asignaciones. Cost Management, los informes de cumplimiento de Intune y los de Teams no auditan roles privilegiados."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. La configuración del rol controla la duración de activación, MFA, aprobación y justificación."
+       "text": "Respuesta correcta. La duración máxima de activación, en la configuración del rol de PIM, limita cada activación a 2 horas; en la misma configuración se exigen MFA y justificación. La justificación no limita el tiempo, las notificaciones solo avisan y la caducidad de la asignación apta controla hasta cuándo puede activarse, no cuánto dura cada activación."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "La configuración del rol controla la duración de activación, MFA, aprobación y justificación."
+       "text": "La duración máxima de activación, en la configuración del rol de PIM, limita cada activación a 2 horas; en la misma configuración se exigen MFA y justificación. La justificación no limita el tiempo, las notificaciones solo avisan y la caducidad de la asignación apta controla hasta cuándo puede activarse, no cuánto dura cada activación."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los libros del centro de administración de Entra usan Azure Monitor para visualizar datos de registro."
+       "text": "Respuesta correcta. Los libros de Microsoft Entra (workbooks) usan Azure Monitor para mostrar informes predefinidos sobre los datos de registro, como el uso de métodos de autenticación o el impacto del acceso condicional. Los informes de Windows Update, el seguimiento de mensajes de Exchange y el análisis de llamadas de Teams no usan los registros de Entra."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los libros del centro de administración de Entra usan Azure Monitor para visualizar datos de registro."
+       "text": "Los libros de Microsoft Entra (workbooks) usan Azure Monitor para mostrar informes predefinidos sobre los datos de registro, como el uso de métodos de autenticación o el impacto del acceso condicional. Los informes de Windows Update, el seguimiento de mensajes de Exchange y el análisis de llamadas de Teams no usan los registros de Entra."
       }
      }
     },
@@ -574,11 +574,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Cada registro de inicio de sesión incluye detalles de acceso condicional."
+       "text": "Respuesta correcta. Cada registro de inicio de sesión incluye una pestaña de acceso condicional con las directivas evaluadas y su resultado (correcto, error, no aplicada). Los registros de auditoría guardan cambios de configuración, y los de facturación o DNS no contienen esa información."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Cada registro de inicio de sesión incluye detalles de acceso condicional."
+       "text": "Cada registro de inicio de sesión incluye una pestaña de acceso condicional con las directivas evaluadas y su resultado (correcto, error, no aplicada). Los registros de auditoría guardan cambios de configuración, y los de facturación o DNS no contienen esa información."
       }
      }
     }
@@ -623,17 +623,17 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Programas una revisión de acceso de un grupo y el revisor es el propietario del grupo. El propietario deja la empresa. ¿Qué deberías haber configurado?</p>
       <ol class="sq-opts" type="A"><li>Un dominio personalizado</li><li>Revisores de reserva</li><li>Un nuevo inquilino</li><li>Un registro DNS</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Los revisores de reserva gestionan los casos en los que un revisor no está disponible.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Los revisores de reserva (fallback) se encargan de la revisión cuando el revisor principal no está disponible, por ejemplo si el grupo se queda sin propietario. Un dominio, un inquilino nuevo o un registro DNS no resuelven la falta de revisor.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Una organización quiere recibir alertas cuando se asigna Administrador global fuera de PIM y cuando los roles se activan con demasiada frecuencia. ¿Dónde puede revisar esas alertas y el historial de auditoría?</p>
       <ol class="sq-opts" type="A"><li>Azure Cost Management</li><li>Las alertas de PIM y el historial de auditoría e informes de PIM</li><li>Informes de cumplimiento de dispositivos de Intune</li><li>Informes del centro de administración de Teams</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> PIM proporciona alertas, historial de auditoría e informes para supervisar el acceso con privilegios.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> PIM incluye alertas (por ejemplo, roles asignados fuera de PIM o activaciones demasiado frecuentes) y un historial de auditoría e informes de todas las activaciones y asignaciones. Cost Management, los informes de cumplimiento de Intune y los de Teams no auditan roles privilegiados.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Quieres que un usuario pueda solicitar el rol Administrador de Exchange solo durante 2 horas, con MFA y una justificación. ¿Qué configuración de PIM proporciona el límite de tiempo?</p>
       <ol class="sq-opts" type="A"><li>Duración máxima de activación en la configuración del rol</li><li>Configuración de las notificaciones de asignaciones de rol</li><li>Exigir justificación al activar</li><li>La expiración de la asignación apta</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> La configuración del rol controla la duración de activación, MFA, aprobación y justificación.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> La duración máxima de activación, en la configuración del rol de PIM, limita cada activación a 2 horas; en la misma configuración se exigen MFA y justificación. La justificación no limita el tiempo, las notificaciones solo avisan y la caducidad de la asignación apta controla hasta cuándo puede activarse, no cuánto dura cada activación.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> ¿Dónde se ve quién activó un rol con privilegios y por qué?</p>
@@ -643,12 +643,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> ¿Qué herramienta permite visualizar el uso de métodos de autenticación y las perspectivas de acceso condicional con informes predefinidos sobre los datos de registro de Entra?</p>
       <ol class="sq-opts" type="A"><li>Libros de Microsoft Entra</li><li>Informes de Windows Update</li><li>Seguimiento de mensajes de Exchange</li><li>Análisis de llamadas de Teams</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Los libros del centro de administración de Entra usan Azure Monitor para visualizar datos de registro.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Los libros de Microsoft Entra (workbooks) usan Azure Monitor para mostrar informes predefinidos sobre los datos de registro, como el uso de métodos de autenticación o el impacto del acceso condicional. Los informes de Windows Update, el seguimiento de mensajes de Exchange y el análisis de llamadas de Teams no usan los registros de Entra.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> ¿Qué registro muestra si se aplicó una directiva de acceso condicional a un inicio de sesión y con qué resultado?</p>
       <ol class="sq-opts" type="A"><li>Registros de facturación</li><li>Registros de inicio de sesión</li><li>Registros DNS</li><li>Registros de auditoría</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Cada registro de inicio de sesión incluye detalles de acceso condicional.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Cada registro de inicio de sesión incluye una pestaña de acceso condicional con las directivas evaluadas y su resultado (correcto, error, no aplicada). Los registros de auditoría guardan cambios de configuración, y los de facturación o DNS no contienen esa información.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-300&amp;dom=4&amp;lang=es">Practicar el dominio 4 gratis →</a></div>
   </section>

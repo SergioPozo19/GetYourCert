@@ -214,11 +214,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Un inquilino puede alojar varios dominios personalizados comprobados."
+       "text": "Respuesta correcta. Un mismo inquilino admite varios dominios personalizados verificados; se agregan y verifican contoso.com y fabrikam.com y uno queda como principal. Usar solo onmicrosoft.com o cuentas de invitado no da a los usuarios su dominio, y crear un inquilino por dominio fragmenta la administración."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Un inquilino puede alojar varios dominios personalizados comprobados."
+       "text": "Un mismo inquilino admite varios dominios personalizados verificados; se agregan y verifican contoso.com y fabrikam.com y uno queda como principal. Usar solo onmicrosoft.com o cuentas de invitado no da a los usuarios su dominio, y crear un inquilino por dominio fragmenta la administración."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los grupos dinámicos de dispositivos evalúan atributos de dispositivo como deviceOSType."
+       "text": "Respuesta correcta. Las reglas dinámicas de dispositivos usan atributos como device.deviceOSType; (device.deviceOSType -eq \"Windows\") agrega todos los dispositivos Windows. Las reglas con user.* evalúan usuarios, no dispositivos, y group.type no es un atributo válido en las reglas."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los grupos dinámicos de dispositivos evalúan atributos de dispositivo como deviceOSType."
+       "text": "Las reglas dinámicas de dispositivos usan atributos como device.deviceOSType; (device.deviceOSType -eq \"Windows\") agrega todos los dispositivos Windows. Las reglas con user.* evalúan usuarios, no dispositivos, y group.type no es un atributo válido en las reglas."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. El código por correo es una alternativa para invitados sin otro proveedor de identidades."
+       "text": "Respuesta correcta. El código de acceso de un solo uso por correo electrónico permite a un invitado sin cuenta Microsoft ni profesional iniciar sesión con un código enviado a su correo. Application Proxy publica apps locales, la autenticación de paso a través es para usuarios híbridos y Windows Hello es un método del dispositivo propio."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "El código por correo es una alternativa para invitados sin otro proveedor de identidades."
+       "text": "El código de acceso de un solo uso por correo electrónico permite a un invitado sin cuenta Microsoft ni profesional iniciar sesión con un código enviado a su correo. Application Proxy publica apps locales, la autenticación de paso a través es para usuarios híbridos y Windows Hello es un método del dispositivo propio."
       }
      }
     },
@@ -618,7 +618,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Tu organización ha adquirido otra empresa y quiere que los usuarios inicien sesión con contoso.com y fabrikam.com. ¿Qué debes hacer?</p>
       <ol class="sq-opts" type="A"><li>Agregar y verificar ambos dominios personalizados; uno es el principal</li><li>Usar solo el dominio onmicrosoft.com para todos los usuarios</li><li>Usar solo cuentas de invitado</li><li>Crear un segundo inquilino para cada dominio adquirido</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Un inquilino puede alojar varios dominios personalizados comprobados.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Un mismo inquilino admite varios dominios personalizados verificados; se agregan y verifican contoso.com y fabrikam.com y uno queda como principal. Usar solo onmicrosoft.com o cuentas de invitado no da a los usuarios su dominio, y crear un inquilino por dominio fragmenta la administración.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Una unidad administrativa debe incluir automáticamente a todos los usuarios cuyo Country sea &#x27;Spain&#x27;. ¿Qué debes configurar?</p>
@@ -633,7 +633,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> ¿Qué regla de pertenencia dinámica agregaría a un grupo todos los dispositivos que ejecutan Windows?</p>
       <ol class="sq-opts" type="A"><li>(user.country -eq &quot;Windows&quot;)</li><li>(user.jobTitle -contains &quot;PC&quot;)</li><li>(group.type -eq &quot;Windows&quot;)</li><li>(device.deviceOSType -eq &quot;Windows&quot;)</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Los grupos dinámicos de dispositivos evalúan atributos de dispositivo como deviceOSType.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Las reglas dinámicas de dispositivos usan atributos como device.deviceOSType; (device.deviceOSType -eq &quot;Windows&quot;) agrega todos los dispositivos Windows. Las reglas con user.* evalúan usuarios, no dispositivos, y group.type no es un atributo válido en las reglas.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Cientos de dispositivos no inician sesión desde hace más de un año. ¿Cuál es el enfoque de limpieza recomendado?</p>
@@ -643,7 +643,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Un usuario invitado no tiene cuenta Microsoft ni cuenta profesional. ¿Qué característica le permite iniciar sesión con un código de un solo uso enviado a su correo?</p>
       <ol class="sq-opts" type="A"><li>Código de acceso de un solo uso por correo</li><li>Application Proxy</li><li>Autenticación transferida</li><li>Windows Hello</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> El código por correo es una alternativa para invitados sin otro proveedor de identidades.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> El código de acceso de un solo uso por correo electrónico permite a un invitado sin cuenta Microsoft ni profesional iniciar sesión con un código enviado a su correo. Application Proxy publica apps locales, la autenticación de paso a través es para usuarios híbridos y Windows Hello es un método del dispositivo propio.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Un usuario de la nube se asocia con un usuario local con la misma dirección de correo durante la primera sincronización. ¿Cómo se llama este comportamiento?</p>

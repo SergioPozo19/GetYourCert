@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Federated credentials trust tokens from external identity providers."
+       "text": "Correct answer. Workload identity federation with OpenID Connect makes Entra trust the tokens GitHub issues for that workflow, with no stored secret. A client secret in the repository or a shared password can leak, and SMS verification is for people."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Federated credentials trust tokens from external identity providers."
+       "text": "Workload identity federation with OpenID Connect makes Entra trust the tokens GitHub issues for that workflow, with no stored secret. A client secret in the repository or a shared password can leak, and SMS verification is for people."
       }
      }
     },
@@ -334,11 +334,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Outbound-only connections reduce attack surface."
+       "text": "Correct answer. The Application Proxy connector only needs outbound access to the Application Proxy service; it needs no inbound ports, public IP or ExpressRoute, which reduces the attack surface."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Outbound-only connections reduce attack surface."
+       "text": "The Application Proxy connector only needs outbound access to the Application Proxy service; it needs no inbound ports, public IP or ExpressRoute, which reduces the attack surface."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Unsanctioning can be enforced with endpoint or network integration."
+       "text": "Correct answer. After marking an app as unsanctioned, you can block it through the Defender for Endpoint integration or by exporting a block script to a firewall or proxy. Resetting passwords, deleting app registrations or removing MFA do not stop its use."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Unsanctioning can be enforced with endpoint or network integration."
+       "text": "After marking an app as unsanctioned, you can block it through the Defender for Endpoint integration or by exporting a block script to a firewall or proxy. Resetting passwords, deleting app registrations or removing MFA do not stop its use."
       }
      }
     },
@@ -623,12 +623,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Which authentication approach lets a GitHub Actions workflow access Azure resources without storing a secret?</p>
       <ol class="sq-opts" type="A"><li>SMS verification</li><li>A long-lived client secret in the repository</li><li>A shared admin password</li><li>Workload identity federation using OpenID Connect</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Federated credentials trust tokens from external identity providers.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Workload identity federation with OpenID Connect makes Entra trust the tokens GitHub issues for that workflow, with no stored secret. A client secret in the repository or a shared password can leak, and SMS verification is for people.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> What does the Microsoft Entra Application Proxy connector require regarding network connectivity?</p>
       <ol class="sq-opts" type="A"><li>Outbound access to the Application Proxy service; no inbound ports</li><li>A public IP address on the server</li><li>Inbound access from the internet to the server</li><li>A dedicated ExpressRoute</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Outbound-only connections reduce attack surface.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The Application Proxy connector only needs outbound access to the Application Proxy service; it needs no inbound ports, public IP or ExpressRoute, which reduces the attack surface.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> An app registration is configured for a single-page application. Which setting must be added so Entra ID can return tokens to the app after sign-in?</p>
@@ -643,7 +643,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> You mark a cloud app as unsanctioned in Defender for Cloud Apps. What can you do next?</p>
       <ol class="sq-opts" type="A"><li>Reset all user passwords for the app</li><li>Block it through Defender for Endpoint or a network appliance</li><li>Delete the app&#x27;s registration and all of its service principals</li><li>Disable MFA for the users who accessed the app last month</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Unsanctioning can be enforced with endpoint or network integration.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> After marking an app as unsanctioned, you can block it through the Defender for Endpoint integration or by exporting a block script to a firewall or proxy. Resetting passwords, deleting app registrations or removing MFA do not stop its use.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which Defender for Cloud Apps capability gives detailed insight into OAuth apps&#x27; data access and lets you set policies on unusual behavior, such as an app suddenly reading many emails?</p>

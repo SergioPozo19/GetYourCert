@@ -48,8 +48,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los roles personalizados permiten combinar permisos específicos para cumplir el mínimo privilegio.",
-  "exp_en": "Custom roles let you combine specific permissions to follow least privilege."
+  "exp_es": "Un rol personalizado de Microsoft Entra permite elegir solo el permiso concreto (actualizar teléfonos), cumpliendo el mínimo privilegio. El rol integrado de administrador del departamento de soporte da derechos de más, el rol Propietario es de Azure RBAC y no aplica a objetos de Entra, y una unidad administrativa sin rol asignado no concede ningún permiso.",
+  "exp_en": "A custom Microsoft Entra role lets you pick just the specific permission (update phone numbers), following least privilege. The built-in Helpdesk Administrator role grants more than needed, Owner is an Azure RBAC role that does not apply to Entra objects, and an administrative unit without a role assignment grants no permissions at all."
  },
  {
   "id": 3,
@@ -206,8 +206,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Las unidades administrativas limitan el ámbito; los roles personalizados definen los permisos.",
-  "exp_en": "Administrative units limit scope; custom roles define permissions."
+  "exp_es": "Una unidad administrativa limita el ámbito: el responsable solo administra los usuarios de su departamento. Un rol personalizado define el conjunto exacto de permisos que no ofrece ningún rol integrado. Administrador global da control total del inquilino y un paquete de acceso sirve para solicitar acceso a recursos, no para delegar administración.",
+  "exp_en": "An administrative unit limits scope, so the manager only manages the users of their department. A custom role defines the exact set of permissions that no built-in role offers. Global Administrator gives full tenant control, and an access package is for requesting access to resources, not for delegating administration."
  },
  {
   "id": 8,
@@ -364,8 +364,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los dispositivos registrados suelen ser personales y no están unidos al dominio.",
-  "exp_en": "Registered devices are typically personal and not domain-joined."
+  "exp_es": "Verdadero: la unión a Microsoft Entra está pensada para dispositivos propiedad de la organización. Verdadero: la unión híbrida exige que el dispositivo esté también unido al Active Directory local. Falso: un dispositivo registrado suele ser personal (BYOD); no está unido al dominio ni lo administra por completo la organización.",
+  "exp_en": "True: Microsoft Entra join is designed for organization-owned devices. True: hybrid join requires the device to also be joined to on-premises Active Directory. False: a registered device is typically personal (BYOD); it is not domain-joined or fully managed by the organization."
  },
  {
   "id": 14,
@@ -411,8 +411,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "La unión híbrida es para dispositivos unidos a un dominio; el registro es para dispositivos personales.",
-  "exp_en": "Hybrid join is for domain-joined devices; registration is for personal devices."
+  "exp_es": "Un portátil corporativo unido al dominio local y sincronizado con la nube está unido de forma híbrida a Microsoft Entra. Un teléfono personal que accede a apps de trabajo con una cuenta profesional está registrado en Microsoft Entra. La unión a Entra (sin AD local) es para equipos corporativos solo en la nube.",
+  "exp_en": "A corporate laptop joined to the on-premises domain and synchronized to the cloud is Microsoft Entra hybrid joined. A personal phone accessing work apps with a work account is Microsoft Entra registered. Plain Entra join (no on-premises AD) is for cloud-only corporate devices."
  },
  {
   "id": 15,
@@ -543,8 +543,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La configuración de acceso entre inquilinos tiene controles tanto entrantes como salientes.",
-  "exp_en": "Cross-tenant access settings have both inbound and outbound controls."
+  "exp_es": "Verdadero: los invitados se pueden invitar de uno en uno o de forma masiva (CSV). Falso: la configuración de acceso entre inquilinos tiene controles de entrada y de salida. Verdadero: con la administración de derechos, los invitados pueden eliminarse automáticamente cuando caduca su último paquete de acceso.",
+  "exp_en": "True: guests can be invited individually or in bulk (CSV). False: cross-tenant access settings have both inbound and outbound controls. True: with entitlement management, guests can be removed automatically when their last access package assignment expires."
  },
  {
   "id": 20,
@@ -569,8 +569,8 @@
    "managed"
   ],
   "correct": 2,
-  "exp_es": "La colaboración B2B representa a los socios como usuarios invitados de forma predeterminada.",
-  "exp_en": "B2B collaboration represents partners as guest users by default."
+  "exp_es": "La colaboración B2B agrega a los usuarios del socio como usuarios invitados de tu directorio; se autentican con su propia identidad. Las identidades de carga de trabajo y de servicio son para aplicaciones, y 'administrado' describe un dominio o usuario interno, no un socio externo.",
+  "exp_en": "B2B collaboration adds partner users as guest users in your directory, and they sign in with their own identity. Workload and service identities are for applications, and 'managed' describes an internal domain or user, not an external partner."
  },
  {
   "id": 21,
@@ -725,8 +725,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Connect Health supervisa la sincronización y la infraestructura de AD FS y AD DS.",
-  "exp_en": "Connect Health monitors sync, AD FS and AD DS infrastructure."
+  "exp_es": "Microsoft Entra Connect Health supervisa la sincronización de Entra Connect, AD FS y AD DS y envía alertas cuando hay problemas. Intune Remediations corrige dispositivos, Purview Audit registra actividad de usuarios y Application Insights supervisa el rendimiento de aplicaciones, no la sincronización de identidades.",
+  "exp_en": "Microsoft Entra Connect Health monitors Entra Connect sync, AD FS and AD DS and sends alerts when something fails. Intune Remediations fixes devices, Purview Audit records user activity, and Application Insights monitors application performance, not identity sync."
  },
  {
   "id": 27,
@@ -751,8 +751,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Migrar de federación a autenticación administrada simplifica la infraestructura.",
-  "exp_en": "Migrating from federation to managed authentication simplifies infrastructure."
+  "exp_es": "Para retirar AD FS se pasa a autenticación administrada: sincronización de hash de contraseñas o autenticación de paso a través, con SSO de conexión directa para mantener la experiencia. Montar otra granja de federación en Azure mantiene la complejidad, Entra Domain Services no sustituye la autenticación en la nube y las invitaciones de invitado son para externos.",
+  "exp_en": "To retire AD FS you move to managed authentication: password hash sync or pass-through authentication, with seamless SSO to keep the sign-in experience. Building another federation farm on Azure keeps the complexity, Entra Domain Services does not replace cloud sign-in, and guest invitations are for external users."
  },
  {
   "id": 28,
@@ -826,8 +826,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "PTA valida de forma local; Connect Health supervisa la infraestructura de sincronización.",
-  "exp_en": "PTA validates on-premises; Connect Health monitors the sync infrastructure."
+  "exp_es": "La autenticación de paso a través (PTA) valida la contraseña directamente contra el AD local en cada inicio de sesión. Connect Health supervisa la sincronización y envía alertas. La sincronización de hash de contraseñas valida en la nube y Cloud Sync es un motor de sincronización, no una herramienta de supervisión.",
+  "exp_en": "Pass-through authentication (PTA) validates the password directly against on-premises AD at each sign-in. Connect Health monitors synchronization and sends alerts. Password hash sync validates in the cloud, and Cloud Sync is a sync engine, not a monitoring tool."
  },
  {
   "id": 30,
@@ -852,8 +852,8 @@
    "Permissions Management"
   ],
   "correct": 2,
-  "exp_es": "Connect Health cubre la sincronización, AD FS y AD DS.",
-  "exp_en": "Connect Health covers synchronization, AD FS and AD DS."
+  "exp_es": "Microsoft Entra Connect Health ofrece supervisión y alertas de la infraestructura de identidad local: servidores de sincronización, AD FS y controladores de dominio. Private Access da acceso a apps internas, Verified ID emite credenciales verificables y Permissions Management analiza permisos en nubes.",
+  "exp_en": "Microsoft Entra Connect Health provides monitoring and alerts for on-premises identity infrastructure: sync servers, AD FS and domain controllers. Private Access gives access to internal apps, Verified ID issues verifiable credentials, and Permissions Management analyzes cloud permissions."
  },
  {
   "id": 31,
@@ -956,8 +956,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La directiva de SSPR define los métodos disponibles y si se exige uno o dos.",
-  "exp_en": "SSPR policy defines the methods available and whether one or two are required."
+  "exp_es": "En la directiva de SSPR el administrador decide qué métodos están disponibles y si hacen falta uno o dos para restablecer la contraseña. SSPR no es solo para invitados, sí usa métodos de autenticación y puede exigir dos métodos, que es lo que pide el escenario.",
+  "exp_en": "In the SSPR policy the administrator chooses which methods are available and whether one or two are required to reset a password. SSPR is not only for guests, it does use authentication methods, and it can require two methods, which is exactly what the scenario asks for."
  },
  {
   "id": 35,
@@ -982,8 +982,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La escritura diferida de contraseñas envía los cambios de contraseña de la nube al AD local.",
-  "exp_en": "Password writeback sends cloud password changes back to on-premises AD."
+  "exp_es": "La escritura diferida de contraseñas envía al AD local los cambios y restablecimientos hechos en la nube. La sincronización de hash solo va de local a la nube, el SSO de conexión directa evita volver a escribir la contraseña y la lista personalizada de contraseñas prohibidas solo bloquea palabras.",
+  "exp_en": "Password writeback sends password changes and resets made in the cloud back to on-premises AD. Password hash sync only flows from on-premises to the cloud, seamless SSO avoids retyping the password, and the custom banned password list only blocks words."
  },
  {
   "id": 36,
@@ -1008,8 +1008,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las listas personalizadas de prohibidos agregan términos específicos de la organización a la lista global.",
-  "exp_en": "Custom banned lists add organization-specific terms to the global banned list."
+  "exp_es": "Protección con contraseña de Microsoft Entra con una lista personalizada de contraseñas prohibidas añade términos propios (nombre de la empresa, productos) a la lista global. Los paquetes de acceso, las licencias por grupo y las ubicaciones con nombre no controlan qué contraseñas pueden elegir los usuarios.",
+  "exp_en": "Microsoft Entra Password Protection with a custom banned password list adds your own terms (company name, products) to the global list. Access packages, group-based licensing and named locations do not control which passwords users can choose."
  },
  {
   "id": 37,
@@ -1034,8 +1034,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Revocar las sesiones invalida los tokens de actualización, por lo que el usuario debe volver a autenticarse.",
-  "exp_en": "Revoking sessions invalidates refresh tokens so the user must reauthenticate."
+  "exp_es": "Revocar las sesiones invalida los tokens de actualización y obliga a volver a autenticarse; además conviene deshabilitar la cuenta o restablecer la contraseña para que el atacante no vuelva a entrar. Esperar a que caduque el token deja la puerta abierta, y las licencias o el buzón no afectan a las sesiones.",
+  "exp_en": "Revoking sessions invalidates refresh tokens and forces reauthentication; you should also disable the account or reset the password so the attacker cannot sign in again. Waiting for tokens to expire leaves the door open, and licenses or the mailbox do not affect sessions."
  },
  {
   "id": 38,
@@ -1083,8 +1083,8 @@
     "ans": true
    }
   ],
-  "exp_es": "La escritura diferida se aplica a usuarios sincronizados desde AD local.",
-  "exp_en": "Writeback applies to users synchronized from on-premises AD."
+  "exp_es": "Falso: la escritura diferida solo se necesita para usuarios sincronizados desde AD local; los usuarios solo en la nube cambian la contraseña directamente en Entra. Verdadero: Microsoft Entra Kerberos permite que identidades híbridas accedan a recursos locales, por ejemplo desde dispositivos unidos a Entra.",
+  "exp_en": "False: writeback is only needed for users synchronized from on-premises AD; cloud-only users change their password directly in Entra. True: Microsoft Entra Kerberos lets hybrid identities access on-premises resources, for example from Entra-joined devices."
  },
  {
   "id": 40,
@@ -1156,8 +1156,8 @@
    "rollback"
   ],
   "correct": 0,
-  "exp_es": "La escritura diferida de contraseñas es necesaria para que SSPR actualice las contraseñas locales.",
-  "exp_en": "Password writeback is required for SSPR to update on-premises passwords."
+  "exp_es": "La escritura diferida de contraseñas (writeback) es la que hace que un restablecimiento hecho en la nube con SSPR se aplique también al AD local. Las otras opciones no son funciones de Microsoft Entra.",
+  "exp_en": "Password writeback is what makes a reset done in the cloud with SSPR also apply to on-premises AD. The other options are not Microsoft Entra features."
  },
  {
   "id": 42,
@@ -1182,8 +1182,8 @@
    "recovery lock"
   ],
   "correct": 1,
-  "exp_es": "Un TAP puede ser de un solo uso o de varios usos dentro de un período de validez.",
-  "exp_en": "TAP can be one-time or multi-use within a validity window."
+  "exp_es": "El pase de acceso temporal (TAP) es un código con caducidad que permite iniciar sesión y registrar métodos sin contraseña, como Microsoft Authenticator o una clave de paso. Puede ser de un solo uso o de varios usos dentro de su periodo de validez. Las otras opciones no existen como métodos de autenticación.",
+  "exp_en": "A Temporary Access Pass (TAP) is a time-limited code that lets a user sign in and register passwordless methods such as Microsoft Authenticator or a passkey. It can be one-time or multi-use within its validity period. The other options are not authentication methods."
  },
  {
   "id": 43,
@@ -1234,8 +1234,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El modo de solo informe registra lo que habría ocurrido sin aplicar la directiva.",
-  "exp_en": "Report-only mode logs what would have happened without enforcing the policy."
+  "exp_es": "El modo de solo informe registra en los inicios de sesión qué habría hecho la directiva sin aplicarla, y la herramienta What If simula su efecto sobre un usuario concreto. Activarla para todos de golpe puede bloquear accesos, y borrar otras directivas o quitar MFA reduce la seguridad.",
+  "exp_en": "Report-only mode logs in the sign-in logs what the policy would have done without enforcing it, and the What If tool simulates its effect for a specific user. Turning it on for everyone at once can lock people out, and deleting other policies or removing MFA weakens security."
  },
  {
   "id": 45,
@@ -1312,8 +1312,8 @@
   "correct": [
    1
   ],
-  "exp_es": "CAE reduce el período durante el cual un token sigue siendo válido tras un evento crítico.",
-  "exp_en": "CAE reduces the window in which a token remains valid after a critical event."
+  "exp_es": "La evaluación continua de acceso (CAE) permite que servicios como Exchange o SharePoint revoquen el acceso casi al instante ante eventos críticos (cuenta deshabilitada, cambio de contraseña, riesgo alto, cambio de ubicación). No borra usuarios, no rota claves a diario y no obliga a iniciar sesión cada hora.",
+  "exp_en": "Continuous access evaluation (CAE) lets services such as Exchange or SharePoint revoke access almost immediately after critical events (account disabled, password change, high risk, location change). It does not delete users, rotate keys daily or force sign-in every hour."
  },
  {
   "id": 48,
@@ -1364,8 +1364,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los registros de inicio de sesión muestran qué directivas se aplicaron y su resultado.",
-  "exp_en": "Sign-in logs show which policies applied and their result."
+  "exp_es": "Los registros de inicio de sesión muestran, para cada intento, qué directivas de acceso condicional se evaluaron y su resultado (correcto, error, no aplicada). Las licencias, el cumplimiento en Intune o la verificación de dominios no indican qué directiva bloqueó el acceso.",
+  "exp_en": "The sign-in logs show, for each attempt, which Conditional Access policies were evaluated and their result (success, failure, not applied). Licenses, Intune compliance or domain verification do not tell you which policy blocked access."
  },
  {
   "id": 50,
@@ -1397,8 +1397,8 @@
     "ans": true
    }
   ],
-  "exp_es": "El modo de solo informe evalúa y registra pero no aplica.",
-  "exp_en": "Report-only mode evaluates and logs but does not enforce."
+  "exp_es": "Verdadero: el riesgo de inicio de sesión y de usuario de ID Protection se usan como condiciones. Falso: el modo de solo informe evalúa y registra, pero no aplica los controles. Verdadero: hay plantillas de directivas. Verdadero: las acciones protegidas pueden exigir un contexto de autenticación.",
+  "exp_en": "True: sign-in risk and user risk from ID Protection can be used as conditions. False: report-only mode evaluates and logs but does not enforce controls. True: policy templates are available. True: protected actions can require an authentication context."
  },
  {
   "id": 51,
@@ -1444,8 +1444,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "El modo de solo informe simula; las ubicaciones con nombre definen rangos de IP o países.",
-  "exp_en": "Report-only mode simulates; named locations define IP ranges or countries."
+  "exp_es": "El modo de solo informe prueba el efecto de una directiva sin aplicarla. Las ubicaciones con nombre definen los rangos IP o países de confianza. El contexto de autenticación protege acciones o recursos concretos y CAE revoca el acceso en tiempo casi real; ninguno de los dos cubre estos requisitos.",
+  "exp_en": "Report-only mode tests a policy's effect without enforcing it. Named locations define trusted IP ranges or countries. Authentication context protects specific actions or resources, and CAE revokes access in near real time; neither meets these requirements."
  },
  {
   "id": 52,
@@ -1470,8 +1470,8 @@
    "legacy"
   ],
   "correct": 2,
-  "exp_es": "El modo de solo informe es la forma segura de probar directivas.",
-  "exp_en": "Report-only is the safe way to test policies."
+  "exp_es": "En modo de solo informe la directiva se evalúa y su resultado queda en los registros, pero no bloquea a nadie, por eso es la forma segura de probarla. 'Activada' (enforced) sí aplica los controles; las demás opciones no son estados de una directiva.",
+  "exp_en": "In report-only mode the policy is evaluated and its result is logged, but nobody is blocked, which makes it the safe way to test. 'On' (enforced) applies the controls; the other options are not policy states."
  },
  {
   "id": 53,
@@ -1496,8 +1496,8 @@
    "shared"
   ],
   "correct": 1,
-  "exp_es": "Las cuentas break-glass garantizan el acceso si fallan las directivas o MFA.",
-  "exp_en": "Break-glass accounts ensure access if policies or MFA fail."
+  "exp_es": "Las cuentas de acceso de emergencia (break-glass) se excluyen del acceso condicional para que, si una directiva mal configurada o un fallo de MFA bloquea a todos, siga habiendo una forma de entrar. Deben estar muy protegidas y supervisadas. Las cuentas de invitado, de servicio o compartidas no cumplen esa función.",
+  "exp_en": "Emergency access (break-glass) accounts are excluded from Conditional Access so that, if a misconfigured policy or an MFA outage locks everyone out, there is still a way in. They must be tightly protected and monitored. Guest, service or shared accounts do not serve that purpose."
  },
  {
   "id": 54,
@@ -1522,8 +1522,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las directivas basadas en riesgo automatizan las respuestas al riesgo detectado.",
-  "exp_en": "Risk-based policies automate responses to detected risk."
+  "exp_es": "El acceso condicional basado en riesgo usa el riesgo de inicio de sesión para exigir MFA y el riesgo de usuario para exigir un cambio de contraseña seguro, de forma automática. Caducar contraseñas cada 30 días no responde al riesgo, bloquear países no cubre todos los casos y deshabilitar ID Protection elimina las señales.",
+  "exp_en": "Risk-based Conditional Access uses sign-in risk to require MFA and user risk to require a secure password change, automatically. Expiring passwords every 30 days does not respond to risk, blocking countries misses most cases, and disabling ID Protection removes the signals."
  },
  {
   "id": 55,
@@ -1574,8 +1574,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las campañas de registro animan a los usuarios a configurar Microsoft Authenticator.",
-  "exp_en": "Registration campaigns encourage users to set up Microsoft Authenticator."
+  "exp_es": "Una campaña de registro muestra un aviso al iniciar sesión para que los usuarios configuren Microsoft Authenticator, y se puede posponer durante un número de días definido. Las ubicaciones con nombre, la caducidad de grupos y las revisiones de acceso no piden registrar MFA.",
+  "exp_en": "A registration campaign shows a nudge at sign-in asking users to set up Microsoft Authenticator, and it can be snoozed for a defined number of days. Named locations, group expiration and access reviews do not prompt MFA registration."
  },
  {
   "id": 57,
@@ -1628,8 +1628,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los niveles de riesgo son entradas de las directivas de acceso condicional.",
-  "exp_en": "Risk levels are inputs to Conditional Access policies."
+  "exp_es": "Verdadero: las detecciones incluyen credenciales filtradas, viaje imposible o IP anónimas. Falso: el administrador sí puede confirmar un inicio de sesión como seguro (o comprometido) y eso mejora el modelo. Falso: los niveles de riesgo de ID Protection se usan como condiciones del acceso condicional.",
+  "exp_en": "True: detections include leaked credentials, impossible travel and anonymous IPs. False: an administrator can confirm a sign-in as safe (or compromised), which improves the model. False: ID Protection risk levels are used as Conditional Access conditions."
  },
  {
   "id": 59,
@@ -1654,8 +1654,8 @@
    "Delete user"
   ],
   "correct": 0,
-  "exp_es": "Los comentarios ayudan a ajustar los modelos de aprendizaje automático.",
-  "exp_en": "Feedback helps tune the machine learning models."
+  "exp_es": "'Confirmar inicio de sesión seguro' indica a ID Protection que el riesgo era un falso positivo: baja el riesgo y ayuda a ajustar la detección. Restablecer el dominio, revocar licencias o eliminar al usuario no dan ese tipo de información al sistema.",
+  "exp_en": "'Confirm sign-in safe' tells ID Protection the risk was a false positive: it lowers the risk and helps tune detection. Resetting a domain, revoking a license or deleting the user give the system no such feedback."
  },
  {
   "id": 60,
@@ -1706,8 +1706,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Internet Access es una puerta de enlace web segura integrada con Entra.",
-  "exp_en": "Internet Access is a secure web gateway integrated with Entra."
+  "exp_es": "Microsoft Entra Internet Access es la puerta de enlace web segura de Global Secure Access: filtra el tráfico a Internet y SaaS y aplica el acceso condicional. Private Access cubre las apps internas, PIM gestiona roles privilegiados y Connect Sync sincroniza identidades.",
+  "exp_en": "Microsoft Entra Internet Access is the secure web gateway in Global Secure Access: it filters traffic to the internet and SaaS apps and applies Conditional Access. Private Access covers internal apps, PIM manages privileged roles, and Connect Sync synchronizes identities."
  },
  {
   "id": 62,
@@ -1937,8 +1937,8 @@
    "system-assigned"
   ],
   "correct": 3,
-  "exp_es": "El ciclo de vida de una identidad asignada por el sistema está vinculado a su recurso.",
-  "exp_en": "The lifecycle of a system-assigned identity is tied to its resource."
+  "exp_es": "La identidad administrada asignada por el sistema se crea con el recurso de Azure y se elimina cuando se borra ese recurso. La asignada por el usuario es un recurso independiente que puede compartirse entre varios recursos; las credenciales federadas e invitados no son tipos de identidad administrada.",
+  "exp_en": "A system-assigned managed identity is created with the Azure resource and deleted when that resource is deleted. A user-assigned identity is a standalone resource that can be shared across resources; federated credentials and guests are not managed identity types."
  },
  {
   "id": 70,
@@ -1989,8 +1989,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las aplicaciones empresariales alojan la configuración de SSO, aprovisionamiento y asignación de usuarios.",
-  "exp_en": "Enterprise applications host SSO, provisioning and user assignment settings."
+  "exp_es": "El SSO con SAML de una app SaaS se configura en la hoja 'Inicio de sesión único' de la aplicación empresarial, junto con el aprovisionamiento y la asignación de usuarios. La directiva de métodos de autenticación, la personalización de marca y la configuración de dispositivos no tienen ajustes de SSO.",
+  "exp_en": "SAML SSO for a SaaS app is configured in the enterprise application's Single sign-on blade, alongside provisioning and user assignment. The authentication methods policy, company branding and device settings have no SSO settings."
  },
  {
   "id": 72,
@@ -2093,8 +2093,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las colecciones organizan las aplicaciones en el portal Mis aplicaciones para los usuarios.",
-  "exp_en": "Collections organize apps in the My Apps portal for users."
+  "exp_es": "Las colecciones de aplicaciones agrupan apps para que aparezcan juntas en el portal Mis aplicaciones. Las unidades administrativas delegan administración, los paquetes de acceso conceden acceso a recursos y los contextos de autenticación protegen acciones concretas.",
+  "exp_en": "Application collections group apps so they appear together in the My Apps portal. Administrative units delegate administration, access packages grant access to resources, and authentication contexts protect specific actions."
  },
  {
   "id": 76,
@@ -2121,8 +2121,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El conector de Application Proxy solo realiza conexiones salientes.",
-  "exp_en": "The Application Proxy connector makes only outbound connections."
+  "exp_es": "Verdadero: la aplicación empresarial es la entidad de servicio de la app en tu inquilino. Falso: el conector de Application Proxy solo hace conexiones salientes, no hace falta abrir puertos de entrada. Falso: el consentimiento del administrador concede permisos en nombre de toda la organización.",
+  "exp_en": "True: an enterprise application is the app's service principal in your tenant. False: the Application Proxy connector only makes outbound connections, so no inbound ports are needed. False: admin consent grants permissions on behalf of the whole organization."
  },
  {
   "id": 77,
@@ -2194,8 +2194,8 @@
    "Verified ID"
   ],
   "correct": 2,
-  "exp_es": "El conector se instala de forma local y se comunica hacia fuera mediante HTTPS.",
-  "exp_en": "The connector is installed on-premises and communicates outward over HTTPS."
+  "exp_es": "Microsoft Entra Application Proxy publica apps web locales para acceso remoto mediante un conector instalado en la red interna que solo abre conexiones salientes por HTTPS. Cloud Sync sincroniza identidades, Connect Health supervisa y Verified ID emite credenciales.",
+  "exp_en": "Microsoft Entra Application Proxy publishes on-premises web apps for remote access through a connector on the internal network that only opens outbound HTTPS connections. Cloud Sync synchronizes identities, Connect Health monitors, and Verified ID issues credentials."
  },
  {
   "id": 79,
@@ -2272,8 +2272,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los certificados y las credenciales federadas evitan secretos compartidos de larga duración.",
-  "exp_en": "Certificates and federated credentials avoid long-lived shared secrets."
+  "exp_es": "Para una app demonio se recomienda un certificado o una credencial federada (federación de identidades de carga de trabajo), que evitan secretos compartidos de larga duración. Una contraseña en un archivo es insegura, y los códigos SMS o las cuentas de invitado son para personas, no para aplicaciones.",
+  "exp_en": "For a daemon app a certificate or a federated credential (workload identity federation) is recommended, because they avoid long-lived shared secrets. A password in a file is insecure, and SMS codes or guest accounts are for people, not applications."
  },
  {
   "id": 82,
@@ -2352,8 +2352,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los permisos de aplicación siempre necesitan consentimiento del administrador.",
-  "exp_en": "Application permissions always need admin consent."
+  "exp_es": "Verdadero: los permisos de API piden acceso a recursos como Microsoft Graph. Falso: los permisos de aplicación siempre requieren consentimiento del administrador, porque actúan sin usuario. Verdadero: los roles de aplicación pueden asignarse a usuarios, grupos o a otras aplicaciones.",
+  "exp_en": "True: API permissions request access to resources such as Microsoft Graph. False: application permissions always require admin consent because they act without a user. True: app roles can be assigned to users, groups or other applications."
  },
  {
   "id": 85,
@@ -2425,8 +2425,8 @@
    "billing"
   ],
   "correct": 2,
-  "exp_es": "Los URI de redirección deben coincidir exactamente con los puntos de conexión configurados de la aplicación.",
-  "exp_en": "Redirect URIs must exactly match the app's configured endpoints."
+  "exp_es": "El URI de redirección indica a Microsoft Entra ID adónde enviar los tokens tras el inicio de sesión y debe coincidir exactamente con el configurado en el registro de la app; así se evita que los tokens acaben en un sitio no autorizado. Las otras opciones no son propiedades del registro de aplicación.",
+  "exp_en": "The redirect URI tells Microsoft Entra ID where to send tokens after sign-in and must exactly match the one configured in the app registration, which prevents tokens from going to an unauthorized site. The other options are not app registration properties."
  },
  {
   "id": 87,
@@ -2451,8 +2451,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Cloud Discovery analiza los registros de tráfico para identificar aplicaciones y evaluar el riesgo.",
-  "exp_en": "Cloud Discovery analyzes traffic logs to identify apps and assess risk."
+  "exp_es": "Cloud Discovery analiza los registros del firewall y del proxy para identificar las apps en la nube que se usan, incluidas las no autorizadas (shadow IT), y evalúa su riesgo. Las directivas de sesión y el control de apps de acceso condicional actúan sobre apps ya conocidas, y App governance supervisa apps OAuth.",
+  "exp_en": "Cloud Discovery analyzes firewall and proxy logs to identify the cloud apps in use, including unsanctioned ones (shadow IT), and scores their risk. Session policies and Conditional Access App Control act on known apps, and app governance monitors OAuth apps."
  },
  {
   "id": 88,
@@ -2557,8 +2557,8 @@
    "Entitlement management"
   ],
   "correct": 2,
-  "exp_es": "Cloud Discovery identifica la TI en la sombra.",
-  "exp_en": "Cloud Discovery identifies shadow IT."
+  "exp_es": "Cloud Discovery de Defender for Cloud Apps analiza los registros de tráfico para descubrir qué apps usan los usuarios y detectar la TI en la sombra. PIM gestiona roles privilegiados, Workload ID protege identidades de aplicaciones y la administración de derechos gestiona solicitudes de acceso.",
+  "exp_en": "Defender for Cloud Apps Cloud Discovery analyzes traffic logs to discover which apps users access and to detect shadow IT. PIM manages privileged roles, Workload ID protects application identities, and entitlement management handles access requests."
  },
  {
   "id": 92,
@@ -2687,8 +2687,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los términos de uso se pueden exigir mediante acceso condicional o paquetes de acceso.",
-  "exp_en": "Terms of use can be required through Conditional Access or access packages."
+  "exp_es": "Los términos de uso muestran un texto legal que el usuario debe aceptar antes de acceder; se exigen con una directiva de acceso condicional o en un paquete de acceso. La federación de cargas de trabajo, el SSO de conexión directa y la escritura diferida de contraseñas no piden aceptar nada.",
+  "exp_en": "Terms of use show legal text that users must accept before access; you require them through a Conditional Access policy or an access package. Workload identity federation, seamless SSO and password writeback do not ask users to accept anything."
  },
  {
   "id": 97,
@@ -2710,8 +2710,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La administración de derechos admite usuarios internos y externos.",
-  "exp_en": "Entitlement management supports both internal and external users."
+  "exp_es": "Verdadero: las asignaciones de paquetes de acceso pueden caducar en una fecha o tras un número de días. Falso: la administración de derechos admite usuarios externos, por ejemplo de organizaciones conectadas, que se incorporan como invitados al aprobarse la solicitud.",
+  "exp_en": "True: access package assignments can expire on a date or after a number of days. False: entitlement management supports external users, for example from connected organizations, who are added as guests when their request is approved."
  },
  {
   "id": 98,
@@ -2757,8 +2757,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Los catálogos contienen recursos; los paquetes de acceso los agrupan con directivas.",
-  "exp_en": "Catalogs hold resources; access packages bundle them with policies."
+  "exp_es": "El catálogo es el contenedor de recursos y paquetes de acceso que permite delegar su gestión. El paquete de acceso agrupa recursos con reglas de solicitud, aprobación y caducidad. Los términos de uso son un texto legal y una organización conectada es un socio externo.",
+  "exp_en": "A catalog is the container of resources and access packages that lets you delegate their management. An access package bundles resources with request, approval and expiration rules. Terms of use are legal text, and a connected organization is an external partner."
  },
  {
   "id": 99,
@@ -2783,8 +2783,8 @@
    "named locations"
   ],
   "correct": 2,
-  "exp_es": "Los paquetes de acceso definen qué obtienen los usuarios y cuánto tiempo lo conservan.",
-  "exp_en": "Access packages define what users get and how long they keep it."
+  "exp_es": "En la administración de derechos los recursos (grupos, apps, sitios) se agrupan en paquetes de acceso que los usuarios solicitan, con aprobación y caducidad. Los grupos de administración y los bloqueos son de Azure Resource Manager, y las ubicaciones con nombre son del acceso condicional.",
+  "exp_en": "In entitlement management resources (groups, apps, sites) are bundled into access packages that users request, with approval and expiration. Management groups and resource locks belong to Azure Resource Manager, and named locations belong to Conditional Access."
  },
  {
   "id": 100,
@@ -2809,8 +2809,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las revisiones de acceso se pueden programar y asignar a propietarios de grupo o responsables.",
-  "exp_en": "Access reviews can be scheduled and assigned to group owners or managers."
+  "exp_es": "Una revisión de acceso periódica (trimestral) del grupo pide a los propietarios que confirmen si cada miembro sigue necesitando el acceso. Un dominio personalizado, un filtro de dispositivos o una directiva de acceso condicional no recertifican la pertenencia a grupos.",
+  "exp_en": "A recurring (quarterly) access review of the group asks the owners to confirm whether each member still needs access. A custom domain, a device filter or a Conditional Access policy do not recertify group membership."
  },
  {
   "id": 101,
@@ -2835,8 +2835,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La aplicación automática con una decisión predeterminada de denegar garantiza que el acceso obsoleto se revoque.",
-  "exp_en": "Auto apply with a deny default ensures stale access is revoked."
+  "exp_es": "Si se configura 'Si los revisores no responden: quitar acceso' y se activa la aplicación automática de resultados, el acceso sin revisar se retira solo al terminar la revisión. Borrar el grupo es destructivo y repetir la revisión a mano o cambiar el tipo de grupo no retira nada.",
+  "exp_en": "Setting 'If reviewers don't respond: remove access' and enabling auto apply results removes unreviewed access automatically when the review ends. Deleting the group is destructive, and restarting the review manually or changing the group type removes nothing."
  },
  {
   "id": 102,
@@ -2861,8 +2861,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los revisores pueden ser propietarios, usuarios seleccionados, responsables o los propios usuarios.",
-  "exp_en": "Reviewers can be owners, selected users, managers or the users themselves."
+  "exp_es": "La autorrevisión permite que cada usuario confirme si sigue necesitando su propio acceso. Los revisores también pueden ser propietarios, usuarios seleccionados o responsables. El invitador de invitados, el Lector global y las cuentas de emergencia no son tipos de revisor.",
+  "exp_en": "Self-review lets each user confirm whether they still need their own access. Reviewers can also be owners, selected users or managers. Guest inviter, Global Reader and break-glass accounts are not reviewer types."
  },
  {
   "id": 103,
@@ -2889,8 +2889,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La aplicación automática de resultados debe habilitarse en la configuración de la revisión.",
-  "exp_en": "Auto apply results must be enabled in the review settings."
+  "exp_es": "Verdadero: las revisiones cubren pertenencias a grupos y asignaciones de aplicaciones. Verdadero: pueden recomendar decisiones según la actividad de inicio de sesión (por ejemplo, denegar si no hay actividad en 30 días). Falso: los resultados solo se aplican automáticamente si se activa esa opción.",
+  "exp_en": "True: reviews cover group memberships and application assignments. True: they can recommend decisions based on sign-in activity (for example, deny if there is no activity for 30 days). False: results are only applied automatically if that option is enabled."
  },
  {
   "id": 104,
@@ -2915,8 +2915,8 @@
    "access"
   ],
   "correct": 3,
-  "exp_es": "Las revisiones de acceso evitan la acumulación de permisos.",
-  "exp_en": "Access reviews prevent permission creep."
+  "exp_es": "Una revisión de acceso periódica pide a los propietarios que recertifiquen si los usuarios siguen necesitando pertenecer al grupo, evitando la acumulación de permisos. Las copias de seguridad, la facturación o la red no tienen revisiones de este tipo.",
+  "exp_en": "A recurring access review asks owners to recertify whether users still need group membership, preventing permission creep. Backup, billing or network have no reviews of this kind."
  },
  {
   "id": 105,
@@ -2967,8 +2967,8 @@
   "correct": [
    1
   ],
-  "exp_es": "PIM también administra asignaciones elegibles y limitadas en el tiempo para roles de recursos de Azure.",
-  "exp_en": "PIM manages eligible and time-bound assignments for Azure resource roles too."
+  "exp_es": "PIM para recursos de Azure permite hacer a los usuarios aptos para el rol Propietario de la suscripción y activarlo justo a tiempo, con duración, MFA o aprobación. Los términos de uso, Connect Health y la escritura diferida de contraseñas no gestionan roles de Azure.",
+  "exp_en": "PIM for Azure resources makes users eligible for the subscription Owner role so they activate it just in time, with duration, MFA or approval. Terms of use, Connect Health and password writeback do not manage Azure roles."
  },
  {
   "id": 107,
@@ -2993,8 +2993,8 @@
   "correct": [
    2
   ],
-  "exp_es": "PIM para grupos amplía el acceso justo a tiempo a la pertenencia a grupos.",
-  "exp_en": "PIM for Groups extends just-in-time access to group membership."
+  "exp_es": "PIM para grupos permite que la pertenencia o la propiedad de un grupo sea apta y se active justo a tiempo, así los permisos que da el grupo solo existen mientras dura la activación. Cloud Sync sincroniza identidades, los paquetes de acceso no dan activación temporal de la pertenencia y las ubicaciones con nombre son de acceso condicional.",
+  "exp_en": "PIM for Groups makes group membership or ownership eligible and activated just in time, so the permissions the group grants exist only while the activation lasts. Cloud Sync synchronizes identities, access packages do not provide temporary activation of membership, and named locations belong to Conditional Access."
  },
  {
   "id": 108,
@@ -3019,8 +3019,8 @@
   "correct": [
    1
   ],
-  "exp_es": "PIM proporciona alertas, historial de auditoría e informes para supervisar el acceso con privilegios.",
-  "exp_en": "PIM provides alerts, audit history and reports to monitor privileged access."
+  "exp_es": "PIM incluye alertas (por ejemplo, roles asignados fuera de PIM o activaciones demasiado frecuentes) y un historial de auditoría e informes de todas las activaciones y asignaciones. Cost Management, los informes de cumplimiento de Intune y los de Teams no auditan roles privilegiados.",
+  "exp_en": "PIM includes alerts (for example, roles assigned outside PIM or too-frequent activations) plus audit history and reports for all activations and assignments. Cost Management, Intune compliance reports and Teams reports do not audit privileged roles."
  },
  {
   "id": 109,
@@ -3068,8 +3068,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las asignaciones elegibles requieren activación antes de usarse.",
-  "exp_en": "Eligible assignments require activation before use."
+  "exp_es": "Verdadero: PIM puede exigir aprobación, MFA y justificación al activar un rol. Falso: una asignación apta no da acceso permanente; el usuario debe activarla antes de usar el rol y la activación caduca. La asignación activa es la que da acceso sin activar.",
+  "exp_en": "True: PIM can require approval, MFA and justification when activating a role. False: an eligible assignment does not give permanent access; the user must activate it before using the role and the activation expires. An active assignment is the one that grants access without activation."
  },
  {
   "id": 111,
@@ -3115,8 +3115,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "La duración de activación limita la ventana de tiempo; la aprobación requiere otro revisor.",
-  "exp_en": "Activation duration limits the time window; approval requires another reviewer."
+  "exp_es": "La duración máxima de activación limita cuántas horas dura cada activación (aquí, cuatro). 'Requerir aprobación' hace que otra persona autorice cada activación de Administrador global. Las asignaciones apta y activa definen el tipo de asignación, no estos límites.",
+  "exp_en": "Maximum activation duration limits how many hours each activation lasts (four here). Require approval makes another person authorize each Global Administrator activation. Eligible and active assignments define the assignment type, not these limits."
  },
  {
   "id": 112,
@@ -3141,8 +3141,8 @@
    "static"
   ],
   "correct": 1,
-  "exp_es": "Las asignaciones elegibles reducen los privilegios permanentes.",
-  "exp_en": "Eligible assignments reduce standing privilege."
+  "exp_es": "Con una asignación apta en PIM el usuario no tiene el rol hasta que lo activa, durante un tiempo limitado; así se reduce el privilegio permanente. 'Permanente' (activa) da el rol siempre, y 'invitado' o 'estática' no son tipos de asignación de PIM.",
+  "exp_en": "With an eligible PIM assignment the user does not hold the role until they activate it for a limited time, which reduces standing privilege. Permanent (active) grants the role at all times, and guest or static are not PIM assignment types."
  },
  {
   "id": 113,
@@ -3193,8 +3193,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los registros de aprovisionamiento muestran lo que se sincronizó con las aplicaciones de destino y los errores.",
-  "exp_en": "Provisioning logs show what was synchronized to target apps and any errors."
+  "exp_es": "Los registros de aprovisionamiento muestran cada operación de creación, actualización o deshabilitación que Microsoft Entra hace en la app SaaS, con su estado y los errores. Los registros de inicio de sesión solo muestran autenticaciones, y los informes de facturación o de Intune no registran el aprovisionamiento.",
+  "exp_en": "Provisioning logs show every create, update or disable operation Microsoft Entra performs in the SaaS app, with its status and errors. Sign-in logs only show authentications, and billing or Intune reports do not record provisioning."
  },
  {
   "id": 115,
@@ -3245,8 +3245,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los libros del centro de administración de Entra usan Azure Monitor para visualizar datos de registro.",
-  "exp_en": "Workbooks in the Entra admin center use Azure Monitor to visualize log data."
+  "exp_es": "Los libros de Microsoft Entra (workbooks) usan Azure Monitor para mostrar informes predefinidos sobre los datos de registro, como el uso de métodos de autenticación o el impacto del acceso condicional. Los informes de Windows Update, el seguimiento de mensajes de Exchange y el análisis de llamadas de Teams no usan los registros de Entra.",
+  "exp_en": "Microsoft Entra workbooks use Azure Monitor to show prebuilt reports on log data, such as authentication methods usage or Conditional Access impact. Windows Update reports, Exchange message trace and Teams call analytics do not use Entra log data."
  },
  {
   "id": 117,
@@ -3273,8 +3273,8 @@
     "ans": false
    }
   ],
-  "exp_es": "KQL en Log Analytics puede consultar los registros de Entra enviados mediante la configuración de diagnóstico.",
-  "exp_en": "KQL in Log Analytics can query Entra logs sent via diagnostic settings."
+  "exp_es": "Verdadero: los registros de inicio de sesión, auditoría y aprovisionamiento están en el centro de administración de Entra. Falso: la configuración de diagnóstico puede enviarlos a Log Analytics, a una cuenta de almacenamiento o a Event Hubs (por ejemplo, para un SIEM). Falso: KQL consulta los registros de Entra enviados a Log Analytics.",
+  "exp_en": "True: sign-in, audit and provisioning logs are available in the Entra admin center. False: diagnostic settings can send them to Log Analytics, a storage account or Event Hubs (for example, for a SIEM). False: KQL queries Entra logs sent to Log Analytics."
  },
  {
   "id": 118,
@@ -3320,8 +3320,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Los registros de auditoría registran cambios; los de inicio de sesión registran eventos de autenticación.",
-  "exp_en": "Audit logs record changes; sign-in logs record authentication events."
+  "exp_es": "Los registros de auditoría guardan los cambios de configuración (quién modificó una directiva de acceso condicional y cuándo). Los registros de inicio de sesión explican por qué se bloqueó un inicio de sesión. Los libros visualizan datos y la puntuación de seguridad de identidad da recomendaciones, no eventos concretos.",
+  "exp_en": "Audit logs record configuration changes (who modified a Conditional Access policy and when). Sign-in logs explain why a sign-in was blocked. Workbooks visualize data and Identity Secure Score gives recommendations, not individual events."
  },
  {
   "id": 119,
@@ -3346,8 +3346,8 @@
    "password protection"
   ],
   "correct": 1,
-  "exp_es": "La configuración de diagnóstico define los destinos de exportación de registros.",
-  "exp_en": "Diagnostic settings define destinations for log export."
+  "exp_es": "La configuración de diagnóstico define adónde se exportan los registros de Entra; enviándolos a Log Analytics se conservan más tiempo que la retención predeterminada y se pueden consultar con KQL. La personalización de marca, las licencias por grupo y la protección con contraseña no exportan registros.",
+  "exp_en": "Diagnostic settings define where Entra logs are exported; sending them to Log Analytics keeps them longer than the default retention and lets you query them with KQL. Company branding, group-based licensing and Password Protection do not export logs."
  },
  {
   "id": 120,
@@ -3372,8 +3372,8 @@
    "Identity"
   ],
   "correct": 3,
-  "exp_es": "Identity Secure Score ayuda a seguir las recomendaciones de seguridad.",
-  "exp_en": "Identity Secure Score helps track security recommendations."
+  "exp_es": "La puntuación de seguridad de identidad (Identity Secure Score) mide la postura de seguridad de identidades del inquilino y recomienda acciones, como exigir MFA o bloquear la autenticación heredada. Las otras opciones no son puntuaciones de Microsoft Entra.",
+  "exp_en": "Identity Secure Score measures the tenant's identity security posture and recommends actions such as requiring MFA or blocking legacy authentication. The other options are not Microsoft Entra scores."
  },
  {
   "id": 121,
@@ -3502,8 +3502,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Un inquilino puede alojar varios dominios personalizados comprobados.",
-  "exp_en": "A tenant can host multiple verified custom domains."
+  "exp_es": "Un mismo inquilino admite varios dominios personalizados verificados; se agregan y verifican contoso.com y fabrikam.com y uno queda como principal. Usar solo onmicrosoft.com o cuentas de invitado no da a los usuarios su dominio, y crear un inquilino por dominio fragmenta la administración.",
+  "exp_en": "One tenant supports multiple verified custom domains; you add and verify contoso.com and fabrikam.com and set one as primary. Using only onmicrosoft.com or guest accounts does not give users their domain, and a tenant per domain fragments administration."
  },
  {
   "id": 126,
@@ -3528,8 +3528,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La configuración de dispositivos controla quién puede unir dispositivos y el límite de dispositivos por usuario.",
-  "exp_en": "Device settings control who can join devices and the per-user device limit."
+  "exp_es": "El número máximo de dispositivos por usuario se define en la configuración de dispositivos de Microsoft Entra ID, junto con quién puede unir o registrar dispositivos. Las revisiones de acceso, la directiva de métodos de autenticación y la personalización de marca no tienen ese ajuste.",
+  "exp_en": "The maximum number of devices per user is set in Microsoft Entra ID device settings, along with who can join or register devices. Access reviews, the authentication methods policy and company branding have no such setting."
  },
  {
   "id": 127,
@@ -3554,8 +3554,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las directivas de nomenclatura aplican prefijos, sufijos y palabras bloqueadas a los grupos nuevos.",
-  "exp_en": "Naming policies enforce prefixes, suffixes and blocked words for new groups."
+  "exp_es": "La directiva de nomenclatura de grupos de Microsoft 365 aplica prefijos o sufijos (como 'GRP-') y una lista de palabras bloqueadas a los grupos nuevos. La caducidad borra grupos inactivos, la escritura diferida los copia al AD local y una regla dinámica define miembros, no nombres.",
+  "exp_en": "The Microsoft 365 group naming policy applies prefixes or suffixes (such as 'GRP-') and a blocked words list to new groups. Expiration deletes inactive groups, writeback copies them to on-premises AD, and a dynamic rule defines members, not names."
  },
  {
   "id": 128,
@@ -3587,8 +3587,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los grupos asignables a roles deben tener pertenencia asignada.",
-  "exp_en": "Role-assignable groups must have assigned membership."
+  "exp_es": "Verdadero: Lector global lee casi toda la configuración sin poder cambiarla. Falso: los grupos a los que se pueden asignar roles deben tener pertenencia asignada, no dinámica, para que nadie gane un rol cambiando un atributo. Verdadero: un inquilino puede tener varios dominios verificados. Verdadero: las unidades administrativas de administración restringida limitan incluso a Administrador global.",
+  "exp_en": "True: Global Reader can read almost all settings without changing them. False: role-assignable groups must use assigned, not dynamic, membership so nobody gains a role by changing an attribute. True: a tenant can have several verified domains. True: restricted management administrative units restrict even Global Administrators."
  },
  {
   "id": 129,
@@ -3660,8 +3660,8 @@
    "deleted"
   ],
   "correct": 0,
-  "exp_es": "La comprobación demuestra la propiedad del dominio.",
-  "exp_en": "Verification proves ownership of the domain."
+  "exp_es": "Un dominio personalizado debe verificarse agregando un registro DNS (TXT o MX) que demuestra que eres su propietario; hasta entonces no se puede usar en los nombres de inicio de sesión. Cifrado, solo federado o eliminado no son el requisito previo.",
+  "exp_en": "A custom domain must be verified by adding a DNS record (TXT or MX) that proves you own it; until then it cannot be used in sign-in names. Encrypted, federated only or deleted are not the prerequisite."
  },
  {
   "id": 131,
@@ -3686,8 +3686,8 @@
    "Global Administrator"
   ],
   "correct": 1,
-  "exp_es": "Usa Lector global para auditores y revisores.",
-  "exp_en": "Use Global Reader for auditors and reviewers."
+  "exp_es": "Lector global da acceso de solo lectura a la configuración y la información administrativa de Entra ID, ideal para auditores. Administrador global puede cambiarlo todo, Administrador de aplicaciones gestiona apps y Administrador de facturación gestiona compras y suscripciones.",
+  "exp_en": "Global Reader gives read-only access to Entra ID settings and administrative information, ideal for auditors. Global Administrator can change everything, Application Administrator manages apps, and Billing Administrator manages purchases and subscriptions."
  },
  {
   "id": 132,
@@ -3738,8 +3738,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La ubicación de uso es obligatoria porque los servicios no están disponibles en todos los países.",
-  "exp_en": "Usage location is required because services are not available in all countries."
+  "exp_es": "La ubicación de uso es obligatoria para asignar licencias, porque no todos los servicios están disponibles en todos los países. El teléfono móvil, el responsable o el puesto son atributos opcionales que no bloquean la asignación.",
+  "exp_en": "Usage location is required to assign licenses because not all services are available in every country. Mobile phone, manager or job title are optional attributes that do not block assignment."
  },
  {
   "id": 134,
@@ -3764,8 +3764,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los módulos MSOnline y AzureAD están obsoletos; usa módulos basados en Graph.",
-  "exp_en": "MSOnline and AzureAD modules are deprecated; use Graph-based modules."
+  "exp_es": "Microsoft Graph PowerShell (y Microsoft Entra PowerShell, basado en Graph) es la opción recomendada para la administración masiva. Los módulos AzureAD y MSOnline están en desuso y se retiran, y Az.Resources gestiona recursos de Azure, no objetos de identidad.",
+  "exp_en": "Microsoft Graph PowerShell (and the Graph-based Microsoft Entra PowerShell) is the recommended option for bulk management. The AzureAD and MSOnline modules are deprecated and being retired, and Az.Resources manages Azure resources, not identity objects."
  },
  {
   "id": 135,
@@ -3790,8 +3790,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los conflictos se resuelven cambiando las opciones de licencia y volviendo a procesar.",
-  "exp_en": "Conflicts are resolved by changing the license options and reprocessing."
+  "exp_es": "Cuando dos productos tienen planes de servicio en conflicto, se deshabilita uno de esos planes en las opciones de licencia del grupo y se vuelve a procesar. Quitar y volver a agregar usuarios o asignar una tercera licencia repite el conflicto, y la MFA no tiene relación con las licencias.",
+  "exp_en": "When two products contain conflicting service plans, you disable one of those plans in the group's license options and reprocess. Removing and re-adding users or assigning a third license repeats the conflict, and MFA has nothing to do with licensing."
  },
  {
   "id": 136,
@@ -3816,8 +3816,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los grupos dinámicos de dispositivos evalúan atributos de dispositivo como deviceOSType.",
-  "exp_en": "Device dynamic groups evaluate device attributes such as deviceOSType."
+  "exp_es": "Las reglas dinámicas de dispositivos usan atributos como device.deviceOSType; (device.deviceOSType -eq \"Windows\") agrega todos los dispositivos Windows. Las reglas con user.* evalúan usuarios, no dispositivos, y group.type no es un atributo válido en las reglas.",
+  "exp_en": "Dynamic device rules use attributes such as device.deviceOSType; (device.deviceOSType -eq \"Windows\") adds all Windows devices. Rules with user.* evaluate users, not devices, and group.type is not a valid rule attribute."
  },
  {
   "id": 137,
@@ -3842,8 +3842,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La opción puede permitir a todos, a usuarios seleccionados o a ninguno.",
-  "exp_en": "The setting can allow all, selected users or none."
+  "exp_es": "En la configuración de dispositivos, 'Los usuarios pueden unir dispositivos a Microsoft Entra' se pone en 'Seleccionados' y se elige el grupo. Limitar a un dispositivo por usuario no restringe quién une, el acceso entre inquilinos es para otras organizaciones y las restricciones de inscripción de Intune controlan la inscripción, no la unión a Entra.",
+  "exp_en": "In device settings, set 'Users may join devices to Microsoft Entra' to Selected and choose the group. Limiting to one device per user does not restrict who joins, cross-tenant access is for other organizations, and Intune enrollment restrictions control enrollment, not Entra join."
  },
  {
   "id": 138,
@@ -3901,8 +3901,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los grupos dinámicos pueden evaluar usuarios o dispositivos; AzureAD está obsoleto.",
-  "exp_en": "Dynamic groups can evaluate users or devices; AzureAD is deprecated."
+  "exp_es": "Falso: un usuario eliminado se puede restaurar durante 30 días. Verdadero: la ubicación de uso es necesaria para asignar la mayoría de licencias. Falso: los grupos dinámicos pueden usar atributos de dispositivos. Falso: el módulo AzureAD está en desuso; para automatización nueva se usa Microsoft Graph PowerShell.",
+  "exp_en": "False: a deleted user can be restored for 30 days. True: usage location is required to assign most licenses. False: dynamic groups can use device attributes. False: the AzureAD module is deprecated; new automation should use Microsoft Graph PowerShell."
  },
  {
   "id": 140,
@@ -3974,8 +3974,8 @@
    "billing"
   ],
   "correct": 1,
-  "exp_es": "La ubicación de uso determina qué servicios se pueden licenciar.",
-  "exp_en": "Usage location determines which services can be licensed."
+  "exp_es": "Hay que establecer la ubicación de uso del usuario antes de asignarle una licencia, porque determina qué servicios están disponibles en su país. Almacenamiento, copia de seguridad o facturación no son atributos de ubicación del usuario.",
+  "exp_en": "The user's usage location must be set before a license can be assigned, because it determines which services are available in their country. Storage, backup or billing are not user location attributes."
  },
  {
   "id": 142,
@@ -4000,8 +4000,8 @@
    "Az.Storage"
   ],
   "correct": 0,
-  "exp_es": "Ambos módulos heredados se están retirando.",
-  "exp_en": "Both legacy modules are being retired."
+  "exp_es": "Microsoft Graph PowerShell y Microsoft Entra PowerShell sustituyen a los módulos MSOnline y AzureAD, que están en desuso. Pester es un marco de pruebas, PSReadLine mejora la consola y Az.Storage gestiona almacenamiento de Azure.",
+  "exp_en": "Microsoft Graph PowerShell and Microsoft Entra PowerShell replace the deprecated MSOnline and AzureAD modules. Pester is a testing framework, PSReadLine improves the console, and Az.Storage manages Azure storage."
  },
  {
   "id": 143,
@@ -4026,8 +4026,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La configuración de colaboración externa define quién puede invitar a invitados.",
-  "exp_en": "External collaboration settings define who can invite guests."
+  "exp_es": "La opción más restrictiva es que solo los usuarios con roles de administrador concretos (como Invitador de usuarios) puedan invitar a invitados. Permitir a todos, incluidos invitados, o a los miembros es más abierto, y 'sin restricciones' es lo contrario de lo que se pide.",
+  "exp_en": "The most restrictive option is that only users assigned to specific admin roles (such as Guest Inviter) can invite guests. Allowing everyone, including guests, or members is more open, and 'no restrictions' is the opposite of what is asked."
  },
  {
   "id": 144,
@@ -4052,8 +4052,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La configuración de confianza evita pedir MFA dos veces a los invitados.",
-  "exp_en": "Trust settings avoid prompting guests for MFA twice."
+  "exp_es": "En la configuración de acceso entre inquilinos, la configuración de confianza de entrada permite aceptar la MFA que el usuario ya hizo en su inquilino de origen, así no se le pide dos veces. La configuración de salida afecta a tus usuarios cuando acceden a otros inquilinos, y la sincronización o la escritura diferida no tratan la MFA.",
+  "exp_en": "In cross-tenant access settings, inbound trust settings let you accept MFA the user already completed in their home tenant, so they are not prompted twice. Outbound settings affect your users accessing other tenants, and sync or writeback settings do not handle MFA."
  },
  {
   "id": 145,
@@ -4130,8 +4130,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El código por correo es una alternativa para invitados sin otro proveedor de identidades.",
-  "exp_en": "Email OTP is a fallback for guests without another identity provider."
+  "exp_es": "El código de acceso de un solo uso por correo electrónico permite a un invitado sin cuenta Microsoft ni profesional iniciar sesión con un código enviado a su correo. Application Proxy publica apps locales, la autenticación de paso a través es para usuarios híbridos y Windows Hello es un método del dispositivo propio.",
+  "exp_en": "Email one-time passcode lets a guest without a Microsoft or work account sign in with a code sent to their email. Application Proxy publishes on-premises apps, pass-through authentication is for hybrid users, and Windows Hello is a method on your own device."
  },
  {
   "id": 148,
@@ -4156,8 +4156,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los invitados tienen un estado de usuario externo hasta que canjean la invitación.",
-  "exp_en": "Guests have an external user state until they redeem the invitation."
+  "exp_es": "Un invitado que no ha canjeado la invitación aparece con el estado de usuario externo 'Pendiente de aceptación' (PendingAcceptance). No es Administrador global, ni una cuenta sincronizada desde local, ni una identidad administrada.",
+  "exp_en": "A guest who has not redeemed the invitation appears with the external user state 'Pending acceptance' (PendingAcceptance). It is not a Global Administrator, a synced on-premises account or a managed identity."
  },
  {
   "id": 149,
@@ -4184,8 +4184,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La configuración de colaboración externa controla quién puede invitar a invitados.",
-  "exp_en": "External collaboration settings control who can invite guests."
+  "exp_es": "Verdadero: la conexión directa B2B permite canales compartidos de Teams sin crear cuentas de invitado. Verdadero: la configuración de confianza puede aceptar la MFA hecha en el inquilino del socio. Falso: las restricciones de invitación se cambian en la configuración de colaboración externa.",
+  "exp_en": "True: B2B direct connect enables Teams shared channels without creating guest accounts. True: trust settings can accept MFA performed in the partner tenant. False: invitation restrictions are changed in external collaboration settings."
  },
  {
   "id": 150,
@@ -4257,8 +4257,8 @@
    "synchronization"
   ],
   "correct": 3,
-  "exp_es": "Reduce las invitaciones manuales de invitados en organizaciones multiinquilino.",
-  "exp_en": "It reduces manual guest invitations in multi-tenant organizations."
+  "exp_es": "La sincronización entre inquilinos crea, actualiza y elimina automáticamente usuarios de colaboración B2B entre los inquilinos de una misma organización, evitando invitar a mano. Personalización de marca, nomenclatura o licencias no crean usuarios en otro inquilino.",
+  "exp_en": "Cross-tenant synchronization automatically creates, updates and removes B2B collaboration users between the tenants of one organization, avoiding manual invitations. Branding, naming or licensing do not create users in another tenant."
  },
  {
   "id": 152,
@@ -4309,8 +4309,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El módulo ADSync controla el programador.",
-  "exp_en": "The ADSync module controls the scheduler."
+  "exp_es": "Start-ADSyncSyncCycle -PolicyType Delta lanza al momento un ciclo de sincronización diferencial en el servidor de Entra Connect. Set-ADSyncScheduler con SyncCycleEnabled $false desactiva el programador, y Get-MgUser y Connect-MgGraph son cmdlets de Microsoft Graph, no del motor de sincronización.",
+  "exp_en": "Start-ADSyncSyncCycle -PolicyType Delta starts a delta sync cycle immediately on the Entra Connect server. Set-ADSyncScheduler with SyncCycleEnabled $false disables the scheduler, and Get-MgUser and Connect-MgGraph are Microsoft Graph cmdlets, not sync engine cmdlets."
  },
  {
   "id": 154,
@@ -4335,8 +4335,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Un servidor de ensayo proporciona alta disponibilidad y una forma de probar cambios con seguridad.",
-  "exp_en": "A staging server provides high availability and a way to test changes safely."
+  "exp_es": "Un servidor en modo de almacenamiento provisional (staging) importa y sincroniza los datos pero no exporta cambios a Entra ID; sirve de reserva para alta disponibilidad y para probar cambios de configuración. La federación, la escritura diferida y el SSO de conexión directa no crean un servidor de reserva.",
+  "exp_en": "A server in staging mode imports and synchronizes data but does not export changes to Entra ID; it acts as a standby for high availability and for testing configuration changes. Federation, password writeback and seamless SSO do not create a standby server."
  },
  {
   "id": 155,
@@ -4387,8 +4387,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los agentes solo realizan conexiones salientes; los agentes adicionales aportan redundancia.",
-  "exp_en": "Agents make outbound connections only; extra agents provide redundancy."
+  "exp_es": "La autenticación de paso a través consigue alta disponibilidad instalando varios agentes en servidores distintos; si uno falla, otro atiende las validaciones. Un solo agente es un punto único de error, y las contraseñas no se guardan en Key Vault.",
+  "exp_en": "Pass-through authentication achieves high availability by installing several agents on separate servers; if one fails, another handles validations. A single agent is a single point of failure, and passwords are not stored in Key Vault."
  },
  {
   "id": 157,
@@ -4413,8 +4413,8 @@
   "correct": [
    3
   ],
-  "exp_es": "La cuenta de equipo AZUREADSSOACC se usa para validar los vales Kerberos.",
-  "exp_en": "The AZUREADSSOACC computer account is used to validate Kerberos tickets."
+  "exp_es": "El SSO de conexión directa crea en el AD local una cuenta de equipo llamada AZUREADSSOACC, cuya clave se usa para validar los tickets Kerberos de los dispositivos unidos al dominio. No crea un bosque, una plantilla de directiva de grupo ni un reenviador DNS.",
+  "exp_en": "Seamless SSO creates a computer account named AZUREADSSOACC in on-premises AD, whose key is used to validate Kerberos tickets from domain-joined devices. It does not create a forest, a Group Policy template or a DNS forwarder."
  },
  {
   "id": 158,
@@ -4491,8 +4491,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El identificador inmutable vincula el objeto de la nube con el objeto local.",
-  "exp_en": "The immutable ID ties the cloud object to the on-premises object."
+  "exp_es": "El objectGUID (o ms-DS-ConsistencyGuid) del usuario local, convertido en ImmutableID, es el anclaje de origen que vincula el objeto local con el de la nube para la coincidencia exacta (hard match). El puesto, el nombre para mostrar o el teléfono cambian y no son únicos.",
+  "exp_en": "The on-premises user's objectGUID (or ms-DS-ConsistencyGuid), converted to an ImmutableID, is the source anchor that links the on-premises object to the cloud object for a hard match. Job title, display name or phone number change and are not unique."
  },
  {
   "id": 161,
@@ -4524,8 +4524,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los agentes de PTA solo realizan conexiones salientes.",
-  "exp_en": "PTA agents only make outbound connections."
+  "exp_es": "Verdadero: un servidor en modo provisional no exporta cambios a Entra ID. Falso: los agentes de PTA solo hacen conexiones salientes. Verdadero: el SSO de conexión directa usa Kerberos en dispositivos unidos al dominio. Verdadero: IdFix detecta errores del directorio (duplicados, caracteres no válidos) antes de sincronizar.",
+  "exp_en": "True: a staging server does not export changes to Entra ID. False: PTA agents only make outbound connections. True: seamless SSO uses Kerberos on domain-joined devices. True: IdFix finds directory errors (duplicates, invalid characters) before synchronization."
  },
  {
   "id": 162,
@@ -4571,8 +4571,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "IdFix corrige los datos del directorio; la implementación por fases migra grupos gradualmente.",
-  "exp_en": "IdFix remediates directory data; staged rollout migrates groups gradually."
+  "exp_es": "IdFix encuentra y corrige errores de datos, como proxyAddresses duplicados, antes de la primera sincronización. El lanzamiento por fases (staged rollout) pasa un grupo piloto de la federación a la autenticación en la nube. Connect Health supervisa y el modo provisional prepara un servidor de reserva.",
+  "exp_en": "IdFix finds and fixes data errors such as duplicate proxyAddresses before the first sync. Staged rollout moves a pilot group from federation to cloud authentication. Connect Health monitors, and staging mode prepares a standby server."
  },
  {
   "id": 163,
@@ -4618,8 +4618,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Connect Sync se basa en servidor; Cloud Sync es ligera y se basa en agentes.",
-  "exp_en": "Connect Sync is server-based; Cloud Sync is lightweight and agent-based."
+  "exp_es": "Entra Connect Sync se instala en un servidor dedicado y permite filtrado avanzado y reglas de sincronización personalizadas. Entra Cloud Sync usa agentes ligeros y admite varios bosques desconectados. La importación por CSV es manual y la sincronización entre inquilinos es entre inquilinos de Entra, no desde AD.",
+  "exp_en": "Entra Connect Sync runs on a dedicated server and supports rich filtering and custom sync rules. Entra Cloud Sync uses lightweight agents and supports multiple disconnected forests. CSV import is manual, and cross-tenant synchronization is between Entra tenants, not from AD."
  },
  {
   "id": 164,
@@ -4644,8 +4644,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La directiva unificada de métodos de autenticación reemplaza la configuración heredada por característica.",
-  "exp_en": "The unified Authentication methods policy replaces legacy per-feature settings."
+  "exp_es": "La directiva de métodos de autenticación centraliza la configuración de Authenticator, FIDO2, el pase de acceso temporal y otros métodos para MFA y SSPR, y sustituye la configuración heredada separada. La directiva de paquetes de acceso, la configuración de dispositivos y la nomenclatura de grupos no gestionan métodos.",
+  "exp_en": "The authentication methods policy centralizes settings for Authenticator, FIDO2, Temporary Access Pass and other methods for both MFA and SSPR, replacing the separate legacy settings. Access package policies, device settings and group naming do not manage methods."
  },
  {
   "id": 165,
@@ -4670,8 +4670,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El contexto adicional complementa la coincidencia de números.",
-  "exp_en": "Additional context complements number matching."
+  "exp_es": "El contexto adicional muestra en la notificación de Authenticator el nombre de la app y la ubicación del inicio de sesión, para que el usuario detecte solicitudes sospechosas; complementa la coincidencia de números. El bloqueo inteligente y la caducidad de contraseñas no muestran información en la notificación.",
+  "exp_en": "Additional context shows the app name and sign-in location in the Authenticator notification so the user can spot suspicious prompts; it complements number matching. Smart lockout and password expiration show nothing in the notification."
  },
  {
   "id": 166,
@@ -4722,8 +4722,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los métodos se habilitan y se dirigen en la directiva de métodos de autenticación.",
-  "exp_en": "Methods are enabled and targeted in the Authentication methods policy."
+  "exp_es": "Para que los usuarios registren llaves de seguridad FIDO2, el administrador habilita el método FIDO2 para ellos en la directiva de métodos de autenticación. No hace falta un dominio personalizado ni Entra Connect, y crear una cuenta de emergencia no habilita ningún método.",
+  "exp_en": "For users to register FIDO2 security keys, the administrator enables the FIDO2 method for them in the authentication methods policy. A custom domain or Entra Connect is not needed, and creating a break-glass account enables no method."
  },
  {
   "id": 168,
@@ -4748,8 +4748,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Entra CBA funciona sin AD FS al confiar en las CA cargadas.",
-  "exp_en": "Entra CBA works without AD FS by trusting uploaded CAs."
+  "exp_es": "La autenticación basada en certificados de Entra se configura subiendo al inquilino las entidades de certificación de confianza y definiendo reglas de enlace de autenticación (y de nombre de usuario). No necesita AD FS, un controlador de dominio emisor ni un DNS personalizado.",
+  "exp_en": "Entra certificate-based authentication is configured by uploading the trusted certificate authorities to the tenant and defining authentication binding (and username binding) rules. It does not need AD FS, a domain controller issuer or a custom DNS server."
  },
  {
   "id": 169,
@@ -4774,8 +4774,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La directiva de SSPR define el número de métodos necesarios y cuáles se permiten.",
-  "exp_en": "SSPR policy sets the number of required methods and which methods are allowed."
+  "exp_es": "La opción 'Número de métodos necesarios para restablecer' de SSPR define si basta con uno o hacen falta dos. La escritura diferida de grupos, las notificaciones a administradores y la lista de contraseñas prohibidas no controlan cuántos métodos se piden.",
+  "exp_en": "The SSPR option 'Number of methods required to reset' defines whether one or two are needed. Group writeback, admin notifications and the banned password list do not control how many methods are requested."
  },
  {
   "id": 170,
@@ -4800,8 +4800,8 @@
   "correct": [
    0
   ],
-  "exp_es": "SSPR se puede limitar a Ninguno, Seleccionados o Todos.",
-  "exp_en": "SSPR can be scoped to None, Selected or All."
+  "exp_es": "SSPR se puede habilitar para Ninguno, Seleccionados o Todos; para un piloto se elige 'Seleccionados' y el grupo. Borrar el grupo no tiene sentido, 'Todos' no admite exclusiones y deshabilitarlo para todos impide el piloto.",
+  "exp_en": "SSPR can be enabled for None, Selected or All; for a pilot you choose Selected and the group. Deleting the group makes no sense, All does not support exclusions, and disabling it for everyone prevents the pilot."
  },
  {
   "id": 171,
@@ -4826,8 +4826,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La confianza de Kerberos en la nube es la implementación híbrida recomendada.",
-  "exp_en": "Cloud Kerberos trust is the recommended hybrid deployment."
+  "exp_es": "La confianza de Kerberos en la nube es el modelo recomendado de Windows Hello para empresas en entornos híbridos: usa Microsoft Entra Kerberos y no necesita una PKI. La confianza de certificado sí requiere PKI, y la confianza de clave exige controladores de dominio con certificados.",
+  "exp_en": "Cloud Kerberos trust is the recommended Windows Hello for Business model for hybrid environments: it uses Microsoft Entra Kerberos and needs no PKI. Certificate trust requires a PKI, and key trust needs domain controllers with certificates."
  },
  {
   "id": 172,
@@ -4878,8 +4878,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los agentes de controlador de dominio validan las contraseñas con la directiva descargada mediante el proxy.",
-  "exp_en": "DC agents validate passwords against the policy downloaded via the proxy."
+  "exp_es": "Para aplicar la lista de contraseñas prohibidas en AD local se instalan el servicio proxy de Protección con contraseña y el agente en los controladores de dominio; el proxy descarga la directiva de Entra y los agentes validan cada cambio de contraseña. Application Proxy, Intune o Cloud Sync no validan contraseñas.",
+  "exp_en": "To apply the banned password list in on-premises AD you install the Password Protection proxy service and the DC agent on domain controllers; the proxy downloads the Entra policy and the agents validate every password change. Application Proxy, Intune or Cloud Sync do not validate passwords."
  },
  {
   "id": 174,
@@ -4904,8 +4904,8 @@
   "correct": [
    0
   ],
-  "exp_es": "El modo de auditoría registra lo que se bloquearía antes de aplicar.",
-  "exp_en": "Audit mode logs what would be blocked before you enforce."
+  "exp_es": "Protección con contraseña tiene modo de auditoría, que solo registra qué contraseñas se habrían rechazado, y modo de aplicación, que las rechaza. Los demás pares de modos no existen.",
+  "exp_en": "Password Protection has audit mode, which only logs which passwords would have been rejected, and enforced mode, which rejects them. The other mode pairs do not exist."
  },
  {
   "id": 175,
@@ -4937,8 +4937,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los pases de un solo uso caducan tras el primer uso.",
-  "exp_en": "One-time passes expire after first use."
+  "exp_es": "Verdadero: la directiva de métodos de autenticación centraliza su configuración. Falso: un pase de acceso temporal de un solo uso deja de valer tras el primer uso. Verdadero: la CBA de Entra autentica sin AD FS. Verdadero: Protección con contraseña tiene modo de auditoría.",
+  "exp_en": "True: the authentication methods policy centralizes method settings. False: a one-time Temporary Access Pass stops working after its first use. True: Entra CBA authenticates without AD FS. True: Password Protection supports audit mode."
  },
  {
   "id": 176,
@@ -4970,8 +4970,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El ámbito de SSPR puede ser Ninguno, Seleccionados o Todos.",
-  "exp_en": "SSPR scope can be None, Selected or All."
+  "exp_es": "Verdadero: SSPR se puede limitar a un grupo seleccionado. Verdadero: puede exigir dos métodos. Verdadero: hace falta la escritura diferida para actualizar contraseñas en el AD local. Falso: el ámbito puede ser Ninguno, Seleccionados o Todos.",
+  "exp_en": "True: SSPR can be limited to a selected group. True: it can require two methods. True: password writeback is needed to update on-premises AD passwords. False: the scope can be None, Selected or All."
  },
  {
   "id": 177,
@@ -5043,8 +5043,8 @@
    "silent-delete"
   ],
   "correct": 2,
-  "exp_es": "El modo de auditoría registra eventos sin rechazar contraseñas.",
-  "exp_en": "Audit mode records events without rejecting passwords."
+  "exp_es": "En modo de auditoría, Protección con contraseña registra en los controladores de dominio las contraseñas que habría rechazado, sin rechazarlas; así se mide el impacto antes de aplicarla. Los otros modos no existen.",
+  "exp_en": "In audit mode Password Protection logs on domain controllers the passwords it would have rejected, without rejecting them, so you can measure the impact before enforcing. The other modes do not exist."
  },
  {
   "id": 179,
@@ -5069,8 +5069,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El acceso condicional evalúa todas las directivas; cualquier bloqueo deniega el acceso.",
-  "exp_en": "Conditional Access evaluates all policies; any block denies access."
+  "exp_es": "El acceso condicional evalúa todas las directivas que aplican y hay que cumplir los controles de todas; si alguna bloquea, el bloqueo prevalece. No gana la menos restrictiva, no importa el orden alfabético y los controles de concesión no se ignoran.",
+  "exp_en": "Conditional Access evaluates every applicable policy and the user must satisfy the controls of all of them; if any blocks, the block wins. The least restrictive policy does not win, alphabetical order does not matter, and grant controls are not ignored."
  },
  {
   "id": 180,
@@ -5095,8 +5095,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las fortalezas de autenticación definen qué combinaciones de métodos satisfacen MFA.",
-  "exp_en": "Authentication strengths define which combinations of methods satisfy MFA."
+  "exp_es": "La intensidad de autenticación (authentication strength) define qué combinaciones de métodos cumplen el requisito, por ejemplo solo métodos resistentes al phishing como FIDO2 o Windows Hello. Las ubicaciones con nombre, los términos de uso y la frecuencia de inicio de sesión no eligen el tipo de MFA.",
+  "exp_en": "Authentication strength defines which method combinations satisfy the requirement, for example only phishing-resistant methods such as FIDO2 or Windows Hello. Named locations, terms of use and sign-in frequency do not choose the MFA type."
  },
  {
   "id": 181,
@@ -5121,8 +5121,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La frecuencia de inicio de sesión define cada cuánto deben volver a iniciar sesión los usuarios.",
-  "exp_en": "Sign-in frequency defines how often users must sign in again."
+  "exp_es": "La frecuencia de inicio de sesión es un control de sesión que obliga a volver a autenticarse cada cierto tiempo (aquí, 8 horas). La sesión de explorador persistente hace lo contrario, el modo de solo informe no aplica nada y la ubicación con nombre es una condición.",
+  "exp_en": "Sign-in frequency is a session control that forces reauthentication after a set time (8 hours here). Persistent browser session does the opposite, report-only mode enforces nothing, and a named location is a condition."
  },
  {
   "id": 182,
@@ -5173,8 +5173,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los filtros de dispositivos evalúan atributos del dispositivo como el tipo de confianza o el cumplimiento.",
-  "exp_en": "Device filters evaluate device attributes such as trust type or compliance."
+  "exp_es": "Un filtro de dispositivos (o la condición de estado del dispositivo) permite que la directiva se aplique solo a dispositivos no conformes o no administrados, evaluando atributos como isCompliant o trustType. La nomenclatura de grupos, Application Proxy o las revisiones de acceso no seleccionan dispositivos en una directiva.",
+  "exp_en": "A device filter (or the device state condition) lets the policy target only noncompliant or unmanaged devices by evaluating attributes such as isCompliant or trustType. Group naming, Application Proxy or access reviews do not target devices in a policy."
  },
  {
   "id": 184,
@@ -5199,8 +5199,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El control de concesión de directiva de protección de aplicaciones admite escenarios BYOD móviles.",
-  "exp_en": "App protection policy grant control supports BYOD mobile scenarios."
+  "exp_es": "El control 'Requerir directiva de protección de aplicaciones' solo permite el acceso desde apps protegidas por Intune (como Outlook móvil), ideal para BYOD. Exigir cambio de contraseña o términos de uso no controla la app usada, y bloquear la autenticación heredada no exige protección de apps.",
+  "exp_en": "The 'Require app protection policy' grant control only allows access from apps protected by Intune (such as Outlook mobile), ideal for BYOD. Requiring a password change or terms of use does not control the app used, and blocking legacy authentication does not require app protection."
  },
  {
   "id": 185,
@@ -5225,8 +5225,8 @@
   "correct": [
    0
   ],
-  "exp_es": "What If ayuda a solucionar problemas y planificar directivas sin afectar a los usuarios.",
-  "exp_en": "What If helps troubleshoot and plan policies without affecting users."
+  "exp_es": "What If simula un inicio de sesión (usuario, app, ubicación, dispositivo, riesgo) y muestra qué directivas se aplicarían y cuáles no, sin afectar a nadie. No crea usuarios de prueba, no restablece contraseñas ni elimina directivas.",
+  "exp_en": "What If simulates a sign-in (user, app, location, device, risk) and shows which policies would and would not apply, without affecting anyone. It does not create test users, reset passwords or delete policies."
  },
  {
   "id": 186,
@@ -5251,8 +5251,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los clientes de autenticación heredada no pueden realizar MFA; bloquéalos con una directiva.",
-  "exp_en": "Legacy authentication clients cannot do MFA; block them with a policy."
+  "exp_es": "La condición de aplicaciones cliente identifica el tipo de cliente, incluidos los clientes de autenticación heredada que no admiten autenticación moderna ni MFA; se usa para bloquearlos. La frecuencia de inicio de sesión, las ubicaciones con nombre y el contexto de autenticación no distinguen el tipo de cliente.",
+  "exp_en": "The client apps condition identifies the client type, including legacy authentication clients that cannot do modern authentication or MFA; you use it to block them. Sign-in frequency, named locations and authentication context do not distinguish client types."
  },
  {
   "id": 187,
@@ -5303,8 +5303,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las acciones protegidas agregan requisitos de acceso condicional a permisos seleccionados.",
-  "exp_en": "Protected actions add Conditional Access requirements to selected permissions."
+  "exp_es": "Las acciones protegidas exigen un contexto de autenticación del acceso condicional (por ejemplo, MFA resistente al phishing) antes de ejecutar permisos sensibles, como modificar directivas de acceso condicional. La personalización de marca, la sincronización entre inquilinos y las licencias por grupo no añaden requisitos a acciones administrativas.",
+  "exp_en": "Protected actions require a Conditional Access authentication context (for example, phishing-resistant MFA) before sensitive permissions run, such as changing Conditional Access policies. Company branding, cross-tenant synchronization and group-based licensing add no requirements to admin actions."
  },
  {
   "id": 189,
@@ -5336,8 +5336,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El acceso condicional aplica todas las directivas coincidentes; los bloqueos prevalecen.",
-  "exp_en": "Conditional Access applies all matching policies; blocks win."
+  "exp_es": "Verdadero: la intensidad de autenticación puede exigir MFA resistente al phishing. Verdadero: la frecuencia de inicio de sesión define cada cuánto hay que volver a autenticarse. Falso: se aplican todas las directivas que coinciden y el bloqueo prevalece. Falso: hay plantillas para crear directivas.",
+  "exp_en": "True: authentication strength can require phishing-resistant MFA. True: sign-in frequency controls how often users reauthenticate. False: all matching policies apply and a block wins. False: templates are available to create policies."
  },
  {
   "id": 190,
@@ -5359,8 +5359,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El modo de solo informe solo evalúa y registra.",
-  "exp_en": "Report-only mode only evaluates and logs."
+  "exp_es": "Verdadero: What If simula qué directivas se aplicarían a un inicio de sesión. Falso: el modo de solo informe evalúa y registra el resultado pero no aplica los controles; para aplicarlos la directiva debe estar activada.",
+  "exp_en": "True: What If simulates which policies would apply to a sign-in. False: report-only mode evaluates and logs the result but does not enforce controls; to enforce them the policy must be turned on."
  },
  {
   "id": 191,
@@ -5453,8 +5453,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "El cumplimiento condiciona el acceso; las restricciones aplicadas por la aplicación limitan las sesiones.",
-  "exp_en": "Compliance gates access; app enforced restrictions limit sessions."
+  "exp_es": "'Requerir dispositivo conforme' solo deja entrar en Exchange desde dispositivos administrados y conformes en Intune. Las restricciones aplicadas por la aplicación permiten ver SharePoint en el explorador desde dispositivos no administrados, pero sin descargar. La frecuencia de inicio de sesión y la MFA no controlan el dispositivo ni las descargas.",
+  "exp_en": "'Require compliant device' only lets Intune-managed, compliant devices into Exchange. App enforced restrictions let unmanaged devices view SharePoint in the browser without downloading. Sign-in frequency and MFA do not control the device or downloads."
  },
  {
   "id": 193,
@@ -5479,8 +5479,8 @@
    "Billing"
   ],
   "correct": 1,
-  "exp_es": "What If se usa para planificar y solucionar problemas de directivas.",
-  "exp_en": "What If is used to plan and troubleshoot policies."
+  "exp_es": "La herramienta What If simula un inicio de sesión con usuario, app, ubicación y dispositivo y muestra qué directivas se aplicarían, útil para planificar y solucionar problemas. Hunting, Backup y Billing no son herramientas del acceso condicional.",
+  "exp_en": "The What If tool simulates a sign-in with a user, app, location and device and shows which policies would apply, useful for planning and troubleshooting. Hunting, Backup and Billing are not Conditional Access tools."
  },
  {
   "id": 194,
@@ -5505,8 +5505,8 @@
    "filter"
   ],
   "correct": 2,
-  "exp_es": "Las fortalezas integradas incluyen MFA, MFA sin contraseña y MFA resistente al phishing.",
-  "exp_en": "Built-in strengths include MFA, passwordless MFA and phishing-resistant MFA."
+  "exp_es": "La intensidad de autenticación (authentication strength) del control de concesión define qué métodos son válidos; la integrada 'MFA resistente al phishing' solo acepta FIDO2, Windows Hello o certificados. El contexto de autenticación etiqueta recursos o acciones, y 'bloqueo' o 'filtro' no eligen métodos.",
+  "exp_en": "Authentication strength in the grant control defines which methods are valid; the built-in 'phishing-resistant MFA' strength only accepts FIDO2, Windows Hello or certificates. Authentication context tags resources or actions, and 'lock' or 'filter' do not choose methods."
  },
  {
   "id": 195,
@@ -5557,8 +5557,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La autocorrección con MFA reduce el riesgo del inicio de sesión.",
-  "exp_en": "Self-remediation with MFA lowers sign-in risk."
+  "exp_es": "Con riesgo de inicio de sesión medio, una directiva basada en riesgo puede pedir MFA; si el usuario la completa, se corrige él mismo y el riesgo baja. Reinstalar Windows, borrar la cuenta o cambiar el sufijo de dominio no son correcciones del riesgo.",
+  "exp_en": "With medium sign-in risk, a risk-based policy can require MFA; if the user completes it, they self-remediate and the risk is lowered. Reinstalling Windows, deleting the account or changing the domain suffix are not risk remediations."
  },
  {
   "id": 197,
@@ -5583,8 +5583,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La autocorrección requiere métodos de autenticación registrados.",
-  "exp_en": "Self-remediation requires registered authentication methods."
+  "exp_es": "Para corregir el riesgo de usuario cambiando la contraseña, el usuario debe tener registrados MFA y SSPR; sin métodos registrados no puede demostrar su identidad y queda bloqueado. Ser invitado, tener VPN o una cuenta de emergencia no permite la autocorrección.",
+  "exp_en": "To remediate user risk by changing the password, the user must be registered for MFA and SSPR; without registered methods they cannot prove their identity and are blocked. Being a guest, having a VPN or a break-glass account does not enable self-remediation."
  },
  {
   "id": 198,
@@ -5609,8 +5609,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Confirmar que es seguro proporciona comentarios para mejorar las detecciones.",
-  "exp_en": "Confirming safe provides feedback to improve detections."
+  "exp_es": "Si la investigación muestra que la actividad era legítima, se marca 'Confirmar inicio de sesión seguro': baja el riesgo y mejora la detección. 'Confirmar usuario en peligro' es para ataques reales, y deshabilitar el inquilino o borrar el usuario son medidas desproporcionadas.",
+  "exp_en": "If the investigation shows the activity was legitimate, you select 'Confirm sign-in safe': it lowers the risk and improves detection. 'Confirm user compromised' is for real attacks, and disabling the tenant or deleting the user are disproportionate."
  },
  {
   "id": 199,
@@ -5635,8 +5635,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las directivas basadas en riesgo requieren Microsoft Entra ID P2.",
-  "exp_en": "Risk-based policies require Microsoft Entra ID P2."
+  "exp_es": "Las directivas de acceso condicional basadas en riesgo de ID Protection requieren Microsoft Entra ID P2 (o Microsoft Entra Suite, que lo incluye). Entra ID Free, una cuenta gratuita de Azure o las licencias de Office no incluyen el riesgo como condición.",
+  "exp_en": "Risk-based Conditional Access policies from ID Protection require Microsoft Entra ID P2 (or Microsoft Entra Suite, which includes it). Entra ID Free, an Azure free account or Office licenses do not include risk as a condition."
  },
  {
   "id": 200,
@@ -5661,8 +5661,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El viaje imposible es una detección de riesgo de inicio de sesión sin conexión.",
-  "exp_en": "Impossible travel is an offline sign-in risk detection."
+  "exp_es": "Viaje imposible detecta dos inicios de sesión desde ubicaciones tan alejadas que no da tiempo a viajar entre ellas. IP anónima detecta proxies o Tor, credenciales filtradas detecta contraseñas publicadas y difusión de contraseñas detecta intentos con contraseñas comunes contra muchas cuentas.",
+  "exp_en": "Impossible travel flags two sign-ins from locations so far apart that travelling between them in that time is not possible. Anonymous IP detects proxies or Tor, leaked credentials detects published passwords, and password spray detects common passwords tried against many accounts."
  },
  {
   "id": 201,
@@ -5689,8 +5689,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los administradores pueden descartar o confirmar el riesgo tras la investigación.",
-  "exp_en": "Admins can dismiss or confirm risk after investigation."
+  "exp_es": "Verdadero: el riesgo de usuario (probabilidad de que la identidad esté en peligro) y el de inicio de sesión (de que un intento no sea del propietario) son distintos. Verdadero: las directivas basadas en riesgo requieren P2. Falso: el administrador puede descartar o confirmar el riesgo tras investigar.",
+  "exp_en": "True: user risk (likelihood the identity is compromised) and sign-in risk (likelihood an attempt is not from the owner) are different. True: risk-based policies need P2. False: an administrator can dismiss or confirm risk after investigating."
  },
  {
   "id": 202,
@@ -5736,8 +5736,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Confirmar comprometido para ataques reales; confirmar seguro para falsos positivos.",
-  "exp_en": "Confirm compromised for real attacks; confirm safe for false positives."
+  "exp_es": "Si las credenciales aparecieron en una filtración y la cuenta se usó de forma indebida, se marca 'Confirmar usuario en peligro', que sube el riesgo al máximo y activa las directivas. Si el viaje imposible se debe a una VPN, se marca 'Confirmar inicio de sesión seguro'. Borrar al usuario no es una acción de ID Protection.",
+  "exp_en": "If credentials appeared in a breach and the account was misused, select 'Confirm user compromised', which raises risk to high and triggers policies. If impossible travel was caused by a VPN, select 'Confirm sign-in safe'. Deleting the user is not an ID Protection action."
  },
  {
   "id": 203,
@@ -5762,8 +5762,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Internet Access incluye capacidades de puerta de enlace web segura.",
-  "exp_en": "Internet Access includes secure web gateway capabilities."
+  "exp_es": "El filtrado de contenido web de las directivas de Entra Internet Access bloquea categorías de sitios (como juegos de azar) para el tráfico que pasa por Global Secure Access. Application Proxy publica apps internas, los controles de sesión de acceso condicional actúan sobre apps en la nube y las restricciones universales de inquilino limitan el acceso a otros inquilinos.",
+  "exp_en": "Web content filtering in Entra Internet Access policies blocks website categories (such as gambling) for traffic going through Global Secure Access. Application Proxy publishes internal apps, Conditional Access session controls act on cloud apps, and universal tenant restrictions limit access to other tenants."
  },
  {
   "id": 204,
@@ -5788,8 +5788,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los conectores proporcionan conectividad saliente a los recursos privados.",
-  "exp_en": "Connectors provide outbound connectivity to private resources."
+  "exp_es": "Microsoft Entra Private Access usa conectores de red privada instalados en la red interna (solo conexiones salientes) y segmentos de aplicación que definen los FQDN o IP y puertos publicados. Un controlador de dominio, WSUS o un SBC de telefonía no publican aplicaciones.",
+  "exp_en": "Microsoft Entra Private Access uses private network connectors installed on the internal network (outbound connections only) and application segments that define the published FQDNs or IPs and ports. A domain controller, WSUS or a telephony SBC do not publish apps."
  },
  {
   "id": 205,
@@ -5814,8 +5814,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La comprobación de red compatible vincula el acceso al tráfico que pasa por el servicio.",
-  "exp_en": "The compliant network check ties access to traffic through the service."
+  "exp_es": "La comprobación de red conforme (compliant network) hace que el acceso condicional solo permita la app si el tráfico llega a través de Global Secure Access del inquilino. El modo de solo informe no aplica nada, el contexto de autenticación protege recursos concretos y la nomenclatura de grupos no tiene relación.",
+  "exp_en": "The compliant network check makes Conditional Access allow the app only when traffic arrives through the tenant's Global Secure Access. Report-only mode enforces nothing, authentication context protects specific resources, and group naming is unrelated."
  },
  {
   "id": 206,
@@ -5842,8 +5842,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los conectores de Private Access usan conexiones salientes.",
-  "exp_en": "Private Access connectors use outbound connections."
+  "exp_es": "Verdadero: los perfiles de reenvío de tráfico (Microsoft 365, Internet, privado) definen qué tráfico pasa por el servicio. Falso: los conectores de Private Access solo hacen conexiones salientes. Falso: el cliente de Global Secure Access se instala en Windows (y también en otros sistemas).",
+  "exp_en": "True: traffic forwarding profiles (Microsoft 365, Internet, Private) define which traffic goes through the service. False: Private Access connectors only make outbound connections. False: the Global Secure Access client is deployed on Windows (and other platforms too)."
  },
  {
   "id": 207,
@@ -5967,8 +5967,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las credenciales federadas confían en los tokens de proveedores de identidades externos.",
-  "exp_en": "Federated credentials trust tokens from external identity providers."
+  "exp_es": "La federación de identidades de carga de trabajo con OpenID Connect hace que Entra confíe en los tokens que emite GitHub para ese flujo de trabajo, sin guardar ningún secreto. Un secreto de cliente en el repositorio o una contraseña compartida pueden filtrarse, y la verificación por SMS es para personas.",
+  "exp_en": "Workload identity federation with OpenID Connect makes Entra trust the tokens GitHub issues for that workflow, with no stored secret. A client secret in the repository or a shared password can leak, and SMS verification is for people."
  },
  {
   "id": 211,
@@ -6021,8 +6021,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las identidades asignadas por el sistema pertenecen a un único recurso.",
-  "exp_en": "System-assigned identities belong to a single resource."
+  "exp_es": "Falso: una identidad administrada asignada por el usuario sí puede asociarse a varios recursos. Verdadero: la federación de identidades permite a cargas externas como GitHub Actions autenticarse sin secretos. Falso: la identidad asignada por el sistema pertenece a un único recurso y no se comparte.",
+  "exp_en": "False: a user-assigned managed identity can be attached to several resources. True: workload identity federation lets external workloads such as GitHub Actions authenticate without secrets. False: a system-assigned identity belongs to a single resource and cannot be shared."
  },
  {
   "id": 213,
@@ -6068,8 +6068,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "La federación encaja con CI/CD externo; las identidades administradas encajan con cargas hospedadas en Azure.",
-  "exp_en": "Federation fits external CI/CD; managed identities fit Azure-hosted workloads."
+  "exp_es": "Para un pipeline de GitHub que despliega en Azure sin secretos, la federación de identidades de carga de trabajo. Para un App Service que lee Key Vault, una identidad administrada, porque Azure gestiona la credencial. Una entidad de servicio con certificado sigue necesitando gestionar el certificado y una cuenta de usuario no es para cargas.",
+  "exp_en": "For a GitHub pipeline deploying to Azure without secrets, workload identity federation. For an App Service reading Key Vault, a managed identity, because Azure manages the credential. A service principal with a certificate still needs certificate management, and a user account is not for workloads."
  },
  {
   "id": 214,
@@ -6094,8 +6094,8 @@
    "federation"
   ],
   "correct": 3,
-  "exp_es": "Las credenciales federadas confían en tokens externos.",
-  "exp_en": "Federated credentials trust external tokens."
+  "exp_es": "La federación de identidades de carga de trabajo permite que cargas externas (GitHub, Kubernetes, otras nubes) se autentiquen en Entra ID con tokens de su propio proveedor, sin guardar secretos. Clonar, hash o licencias no son mecanismos de autenticación de cargas.",
+  "exp_en": "Workload identity federation lets external workloads (GitHub, Kubernetes, other clouds) authenticate to Entra ID with tokens from their own provider, without stored secrets. Cloning, hashing or licensing are not workload authentication mechanisms."
  },
  {
   "id": 215,
@@ -6120,8 +6120,8 @@
    "manually-assigned"
   ],
   "correct": 1,
-  "exp_es": "Ambos tipos existen para recursos de Azure.",
-  "exp_en": "Both types exist for Azure resources."
+  "exp_es": "Las identidades administradas son de dos tipos: asignadas por el sistema, ligadas al ciclo de vida de un recurso, y asignadas por el usuario, que son un recurso independiente reutilizable. Las demás opciones no existen.",
+  "exp_en": "Managed identities come in two types: system-assigned, tied to one resource's lifecycle, and user-assigned, a standalone reusable resource. The other options do not exist."
  },
  {
   "id": 216,
@@ -6146,8 +6146,8 @@
   "correct": [
    2
   ],
-  "exp_es": "OIDC se usa ampliamente en aplicaciones modernas.",
-  "exp_en": "OIDC is widely used by modern apps."
+  "exp_es": "Si la app admite protocolos modernos y devuelve un token de identificador, se usa OpenID Connect u OAuth 2.0. El SSO basado en contraseña y el vinculado son para apps sin federación, y el SSO por encabezados de Application Proxy es para apps locales heredadas.",
+  "exp_en": "If the app supports modern protocols and returns an ID token, use OpenID Connect or OAuth 2.0. Password-based and linked SSO are for apps without federation, and header-based SSO through Application Proxy is for legacy on-premises apps."
  },
  {
   "id": 217,
@@ -6172,8 +6172,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El SSO basado en contraseñas usa una extensión del navegador para rellenar las credenciales.",
-  "exp_en": "Password-based SSO uses a browser extension to fill credentials."
+  "exp_es": "El SSO basado en contraseña guarda las credenciales y las rellena en el formulario de inicio de sesión mediante la extensión de Mis aplicaciones; sirve para apps sin federación. SAML y OIDC requieren que la app admita federación, y Kerberos es para apps locales integradas en Windows.",
+  "exp_en": "Password-based SSO stores credentials and fills them into the login form through the My Apps extension; it is for apps without federation. SAML and OIDC require the app to support federation, and Kerberos is for Windows-integrated on-premises apps."
  },
  {
   "id": 218,
@@ -6198,8 +6198,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El aprovisionamiento basado en SCIM mantiene sincronizadas las cuentas de la aplicación.",
-  "exp_en": "SCIM-based provisioning keeps app accounts in sync."
+  "exp_es": "El aprovisionamiento automático de usuarios con SCIM crea, actualiza y deshabilita cuentas en la app SaaS según las asignaciones de Entra ID. La escritura diferida de contraseñas va hacia AD local, las ubicaciones con nombre son de acceso condicional y las revisiones de acceso quitan asignaciones pero no gestionan cuentas en la app.",
+  "exp_en": "Automatic user provisioning with SCIM creates, updates and disables accounts in the SaaS app based on Entra ID assignments. Password writeback targets on-premises AD, named locations belong to Conditional Access, and access reviews remove assignments but do not manage accounts in the app."
  },
  {
   "id": 219,
@@ -6224,8 +6224,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El consentimiento del administrador se aplica a todo el inquilino.",
-  "exp_en": "Admin consent applies tenant-wide."
+  "exp_es": "El consentimiento del administrador concede los permisos en nombre de todos los usuarios de la organización, de modo que nadie tiene que consentir por su cuenta. El consentimiento de usuario solo vale para quien lo da, y no existe un consentimiento 'implícito' ni se puede omitir.",
+  "exp_en": "Admin consent grants the permissions on behalf of every user in the organization, so nobody has to consent individually. User consent only applies to the person who gives it, and there is no 'implicit' or skipped consent."
  },
  {
   "id": 220,
@@ -6276,8 +6276,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las conexiones solo salientes reducen la superficie de ataque.",
-  "exp_en": "Outbound-only connections reduce attack surface."
+  "exp_es": "El conector de Application Proxy solo necesita acceso saliente al servicio de Application Proxy; no requiere puertos de entrada, IP pública ni ExpressRoute, lo que reduce la superficie de ataque.",
+  "exp_en": "The Application Proxy connector only needs outbound access to the Application Proxy service; it needs no inbound ports, public IP or ExpressRoute, which reduces the attack surface."
  },
  {
   "id": 222,
@@ -6302,8 +6302,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las asignaciones determinan quién puede iniciar sesión cuando la asignación es obligatoria.",
-  "exp_en": "Assignments determine who can sign in when assignment is required."
+  "exp_es": "El acceso a una aplicación empresarial se concede en su página 'Usuarios y grupos'; si 'Asignación requerida' está activado, solo los asignados pueden iniciar sesión. Los propietarios gestionan la app, los roles de aplicación se definen en el registro y los dominios personalizados no conceden acceso.",
+  "exp_en": "Access to an enterprise application is granted on its 'Users and groups' page; if 'Assignment required' is on, only assigned users can sign in. Owners manage the app, app roles are defined in the registration, and custom domains grant no access."
  },
  {
   "id": 223,
@@ -6328,8 +6328,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los roles de administrador de aplicaciones pueden administrar el consentimiento según la configuración del inquilino.",
-  "exp_en": "Application admin roles can manage consent according to tenant settings."
+  "exp_es": "Administrador de aplicaciones en la nube y Administrador de roles con privilegios pueden conceder consentimiento en nombre de la organización (el segundo, incluso para permisos de aplicación de Microsoft Graph). Invitador de usuarios, Administrador de usuarios, Lectores de directorio y Lector de informes no pueden.",
+  "exp_en": "Cloud Application Administrator and Privileged Role Administrator can grant consent on behalf of the organization (the latter even for Microsoft Graph application permissions). Guest Inviter, User Administrator, Directory Readers and Reports Reader cannot."
  },
  {
   "id": 224,
@@ -6356,8 +6356,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Con la asignación obligatoria, solo los usuarios y grupos asignados pueden acceder.",
-  "exp_en": "With assignment required, only assigned users and groups can access."
+  "exp_es": "Verdadero: el aprovisionamiento automático usa SCIM. Verdadero: el consentimiento del administrador concede permisos en nombre de todos. Falso: con 'Asignación requerida' solo los usuarios y grupos asignados pueden acceder; sin ella, cualquier usuario del inquilino podría.",
+  "exp_en": "True: automatic provisioning uses SCIM. True: admin consent grants permissions on behalf of everyone. False: with 'Assignment required' only assigned users and groups can access; without it, any tenant user could."
  },
  {
   "id": 225,
@@ -6403,8 +6403,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Elige el protocolo más sólido que admita la aplicación.",
-  "exp_en": "Choose the strongest protocol the application supports."
+  "exp_es": "Una app SaaS heredada que solo tiene formulario de inicio de sesión usa SSO basado en contraseña. Una app empresarial que admite aserciones SAML usa SAML. Se elige siempre el protocolo más seguro que admita la app; Kerberos con Application Proxy es para apps locales y OIDC para apps modernas.",
+  "exp_en": "A legacy SaaS app with only a login form uses password-based SSO. An enterprise app that supports SAML assertions uses SAML. Always choose the strongest protocol the app supports; Kerberos with Application Proxy is for on-premises apps and OIDC for modern apps."
  },
  {
   "id": 226,
@@ -6429,8 +6429,8 @@
    "SCIM"
   ],
   "correct": 3,
-  "exp_es": "SCIM estandariza las operaciones del ciclo de vida de los usuarios.",
-  "exp_en": "SCIM standardizes user lifecycle operations."
+  "exp_es": "El aprovisionamiento automático a apps SaaS usa SCIM (System for Cross-domain Identity Management), un estándar para crear, actualizar y eliminar usuarios. SMTP es correo, DHCP asigna direcciones IP y FTP transfiere archivos.",
+  "exp_en": "Automatic provisioning to SaaS apps uses SCIM (System for Cross-domain Identity Management), a standard for creating, updating and removing users. SMTP is email, DHCP assigns IP addresses, and FTP transfers files."
  },
  {
   "id": 227,
@@ -6455,8 +6455,8 @@
    "billing"
   ],
   "correct": 2,
-  "exp_es": "El flujo de consentimiento del administrador permite que los usuarios soliciten aprobación.",
-  "exp_en": "The admin consent workflow lets users request approval."
+  "exp_es": "El flujo de trabajo de consentimiento del administrador permite que, en lugar de consentir ellos mismos, los usuarios soliciten la aprobación de un administrador para la app; así se evita el consentimiento a apps de riesgo. Licencias, copias de seguridad o facturación no controlan el consentimiento.",
+  "exp_en": "The admin consent workflow lets users request an administrator's approval for an app instead of consenting themselves, which prevents consent to risky apps. Licensing, backup or billing do not control consent."
  },
  {
   "id": 228,
@@ -6481,8 +6481,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los tipos de cuenta admitidos definen qué inquilinos y cuentas pueden iniciar sesión.",
-  "exp_en": "Supported account types define which tenants and accounts can sign in."
+  "exp_es": "Una aplicación multiinquilino permite que inicien sesión usuarios de otros inquilinos de Microsoft Entra; los tipos de cuenta admitidos del registro definen qué inquilinos y cuentas pueden hacerlo. No le da poder para borrar inquilinos ni le impide usar tokens, y 'un solo inquilino' es justo lo contrario.",
+  "exp_en": "A multi-tenant application lets users from other Microsoft Entra tenants sign in; the registration's supported account types define which tenants and accounts can. It cannot delete tenants or stop using tokens, and single tenant is the opposite."
  },
  {
   "id": 229,
@@ -6507,8 +6507,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El Id. de cliente es el identificador único del registro de aplicación.",
-  "exp_en": "The client ID is the unique identifier of the app registration."
+  "exp_es": "El Id. de aplicación (cliente) identifica de forma única el registro y se envía en las solicitudes de autenticación. El nombre para mostrar no es único, el sufijo de dominio identifica al inquilino y el URI de redirección indica adónde enviar los tokens.",
+  "exp_en": "The Application (client) ID uniquely identifies the registration and is sent in authentication requests. The display name is not unique, the domain suffix identifies the tenant, and the redirect URI says where to send tokens."
  },
  {
   "id": 230,
@@ -6533,8 +6533,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los permisos delegados se solicitan con el consentimiento del usuario con sesión iniciada.",
-  "exp_en": "Delegated permissions are requested with consent for the signed-in user."
+  "exp_es": "Para llamar a la API en nombre del usuario que ha iniciado sesión, el cliente configura un permiso de API delegado para el ámbito (scope) que expone la API. Un permiso de aplicación actúa sin usuario, y un registro DNS o un usuario invitado no dan permisos sobre una API.",
+  "exp_en": "To call the API on behalf of the signed-in user, the client configures a delegated API permission for the scope the API exposes. An application permission acts without a user, and a DNS record or a guest user grant no API permissions."
  },
  {
   "id": 231,
@@ -6559,8 +6559,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los roles de aplicación aparecen como notificaciones en los tokens.",
-  "exp_en": "App roles appear as claims in tokens."
+  "exp_es": "Los roles de aplicación definen roles propios (como Aprobador o Lector) que se asignan a usuarios o grupos y llegan a la app como notificaciones en el token. La personalización de marca, la duración del token y los URI de redirección no definen roles.",
+  "exp_en": "App roles define your own roles (such as Approver or Reader) that are assigned to users or groups and reach the app as claims in the token. Branding, token lifetime and redirect URIs do not define roles."
  },
  {
   "id": 232,
@@ -6585,8 +6585,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las credenciales se administran en el registro de aplicación.",
-  "exp_en": "Credentials are managed on the app registration."
+  "exp_es": "Los certificados y secretos se agregan o rotan en 'Certificados y secretos' del registro de la aplicación. La página de inicio de sesión único de la app empresarial gestiona el certificado de firma SAML, no las credenciales de la app; la configuración de tokens define notificaciones y la de dispositivos no tiene relación.",
+  "exp_en": "Certificates and secrets are added or rotated in 'Certificates & secrets' of the app registration. The enterprise app's single sign-on page manages the SAML signing certificate, not the app's credentials; token configuration defines claims and device settings are unrelated."
  },
  {
   "id": 233,
@@ -6618,8 +6618,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los permisos de aplicación se usan cuando no hay usuario.",
-  "exp_en": "Application permissions are used when no user is present."
+  "exp_es": "Verdadero: los permisos delegados actúan en nombre de un usuario que ha iniciado sesión. Falso: los permisos de aplicación se usan cuando no hay usuario, como en servicios en segundo plano. Verdadero: se prefieren certificados a secretos de cliente. Verdadero: los roles de aplicación se asignan a usuarios y grupos.",
+  "exp_en": "True: delegated permissions act on behalf of a signed-in user. False: application permissions are used when no user is present, as in background services. True: certificates are preferred over client secrets. True: app roles can be assigned to users and groups."
  },
  {
   "id": 234,
@@ -6665,8 +6665,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Los ámbitos definen el acceso delegado; los certificados son credenciales para aplicaciones.",
-  "exp_en": "Scopes define delegated access; certificates are credentials for apps."
+  "exp_es": "'Exponer una API' define los ámbitos (scopes) que las apps cliente pueden solicitar al llamar a tu API. Un certificado autentica la app sin secreto compartido. Los roles de aplicación asignan roles a usuarios o apps y el URI de redirección indica adónde se envían los tokens.",
+  "exp_en": "'Expose an API' defines the scopes client apps can request when calling your API. A certificate authenticates the app without a shared secret. App roles assign roles to users or apps, and the redirect URI says where tokens are sent."
  },
  {
   "id": 235,
@@ -6691,8 +6691,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las directivas de actividad detectan actividades inusuales o de riesgo.",
-  "exp_en": "Activity policies detect unusual or risky activities."
+  "exp_es": "Una directiva de actividad de Defender for Cloud Apps detecta actividades concretas, como descargas masivas desde una app autorizada, y puede alertar o suspender al usuario. Las directivas de nomenclatura, contraseñas o retención no supervisan la actividad en apps en la nube.",
+  "exp_en": "A Defender for Cloud Apps activity policy detects specific activities, such as mass downloads from a sanctioned app, and can alert or suspend the user. Naming, password or retention policies do not monitor activity in cloud apps."
  },
  {
   "id": 236,
@@ -6717,8 +6717,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los conectores de aplicaciones se integran con Microsoft 365, Salesforce y otras aplicaciones SaaS.",
-  "exp_en": "App connectors integrate with Microsoft 365, Salesforce and other SaaS apps."
+  "exp_es": "Los conectores de aplicaciones se conectan por API a apps como Microsoft 365 o Salesforce para ver y gobernar sus datos y actividades. El bloqueo inteligente protege contraseñas, Vínculos seguros analiza URL en correos y PIM gestiona roles privilegiados.",
+  "exp_en": "App connectors connect through APIs to apps such as Microsoft 365 or Salesforce to give visibility and governance over their data and activities. Smart lockout protects passwords, Safe Links scans URLs in email, and PIM manages privileged roles."
  },
  {
   "id": 237,
@@ -6743,8 +6743,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El catálogo ayuda a decidir si autorizar o no una aplicación.",
-  "exp_en": "The catalog helps decide whether to sanction or unsanction an app."
+  "exp_es": "El catálogo de aplicaciones en la nube da puntuaciones de riesgo y datos de seguridad y cumplimiento de miles de apps, para decidir si autorizarlas o no. No ofrece copias de seguridad, precios de máquinas virtuales ni configuraciones de Intune.",
+  "exp_en": "The cloud app catalog provides risk scores and security and compliance details for thousands of apps, to help decide whether to sanction them. It does not provide backups, VM prices or Intune configurations."
  },
  {
   "id": 238,
@@ -6769,8 +6769,8 @@
   "correct": [
    1
   ],
-  "exp_es": "La no autorización se puede aplicar con la integración de endpoints o de red.",
-  "exp_en": "Unsanctioning can be enforced with endpoint or network integration."
+  "exp_es": "Tras marcar una app como no autorizada, se puede bloquear mediante la integración con Defender for Endpoint o exportando un script de bloqueo a un firewall o proxy. Restablecer contraseñas, borrar registros de apps o quitar la MFA no impiden su uso.",
+  "exp_en": "After marking an app as unsanctioned, you can block it through the Defender for Endpoint integration or by exporting a block script to a firewall or proxy. Resetting passwords, deleting app registrations or removing MFA do not stop its use."
  },
  {
   "id": 239,
@@ -6797,8 +6797,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las directivas de aplicaciones OAuth detectan y gobiernan aplicaciones arriesgadas con consentimiento.",
-  "exp_en": "OAuth app policies detect and govern risky consented apps."
+  "exp_es": "Verdadero: Cloud Discovery analiza registros de firewalls y proxies. Verdadero: las directivas de sesión supervisan y controlan las sesiones en tiempo real. Falso: las directivas de apps OAuth detectan apps con permisos de riesgo y pueden revocarlas o prohibirlas.",
+  "exp_en": "True: Cloud Discovery analyzes firewall and proxy logs. True: session policies monitor and control sessions in real time. False: OAuth app policies detect apps with risky permissions and can revoke or ban them."
  },
  {
   "id": 240,
@@ -6870,8 +6870,8 @@
    "session"
   ],
   "correct": 3,
-  "exp_es": "Las directivas de sesión funcionan mediante el control de aplicaciones de acceso condicional.",
-  "exp_en": "Session policies work through Conditional Access App Control."
+  "exp_es": "Las directivas de sesión supervisan y controlan en tiempo real las sesiones de los usuarios (por ejemplo, bloquear descargas) a través del Control de aplicaciones de acceso condicional. Las directivas de licencias, retención o nomenclatura no actúan sobre sesiones.",
+  "exp_en": "Session policies monitor and control user sessions in real time (for example, blocking downloads) through Conditional Access App Control. License, retention or naming policies do not act on sessions."
  },
  {
   "id": 242,
@@ -6896,8 +6896,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las directivas pueden tener varias fases de aprobación con distintos aprobadores.",
-  "exp_en": "Policies can have up to several approval stages with different approvers."
+  "exp_es": "La directiva del paquete de acceso admite aprobación en varias fases: primero el responsable del solicitante y después, por ejemplo, un responsable de seguridad. Un grupo dinámico, una ubicación con nombre o un dominio personalizado no definen flujos de aprobación.",
+  "exp_en": "The access package policy supports multi-stage approval: first the requester's manager, then, for example, a security officer. A dynamic group, a named location or a custom domain do not define approval flows."
  },
  {
   "id": 243,
@@ -6948,8 +6948,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los roles de catálogo delegan la administración de paquetes de acceso.",
-  "exp_en": "Catalog roles delegate management of access packages."
+  "exp_es": "Los roles de catálogo, como Propietario del catálogo o Administrador de paquetes de acceso, permiten crear y gestionar paquetes en un catálogo concreto sin administrar todo el inquilino. Invitador de usuarios, Administrador de facturación y Lector global no gestionan paquetes de acceso.",
+  "exp_en": "Catalog roles such as Catalog owner or Access package manager let you create and manage packages in a specific catalog without administering the whole tenant. Guest Inviter, Billing Administrator and Global Reader do not manage access packages."
  },
  {
   "id": 245,
@@ -6974,8 +6974,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La caducidad y las revisiones mantienen el acceso limitado en el tiempo.",
-  "exp_en": "Expiration and reviews keep access time-bound."
+  "exp_es": "Cuando caduca la asignación de un paquete de acceso, se retira el acceso del usuario a los recursos incluidos (y, si es invitado, puede eliminarse su cuenta). No borra el catálogo, no impide volver a solicitar acceso ni restablece contraseñas.",
+  "exp_en": "When an access package assignment expires, the user's access to the included resources is removed (and a guest account can be removed too). It does not delete the catalog, block new requests or reset passwords."
  },
  {
   "id": 246,
@@ -7000,8 +7000,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las directivas de asignación automática usan reglas para agregar o quitar asignaciones.",
-  "exp_en": "Auto-assignment policies use rules to add or remove assignments."
+  "exp_es": "Una directiva de asignación automática asigna el paquete a quien cumple una regla de atributos (como department igual a Finanzas) y lo retira cuando deja de cumplirla. El flujo de aprobación, la periodicidad de una revisión o una organización conectada no asignan por reglas.",
+  "exp_en": "An auto-assignment policy assigns the package to anyone matching an attribute rule (such as department equals Finance) and removes it when they no longer match. An approval workflow, a review recurrence or a connected organization do not assign by rule."
  },
  {
   "id": 247,
@@ -7026,8 +7026,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los usuarios deben aceptar los términos antes de obtener acceso.",
-  "exp_en": "Users must accept terms before getting access."
+  "exp_es": "Los términos de uso se exigen con un control de concesión del acceso condicional o como requisito en la directiva de un paquete de acceso. No se aplican solo con scripts de PowerShell, intensidades de autenticación o directivas de cumplimiento de Intune.",
+  "exp_en": "Terms of use are enforced with a Conditional Access grant control or as a requirement in an access package policy. They are not applied only through PowerShell scripts, authentication strengths or Intune compliance policies."
  },
  {
   "id": 248,
@@ -7049,8 +7049,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las asignaciones pueden tener un límite de tiempo y revisarse.",
-  "exp_en": "Assignments can be time-limited and reviewed."
+  "exp_es": "Verdadero: las directivas de un paquete de acceso pueden exigir aprobación en varias fases. Falso: las asignaciones pueden caducar en una fecha o tras un número de días, y además pueden revisarse periódicamente.",
+  "exp_en": "True: access package policies can require multi-stage approval. False: assignments can expire on a date or after a number of days, and they can also be reviewed periodically."
  },
  {
   "id": 249,
@@ -7122,8 +7122,8 @@
    "removed"
   ],
   "correct": 3,
-  "exp_es": "La caducidad impone un acceso limitado en el tiempo.",
-  "exp_en": "Expiration enforces time-bound access."
+  "exp_es": "Al caducar la asignación de un paquete de acceso, el acceso se retira automáticamente; así el acceso queda limitado en el tiempo. Duplicar, cifrar o renombrar no es lo que ocurre al caducar.",
+  "exp_en": "When an access package assignment expires, access is removed automatically, which keeps access time-bound. Duplicating, encrypting or renaming is not what happens on expiry."
  },
  {
   "id": 251,
@@ -7148,8 +7148,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las revisiones de acceso pueden dirigirse a los usuarios invitados de los grupos.",
-  "exp_en": "Access reviews can target guest users in groups."
+  "exp_es": "Para revisar cada 90 días solo a los invitados de los grupos, se elige el ámbito 'Teams y grupos de Microsoft 365' con la opción 'Solo usuarios invitados'. Incluir a todos los miembros internos amplía la revisión sin necesidad, los roles de Entra son otro ámbito y la personalización de marca no tiene relación.",
+  "exp_en": "To review only the guests in groups every 90 days, choose the 'Teams and Microsoft 365 groups' scope with the 'Guest users only' option. Including all internal members widens the review unnecessarily, Entra roles are a different scope, and company branding is unrelated."
  },
  {
   "id": 252,
@@ -7174,8 +7174,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Elige revisores que conozcan el contexto del acceso.",
-  "exp_en": "Choose reviewers who know the access context."
+  "exp_es": "La autorrevisión es adecuada cuando cada usuario es quien mejor sabe si sigue necesitando el acceso. Limitarlo a Administrador global o a auditores carga la revisión en quien no conoce el contexto, y un proveedor externo no sabe qué accesos necesita cada empleado.",
+  "exp_en": "Self-review fits when each user is the best person to judge whether they still need access. Limiting it to Global Administrators or auditors puts the review on people without context, and an external vendor does not know what access each employee needs."
  },
  {
   "id": 253,
@@ -7200,8 +7200,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las recomendaciones se basan en la actividad y las relaciones del usuario.",
-  "exp_en": "Recommendations are based on user activity and relationships."
+  "exp_es": "Los asistentes de decisión muestran recomendaciones, como el último inicio de sesión o la afinidad con el grupo, para que el revisor decida mejor. No eliminan usuarios por sí solos, no desactivan la MFA ni copian la pertenencia a otro grupo.",
+  "exp_en": "Decision helpers show recommendations, such as last sign-in or peer affinity, so the reviewer can decide better. They do not delete users on their own, disable MFA or copy membership to another group."
  },
  {
   "id": 254,
@@ -7226,8 +7226,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las revisiones de acceso de PIM recertifican las asignaciones de roles con privilegios.",
-  "exp_en": "PIM access reviews recertify privileged role assignments."
+  "exp_es": "Las revisiones de acceso de roles de Microsoft Entra se crean en PIM y recertifican asignaciones privilegiadas como Administrador global. Los catálogos de administración de derechos agrupan recursos, una directiva de riesgo responde a amenazas y los flujos de trabajo de ciclo de vida automatizan altas y bajas.",
+  "exp_en": "Access reviews of Microsoft Entra roles are created in PIM and recertify privileged assignments such as Global Administrator. Entitlement management catalogs group resources, a risk policy responds to threats, and lifecycle workflows automate joiner and leaver tasks."
  },
  {
   "id": 255,
@@ -7249,8 +7249,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las revisiones pueden ser únicas o periódicas.",
-  "exp_en": "Reviews can be one-time or recurring."
+  "exp_es": "Verdadero: los revisores pueden ser propietarios del grupo, responsables o los propios usuarios. Falso: las revisiones pueden ser de una sola vez o periódicas (semanal, mensual, trimestral, semestral o anual).",
+  "exp_en": "True: reviewers can be group owners, managers or the users themselves. False: reviews can be one-time or recurring (weekly, monthly, quarterly, semiannual or annual)."
  },
  {
   "id": 256,
@@ -7296,8 +7296,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "La periodicidad programa las revisiones; la aplicación automática impone las decisiones.",
-  "exp_en": "Recurrence schedules reviews; auto apply enforces decisions."
+  "exp_es": "La periodicidad (recurrence) repite la revisión cada trimestre sin crearla de nuevo. 'Aplicar resultados automáticamente' retira el acceso a los usuarios denegados al terminar. La autorrevisión define quién revisa y los asistentes de decisión solo dan recomendaciones.",
+  "exp_en": "Recurrence repeats the review every quarter without recreating it. Auto apply results removes denied users when the review ends. Self-review defines who reviews, and decision helpers only give recommendations."
  },
  {
   "id": 257,
@@ -7322,8 +7322,8 @@
    "blueprints"
   ],
   "correct": 0,
-  "exp_es": "Las recomendaciones mejoran la calidad de la revisión.",
-  "exp_en": "Recommendations improve review quality."
+  "exp_es": "Los asistentes de decisión muestran recomendaciones, como el último inicio de sesión, para orientar al revisor. Los playbooks y las listas de seguimiento son de Microsoft Sentinel y los blueprints eran plantillas de Azure.",
+  "exp_en": "Decision helpers show recommendations such as last sign-in to guide the reviewer. Playbooks and watchlists belong to Microsoft Sentinel, and blueprints were Azure templates."
  },
  {
   "id": 258,
@@ -7348,8 +7348,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La configuración del rol controla la duración de activación, MFA, aprobación y justificación.",
-  "exp_en": "Role settings control activation duration, MFA, approval and justification."
+  "exp_es": "La duración máxima de activación, en la configuración del rol de PIM, limita cada activación a 2 horas; en la misma configuración se exigen MFA y justificación. La justificación no limita el tiempo, las notificaciones solo avisan y la caducidad de la asignación apta controla hasta cuándo puede activarse, no cuánto dura cada activación.",
+  "exp_en": "Maximum activation duration in the PIM role settings limits each activation to 2 hours; the same settings require MFA and justification. Justification does not limit time, notifications only alert, and eligible assignment expiration controls until when the role can be activated, not how long each activation lasts."
  },
  {
   "id": 259,
@@ -7374,8 +7374,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las cuentas break-glass necesitan acceso aunque falle PIM o MFA.",
-  "exp_en": "Break-glass accounts need access even if PIM or MFA fails."
+  "exp_es": "Las cuentas de emergencia necesitan una asignación activa y permanente, porque deben funcionar aunque falle PIM o la MFA; el resto de administradores deben tener asignaciones aptas. Hacer aptas también las de emergencia anula su propósito, y 'sin asignación' o 'invitado' no les dan el rol.",
+  "exp_en": "Emergency accounts need an active, permanent assignment because they must work even if PIM or MFA fails; all other admins should have eligible assignments. Making emergency accounts eligible too defeats their purpose, and no assignment or guest gives them no role."
  },
  {
   "id": 260,
@@ -7400,8 +7400,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Los aprobadores se eligen por rol.",
-  "exp_en": "Approvers are chosen per role."
+  "exp_es": "La solicitud va a los aprobadores definidos en la configuración del rol (usuarios o grupos concretos). El soporte de Microsoft no aprueba activaciones, el propio solicitante no puede aprobarse y los invitados no participan.",
+  "exp_en": "The request goes to the approvers defined in the role settings (specific users or groups). Microsoft support does not approve activations, the requester cannot approve themselves, and guests are not involved."
  },
  {
   "id": 261,
@@ -7426,8 +7426,8 @@
   "correct": [
    1
   ],
-  "exp_es": "El historial de auditoría registra las activaciones y los cambios de asignación.",
-  "exp_en": "Audit history records activations and assignment changes."
+  "exp_es": "El historial de auditoría de PIM registra quién activó qué rol, cuándo y con qué justificación, además de los cambios de asignación. El informe de cumplimiento de dispositivos, el catálogo de apps en la nube y la puntuación de seguridad no registran activaciones.",
+  "exp_en": "PIM audit history records who activated which role, when and with what justification, plus assignment changes. The device compliance report, the cloud app catalog and Secure Score do not record activations."
  },
  {
   "id": 262,
@@ -7452,8 +7452,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las alertas de PIM destacan configuraciones de acceso con privilegios arriesgadas.",
-  "exp_en": "PIM alerts highlight risky privileged access configurations."
+  "exp_es": "Esta alerta indica que alguien asignó roles privilegiados directamente, sin pasar por PIM, saltándose la activación, la MFA y la aprobación. No tiene que ver con licencias, invitaciones de invitados ni revisiones de acceso.",
+  "exp_en": "This alert means privileged roles were assigned directly, outside PIM, bypassing activation, MFA and approval. It has nothing to do with licenses, guest invitations or access reviews."
  },
  {
   "id": 263,
@@ -7478,8 +7478,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las cuentas de emergencia son de uso excepcional y deben generar alertas cuando se usan.",
-  "exp_en": "Emergency accounts are for rare use and should trigger alerts when used."
+  "exp_es": "Las cuentas de emergencia deben ser solo en la nube (para no depender del AD local), muy protegidas (por ejemplo, con FIDO2) y supervisadas con alertas cuando se usan. No se comparten para tareas diarias ni se dejan sin protección.",
+  "exp_en": "Emergency accounts should be cloud-only (so they do not depend on on-premises AD), strongly protected (for example, with FIDO2) and monitored with alerts when used. They are not shared for daily tasks or left unprotected."
  },
  {
   "id": 264,
@@ -7506,8 +7506,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las cuentas break-glass deben funcionar aunque PIM o MFA no estén disponibles.",
-  "exp_en": "Break-glass accounts must work even if PIM or MFA is unavailable."
+  "exp_es": "Verdadero: PIM gestiona roles de Entra, roles de recursos de Azure y pertenencia a grupos. Verdadero: las asignaciones aptas requieren activación. Falso: las cuentas de emergencia no deben depender de una aprobación de PIM; deben funcionar aunque PIM o la MFA no estén disponibles.",
+  "exp_en": "True: PIM manages Entra roles, Azure resource roles and group membership. True: eligible assignments require activation. False: emergency accounts must not depend on PIM approval; they must work even if PIM or MFA is unavailable."
  },
  {
   "id": 265,
@@ -7553,8 +7553,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "PIM para recursos de Azure gestiona roles de Azure; las alertas destacan patrones de riesgo.",
-  "exp_en": "PIM for Azure resources handles Azure roles; alerts highlight risky patterns."
+  "exp_es": "PIM para recursos de Azure hace apto y temporal el rol Colaborador en una suscripción. Las alertas de PIM avisan cuando los roles se activan con demasiada frecuencia. El historial de auditoría registra lo ocurrido y PIM para grupos gestiona pertenencias, no roles de Azure.",
+  "exp_en": "PIM for Azure resources makes the Contributor role on a subscription eligible and time-bound. PIM alerts warn when roles are activated too often. Audit history records what happened, and PIM for Groups manages memberships, not Azure roles."
  },
  {
   "id": 266,
@@ -7579,8 +7579,8 @@
    "billing statements"
   ],
   "correct": 1,
-  "exp_es": "La configuración del rol controla los requisitos de activación.",
-  "exp_en": "Role settings control activation requirements."
+  "exp_es": "En la configuración del rol, PIM puede exigir requisitos de activación como MFA, justificación, número de incidencia o aprobación. Los registros de dominio, las copias de seguridad o la facturación no son requisitos de activación.",
+  "exp_en": "In the role settings, PIM can require activation requirements such as MFA, justification, ticket number or approval. Domain records, backups or billing are not activation requirements."
  },
  {
   "id": 267,
@@ -7605,8 +7605,8 @@
    "guest"
   ],
   "correct": 2,
-  "exp_es": "Las cuentas break-glass proporcionan acceso cuando fallan las vías normales de administración.",
-  "exp_en": "Break-glass accounts provide access when normal admin paths fail."
+  "exp_es": "Las cuentas de acceso de emergencia también se llaman cuentas break-glass ('romper el cristal'): se usan solo cuando fallan las vías normales de administración. Las cuentas de servicio, compartidas o de invitado tienen otros fines.",
+  "exp_en": "Emergency access accounts are also called break-glass accounts: they are used only when normal admin paths fail. Service, shared or guest accounts serve other purposes."
  },
  {
   "id": 268,
@@ -7631,8 +7631,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los registros de auditoría registran los cambios del directorio realizados por usuarios y administradores.",
-  "exp_en": "Audit logs record directory changes made by users and admins."
+  "exp_es": "Los registros de auditoría guardan los cambios en el directorio, incluido quién modificó los métodos de autenticación de un usuario y cuándo. Los registros de inicio de sesión solo muestran autenticaciones, los de aprovisionamiento muestran sincronizaciones con apps y los de Intune son de dispositivos.",
+  "exp_en": "Audit logs record directory changes, including who modified a user's authentication methods and when. Sign-in logs only show authentications, provisioning logs show app syncs, and Intune logs are about devices."
  },
  {
   "id": 269,
@@ -7657,8 +7657,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Cada registro de inicio de sesión incluye detalles de acceso condicional.",
-  "exp_en": "Each sign-in record includes Conditional Access details."
+  "exp_es": "Cada registro de inicio de sesión incluye una pestaña de acceso condicional con las directivas evaluadas y su resultado (correcto, error, no aplicada). Los registros de auditoría guardan cambios de configuración, y los de facturación o DNS no contienen esa información.",
+  "exp_en": "Each sign-in log entry includes a Conditional Access tab with the evaluated policies and their result (success, failure, not applied). Audit logs record configuration changes, and billing or DNS logs do not contain that information."
  },
  {
   "id": 270,
@@ -7709,8 +7709,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Log Analytics permite consultas, alertas y libros.",
-  "exp_en": "Log Analytics enables queries, alerts and workbooks."
+  "exp_es": "Se envían los registros de inicio de sesión a Log Analytics con la configuración de diagnóstico y se crea una regla de alerta (o una consulta programada) que notifique al equipo de seguridad. Una cuenta de almacenamiento con VPN, una invitación de invitado o una zona DNS no generan informes de inicios de sesión fallidos.",
+  "exp_en": "Send sign-in logs to Log Analytics with diagnostic settings and create an alert rule (or scheduled query) that notifies the security team. A storage account with a VPN, a guest invitation or a DNS zone do not produce failed sign-in reports."
  },
  {
   "id": 272,
@@ -7735,8 +7735,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La puntuación de seguridad de identidad forma parte de las recomendaciones de Microsoft Entra.",
-  "exp_en": "Identity Secure Score is part of Microsoft Entra recommendations."
+  "exp_es": "La puntuación de seguridad de identidad da una puntuación que se puede seguir en el tiempo y recomendaciones para mejorar la seguridad de identidades. No es un informe de salud de DNS o controladores de dominio, ni una lista de usuarios con licencia, ni un estado de copias de seguridad.",
+  "exp_en": "Identity Secure Score gives a score you can track over time and recommendations to improve identity security. It is not a health report for DNS or domain controllers, a list of licensed users or a backup status."
  },
  {
   "id": 273,
@@ -7758,8 +7758,8 @@
     "ans": false
    }
   ],
-  "exp_es": "SigninLogs contiene eventos de inicio de sesión de Entra.",
-  "exp_en": "SigninLogs contains Entra sign-in events."
+  "exp_es": "Verdadero: los registros de auditoría guardan cambios como asignaciones de roles. Falso: SigninLogs es la tabla de Log Analytics con los inicios de sesión de Entra, no datos de cumplimiento de Intune.",
+  "exp_en": "True: audit logs record changes such as role assignments. False: SigninLogs is the Log Analytics table with Entra sign-in events, not Intune compliance data."
  },
  {
   "id": 274,
@@ -7831,8 +7831,8 @@
    "terms of use"
   ],
   "correct": 1,
-  "exp_es": "La configuración de diagnóstico exporta los registros a los destinos elegidos.",
-  "exp_en": "Diagnostic settings export logs to chosen destinations."
+  "exp_es": "La configuración de diagnóstico de Microsoft Entra envía los registros a una cuenta de almacenamiento, a un centro de eventos o a Log Analytics. Los paquetes de acceso, las ubicaciones con nombre y los términos de uso no exportan registros.",
+  "exp_en": "Microsoft Entra diagnostic settings send logs to a storage account, an event hub or Log Analytics. Access packages, named locations and terms of use do not export logs."
  },
  {
   "id": 276,
@@ -7857,8 +7857,8 @@
    "EmailEvents"
   ],
   "correct": 0,
-  "exp_es": "Las consultas KQL de inicios de sesión empiezan con SigninLogs.",
-  "exp_en": "KQL queries for sign-ins start with SigninLogs."
+  "exp_es": "Los inicios de sesión interactivos de Entra se guardan en la tabla SigninLogs de Log Analytics, por eso las consultas KQL sobre inicios de sesión empiezan por ella. Heartbeat registra agentes, DeviceInfo es de Defender for Endpoint y EmailEvents de Defender for Office 365.",
+  "exp_en": "Interactive Entra sign-in events are stored in the SigninLogs table in Log Analytics, so KQL queries on sign-ins start there. Heartbeat records agents, DeviceInfo belongs to Defender for Endpoint, and EmailEvents to Defender for Office 365."
  },
  {
   "id": 277,
@@ -7883,8 +7883,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Workload ID federa las cuentas de servicio de Kubernetes con identidades de Entra.",
-  "exp_en": "Workload ID federates Kubernetes service accounts with Entra identities."
+  "exp_es": "Microsoft Entra Workload ID con una credencial de identidad federada vincula la cuenta de servicio de Kubernetes con una identidad de Entra, de modo que los pods acceden a Storage sin secretos. Una contraseña o claves de la cuenta guardadas en secretos o ConfigMap pueden filtrarse, y el acceso público anónimo expone los datos.",
+  "exp_en": "Microsoft Entra Workload ID with a federated identity credential links the Kubernetes service account to an Entra identity, so pods access Storage without secrets. A password or account keys stored in secrets or a ConfigMap can leak, and anonymous public access exposes the data."
  },
  {
   "id": 278,
@@ -7909,8 +7909,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las identidades administradas siguen necesitando permisos de Azure RBAC en el recurso de destino.",
-  "exp_en": "Managed identities still need Azure RBAC permissions on the target resource."
+  "exp_es": "La identidad administrada necesita un rol de datos de Azure RBAC sobre el recurso: Lector de datos de Storage Blob en la cuenta de almacenamiento. El rol Lector solo da acceso al plano de administración, no a los datos; una identidad administrada no es un invitado y Administrador global es un rol de Entra.",
+  "exp_en": "The managed identity needs an Azure RBAC data role on the resource: Storage Blob Data Reader on the storage account. The Reader role only gives management-plane access, not data access; a managed identity is not a guest, and Global Administrator is an Entra role."
  },
  {
   "id": 279,
@@ -7935,8 +7935,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Las aplicaciones asignadas aparecen en Mis aplicaciones para los usuarios asignados.",
-  "exp_en": "Assigned apps appear in My Apps for assigned users."
+  "exp_es": "Al asignar la app a un grupo con todos los empleados (y dejarla visible para los usuarios), el icono aparece en Mis aplicaciones para todos. Las invitaciones de invitado son para externos, la escritura diferida de contraseñas es para AD local y un dominio personalizado no publica iconos.",
+  "exp_en": "Assigning the app to an all-employees group (and keeping it visible to users) makes the tile appear in My Apps for everyone. Guest invitations are for external users, password writeback is for on-premises AD, and a custom domain does not publish tiles."
  },
  {
   "id": 280,
@@ -7961,8 +7961,8 @@
   "correct": [
    3
   ],
-  "exp_es": "Revisar los permisos concedidos ayuda a detectar aplicaciones con privilegios excesivos.",
-  "exp_en": "Reviewing granted permissions helps detect overprivileged apps."
+  "exp_es": "La página Permisos de cada aplicación empresarial muestra los permisos concedidos por usuarios o administradores, y la configuración de consentimiento define qué pueden aprobar los usuarios. La configuración de dispositivos, la nomenclatura de grupos y la personalización de marca no muestran permisos de apps.",
+  "exp_en": "Each enterprise application's Permissions page shows the permissions granted by users or admins, and consent settings define what users can approve. Device settings, group naming and company branding do not show app permissions."
  },
  {
   "id": 281,
@@ -7987,8 +7987,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La notificación oid es el identificador de objeto inmutable del usuario o la entidad de servicio.",
-  "exp_en": "The oid claim is the immutable object ID of the user or service principal."
+  "exp_es": "La notificación oid es el identificador de objeto inmutable del usuario o la entidad de servicio en el inquilino. exp es la caducidad del token, aud la audiencia a la que va dirigido e iss el emisor.",
+  "exp_en": "The oid claim is the immutable object ID of the user or service principal in the tenant. exp is the token expiry, aud the audience it is meant for, and iss the issuer."
  },
  {
   "id": 282,
@@ -8013,8 +8013,8 @@
   "correct": [
    1
   ],
-  "exp_es": "PKCE protege el flujo de código de autorización para clientes públicos.",
-  "exp_en": "PKCE protects the authorization code flow for public clients."
+  "exp_es": "Para una aplicación de página única se recomienda el flujo de código de autorización con PKCE, que protege el código en clientes públicos sin secreto. El flujo implícito ya no se recomienda, las credenciales de contraseña del propietario exponen la contraseña y la autenticación básica no es OAuth.",
+  "exp_en": "For a single-page app the authorization code flow with PKCE is recommended, protecting the code in public clients with no secret. The implicit flow is no longer recommended, resource owner password credentials expose the password, and basic authentication is not OAuth."
  },
  {
   "id": 283,
@@ -8039,8 +8039,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las credenciales de cliente se usan para llamadas de demonio y de servicio a servicio.",
-  "exp_en": "Client credentials is used for daemon and service-to-service calls."
+  "exp_es": "El flujo de credenciales de cliente se usa cuando un servicio llama a Microsoft Graph sin usuario, con permisos de aplicación y un certificado o secreto. El inicio de sesión interactivo, el código de dispositivo y el código de autorización necesitan un usuario.",
+  "exp_en": "The client credentials flow is used when a service calls Microsoft Graph without a user, with application permissions and a certificate or secret. Interactive sign-in, device code and authorization code flows all need a user."
  },
  {
   "id": 284,
@@ -8065,8 +8065,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las directivas pueden analizar archivos y controlar cargas y descargas.",
-  "exp_en": "Policies can scan files and control uploads and downloads."
+  "exp_es": "Las directivas de archivo y de sesión de Defender for Cloud Apps con protección de datos analizan contenido y pueden bloquear la subida de archivos confidenciales. Las revisiones de acceso, la sincronización entre inquilinos y los términos de uso no inspeccionan archivos.",
+  "exp_en": "Defender for Cloud Apps file and session policies with data protection inspect content and can block uploads of sensitive files. Access reviews, cross-tenant synchronization and terms of use do not inspect files."
  },
  {
   "id": 285,
@@ -8093,8 +8093,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las SPA nuevas deben usar el flujo de código de autorización con PKCE.",
-  "exp_en": "New SPAs should use authorization code flow with PKCE."
+  "exp_es": "Verdadero: el flujo de credenciales de cliente se usa cuando no hay usuario. Verdadero: PKCE protege el flujo de código de autorización en clientes públicos. Falso: para nuevas aplicaciones de página única se recomienda código de autorización con PKCE, no el flujo implícito.",
+  "exp_en": "True: the client credentials flow is used when no user is present. True: PKCE protects the authorization code flow for public clients. False: new single-page apps should use authorization code with PKCE, not the implicit flow."
  },
  {
   "id": 286,
@@ -8140,8 +8140,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Elige los flujos según haya o no un usuario presente y el tipo de cliente.",
-  "exp_en": "Choose flows according to whether a user is present and the client type."
+  "exp_es": "Un trabajo nocturno sin usuario usa credenciales de cliente. Una aplicación de página única que inicia sesión en el explorador usa código de autorización con PKCE. El código de dispositivo es para equipos sin explorador y la autenticación básica no debe usarse.",
+  "exp_en": "A nightly job without a user uses client credentials. A single-page app signing in a user in the browser uses authorization code with PKCE. Device code is for devices without a browser, and basic authentication should not be used."
  },
  {
   "id": 287,
@@ -8187,8 +8187,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "El flujo de consentimiento del administrador envía las solicitudes de los usuarios a los revisores.",
-  "exp_en": "The admin consent workflow routes user requests to reviewers."
+  "exp_es": "Un permiso que solo un administrador puede conceder para todo el inquilino requiere consentimiento del administrador. Si el usuario no puede aprobar la app, envía una solicitud por el flujo de trabajo de consentimiento del administrador para que un revisor decida. El consentimiento de usuario no basta en ninguno de los dos casos.",
+  "exp_en": "A permission only an administrator can grant tenant-wide needs admin consent. If the user cannot approve the app, they send a request through the admin consent workflow so a reviewer decides. User consent is not enough in either case."
  },
  {
   "id": 288,
@@ -8213,8 +8213,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La asignación automática usa reglas de atributos para mantener el acceso alineado con los cambios de puesto.",
-  "exp_en": "Auto-assignment uses attribute rules to keep access aligned with role changes."
+  "exp_es": "Las directivas de asignación automática de la administración de derechos asignan paquetes según atributos (como departamento) y los retiran cuando el usuario cambia de puesto. Las licencias por grupo solo asignan licencias, y las directivas de acceso condicional o de riesgo no conceden acceso a recursos.",
+  "exp_en": "Entitlement management auto-assignment policies assign packages based on attributes (such as department) and remove them when the user changes role. Group-based licensing only assigns licenses, and Conditional Access or risk policies do not grant access to resources."
  },
  {
   "id": 289,
@@ -8239,8 +8239,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Los revisores de reserva gestionan los casos en los que un revisor no está disponible.",
-  "exp_en": "Fallback reviewers handle cases when a reviewer is unavailable."
+  "exp_es": "Los revisores de reserva (fallback) se encargan de la revisión cuando el revisor principal no está disponible, por ejemplo si el grupo se queda sin propietario. Un dominio, un inquilino nuevo o un registro DNS no resuelven la falta de revisor.",
+  "exp_en": "Fallback reviewers handle the review when the primary reviewer is unavailable, for example if the group has no owner. A domain, a new tenant or a DNS record do not solve the missing reviewer."
  },
  {
   "id": 290,
@@ -8265,8 +8265,8 @@
   "correct": [
    2
   ],
-  "exp_es": "PIM puede enviar notificaciones por correo de activaciones y asignaciones.",
-  "exp_en": "PIM can send email notifications for activations and assignments."
+  "exp_es": "La configuración de notificaciones del rol en PIM envía correos a los administradores cuando se activa o asigna un rol privilegiado. Las alertas de Cloud Discovery son de Defender for Cloud Apps, las notificaciones de revisiones son de otra función y las contraseñas prohibidas no notifican nada.",
+  "exp_en": "The role notification settings in PIM email administrators when a privileged role is activated or assigned. Cloud Discovery alerts belong to Defender for Cloud Apps, review notifications are a different feature, and banned passwords notify nothing."
  },
  {
   "id": 291,
@@ -8291,8 +8291,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Los libros usan Azure Monitor para visualizar los registros de Entra.",
-  "exp_en": "Workbooks use Azure Monitor to visualize Entra logs."
+  "exp_es": "Los libros (workbooks) de Microsoft Entra ofrecen visualizaciones predefinidas sobre inicios de sesión y acceso condicional usando Azure Monitor. Los términos de uso, Cloud Sync y los paquetes de acceso no generan informes visuales.",
+  "exp_en": "Microsoft Entra workbooks offer prebuilt visualizations of sign-ins and Conditional Access using Azure Monitor. Terms of use, Cloud Sync and access packages do not produce visual reports."
  },
  {
   "id": 292,
@@ -8317,8 +8317,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los informes de registro ayudan a impulsar la adopción de MFA.",
-  "exp_en": "Registration reports help drive MFA adoption."
+  "exp_es": "El informe de actividad de métodos de autenticación muestra qué usuarios se han registrado para MFA y SSPR y qué métodos usan, útil para impulsar la adopción. El catálogo de apps en la nube, los registros de aprovisionamiento y la puntuación de seguridad no dan ese detalle por usuario.",
+  "exp_en": "The authentication methods activity report shows which users registered for MFA and SSPR and which methods they use, useful to drive adoption. The cloud app catalog, provisioning logs and Secure Score do not give that per-user detail."
  },
  {
   "id": 293,
@@ -8345,8 +8345,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las directivas definen solicitantes, aprobadores y ciclo de vida.",
-  "exp_en": "Policies define requestors, approvers and lifecycle."
+  "exp_es": "Verdadero: las directivas de asignación automática agregan o quitan asignaciones según reglas. Verdadero: un paquete de acceso puede exigir aceptar términos de uso. Falso: las directivas definen solicitantes, aprobadores (incluso en varias fases) y ciclo de vida.",
+  "exp_en": "True: auto-assignment policies add or remove assignments based on rules. True: an access package can require accepting terms of use. False: policies define requestors, approvers (even multi-stage) and lifecycle."
  },
  {
   "id": 294,
@@ -8392,8 +8392,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Las revisiones de acceso recertifican el acceso; la aprobación de PIM controla la activación.",
-  "exp_en": "Access reviews recertify access; PIM approval controls activation."
+  "exp_es": "Recertificar cada seis meses quién está en un grupo privilegiado es una revisión de acceso. Que otra persona apruebe cada activación de Administrador global es la aprobación de activación de PIM. La administración de derechos gestiona solicitudes y la puntuación de seguridad da recomendaciones.",
+  "exp_en": "Recertifying every six months who is in a privileged group is an access review. Having another person approve each Global Administrator activation is PIM activation approval. Entitlement management handles requests, and Secure Score gives recommendations."
  },
  {
   "id": 295,
@@ -8418,8 +8418,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Las plantillas aceleran la creación de directivas habituales.",
-  "exp_en": "Templates speed up creating common policies."
+  "exp_es": "La plantilla 'Bloquear autenticación heredada' crea una directiva que bloquea a los clientes heredados, que no admiten MFA, para todos los usuarios. Las demás opciones no son plantillas de acceso condicional para ese fin.",
+  "exp_en": "The 'Block legacy authentication' template creates a policy that blocks legacy clients, which cannot do MFA, for all users. The other options are not Conditional Access templates for that purpose."
  },
  {
   "id": 296,
@@ -8444,8 +8444,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Las comprobaciones de red compatible garantizan que el tráfico fluya por Global Secure Access.",
-  "exp_en": "Compliant network checks ensure traffic flows through Global Secure Access."
+  "exp_es": "El acceso condicional con la condición de red conforme solo permite acceder a datos sensibles de Microsoft 365 cuando el tráfico pasa por Global Secure Access del inquilino. La nomenclatura de grupos, Entra Domain Services o los atributos personalizados no comprueban la red de origen.",
+  "exp_en": "Conditional Access with the compliant network condition only allows access to sensitive Microsoft 365 data when traffic goes through the tenant's Global Secure Access. Group naming, Entra Domain Services or custom attributes do not check the source network."
  },
  {
   "id": 297,
@@ -8472,8 +8472,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Usa el modo de solo informe y What If antes de aplicar.",
-  "exp_en": "Use report-only and What If before enforcing."
+  "exp_es": "Verdadero: excluir las cuentas de emergencia evita quedarse sin acceso. Falso: las plantillas sí agilizan la creación de directivas comunes. Falso: las directivas deben probarse antes con modo de solo informe y What If, no activarse para todos sin más.",
+  "exp_en": "True: excluding emergency accounts helps avoid lockouts. False: templates do speed up creating common policies. False: policies should be tested first with report-only mode and What If, not enabled for everyone straight away."
  },
  {
   "id": 298,
@@ -8524,8 +8524,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El inicio de sesión sin contraseña de Authenticator usa una clave vinculada al dispositivo y la coincidencia de números.",
-  "exp_en": "Authenticator passwordless sign-in uses a device-bound key and number matching."
+  "exp_es": "El inicio de sesión sin contraseña con el teléfono (Microsoft Authenticator) permite aprobar el inicio tocando la notificación y confirmando un número, sin escribir la contraseña. El código por correo, las preguntas de seguridad o la llamada de voz no son sin contraseña y son más débiles.",
+  "exp_en": "Passwordless phone sign-in (Microsoft Authenticator) lets the user approve the sign-in by tapping the prompt and confirming a number, without typing a password. Email codes, security questions or voice calls are not passwordless and are weaker."
  },
  {
   "id": 300,
@@ -8550,8 +8550,8 @@
   "correct": [
    1
   ],
-  "exp_es": "ID Protection puede enviar alertas de usuarios en riesgo y resúmenes por correo a los administradores.",
-  "exp_en": "ID Protection can email users at risk alerts and digests to administrators."
+  "exp_es": "ID Protection envía notificaciones por correo de usuarios en riesgo y un resumen semanal a los administradores. Las notificaciones de revisiones de acceso, la personalización de marca y los informes de términos de uso no avisan de riesgos.",
+  "exp_en": "ID Protection sends 'users at risk detected' emails and a weekly digest to administrators. Access review notifications, company branding and terms of use reports do not alert on risk."
  },
  {
   "id": 301,
@@ -8576,8 +8576,8 @@
   "correct": [
    2
   ],
-  "exp_es": "El aprovisionamiento mantiene las cuentas de la aplicación alineadas con el directorio.",
-  "exp_en": "Provisioning keeps app accounts aligned with the directory."
+  "exp_es": "Con el aprovisionamiento automático, las cuentas en la app SaaS se crean, actualizan y eliminan a medida que cambian las asignaciones en Entra ID. No elimina la necesidad de MFA ni de autenticación, y no convierte a los usuarios en administradores de la app.",
+  "exp_en": "With automatic provisioning, accounts in the SaaS app are created, updated and removed as assignments change in Entra ID. It does not remove the need for MFA or authentication, and it does not make users app administrators."
  },
  {
   "id": 302,
@@ -8602,8 +8602,8 @@
   "correct": [
    0
   ],
-  "exp_es": "La justificación favorece la responsabilidad y la revisión del uso de privilegios.",
-  "exp_en": "Justification supports accountability and review of privileged use."
+  "exp_es": "La justificación queda registrada en el historial de auditoría y explica por qué se necesitó el acceso privilegiado, lo que permite rendir cuentas y revisar su uso. No desactiva la MFA, no amplía el buzón ni elimina la asignación.",
+  "exp_en": "The justification is recorded in the audit history and explains why privileged access was needed, which supports accountability and review. It does not disable MFA, enlarge the mailbox or delete the assignment."
  },
  {
   "id": 303,
@@ -9806,8 +9806,8 @@
   "correct": [
    0
   ],
-  "exp_es": "summarize agrega filas; antes se filtran los fallos con where ResultType != 0.",
-  "exp_en": "summarize aggregates rows; filter failures with where ResultType != 0 first."
+  "exp_es": "summarize count() by UserPrincipalName agrupa las filas por usuario y cuenta cuántas hay; antes se filtran los fallos con where ResultType != 0. project-away quita columnas, extend añade columnas calculadas y sort ordena, pero ninguno agrega.",
+  "exp_en": "summarize count() by UserPrincipalName groups rows by user and counts them; you filter failures first with where ResultType != 0. project-away removes columns, extend adds calculated columns and sort orders rows, but none of them aggregate."
  },
  {
   "id": 350,
@@ -10045,8 +10045,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Cada requisito corresponde a un control concreto de concesión o de sesión.",
-  "exp_en": "Each requirement maps to a specific grant or session control."
+  "exp_es": "Exigir claves de paso a los administradores es una intensidad de autenticación. Volver a autenticar cada 8 horas es la frecuencia de inicio de sesión. Mostrar texto legal antes del primer acceso son los términos de uso. Permitir solo dispositivos administrados por Intune es exigir dispositivo conforme.",
+  "exp_en": "Requiring passkeys for administrators is an authentication strength. Reauthenticating every 8 hours is sign-in frequency. Showing legal text before first access is terms of use. Allowing only Intune-managed devices is requiring a compliant device."
  },
  {
   "id": 356,
@@ -10126,8 +10126,8 @@
     "correct": 2
    }
   ],
-  "exp_es": "Use el rol con menos privilegios que cubra la tarea.",
-  "exp_en": "Use the least-privileged role that covers the task."
+  "exp_es": "Crear usuarios y gestionar grupos: Administrador de usuarios. Restablecer métodos MFA de usuarios no administradores: Administrador de autenticación. Gestionar directivas de acceso condicional: Administrador de acceso condicional. Configurar el SSO de apps empresariales: Administrador de aplicaciones. Cada tarea con el rol de menor privilegio que la cubre.",
+  "exp_en": "Create users and manage groups: User Administrator. Reset MFA methods for non-admin users: Authentication Administrator. Manage Conditional Access policies: Conditional Access Administrator. Configure enterprise app SSO: Application Administrator. Each task gets the least-privileged role that covers it."
  },
  {
   "id": 357,
@@ -10288,8 +10288,8 @@
    "a read-only domain controller"
   ],
   "correct": 1,
-  "exp_es": "Los conectores de Application Proxy solo hacen conexiones salientes al servicio.",
-  "exp_en": "Application Proxy connectors make only outbound connections to the service."
+  "exp_es": "Un conector de Application Proxy instalado en la red interna publica la app web local con preautenticación de Entra y solo abre conexiones salientes hacia el servicio. Un host de Bastion es para acceso RDP/SSH a VM, un grupo de conmutación de SQL es para bases de datos y un RODC no publica aplicaciones.",
+  "exp_en": "An Application Proxy connector installed on the internal network publishes the on-premises web app with Entra pre-authentication and only opens outbound connections to the service. A Bastion host is for RDP/SSH to VMs, a SQL failover group is for databases, and an RODC does not publish apps."
  },
  {
   "id": 361,
@@ -10314,8 +10314,8 @@
    "Active Directory Federation Services"
   ],
   "correct": 2,
-  "exp_es": "Cloud Sync usa agentes de aprovisionamiento y admite sincronización de varios bosques.",
-  "exp_en": "Cloud Sync uses provisioning agents and supports multi-forest synchronization."
+  "exp_es": "Microsoft Entra Cloud Sync usa agentes de aprovisionamiento ligeros y admite sincronizar varios bosques de AD desconectados entre sí. Azure Site Recovery y Windows Server Backup son de continuidad de negocio, y AD FS es federación, no sincronización.",
+  "exp_en": "Microsoft Entra Cloud Sync uses lightweight provisioning agents and supports syncing several disconnected AD forests. Azure Site Recovery and Windows Server Backup are for business continuity, and AD FS is federation, not synchronization."
  },
  {
   "id": 362,
@@ -10423,8 +10423,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Los atributos de seguridad personalizados requieren roles de atributos específicos.",
-  "exp_en": "Custom security attributes require dedicated attribute roles.",
+  "exp_es": "Falso: Administrador global no puede leer los atributos de seguridad personalizados de forma predeterminada; hacen falta roles específicos de atributos. Verdadero: las unidades administrativas admiten reglas de pertenencia dinámica. Verdadero: algunos roles pueden asignarse con ámbito a una sola aplicación.",
+  "exp_en": "False: Global Administrators cannot read custom security attributes by default; dedicated attribute roles are required. True: administrative units support dynamic membership rules. True: some roles can be scoped to a single application.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10504,8 +10504,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Solo los miembros directos reciben las licencias asignadas al grupo.",
-  "exp_en": "Only direct members receive group-assigned licenses.",
+  "exp_es": "Las licencias por grupo solo se aplican a los miembros directos; los miembros de un grupo anidado dentro del grupo licenciado no las reciben. No depende de que sean invitados, de que el grupo tenga correo o más de 100 miembros, ni de una licencia P2.",
+  "exp_en": "Group-based licensing only applies to direct members; members of a group nested inside the licensed group do not receive the licenses. It does not depend on guests, mail-enabled groups with more than 100 members, or a P2 license.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10533,8 +10533,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Solo los miembros directos obtienen licencias basadas en grupos.",
-  "exp_en": "Only direct members get group-based licenses.",
+  "exp_es": "Verdadero: Windows LAPS puede guardar la contraseña del administrador local en Microsoft Entra ID. Verdadero: al eliminar un dispositivo también se eliminan sus claves de recuperación de BitLocker guardadas en Entra, por eso hay que tener cuidado al limpiar dispositivos. Falso: las licencias por grupo no se aplican a grupos anidados.",
+  "exp_en": "True: Windows LAPS can store the local administrator password in Microsoft Entra ID. True: deleting a device also deletes its BitLocker recovery keys stored in Entra, so device cleanup needs care. False: group-based licensing does not apply to nested groups.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10616,8 +10616,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La conversión mantiene las pertenencias y asignaciones.",
-  "exp_en": "Conversion keeps memberships and assignments.",
+  "exp_es": "Verdadero: un usuario externo puede convertirse en usuario interno conservando su objeto. Verdadero: se puede configurar el orden de canje de los proveedores de identidad para invitados. Falso: la conversión mantiene las pertenencias a grupos y las asignaciones.",
+  "exp_en": "True: an external user can be converted to an internal user, keeping the same object. True: the redemption order of identity providers for guests can be configured. False: conversion keeps group memberships and assignments.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10670,8 +10670,8 @@
   "correct": [
    3
   ],
-  "exp_es": "El filtrado por OU limita el ámbito de sincronización a los contenedores seleccionados.",
-  "exp_en": "OU filtering limits the sync scope to selected containers.",
+  "exp_es": "El filtrado por dominio y unidad organizativa de Entra Connect limita la sincronización a las OU seleccionadas, así solo se sincronizan los usuarios de esas dos. Una directiva de acceso condicional no impide sincronizar, el modo provisional no exporta nada y la escritura diferida es para contraseñas.",
+  "exp_en": "Entra Connect domain and OU-based filtering limits synchronization to the selected OUs, so only users in those two are synced. A Conditional Access policy does not prevent sync, staging mode exports nothing, and writeback is for passwords.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10726,8 +10726,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las extensiones del directorio sincronizan atributos personalizados.",
-  "exp_en": "Directory extensions sync custom attributes.",
+  "exp_es": "Verdadero: la prevención de eliminaciones accidentales bloquea de forma predeterminada las exportaciones con más de 500 eliminaciones. Verdadero: el filtrado por OU limita qué usuarios se sincronizan. Falso: los atributos locales personalizados se pueden sincronizar con las extensiones de directorio.",
+  "exp_en": "True: accidental delete prevention blocks exports with more than 500 deletions by default. True: OU filtering limits which users are synchronized. False: custom on-premises attributes can be synchronized with directory extensions.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10807,8 +10807,8 @@
   "correct": [
    2
   ],
-  "exp_es": "La autenticación con código QR está diseñada para trabajadores de primera línea en dispositivos compartidos.",
-  "exp_en": "QR code authentication is designed for frontline workers on shared devices.",
+  "exp_es": "La autenticación con código QR está pensada para trabajadores de primera línea en dispositivos compartidos: escanean el código de su tarjeta e introducen un PIN. La llamada de voz es lenta, una llave FIDO2 requiere un dispositivo por persona y la CBA con tarjeta inteligente necesita lector.",
+  "exp_en": "QR code authentication is designed for frontline workers on shared devices: they scan the code on their badge and enter a PIN. Voice calls are slow, a FIDO2 key requires one device per person, and CBA with a smart card needs a reader.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10890,8 +10890,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Usa la directiva de métodos de autenticación.",
-  "exp_en": "Use the Authentication methods policy.",
+  "exp_es": "Verdadero: la MFA preferida por el sistema pide el método registrado más seguro. Verdadero: la autenticación con código QR está pensada para trabajadores de primera línea. Falso: las directivas heredadas de MFA y SSPR se han migrado; los métodos se gestionan en la directiva de métodos de autenticación.",
+  "exp_en": "True: system-preferred MFA prompts for the strongest registered method. True: QR code authentication is designed for frontline workers. False: the legacy MFA and SSPR policies have been migrated; methods are managed in the authentication methods policy.",
   "pack": "sc300-oct26b"
  },
  {
@@ -10938,8 +10938,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "Los métodos externos integran MFA de terceros; el bloqueo inteligente limita las adivinanzas.",
-  "exp_en": "External methods integrate third-party MFA; smart lockout limits guessing.",
+  "exp_es": "Un método de autenticación externo integra un proveedor de MFA de terceros en los inicios de sesión de Entra. El bloqueo inteligente bloquea al atacante tras un número de intentos fallidos configurable (por ejemplo, 10). El código QR es para primera línea y la MFA preferida por el sistema elige el método más seguro.",
+  "exp_en": "An external authentication method integrates a third-party MFA provider into Entra sign-ins. Smart lockout locks out attackers after a configurable number of failed attempts (for example, 10). QR code is for frontline workers, and system-preferred MFA chooses the strongest method.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11075,8 +11075,8 @@
     "ans": false
    }
   ],
-  "exp_es": "El riesgo interno es una condición del acceso condicional integrada con Purview.",
-  "exp_en": "Insider risk is a Conditional Access condition integrated with Purview.",
+  "exp_es": "Verdadero: la condición de flujos de autenticación puede bloquear el flujo de código de dispositivo, muy usado en phishing. Verdadero: la protección de tokens vincula el token al dispositivo para evitar que se reutilice en otro. Falso: el riesgo interno de Purview sí se usa como condición del acceso condicional.",
+  "exp_en": "True: the authentication flows condition can block device code flow, which is often abused in phishing. True: token protection binds the token to the device so it cannot be replayed elsewhere. False: insider risk from Purview can be used as a Conditional Access condition.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11123,8 +11123,8 @@
     "correct": 3
    }
   ],
-  "exp_es": "La condición de flujos apunta al código de dispositivo; la protección de tokens los vincula.",
-  "exp_en": "Flows condition targets device code; token protection binds tokens.",
+  "exp_es": "Bloquear el inicio de sesión con código de dispositivo para la mayoría de usuarios se hace con la condición de flujos de autenticación. Rechazar tokens reutilizados desde otro dispositivo es la protección de tokens. El riesgo interno y la frecuencia 'Cada vez' responden a otros requisitos.",
+  "exp_en": "Blocking device code sign-ins for most users is done with the authentication flows condition. Rejecting tokens replayed from another device is token protection. Insider risk and sign-in frequency 'Every time' address other requirements.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11206,8 +11206,8 @@
     "ans": false
    }
   ],
-  "exp_es": "La difusión de contraseñas es una de las detecciones de ID Protection.",
-  "exp_en": "Password spray is one of the ID Protection detections.",
+  "exp_es": "Verdadero: se recomienda el acceso condicional basado en riesgo en lugar de las directivas de riesgo heredadas de ID Protection. Verdadero: los datos de riesgo se pueden enviar a Log Analytics con la configuración de diagnóstico. Falso: la difusión de contraseñas es una de las detecciones de ID Protection.",
+  "exp_en": "True: risk-based Conditional Access is recommended over the legacy ID Protection risk policies. True: risk data can be sent to Log Analytics with diagnostic settings. False: password spray is one of the ID Protection detections.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11289,8 +11289,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las organizaciones suelen empezar con el acceso rápido y pasar al acceso por aplicación.",
-  "exp_en": "Organizations typically start with Quick Access and move to per-app access.",
+  "exp_es": "Verdadero: Acceso rápido publica un rango amplio de IP o FQDN privados, útil para sustituir una VPN. Verdadero: las redes remotas conectan sucursales sin instalar el cliente en cada dispositivo. Falso: tras configurar Acceso rápido se puede pasar a acceso por aplicación, que es lo habitual.",
+  "exp_en": "True: Quick Access publishes a broad range of private IPs or FQDNs, useful to replace a VPN. True: remote networks connect branches without a client on every device. False: after Quick Access you can move to per-app access, which is the usual path.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11343,8 +11343,8 @@
   "correct": [
    2
   ],
-  "exp_es": "Los inicios de sesión de entidades de servicio e identidades administradas tienen sus propias categorías de registro.",
-  "exp_en": "Service principal and managed identity sign-ins have their own log categories.",
+  "exp_es": "Los registros de inicio de sesión de entidades de servicio muestran cuándo y desde dónde se autenticó cada entidad de servicio, útil para detectar el uso indebido de sus credenciales. Los registros interactivos son de usuarios, los de aprovisionamiento muestran sincronizaciones y las revisiones de acceso no registran inicios.",
+  "exp_en": "Service principal sign-in logs show when and from where each service principal authenticated, useful to detect misuse of its credentials. Interactive logs are for users, provisioning logs show syncs, and access reviews do not record sign-ins.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11372,8 +11372,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Azure administra las credenciales de las identidades administradas.",
-  "exp_en": "Managed identity credentials are managed by Azure.",
+  "exp_es": "Verdadero: el bloqueo de propiedades de instancia de la app protege las credenciales de la entidad de servicio frente a cambios en otros inquilinos. Verdadero: los inicios de sesión de entidades de servicio tienen su propia categoría de registro. Falso: Azure gestiona y rota las credenciales de las identidades administradas.",
+  "exp_en": "True: app instance property lock protects service principal credentials from changes in other tenants. True: service principal sign-ins have their own log category. False: Azure manages and rotates managed identity credentials.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11426,8 +11426,8 @@
   "correct": [
    0
   ],
-  "exp_es": "Application Proxy puede insertar notificaciones como encabezados HTTP en aplicaciones basadas en encabezados.",
-  "exp_en": "Application Proxy can inject claims as HTTP headers for header-based apps.",
+  "exp_es": "El SSO basado en encabezados de Application Proxy inserta la identidad del usuario en encabezados HTTP, que es lo que lee la app local heredada. El SSO con contraseña rellena formularios, SAML requiere que la app lo admita y el SSO vinculado solo agrega un enlace.",
+  "exp_en": "Application Proxy header-based SSO injects the user's identity into HTTP headers, which is what the legacy on-premises app reads. Password-based SSO fills forms, SAML requires the app to support it, and linked SSO only adds a link.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11509,8 +11509,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los filtros de ámbito afectan al aprovisionamiento, no a la autorización del inicio de sesión.",
-  "exp_en": "Scoping filters affect provisioning, not sign-in authorization.",
+  "exp_es": "Verdadero: Entra puede avisar por correo a los propietarios antes de que caduque el certificado de firma SAML. Verdadero: el aprovisionamiento a petición prueba el aprovisionamiento de un solo usuario. Falso: los filtros de ámbito afectan a qué usuarios se aprovisionan, no a quién puede iniciar sesión.",
+  "exp_en": "True: Entra can email owners before a SAML signing certificate expires. True: provision on demand tests provisioning for a single user. False: scoping filters affect which users are provisioned, not who can sign in.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11557,8 +11557,8 @@
     "correct": 0
    }
   ],
-  "exp_es": "Los filtros de ámbito limitan el aprovisionamiento; el SSO vinculado solo agrega un icono con enlace.",
-  "exp_en": "Scoping filters limit provisioning; linked SSO only adds a link tile.",
+  "exp_es": "Aprovisionar solo a los usuarios cuyo país es España se hace con filtros de ámbito. Mostrar un icono que solo enlaza con un portal SSO existente es el SSO vinculado. El aprovisionamiento a petición prueba un usuario y el SSO por encabezados es para apps locales.",
+  "exp_en": "Provisioning only users whose country is Spain is done with scoping filters. Showing a tile that just links to an existing SSO portal is linked SSO. Provision on demand tests one user, and header-based SSO is for on-premises apps.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11694,8 +11694,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Con exceso, la aplicación debe llamar a Graph para obtener las pertenencias.",
-  "exp_en": "With overage, the app must call Graph to get memberships.",
+  "exp_es": "Verdadero: las notificaciones opcionales añaden atributos al token. Falso: con exceso de grupos (overage) el token no incluye los grupos y la app debe consultarlos en Microsoft Graph. Verdadero: la verificación del editor quita la advertencia de editor no verificado en el consentimiento.",
+  "exp_en": "True: optional claims add attributes to tokens. False: with group overage the token does not include the groups, and the app must query them from Microsoft Graph. True: publisher verification removes the unverified publisher warning in consent prompts.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11721,8 +11721,8 @@
    "scope"
   ],
   "correct": 0,
-  "exp_es": "El límite es de 200 grupos en JWT (150 en SAML).",
-  "exp_en": "The limit is 200 groups for JWTs (150 for SAML).",
+  "exp_es": "Cuando el usuario pertenece a demasiados grupos (más de 200 en JWT o 150 en SAML), el token lleva un indicador de exceso (overage) en lugar de la lista, y la app debe pedir los grupos a Microsoft Graph. Rol, consentimiento o ámbito no describen esta situación.",
+  "exp_en": "When the user is in too many groups (more than 200 for JWT or 150 for SAML), the token carries an overage indicator instead of the list, and the app must get the groups from Microsoft Graph. Role, consent or scope do not describe this situation.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11777,8 +11777,8 @@
     "ans": true
    }
   ],
-  "exp_es": "Cloud Discovery analiza registros de tráfico para encontrar las aplicaciones en la nube que se usan.",
-  "exp_en": "Cloud Discovery analyzes traffic logs to find cloud apps in use.",
+  "exp_es": "Verdadero: App governance detecta accesos a datos inusuales de apps OAuth. Falso: Cloud Discovery analiza los registros de tráfico para encontrar apps en uso, no los consentimientos OAuth. Verdadero: App governance puede deshabilitar una app automáticamente con sus directivas.",
+  "exp_en": "True: app governance detects unusual data access by OAuth apps. False: Cloud Discovery analyzes traffic logs to find apps in use, not OAuth consent grants. True: app governance can disable an app automatically through its policies.",
   "pack": "sc300-oct26b"
  },
  {
@@ -11914,8 +11914,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Los flujos de trabajo de ciclo de vida cubren incorporaciones, cambios y salidas.",
-  "exp_en": "Lifecycle workflows cover joiners, movers and leavers.",
+  "exp_es": "Verdadero: las extensiones personalizadas llaman a Logic Apps en fases del paquete de acceso, por ejemplo al aprobar o asignar. Verdadero: los paquetes de acceso incompatibles impiden combinar accesos y aplican la separación de funciones. Falso: los flujos de trabajo de ciclo de vida cubren altas, cambios de puesto y bajas.",
+  "exp_en": "True: custom extensions call Logic Apps at access package stages, for example on approval or assignment. True: incompatible access packages prevent combining access and enforce separation of duties. False: lifecycle workflows cover joiners, movers and leavers.",
   "pack": "sc300-oct26b"
  },
  {
@@ -12016,8 +12016,8 @@
   "correct": [
    1
   ],
-  "exp_es": "Las revisiones de varias fases pasan las decisiones de una fase de revisores a la siguiente.",
-  "exp_en": "Multi-stage reviews pass decisions from one stage of reviewers to the next.",
+  "exp_es": "Una revisión de acceso en varias fases pasa las decisiones de los responsables (primera fase) al propietario de la app (segunda fase). La aprobación de PIM es para roles, la asignación automática concede acceso y dos revisiones separadas no comparten decisiones.",
+  "exp_en": "A multi-stage access review passes the managers' decisions (first stage) to the app owner (second stage). PIM approval is for roles, auto-assignment grants access, and two unrelated reviews do not share decisions.",
   "pack": "sc300-oct26b"
  },
  {
@@ -12045,8 +12045,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las revisiones de acceso de PIM pueden cubrir entidades de servicio asignadas a roles.",
-  "exp_en": "PIM access reviews can cover service principals assigned to roles.",
+  "exp_es": "Verdadero: una revisión puede limitarse a usuarios inactivos durante un número de días. Verdadero: las revisiones en varias fases pueden implicar primero a responsables y después a propietarios de la app. Falso: las revisiones de acceso de PIM pueden incluir entidades de servicio con roles privilegiados.",
+  "exp_en": "True: a review can target only users inactive for a number of days. True: multi-stage reviews can involve managers first and then app owners. False: PIM access reviews can include service principals in privileged roles.",
   "pack": "sc300-oct26b"
  },
  {
@@ -12072,8 +12072,8 @@
    "one-time"
   ],
   "correct": 1,
-  "exp_es": "Se pueden configurar hasta tres fases.",
-  "exp_en": "Up to three stages can be configured.",
+  "exp_es": "Una revisión de acceso en varias fases (hasta tres) permite que los responsables revisen primero y los propietarios de la app confirmen después. La autorrevisión, la revisión solo de invitados o la revisión de una sola vez no encadenan revisores.",
+  "exp_en": "A multi-stage access review (up to three stages) lets managers review first and app owners confirm afterwards. Self-review, guest-only or one-time reviews do not chain reviewers.",
   "pack": "sc300-oct26b"
  },
  {
@@ -12265,8 +12265,8 @@
     "ans": false
    }
   ],
-  "exp_es": "Las recomendaciones siguen estados como activo, completado o descartado.",
-  "exp_en": "Recommendations track status such as active, completed or dismissed.",
+  "exp_es": "Verdadero: en inquilinos con P1 o P2 los registros de inicio de sesión se conservan 30 días. Verdadero: 'Uso e información' muestra la actividad de inicio de sesión por aplicación. Falso: las recomendaciones de Entra registran el estado de cada tarea (activa, completada, descartada o pospuesta).",
+  "exp_en": "True: in P1 or P2 tenants sign-in logs are kept for 30 days. True: Usage and insights shows sign-in activity per application. False: Entra recommendations track each task's status (active, completed, dismissed or postponed).",
   "pack": "sc300-oct26b"
  },
  {
@@ -12313,8 +12313,8 @@
     "correct": 1
    }
   ],
-  "exp_es": "La configuración de diagnóstico exporta registros; las recomendaciones señalan acciones pendientes.",
-  "exp_en": "Diagnostic settings export logs; recommendations flag pending actions.",
+  "exp_es": "Para conservar los registros de inicio de sesión dos años, se exportan con la configuración de diagnóstico a Log Analytics o a una cuenta de almacenamiento. Para encontrar apps con credenciales a punto de caducar, las recomendaciones de Entra. Los libros visualizan y 'Uso e información' resume actividad.",
+  "exp_en": "To keep sign-in logs for two years, export them with diagnostic settings to Log Analytics or a storage account. To find apps with expiring credentials, use Entra recommendations. Workbooks visualize data, and Usage and insights summarizes activity.",
   "pack": "sc300-oct26b"
  }
 ]

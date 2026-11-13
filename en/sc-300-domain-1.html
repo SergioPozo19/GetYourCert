@@ -214,11 +214,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. A tenant can host multiple verified custom domains."
+       "text": "Correct answer. One tenant supports multiple verified custom domains; you add and verify contoso.com and fabrikam.com and set one as primary. Using only onmicrosoft.com or guest accounts does not give users their domain, and a tenant per domain fragments administration."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "A tenant can host multiple verified custom domains."
+       "text": "One tenant supports multiple verified custom domains; you add and verify contoso.com and fabrikam.com and set one as primary. Using only onmicrosoft.com or guest accounts does not give users their domain, and a tenant per domain fragments administration."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Device dynamic groups evaluate device attributes such as deviceOSType."
+       "text": "Correct answer. Dynamic device rules use attributes such as device.deviceOSType; (device.deviceOSType -eq \"Windows\") adds all Windows devices. Rules with user.* evaluate users, not devices, and group.type is not a valid rule attribute."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Device dynamic groups evaluate device attributes such as deviceOSType."
+       "text": "Dynamic device rules use attributes such as device.deviceOSType; (device.deviceOSType -eq \"Windows\") adds all Windows devices. Rules with user.* evaluate users, not devices, and group.type is not a valid rule attribute."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Email OTP is a fallback for guests without another identity provider."
+       "text": "Correct answer. Email one-time passcode lets a guest without a Microsoft or work account sign in with a code sent to their email. Application Proxy publishes on-premises apps, pass-through authentication is for hybrid users, and Windows Hello is a method on your own device."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Email OTP is a fallback for guests without another identity provider."
+       "text": "Email one-time passcode lets a guest without a Microsoft or work account sign in with a code sent to their email. Application Proxy publishes on-premises apps, pass-through authentication is for hybrid users, and Windows Hello is a method on your own device."
       }
      }
     },
@@ -618,7 +618,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Your organization has acquired another company and wants users to sign in with both contoso.com and fabrikam.com. What should you do?</p>
       <ol class="sq-opts" type="A"><li>Add and verify both custom domains; one is primary</li><li>Use only the onmicrosoft.com domain for every user</li><li>Use guest accounts only</li><li>Create a second tenant for each acquired domain</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> A tenant can host multiple verified custom domains.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> One tenant supports multiple verified custom domains; you add and verify contoso.com and fabrikam.com and set one as primary. Using only onmicrosoft.com or guest accounts does not give users their domain, and a tenant per domain fragments administration.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> An administrative unit must automatically include every user whose Country is &#x27;Spain&#x27;. What should you configure?</p>
@@ -633,7 +633,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Which dynamic membership rule would add all devices running Windows to a group?</p>
       <ol class="sq-opts" type="A"><li>(user.country -eq &quot;Windows&quot;)</li><li>(user.jobTitle -contains &quot;PC&quot;)</li><li>(group.type -eq &quot;Windows&quot;)</li><li>(device.deviceOSType -eq &quot;Windows&quot;)</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Device dynamic groups evaluate device attributes such as deviceOSType.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Dynamic device rules use attributes such as device.deviceOSType; (device.deviceOSType -eq &quot;Windows&quot;) adds all Windows devices. Rules with user.* evaluate users, not devices, and group.type is not a valid rule attribute.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Hundreds of devices haven&#x27;t signed in for over a year. What is the recommended cleanup approach?</p>
@@ -643,7 +643,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> A guest user does not have a Microsoft account or work account. Which feature lets them sign in with a one-time code sent to their email?</p>
       <ol class="sq-opts" type="A"><li>Email one-time passcode</li><li>Application Proxy</li><li>Pass-through authentication</li><li>Windows Hello</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Email OTP is a fallback for guests without another identity provider.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Email one-time passcode lets a guest without a Microsoft or work account sign in with a code sent to their email. Application Proxy publishes on-premises apps, pass-through authentication is for hybrid users, and Windows Hello is a method on your own device.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> A cloud user is matched to an on-premises user with the same email address during first synchronization. What is this behavior called?</p>

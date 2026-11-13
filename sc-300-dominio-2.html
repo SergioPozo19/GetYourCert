@@ -154,11 +154,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Revocar las sesiones invalida los tokens de actualización, por lo que el usuario debe volver a autenticarse."
+       "text": "Respuesta correcta. Revocar las sesiones invalida los tokens de actualización y obliga a volver a autenticarse; además conviene deshabilitar la cuenta o restablecer la contraseña para que el atacante no vuelva a entrar. Esperar a que caduque el token deja la puerta abierta, y las licencias o el buzón no afectan a las sesiones."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Revocar las sesiones invalida los tokens de actualización, por lo que el usuario debe volver a autenticarse."
+       "text": "Revocar las sesiones invalida los tokens de actualización y obliga a volver a autenticarse; además conviene deshabilitar la cuenta o restablecer la contraseña para que el atacante no vuelva a entrar. Esperar a que caduque el token deja la puerta abierta, y las licencias o el buzón no afectan a las sesiones."
       }
      }
     },
@@ -214,11 +214,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los agentes de controlador de dominio validan las contraseñas con la directiva descargada mediante el proxy."
+       "text": "Respuesta correcta. Para aplicar la lista de contraseñas prohibidas en AD local se instalan el servicio proxy de Protección con contraseña y el agente en los controladores de dominio; el proxy descarga la directiva de Entra y los agentes validan cada cambio de contraseña. Application Proxy, Intune o Cloud Sync no validan contraseñas."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los agentes de controlador de dominio validan las contraseñas con la directiva descargada mediante el proxy."
+       "text": "Para aplicar la lista de contraseñas prohibidas en AD local se instalan el servicio proxy de Protección con contraseña y el agente en los controladores de dominio; el proxy descarga la directiva de Entra y los agentes validan cada cambio de contraseña. Application Proxy, Intune o Cloud Sync no validan contraseñas."
       }
      }
     },
@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los filtros de dispositivos evalúan atributos del dispositivo como el tipo de confianza o el cumplimiento."
+       "text": "Respuesta correcta. Un filtro de dispositivos (o la condición de estado del dispositivo) permite que la directiva se aplique solo a dispositivos no conformes o no administrados, evaluando atributos como isCompliant o trustType. La nomenclatura de grupos, Application Proxy o las revisiones de acceso no seleccionan dispositivos en una directiva."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los filtros de dispositivos evalúan atributos del dispositivo como el tipo de confianza o el cumplimiento."
+       "text": "Un filtro de dispositivos (o la condición de estado del dispositivo) permite que la directiva se aplique solo a dispositivos no conformes o no administrados, evaluando atributos como isCompliant o trustType. La nomenclatura de grupos, Application Proxy o las revisiones de acceso no seleccionan dispositivos en una directiva."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las campañas de registro animan a los usuarios a configurar Microsoft Authenticator."
+       "text": "Respuesta correcta. Una campaña de registro muestra un aviso al iniciar sesión para que los usuarios configuren Microsoft Authenticator, y se puede posponer durante un número de días definido. Las ubicaciones con nombre, la caducidad de grupos y las revisiones de acceso no piden registrar MFA."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las campañas de registro animan a los usuarios a configurar Microsoft Authenticator."
+       "text": "Una campaña de registro muestra un aviso al iniciar sesión para que los usuarios configuren Microsoft Authenticator, y se puede posponer durante un número de días definido. Las ubicaciones con nombre, la caducidad de grupos y las revisiones de acceso no piden registrar MFA."
       }
      }
     },
@@ -454,11 +454,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. El viaje imposible es una detección de riesgo de inicio de sesión sin conexión."
+       "text": "Respuesta correcta. Viaje imposible detecta dos inicios de sesión desde ubicaciones tan alejadas que no da tiempo a viajar entre ellas. IP anónima detecta proxies o Tor, credenciales filtradas detecta contraseñas publicadas y difusión de contraseñas detecta intentos con contraseñas comunes contra muchas cuentas."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "El viaje imposible es una detección de riesgo de inicio de sesión sin conexión."
+       "text": "Viaje imposible detecta dos inicios de sesión desde ubicaciones tan alejadas que no da tiempo a viajar entre ellas. IP anónima detecta proxies o Tor, credenciales filtradas detecta contraseñas publicadas y difusión de contraseñas detecta intentos con contraseñas comunes contra muchas cuentas."
       }
      }
     },
@@ -574,11 +574,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Internet Access incluye capacidades de puerta de enlace web segura."
+       "text": "Respuesta correcta. El filtrado de contenido web de las directivas de Entra Internet Access bloquea categorías de sitios (como juegos de azar) para el tráfico que pasa por Global Secure Access. Application Proxy publica apps internas, los controles de sesión de acceso condicional actúan sobre apps en la nube y las restricciones universales de inquilino limitan el acceso a otros inquilinos."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Internet Access incluye capacidades de puerta de enlace web segura."
+       "text": "El filtrado de contenido web de las directivas de Entra Internet Access bloquea categorías de sitios (como juegos de azar) para el tráfico que pasa por Global Secure Access. Application Proxy publica apps internas, los controles de sesión de acceso condicional actúan sobre apps en la nube y las restricciones universales de inquilino limitan el acceso a otros inquilinos."
       }
      }
     }
@@ -613,17 +613,17 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Un administrador sospecha que una cuenta está comprometida y quiere finalizar de inmediato todas las sesiones activas del usuario. ¿Qué debe hacer?</p>
       <ol class="sq-opts" type="A"><li>Aumentar el número de licencias</li><li>Esperar a que el token caduque de forma natural</li><li>Revocar las sesiones del usuario y deshabilitar o restablecer la cuenta</li><li>Eliminar solo el buzón del usuario</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Revocar las sesiones invalida los tokens de actualización, por lo que el usuario debe volver a autenticarse.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Revocar las sesiones invalida los tokens de actualización y obliga a volver a autenticarse; además conviene deshabilitar la cuenta o restablecer la contraseña para que el atacante no vuelva a entrar. Esperar a que caduque el token deja la puerta abierta, y las licencias o el buzón no afectan a las sesiones.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Un Active Directory local necesita la misma lista de contraseñas prohibidas que la nube. ¿Qué componentes se implementan?</p>
       <ol class="sq-opts" type="A"><li>Servicio de proxy de Password Protection y agentes de DC</li><li>Conectores del proxy de aplicaciones en los controladores de dominio</li><li>Scripts de Intune Remediations</li><li>Agentes de Microsoft Entra Cloud Sync con escritura diferida de contraseñas</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Los agentes de controlador de dominio validan las contraseñas con la directiva descargada mediante el proxy.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Para aplicar la lista de contraseñas prohibidas en AD local se instalan el servicio proxy de Protección con contraseña y el agente en los controladores de dominio; el proxy descarga la directiva de Entra y los agentes validan cada cambio de contraseña. Application Proxy, Intune o Cloud Sync no validan contraseñas.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> ¿Cómo puede una directiva de acceso condicional dirigirse solo a dispositivos que no son compatibles con Intune, como los portátiles personales no administrados?</p>
       <ol class="sq-opts" type="A"><li>Una directiva de nomenclatura de grupos para los dispositivos</li><li>Un filtro de dispositivos o la condición de estado del dispositivo</li><li>Un conector de Application Proxy cerca de los dispositivos</li><li>Revisiones de acceso para los propietarios cada trimestre</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Los filtros de dispositivos evalúan atributos del dispositivo como el tipo de confianza o el cumplimiento.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Un filtro de dispositivos (o la condición de estado del dispositivo) permite que la directiva se aplique solo a dispositivos no conformes o no administrados, evaluando atributos como isCompliant o trustType. La nomenclatura de grupos, Application Proxy o las revisiones de acceso no seleccionan dispositivos en una directiva.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Los usuarios marcados con riesgo interno elevado por Purview deben bloquearse en aplicaciones confidenciales. ¿Qué condición del acceso condicional encaja?</p>
@@ -633,12 +633,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> ¿Qué característica solicita a los usuarios que se registren en MFA mostrando un aviso al iniciar sesión durante un período definido?</p>
       <ol class="sq-opts" type="A"><li>Ubicación con nombre</li><li>Caducidad de grupo</li><li>Revisión de acceso</li><li>Campaña de registro</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Las campañas de registro animan a los usuarios a configurar Microsoft Authenticator.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Una campaña de registro muestra un aviso al iniciar sesión para que los usuarios configuren Microsoft Authenticator, y se puede posponer durante un número de días definido. Las ubicaciones con nombre, la caducidad de grupos y las revisiones de acceso no piden registrar MFA.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> ¿Qué tipo de detección de riesgo se genera cuando un usuario inicia sesión desde dos ubicaciones lejanas en un intervalo de tiempo que hace imposible el viaje?</p>
       <ol class="sq-opts" type="A"><li>IP anónima</li><li>Credenciales filtradas</li><li>Difusión de contraseñas</li><li>Viaje imposible</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> El viaje imposible es una detección de riesgo de inicio de sesión sin conexión.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Viaje imposible detecta dos inicios de sesión desde ubicaciones tan alejadas que no da tiempo a viajar entre ellas. IP anónima detecta proxies o Tor, credenciales filtradas detecta contraseñas publicadas y difusión de contraseñas detecta intentos con contraseñas comunes contra muchas cuentas.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> ¿Dónde investiga las identidades de carga de trabajo de riesgo, como una entidad de servicio con actividad sospechosa?</p>
@@ -648,7 +648,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> ¿Qué característica de Global Secure Access permite bloquear el acceso a categorías de sitios web como los juegos de azar mediante filtrado de contenido web?</p>
       <ol class="sq-opts" type="A"><li>Application Proxy de Microsoft Entra con autenticación previa</li><li>Filtrado de contenido web en directivas de Entra Internet Access</li><li>Controles de sesión de acceso condicional para apps en la nube</li><li>Restricciones universales de inquilino para los inquilinos externos</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> Internet Access incluye capacidades de puerta de enlace web segura.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> El filtrado de contenido web de las directivas de Entra Internet Access bloquea categorías de sitios (como juegos de azar) para el tráfico que pasa por Global Secure Access. Application Proxy publica apps internas, los controles de sesión de acceso condicional actúan sobre apps en la nube y las restricciones universales de inquilino limitan el acceso a otros inquilinos.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-300&amp;dom=2&amp;lang=es">Practicar el dominio 2 gratis →</a></div>
   </section>

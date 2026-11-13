@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Fallback reviewers handle cases when a reviewer is unavailable."
+       "text": "Correct answer. Fallback reviewers handle the review when the primary reviewer is unavailable, for example if the group has no owner. A domain, a new tenant or a DNS record do not solve the missing reviewer."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Fallback reviewers handle cases when a reviewer is unavailable."
+       "text": "Fallback reviewers handle the review when the primary reviewer is unavailable, for example if the group has no owner. A domain, a new tenant or a DNS record do not solve the missing reviewer."
       }
      }
     },
@@ -334,11 +334,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. PIM provides alerts, audit history and reports to monitor privileged access."
+       "text": "Correct answer. PIM includes alerts (for example, roles assigned outside PIM or too-frequent activations) plus audit history and reports for all activations and assignments. Cost Management, Intune compliance reports and Teams reports do not audit privileged roles."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "PIM provides alerts, audit history and reports to monitor privileged access."
+       "text": "PIM includes alerts (for example, roles assigned outside PIM or too-frequent activations) plus audit history and reports for all activations and assignments. Cost Management, Intune compliance reports and Teams reports do not audit privileged roles."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Role settings control activation duration, MFA, approval and justification."
+       "text": "Correct answer. Maximum activation duration in the PIM role settings limits each activation to 2 hours; the same settings require MFA and justification. Justification does not limit time, notifications only alert, and eligible assignment expiration controls until when the role can be activated, not how long each activation lasts."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Role settings control activation duration, MFA, approval and justification."
+       "text": "Maximum activation duration in the PIM role settings limits each activation to 2 hours; the same settings require MFA and justification. Justification does not limit time, notifications only alert, and eligible assignment expiration controls until when the role can be activated, not how long each activation lasts."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Workbooks in the Entra admin center use Azure Monitor to visualize log data."
+       "text": "Correct answer. Microsoft Entra workbooks use Azure Monitor to show prebuilt reports on log data, such as authentication methods usage or Conditional Access impact. Windows Update reports, Exchange message trace and Teams call analytics do not use Entra log data."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Workbooks in the Entra admin center use Azure Monitor to visualize log data."
+       "text": "Microsoft Entra workbooks use Azure Monitor to show prebuilt reports on log data, such as authentication methods usage or Conditional Access impact. Windows Update reports, Exchange message trace and Teams call analytics do not use Entra log data."
       }
      }
     },
@@ -574,11 +574,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Each sign-in record includes Conditional Access details."
+       "text": "Correct answer. Each sign-in log entry includes a Conditional Access tab with the evaluated policies and their result (success, failure, not applied). Audit logs record configuration changes, and billing or DNS logs do not contain that information."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Each sign-in record includes Conditional Access details."
+       "text": "Each sign-in log entry includes a Conditional Access tab with the evaluated policies and their result (success, failure, not applied). Audit logs record configuration changes, and billing or DNS logs do not contain that information."
       }
      }
     }
@@ -623,17 +623,17 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> You schedule an access review of a group and the reviewer is the group owner. The owner leaves the company. What should you have configured?</p>
       <ol class="sq-opts" type="A"><li>A custom domain</li><li>Fallback reviewers</li><li>A new tenant</li><li>A DNS record</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Fallback reviewers handle cases when a reviewer is unavailable.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Fallback reviewers handle the review when the primary reviewer is unavailable, for example if the group has no owner. A domain, a new tenant or a DNS record do not solve the missing reviewer.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> An organization wants alerts when Global Administrator is assigned outside of PIM and when roles are activated too frequently. Where can it review such alerts and audit history?</p>
       <ol class="sq-opts" type="A"><li>Azure Cost Management</li><li>PIM alerts and the PIM audit history and reports</li><li>Intune device compliance reports</li><li>Teams admin center reports</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> PIM provides alerts, audit history and reports to monitor privileged access.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> PIM includes alerts (for example, roles assigned outside PIM or too-frequent activations) plus audit history and reports for all activations and assignments. Cost Management, Intune compliance reports and Teams reports do not audit privileged roles.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> You want a user to be able to request the Exchange Administrator role only for 2 hours, with MFA and a justification. Which PIM setting provides the time limit?</p>
       <ol class="sq-opts" type="A"><li>Maximum activation duration in the role settings</li><li>Notification settings for role assignments</li><li>Require justification on activation</li><li>The eligible assignment expiration</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Role settings control activation duration, MFA, approval and justification.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Maximum activation duration in the PIM role settings limits each activation to 2 hours; the same settings require MFA and justification. Justification does not limit time, notifications only alert, and eligible assignment expiration controls until when the role can be activated, not how long each activation lasts.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Where can you see who activated a privileged role and why?</p>
@@ -643,12 +643,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which tool lets you visualize authentication methods usage and Conditional Access insights using prebuilt reports on Entra log data?</p>
       <ol class="sq-opts" type="A"><li>Microsoft Entra workbooks</li><li>Windows Update reports</li><li>Exchange message trace</li><li>Teams call analytics</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Workbooks in the Entra admin center use Azure Monitor to visualize log data.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Microsoft Entra workbooks use Azure Monitor to show prebuilt reports on log data, such as authentication methods usage or Conditional Access impact. Windows Update reports, Exchange message trace and Teams call analytics do not use Entra log data.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which log shows whether a Conditional Access policy was applied to a sign-in and with what result?</p>
       <ol class="sq-opts" type="A"><li>Billing logs</li><li>Sign-in logs</li><li>DNS logs</li><li>Audit logs</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Each sign-in record includes Conditional Access details.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Each sign-in log entry includes a Conditional Access tab with the evaluated policies and their result (success, failure, not applied). Audit logs record configuration changes, and billing or DNS logs do not contain that information.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-300&amp;dom=4&amp;lang=en">Practice domain 4 for free →</a></div>
   </section>

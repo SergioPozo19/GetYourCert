@@ -154,11 +154,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Revoking sessions invalidates refresh tokens so the user must reauthenticate."
+       "text": "Correct answer. Revoking sessions invalidates refresh tokens and forces reauthentication; you should also disable the account or reset the password so the attacker cannot sign in again. Waiting for tokens to expire leaves the door open, and licenses or the mailbox do not affect sessions."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Revoking sessions invalidates refresh tokens so the user must reauthenticate."
+       "text": "Revoking sessions invalidates refresh tokens and forces reauthentication; you should also disable the account or reset the password so the attacker cannot sign in again. Waiting for tokens to expire leaves the door open, and licenses or the mailbox do not affect sessions."
       }
      }
     },
@@ -214,11 +214,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. DC agents validate passwords against the policy downloaded via the proxy."
+       "text": "Correct answer. To apply the banned password list in on-premises AD you install the Password Protection proxy service and the DC agent on domain controllers; the proxy downloads the Entra policy and the agents validate every password change. Application Proxy, Intune or Cloud Sync do not validate passwords."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "DC agents validate passwords against the policy downloaded via the proxy."
+       "text": "To apply the banned password list in on-premises AD you install the Password Protection proxy service and the DC agent on domain controllers; the proxy downloads the Entra policy and the agents validate every password change. Application Proxy, Intune or Cloud Sync do not validate passwords."
       }
      }
     },
@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Device filters evaluate device attributes such as trust type or compliance."
+       "text": "Correct answer. A device filter (or the device state condition) lets the policy target only noncompliant or unmanaged devices by evaluating attributes such as isCompliant or trustType. Group naming, Application Proxy or access reviews do not target devices in a policy."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Device filters evaluate device attributes such as trust type or compliance."
+       "text": "A device filter (or the device state condition) lets the policy target only noncompliant or unmanaged devices by evaluating attributes such as isCompliant or trustType. Group naming, Application Proxy or access reviews do not target devices in a policy."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Registration campaigns encourage users to set up Microsoft Authenticator."
+       "text": "Correct answer. A registration campaign shows a nudge at sign-in asking users to set up Microsoft Authenticator, and it can be snoozed for a defined number of days. Named locations, group expiration and access reviews do not prompt MFA registration."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Registration campaigns encourage users to set up Microsoft Authenticator."
+       "text": "A registration campaign shows a nudge at sign-in asking users to set up Microsoft Authenticator, and it can be snoozed for a defined number of days. Named locations, group expiration and access reviews do not prompt MFA registration."
       }
      }
     },
@@ -454,11 +454,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Impossible travel is an offline sign-in risk detection."
+       "text": "Correct answer. Impossible travel flags two sign-ins from locations so far apart that travelling between them in that time is not possible. Anonymous IP detects proxies or Tor, leaked credentials detects published passwords, and password spray detects common passwords tried against many accounts."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Impossible travel is an offline sign-in risk detection."
+       "text": "Impossible travel flags two sign-ins from locations so far apart that travelling between them in that time is not possible. Anonymous IP detects proxies or Tor, leaked credentials detects published passwords, and password spray detects common passwords tried against many accounts."
       }
      }
     },
@@ -574,11 +574,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Internet Access includes secure web gateway capabilities."
+       "text": "Correct answer. Web content filtering in Entra Internet Access policies blocks website categories (such as gambling) for traffic going through Global Secure Access. Application Proxy publishes internal apps, Conditional Access session controls act on cloud apps, and universal tenant restrictions limit access to other tenants."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Internet Access includes secure web gateway capabilities."
+       "text": "Web content filtering in Entra Internet Access policies blocks website categories (such as gambling) for traffic going through Global Secure Access. Application Proxy publishes internal apps, Conditional Access session controls act on cloud apps, and universal tenant restrictions limit access to other tenants."
       }
      }
     }
@@ -613,17 +613,17 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> An administrator suspects an account is compromised and wants to immediately end all active sessions for the user. What should they do?</p>
       <ol class="sq-opts" type="A"><li>Increase the license count</li><li>Wait for the token to expire naturally</li><li>Revoke the user&#x27;s sessions and disable or reset the account</li><li>Delete the user&#x27;s mailbox only</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Revoking sessions invalidates refresh tokens so the user must reauthenticate.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Revoking sessions invalidates refresh tokens and forces reauthentication; you should also disable the account or reset the password so the attacker cannot sign in again. Waiting for tokens to expire leaves the door open, and licenses or the mailbox do not affect sessions.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> An on-premises Active Directory needs the same banned password list as the cloud. Which components are deployed?</p>
       <ol class="sq-opts" type="A"><li>Password Protection proxy service and DC agents</li><li>Application Proxy connectors on the domain controllers</li><li>Intune Remediations scripts</li><li>Microsoft Entra Cloud Sync agents with password writeback</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> DC agents validate passwords against the policy downloaded via the proxy.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> To apply the banned password list in on-premises AD you install the Password Protection proxy service and the DC agent on domain controllers; the proxy downloads the Entra policy and the agents validate every password change. Application Proxy, Intune or Cloud Sync do not validate passwords.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> How can a Conditional Access policy target only devices that are not Intune compliant, such as unmanaged personal laptops?</p>
       <ol class="sq-opts" type="A"><li>A group naming policy for the managed devices</li><li>A device filter or the device state condition</li><li>An application proxy connector near the devices</li><li>Access reviews for the device owners every quarter</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Device filters evaluate device attributes such as trust type or compliance.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> A device filter (or the device state condition) lets the policy target only noncompliant or unmanaged devices by evaluating attributes such as isCompliant or trustType. Group naming, Application Proxy or access reviews do not target devices in a policy.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Users flagged with elevated insider risk by Purview must be blocked from sensitive apps. Which Conditional Access condition fits?</p>
@@ -633,12 +633,12 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Which feature prompts users to register for MFA by displaying a nudge at sign-in for a defined period?</p>
       <ol class="sq-opts" type="A"><li>Named location</li><li>Group expiration</li><li>Access review</li><li>Registration campaign</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Registration campaigns encourage users to set up Microsoft Authenticator.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> A registration campaign shows a nudge at sign-in asking users to set up Microsoft Authenticator, and it can be snoozed for a defined number of days. Named locations, group expiration and access reviews do not prompt MFA registration.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Which risk detection type is generated when a user signs in from two distant locations in a time frame that makes travel impossible?</p>
       <ol class="sq-opts" type="A"><li>Anonymous IP</li><li>Leaked credentials</li><li>Password spray</li><li>Impossible travel</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Impossible travel is an offline sign-in risk detection.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Impossible travel flags two sign-ins from locations so far apart that travelling between them in that time is not possible. Anonymous IP detects proxies or Tor, leaked credentials detects published passwords, and password spray detects common passwords tried against many accounts.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Where do you investigate risky workload identities, such as a service principal with suspicious activity?</p>
@@ -648,7 +648,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which Global Secure Access feature lets you block access to categories of websites such as gambling by using web content filtering?</p>
       <ol class="sq-opts" type="A"><li>Microsoft Entra application proxy with pre-authentication</li><li>Web content filtering in Entra Internet Access policies</li><li>Conditional Access session controls for cloud apps</li><li>Universal tenant restrictions for external tenants</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Internet Access includes secure web gateway capabilities.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Web content filtering in Entra Internet Access policies blocks website categories (such as gambling) for traffic going through Global Secure Access. Application Proxy publishes internal apps, Conditional Access session controls act on cloud apps, and universal tenant restrictions limit access to other tenants.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=sc-300&amp;dom=2&amp;lang=en">Practice domain 2 for free →</a></div>
   </section>
