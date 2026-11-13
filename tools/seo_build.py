@@ -12,6 +12,7 @@ Idempotent: safe to run on every ship.
 import json, re, os, html, hashlib, datetime, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from seo_content import CATS, HOME_ES, HOME_EN
+from seo_articles import ARTICLES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
@@ -175,6 +176,9 @@ def other_exams_html(self_id):
     rows.append('    <div class="other-exams cat-links">')
     for c in CATS:
         rows.append(f'      <a href="/{c["es"]}.html"><span lang="es">{esc(c["h1_es"])}</span></a><a href="/en/{c["en"]}.html"><span lang="en">{esc(c["h1_en"])}</span></a>')
+    for a in ARTICLES:
+        if a['on'] == 'all' or self_id in a['on']:
+            rows.append(f'      <a href="/{a["es"]}.html"><span lang="es">{esc(a["h1_es"])}</span></a><a href="/en/{a["en"]}.html"><span lang="en">{esc(a["h1_en"])}</span></a>')
     rows.append('    </div>')
     return '\n'.join(rows)
 
@@ -528,6 +532,86 @@ def build_categories():
                 f'</body>\n</html>\n')
             wr(f'{c["es"]}.html' if lg == 'es' else f'en/{c["en"]}.html', page)
 
+# ---------------------------------------------------------------- articles
+# Editorial pages from seo_articles.ARTICLES, same shell as the category pages.
+def build_articles():
+    by = {e['id']: e for e in EXAMS}
+    for a in ARTICLES:
+        es_url, en_url = f'{SITE}/{a["es"]}.html', f'{SITE}/en/{a["en"]}.html'
+        exs = [by[i] for i in a['exams'] if i in by]
+        for lg in ('es', 'en'):
+            url = es_url if lg == 'es' else en_url
+            home = '/' if lg == 'es' else '/en/'
+            pre = '' if lg == 'es' else '/en'
+            if lg == 'es':
+                T = dict(crumb='Todos los exámenes', exams='Exámenes relacionados', faqh='Preguntas frecuentes', cta='Practicar gratis →',
+                         all='Ver todos los exámenes →', legal='Volver al catálogo', privacy='Privacidad', q='preguntas', eyebrow='Guía')
+            else:
+                T = dict(crumb='All exams', exams='Related exams', faqh='Frequently asked questions', cta='Practice for free →',
+                         all='See all exams →', legal='Back to the catalog', privacy='Privacy', q='questions', eyebrow='Guide')
+            app = f'/?exam={a["cta"]}&amp;lang={lg}' if a.get('cta') else f'/?lang={lg}'
+            lvl_i = 0 if lg == 'es' else 1
+            cards = '\n'.join(
+                f'      <a class="hub-card" href="{pre}/{e["id"]}.html">\n'
+                f'        <span class="hub-code">{e["code"]}</span>\n'
+                f'        <span class="hub-title">{esc(short_name(e))}</span>\n'
+                f'        <span class="hub-desc">{esc(e["desc_" + lg])}</span>\n'
+                f'        <span class="hub-meta">{LEVEL_NAME.get(e.get("level"), ("", ""))[lvl_i]} · {e["n"]} {T["q"]}</span>\n'
+                f'      </a>' for e in exs)
+            secs = []
+            for h2, items in a['sections_' + lg]:
+                body = '\n'.join(('    <ul>' + ''.join(f'<li>{esc(x)}</li>' for x in it) + '</ul>') if isinstance(it, list) else f'    <p>{esc(it)}</p>'
+                                 for it in items)
+                secs.append(f'  <section class="block prose">\n    <h2>{esc(h2)}</h2>\n{body}\n  </section>')
+            faq = a['faq_' + lg]
+            faq_html = '\n'.join(f'    <div class="faq-item">\n      <h3>{esc(q)}</h3>\n      <p>{esc(x)}</p>\n    </div>' for q, x in faq)
+            ld = {"@context": "https://schema.org", "@graph": [
+                org(),
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "EarnYourCert", "item": SITE + home},
+                    {"@type": "ListItem", "position": 2, "name": a['h1_' + lg], "item": url}]},
+                {"@type": "Article", "headline": a['h1_' + lg], "description": a['desc_' + lg], "url": url, "inLanguage": lg,
+                 "dateModified": TODAY, "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"},
+                 "image": SITE + '/seo-assets/og/home.jpg'},
+                {"@type": "FAQPage", "mainEntity": [
+                    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": x}} for q, x in faq]}]}
+            head = head_html(lg, a['title_' + lg], a['desc_' + lg], a['h1_' + lg] + ' · EarnYourCert',
+                             url, es_url, en_url, SITE + '/seo-assets/og/home.jpg', ld)
+            on_es, on_en = ('on', '') if lg == 'es' else ('', 'on')
+            cur_es, cur_en = ('page', 'false') if lg == 'es' else ('false', 'page')
+            page = (
+                f'<!DOCTYPE html>\n<html lang="{lg}" data-lang="{lg}" data-fixed-lang="{lg}">\n{head}\n<body>\n'
+                f'<div class="wrap">\n'
+                f'  <div class="topbar">\n'
+                f'    <a class="brand" href="{home}">\n'
+                f'      <span class="logo"><img src="/icon.svg" alt="" width="44" height="44"></span>\n'
+                f'      <span class="name">EarnYourCert</span>\n'
+                f'    </a>\n'
+                f'    <div class="toggle" id="langToggle" role="group" aria-label="Idioma / Language">\n'
+                f'      <a href="/{a["es"]}.html" hreflang="es" class="{on_es}" aria-current="{cur_es}">ES</a>\n'
+                f'      <a href="/en/{a["en"]}.html" hreflang="en" class="{on_en}" aria-current="{cur_en}">EN</a>\n'
+                f'    </div>\n'
+                f'  </div>\n'
+                f'  <div class="crumb"><a href="{home}">{T["crumb"]}</a> › {esc(a["h1_" + lg])}</div>\n\n'
+                f'  <div class="hero">\n'
+                f'    <div class="eyebrow">{T["eyebrow"]}</div>\n'
+                f'    <h1>{esc(a["h1_" + lg])}</h1>\n'
+                f'    <p>{esc(a["desc_" + lg])}</p>\n'
+                f'    <div class="cta"><a class="btn btn-primary" href="{app}">{T["cta"]}</a></div>\n'
+                f'  </div>\n\n'
+                + '\n\n'.join(secs) + '\n\n'
+                f'  <section class="block">\n    <h2>{T["exams"]}</h2>\n    <div class="hub-grid">\n{cards}\n    </div>\n'
+                f'    <p><a href="{home}">{T["all"]}</a></p>\n  </section>\n\n'
+                f'  <section class="block">\n    <h2>{T["faqh"]}</h2>\n{faq_html}\n  </section>\n\n'
+                f'  <footer>\n'
+                f'    <div class="legal"><a href="{home}">{T["legal"]}</a> · <a href="/privacy.html">{T["privacy"]}</a></div>\n'
+                f'  </footer>\n'
+                f'</div>\n'
+                f'<script src="/seo-assets/landing.js?v={CSS_V}"></script>\n'
+                f'</body>\n</html>\n')
+            wr(f'{a["es"]}.html' if lg == 'es' else f'en/{a["en"]}.html', page)
+
+
 # ---------------------------------------------------------------- domain pages
 # One page per exam domain (ES + EN) for the exams people actually use: what the domain covers,
 # its weight, and 8 worked sample questions that appear on no other page. CTA opens domain practice.
@@ -800,7 +884,7 @@ def build_home():
         paras = ''.join(f'<p lang="{lg}">{esc(p)}</p>' for p in lgd['paras'])
         faqs = ''.join(f'<div class="seo-faq" lang="{lg}"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for q, a in lgd['faq'])
         return f'<h2 lang="{lg}">{esc(lgd["h2"])}</h2>{paras}{faqs}'
-    cats = ' · '.join(f'<a href="/{c["es"]}.html" lang="es">{esc(c["h1_es"])}</a><a href="/en/{c["en"]}.html" lang="en">{esc(c["h1_en"])}</a>' for c in CATS)
+    cats = ' · '.join(f'<a href="/{c["es"]}.html" lang="es">{esc(c["h1_es"])}</a><a href="/en/{c["en"]}.html" lang="en">{esc(c["h1_en"])}</a>' for c in CATS + ARTICLES)
     intro_block = (f'<!--seo-intro-->\n    <div class="seo-intro">{intro(HOME_ES, "es")}{intro(HOME_EN, "en")}'
                    f'<p class="seo-cats">{cats}</p></div>\n<!--/seo-intro-->\n')
     s = re.sub(r'<!--seo-intro-->.*?<!--/seo-intro-->\n', '', s, flags=re.S)
@@ -833,6 +917,8 @@ def build_sitemap():
         rows += url(f'{SITE}/{e["id"]}.html', f'{SITE}/en/{e["id"]}.html', '0.9', 'weekly')
     for c in CATS:
         rows += url(f'{SITE}/{c["es"]}.html', f'{SITE}/en/{c["en"]}.html', '0.8', 'weekly')
+    for a in ARTICLES:
+        rows += url(f'{SITE}/{a["es"]}.html', f'{SITE}/en/{a["en"]}.html', '0.8', 'monthly')
     for e in ORDERED:
         if e['id'] in DOMAIN_EXAMS:
             for d in e['domains']:
@@ -857,6 +943,7 @@ if __name__ == '__main__':
     build_qotd()
     build_en_hub()
     build_categories()
+    build_articles()
     build_home()
     build_sitemap()
     print(f'SEO build: {len(EXAMS)} exams x2 langs, en hub, home, sitemap ({TOTAL} questions)')
