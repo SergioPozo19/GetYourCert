@@ -154,11 +154,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Streaming returns tokens as they are produced."
+       "text": "Correct answer. Streaming returns tokens as they are generated, so the user sees text appear and the app feels faster. Region, temperature or a longer system prompt do not change how the response is delivered."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Streaming returns tokens as they are produced."
+       "text": "Streaming returns tokens as they are generated, so the user sees text appear and the app feels faster. Region, temperature or a longer system prompt do not change how the response is delivered."
       }
      }
     },
@@ -214,11 +214,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Clients reference the agent in the project."
+       "text": "Correct answer. A client app needs the project endpoint, credentials and the agent ID to use an existing agent. It does not need a new deployment per request or the admin password, and an agent color does not exist."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Clients reference the agent in the project."
+       "text": "A client app needs the project endpoint, credentials and the agent ID to use an existing agent. It does not need a new deployment per request or the admin password, and an agent color does not exist."
       }
      }
     },
@@ -274,11 +274,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Audio-capable models accept spoken prompts."
+       "text": "Correct answer. For a multimodal model to answer a spoken question you send the audio as input, and it must be a model that supports audio. A screenshot, a spreadsheet or client-side text-to-speech alone do not deliver the spoken question."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Audio-capable models accept spoken prompts."
+       "text": "For a multimodal model to answer a spoken question you send the audio as input, and it must be a model that supports audio. A screenshot, a spreadsheet or client-side text-to-speech alone do not deliver the spoken question."
       }
      }
     },
@@ -334,11 +334,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Speech translation can output translated text and speech."
+       "text": "Correct answer. Azure Speech translation can return translated text and, combined with text-to-speech, speak it in the other language during the conversation. Key phrases, text analytics or recognition without translation do not speak another language."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Speech translation can output translated text and speech."
+       "text": "Azure Speech translation can return translated text and, combined with text-to-speech, speak it in the other language during the conversation. Key phrases, text analytics or recognition without translation do not speak another language."
       }
      }
     },
@@ -394,11 +394,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Recognition language settings improve accuracy."
+       "text": "Correct answer. The recognizer is configured with the expected recognition language(s) (or automatic language identification among candidates), which improves accuracy. A PDF template, temperature or a custom neural voice do not affect recognition."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Recognition language settings improve accuracy."
+       "text": "The recognizer is configured with the expected recognition language(s) (or automatic language identification among candidates), which improves accuracy. A PDF template, temperature or a custom neural voice do not affect recognition."
       }
      }
     },
@@ -454,11 +454,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Disclosure is part of transparency."
+       "text": "Correct answer. Disclosing that the image was AI-generated is a transparency practice. Hiding its origin, removing captions or skipping review goes against responsible AI."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Disclosure is part of transparency."
+       "text": "Disclosing that the image was AI-generated is a transparency practice. Hiding its origin, removing captions or skipping review goes against responsible AI."
       }
      }
     },
@@ -514,11 +514,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Facial identification is a sensitive, limited-access scenario."
+       "text": "Correct answer. Identifying people from facial images is a sensitive, limited-access scenario: you must apply and be approved by Microsoft. It is not open to everyone, not free by default, and consent is still required."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Facial identification is a sensitive, limited-access scenario."
+       "text": "Identifying people from facial images is a sensitive, limited-access scenario: you must apply and be approved by Microsoft. It is not open to everyone, not free by default, and consent is still required."
       }
      }
     },
@@ -574,11 +574,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Results contain fields as structured JSON."
+       "text": "Correct answer. Extracted field values are returned as structured JSON, easy to process in the app. A bitmap, a zipped spreadsheet or a WAV file are not the result format."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Results contain fields as structured JSON."
+       "text": "Extracted field values are returned as structured JSON, easy to process in the app. A bitmap, a zipped spreadsheet or a WAV file are not the result format."
       }
      }
     }
@@ -613,42 +613,42 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Which option shows model output progressively as it is generated, improving perceived responsiveness?</p>
       <ol class="sq-opts" type="A"><li>Streaming responses</li><li>Provisioned region</li><li>Larger temperature</li><li>Longer system prompt</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Streaming returns tokens as they are produced.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Streaming returns tokens as they are generated, so the user sees text appear and the app feels faster. Region, temperature or a longer system prompt do not change how the response is delivered.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> A client app wants to use an agent already created in a Foundry project. What does it typically need?</p>
       <ol class="sq-opts" type="A"><li>A new model deployment created for every single request</li><li>The admin password of the Foundry portal and the subscription ID</li><li>Only the agent&#x27;s color</li><li>The project endpoint, credentials and the agent ID</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Clients reference the agent in the project.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> A client app needs the project endpoint, credentials and the agent ID to use an existing agent. It does not need a new deployment per request or the admin password, and an agent color does not exist.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Which technique lets a multimodal model respond directly to a user&#x27;s spoken question?</p>
       <ol class="sq-opts" type="A"><li>Sending the audio as input to a model that supports audio</li><li>Sending a screenshot of the question only</li><li>Using a spreadsheet to store the audio</li><li>Using only text-to-speech on the client</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Audio-capable models accept spoken prompts.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> For a multimodal model to answer a spoken question you send the audio as input, and it must be a model that supports audio. A screenshot, a spreadsheet or client-side text-to-speech alone do not deliver the spoken question.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which Azure Speech capability lets an app speak translated output in another language during a conversation?</p>
       <ol class="sq-opts" type="A"><li>Key phrase extraction with summarization</li><li>Language detection followed by text analytics</li><li>Speech recognition without translation</li><li>Speech translation with text-to-speech</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Speech translation can output translated text and speech.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Azure Speech translation can return translated text and, combined with text-to-speech, speak it in the other language during the conversation. Key phrases, text analytics or recognition without translation do not speak another language.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> An app must support users who speak several languages. What should the speech recognizer be configured with?</p>
       <ol class="sq-opts" type="A"><li>A PDF template for the generated transcripts</li><li>The expected recognition language(s)</li><li>A higher temperature so it adapts to each user</li><li>A custom neural voice for every supported user</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Recognition language settings improve accuracy.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> The recognizer is configured with the expected recognition language(s) (or automatic language identification among candidates), which improves accuracy. A PDF template, temperature or a custom neural voice do not affect recognition.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> A generated image will be published on a website. Which practice supports transparency?</p>
       <ol class="sq-opts" type="A"><li>Hide the origin of the image</li><li>Remove all captions</li><li>Disclose that the image was AI-generated</li><li>Avoid any review</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Disclosure is part of transparency.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Disclosing that the image was AI-generated is a transparency practice. Hiding its origin, removing captions or skipping review goes against responsible AI.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which policy applies to using AI to identify people from facial images?</p>
       <ol class="sq-opts" type="A"><li>It is unrestricted for every Azure customer by default</li><li>It never needs consent when images are stored in Azure</li><li>Access is restricted and needs approval</li><li>It is always free</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Facial identification is a sensitive, limited-access scenario.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Identifying people from facial images is a sensitive, limited-access scenario: you must apply and be approved by Microsoft. It is not open to everyone, not free by default, and consent is still required.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> In an extraction result, in which format are the extracted field values typically returned?</p>
       <ol class="sq-opts" type="A"><li>A bitmap image</li><li>A zipped spreadsheet only</li><li>A WAV file</li><li>Structured JSON</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Results contain fields as structured JSON.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Extracted field values are returned as structured JSON, easy to process in the app. A bitmap, a zipped spreadsheet or a WAV file are not the result format.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=ai-901&amp;dom=2&amp;lang=en">Practice domain 2 for free →</a></div>
   </section>
