@@ -17,7 +17,7 @@ from seo_articles import ARTICLES
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
 TODAY = datetime.date.today().isoformat()
-CSS_V = '8'
+CSS_V = '9'
 
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8', newline='').read()
