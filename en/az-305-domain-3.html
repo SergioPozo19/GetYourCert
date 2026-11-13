@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. LTR keeps full backups for up to 10 years."
+       "text": "Correct answer. Long-term retention (LTR) policies keep weekly, monthly or yearly full backups for up to 10 years. Read scale-out, auto-pause and data masking have nothing to do with retention."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "LTR keeps full backups for up to 10 years."
+       "text": "Long-term retention (LTR) policies keep weekly, monthly or yearly full backups for up to 10 years. Read scale-out, auto-pause and data masking have nothing to do with retention."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Recovery plans orchestrate multi-tier failover."
+       "text": "Correct answer. A Site Recovery recovery plan groups VMs, sets the order they fail over (for example, database first, then web) and adds scripts or manual steps. It doesn't create budgets, delete the primary VMs or permanently change DNS names."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Recovery plans orchestrate multi-tier failover."
+       "text": "A Site Recovery recovery plan groups VMs, sets the order they fail over (for example, database first, then web) and adds scripts or manual steps. It doesn't create budgets, delete the primary VMs or permanently change DNS names."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Application-consistent backups protect transactional data."
+       "text": "Correct answer. Azure Backup takes application-consistent snapshots using VSS on Windows or pre/post scripts on Linux, protecting transactional data. Disk snapshots without VSS are only crash-consistent, and Azure Files snapshots or Site Recovery crash-consistent points don't meet this."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Application-consistent backups protect transactional data."
+       "text": "Azure Backup takes application-consistent snapshots using VSS on Windows or pre/post scripts on Linux, protecting transactional data. Disk snapshots without VSS are only crash-consistent, and Azure Files snapshots or Site Recovery crash-consistent points don't meet this."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Enhanced policies support multiple backups per day (every 4, 6, 8 or 12 hours)."
+       "text": "Correct answer. The enhanced backup policy allows several backups per day (every 4, 6, 8 or 12 hours), meeting a 4-hour RPO. The archive tier is for long retention, soft delete protects deleted backups, and the standard policy takes only one daily backup."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Enhanced policies support multiple backups per day (every 4, 6, 8 or 12 hours)."
+       "text": "The enhanced backup policy allows several backups per day (every 4, 6, 8 or 12 hours), meeting a 4-hour RPO. The archive tier is for long retention, soft delete protects deleted backups, and the standard policy takes only one daily backup."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Standard SKU supports zones and a 99.99% SLA."
+       "text": "Correct answer. Standard Load Balancer with a zone-redundant frontend spreads traffic across VMs in several zones and has a 99.99% SLA. The Basic SKU doesn't support zones, a public IP on one VM doesn't balance, and DNS round-robin doesn't check health."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Standard SKU supports zones and a 99.99% SLA."
+       "text": "Standard Load Balancer with a zone-redundant frontend spreads traffic across VMs in several zones and has a 99.99% SLA. The Basic SKU doesn't support zones, a public IP on one VM doesn't balance, and DNS round-robin doesn't check health."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Each stamp hosts a subset of tenants, so a failure affects only that stamp."
+       "text": "Correct answer. The deployment stamps pattern deploys identical, independent units, each serving some of the customers, so a failure only affects one stamp. A single shared global database concentrates risk, and sidecar and gateway aggregation solve other problems."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Each stamp hosts a subset of tenants, so a failure affects only that stamp."
+       "text": "The deployment stamps pattern deploys identical, independent units, each serving some of the customers, so a failure only affects one stamp. A single shared global database concentrates risk, and sidecar and gateway aggregation solve other problems."
       }
      }
     }
@@ -622,27 +622,27 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Compliance requires yearly SQL database backups to be retained for 10 years. Which feature supports this?</p>
       <ol class="sq-opts" type="A"><li>Read scale-out</li><li>Serverless auto-pause</li><li>Long-term retention (LTR) policies</li><li>Dynamic data masking</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> LTR keeps full backups for up to 10 years.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Long-term retention (LTR) policies keep weekly, monthly or yearly full backups for up to 10 years. Read scale-out, auto-pause and data masking have nothing to do with retention.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> A recovery plan in Azure Site Recovery allows you to do what?</p>
       <ol class="sq-opts" type="A"><li>Create budgets for the recovered VMs</li><li>Delete the primary VMs automatically after a successful failover</li><li>Change DNS names permanently for every protected application</li><li>Group VMs, order their failover and add scripts or manual steps</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Recovery plans orchestrate multi-tier failover.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> A Site Recovery recovery plan groups VMs, sets the order they fail over (for example, database first, then web) and adds scripts or manual steps. It doesn&#x27;t create budgets, delete the primary VMs or permanently change DNS names.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Which service provides application-consistent snapshots of Azure VMs during backups?</p>
       <ol class="sq-opts" type="A"><li>Azure Backup with VSS (Windows) or pre/post scripts (Linux)</li><li>Managed disk snapshots taken on a schedule without using VSS</li><li>Azure Files share snapshots</li><li>Azure Site Recovery crash-consistent recovery points only</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Application-consistent backups protect transactional data.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Azure Backup takes application-consistent snapshots using VSS on Windows or pre/post scripts on Linux, protecting transactional data. Disk snapshots without VSS are only crash-consistent, and Azure Files snapshots or Site Recovery crash-consistent points don&#x27;t meet this.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> A critical VM needs several backups per day with an RPO of 4 hours. Which Azure Backup option fits?</p>
       <ol class="sq-opts" type="A"><li>Enhanced backup policy with hourly frequency</li><li>Archive tier for all recovery points older than one hour</li><li>Soft delete</li><li>Standard policy with one daily backup</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Enhanced policies support multiple backups per day (every 4, 6, 8 or 12 hours).</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The enhanced backup policy allows several backups per day (every 4, 6, 8 or 12 hours), meeting a 4-hour RPO. The archive tier is for long retention, soft delete protects deleted backups, and the standard policy takes only one daily backup.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Which load balancer SKU feature distributes traffic across VMs in multiple availability zones with zone redundancy?</p>
       <ol class="sq-opts" type="A"><li>Basic Load Balancer</li><li>Standard Load Balancer with zone-redundant frontend</li><li>A single public IP assigned to a VM</li><li>A DNS round-robin record only</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Standard SKU supports zones and a 99.99% SLA.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Standard Load Balancer with a zone-redundant frontend spreads traffic across VMs in several zones and has a 99.99% SLA. The Basic SKU doesn&#x27;t support zones, a public IP on one VM doesn&#x27;t balance, and DNS round-robin doesn&#x27;t check health.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Which recovery tier gives the lowest RTO for a critical VM workload across regions?</p>
@@ -657,7 +657,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> A SaaS platform must scale to many customers and limit the blast radius of failures by deploying identical independent units. Which pattern fits?</p>
       <ol class="sq-opts" type="A"><li>Deployment stamps</li><li>A single global database shared by every customer</li><li>Sidecar</li><li>Gateway aggregation</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Each stamp hosts a subset of tenants, so a failure affects only that stamp.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The deployment stamps pattern deploys identical, independent units, each serving some of the customers, so a failure only affects one stamp. A single shared global database concentrates risk, and sidecar and gateway aggregation solve other problems.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=az-305&amp;dom=3&amp;lang=en">Practice domain 3 for free →</a></div>
   </section>

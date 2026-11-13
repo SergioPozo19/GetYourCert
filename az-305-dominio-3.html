@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. LTR conserva copias completas hasta 10 años."
+       "text": "Respuesta correcta. Las directivas de retención a largo plazo (LTR) guardan copias completas semanales, mensuales o anuales hasta 10 años. El escalado horizontal de lectura, la pausa automática y el enmascaramiento de datos no tienen nada que ver con la retención."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "LTR conserva copias completas hasta 10 años."
+       "text": "Las directivas de retención a largo plazo (LTR) guardan copias completas semanales, mensuales o anuales hasta 10 años. El escalado horizontal de lectura, la pausa automática y el enmascaramiento de datos no tienen nada que ver con la retención."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Los planes de recuperación orquestan la conmutación por error de varios niveles."
+       "text": "Respuesta correcta. Un plan de recuperación de Site Recovery agrupa VM, fija el orden en que conmutan (por ejemplo, primero la base de datos y luego la web) y añade scripts o pasos manuales. No crea presupuestos, no borra las VM principales ni cambia nombres DNS para siempre."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Los planes de recuperación orquestan la conmutación por error de varios niveles."
+       "text": "Un plan de recuperación de Site Recovery agrupa VM, fija el orden en que conmutan (por ejemplo, primero la base de datos y luego la web) y añade scripts o pasos manuales. No crea presupuestos, no borra las VM principales ni cambia nombres DNS para siempre."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las copias coherentes con la aplicación protegen los datos transaccionales."
+       "text": "Respuesta correcta. Azure Backup hace instantáneas coherentes con la aplicación usando VSS en Windows o scripts previos y posteriores en Linux, protegiendo datos transaccionales. Las instantáneas de disco sin VSS son coherentes solo ante bloqueo, y las de Azure Files o los puntos de Site Recovery no cumplen esto."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las copias coherentes con la aplicación protegen los datos transaccionales."
+       "text": "Azure Backup hace instantáneas coherentes con la aplicación usando VSS en Windows o scripts previos y posteriores en Linux, protegiendo datos transaccionales. Las instantáneas de disco sin VSS son coherentes solo ante bloqueo, y las de Azure Files o los puntos de Site Recovery no cumplen esto."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las directivas mejoradas admiten varias copias al día (cada 4, 6, 8 o 12 horas)."
+       "text": "Respuesta correcta. La directiva de copia mejorada permite varias copias al día (cada 4, 6, 8 o 12 horas), lo que cumple un RPO de 4 horas. El nivel de archivo es para retención larga, la eliminación temporal protege copias borradas y la directiva estándar solo hace una copia diaria."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las directivas mejoradas admiten varias copias al día (cada 4, 6, 8 o 12 horas)."
+       "text": "La directiva de copia mejorada permite varias copias al día (cada 4, 6, 8 o 12 horas), lo que cumple un RPO de 4 horas. El nivel de archivo es para retención larga, la eliminación temporal protege copias borradas y la directiva estándar solo hace una copia diaria."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. La SKU Estándar admite zonas y un SLA del 99,99 %."
+       "text": "Respuesta correcta. El Load Balancer Standard con un front-end con redundancia de zona reparte tráfico entre VM de varias zonas y tiene un SLA del 99,99%. El SKU Basic no admite zonas, una IP pública en una VM no equilibra y un registro DNS round-robin no comprueba el estado."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "La SKU Estándar admite zonas y un SLA del 99,99 %."
+       "text": "El Load Balancer Standard con un front-end con redundancia de zona reparte tráfico entre VM de varias zonas y tiene un SLA del 99,99%. El SKU Basic no admite zonas, una IP pública en una VM no equilibra y un registro DNS round-robin no comprueba el estado."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Cada sello aloja un subconjunto de inquilinos, así que un fallo solo afecta a ese sello."
+       "text": "Respuesta correcta. El patrón de sellos de implementación (deployment stamps) despliega unidades idénticas e independientes, cada una con parte de los clientes, así que un fallo solo afecta a un sello. Una base de datos global compartida concentra el riesgo, y los patrones sidecar y agregación de puertas de enlace resuelven otros problemas."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Cada sello aloja un subconjunto de inquilinos, así que un fallo solo afecta a ese sello."
+       "text": "El patrón de sellos de implementación (deployment stamps) despliega unidades idénticas e independientes, cada una con parte de los clientes, así que un fallo solo afecta a un sello. Una base de datos global compartida concentra el riesgo, y los patrones sidecar y agregación de puertas de enlace resuelven otros problemas."
       }
      }
     }
@@ -622,27 +622,27 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> El cumplimiento exige conservar durante 10 años copias de seguridad anuales de la base de datos SQL. ¿Qué característica lo admite?</p>
       <ol class="sq-opts" type="A"><li>Escalabilidad horizontal de lectura</li><li>Pausa automática sin servidor</li><li>Directivas de retención a largo plazo (LTR)</li><li>Enmascaramiento dinámico de datos</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> LTR conserva copias completas hasta 10 años.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Las directivas de retención a largo plazo (LTR) guardan copias completas semanales, mensuales o anuales hasta 10 años. El escalado horizontal de lectura, la pausa automática y el enmascaramiento de datos no tienen nada que ver con la retención.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> ¿Qué permite hacer un plan de recuperación en Azure Site Recovery?</p>
       <ol class="sq-opts" type="A"><li>Crear presupuestos para las VM recuperadas</li><li>Eliminar automáticamente las VM principales tras una conmutación correcta</li><li>Cambiar permanentemente los nombres DNS de cada aplicación protegida</li><li>Agrupar VM, ordenar su conmutación y agregar scripts o pasos manuales</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Los planes de recuperación orquestan la conmutación por error de varios niveles.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Un plan de recuperación de Site Recovery agrupa VM, fija el orden en que conmutan (por ejemplo, primero la base de datos y luego la web) y añade scripts o pasos manuales. No crea presupuestos, no borra las VM principales ni cambia nombres DNS para siempre.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> ¿Qué servicio proporciona instantáneas coherentes con la aplicación de las VM de Azure durante las copias de seguridad?</p>
       <ol class="sq-opts" type="A"><li>Azure Backup con VSS (Windows) o scripts previos y posteriores (Linux)</li><li>Instantáneas de discos administrados programadas sin usar VSS</li><li>Instantáneas de recursos compartidos de Azure Files</li><li>Solo puntos de recuperación coherentes con bloqueos de Site Recovery</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Las copias coherentes con la aplicación protegen los datos transaccionales.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Azure Backup hace instantáneas coherentes con la aplicación usando VSS en Windows o scripts previos y posteriores en Linux, protegiendo datos transaccionales. Las instantáneas de disco sin VSS son coherentes solo ante bloqueo, y las de Azure Files o los puntos de Site Recovery no cumplen esto.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Una VM crítica necesita varias copias al día con un RPO de 4 horas. ¿Qué opción de Azure Backup encaja?</p>
       <ol class="sq-opts" type="A"><li>Directiva de copia mejorada con frecuencia por horas</li><li>Nivel de archivo para todos los puntos de recuperación de más de una hora</li><li>Eliminación temporal</li><li>Directiva estándar con una copia diaria</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Las directivas mejoradas admiten varias copias al día (cada 4, 6, 8 o 12 horas).</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> La directiva de copia mejorada permite varias copias al día (cada 4, 6, 8 o 12 horas), lo que cumple un RPO de 4 horas. El nivel de archivo es para retención larga, la eliminación temporal protege copias borradas y la directiva estándar solo hace una copia diaria.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> ¿Qué característica de la SKU de equilibrador de carga distribuye el tráfico entre VM de varias zonas de disponibilidad con redundancia de zona?</p>
       <ol class="sq-opts" type="A"><li>Basic Load Balancer</li><li>Standard Load Balancer con front-end con redundancia de zona</li><li>Una sola IP pública asignada a una VM</li><li>Solo un registro DNS round-robin</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> La SKU Estándar admite zonas y un SLA del 99,99 %.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: B.</strong> El Load Balancer Standard con un front-end con redundancia de zona reparte tráfico entre VM de varias zonas y tiene un SLA del 99,99%. El SKU Basic no admite zonas, una IP pública en una VM no equilibra y un registro DNS round-robin no comprueba el estado.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> ¿Qué nivel de recuperación da el menor RTO para una carga crítica de VM entre regiones?</p>
@@ -657,7 +657,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Una plataforma SaaS debe escalar a muchos clientes y limitar el impacto de los fallos implementando unidades idénticas e independientes. ¿Qué patrón encaja?</p>
       <ol class="sq-opts" type="A"><li>Sellos de implementación</li><li>Una única base de datos global compartida por todos los clientes</li><li>Sidecar</li><li>Agregación de puerta de enlace</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Cada sello aloja un subconjunto de inquilinos, así que un fallo solo afecta a ese sello.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> El patrón de sellos de implementación (deployment stamps) despliega unidades idénticas e independientes, cada una con parte de los clientes, así que un fallo solo afecta a un sello. Una base de datos global compartida concentra el riesgo, y los patrones sidecar y agregación de puertas de enlace resuelven otros problemas.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=az-305&amp;dom=3&amp;lang=es">Practicar el dominio 3 gratis →</a></div>
   </section>

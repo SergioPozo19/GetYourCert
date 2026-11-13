@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Elastic tools help manage many databases and shard maps."
+       "text": "Correct answer. To scale a SaaS app by tenant, Azure SQL supports sharding with elastic database tools and elastic pools. Backups per tenant don't scale anything, Table Storage with one partition is the opposite, and a large VM doesn't spread the load."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Elastic tools help manage many databases and shard maps."
+       "text": "To scale a SaaS app by tenant, Azure SQL supports sharding with elastic database tools and elastic pools. Backups per tenant don't scale anything, Table Storage with one partition is the opposite, and a large VM doesn't spread the load."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Compatible APIs reduce migration effort."
+       "text": "Correct answer. Azure Cosmos DB for MongoDB is compatible with the MongoDB protocol, so the app migrates with few changes. Gremlin is for graphs, Azure SQL is relational, and Table Storage doesn't speak MongoDB."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Compatible APIs reduce migration effort."
+       "text": "Azure Cosmos DB for MongoDB is compatible with the MongoDB protocol, so the app migrates with few changes. Gremlin is for graphs, Azure SQL is relational, and Table Storage doesn't speak MongoDB."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Table Storage is a low-cost NoSQL key-value store."
+       "text": "Correct answer. Azure Table Storage is the cheapest NoSQL key-value store for billions of simple entities without rich queries. SQL Business Critical and Cosmos DB with 50,000 RU/s are much more expensive, and NetApp Files is file storage."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Table Storage is a low-cost NoSQL key-value store."
+       "text": "Azure Table Storage is the cheapest NoSQL key-value store for billions of simple entities without rich queries. SQL Business Critical and Cosmos DB with 50,000 RU/s are much more expensive, and NetApp Files is file storage."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. CMK lets organizations control the key lifecycle."
+       "text": "Correct answer. Customer-managed keys encrypt the storage account with keys you control in Azure Key Vault, including their lifecycle. Anonymous access, sharing account keys or public access have nothing to do with encryption and are risks."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "CMK lets organizations control the key lifecycle."
+       "text": "Customer-managed keys encrypt the storage account with keys you control in Azure Key Vault, including their lifecycle. Anonymous access, sharing account keys or public access have nothing to do with encryption and are risks."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Stream Analytics provides serverless stream processing."
+       "text": "Correct answer. Azure Stream Analytics runs real-time SQL-like queries over streams from Event Hubs or IoT Hub. Event Hubs only ingests, Data Lake Storage stores, and Data Factory orchestrates batches."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Stream Analytics provides serverless stream processing."
+       "text": "Azure Stream Analytics runs real-time SQL-like queries over streams from Event Hubs or IoT Hub. Event Hubs only ingests, Data Lake Storage stores, and Data Factory orchestrates batches."
       }
      }
     },
@@ -622,22 +622,22 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> A multitenant SaaS app must scale out across many databases by tenant. Which pattern and tooling does Azure SQL support?</p>
       <ol class="sq-opts" type="A"><li>Azure Backup for each tenant database</li><li>Azure Table Storage with one partition</li><li>Sharding with elastic database tools and elastic pools</li><li>A single large VM running SQL Server</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Elastic tools help manage many databases and shard maps.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> To scale a SaaS app by tenant, Azure SQL supports sharding with elastic database tools and elastic pools. Backups per tenant don&#x27;t scale anything, Table Storage with one partition is the opposite, and a large VM doesn&#x27;t spread the load.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Which Cosmos DB API should you choose to migrate an existing MongoDB application with minimal code changes?</p>
       <ol class="sq-opts" type="A"><li>Azure Cosmos DB for Gremlin</li><li>Azure SQL</li><li>Table storage only</li><li>Azure Cosmos DB for MongoDB</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Compatible APIs reduce migration effort.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Azure Cosmos DB for MongoDB is compatible with the MongoDB protocol, so the app migrates with few changes. Gremlin is for graphs, Azure SQL is relational, and Table Storage doesn&#x27;t speak MongoDB.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> A solution stores billions of simple key-value entities with low cost and does not need rich queries. Which service is the cheapest fit?</p>
       <ol class="sq-opts" type="A"><li>Azure Table Storage</li><li>Azure SQL Business Critical</li><li>Cosmos DB with 50,000 RU/s</li><li>Azure NetApp Files</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Table Storage is a low-cost NoSQL key-value store.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Azure Table Storage is the cheapest NoSQL key-value store for billions of simple entities without rich queries. SQL Business Critical and Cosmos DB with 50,000 RU/s are much more expensive, and NetApp Files is file storage.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which storage account setting helps ensure data is encrypted with keys you control in Azure Key Vault?</p>
       <ol class="sq-opts" type="A"><li>Allowing anonymous blob access</li><li>Sharing the account keys with the team</li><li>Enabling public network access</li><li>Customer-managed keys for storage encryption</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> CMK lets organizations control the key lifecycle.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Customer-managed keys encrypt the storage account with keys you control in Azure Key Vault, including their lifecycle. Anonymous access, sharing account keys or public access have nothing to do with encryption and are risks.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Data is accessed about once a quarter, must stay online and be kept at least 90 days per tier change, at lower cost than Cool. Which blob tier fits?</p>
@@ -652,7 +652,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which service runs real-time SQL-like queries over streaming data from Event Hubs or IoT Hub?</p>
       <ol class="sq-opts" type="A"><li>Azure Event Hubs</li><li>Azure Data Lake Storage</li><li>Azure Stream Analytics</li><li>Azure Data Factory</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Stream Analytics provides serverless stream processing.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Azure Stream Analytics runs real-time SQL-like queries over streams from Event Hubs or IoT Hub. Event Hubs only ingests, Data Lake Storage stores, and Data Factory orchestrates batches.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> A global app needs a relational database with multi-region writes and low latency. Which Azure service should you evaluate?</p>

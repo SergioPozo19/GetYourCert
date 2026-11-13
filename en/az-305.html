@@ -246,11 +246,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Managed identities remove secrets from configuration."
+       "text": "Correct answer. A managed identity with Microsoft Entra authentication on the database lets the VM connect with no password in its configuration. Anonymous access is insecure, and putting the password in environment variables or app settings still exposes a secret."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Managed identities remove secrets from configuration."
+       "text": "A managed identity with Microsoft Entra authentication on the database lets the VM connect with no password in its configuration. Anonymous access is insecure, and putting the password in environment variables or app settings still exposes a secret."
       }
      }
     },
@@ -306,11 +306,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Always Encrypted keeps keys outside the database engine."
+       "text": "Correct answer. Always Encrypted encrypts specific columns on the client and the keys never reach the engine, so even the database admin can't see the values. Dynamic data masking only hides values in queries, TDE encrypts at rest, and a public endpoint protects nothing."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Always Encrypted keeps keys outside the database engine."
+       "text": "Always Encrypted encrypts specific columns on the client and the keys never reach the engine, so even the database admin can't see the values. Dynamic data masking only hides values in queries, TDE encrypts at rest, and a public endpoint protects nothing."
       }
      }
     },
@@ -366,11 +366,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. A poor key creates hot partitions."
+       "text": "Correct answer. A good partition key has many distinct values (high cardinality) to spread requests and storage evenly. A boolean or constant value creates hot partitions, and the string length doesn't matter."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "A poor key creates hot partitions."
+       "text": "A good partition key has many distinct values (high cardinality) to spread requests and storage evenly. A boolean or constant value creates hot partitions, and the string length doesn't matter."
       }
      }
     },
@@ -426,11 +426,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. The workload-aware backup supports log backups and PITR."
+       "text": "Correct answer. Azure Backup for SQL Server in Azure VMs is workload-aware: it takes log backups every 15 minutes and supports point-in-time restore. VM snapshots have no log backups, local-disk backups are lost with the VM, and Site Recovery isn't a backup."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "The workload-aware backup supports log backups and PITR."
+       "text": "Azure Backup for SQL Server in Azure VMs is workload-aware: it takes log backups every 15 minutes and supports point-in-time restore. VM snapshots have no log backups, local-disk backups are lost with the VM, and Site Recovery isn't a backup."
       }
      }
     },
@@ -486,11 +486,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Application Gateway is a regional web traffic load balancer."
+       "text": "Correct answer. Azure Application Gateway is a regional layer-7 load balancer with URL-based routing, TLS termination and optional WAF. Load Balancer is layer 4, Traffic Manager is global DNS, and NAT Gateway provides outbound internet."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Application Gateway is a regional web traffic load balancer."
+       "text": "Azure Application Gateway is a regional layer-7 load balancer with URL-based routing, TLS termination and optional WAF. Load Balancer is layer 4, Traffic Manager is global DNS, and NAT Gateway provides outbound internet."
       }
      }
     }
@@ -720,7 +720,7 @@
       <details class="sq-ans">
         <summary><span lang="en">Show answer</span></summary>
         
-        <p lang="en"><strong>Correct answer: A.</strong> Managed identities remove secrets from configuration.</p>
+        <p lang="en"><strong>Correct answer: A.</strong> A managed identity with Microsoft Entra authentication on the database lets the VM connect with no password in its configuration. Anonymous access is insecure, and putting the password in environment variables or app settings still exposes a secret.</p>
       </details>
     </div>
     <div class="sq">
@@ -735,7 +735,7 @@
       <details class="sq-ans">
         <summary><span lang="en">Show answer</span></summary>
         
-        <p lang="en"><strong>Correct answer: B.</strong> Always Encrypted keeps keys outside the database engine.</p>
+        <p lang="en"><strong>Correct answer: B.</strong> Always Encrypted encrypts specific columns on the client and the keys never reach the engine, so even the database admin can&#x27;t see the values. Dynamic data masking only hides values in queries, TDE encrypts at rest, and a public endpoint protects nothing.</p>
       </details>
     </div>
     <div class="sq">
@@ -750,7 +750,7 @@
       <details class="sq-ans">
         <summary><span lang="en">Show answer</span></summary>
         
-        <p lang="en"><strong>Correct answer: C.</strong> A poor key creates hot partitions.</p>
+        <p lang="en"><strong>Correct answer: C.</strong> A good partition key has many distinct values (high cardinality) to spread requests and storage evenly. A boolean or constant value creates hot partitions, and the string length doesn&#x27;t matter.</p>
       </details>
     </div>
     <div class="sq">
@@ -765,7 +765,7 @@
       <details class="sq-ans">
         <summary><span lang="en">Show answer</span></summary>
         
-        <p lang="en"><strong>Correct answer: A.</strong> The workload-aware backup supports log backups and PITR.</p>
+        <p lang="en"><strong>Correct answer: A.</strong> Azure Backup for SQL Server in Azure VMs is workload-aware: it takes log backups every 15 minutes and supports point-in-time restore. VM snapshots have no log backups, local-disk backups are lost with the VM, and Site Recovery isn&#x27;t a backup.</p>
       </details>
     </div>
     <div class="sq">
@@ -780,7 +780,7 @@
       <details class="sq-ans">
         <summary><span lang="en">Show answer</span></summary>
         
-        <p lang="en"><strong>Correct answer: C.</strong> Application Gateway is a regional web traffic load balancer.</p>
+        <p lang="en"><strong>Correct answer: C.</strong> Azure Application Gateway is a regional layer-7 load balancer with URL-based routing, TLS termination and optional WAF. Load Balancer is layer 4, Traffic Manager is global DNS, and NAT Gateway provides outbound internet.</p>
       </details>
     </div>
     <div class="cta sq-cta">

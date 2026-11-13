@@ -246,11 +246,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las identidades administradas eliminan los secretos de la configuración."
+       "text": "Respuesta correcta. Una identidad administrada con autenticación de Microsoft Entra en la base de datos permite a la VM conectarse sin ninguna contraseña en la configuración. El acceso anónimo es inseguro, y guardar la contraseña en variables de entorno o en la configuración de la aplicación sigue exponiendo un secreto."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las identidades administradas eliminan los secretos de la configuración."
+       "text": "Una identidad administrada con autenticación de Microsoft Entra en la base de datos permite a la VM conectarse sin ninguna contraseña en la configuración. El acceso anónimo es inseguro, y guardar la contraseña en variables de entorno o en la configuración de la aplicación sigue exponiendo un secreto."
       }
      }
     },
@@ -306,11 +306,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Always Encrypted mantiene las claves fuera del motor de base de datos."
+       "text": "Respuesta correcta. Always Encrypted cifra columnas concretas en el cliente y las claves nunca llegan al motor, así que ni el administrador de la base de datos ve los valores. El enmascaramiento dinámico solo oculta en las consultas, TDE cifra el disco y un punto de conexión público no protege nada."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Always Encrypted mantiene las claves fuera del motor de base de datos."
+       "text": "Always Encrypted cifra columnas concretas en el cliente y las claves nunca llegan al motor, así que ni el administrador de la base de datos ve los valores. El enmascaramiento dinámico solo oculta en las consultas, TDE cifra el disco y un punto de conexión público no protege nada."
       }
      }
     },
@@ -366,11 +366,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Una clave deficiente crea particiones calientes."
+       "text": "Respuesta correcta. Una buena clave de partición tiene muchos valores distintos (alta cardinalidad) para repartir solicitudes y almacenamiento de forma uniforme. Un valor booleano o constante crea particiones calientes, y la longitud del texto no importa."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Una clave deficiente crea particiones calientes."
+       "text": "Una buena clave de partición tiene muchos valores distintos (alta cardinalidad) para repartir solicitudes y almacenamiento de forma uniforme. Un valor booleano o constante crea particiones calientes, y la longitud del texto no importa."
       }
      }
     },
@@ -426,11 +426,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. La copia de seguridad que conoce la carga admite copias de registros y PITR."
+       "text": "Respuesta correcta. Azure Backup para SQL Server en VM de Azure entiende la carga de trabajo: hace copias de registro cada 15 minutos y permite restaurar a un momento dado. Las instantáneas de VM no tienen copias de registro, las copias a disco local se pierden con la VM y Site Recovery no es una copia de seguridad."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "La copia de seguridad que conoce la carga admite copias de registros y PITR."
+       "text": "Azure Backup para SQL Server en VM de Azure entiende la carga de trabajo: hace copias de registro cada 15 minutos y permite restaurar a un momento dado. Las instantáneas de VM no tienen copias de registro, las copias a disco local se pierden con la VM y Site Recovery no es una copia de seguridad."
       }
      }
     },
@@ -486,11 +486,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Application Gateway es un equilibrador de carga de tráfico web regional."
+       "text": "Respuesta correcta. Azure Application Gateway es un equilibrador regional de capa 7 con enrutamiento por URL, terminación TLS y WAF opcional. Load Balancer es de capa 4, Traffic Manager es DNS global y NAT Gateway da salida a internet."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Application Gateway es un equilibrador de carga de tráfico web regional."
+       "text": "Azure Application Gateway es un equilibrador regional de capa 7 con enrutamiento por URL, terminación TLS y WAF opcional. Load Balancer es de capa 4, Traffic Manager es DNS global y NAT Gateway da salida a internet."
       }
      }
     }
@@ -719,7 +719,7 @@
       </ol>
       <details class="sq-ans">
         <summary><span lang="es">Ver respuesta</span></summary>
-        <p lang="es"><strong>Respuesta correcta: A.</strong> Las identidades administradas eliminan los secretos de la configuración.</p>
+        <p lang="es"><strong>Respuesta correcta: A.</strong> Una identidad administrada con autenticación de Microsoft Entra en la base de datos permite a la VM conectarse sin ninguna contraseña en la configuración. El acceso anónimo es inseguro, y guardar la contraseña en variables de entorno o en la configuración de la aplicación sigue exponiendo un secreto.</p>
         
       </details>
     </div>
@@ -734,7 +734,7 @@
       </ol>
       <details class="sq-ans">
         <summary><span lang="es">Ver respuesta</span></summary>
-        <p lang="es"><strong>Respuesta correcta: B.</strong> Always Encrypted mantiene las claves fuera del motor de base de datos.</p>
+        <p lang="es"><strong>Respuesta correcta: B.</strong> Always Encrypted cifra columnas concretas en el cliente y las claves nunca llegan al motor, así que ni el administrador de la base de datos ve los valores. El enmascaramiento dinámico solo oculta en las consultas, TDE cifra el disco y un punto de conexión público no protege nada.</p>
         
       </details>
     </div>
@@ -749,7 +749,7 @@
       </ol>
       <details class="sq-ans">
         <summary><span lang="es">Ver respuesta</span></summary>
-        <p lang="es"><strong>Respuesta correcta: C.</strong> Una clave deficiente crea particiones calientes.</p>
+        <p lang="es"><strong>Respuesta correcta: C.</strong> Una buena clave de partición tiene muchos valores distintos (alta cardinalidad) para repartir solicitudes y almacenamiento de forma uniforme. Un valor booleano o constante crea particiones calientes, y la longitud del texto no importa.</p>
         
       </details>
     </div>
@@ -764,7 +764,7 @@
       </ol>
       <details class="sq-ans">
         <summary><span lang="es">Ver respuesta</span></summary>
-        <p lang="es"><strong>Respuesta correcta: A.</strong> La copia de seguridad que conoce la carga admite copias de registros y PITR.</p>
+        <p lang="es"><strong>Respuesta correcta: A.</strong> Azure Backup para SQL Server en VM de Azure entiende la carga de trabajo: hace copias de registro cada 15 minutos y permite restaurar a un momento dado. Las instantáneas de VM no tienen copias de registro, las copias a disco local se pierden con la VM y Site Recovery no es una copia de seguridad.</p>
         
       </details>
     </div>
@@ -779,7 +779,7 @@
       </ol>
       <details class="sq-ans">
         <summary><span lang="es">Ver respuesta</span></summary>
-        <p lang="es"><strong>Respuesta correcta: C.</strong> Application Gateway es un equilibrador de carga de tráfico web regional.</p>
+        <p lang="es"><strong>Respuesta correcta: C.</strong> Azure Application Gateway es un equilibrador regional de capa 7 con enrutamiento por URL, terminación TLS y WAF opcional. Load Balancer es de capa 4, Traffic Manager es DNS global y NAT Gateway da salida a internet.</p>
         
       </details>
     </div>

@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las herramientas elásticas ayudan a administrar muchas bases de datos y mapas de particiones."
+       "text": "Respuesta correcta. Para escalar una aplicación SaaS por inquilino, Azure SQL admite el particionamiento (sharding) con las herramientas de bases de datos elásticas y grupos elásticos. Hacer copias por inquilino no escala, Table Storage con una partición es lo contrario y una VM grande no reparte la carga."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las herramientas elásticas ayudan a administrar muchas bases de datos y mapas de particiones."
+       "text": "Para escalar una aplicación SaaS por inquilino, Azure SQL admite el particionamiento (sharding) con las herramientas de bases de datos elásticas y grupos elásticos. Hacer copias por inquilino no escala, Table Storage con una partición es lo contrario y una VM grande no reparte la carga."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Las API compatibles reducen el esfuerzo de migración."
+       "text": "Respuesta correcta. Azure Cosmos DB for MongoDB es compatible con el protocolo de MongoDB, así que la aplicación se migra con pocos cambios. Gremlin es para grafos, Azure SQL es relacional y Table Storage no habla MongoDB."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Las API compatibles reducen el esfuerzo de migración."
+       "text": "Azure Cosmos DB for MongoDB es compatible con el protocolo de MongoDB, así que la aplicación se migra con pocos cambios. Gremlin es para grafos, Azure SQL es relacional y Table Storage no habla MongoDB."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Table Storage es un almacén clave-valor NoSQL de bajo coste."
+       "text": "Respuesta correcta. Azure Table Storage es el almacén NoSQL de clave-valor más barato para miles de millones de entidades simples sin consultas complejas. SQL Business Critical y Cosmos DB con 50.000 RU/s son mucho más caros, y NetApp Files es almacenamiento de archivos."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Table Storage es un almacén clave-valor NoSQL de bajo coste."
+       "text": "Azure Table Storage es el almacén NoSQL de clave-valor más barato para miles de millones de entidades simples sin consultas complejas. SQL Business Critical y Cosmos DB con 50.000 RU/s son mucho más caros, y NetApp Files es almacenamiento de archivos."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. CMK permite a las organizaciones controlar el ciclo de vida de las claves."
+       "text": "Respuesta correcta. Las claves administradas por el cliente cifran la cuenta de almacenamiento con claves que controlas en Azure Key Vault, incluido su ciclo de vida. El acceso anónimo, compartir las claves de cuenta o el acceso público no tienen que ver con el cifrado y son riesgos."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "CMK permite a las organizaciones controlar el ciclo de vida de las claves."
+       "text": "Las claves administradas por el cliente cifran la cuenta de almacenamiento con claves que controlas en Azure Key Vault, incluido su ciclo de vida. El acceso anónimo, compartir las claves de cuenta o el acceso público no tienen que ver con el cifrado y son riesgos."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Respuesta correcta. Stream Analytics proporciona procesamiento de streaming sin servidor."
+       "text": "Respuesta correcta. Azure Stream Analytics ejecuta consultas parecidas a SQL en tiempo real sobre flujos de Event Hubs o IoT Hub. Event Hubs solo ingiere, Data Lake Storage almacena y Data Factory orquesta lotes."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Stream Analytics proporciona procesamiento de streaming sin servidor."
+       "text": "Azure Stream Analytics ejecuta consultas parecidas a SQL en tiempo real sobre flujos de Event Hubs o IoT Hub. Event Hubs solo ingiere, Data Lake Storage almacena y Data Factory orquesta lotes."
       }
      }
     },
@@ -622,22 +622,22 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Una aplicación SaaS multiinquilino debe escalar horizontalmente entre muchas bases de datos por inquilino. ¿Qué patrón y herramientas admite Azure SQL?</p>
       <ol class="sq-opts" type="A"><li>Azure Backup para cada base de datos de inquilino</li><li>Azure Table Storage con una sola partición</li><li>Particionamiento horizontal (sharding) con herramientas de bases de datos elásticas y grupos elásticos</li><li>Una sola VM grande con SQL Server</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Las herramientas elásticas ayudan a administrar muchas bases de datos y mapas de particiones.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Para escalar una aplicación SaaS por inquilino, Azure SQL admite el particionamiento (sharding) con las herramientas de bases de datos elásticas y grupos elásticos. Hacer copias por inquilino no escala, Table Storage con una partición es lo contrario y una VM grande no reparte la carga.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> ¿Qué API de Cosmos DB debes elegir para migrar una aplicación MongoDB existente con cambios mínimos de código?</p>
       <ol class="sq-opts" type="A"><li>Azure Cosmos DB for Gremlin</li><li>Azure SQL</li><li>Solo Table Storage</li><li>Azure Cosmos DB for MongoDB</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Las API compatibles reducen el esfuerzo de migración.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Azure Cosmos DB for MongoDB es compatible con el protocolo de MongoDB, así que la aplicación se migra con pocos cambios. Gremlin es para grafos, Azure SQL es relacional y Table Storage no habla MongoDB.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Una solución almacena miles de millones de entidades simples clave-valor con bajo coste y no necesita consultas avanzadas. ¿Qué servicio es el más barato?</p>
       <ol class="sq-opts" type="A"><li>Azure Table Storage</li><li>Azure SQL Business Critical</li><li>Cosmos DB con 50 000 RU/s</li><li>Azure NetApp Files</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Table Storage es un almacén clave-valor NoSQL de bajo coste.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: A.</strong> Azure Table Storage es el almacén NoSQL de clave-valor más barato para miles de millones de entidades simples sin consultas complejas. SQL Business Critical y Cosmos DB con 50.000 RU/s son mucho más caros, y NetApp Files es almacenamiento de archivos.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> ¿Qué configuración de la cuenta de almacenamiento ayuda a garantizar que los datos se cifran con claves que controlas en Azure Key Vault?</p>
       <ol class="sq-opts" type="A"><li>Permitir el acceso anónimo a blobs</li><li>Compartir las claves de la cuenta con el equipo</li><li>Habilitar el acceso a la red pública</li><li>Claves administradas por el cliente para el cifrado del almacenamiento</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> CMK permite a las organizaciones controlar el ciclo de vida de las claves.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: D.</strong> Las claves administradas por el cliente cifran la cuenta de almacenamiento con claves que controlas en Azure Key Vault, incluido su ciclo de vida. El acceso anónimo, compartir las claves de cuenta o el acceso público no tienen que ver con el cifrado y son riesgos.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Los datos se consultan una vez al trimestre, deben seguir en línea y mantenerse al menos 90 días por cambio de nivel, con menor coste que Esporádico. ¿Qué nivel de blob encaja?</p>
@@ -652,7 +652,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> ¿Qué servicio ejecuta consultas en tiempo real tipo SQL sobre datos de streaming de Event Hubs o IoT Hub?</p>
       <ol class="sq-opts" type="A"><li>Azure Event Hubs</li><li>Azure Data Lake Storage</li><li>Azure Stream Analytics</li><li>Azure Data Factory</li></ol>
-      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Stream Analytics proporciona procesamiento de streaming sin servidor.</p></details>
+      <details class="sq-ans"><summary>Ver respuesta</summary><p><strong>Respuesta correcta: C.</strong> Azure Stream Analytics ejecuta consultas parecidas a SQL en tiempo real sobre flujos de Event Hubs o IoT Hub. Event Hubs solo ingiere, Data Lake Storage almacena y Data Factory orquesta lotes.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Una app global necesita una base de datos con escrituras en varias regiones y baja latencia. ¿Qué servicio de Azure debe evaluar?</p>

@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Log search alerts are suited to complex conditions across logs."
+       "text": "Correct answer. A log search alert rule runs a KQL query and fires when the results meet a condition, good for complex conditions. Metric alerts measure numeric thresholds, budget alerts spend, and Service Health alerts Azure incidents."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Log search alerts are suited to complex conditions across logs."
+       "text": "A log search alert rule runs a KQL query and fires when the results meet a condition, good for complex conditions. Metric alerts measure numeric thresholds, budget alerts spend, and Service Health alerts Azure incidents."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. PIM supports Azure RBAC role eligibility and activation."
+       "text": "Correct answer. Privileged Identity Management makes Azure roles such as Owner eligible and activated just in time, with approval and for a limited time. Access reviews recertify, custom roles define permissions, and Lighthouse delegates management across tenants."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "PIM supports Azure RBAC role eligibility and activation."
+       "text": "Privileged Identity Management makes Azure roles such as Owner eligible and activated just in time, with approval and for a limited time. Access reviews recertify, custom roles define permissions, and Lighthouse delegates management across tenants."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. B2B lets partners authenticate with their own identity providers."
+       "text": "Correct answer. Microsoft Entra B2B lets you invite the partner's employees as guests who sign in with their own corporate credentials. Local accounts duplicate identities, Domain Services is for legacy protocols, and anonymous access isn't secure."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "B2B lets partners authenticate with their own identity providers."
+       "text": "Microsoft Entra B2B lets you invite the partner's employees as guests who sign in with their own corporate credentials. Local accounts duplicate identities, Domain Services is for legacy protocols, and anonymous access isn't secure."
       }
      }
     },
@@ -458,11 +458,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Federation removes secret management."
+       "text": "Correct answer. A service connection with workload identity federation lets the pipeline get Entra tokens without storing any secret. Anonymous access, a long-lived secret in the repo or a shared password are insecure."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Federation removes secret management."
+       "text": "A service connection with workload identity federation lets the pipeline get Entra tokens without storing any secret. Anonymous access, a long-lived secret in the repo or a shared password are insecure."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. DeployIfNotExists remediates by deploying related resources."
+       "text": "Correct answer. The DeployIfNotExists effect automatically deploys a related resource, such as a diagnostic setting, when it's missing. Append adds fields, Deny blocks, and AuditIfNotExists only reports without deploying anything."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "DeployIfNotExists remediates by deploying related resources."
+       "text": "The DeployIfNotExists effect automatically deploys a related resource, such as a diagnostic setting, when it's missing. Append adds fields, Deny blocks, and AuditIfNotExists only reports without deploying anything."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Subscriptions act as boundaries for access, policy and billing."
+       "text": "Correct answer. The recommendation is separate subscriptions under management groups with their own policies: a subscription is a boundary for access, policy and billing. One resource group or a shared subscription with tags don't isolate, and a shared VM mixes environments."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Subscriptions act as boundaries for access, policy and billing."
+       "text": "The recommendation is separate subscriptions under management groups with their own policies: a subscription is a boundary for access, policy and billing. One resource group or a shared subscription with tags don't isolate, and a shared VM mixes environments."
       }
      }
     }
@@ -622,7 +622,7 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> Which alert type runs a KQL query on logs and fires when the results meet a condition?</p>
       <ol class="sq-opts" type="A"><li>Log search alert rule</li><li>Metric alert</li><li>Budget alert</li><li>Service Health alert</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Log search alerts are suited to complex conditions across logs.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> A log search alert rule runs a KQL query and fires when the results meet a condition, good for complex conditions. Metric alerts measure numeric thresholds, budget alerts spend, and Service Health alerts Azure incidents.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> Personal data must be removed from logs before they are stored in the Log Analytics workspace. What should you design?</p>
@@ -637,27 +637,27 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which service provides just-in-time, approval-based activation of Azure resource roles such as Owner?</p>
       <ol class="sq-opts" type="A"><li>Microsoft Entra access reviews</li><li>Azure RBAC custom roles</li><li>Azure Lighthouse</li><li>Microsoft Entra Privileged Identity Management</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> PIM supports Azure RBAC role eligibility and activation.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Privileged Identity Management makes Azure roles such as Owner eligible and activated just in time, with approval and for a limited time. Access reviews recertify, custom roles define permissions, and Lighthouse delegates management across tenants.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> A partner organization&#x27;s employees need access to an internal app using their own corporate credentials. Which approach should you recommend?</p>
       <ol class="sq-opts" type="A"><li>Create local accounts for each partner user</li><li>Microsoft Entra B2B collaboration with guest users</li><li>Use Microsoft Entra Domain Services</li><li>Publish it with Application Proxy and anonymous access</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> B2B lets partners authenticate with their own identity providers.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Microsoft Entra B2B lets you invite the partner&#x27;s employees as guests who sign in with their own corporate credentials. Local accounts duplicate identities, Domain Services is for legacy protocols, and anonymous access isn&#x27;t secure.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Which approach should be used so that an Azure DevOps pipeline deploys to Azure without storing secrets?</p>
       <ol class="sq-opts" type="A"><li>Anonymous access</li><li>A long-lived client secret in the repo</li><li>A shared admin password</li><li>A service connection using workload identity federation</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Federation removes secret management.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> A service connection with workload identity federation lets the pipeline get Entra tokens without storing any secret. Anonymous access, a long-lived secret in the repo or a shared password are insecure.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which Azure Policy effect automatically deploys a resource such as a diagnostic setting when a matching resource is created?</p>
       <ol class="sq-opts" type="A"><li>Append</li><li>Deny</li><li>DeployIfNotExists</li><li>AuditIfNotExists only</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> DeployIfNotExists remediates by deploying related resources.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> The DeployIfNotExists effect automatically deploys a related resource, such as a diagnostic setting, when it&#x27;s missing. Append adds fields, Deny blocks, and AuditIfNotExists only reports without deploying anything.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which resource organization design is recommended to separate production and non-production workloads with different governance?</p>
       <ol class="sq-opts" type="A"><li>Separate subscriptions under management groups with their own policies</li><li>One resource group for all workloads, with tags that mark each environment</li><li>One shared VM for every environment</li><li>Tags only on one shared subscription, with a naming convention per environment</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> Subscriptions act as boundaries for access, policy and billing.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: A.</strong> The recommendation is separate subscriptions under management groups with their own policies: a subscription is a boundary for access, policy and billing. One resource group or a shared subscription with tags don&#x27;t isolate, and a shared VM mixes environments.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=az-305&amp;dom=1&amp;lang=en">Practice domain 1 for free →</a></div>
   </section>

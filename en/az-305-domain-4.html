@@ -158,11 +158,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. AKS gives managed Kubernetes with full API access."
+       "text": "Correct answer. Azure Kubernetes Service gives managed Kubernetes with full API access, so it supports custom operators and a service mesh. App Service, Container Instances and Functions don't expose Kubernetes."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "AKS gives managed Kubernetes with full API access."
+       "text": "Azure Kubernetes Service gives managed Kubernetes with full API access, so it supports custom operators and a service mesh. App Service, Container Instances and Functions don't expose Kubernetes."
       }
      }
     },
@@ -218,11 +218,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Data Box is a physical appliance for offline bulk transfer."
+       "text": "Correct answer. With 80 TB and a slow link, Azure Data Box fits: a physical device for offline transfer. AzCopy over the internet or a VPN would take too long, and File Sync syncs servers rather than doing an initial bulk load."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Data Box is a physical appliance for offline bulk transfer."
+       "text": "With 80 TB and a slow link, Azure Data Box fits: a physical device for offline transfer. AzCopy over the internet or a VPN would take too long, and File Sync syncs servers rather than doing an initial bulk load."
       }
      }
     },
@@ -278,11 +278,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Queues absorb spikes and decouple components."
+       "text": "Correct answer. Queue-based load leveling puts a queue between producers and consumers to absorb spikes so the downstream service works at its own pace. Synchronous coupling passes spikes through, a shared database couples components, and file copies don't buffer."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Queues absorb spikes and decouple components."
+       "text": "Queue-based load leveling puts a queue between producers and consumers to absorb spikes so the downstream service works at its own pace. Synchronous coupling passes spikes through, a shared database couples components, and file copies don't buffer."
       }
      }
     },
@@ -338,11 +338,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Azure Migrate provides discovery, assessment and migration tools."
+       "text": "Correct answer. Azure Migrate discovers and assesses on-premises servers, databases and web apps, tells you whether they're ready for Azure and estimates cost. Advisor recommends on what's already in Azure, Site Recovery replicates, and Database Migration Service migrates databases but doesn't do the overall assessment."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Azure Migrate provides discovery, assessment and migration tools."
+       "text": "Azure Migrate discovers and assesses on-premises servers, databases and web apps, tells you whether they're ready for Azure and estimates cost. Advisor recommends on what's already in Azure, Site Recovery replicates, and Database Migration Service migrates databases but doesn't do the overall assessment."
       }
      }
     },
@@ -398,11 +398,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Rearchitecting yields maximum cloud benefits with higher effort."
+       "text": "Correct answer. Rearchitect or rebuild changes the app to use cloud-native services such as microservices and serverless; it gives the most benefit for the most effort. Retire or replace with SaaS, retain on-premises or rehost don't rework the architecture."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Rearchitecting yields maximum cloud benefits with higher effort."
+       "text": "Rearchitect or rebuild changes the app to use cloud-native services such as microservices and serverless; it gives the most benefit for the most effort. Retire or replace with SaaS, retain on-premises or rehost don't rework the architecture."
       }
      }
     },
@@ -458,11 +458,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. ExpressRoute offers private connectivity via a provider."
+       "text": "Correct answer. Azure ExpressRoute is a private, dedicated connection between your on-premises network and Azure through a provider, without using the internet. VPN Gateway encrypts traffic but goes over the internet, DNS resolves names, and Bastion gives VM access."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "ExpressRoute offers private connectivity via a provider."
+       "text": "Azure ExpressRoute is a private, dedicated connection between your on-premises network and Azure through a provider, without using the internet. VPN Gateway encrypts traffic but goes over the internet, DNS resolves names, and Bastion gives VM access."
       }
      }
     },
@@ -518,11 +518,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Accelerated networking uses SR-IOV to reduce latency and CPU use."
+       "text": "Correct answer. Accelerated networking uses SR-IOV so VM traffic bypasses the host's virtual switch, giving more throughput, lower latency and less CPU. An availability set gives resilience, a proximity placement group places VMs close together, and Premium SSD v2 disks improve storage."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Accelerated networking uses SR-IOV to reduce latency and CPU use."
+       "text": "Accelerated networking uses SR-IOV so VM traffic bypasses the host's virtual switch, giving more throughput, lower latency and less CPU. An availability set gives resilience, a proximity placement group places VMs close together, and Premium SSD v2 disks improve storage."
       }
      }
     },
@@ -578,11 +578,11 @@
       "encodingFormat": "text/html",
       "comment": {
        "@type": "Comment",
-       "text": "Correct answer. Bastion connects over TLS from the portal."
+       "text": "Correct answer. Azure Bastion gives secure RDP/SSH access to VMs from the portal over TLS, with no public IPs on the VMs or open management ports. Azure Firewall filters traffic, NAT Gateway provides outbound access, and DDoS Protection mitigates attacks."
       },
       "answerExplanation": {
        "@type": "Comment",
-       "text": "Bastion connects over TLS from the portal."
+       "text": "Azure Bastion gives secure RDP/SSH access to VMs from the portal over TLS, with no public IPs on the VMs or open management ports. Azure Firewall filters traffic, NAT Gateway provides outbound access, and DDoS Protection mitigates attacks."
       }
      }
     }
@@ -622,42 +622,42 @@
     <div class="sq">
       <p class="sq-q"><span class="sq-n">1.</span> A team needs full Kubernetes control, custom operators and service mesh integration. Which service should they choose?</p>
       <ol class="sq-opts" type="A"><li>Azure App Service</li><li>Azure Kubernetes Service (AKS)</li><li>Azure Container Instances</li><li>Azure Functions</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> AKS gives managed Kubernetes with full API access.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Azure Kubernetes Service gives managed Kubernetes with full API access, so it supports custom operators and a service mesh. App Service, Container Instances and Functions don&#x27;t expose Kubernetes.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">2.</span> You must transfer 80 TB of data to Azure over a slow link. Which option is most suitable?</p>
       <ol class="sq-opts" type="A"><li>AzCopy over the internet</li><li>A VPN with more bandwidth</li><li>Azure Data Box</li><li>Azure File Sync only</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Data Box is a physical appliance for offline bulk transfer.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> With 80 TB and a slow link, Azure Data Box fits: a physical device for offline transfer. AzCopy over the internet or a VPN would take too long, and File Sync syncs servers rather than doing an initial bulk load.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">3.</span> Which pattern protects a downstream service from being overloaded by buffering requests between producers and consumers?</p>
       <ol class="sq-opts" type="A"><li>Synchronous coupling</li><li>Shared database</li><li>Queue-based load leveling</li><li>Direct file copy</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Queues absorb spikes and decouple components.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Queue-based load leveling puts a queue between producers and consumers to absorb spikes so the downstream service works at its own pace. Synchronous coupling passes spikes through, a shared database couples components, and file copies don&#x27;t buffer.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">4.</span> Which service discovers and assesses on-premises servers, databases and web apps for migration readiness and cost estimates?</p>
       <ol class="sq-opts" type="A"><li>Azure Advisor</li><li>Azure Migrate</li><li>Azure Site Recovery</li><li>Azure Database Migration Service</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Azure Migrate provides discovery, assessment and migration tools.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Azure Migrate discovers and assesses on-premises servers, databases and web apps, tells you whether they&#x27;re ready for Azure and estimates cost. Advisor recommends on what&#x27;s already in Azure, Site Recovery replicates, and Database Migration Service migrates databases but doesn&#x27;t do the overall assessment.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">5.</span> Which migration strategy re-architects an application to use cloud-native services such as microservices and serverless?</p>
       <ol class="sq-opts" type="A"><li>Retire and replace with SaaS</li><li>Rearchitect or rebuild</li><li>Retain on-premises for now</li><li>Rehost on Azure VMs (lift and shift)</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Rearchitecting yields maximum cloud benefits with higher effort.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Rearchitect or rebuild changes the app to use cloud-native services such as microservices and serverless; it gives the most benefit for the most effort. Retire or replace with SaaS, retain on-premises or rehost don&#x27;t rework the architecture.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">6.</span> Which service provides a private, dedicated connection between on-premises and Azure that does not traverse the public internet?</p>
       <ol class="sq-opts" type="A"><li>Azure DNS</li><li>Azure VPN Gateway over the internet</li><li>Azure ExpressRoute</li><li>Azure Bastion</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> ExpressRoute offers private connectivity via a provider.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: C.</strong> Azure ExpressRoute is a private, dedicated connection between your on-premises network and Azure through a provider, without using the internet. VPN Gateway encrypts traffic but goes over the internet, DNS resolves names, and Bastion gives VM access.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">7.</span> Which networking option improves VM network throughput by bypassing the host virtual switch?</p>
       <ol class="sq-opts" type="A"><li>Availability set</li><li>Accelerated networking</li><li>Proximity placement groups</li><li>Premium SSD v2 disks</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Accelerated networking uses SR-IOV to reduce latency and CPU use.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: B.</strong> Accelerated networking uses SR-IOV so VM traffic bypasses the host&#x27;s virtual switch, giving more throughput, lower latency and less CPU. An availability set gives resilience, a proximity placement group places VMs close together, and Premium SSD v2 disks improve storage.</p></details>
     </div>
     <div class="sq">
       <p class="sq-q"><span class="sq-n">8.</span> Which service provides secure RDP/SSH access to VMs without exposing public IPs or opening management ports?</p>
       <ol class="sq-opts" type="A"><li>Azure Firewall</li><li>Azure NAT Gateway</li><li>Azure DDoS Protection</li><li>Azure Bastion</li></ol>
-      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Bastion connects over TLS from the portal.</p></details>
+      <details class="sq-ans"><summary>Show answer</summary><p><strong>Correct answer: D.</strong> Azure Bastion gives secure RDP/SSH access to VMs from the portal over TLS, with no public IPs on the VMs or open management ports. Azure Firewall filters traffic, NAT Gateway provides outbound access, and DDoS Protection mitigates attacks.</p></details>
     </div>
     <div class="cta sq-cta"><a class="btn btn-primary" href="/?exam=az-305&amp;dom=4&amp;lang=en">Practice domain 4 for free →</a></div>
   </section>
