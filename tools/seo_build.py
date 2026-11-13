@@ -16,7 +16,7 @@ from seo_content import CATS, HOME_ES, HOME_EN
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://earnyourcert.com'
 TODAY = datetime.date.today().isoformat()
-CSS_V = '7'
+CSS_V = '8'
 
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8', newline='').read()
@@ -342,7 +342,7 @@ def build_en_hub():
         lv = LEVEL_NAME.get(e.get('level'), ('', ''))[1]
         ret = ''
         if e.get('retiresOn'):
-            ret = '<span class="hub-ret">Retires Nov 30, 2026</span>'
+            ret = '<span class="hub-ret" data-retires="2026-12-01T06:00:00Z" data-after="Retired Nov 30, 2026">Retires Nov 30, 2026</span>'
         cards.append(f'''      <a class="hub-card" href="/en/{e['id']}.html">
         <span class="hub-code">{e['code']}</span>
         <span class="hub-title">{esc(short_name(e))}</span>

@@ -52,6 +52,10 @@
   }
   applyTheme();
   function enhance(){
+    // avisos de retirada: tras la fecha (data-retires) se muestra el texto en pasado (data-after)
+    document.querySelectorAll('[data-retires]').forEach(function(el){
+      if(Date.now()>=Date.parse(el.getAttribute('data-retires')))el.innerHTML=el.getAttribute('data-after');
+    });
     // barras de peso por dominio
     document.querySelectorAll('.dom-row').forEach(function(r){
       var w=r.querySelector('.dw'); if(!w||r.querySelector('.dbar'))return;
