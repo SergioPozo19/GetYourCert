@@ -550,6 +550,90 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de SC-200: qué entra y cómo prepararlo</h2>
+    
+    <p class="guide-intro" lang="es">SC-200 es el examen de analista de operaciones de seguridad. Trabaja con Microsoft Defender XDR y Microsoft Sentinel: configurar la detección, investigar incidentes, responder y cazar amenazas con KQL.</p>
+    
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Entorno de operaciones de seguridad (40-45%)</h3>
+        
+        <ul>
+          <li lang="es">Área de trabajo de Sentinel, conectores de datos y tablas</li>
+          
+          <li lang="es">Reglas de análisis: programadas, casi en tiempo real, Microsoft Security y Fusion</li>
+          
+          <li lang="es">Configuración de Defender para punto de conexión: incorporación, grupos de dispositivos y reglas ASR</li>
+          
+          <li lang="es">Planes de Defender for Cloud y conectores multinube</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Respuesta a incidentes (35-40%)</h3>
+        
+        <ul>
+          <li lang="es">Cola de incidentes de Defender XDR, alertas y correlación</li>
+          
+          <li lang="es">Investigación y respuesta automatizadas (AIR) y acciones del centro de acciones</li>
+          
+          <li lang="es">Reglas de automatización y cuadernos de estrategias (Logic Apps) en Sentinel</li>
+          
+          <li lang="es">Aislar dispositivos, recopilar paquetes y respuesta en vivo</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Caza de amenazas (20-25%)</h3>
+        
+        <ul>
+          <li lang="es">KQL: where, summarize, join, project y extend</li>
+          
+          <li lang="es">Búsqueda avanzada en Defender XDR y reglas de detección personalizadas</li>
+          
+          <li lang="es">Búsquedas, marcadores, livestream y cuadernos en Sentinel</li>
+          
+          <li lang="es">Inteligencia sobre amenazas e indicadores</li>
+          
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Sentinel: área de trabajo, conectores y reglas de análisis.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Defender XDR y Defender para punto de conexión: incorporación y configuración. Es el dominio con más peso.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Incidentes, investigación automatizada, reglas de automatización y cuadernos de estrategias.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">KQL a diario: escribe consultas de búsqueda avanzada hasta que te salgan solas.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Simulacros completos cronometrados hasta superar el 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Regla de automatización frente a cuaderno de estrategias</h3>
+      
+      <p lang="es">La regla de automatización hace acciones sencillas (asignar, etiquetar, cerrar) y puede lanzar un cuaderno; el cuaderno es una Logic App para lógica compleja o llamadas a otros sistemas.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Regla programada frente a NRT</h3>
+      
+      <p lang="es">La programada se ejecuta cada cierto intervalo sobre una ventana de datos; la casi en tiempo real se ejecuta cada minuto con consultas más limitadas.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">summarize frente a project</h3>
+      
+      <p lang="es">project elige o renombra columnas; summarize agrupa filas y calcula agregados como count() o dcount().</p>
+      
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     <h2 lang="es">Preguntas de ejemplo de SC-200</h2>

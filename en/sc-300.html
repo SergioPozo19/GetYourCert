@@ -557,6 +557,110 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">SC-300 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">SC-300 is the identity and access administrator exam with Microsoft Entra. Questions ask for the most secure option that meets the requirement, and often mix Conditional Access, authentication methods and governance.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">User identities (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Users, dynamic groups, administrative units and group-based licensing</li>
+          
+          <li lang="en">Hybrid identity: Entra Connect, Cloud Sync, PHS, PTA and federation</li>
+          
+          <li lang="en">External identities: B2B, cross-tenant collaboration and External ID</li>
+          
+          <li lang="en">Custom domains and tenant settings</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Authentication and access (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Authentication methods: Authenticator, FIDO2, passkeys, Windows Hello and TAP</li>
+          
+          <li lang="en">Conditional Access policies, conditions, controls and report-only mode</li>
+          
+          <li lang="en">Identity Protection: user and sign-in risk</li>
+          
+          <li lang="en">Global Secure Access and private app access</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Workload identities (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">App registrations, service principals and consent</li>
+          
+          <li lang="en">System-assigned and user-assigned managed identities</li>
+          
+          <li lang="en">Enterprise apps, SAML and OIDC SSO, and Application Proxy</li>
+          
+          <li lang="en">Defender for Cloud Apps for cloud apps</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Identity governance (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Entitlement management: access packages and catalogs</li>
+          
+          <li lang="en">Access reviews</li>
+          
+          <li lang="en">Privileged Identity Management (PIM) for roles and groups</li>
+          
+          <li lang="en">Lifecycle workflows and audit logs</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Users, groups, hybrid identity and external identities.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Authentication methods and Conditional Access. This is the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">Apps: registrations, consent, managed identities and SSO.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Governance: access packages, reviews, PIM and lifecycle workflows.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Full timed mock exams until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">App registration vs enterprise application</h3>
+      
+      <p lang="en">The app registration defines the app (once, in its home tenant); the enterprise application is its service principal in each tenant where it is used, and that&#x27;s where you assign users and SSO.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">User risk vs sign-in risk</h3>
+      
+      <p lang="en">Sign-in risk scores a single attempt (unusual location, anonymous IP); user risk means the account itself may be compromised (leaked credentials).</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Access package vs access review</h3>
+      
+      <p lang="en">An access package grants a bundle of permissions on request with expiry; an access review periodically checks whether people who have access still need it.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">System-assigned vs user-assigned managed identity</h3>
+      
+      <p lang="en">A system-assigned identity is tied to one resource and is deleted with it; a user-assigned identity is a standalone resource you can share across several.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

@@ -188,6 +188,90 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de AB-650: qué entra y cómo prepararlo</h2>
+    <h2 lang="en">AB-650 study guide: what's covered and how to prepare</h2>
+    <p class="guide-intro" lang="es">AB-650 sustituye a MS-102 como examen de administrador de Microsoft 365. Mantiene identidad, Defender y Purview, y añade un bloque grande sobre Copilot y agentes: cómo prepararlos, gobernarlos y protegerlos.</p>
+    <p class="guide-intro" lang="en">AB-650 replaces MS-102 as the Microsoft 365 administrator exam. It keeps identity, Defender and Purview, and adds a large block on Copilot and agents: how to prepare, govern and secure them.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Inquilinos y cargas de trabajo (20-25%)</h3>
+        <h3 lang="en">Tenants and workloads (20-25%)</h3>
+        <ul>
+          <li lang="es">Dominios, licencias, roles de administrador y unidades administrativas</li>
+          <li lang="en">Domains, licenses, admin roles and administrative units</li>
+          <li lang="es">Sincronización con Entra Connect o Cloud Sync</li>
+          <li lang="en">Sync with Entra Connect or Cloud Sync</li>
+          <li lang="es">Configuración de Exchange Online, SharePoint, OneDrive y Teams</li>
+          <li lang="en">Exchange Online, SharePoint, OneDrive and Teams settings</li>
+          <li lang="es">Estado del servicio, centro de mensajes e informes de uso</li>
+          <li lang="en">Service health, Message center and usage reports</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Gobernanza y seguridad (40-45%)</h3>
+        <h3 lang="en">Governance and security (40-45%)</h3>
+        <ul>
+          <li lang="es">MFA, acceso condicional, PIM y protección de identidades</li>
+          <li lang="en">MFA, Conditional Access, PIM and Identity Protection</li>
+          <li lang="es">Defender para Office 365: antiphishing, Datos adjuntos y Vínculos seguros</li>
+          <li lang="en">Defender for Office 365: anti-phishing, Safe Attachments and Safe Links</li>
+          <li lang="es">Defender XDR: incidentes, puntuación de seguridad y respuesta</li>
+          <li lang="en">Defender XDR: incidents, secure score and response</li>
+          <li lang="es">Purview: etiquetas de confidencialidad, DLP, retención y auditoría</li>
+          <li lang="en">Purview: sensitivity labels, DLP, retention and audit</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Servicios de IA en Microsoft 365 (35-40%)</h3>
+        <h3 lang="en">AI services in Microsoft 365 (35-40%)</h3>
+        <ul>
+          <li lang="es">Preparación para Copilot: licencias, sobreexposición y SharePoint Advanced Management</li>
+          <li lang="en">Copilot readiness: licensing, oversharing and SharePoint Advanced Management</li>
+          <li lang="es">DSPM para IA y protección de datos en las interacciones con Copilot</li>
+          <li lang="en">DSPM for AI and data protection in Copilot interactions</li>
+          <li lang="es">Agentes: registro, Entra Agent ID, Agent 365 y aprobación de agentes</li>
+          <li lang="en">Agents: registry, Entra Agent ID, Agent 365 and agent approval</li>
+          <li lang="es">Informes de Copilot Control System y adopción</li>
+          <li lang="en">Copilot Control System reports and adoption</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Inquilino, licencias, roles y sincronización de identidades.</span><span lang="en">Tenant, licenses, roles and identity sync.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Identidad segura: MFA, acceso condicional, PIM y protección de identidades.</span><span lang="en">Secure identity: MFA, Conditional Access, PIM and Identity Protection.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Defender XDR, Defender para Office 365 y Purview. Es el dominio con más peso.</span><span lang="en">Defender XDR, Defender for Office 365 and Purview. This is the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Copilot y agentes: preparación, sobreexposición, DSPM para IA y Agent 365.</span><span lang="en">Copilot and agents: readiness, oversharing, DSPM for AI and Agent 365.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Simulacros completos cronometrados. El examen sigue en beta, así que revisa los cambios del temario oficial.</span><span lang="en">Full timed mock exams. The exam is still in beta, so check the official outline for changes.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Sobreexposición: el problema no es Copilot</h3>
+      <h3 lang="en">Oversharing: the problem is not Copilot</h3>
+      <p lang="es">Copilot solo ve lo que el usuario ya puede abrir. Si encuentra documentos que no debería, el arreglo está en los permisos de SharePoint y en las etiquetas, no en desactivar Copilot.</p>
+      <p lang="en">Copilot only sees what the user can already open. If it surfaces documents it shouldn&#x27;t, the fix is SharePoint permissions and labels, not turning Copilot off.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Unidades administrativas frente a roles personalizados</h3>
+      <h3 lang="en">Administrative units vs custom roles</h3>
+      <p lang="es">Las unidades administrativas limitan a quién afecta un rol (por ejemplo, solo usuarios de una sede); un rol personalizado define qué acciones permite.</p>
+      <p lang="en">Administrative units limit who a role applies to (for example, only users at one site); a custom role defines which actions it allows.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Datos adjuntos seguros frente a Vínculos seguros</h3>
+      <h3 lang="en">Safe Attachments vs Safe Links</h3>
+      <p lang="es">Datos adjuntos seguros abre los archivos en un espacio aislado antes de entregarlos; Vínculos seguros comprueba las URL en el momento del clic.</p>
+      <p lang="en">Safe Attachments opens files in a sandbox before delivery; Safe Links checks URLs at the moment of the click.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
   <section class="block">
     <h2 lang="es">Preguntas frecuentes</h2>
     <h2 lang="en">Frequently asked questions</h2>

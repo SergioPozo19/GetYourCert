@@ -557,6 +557,110 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">PL-300 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">PL-300 is the Power BI data analyst exam. It covers the whole job: preparing data in Power Query, modeling it, writing DAX, building reports and publishing them with the right security.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Prepare the data (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Connectors, Import, DirectQuery and Direct Lake modes</li>
+          
+          <li lang="en">Column profiling: quality, distribution and profile</li>
+          
+          <li lang="en">Power Query: merge, append, pivot, unpivot and data types</li>
+          
+          <li lang="en">Parameters, dataflows and query folding</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Model the data (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Star schema: fact and dimension tables</li>
+          
+          <li lang="en">Relationships, cardinality and cross-filter direction</li>
+          
+          <li lang="en">DAX: measures, CALCULATE, time intelligence and date tables</li>
+          
+          <li lang="en">Performance: Performance analyzer and model size reduction</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Visualize and analyze (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Choosing the right visual and conditional formatting</li>
+          
+          <li lang="en">Slicers, filters, bookmarks, tooltips and drillthrough</li>
+          
+          <li lang="en">AI visuals: key influencers, decomposition tree, Q&amp;A</li>
+          
+          <li lang="en">Accessibility, mobile layout and trend and anomaly analysis</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Manage and secure (15-20%)</h3>
+        <ul>
+          
+          <li lang="en">Workspaces, roles and apps</li>
+          
+          <li lang="en">Static and dynamic row-level security (RLS)</li>
+          
+          <li lang="en">Scheduled refresh and on-premises data gateway</li>
+          
+          <li lang="en">Sensitivity labels, sharing and subscriptions</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Power Query: connect several sources, clean and transform a real dataset.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Modeling: star schema, relationships and a date table.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">DAX: measures with CALCULATE and time intelligence. Write them yourself, don&#x27;t just read.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Reports, visuals, publishing, RLS and refresh.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Full timed mock exams until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Merge vs append</h3>
+      
+      <p lang="en">Merge joins tables on a common column and adds columns (like a join); append stacks the rows of tables with the same structure.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Calculated column vs measure</h3>
+      
+      <p lang="en">A calculated column is evaluated row by row at refresh and uses memory; a measure is computed at query time according to the visual&#x27;s filters.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Import vs DirectQuery</h3>
+      
+      <p lang="en">Import copies data into the model and is fastest but needs refreshes; DirectQuery queries the source on every interaction, current but slower.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Workspace roles vs RLS</h3>
+      
+      <p lang="en">Workspace roles decide who edits or publishes; RLS filters which rows each reader sees. Note: RLS does not apply to workspace members with edit roles.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

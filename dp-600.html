@@ -550,6 +550,90 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de DP-600: qué entra y cómo prepararlo</h2>
+    
+    <p class="guide-intro" lang="es">DP-600 es el examen de ingeniero de análisis de Microsoft Fabric. Cubre almacenes de lago y almacenes de datos, cómo cargar y transformar datos, y modelos semánticos rápidos para Power BI.</p>
+    
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Mantener la solución (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Áreas de trabajo, capacidades, roles y permisos de elementos</li>
+          
+          <li lang="es">Seguridad de nivel de fila, columna y objeto en el almacén</li>
+          
+          <li lang="es">Canalizaciones de implementación e integración con Git</li>
+          
+          <li lang="es">Etiquetas de confidencialidad, aprobación y análisis del linaje</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Preparar los datos (45-50%)</h3>
+        
+        <ul>
+          <li lang="es">Almacén de lago frente a almacén de datos, accesos directos y OneLake</li>
+          
+          <li lang="es">Ingesta con canalizaciones, Dataflow Gen2 y cuadernos</li>
+          
+          <li lang="es">Transformar con SQL, PySpark y KQL</li>
+          
+          <li lang="es">Tablas Delta, optimización (V-Order, OPTIMIZE, VACUUM) y modelos dimensionales</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Modelos semánticos (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Modos de almacenamiento: Import, DirectQuery y Direct Lake</li>
+          
+          <li lang="es">DAX: medidas, grupos de cálculo y parámetros de campo</li>
+          
+          <li lang="es">Rendimiento: DAX Studio, Tabular Editor y Best Practice Analyzer</li>
+          
+          <li lang="es">Actualización incremental y modelos grandes</li>
+          
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Fabric básico: áreas de trabajo, capacidades, OneLake y permisos.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Ingesta: canalizaciones, Dataflow Gen2, cuadernos y accesos directos.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Transformación con SQL y PySpark, y optimización de tablas Delta. Es el dominio con más peso.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Modelos semánticos: Direct Lake, DAX y rendimiento.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Canalizaciones de implementación, Git y simulacros completos hasta superar el 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Almacén de lago frente a almacén de datos</h3>
+      
+      <p lang="es">El almacén de lago guarda archivos y tablas Delta y se trabaja sobre todo con Spark (su punto de conexión SQL es de solo lectura); el almacén de datos admite T-SQL completo con escrituras.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Direct Lake frente a DirectQuery</h3>
+      
+      <p lang="es">Direct Lake lee directamente las tablas Delta de OneLake con rendimiento cercano a Import y sin copiar datos; DirectQuery manda consultas a la fuente en cada interacción.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Acceso directo frente a copiar datos</h3>
+      
+      <p lang="es">Un acceso directo apunta a datos que ya están en otro lugar (otro almacén de lago, ADLS, S3) sin moverlos; copiar duplica el almacenamiento y hay que mantenerlo sincronizado.</p>
+      
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     <h2 lang="es">Preguntas de ejemplo de DP-600</h2>

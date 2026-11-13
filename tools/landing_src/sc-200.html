@@ -188,6 +188,90 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de SC-200: qué entra y cómo prepararlo</h2>
+    <h2 lang="en">SC-200 study guide: what's covered and how to prepare</h2>
+    <p class="guide-intro" lang="es">SC-200 es el examen de analista de operaciones de seguridad. Trabaja con Microsoft Defender XDR y Microsoft Sentinel: configurar la detección, investigar incidentes, responder y cazar amenazas con KQL.</p>
+    <p class="guide-intro" lang="en">SC-200 is the security operations analyst exam. It works with Microsoft Defender XDR and Microsoft Sentinel: setting up detection, investigating incidents, responding and hunting threats with KQL.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Entorno de operaciones de seguridad (40-45%)</h3>
+        <h3 lang="en">Security operations environment (40-45%)</h3>
+        <ul>
+          <li lang="es">Área de trabajo de Sentinel, conectores de datos y tablas</li>
+          <li lang="en">Sentinel workspace, data connectors and tables</li>
+          <li lang="es">Reglas de análisis: programadas, casi en tiempo real, Microsoft Security y Fusion</li>
+          <li lang="en">Analytics rules: scheduled, NRT, Microsoft Security and Fusion</li>
+          <li lang="es">Configuración de Defender para punto de conexión: incorporación, grupos de dispositivos y reglas ASR</li>
+          <li lang="en">Defender for Endpoint setup: onboarding, device groups and ASR rules</li>
+          <li lang="es">Planes de Defender for Cloud y conectores multinube</li>
+          <li lang="en">Defender for Cloud plans and multicloud connectors</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Respuesta a incidentes (35-40%)</h3>
+        <h3 lang="en">Incident response (35-40%)</h3>
+        <ul>
+          <li lang="es">Cola de incidentes de Defender XDR, alertas y correlación</li>
+          <li lang="en">Defender XDR incident queue, alerts and correlation</li>
+          <li lang="es">Investigación y respuesta automatizadas (AIR) y acciones del centro de acciones</li>
+          <li lang="en">Automated investigation and response (AIR) and Action center</li>
+          <li lang="es">Reglas de automatización y cuadernos de estrategias (Logic Apps) en Sentinel</li>
+          <li lang="en">Automation rules and playbooks (Logic Apps) in Sentinel</li>
+          <li lang="es">Aislar dispositivos, recopilar paquetes y respuesta en vivo</li>
+          <li lang="en">Isolate devices, collect packages and live response</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Caza de amenazas (20-25%)</h3>
+        <h3 lang="en">Threat hunting (20-25%)</h3>
+        <ul>
+          <li lang="es">KQL: where, summarize, join, project y extend</li>
+          <li lang="en">KQL: where, summarize, join, project and extend</li>
+          <li lang="es">Búsqueda avanzada en Defender XDR y reglas de detección personalizadas</li>
+          <li lang="en">Advanced hunting in Defender XDR and custom detection rules</li>
+          <li lang="es">Búsquedas, marcadores, livestream y cuadernos en Sentinel</li>
+          <li lang="en">Hunting queries, bookmarks, livestream and notebooks in Sentinel</li>
+          <li lang="es">Inteligencia sobre amenazas e indicadores</li>
+          <li lang="en">Threat intelligence and indicators</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Sentinel: área de trabajo, conectores y reglas de análisis.</span><span lang="en">Sentinel: workspace, connectors and analytics rules.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Defender XDR y Defender para punto de conexión: incorporación y configuración. Es el dominio con más peso.</span><span lang="en">Defender XDR and Defender for Endpoint: onboarding and configuration. This is the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Incidentes, investigación automatizada, reglas de automatización y cuadernos de estrategias.</span><span lang="en">Incidents, automated investigation, automation rules and playbooks.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">KQL a diario: escribe consultas de búsqueda avanzada hasta que te salgan solas.</span><span lang="en">KQL every day: write advanced hunting queries until they come naturally.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Simulacros completos cronometrados hasta superar el 80%.</span><span lang="en">Full timed mock exams until you score above 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Regla de automatización frente a cuaderno de estrategias</h3>
+      <h3 lang="en">Automation rule vs playbook</h3>
+      <p lang="es">La regla de automatización hace acciones sencillas (asignar, etiquetar, cerrar) y puede lanzar un cuaderno; el cuaderno es una Logic App para lógica compleja o llamadas a otros sistemas.</p>
+      <p lang="en">An automation rule does simple actions (assign, tag, close) and can trigger a playbook; a playbook is a Logic App for complex logic or calls to other systems.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Regla programada frente a NRT</h3>
+      <h3 lang="en">Scheduled vs NRT rule</h3>
+      <p lang="es">La programada se ejecuta cada cierto intervalo sobre una ventana de datos; la casi en tiempo real se ejecuta cada minuto con consultas más limitadas.</p>
+      <p lang="en">A scheduled rule runs on an interval over a data window; a near-real-time rule runs every minute with more limited queries.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">summarize frente a project</h3>
+      <h3 lang="en">summarize vs project</h3>
+      <p lang="es">project elige o renombra columnas; summarize agrupa filas y calcula agregados como count() o dcount().</p>
+      <p lang="en">project picks or renames columns; summarize groups rows and computes aggregates such as count() or dcount().</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
   <section class="block">
     <h2 lang="es">Preguntas frecuentes</h2>
     <h2 lang="en">Frequently asked questions</h2>

@@ -557,6 +557,111 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de AZ-305: qué entra y cómo prepararlo</h2>
+    
+    <p class="guide-intro" lang="es">AZ-305 es el examen de arquitecto de soluciones de Azure. No pregunta cómo configurar algo, sino qué servicio elegir para unos requisitos de coste, disponibilidad, seguridad y rendimiento. Se da por hecho que ya sabes lo de AZ-104.</p>
+    
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Identidad, gobernanza y supervisión (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Jerarquía de grupos de administración, suscripciones y Azure Policy</li>
+          
+          <li lang="es">Autenticación y autorización: Entra ID, B2B, External ID e identidades administradas</li>
+          
+          <li lang="es">Key Vault para secretos, claves y certificados</li>
+          
+          <li lang="es">Registro y supervisión con Log Analytics, Azure Monitor y alertas</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Almacenamiento de datos (20-25%)</h3>
+        
+        <ul>
+          <li lang="es">Datos relacionales: Azure SQL Database, Managed Instance y SQL en VM</li>
+          
+          <li lang="es">Datos no relacionales: Cosmos DB, Table Storage y Blob Storage</li>
+          
+          <li lang="es">Integración de datos: Data Factory, Fabric y Databricks</li>
+          
+          <li lang="es">Niveles, redundancia y escalado de cada servicio</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Continuidad del negocio (15-20%)</h3>
+        
+        <ul>
+          <li lang="es">RPO y RTO, y cómo se traducen en servicios</li>
+          
+          <li lang="es">Azure Backup y Azure Site Recovery</li>
+          
+          <li lang="es">Replicación geográfica, grupos de conmutación por error y Cosmos DB multirregión</li>
+          
+          <li lang="es">Zonas de disponibilidad y pares de regiones</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Infraestructura (30-35%)</h3>
+        
+        <ul>
+          <li lang="es">Proceso: VM, conjuntos de escalado, App Service, Functions, AKS y Container Apps</li>
+          
+          <li lang="es">Mensajería y eventos: Service Bus, Event Grid, Event Hubs y colas</li>
+          
+          <li lang="es">Redes: hub-spoke, VPN, ExpressRoute, Front Door, Application Gateway y Load Balancer</li>
+          
+          <li lang="es">Migración con Azure Migrate y Cloud Adoption Framework</li>
+          
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 6 semanas</h3>
+    
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Identidad, gobernanza y supervisión.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Bases de datos: cuándo usar cada opción de Azure SQL y Cosmos DB.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Continuidad del negocio: RPO, RTO, Backup, Site Recovery y replicación.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Proceso y mensajería. Es parte del dominio con más peso.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Redes y migración: hub-spoke, conectividad híbrida y equilibrio de carga global.</span></div>
+      <div class="plan-step"><span class="ps-d">6</span><span lang="es">Simulacros completos con casos prácticos hasta superar el 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Front Door, Application Gateway, Traffic Manager y Load Balancer</h3>
+      
+      <p lang="es">Front Door es global y HTTP(S); Application Gateway es regional y HTTP(S) con WAF; Traffic Manager es global por DNS para cualquier protocolo; Load Balancer es regional en la capa 4.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Service Bus, Event Grid y Event Hubs</h3>
+      
+      <p lang="es">Service Bus es mensajería empresarial con colas, temas y orden; Event Grid reparte eventos discretos a suscriptores; Event Hubs ingiere flujos de telemetría a gran escala.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">SQL Database frente a Managed Instance</h3>
+      
+      <p lang="es">SQL Database es una base de datos PaaS individual o en grupo elástico; Managed Instance da casi toda la compatibilidad de SQL Server (Agente SQL, consultas entre bases de datos) para migrar sin cambios.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">RPO frente a RTO</h3>
+      
+      <p lang="es">El RPO es cuántos datos puedes perder (distancia a la última copia); el RTO es cuánto tiempo puedes estar sin servicio hasta recuperarte.</p>
+      
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     <h2 lang="es">Preguntas de ejemplo de AZ-305</h2>

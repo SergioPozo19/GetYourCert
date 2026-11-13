@@ -564,6 +564,124 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">MD-102 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">MD-102 tests the endpoint administrator using Microsoft Intune: enrolling devices, configuring them, protecting them and deploying apps. Questions usually ask for the right enrollment method or policy type for each case.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Prepare infrastructure (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Microsoft Entra join, hybrid join and device registration</li>
+          
+          <li lang="en">Intune enrollment: automatic, Windows Autopilot, bulk enrollment</li>
+          
+          <li lang="en">Compliance policies and Conditional Access</li>
+          
+          <li lang="en">Scope tags, Intune roles and device groups</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Manage and maintain devices (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Configuration profiles, settings catalog and administrative templates</li>
+          
+          <li lang="en">Windows Autopilot: user-driven, self-deploying and pre-provisioning modes</li>
+          
+          <li lang="en">Windows updates: rings, feature updates and Windows Autopatch</li>
+          
+          <li lang="en">iOS/iPadOS, macOS and Android enrollment (Apple Business Manager, Android Enterprise)</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Protect devices (15-20%)</h3>
+        <ul>
+          
+          <li lang="en">Microsoft Defender for Endpoint and Intune integration</li>
+          
+          <li lang="en">Endpoint security policies: antivirus, firewall, disk encryption</li>
+          
+          <li lang="en">BitLocker, FileVault and key recovery</li>
+          
+          <li lang="en">Windows LAPS and security baselines</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Applications (15-20%)</h3>
+        <ul>
+          
+          <li lang="en">Deploying Win32, Microsoft Store and Microsoft 365 Apps</li>
+          
+          <li lang="en">App protection policies (MAM) with and without enrollment</li>
+          
+          <li lang="en">App configuration policies</li>
+          
+          <li lang="en">Required, available and uninstall assignments</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Automation, monitoring and reporting (10-15%)</h3>
+        <ul>
+          
+          <li lang="en">Intune reports and Endpoint analytics</li>
+          
+          <li lang="en">Remediations (detection and remediation scripts) and PowerShell scripts</li>
+          
+          <li lang="en">Remote actions: wipe, retire, restart, sync</li>
+          
+          <li lang="en">Remote Help and enrollment troubleshooting</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Identity and device join types, enrollment and compliance.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Autopilot, configuration profiles and update rings. Practice it in a developer tenant.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">Endpoint security, BitLocker, LAPS and Defender for Endpoint.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Apps: Win32, Store, Microsoft 365 Apps and app protection policies.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Reports, remediations and timed mock exams until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Compliance policy vs configuration profile</h3>
+      
+      <p lang="en">A configuration profile applies settings to the device; a compliance policy only checks whether the device meets them and marks it compliant or not, which Conditional Access then uses.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Wipe vs retire</h3>
+      
+      <p lang="en">Wipe resets the device to factory settings; retire removes only company data and apps and keeps personal data, which suits personal devices.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">MAM without enrollment</h3>
+      
+      <p lang="en">App protection policies protect data inside Outlook or Teams even when the personal phone is not enrolled in Intune.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Entra join vs hybrid join</h3>
+      
+      <p lang="en">Entra join is for cloud-only devices; hybrid join is for devices still joined to on-premises Active Directory that are also registered in Entra.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

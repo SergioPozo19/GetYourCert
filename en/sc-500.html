@@ -557,6 +557,105 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">SC-500 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">SC-500 is the cloud and AI security engineer exam, successor to AZ-500. It covers Azure security controls for identity, data, networking and compute, and adds protecting AI solutions and managing security posture.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Identity, access and governance (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Azure RBAC, Entra roles, PIM and Conditional Access</li>
+          
+          <li lang="en">Managed identities and service principals</li>
+          
+          <li lang="en">Azure Key Vault: keys, secrets, certificates and permission model</li>
+          
+          <li lang="en">Azure Policy and management groups for security governance</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Storage, databases and networking (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Storage access with Entra ID, SAS and customer-managed keys</li>
+          
+          <li lang="en">Azure SQL security: Entra authentication, TDE, Always Encrypted and auditing</li>
+          
+          <li lang="en">NSGs, ASGs, Azure Firewall, WAF and DDoS Protection</li>
+          
+          <li lang="en">Private endpoints, Private Link and network isolation</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Compute, containers and AI (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Azure Bastion, just-in-time VM access and disk encryption</li>
+          
+          <li lang="en">AKS and Azure Container Registry security</li>
+          
+          <li lang="en">App Service: authentication, TLS and managed identities</li>
+          
+          <li lang="en">Securing AI solutions: Foundry access, Content Safety and threat protection for AI</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Security posture (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Microsoft Defender for Cloud: CSPM, recommendations and secure score</li>
+          
+          <li lang="en">Workload protection plans and regulatory compliance</li>
+          
+          <li lang="en">Microsoft Sentinel: connectors, analytics rules and automation</li>
+          
+          <li lang="en">Microsoft Security Copilot to investigate and summarize</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">6-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Identity and access: RBAC, PIM, Conditional Access and managed identities.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Key Vault and governance with Azure Policy.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">Data and networking: storage, SQL, firewalls and private endpoints. This is the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Compute, containers and protecting AI solutions.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Defender for Cloud, Sentinel and Security Copilot.</span></div>
+      <div class="plan-step"><span class="ps-d">6</span><span lang="en">Full timed mock exams until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Azure Firewall vs NSG vs WAF</h3>
+      
+      <p lang="en">An NSG filters by IP and port on a subnet or NIC; Azure Firewall is a central firewall with application and FQDN rules; a WAF protects web apps from attacks such as SQL injection.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">TDE vs Always Encrypted</h3>
+      
+      <p lang="en">TDE encrypts the database at rest and is transparent to everyone; Always Encrypted encrypts specific columns so even the database admin cannot see the values.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Key Vault RBAC vs access policies</h3>
+      
+      <p lang="en">The RBAC model uses Azure roles scoped to a vault or a single secret and is the recommended one; access policies are the older, whole-vault model.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

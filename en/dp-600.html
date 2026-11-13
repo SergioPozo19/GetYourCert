@@ -550,6 +550,90 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">DP-600 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">DP-600 is the Microsoft Fabric analytics engineer exam. It covers lakehouses and warehouses, how to load and transform data, and fast semantic models for Power BI.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Maintain the solution (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Workspaces, capacities, roles and item permissions</li>
+          
+          <li lang="en">Row-, column- and object-level security in the warehouse</li>
+          
+          <li lang="en">Deployment pipelines and Git integration</li>
+          
+          <li lang="en">Sensitivity labels, endorsement and lineage analysis</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Prepare data (45-50%)</h3>
+        <ul>
+          
+          <li lang="en">Lakehouse vs warehouse, shortcuts and OneLake</li>
+          
+          <li lang="en">Ingestion with pipelines, Dataflow Gen2 and notebooks</li>
+          
+          <li lang="en">Transform with SQL, PySpark and KQL</li>
+          
+          <li lang="en">Delta tables, optimization (V-Order, OPTIMIZE, VACUUM) and dimensional models</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Semantic models (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Storage modes: Import, DirectQuery and Direct Lake</li>
+          
+          <li lang="en">DAX: measures, calculation groups and field parameters</li>
+          
+          <li lang="en">Performance: DAX Studio, Tabular Editor and Best Practice Analyzer</li>
+          
+          <li lang="en">Incremental refresh and large models</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">5-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Fabric basics: workspaces, capacities, OneLake and permissions.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Ingestion: pipelines, Dataflow Gen2, notebooks and shortcuts.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">Transformation with SQL and PySpark, and Delta table optimization. This is the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Semantic models: Direct Lake, DAX and performance.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Deployment pipelines, Git and full mock exams until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Lakehouse vs warehouse</h3>
+      
+      <p lang="en">A lakehouse stores files and Delta tables and is worked mainly with Spark (its SQL endpoint is read-only); a warehouse supports full T-SQL with writes.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Direct Lake vs DirectQuery</h3>
+      
+      <p lang="en">Direct Lake reads Delta tables in OneLake directly, with near-Import performance and no data copy; DirectQuery sends queries to the source on every interaction.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Shortcut vs copying data</h3>
+      
+      <p lang="en">A shortcut points to data that already lives elsewhere (another lakehouse, ADLS, S3) without moving it; copying duplicates storage and must be kept in sync.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

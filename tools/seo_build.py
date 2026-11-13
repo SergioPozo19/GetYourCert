@@ -670,9 +670,9 @@ def build_domains(e):
                          others=f'Other {code} domains', back=f'{code}: full practice exam', qn='questions',
                          full=f'Full {code} mock exam →', legal='Back to the catalog', privacy='Privacy', app_label='Open the app',
                          stats=('Questions', 'Exam weight', 'Objectives'))
-            # topics: study-guide cards, else official objective names with question counts
+            # topics: official objective names with question counts where listed, else study-guide cards
             tlist = topics.get(n, {}).get(lg) or []
-            if tlist:
+            if tlist and eid not in OBJECTIVES:
                 topics_html = '<ul class="dm-topics">' + ''.join(f'<li>{esc(x)}</li>' for x in tlist) + '</ul>'
             elif eid in OBJECTIVES:
                 ob = OBJECTIVES[eid]

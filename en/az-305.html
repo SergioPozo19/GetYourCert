@@ -557,6 +557,111 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    
+    <h2 lang="en">AZ-305 study guide: what's covered and how to prepare</h2>
+    
+    <p class="guide-intro" lang="en">AZ-305 is the Azure solutions architect exam. It doesn&#x27;t ask how to configure something but which service to choose for given cost, availability, security and performance requirements. It assumes you already know AZ-104 material.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        
+        <h3 lang="en">Identity, governance and monitoring (25-30%)</h3>
+        <ul>
+          
+          <li lang="en">Management group and subscription hierarchy and Azure Policy</li>
+          
+          <li lang="en">Authentication and authorization: Entra ID, B2B, External ID and managed identities</li>
+          
+          <li lang="en">Key Vault for secrets, keys and certificates</li>
+          
+          <li lang="en">Logging and monitoring with Log Analytics, Azure Monitor and alerts</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Data storage (20-25%)</h3>
+        <ul>
+          
+          <li lang="en">Relational data: Azure SQL Database, Managed Instance and SQL on VMs</li>
+          
+          <li lang="en">Non-relational data: Cosmos DB, Table Storage and Blob Storage</li>
+          
+          <li lang="en">Data integration: Data Factory, Fabric and Databricks</li>
+          
+          <li lang="en">Tiers, redundancy and scaling for each service</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Business continuity (15-20%)</h3>
+        <ul>
+          
+          <li lang="en">RPO and RTO, and how they map to services</li>
+          
+          <li lang="en">Azure Backup and Azure Site Recovery</li>
+          
+          <li lang="en">Geo-replication, failover groups and multi-region Cosmos DB</li>
+          
+          <li lang="en">Availability zones and region pairs</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        
+        <h3 lang="en">Infrastructure (30-35%)</h3>
+        <ul>
+          
+          <li lang="en">Compute: VMs, scale sets, App Service, Functions, AKS and Container Apps</li>
+          
+          <li lang="en">Messaging and events: Service Bus, Event Grid, Event Hubs and queues</li>
+          
+          <li lang="en">Networking: hub-spoke, VPN, ExpressRoute, Front Door, Application Gateway and Load Balancer</li>
+          
+          <li lang="en">Migration with Azure Migrate and the Cloud Adoption Framework</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">6-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="en">Identity, governance and monitoring.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="en">Databases: when to use each Azure SQL option and Cosmos DB.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="en">Business continuity: RPO, RTO, Backup, Site Recovery and replication.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="en">Compute and messaging. Part of the heaviest domain.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="en">Networking and migration: hub-spoke, hybrid connectivity and global load balancing.</span></div>
+      <div class="plan-step"><span class="ps-d">6</span><span lang="en">Full mock exams with case studies until you score above 80%.</span></div>
+    </div>
+    
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Front Door vs Application Gateway vs Traffic Manager vs Load Balancer</h3>
+      
+      <p lang="en">Front Door is global and HTTP(S); Application Gateway is regional HTTP(S) with WAF; Traffic Manager is global DNS-based for any protocol; Load Balancer is regional at layer 4.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">Service Bus vs Event Grid vs Event Hubs</h3>
+      
+      <p lang="en">Service Bus is enterprise messaging with queues, topics and ordering; Event Grid distributes discrete events to subscribers; Event Hubs ingests large-scale telemetry streams.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">SQL Database vs Managed Instance</h3>
+      
+      <p lang="en">SQL Database is a single PaaS database or elastic pool; Managed Instance offers near-full SQL Server compatibility (SQL Agent, cross-database queries) for lift-and-shift migrations.</p>
+    </div>
+      <div class="faq-item trap">
+      
+      <h3 lang="en">RPO vs RTO</h3>
+      
+      <p lang="en">RPO is how much data you can lose (time since the last copy); RTO is how long you can be down before you recover.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     

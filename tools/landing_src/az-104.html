@@ -202,6 +202,125 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de AZ-104: qué entra y cómo prepararlo</h2>
+    <h2 lang="en">AZ-104 study guide: what's covered and how to prepare</h2>
+    <p class="guide-intro" lang="es">AZ-104 es el examen de administrador de Azure: pregunta cómo configurar cosas, no solo qué son. Espera escenarios con varios requisitos y preguntas sobre qué opción cumple todos con el menor esfuerzo o coste.</p>
+    <p class="guide-intro" lang="en">AZ-104 is the Azure administrator exam: it asks how to configure things, not just what they are. Expect scenarios with several requirements and questions about which option meets them all with the least effort or cost.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Identidades y gobernanza (20-25%)</h3>
+        <h3 lang="en">Identities and governance (20-25%)</h3>
+        <ul>
+          <li lang="es">Usuarios, grupos (asignados y dinámicos) e invitados B2B en Microsoft Entra ID</li>
+          <li lang="en">Users, groups (assigned and dynamic) and B2B guests in Microsoft Entra ID</li>
+          <li lang="es">Roles de Azure RBAC, roles personalizados y ámbito de asignación</li>
+          <li lang="en">Azure RBAC roles, custom roles and assignment scope</li>
+          <li lang="es">Azure Policy, iniciativas y efectos (Deny, Audit, Modify, DeployIfNotExists)</li>
+          <li lang="en">Azure Policy, initiatives and effects (Deny, Audit, Modify, DeployIfNotExists)</li>
+          <li lang="es">Bloqueos de recursos, etiquetas, grupos de administración y presupuestos</li>
+          <li lang="en">Resource locks, tags, management groups and budgets</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Almacenamiento (15-20%)</h3>
+        <h3 lang="en">Storage (15-20%)</h3>
+        <ul>
+          <li lang="es">Redundancia (LRS, ZRS, GRS, RA-GRS, GZRS) y niveles de acceso</li>
+          <li lang="en">Redundancy (LRS, ZRS, GRS, RA-GRS, GZRS) and access tiers</li>
+          <li lang="es">Claves de acceso, firmas SAS, directivas de acceso almacenadas y acceso con Entra ID</li>
+          <li lang="en">Access keys, SAS tokens, stored access policies and Entra ID access</li>
+          <li lang="es">Firewalls de almacenamiento, puntos de conexión de servicio y privados</li>
+          <li lang="en">Storage firewalls, service endpoints and private endpoints</li>
+          <li lang="es">Azure Files, Blob Storage, ciclo de vida, versiones, eliminación temporal y AzCopy</li>
+          <li lang="en">Azure Files, Blob Storage, lifecycle management, versioning, soft delete and AzCopy</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Proceso (20-25%)</h3>
+        <h3 lang="en">Compute (20-25%)</h3>
+        <ul>
+          <li lang="es">Plantillas ARM y Bicep: interpretar, modificar y desplegar</li>
+          <li lang="en">ARM templates and Bicep: read, modify and deploy</li>
+          <li lang="es">Máquinas virtuales: tamaños, discos, cifrado, zonas y conjuntos de disponibilidad</li>
+          <li lang="en">Virtual machines: sizes, disks, encryption, availability zones and sets</li>
+          <li lang="es">Conjuntos de escalado de máquinas virtuales y escalado automático</li>
+          <li lang="en">Virtual machine scale sets and autoscale</li>
+          <li lang="es">Contenedores (ACI, Container Apps, ACR) y App Service: planes, ranuras y escalado</li>
+          <li lang="en">Containers (ACI, Container Apps, ACR) and App Service: plans, slots and scaling</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Redes virtuales (15-20%)</h3>
+        <h3 lang="en">Virtual networking (15-20%)</h3>
+        <ul>
+          <li lang="es">VNet, subredes, emparejamiento y rutas definidas por el usuario</li>
+          <li lang="en">VNets, subnets, peering and user-defined routes</li>
+          <li lang="es">Grupos de seguridad de red (NSG) y grupos de seguridad de aplicaciones</li>
+          <li lang="en">Network security groups (NSGs) and application security groups</li>
+          <li lang="es">Azure Bastion, puntos de conexión de servicio y privados</li>
+          <li lang="en">Azure Bastion, service endpoints and private endpoints</li>
+          <li lang="es">Azure DNS, Load Balancer interno y público, y solución de problemas con Network Watcher</li>
+          <li lang="en">Azure DNS, internal and public Load Balancer, and troubleshooting with Network Watcher</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Supervisión y mantenimiento (10-15%)</h3>
+        <h3 lang="en">Monitoring and maintenance (10-15%)</h3>
+        <ul>
+          <li lang="es">Métricas, registros y consultas KQL en Log Analytics</li>
+          <li lang="en">Metrics, logs and KQL queries in Log Analytics</li>
+          <li lang="es">Alertas, grupos de acciones y reglas de procesamiento de alertas</li>
+          <li lang="en">Alerts, action groups and alert processing rules</li>
+          <li lang="es">Azure Backup: almacén de Recovery Services, directivas y restauración</li>
+          <li lang="en">Azure Backup: Recovery Services vault, policies and restore</li>
+          <li lang="es">Azure Site Recovery para replicar y conmutar máquinas virtuales</li>
+          <li lang="en">Azure Site Recovery to replicate and fail over VMs</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 6 semanas</h3>
+    <h3 class="guide-sub" lang="en">6-week study plan</h3>
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Identidades y gobernanza. Practica en un tenant de prueba: crea usuarios, grupos dinámicos, roles y una directiva.</span><span lang="en">Identities and governance. Practice in a test tenant: create users, dynamic groups, roles and a policy.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Almacenamiento: redundancia, SAS, firewalls y ciclo de vida. Haz la práctica por dominio del dominio 2.</span><span lang="en">Storage: redundancy, SAS, firewalls and lifecycle. Do domain practice for domain 2.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Proceso: despliega una VM y un conjunto de escalado, lee una plantilla Bicep y crea una web en App Service con ranuras.</span><span lang="en">Compute: deploy a VM and a scale set, read a Bicep template and create an App Service web app with slots.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Redes: emparejamiento, NSG, rutas, Bastion y Load Balancer. Es donde más fallan los candidatos.</span><span lang="en">Networking: peering, NSGs, routes, Bastion and Load Balancer. This is where candidates fail most.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Supervisión, alertas, Backup y Site Recovery. Repasa a diario lo que falles con el repaso inteligente.</span><span lang="en">Monitoring, alerts, Backup and Site Recovery. Review your mistakes daily with smart review.</span></div>
+      <div class="plan-step"><span class="ps-d">6</span><span lang="es">Simulacros completos cronometrados. Programa el examen cuando superes el 80% de forma constante.</span><span lang="en">Full timed mock exams. Book the exam once you consistently score above 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    <h3 class="guide-sub" lang="en">Common exam traps</h3>
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Roles de Azure RBAC frente a roles de Microsoft Entra</h3>
+      <h3 lang="en">Azure RBAC roles vs Microsoft Entra roles</h3>
+      <p lang="es">Los roles de Azure (Propietario, Colaborador, Lector) dan acceso a recursos como VMs o cuentas de almacenamiento; los roles de Entra (Administrador de usuarios, Administrador global) administran el directorio.</p>
+      <p lang="en">Azure roles (Owner, Contributor, Reader) grant access to resources such as VMs or storage accounts; Entra roles (User Administrator, Global Administrator) manage the directory.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Punto de conexión de servicio frente a punto de conexión privado</h3>
+      <h3 lang="en">Service endpoint vs private endpoint</h3>
+      <p lang="es">El de servicio deja el servicio en su IP pública, pero solo acepta tráfico de tu subred; el privado le da una IP privada dentro de tu VNet y sirve también desde local por VPN o ExpressRoute.</p>
+      <p lang="en">A service endpoint keeps the service on its public IP but only accepts traffic from your subnet; a private endpoint gives it a private IP inside your VNet and also works from on-premises over VPN or ExpressRoute.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">El emparejamiento no es transitivo</h3>
+      <h3 lang="en">Peering is not transitive</h3>
+      <p lang="es">Si A está emparejada con B y B con C, A no llega a C. Necesitas emparejar A con C o pasar el tráfico por una aplicación virtual de red con rutas definidas por el usuario.</p>
+      <p lang="en">If A is peered with B and B with C, A cannot reach C. You need to peer A with C or route traffic through a network virtual appliance with user-defined routes.</p>
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Azure Backup frente a Azure Site Recovery</h3>
+      <h3 lang="en">Azure Backup vs Azure Site Recovery</h3>
+      <p lang="es">Backup guarda copias para recuperar datos borrados o dañados; Site Recovery replica máquinas a otra región para seguir funcionando si cae la principal.</p>
+      <p lang="en">Backup keeps copies so you can recover deleted or damaged data; Site Recovery replicates machines to another region so you keep running if the primary goes down.</p>
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
   <section class="block">
     <h2 lang="es">Preguntas frecuentes</h2>
     <h2 lang="en">Frequently asked questions</h2>

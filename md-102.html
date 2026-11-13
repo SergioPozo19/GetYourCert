@@ -564,6 +564,124 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de MD-102: qué entra y cómo prepararlo</h2>
+    
+    <p class="guide-intro" lang="es">MD-102 evalúa al administrador de puestos de trabajo con Microsoft Intune: inscribir dispositivos, configurarlos, protegerlos y desplegar aplicaciones. Las preguntas suelen pedir el método de inscripción o el tipo de directiva correcto para cada caso.</p>
+    
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Preparar la infraestructura (20-25%)</h3>
+        
+        <ul>
+          <li lang="es">Unión a Microsoft Entra, unión híbrida y registro de dispositivos</li>
+          
+          <li lang="es">Inscripción en Intune: automática, Windows Autopilot, inscripción masiva</li>
+          
+          <li lang="es">Directivas de cumplimiento y acceso condicional</li>
+          
+          <li lang="es">Etiquetas de ámbito, roles de Intune y grupos de dispositivos</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Administrar y mantener dispositivos (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Perfiles de configuración, catálogo de configuración y plantillas administrativas</li>
+          
+          <li lang="es">Windows Autopilot: modos controlado por el usuario, autoimplementación y prerrogativas</li>
+          
+          <li lang="es">Actualizaciones de Windows: anillos, actualizaciones de características y Windows Autopatch</li>
+          
+          <li lang="es">Inscripción de iOS/iPadOS, macOS y Android (Apple Business Manager, Android Enterprise)</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Proteger dispositivos (15-20%)</h3>
+        
+        <ul>
+          <li lang="es">Microsoft Defender para punto de conexión e integración con Intune</li>
+          
+          <li lang="es">Directivas de seguridad de punto de conexión: antivirus, firewall, cifrado de disco</li>
+          
+          <li lang="es">BitLocker, FileVault y recuperación de claves</li>
+          
+          <li lang="es">Windows LAPS y líneas base de seguridad</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Aplicaciones (15-20%)</h3>
+        
+        <ul>
+          <li lang="es">Despliegue de aplicaciones Win32, Microsoft Store y Microsoft 365 Apps</li>
+          
+          <li lang="es">Directivas de protección de aplicaciones (MAM) con y sin inscripción</li>
+          
+          <li lang="es">Directivas de configuración de aplicaciones</li>
+          
+          <li lang="es">Asignación obligatoria, disponible y desinstalación</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Automatización, supervisión e informes (10-15%)</h3>
+        
+        <ul>
+          <li lang="es">Informes de Intune y análisis de puntos de conexión</li>
+          
+          <li lang="es">Corrección (scripts de detección y corrección) y scripts de PowerShell</li>
+          
+          <li lang="es">Acciones remotas: borrar, retirar, reiniciar, sincronizar</li>
+          
+          <li lang="es">Ayuda remota y solución de problemas de inscripción</li>
+          
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Identidad y tipos de unión de dispositivos, inscripción y cumplimiento.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Autopilot, perfiles de configuración y anillos de actualización. Practícalo en un tenant de desarrollo.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">Seguridad de punto de conexión, BitLocker, LAPS y Defender para punto de conexión.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Aplicaciones: Win32, Store, Microsoft 365 Apps y directivas de protección de aplicaciones.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Informes, correcciones y simulacros cronometrados hasta superar el 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Directiva de cumplimiento frente a perfil de configuración</h3>
+      
+      <p lang="es">El perfil de configuración aplica ajustes al dispositivo; la directiva de cumplimiento solo comprueba si los cumple y marca el dispositivo como conforme o no, algo que usa el acceso condicional.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Borrar frente a retirar</h3>
+      
+      <p lang="es">Borrar restaura el dispositivo a valores de fábrica; retirar solo quita los datos y aplicaciones de la empresa y deja los datos personales, lo propio en dispositivos personales.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">MAM sin inscripción</h3>
+      
+      <p lang="es">Las directivas de protección de aplicaciones protegen los datos dentro de Outlook o Teams aunque el móvil personal no esté inscrito en Intune.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Unión a Entra frente a unión híbrida</h3>
+      
+      <p lang="es">La unión a Entra es para equipos solo en la nube; la unión híbrida, para equipos que siguen unidos al Active Directory local y además se registran en Entra.</p>
+      
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     <h2 lang="es">Preguntas de ejemplo de MD-102</h2>

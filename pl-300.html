@@ -557,6 +557,110 @@
     </div>
   </section>
 
+  <!--guide-->
+  <section class="block guide">
+    <h2 lang="es">Guía de estudio de PL-300: qué entra y cómo prepararlo</h2>
+    
+    <p class="guide-intro" lang="es">PL-300 es el examen de analista de datos de Power BI. Recorre todo el trabajo: preparar los datos en Power Query, modelarlos, escribir DAX, crear informes y publicarlos con la seguridad adecuada.</p>
+    
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3 lang="es">Preparar los datos (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Conectores, modos Import, DirectQuery y Direct Lake</li>
+          
+          <li lang="es">Perfilado de columnas: calidad, distribución y perfil</li>
+          
+          <li lang="es">Power Query: combinar, anexar, dinamizar, anular dinamización y tipos de datos</li>
+          
+          <li lang="es">Parámetros, flujos de datos y plegado de consultas</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Modelar los datos (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Esquema en estrella: tablas de hechos y de dimensiones</li>
+          
+          <li lang="es">Relaciones, cardinalidad y dirección de filtro cruzado</li>
+          
+          <li lang="es">DAX: medidas, CALCULATE, inteligencia de tiempo y tablas de fechas</li>
+          
+          <li lang="es">Rendimiento: Analizador de rendimiento y reducción del modelo</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Visualizar y analizar (25-30%)</h3>
+        
+        <ul>
+          <li lang="es">Elegir el objeto visual adecuado y formato condicional</li>
+          
+          <li lang="es">Segmentaciones, filtros, marcadores, información sobre herramientas y obtención de detalles</li>
+          
+          <li lang="es">Objetos visuales de IA: influenciadores clave, árbol de descomposición, preguntas y respuestas</li>
+          
+          <li lang="es">Accesibilidad, diseño para móviles y análisis de tendencias y anomalías</li>
+          
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3 lang="es">Administrar y proteger (15-20%)</h3>
+        
+        <ul>
+          <li lang="es">Áreas de trabajo, roles y aplicaciones</li>
+          
+          <li lang="es">Seguridad de nivel de fila (RLS) estática y dinámica</li>
+          
+          <li lang="es">Actualización programada y puerta de enlace de datos local</li>
+          
+          <li lang="es">Etiquetas de confidencialidad, uso compartido y suscripciones</li>
+          
+        </ul>
+      </div>
+    </div>
+    <h3 class="guide-sub" lang="es">Plan de estudio de 5 semanas</h3>
+    
+    <div class="plan">
+      <div class="plan-step"><span class="ps-d">1</span><span lang="es">Power Query: conecta varias fuentes, limpia y transforma un conjunto de datos real.</span></div>
+      <div class="plan-step"><span class="ps-d">2</span><span lang="es">Modelado: esquema en estrella, relaciones y tabla de fechas.</span></div>
+      <div class="plan-step"><span class="ps-d">3</span><span lang="es">DAX: medidas con CALCULATE e inteligencia de tiempo. Escríbelas a mano, no solo leas.</span></div>
+      <div class="plan-step"><span class="ps-d">4</span><span lang="es">Informes, objetos visuales, publicación, RLS y actualización.</span></div>
+      <div class="plan-step"><span class="ps-d">5</span><span lang="es">Simulacros completos cronometrados hasta superar el 80%.</span></div>
+    </div>
+    <h3 class="guide-sub" lang="es">Confusiones típicas en el examen</h3>
+    
+    <div class="traps">
+      <div class="faq-item trap">
+      <h3 lang="es">Combinar frente a anexar</h3>
+      
+      <p lang="es">Combinar une tablas por una columna común y añade columnas (como un join); anexar apila las filas de tablas con la misma estructura.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Columna calculada frente a medida</h3>
+      
+      <p lang="es">La columna calculada se evalúa fila a fila al actualizar y ocupa memoria; la medida se calcula al consultar según los filtros del objeto visual.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Import frente a DirectQuery</h3>
+      
+      <p lang="es">Import copia los datos al modelo y es lo más rápido, pero necesita actualizaciones; DirectQuery consulta la fuente en cada interacción, con datos al día pero más lento.</p>
+      
+    </div>
+      <div class="faq-item trap">
+      <h3 lang="es">Roles del área de trabajo frente a RLS</h3>
+      
+      <p lang="es">Los roles del área de trabajo deciden quién edita o publica; la RLS filtra qué filas ve cada lector. Ojo: la RLS no se aplica a los miembros con rol de edición del área de trabajo.</p>
+      
+    </div>
+    </div>
+  </section>
+  <!--/guide-->
+
 <!--samples-->
   <section class="block samples">
     <h2 lang="es">Preguntas de ejemplo de PL-300</h2>
